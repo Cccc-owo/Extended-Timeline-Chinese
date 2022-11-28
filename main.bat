@@ -1,14 +1,14 @@
 @ECHO OFF
 ::checking
-chcp 936
-ECHO ÏÖÔÚÊ±¼ä£º%date%
-ECHO ¼ì²éÊÇ·ñ´æÔÚĞèÒªµÄÎÄ¼ş¼ĞÖĞ...
+ECHO Timeï¼š%date%
+ECHO Check if the required folder exists...
 if not exist output\ mkdir \output\
 if not exist output\ETCP mkdir output\ETCP\
 ::pre-processing
 ECHO.
-ECHO ¿ªÊ¼¸´ÖÆÎÄ¼ş...
+ECHO start copying
 ::integrating files
+ECHO.
 cp -r eu4_chinese/* output/ETCP/
 cp -r eu4_chinese_sup/* output/ETCP/
 cp -r ExtendedTimeline/* output/ETCP/
@@ -17,11 +17,12 @@ cp -r addition/* output/ETCP/
 cp -r mod_descriptor/* output/
 ::post-processing
 ECHO.
-ECHO ¸´ÖÆÎÄ¼ş½áÊø£¬ÕıÔÚÍê³ÉÉÆºó...
+ECHO Copying the file is finished, finishing the aftermath...
+ECHO.
 del output\ETCP\thumbnail.png
-del /F /S /Q output/ETCP/output/ETCP/output/ETCP/*_l_spanish.yml
-del /F /S /Q output/ETCP/output/ETCP/*_l_french.yml
-del /F /S /Q output/ETCP/*_l_german.yml
+del /F /S /Q output\ETCP\localisation\*_l_spanish.yml
+del /F /S /Q output\ETCP\localisation\*_l_french.yml
+del /F /S /Q output\ETCP\localisation\*_l_german.yml
 ::done
 ECHO.
-ECHO ½Å±¾ÔËĞĞ½áÊø
+ECHO End of script running
