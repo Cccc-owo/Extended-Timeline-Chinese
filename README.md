@@ -13,7 +13,7 @@ Translated version of a EU4 mod called "Extended Timeline".
 |文件夹 / folder|内容 / contents|备注 / notes|
 |--------------|---------------|-----------|
 |.github|GitHub 工作流文件||
-|addition|整合过程最后需要覆盖的东西||
+|addition|整合过程最后需要覆盖的东西|存放有额外加入的文件|
 |cn_text|翻译后的文本文件|使用 EU4 双字节补丁特殊编码|
 |eu4_chinese|52汉化组欧陆风云 4 简体中文汉化|[源项目](https://paratranz.cn/projects/2)|
 |eu4_chinese|52汉化组欧陆风云 4 简体中文汉化|[源项目](https://paratranz.cn/projects/2)|
