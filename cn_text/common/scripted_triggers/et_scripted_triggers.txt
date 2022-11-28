@@ -1,0 +1,1058 @@
+can_build_production_building_et = {
+  num_free_building_slots = 1
+  owner = {
+    adm_tech = 20
+  }
+  NOT = {
+    has_building = storehouse
+  }
+  NOT = {
+    has_building = windmill
+  }
+  NOT = {
+    has_building = workshop
+  }
+  NOT = {
+    has_building = counting_house
+  }
+  NOT = {
+    has_building = factory
+  }
+  NOT = {
+    trade_goods = gold
+  }
+}
+has_production_building_et = {
+  OR = {
+    has_building = storehouse
+    has_building = windmill
+    has_building = workshop
+    has_building = counting_house
+    has_building = factory
+  }
+}
+can_build_army_building_et = {
+  num_free_building_slots = 1
+  owner = {
+    mil_tech = 38
+  }
+  NOT = {
+    has_building = armory
+  }
+  NOT = {
+    has_building = barracks
+  }
+  NOT = {
+    has_building = training_fields
+  }
+}
+has_army_building_et = {
+  OR = {
+    has_building = armory
+    has_building = barracks
+    has_building = training_fields
+  }
+}
+can_build_religion_building_et = {
+  num_free_building_slots = 1
+  owner = {
+    adm_tech = 7
+  }
+  NOT = {
+    has_building = glorious_monument
+  }
+  NOT = {
+    has_building = temple
+  }
+  NOT = {
+    has_building = cathedral
+  }
+}
+has_religion_building_et = {
+  OR = {
+    has_building = glorious_monument
+    has_building = temple
+    has_building = cathedral
+  }
+}
+can_build_port_building_et = {
+  num_free_building_slots = 1
+  has_port = yes
+  owner = {
+    dip_tech = 42
+  }
+  NOT = {
+    has_building = dock
+  }
+  NOT = {
+    has_building = drydock
+  }
+  NOT = {
+    has_building = naval_arsenal
+  }
+}
+has_port_building_et = {
+  OR = {
+    has_building = dock
+    has_building = drydock
+    has_building = naval_arsenal
+  }
+}
+can_build_trade_building_et = {
+  num_free_building_slots = 1
+  owner = {
+    dip_tech = 34
+  }
+  NOT = {
+    has_building = marketplace
+  }
+  NOT = {
+    has_building = trade_post
+  }
+  NOT = {
+    has_building = trade_depot
+  }
+  NOT = {
+    has_building = treasury_office
+  }
+  NOT = {
+    has_building = stock_exchange
+  }
+}
+has_trade_building_et = {
+  OR = {
+    has_building = marketplace
+    has_building = trade_post
+    has_building = trade_depot
+    has_building = treasury_office
+    has_building = stock_exchange
+  }
+}
+can_build_fort_et = {
+  num_free_building_slots = 1
+  NOT = {
+    has_building = fort_et
+  }
+  NOT = {
+    has_building = fort_15th
+  }
+  NOT = {
+    has_building = fort_16th
+  }
+  NOT = {
+    has_building = fort_17th
+  }
+  NOT = {
+    has_building = fort_18th
+  }
+}
+has_fort_et = {
+  OR = {
+    has_building = fort_et
+    has_building = fort_15th
+    has_building = fort_16th
+    has_building = fort_17th
+    has_building = fort_18th
+  }
+}
+estate_agenda_fort_trigger_et = {
+  OR = {
+    any_neighbor_province = {
+      owner = {
+        OR = {
+          is_rival = root
+          root = {
+            is_rival = prev
+          }
+          AND = {
+            is_subject_other_than_tributary_trigger = yes
+            overlord = {
+              OR = {
+                is_rival = root
+                root = {
+                  is_rival = prev
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    any_neighbor_province = {
+      owned_by = root
+      any_neighbor_province = {
+        owner = {
+          OR = {
+            is_rival = root
+            root = {
+              is_rival = prev
+            }
+            AND = {
+              is_subject_other_than_tributary_trigger = yes
+              overlord = {
+                OR = {
+                  is_rival = root
+                  root = {
+                    is_rival = prev
+                  }
+                }
+              }
+            }
+          }
+        }
+        NOT = {
+          any_neighbor_province = {
+            owned_by = root
+            OR = {
+              has_building = fort_15th
+              has_building = fort_16th
+              has_building = fort_17th
+              has_building = fort_18th
+            }
+          }
+        }
+      }
+    }
+  }
+}
+root_can_build_manufactory_here_trigger_et = {
+  OR = {
+    AND = {
+      owner = {
+        dip_tech = 56
+      }
+      NOT = {
+        has_building = wharf
+      }
+      OR = {
+        trade_goods = naval_supplies
+        trade_goods = fish
+        trade_goods = salt
+      }
+    }
+    AND = {
+      owner = {
+        mil_tech = 56
+      }
+      NOT = {
+        has_building = weapons
+      }
+      OR = {
+        trade_goods = copper
+        trade_goods = iron
+      }
+    }
+    AND = {
+      owner = {
+        adm_tech = 56
+      }
+      NOT = {
+        has_building = textile
+      }
+      OR = {
+        trade_goods = wool
+        trade_goods = cloth
+        trade_goods = silk
+        trade_goods = dyes
+      }
+    }
+    AND = {
+      owner = {
+        adm_tech = 59
+      }
+      NOT = {
+        has_building = plantations
+      }
+      OR = {
+        trade_goods = coffee
+        trade_goods = cotton
+        trade_goods = sugar
+        trade_goods = tobacco
+        trade_goods = tea
+        trade_goods = cocoa
+      }
+    }
+    AND = {
+      owner = {
+        dip_tech = 59
+      }
+      NOT = {
+        has_building = tradecompany
+      }
+      OR = {
+        trade_goods = ivory
+        trade_goods = slaves
+        trade_goods = spices
+        trade_goods = fur
+        trade_goods = incense
+      }
+    }
+    AND = {
+      owner = {
+        adm_tech = 51
+      }
+      NOT = {
+        has_building = farm_estate
+      }
+      OR = {
+        trade_goods = grain
+        trade_goods = livestock
+        trade_goods = wine
+      }
+    }
+    AND = {
+      owner = {
+        adm_tech = 61
+      }
+      NOT = {
+        has_building = mills
+      }
+      OR = {
+        trade_goods = paper
+        trade_goods = gems
+        trade_goods = tropical_wood
+        trade_goods = glass
+        trade_goods = chinaware
+      }
+    }
+    AND = {
+      has_dlc = "Rule Britannia"
+      owner = {
+        adm_tech = 66
+      }
+      NOT = {
+        has_building = furnace
+      }
+      OR = {
+        trade_goods = coal
+        trade_goods = oil
+        trade_goods = uranium
+        trade_goods = aluminum
+        trade_goods = electronics
+        trade_goods = cars
+      }
+    }
+  }
+}
+has_manufactory_trigger_et = {
+  OR = {
+    has_building = wharf
+    has_building = weapons
+    has_building = textile
+    has_building = plantations
+    has_building = tradecompany
+    has_building = farm_estate
+    has_building = mills
+    has_building = furnace
+  }
+}
+has_owner_religion_or_secularism = {
+  OR = {
+    has_owner_religion = yes
+    owner = {
+      religion = secularism
+    }
+  }
+}
+invalid_dynastic_country_name_trigger_et = {
+  has_country_flag = has_dynastic_dynamic_name
+  OR = {
+    AND = {
+      has_country_flag = dyn_name_abbasid_flag
+      NOT = {
+        dynasty = "?–Ôb¯e"  # Abbasid
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_afrighid_flag
+      NOT = {
+        dynasty = "?–+YÌ‘<h"  # Afrighid
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_aghlabid_flag
+      NOT = {
+        dynasty = "Aghlabid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ahmadili_flag
+      NOT = {
+        dynasty = "Ahmadili"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_alid_flag
+      NOT = {
+        dynasty = "Alid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_almohad_flag
+      NOT = {
+        dynasty = "Almohad"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_almoravid_flag
+      NOT = {
+        dynasty = "Almoravid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_annazid_flag
+      NOT = {
+        dynasty = "Annazid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_artuqid_flag
+      NOT = {
+        dynasty = "Artuqid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_awraba_flag
+      NOT = {
+        dynasty = "Awraba"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ayyubid_flag
+      NOT = {
+        dynasty = "Ayyubid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_banijurid_flag
+      NOT = {
+        dynasty = "Banijurid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_bavandid_flag
+      NOT = {
+        dynasty = "Bavandid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_buyid_flag
+      NOT = {
+        dynasty = "Buyid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_chobanid_flag
+      NOT = {
+        dynasty = "Chobanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_dabuyid_flag
+      NOT = {
+        dynasty = "Dabuyid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_eldiguzid_flag
+      NOT = {
+        dynasty = "Eldiguzid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_fihrid_flag
+      NOT = {
+        dynasty = "Fihrid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ghaznavid_flag
+      NOT = {
+        dynasty = "Ghaznavid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_hafsid_flag
+      NOT = {
+        dynasty = "Hafsid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_hamdanid_flag
+      NOT = {
+        dynasty = "Hamdanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_hammadid_flag
+      NOT = {
+        dynasty = "Hammadid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_hasanwayhid_flag
+      NOT = {
+        dynasty = "Hasanwayhid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_hazaraspid_flag
+      NOT = {
+        dynasty = "Hazaraspid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_idrisid_flag
+      NOT = {
+        dynasty = "Idrisid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ifrinid_flag
+      NOT = {
+        dynasty = "Ifrinid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ikshidid_flag
+      NOT = {
+        dynasty = "Ikshidid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ilyasid_flag
+      NOT = {
+        dynasty = "Ilyasid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_injuid_flag
+      NOT = {
+        dynasty = "Injuid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_jabrid_flag
+      NOT = {
+        dynasty = "Jabrid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_jalayirid_flag
+      NOT = {
+        dynasty = "Jalayirid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_jarwanid_flag
+      NOT = {
+        dynasty = "Jarwanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_justanid_flag
+      NOT = {
+        dynasty = "Justanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_kakuyid_flag
+      NOT = {
+        dynasty = "Kakuyid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_kartid_flag
+      NOT = {
+        dynasty = "Kartid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_kaysid_flag
+      NOT = {
+        dynasty = "Kaysid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_khazimid_flag
+      NOT = {
+        dynasty = "Khazimid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_khorshidi_flag
+      NOT = {
+        dynasty = "Khorshidi"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_khurasanid_flag
+      NOT = {
+        dynasty = "Khurasanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_khuraymid_flag
+      NOT = {
+        dynasty = "Khuraymid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_kindid_flag
+      NOT = {
+        dynasty = "Kindid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_maghrawa_flag
+      NOT = {
+        dynasty = "Maghrawa"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_mahdid_flag
+      NOT = {
+        dynasty = "Mahdid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_mamunid_flag
+      NOT = {
+        dynasty = "Ma'munid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_manid_flag
+      NOT = {
+        dynasty = "Ma'nid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_marinid_flag
+      NOT = {
+        dynasty = "Marinid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_marwanid_flag
+      NOT = {
+        dynasty = "Marwanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_mengujekid_flag
+      NOT = {
+        dynasty = "Mengujekid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_mihrabanid_flag
+      NOT = {
+        dynasty = "Mihrabanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_mirdasid_flag
+      NOT = {
+        dynasty = "Mirdasid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_muzaffarid_flag
+      NOT = {
+        dynasty = "Muzaffarid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_nafisid_flag
+      NOT = {
+        dynasty = "Nafisid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_najahid_flag
+      NOT = {
+        dynasty = "Najahid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_nasrid_flag
+      NOT = {
+        dynasty = "Nasrid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_numayrid_flag
+      NOT = {
+        dynasty = "Numayrid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_paduspanid_flag
+      NOT = {
+        dynasty = "Paduspanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_qahtabid_flag
+      NOT = {
+        dynasty = "Qahtabid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_qarauna_flag
+      NOT = {
+        dynasty = "Qara'una"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_qarlughid_flag
+      NOT = {
+        dynasty = "Qarlughid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_rassid_flag
+      NOT = {
+        dynasty = "Rassid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_rasulid_flag
+      NOT = {
+        dynasty = "Rasulid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_rawadid_flag
+      NOT = {
+        dynasty = "Rawadid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_rustamid_flag
+      NOT = {
+        dynasty = "Rustamid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_sabuktiginid_flag
+      NOT = {
+        dynasty = "Sabuktiginid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_saffarid_flag
+      NOT = {
+        dynasty = "Saffarid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_sajid_flag
+      NOT = {
+        dynasty = "Sajid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_salghurid_flag
+      NOT = {
+        dynasty = "Salghurid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_sallarid_flag
+      NOT = {
+        dynasty = "Sallarid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_saltukid_flag
+      NOT = {
+        dynasty = "Saltukid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_samanid_flag
+      NOT = {
+        dynasty = "Samanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_sarbadar_flag
+      NOT = {
+        dynasty = "Sarbadar"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_shaddadid_flag
+      NOT = {
+        dynasty = "Shaddadid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_shaybanid_flag
+      NOT = {
+        dynasty = "Shaybanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_sulayhid_flag
+      NOT = {
+        dynasty = "Sulayhid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_sulaymanid_flag
+      NOT = {
+        dynasty = "Sulaymanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_sulaymid_flag
+      NOT = {
+        dynasty = "Sulaymid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_tahirid_flag
+      NOT = {
+        dynasty = "Tahirid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_tulunid_flag
+      NOT = {
+        dynasty = "z&O"  # Tulunid
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ukhaidhirid_flag
+      NOT = {
+        dynasty = "Ukhaidhirid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_umayyad_flag
+      NOT = {
+        dynasty = "Umayyad"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_uqaylid_flag
+      NOT = {
+        dynasty = "Uqaylid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_usfurid_flag
+      NOT = {
+        dynasty = "Usfurid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_uyunid_flag
+      NOT = {
+        dynasty = "Uyunid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_yazidid_flag
+      NOT = {
+        dynasty = "Yazidid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_yufirid_flag
+      NOT = {
+        dynasty = "Yufirid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_zayyanid_flag
+      NOT = {
+        dynasty = "Zayyanid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_zengid_flag
+      NOT = {
+        dynasty = "Zengid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_zirid_flag
+      NOT = {
+        dynasty = "Zirid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ziyadid_flag
+      NOT = {
+        dynasty = "Ziyadid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_ziyarid_flag
+      NOT = {
+        dynasty = "Ziyarid"
+      }
+    }
+    AND = {
+      has_country_flag = dyn_name_zurayid_flag
+      NOT = {
+        dynasty = "Zurayid"
+      }
+    }
+  }
+}
+needs_dynastic_country_name_trigger_et = {
+  religion_group = muslim
+  OR = {
+    tag = AFG
+    tag = ADE
+    tag = ALH
+    tag = ARD
+    tag = ARM
+    tag = ASX
+    tag = AZE
+    tag = BUK
+    tag = DIV
+    tag = EGY
+    tag = FEZ
+    tag = FRG
+    tag = FRS
+    tag = GHZ
+    tag = GNJ
+    tag = HRN
+    tag = HSN
+    tag = IDA
+    tag = ISF
+    tag = KAY
+    tag = KBA
+    tag = KHO
+    tag = KHW
+    tag = KRD
+    tag = KRM
+    tag = KRT
+    tag = KRY
+    tag = LRI
+    tag = MGR
+    tag = MHD
+    tag = MOR
+    tag = MZB
+    tag = NAJ
+    tag = PER
+    tag = QOM
+    tag = SA1
+    tag = SBZ
+    tag = SIS
+    tag = SLT
+    tag = SOG
+    tag = SYR
+    tag = TAB
+    tag = TBR
+    tag = TLC
+    tag = TUN
+    tag = YEM
+    tag = YZD
+    tag = ZNG
+  }
+  OR = {
+    dynasty = "Abbasid"
+    dynasty = "Afrighid"
+    dynasty = "Aghlabid"
+    dynasty = "Ahmadili"
+    dynasty = "Alid"
+    dynasty = "Almohad"
+    dynasty = "Almoravid"
+    dynasty = "Annazid"
+    dynasty = "Artuqid"
+    dynasty = "Awraba"
+    dynasty = "Ayyubid"
+    dynasty = "Banijurid"
+    dynasty = "Bavandid"
+    dynasty = "Buyid"
+    dynasty = "Chobanid"
+    dynasty = "Dabuyid"
+    dynasty = "Eldiguzid"
+    dynasty = "Fihrid"
+    dynasty = "Ghaznavid"
+    dynasty = "Hafsid"
+    dynasty = "Hamdanid"
+    dynasty = "Hammadid"
+    dynasty = "Hasanwayhid"
+    dynasty = "Hazaraspid"
+    dynasty = "Idrisid"
+    dynasty = "Ifrinid"
+    dynasty = "Ikshidid"
+    dynasty = "Ilyasid"
+    dynasty = "Injuid"
+    dynasty = "Jabrid"
+    dynasty = "Jalayirid"
+    dynasty = "Jarwanid"
+    dynasty = "Justanid"
+    dynasty = "Kakuyid"
+    dynasty = "Kartid"
+    dynasty = "Kaysid"
+    dynasty = "Khazimid"
+    dynasty = "Khorshidi"
+    dynasty = "Khurasanid"
+    dynasty = "Khuraymid"
+    dynasty = "Kindid"
+    dynasty = "Maghrawa"
+    dynasty = "Mahdid"
+    dynasty = "Ma'munid"
+    dynasty = "Ma'nid"
+    dynasty = "Marinid"
+    dynasty = "Marwanid"
+    dynasty = "Mengujekid"
+    dynasty = "Mihrabanid"
+    dynasty = "Mirdasid"
+    dynasty = "Muzaffarid"
+    dynasty = "Nafisid"
+    dynasty = "Najahid"
+    dynasty = "Nasrid"
+    dynasty = "Numayrid"
+    dynasty = "Paduspanid"
+    dynasty = "Qahtabid"
+    dynasty = "Qara'una"
+    dynasty = "Qarlughid"
+    dynasty = "Rassid"
+    dynasty = "Rasulid"
+    dynasty = "Rawadid"
+    dynasty = "Rustamid"
+    dynasty = "Sabuktiginid"
+    dynasty = "Saffarid"
+    dynasty = "Sajid"
+    dynasty = "Salghurid"
+    dynasty = "Sallarid"
+    dynasty = "Saltukid"
+    dynasty = "Samanid"
+    dynasty = "Sarbadar"
+    dynasty = "Shaddadid"
+    dynasty = "Shaybanid"
+    dynasty = "Sulayhid"
+    dynasty = "Sulaymanid"
+    dynasty = "Sulaymid"
+    dynasty = "Tahirid"
+    dynasty = "z&O"  # Tulunid
+    dynasty = "Ukhaidhirid"
+    dynasty = "Umayyad"
+    dynasty = "Uqaylid"
+    dynasty = "Usfurid"
+    dynasty = "Uyunid"
+    dynasty = "Yazidid"
+    dynasty = "Yufirid"
+    dynasty = "Zayyanid"
+    dynasty = "Zengid"
+    dynasty = "Zirid"
+    dynasty = "Ziyadid"
+    dynasty = "Ziyarid"
+    dynasty = "Zurayid"
+  }
+  NOT = {
+    any_country = {
+      dynasty = ROOT
+    }
+  }
+}

@@ -1,0 +1,173 @@
+###################
+#Suomenusko Events#
+###################
+
+namespace = suomenusko
+
+#Exploration
+country_event = {
+	id = suomenusko.1
+	title = suomenusko.1.t
+	desc = suomenusko.1.d
+	picture = COLONIZATION_eventPicture
+
+	trigger = {
+		religion = suomenusko
+		NOT = { has_ruler_flag = suomenusko_exploration }
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = {
+		name = suomenusko.1.a
+		add_years_of_income = -1
+		set_ruler_flag = suomenusko_exploration
+		hidden_effect = {
+			random_list = {
+				50 = {
+					country_event = {
+						id = suomenusko.2
+						days = 30
+					}
+				}
+				5 = {
+					country_event = {
+						id = suomenusko.3
+						days = 30
+					}
+				}
+				15 = {
+					country_event = {
+						id = suomenusko.4
+						days = 30
+					}
+				}
+				15 = {
+					country_event = {
+						id = suomenusko.5
+						days = 30
+					}
+				}
+				15 = {
+					country_event = {
+						id = suomenusko.6
+						days = 30
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = suomenusko.1.b
+	}
+}
+
+#Nothing Interesting
+country_event = {
+	id = suomenusko.2
+	title = suomenusko.2.t
+	desc = suomenusko.2.d
+	picture = COMET_SIGHTED
+
+	is_triggered_only = yes
+
+	immediate = {
+		clr_ruler_flag = suomenusko_exploration
+	}
+
+	option = {
+		name = suomenusko.2.a
+	}
+}
+
+#The Sampo
+country_event = {
+	id = suomenusko.3
+	title = suomenusko.3.t
+	desc = suomenusko.3.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		clr_ruler_flag = suomenusko_exploration
+	}
+
+	option = {
+		name = suomenusko.3.a
+		add_stability = 2
+		add_ruler_modifier = {
+			name = found_sampo
+		}
+	}
+}
+
+#Wicked Forest
+country_event = {
+	id = suomenusko.4
+	title = suomenusko.4.t
+	desc = suomenusko.4.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_ruler_flag = suomenusko_exploration
+	}
+
+	option = {
+		name = suomenusko.4.a
+		add_yearly_manpower = -1
+		random_list = {
+			95 = {
+			}
+			5 = {
+				kill_ruler = yes
+			}
+		}
+	}
+}
+
+#Bear Spotted
+country_event = {
+	id = suomenusko.5
+	title = suomenusko.5.t
+	desc = suomenusko.5.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		clr_ruler_flag = suomenusko_exploration
+	}
+
+	option = {
+		name = suomenusko.5.a
+		add_prestige = 5
+	}
+}
+
+#Found Food
+country_event = {
+	id = suomenusko.6
+	title = suomenusko.6.t
+	desc = suomenusko.6.d
+	picture = FEAST_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		clr_ruler_flag = suomenusko_exploration
+	}
+
+	option = {
+		name = suomenusko.6.a
+		add_country_modifier = {
+			name = suomenusko_feast
+			duration = 365
+		}
+	}
+}

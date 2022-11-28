@@ -1,0 +1,240 @@
+sui_missions_ext_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SUI
+		}
+	}
+	has_country_shield = yes
+	
+	sui_weaken_the_turkic_clans_mission = {
+		icon = mission_great_wall
+		required_missions = { }	#none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = central_mongolia_area
+				area = ordos_area
+				area = inner_mongolia_area
+			}
+			NOT = {
+				country_or_vassal_holds = ROOT
+			}
+		}
+		trigger = {
+			central_mongolia_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			ordos_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			inner_mongolia_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven"
+				}
+				add_mandate = 15
+			}
+			else_if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" }
+				}
+				add_prestige = 20
+			}
+		}
+	}
+	sui_defeat_goguryeo_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { }	#none
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = liaoning_area
+				area = jilin_area		#south jilin
+				area = ningguta_area
+				area = pyongan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			liaoning_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jilin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ningguta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			pyongan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+	sui_conquest_of_chaoxian_mission = {
+		icon = mission_invade_island
+		required_missions = { sui_defeat_goguryeo_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				region = korea_region
+			}
+			NOT = {
+				country_or_vassal_holds = ROOT
+			}
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "epithet_the_great"
+				duration = -1
+			}
+		}
+	}
+	sui_reconquer_vietnam_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { }	#none
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = red_river_delta_area
+				area = vietnam_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	sui_subjugate_cham_mission = {
+		icon = mission_rice_field
+		required_missions = { sui_reconquer_vietnam_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = champa_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			champa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			add_mandate = 10
+		}
+	}
+}
+
+sui_missions_ext_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SUI
+		}
+	}
+	has_country_shield = yes
+	
+	sui_accept_buddhist_schools_mission = {
+		icon = mission_buddhist_monk_praying
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			OR = {
+				religion_group = buddhic
+				
+				has_harmonized_with = buddhism
+				has_harmonized_with = vajrayana
+				has_harmonized_with = mahayana
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sui_thriving_buddhist_schools"
+				duration = 10950
+			}
+		}
+	}
+	sui_reform_the_empire_mission = {
+		icon = mission_asian_trader
+		required_missions = { }	#none
+		position = 4
+		trigger = {
+			stability = 2
+			meritocracy = 70
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sui_imperial_examinations_restored"
+				duration = 10950
+			}
+		}
+	}
+	sui_the_grand_canal_mission = {
+		icon = mission_asian_city
+		required_missions = { }	#none
+		position = 5
+		trigger = {
+			road = 25
+			
+			custom_trigger_tooltip = {
+				tooltip = improve_25_different_provinces
+				
+				calc_true_if = {
+					all_owned_province = {
+						num_of_times_improved = 1
+					}
+					amount = 25
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sui_the_grand_canal"
+				duration = -1
+			}
+		}
+	}
+}

@@ -1,0 +1,187 @@
+# Division of Rome
+country_event = {
+	id = et.18
+	title = "et.EVTNAME18"
+	desc = "et.EVTDESC18"
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "et.EVTOPTA18"
+		ai_chance = { 
+			factor = 20
+		}
+		change_tag = ROW
+		clr_country_flag = rome_divided
+		every_owned_province = {
+			limit = {
+				OR = {
+					continent = asia
+					region = crimea_region
+					region = ruthenia_region
+					region = egypt_region
+					region = anatolia_region
+					region = caucasia_region
+					region = russia_region
+					region = central_asia_region
+					AND = {
+						region = carpathia_region
+						NOT = { area = transdanubia_area }
+						NOT = { area = slovakia_area }
+					}
+					AND = {
+						region = balkan_region
+						NOT = { area = croatia_area }
+						NOT = { area = bosnia_area }
+						NOT = { area = east_adriatic_coast_area }
+						NOT = { area = slavonia_area }
+					}
+				}
+			}
+			cede_province = BYZ
+			add_core = BYZ
+			remove_core = ROW
+		}
+		if = {
+			limit = { has_country_modifier = empire_destabilized }
+			remove_country_modifier = empire_destabilized
+		}
+		if = {
+			limit = { has_country_modifier = empire_declining }
+			remove_country_modifier = empire_declining
+			BYZ = {
+				add_country_modifier = {
+					name = empire_destabilized
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = { has_country_modifier = empire_fragmenting }
+			remove_country_modifier = empire_fragmenting
+			BYZ = {
+				add_country_modifier = {
+					name = empire_declining
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = { has_country_modifier = empire_collapsing }
+			remove_country_modifier = empire_collapsing
+			BYZ = {
+				add_country_modifier = {
+					name = empire_fragmenting
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = { has_country_modifier = total_collapse }
+			remove_country_modifier = total_collapse
+			BYZ = {
+				add_country_modifier = {
+					name = empire_collapsing
+					duration = -1
+				}
+			}
+		}
+		BYZ = { change_religion = ROOT }
+		BYZ = { change_primary_culture = greek }
+	}
+
+	option = {
+		name = "et.EVTOPTB18"
+		ai_chance = { 
+			factor = 80
+		}
+		change_tag = BYZ
+		change_primary_culture = greek
+		swap_free_idea_group = yes
+		clr_country_flag = rome_divided
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = maghreb_region
+					region = iberia_region
+					region = italy_region
+					region = low_countries_region
+					region = north_german_region
+					region = south_german_region
+					region = france_region
+					region = british_isles_region
+					region = scandinavia_region
+					region = baltic_region
+					region = poland_region
+					area = croatia_area
+					area = bosnia_area
+					area = east_adriatic_coast_area
+					area = transdanubia_area
+					area = slovakia_area
+					area = slavonia_area
+				}
+			}
+			cede_province = ROW
+			add_core = ROW
+			remove_core = BYZ
+		}
+		if = {
+			limit = { has_country_modifier = empire_destabilized }
+			remove_country_modifier = empire_destabilized
+		}
+		if = {
+			limit = { has_country_modifier = empire_declining }
+			remove_country_modifier = empire_declining
+			ROW = {
+				add_country_modifier = {
+					name = empire_destabilized
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = { has_country_modifier = empire_fragmenting }
+			remove_country_modifier = empire_fragmenting
+			ROW = {
+				add_country_modifier = {
+					name = empire_declining
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = { has_country_modifier = empire_collapsing }
+			remove_country_modifier = empire_collapsing
+			ROW = {
+				add_country_modifier = {
+					name = empire_fragmenting
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = { has_country_modifier = total_collapse }
+			remove_country_modifier = total_collapse
+			ROW = {
+				add_country_modifier = {
+					name = empire_collapsing
+					duration = -1
+				}
+			}
+		}
+		ROW = { change_religion = ROOT }
+	}
+
+	option = {
+		name = "et.EVTOPTC18"
+		ai_chance = { 
+			factor = 0
+		}
+		add_stability = -1
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		clr_country_flag = rome_divided
+	}
+}

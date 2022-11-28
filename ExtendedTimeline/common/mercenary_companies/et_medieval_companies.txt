@@ -1,0 +1,100 @@
+
+merc_catalan_company = {
+    regiments_per_development = 0.04
+	cavalry_weight = 0.1
+	cavalry_cap = 2
+    home_province = 213
+	sprites = { dlc020_ara_sprite_pack dlc029_spa_sprite_pack dlc049_SPA_sprite_pack dlc053_spa_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		religion_group = christian
+		OR = {
+			capital_scope = { 
+				OR= { 
+					region = france_region
+					region = italy_region
+				}
+			}
+			any_owned_province = {
+				region = iberia_region
+			}
+		}
+		OR = {
+			current_age = high_middle_ages
+			current_age = late_middle_ages
+		}
+	}
+	modifier = {
+        infantry_power = 0.05
+	}
+}
+
+merc_navarrese_company = {
+    regiments_per_development = 0.02
+    home_province = 210
+    cost_modifier = 1.2
+	sprites = { dlc098_nav_sprite_pack dlc020_ara_sprite_pack dlc029_spa_sprite_pack dlc049_SPA_sprite_pack dlc053_spa_sprite_pack westerngfx_sprite_pack }
+	trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		religion_group = christian
+		capital_scope = { 
+			OR = {
+				region = france_region
+				region = iberia_region
+				region = italy_region
+			}
+		}
+		OR = {
+			current_age = high_middle_ages
+			current_age = late_middle_ages
+		}
+	}
+    modifier = {
+        reserves_organisation = 0.05
+		land_morale = 0.05
+	}
+}
+
+merc_compagnia_di_san_giorgio = {
+    regiments_per_development = 0.04
+    home_province = 108
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	sprites = { dlc056_mlo_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		religion_group = christian
+		capital_scope = {
+			region = italy_region
+		}
+		OR = {
+			current_age = high_middle_ages
+			current_age = late_middle_ages
+		}
+	}
+	modifier = { 
+		infantry_power = 0.05
+	}
+}
+
+merc_compagnia_della_stella = {
+    regiments_per_development = 0.04
+    home_province = 108
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	sprites = { dlc056_mlo_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		religion_group = christian
+		capital_scope = {
+			region = italy_region
+		}
+		OR = {
+			current_age = high_middle_ages
+			current_age = late_middle_ages
+		}
+	}
+	modifier = { 
+		infantry_power = 0.05
+	}
+}

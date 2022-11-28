@@ -1,0 +1,126 @@
+#555 - Jaunpur
+
+owner = MHJ
+controller = MHJ
+culture = bihari
+religion = mahayana
+capital = "Ghazipur"
+trade_goods = cloth
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+discovered_by = ottoman
+discovered_by = middle_eastern 
+discovered_by = muslim
+discovered_by = indian
+discovered_by = early_indian
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = MHJ
+
+120.1.1 = { owner = KUS controller = KUS add_core = KUS remove_core = MHJ }
+270.1.1 = { owner = PNC controller = PNC add_core = PNC remove_core = KUS }
+320.1.1 = { owner = GUP controller = GUP add_core = GUP remove_core = PNC }
+600.1.1 = { owner = KNN controller = KNN add_core = KNN remove_core = GUP }
+620.1.1 = { owner = HRS controller = HRS add_core = HRS }
+647.1.1 = { owner = KNN controller = KNN remove_core = HRS }
+750.1.1 = { owner = PAA controller = PAA add_core = PAA remove_core = KNN }
+800.1.1 = { discovered_by = nomad_group }
+1000.1.1 = { base_manpower = 2 }
+1068.1.1 = { owner = GAH controller = GAH add_core = GAH remove_core = PAA }
+1192.1.1 = { owner = GHU controller = GHU add_core = GHU remove_core = GAH }
+1200.1.1 = { base_tax = 3 base_production = 3 }
+1206.1.1 = { owner = DLH controller = DLH add_core = DLH remove_core = GHU }
+1250.1.1 = { religion = hinduism }
+1394.1.1 = { owner = JNP controller = JNP add_core = JNP }
+
+1486.1.1 = {
+	owner = DLH
+	controller = DLH
+	add_core = DLH
+} # Bahlul Lodi places his eldest surviving son Barbak Shah Lodi on the throne of Jaunpur, slowly integrated into Delhi's domains after this
+1526.4.1 = { controller = TIM } #Conquered by Babur
+1526.4.21 = {
+	owner = BNG
+	controller = REB
+	revolt = { type = anti_tax_rebels name = "Landless Nobles" }
+} # Contested area with lots of different factions fighting eachother after Panipat
+1538.1.1 = {
+	controller = BNG
+	add_core = BNG
+	remove_core = DLH
+	revolt = { }
+} # Sher Shah Triumphant
+1553.1.1 = {
+	owner = JNP
+	controller = JNP
+	remove_core = BNG
+} #Death of Islam Shah Sur, Suri empire split
+1561.5.1 = { controller = MUG }
+1562.1.1 = {
+	owner = MUG
+	add_core = MUG
+}
+1622.10.1 = {
+	controller = REB
+	revolt = {
+	type = pretender_rebels
+	size = 2 name = "Khurrams Faction"
+	leader = "Shah Jahan Timurid"
+	}
+} #With some aid from Golconda Khurrams rebelion against his father continues
+1623.5.1 = {
+	controller = MUG
+	revolt = { }
+} #Defeated, retreats into Bengal
+1658.1.1 = {
+	controller = REB
+	revolt = {
+	type = pretender_rebels
+	size = 0
+	name = "Muhammed Shuja's Faction"
+	leader = "Muhammed Shuja Timurid"
+	}
+} # Muhammed Shuja moves upriver towards Agra
+1658.2.14 = {
+	controller = MUG
+	revolt = { }
+} # Muhammed Shuja routed in surprise raid by Suleiman Shukoh and Raja Jai Singh outside Varanasi
+1690.1.1 = { discovered_by = ENG }
+1707.5.12 = { discovered_by = GBR }
+1724.1.1 = {
+	owner = ODH
+	controller = ODH
+	add_core = ODH
+	remove_core = MUG
+} # Foundation of the Oudh dynasty
+1738.1.1 = {
+	owner = JNP	#Varanasi becomes independent
+	controller = JNP
+}
+1765.1.1 = {
+	owner = ODH
+	controller = ODH	#Restored by British to Oudh.
+}
+1794.1.1 = {
+	owner = GBR
+	controller = GBR
+	add_core = GBR
+	remove_core = ODH
+}
+
+1856.2.11 = { owner = GBR controller = GBR add_core = GBR }
+1901.1.1 = { base_manpower = 3 }
+1910.1.1 = { discovered_by = western discovered_by = eastern }
+1925.1.1 = { base_tax = 4 base_production = 4 }
+1930.1.1  = { add_core = INI remove_core = ODH remove_core = JNP }
+1947.8.15 = { owner = INI controller = INI remove_core = GBR }
+1951.1.1 = { base_tax = 5 base_production = 5 base_manpower = 4 }
+1975.1.1 = { base_tax = 7 base_production = 7 base_manpower = 6 }
+2000.1.1 = { base_tax = 9 base_production = 9 base_manpower = 8 }
+
+
+

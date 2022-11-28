@@ -1,0 +1,220 @@
+##############################
+#Zoroastrianism Flavor Events#
+##############################
+
+namespace = zoroastrianism_flavor
+
+#Angra Mainyu
+country_event = {
+	id = zoroastrianism_flavor.1
+	title = zoroastrianism_flavor.1.t
+	desc = zoroastrianism_flavor.1.d
+	picture = COMET_SIGHTED_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = zoroastrian
+		NOT = { has_ruler_flag = good_or_bad_spirit }
+		num_of_revolts = 3
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+
+	immediate = {
+		set_ruler_flag = good_or_bad_spirit
+	}
+
+	option = {
+		name = zoroastrianism_flavor.1.a
+		add_stability = -1
+	}
+
+	option = {
+		name = zoroastrianism_flavor.1.b
+		add_legitimacy = -33
+		add_prestige = -33
+	}
+}
+
+#Amesha Spenta
+country_event = {
+	id = zoroastrianism_flavor.2
+	title = zoroastrianism_flavor.2.t
+	desc = zoroastrianism_flavor.2.d
+	picture = COMET_SIGHTED_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		stability = 2
+		prestige = 50
+		legitimacy = 100
+		NOT = { has_ruler_flag = good_or_bad_spirit }
+		religion = zoroastrian
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	immediate = {
+		set_ruler_flag = good_or_bad_spirit
+	}
+
+	option = {
+		name = zoroastrianism_flavor.2.a
+		add_stability = 1
+	}
+
+	option = {
+		name = zoroastrianism_flavor.2.b
+		add_prestige = 33
+	}
+}
+	
+#Zurvanism
+country_event = {
+	id = zoroastrianism_flavor.3
+	title = zoroastrianism_flavor.3.t
+	desc = zoroastrianism_flavor.3.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion = zoroastrian
+		is_year = 200
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+
+	option = {
+		name = zoroastrianism_flavor.3.a
+		add_country_modifier = {
+			name = zurvanism
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = zoroastrianism_flavor.3.b
+		add_prestige = 10
+	}
+}
+
+#Fire Temple
+province_event = {
+	id = zoroastrianism_flavor.4
+	title = zoroastrianism_flavor.4.t
+	desc = zoroastrianism_flavor.4.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		NOT = { 
+			religion = zoroastrian
+			is_core = ROOT
+		}
+		owner = {
+			religion = zoroastrian
+			NOT = { has_ruler_flag = fire_temple }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	immediate = {
+		owner = {
+			set_ruler_flag = fire_temple
+		}
+	}
+	
+	option = {
+		name = zoroastrianism_flavor.4.a
+		owner = { add_treasury = -50 }
+		add_province_modifier = {
+			name = fire_temple
+			duration = 7300
+		}
+	}
+
+	option = {
+		name = zoroastrianism_flavor.4.b
+		owner = { add_prestige = -1 }
+	}
+}
+
+#Avesta
+country_event = {
+	id = zoroastrianism_flavor.5
+	title = zoroastrianism_flavor.5.t
+	desc = zoroastrianism_flavor.5.d
+	picture = BIG_BOOK_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion = zoroastrian
+		is_year = 200
+		NOT = { is_year = 600 }
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	option = {
+		name = zoroastrianism_flavor.5.a
+		add_years_of_income = -2
+		add_stability = 2
+	}
+
+	option = { 
+		name = zoroastrianism_flavor.5.b
+		add_prestige = 15
+	}
+}
+
+#Tolerence of Manichaeism
+country_event = {
+	id = zoroastrianism_flavor.6
+	title = zoroastrianism_flavor.6.t
+	desc = zoroastrianism_flavor.6.d
+	picture = RELIGION_eventPicture
+
+	fire_only_once = no
+	
+	trigger = {
+		any_owned_province = {
+			religion = manichaeism
+		}
+		religion = zoroastrian
+		NOT = { has_ruler_modifier = tolerate_manichaeism }
+		NOT = { has_country_flag = no_manichaeism }
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	option = {
+		name = zoroastrianism_flavor.6.a
+		add_ruler_modifier = {
+			name = tolerate_manichaeism
+		}
+	}
+
+	option = {
+		name = zoroastrianism_flavor.6.b
+		add_stability = -1
+		set_country_flag = no_manichaeism
+	}
+}

@@ -1,0 +1,555 @@
+namespace = et_cathar
+
+country_event = {
+    #Start Cathar Reformation 
+    id = et_cathar.1
+    title = "et_cathar.EVTNAME1"
+    desc = "et_cathar.EVTDESC1"
+    picture = REFORM_eventPicture	
+
+	
+    trigger = {
+		religion = catholic
+       	reform_desire = 1
+		capital_scope = { continent = europe }
+		NOT = { is_religion_enabled = cathar }
+		NOT = { tag = PAP }
+	}
+	
+	major = yes
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+        months = 240
+		
+		modifier = {
+			factor = 0.75
+			NOT = { num_of_cities = 10 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { num_of_cities = 2 }
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}		
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = cathar_reformation_started_et
+			add_reform_desire = -1
+		}
+	}
+	
+	option = {
+		name = "et_cathar.1.a"
+		enable_religion = cathar
+		add_stability = -1
+		random_owned_province = {
+			change_religion = cathar
+			add_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+			add_province_modifier = {
+				name = "cathar_persecution"
+				duration = 9000
+			}
+			if = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				root = {
+					capital_scope = {
+						change_religion = cathar
+						add_permanent_province_modifier = {
+							name = "religious_zeal_at_conv"
+							duration = 9000
+						}
+						add_province_modifier = {
+							name = "cathar_persecution"
+							duration = 9000
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "et_cathar.1.b"
+		enable_religion = cathar
+		hidden_effect = {
+			set_country_flag = tolerance_of_cathars
+		}
+		add_papal_influence = -50
+		random_owned_province = {
+			change_religion = cathar
+			add_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+			if = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				root = {
+					capital_scope = {
+						change_religion = cathar
+						add_permanent_province_modifier = {
+							name = "religious_zeal_at_conv"
+							duration = 9000
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+    #spread of Catharism
+    id = et_cathar.2
+    title = "et_cathar.EVTNAME2"
+    desc = "et_cathar.EVTDESC2"
+    picture = PEASANTS_BARTERING_eventPicture
+
+    
+    trigger = {
+        OR = {
+			religion = catholic
+			religion = orthodox
+		}
+		is_religion_enabled = cathar
+        NOT = { religion = cathar }
+		NOT = { is_year = 1400 }
+        OR = {
+			region = france_region
+			region = low_countries_region
+			area = piedmont_area
+			area = liguria_area
+			area = lombardy_area
+			area = catalonia_area
+			area = po_valley_area
+			area = aragon_area
+			area = emilia_romagna_area
+			area = venetia_area
+			area = tuscany_area
+			area = asturias_area
+			area = lower_rhineland_area
+			area = valencia_area
+			area = corsica_sardinia_area
+			area = switzerland_area
+			area = home_counties_area
+			area = north_rhine_area
+        }
+    }
+    mean_time_to_happen = {
+        months = 6000
+		
+		modifier = {
+            factor = 0.75
+			has_country_flag = tolerance_of_cathars
+		}
+		modifier = {
+            factor = 0.8
+			any_neighbor_province = { religion = cathar }
+		}
+		modifier = {
+            factor = 1
+			religion = catholic
+		}
+		modifier = {
+            factor = 1.2
+			religion = orthodox
+		}
+        modifier = {
+            factor = 0.7
+            OR = {
+                area = languedoc_area
+                area = pyrenees_area
+                area = guyenne_area
+            }
+        }
+        modifier = {
+            factor = 1.4
+            OR = {
+                area = catalonia_area
+                area = provence_area
+                area = massif_central_area
+            }
+        }
+		modifier = {
+            factor = 2.2
+            OR = {
+                area = savoy_dauphine_area
+                area = poitou_area
+                area = loire_area
+				area = orleans_area
+				area = piedmont_area
+				area = liguria_area
+				area = west_burgundy_area
+				area = lombardy_area
+            }
+        }
+		modifier = {
+            factor = 4
+            OR = {
+                area = brittany_area
+                area = ile_de_france_area
+				area = normandy_area
+				area = champagne_area
+				area = picardy_area
+				area = bourgogne_area
+				area = lorraine_area
+				area = po_valley_area
+            }
+        }
+		modifier = {
+            factor = 5
+            OR = {
+                area = flanders_area
+				area = wallonia_area
+				area = alsace_area
+				area = palatinate_area
+				area = romandie_area
+				area = basque_country
+            }
+        }
+		modifier = {
+            factor = 10
+            OR = {
+                area = aragon_area
+				area = emilia_romagna_area
+				area = venetia_area
+				area = tuscany_area
+				area = asturias_area
+				area = lower_rhineland_area
+				area = brabant_area
+				area = valencia_area
+				area = corsica_sardinia_area
+				area = switzerland_area
+				area = home_counties_area
+				area = north_rhine_area
+				area = north_brabant_area
+				area = holland_area
+            }
+        }
+    }    
+    
+    option = {
+        name = "et_cathar.2.a"
+        trigger = {
+			NOT = { religion = cathar }
+		}
+        change_religion = cathar
+        add_permanent_province_modifier = {
+            name = "religious_zeal_at_conv"
+            duration = 3650
+        }
+		hidden_effect = {
+			if = {
+				limit = { 
+					any_owned_province = {
+						religion = cathar
+						development = 10
+						can_have_center_of_reformation_trigger = { religion = cathar }
+					}
+					calc_true_if = {
+						all_province = {
+							religion = cathar
+						}
+						amount = 5
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = cathar
+						development = 10
+						can_have_center_of_reformation_trigger = { religion = cathar }
+					}
+					add_reform_center = cathar
+				}
+			}	
+		}
+    }
+	
+	option = {
+        name = "et_cathar.2.b"
+        trigger = {
+			religion = cathar
+		}
+        change_religion = cathar
+		hidden_effect = {
+			if = {
+				limit = { 
+					any_owned_province = {
+						religion = cathar
+						development = 10
+						can_have_center_of_reformation_trigger = { religion = cathar }
+					}
+					calc_true_if = {
+						all_province = {
+							religion = cathar
+						}
+						amount = 5
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = cathar
+						development = 10
+						can_have_center_of_reformation_trigger = { religion = cathar }
+					}
+					add_reform_center = cathar
+				}
+			}	
+		}
+    }
+}
+country_event = {
+    #Catharism needs reforms
+    id = et_cathar.3
+    title = "et_cathar.EVTNAME3"
+    desc = "et_cathar.EVTDESC3"
+    picture = CHURCH_ESTATE_1_eventPicture	
+
+    
+    trigger = {
+		religion = cathar
+		NOT = { has_country_flag = catharism_reformed_et }
+	}
+	
+	mean_time_to_happen = {
+        months = 120
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = catharism_reformed_et
+		}
+	}
+	
+	option = { #Cathar getting reformed
+		name = "et_cathar.3.a"
+		add_adm_power = -100
+		add_country_modifier = {
+			name = "reformed_catharism"
+			duration = -1
+		}
+		ai_chance = { 
+			factor = 77
+		}
+	}
+	option = {	#King refuses reforms
+		name = "et_cathar.3.b"
+		add_country_modifier = {
+			name = "unreformed_catharism"
+			duration = -1
+		}
+		ai_chance = { 
+			factor = 33
+		}
+	}
+}
+
+country_event = {
+    #Pope calls for Cathar Crusade 
+    id = et_cathar.4
+    title = "et_cathar.EVTNAME4"
+    desc = "et_cathar.EVTDESC4"
+    picture = POPE_PREACHING_eventPicture	
+
+    major = yes
+	fire_only_once = yes
+	
+    trigger = {
+		religion = catholic
+       	OR = {
+			tag = PAP
+			AND = {
+				NOT = { exists = PAP }
+				owns = 118
+			}
+		}
+		any_country = {
+			religion = cathar
+		}
+	}
+	mean_time_to_happen = {
+        months = 120
+		
+	}
+	option = { #Call for Crusade
+		name = "et_cathar.4.a"
+	
+		every_country = {
+			limit = { religion = catholic }
+			every_country = {
+				limit = { religion = cathar }
+				reverse_add_casus_belli = {
+					target = PREV
+					type = cb_heretic
+					months = 240
+				}
+			}
+			country_event = {
+				id = et_cathar.5
+			}
+		}
+		
+		ai_chance = { 
+			factor = 99
+		}
+	}
+	option = {	# Don't go for crusade
+		name = "et_cathar.4.b"
+		
+		add_prestige = -10
+		
+		ai_chance = { 
+			factor = 1
+		}		
+		
+	}
+}
+country_event = {
+    #Support or deny crusade 
+    id = et_cathar.5
+    title = "et_cathar.EVTNAME5"
+    desc = "et_cathar.EVTDESC5"
+    picture = RELIGIOUS_TURMOIL_eventPicture	
+
+	is_triggered_only = yes
+	
+	option = { #Support the Crusade
+		name = "et_cathar.5.a"
+		
+		if = {
+			limit = {
+				exists = PAP
+			}
+			PAP = {
+				add_opinion = {
+					who = ROOT
+					modifier = supports_cathar_crusade
+				}
+			}
+		}
+		every_country = {
+			limit = { religion = cathar }
+			add_opinion = {
+				who = ROOT
+				modifier = supports_cathar_crusade_cathar
+			}
+		}
+		
+		ai_chance = { 
+			factor = 50
+			modifier = { 
+				factor = 0.1
+				exists = PAP
+				NOT = {
+					has_opinion = {
+						who = PAP
+						value = 0
+					}
+				}
+			}
+			modifier = { 
+				factor = 2
+				exists = PAP
+				has_opinion = {
+					who = PAP
+					value = 50
+				}
+			}
+			modifier = { 
+				factor = 0.1
+				any_ally = { religion = cathar }
+			}
+			modifier = { 
+				factor = 10
+				any_rival_country = { religion = cathar }
+			}
+		}
+	}
+	option = {	#Refuse to help
+		name = "et_cathar.5.b"		
+		
+		if = {
+			limit = {
+				exists = PAP
+			}
+			PAP = {
+				add_opinion = {
+					who = ROOT
+					modifier = no_support_cathar_crusade
+				}
+			}
+		}
+		
+		ai_chance = { 
+			factor = 50
+		}
+	}
+}
+
+country_event = {
+    #Livestock question
+    id = et_cathar.6
+    title = "et_cathar.EVTNAME6"
+    desc = "et_cathar.EVTDESC6"
+    picture = FARMING_eventPicture	
+
+	trigger = {
+		any_owned_province = {
+			religion = cathar
+			trade_goods = livestock
+		}
+	}
+	
+	mean_time_to_happen = {
+        months = 480
+	}
+	
+	option = { #Find other goods to produce
+		name = "et_cathar.6.a"
+		
+		add_stability = -1
+		every_owned_province = {
+			limit = { trade_goods = livestock }
+			change_trade_goods = unknown
+			add_province_modifier = {
+				name = "cathar_livestock_ban"
+				duration = 7300
+			}
+		}
+	}
+	option = {	#It's not a problem
+		name = "et_cathar.6.b"		
+		
+		every_owned_province = {
+			limit = { trade_goods = livestock }
+			add_province_modifier = {
+				name = "cathar_livestock_low_demand"
+				duration = 36500
+			}
+		}
+	}
+}

@@ -1,0 +1,201 @@
+country_decisions = {
+  restore_byzantine_empire = {
+    major = yes
+    potential = {
+      was_never_end_game_tag_trigger = yes
+      normal_or_historical_nations = yes
+      NOT = {
+        has_country_flag = formed_byzantium_flag
+      }
+      OR = {
+        ai = no
+        is_playing_custom_nation = no
+      }
+      OR = {
+        is_free_or_tributary_trigger = yes
+        ai = no
+      }
+      NOT = {
+        exists = BYZ
+      }
+      NOT = {
+        exists = GRE
+      }
+      NOT = {
+        tag = HLR
+      }
+      NOT = {
+        tag = ROM
+      }
+      NOT = {
+        tag = TUR
+      }
+      OR = {
+        primary_culture = greek
+        primary_culture = pontic_greek
+        AND = {
+          has_idea = MFA_byzantine_claimants
+          dynasty = "ÙTReYeu"  # Palaiologos
+        }
+      }
+      OR = {
+        religion = orthodox
+        has_idea = MFA_byzantine_claimants
+      }
+    }
+    provinces_to_highlight = {
+      OR = {
+        province_id = 151
+        province_id = 149
+        province_id = 144
+        province_id = 147
+        province_id = 148
+        province_id = 146
+        province_id = 145
+        province_id = 1773
+        province_id = 316
+        province_id = 317
+        province_id = 318
+        province_id = 1853
+        province_id = 2296
+      }
+      NOT = {
+        owned_by = ROOT
+      }
+    }
+    allow = {
+      owns = 149
+      owns = 144
+      owns = 147
+      owns = 148
+      owns = 146
+      owns = 145
+      owns = 1773
+      owns = 316
+      owns = 317
+      owns = 318
+      owns = 1853
+      owns = 2296
+      owns = 151
+      151 = {
+        is_state = yes
+      }
+      is_at_war = no
+      is_free_or_tributary_trigger = yes
+      is_nomad = no
+    }
+    effect = {
+      151 = {
+        move_capital_effect = yes
+      }
+      change_tag = BYZ
+      restore_country_name = yes
+      if = {
+        limit = {
+          NOT = {
+            culture_group = byzantine
+          }
+          NOT = {
+            accepted_culture = greek
+          }
+        }
+        add_accepted_culture = greek
+      }
+      swap_non_generic_missions = yes
+      every_province = {
+        limit = {
+          OR = {
+            area = aydin_area
+            area = ankara_area
+            area = germiyan_area
+            area = karaman_area
+            area = cukurova_area
+            area = rum_area
+            area = kastamonu_area
+            area = hudavendigar_area
+            area = dulkadir_area
+            province_id = 149
+            province_id = 147
+            province_id = 148
+            province_id = 146
+            province_id = 145
+            province_id = 1773
+            province_id = 163
+            province_id = 164
+            province_id = 320
+            province_id = 330
+            province_id = 285
+            province_id = 142
+            province_id = 143
+            province_id = 144
+            province_id = 1765
+            province_id = 150
+            province_id = 1764
+            province_id = 159
+            province_id = 1853
+            province_id = 2348
+            province_id = 2410
+            province_id = 2750
+            province_id = 4298
+          }
+          NOT = {
+            is_core = BYZ
+          }
+        }
+        add_permanent_claim = BYZ
+      }
+      random_owned_province = {
+        limit = {
+          culture = greek
+        }
+        add_base_tax = 1
+      }
+      random_owned_province = {
+        limit = {
+          culture = greek
+        }
+        add_base_tax = 1
+      }
+      add_country_modifier = {
+        name = "centralization_modifier"
+        duration = 7300
+      }
+      add_prestige = 10
+      BYZ = {
+        add_core = 151
+      }
+      if = {
+        limit = {
+          is_part_of_hre = yes
+        }
+        every_owned_province = {
+          limit = {
+            is_part_of_hre = yes
+          }
+          set_in_empire = no
+        }
+      }
+      if = {
+        limit = {
+          has_global_flag = hagia_sophia_now_mosque
+        }
+        clr_global_flag = hagia_sophia_now_mosque
+        show_ambient_object = hagia_sophia
+        hide_ambient_object = hagia_sophia_minarets
+      }
+      set_government_rank = 3
+      if = {
+        limit = {
+          has_custom_ideas = no
+        }
+        country_event = {
+          id = ideagroups.1
+        }
+      }
+      set_country_flag = formed_byzantium_flag
+    }
+    ai_will_do = {
+      factor = 0
+    }
+  }
+}

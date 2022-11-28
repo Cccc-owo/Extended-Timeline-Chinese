@@ -1,0 +1,235 @@
+northumberland_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = NOL
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	nol_defeat_the_picts_mission = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = highlands_area
+				area = lowlands_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lowlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nol_victorious_army"
+				duration = 10950		#30 years
+			}
+		}
+	}
+	nol_unite_north_anglia_mission = {
+		icon = mission_rb_unite_the_clans
+		required_missions = { nol_defeat_the_picts_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = scottish_marches_area
+				area = yorkshire_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			scottish_marches_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nol_king_in_the_north"
+				duration = 10950		#30 years
+			}
+		}
+	}
+	nol_conquer_the_midlands_mission = {
+		icon = mission_rb_into_england
+		required_missions = { nol_unite_north_anglia_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = west_midlands_area
+				area = east_midlands_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nol_southward_expansion"
+				duration = 10950		#30 years
+			}
+		}
+	}
+	nol_unite_anglia_mission = {
+		icon = mission_unite_home_region
+		required_missions = { nol_conquer_the_midlands_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = wessex_area
+				area = home_counties_area
+				area = east_anglia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nol_king_of_england"
+				duration = 10950		#30 years
+			}
+		}
+	}
+	
+}
+
+northumberland_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = NOL
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	nol_conquer_the_isles_mission = {
+		icon = mission_rb_conquer_the_isles
+		required_missions = { nol_unite_north_anglia_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = kingdom_of_the_isles_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kingdom_of_the_isles_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+	nol_kings_of_wales_mission = {
+		icon = mission_conquer_50_development
+		required_missions = { nol_conquer_the_midlands_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = wales_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+		}
+	}
+}
+
+northumberland_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = NOL
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	nol_construct_monasteries_mission = {
+		icon = mission_hands_praying
+		required_missions = { } #none
+		position = 3
+		trigger = {
+			religion_group = christian
+			OR = {
+				glorious_monument = 4
+				temple = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nol_monastic_culture"
+				duration = -1	#permanent
+			}
+		}
+	}
+}

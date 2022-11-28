@@ -1,0 +1,168 @@
+country_decisions = {
+
+	start_space_program = {
+		major = yes
+		potential = {
+			dip_tech = 84
+			total_development = 400
+			NOT = { has_country_modifier = space_program }
+		}
+		allow = {
+			dip_tech = 88
+			treasury = 10000
+			adm_power = 100
+			mil_power = 100
+			dip_power = 100
+		}
+		effect = {
+			add_treasury = -10000
+			add_adm_power = -100
+			add_mil_power = -100
+			add_dip_power = -100
+			add_country_modifier = {
+				name = space_program
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { total_development = 1000 }
+				NOT = { tag = SOV }
+				NOT = { tag = USA }
+			}
+		}
+	}
+
+	end_space_program = {
+		potential = {
+			has_country_modifier = space_program
+		}
+		allow = {
+			has_country_modifier = space_program
+		}
+		effect = {
+			remove_country_modifier = space_program
+			remove_country_modifier = space_station
+			remove_country_modifier = moon_base
+			remove_country_modifier = mars_base
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	send_a_satellite_into_orbit = {
+		potential = {
+			has_country_modifier = space_program
+			NOT = { has_country_flag = satellite_into_orbit }
+		}
+		allow = {
+			has_country_modifier = space_program
+			dip_tech = 88
+			treasury = 5000
+		}
+		effect = {
+			add_treasury = -5000
+			add_prestige = 25
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			set_country_flag = satellite_into_orbit
+			custom_tooltip = "enables_more_space_missions"
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_a_space_station = {
+		potential = {
+			has_country_modifier = space_program
+			has_country_flag = satellite_into_orbit
+			NOT = { has_country_modifier = space_station }
+		}
+		allow = {
+			has_country_modifier = space_program
+			dip_tech = 90
+			treasury = 10000
+		}
+		effect = {
+			add_treasury = -10000
+			add_prestige = 25
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_country_modifier = {
+				name = space_station
+				duration = -1
+			}
+		}
+	}
+	
+	mission_to_moon = {
+		potential = {
+			has_country_modifier = space_program
+			has_country_flag = satellite_into_orbit
+			NOT = { has_country_flag = moon_misson_in_progress }
+		}
+		allow = {
+			has_country_modifier = space_program
+			dip_tech = 88
+			treasury = 10000
+		}
+		effect = {
+			set_country_flag = moon_misson_in_progress
+			add_treasury = -10000
+			country_event = {
+				id = et.90
+				days = 2920
+			}
+		}
+	}
+	
+	establish_a_moon_colony = {
+		potential = {
+			has_country_modifier = space_program
+			has_country_flag = satellite_into_orbit
+			NOT = { has_country_flag = moon_decision_taken }
+			has_global_flag = man_on_moon
+		}
+		allow = {
+			has_country_modifier = space_program
+			dip_tech = 92
+			treasury = 15000
+		}
+		effect = {
+			set_country_flag = moon_decision_taken
+			add_treasury = -15000
+			country_event = {
+				id = et.93
+				days = 2920
+			}
+		}
+	}
+	
+	establish_a_mars_colony = {
+		potential = {
+			has_country_modifier = space_program
+			has_country_flag = satellite_into_orbit
+			NOT = { has_country_flag = mars_decision_taken }
+			has_global_flag = man_on_moon
+		}
+		allow = {
+			has_country_modifier = space_program
+			dip_tech = 92
+			treasury = 15000
+		}
+		effect = {
+			set_country_flag = mars_decision_taken
+			add_treasury = -15000
+			country_event = {
+				id = et.94
+				days = 2920
+			}
+		}
+	}
+}

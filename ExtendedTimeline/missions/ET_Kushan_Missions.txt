@@ -1,0 +1,587 @@
+kushan_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+		potential = {
+		AND = {
+			OR = {
+				tag = KUS
+				tag = KSA
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	kush_conquer_indo_parthia_mission = {
+		icon = mission_conquer_sindh_mer
+		required_missions = {  } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = sindh_area
+				area = northern_sindh_area
+				area = kabulistan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sindh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_sindh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabulistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kus_makran_coastal_trade"
+				duration = 7300		#20 years
+			}
+		}
+	}
+	kush_conquer_the_shakas_mission = {
+		icon = mission_conquer_maharashtra
+		required_missions = { kush_conquer_indo_parthia_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 524	#Central Doab
+				province_id = 2075	#Doaba
+				province_id = 520	#Mewat
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 524		# Central Doab
+			owns_or_non_sovereign_subject_of = 2075		# Doaba
+			owns_or_non_sovereign_subject_of = 520		# Mewat
+		}
+		effect = {
+			jaipur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_doab_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	kush_subjugate_khwarezm_mission = {
+		icon = mission_afghan_frontier
+		required_missions = { kush_conquer_the_shakas_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2362	#Gurganj
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				owns = 2362		# Gurganj
+				KHW = {
+					vassal_of = ROOT
+				}
+			}
+		}
+		effect = {
+			add_manpower = 10
+		}
+	}
+	kush_unite_hindustan_mission = {
+		icon = mission_unite_west_india
+		required_missions = { kush_subjugate_khwarezm_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = hindusthan_region 
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hindusthan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			west_india_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			} 
+		}
+	}
+	kush_subjugate_the_kshatrapas_mission = {
+		icon = mission_subjugate_rajputana
+		required_missions = { kush_unite_hindustan_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = tapti_area
+				area = malwa_area
+				area = ahmedabad_area
+				area = saurashtra_area
+				area = patan_area
+				area = marwar_area
+				area = mewar_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tapti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			malwa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ahmedabad_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saurashtra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			patan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			marwar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mewar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			
+			add_ruler_modifier = {
+				name = "divine_conqueror"
+				duration = -1
+			}
+		}
+	}
+	kush_into_the_deccan_mission = {
+		icon = mission_onward_to_gaur
+		required_missions = { kush_subjugate_the_kshatrapas_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = deccan_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				region = deccan_region 
+				value = 15
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+	kush_legacy_of_ashoka_mission = {
+		icon = mission_protect_jain_communities
+		required_missions = { kush_into_the_deccan_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = bengal_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				region = bengal_region 
+				value = 30
+			}
+		}
+		effect = {
+			add_prestige = 15
+		
+			add_ruler_modifier = {
+				name = "great_unifier"
+				duration = -1
+			}
+		}
+	}
+}
+
+kushan_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			OR= {
+				tag = KUS
+				tag = KSA
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	kush_conquer_kandahar_mission = {
+		icon = mission_into_persia_2
+		required_missions = { kush_subjugate_khwarezm_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 447		#Kandahar
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 447		# Kandahar
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	kush_conquer_ferghana_mission = {
+		icon = mission_marwari_horses
+		required_missions = { kush_unite_hindustan_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 447		#Kandahar
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 447		# Kandahar
+		}
+		effect = {
+			add_country_modifier = {
+				name = "xio_ferghana_hanxue_ma"
+				duration = 10950	#30 years
+			}
+		}
+	}
+	kush_reunite_the_yuezhi_mission = {
+		icon = mission_unite_rajputana
+		required_missions = { kush_into_the_deccan_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = kashgaria_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				kashgaria_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				
+				#Yarkand
+				KAS = {
+					vassal_of = ROOT
+				}
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "great_unifier"
+				duration = -1
+			}
+		}
+	}
+	kush_revenge_on_the_xiongnu_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { kush_subjugate_the_kshatrapas_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = zungaria_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				zungaria_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kus_yuezhi_pride"
+				duration = 12775	#35 years
+			}
+		}
+	}
+	kush_challenge_the_heavens_mission = {
+		icon = mission_seize_the_dragon_throne
+		required_missions = { kush_revenge_on_the_xiongnu_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = west_gansu_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				west_gansu_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			
+			add_country_modifier = {
+				name = "dominate_desert_trade"
+				duration = 9125		#25 years
+			}
+		}
+	}
+}
+
+kushan_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			OR= {
+				tag = KUS
+				tag = KSA
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	kush_kshatrapa_of_parthia_missions = {
+		icon = mission_el_badi_palace
+		required_missions = { kush_conquer_kandahar_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 427		#Hyrcania Qumis
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 427		# Hyrcania Qumis
+		}
+		effect = {
+			isfahan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			farsistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iraq_e_ajam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	kush_kushanshah_missions = {
+		icon = mission_el_badi_palace
+		required_missions = { kush_conquer_ferghana_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = persia_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			persia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kus_title_kushanshah"
+				duration = -1
+			}
+		}
+	}
+}
+
+kushan_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			OR= {
+				tag = KUS
+				tag = KSA
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	kush_greco_buddhist_patronage_missions = {
+		icon = mission_protect_lankan_buddhism
+		required_missions = { } #none
+		position = 3
+		trigger = {
+			religion_group = buddhic
+			num_of_owned_provinces_with = {
+				religion_group = buddhic
+				value = 40
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kus_buddhist_council"
+				duration = -1
+			}
+		}
+	}
+	kush_devaputras_missions = {
+		icon = mission_patronize_local_gods
+		required_missions = { } #none
+		position = 4
+		trigger = {
+			glorious_monument = 4
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 10
+		}
+	}
+	kush_contact_rome_missions = {
+		icon = mission_mare_nostrum
+		required_missions = { } #none
+		position = 5
+		trigger = {
+			OR = {
+				118 = {
+					owner = {
+						has_opinion = {
+							who = ROOT
+							value = 50
+						}
+					}
+				}
+				151 = {
+					owner = {
+						has_opinion = {
+							who = ROOT
+							value = 50
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kus_trade_with_rome"
+				duration = 10950	#30 years
+			}
+		}
+	}
+	kush_rival_sogdian_merchants_missions = {
+		icon = mission_jawal_silver_mine
+		required_missions = { } #none
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 454		# Samarkand
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			#Samarkand
+			454 = {
+				has_most_province_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "dominate_desert_trade"
+				duration = 10950	#30 years
+			}
+		}
+	}
+}

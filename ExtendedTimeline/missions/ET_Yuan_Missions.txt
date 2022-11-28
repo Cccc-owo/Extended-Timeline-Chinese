@@ -1,0 +1,465 @@
+yuan_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YUA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yua_besiege_xiangyang_mission = {
+		icon = mission_great_wall
+		required_missions = { } #none
+		position = 1
+		completed_by = 1279.3.19
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2171	#Xiangyang
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2171
+		}
+		effect = {
+			south_jiangsu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_anhui_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			huguang_area = {	#hubei
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	yua_capture_hangzhou_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { yua_besiege_xiangyang_mission }
+		position = 3
+		completed_by = 1279.3.19
+		provinces_to_highlight = {
+			OR = {
+				province_id = 684	#Hangzhou
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 684
+		}
+		effect = {
+			china_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	yua_destroy_the_song_mission = {
+		icon = mission_unite_home_region
+		required_missions = { yua_capture_hangzhou_mission }
+		position = 5
+		completed_by = 1279.3.19
+		provinces_to_highlight = {
+			OR = {
+				superregion = china_superregion
+			}
+			NOT = {
+				OR = {
+					is_empty = yes
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				is_emperor_of_china = yes
+				has_reform = celestial_empire
+			}
+			china_superregion = {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_mandate = 25
+			add_prestige = 10
+		}
+	}
+	yua_subjugate_goryeo_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { yua_destroy_the_song_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = korea_region
+			}
+			NOT = {
+				country_or_vassal_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_prestige = 10
+		}
+	}
+	yua_invade_japan_mission = {
+		icon = mission_japanese_fort
+		required_missions = { yua_subjugate_goryeo_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = japan_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			japan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_prestige = 10
+		}
+	}
+}
+
+yuan_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YUA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yua_invade_dai_viet_mission = {
+		icon = mission_rice_field
+		required_missions = { yua_destroy_the_song_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = red_river_delta_area
+				area = vietnam_area
+			}
+			NOT = {
+				country_or_vassal_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			red_river_delta_area= {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			vietnam_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			add_mandate = 10
+		}
+	}
+	yua_conquer_burma_mission = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { yua_invade_dai_viet_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = kachin_area
+				area = chindwin_area
+				area = shan_hill_area
+				area = karenni_area
+				area = upper_burma_area
+				area = central_burma_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kachin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			chindwin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shan_hill_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karenni_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mandate = 10
+		}
+	}
+}
+
+yuan_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YUA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yua_humiliate_chagatai_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { yua_destroy_the_song_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = shanshan_area
+				area = zungaria_area		#south
+				area = tarim_basin_area		#north altishahr
+				area = kashgaria_area
+				area = jetysuu_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			shanshan_area= {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zungaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tarim_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kashgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jetysuu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	yua_defeat_the_jochids_mission = {
+		icon = mission_steppe_warriors
+		required_missions = { yua_humiliate_chagatai_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = balchasj_area
+				area = syr_darya_area
+				area = kazakhstan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			balchasj_area= {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syr_darya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kazakhstan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+}
+
+yuan_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YUA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yua_supreme_control_commission_mission = {
+		icon = mission_scholar_officials
+		required_missions = {  }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				region = tibet_region
+			}
+			NOT = {
+				NOT = { local_autonomy = 30 }
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tibet_region= {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+			tibet_region= {
+				type = all
+				NOT = { local_autonomy = 30 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "yua_supreme_control_commission_mod"
+				duration = 10950
+			}
+		}
+	}
+	yua_embrace_buddhism_mission = {
+		icon = mission_buddhist_monk_praying
+		required_missions = {  }
+		position = 4
+		trigger = {
+			OR = {
+				has_harmonized_with = vajrayana
+				has_harmonized_with = mahayana
+				has_harmonized_with = buddhism
+				
+				secondary_religion = vajrayana
+				secondary_religion = mahayana
+				secondary_religion = buddhism
+				
+				religion_group = buddhic
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	yua_construct_khanbaliq_mission = {
+		icon = et_mission_forbidden_city
+		required_missions = {  }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1816	#Beijing
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1816
+			1816 = {
+				is_capital = yes
+				has_building = temple
+				num_of_times_improved = 4
+			}
+		}
+		effect = {
+			add_prestige = 5
+			if = {
+				limit = { 
+					OR = {
+						is_harmonizing_with = vajrayana
+						is_harmonizing_with = mahayana
+						is_harmonizing_with = buddhism
+					}
+				}
+				add_harmony = 10
+			}
+		}
+	}
+	yua_xanadu_handcannon_mission = {
+		icon = mission_asian_cannon
+		required_missions = {  }
+		position = 6
+		trigger = {
+			adm_tech = 42
+			dip_tech = 42
+			mil_tech = 42
+			natural_scientist = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sng_gunpowder_warfare"
+				duration = -1
+			}
+		}
+	}
+}

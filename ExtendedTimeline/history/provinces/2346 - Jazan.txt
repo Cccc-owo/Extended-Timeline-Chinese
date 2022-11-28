@@ -1,0 +1,82 @@
+#2537 - Jazan
+
+owner = MIE
+controller = MIE
+culture = yemeni_culture
+religion = south_arabian
+capital = "Jazan"
+trade_goods = fish
+hre = no
+discovered_by = east_african
+discovered_by = indian
+discovered_by = asian
+discovered_by = early_indian
+discovered_by = barbarian
+discovered_by = western
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+base_tax = 3
+base_production = 3
+base_manpower = 1
+is_city = yes
+add_core = MIE
+
+220.1.1 = { owner = HIM controller = HIM add_core = HIM remove_core = MIE }
+320.1.1 = { owner = AKS controller = AKS add_core = AKS }
+380.1.1 = { owner = HIM controller = HIM add_core = HIM remove_core = AKS }
+450.1.1 = { religion = jewish }
+525.1.1 = { owner = AKS controller = AKS add_core = AKS remove_core = HIM }
+560.1.1 = { owner = YEM controller = YEM add_core = YEM remove_core = AKS }
+570.1.1 = { owner = NJR controller = NJR add_core = NJR remove_core = YEM }
+628.1.1 = { owner = RSD controller = RSD add_core = RSD religion = islam }
+661.7.28 = { owner = UMA controller = UMA add_core = UMA remove_core = RSD religion = sunni }
+750.8.6 = { owner = ABA controller = ABA add_core = ABA remove_core = UMA }
+800.1.1 = { discovered_by = nomad_group }
+866.1.1 = { owner = YEM controller = YEM add_core = YEM remove_core = ABA }
+1100.1.1 = { discovered_by = western }
+1174.1.1 = { owner = EGY controller = EGY add_core = EGY remove_core = YEM }
+1200.1.1 = { culture = hejazi_culture }
+1229.1.1 = { owner = YEM controller = YEM add_core = YEM remove_core = EGY }
+1350.1.1 = { owner = MFL controller = MFL add_core = MFL remove_core = YEM }
+
+1421.1.1 = { discovered_by = MNG }
+1453.1.1 = { discovered_by = western }
+1488.1.1 = { discovered_by = POR }
+1538.1.1 = { #Annexed by the Ottomans and put in the Abu Arish Sanjak.
+	owner = TUR
+	controller = TUR
+	add_core = TUR
+} # Part of the Ottoman empire
+1627.1.1 = { #Zayidis
+	owner = RAS
+	controller = RAS
+	add_core = RAS
+}
+1728.1.1 = { #Mikhlaf - Dependency of the Zaidi Imams
+	owner = MFL
+	controller = MFL
+	add_core = MFL
+}
+1802.1.1 = {
+	owner = NAJ
+	controller = NAJ
+	add_core = NAJ
+} # Incorporated into the First Saudi State
+1803.1.1 = {
+	owner = MFL
+	controller = MFL
+} # Side with Ottomans/Egypt
+1818.9.9 = {
+	owner = EGY
+	controller = EGY
+	add_core = EGY
+	add_core = TUR
+	remove_core = NAJ
+} # The end of the Saudi State
+
+1841.2.1   = { owner = TUR controller = TUR add_core = TUR remove_core = EGY }
+1906.1.1   = { owner = ASX controller = ASX add_core = ASX remove_core = TUR }
+1910.1.1 = { discovered_by = eastern }
+1934.5.1   = { controller = SAU }
+1934.5.20  = { owner = SAU add_core = SAU remove_core = ASX }

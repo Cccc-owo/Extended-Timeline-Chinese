@@ -1,0 +1,95 @@
+#167 - Caux
+
+owner = ROM
+controller = ROM
+capital = "Rotomagus"
+is_city = yes
+culture = gallian
+religion = druidism
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 1
+base_production = 1
+trade_goods = cloth
+base_manpower = 1
+add_core = ROM
+
+add_permanent_province_modifier = {
+	name = seine_estuary_modifier
+	duration = -1
+}
+
+260.1.1 = { add_core = GLL revolt = { type = nationalist_rebels size = 1 } controller = REB }
+268.1.1 = { controller = ROM remove_core = GLL revolt = {} }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+440.1.1 = { religion = chalcedonism }
+461.11.1 = { owner = SOI controller = SOI add_core = SOI }
+480.6.1 = { remove_core = ROW }
+486.6.1 = { owner = FRK controller = FRK add_core = FRK remove_core = SOI capital = "Rouen" culture = cosmopolitan_french }
+500.1.1 = { trade_goods = glass }
+511.11.27 = { owner = NEU controller = NEU add_core = NEU }
+558.12.23 = { owner = FRK controller = FRK add_core = FRK }
+561.11.29 = { owner = NEU controller = NEU }
+600.1.1 = { base_manpower = 2 }
+613.10.10 = { owner = FRK controller = FRK add_core = FRK }
+634.1.1 = { owner = NEU controller = NEU }
+679.12.23 = { owner = FRK controller = FRK }
+800.1.1 = { base_tax = 2 base_production = 2 }
+840.6.21 = { owner = FRW controller = FRW add_core = FRW remove_core = FRK }
+867.1.1 = { religion = catholic }
+900.1.1 = { base_tax = 3 base_production = 3 }
+911.1.1 = { owner = NRM controller = NRM add_core = NRM remove_core = FRW culture = normand }
+1000.1.1 = { base_tax = 4 base_production = 4 }
+1050.1.1 = { base_manpower = 4 }
+1066.12.25 = { owner = ENG controller = ENG add_core = ENG }
+1087.9.9 = { owner = NRM controller = NRM }
+1106.1.1 = { owner = ENG controller = ENG }
+1144.1.1 = { owner = ANJ controller = ANJ add_core = ANJ remove_core = ENG }
+1154.12.19 = { owner = ENG controller = ENG add_core = ENG remove_core = ANJ }
+1204.6.24 = { owner = FRA controller = FRA add_core = FRA add_core = ENG }
+
+1419.1.19 = { controller = ENG } # Incorporated into England by Henry V
+1420.5.12 = { owner = ENG add_core = ENG } # Treaty of Troyes
+1449.1.1 = { owner = FRA controller = FRA } # Retaken by France
+1465.8.15 = { owner = NRM controller = NRM } # Treaty of Conflans
+1466.3.6 = { owner = FRA controller = FRA } # Louis XI reincorporates Normandy into the French crown
+1467.6.15 = { add_core = BUR } # Charles the Bold ascends to the throne and lays claims
+1471.1.1 = { controller = BUR } # Charles the Bold invades France and ravages the country as far as Rouen
+1471.8.1 = { controller = FRA } # Charles the Bold has to retire
+1475.8.29 = { remove_core = ENG } # Treaty of Picquigny
+1477.1.5 = { remove_core = BUR } # Charles the Bold dies at Nancy
+1571.1.1 = { unrest = 5 } # Unrest spreads in catholic territory: massacres of protestants in Rouen, Orange & Paris
+1574.4.1 = { unrest = 0 } # Charles IX dies, situation cools a bit
+1588.12.1 = { unrest = 5 } # Henri de Guise assassinated at Blois, Ultra-Catholics into a frenzy
+1594.1.1 = { unrest = 0 } # 'Paris vaut bien une messe!', Henri converts to Catholicism
+1631.1.1 = { unrest = 5 } # Region is rebellious until about 1639
+1641.1.1 = { unrest = 0 }
+
+1751.1.1 = { base_tax = 5 }
+1775.1.1 = { base_tax = 6 }
+1800.1.1 = { base_tax = 7 base_manpower = 6 }
+1825.1.1 = { base_tax = 8 }
+1850.1.1 = { base_manpower = 7 }
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+	     } # Republic proclaimed
+1875.1.1 = { base_production = 5 base_manpower = 8 }
+1901.1.1 = { base_production = 6 }
+1910.1.1 = { discovered_by = asian }
+1925.1.1 = { base_tax = 9 }
+1940.6.14  = { owner = GER controller = GER } # France surrendered to Nazi Garmany
+1944.8.25  = { owner = FR2 controller = FR2 } # France liberated by allied forces
+1951.1.1 = { base_tax = 10 base_production = 7 }
+1975.1.1 = { base_production = 8 }
+2000.1.1 = { base_tax = 11 base_production = 10 }
+
+
+

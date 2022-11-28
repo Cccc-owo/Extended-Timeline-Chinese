@@ -1,0 +1,65 @@
+#641 - Makassar
+
+culture = sulawesi
+religion = animism
+capital = "Watansoppeng"
+trade_goods = unknown
+hre = no
+discovered_by = TID
+discovered_by = TER
+discovered_by = MGD
+discovered_by = LUW
+discovered_by = LNO
+discovered_by = LFA
+discovered_by = BNJ
+discovered_by = KUT
+discovered_by = SUN
+discovered_by = SAK
+discovered_by = PSA
+discovered_by = PLB
+discovered_by = PGR
+discovered_by = DMK
+discovered_by = CRB
+discovered_by = BTN
+discovered_by = BLM
+discovered_by = BEI
+discovered_by = BAN
+discovered_by = BLI
+discovered_by = MKS
+discovered_by = MAJ
+discovered_by = ATJ
+base_tax = 3
+base_production = 3
+base_manpower = 2
+native_size = 60
+native_ferocity = 2
+native_hostileness = 6
+
+960.1.1 = { owner = LUW controller = LUW add_core = LUW trade_goods = spices is_city = yes }
+1180.1.1 = { owner = MKS controller = MKS add_core = MKS remove_core = LUW }
+1320.1.1 = { discovered_by = indian discovered_by = asian discovered_by = muslim discovered_by = ottoman }
+
+1511.1.1 = { discovered_by = POR }
+1667.1.1 = {	
+	owner = BNE
+	controller = BNE
+	add_core = BNE
+} # Makassar conquered by the Dutch, Soppeng falls under Bone influence
+
+1910.1.1 = { discovered_by = western discovered_by = eastern }
+1940.1.1   = {
+	owner = NED
+	controller = NED
+	add_core = NED
+	add_core = IDN
+	remove_core = BNE
+	add_to_trade_company = NED
+} # Dutch control
+1942.2.9   = { controller = JAP }
+1942.3.9   = { owner = JAP }
+1945.8.15  = { owner = NED revolt = { type = nationalist_rebels size = 1 } controller = REB }
+1945.8.17  = { owner = IDN revolt = {} controller = IDN }
+1949.12.27 = { remove_core = NED }
+
+
+

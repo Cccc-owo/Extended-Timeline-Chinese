@@ -1,0 +1,980 @@
+egypt_tulunid_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 868.9.15
+			NOT = { started_in = 905.1.10 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_tulunid_take_al_jazira_mission = {
+		icon = mission_mahmudabad
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = al_jazira_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			al_jazira_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			
+			add_ruler_modifier = {
+				name = "epithet_the_conqueror"
+				duration = -1
+			}
+		}
+	}
+	egy_tulunid_defeat_the_abbasids_mission = {
+		icon = mission_black_standard_of_the_eagle
+		required_missions = { egy_tulunid_take_al_jazira_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 410	#Baghdad
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 410
+		}
+		effect = {
+			add_prestige = 15
+			
+			add_ruler_modifier = {
+				name = "epithet_the_great"
+				duration = -1
+			}
+		}
+	}
+	egy_tulunid_ally_of_merchants_mission = {
+		icon = mission_entrepot_of_india
+		required_missions = {  } #none
+		position = 3
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 75
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = master_of_mint
+				skill = 3
+				discount = yes
+				culture = al_misr_arabic	#Egyptian Arabic
+			}
+			add_country_modifier = {
+				name = "egy_merchant_diplomacy"
+				duration = 9125 	#25 years
+			}
+		}
+	}
+	egy_tulunid_al_mukhtara_mission = {
+		icon = mission_saladin_takes_jerusalem
+		required_missions = {  } #none
+		position = 4
+		trigger = {
+			stability = 2
+			num_accepted_cultures = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "egy_al_mukhtara"
+				duration = 10950 	#30 years
+			}
+		}
+	}
+}
+
+egypt_ayyubid_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_european_trade_mission = {
+		icon = mission_african_gold
+		required_missions = {  } #none
+		position = 4
+		trigger = {
+			any_owned_province = {
+				trade_goods = sugar
+			}
+			OR = {
+				#Venice
+				1308 = {
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				#Genua
+				1297 = {
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "egy_european_trade_mod"
+				duration = 9125 	#25 years
+			}
+		}
+	}
+	egy_servants_to_the_caliph_mission = {
+		icon = mission_black_standard_of_the_eagle
+		required_missions = {  } #none
+		position = 5
+		trigger = {
+			OR = {
+				has_guaranteed = ABA
+				alliance_with = ABA
+			}
+			reverse_has_opinion = {
+				who = ABA
+				value = 150
+			}
+		}
+		effect = {
+			every_known_country = { 
+				limit = { religion = sunni }
+				add_opinion = {
+					who = ROOT
+					modifier = egy_opinion_caliph_relations
+				}
+			}
+		}
+	}
+}
+
+egypt_ayyubid_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_subjugate_the_bedouins_mission = {
+		icon = mission_conquer_timbuktu
+		required_missions = { egy_secure_syria_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = tripolitania_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_manpower = 10
+			add_army_tradition = 15
+		}
+	}
+	egy_challenge_the_almohad_mission = {
+		icon = mission_new_world_power
+		required_missions = { egy_subjugate_the_bedouins_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 341	#Carthage
+				province_id = 343	#Fez
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 341
+			owns_core_province = 343
+		}
+		effect = {
+			add_prestige = 15
+			add_navy_tradition = 15
+		}
+	}
+}
+
+egypt_ayyubid_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_unite_arabia_mission = {
+		icon = mission_into_arabia
+		required_missions = { egy_secure_syria_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = arabia_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			arabia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "egy_sultan_of_egypt_and_arabia"
+				duration = 7300
+			}
+		}
+	}
+	egy_into_anatolia_mission = {
+		icon = mission_pacify_the_berbers
+		required_missions = { egy_land_between_two_rivers_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = north_kurdistan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			north_kurdistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+	egy_conquer_georgia_mission = {
+		icon = mission_steppe_warriors
+		required_missions = { egy_into_anatolia_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = caucasia_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				num_of_owned_provinces_with = {
+					region = caucasia_region
+					value = 10
+				}
+				GEO = {
+					vassal_of = ROOT
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+}
+
+
+egypt_ayyubid_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_conquer_nubia_mission = {
+		icon = mission_arabian_fort
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = lower_nubia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lower_nubia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "egy_sultan_of_egypt_and_nubia"
+				duration = -1
+			}
+		}
+	}
+	egy_conquer_barqa_mission = {
+		icon = mission_traverse_the_sahara
+		required_missions = { egy_conquer_nubia_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 356	#Cyrenaica Benghazi
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 356	#Cyrenaica Benghazhi
+		}
+		effect = {
+			add_prestige = 10
+			add_years_of_income = 0.1
+		}
+	}
+	egy_secure_syria_mission = {
+		icon = mission_traverse_the_sahara
+		required_missions = { egy_conquer_barqa_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+				area = aleppo_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "egy_sultan_of_egypt_and_syria"
+				duration = -1
+			}
+		}
+	}
+	egy_land_between_two_rivers_mission = {
+		icon = mission_found_udaipur
+		required_missions = { egy_secure_syria_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = al_jazira_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			al_jazira_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "egy_sultan_of_mesopotamia"
+				duration = -1
+			}
+		}
+	}
+	egy_retake_the_levant_mission = {
+		icon = mission_saladin_takes_jerusalem
+		required_missions = { egy_land_between_two_rivers_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = palestine_area
+				area = trans_jordan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+}
+
+egypt_alawiyya_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1800.1.1
+			NOT = { started_in = 1883.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_ali_suez_canal_mission = {
+		icon = mission_rb_scottish_north_sea_trade
+		required_missions = {  }
+		position = 4
+		trigger = {
+			has_great_project = suez_canal
+		}
+		effect = {
+			add_prestige = 30
+		}
+	}
+	egy_ali_modernize_the_army_mission = {
+		icon = mission_ottoman_army_1830s
+		required_missions = {  }
+		position = 5
+		trigger = {
+			army_professionalism = 0.80
+			dip_tech = 76
+		}
+		effect = {
+			add_country_modifier = {
+				name = "egy_ali_modern_egyptian_army"
+				duration = 9125
+			}
+		}
+	}
+	egy_ali_egyptian_ironclads_mission = {
+		icon = mission_great_war_battleship
+		required_missions = { egy_ali_modernize_the_army_mission }
+		position = 6
+		trigger = {
+			dip_tech = 79
+			num_of_heavy_ship = 10
+		}
+		effect = {
+			add_country_modifier = {
+				name = "egy_ali_egyptian_ironclads"
+				duration = 7300
+			}
+		}
+	}
+}
+
+egypt_alawiyya_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1800.1.1
+			NOT = { started_in = 1883.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_ali_the_holy_cities_mission = {
+		icon = mission_into_arabia
+		required_missions = { egy_ali_conquer_sudan_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 385	#Mecca 		Makkah
+				province_id = 384	#Medina 	Madinah
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 385
+			owns_or_non_sovereign_subject_of = 384
+		}
+		effect = {
+			add_legitimacy = 50
+			add_prestige = 10
+		}
+	}
+	egy_ali_into_the_mediterranean_mission = {
+		icon = mission_dominate_the_mediterranean
+		required_missions = { egy_ali_conquer_syria_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 321	#Cyprus
+				province_id = 163	#Crete
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 321		#Cipro Cyrpus
+			owns_or_non_sovereign_subject_of = 163		#Creta Crete
+		}
+		effect = {
+			add_country_modifier = {
+				name = "egy_ali_mediterranean_ports"
+				duration = 10950
+			}
+		}
+	}
+}
+
+egypt_alawiyya_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1800.1.1
+			NOT = { started_in = 1883.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_ali_conquer_syria_mission = {
+		icon = mission_into_persia_2
+		required_missions = { egy_ali_conquer_sudan_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			aleppo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			syrian_desert_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			trans_jordan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			palestine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	egy_ali_secure_the_levant_mission = {
+		icon = mission_levantine_restoration
+		required_missions = { egy_ali_conquer_syria_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = aleppo_area
+				area = syrian_desert_area
+				area = trans_jordan_area
+				area = palestine_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syrian_desert_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "egy_ali_khedive_of_greater_syria"
+				duration = 10950
+			}
+		}
+	}
+	egy_ali_into_anatolia_mission = {
+		icon = mission_conquer_50_development
+		required_missions = { egy_ali_secure_the_levant_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = anatolia_region
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				region = anatolia_region
+				value = 15
+			}
+		}
+		effect = {
+			anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	egy_ali_conquer_istanbul_mission = {
+		icon = mission_city_of_the_world's_desire
+		required_missions = { egy_ali_into_anatolia_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 151
+		}
+		effect = {
+			add_mercantilism = 2
+			add_country_modifier = {
+				name = "egy_ali_magnificent_conqueror"
+				duration = 10950
+			}
+		}
+	}
+}
+
+egypt_alawiyya_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1800.1.1
+			NOT = { started_in = 1883.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_ali_egyptian_independence_mission = {
+		icon = mission_muhammad_ali
+		required_missions = {  }
+		position = 1
+		completed_by = 1841.11.25
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = egy_ali_egyptian_independence.tooltip
+				
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = "egy_ali_rising_khedivate"
+				duration = 9125
+			}
+		}
+	}
+	egy_ali_invade_nubia_mission = {
+		icon = mission_into_africa
+		required_missions = { egy_ali_egyptian_independence_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = lower_nubia_area
+				area = dongola_area
+				area = upper_nubia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lower_nubia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dongola_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_nubia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			sennar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kurdufan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	egy_ali_conquer_sudan_mission = {
+		icon = mission_zanzibari_trade
+		required_missions = { egy_ali_invade_nubia_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = sennar_area
+				area = kurdufan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sennar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kurdufan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+	egy_ali_defeat_ethiopia_mission = {
+		icon = mission_envoy_to_ethiopia
+		required_missions = { egy_ali_conquer_sudan_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1224		#Gonder Ethiopian capital
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 1224		#Gonder
+		}
+		effect = {
+			add_prestige = 10
+			add_army_tradition = 5
+		}
+	}
+	egy_ali_take_somaliland_mission = {
+		icon = mission_invade_maharashtra
+		required_missions = { egy_ali_defeat_ethiopia_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = somaliland_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			somaliland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			horn_of_africa_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	egy_ali_monopolize_red_sea_mission = {
+		icon = mission_dominate_trade_in_aden
+		required_missions = { egy_ali_take_somaliland_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = gulf_of_arabia_area	#red sea hills
+				area = red_sea_coast_area 
+				area = aussa_area
+				area = tihama_al_yemen_area
+				area = mecca_area
+				area = medina_area
+				area = tabuk_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			gulf_of_arabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			red_sea_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aussa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tihama_al_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mecca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			medina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tabuk_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+		}
+	}
+}

@@ -1,0 +1,88 @@
+#1879 - Alencon
+
+owner = ROM
+controller = ROM
+capital = "Cenomanus"
+is_city = yes
+culture = gallian
+religion = druidism
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 1
+base_production = 1
+trade_goods = livestock
+base_manpower = 1
+add_core = ROM
+
+260.1.1 = { add_core = GLL revolt = { type = nationalist_rebels size = 1 } controller = REB }
+268.1.1 = { controller = ROM remove_core = GLL revolt = {} }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+420.1.1 = { religion = chalcedonism }
+461.11.1 = { owner = SOI controller = SOI add_core = SOI }
+480.6.1 = { remove_core = ROW }
+486.6.1 = { owner = FRK controller = FRK add_core = FRK remove_core = SOI capital = "Alençon" }
+500.1.1 = { base_tax = 2 base_production = 2 culture = cosmopolitan_french }
+511.11.27 = { owner = NEU controller = NEU add_core = NEU }
+558.12.23 = { owner = FRK controller = FRK add_core = FRK }
+561.11.29 = { owner = NEU controller = NEU add_core = NEU }
+567.12.1 = { owner = ORL controller = ORL add_core = ORL remove_core = NEU }
+592.3.28 = { owner = AUT controller = AUT add_core = AUT }
+595.1.1 = { owner = ORL controller = ORL remove_core = AUT }
+596.1.1 = { owner = NEU controller = NEU add_core = NEU remove_core = ORL }
+613.10.10 = { owner = FRK controller = FRK add_core = FRK }
+634.1.1 = { owner = NEU controller = NEU }
+679.12.23 = { owner = FRK controller = FRK }
+700.1.1 = { base_manpower = 2 }
+800.1.1 = { base_tax = 3 base_production = 3 }
+#832.1.1 = { owner = MNE controller = MNE add_core = MNE }
+840.6.21 = { owner = FRW controller = FRW add_core = FRW remove_core = FRK }
+867.1.1 = { religion = catholic }
+900.1.1 = { base_manpower = 3 }
+987.7.3 = { owner = FRA controller = FRA add_core = FRA remove_core = FRW }
+1000.1.1 = { base_tax = 4 base_production = 4 }
+1047.1.1 = { owner = NRM controller = NRM add_core = NRM }
+1066.12.25 = { owner = ENG controller = ENG add_core = ENG }
+1087.9.9 = { owner = NRM controller = NRM remove_core = ENG }
+1106.1.1 = { owner = ENG controller = ENG }
+1126.1.1 = { owner = ANJ controller = ANJ add_core = ANJ }
+1154.12.19 = { owner = ENG controller = ENG add_core = ENG remove_core = ANJ }
+1203.1.1 = { owner = ALE controller = ALE add_core = ALE remove_core = ENG }
+1217.1.1 = { owner = FRA controller = FRA }
+1269.1.1 = { owner = ALE controller = ALE }
+1283.1.1 = { owner = FRA controller = FRA }
+1291.1.1 = { owner = ANJ controller = ANJ add_core = ANJ }
+1325.12.16 = { owner = ALE controller = ALE remove_core = ANJ }
+1424.8.17  = { owner = ENG controller = ENG add_core = ENG } #Battle of Verneuil
+
+1449.3.24 = { #Fall of Routier
+	owner = FRA 
+	controller = FRA
+	add_local_autonomy = -80
+}
+1549.1.1 = { remove_core = ALE }
+1650.1.14 = { unrest = 7 } # Mazarin arrests the Princes Condé, Conti & Longueville, the beginning of the Second Fronde
+1651.4.1 = { unrest = 4 } # An unstable peace is concluded
+1651.12.1 = { unrest = 7 } # Mazarin returns from exile, Condé sides with Spain, situation heats up again
+1652.10.21 = { unrest = 0 } # The King is allowed to enter Paris again, Mazarin leaves France for good. Second Fronde over.
+1685.10.18 = { unrest = 8 } # Edict of Nantes revoked by Louis XIV
+1686.1.17 = { religion = catholic unrest = 0 } # Dragonnard campaign succesful, region back to catholicism
+1786.1.1 = { base_tax = 6 base_production = 6 } # The Eden Agreement
+
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+	     } # Republic proclaimed
+1910.1.1 = { discovered_by = asian }
+1940.6.14  = { owner = GER controller = GER } # France surrendered to Nazi Garmany
+1944.8.12  = { controller = GBR }
+1944.8.25  = { owner = FR2 controller = FR2 } # France liberated by allied forces
+
+
+

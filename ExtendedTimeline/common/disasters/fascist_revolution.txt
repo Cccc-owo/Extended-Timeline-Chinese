@@ -1,0 +1,119 @@
+fascist_revolution = {
+	potential = {
+		adm_tech = 81	
+		num_of_cities = 30
+		NOT = { has_country_flag = had_fascist_revolution }
+		NOT = { has_reform = fascist_government }
+		NOT = { tag = PAP }
+		is_subject = no
+		uses_doom = no
+	}
+	
+	
+	can_start = {
+		has_any_disaster = no
+		NOT = { stability = 0 }
+		adm_tech = 83
+		num_of_loans = 2
+	}
+	
+	can_stop = { 
+		OR = {
+			has_any_disaster = yes
+			stability = 3
+		}
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { prestige = 0 }
+		}
+		modifier = {
+			factor = 1
+			war_exhaustion = 5
+		} 
+		modifier = {
+			factor = 0.5
+			num_of_loans = 10
+			NOT = { num_of_loans = 25 }
+		}	
+		modifier = {
+			factor = 1
+			num_of_loans = 25
+		}	
+		modifier = {
+			factor = 2
+			is_bankrupt = yes
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { stability = -1 }
+		}	
+		modifier = {
+			factor = 1
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				has_reform = fascist_government
+			}
+		}
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				has_disaster = fascist_revolution
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_faction = national_socialist_party
+			faction_in_power = national_socialist_party
+		}	
+		modifier = {
+			factor = 2
+			is_at_war = yes
+			NOT = { war_score = -20 }
+		}
+		modifier = {
+			factor = 0.5
+			revanchism = 5
+		}
+		modifier = {
+			factor = 1
+			revanchism = 10
+		}
+	}
+	
+	can_end = {
+		stability = 1
+		NOT = { num_of_revolts = 1 }
+	}
+	
+
+	modifier = {
+		global_unrest = 10
+		stability_cost_modifier = 0.1
+	}	
+	
+	
+	on_start = dis_fas.1
+	on_end = dis_fas.4
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = dis_fas.2
+			100 = dis_fas.3
+			100 = dis_com.4
+			100 = revolution.7
+			100 = revolution.8
+		
+		}
+	}
+}
+

@@ -1,0 +1,246 @@
+emishi_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = EMI
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	emi_cross_the_hida_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = chubu_area
+				area = eastern_chubu_area
+				area = hokuriku_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			chubu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			eastern_chubu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hokuriku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "emi_victorious_army"
+				duration = 9125
+			}
+		}
+	}
+	emi_vanquish_the_yamato_mission = {
+		icon = mission_impaled_soldies
+		required_missions = { emi_cross_the_hida_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = kinai_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kinai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = "emi_barbarians_no_more"
+				duration = 9125
+			}
+		}
+	}
+	emi_subjugate_the_na_mission = {
+		icon = mission_japanese_samurai
+		required_missions = { emi_vanquish_the_yamato_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = sanindo_area
+				area = saigoku_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sanindo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saigoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+		}
+	}
+	emi_cross_the_seas_mission = {
+		icon = mission_rice_field
+		required_missions = { emi_subjugate_the_na_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = shikoku_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			shikoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 10
+			add_dip_power = 75
+		}
+	}
+	emi_chief_of_chiefs_mission = {
+		icon = mission_crusade_for_varna
+		required_missions = { emi_cross_the_seas_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = northern_kyushu
+				province_id = 1012
+				province_id = 4180
+				province_id = 4181
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			northern_kyushu = {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			1012 = { country_or_non_sovereign_subject_holds = ROOT }
+			4180 = { country_or_non_sovereign_subject_holds = ROOT }
+			4181 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "epithet_the_conqueror"
+				duration = -1
+			}
+		}
+	}
+}
+
+emishi_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = EMI
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	emi_unite_the_tribes_mission = {
+		icon = mission_ottoman_harem
+		required_missions = { } #none
+		position = 3
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 80
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "emi_emishi_united"
+				duration = 10950
+			}
+		}
+	}
+	emi_cavalry_dominance_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { } #none
+		position = 4
+		trigger = {
+			cavalry_fraction = 0.5
+			OR = {
+				army_tradition = 35
+				army_professionalism = 0.75
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "emi_shock_cavalry"
+				duration = 10950
+			}
+			add_country_modifier = {
+				name = "emi_mounted_archers"
+				duration = -1
+			}
+		}
+	}
+	emi_ainu_relations_mission = {
+		icon = mission_iroquois_warriors
+		required_missions = { } #none
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1031
+				province_id = 1847
+				province_id = 1854
+				province_id = 4193
+			}			
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				alliance_with = ANU
+				1031 = { country_or_non_sovereign_subject_holds = ROOT }
+				1847 = { country_or_non_sovereign_subject_holds = ROOT }
+				1852 = { country_or_non_sovereign_subject_holds = ROOT }
+				4193 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "emi_jomon_restoration"
+				duration = 9125
+			}
+		}
+	}
+}

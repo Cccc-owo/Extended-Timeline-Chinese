@@ -1,0 +1,342 @@
+namespace = imperial_restoration
+
+# Disaster start
+country_event = {
+	id = imperial_restoration.1
+	title = "imperial_restoration.1.t"
+	desc = "imperial_restoration.1.d"
+	picture = REVOLUTION_eventPicture
+		
+	is_triggered_only = yes
+
+	option = {
+		name = "imperial_restoration.1.a"
+		set_country_flag = had_imperial_restoration
+		add_stability = -2
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+				is_capital = no
+			}
+			revolutionary_rebels = 2
+		}
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+				is_capital = no
+			}
+			revolutionary_rebels = 2
+		}
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+				is_capital = no
+			}
+			revolutionary_rebels = 2
+		}
+	}
+}
+
+# Disaster end
+country_event = {
+	id = imperial_restoration.2
+	title = "imperial_restoration.2.t"
+	desc = {
+	    trigger = { NOT = { tag = JAP } }
+	    desc = "imperial_restoration.2.d"
+	}
+	desc = {
+	    trigger = { tag = JAP }
+	    desc = "imperial_restoration.2.e"
+	}
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "imperial_restoration.2.a"
+		add_stability = 3
+	}
+}
+
+# Shogunate falls
+country_event = {
+	id = imperial_restoration.3
+	title = "imperial_restoration.3.t"
+	desc = "imperial_restoration.3.d"
+	picture = REVOLUTION_eventPicture
+	
+	trigger = {
+		OR = {
+			capital_scope = { controlled_by = REB }
+			AND = {
+				capital_scope = { NOT = { region = japan_region } }
+				1028 = { controlled_by = REB }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "imperial_restoration.3.a"
+		disband_rebels = revolutionary_rebels
+		remove_government_reform = shogunate
+		set_government_rank = 3
+		define_ruler = {
+			adm = 2
+			dip = 2
+			mil = 2
+			dynasty = "Yamato"
+			male = yes
+			claim = 95
+		}
+		end_disaster = imperial_restoration
+		custom_tooltip = unite_japan_subject_tooltip
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					has_reform = daimyo
+				}
+				ROOT = {
+					free_vassal = PREV
+				}
+				remove_government_reform = daimyo
+				every_owned_province = {
+					remove_core = JAP
+				}
+			}
+		}
+		change_tag = JAP
+		swap_non_generic_missions = yes
+		set_country_flag = formed_japan_flag
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		hidden_effect = {
+			every_country = {
+				limit = { has_country_flag = imperial_restoration_supporter }
+				country_event = {
+					id = imperial_restoration.8
+					days = 1
+				}
+				clr_country_flag = imperial_restoration_supporter
+			}
+		}
+		ai_chance = { 
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "imperial_restoration.3.b"
+		add_stability = -1
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+				is_capital = no
+			}
+			revolutionary_rebels = 2
+		}
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+				is_capital = no
+			}
+			revolutionary_rebels = 2
+		}
+		ai_chance = { 
+			factor = 0
+		}
+	}
+}
+
+# A clan supports the emperor
+country_event = {
+	id = imperial_restoration.4
+	title = "imperial_restoration.4.t"
+	desc = "imperial_restoration.4.d"
+	picture = REVOLUTION_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "imperial_restoration.4.a"
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+				is_capital = no
+			}
+			revolutionary_rebels = 2
+		}
+	}
+}
+
+# Rebels ask for foreign support
+country_event = {
+	id = imperial_restoration.5
+	title = "imperial_restoration.4.t"
+	desc = "imperial_restoration.4.d"
+	picture = REVOLUTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		any_country = {
+			total_development = 500
+			has_discovered = 1028
+			OR = {
+				technology_group = western
+				technology_group = eastern
+			}
+			NOT = { has_country_flag = imperial_restoration_support_event }
+			NOT = { alliance_with = ROOT }
+		}
+	}
+	
+	immediate = {
+		random_country = {
+			limit = {
+				total_development = 500
+				has_discovered = 1028
+				OR = {
+					technology_group = western
+					technology_group = eastern
+				}
+				NOT = { has_country_flag = imperial_restoration_support_event }
+				NOT = { alliance_with = ROOT }
+			}
+			country_event = {
+				id = imperial_restoration.6
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = "imperial_crisis.4.a"
+	}
+}
+
+# Foreign support for rebels
+country_event = {
+	id = imperial_restoration.6
+	title = "imperial_restoration.6.t"
+	desc = "imperial_restoration.6.d"
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = imperial_restoration_support_event
+	}
+
+	option = {
+		name = "imperial_crisis.6.a"
+		add_years_of_income = -0.2
+		set_country_flag = imperial_restoration_supporter
+		random_country = {
+			limit = { has_disaster = imperial_restoration }
+			add_opinion = {
+				who = ROOT
+				modifier = imperial_restoration_supported_rebels
+			}
+			hidden_effect = {
+				country_event = {
+					id = imperial_restoration.7
+					days = 1
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+	}
+	option = {
+		name = "imperial_restoration.6.b"
+		add_prestige = 5
+		ai_chance = { 
+			factor = 50
+		}
+	}
+}
+
+# Foreign support for rebels
+country_event = {
+	id = imperial_restoration.7
+	title = "imperial_restoration.7.t"
+	desc = "imperial_restoration.7.d"
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "imperial_restoration.7.a"
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+				is_capital = no
+			}
+			revolutionary_rebels = 2
+		}
+	}
+}
+
+# Reward for support
+country_event = {
+	id = imperial_restoration.8
+	title = "imperial_restoration.8.t"
+	desc = "imperial_restoration.8.d"
+	picture = PORTUGUESE_MERCHANTS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "imperial_restoration.8.a"
+		add_country_modifier = {
+			name = trade_with_japan
+			duration = 3650
+		}
+		JAP = {
+			remove_opinion = {
+				who = ROOT
+				modifier = imperial_restoration_supported_rebels
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = helped_restore_emperor
+			}
+		}
+	}
+}

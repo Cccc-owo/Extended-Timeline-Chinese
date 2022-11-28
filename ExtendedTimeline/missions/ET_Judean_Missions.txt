@@ -1,0 +1,217 @@
+judean_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = JUD
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	jud_judean_independence_mission = {
+		icon = mission_turning_the_tables
+		required_missions = { } #none
+		position = 1
+		trigger = {
+			is_free_or_tributary_trigger = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "jud_free_judea"
+				duration = 9125
+			}
+		}
+	}
+	jud_friends_of_rome_mission = {
+		icon = et_mission_rome_banner
+		required_missions = { } #none
+		position = 2
+		trigger = {
+			OR = {
+				reverse_has_opinion = {
+					who = ROM
+					value = 60
+				}
+				reverse_has_opinion = {
+					who = BYZ
+					value = 60
+				}
+				reverse_has_opinion = {
+					who = ROW
+					value = 60
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			add_ruler_modifier = {
+				name = "epithet_the_great"
+				duration = -1
+			}
+		}
+	}
+	jud_retake_idumea_mission = {
+		icon = mission_renovate_kannauj
+		required_missions = { } #none
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1854	#Negev
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1854
+		}
+		effect = {
+			palestine_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	jud_conquer_moab_mission = {
+		icon = mission_cope_with_refugees
+		required_missions = { jud_retake_idumea_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 380	#Al-Karak
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 380
+		}
+		effect = {
+			add_army_tradition = 15
+			trans_jordan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	jud_seize_galad_mission = {
+		icon = mission_arabian_fort
+		required_missions = { jud_conquer_moab_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 381	#Zarka Hawran
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 381
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "jud_hasmonean_legacy"
+				duration = 10950
+			}
+		}
+	}
+}
+
+judean_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = JUD
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	jud_fortify_jerusalem_mission = {
+		icon = mission_tear_down_spanish_strongholds
+		required_missions = { }	#none
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 379	#Judea
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			379 = {
+				num_of_times_improved = 7
+			}
+		}
+		effect = {
+			379 = {
+				add_province_modifier = {
+					name = "jud_walls_of_herod"
+					duration = -1
+				}
+			}
+		}
+	}
+	jud_expand_the_second_temple_mission = {
+		icon = mission_european_church
+		required_missions = { }	#none
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 379	#Judea
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			379 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			379 = {
+				add_province_modifier = {
+					name = "jud_expanded_second_temple"
+					duration = -1
+				}
+			}
+		}
+	}
+	jud_roman_roads_mission = {
+		icon = et_mission_road
+		required_missions = { }	#none
+		position = 5
+		trigger = {
+			road = 5
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+}

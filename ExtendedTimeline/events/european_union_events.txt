@@ -1,0 +1,1090 @@
+namespace = european_union
+
+#Unite the european union
+country_event = {
+	id = european_union.1
+	title = "EUNAME1"
+	desc = "EUDESC1"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EUNAMEOP1"
+		hidden_effect = {
+			remove_country_modifier = european_union
+			remove_country_modifier = european_leader
+			dismantle_hre = yes
+		}
+		add_country_modifier = {
+			name = unita_in_diversitate
+			duration = -1
+		}
+		change_tag = EUR
+		swap_free_idea_group = yes
+		change_government = republic
+		add_faction_influence = { faction = conservative_party influence = 5 }
+		every_country = {
+			limit = { 
+				is_subject_of = ROOT
+				is_subject_of_type = eu_state
+			}
+			country_event = { id = european_union.16 }
+		}
+	}
+}
+
+#Reform passed warning
+country_event = {
+	id = european_union.2
+	title = "EUNAME2"
+	desc = "EUDESC2"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EUNAMEOP2"
+		custom_tooltip = EUREFORMDESC
+	}
+}
+
+#New member warning
+country_event = {
+	id = european_union.3
+	title = "EUNAME3"
+	desc = "EUDESC3"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EUNAMEOP3"
+		if = {
+			limit = { has_country_modifier = european_leader }
+			change_variable = { which = eu_authority value = 3 }
+		}
+	}
+}
+
+#Becoming the new leader
+country_event = {
+	id = european_union.4
+	title = "EUNAME4"
+	desc = "EUDESC4"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EUNAMEOP4"
+		change_variable = { which = eu_authority value = 20 }
+		if = {
+			limit = { NOT = { has_country_modifier = european_leader } }
+			add_country_modifier = {
+				name = european_leader
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				is_elector = no
+			}
+			elector = yes
+		}
+		every_country = {
+			limit = {
+				NOT = { tag = ROOT }
+				has_country_modifier = european_union
+			}
+			country_event = { id = european_union.5 }
+		}
+		save_global_event_target_as = leader_of_the_eu
+	}
+}
+
+#New leader warning
+country_event = {
+	id = european_union.5
+	title = "EUNAME5"
+	desc = "EUDESC5"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { is_elector = yes }
+				remove_country_modifier = european_leader
+				elector = no
+			}
+		}
+	}
+	
+	option = {
+		name = "EUNAMEOP5"
+	}
+}
+
+#EU leader election cycle
+country_event = {
+	id = european_union.6
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { exists = EUR }
+		OR = {
+			has_country_modifier = european_leader
+			NOT = { any_country = { has_country_modifier = european_leader } }
+		}
+		any_country = {
+			has_country_modifier = european_union
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					has_country_modifier = european_union
+					NOT = { tag = ROOT }
+					prestige = ROOT
+					DIP = ROOT
+					OR = {
+						legitimacy = ROOT
+						republican_tradition = ROOT
+					}
+				}
+			}
+			if = {	#Tier 0 priority
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = european_union
+							is_subject = no
+							DIP = 3
+							prestige = 20
+							OR = {
+								legitimacy = 20
+								republican_tradition = 20
+							}
+						}
+					}
+				}
+				random_country = {
+					limit = { has_country_modifier = european_union }
+					country_event = { id = european_union.4 }
+				}
+			}
+			if = {	#Tier 1 priority
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = european_union
+							is_subject = no
+							DIP = 3
+							prestige = 40
+							OR = {
+								legitimacy = 40
+								republican_tradition = 40
+							}
+						}
+					}
+					any_country = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 20
+						OR = {
+							legitimacy = 20
+							republican_tradition = 20
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 20
+						OR = {
+							legitimacy = 20
+							republican_tradition = 20
+						}
+					}
+					country_event = { id = european_union.4 }
+				}
+			}
+			if = {	#Tier 2 priority
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = european_union
+							is_subject = no
+							DIP = 3
+							prestige = 60
+							OR = {
+								legitimacy = 60
+								republican_tradition = 60
+							}
+						}
+					}
+					any_country = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 40
+						OR = {
+							legitimacy = 40
+							republican_tradition = 40
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 40
+						OR = {
+							legitimacy = 40
+							republican_tradition = 40
+						}
+					}
+					country_event = { id = european_union.4 }
+				}
+			}
+			if = {	#Tier 3 priority
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = european_union
+							is_subject = no
+							DIP = 3
+							prestige = 80
+							OR = {
+								legitimacy = 80
+								republican_tradition = 80
+							}
+						}
+					}
+					any_country = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 60
+						OR = {
+							legitimacy = 60
+							republican_tradition = 60
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 60
+						OR = {
+							legitimacy = 60
+							republican_tradition = 60
+						}
+					}
+					country_event = { id = european_union.4 }
+				}
+			}
+			if = {	#Tier 4 priority
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = european_union
+							is_subject = no
+							DIP = 3
+							prestige = 100
+							OR = {
+								legitimacy = 100
+								republican_tradition = 100
+							}
+						}
+					}
+					any_country = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 80
+						OR = {
+							legitimacy = 80
+							republican_tradition = 80
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 80
+						OR = {
+							legitimacy = 80
+							republican_tradition = 80
+						}
+					}
+					country_event = { id = european_union.4 }
+				}
+			}
+			if = {	#Tier 5 priority
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = european_union
+							is_subject = no
+							DIP = 4
+							prestige = 100
+							OR = {
+								legitimacy = 100
+								republican_tradition = 100
+							}
+						}
+					}
+					any_country = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 100
+						OR = {
+							legitimacy = 100
+							republican_tradition = 100
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 3
+						prestige = 100
+						OR = {
+							legitimacy = 100
+							republican_tradition = 100
+						}
+					}
+					country_event = { id = european_union.4 }
+				}
+			}
+			if = {	#Tier 6 priority
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = european_union
+							is_subject = no
+							DIP = 5
+							prestige = 100
+							OR = {
+								legitimacy = 100
+								republican_tradition = 100
+							}
+						}
+					}
+					any_country = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 4
+						prestige = 100
+						OR = {
+							legitimacy = 100
+							republican_tradition = 100
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 4
+						prestige = 100
+						OR = {
+							legitimacy = 100
+							republican_tradition = 100
+						}
+					}
+					country_event = { id = european_union.4 }
+				}
+			}
+			if = {	#Tier 7 priority
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = european_union
+							is_subject = no
+							DIP = 6
+							prestige = 100
+							OR = {
+								legitimacy = 100
+								republican_tradition = 100
+								}
+						}
+					}
+					any_country = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 5
+						prestige = 100
+						OR = {
+							legitimacy = 100
+							republican_tradition = 100
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 5
+						prestige = 100
+						OR = {
+							legitimacy = 100
+							republican_tradition = 100
+						}
+					}
+					country_event = { id = european_union.4 }
+				}
+			}
+			if = {	#Tier 8 priority
+				limit = {
+					any_country = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 6
+						prestige = 100
+						OR = {
+							legitimacy = 100
+							republican_tradition = 100
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						is_subject = no
+						DIP = 6
+						prestige = 100
+						OR = {
+							legitimacy = 100
+							republican_tradition = 100
+						}
+					}
+					country_event = { id = european_union.4 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						NOT = { tag = ROOT }
+						has_country_modifier = european_union
+						prestige = ROOT
+						DIP = ROOT
+						OR = {
+							legitimacy = ROOT
+							republican_tradition = ROOT
+						}
+					}
+				}
+			}
+			country_event = { id = european_union.4 }
+		}
+		every_country = {
+			limit = { has_country_modifier = european_union }
+			every_owned_province = {
+				limit = { is_part_of_hre = no }
+				if = {
+					limit = {
+						any_core_country = {
+							has_country_modifier = european_union
+						}
+					}
+					set_in_empire = yes
+				}
+			}
+		}
+		every_country = {
+			limit = { NOT = { has_country_modifier = european_union } }
+			every_owned_province = {
+				limit = { is_part_of_hre = yes }
+				if = {
+					limit = {
+						NOT = {
+							any_core_country = {
+								has_country_modifier = european_union
+							}
+						}
+					}
+					set_in_empire = no
+				}
+			}
+		}
+	}
+}
+
+#Voting in EU debate
+country_event = {
+	id = european_union.7
+	title = "EUNAME7"
+	desc = "EUDESC7"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		has_country_modifier = european_union
+		has_global_flag = eu_debate_happening
+		NOT = {
+			OR = {
+				has_country_flag = support_european_reform
+				has_country_flag = opposes_european_reform
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "EUNAMEOP7"
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 10
+				is_subject_of = event_target:leader_of_the_eu
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { event_target:leader_of_the_eu = { reverse_has_opinion = { who = ROOT value = 100 } } }
+			}
+			modifier = {
+				factor = 0
+				NOT = { event_target:leader_of_the_eu = { reverse_has_opinion = { who = ROOT value = 0 } } }
+			}
+		}
+		set_country_flag = support_european_reform
+		hidden_effect = {
+			every_country = { change_variable = { which = support_european_reform_number value = 1 } }
+		}
+	}
+	
+	option = {
+		name = "EUNAMEOP7REFUSAL"
+		set_country_flag = opposes_european_reform
+		hidden_effect = {
+			every_country = { change_variable = { which = opposes_european_reform_number value = 1 } }
+		}
+		if = {
+			limit = { has_global_flag = centralized_warfare_policy_enacted }
+			remove_country_modifier = european_union
+			elector = no
+			every_owned_province = {
+				set_in_empire = no
+			}
+		}
+		if = {
+			limit = { is_subject_of = EUR }
+			EUR = { free_vassal = ROOT }
+		}
+	}
+}
+
+#EU debate ended badly
+country_event = {
+	id = european_union.8
+	title = "EUNAME8"
+	desc = "EUDESC8"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		has_country_modifier = european_leader
+		any_country = {
+			has_country_flag = oppose_european_reform
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 4
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 8
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 12
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 16
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 20
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 24
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 28
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 32
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = oppose_european_reform
+				}
+				amount = 36
+			}
+		}
+	}
+	
+	option = {
+		name = "EUNAMEOP8"
+		hidden_effect = {
+			every_country = {
+				clr_country_flag = support_european_reform
+				clr_country_flag = opposes_european_reform
+				set_variable = { which = support_european_reform_number value = 0 }
+				set_variable = { which = opposes_european_reform_number value = 0 }
+			}
+			clr_global_flag = eu_debate_happening
+			
+		}
+		if = {
+			limit = {
+				has_global_flag = take_over_parliament
+				NOT = { has_country_modifier = parliament_reform }
+			}
+			clr_global_flag = take_over_parliament
+		}
+		if = {
+			limit = {
+				has_global_flag = take_over_commission
+				NOT = { has_country_modifier = commission_reform }
+			}
+			clr_global_flag = take_over_commission
+		}
+		if = {
+			limit = {
+				has_global_flag = take_over_council
+				NOT = { has_country_modifier = council_reform }
+			}
+			clr_global_flag = take_over_council
+		}
+		if = {
+			limit = {
+				has_global_flag = centralized_warfare_policy_enacted
+				NOT = { exists = EUR }
+			}
+			clr_global_flag = centralized_warfare_policy_enacted
+		}
+		if = {
+			limit = { has_global_flag = final_eu_debate }
+			clr_global_flag = final_eu_debate
+		}
+	}
+}
+
+#EU debate ended well
+country_event = {
+	id = european_union.9
+	title = "EUNAME9"
+	desc = "EUDESC9"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		has_country_modifier = european_leader
+		any_country = {
+			has_country_flag = support_european_reform
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 4
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 8
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 12
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 16
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 20
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 24
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 28
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 32
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				all_country = {
+					has_country_flag = support_european_reform
+				}
+				amount = 36
+			}
+		}
+	}
+	
+	option = {
+		name = "EUNAMEOP9"
+		hidden_effect = {
+			every_country = {
+				clr_country_flag = support_european_reform
+				clr_country_flag = opposes_european_reform
+				set_variable = { which = support_european_reform_number value = 0 }
+				set_variable = { which = opposes_european_reform_number value = 0 }
+			}
+			clr_global_flag = eu_debate_happening
+		}
+		if = {
+			limit = { has_global_flag = take_over_parliament }
+			every_country = {
+				limit = { has_country_modifier = european_union }
+				add_country_modifier = {
+					name = parliament_reform
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = take_over_commission }
+			every_country = {
+				limit = { has_country_modifier = european_union }
+				add_country_modifier = {
+					name = commission_reform
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = take_over_council }
+			every_country = {
+				limit = { has_country_modifier = european_union }
+				add_country_modifier = {
+					name = council_reform
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_global_flag = centralized_warfare_policy_enacted
+					NOT = { 
+						exists = EUR
+						has_global_flag = final_eu_debate
+					}
+				}
+			}
+			country_event = { id = european_union.10 }
+		}
+		if = {
+			limit = { has_global_flag = final_eu_debate }
+			country_event = { id = european_union.1 }
+		}
+	}
+}
+
+#Centralized warfare policy
+country_event = {
+	id = european_union.10
+	title = "EUNAME10"
+	desc = "EUDESC10"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EUNAMEOP10"
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_modifier = european_union
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = european_union.17 }
+			}
+		}
+	}
+}
+
+#Founding the EU
+country_event = {
+	id = european_union.12
+	title = "EUNAME12"
+	desc = "EUDESC12"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EUNAMEOP12"
+	}
+}
+
+#Unions aggressive expansion
+country_event = {
+	id = european_union.13
+
+	hidden = yes
+	
+	trigger = {
+		any_known_country = {
+			has_country_modifier = european_union
+			defensive_war_with = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		every_country = {
+			limit = {
+				has_country_modifier = european_union
+			}
+			add_opinion = { who = ROOT modifier = aggressive_expansion }
+		}
+	}
+}
+
+#EU leader election cycle kickstarter
+country_event = {
+	id = european_union.14
+	
+	hidden = yes
+	
+	trigger = {
+		NOT = { exists = EUR }
+		any_country = {
+			has_country_modifier = european_union
+		}
+		NOT = { any_country = { has_country_modifier = european_leader } }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		country_event = { id = european_union.6 }
+	}
+}
+
+# Kicks potential Napoleon Bonaparts from the union
+country_event = {
+	id = european_union.15
+	title = "EUNAME15"
+	desc = "EUDESC15"
+	picture = EUROPEAN_DEBATE_eventPicture
+	
+	trigger = {
+		has_country_modifier = european_union
+		any_country = {
+			has_country_modifier = european_union
+			defensive_war_with = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EUOPTA15"
+		remove_country_modifier = european_union
+		elector = no
+		hidden_effect = {
+			every_owned_province = {
+				limit = { is_core = ROOT }
+				set_in_empire = no
+			}
+		}
+	}
+}
+
+# Unite the european union - other members
+country_event = {
+	id = european_union.16
+	title = "EUNAME16"
+	desc = "EUDESC16"
+	picture = EUROPEAN_DEBATE_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EUNAMEOP16"
+		FROM = {
+			inherit = ROOT
+		}
+	}
+}
+
+# Centralized warfare policy - other members
+country_event = {
+	id = european_union.17
+	title = "EUNAME17"
+	desc = "EUDESC17"
+	picture = EUROPEAN_DEBATE_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EUNAMEOP17"
+		FROM = {
+			create_subject = {
+				subject_type = eu_state
+				subject = ROOT
+			}
+		}
+	}
+}

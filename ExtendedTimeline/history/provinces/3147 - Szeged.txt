@@ -1,0 +1,70 @@
+#155 - Békés
+
+owner = IAZ
+controller = IAZ
+add_core = IAZ
+is_city = yes
+culture = sarmatian
+religion = tengri_pagan_reformed
+capital = "Szeged"
+trade_goods = wine
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 1
+base_production = 1
+base_manpower = 2
+
+300.1.1 = { owner = RGL controller = RGL add_core = RGL remove_core = IAZ culture = bavarian }
+376.1.1 = { owner = HNS controller = HNS add_core = HNS remove_core = RGL }
+453.1.1 = { owner = SCI controller = SCI add_core = SCI remove_core = HNS culture = scirian }
+469.1.1 = { owner = GEP controller = GEP add_core = GEP remove_core = SCI culture = gepid }
+567.1.1 = { owner = AVR controller = AVR add_core = AVR remove_core = GEP culture = avar }
+700.1.1 = { base_tax = 2 base_production = 2 }
+804.1.1 = { owner = BUL controller = BUL add_core = BUL remove_core = AVR }
+880.1.1 = { religion = catholic }
+884.1.1 = { owner = MVA controller = MVA add_core = MVA remove_core = BUL }
+897.1.1 = { owner = HUN controller = HUN add_core = HUN remove_core = MVA culture = hungarian }
+
+1506.1.1 = { revolt = { type = anti_tax_rebels size = 0 } controller = REB } # Szekely rebellion
+1507.1.1 = { revolt = {} controller = HUN } # Estimated
+1514.4.1 = { revolt = { type = anti_tax_rebels size = 2 } controller = REB } # Peasant rebellion against Hungary's magnates
+1515.1.1 = { revolt = {} controller = HUN } # Estimated, put down by the Voyevode of Transylvania, Szapolyiai
+1526.8.30 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	add_core = TRA
+} #Hungary fractured after Battle of Mohacs
+1540.1.1 = { religion = reformed }
+1552.9.4 = { controller = TUR } # Surrendered to the Ottomans
+1562.6.1 = {  owner = TUR
+	add_core = TUR
+	remove_core = HAB
+} # End of Ottoman-Habsburg War
+1567.1.1 = { religion = reformed } # Synod of Debrecen
+1570.1.1  = {remove_core = TRA	} #Treaty of Speyer
+1660.1.1 = { religion = catholic }
+1678.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } # Kuruc rebellion
+1684.1.1 = { revolt = {} controller = TUR }
+1685.1.1 = {	owner = HAB
+	controller = HAB
+	add_core = HAB
+	remove_core = TUR
+} # Conquered/liberated by Charles of Lorraine, the Ottoman Turks are driven out of Hungary
+1703.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } # Kuruc rebellion, led by Francisc Rakoczy
+1705.1.1 = { revolt = {}   }
+1711.1.1 = { controller = HAB } # The treaty of Szatmar
+1755.1.1 = { base_manpower = 4 }
+1785.1.1 = { base_manpower = 5 }
+
+1815.1.1 = { base_tax = 5 }
+1875.1.1 = { base_production = 4 }
+1910.1.1 = { discovered_by = asian }
+1918.10.31 = { owner = HUN controller = HUN remove_core = HAB }
+1935.1.1 = { base_production = 5 }

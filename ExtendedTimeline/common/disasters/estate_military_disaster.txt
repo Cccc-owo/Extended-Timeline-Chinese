@@ -1,0 +1,109 @@
+estate_military_disaster = {
+	potential = {
+		has_estate = estate_military
+		estate_influence = {
+			estate = estate_military
+			influence = 80
+		}
+	}
+
+
+	can_start = {
+		has_any_disaster = no
+		estate_influence = {
+			estate = estate_military
+			influence = 100
+		}
+		is_at_war = no
+	}
+	
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			NOT = {
+				estate_influence = {
+					estate = estate_military
+					influence = 100
+				}		
+			}
+		}
+	}
+	
+	down_progress = {
+		factor = 0
+		modifier = {
+			factor = 1
+			NOT = {
+				estate_influence = {
+					estate = estate_military
+					influence = 100
+				}
+			}
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 0.5
+			NOT = {
+				estate_loyalty = {
+					estate = estate_military
+					loyalty = 50
+				}
+			}
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				estate_loyalty = {
+					estate = estate_military
+					loyalty = 40
+				}
+			}
+			is_at_war = no
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				estate_loyalty = {
+					estate = estate_military
+					loyalty = 30
+				}
+			}
+			is_at_war = no
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				estate_loyalty = {
+					estate = estate_military
+					loyalty = 20
+				}
+			}
+			is_at_war = no
+		}
+	}
+	
+	can_end = {
+		custom_trigger_tooltip = {
+			tooltip = EST_CRUSHED_MILITARY
+			NOT = {
+				has_country_flag = military_estate_in_power
+			}
+		}
+	}
+	
+	modifier = {	
+		global_unrest = 2
+		tolerance_heathen = -3
+		global_trade_power = -0.25
+	}
+
+	on_start = etf_event_disaster.5
+	on_end = etf_event_disaster.6
+	
+	on_monthly = {
+	}
+}
+

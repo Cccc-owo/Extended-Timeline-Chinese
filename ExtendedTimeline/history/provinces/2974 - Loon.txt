@@ -1,0 +1,82 @@
+#3103 - Loon
+
+owner = ROM
+controller = ROM 
+capital = "Atuatuca Tungrorum"
+is_city = yes
+culture = belgae
+religion = germanic
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 1
+base_production = 1
+trade_goods = cloth
+base_manpower = 1
+add_core = ROM
+
+260.1.1 = { add_core = GLL revolt = { type = nationalist_rebels size = 1 } controller = REB culture = gallian }
+274.1.1 = { controller = ROM remove_core = GLL revolt = {} culture = flemish }
+358.1.1 = { owner = FRK controller = FRK add_core = FRK remove_core = ROM }
+420.1.1 = { capital = "Loon" }
+511.11.27 = { owner = SOI controller = SOI add_core = SOI }
+558.12.23 = { owner = FRK controller = FRK add_core = FRK remove_core = SOI }
+561.11.29 = { owner = AUT controller = AUT add_core = AUT }
+580.1.1 = { religion = chalcedonism }
+600.1.1 = { base_tax = 2 base_production = 2 }
+613.10.10 = { owner = FRK controller = FRK add_core = FRK remove_core = AUT }
+634.1.1 = { owner = NEU controller = NEU add_core = NEU }
+679.12.23 = { owner = FRK controller = FRK }
+800.1.1 = { base_manpower = 2 }
+840.6.21 = { owner = FRD controller = FRD add_core = FRD remove_core = FRK }
+855.9.30 = { owner = LOT controller = LOT add_core = LOT remove_core = FRD }
+867.1.1 = { religion = catholic }
+870.8.8 = { owner = FRW controller = FRW add_core = FRW }
+880.1.1 = { owner = FRE controller = FRE add_core = FRE remove_core = FRW }
+911.11.10 = { owner = LOT controller = LOT remove_core = FRE }
+962.2.2 = { hre = yes }
+972.1.1 = { owner = LIE controller = LIE add_core = LIE remove_core = LOT }
+1000.1.1 = { base_tax = 3 base_production = 3 }
+1100.1.1 = { base_tax = 4 base_production = 4 }
+1200.1.1 = { base_tax = 5 base_production = 5 }
+
+1453.1.1 = { add_core = BUR }
+1465.1.1 = { unrest = 4 } # Revolt imminent
+1465.4.22 = { unrest = 8 } # Citizens revolt
+1465.10.19 = { unrest = 0 } # Peace is restored
+1467.1.1 = { owner = BUR controller = BUR unrest = 5 } # Charles the Bold installs Louis de Bourbon
+1468.9.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } # Citizens rise up against the disliked Louis de Bourbon
+1468.9.4 = { revolt = {} controller = BUR } # Charles the Bold sacks Liège
+1477.1.5 = { owner = LIE controller = LIE remove_core = BUR add_core = HAB unrest = 0 } # Charles the Bold dies and Liège is re-established
+1492.8.12 = { remove_core = HAB } # Liège signs a perpetual treaty of neutrality with Austria (and France)
+1797.12.26 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+} # Treaty of Campo Formio
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+1815.3.16 = {
+	owner = NED
+	controller = NED
+	add_core = NED
+	remove_core = FRA
+} # The United Kingdom of the Netherlands
+
+1830.8.25  = { add_core = BEL revolt = { type = nationalist_rebels size = 1 } controller = REB } # Belgian Revolution
+1831.7.21  = { owner = BEL controller = BEL revolt = {} }
+1839.4.19  = { remove_core = NED }
+1900.1.1   = { remove_core = BRB }
+1910.1.1 = { discovered_by = asian }
+1914.8.20  = { controller = GER }
+1919.6.28  = { controller = BEL } # Treaty of Versailles
+1940.5.28  = { owner = GER controller = GER } # Belgium surrendered to Nazi Germany
+1944.9.1   = { controller = GBR }
+1945.5.8   = { owner = BEL controller = BEL }
+
+
+

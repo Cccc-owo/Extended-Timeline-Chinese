@@ -1,0 +1,155 @@
+########################
+#Druidism Flavor Events#
+########################
+
+namespace = druidism_flavor
+
+#Druids
+country_event = {
+	id = druidism_flavor.1
+	title = druidism_flavor.1.t
+	desc = druidism_flavor.1.d
+	picture = ADVISOR_eventPicture
+
+	trigger = {
+		religion = druidism
+		NOT = { has_country_modifier = druidic_heritage }
+		NOT = { has_country_flag = druid_flavor_1_fired }
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+
+	immediate = {
+		set_country_flag = druid_flavor_1_fired
+	}
+
+	option = {
+		name = druidism_flavor.1.a
+		add_ruler_modifier = {
+			name = druidic_heritage
+		}
+	}
+
+	option = {
+		name = druidism_flavor.1.b
+		add_stability = 1
+	}
+}
+
+#Ritual of Oak and Mistletoe
+country_event = {
+	id = druidism_flavor.2
+	title = druidism_flavor.2.t
+	desc = druidism_flavor.2.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	trigger = {
+		religion = druidism
+		NOT = { has_ruler_modifier = mistletoe_ritual }
+		has_regency = no
+		has_heir = no
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = druidism_flavor.2.a
+		add_ruler_modifier = {
+			name = mistletoe_ritual
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = druidism_flavor.2.b
+		add_prestige = 5
+	}
+}
+
+#The Sacred Triad
+country_event = {
+	id = druidism_flavor.3
+	title = druidism_flavor.3.t
+	desc = druidism_flavor.3.d
+	picture = COMET_SIGHTED_eventPicture
+
+	trigger = {
+		religion = druidism
+		NOT = { has_ruler_modifier = taranis_favored }
+		NOT = { has_ruler_modifier = toutatis_favored }
+		NOT = { has_ruler_modifier = esus_favored }
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+
+	option = {
+		name = druidism_flavor.3.a
+		add_ruler_modifier = {
+			name = taranis_favored
+		}
+	}
+
+	option = {
+		name = druidism_flavor.3.b
+		add_ruler_modifier = {
+			name = toutatis_favored
+		}
+	}
+
+	option = {
+		name = druidism_flavor.3.c
+		add_ruler_modifier = {
+			name = esus_favored
+		}
+	}
+}
+
+#Stonehenge
+country_event = {
+	id = druidism_flavor.4
+	title = druidism_flavor.4.t
+	desc = druidism_flavor.4.d
+	picture = COMET_SIGHTED_eventPicture
+
+	trigger = {
+		NOT = { has_dlc = "Leviathan" }
+		religion = druidism
+		owns = 234
+		234 = { 
+			religion = druidism 
+			NOT = { has_province_modifier = stonehenge }
+		}
+		NOT = { has_country_flag = stonehenge_flag }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	immediate = { set_country_flag = stonehenge_flag }
+
+	option = {
+		name = druidism_flavor.4.a
+		add_prestige = 5
+	}
+
+	option = {
+		name = druidism_flavor.4.b
+		add_adm_power = -50
+		add_years_of_income = -0.2
+		add_prestige = 20
+		234 = {
+			add_building = glorious_monument
+			add_permanent_province_modifier = {
+				name = stonehenge
+				duration = -1
+			}
+		}
+	}
+}

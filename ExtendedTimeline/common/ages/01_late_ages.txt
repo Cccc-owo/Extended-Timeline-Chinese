@@ -1,0 +1,549 @@
+industrial_age = {
+	start = 1800
+	
+	can_start = {
+		is_institution_enabled = industrialization
+	}
+	
+	papacy = 2.0
+	absolutism = {
+		harsh_treatment = 1
+		stability = 1
+		decrease_autonomy_command = 1
+		strengthen_government = 2
+		
+		increase_autonomy_command = -2
+		debase_currency = -1
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -2
+		war_exhaustion = -1
+	}
+
+	objectives = {
+		obj_industrial_20_factories = {
+			calc_true_if = {
+				all_owned_province = {
+					has_building = factory
+					controlled_by = owner
+					is_core = ROOT
+				}
+				amount = 20
+			}
+		}
+		obj_industrial_10_manufactories = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						has_building = wharf
+						has_building = weapons
+						has_building = textile
+						has_building = plantations
+						has_building = tradecompany
+					}
+					controlled_by = owner
+					is_core = ROOT
+				}
+				amount = 10
+			}
+		}
+		obj_industrial_african_colonies = {
+			calc_true_if = {
+				all_country = {
+					is_colonial_nation_of = ROOT
+					capital_scope = { continent = africa }
+				}
+				amount = 2
+			}
+		}
+		obj_industrial_four_continents = {
+			num_of_continents = 4
+		}
+		obj_industrial_developed_provinces = {
+			calc_true_if = {
+				all_owned_province = {
+					development = 50
+				}
+				amount = 10
+			}
+		}
+		obj_industrial_japan = {
+			japan_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		obj_industrial_tech_superiority = {
+			all_rival_country = {
+				NOT = { mil_tech = ROOT }
+			}
+		}
+	}		
+	
+	abilities = {
+		ab_industrial_construction = {
+			modifier = {
+				build_cost = -0.15
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_industrial_development = {
+			modifier = {
+				development_cost = -0.15
+			}
+			ai_will_do = {
+				factor = 10
+			}			
+		}
+		ab_industrial_colonization = {
+			modifier = {
+				colonists = 1
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_industrial_skilled_workers = {
+			modifier = {
+				production_efficiency = 0.15
+			}
+			ai_will_do = {
+				factor = 10
+			}	
+		}
+		ab_industrial_weapons_industry = {
+			modifier = {
+				infantry_cost = -0.20
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_industrial_nationalist_zeal = {
+			modifier = {
+				land_morale = 0.15
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_industrial_grand_artillery = {
+			modifier = {
+				artillery_power = 0.15
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_industrial_british_empire = {
+			allow = {
+				tag = GBR
+			}
+			modifier = {
+				reduced_liberty_desire = 30
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_industrial_napoleonic_legacy = {
+			allow = {
+				OR = {
+					tag = FRA
+					tag = FR2
+				}
+			}
+			modifier = {
+				leader_land_fire = 1
+				prestige = 1
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_industrial_dutch_traders = {
+			allow = {
+				OR = {
+					tag = NED
+					tag = HOL
+				}
+			}
+			modifier = {
+				trade_steering = 0.2
+				global_trade_power = 0.1
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_industrial_italian_unification = {
+			allow = {
+				OR = {
+					tag = SPI
+					tag = ITA
+					tag = ROM
+				}
+			}
+			modifier = {
+				discipline = 0.075
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+}
+
+great_war_age = {
+	start = 1890
+	
+	can_start = {
+		any_country = { mil_tech = 82 }
+	}
+	
+	papacy = 2.0
+	absolutism = {
+		harsh_treatment = 1
+		stability = 1
+		decrease_autonomy_command = 1
+		strengthen_government = 2
+		
+		increase_autonomy_command = -2
+		debase_currency = -1
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -1
+		war_exhaustion = -1
+	}
+	
+	objectives = {
+		obj_greatwar_defeat_greatpower = {
+			custom_trigger_tooltip = {
+				tooltip = defeat_great_power
+				has_country_flag = won_against_great_power
+			}
+		}
+		obj_greatwar_greatpower = {
+			is_great_power = yes
+			NOT = { great_power_rank = 4 }
+		}
+		obj_greatwar_moonlanding = {
+			custom_trigger_tooltip = {
+				tooltip = be_first_to_land_man_on_moon
+				has_country_flag = first_to_get_man_on_moon
+			}
+		}
+		obj_greatwar_oil = {
+			trading_bonus = {
+				trade_goods = oil
+				value = yes
+			}
+		}
+		obj_greatwar_ideology = {
+			OR = {
+				full_idea_group = order_ideas
+				full_idea_group = freedom_ideas
+				full_idea_group = autocracy_ideas
+			}
+		}
+		obj_greatwar_more_nuclear_than_rivals = {
+			all_rival_country = {
+				NOT = {
+					check_variable = {
+						which = num_of_nuclear_weapons
+						value = ROOT
+					}
+				}
+			}
+		}
+		obj_greatwar_win_battles = {	
+			check_variable = {
+				which = num_of_battles_won
+				value = 25
+			}
+		}
+	}	
+	
+	abilities = {
+		ab_greatwar_secret_police = {
+			modifier = {
+				global_unrest = -2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_greatwar_intelligence_network = {
+			modifier = {
+				spy_offence = 0.2
+				global_spy_defence = 0.2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_greatwar_nuclear_project = {
+			effect = {
+				custom_tooltip = allow_construction_of_nuclear_weapons
+				set_country_flag = nuclear_weapons_allowed
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_greatwar_relations = {
+			modifier = {
+				diplomatic_upkeep = 2
+				diplomats = 1
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		ab_greatwar_war_industry = {
+			modifier = {
+				global_regiment_recruit_speed = -0.33
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_greatwar_total_war = {
+			modifier = {
+				war_exhaustion = -0.25
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_greatwar_military_expansion = {
+			modifier = {
+				core_creation = -0.15
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_greatwar_usa_production = {
+			allow = {
+				tag = USA
+			}
+			modifier = {
+				global_trade_goods_size_modifier = 0.25
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_greatwar_russian_tanks = {
+			allow = {
+				OR = {
+					tag = SOV
+					tag = RUS
+				}
+			}
+			modifier = {
+				cavalry_cost = -0.25
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		ab_greatwar_german_generals = {
+			allow = {
+				tag = GER
+			}
+			modifier = {
+				leader_land_shock = 2
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		ab_greatwar_japanese_morale = {
+			allow = {
+				tag = JAP
+			}
+			modifier = {
+				land_morale = 0.15
+				naval_morale = 0.15
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+}
+
+information_age = {
+	start = 1980
+	
+	can_start = {
+		any_country = { adm_tech = 89 }
+	}
+	
+	papacy = 2.0
+	absolutism = {
+		stability = 1
+		decrease_autonomy_command = 1
+		strengthen_government = 2
+		
+		increase_autonomy_command = -2
+		debase_currency = -1
+		execute_rebel_acceptance_command = -10
+		war_exhaustion = -1
+	}
+	
+	objectives = {
+		obj_info_parties = {
+			has_faction = nationalist_party 
+		}
+		obj_info_alldeveloped = {
+			all_owned_province = {
+				development = 12
+			}
+		}
+		obj_info_allaccepted = {
+			all_owned_province = {
+				OR = {
+					has_owner_accepted_culture = yes
+					culture = ROOT
+				}
+			}
+		}
+		obj_info_internet = {
+	 		has_institution = internet
+	 		all_owned_province = {
+	 			internet = 100
+	 		}
+		}
+		obj_info_fusion_power = {
+			calc_true_if = {
+				all_owned_province = {
+					has_building = fusion_reactor
+					controlled_by = owner
+					is_core = ROOT
+				}
+				amount = 20
+			}
+		}
+		obj_info_allies = {
+			num_of_allies = 6
+		}
+		obj_info_skilled_scientist = {
+			natural_scientist = 3
+		}
+	}	
+
+	abilities = {
+		ab_info_global_trade = {
+			modifier = {
+				merchants = 2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_info_cultural_tolerance = {
+			modifier = {
+				num_accepted_cultures = 2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_info_stable_society = {
+			modifier = {
+				global_unrest = -2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_info_global_diplomacy = {
+			modifier = {
+				diplomatic_upkeep = 2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_info_future_technology = {
+			modifier = {
+				technology_cost = -0.1
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_info_world_bank = {
+			modifier = {
+				interest = -2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_info_global_economy = {
+			modifier = {
+				inflation_reduction = 0.2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_info_chinese_industry = {
+			allow = {
+				OR = {
+					tag = CHN
+					is_emperor_of_china = yes
+				}
+			}
+			modifier = {
+				global_trade_goods_size_modifier = 0.25
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_info_indian_development = {
+			allow = {
+				tag = INI
+			}
+			modifier = {
+				development_cost = -0.2
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}	
+		ab_info_arabian_oilfields = {
+			allow = {
+				OR = {
+					primary_culture = bedouin_arabic
+					primary_culture = al_iraqiya_arabic
+					primary_culture = omani_culture
+				}
+			}
+			modifier = {
+				global_trade_goods_size_modifier = 0.25
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_info_european_reputation = {
+			allow = {
+				has_country_modifier = european_union
+			}
+			modifier = {
+				diplomatic_reputation = 2
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+}

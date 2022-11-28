@@ -1,0 +1,229 @@
+silla_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SLL
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sll_unite_the_east_mission = {
+		icon = mission_unite_home_region
+		required_missions = { } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = eastern_korea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			eastern_korea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sll_rising_naval_power"
+				duration = 9125
+			}
+		}
+	}
+	sll_conquer_baekje_mission = {
+		icon = mission_asian_city
+		required_missions = { sll_unite_the_east_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = south_korea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			south_korea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_navy_tradition = 20
+		}
+	}
+	sll_to_the_yellow_sea_mission = {
+		icon = et_mission_chinese_navy
+		required_missions = { sll_conquer_baekje_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = western_korea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			western_korea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sll_yellow_sea_access"
+				duration = 10950
+			}
+		}
+	}
+	sll_reach_the_hamgyeong_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { sll_to_the_yellow_sea_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = hamgyeong_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hamgyeong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sll_king_of_samhan"
+				duration = 9125
+			}
+		}
+	}
+	sll_beyond_the_passes_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { sll_reach_the_hamgyeong_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = ningguta_area
+				area = jilin_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ningguta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jilin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_prestige = 10
+		}
+	}
+}
+
+silla_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SLL
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sll_establish_the_sodang_mission = {
+		icon = mission_scholar_officials
+		required_missions = { } #none
+		position = 3
+		trigger = {
+			stability = 1
+			num_of_cavalry = 9
+			
+			NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 60
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sll_sodang_banners"
+				duration = 9125
+			}
+		}
+	}
+	sll_promote_the_hwarang_mission = {
+		icon = mission_japanese_samurai
+		required_missions = { } #none
+		position = 4
+		trigger = {
+			OR = {
+				army_professionalism = 0.80 
+				army_tradition = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sll_hwarang_teachings"
+				duration = 9125
+			}
+		}
+	}
+	sll_expand_gyeongju_mission = {
+		icon = mission_asian_city
+		required_missions = { } #none
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2745	#Gyeongju
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2745
+			
+			2745 = {
+				has_building = glorious_monument
+				num_of_times_improved = 5
+			}
+		}
+		effect = {
+			add_prestige = 10
+			
+			2745 = {
+				add_permanent_province_modifier = { 
+					name = "urban_expansion"
+					duration = -1
+				}
+			}
+		}
+	}
+}

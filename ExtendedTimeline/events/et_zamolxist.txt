@@ -1,0 +1,127 @@
+#########################
+#Zamolxist Flavor Events#
+#########################
+
+namespace = zamolxist_flavor
+
+#A messenger to Zalmoxis
+country_event = {
+	id = zamolxist_flavor.1
+	title = zamolxist_flavor.1.t
+	desc = zamolxist_flavor.1.d
+	picture = ADVISOR_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = zamolxism
+		NOT = { has_country_modifier = zalmoxis_provides_weapons }
+		NOT = { has_country_modifier = zalmoxis_provides_harvest }
+		NOT = { has_country_modifier = zalmoxis_doesnt_help }
+	}
+
+	mean_time_to_happen = {
+		months = 192
+	}
+
+	option = {
+		name = zamolxist_flavor.1.a
+		add_years_of_income = -0.5
+		random_list = {
+			25 = {
+				add_country_modifier = {
+					name = "zalmoxis_provides_weapons"
+					duration = 1460
+					
+				}
+			}
+			25 = {
+				add_country_modifier = {
+					name = "zalmoxis_provides_harvest"
+					duration = 1460
+				}
+			}
+			50 = {
+				add_country_modifier = {
+					name = "zalmoxis_doesnt_help"
+					duration = 1460
+				}
+			}
+		}
+	}
+
+	option = {
+		name = zamolxist_flavor.1.b
+		add_prestige = -5
+	}
+}
+					
+					
+#Immortal Warriors
+country_event = {
+	id = zamolxist_flavor.2
+	title = zamolxist_flavor.2.t
+	desc = zamolxist_flavor.2.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = zamolxism
+	}
+
+	mean_time_to_happen = {
+		months = 384
+	}
+
+	option = {
+		name = zamolxist_flavor.2.a
+		add_yearly_manpower = 1
+	}
+}
+
+
+#Rite of Passage
+country_event = {
+	id = zamolxist_flavor.3
+	title = zamolxist_flavor.3.t
+	desc = zamolxist_flavor.3.d
+	picture = NEW_HEIR_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = zamolxism
+		NOT = { has_ruler_flag = rite_of_passage }
+	}
+
+	mean_time_to_happen = {
+		months = 384
+	}
+
+	immediate = {
+		set_ruler_flag = rite_of_passage
+	}
+
+	option = {
+		name = zamolxist_flavor.3.a
+		random_list = {
+			95 = {
+				add_ruler_modifier = {
+					name = took_rite_of_passage
+				}
+			}
+			5 = {
+				kill_ruler = yes
+			}
+		}
+	}
+
+	option = {
+		name = zamolxist_flavor.3.b
+		add_ruler_modifier = {
+			name = refuse_rite_of_passage
+		}
+	}
+}
+

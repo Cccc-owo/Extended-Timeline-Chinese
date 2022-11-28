@@ -1,0 +1,872 @@
+################
+#Culture Events#
+################
+
+namespace = culturedk
+
+#Birth of Catalan Culture
+province_event = {
+	id = culturedk.9
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1000 }
+		is_year = 550
+		OR = {
+			culture = celtiberian
+			culture = iberi
+			culture = roman
+		}
+		OR = {
+			area = catalonia_area
+			area = valencia_area
+		}
+		owner = {
+			NOT = { primary_culture = roman }
+			NOT = { primary_culture = iberi }
+			NOT = { primary_culture = celtiberian }
+			NOT = { culture_group = basque_group }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = catalan
+	}
+}
+#Birth of Aragonese Culture
+province_event = {
+	id = culturedk.10
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		NOT = { is_year = 1000 }
+		is_year = 550
+		OR = {
+			culture = celtiberian
+			culture = iberi
+			culture = roman
+		}
+		area = aragon_area
+		owner = {
+			NOT = { primary_culture = roman }
+			NOT = { primary_culture = iberi }
+			NOT = { primary_culture = celtiberian }
+			NOT = { culture_group = basque_group }
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = {
+		name = culturedk.1.a
+		change_culture = aragonese
+	}
+}
+#Birth of Leonese Culture
+province_event = {
+	id = culturedk.11
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		is_year = 550
+		NOT = { is_year = 1000 }
+		OR = {
+			culture = celtiberian
+			culture = iberi
+			culture = roman
+		}
+		OR = {
+			area = leon_area
+			area = extremadura_area
+			province_id = 207
+			province_id = 1745
+		}
+		owner = {
+			NOT = { primary_culture = roman }
+			NOT = { primary_culture = iberi }
+			NOT = { primary_culture = celtiberian }
+			NOT = { culture_group = basque_group }
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = {
+		name = culturedk.1.a
+		change_culture = leonese
+	}
+}
+#Birth of castillian Culture
+province_event = {
+	id = culturedk.12
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		NOT = { is_year = 1000 }
+		is_year = 550
+		OR = {
+			culture = celtiberian
+			culture = iberi
+			culture = roman
+		}
+		OR = {
+            area = toledo_area
+			area = castille_area
+		}
+		owner = {
+			NOT = { primary_culture = roman }
+			NOT = { primary_culture = iberi }
+			NOT = { primary_culture = celtiberian }
+			NOT = { culture_group = basque_group }
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = {
+		name = culturedk.1.a
+		change_culture = castillian
+	}
+}
+#Birth of Portuguese Culture
+province_event = {
+	id = culturedk.13
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		is_year = 800
+		NOT = { is_year = 1200 }
+		OR = {
+			culture = celtiberian
+			culture = iberi
+			culture = roman
+		}
+		OR = {
+			area = beieras_area
+			area = alentejo_area
+		}
+		owner = {
+			NOT = { primary_culture = roman }
+			NOT = { primary_culture = iberi }
+			NOT = { primary_culture = celtiberian }
+			NOT = { culture_group = basque_group }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = portugese
+	}
+}
+#Birth of Andalucian Culture
+province_event = {
+	id = culturedk.14
+	title = culturedk.2.t
+	desc = culturedk.2.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1300 }
+		NOT = { culture = andalucian }
+		OR = {
+			province_id = 218
+			province_id = 220
+			province_id = 1747
+			province_id = 1750
+            area = toledo_area
+	        area = alentejo_area
+			area = upper_andalucia_area
+			area = lower_andalucia_area 
+		}
+		culture_group = iberian
+		owner = {
+			OR = {
+		        religion = sunni
+	           	religion = shiite
+	            religion = ibadi
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 100
+	}
+
+	option = {
+		name = culturedk.2.a
+		change_culture = andalucian
+	}
+}
+
+#Italia
+#Birth of Romagna Culture
+province_event = {
+	id = culturedk.24
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		NOT = { is_year = 1000 }
+		culture_group = latin
+		NOT = { culture = romagnan }
+		area = emilia_romagna_area
+		owner = {
+			NOT = { primary_culture = roman }
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = {
+		name = culturedk.1.a
+		change_culture = romagnan
+	}
+}
+#Birth of Lombard Culture
+province_event = {
+	id = culturedk.25
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		culture_group = latin
+		NOT = { culture = lombard }
+		NOT = { is_year = 1000 }
+		area = lombardy_area
+		area = po_valley_area
+		owner = {
+			NOT = { primary_culture = roman }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = lombard
+	}
+}
+#Birth of Piedmontese Culture
+province_event = {
+	id = culturedk.26
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { culture = piedmontese }
+		NOT = { is_year = 1000 }
+		culture_group = latin
+		area = piedmont_area
+		owner = {
+			NOT = { primary_culture = roman }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = piedmontese
+	}
+}
+#Birth of Tuscan Culture
+province_event = {
+	id = culturedk.27
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { culture = tuscan }
+		NOT = { is_year = 1000 }
+		culture_group = latin
+		area = tuscany_area
+		owner = {
+			NOT = { primary_culture = etruscan }
+			NOT = { primary_culture = roman }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = tuscan
+	}
+}
+#Birth of Neapolitan Culture
+province_event = {
+	id = culturedk.28
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { culture = neapolitan }
+		NOT = { is_year = 1000 }
+		OR = {
+			culture_group = latin
+			culture = greek 
+		}
+		OR = {
+			area = naples_area
+			area = calabria_area
+			area = apulia_area
+		}
+		owner = {
+			NOT = { primary_culture = greek }
+			NOT = { primary_culture = roman }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = neapolitan
+	}
+}
+#Birth of Maltese Culture
+province_event = {
+	id = culturedk.29
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { culture = maltese }
+		NOT = { is_year = 1000 }
+		province_id = 126
+		OR = {
+			culture_group = latin
+			culture = greek 
+		}
+		owner = {
+			NOT = { primary_culture = greek }
+			NOT = { primary_culture = roman }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = maltese
+	}
+}
+#Birth of Sicilian Culture
+province_event = {
+	id = culturedk.30
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { culture = sicilian }
+		NOT = { is_year = 1000 }
+		OR = {
+			area = sicily_area
+			area = western_sicily_area
+		}
+		NOT = { province_id = 126 }
+		OR = {
+			culture_group = latin
+			culture = greek 
+		}
+		owner = {
+			NOT = { primary_culture = greek }
+			NOT = { primary_culture = roman }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = sicilian
+	}
+}
+
+#Spread of Umbrian Culture
+province_event = {
+	id = culturedk.32
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		culture = roman
+		NOT = { is_year = 1000 }
+		area = central_italy_area
+		owner = {
+			NOT = { primary_culture = greek }
+			NOT = { primary_culture = roman }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = umbrian
+	}
+}
+
+#Spread of Romanian Culture
+province_event = {
+	id = culturedk.35
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1000 }
+		is_year = 600
+		OR = {
+			culture = dacian
+			culture = thracian
+		}
+		owner = {
+			NOT = { primary_culture = dacian }
+			NOT = { primary_culture = thracian }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = romanian
+	}
+}
+#Spread of Silesian Culture
+province_event = {
+	id = culturedk.36
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		area = silesia_area
+		culture_group = germanic
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.3.a
+		change_culture = schlesian
+	}
+}
+#Spread of Czech Culture
+province_event = {
+	id = culturedk.37
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		OR = {
+			area = bohemia_area
+			area = erzgebirge_area
+			area = moravia_area
+		}
+		culture_group = germanic
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.3.a
+		change_culture = czech
+	}
+}
+#Spread of Polish Culture
+province_event = {
+	id = culturedk.38
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		region = poland_region
+		NOT = { silesia_area }
+		OR = {
+			culture_group = germanic
+			culture_group = western_balkan
+			culture_group = baltic
+		}
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = polish
+	}
+}
+#Spread of kashubian Culture
+province_event = {
+	id = culturedk.39
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		OR = {
+			area = hinter_pommern_area
+			area = east_prussia_area
+			area = west_prussia_area
+		}
+		culture_group = germanic
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+	option = {
+		name = culturedk.3.a
+		change_culture = kashubian
+	}
+}
+
+#Spread of wendish Culture
+province_event = {
+	id = culturedk.40
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		OR = {
+	        area = neumark_area
+			area = mittelmark_area
+			area = vorpommern_area
+			area = south_saxony_area
+			area = mecklenburg_area
+		}
+		culture_group = germanic
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = sorbian
+	}
+}
+
+#Spread of slovak Culture
+province_event = {
+	id = culturedk.41
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		area = slovakia_area
+		OR = {
+			culture_group = germanic
+			culture_group = western_balkan
+		}
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.3.a
+		change_culture = slovak
+	}
+}
+
+#Spread of slovenian Culture
+province_event = {
+	id = culturedk.42
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		OR = {
+			area = carinthia_area
+			area = inner_austria_area
+			area = austria_proper_area
+		}
+		OR = {
+			culture_group = germanic
+			culture = noric
+			culture = illyrian
+		}
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.3.a
+		change_culture = slovene
+	}
+}
+#Spread of croatian Culture
+province_event = {
+	id = culturedk.43
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		OR = {
+			area = transdanubia_area	
+			area = croatia_area
+			area = east_adriatic_coast_area
+		}
+		OR = {
+			culture_group = germanic
+			culture = noric
+			culture = illyrian
+		}
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = croatian
+	}
+}
+#Spread of serbian Culture
+province_event = {
+	id = culturedk.44
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		OR = {
+			area = alfold_area	
+			area = serbia_area
+			area = bosnia_area
+		}
+		OR = {
+			culture_group = germanic
+			culture = illyrian
+		}
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.3.a
+		change_culture = serbian
+	}
+}
+#Spread of Ligurian Culture
+province_event = {
+	id = culturedk.45
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		culture_group = latin
+		NOT = { culture = ligurian }
+		NOT = { is_year = 1000 }
+		area = liguria_area
+		owner = {
+			NOT = { primary_culture = roman }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = ligurian
+	}
+}
+#Spread of Venetian Culture
+province_event = {
+	id = culturedk.46
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		culture_group = latin
+		NOT = { culture = venetian }
+		NOT = { is_year = 1000 }
+		area = venetia_area
+		owner = {
+			OR = {
+				NOT = { primary_culture = roman }
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = venetian
+	}
+}
+#Spread of Pommerarian Culture
+province_event = {
+	id = culturedk.47
+	title = culturedk.4.t
+	desc = culturedk.4.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		culture_group = west_slavic
+		owner = {
+			culture_group = germanic
+		}
+		OR = {
+	        area = mittelmark_area
+			area = vorpommern_area
+			area = hinter_pommern_area
+			area = mecklenburg_area
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = pommeranian
+	}
+}
+#Spread of Prussian Culture
+province_event = {
+	id = culturedk.48
+	title = culturedk.4.t
+	desc = culturedk.4.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1500 }
+		OR = {
+			culture_group = west_slavic
+			culture = old_prussian
+		}
+		owner = {
+			culture_group = germanic
+		}
+		OR = {
+	        area = east_prussia_area
+			area = west_prussia_area
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = prussian
+	}
+}
+
+#Spread of Polabian Culture
+province_event = {
+	id = culturedk.49
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		OR = {
+	        area = neumark_area
+			area = mittelmark_area
+			area = vorpommern_area
+			area = mecklenburg_area
+		}
+		culture_group = germanic
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = polabian
+	}
+}

@@ -1,0 +1,101 @@
+#203 - Lyonnais
+
+owner = ROM
+controller = ROM
+capital = "Lugdunum"
+is_city = yes
+culture = gallian
+religion = hellenism
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 3
+base_production = 3
+trade_goods = grain
+base_manpower = 2
+add_core = ROM
+center_of_trade = 2
+
+360.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+450.1.1 = { religion = arianism }
+455.1.1 = { owner = BUR controller = BUR add_core = BUR remove_core = ROW culture = burgundione religion = germanic }
+486.6.1 = { culture = burgundian }
+500.1.1 = { religion = chalcedonism base_manpower = 3 }
+534.1.1 = { owner = NEU controller = NEU add_core = NEU capital = "Lyon" }
+558.12.23 = { owner = FRK controller = FRK add_core = FRK remove_core = NEU }
+561.11.29 = { owner = ORL controller = ORL add_core = ORL }
+592.3.28 = { owner = AUT controller = AUT add_core = AUT }
+595.1.1 = { owner = ORL controller = ORL remove_core = AUT }
+600.1.1 = { fort_15th = yes culture = arpitan base_manpower = 4 }
+612.1.1 = { owner = AUT controller = AUT add_core = AUT remove_core = ORL }
+613.10.10 = { owner = FRK controller = FRK add_core = FRK remove_core = AUT }
+634.1.1 = { owner = NEU controller = NEU add_core = NEU }
+679.12.23 = { owner = FRK controller = FRK }
+700.1.1 = { base_tax = 4 base_production = 4 }
+800.1.1 = { base_manpower = 5 }
+840.6.21 = { owner = FRD controller = FRD add_core = FRD remove_core = FRK }
+855.9.30 = { owner = PRO controller = PRO add_core = PRO remove_core = FRD }
+863.1.24 = { owner = ITA controller = ITA add_core = ITA remove_core = PRO }
+867.1.1 = { religion = catholic }
+888.1.1  = { owner = BUR controller = BUR remove_core = ITA }
+900.1.1 = { base_tax = 5 base_production = 5 }
+1000.1.1 = { base_manpower = 6 }
+1033.1.1 = { hre = yes }
+1040.1.1 = { add_core = DAU }
+1050.1.1 = { trade_goods = paper }
+1157.1.1 = { owner = LYO controller = LYO add_core = LYO remove_core = BUR }
+1200.1.1 = { base_tax = 6 base_production = 6 }
+1312.1.1 = { owner = FRA controller = FRA add_core = FRA remove_core = LYO hre = no }
+
+1399.1.1 = { add_core = DAU }
+1446.9.27 = { revolt = { type = pretender_rebels size = 0 } controller = REB } # Dauphiné is ruled as a separate kingdom by Louis
+1461.7.22 = { revolt = {} controller = FRA } # Louis is proclaimed king of France
+1467.6.15 = { add_core = BUR } # Charles the Bold ascends to the throne and lays claims
+1477.1.5 = { remove_core = BUR } # Charles the Bold dies
+1573.9.1 = { unrest = 5 } # Saint Barthelew's Day Massacre: the consequences in the land
+1574.5.1 = { unrest = 0 } # Charles IX dies, situation cools a bit
+1583.1.1 = {
+	fort_15th = no
+	fort_16th = yes
+}
+1588.12.1 = { unrest = 5 } # Henri de Guise assassinated at Blois, Ultra-Catholics into a frenzy
+1594.1.1 = { unrest = 0 } # 'Paris vaut bien une messe!', Henri converts to Catholicism
+1632.1.1 = { unrest = 3 }
+1634.1.1 = { unrest = 0 }
+1641.1.1 = { unrest = 3 }
+1644.1.1 = { unrest = 0 }
+1648.1.1 = { fort_16th = no fort_17th = yes }
+1650.1.14 = { unrest = 7 } # Mazarin arrests the Princes Condé, Conti & Longueville, the beginning of the Second Fronde
+1650.3.1 = { unrest = 0 revolt = { type = revolutionary_rebels size = 0 } controller = REB } # Fronde rebels take control
+1651.4.1 = { revolt = {} controller = FRA } # An unstable peace is concluded
+1651.12.1 = { unrest = 7 } # Mazarin returns from exile, Condé sides with Spain, situation heats up again
+1652.10.21 = { unrest = 0 } # The King is allowed to enter Paris again, Mazarin leaves France for good. Second Fronde over.
+1715.1.1 = {
+	fort_17th = no
+	fort_18th = yes
+}
+
+1750.1.1 = { base_manpower = 10 }
+1775.1.1 = { base_manpower = 11 }
+1800.1.1 = { base_tax = 10 }
+1825.1.1 = { base_production = 10 }
+1850.1.1 = { base_tax = 11 }
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+	     } # Republic proclaimed
+1875.1.1 = { base_tax = 11 }
+1901.1.1 = { base_production = 12 }
+1910.1.1 = { discovered_by = asian }
+1925.1.1 = { base_tax = 12 }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1944.8.25  = { owner = FR2 controller = FR2 remove_core = FRV } # France liberated by allied forces
+
+

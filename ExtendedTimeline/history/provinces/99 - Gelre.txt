@@ -1,0 +1,116 @@
+#99 - Gelre
+
+owner = CMV
+controller = CMV
+add_core = CMV
+is_city = yes
+capital = "Ermelo"
+culture = frankish
+religion = germanic
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 1
+base_production = 1
+trade_goods = livestock
+base_manpower = 1
+
+290.1.1 = { owner = FRK controller = FRK add_core = FRK }
+500.1.1 = { culture = dutch capital = "Arnhem" }
+511.11.27 = { owner = AUT controller = AUT add_core = AUT }
+555.1.1 = { owner = SOI controller = SOI add_core = SOI }
+558.12.23 = { owner = FRK controller = FRK add_core = FRK remove_core = SOI }
+561.11.29 = { owner = AUT controller = AUT }
+600.1.1 = { base_tax = 2 base_production = 2 }
+613.10.10 = { owner = FRK controller = FRK add_core = FRK }
+623.1.1 = { owner = AUT controller = AUT }
+629.10.18 = { owner = FRK controller = FRK }
+634.1.1 = { owner = AUT controller = AUT }
+679.12.23 = { owner = FRK controller = FRK }
+750.1.1 = { religion = chalcedonism }
+800.1.1 = { base_manpower = 2 }
+840.6.21 = { owner = FRD controller = FRD add_core = FRD remove_core = FRK }
+855.9.30 = { owner = LOT controller = LOT add_core = LOT remove_core = FRD }
+867.1.1 = { religion = catholic }
+870.8.8 = { owner = FRE controller = FRE add_core = FRE }
+900.1.1 = { base_tax = 3 base_production = 3 }
+911.11.10 = { owner = LOT controller = LOT remove_core = FRE }
+962.2.2 = { hre = yes }
+1000.1.1 = { base_tax = 4 base_production = 4 }
+1024.1.1 = { add_core = UTR }
+1096.1.1 = { owner = GEL controller = GEL add_core = GEL remove_core = LOT }
+1100.1.1 = { base_manpower = 3 }
+1200.1.1 = { base_tax = 5 base_production = 5 }
+1300.1.1 = { base_tax = 6 base_production = 6 }
+1384.1.1 = { add_core = BUR }
+
+1444.11.11 = { add_core = UTR add_core = BUR }
+1473.2.23 = { owner = BUR controller = BUR add_core = BUR } # Charles the Bold annexes Gelre
+1477.1.5 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	remove_core = BUR
+} # Charles the Bold dies and Gelre goes to the Habsburgs
+
+1492.1.1 = { 
+	owner = GEL
+	controller = GEL
+} # Karel van Gelre is released from prison and assumes control of Gelre by right of the Egmond family.
+1543.9.7 = { owner = SPA controller = SPA add_core = SPA remove_core = HAB } # Charles V annexes Gelre
+1559.5.12 = { unrest = 3 } # New bishoprics in the Lowlands create an outrage
+1565.1.1 = { unrest = 5 } # Letters of Segovia, Philip I orders the harsh persecution of Calvinists
+1566.4.5 = { unrest = 3 } # 'Eedverbond der Edelen', Margaretha of Parma promises leniency
+1567.9.10 = { unrest = 4 } # Counts of Egmont & Hoorne arrested
+1568.6.5 = { unrest = 6 } # Counts of Egmont & Hoorne beheaded
+1569.1.1 = { unrest = 12 } # The Duke of Alba reforms the taxation system ('tiende penning')
+1570.1.1 = { unrest = 20 } # The Duke of Alba reforms the penal system, 'Blood Council' (Bloedraad) established
+1572.6.5 = { unrest = 0 revolt = { type = nationalist_rebels size = 2 } controller = REB } # Rebels rise up in Gelre & Zutphen
+1572.9.1 = { revolt = {} controller = SPA unrest = 10 } # Don Frederique takes control of Gelre for Spain again
+1577.2.12 = { unrest = 16 } # Eeuwig Edict accepted by Don Juan
+1579.1.23 = {	
+	owner = NED
+	controller = NED
+	add_core = NED 
+	remove_core = SPA
+	unrest = 0
+} # Union of Utrecht, Gelre joins
+1583.9.1 = { controller = SPA unrest = 15 } # Alessandro Farnese captures Zutphen and the surrounding lands
+1592.7.4 = { controller = NED unrest = 0 } # The Republic takes back Zutphen and surrounding areas
+1648.10.24 = { hre = no } # The Peace of Westphalia
+1672.5.20 = { controller = FRA } # France blitzes through the Lowlands in the Franco-Dutch War
+1678.8.10 = { controller = NED } # Peace of Nijmegen (Netherlands-France)
+1681.1.1 = { base_tax = 9 } # Protestants expelled from France
+1775.1.1 = { base_production = 7 }
+1801.1.1 = { base_manpower = 4 }
+1810.7.10  = {	owner = FRA
+		controller = FRA
+		add_core = FRA
+	     } # Annexed by France
+1813.11.30 = {	owner = NED
+		controller = NED
+		remove_core = FRA
+	     } # William returns to the Netherlands
+
+1825.1.1 = { base_tax = 10 }
+1851.1.1 = { base_production = 8 }
+1875.1.1 = { base_tax = 11 }
+1900.1.1   = { remove_core = GEL remove_core = UTR }
+1901.1.1 = { base_production = 9 base_manpower = 5 }
+1910.1.1 = { discovered_by = asian }
+1925.1.1 = { base_production = 10 }
+1940.5.14  = { controller = GER }
+1940.5.17  = { owner = GER } # Netherlands surrendered to Nazi Germany
+1945.4.16  = { controller = GBR }
+1945.5.5   = { owner = NED controller = NED }
+1951.1.1 = { base_manpower = 6 }
+1975.1.1 = { base_manpower = 7 }
+2000.1.1 = { base_manpower = 8 }
+
+
+

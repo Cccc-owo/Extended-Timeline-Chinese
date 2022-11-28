@@ -1,0 +1,35 @@
+#2641 - Chiapas
+
+culture = lacandon
+owner = PLQ
+controller = PLQ
+add_core = PLQ
+is_city = yes
+religion = mesoamerican_religion
+capital = "Tzotzil"
+trade_goods = cocoa
+hre = no
+discovered_by = mesoamerican
+base_tax = 2
+base_production = 2
+base_manpower = 1
+add_local_autonomy = 25
+
+850.1.1 = { owner = LAC controller = LAC add_core = LAC remove_core = PLQ } #Palenque declines
+
+1517.1.1 = { discovered_by = SPA }
+1528.1.1 = {
+	owner = SPA
+	controller = SPA
+	add_core = SPA
+	religion = catholic
+	capital = "San Cristóbal de las Casas"
+}
+1553.1.1   = { add_core = SPA }
+1810.9.16  = { owner = MEX add_core = MEX controller = SPA } # Mexican War of Independence
+
+1821.9.27  = { controller = MEX remove_core = SPA }
+1880.1.1 = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+
+1910.1.1 = { discovered_by = western }
+1994.1.1 = { revolt = { type = nationalist_rebels size = 1 } controller = REB add_core = LAC } #Zapatista Army

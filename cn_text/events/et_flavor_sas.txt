@@ -1,0 +1,181 @@
+namespace = et_sas
+country_event = {
+  id = et_sas.1
+  title = "et_sas.1.t"
+  desc = "et_sas.1.d"
+  picture = GOOD_WITH_MONARCH_eventPicture
+  fire_only_once = yes
+  trigger = {
+    is_subject_of = PRT
+    primary_culture = persian
+    is_year = 150
+    NOT = {
+      is_year = 400
+    }
+    is_at_war = no
+    NOT = {
+      exists = SAS
+    }
+    persia_region = {
+      NOT = {
+        owned_by = ROOT
+      }
+    }
+  }
+  mean_time_to_happen = {
+    months = 1200
+    modifier = {
+      factor = 0.5
+      is_year = 200
+    }
+    modifier = {
+      factor = 0.5
+      is_year = 250
+    }
+  }
+  option = {
+    name = "et_sas.1.a"
+    change_tag = SAS
+    add_stability = 1
+    add_liberty_desire = 100
+    define_ruler = {
+      name = "^iOKQ"  # Papak
+      dynasty = "(Ñ s"  # Sasanian
+      claim = 95
+      adm = 4
+      dip = 5
+      mil = 5
+      male = yes
+    }
+    define_heir = {
+      name = "?ñSæè^S"  # Ardashir
+      dynasty = "(Ñ s"  # Sasanian
+      claim = 95
+      adm = 5
+      dip = 4
+      mil = 5
+      male = yes
+    }
+    persia_region = {
+      limit = {
+        NOT = {
+          is_core = ROOT
+        }
+        NOT = {
+          is_permanent_claim = ROOT
+        }
+      }
+      add_permanent_claim = ROOT
+    }
+    hidden_effect = {
+      PRT = {
+        country_event = {
+          id = et_sas.3
+          days = 1
+        }
+      }
+    }
+    ai_chance = {
+      factor = 100
+    }
+  }
+  option = {
+    name = "et_sas.1.b"
+    kill_ruler = yes
+    ai_chance = {
+      factor = 0
+    }
+  }
+}
+country_event = {
+  id = et_sas.2
+  title = "et_sas.2.t"
+  desc = "et_sas.2.d"
+  picture = GOOD_WITH_MONARCH_eventPicture
+  fire_only_once = yes
+  trigger = {
+    primary_culture = persian
+    NOT = {
+      tag = PRT
+    }
+    is_year = 150
+    NOT = {
+      is_year = 400
+    }
+    is_subject = no
+    is_at_war = no
+    NOT = {
+      exists = SAS
+    }
+    persia_region = {
+      NOT = {
+        owned_by = ROOT
+      }
+    }
+  }
+  mean_time_to_happen = {
+    months = 1200
+    modifier = {
+      factor = 0.5
+      is_year = 200
+    }
+    modifier = {
+      factor = 0.5
+      is_year = 250
+    }
+  }
+  option = {
+    name = "et_sas.2.a"
+    change_tag = SAS
+    define_ruler = {
+      name = "^iOKQ"  # Papak
+      dynasty = "(Ñ s"  # Sasanian
+      claim = 95
+      adm = 4
+      dip = 5
+      mil = 5
+      male = yes
+    }
+    define_heir = {
+      name = "?ñSæè^S"  # Ardashir
+      dynasty = "(Ñ s"  # Sasanian
+      claim = 95
+      adm = 5
+      dip = 4
+      mil = 5
+      male = yes
+    }
+    persia_region = {
+      limit = {
+        NOT = {
+          is_core = ROOT
+        }
+        NOT = {
+          is_permanent_claim = ROOT
+        }
+      }
+      add_permanent_claim = ROOT
+    }
+    ai_chance = {
+      factor = 100
+    }
+  }
+  option = {
+    name = "et_sas.2.b"
+    kill_ruler = yes
+    ai_chance = {
+      factor = 0
+    }
+  }
+}
+country_event = {
+  id = et_sas.3
+  title = "et_sas.3.t"
+  desc = "et_sas.3.d"
+  picture = CIVIL_WAR_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "et_sas.3.a"
+    add_stability = -2
+  }
+}

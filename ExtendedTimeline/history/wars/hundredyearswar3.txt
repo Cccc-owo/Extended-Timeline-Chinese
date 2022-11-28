@@ -1,0 +1,59 @@
+name = "Hundred Years War - Third Phase"
+#casus_belli = cb_claim_throne
+war_goal = {
+	type = take_capital_throne
+	casus_belli = cb_claim_throne
+	tag = FRA
+}
+
+# Henry invades Normandy
+1415.1.1 = {
+	add_attacker = ENG
+	add_defender = FRA
+	add_defender = ORL
+	add_defender = AMG
+	add_defender = PRO
+	add_defender = BOU
+	add_defender = AUV
+	add_defender = FOI
+}
+
+1415.10.25 = {
+	battle = {
+		name = "Agincourt"
+		location = 87
+		attacker = {
+			commander = "Henry V"	# Henry V
+			infantry = 6000
+			losses = 2	# percent
+			country = ENG
+		}
+		defender = {
+			commander = "Charles d'Albret"	# Charles d'Albret
+			infantry = 25000
+			losses = 32	# percent
+			country = FRA
+		}
+		result = yes
+	}
+}
+
+# Treaty of Troyes, Philip of Burgundy and Henry V ally after John II's death
+1420.5.21 = {
+	add_attacker = BUR
+	add_attacker = BRI
+}
+
+# Treaty of Arras
+1435.9.21 = {
+	rem_attacker = ENG
+	rem_attacker = BUR
+	rem_attacker = BRI
+	rem_defender = FRA
+	rem_defender = ORL
+	rem_defender = AMG
+	rem_defender = PRO
+	rem_defender = BOU
+	rem_defender = AUV
+	rem_defender = FOI
+}

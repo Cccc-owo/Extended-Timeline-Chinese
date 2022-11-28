@@ -1,0 +1,82 @@
+#633 - Flores
+
+culture = moluccan
+religion = animism
+capital = "Flores"
+trade_goods = unknown
+hre = no
+discovered_by = TID
+discovered_by = TER
+discovered_by = MGD
+discovered_by = LUW
+discovered_by = LNO
+discovered_by = LFA
+discovered_by = BNJ
+discovered_by = KUT
+discovered_by = SUN
+discovered_by = SAK
+discovered_by = PSA
+discovered_by = PLB
+discovered_by = PGR
+discovered_by = DMK
+discovered_by = CRB
+discovered_by = BTN
+discovered_by = BLM
+discovered_by = BEI
+discovered_by = BAN
+discovered_by = BLI
+discovered_by = MKS
+discovered_by = MAJ
+discovered_by = ATJ
+base_tax = 4
+base_production = 4
+base_manpower = 3
+native_size = 10
+native_ferocity = 1
+native_hostileness = 3
+
+1512.1.1 = { discovered_by = POR }
+1515.1.1 = {
+		owner = POR
+		controller = POR
+	   	capital = "Solor"
+		religion = catholic
+	   	citysize = 400
+		trade_goods = spices
+	   } # Solor became the center of the Portuguese trade
+1540.1.1 = { is_city = yes add_core = POR }
+1605.1.1 = {	citysize = 0
+		native_size = 5
+		native_ferocity = 1
+		native_hostileness = 2
+		owner = XXX
+		controller = XXX
+		remove_core = POR
+		religion = animism
+		trade_goods = unknown
+	   } # The Portuguese are driven out by the natives
+1616.1.1 = {	owner = POR
+		controller = POR
+		add_core = POR
+		religion = catholic
+		unrest = 4
+		is_city = yes
+	   } # Continous struggles between the Portuguese & the Dutch
+1618.1.1 = {	owner = NED
+		controller = NED
+		add_core = NED
+		trade_goods = spices
+	   } # The Dutch managed to take control
+1657.1.1 = { remove_core = POR } # The Portuguese began to lose control
+
+1800.1.1   = { discovered_by = chinese discovered_by = asian }
+1910.1.1 = { discovered_by = western }
+1912.9.10  = { add_core = IDN }
+1940.1.1   = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman }
+1942.3.9   = { controller = JAP owner = JAP }
+1945.8.15  = { owner = NED revolt = { type = nationalist_rebels size = 1 } controller = REB }
+1945.8.17  = { owner = IDN revolt = {} controller = IDN capital = "Labuan Bajo" }
+1949.12.27 = { remove_core = NED }
+
+
+

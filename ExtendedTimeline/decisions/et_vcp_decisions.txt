@@ -1,0 +1,203 @@
+country_decisions = { 
+
+	#Form Rus'
+	russ_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = KRU }
+			NOT = { exists = RUS }
+			NOT = { tag = UKR }
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = SOV }
+			NOT = { tag = EUR }
+			OR = {
+				primary_culture = russian
+				primary_culture = ruthenian
+				primary_culture = byelorussian
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 310
+				province_id = 280
+				province_id = 276
+				province_id = 294
+				province_id = 308
+				province_id = 301
+				province_id = 293
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 28
+			is_subject = no
+			is_at_war = no
+			owns = 310			# Novgorod
+			owns = 280			# Kiev
+			owns = 276			# Minsk
+			is_core = 310			# Novgorod
+			is_core = 280			# Kiev
+			is_core = 276			# Minsk
+			OR = {
+				AND = {
+					owns = 294		# Tver
+					is_core = 294
+				}
+				AND = {
+					owns = 308		# Yaroslavl	
+					is_core = 308
+				}
+			}
+			OR = {
+				AND = {
+					owns = 301		# Ryazan
+					is_core = 301
+				}
+				AND = {
+					owns = 293		# Smolensk
+					is_core = 293
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			change_tag = KRU
+			swap_non_generic_missions = yes
+			if = {
+				limit = { NOT = { government = monarchy } }
+				change_government = monarchy
+			}
+			add_government_reform = grand_principality
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	#Novgorod banishes prince (historical)
+	banish_prince_novgorod = { 
+		major = yes
+		potential = {
+			tag = NOV
+			NOT = { government = republic }
+		}
+		allow = {
+			OR = {
+				NOT = { stability = 0 }
+				NOT = { legitimacy = 60 }
+			}
+			has_regency = no
+			OR = { 
+				NOT = { adm = 3 }
+				NOT = { mil = 2 }
+			}
+		}
+		effect = {
+			kill_ruler = yes
+			change_government = republic
+			add_government_reform = veche_republic
+			add_republican_tradition = 0.1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	#Novgorodian Knyaz converted to slavic faith
+	convert_knyaz_to_slavic = {
+		potential = {
+			tag = NOV
+			religion = norse_pagan_reformed
+		}
+		allow = {
+			#stability = 1
+			legitimacy = 90
+			has_regency = no
+			NOT  = { religious_unity = 0.5 }
+		}
+		
+		effect = {
+			change_religion = slavic
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Uppsala controller - Uppsala does not tolerate Christianity
+	uppsala_does_not_tolerate_christians = {
+		potential = {
+			owns = 1
+			religion = norse_pagan_reformed
+			NOT = { has_country_modifier = uppsala_resists_christianization }
+		}
+		allow = {
+			owns_core_province = 1
+			religion = norse_pagan_reformed
+			stability = 1
+			NOT  = { religious_unity = 0.65 }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "uppsala_resists_christianization"
+				duration = -1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Give volkhvs more power in society (historical).
+	support_volkvs = {
+		potential = {
+			religion_group = slavic_pagan
+			NOT = { has_country_modifier = volkhvs_supproted }
+		}
+		
+		allow = {
+			years_of_income = 0.2
+		}
+		
+		effect = {
+			add_years_of_income = -0.2
+			add_country_modifier = {
+				name = "volkhvs_supproted"
+				duration = -1
+			}
+		}
+	}
+}

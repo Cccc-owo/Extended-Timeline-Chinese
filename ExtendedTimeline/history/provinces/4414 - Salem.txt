@@ -1,0 +1,68 @@
+#538 - Kongu
+
+owner = KGU
+controller = KGU
+capital = "Salem"
+culture = tamil
+religion = hinduism
+trade_goods = cotton
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+discovered_by = ottoman
+discovered_by = middle_eastern 
+discovered_by = muslim
+discovered_by = indian
+discovered_by = early_indian
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = KGU
+
+250.1.1 = { owner = KLA controller = KLA add_core = KLA remove_core = KGU }
+600.1.1 = { owner = PND controller = PND add_core = PND remove_core = KLA }
+800.1.1 = { discovered_by = nomad_group }
+960.1.1 = { owner = CLS controller = CLS add_core = CLS remove_core = PND }
+1000.1.1 = { base_tax = 3 base_production = 3 }
+1116.1.1 = { owner = HOY controller = HOY add_core = HOY remove_core = CLS }
+1343.1.1 = { owner = VIJ controller = VIJ add_core = VIJ remove_core = HOY }
+1399.1.1 = { add_core = MYS }
+
+1444.1.1 = { add_core = MYS }
+1498.1.1 = { discovered_by = POR }
+1543.1.1 = { controller = REB revolt = { size = 0 type = nationalist_rebels } }
+1550.1.1 = { controller = VIJ revolt = { } }
+1565.1.26 = {
+	owner = MYS
+	controller = MYS
+	remove_core = VIJ
+} # The Vijayanagar empire collapses
+1649.1.1 = { controller = BIJ } #Bijapuri Expansion
+1649.12.1 = {
+	owner = BIJ
+	add_core = BIJ
+} #Bijapuri Expansion
+1685.1.1 = { controller = MUG } # Conquered by the Mughal emperor Aurangzeb
+1686.1.1 = {
+	owner = MYS	#Beaten by the mughals and sold to Mysore
+	controller = MYS
+	add_core = MYS
+	remove_core = BIJ
+}
+1799.1.1 = {
+	owner = GBR
+	controller = GBR
+	add_core = GBR
+} # British
+
+1910.1.1 = { discovered_by = western discovered_by = eastern }
+1930.1.1  = { add_core = INI remove_core = MYS }
+1947.8.15 = { owner = INI controller = INI remove_core = GBR }
+1950.1.1 = { base_manpower = 2 }
+1975.1.1 = { base_manpower = 3 }
+2000.1.1 = { base_tax = 4 base_production = 4 }
+
+
+

@@ -1,0 +1,166 @@
+namespace = et_christian
+
+# Founding of a Church
+province_event = {
+
+	id = et_christian.1
+	title = "et_christian.1.t"
+	desc = "et_christian.1.d"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = chalcedonism
+		owner = { religion = chalcedonism }
+		NOT = { is_religion_enabled = coptic }
+	}
+	mean_time_to_happen = {
+		months = 3600
+	}
+	
+	option = {
+		name = "et_christian.1.a"
+		owner = {
+			add_years_of_income = -0.2
+			add_dip_power = 25
+		}
+	}
+	option = {
+		name = "et_christian.1.b"
+		owner = {
+			add_prestige = 10
+		}
+	}
+}
+
+# A scandalous bishop
+province_event = {
+
+	id = et_christian.2
+	title = "et_christian.2.t"
+	desc = "et_christian.2.d"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = chalcedonism
+		owner = { religion = chalcedonism }
+		NOT = { is_religion_enabled = coptic }
+	}
+	mean_time_to_happen = {
+		months = 3600
+	}
+	
+	option = {
+		name = "et_christian.2.a"
+		owner = {
+			add_adm_power = -25
+		}
+		add_local_autonomy = -25
+	}
+	option = {
+		name = "et_christian.2.b"
+		owner = {
+			add_dip_power = -25
+			add_prestige = 5
+		}
+	}
+	option = {
+		name = "et_christian.2.c"
+		add_unrest = 6
+	}
+}
+
+# Local Synod
+province_event = {
+
+	id = et_christian.3
+	title = "et_christian.3.t"
+	desc = "et_christian.3.d"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = chalcedonism
+		owner = { religion = chalcedonism }
+		NOT = { is_religion_enabled = coptic }
+	}
+	mean_time_to_happen = {
+		months = 3600
+	}
+	
+	option = {
+		name = "et_christian.3.a"
+		owner = {
+			add_adm_power = 10
+			add_dip_power = 10
+		}
+	}
+}
+
+#Hussite appear
+country_event = {
+
+	id = et_christian.4
+	title = "et_christian.4.t"
+	desc = "et_christian.4.d"
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		religion = catholic
+		reform_desire = 1
+		OR = {
+			primary_culture = czech
+			any_owned_province = {
+				culture = czech
+			}
+			AND = {
+				NOT = {
+					any_province = {
+						culture = czech
+					}
+				}
+				any_owned_province = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+					}
+				}
+			}
+		}
+		is_year = 1300
+		NOT = { is_religion_enabled = hussite }
+		NOT = { tag = PAP }
+	}
+	mean_time_to_happen = {
+		months = 3600
+	}
+	
+	immediate = {
+		add_reform_desire = -1
+	}
+	
+	option = {
+		name = "et_christian.4.a"
+		enable_religion = hussite
+		if = {
+			limit = {
+				any_owned_province = { culture = czech }
+			}
+			random_owned_province = {
+				limit = { culture = czech }
+				change_religion = hussite
+				add_province_modifier = {
+					name = "religious_zeal_at_conv"
+					duration = 9000
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				change_religion = hussite
+				add_province_modifier = {
+					name = "religious_zeal_at_conv"
+					duration = 9000
+				}
+			}
+		}
+	}
+}

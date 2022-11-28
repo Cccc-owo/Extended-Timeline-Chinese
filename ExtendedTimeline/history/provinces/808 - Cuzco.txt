@@ -1,0 +1,55 @@
+#808 - Cuzco
+
+culture = inca
+religion = inti
+capital = "Cuzco"
+trade_goods = unknown
+hre = no
+discovered_by = south_american
+discovered_by = andean
+base_tax = 3
+base_production = 3
+base_manpower = 2
+native_size = 15
+native_ferocity = 1 
+native_hostileness = 1
+center_of_trade = 1
+
+500.1.1 = { owner = HRI controller = HRI add_core = HRI is_city = yes trade_goods = gold }
+1100.1.1 = { base_tax = 4 base_production = 4 }
+1150.1.1 = { owner = CSU controller = CSU add_core = CSU remove_core = HRI }
+1200.1.1 = { base_tax = 5 base_production = 5 fort_15th = yes }
+1300.1.1 = { base_tax = 6 base_production = 6 }
+
+1467.1.1 = {
+	owner = INC
+	controller = INC
+	add_core = INC
+}
+1533.8.29 = {
+	discovered_by = SPA
+	owner = SPA
+	controller = SPA
+	religion = catholic
+} # Francisco Pizarro
+1536.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } # Manco briefly recaptures the city
+1537.1.1 = {
+	revolt = {}
+	unrest = 8
+	controller = SPA
+	base_tax = 4
+	base_production = 4
+} # Fighting breaks out when Almagro seizes Cuzco
+1538.1.1 = { unrest = 5 } # Almagro is defeated & executed
+1541.1.1 = { unrest = 6 } # Pizzaro is assassinated by supporters of Almagro, his brother assumes control
+1548.1.1 = { unrest = 0 } # Gonzalo Pizzaro is also executed & Spain regains control
+1558.1.1 = { add_core = SPA }
+1780.1.1 = { unrest = 7 } # Uprising of Tupca Amaru II
+1781.5.1 = { unrest = 0 }
+1814.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } # Uprising
+1816.1.1 = { revolt = {} controller = SPA }
+
+1821.7.28  = { owner = PEU controller = PEU add_core = PEU }
+1879.8.14  = { remove_core = SPA }
+1880.1.1 = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1910.1.1 = { discovered_by = western }

@@ -1,0 +1,122 @@
+#2204 - Chanderi
+
+owner = MLW
+controller = MLW
+culture = vindhyan
+religion = hinduism
+capital = "Chanderi"
+trade_goods = cloth #Chintz
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+discovered_by = nomad_group
+discovered_by = eastern_nomad_group
+discovered_by = western_nomad_group
+discovered_by = ottoman
+discovered_by = middle_eastern 
+discovered_by = muslim
+discovered_by = indian
+discovered_by = early_indian
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = MLW
+
+375.1.1 = { owner = BND controller = BND add_core = BND }
+510.1.1 = { owner = MLW controller = MLW add_core = MLW remove_core = BND }
+610.1.1 = { owner = GUJ controller = GUJ add_core = GUJ }
+745.1.1 = { owner = GRP controller = GRP add_core = GRP remove_core = GUJ }
+780.1.1 = { owner = RSH controller = RSH add_core = RSH }
+815.1.1 = { owner = GRP controller = GRP remove_core = RSH }
+860.1.1 = { owner = BND controller = BND add_core = BND remove_core = GRP }
+900.1.1 = { base_tax = 3 }
+920.1.1 = { owner = MLW controller = MLW add_core = MLW remove_core = BND }
+1151.1.1 = { owner = GUJ controller = GUJ }
+1160.1.1 = { owner = MLW controller = MLW }
+1305.1.1 = { owner = DLH controller = DLH add_core = DLH }
+1392.1.1 = { owner = MLW controller = MLW remove_core = DLH } # Dilawar Khan declares Malwa independent
+
+1498.1.1 = { discovered_by = POR }
+1519.1.1 = {
+	owner = MER
+	controller = MER
+	add_core = MER
+}	#Defects
+1531.1.1 = { controller = GUJ } # Conquered by Ahmad Shahis
+1532.1.1 = { owner = GUJ } # Conquered by Ahmad Shahis
+1535.1.1 = { controller = MUG } # Mughal campaign
+1537.1.1 = {
+	owner = MLW
+	controller = MLW
+	remove_core = MER
+} # Reverts to Gujarati control and granted independence
+1543.1.1 = {
+	owner = BNG
+	controller = BNG
+} # Conquered by Sher Shah Sur
+1545.5.22 = {
+	owner = MLW
+	controller = MLW
+} # Death of Sher Shah, governor declares independence
+1560.1.1 = { controller = MUG } # Bairam Khan
+1560.10.1 = { controller = MLW } #Bairam Khan called to Delhi
+1561.3.1 = { controller = MUG } #Pir Mohammad Khan
+1561.8.1 = { controller = MLW } #Baz Bahadur regains controll as Pir Mohammad Khan is recalled
+1562.2.1 = { controller = MUG } #Reconquered by Akbar
+1562.6.1 = { owner = MUG add_core = MUG } # Annexed by Mughal Empire
+1564.1.1 = { controller = REB revolt = { type = noble_rebels size = 2 } }	#Revolt of Uzbek commanders in Malwa
+1565.1.1 = {
+	controller = MUG
+	revolt = { }
+} #Revolt beaten down
+1622.4.1 = {
+	controller = REB
+	revolt = {
+		type = pretender_rebels
+		size = 3
+		name = "Khurrams Faction"
+		leader = "Shah Jahan Timurid"
+	}
+} #Should be named Khurram at this point
+1622.5.1 = {
+	revolt = {
+		type = pretender_rebels
+		size = 0
+		name = "Khurrams Faction"
+		leader = "Shah Jahan Timurid"
+	}
+} #Should be named Khurram at this point
+1622.8.1 = {
+	controller = MUG
+	revolt = { }
+} #Defeated and flees south to Khandesh
+1658.2.10 = {
+	controller = REB
+	revolt = {
+		type = pretender_rebels
+		size = 0
+		name = "Murad Bakhsh's Faction"
+		leader = "Murad Bakhsh Timurid"
+	}
+} # Battle of Dharmat, Murad Bakhsh and Aurangzeb beat Shah Jahans army
+1658.6.25 = {
+	controller = MUG
+	revolt = { }
+} # Aurangzeb imprison Murad
+1737.1.1 = {
+	owner = GWA
+	controller = GWA
+	add_core = GWA
+	remove_core = MUG
+}
+
+1925.1.1 = { base_manpower = 2 }
+1930.1.1  = { add_core = INI }
+1947.8.15 = { owner = INI controller = INI remove_core = GWA }
+1951.1.1 = { base_production = 3 base_manpower = 3 }
+1975.1.1 = { base_tax = 4 base_production = 4 }
+2000.1.1 = { base_tax = 5 base_production = 5 base_manpower = 4 }
+
+

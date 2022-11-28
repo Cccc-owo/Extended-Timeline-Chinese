@@ -1,0 +1,104 @@
+#183 - Paris
+
+owner = ROM
+controller = ROM
+capital = "Carnutum"
+is_city = yes
+culture = gallian
+religion = hellenism
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 2
+base_production = 2
+trade_goods = cloth
+base_manpower = 1
+add_core = ROM
+ 
+200.1.1 = { base_manpower = 2 }
+260.1.1 = { add_core = GLL revolt = { type = nationalist_rebels size = 1 } controller = REB }
+268.1.1 = { controller = ROM remove_core = GLL revolt = {} }
+300.1.1 = { base_tax = 3 base_production = 3 }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+400.1.1 = { base_manpower = 3 }
+440.1.1 = { religion = chalcedonism }
+461.11.1 = { owner = SOI controller = SOI add_core = SOI }
+480.6.1 = { remove_core = ROW }
+486.6.1 = { owner = FRK controller = FRK add_core = FRK remove_core = SOI capital = "Chartres" culture = cosmopolitan_french }
+500.1.1 = { base_tax = 4 base_production = 4 }
+511.11.27 = { owner = NEU controller = NEU add_core = NEU }
+558.12.23 = { owner = FRK controller = FRK add_core = FRK }
+561.11.29 = { owner = NEU controller = NEU add_core = NEU }
+567.12.1 = { owner = ORL controller = ORL add_core = ORL remove_core = NEU }
+592.3.28 = { owner = AUT controller = AUT add_core = AUT }
+595.1.1 = { owner = ORL controller = ORL remove_core = AUT }
+596.1.1 = { owner = NEU controller = NEU add_core = NEU remove_core = ORL }
+600.1.1 = { base_manpower = 4 }
+613.10.10 = { owner = FRK controller = FRK add_core = FRK }
+634.1.1 = { owner = NEU controller = NEU }
+679.12.23 = { owner = FRK controller = FRK }
+700.1.1 = { base_tax = 5 base_production = 5 }
+840.6.21 = { owner = FRW controller = FRW add_core = FRW remove_core = FRK }
+867.1.1 = { religion = catholic }
+900.1.1 = { base_manpower = 5 }
+987.7.3 = { owner = FRA controller = FRA add_core = FRA remove_core = FRW }
+1050.1.1 = { base_manpower = 6 }
+1100.1.1 = { fort_15th = yes }
+
+1420.1.1 = { controller = ENG } # Captured by the English
+1437.1.1 = { controller = FRA } # Retaken by Charles VII
+1571.1.1 = { unrest = 5 } # Unrest spreads in catholic territory: massacres of protestants in Rouen, Orange & Paris
+1573.8.23 = { unrest = 10 } # Saint Barthelew's Day Massacre
+1574.5.1 = { unrest = 0 } # Charles IX dies, situation cools a bit	
+1583.1.1 = { fort_15th = no fort_16th = yes }
+1584.1.1 = { unrest = 7 } # Situation heats up again, even Paris is restless
+1588.1.1 = { unrest = 10 } # Paris turns against the King and sides with the de Guises
+1588.12.1 = { unrest = 12 } # Henri de Guise assassinated at Blois, Ultra-Catholics into a frenzy
+1594.1.1 = { unrest = 8 } # 'Paris vaut bien une messe!', Henri converts to Catholicism
+1598.4.13 = { unrest = 3 } # Edict of Nantes, alot more freedom to the protestants
+1598.5.2 = { unrest = 0 } # Peace of Vervins, formal end to the Wars of Religion
+1631.1.1 = { unrest = 3 }
+1633.1.1 = { unrest = 0 }
+1648.5.1 = { unrest = 5 } # New tax levied by the Parliament of Paris, first Fronde coming up
+1648.1.1 = { fort_16th = no fort_17th = yes }
+1648.8.1 = { unrest = 10 } # Cardinal Mazarin arrests the leaders of the Parliament, Paris rises up and barricades the streets
+1648.10.21 = { unrest = 0 revolt = { type = revolutionary_rebels size = 0 } controller = REB } # The First Fronde hits Paris, officials flee from the city
+1649.3.1 = { revolt = {} controller = FRA } # Maréchal Condé besieges and takes back the city, little to no bloodshed - Peace of Rueil signed, peace returns, although Paris remains anti-cardinalist
+1650.1.14 = { unrest = 7 } # Mazarin arrests the Princes Condé, Conti & Longueville, the beginning of the Second Fronde.
+1651.4.1 = { controller = FRA unrest = 4 } # An unstable peace is concluded
+1651.12.1 = { unrest = 7 } # Mazarin returns from exile, Condé sides with Spain, situation heats up again
+1652.7.2 = { revolt = { type = revolutionary_rebels size = 1 } controller = REB unrest = 3 } # The gates of Paris opened for Condé's troops
+1652.10.21 = { revolt = {} controller = FRA unrest = 0 } # The King is allowed to enter Paris again, Mazarin leaves France for good. Second Fronde over.
+1715.1.1 = { fort_17th = no fort_18th = yes }
+#1789.7.14 = { revolt = { type = revolutionary_rebels size = 3 } controller = REB } # The storming of the Bastille
+1791.6.20 = {
+	revolt = {}
+	controller = FRA
+} # The establishment of the First Republic
+
+1823.1.1 = { base_tax = 6 base_production = 6 }
+1848.1.1 = { base_tax = 7 base_production = 7 }
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+	     } # Republic proclaimed
+1871.1.28  = { controller = GER }
+1871.3.18  = { revolt = { type = communist_rebels size = 1 leader = "Louis Charles Delescluze" } } #Paris Commune
+1871.5.10  = { controller = FR2 }
+1871.5.28  = { revolt = {} }
+1873.1.1 = { base_tax = 8 base_production = 8 }
+1898.1.1 = { base_manpower = 8 }
+1910.1.1 = { discovered_by = asian }
+1920.1.1   = { trade_goods = cars }
+1924.1.1 = { base_tax = 9 base_production = 9 }
+1940.6.14  = { controller = GER owner = GER } # France surrendered to Nazi Garmany
+1944.9.19  = { owner = FR2 controller = FR2 } # Paris liberated
+1949.1.1 = { base_tax = 10 base_production = 10 }
+1974.1.1 = { base_tax = 11 base_production = 11 }
+2000.1.1 = { base_tax = 12 base_production = 11 base_manpower = 9 }

@@ -1,0 +1,346 @@
+srivijaya_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = SRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sri_unify_sumatra = {
+		icon = mission_conquer_50_development
+		required_missions = { }
+		position = 1
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 617
+				province_id = 621
+				province_id = 622
+				province_id = 623
+				province_id = 2673
+				province_id = 2674
+				area = central_sumatra_area
+				area = minangkabau_area
+				area = batak_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			617 = { country_or_non_sovereign_subject_holds = ROOT }
+			621 = { country_or_non_sovereign_subject_holds = ROOT }
+			622 = { country_or_non_sovereign_subject_holds = ROOT }
+			623 = { country_or_non_sovereign_subject_holds = ROOT }
+			2673 = { country_or_non_sovereign_subject_holds = ROOT }
+			2674 = { country_or_non_sovereign_subject_holds = ROOT }
+			central_sumatra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			minangkabau_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			batak_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			add_prestige = 20
+		}
+	}
+	
+	sri_invasion_of_malay_peninsula = {
+		icon = mission_junk_boat
+		required_missions = { sri_bangka_expedition }
+		completed_by = 770.1.1
+		position = 2
+		
+		trigger = {
+			stability = 2
+			num_of_galley = 20
+			num_of_transport = 10
+			4815 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			597 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			596 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			598 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			2392 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 2686 = { is_empty = yes } }
+				2686 = {
+					cede_province = ROOT
+					change_trade_goods = naval_supplies
+				}
+			}
+			if = {
+				limit = { 4815 = { is_empty = yes } }
+				4815 = {
+					cede_province = ROOT
+					change_trade_goods = fish
+				}
+			}
+			if = {
+				limit = { 597 = { is_empty = yes } }
+				597 = {
+					cede_province = ROOT
+					change_trade_goods = chinaware
+				}
+			}
+			if = {
+				limit = { 596 = { is_empty = yes } }
+				596 = {
+					cede_province = ROOT
+					change_trade_goods = spices
+				}
+			}
+			if = {
+				limit = { 598 = { is_empty = yes } }
+				598 = {
+					cede_province = ROOT
+					change_trade_goods = tropical_wood
+				}
+			}
+			tenasserim_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			malaya_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			malacca_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	srivijaya_langkasuka = {
+		icon = mission_galleys_in_port
+		required_missions = { sri_invasion_of_malay_peninsula }
+		completed_by = 770.1.1
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = tenasserim_area
+				area = malaya_area
+				area = malacca_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tenasserim_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			malaya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			malacca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			cambodia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			mekong_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	sri_defeat_the_khmer = {
+		icon = mission_indian_soldier_elephant
+		required_missions = { srivijaya_langkasuka }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = cambodia_area
+				area = mekong_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mekong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_prestige = 20
+		}
+	}
+}
+srivijaya_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sri_bangka_expedition = {
+		icon = mission_assemble_an_army
+		required_missions = { }
+		completed_by = 690.1.1
+		position = 1
+		
+		trigger = {
+			army_size_percentage = 1
+			num_of_galley = 10
+			2678 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+			if = {
+				limit = { 2678 = { is_empty = yes } }
+				2678 = {
+					cede_province = ROOT
+					change_trade_goods = copper
+				}
+			}
+			west_java_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	sri_control_west_java = {
+		icon = mission_invade_island
+		required_missions = { sri_bangka_expedition	}
+		position = 2
+		
+		provinces_to_highlight = {
+			area = west_java_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			west_java_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			central_java_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	sri_control_central_java = {
+		icon = mission_indian_stateman
+		required_missions = { sri_control_west_java	}
+		position = 3
+		
+		provinces_to_highlight = {
+			area = west_java_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			west_java_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_prestige = 20
+		}
+	}
+	
+	sri_build_borobudur = {
+		icon = mission_asian_city
+		required_missions = { sri_control_central_java	}
+		position = 4
+		
+		provinces_to_highlight = {
+			province_id = 2690
+		}
+		trigger = {
+			2690 = { has_building = temple }
+		}
+		effect = {
+			add_prestige = 10
+			2690 = {
+				add_province_modifier = {
+					name = "sri_borobudur"
+					duration = -1
+				}
+			}
+		}
+	}
+}

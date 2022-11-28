@@ -1,0 +1,391 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# ai_will do is only used to determine which idea group is picked if AI_USES_HISTORICAL_IDEA_GROUPS define is 0, OR start is custom/random
+# ai never picks an idea that resolves to ai_will_do = 0, even if AI_USES_HISTORICAL_IDEA_GROUPS = 1
+# ROOT = country picking the idea
+# groups set to colonial=yes will be higher prioritized by the AI when spending power
+
+early_adm_ideas = {
+	category = ADM
+
+	bonus = {
+		prestige = 0.2
+	}
+
+	slavery = {
+		production_efficiency = 0.1
+	}
+	decentralization = {
+		stability_cost_modifier = -0.1
+	}
+	advisors = {
+		advisor_pool = 1
+	}
+	resistance_to_foreigners = {
+		enemy_core_creation = 0.2
+	}
+	efficient_administration = {
+		core_creation = -0.10
+	}
+	administrative_innovation = {
+		adm_tech_cost_modifier = -0.06
+	}
+	noble_soldiers = {
+		diplomatic_upkeep = 1
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 50
+			always = yes
+		}
+	}
+}
+
+early_religious_ideas = {
+	category = ADM
+
+	bonus = {
+		tolerance_heathen = 1
+	}
+
+	early_tolerance = {
+		tolerance_heathen = 1
+	}
+	converting = {
+		missionaries = 1
+	}
+	acceptance_of_differences = {
+		tolerance_heretic = 1
+	}
+	religious_customs = {
+		stability_cost_modifier = -0.1
+	}
+	religious_education = {
+		tolerance_own = 1
+	}
+	divine_heritage = {
+		prestige_decay = -0.01
+	}
+	organized_religion = {
+		global_missionary_strength = 0.01
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 50
+			always = yes
+		}
+		modifier = {
+			factor = 5
+			any_owned_province = { NOT = { religion = ROOT } }
+		}
+	}
+}
+
+early_dip_ideas = {
+	category = DIP
+
+	bonus = {
+		diplomatic_upkeep = 1
+	}
+	
+	diplomats = {
+		diplomats = 1
+	}
+	additional_relations = {
+		diplomatic_upkeep = 1
+	}
+	vassal_tribute = {
+		vassal_income = 0.10
+	}
+	diplomatic_reputation = {
+		diplomatic_reputation = 1
+	}
+	foreign_customs = {
+		unjustified_demands = -0.1
+	}
+	claims = {
+		fabricate_claims_cost = -0.15
+	}
+	diplomatic_conquest = {
+		diplomatic_annexation_cost = -0.10
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+early_trade_ideas = {
+	category = DIP
+
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	
+	trading = {
+		merchants = 1
+	}
+	galley_slaves = {
+		naval_forcelimit_modifier = 0.1
+	}
+	merchant_admirals = {
+		navy_tradition_decay = -0.01
+	}
+	naval_innovation = {
+		dip_tech_cost_modifier = -0.06
+	}
+	merchant_travels = {
+		trade_range_modifier = 0.10
+	}
+	protected_trade = {
+		global_trade_goods_size_modifier = 0.05
+	}
+	shipwrights = {
+		global_ship_cost = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 50
+			always = yes
+		}
+	}
+}
+
+early_mil_ideas = {
+	category = MIL
+
+	bonus = {
+		core_creation = -0.10
+	}
+	
+	formation = {
+		discipline = 0.025
+	}
+	professional_soldiers = {
+		infantry_power = 0.05
+	}
+	military_education = {
+		army_tradition_decay = -0.01
+	}
+	horse_breeding = {
+		cavalry_power = 0.05
+	}
+	early_mercenaries = {
+		mercenary_cost = -0.1
+	}
+	military_innovation = {
+		mil_tech_cost_modifier  = -0.06
+	}
+	cheaper_mercenaries = {
+		merc_maintenance_modifier = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 50
+			always = yes
+		}
+	}
+}
+
+early_defensive_ideas = {
+	category = MIL
+
+	bonus = {
+		recover_army_morale_speed = 0.05
+	}
+	
+	border_guard = {
+		defensiveness = 0.05
+	}
+	no_aid_for_enemy = {
+		hostile_attrition = 1.0
+	}
+	fight_for_our_land = {
+		land_morale = 0.05
+	}
+	history_of_independence = {
+		enemy_core_creation = 0.3
+	}
+	recruitment = {
+		manpower_recovery_speed = 0.1
+	}
+	slave_army = {
+		global_manpower_modifier = 0.1
+	}
+	fortifications = {
+		defensiveness = 0.05
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+order_ideas = {
+	category = ADM
+
+	bonus = {
+		free_leader_pool = 1
+	}
+	
+	trigger = {
+		adm_tech = 81
+		NOT = { has_idea_group = freedom_ideas }
+		NOT = { has_idea_group = autocracy_ideas }
+	}
+	
+	state_controlled_economy = {
+		inflation_reduction = 0.1
+		global_tax_modifier = 0.15
+	}
+	patriotism = {
+		land_morale = 0.10
+		defensiveness = 0.2
+	}
+	state_police = {
+		global_unrest = -1
+	}
+	workers_utopia = {
+		production_efficiency = 0.2
+		global_trade_goods_size_modifier = 0.1
+	}
+	free_education = {
+		adm_tech_cost_modifier = -0.2
+	}
+	military_service = {
+		global_manpower_modifier = 0.2
+		land_forcelimit_modifier = 0.2
+	}
+	universal_healthcare = {
+		manpower_recovery_speed = 0.2
+	}
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 5
+			has_reform = communist_government
+		}
+	}
+}
+
+freedom_ideas = {
+	category = DIP
+
+	bonus = {
+		advisor_pool = 1
+	}
+	
+	trigger = {
+		adm_tech = 81
+		NOT = { has_idea_group = order_ideas }
+		NOT = { has_idea_group = autocracy_ideas }
+	}
+	
+	capitalist_economy = {
+		merchants = 1
+		global_trade_power = 0.10
+	}
+	free_religion = {
+		tolerance_heathen = 2
+		tolerance_heretic = 2
+	}
+	universal_suffrage = {
+		female_advisor_chance = 0.4
+		diplomatic_upkeep = 1
+	}
+	freedom_of_speech = {
+		republican_tradition = 1
+		legitimacy = 1
+		global_unrest = -1
+	}
+	equality_of_races = {
+		num_accepted_cultures = 2
+		diplomatic_reputation = 1
+	}
+	volunteer_army = {
+		may_recruit_female_generals = yes
+		discipline = 0.05
+	}
+	sharing_of_ideas = {
+		idea_cost = -0.1
+		dip_tech_cost_modifier = -0.2
+	}
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2
+			government = republic
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_reform = fascist_government
+				has_reform = communist_government
+				has_reform = military_government
+			}
+		}
+	}
+}
+
+autocracy_ideas = {
+	category = MIL
+
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		adm_tech = 81
+		NOT = { has_idea_group = freedom_ideas }
+		NOT = { has_idea_group = order_ideas }
+	}
+	
+	glorious_leader = {
+		land_morale = 0.1
+	}
+	police_state = {
+		global_unrest = -1
+	}
+	elite_generals = {
+		army_tradition = 0.5
+		leader_land_fire = 1
+	}
+	military_industry = {
+		global_regiment_recruit_speed = -0.1
+		global_regiment_cost = -0.1
+	}
+	military_thinkers = {
+		mil_tech_cost_modifier = -0.2
+	}
+	resettlement = {
+		culture_conversion_cost = -0.15
+		core_creation = -0.15
+	}
+	total_war = {
+		war_exhaustion_cost = -0.2
+		manpower_recovery_speed = 0.2
+	}
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 5
+			OR = {
+				has_reform = fascist_government
+				has_reform = military_government
+			}
+		}
+	}
+}

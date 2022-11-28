@@ -1,0 +1,677 @@
+namespace = etbrit
+
+#Cornwall!
+#233 - Cornwall
+#CRN - Cornwall
+#Cornwall was severed from the remaining Welsh following the Battle of Deorham
+province_event = {
+	id = etbrit.1
+	title = "etbrit.1.t"
+	desc = "etbrit.1.d"
+	picture = REFORM_eventPicture
+	fire_only_once = yes
+	trigger = {
+		province_id = 233 
+		NOT = { exists = CRN }
+		OR = {
+			culture = welsh
+			culture = breton
+			culture = cornish
+		}
+		owner = { 
+			OR = {
+				primary_culture = welsh 
+				primary_culture = breton
+				primary_culture = cornish
+			}
+			
+			NOT = { num_of_cities = 2 }
+			NOT = { tag = GBR }
+		}
+		all_neighbor_province = {
+			OR = {
+				AND = {
+					NOT = { culture = welsh }
+					NOT = { culture = breton }
+					NOT = { culture = cornish }
+				}
+				owner = { 
+					NOT = { primary_culture = welsh }
+					NOT = { primary_culture = breton }
+					NOT = { primary_culture = cornish }
+				}
+			}
+			
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = "etbrit.1.a"
+		change_culture = cornish
+		owner = { 
+			change_tag = CRN
+			change_primary_culture = cornish
+		}
+	}
+}
+
+#Welsh Culture Emerges!
+#Developed from Romano-British and Briton culture
+province_event = {
+	id = etbrit.2
+	title = "etbrit.2.t"
+	desc = "etbrit.2.d"
+	picture = REFORM_eventPicture
+
+	trigger = {
+		NOT = { is_year = 1100 }
+		NOT = { culture = welsh }
+		OR = {
+			AND = {
+				culture = briton
+				owner = {
+					OR = {
+						primary_culture = welsh
+						primary_culture = roman
+					}
+				}
+			}
+			AND = {
+				region = british_isles_region
+				culture = roman
+				owner = {
+					OR = {
+						primary_culture = welsh
+						primary_culture = briton
+					} 
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.5
+			owner = {
+				primary_culture = welsh
+			}
+		}
+		modifier = {
+			factor = 0.5
+			any_core_country = {
+				primary_culture = welsh
+			}
+		}
+		modifier = {
+			factor = 0.7
+			any_core_country = {
+				OR = {
+					culture_group = byzantine
+					culture_group = latin
+				}
+				NOT = { culture_group = ROOT }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = { religion_group = ROOT }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 0.8
+			any_neighbor_province = { culture = welsh }
+		}
+		modifier = {
+			factor = 0.5
+			culture = briton
+			any_neighbor_province = {
+				OR = {
+					culture_group = latin
+					culture_group = byzantine
+				}
+			}
+		}
+	}
+	
+	# Welsh
+	option = {
+		name = "etbrit.2.a"
+		change_culture = welsh
+		if = {
+			limit = { NOT = { exists = WLS } }
+			add_core = WLS
+		}
+	}
+}
+#Breton Culture Emerges!
+#Developed from Briton culture in France
+province_event = {
+	id = etbrit.3
+	title = "etbrit.3.t"
+	desc = "etbrit.3.d"
+	picture = REFORM_eventPicture
+
+	trigger = {
+		NOT = { is_year = 1100 }
+		NOT = { culture = breton }
+		OR = {
+			owner = { primary_culture = briton }
+			owner = { primary_culture = breton }
+			owner = { primary_culture = welsh }
+		}
+		region = france_region
+	}
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.5
+			owner = {
+				primary_culture = breton
+			}
+		}
+		modifier = {
+			factor = 0.5
+			area = brittany_area
+		}
+	}
+	
+	# Breton
+	option = {
+		name = "etbrit.3.a"
+		change_culture = breton
+		if = {
+			limit = { NOT = { exists = BRI } }
+			add_core = BRI
+		}
+	}
+}
+
+#Anglo-Saxon Culture Emerges!
+#Developed from Germanic culture in British Isles
+province_event = {
+	id = etbrit.4
+	title = "etbrit.4.t"
+	desc = "etbrit.4.d"
+	picture = REFORM_eventPicture
+
+	trigger = {
+		NOT = { is_year = 1100 }
+		NOT = { culture = anglo_saxon }
+		owner = { culture_group = germanic }
+		region = british_isles_region
+	}
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.5 
+			owner = { primary_culture = anglo_saxon }
+		}
+		modifier = {
+			factor = 0.5
+			any_core_country = {
+				primary_culture = anglo_saxon
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = { religion_group = ROOT }
+		}
+		modifier = {
+			factor = 0.5
+			any_neighbor_province = { culture_group = germanic }
+		}
+		modifier = {
+			factor = 0.5
+			all_neighbor_province = { culture_group = germanic }
+		}
+		#Historical regions where Celtic culture held out
+		modifier = {
+			factor = 5
+			culture_group = gaelic
+			OR = {
+				area = ireland_area
+				area = wales_area
+				area = highlands_area
+			}
+			
+		}
+	}
+	
+	# Anglo Saxon
+	option = {
+		name = "etbrit.4.a"
+		change_culture = anglo_saxon
+		if = { #Kent
+			limit = {
+				province_id = 235
+				NOT = { exists = KEN }	
+			}
+			add_core = KEN
+		}
+		if = { #Essex
+			limit = {
+				OR = {
+					province_id = 238
+					province_id = 236
+				}
+				NOT = { exists = ESX }	
+			}
+			add_core = ESX
+		}
+		if = { #Wessex
+			limit = {
+				area = wessex_area
+				NOT = { exists = WSX }	
+			}
+			add_core = WSX
+		}
+		if = { #Northumberland
+			limit = {
+				area = northern_england_area
+				NOT = { exists = NOL }	
+			}
+			add_core = NOL
+		}
+		if = { #East Anglia
+			limit = {
+				province_id = 1860 #Norfolk
+				NOT = { exists = EAN }	
+			}
+			add_core = EAN
+		}
+		if = { #Lindsey
+			limit = {
+				province_id = 243 #Lincoln
+				NOT = { exists = LIN }	
+			}
+			add_core = LIN
+		}
+		if = { #Deira
+			limit = {
+				OR = {
+					province_id = 244 #Lancashire
+					province_id = 245 #Yorkshire
+				}
+				NOT = { exists = DEI }	
+			}
+			add_core = DEI
+		}
+		if = { #Bernicia
+			limit = {
+				OR = {
+					province_id = 246 #Northumberland
+					province_id = 247 #Cumbria
+				}
+				NOT = { exists = BRN }	
+			}
+			add_core = BRN
+		}
+		if = { #Mercia
+			limit = {
+				area = mercia_area
+				has_port = no
+				NOT = { exists = MRC }	
+			}
+			add_core = MRC
+		}
+	}
+}
+
+#Norman Culture Emerges!
+#Developed from Scandinavian culture in France
+province_event = {
+	id = etbrit.7
+	title = "etbrit.7.t"
+	desc = "etbrit.7.d"
+	picture = REFORM_eventPicture
+
+	trigger = {
+		#NOT = { is_year = 1100 }
+		NOT = { culture = normand }
+		OR = {
+			culture_group = scandinavian
+			culture_group = french
+		}
+		owner = { 
+			NOT = { culture_group = ROOT }
+			OR = {
+				culture_group = scandinavian
+				culture_group = french
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.5
+			owner = {
+				primary_culture = normand
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				region = british_isles_region
+				area = brittany_area
+				region = low_countries_region
+			}
+		}
+		modifier = {
+			factor = 3
+			has_port = no
+		}
+	}
+	
+	# Norman
+	option = {
+		name = "etbrit.7.a"
+		change_culture = normand
+		if = {
+			limit = { NOT = { exists = NRM } }
+			add_core = NRM
+		}
+	}
+}
+
+#British (English/Scottish) Culture Emerges!
+province_event = {
+	id = etbrit.8
+	title = "etbrit.8.t"
+	desc = "etbrit.8.d"
+	picture = REFORM_eventPicture
+
+	trigger = {
+		NOT = { is_year = 1450 }
+		NOT = { culture_group = british }
+		OR = {
+			culture = anglo_saxon
+			AND = {
+				culture = highland_scottish
+				NOT = { area = highlands_area }
+			}
+			AND = {
+				culture = irish
+				region = british_isles_region
+				NOT = { area = ireland_area }
+			}
+			AND = {
+				OR = {
+					culture = briton
+					culture = welsh
+				}
+				OR = {
+					area = highlands_area
+					area = lowlands_area
+				}
+				
+			}
+			AND = {
+				region = british_isles_region
+				NOT = { culture_group = gaelic }
+			}
+		}
+		NOT = {
+			OR = {
+				culture_group = french
+				culture_group = latin
+				culture_group = iberian
+				culture_group = basque_group
+			}
+		}
+		owner = {
+			NOT = { primary_culture = roman }
+			OR = {
+				culture_group = french
+				culture_group = latin
+				culture_group = iberian
+				culture_group = basque_group
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.5
+			any_core_country = {
+				culture_group = british
+			}
+		}
+		modifier = {
+			factor = 0.5
+			culture = anglo_saxon
+		}
+		modifier = {
+			factor = 0.8
+			owner = { religion_group = ROOT }
+		}
+		modifier = {
+			factor = 0.5
+			any_neighbor_province = { culture_group = british }
+		}
+		modifier = {
+			factor = 0.5 
+			OR = {
+				owner = { tag = ENG }
+				owner = { tag = GBR }
+			}
+		}
+	}
+	
+	# English
+	option = {
+		name = "etbrit.8.a"
+		change_culture = english
+		trigger = {
+			NOT = {
+				OR = {
+					culture = welsh
+					culture = briton
+					culture = highland_scottish
+					culture = irish
+					owner = { primary_culture = highland_scottish }
+					owner = { primary_culture = irish }
+					owner = { primary_culture = scottish }
+					area = highlands_area
+					area = lowlands_area
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { exists = ENG } }
+			add_core = ENG
+		}
+	}
+	#Scottish
+	option = {
+		name = "etbrit.8.b"
+		trigger = {
+			OR = {
+				
+				culture = welsh
+				culture = briton
+				culture = highland_scottish
+				culture = irish
+				owner = { primary_culture = highland_scottish }
+				owner = { primary_culture = irish }
+				owner = { primary_culture = scottish }
+				area = highlands_area
+				area = lowlands_area
+			}
+		}
+		change_culture = scottish
+		if = {
+			limit = { NOT = { exists = SCO } }
+			add_core = SCO
+		}
+	}
+}
+
+#Scottish culture
+province_event = {
+	id = etbrit.9
+	title = "etbrit.9.t"
+	desc = "etbrit.9.d"
+	picture = REFORM_eventPicture
+
+	trigger = {
+		NOT = { is_year = 1400 }
+		culture = highland_scottish
+		NOT = { area = highlands_area }
+		owner = { primary_culture = english }
+	}
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.8
+			owner = { religion_group = ROOT }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 0.8
+			any_neighbor_province = { culture = scottish }
+		}
+	}
+	
+	option = {
+		name = "etbrit.9.a"
+		change_culture = scottish
+		if = {
+			limit = { NOT = { exists = SCO } }
+			add_core = SCO
+		}
+	}
+}
+
+#Statute of Westminster
+country_event = {
+	id = etbrit.10
+	title = "etbrit.10.t"
+	desc = "etbrit.10.d"
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 1900
+		dominion = 1
+	}
+	
+	mean_time_to_happen = {
+		years = 60
+		modifier = {
+			factor = 0.5
+			any_subject_country = {
+				is_subject_of_type = dominion
+				liberty_desire = 66
+			}
+		}
+		modifier = {
+			factor = 0.5
+			any_subject_country = {
+				is_subject_of_type = dominion
+				liberty_desire = 33
+			}
+		}
+	}
+	
+	option = {
+		name = "etbrit.10.a" #Let it pass
+		every_subject_country = {
+			limit = { is_subject_of_type = dominion }
+			add_liberty_desire = -10
+			add_opinion = {
+				who = ROOT
+				modifier = increased_dominion_autonomy
+			}
+			hidden_effect = {
+				country_event = { 
+					id = etbrit.11
+					days = 1
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "etbrit.10.b" #Block it
+		every_subject_country = {
+			limit = { is_subject_of_type = dominion }
+			add_liberty_desire = 20
+			add_opinion = {
+				who = ROOT
+				modifier = dominion_autonomy_increase_blocked
+			}
+		}
+		ai_chance = { 
+			factor = 0
+		}
+	}
+}
+
+#Statute of Westminster Passed
+country_event = {
+	id = etbrit.11
+	title = "etbrit.11.t"
+	desc = "etbrit.11.d"
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "etbrit.11.a"
+		add_prestige = 5
+		set_country_flag = statute_of_westminster_passed
+	}
+}
+
+#Titanic
+country_event = {
+	id = etbrit.12
+	title = "etbrit.12.t"
+	desc = "etbrit.12.d"
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 234
+		NOT = { started_in = 1912.4.15 }
+		primary_culture = english
+		dip_tech = 83
+		965 = {
+			is_city = yes
+			owner = { 
+				NOT = { is_rival = ROOT } 
+				NOT = { war_with = ROOT }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 60
+	}
+	
+	option = {
+		name = "etbrit.12.a"
+		add_country_modifier = {
+			name = increased_naval_safety_regulations
+			duration = 1825
+		}
+	}
+	
+	option = {
+		name = "etbrit.12.b"
+		add_prestige = -15
+	}
+}

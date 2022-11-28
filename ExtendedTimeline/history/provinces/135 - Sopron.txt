@@ -1,0 +1,57 @@
+#135 - Sopron
+
+owner = ROM
+controller = ROM  
+culture = pannonian
+religion = druidism
+capital = "Scarbantia"
+trade_goods = grain
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = ROM
+
+380.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+420.1.1 = { culture = austrian religion = germanic }
+447.1.1 = { owner = OST controller = OST add_core = OST remove_core = ROW capital = "Sopron" }
+500.1.1 = { base_manpower = 2 }
+530.1.1 = { owner = GEP controller = GEP add_core = GEP remove_core = OST }
+540.1.1 = { religion = arianism }
+567.1.1 = { owner = AVR controller = AVR add_core = AVR remove_core = GEP culture = avar }
+570.1.1 = { religion = tengri_pagan_reformed }
+700.1.1 = { base_tax = 2 base_production = 2 }
+846.1.1 = { owner = PNN controller = PNN add_core = PNN remove_core = AVR }
+850.1.1 = { religion = chalcedonism }
+867.1.1 = { religion = catholic }
+897.1.1 = { owner = HUN controller = HUN add_core = HUN remove_core = PNN culture = hungarian }
+900.1.1 = { base_tax = 3 base_production = 3 }
+
+1506.1.1 = { revolt = { type = anti_tax_rebels size = 0 } controller = REB } # Szekely rebellion
+1507.1.1 = { revolt = {} controller = HUN }
+1514.4.1 = { revolt = { type = anti_tax_rebels size = 1 } controller = REB } # Peasant rebellion against Hungary's magnates
+1515.1.1 = { revolt = {} controller = HUN }
+1526.8.30 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+} #Hungary fractured after Battle of Mohacs
+1545.1.1 = { religion = protestant } # Synod of Erdod
+#1570.1.1 = { remove_core = TRA	} #Treaty of Speyer
+1580.1.1 = { religion = catholic }
+1594.9.29 = { controller = TUR } # Ottoman capture of Gyor leads to domination of region
+1598.3.28 = { controller = HAB } # Gyor is liberated
+
+1850.1.1   = { capital = "Györ" }
+1910.1.1 = { discovered_by = asian }
+1918.10.31 = { owner = HUN controller = HUN remove_core = HAB }
+

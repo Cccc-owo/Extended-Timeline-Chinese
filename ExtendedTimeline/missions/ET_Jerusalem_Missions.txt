@@ -1,0 +1,343 @@
+kingdom_of_jerusalem_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = KOJ
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	koj_discipline_the_crusaders_mission = {
+		icon = mission_consolidate_the_state
+		required_missions = { } #none
+		position = 1
+		trigger = {
+			OR = {
+				army_professionalism = 0.80
+				army_tradition = 40
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "koj_disciplined_army"
+				duration = 10950
+			}
+		}
+	}
+	koj_establish_the_templars_mission = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { } #none
+		position = 2
+		trigger = {
+			any_owned_province = {
+				has_estate = estate_militaris_ordinis
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_estate = estate_militaris_ordinis
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+				add_province_modifier = {
+					name = "koj_knights_templar"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	koj_prepare_for_the_offensive_mission = {
+		icon = et_mission_crusader
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			army_size_percentage = 1.0
+			manpower_percentage = 0.60
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oma_buildforces_mod"
+				duration = 10950
+			}
+		}
+	}
+	koj_consolidate_the_holy_city_mission = {
+		icon = mission_tear_down_spanish_strongholds
+		required_missions = { koj_prepare_for_the_offensive_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 379	#Jerusalem
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 379
+			379 = {
+				has_owner_religion = yes
+			}
+			379 = {
+				fort_level = 1
+			}
+		}
+		effect = {
+			palestine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	koj_secure_palestina_mission = {
+		icon = mission_unite_home_region
+		required_missions = { koj_consolidate_the_holy_city_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = palestine_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "koj_crusade_victorious"
+				duration = 10950
+			}
+		}
+	}
+	koj_syrian_conquest_mission = {
+		icon = mission_arabian_fort
+		required_missions = { koj_secure_palestina_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = trans_jordan_area
+				area = syrian_desert_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syrian_desert_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 40
+		}
+	}
+}
+
+kingdom_of_jerusalem_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = KOJ
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	koj_restore_the_holy_land_mission = {
+		icon = mission_hands_praying
+		required_missions = { koj_secure_palestina_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = palestine_area
+			}
+			NOT = {
+				OR = {
+					religion = ROOT
+					religion_group = christian
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			palestine_area = {
+				type = all
+				OR = {
+					religion = ROOT
+					religion_group = christian
+				}
+			}
+		}
+		effect = {
+			add_papal_influence = 40
+			add_dip_power = 100
+		}
+	}
+	koj_sinai_campaign_mission = {
+		icon = mission_crusade_for_varna
+		required_missions = { koj_restore_the_holy_land_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 365	#Sinai
+				province_id = 2315	#Suez
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 365
+			owns_or_non_sovereign_subject_of = 2315
+		}
+		effect = {
+			add_army_tradition = 25
+			add_navy_tradition = 25
+		}
+	}
+}
+
+kingdom_of_jerusalem_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = KOJ
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	koj_habemus_papam_mission = {
+		icon = mission_crowned_by_clergy
+		required_missions = { koj_allies_of_the_canons_mission }
+		position = 6
+		trigger = {
+			is_papal_controller = yes
+		}
+		effect = {
+			add_papal_influence = 40
+		}
+	}
+	koj_lead_the_crusade_mission = {
+		icon = mission_teutonic_knights
+		required_missions = { koj_habemus_papam_mission }
+		position = 7
+		trigger = {
+			is_papal_controller = yes
+			
+			any_country = {
+				is_crusade_target = yes
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "divine_conqueror"
+				duration = -1
+			}
+		}
+	}
+}
+
+kingdom_of_jerusalem_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = KOJ
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	koj_placate_muslim_burghers_mission = {
+		icon = mission_restore_caliphate_of_cordoba
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 70
+			}
+		}
+		effect = {
+			add_stability = 1
+			add_years_of_income = 0.5
+		}
+	}
+	koj_allies_of_the_faith_mission = {
+		icon = mission_spanish_armada
+		required_missions = { }	#none
+		position = 4
+		trigger = {
+			calc_true_if = {
+				all_ally = {
+					religion = ROOT
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			add_manpower = 10
+		}
+	}
+	koj_allies_of_the_canons_mission = {
+		icon = mission_religious
+		required_missions = { }
+		position = 5
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 75
+			}
+		}
+		effect = {
+			add_papal_influence = 30
+		}
+	}
+	koj_advocatus_sancti_sepulchri_mission = {
+		icon = mission_european_church
+		required_missions = { koj_allies_of_the_canons_mission }
+		position = 6
+		trigger = {
+			is_defender_of_faith = yes
+		}
+		effect = {
+			add_papal_influence = 40
+		}
+	}
+}

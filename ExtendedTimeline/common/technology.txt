@@ -1,0 +1,229 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new technology, make sure they are uniquely named.
+
+
+# Groups must be defined BEFORE tables.
+
+#Nation Designer Cost is set to match triggers for starting institutions.
+
+groups = {
+	western = {
+		start_level = 0
+		start_cost_modifier = 0
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	eastern = {
+		start_level = 4
+		start_cost_modifier = 0.16
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	ottoman = {
+		start_level = 6
+		start_cost_modifier = 0.21
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	muslim = {
+		start_level = 6
+		start_cost_modifier = 0.23
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	indian = {
+		start_level = 8
+		start_cost_modifier = 0.3
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	chinese = {
+		start_level = 9
+		start_cost_modifier = 0.33
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	nomad_group = {
+		start_level = 6
+		start_cost_modifier = 0.38
+	}
+	sub_saharan = { #West African
+		start_level = 2
+		start_cost_modifier = 0.4
+	}
+	north_american = {
+		start_level = 2
+		start_cost_modifier = 1
+		is_primitive = yes
+	}
+	mesoamerican = {
+		start_level = 2
+		start_cost_modifier = 0.6
+		is_primitive = yes
+	}
+	south_american = {
+		start_level = 2
+		start_cost_modifier = 1
+		is_primitive = yes
+	}
+	andean = {
+		start_level = 2
+		start_cost_modifier = 0.6
+		nation_designer_unit_type = south_american
+		is_primitive = yes
+	}	
+	roman_group = {
+		start_level = 3
+		start_cost_modifier = 0.16
+	}
+	barbarian = {
+		start_level = 2
+		start_cost_modifier = 0.3
+	}
+	middle_eastern = {
+		start_level = 3
+		start_cost_modifier = 0.26
+	}
+	asian = {
+		start_level = 5
+		start_cost_modifier = 0.16
+	}
+	early_indian = {
+		start_level = 3
+		start_cost_modifier = 0.32
+	}
+	early_chinese = {
+		start_level = 4
+		start_cost_modifier = 0.35
+	}
+	western_nomad_group = {
+		start_level = 3
+		start_cost_modifier = 0.4
+	}
+	eastern_nomad_group = {
+		start_level = 3
+		start_cost_modifier = 0.4
+	}
+	high_american = {
+		start_level = 2
+		start_cost_modifier = 0
+		nation_designer_unit_type = high_american
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	east_african = {
+		start_level = 8
+		start_cost_modifier = 0.5
+		nation_designer_unit_type = sub_saharan
+	}
+	central_african = {
+		start_level = 10
+		start_cost_modifier = 0.65
+		nation_designer_unit_type = sub_saharan
+	}
+	aboriginal_tech = {
+		start_level = 9
+		start_cost_modifier = 0.6
+		is_primitive = yes
+		nation_designer_cost = {
+			value = 50
+		}
+	}
+	polynesian_tech = {
+		start_level = 9
+		start_cost_modifier = 0.6
+		is_primitive = yes
+		nation_designer_cost = {
+			value = 50
+		}
+	}
+	dummy_group = {
+		start_level = 0
+		start_cost_modifier = 0
+		power = -10
+		valid_for_nation_designer = no
+	}
+}
+
+tables = {
+	adm_tech = "technologies/adm.txt"
+	dip_tech = "technologies/dip.txt"
+	mil_tech = "technologies/mil.txt"
+}

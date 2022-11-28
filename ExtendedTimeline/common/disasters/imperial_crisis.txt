@@ -1,0 +1,167 @@
+imperial_crisis = {
+	potential = {
+		tag = ROM
+		NOT = { adm_tech = 26 }
+		NOT = { has_country_flag = rome_formed }
+		NOT = { has_country_flag = had_imperial_crisis }
+		OR = {
+			any_owned_province = {
+				OR = {
+					region = anatolia_region
+					region = mashriq_region
+				}
+				OR = {
+					culture = roman
+					culture = aramaic
+				}
+			}
+			any_owned_province = {
+				OR = {
+					area = normandy_area
+					area = ile_de_france_area
+					area = champagne_area
+					area = loire_area
+					area = picardy_area
+					area = lorraine_area
+					region = low_countries_region
+				}
+				OR = {
+					culture = roman
+					culture = gallian
+				}
+			}
+		}
+		OR = {
+			ai = no
+			NOT = { has_country_modifier = pax_romana }
+			is_year = 120
+		}
+	}
+	
+	can_start = {
+		NOT = { stability = 2 }
+		NOT = { legitimacy = 60 }
+		NOT = { republican_tradition = 80 }
+		NOT = { adm_tech = 26 }
+	}
+	
+	can_stop = { 
+		stability = 3
+	}
+	
+	progress = {
+		modifier = {
+			factor = 2
+			NOT = { prestige = 0 }
+		}
+		modifier = {
+			factor = 2
+			war_exhaustion = 5
+		} 
+		modifier = {
+			factor = 1
+			num_of_loans = 10
+		}	
+		modifier = {
+			factor = 2
+			num_of_loans = 25
+		}	
+		modifier = {
+			factor = 4
+			is_bankrupt = yes
+		}	
+		modifier = {
+			factor = 1
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 3
+			NOT = { stability = -1 }
+		}	
+		modifier = {
+			factor = 4
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 1
+			government = monarchy
+			NOT = { legitimacy = 60 }
+		}
+		modifier = {
+			factor = 2
+			government = monarchy
+			NOT = { legitimacy = 40 }
+		}	
+		modifier = {
+			factor = 4
+			government = monarchy
+			NOT = { legitimacy = 20 }
+		}
+		modifier = {
+			factor = 1
+			government = republic
+			NOT = { republican_tradition = 60 }
+		}
+		modifier = {
+			factor = 2
+			government = republic
+			NOT = { republican_tradition = 40 }
+		}	
+		modifier = {
+			factor = 4
+			government = republic
+			NOT = { republican_tradition = 20 }
+		}
+		modifier = {
+			factor = 4
+			has_reform = roman_empire_reform
+			NOT = { faction_in_power = imperials }
+		}
+		modifier = {
+			factor = 1
+			NOT = { adm = 3 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { adm = 2 }
+		}
+		modifier = {
+			factor = 3
+			NOT = { adm = 1 }
+		}
+	}
+	
+	can_end = {
+		stability = 2
+		OR = {
+			legitimacy = 60
+			republican_tradition = 60
+		}
+	}
+
+	modifier = {
+		global_unrest = 10
+		stability_cost_modifier = 0.1
+	}	
+	
+	on_start = imperial_crisis.1
+	on_end = imperial_crisis.2
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = imperial_crisis.4
+			100 = imperial_crisis.5
+			150 = imperial_crisis.8
+			150 = imperial_crisis.9
+			150 = imperial_crisis.10
+		}
+	}
+}
+

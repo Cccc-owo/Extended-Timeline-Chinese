@@ -1,0 +1,63 @@
+#994 - Stadacona
+
+owner = STA
+controller = STA
+add_core = STA
+is_city = yes
+culture = laurentian
+religion = totemism
+capital = "Stadacona"
+trade_goods = fish
+hre = no
+discovered_by = north_american
+base_tax = 4
+base_production = 4
+base_manpower = 2
+native_size = 5
+native_ferocity = 1
+native_hostileness = 6
+
+add_permanent_province_modifier = {
+	name = saint_lawrence_estuary_modifier
+	duration = -1
+}
+
+1535.1.1 = { discovered_by = FRA } # Jacques Cartier
+1608.7.3 = {
+	owner = FRA
+	controller = FRA	
+	is_city = yes
+	capital = "Québec"
+	culture = cosmopolitan_french
+	religion = catholic
+	trade_goods = naval_supplies
+}
+1610.1.1 = { discovered_by = ENG }
+1629.7.16 = { controller = ENG owner = ENG } # Conquered by the British
+1632.3.29 = { controller = FRA owner = FRA } # Treaty of St. Germain-en-Layne, handed back to the French
+1633.1.1 = { add_core = FRA }
+1707.5.12 = { discovered_by = GBR }
+1745.1.1 = { fort_18th = yes }
+1760.1.1 = { controller = GBR } # The government of New France capitulate at Montreal
+1763.2.10 = {
+	owner = GBR
+	add_core = GBR
+	remove_core = FRA
+} # Treaty of Paris - ceded to the British
+1775.1.1 = { base_manpower = 4 }
+1790.1.1  = { culture = french_canadian }
+
+1800.1.1 = { base_tax = 5 }
+1825.1.1 = { base_tax = 6 base_manpower = 5 }
+1851.1.1 = { base_manpower = 6 }
+1867.7.1   = { owner = CAN add_core = CAN controller = CAN remove_core = GBR }
+1875.1.1 = { base_tax = 7 base_manpower = 7 }
+1880.1.1 = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1900.1.1 = { base_tax = 8 base_manpower = 8 }
+1910.1.1 = { discovered_by = western }
+1925.1.1 = { base_tax = 9 base_manpower = 9 }
+1950.1.1 = { base_tax = 10 base_production = 5 }
+1975.1.1 = { base_production = 7 }
+1980.5.20  = { add_core = QUE } # Quebec referendum
+2000.1.1 = { base_production = 10 }
+

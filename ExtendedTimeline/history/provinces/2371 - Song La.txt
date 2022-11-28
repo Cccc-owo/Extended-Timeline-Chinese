@@ -1,0 +1,53 @@
+#2383 - Song La
+
+culture = lao
+religion = satsana_phi
+capital = "Song La"
+trade_goods = unknown
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 30
+native_ferocity = 1
+native_hostileness = 5
+
+620.1.1 = { owner = TKH controller = TKH add_core = TKH is_city = yes trade_goods = tea }
+800.1.1 = { base_tax = 2 base_production = 2 }
+1200.1.1 = { base_manpower = 2 }
+1354.1.1 = { owner = LXA controller = LXA add_core = LXA }
+
+1592.1.1 = {
+	owner = TOK
+	controller = TOK
+	add_core = TOK
+} # The kingdom is divided between the Nguyens & the Trinh line
+1655.1.1 = { discovered_by = SPA }#Novus Atlas Sinensis
+1730.1.1 = { unrest = 5 } # Peasant revolt
+1731.1.1 = { unrest = 0 }
+1786.6.1 = {
+	owner = DAI
+	controller = DAI
+	add_core = DAI
+	remove_core = TOK
+}
+1802.7.22 = {
+	owner = ANN
+	controller = ANN
+	remove_core = DAI
+} # Nguyen Phuc Anh annexed the Tay Son Dynasty
+
+1840.1.1   = { religion = mahayana }
+1883.8.25  = { owner = FR2 revolt = { type = nationalist_rebels size = 2 } controller = REB }
+1886.4.1   = { revolt = {} controller = FR2 add_core = FR2 }
+1910.1.1 = { discovered_by = western discovered_by = eastern discovered_by = muslim discovered_by = ottoman }
+1940.6.14  = { controller = JAP }
+1945.3.11  = { owner = VTN controller = VTN add_core = VTN } # Empire of Vietnam, Japanese puppet
+1945.8.23  = { owner = NVI controller = NVI add_core = NVI remove_core = FR2 }
+1976.7.2   = { owner = VTN controller = VTN remove_core = NVI }
+
+
+

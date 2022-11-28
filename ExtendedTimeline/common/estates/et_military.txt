@@ -1,0 +1,89 @@
+estate_military = {
+	icon = 2
+
+	# If true, country will get estate
+	trigger = {
+		NOT = { has_government_attribute = is_merchant_republic }
+		NOT = { has_reform = pirate_republic_reform }
+		NOT = { has_reform = veche_republic }
+		NOT = { has_reform = cossacks_reform }
+		NOT = { government = native }
+		NOT = { has_reform = trading_city }
+		NOT = { has_reform = siberian_tribe }
+		NOT = { is_revolutionary_republic_trigger = yes }
+		NOT = { has_reform = revolutionary_empire_reform }
+		NOT = { has_reform = roman_empire_reform }
+		OR = {
+			NOT = { has_reform = celestial_empire }
+			has_dlc = "Mandate of Heaven"
+		}
+		is_nomad = no
+		is_colonial_nation = no
+		OR = {
+			has_reform = multi_party_system
+			has_reform = single_party_system
+			has_reform = military_government
+			has_reform = fascist_government
+			has_reform = communist_government
+		}
+	}
+	
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		global_manpower_modifier = 0.15
+		manpower_recovery_speed = 0.2
+		army_tradition = 0.5
+	}
+	country_modifier_neutral = {
+		manpower_recovery_speed = 0.1
+		army_tradition = 0.1
+	}	
+	country_modifier_angry = {
+		global_unrest = 2
+		manpower_recovery_speed = -0.3
+		army_tradition = -1
+	}
+	land_ownership_modifier = {
+		generals_loyalty_modifier = 0.2
+	}
+	
+	# Influence modifiers
+	base_influence = 20
+	influence_modifier = {
+		desc = ET_MIL_MILITARIST_GOVERNMENT
+		trigger = {
+			OR = {
+				has_reform = fascist_government
+				has_reform = military_government
+			}
+		}	
+		influence = 20
+	}
+	
+	# Loyalty modifiers
+	loyalty_modifier = {
+		desc = ET_MIL_MILITARIST_GOVERNMENT
+		trigger = {
+			OR = {
+				has_reform = fascist_government
+				has_reform = military_government
+			}
+		}
+		loyalty = 10
+	}
+	
+	color = { 0 49 83 }
+	
+	privileges = {
+		estate_military_land_rights
+		estate_military_budget_increase
+		estate_military_budget_decrease
+		estate_military_advisors
+	}
+	
+	agendas = {
+		estate_burghers_develop_x
+	}
+	
+	influence_from_dev_modifier = 1.0
+}

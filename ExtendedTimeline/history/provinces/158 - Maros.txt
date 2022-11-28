@@ -1,0 +1,98 @@
+#158 - Maros
+
+owner = DAC
+controller = DAC
+culture = dacian
+religion = zamolxism
+capital = "Napoca"
+trade_goods = wool
+hre = no
+discovered_by = nomad_group
+discovered_by = eastern_nomad_group
+discovered_by = western_nomad_group
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+add_core = DAC
+
+106.1.1 = { owner = ROM controller = ROM add_core = ROM }
+160.1.1 = { remove_core = DAC }
+271.1.1 = { owner = GVI controller = GVI add_core = GVI remove_core = ROM religion = germanic }
+360.1.1 = { religion = chalcedonism }
+376.1.1 = { owner = HNS controller = HNS add_core = HNS remove_core = GVI }
+450.1.1 = { culture = romanian }
+469.1.1 = { owner = GEP controller = GEP add_core = GEP remove_core = HNS capital = "Brasov" }
+567.1.1 = { owner = AVR controller = AVR add_core = AVR remove_core = GEP religion = tengri_pagan_reformed }
+804.1.1 = { owner = BUL controller = BUL add_core = BUL remove_core = AVR }
+840.1.1 = { owner = TRA controller = TRA add_core = TRA remove_core = BUL }
+900.1.1 = { base_tax = 3 base_production = 3 }
+1003.1.1 = { owner = HUN controller = HUN add_core = HUN culture = hungarian }
+1040.1.1 = { religion = orthodox }
+1200.1.1 = { religion = catholic }
+
+1506.1.1 = { revolt = { type = nationalist_rebels size = 1 } controller = REB } # Szekely rebellion
+1507.1.1 = { revolt = {} controller = TRA } # Estimated
+1514.4.1 = { revolt = { type = anti_tax_rebels size = 0 } controller = REB } # Peasant rebellion against Hungary's magnates
+1514.10.1 = { revolt = {} controller = TRA } # Estimated, the rebellions is put down by Szapolyiai
+1526.8.30 = { 
+	owner = TRA 
+	controller = TRA
+	add_core = TRA
+	add_core = HAB
+} #Hungary fractured after Battle of Mohacs
+1528.1.1 = { add_core = TUR }
+1551.7.19 = {
+	owner = HAB
+	controller = HAB
+} # Ferdinand gains Transylvania from Treaty of Weissenburg
+1556.10.1 = { owner = TRA controller = TRA } # Isabella Jagiello is restored as queen of Transylvania
+1562.1.1 = { revolt = { type = nationalist_rebels size = 1 } controller = REB } # Szekely rebellion
+1562.6.1 = { remove_core = HAB } # End of Ottoman-Habsburg War
+1563.1.1 = { revolt = {} controller = TRA } # Estimated
+1599.1.1 = {
+	owner = WAL
+	controller = WAL
+	add_core = WAL
+} # Battle of Selimbar, Michael the brave gained control
+1601.1.1 = {
+	owner = TRA
+	controller = TRA
+	remove_core = WAL
+} # Michael is assasinated
+1604.1.1 = { owner = HAB controller = HAB }
+1604.10.1 = { revolt = { type = nationalist_rebels size = 1 } controller = REB } # Estimated, rebellion (Stephen Bocskai) against Austrian rule
+1606.6.23 = { revolt = {} owner = TRA controller = TRA } # Stephen becomes prince of Transylvania
+1699.1.1 = {
+	owner = HAB 
+	controller = HAB
+	add_core = HAB
+	remove_core = TUR
+} # Ceded to Austria
+1703.1.1 = { revolt = { type = nationalist_rebels size = 1 } controller = REB } # Kuruc rebellion, led by Francisc Rakoczy
+1711.1.1 = { revolt = {} controller = HAB } # The treaty of Szatmar, Austrian governors replaced the prince of Transylvania
+1744.1.1 = { revolt = { type = heretic_rebels size = 1 } controller = REB } # Visarion Sarai stir up an orthodox rebellion against the Uniate church
+1745.1.1 = { revolt = {} controller = HAB } # Estimated, Visarion Sarai is arrested and executed
+1775.1.1 = { base_manpower = 3 }
+1784.1.1 = { revolt = { type = anti_tax_rebels size = 2 } controller = REB } # Peasant rebellion against the nobles
+1785.1.1 = { revolt = {} controller = HAB } # The leaders are arrested and executed
+
+1801.1.1 = { base_production = 4 }
+1825.1.1 = { base_production = 5 }
+1851.1.1 = { base_manpower = 4 }
+1875.1.1 = { base_tax = 5 }
+1901.1.1 = { base_production = 6 }
+1910.1.1 = { discovered_by = asian }
+1918.10.31 = { owner = HUN controller = HUN add_core = HUN remove_core = HAB }
+1920.6.4   = { owner = RMN controller = RMN add_core = RMN remove_core = HUN remove_core = TRA } #Treaty of Trianon
+1940.9.1   = { owner = HUN controller = HUN } # Second Vienna Award
+1944.3.1   = { owner = RMN controller = RMN }
+1951.1.1 = { base_tax = 6 }
+

@@ -1,0 +1,582 @@
+roman_defensive = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = ROM
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	roman_legionaries = {
+		icon = mission_assemble_an_army
+		required_missions = { }
+		position = 1
+		
+		trigger = {
+			army_size_percentage = 1
+			num_of_generals = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "thriving_arms_industry"
+				duration = 9125 #25 years
+			}
+			trans_jordan_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			palestine_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			gulf_of_arabia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = { 4392 = { NOT = { is_core = ROOT } } }
+				4392 = { add_permanent_claim = ROOT }
+			}
+		}
+	}
+	integrate_south_caucasus = {
+		icon = mission_high_income
+		required_missions = { roman_legionaries }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 424
+				province_id = 2206
+				province_id = 4304
+				province_id = 4340
+				area = armenia_area
+				area = kartli_kakheti_area
+				area = imereti_area
+				area = north_kurdistan_area
+				area = dulkadir_area
+				area = erzurum_area
+				area = samtskhe_area
+				area = rum_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			424 = { owned_by = ROOT }
+			2206 = { owned_by = ROOT }
+			4304 = { owned_by = ROOT }
+			4340 = { owned_by = ROOT }
+			armenia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			kartli_kakheti_area = {
+				type = all
+				owned_by = ROOT
+			}
+			imereti_area = {
+				type = all
+				owned_by = ROOT
+			}
+			north_kurdistan_area = {
+				type = all
+				owned_by = ROOT
+			}
+			dulkadir_area = {
+				type = all
+				owned_by = ROOT
+			}
+			erzurum_area = {
+				type = all
+				owned_by = ROOT
+			}
+			samtskhe_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 20
+		}
+	}
+	empire_of_the_superlative_rom = {
+		icon = mission_early_game_buildings
+		required_missions = { }
+		position = 4
+		
+		trigger = {
+			total_development = 2500
+		}
+		effect = {
+			add_prestige = 50
+			add_legitimacy = 50
+		}
+	}
+}
+roman_iberia = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = ROM
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	border_forts_rom = {
+		icon = mission_conquer_50_development
+		required_missions = { }
+		position = 1
+		
+		trigger = {
+			fort_et = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "rom_secure_borders"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	
+	arabia_petraea_rom = {
+		icon = mission_arabian_fort
+		required_missions = { roman_legionaries	}
+		completed_by = 106.6.1
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4392
+				area = trans_jordan_area
+				area = palestine_area
+				area = gulf_of_arabia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			4392 = { country_or_non_sovereign_subject_holds = ROOT }
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gulf_of_arabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			al_jazira_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	mesopotamia_rom = {
+		icon = mission_conquer_50_development
+		required_missions = { arabia_petraea_rom }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = al_jazira_area
+				area = iraq_arabi_area
+				province_id = 2312
+				province_id = 2311
+				province_id = 4288
+				province_id = 408
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			al_jazira_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			iraq_arabi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2312 = { country_or_non_sovereign_subject_holds = ROOT }
+			2311 = { country_or_non_sovereign_subject_holds = ROOT }
+			4288 = { country_or_non_sovereign_subject_holds = ROOT }
+			408 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+}
+roman_stability = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = ROM
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	stabilize_the_empire_rom = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 1
+		
+		trigger = {
+			AND = {
+				stability = 2
+				legitimacy = 75
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "rom_empire_stabilized"
+				duration = 3650
+			}
+		}
+	}
+	pacify_germania_rom = {
+		icon = mission_impaled_soldies
+		required_missions = { stabilize_the_empire_rom }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = upper_rhineland_area
+				area = lower_swabia_area
+				area = upper_swabia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				all_country = {
+					is_subject_of = ROOT
+					capital_scope = {
+						OR = {
+							region = north_german_region
+							region = south_german_region
+						}
+					}
+				}
+				amount = 2
+			}
+			upper_rhineland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_swabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_swabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_stability = 1
+			add_manpower = 10
+		}
+	}
+	province_britannia_rom = {
+		icon = mission_unite_home_region
+		required_missions = { }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 246
+				province_id = 247
+				area = wessex_area
+				area = east_midlands_area
+				area = home_counties_area
+				area = east_anglia_area
+				area = west_midlands_area
+				area = wales_area
+				area = yorkshire_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+		trigger = {
+			246 = { country_or_non_sovereign_subject_holds = ROOT }
+			247 = { country_or_non_sovereign_subject_holds = ROOT }
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			lowlands_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			scottish_marches_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	province_caledonia_rom = {
+		icon = mission_galleys_in_port
+		required_missions = { province_britannia_rom }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = scottish_marches_area
+				area = lowlands_area
+				area = highlands_area
+				area = kingdom_of_the_isles_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			scottish_marches_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lowlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kingdom_of_the_isles_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_mil_power = 100
+		}
+	}
+}
+roman_balkan = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = ROM
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	dominate_mediterranean_rom = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { }
+		trigger = { 
+			num_of_galley = 30
+		}
+		effect = {
+			add_country_modifier = {
+				name = "naval_enthusiasm_mission"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	
+	province_dacia_rom = {
+		icon = mission_colonial
+		required_missions = { stabilize_the_empire_rom }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 157
+				province_id = 158
+				province_id = 1954
+				province_id = 4126
+				province_id = 4127
+				area = wallachia_area
+				area = southern_transylvania_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			157 = { country_or_non_sovereign_subject_holds = ROOT }
+			158 = { country_or_non_sovereign_subject_holds = ROOT }
+			1954 = { country_or_non_sovereign_subject_holds = ROOT }
+			4126 = { country_or_non_sovereign_subject_holds = ROOT }
+			4127 = { country_or_non_sovereign_subject_holds = ROOT }
+			wallachia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			southern_transylvania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+		}
+	}
+}
+roman_faith = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = ROM
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	true_faith_rom = {
+        icon = mission_hands_praying
+        required_missions = { }
+        position = 1
+		
+        trigger = {
+			OR = {
+				ROOT = {
+					AND = {
+						religion = hellenism
+						all_owned_province = {
+							NOT = { religion = chalcedonism }
+						}
+					}
+				}
+				ROOT = {
+					religion = chalcedonism
+				}
+			}
+        }
+        effect = {
+			add_country_modifier = {
+				name = "rom_true_faith"
+				duration = 9125 #25 years
+			}
+        }
+    }
+	one_empire_one_religion_rom = {
+        icon = mission_religious
+        required_missions = { true_faith_rom }
+        position = 2
+		
+		trigger = {
+			ROOT = {
+				all_owned_province = {
+					religion = ROOT
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_stability = 1
+		}
+	}
+	all_roads_lead_to_rom = {
+        icon = et_mission_road
+        required_missions = { }
+        position = 3
+		
+		trigger = {
+			road = 10
+		}
+		effect = {
+			add_country_modifier = {
+				name = "rom_roman_roads"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	slave_trade_rom = {
+        icon = mission_market_place_with_asian_traders
+        required_missions = { all_roads_lead_to_rom }
+        position = 4
+		
+		provinces_to_highlight = {
+			trade_goods = slaves
+		}
+		trigger = {
+			slaves = 2
+		}
+		effect = {
+			add_adm_power = 100
+			add_manpower = 10
+		}
+	}
+	roman_wealth = {
+		icon = mission_war_chest
+        required_missions = { slave_trade_rom }
+        position = 5
+		
+		trigger = {
+			copper = 6
+			sugar = 6
+			cotton = 6
+			gold = 4
+			spices = 3
+			glass = 3
+			silk = 3
+			paper = 2
+			dyes = 2
+			gems = 1
+			ivory = 1
+			treasury = 5000
+		}
+		effect = {
+			add_country_modifier = {
+				name = "rom_trade_domination"
+				duration = 9125 #25 years
+			}
+		}
+	}
+}

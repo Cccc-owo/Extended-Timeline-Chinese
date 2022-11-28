@@ -1,0 +1,434 @@
+csa_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = CSA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	csa_secure_the_border_states_mission = {
+		icon = mission_us_civil_war_border_states
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = chesapeake_area 		#Maryland
+				area = kentucky_area
+				area = appalachia_area		#Vandalia
+				area = mississippi_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			chesapeake_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kentucky_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			appalachia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mississippi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			south_iroquoisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			delaware_valley_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hudson_valley_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	csa_northern_offensive_mission = {
+		icon = mission_us_civil_war_confrontation
+		required_missions = { csa_secure_the_border_states_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = south_iroquoisia_area	#Westsylvania
+				area = delaware_valley_area
+				area = hudson_valley_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			south_iroquoisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			delaware_valley_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudson_valley_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			iroquoisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			great_woods_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	csa_dominate_the_coast_mission = {
+		icon = mission_rb_the_thirteen_colonies
+		required_missions = { csa_northern_offensive_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = massachusetts_bay_area
+				area = connecticut_valley_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			massachusetts_bay_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			connecticut_valley_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			maine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			susquehanna_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	csa_to_the_great_plains_mission = {
+		icon = mission_collect_yasak
+		required_missions = { csa_dominate_the_coast_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = ozarks_area
+				area = upper_louisiana_area
+				area = central_plains_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ozarks_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_louisiana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_plains_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			south_dakota_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dakota_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			high_plains_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	csa_manifest_destiny_mission = {
+		icon = mission_colonize_california
+		required_missions = { csa_to_the_great_plains_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = california_area
+				area = northern_california_area
+				area = central_valley_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			california_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_california_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_valley_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			great_lakes_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northeast_america_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			southeast_america_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mississippi_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			great_plains_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			california_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	csa_one_nation_under_god_mission = {
+		icon = mission_usa_old_western_regions_map
+		required_missions = { csa_manifest_destiny_mission }
+		position = 6
+		trigger = {
+			OR = {
+				NOT = { exists = USA }
+				north_america_superregion = {
+					type = all
+					NOT = { owned_by = USA }
+				}
+			}
+		}
+		effect = {
+			add_prestige = 40
+		}
+	}
+}
+
+csa_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = CSA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	csa_cross_the_rio_grande_mission = {
+		icon = mission_sail_to_the_east_indies
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = northeast_mexico_area 	#Coahuila
+				area = rio_grande_area			#Tamaulipas
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			northeast_mexico_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rio_grande_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+	csa_into_the_caribbean_mission = {
+		icon = mission_colonize_the_caribbean
+		required_missions = { }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				region = carribeans_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				region = carribeans_region
+				value = 7
+			}
+		}
+		effect = {
+			add_navy_tradition = 25
+		}
+	}
+	csa_international_allies_mission = {
+		icon = mission_aragonese_navy
+		required_missions = { }
+		position = 3
+		trigger = {
+			any_country = {
+				capital_scope = { continent = europe }
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		effect = {
+			add_prestige = 5
+			add_country_modifier = {
+				name = "csa_internationally_recognized"
+				duration = 10950
+			}
+		}
+	}
+	csa_a_standing_army_mission = {
+		icon = mission_brazilian_bandeirantes
+		required_missions = { }
+		position = 4
+		trigger = {
+			OR = {
+			 	army_professionalism = 0.80
+				army_tradition = 40
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "csa_standing_army"
+				duration = 10950
+			}
+		}
+	}
+	csa_overcome_the_anaconda_mission = {
+		icon = mission_us_civil_war_anaconda
+		required_missions = { }
+		position = 5
+		trigger = {
+			navy_size = USA
+		}
+		effect = {
+			add_country_modifier = {
+				name = "csa_naval_powerhouse"
+				duration = 10950
+			}
+		}
+	}
+	csa_establish_railways_mission = {
+		icon = mission_steam_locomotive
+		required_missions = { }
+		position = 6
+		trigger = {
+			railroad = 10
+		}
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = "csa_railroad_network"
+				duration = 10950
+			}
+		}
+	}
+}

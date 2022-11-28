@@ -1,0 +1,282 @@
+########################
+#Druidism Flavor Events#
+########################
+
+namespace = et_sanamahism
+
+#Offerings to the Household Gods
+country_event = {
+	id = et_sanamahism.1
+	title = et_sanamahism.1.t
+	desc = et_sanamahism.1.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = sanamahism
+		NOT = { has_country_modifier = blessing_of_the_household_gods }
+		NOT = { has_country_modifier = wrath_of_the_household_gods }
+		NOT = { has_ruler_flag = sanamahism_event_1 }
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+
+	immediate = {
+		set_ruler_flag = sanamahism_event_1
+	}
+
+	option = {
+		name = et_sanamahism.1.a
+		add_years_of_income = -0.4
+		add_country_modifier = {
+			name = blessing_of_the_household_gods
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = et_sanamahism.1.b
+		add_country_modifier = {
+			name = wrath_of_the_household_gods
+			duration = 1825
+		}
+	}
+}
+
+#Urban Sprawl and the Forest Gods
+province_event = {
+	id = et_sanamahism.2
+	title = et_sanamahism.2.t
+	desc = et_sanamahism.2.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = sanamahism
+		development = 14
+		owner = { 
+			religion = sanamahism
+			NOT = { has_country_flag = sanamahism_event_2 }
+			NOT = { 
+				any_owned_province = { 
+					OR = { 
+						has_province_modifier = et_sanamahi_displaced_locals 
+						has_province_modifier = disturbed_umang_lai 
+					} 
+				} 
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { set_country_flag = sanamahism_event_2 }
+	}
+
+	option = {
+		name = et_sanamahism.2.a
+		add_base_tax = -1
+		random_neighbor_province = {
+			limit = { owner = { owns = ROOT } }
+			add_base_tax = 1
+		}
+		add_province_modifier = {
+			name = et_sanamahi_displaced_locals
+			duration = 1825
+		}
+		owner = { clr_country_flag = sanamahism_event_2 }
+	}
+
+	option = {
+		name = et_sanamahism.2.b
+		owner = { add_prestige = -10 }
+		add_province_modifier = {
+			name = disturbed_umang_lai
+			duration = 1825
+		}
+		owner = { clr_country_flag = sanamahism_event_2 }
+	}
+}
+
+#Urban Sprawl and the Forest Gods
+province_event = {
+	id = et_sanamahism.3
+	title = et_sanamahism.2.t
+	desc = et_sanamahism.2.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = sanamahism
+		development = 14
+		owner = { 
+			religion = sanamahism
+			NOT = { has_country_flag = sanamahism_event_2 }
+			NOT = { 
+				any_owned_province = { 
+					OR = { 
+						has_province_modifier = et_sanamahi_displaced_locals 
+						has_province_modifier = disturbed_umang_lai 
+					} 
+				} 
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { set_country_flag = sanamahism_event_2 }
+	}
+
+	option = {
+		name = et_sanamahism.2.a
+		add_base_production = -1
+		random_neighbor_province = {
+			limit = { owner = { owns = ROOT } }
+			add_base_production = 1
+		}
+		add_province_modifier = {
+			name = et_sanamahi_displaced_locals
+			duration = 1825
+		}
+		owner = { clr_country_flag = sanamahism_event_2 }
+	}
+
+	option = {
+		name = et_sanamahism.2.b
+		owner = { add_prestige = -10 }
+		add_province_modifier = {
+			name = disturbed_umang_lai
+			duration = 1825
+		}
+		owner = { clr_country_flag = sanamahism_event_2 }
+	}
+}
+
+#Urban Sprawl and the Forest Gods
+province_event = {
+	id = et_sanamahism.4
+	title = et_sanamahism.2.t
+	desc = et_sanamahism.2.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = sanamahism
+		development = 14
+		owner = { 
+			religion = sanamahism
+			NOT = { has_country_flag = sanamahism_event_2 }
+			NOT = { 
+				any_owned_province = { 
+					OR = { 
+						has_province_modifier = et_sanamahi_displaced_locals 
+						has_province_modifier = disturbed_umang_lai 
+					} 
+				} 
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { set_country_flag = sanamahism_event_2 }
+	}
+
+	option = {
+		name = et_sanamahism.2.a
+		add_base_manpower = -1
+		random_neighbor_province = {
+			limit = { owner = { owns = ROOT } }
+			add_base_manpower = 1
+		}
+		add_province_modifier = {
+			name = et_sanamahi_displaced_locals
+			duration = 1825
+		}
+		owner = { clr_country_flag = sanamahism_event_2 }
+	}
+
+	option = {
+		name = et_sanamahism.2.b
+		owner = { add_prestige = -10 }
+		add_province_modifier = {
+			name = disturbed_umang_lai
+			duration = 1825
+		}
+		owner = { clr_country_flag = sanamahism_event_2 }
+	}
+}
+
+#Panthoibi Iratpa
+country_event = {
+	id = et_sanamahism.5
+	title = et_sanamahism.5.t
+	desc = et_sanamahism.5.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = sanamahism
+		has_personal_deity = ema_panthoibi
+		NOT = { has_ruler_flag = panthoibi_festival }
+	}
+
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	immediate = {
+		set_ruler_flag = panthoibi_festival
+	}
+
+	option = {
+		name = et_sanamahism.5.a
+		add_years_of_income = -0.4
+		add_country_modifier = {
+			name = panthoibi_iratpa
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = et_sanamahism.5.b
+		add_prestige = -2
+	}
+}
+
+#Emoinu Iratpa
+country_event = {
+	id = et_sanamahism.6
+	title = et_sanamahism.6.t
+	desc = et_sanamahism.6.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = sanamahism
+		has_personal_deity = emoinu
+		NOT = { has_ruler_flag = emoinu_festival }
+	}
+
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	immediate = {
+		set_ruler_flag = emoinu_festival
+	}
+
+	option = {
+		name = et_sanamahism.6.a
+		add_years_of_income = -0.4
+		add_country_modifier = {
+			name = emoinu_iratpa
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = et_sanamahism.6.b
+		add_prestige = -2
+	}
+}

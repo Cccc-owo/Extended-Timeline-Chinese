@@ -1,0 +1,650 @@
+# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
+
+#ET
+german_fascism = {
+	rank = {
+		1 = FASCIST_DICTATORSHIP
+		2 = FASCIST_DICTATORSHIP
+		3 = FASCIST_DICTATORSHIP
+	}
+	
+	ruler_male = {
+		1 = FUHRER
+		2 = FUHRER
+		3 = FUHRER
+	}
+	
+	ruler_female = {
+		1 = FUHRER_fem
+		2 = FUHRER_fem
+		3 = FUHRER_fem
+	}
+	
+	trigger = {
+		has_reform = fascist_government
+		culture_group = germanic
+	}
+}
+
+italian_fascism = {
+	rank = {
+		1 = FASCIST_DICTATORSHIP
+		2 = FASCIST_DICTATORSHIP
+		3 = FASCIST_DICTATORSHIP
+	}
+	
+	ruler_male = {
+		1 = DUCE
+		2 = DUCE
+		3 = DUCE
+	}
+	
+	ruler_female = {
+		1 = DUCE_fem
+		2 = DUCE_fem
+		3 = DUCE_fem
+	}
+	
+	trigger = {
+		has_reform = fascist_government
+		culture_group = latin
+	}
+}
+
+spanish_fascism = {
+	rank = {
+		1 = FASCIST_DICTATORSHIP
+		2 = FASCIST_DICTATORSHIP
+		3 = FASCIST_DICTATORSHIP
+	}
+	
+	ruler_male = {
+		1 = CAUDILLO
+		2 = CAUDILLO
+		3 = CAUDILLO
+	}
+	
+	ruler_female = {
+		1 = CAUDILLO_fem
+		2 = CAUDILLO_fem
+		3 = CAUDILLO_fem
+	}
+	
+	trigger = {
+		has_reform = fascist_government
+		culture_group = iberian
+	}
+}
+
+romanian_fascism = {
+	rank = {
+		1 = FASCIST_DICTATORSHIP
+		2 = FASCIST_DICTATORSHIP
+		3 = FASCIST_DICTATORSHIP
+	}
+	
+	ruler_male = {
+		1 = CONDUCATOR
+		2 = CONDUCATOR
+		3 = CONDUCATOR
+	}
+	
+	ruler_female = {
+		1 = CONDUCATOR_fem
+		2 = CONDUCATOR_fem
+		3 = CONDUCATOR_fem
+	}
+	
+	trigger = {
+		has_reform = fascist_government
+		primary_culture = romanian
+	}
+}
+
+nko_dictatorship = {
+	rank = {
+		1 = SOCIALIST_REPUBLIC
+		2 = SOCIALIST_REPUBLIC
+		3 = SOCIALIST_REPUBLIC
+	}
+
+	ruler_male = {
+		1 = LEADER
+		2 = SUPREME_LEADER
+		3 = MOST_SUPREME_LEADER
+	}
+
+	ruler_female = {
+		1 = LEADER_fem
+		2 = SUPREME_LEADER_fem
+		3 = MOST_SUPREME_LEADER_fem
+	}
+
+	trigger = {
+		tag = NOK
+		has_reform = dictatorial_rule
+	}
+}
+
+iran_theocracy = {
+	rank = {
+		1 = ISLAMIC_REPUBLIC
+		2 = ISLAMIC_REPUBLIC
+		3 = GRAND_ISLAMIC_REPUBLIC
+	}
+
+	ruler_male = {
+		1 = AYATOLLAH
+		2 = SUPREME_LEADER
+		3 = MOST_SUPREME_LEADER
+	}
+
+	ruler_female = {
+		1 = AYATOLLAH
+		2 = SUPREME_LEADER_fem
+		3 = MOST_SUPREME_LEADER_fem
+	}
+
+	trigger = {
+		religion = shiite
+		tag = IRA
+		government = theocracy
+	}
+}
+
+bahrain_monarchy = {
+	rank = {
+		1 = EMIRATE
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = EMIR
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = EMIRA
+		2 = QUEEN
+		3 = EMPRESS
+	}
+
+	trigger = {
+		tag = BHR
+		government = monarchy
+	}
+}
+
+bhutan_monarchy = {
+	rank = {
+		1 = KINGDOM
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = DRUK_DESI
+		2 = DRUK_GYALPO
+		3 = DRUK_GYALPO
+	}
+
+	ruler_female = {
+		1 = DRUK_DESI_fem
+		2 = DRUK_GYALPO_fem
+		3 = DRUK_GYALPO_fem
+	}
+
+	trigger = {
+		tag = BHU
+		government = monarchy
+	}
+}
+
+bhutan_theocracy = {
+	rank = {
+		1 = HOLY_PRINCIPALITY
+		2 = HOLY_STATE
+		3 = HOLY_EMPIRE
+	}
+
+	ruler_male = {
+		1 = JE_KHENPO
+		2 = JE_KHENPO
+		3 = JE_KHENPO
+	}
+
+	ruler_female = {
+		1 = JE_KHENPO_fem
+		2 = JE_KHENPO_fem
+		3 = JE_KHENPO_fem
+	}
+
+	trigger = {
+		tag = BHU
+		government = theocracy
+	}
+}
+
+mahdi_title = {
+	rank = {
+		1 = MAHDIST_STATE
+		2 = MAHDIST_STATE
+		3 = MAHDIST_STATE
+	}
+
+	ruler_male = {
+		1 = MAHDI
+		2 = MAHDI
+		3 = MAHDI
+	}
+
+	ruler_female = {
+		1 = MAHDI_fem
+		2 = MAHDI_fem
+		3 = MAHDI_fem
+	}
+	
+	trigger = {
+		has_reform = feudal_theocracy
+		OR = {
+			tag = MOR
+			tag = SOS
+			primary_culture = sudanese
+		}
+	}
+}
+
+samoa_democracy = {
+	rank = {
+		1 = INDEPENDENT_STATE
+		2 = INDEPENDENT_STATE
+		3 = INDEPENDENT_STATE
+	}
+
+	ruler_male = {
+		1 = O_LE_AO_O_LE_MALO
+		2 = O_LE_AO_O_LE_MALO
+		3 = O_LE_AO_O_LE_MALO
+	}
+
+	ruler_female = {
+		1 = O_LE_AO_O_LE_MALO_fem
+		2 = O_LE_AO_O_LE_MALO_fem
+		3 = O_LE_AO_O_LE_MALO_fem
+	}
+	
+	trigger = {
+		tag = SAM
+		government = republic
+	}
+}
+
+xiongnu_horde = {
+	rank = {
+		1 = NOMADIC_CONFEDERATION
+		2 = NOMADIC_CONFEDERATION
+		3 = NOMADIC_CONFEDERATION
+	}
+
+	ruler_male = {
+		1 = DUNGHU
+		2 = CHANYU
+		3 = DA_CHANYU
+	}
+
+	ruler_female = {
+		1 = DUNGHU_fem
+		2 = CHANYU_fem
+		3 = DA_CHANYU_fem
+	}
+	
+	trigger = {
+		OR = {
+			tag = XIO
+			tag = SXI
+		}
+		government = tribal
+	}
+}
+
+punic_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = REPUBLIC
+		3 = REPUBLIC
+	}
+
+	ruler_male = {
+		1 = SHOPHET
+		2 = SHOPHET
+		3 = SHOPHET
+	}
+
+	ruler_female = {
+		1 = SHOPHET_fem
+		2 = SHOPHET_fem
+		3 = SHOPHET_fem
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = phoenician
+			primary_culture = punic
+		}
+		government = republic
+	}
+}
+
+pontus_bosporus_kingdom = {
+	rank = {
+		1 = KINGDOM
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = DESPOT
+		2 = BASILEUS
+		3 = BASILEUS
+	}
+
+	ruler_female = {
+		1 = DESPOTISSA
+		2 = BASILISSA 
+		3 = BASILISSA
+	}
+	
+	consort_male = {
+		1 = DESPOT
+		2 = BASILEUS
+		3 = BASILEUS
+	}
+
+	consort_female = {
+		1 = DESPOTISSA
+		2 = BASILISSA 
+		3 = BASILISSA
+	}
+	
+	trigger = {
+		OR = {
+			tag = PON
+			tag = BSP
+		}
+		government = monarchy
+	}
+}
+
+ankara_republic = {
+	rank = {
+		1 = AHI_BEYLIK
+		2 = AHI_BEYLIK
+		3 = AHI_BEYLIK
+	}
+
+	ruler_male = {
+		1 = AHI_title
+		2 = AHI_title
+		3 = AHI_title
+	}
+
+	ruler_female = {
+		1 = AHI_title_fem
+		2 = AHI_title_fem 
+		3 = AHI_title_fem
+	}
+	
+	trigger = {
+		tag = ANG
+		government = republic
+	}
+}
+
+kievan_grand_principality = {
+	rank = {
+		2 = GRAND_PRINCIPALITY
+	}
+
+	ruler_male = {
+		2 = GRAND_PRINCE
+	}
+
+	ruler_female = {
+		2 = GRAND_PRINCESS
+	}
+	
+	trigger = {
+		has_reform = grand_principality
+	}
+}
+
+liberian_colony = {
+	ruler_male = {
+		1 = COLONIAL_AGENT
+	}
+
+	ruler_female = {
+		1 = COLONIAL_AGENT_fem
+	}
+	
+	trigger = {
+		tag = LBR
+		government = republic
+		has_reform = colonial_government
+	}
+}
+
+gov_constitutional_republic_2 = {
+	rank = {
+		1 = REPUBLIC
+		2 = REPUBLIC
+		3 = REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = CHANCELOR
+		2 = PRESIDENT
+		3 = PRESIDENT
+	}
+	
+	ruler_female = {
+		1 = CHANCELOR_fem
+		2 = PRESIDENT_fem
+		3 = PRESIDENT_fem
+	}
+	
+	trigger = {
+		government = republic
+		OR = {
+			has_reform = constitutional_republic
+			has_reform = presidential_reform
+			has_reform = parliamentary_reform
+			has_reform = presidental_republic
+		}
+		OR = {
+			tag = IND
+			tag = ITA
+			tag = FR2
+		}
+		NOT = { has_reform = presidential_despot_reform }
+	}
+}
+
+islamic_republic = {
+	rank = {
+		1 = ISLAMIC_REPUBLIC
+		2 = ISLAMIC_REPUBLIC
+		3 = ISLAMIC_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = CHANCELOR
+		2 = PRESIDENT
+		3 = PRESIDENT
+	}
+	
+	ruler_female = {
+		1 = CHANCELOR_fem
+		2 = PRESIDENT_fem
+		3 = PRESIDENT_fem
+	}
+	
+	trigger = {
+		tag = PAK
+		government = republic
+		religion_group = muslim
+	}
+}
+
+micronesia_republic = {
+	rank = {
+		1 = FEDERATED_STATES
+		2 = FEDERATED_STATES
+		3 = FEDERATED_STATES
+	}
+	
+	ruler_male = {
+		1 = CHANCELOR
+		2 = PRESIDENT
+		3 = PRESIDENT
+	}
+	
+	ruler_female = {
+		1 = CHANCELOR_fem
+		2 = PRESIDENT_fem
+		3 = PRESIDENT_fem
+	}
+	
+	trigger = {
+		tag = MIC
+		government = republic
+	}
+}
+
+niue_republic = {
+	rank = {
+		1 = STATE
+		2 = REPUBLIC
+		3 = REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = PREMIER
+		2 = PRESIDENT
+		3 = PRESIDENT
+	}
+	
+	ruler_female = {
+		1 = PREMIER_fem
+		2 = PRESIDENT_fem
+		3 = PRESIDENT_fem
+	}
+	
+	trigger = {
+		tag = NIU
+		government = republic
+	}
+}
+
+satraps = {
+	rank = {
+		1 = SATRAPY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = SATRAP
+		2 = GREAT_SATRAP
+		3 = GRAND_SATRAP
+	}
+	
+	ruler_female = {
+		1 = SATRAP_fem
+		2 = GREAT_SATRAP_fem
+		3 = GRAND_SATRAP_fem
+	}
+	
+	trigger = {
+		government = monarchy
+		OR = {
+			tag = WSA
+			tag = NST
+			tag = GND
+		}
+	}
+}
+
+roman_client_kingdoms = {
+	rank = {
+		1 = KINGDOM
+		2 = KINGDOM
+		3 = KINGDOM
+	}
+	
+	ruler_male = {
+		1 = KING
+		2 = KING
+		3 = KING
+	}
+	
+	ruler_female = {
+		1 = QUEEN
+		2 = QUEEN
+		3 = QUEEN
+	}
+	
+	trigger = {
+		government = monarchy
+		is_subject_of = ROM
+	}
+}
+
+warlord_states = {
+	rank = {
+		1 = WARLORD_STATE
+	}
+	
+	ruler_male = {
+		1 = WARLORD
+	}
+	
+	ruler_female = {
+		1 = WARLORD_fem
+	}
+	
+	consort_male = {
+		1 = LORD
+	}
+	
+	consort_female = {
+		1 = LADY
+	}
+	
+	trigger = {
+		has_reform = warlord_state
+	}
+}
+
+muhammad_special_title = {
+	rank = {
+		3 = ISLAMIC_CALIPHATE
+	}
+	
+	ruler_male = {
+		3 = PROPHET
+	}
+	
+	ruler_female = {
+		3 = PROPHETESS
+	}
+	
+	trigger = {
+		has_country_flag = ruler_muhammmad
+	}
+}

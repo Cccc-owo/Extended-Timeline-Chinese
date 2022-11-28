@@ -1,0 +1,165 @@
+namespace = et_byz
+
+#Imperial coup
+country_event = {
+
+	id = et_byz.1
+	title = "et_byz.EVTNAME1"
+	desc = "et_byz.EVTDESC1"
+	picture = REVOLUTION_eventPicture
+
+	trigger = {
+		OR = {
+			tag = BYZ
+			tag = ROW
+			tag = ROM
+		}
+		government = monarchy
+		NOT = { mil = 3 }
+		NOT = { adm = 3 }
+		NOT = { dip = 3 }
+		NOT = { has_ruler_flag = coup_attempt }
+	}
+	mean_time_to_happen = {
+		months = 75
+
+		modifier = {
+			factor = 0.8
+			NOT = { mil = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { adm = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { dip = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 30 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 10 }
+		}
+	}
+
+	option = {
+		name = "et_byz.EVTOPTA1"
+		random_owned_province = {
+			pretender_rebels = 3
+		}
+		random_owned_province = {
+			pretender_rebels = 3
+		}
+		set_ruler_flag = coup_attempt
+	}
+	
+	option = {
+		name = "et_byz.EVTOPTB1"
+		add_prestige = -20
+		add_stability = -1
+		define_ruler = { claim = 25 }
+	}
+}
+
+#Iconoclasm
+country_event = {
+
+	id = et_byz.2
+	title = "et_byz.EVTNAME2"
+	desc = "et_byz.EVTDESC2"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	trigger = {
+		OR = {
+			tag = BYZ
+			tag = ROW
+			tag = ROM
+		}
+		OR = {
+			religion = chalcedonism
+			religion = orthodox
+		}
+		any_province = {
+			is_core = ROOT
+			owner = { religion_group = muslim }
+		}
+		NOT = { is_year = 1000 }
+		NOT = { prestige = 40 }
+		NOT = { stability = 3 }
+		NOT = { has_country_modifier = iconoclasm }
+		NOT = { has_country_flag = iconoclasm_rejected }
+	}
+	mean_time_to_happen = {
+		months = 50
+	}
+
+	option = {
+		name = "et_byz.EVTOPTA2"
+		add_stability = -1
+		add_treasury = 350
+		random_owned_province = {
+			particularist_rebels = 2
+		}
+		random_owned_province = {
+			particularist_rebels = 2
+		}
+		add_country_modifier = {
+			name = iconoclasm
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "et_byz.EVTOPTB2"
+		set_country_flag = iconoclasm_rejected
+		add_stability = -2
+		add_prestige = 5
+		random_owned_province = {
+			heretic_rebels = 3
+		}
+		random_owned_province = {
+			heretic_rebels = 3
+		}
+	}
+}
+
+#Papal State
+country_event = {
+
+	id = et_byz.3
+	title = "et_byz.EVTNAME3"
+	desc = "et_byz.EVTDESC3"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	trigger = {
+		has_country_modifier = iconoclasm
+		owns = 118
+		NOT = { stability = 1 }
+		NOT = { exists = PAP }
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = "et_byz.EVTOPTA3"
+		118 = {
+			cede_province = PAP
+			add_core = PAP
+		}
+		if = {
+			limit = { owns = 3129 }
+			3129 = {
+				cede_province = PAP
+				add_core = PAP
+			}
+		}
+	}
+}

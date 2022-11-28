@@ -1,0 +1,44 @@
+#2738 - Potosi
+
+culture = aimara
+religion = inti
+capital = "Potosi"
+trade_goods = unknown
+hre = no
+discovered_by = south_american
+discovered_by = andean
+base_tax = 4
+base_production = 4
+base_manpower = 2
+native_size = 10
+native_ferocity = 1 
+native_hostileness = 1
+
+add_permanent_province_modifier = {
+	name = cerro_rico_modifier
+	duration = -1
+}
+
+375.1.1 = { owner = TWN controller = TWN add_core = TWN is_city = yes trade_goods = gold }
+1200.1.1 = { owner = CRA controller = CRA add_core = CRA remove_core = TWN }
+
+1476.1.1 = {
+	owner = INC
+	controller = INC
+	add_core = INC
+}
+1533.8.29 = {
+		discovered_by = SPA
+		owner = SPA
+		controller = SPA
+		add_core = SPA
+		religion = catholic
+	    }# The death of Atahualpa
+1809.7.16 = { revolt = { type = nationalist_rebels size = 0 } controller = REB } # Bolivian War of Independence
+
+1825.8.6   = { revolt = {} owner = BOL controller = BOL add_core = BOL }
+1836.10.28 = { owner = PEU controller = PEU add_core = PEU }
+1839.8.25  = { owner = BOL controller = BOL remove_core = PEU }
+1847.7.21  = { remove_core = SPA }
+1880.1.1 = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1910.1.1 = { discovered_by = western }

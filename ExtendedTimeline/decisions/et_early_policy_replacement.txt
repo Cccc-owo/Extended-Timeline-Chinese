@@ -1,0 +1,159 @@
+country_decisions = {
+
+	religious_policy_decision = {
+		potential = {
+			NOT = { has_country_modifier = religious_policy_active }
+			is_lesser_in_union = no
+		}
+		allow = {
+			has_regency = no
+			adm = 1
+			adm_power = 20
+		}
+		effect = {
+			change_adm = -1
+			add_adm_power = -20
+			add_ruler_modifier = {
+				name = religious_policy_active
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_province = { religion = ROOT }
+			}
+			modifier = {
+				factor = 0
+				num_of_missionaries = 1
+			}
+		}
+	}
+	
+	stability_policy_decision = {
+		potential = {
+			NOT = { has_country_modifier = stability_policy_active }
+			is_lesser_in_union = no
+		}
+		allow = {
+			has_regency = no
+			adm = 1
+			adm_power = 20
+		}
+		effect = {
+			change_adm = -1
+			add_adm_power = -20
+			add_ruler_modifier = {
+				name = stability_policy_active
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { tag = ROM }
+			}
+			modifier = {
+				factor = 0
+				is_year = 450
+			}
+		}
+	}
+	
+	diplomatic_policy_decision = {
+		potential = {
+			NOT = { has_country_modifier = diplomatic_policy_active }
+			is_lesser_in_union = no
+		}
+		allow = {
+			has_regency = no
+			dip = 1
+			dip_power = 20
+		}
+		effect = {
+			change_dip = -1
+			add_dip_power = -20
+			add_ruler_modifier = {
+				name = diplomatic_policy_active
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_free_diplomatic_relations = 1 }
+			}
+			modifier = {
+				factor = 0
+				is_year = 1350
+			}
+		}
+	}
+	
+	trade_policy_decision = {
+		potential = {
+			NOT = { has_country_modifier = trade_policy_active }
+			is_lesser_in_union = no
+		}
+		allow = {
+			has_regency = no
+			dip = 1
+			dip_power = 20
+		}
+		effect = {
+			change_dip = -1
+			add_dip_power = -20
+			add_ruler_modifier = {
+				name = trade_policy_active
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	military_policy_decision = {
+		potential = {
+			NOT = { has_country_modifier = military_policy_active }
+			is_lesser_in_union = no
+		}
+		allow = {
+			has_regency = no
+			mil = 1
+			mil_power = 20
+		}
+		effect = {
+			change_mil = -1
+			add_mil_power = -20
+			add_ruler_modifier = {
+				name = military_policy_active
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	leadership_policy_decision = {
+		potential = {
+			NOT = { has_country_modifier = leadership_policy_active }
+			is_lesser_in_union = no
+		}
+		allow = {
+			has_regency = no
+			mil = 1
+			mil_power = 20
+		}
+		effect = {
+			change_mil = -1
+			add_mil_power = -20
+			add_ruler_modifier = {
+				name = leadership_policy_active
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}

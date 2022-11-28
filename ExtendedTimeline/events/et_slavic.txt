@@ -1,0 +1,206 @@
+###############
+#Slavic Events#
+###############
+
+namespace = slavic
+
+#Slavic Pantheon
+country_event = {
+	id = slavic.1
+	title = slavic.1.t
+	desc = slavic.1.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		religion = slavic
+		NOT = { has_country_modifier = united_pantheon }
+		NOT = { has_country_modifier = divided_pantheon }
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	option = {
+		name = slavic.1.a
+		add_stability = -1
+		add_country_modifier = {
+			name = united_pantheon
+			duration = 7300
+		}
+	}
+
+	option = {
+		name = slavic.1.b
+		add_country_modifier = {
+			name = divided_pantheon
+			duration = 7300
+		}
+	}
+}
+
+#Jarilo and Morana
+country_event = {
+	id = slavic.2
+	title = slavic.2.t
+	desc = slavic.2.d
+	picture = COMET_SIGHTED_eventPicture
+
+	trigger = {
+		religion = slavic
+		NOT = { has_country_modifier = worship_jarilo }
+		NOT = { has_country_modifier = worship_morana }
+	}
+
+	mean_time_to_happen = {
+		months = 2400
+	}
+
+	option = {
+		name = slavic.2.a
+		add_country_modifier = {
+			name = worship_jarilo
+			duration = 7300
+		}
+	}
+
+	option = {
+		name = slavic.2.b
+		add_country_modifier = {
+			name = worship_morana
+			duration = 7300
+		}
+	}
+}
+
+#Saint Cyril and Methodius
+country_event = {
+	id = slavic.3
+	title = slavic.3.t
+	desc = slavic.3.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = slavic
+		is_religion_enabled = orthodox
+		BYZ = { religion = orthodox }
+		NOT = { has_country_flag = slavic_no_orthodoxy }
+	}
+
+	mean_time_to_happen = {
+		months = 2400
+	}
+
+	option = {
+		name = slavic.3.a
+		change_religion = orthodox
+		random_core_province = {
+			change_religion = orthodox
+		}
+		add_country_modifier = {
+			name = orthodoxy_accepted
+			duration = 7300
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = slavic.3.b
+		BYZ = {
+			add_opinion = {
+				who = ROOT
+				modifier = orthodoxy_denied
+			}
+		}
+		set_country_flag = slavic_no_orthodoxy
+	}
+}
+
+#Harvest Season
+country_event = {
+	id = slavic.4
+	title = slavic.4.t
+	desc = slavic.4.d
+	picture = BOUNTIFUL_HARVEST_eventPicture
+
+	trigger = {
+		religion = slavic
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = slavic.4.a
+		add_adm_power = -25
+		add_country_modifier = {
+			name = harvest_prayer
+			duration = 365
+		}
+		hidden_effect = {
+			random_list = {
+				70 = {
+				}
+				30 = {
+					set_country_flag = slavic_harvest_festival
+				}
+			}
+		}
+	}
+
+	option = {
+		name = slavic.4.b
+		random_list = {
+			75 = {
+			}
+			25 = {
+				add_country_modifier = {
+					name = no_harvest_prayer
+					duration = 365
+				}
+			}
+		}
+	}
+}
+
+#Human Sacrifice at the Festival
+country_event = {
+	id = slavic.5
+	title = slavic.5.t
+	desc = slavic.5.d
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		religion = slavic
+		has_country_flag = slavic_harvest_festival
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate = {
+		clr_country_flag = slavic_harvest_festival
+	}
+
+	option = {
+		name = slavic.5.a
+		add_mil_power = -25
+		add_country_modifier = {
+			name = slavic_human_sacrifice
+			duration = 365
+		}
+	}
+
+	option = {
+		name = slavic.5.b
+		add_country_modifier = {
+			name = forced_fighting
+			duration = 365
+		}
+	}
+}
+	

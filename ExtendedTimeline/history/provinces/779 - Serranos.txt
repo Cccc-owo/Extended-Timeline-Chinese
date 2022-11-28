@@ -1,0 +1,42 @@
+#779 - Tandil
+
+culture = het
+religion = south_american
+capital = "Tandil"
+trade_goods = unknown
+hre = no
+discovered_by = south_american
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 5
+native_ferocity = 1
+native_hostileness = 1
+
+1519.1.1  = { discovered_by = SPA } # Ferdinand Magellan
+1748.1.1  = {	#Establishment of first Mission in the area.
+	owner = SPA
+	controller = SPA
+	add_core = SPA
+	citysize = 380
+	culture = castillian
+	religion = catholic
+	trade_goods = grain
+}
+1750.1.1  = { is_city = yes }
+1770.1.1  = { culture = iberian_la_platan }
+1785.1.1  = { base_tax = 2 }
+1790.1.1  = { unrest = 6 } # Desire for independence
+1816.7.9  = {	owner = LAP
+		controller = LAP
+		add_core = LAP
+		remove_core = SPA
+		unrest = 0
+	    } # Argentina is declared independent
+
+1845.1.1 = { base_tax = 3 }
+1874.2.10 = { capital = "Mar del Plata" }
+1880.1.1 = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1905.1.1 = { base_manpower = 2 }
+1910.1.1 = { discovered_by = western }
+2000.1.1 = { base_production = 3 }

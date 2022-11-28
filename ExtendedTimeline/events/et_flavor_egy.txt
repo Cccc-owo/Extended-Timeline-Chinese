@@ -1,0 +1,118 @@
+namespace = et_egypt
+
+#Fall of the lighthouse
+country_event = {
+	id =  et_egypt.1
+	title = "et_egypt.1.t"
+	desc = "et_egypt.1.d"
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		owns = 358
+		is_year = 1303
+		NOT = { has_global_flag = great_lighthouse_fell }
+		358 = {	has_great_project = { type = lighthouse_of_alexandria } }
+	}
+	
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "et_egypt.1.a"
+		add_prestige = -10
+		358 = {
+			add_devastation = 25
+			destroy_great_project = { type = lighthouse_of_alexandria }
+			if = {
+				limit = { base_tax = 2 }
+				add_base_tax = -1
+			}
+			if = {
+				limit = { base_production = 2 }
+				add_base_production = -1
+			}
+			if = {
+				limit = { base_manpower = 2 }
+				add_base_manpower = -1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "et_egypt.1.b"
+		add_treasury = -500
+		358 = {
+			destroy_great_project = { type = lighthouse_of_alexandria }
+			if = {
+				limit = { base_tax = 2 }
+				add_base_tax = -1
+			}
+			if = {
+				limit = { base_production = 2 }
+				add_base_production = -1
+			}
+			if = {
+				limit = { base_manpower = 2 }
+				add_base_manpower = -1
+			}
+			add_province_modifier = { 
+				name = et_rebuilding_effort
+				duration = 3650
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "et_egypt.1.c"
+		trigger = {
+			358 = {
+				OR = {
+					has_great_project = { 
+						type = lighthouse_of_alexandria 
+						tier = 2
+					}
+					has_great_project = { 
+						type = lighthouse_of_alexandria 
+						tier = 3
+					}
+				}
+			}
+		}
+		add_treasury = -1000
+		358 = {
+			add_devastation = 25
+			add_great_project_tier = {
+				type = lighthouse_of_alexandria
+				tier = -1
+			}
+			if = {
+				limit = { base_tax = 2 }
+				add_base_tax = -1
+			}
+			if = {
+				limit = { base_production = 2 }
+				add_base_production = -1
+			}
+			if = {
+				limit = { base_manpower = 2 }
+				add_base_manpower = -1
+			}
+			add_province_modifier = { 
+				name = et_monument_restoration
+				duration = 3650
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

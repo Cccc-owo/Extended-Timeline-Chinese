@@ -1,0 +1,162 @@
+
+merc_french_foreign_legion = {
+    regiments_per_development = 0.04
+    home_province = 201
+	sprites = { dlc049_FRA_sprite_pack dlc028_fra_sprite_pack dlc054_fra_sprite_pack fra_base_sprite_pack }
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		culture_group = french
+		any_owned_province = {
+			NOT = { culture_group = french }
+			NOT = { continent = europe }
+		}
+		OR = {
+			current_age = industrial_age
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+	modifier = {
+        infantry_power = 0.05
+	}
+}
+
+merc_jaeger_corps = {
+    regiments_per_development = 0.05
+	cavalry_weight = 0.1
+	artillery_weight = 0.3
+	cavalry_cap = 2
+	cost_modifier = 1.5
+    home_province = 44
+	sprites = { dlc028_hes_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		capital_scope = { 
+			OR = {
+				region = south_german_region
+				region = north_german_region
+				region = low_countries_region
+				region = scandinavia_region
+			}
+		}
+		OR = {
+			current_age = industrial_age
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+	modifier = {
+		fire_damage_received = -0.1
+		shock_damage_received = -0.1
+		discipline = 0.025
+	}
+}
+
+merc_armenian_fedayi = {
+    regiments_per_development = 0.02
+	cost_modifier = 1.5
+    home_province = 419
+	sprites = { dlc028_hes_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		primary_culture = armenian
+		OR = {
+			current_age = industrial_age
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+	modifier = {
+        infantry_power = 0.05
+	}
+}
+
+merc_hamidiye = {
+    regiments_per_development = 0.05
+    home_province = 1848
+	cavalry_weight = 0.4 # lots of cavalry relative to other units
+	artillery_weight = 0 # no artillery
+	cavalry_cap = 6
+	sprites = { muslimgfx_sprite_pack }
+	trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		culture_group = oghuz
+		OR = {
+			current_age = industrial_age
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+    modifier = { }
+}
+
+merc_freikorps = {
+    regiments_per_development = 0.02
+    home_province = 50
+    cost_modifier = 1.2
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		culture_group = germanic
+		OR = {
+			current_age = industrial_age
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+    modifier = {
+        reserves_organisation = 0.05
+		land_morale = 0.05
+	}
+}
+
+merc_moroccan_goumiers = {
+    regiments_per_development = 0.03
+    home_province = 344
+    sprites = { dlc058_mor_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		any_owned_province = { region = maghreb_region }
+		OR = {
+			current_age = industrial_age
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+    modifier = { }
+}
+
+merc_harkis = {
+    regiments_per_development = 0.025
+    home_province = 338
+    sprites = { dlc058_mor_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		any_owned_province = { region = maghreb_region }
+		OR = {
+			current_age = industrial_age
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+    modifier = { }
+}
+
+merc_macheteros_de_jara = {
+    regiments_per_development = 0.04
+    home_province = 776
+	cavalry_weight = 0.4 # lots of cavalry relative to other units
+	artillery_weight = 0 # no artillery
+	cavalry_cap = 6
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		capital_scope = { continent = south_america }
+		OR = {
+			current_age = industrial_age
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+    modifier = { }
+}

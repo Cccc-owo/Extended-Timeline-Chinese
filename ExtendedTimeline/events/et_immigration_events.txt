@@ -1,0 +1,322 @@
+
+namespace = et_immigration
+
+# Emigration due to rebels
+province_event = {
+	id = et_immigration.1
+	title = "et_immigration.1.t"
+	desc = "et_immigration.1.d"
+	picture = BORDER_TENSION_eventPicture
+	
+	trigger = {
+		owner = { dip_tech = 88 }
+		controlled_by = REB
+		NOT = { has_province_modifier = people_emigrating }
+		OR = {
+			base_tax = 2
+			base_production = 2
+			base_manpower = 2
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.75
+			development = 25
+		}
+		modifier = {
+			factor = 0.75
+			development = 50
+		}
+	}
+
+	option = {
+		name = "et_immigration.1.a"
+		hidden_effect = {
+			change_variable = {
+				which = num_of_immigrants
+				value = 2
+			}
+		}
+		add_devastation = 25
+		add_province_modifier = {
+			name = people_emigrating
+			duration = 1825
+		}
+		if = {
+			limit = { base_manpower = 13 }
+			add_base_manpower = -3
+		}
+		if = {
+			limit = { base_production = 13 }
+			add_base_manpower = -3
+		}
+		if = {
+			limit = { base_tax = 13 }
+			add_base_manpower = -3
+		}
+		if = {
+			limit = { base_manpower = 7 NOT = { base_manpower = 13 } }
+			add_base_manpower = -2
+		}
+		if = {
+			limit = { base_production = 7 NOT = { base_production = 13 } }
+			add_base_manpower = -2
+		}
+		if = {
+			limit = { base_tax = 7 NOT = { base_tax = 13 } }
+			add_base_manpower = -2
+		}
+		if = {
+			limit = { base_manpower = 2 NOT = { base_manpower = 7 } }
+			add_base_manpower = -1
+		}
+		if = {
+			limit = { base_production = 2 NOT = { base_production = 7 } }
+			add_base_manpower = -1
+		}
+		if = {
+			limit = { base_tax = 2 NOT = { base_tax = 7 } }
+			add_base_manpower = -1
+		}
+	}
+}
+
+# Emigration due to war
+province_event = {
+	id = et_immigration.2
+	title = "et_immigration.2.t"
+	desc = "et_immigration.2.d"
+	picture = BORDER_TENSION_eventPicture
+	
+	trigger = {
+		NOT = { controlled_by = owner }
+		owner = { 
+			dip_tech = 88
+			is_at_war = yes 
+		}
+		NOT = { has_province_modifier = people_emigrating }
+		OR = {
+			base_tax = 2
+			base_production = 2
+			base_manpower = 2
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.75
+			development = 10
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 0.75
+			owner = { war_exhaustion = 4 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { war_exhaustion = 8 }
+		}
+		modifier = {
+			factor = 0.75
+			devastation = 25
+		}
+		modifier = {
+			factor = 0.75
+			devastation = 50
+		}
+	}
+
+	option = {
+		name = "et_immigration.2.a"
+		hidden_effect = {
+			change_variable = {
+				which = num_of_immigrants
+				value = 2
+			}
+		}
+		add_devastation = 25
+		add_province_modifier = {
+			name = people_emigrating
+			duration = 1825
+		}
+		owner = { add_war_exhaustion = 1 }
+		if = {
+			limit = { base_manpower = 13 }
+			add_base_manpower = -3
+		}
+		if = {
+			limit = { base_production = 13 }
+			add_base_manpower = -3
+		}
+		if = {
+			limit = { base_tax = 13 }
+			add_base_manpower = -3
+		}
+		if = {
+			limit = { base_manpower = 7 NOT = { base_manpower = 13 } }
+			add_base_manpower = -2
+		}
+		if = {
+			limit = { base_production = 7 NOT = { base_production = 13 } }
+			add_base_manpower = -2
+		}
+		if = {
+			limit = { base_tax = 7 NOT = { base_tax = 13 } }
+			add_base_manpower = -2
+		}
+		if = {
+			limit = { base_manpower = 2 NOT = { base_manpower = 7 } }
+			add_base_manpower = -1
+		}
+		if = {
+			limit = { base_production = 2 NOT = { base_production = 7 } }
+			add_base_manpower = -1
+		}
+		if = {
+			limit = { base_tax = 2 NOT = { base_tax = 7 } }
+			add_base_manpower = -1
+		}
+	}
+}
+
+# Refugees
+province_event = {
+	id = et_immigration.3
+	title = "et_immigration.3.t"
+	desc = "et_immigration.3.d"
+	picture = FAMINE_eventPicture
+	
+	trigger = {
+		check_variable = {
+			which = num_of_immigrants
+			value = 1
+		}
+		development = 10
+		NOT = { devastation = 10 }
+		NOT = { has_province_modifier = refugees_accepted }
+		owner = { 
+			dip_tech = 88
+			is_at_war = no
+			NOT = { war_exhaustion = 2 }
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			NOT = { has_country_modifier = refugees_not_accepted }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2400
+		modifier = {
+			factor = 0.75
+			owner = { religion = secularism }
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 0.75
+			development = 30
+		}
+		modifier = {
+			factor = 0.75
+			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				any_neighbor_country = {
+					OR = {
+						is_at_war = yes
+						num_of_rebel_controlled_provinces = 2
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			check_variable = {
+				which = num_of_immigrants
+				value = 5
+			}
+		}
+		modifier = {
+			factor = 0.1
+			check_variable = {
+				which = num_of_immigrants
+				value = 10
+			}
+		}
+	}
+
+	option = {
+		name = "et_immigration.3.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				owner = {
+					OR = { 
+						has_reform = fascist_dictatorship 
+						has_reform = communist_dictatorship
+						has_reform = dictatorial_rule
+						has_reform = fascist_government
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				owner = { 
+					has_faction = nationalist_party
+					faction_in_power = nationalist_party
+				}
+			}
+		}
+		hidden_effect = {
+			change_variable = {
+				which = num_of_immigrants
+				value = -1
+			}
+		}
+		random_list = {
+			33 = { add_base_tax = 1 }
+			33 = { add_base_production = 1 }
+			33 = { add_base_manpower = 1 }
+		}
+		add_province_modifier = {
+			name = "refugees_accepted"
+			duration = 1825
+		}
+	}
+	option = {
+		name = "et_immigration.3.b"
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				religion = secularism
+			}
+			modifier = {
+				factor = 0
+				owner = { 
+					has_faction = nationalist_party
+					NOT = { faction_in_power = nationalist_party }
+					NOT = { faction_in_power = conservative_party }
+				}
+			}
+		}
+		owner = {
+			add_prestige = -10
+			add_country_modifier = {
+				name = "refugees_not_accepted"
+				duration = 1825
+			}
+		}
+	}
+}

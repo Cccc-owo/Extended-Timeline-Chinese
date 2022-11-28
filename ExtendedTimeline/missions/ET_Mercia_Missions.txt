@@ -1,0 +1,395 @@
+mercia_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = MRC
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	mrc_unite_middle_anglia_mission = {
+		icon = mission_consolidate_the_state
+		required_missions = { } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = west_midlands_area
+				area = east_midlands_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mrc_ruler_of_the_midlands"
+				duration = 9125
+			}
+		}
+	}
+	mrc_defeat_northumbria_mission = {
+		icon = mission_rb_into_england
+		required_missions = { mrc_unite_middle_anglia_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = yorkshire_area
+				province_id = 246			#Northumberland
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_or_non_sovereign_subject_of = 246
+		}
+		effect = {
+			add_prestige = 10
+			add_mil_power = 100
+		}
+	}
+	mrc_mercian_supremacy_mission = {
+		icon = mission_unite_home_region
+		required_missions = { mrc_defeat_northumbria_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = wessex_area
+				area = home_counties_area
+				area = east_anglia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mrc_king_of_the_angles"
+				duration = 9125
+			}
+		}
+	}
+}
+
+mercia_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = MRC
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	mrc_beyond_the_marches_mission = {
+		icon = mission_rb_scottish_the_darien_scheme
+		required_missions = { mrc_defeat_northumbria_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = scottish_marches_area
+				area = lowlands_area
+				area = highlands_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			scottish_marches_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lowlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+}
+
+
+mercia_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = MRC
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	mrc_cross_offas_dyke_mission = {
+		icon = mission_break_the_tatar_yoke
+		required_missions = { mrc_defeat_northumbria_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4366	#Powys
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4366
+		}
+		effect = {
+			add_prestige = 5
+		}
+	}
+}
+
+mercia_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = MRC
+			NOT = { map_setup = map_setup_random }
+			religion_group = german_pagan
+		}
+	}
+	has_country_shield = yes
+
+	mrc_woden_s_stronghold_mission = {
+		icon = mission_onward_to_gaur
+		required_missions = { } #none
+		position = 1
+		trigger = {
+			religion_group = german_pagan
+			any_neighbor_country = { 
+				religion_group = christian
+			}
+			all_owned_province = {
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mrc_pagan_stronghold"
+				duration = 9125
+			}
+		}
+	}
+	mrc_temples_to_thunor_mission = {
+		icon = mission_rein_in_the_velamas
+		required_missions = { mrc_woden_s_stronghold_mission }
+		position = 3
+		trigger = {
+			religion_group = german_pagan
+			OR = {
+				temple = 3
+				glorious_monument = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mrc_servants_of_thunor"
+				duration = 10950
+			}
+		}
+	}
+	mrc_glory_to_tir_mission = {
+		icon = mission_rb_control_state_religion
+		required_missions = { mrc_temples_to_thunor_mission }
+		position = 5
+		trigger = {
+			religion_group = german_pagan
+			
+			british_isles_region = {
+				type = all
+				owner = { religion_group = german_pagan }
+			}
+		}
+		effect = {
+			add_prestige = 5
+			add_country_modifier = {
+				name = "mrc_warriors_of_tir"
+				duration = 9125
+			}
+		}
+	}
+	mrc_northumbrian_monasteries_mission = {
+		icon = mission_hands_praying
+		required_missions = { mrc_defeat_northumbria_mission }
+		position = 6
+		trigger = {
+			religion_group = christian
+			temple = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mrc_monasteries_restored"
+				duration = 10950
+			}
+		}
+	}
+}
+
+mercia_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = MRC
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	mrc_integrate_pagans_mission = {
+		icon = mission_secure_khandesh
+		required_missions = { } #none
+		position = 3
+		trigger = {
+			religion_group = christian
+			
+			dominant_religion = ROOT
+			
+			OR = {
+				glorious_monument = 3
+				temple = 3
+				cathedral = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mrc_pagans_assimilated"
+				duration = 9125
+			}
+		}
+	}
+	mrc_placate_the_bishoprics_mission = {
+		icon = mission_restore_kiev
+		required_missions = { mrc_integrate_pagans_mission }
+		position = 4
+		trigger = {
+			religion_group = christian
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 70
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mrc_dioceses_placated"
+				duration = 9125
+			}
+		}
+	}
+	mrc_viking_invasion_mission = {
+		icon = et_mission_viking_longboat
+		required_missions = { }	#none
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = mrc_viking_invasion_mission.tooltip
+				OR = {
+					DAN = {
+						num_of_owned_provinces_with = {
+							region = british_isles_region
+							value = 1
+						}
+					}
+					NOR = {
+						num_of_owned_provinces_with = {
+							region = british_isles_region
+							value = 1
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			british_isles_region = {
+				limit = {
+					OR = {
+						owned_by = DAN
+						owned_by = NOR
+					}
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	mrc_repel_the_danes_missions = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { mrc_viking_invasion_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = british_isles_region
+			}
+			OR = {	
+				owned_by = DAN
+				owned_by = NOR
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			british_isles_region= {
+				type = all
+				NOT = { owned_by = DAN }
+				NOT = { owned_by = NOR }
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "mrc_defender_of_anglia"
+				duration = -1
+			}
+		}
+	}
+}

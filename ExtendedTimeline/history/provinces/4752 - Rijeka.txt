@@ -1,0 +1,66 @@
+#1826 - Lika
+
+owner = ROM
+controller = ROM
+culture = dalmatian
+religion = hellenism
+capital = "Tarsatica"
+trade_goods = cloth
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = ROM
+center_of_trade = 1
+
+340.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+480.1.1 = { owner = ITA controller = ITA add_core = ITA remove_core = ROW }
+489.1.1 = { owner = OST controller = OST add_core = OST remove_core = ITA }
+490.1.1 = { religion = arianism }
+540.1.1 = { owner = BYZ controller = BYZ add_core = BYZ remove_core = OST }
+550.1.1 = { religion = chalcedonism }
+620.1.1 = { add_core = CRO religion = slavic culture = croatian capital = "Rijeka" }
+630.1.1 = { owner = CRO controller = CRO remove_core = BYZ }
+800.1.1 = { religion = chalcedonism }
+867.1.1 = { religion = catholic }
+
+1466.1.1 = { # City of Rijeka itself now directly Habsburg
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+}
+1573.1.20 = { revolt = { type = anti_tax_rebels size = 1 } controller = REB } # Peasant uprising against Habsburg rule & the feudal system
+1573.2.9 = { revolt = {} controller = HAB } # Decisively defeated
+1671.1.1 = { unrest = 5 } # Conspiracy against Habsburg rule uncovered
+1671.5.1 = { unrest = 0 } # Estimated, the conspirators are executed
+1784.1.1 = { unrest = 7 } # Reforms to introduce German as the official language
+1789.1.1 = { unrest = 0 } # Most of the unpopular reforms were cancelled
+1805.12.26 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	remove_core = HAB
+} # Treaty of Pressburg
+1813.9.20 = { controller = HAB } # Occupied by Austrian forces
+1814.4.6 = {
+	owner = HAB
+	add_core = HAB
+	remove_core = FRA
+} # Napoleon abdicates
+
+1918.12.1  = { owner = YUG controller = YUG add_core = YUG remove_core = HAB }
+1941.4.6   = { owner = GER controller = GER }
+1941.4.10  = { owner = CRO controller = CRO }
+1945.5.8   = { owner = YUG controller = YUG }
+1991.6.25  = { owner = CRO controller = CRO remove_core = YUG }
+
+

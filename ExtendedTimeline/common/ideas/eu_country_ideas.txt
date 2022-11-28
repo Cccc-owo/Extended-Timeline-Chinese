@@ -1,0 +1,71 @@
+EUR_ideas = {
+	start = {
+		diplomatic_reputation = 9999
+		diplomatic_upkeep = -25
+		merchants = -3
+		diplomats = -2
+		colonists = -2
+		missionaries = -2
+	}
+
+	bonus = {}	
+
+	trigger = {
+		AND = {
+			tag = EUR
+			owns = 3148
+		}
+	}
+	free = yes		# will be added at load
+
+	eu_idea_a = {}
+	eu_idea_b = {}
+	eu_idea_c = {}
+	eu_idea_d = {}
+	eu_idea_e = {}
+	eu_idea_f = {}
+	eu_idea_g = {}
+}
+
+United_EUR_ideas = {
+	start = {
+		diplomatic_reputation = 3
+		advisor_cost = -0.25
+	}
+
+	bonus = {
+		discipline = 0.05
+	}	
+
+	trigger = {
+		tag = EUR
+		NOT = { owns = 3148 }
+	}
+	free = yes		# will be added at load
+
+	birthplace_of_democracy = {
+		republican_tradition = 0.5
+	}
+	military_border = {
+		global_garrison_growth = 0.15
+		fort_maintenance_modifier = -0.10
+	}
+	navigation_acts = {
+		global_trade_power = 0.15
+	}
+	gold_fleet = {
+		global_tariffs = 0.15
+		global_prov_trade_power_modifier = 0.1
+	}
+	liberty_egalite_fraternity = {
+		tolerance_heathen = 2
+		tolerance_heretic = 2
+	}
+	path_to_citizenship = {
+		core_creation = -0.25
+	}
+	religious_toleration = {
+		development_cost = -0.05
+		tolerance_heretic = 1
+	}
+}

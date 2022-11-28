@@ -1,0 +1,42 @@
+#########################
+#Nabataean Flavor Events#
+#########################
+
+namespace = nabataean_flavor
+
+#God Blocks
+country_event = {
+	id = nabataean_flavor.1
+	title = nabataean_flavor.1.t
+	desc = nabataean_flavor.1.d
+	picture = PRAYING_eventPicture
+
+	trigger = {
+		religion = nabataean
+		NOT = { has_ruler_flag = god_blocks }
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	immediate = {
+		set_ruler_flag = god_blocks
+	}
+
+	option = {
+		name = nabataean_flavor.1.a
+		add_ruler_modifier = {
+			name = dushara_worshipped
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = nabataean_flavor.1.b
+		add_ruler_modifier = {
+			name = aluzza_worshipped
+			duration = 1825
+		}
+	}
+}

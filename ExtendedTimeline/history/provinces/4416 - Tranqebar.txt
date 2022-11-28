@@ -1,0 +1,73 @@
+#540 - Coromandel
+
+owner = CLS
+controller = CLS
+culture = tamil
+religion = hinduism
+capital = "Tranqebar"
+trade_goods = cloth
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = indian
+discovered_by = early_indian
+base_tax = 3
+base_production = 3
+base_manpower = 1
+is_city = yes
+add_core = CLS
+
+200.1.1 = { owner = PND controller = PND add_core = PND remove_core = CLS }
+250.1.1 = { owner = KLA controller = KLA add_core = KLA }
+610.1.1 = { owner = TNJ controller = TNJ add_core = TNJ remove_core = KLA }
+800.1.1 = { discovered_by = nomad_group }
+848.1.1 = { owner = CLS controller = CLS add_core = CLS remove_core = TNJ }
+1279.1.1 = { owner = PND controller = PND add_core = PND }
+1322.1.1 = { owner = CLS controller = CLS add_core = CLS }
+1375.1.1 = { owner = VIJ controller = VIJ add_core = VIJ remove_core = CLS }
+1399.1.1 = { add_core = MAD }
+
+1498.1.1 = { discovered_by = POR }
+1543.1.1 = { controller = REB revolt = { size = 0 type = nationalist_rebels } }
+1550.1.1 = { controller = VIJ revolt = { } }
+1565.7.1 = { owner = TNJ controller = TNJ } # The Vijayanagar empire collapses
+1620.1.1 = {
+	owner = DAN
+	controller = DAN
+	add_core = DAN
+	capital = "Fort Dansborg"
+	add_to_trade_company = DAN
+	add_trade_company_investment = {
+		investment = permanent_quarters
+		investor = DAN
+	}
+	add_trade_company_investment = {
+		investment = district
+		investor = DAN
+	}
+	add_trade_company_investment = {
+		investment = townships
+		investor = DAN
+	}
+	add_trade_company_investment = {
+		investment = company_depot
+		investor = DAN
+	}
+	add_trade_company_investment = {
+		investment = governor_general_mansion
+		investor = DAN
+	}
+}
+
+1845.1.1  = { owner = GBR controller = GBR add_core = GBR remove_core = DAN capital = "Mayiladuthurai" }
+1900.1.1 = { base_manpower = 2 }
+1910.1.1 = { discovered_by = western discovered_by = eastern }
+1930.1.1  = { add_core = INI }
+1947.8.15 = { owner = INI controller = INI remove_core = GBR }
+1950.1.1 = { base_manpower = 3 }
+1975.1.1 = { base_tax = 4 base_production = 4 }
+2000.1.1 = { base_tax = 5 base_production = 5 base_manpower = 4 }

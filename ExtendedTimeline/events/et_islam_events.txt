@@ -1,0 +1,734 @@
+namespace = et
+
+# Birth of Islam
+country_event = {
+
+	id = et.7
+	title = "et.EVTNAME7"
+	desc = "et.EVTDESC7"
+	picture = REFORM_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { is_religion_enabled = islam }
+		owns = 385
+		is_year = 627
+	}
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	option = {
+		name = "et.EVTOPTA7"
+		trigger = {
+			OR = {
+				capital_scope = { region = arabia_region }
+				capital_scope = { continent = africa }
+				culture_group = turko_semitic
+				NOT = { num_of_cities = 20 }
+				religion_group = mesopotamian
+				religion_group = african_pagan
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = { 
+				factor = 0.001
+				capital_scope = { 
+					NOT = { region = arabia_region } 
+					NOT = { continent = africa } 
+				}
+			}
+		}
+		change_tag = RSD
+		set_country_flag = early_caliphate
+		swap_non_generic_missions = yes
+		change_religion = islam
+		change_government = theocracy
+		add_government_reform = caliphate_theocratic_reform
+		define_ruler = {
+			name = "Muhammad"
+			adm = 6
+			dip = 6
+			mil = 6
+			male = yes
+			age = 57
+		}
+		set_country_flag = ruler_muhammmad
+		set_capital = 385
+		add_stability = 1
+		add_adm_power = 500
+		add_dip_power = 500
+		add_mil_power = 500
+		385 = { change_religion = islam }
+		384 = { change_religion = islam }
+		add_country_modifier = {
+			name = "rise_of_islam"
+			duration = 18250
+		}
+		enable_religion = islam
+		change_technology_group = muslim
+		change_unit_type = muslim
+		if = {
+			limit = { is_lesser_in_union = yes }
+			overlord = { break_union = ROOT }
+		}
+		if = {
+			limit = { is_vassal = yes }
+			overlord = { free_vassal = ROOT }
+		}
+		arabia_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = RSD
+		}
+		mashriq_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = RSD
+		}
+		egypt_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = RSD
+		}
+	}
+	option = {
+		name = "et.EVTOPTB7"
+		ai_chance = { 
+			factor = 50
+			modifier = { 
+				factor = 0
+				capital_scope = { 
+					OR = { region = arabia_region continent = africa }
+				}
+			}
+			modifier = { 
+				factor = 0
+				religion = south_arabian
+			}
+		}
+		enable_religion = islam
+		add_stability = -1
+		set_global_flag = caliphate_rejected
+		385 = { 
+			change_religion = islam 
+			change_culture = hejazi_culture
+			cede_province = RSD
+			add_core = RSD
+		}
+		if = { 
+			limit = { 384 = { owned_by = ROOT } }
+			384 = { 
+				change_religion = islam 
+				change_culture = hejazi_culture
+				cede_province = RSD
+				add_core = RSD
+			}
+		}
+		if = { 
+			limit = { 2332 = { owned_by = ROOT } }
+			2332 = { 
+				change_religion = islam 
+				change_culture = hejazi_culture
+				cede_province = RSD
+				add_core = RSD
+			}
+		}
+		if = { 
+			limit = { 2331 = { owned_by = ROOT } }
+			2331 = { 
+				change_religion = islam 
+				change_culture = hejazi_culture
+				cede_province = RSD
+				add_core = RSD
+			}
+		}
+		if = { 
+			limit = { 2330 = { owned_by = ROOT } }
+			2330 = { 
+				change_religion = islam 
+				change_culture = hejazi_culture
+				cede_province = RSD
+				add_core = RSD
+			}
+		}
+		if = { 
+			limit = { 2329 = { owned_by = ROOT } }
+			2329 = { 
+				change_religion = islam 
+				change_culture = hejazi_culture
+				cede_province = RSD
+				add_core = RSD
+			}
+		}
+		if = { 
+			limit = { 4277 = { owned_by = ROOT } }
+			4277 = { 
+				change_religion = islam 
+				change_culture = hejazi_culture
+				cede_province = RSD
+				add_core = RSD
+			}
+		}
+		if = { 
+			limit = { 4278 = { owned_by = ROOT } }
+			4278 = { 
+				change_religion = islam 
+				change_culture = hejazi_culture
+				cede_province = RSD
+				add_core = RSD
+			}
+		}
+		hidden_effect = {
+			RSD = {
+				change_religion = islam
+				change_government = theocracy
+				add_government_reform = caliphate_theocratic_reform
+				add_stability = 3
+				add_treasury = 5000
+				add_adm_power = 800
+				add_dip_power = 800
+				add_mil_power = 800
+				set_country_flag = early_caliphate
+				define_ruler = {
+					name = "Muhammad"
+					adm = 6
+					dip = 6
+					mil = 6
+					male = yes
+					age = 57
+				}
+				set_country_flag = ruler_muhammmad
+				add_country_modifier = {
+					name = "rise_of_islam"
+					duration = 18250
+				}
+			}
+			385 = {
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				infantry = RSD
+				cavalry = RSD
+				cavalry = RSD
+				cavalry = RSD
+				cavalry = RSD
+			}
+		}
+	}
+}
+
+#Spread of Islam
+province_event = {
+
+	id = et.8
+	title = "et.EVTNAME8"
+	desc = "et.EVTDESC8"
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		NOT = { religion_group = muslim }
+		NOT = { is_year = 1100 }
+		OR = {
+			any_neighbor_province = { religion = sunni }
+			owner = { religion = sunni }
+			any_neighbor_province = { religion = islam }
+			owner = { religion = islam }
+		}
+	}
+	mean_time_to_happen = {
+		months = 2400
+
+		modifier = {
+			factor = 0.25
+			controller = { has_country_modifier = rise_of_islam }
+		}
+		modifier = {
+			factor = 0.25
+			controller = { religion = sunni }
+		}
+		modifier = {
+			factor = 0.25
+			controller = { religion = islam }
+		}
+		modifier = {
+			factor = 0.25
+			culture_group = turko_semitic
+		}
+		modifier = {
+			factor = 10
+			religion_group = christian
+		}
+		modifier = {
+			factor = 5
+			controller = { religion_group = christian }
+		}
+		modifier = {
+			factor = 20
+			NOT = { controller = { religion = sunni } }
+			NOT = { controller = { religion = islam } }
+		}
+		modifier = {
+			factor = 5
+			is_year = 950
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA8"
+		if = {
+			limit = {
+				OR = {
+					any_neighbor_province = { religion = sunni }
+					owner = { religion = sunni }
+				}
+			}
+			change_religion = sunni
+		}
+		if = {
+			limit = {
+				OR = {
+					any_neighbor_province = { religion = islam }
+					owner = { religion = islam }
+				}
+			}
+			change_religion = islam
+		}
+		add_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 3650
+		}
+	}
+}
+
+#Joining the Caliphate
+country_event = {
+
+	id = et.9
+	title = "et.EVTNAME9"
+	desc = "et.EVTDESC9"
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		tag = RSD
+		has_country_modifier = rise_of_islam
+		any_neighbor_country = {
+			culture_group = turko_semitic
+			ai = yes
+		}
+		NOT = { is_year = 635 }
+	}
+	mean_time_to_happen = {
+		months = 4
+
+		modifier = {
+			factor = 10
+			religion_group = christian
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA9"
+		random_neighbor_country = {
+			limit = { 
+				culture_group = turko_semitic
+				ai = yes
+			}
+			every_owned_province = {
+				limit = { NOT = { religion = islam } }
+				change_religion = islam
+			}
+			ROOT = { inherit = PREV }
+		}
+		add_yearly_manpower = 0.5
+	}
+}
+
+#Province defects to Caliphate
+province_event = {
+
+	id = et.32
+	title = "et.EVTNAME32"
+	desc = "et.EVTDESC32"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		controller = { has_country_modifier = rise_of_islam }
+		owner = { 
+			NOT = { religion_group = muslim } 
+			NOT = { has_country_modifier = rise_of_islam }
+		}
+	}
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_neighbor_province = {
+				owner = { has_country_modifier = rise_of_islam }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			all_neighbor_province = {
+				controller = { has_country_modifier = rise_of_islam }
+			}
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA32"
+		owner = { add_prestige = -10 }
+		controller = {
+			country_event = {
+				id = et.33
+				days = 1
+			}
+		}
+	}
+}
+
+#Province defects to Caliphate
+country_event = {
+	id = et.33
+	title = "et.EVTNAME33"
+	desc = "et.EVTDESC33"
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "et.EVTOPTA33"
+		ai_chance = { 
+			factor = 100
+		}
+		add_prestige = 10
+		FROM = {
+			add_core = ROOT
+			cede_province = ROOT
+		}
+		if = {
+			limit = { religion = islam FROM = { culture_group = turko_semitic } }
+			change_religion = islam
+		}
+	}
+	option = {
+		name = "et.EVTOPTB33"
+		ai_chance = { 
+			factor = 0
+		}
+		add_prestige = 1
+	}
+}
+
+#Rise of the Shia
+country_event = {
+	id = et.43
+	title = "et.EVTNAME43"
+	desc = "et.EVTDESC43"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = sunni
+		num_of_cities = 15
+		NOT = { has_country_modifier = rise_of_islam }
+		NOT = { any_country = { religion = shiite } }
+		NOT = { has_disaster = first_fitna }
+	}
+
+	mean_time_to_happen = {
+		months = 240
+
+		modifier = {
+			factor = 4
+			stability = 1
+		}
+		modifier = {
+			factor = 4
+			stability = 2
+		}
+	}
+
+	option = {
+		name = "et.EVTOPTA43"
+		if = {
+			limit = { NOT = { is_religion_enabled = shiite } }
+			enable_religion = shiite
+		}
+		random_owned_province = {
+			change_religion = shiite
+			spawn_rebels = {
+				type = religious_rebels
+				size = 3
+			}
+			change_siege = 20
+			every_neighbor_province = {
+				limit = { 
+					owned_by = ROOT
+				}
+				change_religion = shiite
+				spawn_rebels = {
+					type = religious_rebels
+					size = 1
+				}
+				change_siege = 20
+			}
+		}
+	}
+}
+
+#Birth of Ibadi
+province_event = {
+	id = et.64
+	title = et.EVTNAME64
+	desc = et.EVTDESC64
+	picture = PRAYING_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		province_id = 408
+		religion_group = muslim
+		NOT = { is_religion_enabled = ibadi }
+		owner = {
+			religion_group = muslim
+			NOT = { has_country_flag = early_caliphate }
+			NOT = { has_disaster = first_fitna }
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 20
+	}
+
+	option = {
+		name = et.EVTOPTA64
+		ai_chance = { factor = 95 }
+		enable_religion = ibadi
+		change_religion = ibadi
+		add_province_modifier = {
+			name = ibadi_center
+			duration = 7300
+		}
+	}
+
+	option = {
+		name = et.EVTOPTB64
+		enable_religion = ibadi
+		ai_chance = { factor = 5 }
+		owner = {
+			add_stability = -2
+		}
+	}
+}
+
+#Ibadi Revolt
+province_event = {
+	id = et.65
+	title = et.EVTNAME65
+	desc = et.EVTDESC65
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		province_id = 408
+		religion = ibadi
+		NOT = { owner = { religion = ibadi } }
+	}
+
+	mean_time_to_happen = {
+		years = 10
+	}
+
+	option = {
+		name = et.EVTOPTA65
+		ai_chance = { factor = 10 }
+		owner = { add_stability = -1 }
+		spawn_rebels = {
+			type = ibadi_rebels
+			size = 4
+			leader = "Jabir ibn Zayd"
+		}
+	}
+
+	option = {
+		name = et.EVTOPTB65
+		ai_chance = { factor = 90 }
+		remove_province_modifier = ibadi_center
+		389 = {
+			change_religion = ibadi
+			add_province_modifier = {
+				name = ibadi_center
+				duration = 146000
+			}
+		}
+	}
+}
+
+#Ibadi Spreads
+province_event = {
+	id = et.66
+	title = et.EVTNAME66
+	desc = et.EVTDESC66
+	picture = PRAYING_eventPicture
+
+	trigger = {
+		any_neighbor_province = {
+			religion = ibadi
+		}
+		NOT = { religion = ibadi }
+		NOT = { is_year = 1400 }
+	}
+
+	mean_time_to_happen = {
+		years = 500
+
+		modifier = {
+			factor = 0.1
+			OR = {
+				province_id = 397
+				province_id = 398
+				province_id = 399
+				province_id = 400
+				province_id = 401
+				province_id = 403
+				province_id = 2342
+				province_id = 2341
+			}
+		}
+
+		modifier = {
+			factor = 2
+			religion_group = christian
+		}
+
+		modifier = {
+			factor = 0.2
+			owner = {
+				religion = ibadi
+			}
+		}
+	}
+
+	option = {
+		name = et.EVTOPTA66
+		change_religion = ibadi
+		add_province_modifier = {
+			name = religious_zeal_at_conv
+			duration = 3650
+		}
+	}
+}
+
+#Ibadi in M'zab
+province_event = {
+	id = et.67
+	title = et.EVTNAME67
+	desc = et.EVTDESC67
+	picture = PRAYING_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		province_id = 2457
+		is_religion_enabled = ibadi
+		is_year = 700
+		NOT = { religion = ibadi }
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = {
+		name = et.EVTOPTA67
+		change_religion = ibadi
+		add_province_modifier = {
+			name = religious_zeal_at_conv
+			duration = 3650
+		}
+	}
+}
+
+#AI Caliphate DOW
+country_event = {
+	id = et.68
+	title = "et.EVTNAME63"
+	desc = "et.EVTDESC63"
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		has_country_modifier = rise_of_islam
+		is_at_war = no
+		NOT = { war_exhaustion = 10 }
+		manpower_percentage = 0.25
+		ai = yes
+		any_neighbor_country = { 
+			NOT = { culture_group = turko_semitic }
+			NOT = { truce_with = ROOT } 
+			NOT = { alliance_with = ROOT }
+			NOT = { is_subject_of = ROOT }
+			any_owned_province = { 
+				OR = { 
+					is_claim = ROOT 
+					is_permanent_claim = ROOT
+					is_core = ROOT
+					religion_group = muslim
+				} 
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "et.EVTOPTA63"
+		add_stability = 1
+		add_manpower = 5
+		add_treasury = 500
+		add_war_exhaustion = -5
+		random_neighbor_country = {
+			limit = { 
+				NOT = { culture_group = turko_semitic }
+				NOT = { truce_with = ROOT } 
+				NOT = { alliance_with = ROOT }
+				NOT = { is_subject_of = ROOT }
+				any_owned_province = { 
+					OR = { 
+						is_claim = ROOT 
+						is_permanent_claim = ROOT
+						is_core = ROOT
+						religion_group = muslim
+					} 
+				}
+			}
+			ROOT = {
+				declare_war_with_cb = {
+					who = PREV
+					casus_belli = cb_crusade
+				}
+			}
+		}
+	}
+}

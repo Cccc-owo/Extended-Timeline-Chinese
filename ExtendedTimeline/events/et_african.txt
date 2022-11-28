@@ -1,0 +1,89 @@
+#########################
+#African Religion Events#
+#########################
+
+namespace = african
+
+#Okuyi
+country_event = {
+	id = african.1
+	title = african.1.t
+	desc = african.1.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		religion = shamanism
+		OR = {
+			culture_group = southern_african
+			culture_group = kongo_group
+			culture_group = great_lakes_group
+			culture_group = african
+		}
+		NOT = { has_country_modifier = heir_okuyi }
+		NOT = { has_ruler_modifier = wedding_okuyi }
+		NOT = { has_country_modifier = funeral_okuyi }
+		NOT = { has_country_modifier = adolescent_okuyi }
+		OR = {
+			AND = {
+				NOT = { heir_age = 5 }
+				has_heir = yes
+			}
+			num_of_royal_marriages = 1
+			ruler_age = 60
+			AND = {
+				heir_age = 9
+				NOT = { heir_age = 15 }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = {
+		name = african.1.a
+		trigger = {
+			NOT = { heir_age = 5 }
+			has_heir = yes
+		}
+		add_country_modifier = {
+			name = heir_okuyi
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = african.1.b
+		trigger = {
+			num_of_royal_marriages = 1
+		}
+		add_ruler_modifier = {
+			name = wedding_okuyi
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = african.1.c
+		trigger = {
+			ruler_age = 60
+		}
+		add_country_modifier = {
+			name = funeral_okuyi
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = african.1.e
+		trigger = {
+			heir_age = 9
+			NOT = { heir_age = 15 }
+		}
+		add_country_modifier = {
+			name = adolescent_okuyi
+			duration = 1825
+		}
+	}	
+}

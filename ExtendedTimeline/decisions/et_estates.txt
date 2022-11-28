@@ -1,0 +1,79 @@
+country_decisions = {
+	curtail_estate_corporations = {
+		major = yes
+		potential = {
+			has_country_flag = corporations_estate_in_power
+		}
+		allow = {
+			stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_corporations
+					influence = 60
+				}				
+			}
+		}
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = corporations_estate_in_power
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	curtail_estate_military = {
+		major = yes
+		potential = {
+			has_country_flag = military_estate_in_power
+		}
+		allow = {
+			stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_military
+					influence = 60
+				}				
+			}
+		}
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = military_estate_in_power
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	curtail_estate_workers = {
+		major = yes
+		potential = {
+			has_country_flag = workers_estate_in_power
+		}
+		allow = {
+			stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_workers
+					influence = 60
+				}				
+			}
+		}
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = workers_estate_in_power
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

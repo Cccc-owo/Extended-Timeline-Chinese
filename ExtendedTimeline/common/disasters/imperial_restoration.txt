@@ -1,0 +1,99 @@
+imperial_restoration = {
+	potential = {
+		has_reform = shogunate
+		NOT = { tag = JAP }
+		num_of_cities = 30
+		NOT = { has_country_flag = had_imperial_restoration }
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		NOT = { stability = 2 }
+		any_known_country = {
+			tech_difference = 6
+		}
+	}
+	
+	can_stop = { 
+		OR = {
+			tag = JAP
+			NOT = { has_reform = shogunate }
+			stability = 3
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 2
+			NOT = { adm_tech = 77 }
+			any_country = { adm_tech = 77 }
+		}
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				tech_difference = 4
+			}
+		} 
+		modifier = {
+			factor = 1
+			any_known_country = {
+				tech_difference = 6
+			}
+		}	
+		modifier = {
+			factor = 2
+			any_known_country = {
+				tech_difference = 8
+			}
+		}	
+		modifier = {
+			factor = 4
+			any_known_country = {
+				tech_difference = 10
+			}
+		}	
+		modifier = {
+			factor = 1
+			NOT = { stability = 2 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 3
+			NOT = { stability = -2 }
+		}
+	}
+	
+	can_end = {
+		OR = {
+			tag = JAP
+			NOT = { has_reform = shogunate }
+			AND = {
+				stability = 3
+				NOT = { num_of_revolts = 1 }
+			}
+		}
+	}
+
+	modifier = {
+		global_unrest = 10
+		stability_cost_modifier = 0.2
+	}	
+	
+	on_start = imperial_restoration.1
+	on_end = imperial_restoration.2
+	
+	on_monthly = {
+		events = {
+			imperial_restoration.3
+		}
+		random_events = { 
+			1000 = 0
+			100 = imperial_restoration.4
+			300 = imperial_restoration.5
+		}
+	}
+}
+

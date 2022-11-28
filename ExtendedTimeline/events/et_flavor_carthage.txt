@@ -1,0 +1,55 @@
+namespace = carthage
+
+province_event = {
+
+	id = carthage.1
+	title = "carthage.EVTNAME1"
+	desc = "carthage.EVTDESC1"
+	picture = FAMINE_eventPicture
+
+	trigger = {
+		NOT = {
+			is_year = 500
+		}
+		OR = {
+			province_id = 1882
+			province_id = 2455
+			province_id = 341
+			province_id = 4566
+			province_id = 2473
+			province_id = 2453
+			province_id = 353
+			province_id = 2954
+		}
+		NOT = {
+			OR = {
+				owned_by = ROM
+				owned_by = ROW
+				owned_by = BYZ
+			}
+		}
+		NOT = {
+			culture = punic
+		}
+	}
+	mean_time_to_happen = {
+		months = 4800
+	}
+
+	option = {
+		name = "carthage.EVTOPTA1"
+		change_culture = punic
+		if = { 
+			limit = { base_tax = 2 }
+			add_base_tax = -1
+		}
+		if = { 
+			limit = { base_production = 2 }
+			add_base_production = -1
+		}
+		if = { 
+			limit = { base_manpower = 2 }
+			add_base_manpower = -1
+		}
+	}
+}

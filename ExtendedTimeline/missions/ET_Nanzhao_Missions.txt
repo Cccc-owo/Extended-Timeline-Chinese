@@ -1,0 +1,526 @@
+nanzhao_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = NAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	nan_raid_yuenan_mission = {
+		icon = mission_map_scrolls_vietnam
+		required_missions = {  } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = vietnam_area
+				area = red_river_delta_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nan_anti_tang_annamese_support"
+				duration = 7300
+			}
+		}
+	}
+	
+	nan_drive_back_the_tibetans_mission = {
+		icon = mission_korean_castle_assault
+		required_missions = {  } #none
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = kham_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kham_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			utsang_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	nan_invasion_of_yunnan_mission = {
+		icon = mission_ancient_chinese_army_in_siege
+		required_missions = {  } #none
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = yun_gui_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			yun_gui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+	nan_conquest_of_bashu_mission = {
+		icon = mission_chinese_fortress_siege
+		required_missions = { nan_invasion_of_yunnan_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = chuannan_area
+				area = sichuan_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			chuannan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sichuan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			xinan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	nan_the_mandate_of_heaven_mission = {
+		icon = mission_chinese_tang_dynasty_guard
+		required_missions = { nan_conquest_of_bashu_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = xinan_region
+ 			}
+			NOT = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				OR = {
+					is_emperor_of_china = yes
+					NOT = {
+						any_country = {
+							is_emperor_of_china = yes
+						}
+					}
+				}
+			}
+			xinan_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "great_unifier"
+				duration = -1
+			}
+			china_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+nanzhao_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = NAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	nan_subjugate_the_shan_mission = {
+		icon = mission_conquer_burma
+		required_missions = {  } #none
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = shan_hill_area
+				area = kachin_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			shan_hill_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kachin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			karenni_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	nan_along_the_nan_rivers_mission = {
+		icon = mission_upper_burma_campaign
+		required_missions = { nan_subjugate_the_shan_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = northern_thai_area
+				area = central_thai_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			northern_thai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_thai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			central_thai_area = {
+				limit = {
+					NOT = { culture = ROOT }
+				}
+				change_culture = central_thai
+			}
+			northern_thai_area = {
+				limit = {
+					NOT = { culture = ROOT }
+				}
+				change_culture = northern_thai
+			}
+		}
+	}
+	nan_defeat_the_khmer_mission = {
+		icon = mission_angkor_wat
+		required_missions = { nan_along_the_nan_rivers_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = cambodia_area
+				area = khorat_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			khorat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "epithet_the_conqueror"
+				duration = -1
+			}
+		}
+	}
+	
+}
+
+nanzhao_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = NAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	nan_hegemonize_the_pyu_states_mission = {
+		icon = mission_restore_the_pagan_kingdom
+		required_missions = { nan_subjugate_the_shan_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = upper_burma_area
+				area = central_burma_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			upper_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			add_army_tradition = 20
+		}
+	}
+	nan_promote_the_tantric_path_mission = {
+		icon = mission_protect_lankan_buddhism
+		required_missions = { nan_hegemonize_the_pyu_states_mission nan_along_the_nan_rivers_mission }
+		position = 8
+		trigger = {
+			religion = vajrayana
+			religious_unity = 0.95
+			temple = 7
+		}
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Common Sense"
+				}
+				add_karma = 50
+			}
+			else_if = {
+				limit = {
+					NOT = { has_dlc = "Common Sense" }
+				}
+				add_adm_power = 150
+				add_dip_power = 150
+				add_prestige = 10
+			}
+		}
+	}
+}
+
+nanzhao_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = NAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	nan_seize_the_coastal_cities_mission = {
+		icon = mission_conquer_lower_burma_ori
+		required_missions = { nan_hegemonize_the_pyu_states_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = arakan_area
+				area = lower_burma_area
+ 			}
+			NOT = {
+				country_or_vassal_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			arakan_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			lower_burma_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nan_indian_sea_trade"
+				duration = 9125
+			}
+		}
+	}
+}
+
+nanzhao_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = NAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	nan_kingdom_of_many_peoples_mission = {
+		icon = mission_annex_prome
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			OR = {
+				num_accepted_cultures = 3
+				AND = {
+					num_accepted_cultures = 2
+					num_of_owned_provinces_with = {
+						value = 10
+						has_owner_accepted_culture = yes
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nan_multicultural_kingdom"
+				duration = -1
+			}
+		}
+	}
+	nan_allies_of_the_faith_mission = {
+		icon = mission_chinese_warlords_alliance
+		required_missions = { }	#none
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = nan_allies_of_the_faith_mission.tt
+				OR = {
+					calc_true_if = {
+						all_ally = {
+							religion = ROOT
+						}
+						amount = 2
+					}
+					calc_true_if = {
+						all_subject_country = {
+							religion = ROOT
+						}
+						amount = 2
+					}
+					AND = {
+						calc_true_if = {
+							all_ally = {
+								religion = ROOT
+							}
+							amount = 1
+						}
+						calc_true_if = {
+							all_subject_country = {
+								religion = ROOT
+							}
+							amount = 1
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Common Sense"
+				}
+				add_karma = 25
+			}
+			else_if = {
+				limit = {
+					NOT = { has_dlc = "Common Sense" }
+				}
+				add_prestige = 15
+			}
+		}
+	}
+	nan_nanzhao_cavalry_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { }	#none
+		position = 5
+		trigger = {
+			num_of_cavalry = 20
+			OR = {
+				army_tradition = 60
+				army_professionalism = 0.80
+			
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nan_arrows_and_cavalry"
+				duration = 10950
+			}
+		}
+	}
+}

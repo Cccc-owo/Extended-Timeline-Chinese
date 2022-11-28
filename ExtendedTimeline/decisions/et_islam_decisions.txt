@@ -1,0 +1,145 @@
+country_decisions = {
+
+	restore_the_caliphate = {
+		major = yes
+		potential = {
+			religion_group = muslim
+			government = monarchy
+			num_of_cities = 10
+			NOT = { has_reform = caliphate_reform }
+		}
+		allow = {
+			owns_or_vassal_of = 385
+			owns_or_vassal_of = 384
+			owns_or_vassal_of = 382
+			owns_or_vassal_of = 388
+			owns_or_vassal_of = 400
+			owns_or_vassal_of = 410
+			owns_or_vassal_of = 361
+			owns_or_vassal_of = 407
+			owns_or_vassal_of = 379
+			all_owned_province = {
+				religion_group = muslim
+			}
+			adm_power = 100
+			mil_power = 100
+			dip_power = 100
+		}
+		effect = {
+			add_government_reform = caliphate_reform
+			add_prestige = 10
+			if = { 
+				limit = { NOT = { technology_group = muslim } }
+				change_technology_group = muslim
+			}
+			if = { 
+				limit = { NOT = { unit_type = muslim } }
+				change_unit_type = muslim
+			}
+			add_adm_power = -100
+			add_mil_power = -100
+			add_dip_power = -100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_shia_caliphate = {
+		major = yes
+		potential = {
+			religion = shiite
+			government = monarchy
+			num_of_cities = 10
+			any_country = {
+				has_reform = caliphate_reform
+			}
+			NOT = {
+				any_country = {
+					religion = shiite
+					has_reform = caliphate_reform
+				}
+			}
+		}
+		allow = {
+			legitimacy = 80
+			num_of_cities = 30
+			all_owned_province = {
+				religion_group = muslim
+			}
+			adm_power = 100
+			mil_power = 100
+			dip_power = 100
+		}
+		effect = {
+			add_government_reform = caliphate_reform
+			add_prestige = 10
+			if = { 
+				limit = { NOT = { technology_group = muslim } }
+				change_technology_group = muslim
+			}
+			if = { 
+				limit = { NOT = { unit_type = muslim } }
+				change_unit_type = muslim
+			}
+			add_adm_power = -100
+			add_mil_power = -100
+			add_dip_power = -100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_iberian_caliphate = {
+		major = yes
+		potential = {
+			religion_group = muslim
+			government = monarchy
+			num_of_cities = 10
+			OR = {
+				culture_group = iberian
+				culture_group = maghrebi
+			}
+			NOT = { has_reform = caliphate_reform }
+		}
+		allow = {
+			legitimacy = 80
+			owns_core_province = 225
+			owns_core_province = 214
+			owns_core_province = 220
+			owns_core_province = 219
+			owns_core_province = 227
+			owns_core_province = 221
+			owns_core_province = 1749
+			owns_core_province = 223
+			owns_core_province = 213
+			OR = {
+				all_owned_province = { religion_group = muslim }
+				religious_unity = 1
+			}
+			adm_power = 100
+			mil_power = 100
+			dip_power = 100
+		}
+		effect = {
+			add_government_reform = caliphate_reform
+			add_prestige = 10
+			if = { 
+				limit = { NOT = { technology_group = muslim } }
+				change_technology_group = muslim
+			}
+			if = { 
+				limit = { NOT = { unit_type = muslim } }
+				change_unit_type = muslim
+			}
+			add_adm_power = -100
+			add_mil_power = -100
+			add_dip_power = -100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

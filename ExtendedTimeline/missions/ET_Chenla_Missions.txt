@@ -1,0 +1,231 @@
+chenla_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+		potential = {
+		AND = {
+			tag = CNA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	cna_unite_the_dangrek_chiefs_mission = {
+		icon = mission_emperor_of_hindusthan
+		required_missions = { } #none
+		position = 1
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 75
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "cna_dangrek_fealty"
+				duration = 10950
+			}
+		}
+	}
+	cna_usurp_funan_mission = {
+		icon = mission_conquer_siam
+		required_missions = { } #none
+		position = 2
+		completed_by = 550.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = mekong_area
+				area = cambodia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			mekong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "cna_new_trade_empire"
+				duration = -1
+			}
+		}
+	}
+	cna_the_great_gulf_mission = {
+		icon = mission_khmer_galleys
+		required_missions = { cna_usurp_funan_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = central_thai_area
+				area = north_tenasserim_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			central_thai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_tenasserim_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 30
+		}
+	}
+	cna_conquer_champa_mission = {
+		icon = mission_lower_burma_campaign
+		required_missions = { cna_the_great_gulf_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = champa_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			champa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "epithet_the_victorious"
+				duration = -1
+			}
+		}
+	}
+	cna_end_javanese_piracy_mission = {
+		icon = mission_follow_the_brahmaputra
+		required_missions = { cna_conquer_champa_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = central_java_area
+				area = west_java_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			central_java_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			west_java_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_navy_tradition = 40
+		}
+	}
+}
+
+chenla_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+		potential = {
+		AND = {
+			tag = CNA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	cna_indianize_the_state_mission = {
+		icon = mission_conquer_orissa_mug
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			OR = {
+				religion_group = dharmic
+				religion_group = buddhic
+			}
+			OR = {
+				glorious_monument = 10
+				temple = 10
+			}
+		}
+		effect = {
+			add_heir_claim = 100
+			add_ruler_modifier = {
+				name = "cna_maharajadhiraja"
+				duration = -1
+			}
+		}
+	}
+	cna_vat_phou_mission = {
+		icon = mission_southern_frontier
+		required_missions = { }	#none
+		position = 4
+		trigger = {
+			owns_core_province = 4839	#Champassak
+			
+			4839 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+			4839 = {
+				num_of_times_improved = 5
+			}
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+	cna_excavate_barays_mission = {
+		icon = mission_cromandel_coast
+		required_missions = { }	#none
+		position = 5
+		trigger = {
+			road = 10
+			custom_trigger_tooltip = {
+				tooltip = fun_10_province_dev_improved.tooltip
+				
+				calc_true_if = {
+					all_owned_province = {
+						num_of_times_improved = 1
+					}
+					amount = 10
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "fun_canal_system"
+				duration = 10950
+			}
+		}
+	}
+}

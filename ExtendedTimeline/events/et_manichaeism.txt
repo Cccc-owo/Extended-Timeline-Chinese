@@ -1,0 +1,155 @@
+###########################
+#Manichaeism Flavor Events#
+###########################
+
+namespace = manichaeism_flavor
+
+#Birth of Manichaeism
+province_event = {
+	id = manichaeism_flavor.1
+	title = manichaeism_flavor.1.t
+	desc = manichaeism_flavor.1.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { is_religion_enabled = manichaeism }
+		religion = zoroastrian
+		is_year = 216
+		owner = {
+			religion = zoroastrian
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	option = {
+		name = manichaeism_flavor.1.a
+		enable_religion = manichaeism
+		change_religion = manichaeism
+		add_province_modifier = {
+			name = religious_center
+			duration = 7300
+		}
+	}
+}
+
+#Manichaeism_spreading
+province_event = {
+	id = manichaeism_flavor.2
+	title = manichaeism_flavor.2.t
+	desc = manichaeism_flavor.2.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		NOT = { religion = manichaeism }
+		NOT = { is_year = 800 }
+		any_neighbor_province = {
+			religion = manichaeism
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1600
+		modifier = {
+			factor = 0.8
+			OR = {
+				religion = zoroastrian
+				religion = hellenism
+				religion = tengri_pagan_reformed
+			}
+		}
+		modifier = {
+			factor = 3.0
+			religion = chalcedonism
+		}
+		modifier = {
+			factor = 3.0
+			religion = sunni
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				religion = manichaeism
+			}
+		}
+	}
+
+	option = {
+		name = manichaeism_flavor.2.a
+		change_religion = manichaeism
+		add_province_modifier = {
+			name = spread_manichaeism
+			duration = 7300
+		}
+	}
+}
+
+#Convert to Manichaeism
+country_event = {
+	id = manichaeism_flavor.3
+	title = manichaeism_flavor.3.t
+	desc = manichaeism_flavor.3.d
+	picture = RELIGION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion = zoroastrian
+		has_ruler_modifier = tolerate_manichaeism
+		any_owned_province = {
+			religion = manichaeism
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1600
+	}
+
+	option = {
+		name = manichaeism_flavor.3.a
+		change_religion = manichaeism
+		add_stability = -1
+	}
+
+	option = {
+		name = manichaeism_flavor.3.b
+		add_stability = 1
+	}
+}
+
+#Dualistic Nature of Good and Evil
+country_event = {
+	id = manichaeism_flavor.4
+	title = manichaeism_flavor.4.t
+	desc = manichaeism_flavor.4.d
+	picture = COMET_SIGHTED_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = manichaeism
+	}
+	
+	mean_time_to_happen = {
+		months = 2000
+	}
+
+	option = {
+		name = manichaeism_flavor.4.a
+		add_country_modifier = {
+			name = expect_evil
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = manichaeism_flavor.4.b
+		add_stability = 1
+	}
+}
+
+		

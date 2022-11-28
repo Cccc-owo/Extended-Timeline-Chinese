@@ -1,0 +1,57 @@
+#263 - Ratibor
+
+latent_trade_goods = {
+	coal
+}
+
+owner = VAN
+controller = VAN
+add_core = VAN
+is_city = yes
+culture = vandal
+religion = germanic
+base_tax = 1
+base_production = 1
+capital = "Opole"
+trade_goods = grain
+base_manpower = 2
+hre = no
+discovered_by = barbarian
+discovered_by = western
+
+395.1.1 = { owner = NHN controller = NHN add_core = NHN remove_core = VAN }
+550.1.1 = { owner = SIL controller = SIL add_core = SIL remove_core = NHN culture = schlesian religion = slavic }
+600.1.1 = { discovered_by = eastern }
+800.1.1 = { base_tax = 2 base_production = 2 }
+940.1.1 = { owner = BOH controller = BOH add_core = BOH }
+980.1.1 = { religion = catholic }
+990.1.1 = { owner = POL controller = POL add_core = POL remove_core = BOH }
+1000.1.1 = { discovered_by = muslim discovered_by = ottoman }
+1100.1.1 = { base_tax = 3 base_production = 3 }
+1163.1.1 = { owner = OPL controller = OPL add_core = OPL hre = yes } #Duchy of Opole-Raciborz
+#1327.2.19 Bohemian vassal
+
+1523.1.1 = { religion = protestant }
+1618.1.1 = { unrest = 5 } # Religious struggles
+1648.1.1 = { unrest = 0 }
+1675.11.21 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+} # Annexed by the Habsburgs, death of the last Piast duke
+1700.1.1 = {
+	base_tax = 4 
+	base_production = 4
+}
+1740.1.1 = { add_core = PRU } # 1st Silesian war against Austria
+1745.1.1 = { owner = PRU controller = PRU } # Peace of Dresden, 2nd Silesian war
+1750.1.1 = { base_tax = 5 base_production = 5 base_manpower = 3 }
+1763.1.1 = { remove_core = HAB } # End of 3rd Silesian war
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+
+1870.1.1   = { trade_goods = coal }
+1871.1.18  = { owner = GER controller = GER add_core = GER remove_core = PRU remove_core = SIL } # German unification
+1930.1.1   = { trade_goods = cars }
+1945.5.8   = { owner = POL controller = POL add_core = POL remove_core = GER }
+1950.1.1   = { religion = catholic }
+

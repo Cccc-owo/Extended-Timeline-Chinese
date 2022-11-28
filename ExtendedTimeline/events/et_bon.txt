@@ -1,0 +1,47 @@
+############
+#Bon Events#
+############
+
+namespace = bon
+
+#Household Deities
+country_event = {
+	id = bon.1
+	title = bon.1.t
+	desc = bon.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		religion = tibetan_bon
+	}
+
+	mean_time_to_happen = {
+		years = 40
+	}
+
+	option = {
+		name = bon.1.a
+		add_years_of_income = -1
+		random_core_province = {
+			limit = {
+				religion = tibetan_bon
+			}
+			random_list = {
+				33 = {
+					add_base_tax = 1
+				}
+				33 = {
+					add_base_production = 1
+				}
+				33 = {
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = bon.1.b
+		add_prestige = -2
+	}
+}

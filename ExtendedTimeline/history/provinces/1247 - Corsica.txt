@@ -1,0 +1,91 @@
+#1247 - Corsica
+
+owner = ROM
+controller = ROM
+culture = etruscan
+religion = animism
+capital = "Aleria"
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 1
+base_production = 1
+trade_goods = naval_supplies
+base_manpower = 1
+is_city = yes
+add_core = ROM
+
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+410.1.1 = { culture = tuscan capital = "Bastia" }
+476.9.4 = { owner = ITA controller = ITA add_core = ITA }
+480.1.1 = { remove_core = ROW }
+489.1.1 = { owner = OST controller = OST add_core = OST remove_core = ITA }
+522.1.1 = { owner = BYZ controller = BYZ add_core = BYZ remove_core = OST }
+580.1.1 = { religion = chalcedonism }
+725.1.1 = { owner = LOM controller = LOM add_core = LOM }
+774.1.1 = { owner = FRK controller = FRK add_core = FRK remove_core = LOM }
+840.6.21 = { owner = FRD controller = FRD add_core = FRD remove_core = FRK }
+855.9.30 = { owner = ITA controller = ITA add_core = ITA remove_core = FRD remove_core = LOM }
+867.1.1 = { religion = catholic }
+900.1.1 = { base_tax = 2 base_production = 2 }
+962.2.2 = { hre = yes owner = COR controller = COR add_core = COR remove_core = ITA }
+1000.1.1 = { base_manpower = 2 }
+1077.1.1 = { owner = PAP controller = PAP add_core = PAP }
+1090.1.1 = { owner = PIS controller = PIS add_core = PIS remove_core = PAP }
+1100.1.1 = { base_tax = 3 base_production = 3 }
+1282.8.6 = { owner = GEN controller = GEN add_core = GEN remove_core = PIS }
+
+1464.1.1   = {	owner = MLO
+		controller = MLO
+	     	add_core = MLO
+	     }
+1481.1.1   = { revolt = { type = revolutionary_rebels size = 2 } controller = REB }
+1486.1.1   = { revolt = {} controller = MLO }
+1499.1.1   = {	owner = GEN
+		controller = GEN
+	     	remove_core = MLO
+	     }
+1553.1.1   = {	owner = FRA
+		controller = FRA
+	     	add_core = FRA
+	     } # Occupied by the French
+1559.1.1   = {	owner = GEN
+		controller = GEN
+	     	remove_core = FRA
+	     } # Treaty of Cateau-Cambrésis
+1729.1.1   = { unrest = 7 } # Revolt against the Genoese
+1732.5.1   = { unrest = 3 } # Charles VI sends military assistance & the rebels surrender
+1733.11.17 = { unrest = 5 } # Mistrust in the Genoese administration resulted in another Corsican revolt
+1735.1.1   = { unrest = 0 revolt = { type = nationalist_rebels size = 3 } controller = REB } # The Corsican assembly declared Corsica independent
+1736.4.15  = { revolt = {} owner = COR controller = COR }
+1743.1.1   = { owner = GEN controller = GEN } # The Corsicans laid down their arms
+1745.1.1   = { revolt = { type = nationalist_rebels size = 3 } controller = REB } # Third Corsican revolt, declared themselves independent in 1746
+1753.10.1  = { revolt = {} owner = COR controller = COR }
+1755.7.15  = { revolt = { type = nationalist_rebels size = 3 } controller = REB } # Fourth Corsican revolt lead by Pascal Paoli
+1768.5.15  = {	revolt = {}
+		owner = FRA
+		controller = FRA
+		add_core = FRA
+	     	remove_core = GEN
+	     } # Ceded to France, since the Republic of Genoa is unable to restore control
+1769.6.13  = { controller = FRA } # France managed to overcome the resistance & Paoli flees
+1806.7.12  = { hre = no } # The Holy Roman Empire is dissolved
+
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+	     } # Republic proclaimed
+1910.1.1 = { discovered_by = asian }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1942.11.1  = { owner = ITA controller = ITA }
+1943.9.8   = { owner = FRV controller = FRV }
+1944.8.25  = { owner = FR2 controller = FR2 remove_core = FRV } # France liberated by allied forces
+
+
+

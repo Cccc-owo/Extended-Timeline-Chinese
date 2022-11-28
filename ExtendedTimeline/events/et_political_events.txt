@@ -1,0 +1,1410 @@
+namespace = et_political
+
+# Election!
+country_event = {
+	id = et_political.1
+	title = "et_political.1.t"
+	desc = "et_political.1.d"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_faction = conservative_party
+		NOT = { has_states_general_mechanic = yes }
+		NOT = { has_government_attribute = lottery_election }
+	}
+
+	option = {
+		name = "et_political.1.a"	# Current ruler stays
+		trigger = {
+			has_regency = no
+			NOT = { has_ruler_flag = leader_has_been_pushed_out }
+		}
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 0
+				NOT = { republican_tradition = 25 }
+			}	
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 50 }
+			}				
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 75 }
+			}	
+			modifier = {
+				factor = 2.0
+				republican_tradition = 90
+			}		
+		}
+		custom_tooltip = remains_ruler
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		if = {
+			limit = {
+				NOT = { republican_tradition = 20 }				
+				has_dlc = "Res Publica"
+			}
+			add_government_reform = presidential_despot_reform	
+		}
+		if = {
+			limit = {
+				NOT = { republican_tradition = 20 }
+			}
+			add_government_reform = single_party_system
+		}	
+		add_scaled_republican_tradition = -10
+		random_list = {
+			10 = {
+				add_adm_power = 50
+			}
+			10 = {
+				add_dip_power = 50
+			}
+			10 = {
+				add_mil_power = 50
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					AND = {
+						has_country_flag = ruler_from_conservative_party
+						NOT = { faction_in_power = conservative_party }
+					}
+					AND = {
+						has_country_flag = ruler_from_communist_party
+						NOT = { faction_in_power = communist_party }
+					}
+					AND = {
+						has_country_flag = ruler_from_liberal_party
+						NOT = { faction_in_power = liberal_party }
+					}
+					AND = {
+						has_country_flag = ruler_from_social_democratic_party
+						NOT = { faction_in_power = social_democratic_party }
+					}
+					AND = {
+						has_country_flag = ruler_from_nationalist_party
+						NOT = { faction_in_power = nationalist_party }
+					}
+					AND = {
+						has_country_flag = ruler_from_national_socialist_party
+						NOT = { faction_in_power = national_socialist_party }
+					}
+				}
+			}
+			add_corruption = 10
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_conservative_party }
+			add_faction_influence = {
+				faction = conservative_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_communist_party }
+			add_faction_influence = {
+				faction = communist_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_liberal_party }
+			add_faction_influence = {
+				faction = liberal_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_social_democratic_party }
+			add_faction_influence = {
+				faction = social_democratic_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_nationalist_party }
+			add_faction_influence = {
+				faction = nationalist_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_national_socialist_party }
+			add_faction_influence = {
+				faction = national_socialist_party
+				influence = 20
+			}
+		}
+
+		add_karma = -5
+	}
+	option = {
+		name = "et_political.1.b"	# Conservative candidate
+		trigger = {
+			NOT = { has_country_flag = ruler_from_conservative_party }
+			faction_influence = { faction = conservative_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = conservative_party
+			}
+		}
+		set_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 2
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 2
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = conservative_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = conservative_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.c"	# Communist candidate
+		trigger = {
+			NOT = { has_country_flag = ruler_from_communist_party }
+			faction_influence = { faction = communist_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = communist_party
+			}
+		}
+		set_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 2
+				adm = 4
+				dip = 1
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 2
+				adm = 4
+				dip = 1
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = communist_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = communist_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.e"	# Liberal candidate
+		trigger = {
+			NOT = { has_country_flag = ruler_from_liberal_party }
+			faction_influence = { faction = liberal_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = liberal_party
+			}
+		}
+		set_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 1
+				adm = 2
+				dip = 4
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 1
+				adm = 2
+				dip = 4
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = liberal_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = liberal_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.f"	# Social democratic candidate
+		trigger = {
+			NOT = { has_country_flag = ruler_from_social_democratic_party }
+			faction_influence = { faction = social_democratic_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = social_democratic_party
+			}
+		}
+		set_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 2
+				adm = 1
+				dip = 4
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 2
+				adm = 1
+				dip = 4
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = social_democratic_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = social_democratic_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.g"	# Nationalist candidate
+		trigger = {
+			NOT = { has_country_flag = ruler_from_nationalist_party }
+			faction_influence = { faction = nationalist_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = nationalist_party
+			}
+		}
+		set_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 2
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 2
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = nationalist_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = nationalist_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.h"	# National Socialist candidate
+		trigger = {
+			NOT = { has_country_flag = ruler_from_national_socialist_party }
+			faction_influence = { faction = national_socialist_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = national_socialist_party
+			}
+		}
+		set_country_flag = ruler_from_national_socialist_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_nationalist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 4
+				adm = 2
+				dip = 1
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 4
+				adm = 2
+				dip = 1
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = national_socialist_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = national_socialist_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+
+	option = { # Nepotism choice, re-electing within dynasty
+		name = "et_political.1.i" #Elect from ruling family
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		add_scaled_republican_tradition = -4
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = -2
+				adm = -2
+				dip = -2
+				age = 30
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = -2
+				adm = -2
+				dip = -2
+				age = 30
+				name = "lastname"
+			}
+		}
+		add_corruption = 5
+		if = {
+			limit = { has_country_flag = ruler_from_conservative_party }
+			add_faction_influence = {
+				faction = conservative_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_communist_party }
+			add_faction_influence = {
+				faction = communist_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_liberal_party }
+			add_faction_influence = {
+				faction = liberal_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_social_democratic_party }
+			add_faction_influence = {
+				faction = social_democratic_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_nationalist_party }
+			add_faction_influence = {
+				faction = nationalist_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_national_socialist_party }
+			add_faction_influence = {
+				faction = national_socialist_party
+				influence = 20
+			}
+		}
+	}
+}
+
+# Election!
+country_event = {
+	id = et_political.2
+	title = "et_political.1.t"
+	desc = "et_political.2.d"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_faction = conservative_party
+		NOT = { has_states_general_mechanic = yes }
+		NOT = { has_government_attribute = lottery_election }
+	}
+
+	option = {
+		name = "et_political.1.b"	# Conservative candidate
+		trigger = {
+			faction_influence = { faction = conservative_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = conservative_party
+			}
+		}
+		set_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 2
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 2
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = conservative_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = conservative_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.c"	# Communist candidate
+		trigger = {
+			faction_influence = { faction = communist_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = communist_party
+			}
+		}
+		set_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 2
+				adm = 4
+				dip = 1
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 2
+				adm = 4
+				dip = 1
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = communist_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = communist_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.e"	# Liberal candidate
+		trigger = {
+			faction_influence = { faction = liberal_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = liberal_party
+			}
+		}
+		set_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 1
+				adm = 2
+				dip = 4
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 1
+				adm = 2
+				dip = 4
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = liberal_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = liberal_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.f"	# Social democratic candidate
+		trigger = {
+			faction_influence = { faction = social_democratic_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = social_democratic_party
+			}
+		}
+		set_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 2
+				adm = 1
+				dip = 4
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 2
+				adm = 1
+				dip = 4
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = social_democratic_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = social_democratic_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.g"	# Nationalist candidate
+		trigger = {
+			faction_influence = { faction = nationalist_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = nationalist_party
+			}
+		}
+		set_country_flag = ruler_from_nationalist_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_national_socialist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 2
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 2
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = nationalist_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = nationalist_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+	option = {
+		name = "et_political.1.h"	# National Socialist candidate
+		trigger = {
+			faction_influence = { faction = national_socialist_party influence = 10 }
+		}
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				faction_in_power = national_socialist_party
+			}
+		}
+		set_country_flag = ruler_from_national_socialist_party
+		clr_country_flag = ruler_from_conservative_party
+		clr_country_flag = ruler_from_communist_party
+		clr_country_flag = ruler_from_liberal_party
+		clr_country_flag = ruler_from_social_democratic_party
+		clr_country_flag = ruler_from_nationalist_party
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = 4
+				adm = 2
+				dip = 1
+				random_gender = yes # Allows random gender for republics
+				min_age = 35
+				max_age = 55
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 4
+				adm = 2
+				dip = 1
+				min_age = 35
+				max_age = 55
+			}
+		}
+		if = {
+			limit = {
+				NOT = { faction_in_power = national_socialist_party }
+			}
+			add_corruption = 10
+		}
+		add_faction_influence = {
+			faction = national_socialist_party
+			influence = 20
+		}
+		add_karma = 10
+	}
+
+	option = { # Nepotism choice, re-electing within dynasty
+		name = "et_political.1.i" #Elect from ruling family
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		add_scaled_republican_tradition = -4
+		if = {
+			limit = { 
+				OR = {
+					has_active_policy = mandatory_service 
+					has_idea = universal_suffrage
+				}
+			}
+			define_ruler = {
+				mil = -2
+				adm = -2
+				dip = -2
+				age = 30
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = -2
+				adm = -2
+				dip = -2
+				age = 30
+				name = "lastname"
+			}
+		}
+		add_corruption = 5
+		if = {
+			limit = { has_country_flag = ruler_from_conservative_party }
+			add_faction_influence = {
+				faction = conservative_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_communist_party }
+			add_faction_influence = {
+				faction = communist_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_liberal_party }
+			add_faction_influence = {
+				faction = liberal_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_social_democratic_party }
+			add_faction_influence = {
+				faction = social_democratic_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_nationalist_party }
+			add_faction_influence = {
+				faction = nationalist_party
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_country_flag = ruler_from_national_socialist_party }
+			add_faction_influence = {
+				faction = national_socialist_party
+				influence = 20
+			}
+		}
+	}
+}
+
+#Corrupt politician
+country_event = {
+	id = et_political.3
+	title = et_political.3.t
+	desc = et_political.3.d
+	picture = CORRUPTION_eventPicture
+
+	trigger = {
+		has_faction = conservative_party
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_political.3.a
+		if = {
+			limit = { faction_in_power = conservative_party }
+			add_faction_influence = {
+				faction = conservative_party
+				influence = -10
+			}
+		}
+		if = {
+			limit = { faction_in_power = communist_party }
+			add_faction_influence = {
+				faction = communist_party
+				influence = -10
+			}
+		}
+		if = {
+			limit = { faction_in_power = liberal_party }
+			add_faction_influence = {
+				faction = liberal_party
+				influence = -10
+			}
+		}
+		if = {
+			limit = { faction_in_power = social_democratic_party }
+			add_faction_influence = {
+				faction = social_democratic_party
+				influence = -10
+			}
+		}
+		if = {
+			limit = { faction_in_power = nationalist_party }
+			add_faction_influence = {
+				faction = nationalist_party
+				influence = -10
+			}
+		}
+		if = {
+			limit = { faction_in_power = national_socialist_party }
+			add_faction_influence = {
+				faction = national_socialist_party
+				influence = -10
+			}
+		}
+	}
+
+	option = {
+		name = et_political.3.b
+		add_corruption = 5
+	}
+}
+
+#Communist enemy
+country_event = {
+	id = et_political.4
+	title = et_political.4.t
+	desc = et_political.4.d
+	picture = COMMUNISM_eventPicture
+
+	trigger = {
+		has_faction = conservative_party
+		NOT = { faction_in_power = communist_party }
+		any_country = {
+			war_with = ROOT
+			OR = {
+				has_reform = communist_government
+				has_reform = socialist_republic
+				has_reform = communist_dictatorship
+				AND = {
+					has_faction = communist_party
+					faction_in_power = communist_party
+				}
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_political.4.a
+		add_faction_influence = {
+			faction = communist_party
+			influence = -20
+		}
+		add_faction_influence = {
+			faction = social_democratic_party
+			influence = -10
+		}
+	}
+}
+
+#Fascist enemy
+country_event = {
+	id = et_political.5
+	title = et_political.5.t
+	desc = et_political.5.d
+	picture = WW_ALLIES_eventPicture
+
+	trigger = {
+		has_faction = conservative_party
+		NOT = { faction_in_power = national_socialist_party }
+		any_country = {
+			war_with = ROOT
+			OR = {
+				has_reform = fascist_government
+				has_reform = fascist_dictatorship
+				AND = {
+					has_faction = national_socialist_party
+					faction_in_power = national_socialist_party
+				}
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_political.5.a
+		add_faction_influence = {
+			faction = national_socialist_party
+			influence = -20
+		}
+		add_faction_influence = {
+			faction = nationalist_party
+			influence = -10
+		}
+	}
+}
+
+#Sex scandal
+country_event = {
+	id = et_political.6
+	title = et_political.6.t
+	desc = et_political.6.d
+	picture = ACCUSATION_eventPicture
+
+	trigger = {
+		has_faction = conservative_party
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_political.6.a
+		if = {
+			limit = { faction_in_power = conservative_party }
+			add_faction_influence = {
+				faction = conservative_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = communist_party }
+			add_faction_influence = {
+				faction = communist_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = liberal_party }
+			add_faction_influence = {
+				faction = liberal_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = social_democratic_party }
+			add_faction_influence = {
+				faction = social_democratic_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = nationalist_party }
+			add_faction_influence = {
+				faction = nationalist_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = national_socialist_party }
+			add_faction_influence = {
+				faction = national_socialist_party
+				influence = -5
+			}
+		}
+	}
+}
+
+#Racist politician
+country_event = {
+	id = et_political.7
+	title = et_political.7.t
+	desc = et_political.7.d
+	picture = ACCUSATION_eventPicture
+
+	trigger = {
+		has_faction = conservative_party
+		OR = {
+			faction_in_power = conservative_party
+			faction_in_power = nationalist_party
+			faction_in_power = national_socialist_party
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_political.7.a
+		if = {
+			limit = { faction_in_power = conservative_party }
+			add_faction_influence = {
+				faction = conservative_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = nationalist_party }
+			add_faction_influence = {
+				faction = nationalist_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = national_socialist_party }
+			add_faction_influence = {
+				faction = national_socialist_party
+				influence = -5
+			}
+		}
+	}
+	option = {
+		name = et_political.7.b
+		add_country_modifier = {
+			name = atmosphere_of_intolerance
+			duration = 365
+		}
+	}
+}
+
+#Politician support far left group
+country_event = {
+	id = et_political.8
+	title = et_political.8.t
+	desc = et_political.8.d
+	picture = ACCUSATION_eventPicture
+
+	trigger = {
+		has_faction = conservative_party
+		OR = {
+			faction_in_power = communist_party
+			faction_in_power = liberal_party
+			faction_in_power = social_democratic_party
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_political.8.a
+		if = {
+			limit = { faction_in_power = communist_party }
+			add_faction_influence = {
+				faction = communist_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = liberal_party }
+			add_faction_influence = {
+				faction = liberal_party
+				influence = -5
+			}
+		}
+		if = {
+			limit = { faction_in_power = social_democratic_party }
+			add_faction_influence = {
+				faction = social_democratic_party
+				influence = -5
+			}
+		}
+	}
+	option = {
+		name = et_political.8.b
+		add_country_modifier = {
+			name = violent_activists
+			duration = 365
+		}
+	}
+}
+
+#Popular right wing politician
+country_event = {
+	id = et_political.9
+	title = et_political.9.t
+	desc = et_political.9.d
+	picture = STREET_SPEECH_eventPicture
+
+	trigger = {
+		has_faction = conservative_party
+		OR = {
+			faction_in_power = communist_party
+			faction_in_power = liberal_party
+			faction_in_power = social_democratic_party
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_political.9.a
+		if = {
+			limit = { 
+				NOT = {
+					faction_influence = {
+						faction = conservative_party
+						influence = 25
+					} 
+				}
+			}
+			add_faction_influence = {
+				faction = conservative_party
+				influence = 10
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					faction_influence = {
+						faction = nationalist_party
+						influence = 25
+					} 
+				}
+			}
+			add_faction_influence = {
+				faction = nationalist_party
+				influence = 10
+			}
+		}
+		else = {
+			add_faction_influence = {
+				faction = national_socialist_party
+				influence = 10
+			}
+		}
+	}
+}
+
+#Popular left wing politician
+country_event = {
+	id = et_political.10
+	title = et_political.10.t
+	desc = et_political.10.d
+	picture = STREET_SPEECH_eventPicture
+
+	trigger = {
+		has_faction = conservative_party
+		OR = {
+			faction_in_power = conservative_party
+			faction_in_power = nationalist_party
+			faction_in_power = national_socialist_party
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_political.10.a
+		if = {
+			limit = { 
+				NOT = {
+					faction_influence = {
+						faction = liberal_party
+						influence = 25
+					} 
+				}
+			}
+			add_faction_influence = {
+				faction = liberal_party
+				influence = 10
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					faction_influence = {
+						faction = social_democratic_party
+						influence = 25
+					} 
+				}
+			}
+			add_faction_influence = {
+				faction = social_democratic_party
+				influence = 10
+			}
+		}
+		else = {
+			add_faction_influence = {
+				faction = communist_party
+				influence = 10
+			}
+		}
+	}
+	option = {
+		name = et_political.10.b
+		add_country_modifier = {
+			name = violent_activists
+			duration = 365
+		}
+	}
+}

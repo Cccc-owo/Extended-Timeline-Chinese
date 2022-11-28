@@ -1,0 +1,158 @@
+country_decisions = {
+
+	construct_nuclear_weapon = {
+		potential = {
+			OR = {
+				has_country_flag = nuclear_weapons_allowed
+				current_age = information_age
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = recently_constructed_nuclear_weapon }
+			mil_tech = 87
+			treasury = 1000
+			mil_power = 100
+		}
+		effect = {
+			add_treasury = -500
+			add_years_of_income = -0.1
+			add_mil_power = -100
+			add_prestige = 10
+			if = {
+				limit = { has_country_modifier = nuclear_state }
+				change_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_modifier = nuclear_state } }
+				add_country_modifier = {
+					name = "nuclear_state"
+					duration = -1
+				}
+				set_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+			}
+			add_country_modifier = {
+				name = "recently_constructed_nuclear_weapon"
+				duration = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = nukes_used }
+				NOT = { treasury = 1500 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = nukes_used }
+				NOT = { total_development = 300 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = nukes_used }
+				all_rival_country = {
+					NOT = {
+						check_variable = {
+							which = num_of_nuclear_weapons
+							value = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	use_nuke_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			has_global_flag = nukes_used
+		}
+		allow = {
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+			NOT = { has_country_modifier = nuke_cooldown }
+			is_at_war = yes
+			any_country = {
+				war_with = ROOT
+				OR = {
+					AND = {
+						is_rival = ROOT
+						war_score = -40
+					}
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = nuked_us
+					}
+				}
+			}
+		}
+		effect = {
+			change_variable = {
+				which = num_of_nuclear_weapons
+				value = -1
+			}
+			add_country_modifier = {
+				name = nuke_cooldown
+				duration = 30
+			}
+			random_country = {
+				limit = {
+					war_with = ROOT
+					OR = {
+						AND = {
+							is_rival = ROOT
+							war_score = -40
+						}
+						reverse_has_opinion_modifier = {
+							who = ROOT
+							modifier = nuked_us
+						}
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = nuked_us
+				}
+				if = {
+					limit = { any_owned_province = { development = 80 NOT = { has_province_modifier = province_nuked } } }
+					random_owned_province = {
+						limit = { development = 80 NOT = { has_province_modifier = province_nuked } }
+						province_event = { id = et_nuke.3 }
+					}
+				}
+				else_if = {
+					limit = { any_owned_province = { development = 40 NOT = { has_province_modifier = province_nuked } } }
+					random_owned_province = {
+						limit = { development = 40 NOT = { has_province_modifier = province_nuked } }
+						province_event = { id = et_nuke.3 }
+					}
+				}
+				else_if = {
+					limit = { any_owned_province = { development = 20 NOT = { has_province_modifier = province_nuked } } }
+					random_owned_province = {
+						limit = { development = 20 NOT = { has_province_modifier = province_nuked } }
+						province_event = { id = et_nuke.3 }
+					}
+				}
+				else = {
+					random_owned_province = {
+						province_event = { id = et_nuke.3 }
+					}
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

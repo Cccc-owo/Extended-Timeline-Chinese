@@ -1,0 +1,92 @@
+#540 - Coromandel
+
+owner = CLS
+controller = CLS
+culture = tamil
+religion = hinduism
+capital = "Poompuhar"
+trade_goods = cloth
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = indian
+discovered_by = early_indian
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = CLS
+center_of_trade = 2
+
+200.1.1 = { owner = PND controller = PND add_core = PND remove_core = CLS }
+250.1.1 = { owner = KLA controller = KLA add_core = KLA remove_core = PND capital = "Kaveripattinam" }
+600.1.1 = { owner = PLL controller = PLL add_core = PLL remove_core = KLA }
+800.1.1 = { discovered_by = nomad_group }
+848.1.1 = { owner = CLS controller = CLS add_core = CLS remove_core = PLL capital = "Pazhaiyaarai" }
+900.1.1 = { base_manpower = 3 }
+1279.1.1 = { owner = PND controller = PND add_core = PND }
+1300.1.1 = { capital = "Kuddaluru" }
+1322.1.1 = { owner = CLS controller = CLS add_core = CLS }
+1375.1.1 = { owner = VIJ controller = VIJ add_core = VIJ remove_core = CLS }
+1399.1.1 = { add_core = MAD }
+
+1498.1.1 = { discovered_by = POR }
+1543.1.1 = {
+	controller = REB
+	revolt = {
+	size = 0
+	type = nationalist_rebels
+	}
+}
+1548.1.1 = { controller = VIJ revolt = { } }
+1565.1.26 = {
+	owner = GNG
+	controller = GNG
+} # The Vijayanagar empire collapses
+1649.1.1 = { controller = BIJ } # Conquered by Bijapur
+1649.12.1 = {
+	owner = BIJ
+	add_core = BIJ
+	remove_core = KRK
+} # Conquered by Bijapur
+1674.1.1 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	capital = "Pondicherry"
+	add_to_trade_company = FRA
+	add_trade_company_investment = {
+		investment = company_depot
+		investor = FRA
+	}
+	add_trade_company_investment = {
+		investment = permanent_quarters
+		investor = FRA
+	}
+	add_trade_company_investment = {
+		investment = settlements
+		investor = FRA
+	}
+}
+1761.1.16 = { controller = GBR } # Third Carnatic War
+1763.2.10 = { controller = FRA } # Returned to France
+
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+	     } # Republic proclaimed
+1900.1.1 = { base_manpower = 4 }
+1910.1.1 = { discovered_by = western discovered_by = eastern }
+1930.1.1   = { add_core = INI remove_core = MAD }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1944.8.25  = { owner = FR2 controller = FR2 remove_core = FRV } # France liberated by allied forces
+1950.1.1 = { base_tax = 5 base_production = 5 }
+1954.3.18  = { owner = INI controller = INI }
+1956.3.1   = { remove_core = FR2 }
+1975.1.1 = { base_tax = 6 base_production = 6 base_manpower = 5 }
+2000.1.1 = { base_tax = 7 base_production = 7 base_manpower = 6 }
