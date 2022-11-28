@@ -3,8 +3,8 @@
 chcp 936
 ECHO 现在时间：%date%
 ECHO 检查是否存在需要的文件夹中...
-if not exist \output\ mkdir \output\
-if not exist \output\ETCP mkdir \output\ETCP
+if not exist output\ mkdir \output\
+if not exist output\ETCP mkdir output\ETCP\
 ::pre-processing
 ECHO.
 ECHO 开始复制文件...
