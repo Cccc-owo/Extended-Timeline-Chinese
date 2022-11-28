@@ -9,4 +9,4 @@ tags={
 }
 picture="extended_timeline.jpg"
 supported_version="1.34.*"
-path="mod/ET_Chinese_Translation"
+path="mod/ETCP"
