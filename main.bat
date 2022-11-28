@@ -1,6 +1,6 @@
 @ECHO OFF
 ::checking
-ECHO Time：%date%
+ECHO Time:%date%
 ECHO Check if the required folder exists...
 if not exist output\ mkdir \output\
 if not exist output\ETCP mkdir output\ETCP\
