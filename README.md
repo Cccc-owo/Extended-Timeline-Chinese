@@ -6,7 +6,7 @@ Translated version of a EU4 mod called "Extended Timeline".
 
 「Extended Timeline」模组的中文汉化整合版
 
-[ParaTranz 项目]()
+[ParaTranz 项目](https://paratranz.cn/projects/5342/)
 
 ## 文件夹结构说明 / Folders structure of the repository
 
@@ -20,3 +20,5 @@ Translated version of a EU4 mod called "Extended Timeline".
 |ExtendedTimeline|ET 源文件|包含整个 mod|
 |mod_descriptor|mod 描述符文件||
 |output|输出文件夹|运行 ```main.bat``` 时会自动建立|
+
+```7z.exe 和 ```7z.dll``` 提取自官方 7-Zip 22.01 (2022-07-15) 

@@ -23,6 +23,9 @@ del output\ETCP\thumbnail.png
 del /F /S /Q output\ETCP\localisation\*_l_spanish.yml
 del /F /S /Q output\ETCP\localisation\*_l_french.yml
 del /F /S /Q output\ETCP\localisation\*_l_german.yml
+ECHO.
+ECHO Compressing the generated files
+7z.exe a ETCP.zip .\output\*
 ::done
 ECHO.
 ECHO End of script running

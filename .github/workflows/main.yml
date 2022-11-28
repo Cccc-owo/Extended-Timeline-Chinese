@@ -28,10 +28,6 @@ jobs:
       - name: Run integration script
         run: ./main.bat
 
-      - uses: montudor/action-zip@v1
-        with:
-          args: zip -qq -r ETCP.zip output
-
       - name: Upload generated files
         uses: actions/upload-artifact@v3.1.1
         with:
