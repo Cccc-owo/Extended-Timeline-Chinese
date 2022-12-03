@@ -1,4 +1,4 @@
-# Extended-Timeline-Chinese-Project
+# Extended Timeline Chinese Localisation Project
 
 ![et](extended_timeline.jpg)
 
