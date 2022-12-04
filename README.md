@@ -8,6 +8,12 @@ Translated version of a EU4 mod called "Extended Timeline".
 
 [ParaTranz 项目](https://paratranz.cn/projects/5342/)
 
+## 下载 & 使用 / Download & Use
+
+你可以在 [Actions 构建](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/actions)中下载到本地版 Mod，或者你也可以在 [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=2897275182)中找到本 Mod。
+
+注意：**请不要将本 Mod 与「汉化 Mod」或原版「Extended Timeline」一起使用，本 Mod 已将汉化和 ET 整合。**
+
 ## 文件夹结构说明 / Folders structure of the repository
 
 |文件夹 / folder|内容 / contents|备注 / notes|
