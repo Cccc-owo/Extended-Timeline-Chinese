@@ -4,7 +4,7 @@ set mod_dir=ETCLP
 ::checking
 ECHO Time:%date%
 ECHO Checking the required folder...
-if not exist output\ ( mkdir \output\ ) else ( del /F /S /Q output\ & rmdir /S /Q output\ & mkdir output\ )
+if not exist output\ ( mkdir output\ ) else ( del /F /S /Q output\ & rmdir /S /Q output\ & mkdir output\ )
 if not exist output\%mod_dir% mkdir output\%mod_dir%\
 if exist mod.zip del /F /S /Q mod.zip
 ::pre-processing
