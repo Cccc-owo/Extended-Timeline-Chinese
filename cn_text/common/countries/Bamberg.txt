@@ -1,23 +1,22 @@
 graphical_culture = westerngfx
 color = {
-  200
-  219
-  195
-}
-revolutionary_colors = {
-  5
-  13
-  8
+  147
+  116
+  86
 }
 historical_idea_groups = {
-  trade_ideas
+  early_adm_ideas
+  early_mil_ideas
+  early_trade_ideas
+  early_religious_ideas
   defensive_ideas
-  religious_ideas
-  economic_ideas
-  diplomatic_ideas
-  innovativeness_ideas
-  spy_ideas
   offensive_ideas
+  administrative_ideas
+  economic_ideas
+  trade_ideas
+  religious_ideas
+  diplomatic_ideas
+  spy_ideas
 }
 historical_units = {
   western_medieval_infantry
@@ -36,86 +35,91 @@ historical_units = {
   napoleonic_lancers
 }
 monarch_names = {
-  "\u0012¦u\u0010ð #0" = 60
-  "\u0010·^\u0010Éb\u0012·V #0" = 40
-  "\u0012¦u\u0010ð \u0010\bb\u0010yr\u0012\u0017V\u0010Ì\u0012·V #0" = 40
-  "\u0012¦u\u0010ð \u0010ò’\u0010)R\u0010nf #0" = 40
-  "\u0010\bb\u0010yr\u0012\u0017V\u0010Ì\u0012·V #0" = 20
-  "\u0010ýÿS\u0010Sýÿ\u0010+Y #0" = 20
-  "\u0010aN\u0012SV \u0010Sýÿ\u0010yr\u0010Èp #0" = 20
-  "\u00120R\u0010^X\u0012\u0014S\u0010ÆY \u0012\u0017V\u0010\u0017g\u0010(’ #0" = 20
-  "\u0010KQ\u0010Ì\u0010¯e\u0010Xb\u0010+Y \u0012\u0017V\u0010\u0017g\u0010(’ #0" = 20
-  "\u0010ýÿe\u0010êýÿ\u0010WS #0" = 20
-  "\u0012\u0017V\u0010\u0017g\u0010(’ #0" = 20
-  "\u0012\u0017V\u0010\u0017g\u0010(’ \u0010ïýÿ\u0012·V\u0012ôu\u0010\f^ #0" = 20
-  "\u0010Sýÿ\u0010yr\u0010Èp #0" = 20
-  "\u0010Sýÿ\u0010yr\u0010Èp #0" = 10
-  "\u0010Sýÿ\u0010yr\u0010Èp \u0010aS\u0012\u0014S #0" = 20
-  "\u0010= &lt;h\u0010eY\u0012\u0014S\u0010= &lt;h \u0010aS\u0012\u0014S #0" = 20
-  "\u0012¦u\u0010ð  \u0010ÈT\u0010yr\u0010üf #0" = 20
-  "\u00132S\u0010)R\u0010LN\u0010¯e \u0010kýÿ\u0010KQ\u0010Xb #0" = 20
-  "\u0010aS\u0012\u0014S \u0010ò’\u0010)R\u0010nf #0" = 20
-  "\u0010·^\u0010Éb\u0012·V \u0010\u0001Z\u0010É^ #0" = 20
-  "\u0010\u001bm\u0010&O\u0010(’ #0" = 20
-  "\u0010&h\u0012\u0014S\u0010úW\u0010eY #0" = 20
-  "\u0012|V\u0012V \u0010ò’\u0010)R\u0010nf #0" = 20
-  "\u0010ò’\u0010)R\u0010nf \u0010?\u0010Sýÿ\u0010+Y #0" = 20
-  "\u0010ò’\u0010)R\u0010nf \u0012\u0017V\u0010\u0017g\u0010(’ #0" = 20
-  "\u00100\u0010= &lt;h\u00100!\u0012·V #0" = 20
-  "\u0010?\u0012\u0014S\u0010\u0003^\u0010÷\u0010\f^\u0010yr #0" = 15
-  "\u0010kýÿ\u0012\u0014S\u0010üf #0" = 15
-  "\u0010eY\u0010Xb #0" = 15
-  "\u0010= &lt;h\u0010ÈT\u0012·V #0" = 15
-  "\u0010’l\u0012\u0014S\u0012\u0017V\u0010Éb\u0010ÆY #0" = 15
-  "\u0010)R\u0010eY\u0010âl\u0012·V  #0" = 15
-  "\u0010wm\u0010àV\u0010Ì\u0010\f^ #0" = 10
-  "\u0010Às\u0010âl #0" = 10
-  "\u0010\u001dýÿ\u0010yr\u0011\u001b\u0012\u0014S\u0012·V #0" = 10
-  "\u00120R\u0012·V\u0010Èp\u0010aN\u0010¯e #0" = 10
-  "\u0010êýÿ\u0010yr\u0010Ì\u0010\f^ #0" = 10
-  "\u0010?\u0012\u0014S\u0012\u0017V\u0010÷\u0012·V #0" = 0
-  "\u0010KQ\u0010Ì\u0010¯e\u0010\u00120R #0" = 0
-  "\u0010‹N\u0012\u0014S\u00109h #0" = 0
-  "\u0010÷\u0010 T\u0010&Q #0" = -1
-  "\u0010(\u0010\u001bm\u0010&h #0" = -1
-  "\u0010Xb\u0010È’ #0" = -1
+  "Johann #0" = 60
+  "Konrad #1" = 40
+  "Johann Gottfried #0" = 40
+  "Johann Philipp #0" = 40
+  "Gottfried #3" = 20
+  "Rudolf #1" = 20
+  "Adam Friedrich #0" = 20
+  "Anselm Franz #0" = 20
+  "Christoph Franz #0" = 20
+  "Ferdinand #0" = 20
+  "Franz #0" = 20
+  "Franz Ludwig #0" = 20
+  "Friedrich #0" = 20
+  "Friedrich Karl #0" = 20
+  "Georg Karl #0" = 20
+  "Johann Hartmann #0" = 20
+  "Julius Echter #0" = 20
+  "Karl Philipp #0" = 20
+  "Konrad Wilhelm #0" = 20
+  "Lorenz #0" = 20
+  "Melchior #0" = 20
+  "Peter Philipp #0" = 20
+  "Philipp Adolf #0" = 20
+  "Philipp Franz #0" = 20
+  "Siegmund #0" = 20
+  "Albrecht #3" = 15
+  "Hermann #2" = 15
+  "Otto #2" = 15
+  "Gerhard #1" = 15
+  "Wolfram #1" = 15
+  "Leopold #0" = 15
+  "Heinrich #5" = 10
+  "Poppo #3" = 10
+  "Berthold #2" = 10
+  "Andreas #1" = 10
+  "Dietrich #1" = 10
+  "Friedrich #1" = 10
+  "Alfred #0" = 0
+  "Christian #0" = 0
+  "Jürgen #0" = 0
+  "Aleida #0" = -1
+  "Cordula #0" = -1
+  "Gundula #0" = -1
+  "Marianne #0" = -1
+  "Raffaela #0" = -1
+  "Amalia #0" = -1
+  "Bianka #0" = -1
+  "Eleonora #0" = -1
 }
 leader_names = {
-  "\u0010Är\u0010KQ"
-  "\u0010^X\u0012\u0014S"
-  "\u0011mt\u0012\u0014S"
-  "\u0011Ëe\u0010æt\u0010= &lt;h\u0012\u0014S"
-  "\u00109ýÿ\u0010\f^\u0010yr\u0012\u0014S\u0010üf"
-  "\u0010kýÿ\u0010\u001bm\u0012\u0014S"
-  "\u0010pQ\u0010KQ"
-  "\u0010= &lt;h\u0010\u001dýÿ\u0010±’\u0010àV"
-  "\u0010\u001dýÿ\u0012\u0014S"
-  "\u0012·V\u00109h"
-  "\u00109ýÿ\u0012\u0014S\u0011=O"
-  "\u00100\u00100!"
-  "\u0010’l\u0010\u001d`"
-  "\u0010(\u0010KQ"
-  "\u0010\u0003^\u0010\u001bm\u0010kýÿ\u0011=O\u0010= &lt;h"
-  "\u00109ýÿ\u0010êýÿ\u0011Ëe"
-  "\u0010ÃW\u0010= &lt;h\u0010KQ\u0010³R\u0010yr"
-  "\u0010ÈT\u0010= &lt;h\u0012\u0014S"
-  "\u0011\u001b\u0010+Y\u0010üf"
+  "Dick"
+  "Sell"
+  "Söll"
+  "Schwager"
+  "Fichtelmann"
+  "Höhrer"
+  "Rank"
+  "Gäbelein"
+  "Bär"
+  "Degen"
+  "Färber"
+  "Simon"
+  "Wirth"
+  "Sack"
+  "Blochberger"
+  "Födisch"
+  "Egelkraut"
+  "Hager"
+  "Hofmann"
 }
 ship_names = {
-  "\u0010la\u0010g\u0010\u001dýÿ\u0010= &lt;h"
-  "\u00132S\u0010)R\u0010LN\u0010¯e \u0010kýÿ\u0010KQ\u0010Xb"
-  "\u0010&h\u0010àV"
-  "\u0011\u001b\u0010kýÿ\u0010\u001dýÿ\u0010= &lt;h"
-  "\u0010g\u0010\u0015^\u0012\u0014S"
-  "\u0010Ôk\u0010\u001dýÿ\u0012\u0014S\u0010Ì\u0012·V"
-  "\u0011R\u0011=O\u0012\u0014S\u0011Ëe\u0010TX\u0010yr"
-  "\u0010‹N\u0010÷^\u00109h"
-  "\u0010= &lt;h\u0010pQ\u00100!l\u0010(’"
-  "\u0012ôu\u0010i`"
-  "\u0010\u001dýÿ\u0010= &lt;h\u0010yr\u0010wm\u0010ÆY"
-  "\u0010úW\u0010¦\u00109h"
-  "\u0010eY\u0010îh\u0012ÌR\u0012\u0014S\u0010yr"
+  "Marienberg"
+  "Julius Echter"
+  "Main"
+  "Höchberg"
+  "Rimpar"
+  "Biebelried"
+  "Eigelstadt"
+  "Uettingen"
+  "Gramschatz"
+  "Wern"
+  "Bergtheim"
+  "Kietzingen"
+  "Ochsenfurth"
 }
 army_names = {
-  "$PROVINCE$\u0010HQ\u0010âV"
+  "Armee von $PROVINCE$"
 }

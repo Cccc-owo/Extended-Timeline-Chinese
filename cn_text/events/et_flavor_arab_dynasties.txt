@@ -337,6 +337,7 @@ country_event = {
       mil = 5
     }
     change_tag = UMA
+    swap_free_idea_group = yes
     change_government = monarchy
     add_government_reform = caliphate_reform
     end_disaster = first_fitna
@@ -481,12 +482,16 @@ country_event = {
     }
     if = {
       limit = {
-        dynasty = "-PlššN"  # Umayyad
+        OR = {
+          dynasty = "-PlššN"  # Umayyad
+          has_country_flag = umayyad_dynasty_in_power
+        }
         NOT = {
           tag = UMA
         }
       }
       change_tag = UMA
+      swap_free_idea_group = yes
     }
     if = {
       limit = {
@@ -538,6 +543,7 @@ country_event = {
   option = {
     name = dynasties.8.c
     change_tag = FAT
+    swap_free_idea_group = yes
     set_capital = 384
     change_primary_culture = bedouin_arabic
     define_ruler = {
@@ -878,6 +884,7 @@ country_event = {
     clr_country_flag = abbasid_revolution
     set_country_flag = won_abbasid_revolution
     change_tag = ABA
+    swap_free_idea_group = yes
     set_capital = 410
     add_government_reform = caliphate_reform
     add_stability = 1
@@ -912,6 +919,7 @@ country_event = {
     clr_country_flag = abbasid_revolution
     set_country_flag = won_abbasid_revolution
     change_tag = ABA
+    swap_free_idea_group = yes
     set_capital = 410
     add_government_reform = caliphate_reform
     add_stability = 3
@@ -957,6 +965,7 @@ country_event = {
     clr_country_flag = abbasid_revolution
     set_country_flag = won_abbasid_revolution
     change_tag = ABA
+    swap_free_idea_group = yes
     set_capital = 410
     add_government_reform = caliphate_reform
     add_stability = 3
