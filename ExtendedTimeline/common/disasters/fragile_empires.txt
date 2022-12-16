@@ -1,6 +1,10 @@
 fragile_empires = {
 	potential = {
-		government = monarchy
+		OR = {
+			government = monarchy
+			government = tribal
+		}
+		is_nomad = no
 		NOT = { has_reform = celestial_empire }
 		NOT = { has_reform = roman_empire_reform }
 		NOT = { has_reform = roman_republic_reform }
