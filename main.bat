@@ -36,7 +36,7 @@ del /F /S /Q output\%mod_dir%\localisation\*_l_german.yml
 del /F /S /Q output\%mod_dir%\localisation\*_l_spanish.yml
 ECHO.
 ECHO Compressing the generated files...
-7z.exe a mod.zip .\output\
+7z.exe a mod.zip .\output\*
 ::done
 ECHO.
 ECHO End of script running.
