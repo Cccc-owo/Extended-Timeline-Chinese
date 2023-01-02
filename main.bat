@@ -27,6 +27,8 @@ ren output\%mod_dir%\%mod_desc% descriptor.mod
 ECHO.
 ECHO Copying the file is finished, finishing the aftermath...
 ECHO.
+xcopy ExtendedTimeline\common\scripted_effects\00_scripted_effects.txt output\ETCLP\common\scripted_effects\ /Q /C /Y ::fix crash
+xcopy ExtendedTimeline\common\scripted_triggers\00_scripted_triggers.txt output\ETCLP\common\scripted_effects\ /Q /C /Y ::fix crash
 del output\%mod_dir%\thumbnail.png
 del /F /S /Q output\%mod_dir%\*_DE.txt
 del /F /S /Q output\%mod_dir%\*_FR.txt
