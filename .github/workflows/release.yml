@@ -1,0 +1,40 @@
+name: Release
+
+env:
+  TZ: Asia/Shanghai
+
+on:
+  push:
+    branches:
+      - main
+    tags:        
+      - v*.*.*
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Run integration script
+        run: ./main.bat
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            mod.zip
+          body_path: CHANGELOG.md
+          discussion_category_name: "公告"
+          
+      # Upload to Steam Workshop
+      - uses: arma-actions/workshop-upload@v1
+        with:
+          appId: '236850'    # default
+          itemId: '2897275182' # Id of item to update
+          contentPath: 'output/'
+          changelog: '见 mod 路径下的 CHANGELOG.md'
+        env:
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
