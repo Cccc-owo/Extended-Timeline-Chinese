@@ -4,11 +4,8 @@ env:
   TZ: Asia/Shanghai
 
 on:
-  push:
-    branches:
-      - 'main'
-    tags:        
-      - 'v*.*.*'
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -19,8 +16,26 @@ jobs:
         
       - name: Run integration script
         run: ./main.bat
+        
+      - name: Upload generated files
+        uses: actions/upload-artifact@v3
+        with:
+          name: ETCLP
+          path: mod.zip
       
-      - name: Release
+  release:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: ETCLP
+      
+      - name: Unzip the artifact
+        run: |
+          unzip ETCLP.zip -o
+      
+      - name: Release Action
         uses: softprops/action-gh-release@v1
         with:
           files: |
@@ -28,8 +43,8 @@ jobs:
           body_path: CHANGELOG.md
           discussion_category_name: "公告"
           
-      # Upload to Steam Workshop
-      - uses: arma-actions/workshop-upload@v1
+      - name: Upload to Steam Workshop
+        uses: arma-actions/workshop-upload@v1
         with:
           appId: '236850'    # default
           itemId: '2897275182' # Id of item to update
