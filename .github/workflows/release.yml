@@ -12,13 +12,13 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.3.0
         
       - name: Run integration script
         run: ./main.bat
         
       - name: Upload generated files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: ETCLP
           path: mod.zip
@@ -28,9 +28,9 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.3.0
         
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v3.0.2
         with:
           name: ETCLP
       
@@ -40,7 +40,7 @@ jobs:
           unzip mod.zip -d temp 
       
       - name: Release Action
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
             mod.zip
