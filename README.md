@@ -2,7 +2,11 @@
 
 ![et](extended_timeline.jpg)
 
-![GitHub all releases](https://img.shields.io/github/downloads/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/total?label=GitHub%20downloads&style=flat-square) ![Steam Downloads](https://img.shields.io/steam/downloads/2897275182?label=steam%20downloads&style=flat-square) ![Steam Views](https://img.shields.io/steam/views/2897275182?label=Steam%20views&style=flat-square) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project?label=version&style=flat-square) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project?style=flat-square) ![GitHub commits since latest release (by SemVer)](https://img.shields.io/github/commits-since/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/latest?style=flat-square)
+[![GitHub all releases](https://img.shields.io/github/downloads/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/total?label=GitHub%20downloads&style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/releases)
+[![Steam Downloads](https://img.shields.io/steam/downloads/2897275182?label=steam%20downloads&style=flat-square)](https://steamcommunity.com/sharedfiles/filedetails/?id=2897275182)
+[![Steam Views](https://img.shields.io/steam/views/2897275182?label=Steam%20views&style=flat-square)](https://steamcommunity.com/sharedfiles/filedetails/?id=2897275182)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project?label=version&style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/tags)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project?style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/graphs/commit-activity)
 
 Translated version of a EU4 mod called "Extended Timeline".
 
