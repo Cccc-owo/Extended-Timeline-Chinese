@@ -16,7 +16,7 @@ Translated version of a EU4 mod called "Extended Timeline".
 
 ## 下载 & 使用 / Download & Use
 
-你可以在 [Actions 构建](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/actions)中下载到本地版 Mod，或者你也可以在 [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=2897275182)中找到本 Mod。
+你可以在 [Releases](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/releases) 中下载到本地版 Mod，或者你也可以在 [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=2897275182)中找到本 Mod。
 
 注意：**请不要将本 Mod 与「汉化 Mod」或原版「Extended Timeline」一起使用，本 Mod 已将汉化和 ET 整合。**
 
@@ -28,7 +28,7 @@ Translated version of a EU4 mod called "Extended Timeline".
 |[addition](addition)|整合过程最后需要覆盖的东西|存放有额外加入的文件|
 |[cn_text](cn_text)|翻译后的文本文件|使用 EU4 双字节补丁特殊编码，[源项目](https://paratranz.cn/projects/5342/)|
 |[eu4_chinese](eu4_chinese)|52汉化组欧陆风云 4 简体中文汉化|[源项目](https://paratranz.cn/projects/2)|
-|[eu4_chinese_sup](eu4_chinese_sup)]|52汉化组欧陆风云 4 简体中文汉化补充包|[源项目](https://paratranz.cn/projects/2)|
+|[eu4_chinese_sup](eu4_chinese_sup)|52汉化组欧陆风云 4 简体中文汉化补充包|[源项目](https://paratranz.cn/projects/2)|
 |[ExtendedTimeline](ExtendedTimeline)|ET 源文件|包含整个 mod，[Paradox Forum 页面](https://forum.paradoxplaza.com/forum/threads/mod-extended-timeline.740866/)|
 |[mod_descriptor](mod_descriptor)|mod 描述符文件||
 |output|输出文件夹|运行 ```main.bat``` 时会自动建立|
