@@ -45,8 +45,8 @@
 
 排名不分先后。
 
-@Cccc_owo
-@shuaichao189
+[@Cccc_](https://github.com/Cccc-owo) ([ParaTranz](https://paratranz.cn/users/23550/profile))
+[@shuaichao189](https://github.com/shuaichao189) ([ParaTranz](https://paratranz.cn/users/7232/profile))
 
 ---
 
