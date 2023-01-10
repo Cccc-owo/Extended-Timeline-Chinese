@@ -1,5 +1,5 @@
-name="Extended Timeline Chinese Localisation Project | 延长时间线中文汉化计划"
-version="1.14.4-b7"
+name="延长时间线汉化计划－Extended Timeline Chinese Localisation Project"
+version="1.14.4-b8"
 replace_path="customizable_localization"
 replace_path="history/countries"
 replace_path="history/provinces"

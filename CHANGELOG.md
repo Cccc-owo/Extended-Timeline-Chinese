@@ -1,12 +1,20 @@
+# 更新日志
 
-## v1.14.4-b7
+## v1.14.4-b8
 
 - 🌐更新汉化
-- -本次更新包括一大堆人名汉化，基本覆盖了汉语国家
+- ↘本次汉化更新主要包括任务树与国家理念的部分汉化，进度可至 [ParaTranz](https://paratranz.cn/projects/5342/) 查看
+- 🖼️更新缩略图
+- ✏️更改模组名：由「Extended Timeline Chinese Localisation Project | 延长时间线中文汉化计划」改为「延长时间线汉化计划－Extended Timeline Chinese Localisation Project」
 
 ---
 
 <details><summary>历史更新日志</summary>
+
+## v1.14.4-b7
+
+- 🌐更新汉化
+- ↘本次更新包括一大堆人名汉化，基本覆盖了汉语国家
 
 ## v1.14.4-b6
 
