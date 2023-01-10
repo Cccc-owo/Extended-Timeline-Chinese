@@ -7,6 +7,6 @@ replace_path="map/random"
 tags={
 	"Translation"
 }
-picture="extended_timeline.jpg"
+picture="thumbnail.png"
 supported_version="1.34.*"
 remote_file_id="2897275182"

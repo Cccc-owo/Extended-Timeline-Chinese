@@ -1,14 +1,12 @@
-# Extended Timeline Chinese Localisation Project
+# 延长时间线汉化计划－Extended Timeline Chinese Localisation Project
 
-![et](extended_timeline.jpg)
+[![et](thumbnail.png)](https://paratranz.cn/projects/5342)
 
 [![GitHub all releases](https://img.shields.io/github/downloads/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/total?label=GitHub%20downloads&style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/releases)
 [![Steam Downloads](https://img.shields.io/steam/downloads/2897275182?label=steam%20downloads&style=flat-square)](https://steamcommunity.com/sharedfiles/filedetails/?id=2897275182)
 [![Steam Views](https://img.shields.io/steam/views/2897275182?label=Steam%20views&style=flat-square)](https://steamcommunity.com/sharedfiles/filedetails/?id=2897275182)
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project?label=version&style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/tags)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project?style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/graphs/commit-activity)
-
-Translated version of a EU4 mod called "Extended Timeline".
 
 「Extended Timeline」模组的中文汉化整合版
 
@@ -33,4 +31,4 @@ Translated version of a EU4 mod called "Extended Timeline".
 |[mod_descriptor](mod_descriptor)|mod 描述符文件||
 |output|输出文件夹|运行 ```main.bat``` 时会自动建立|
 
-```7z.exe``` 和 ```7z.dll``` 提取自官方 7-Zip 22.01 (2022-07-15) 
+```7z.exe``` 和 ```7z.dll``` 提取自官方 7-Zip 22.01 (2022-07-15)
