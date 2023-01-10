@@ -1,6 +1,6 @@
 # 延长时间线汉化计划－Extended Timeline Chinese Localisation Project
 
-[<img align="right" src="thumbnail.png" />](https://paratranz.cn/projects/5342)
+[![thumbnail](thumbnail.png)](https://paratranz.cn/projects/5342)
 
 [![GitHub all releases](https://img.shields.io/github/downloads/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/total?label=GitHub%20downloads&style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/releases)
 [![Steam Downloads](https://img.shields.io/steam/downloads/2897275182?label=steam%20downloads&style=flat-square)](https://steamcommunity.com/sharedfiles/filedetails/?id=2897275182)
