@@ -37,8 +37,8 @@ xcopy ExtendedTimeline\common\scripted_effects\00_scripted_effects.txt output\ET
 xcopy ExtendedTimeline\common\scripted_triggers\00_scripted_triggers.txt output\ETCLP\common\scripted_triggers\ /Q /C /Y
 ::====fix crash end====
 xcopy CHANGELOG.md output\ETCLP\ /Q /C /Y
-xcopy thumbnail.png output\ETCLP\ /Q /C /Y
 del output\%mod_dir%\thumbnail.png
+xcopy thumbnail.png output\ETCLP\ /Q /C /Y
 del /F /S /Q output\%mod_dir%\*_DE.txt
 del /F /S /Q output\%mod_dir%\*_FR.txt
 del /F /S /Q output\%mod_dir%\*_SP.txt
