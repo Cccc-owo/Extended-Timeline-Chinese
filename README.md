@@ -41,14 +41,14 @@
 
 ```7z.exe``` 和 ```7z.dll``` 提取自官方 7-Zip 22.01 (2022-07-15)
 
-## 贡献者 / Contributors
+## 贡献者 / Contributers
 
 排名不分先后。
 
 [@Cccc_](https://github.com/Cccc-owo) ([ParaTranz](https://paratranz.cn/users/23550/profile))
 [@shuaichao189](https://github.com/shuaichao189) ([ParaTranz](https://paratranz.cn/users/7232/profile))
 
----
+## 鸣谢 / Credits
 
 [原 Extended Timeline 汉化项目](https://paratranz.cn/projects/32)
 
