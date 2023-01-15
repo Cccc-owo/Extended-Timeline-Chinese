@@ -47,6 +47,7 @@
 
 [@Cccc_](https://github.com/Cccc-owo) ([ParaTranz](https://paratranz.cn/users/23550/profile))
 [@shuaichao189](https://github.com/shuaichao189) ([ParaTranz](https://paratranz.cn/users/7232/profile))
+[@Zhujianfei](https://github.com/Zhujianfei1) ([ParaTranz](https://paratranz.cn/users/26954/profile))
 
 ## 鸣谢 / Credits
 
