@@ -18,7 +18,7 @@
 
 若 [ParaTranz 项目](https://paratranz.cn/projects/5342/)的汉化已有一定程度的更新，则由管理员（目前也只有 [@Cccc_](https://paratranz.cn/users/23550/profile) 我了）于[项目下载处](https://paratranz.cn/projects/5342/artifact)下载压缩包，提取本地化文件并解压至 git 仓库内的 [cn_text](cn_text) 文件夹下，进行 ```commit```。
 
-在此之后，修改任何需要修改的其他文件（如修改脚本、[更新字体贴图、增加额外文件](addtition)等），完成后进行 ```commit```。
+在此之后，修改任何需要修改的其他文件（如修改脚本、[更新字体贴图、增加额外文件](addition)等），完成后进行 ```commit```。
 
 然后更新[版本号](mod_descriptor\ETCLP.mod)和[更新日志](CHANGELOG.md)，进行 ```commit``` 并 ```push``` 至[远程仓库（GitHub）](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/)。
 
