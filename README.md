@@ -45,9 +45,9 @@
 
 排名不分先后。
 
-[@Cccc_](https://github.com/Cccc-owo) ([ParaTranz](https://paratranz.cn/users/23550/profile))
-[@shuaichao189](https://github.com/shuaichao189) ([ParaTranz](https://paratranz.cn/users/7232/profile))
-[@Zhujianfei](https://github.com/Zhujianfei1) ([ParaTranz](https://paratranz.cn/users/26954/profile))
+|![avatar](https://avatars.githubusercontent.com/u/47687154?v=4)|![avatar](https://avatars0.githubusercontent.com/u/38562980?v=4)|![avatar](https://avatars.githubusercontent.com/u/98221113?v=4)|![avatar](https://avatars.githubusercontent.com/u/54112189?v=4)|![avatar](https://avatars.githubusercontent.com/u/122777315?v=4)|
+|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
+|[Cccc_](https://github.com/Cccc-owo) ([ParaTranz](https://paratranz.cn/users/23550/profile))|[shuaichao189](https://github.com/shuaichao189) ([ParaTranz](https://paratranz.cn/users/7232/profile))|[Zhujianfei](https://github.com/Zhujianfei1) ([ParaTranz](https://paratranz.cn/users/26954/profile))|[CHuang27](https://github.com/CHuang227) ([ParaTranz](https://paratranz.cn/users/32894/profile))|[Fritzwang](https://github.com/Fritzwang) ([ParaTranz](https://paratranz.cn/users/37160/profile))|
 
 ## 鸣谢 / Credits
 
