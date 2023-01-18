@@ -43,11 +43,13 @@
 
 ## 贡献者 / Contributers
 
-排名不分先后。
+排名以加入项目时间为顺序
 
 |[![avatar](https://avatars.githubusercontent.com/u/47687154?v=4)](https://github.com/Cccc-owo)|[![avatar](https://avatars.githubusercontent.com/u/38562980?v=4)](https://github.com/shuaichao189)|[![avatar](https://avatars.githubusercontent.com/u/98221113?v=4)](https://github.com/Zhujianfei1)|[![avatar](https://avatars.githubusercontent.com/u/54112189?v=4)](https://github.com/CHuang227)|[![avatar](https://avatars.githubusercontent.com/u/122777315?v=4)](https://github.com/Fritzwang)|
 |---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-|[Cccc_](https://github.com/Cccc-owo) ([ParaTranz](https://paratranz.cn/users/23550/profile))|[shuaichao189](https://github.com/shuaichao189) ([ParaTranz](https://paratranz.cn/users/7232/profile))|[Zhujianfei](https://github.com/Zhujianfei1) ([ParaTranz](https://paratranz.cn/users/26954/profile))|[CHuang27](https://github.com/CHuang227) ([ParaTranz](https://paratranz.cn/users/32894/profile))|[Fritzwang](https://github.com/Fritzwang) ([ParaTranz](https://paratranz.cn/users/37160/profile))|
+|[Cccc_](https://github.com/Cccc-owo) ([ParaTranz](https://paratranz.cn/users/23550/profile))|[shuaichao189](https://github.com/shuaichao189) ([ParaTranz](https://paratranz.cn/users/7232/profile))|[Zhujianfei](https://github.com/Zhujianfei1) ([ParaTranz](https://paratranz.cn/users/26954/profile))|[CHuang27](https://github.com/CHuang227) ([ParaTranz](https://paratranz.cn/users/32894/profile))|[Fritzwang](https://github.com/Fritzwang) ([ParaTranz](https://paratranz.cn/users/37160/profile))
+|[![avatar](https://avatars.githubusercontent.com/u/122958141?v=4)](https://github.com/15910637182)|[![avatar](https://avatars.githubusercontent.com/u/41335976?v=4)](https://github.com/IsaacChen0527)||||
+|[15910637182](https://github.com/15910637182) ([ParaTranz](https://paratranz.cn/users/37197/profile))|[IsaacChen0527](https://github.com/IsaacChen0527) ([ParaTranz](https://github.com/IsaacChen0527))||||
 
 ## 鸣谢 / Credits
 
