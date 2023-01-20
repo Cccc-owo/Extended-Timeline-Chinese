@@ -1,14 +1,25 @@
 # 更新日志
 
-## v1.14.4-b9
+汉化组成员：@Cccc_ | @shuaichao189 | @Zhujianfei | @CHuang27 | @Fritzwang | @15910637182 | @IsaacChen0527 | @zhuxizheng | @Observl
 
+## v1.14.4-b10
+
+- 🎇新春快乐！本模组在创意工坊上达成破千订阅，谢谢大家支持！
+- ✍️更新地图字体
 - 🌐更新汉化
 - ↘本次汉化更新主要包括任务树与国家理念的部分汉化，进度可至 [ParaTranz](https://paratranz.cn/projects/5342/) 查看
-- 🎇欢迎新的翻译成员 @Zhujianfei1
+- ↘其他的一些本地化修正
+- 🎇欢迎新的翻译成员：@CHuang27 , @Fritzwang , @15910637182 , @IsaacChen0527 , @zhuxizheng , @Observl
 
 ---
 
 <details><summary>历史更新日志</summary>
+
+## v1.14.4-b9
+
+- 🌐更新汉化
+- ↘本次汉化更新主要包括任务树与国家理念的部分汉化，进度可至 [ParaTranz](https://paratranz.cn/projects/5342/) 查看
+- 🎇欢迎新的翻译成员 [at]Zhujianfei1
 
 ## v1.14.4-b8
 
