@@ -1,6 +1,6 @@
 # 更新日志
 
-汉化组成员：@Cccc_ | @shuaichao189 | @Zhujianfei | @CHuang27 | @Fritzwang | @15910637182 | @IsaacChen0527 | @zhuxizheng | @Observl
+汉化组成员：见 [README](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project#%E8%B4%A1%E7%8C%AE%E8%80%85--contributors)
 
 ## v1.14.4-b10
 
@@ -9,7 +9,7 @@
 - 🌐更新汉化
 - ↘本次汉化更新主要包括任务树与国家理念的部分汉化，进度可至 [ParaTranz](https://paratranz.cn/projects/5342/) 查看
 - ↘其他的一些本地化修正
-- 🎇欢迎新的翻译成员：@CHuang27 , @Fritzwang , @15910637182 , @IsaacChen0527 , @zhuxizheng , @Observl
+- 🎇欢迎新的翻译成员：@CHuang227 , @Fritzwang , @15910637182 , @IsaacChen0527 , @zhuxizheng , @Observl
 
 ---
 
