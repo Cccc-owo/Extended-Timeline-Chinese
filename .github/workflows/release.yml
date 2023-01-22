@@ -2,8 +2,6 @@ name: Release
 
 env:
   TZ: Asia/Shanghai
-  
-permissions: write-all
 
 on:
   release:
@@ -26,6 +24,7 @@ jobs:
           path: mod.zip
       
   release:
+    permissions: write-all
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -36,10 +35,10 @@ jobs:
         with:
           name: ETCLP
       
-      - name: Unzip the artifact
-        run: |
-          mkdir temp
-          unzip mod.zip -d temp 
+      #- name: Unzip the artifact
+      #  run: |
+      #    mkdir temp
+      #    unzip mod.zip -d temp 
       
       - name: Release Action
         uses: softprops/action-gh-release@v0.1.15
