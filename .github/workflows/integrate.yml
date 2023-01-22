@@ -43,21 +43,21 @@ jobs:
           name: ETCLP
           path: mod.zip
 
-  nightly-release:
-    permissions: write-all
-    needs: build
-    runs-on: windows-latest
-
-    steps:
-      - uses: actions/download-artifact@v3.0.2
-        with:
-          name: ETCLP
-
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "nightly-release"
-          prerelease: true
-          title: "test Build"
-          files: |
-            mod.zip
+#  nightly-release:
+#    permissions: write-all
+#    needs: build
+#    runs-on: windows-latest
+#
+#    steps:
+#      - uses: actions/download-artifact@v3.0.2
+#        with:
+#          name: ETCLP
+#
+#      - uses: "marvinpinto/action-automatic-releases@latest"
+#        with:
+#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#          automatic_release_tag: "nightly-release"
+#          prerelease: true
+#          title: "test Build"
+#          files: |
+#            mod.zip
