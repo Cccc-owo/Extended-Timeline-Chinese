@@ -1,0 +1,26 @@
+name: Pull-Update
+
+on:
+  push:
+    branches:
+    - nightly-update
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3.3.0
+
+    - name: pull-request
+      uses: repo-sync/pull-request@v2.12.1
+      with:
+        destination_branch: "main"
+        pr_title: "upd: update translations" #eg. Pulling ${{ github.ref }} into master
+        pr_body: |
+          Pull updates from [ParaTranz]
+          
+          _Created by [repo-sync/pull-request](https://github.com/repo-sync/pull-request)_
+        pr_reviewer: "Cccc-owo"
+        pr_assignee: "Cccc-owo"
+        pr_label: "auto-pr"
+        pr_draft: false
