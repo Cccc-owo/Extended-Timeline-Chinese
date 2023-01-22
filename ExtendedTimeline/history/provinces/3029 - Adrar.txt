@@ -1,0 +1,59 @@
+#2061 - Tiris Zemmour
+
+culture = atlas
+religion = shamanism
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = unknown
+base_manpower = 1
+capital = "Adrar"
+native_hostileness = 9
+native_size = 50
+native_ferocity = 4
+
+add_permanent_province_modifier = {
+	name = hard_to_colonize
+	duration = -1
+}
+
+840.1.1 = { 	
+		owner = SAN
+		controller = SAN
+		add_core = SAN 
+		is_city = yes 
+		trade_goods = grain 
+	   }
+860.1.1 = { religion = sunni }
+1054.1.1 = { owner = MOR controller = MOR add_core = MOR remove_core = SAN }
+1121.1.1 = { 	
+		owner = XXX 
+		controller = XXX 
+		remove_core = MOR 
+		is_city = no
+		trade_goods = unknown
+		native_size = 50
+		native_ferocity = 4
+		native_hostileness = 9
+}
+
+1880.1.1   = { discovered_by = FR2 }
+1904.1.1   = { 	owner = FR2 
+		controller = FR2 
+		add_core = FR2
+		is_city = yes
+		capital = "Fort Gouraud"
+		trade_goods = grain
+	     }
+1920.1.1   = { discovered_by = western }
+1940.1.1   = {  discovered_by = eastern
+		discovered_by = muslim
+		discovered_by = ottoman
+		discovered_by = asian
+	     }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1942.11.16 = { owner = FR2 controller = FR2 remove_core = FRV } # Under Free French control after Operation Torch
+1952.1.1   = { capital = "Zouerat" trade_goods = iron }
+1960.11.28 = { owner = MRT controller = MRT add_core = MRT remove_core = FR2 }
+
+

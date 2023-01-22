@@ -1,0 +1,50 @@
+#2533 - Falaj
+
+culture = bedouin_arabic
+religion = south_arabian
+capital = "Qaryah dhat Kahl"
+trade_goods = unknown
+hre = no
+discovered_by = east_african
+discovered_by = indian
+discovered_by = asian
+discovered_by = early_indian
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+base_tax = 1
+base_production = 1
+base_manpower = 1
+
+425.1.1 = { owner = KIN controller = KIN add_core = KIN is_city = yes trade_goods = livestock }
+490.1.1 = { religion = jewish }
+630.1.1 = { owner = RSD controller = RSD add_core = RSD remove_core = KIN religion = islam capital = "Aflaj" }
+661.7.28 = { owner = UMA controller = UMA add_core = UMA remove_core = RSD religion = sunni }
+750.8.6 = { owner = ABA controller = ABA add_core = ABA remove_core = UMA }
+755.1.1 = { religion = shiite }
+800.1.1 = { discovered_by = nomad_group }
+867.1.1 = { owner = NAJ controller = NAJ add_core = NAJ remove_core = ABA }
+1050.1.1 = { religion = sunni }
+1060.1.1 = { owner = DAW controller = DAW add_core = DAW remove_core = NAJ }
+
+1515.1.1 = { discovered_by = POR }
+1785.1.1 = { #The Dawasir join the Saudis
+	owner = NAJ
+	controller = NAJ
+	add_core = NAJ
+}
+1818.9.9 = {
+	owner = DAW
+	controller = DAW
+	remove_core = NAJ 
+} # The end of the Saudi State
+
+1824.1.1   = { owner = NAJ controller = NAJ add_core = NAJ }
+1861.1.1 = { base_manpower = 2 }
+1891.1.24  = { owner = SHM controller = SHM add_core = SHM }
+1902.1.13  = { owner = NAJ controller = NAJ add_core = NAJ remove_core = SHM }
+1910.1.1 = { discovered_by = western discovered_by = eastern }
+1915.1.1 = { base_production = 2 }
+1932.9.23  = { owner = SAU controller = SAU add_core = SAU remove_core = NAJ }
+1970.1.1 = { base_tax = 2 }
+2000.1.1 = { base_tax = 3 base_production = 3 }

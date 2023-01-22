@@ -1,0 +1,156 @@
+namespace = trm
+
+#Founding of Sunda Pura
+country_event = {
+	id = trm.1
+	title = "trm.1.t"
+	desc = "trm.1.d"
+	picture = REFORM_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = TRM
+		owns = 630
+		NOT = { has_country_flag = sundapura }
+	}
+	mean_time_to_happen = {
+		months = 300
+	}
+	option = {
+		name = "trm.1.a"
+		add_adm_power = -100
+		add_treasury = -150
+		set_country_flag = sundapura
+		630 = {
+			add_base_tax = 3
+			add_base_production = 1
+			add_base_manpower = 1
+			rename_capital = "Sundapura"
+		}
+	}
+	option = {
+		name = "trm.1.b"
+		add_prestige = -10
+		set_country_flag = sundapura
+	}
+}
+
+country_event = {
+	id = trm.4
+	title = "trm.4.t"
+	desc = "trm.4.d"
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TRM
+		owns = 630
+		owns = 625
+		is_year = 600
+		NOT = { stability = 1 }
+		OR = {
+			num_of_loans = 1
+			war_exhaustion = 4
+		}
+	}
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 1.5
+			stability = 0
+		}
+	}
+	
+	option = {
+		name = "trm.4.a"
+		add_stability = -1
+		630 = { add_core = SUN }
+		624 = { add_core = SUN }
+		2687 = { add_core = SUN }
+		625 = { add_core = GLU }
+		2688 = { add_core = GLU }
+		set_country_flag = sundagaluh
+	}
+}
+
+country_event = {
+	id = trm.5
+	title = "trm.5.t"
+	desc = "trm.5.d"
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TRM
+		has_country_flag = sundagaluh
+		owns = 630
+		owns = 625
+		NOT = { stability = 1 }
+		OR = {
+			num_of_loans = 1
+			war_exhaustion = 4
+		}
+	}
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 1.5
+			stability = 0
+		}
+		modifier = {
+			factor = 2.0
+			stability = 2
+		}
+		modifier = {
+			factor = 3.0
+			stability = 3
+		}
+	}
+	
+	option = {
+		name = "trm.5.a"
+		release = GLU
+		change_tag = SUN
+		remove_core = 625
+		remove_core = 2411
+	}
+	option = {
+		name = "trm.5.b"
+		release = SUN
+		change_tag = GLU
+		remove_core = 630
+		remove_core = 624
+		remove_core = 2410
+	}
+	option = {
+		name = "trm.5.c"
+		change_tag = SUN
+		add_stability = -1
+		every_owned_province = {
+			limit = { is_core = GLU }
+			nationalist_rebels = 5
+		}
+	}
+	option = {
+		name = "trm.5.e"
+		change_tag = GLU
+		add_stability = -1
+		every_owned_province = {
+			limit = { is_core = SUN }
+			nationalist_rebels = 5
+		}			
+	}
+	option = {
+		name = "trm.5.f"
+		add_stability = -1
+		every_owned_province = {
+			limit = {
+				OR = { is_core = SUN is_core = GLU }
+			}
+			nationalist_rebels = 5
+		}			
+	}			
+}

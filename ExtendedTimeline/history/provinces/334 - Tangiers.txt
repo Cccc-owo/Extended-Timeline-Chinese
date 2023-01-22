@@ -1,0 +1,68 @@
+#334 - Tangiers
+
+owner = ROM
+controller = ROM 
+culture = berber
+religion = shamanism
+capital = "Tingis"
+trade_goods = cloth
+hre = no
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+base_tax = 3
+base_production = 3
+base_manpower = 1
+is_city = yes
+add_core = ROM
+center_of_trade = 2
+
+320.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+429.1.1 = { owner = VAN controller = VAN add_core = VAN remove_core = ROW religion = arianism }
+534.3.1 = { owner = BYZ controller = BYZ add_core = BYZ remove_core = VAN }
+550.1.1 = { religion = chalcedonism fort_15th = yes }
+702.1.1 = { owner = UMA controller = UMA add_core = UMA remove_core = BYZ capital = "Tangier" }
+730.1.1 = { religion = ibadi } #Many Berbers become Kharijite
+740.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } #Great Berber revolt
+743.1.1 = { owner = NEK controller = NEK add_core = NEK remove_core = UMA revolt = {} } #Caliphate loses control of the region
+789.1.1 = { owner = MOR controller = MOR add_core = MOR remove_core = NEK }
+790.1.1 = { religion = shiite }
+922.1.1 = { owner = FAT controller = FAT }
+925.1.1 = { owner = MOR controller = MOR }
+927.1.1 = { owner = FAT controller = FAT }
+937.1.1 = { owner = MOR controller = MOR }
+974.1.1 = { owner = CRD controller = CRD add_core = CRD remove_core = MOR }
+990.1.1 = { religion = sunni }
+1026.1.1 = { owner = AGC controller = AGC add_core = AGC remove_core = CRD }
+1061.1.1 = { owner = BGW controller = BGW add_core = BGW remove_core = AGC }
+1078.1.1 = { owner = MOR controller = MOR add_core = MOR remove_core = BGW }
+
+1471.1.1 = { controller = POR add_core = POR }
+1471.12.30 = { owner = POR }
+1662.1.1 = {
+	owner = ENG
+	controller = ENG
+	add_core = ENG
+	remove_core = POR
+} # Tangier is given to Charles II of England
+1679.1.1 = { unrest = 4 } # Moulay Ismail attempted to seize the town
+1684.1.1 = {
+	owner = MOR
+	controller = MOR
+	remove_core = ENG
+	unrest = 0
+} # Turned into a pirates nest, returned to Moroccan control, British retreat
+
+1910.1.1 = { discovered_by = asian }
+1912.3.30  = { owner = SPA controller = SPA add_core = SPA }
+1921.9.18  = { revolt = { type = nationalist_rebels size = 1 } controller = REB }
+1926.5.27  = { revolt = {} controller = SPA }
+1956.4.7   = { owner = MOR controller = MOR remove_core = SPA }
+
+
+

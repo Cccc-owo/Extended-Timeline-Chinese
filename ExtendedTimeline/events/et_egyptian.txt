@@ -1,0 +1,208 @@
+#################
+#Egyptian Flavor#
+#################
+
+namespace = egyptian
+
+#Jebel Barkal
+country_event = {
+	id = egyptian.1
+	title = egyptian.1.t
+	desc = egyptian.1.d
+	picture = FORT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion = egyptian
+		owns = 1228
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	option = {
+		name = egyptian.1.a
+		add_years_of_income = -1.5
+		add_country_modifier = {
+			name = restored_jebel
+			duration = 365000
+		}
+	}
+
+	option = {
+		name = egyptian.1.b
+		add_prestige = -5
+	}
+}
+
+#Atenism
+country_event = {
+	id = egyptian.2
+	title = egyptian.2.t
+	desc = egyptian.2.d
+	picture = PRAYING_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion = egyptian
+		owns = 2319
+		NOT = { owns = 361 }
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	option = {
+		name = egyptian.2.a
+		2319 = {
+			change_province_name = "Akhetaten"
+		}
+		set_capital = 2319
+		add_country_modifier = {
+			name = atenism
+			duration = 365000
+		}
+	}
+
+	option = {
+		name = egyptian.2.b
+		add_stability = 1
+	}
+}
+
+#Conquest of Memphis
+country_event = {
+	id = egyptian.3
+	title = egyptian.3.t
+	desc = egyptian.3.d
+	picture = FORT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion = egyptian
+		owns = 361
+		NOT = { has_country_modifier = atenism }
+		NOT = { is_year = 1000 }
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = egyptian.3.a
+		set_capital = 361
+		change_primary_culture = old_egyptian
+	}
+
+	option = {
+		name = egyptian.3.b
+		add_stability = 1
+	}
+}
+
+#Asking the Oracles
+country_event = {
+	id = egyptian.4
+	title = egyptian.4.t
+	desc = egyptian.4.d
+	picture = PRAYING_eventPicture
+
+	trigger = {
+		religion = egyptian
+		NOT = { has_ruler_modifier = good_fortune }
+		NOT = { has_ruler_modifier = bad_fortune }
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+
+	option = {
+		name = egyptian.4.a
+		hidden_effect = {
+			random_list = {
+				10 = {
+					country_event = {
+						id = egyptian.5
+						days = 10
+					}
+				}
+				10 = {
+					country_event = {
+						id = egyptian.6
+						days = 10
+					}
+				}
+				80 = {
+					country_event = {
+						id = egyptian.7
+						days = 10
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = egyptian.4.b
+		add_prestige = -2
+	}
+}
+
+#Oracles - Good
+country_event = {
+	id = egyptian.5
+	title = egyptian.5.t
+	desc = egyptian.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = egyptian.5.a
+		add_ruler_modifier = {
+			name = good_fortune
+			duration = 3650
+		}
+	}
+}
+
+#Oracles - Bad
+country_event = {
+	id = egyptian.6
+	title = egyptian.6.t
+	desc = egyptian.6.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = egyptian.6.a
+		add_ruler_modifier = {
+			name = bad_fortune
+			duration = 3650
+		}
+	}
+}
+
+#Oracles - Neutral
+country_event = {
+	id = egyptian.7
+	title = egyptian.7.t
+	desc = egyptian.7.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = egyptian.7.a
+		add_prestige = 3
+	}
+}
+	

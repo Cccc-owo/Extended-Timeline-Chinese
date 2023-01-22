@@ -1,0 +1,129 @@
+namespace = fragile_empires
+
+# The Empire is collapsing
+country_event = {
+	id = fragile_empires.1
+	title = "fragile_empires.1.t"
+	desc = "fragile_empires.1.d"
+	picture = REVOLUTION_eventPicture
+		
+	is_triggered_only = yes
+
+	option = {
+		name = "fragile_empires.1.a"
+		every_owned_province = {
+			add_nationalism = 30
+			if = {
+				limit = {
+					has_owner_culture = no
+				}
+				add_local_autonomy = 50
+			}
+		}
+		add_stability = -6
+	}
+}
+
+# Stability restored
+country_event = {
+	id = fragile_empires.2
+	title = "fragile_empires.2.t"
+	desc = "fragile_empires.2.d"
+	picture = REVOLUTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "fragile_empires.2.a"
+		add_stability = 3
+	}
+}
+
+# Core removed
+country_event = {
+	id = fragile_empires.3
+	title = "fragile_empires.3.t"
+	desc = "fragile_empires.3.d"
+	picture = REVOLUTION_eventPicture
+	
+	trigger = {
+		any_owned_province = {
+			is_core = ROOT
+			NOT = { culture_group = owner }
+		}
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "fragile_empires.3.a"
+		every_core_province = {
+			limit = {
+				NOT = { culture_group = owner }
+			}
+			remove_core = ROOT
+		}
+	}
+}
+
+# Economic collapse
+country_event = {
+	id = fragile_empires.5
+	title = "fragile_empires.5.t"
+	desc = "fragile_empires.5.d"
+	picture = REVOLUTION_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "fragile_empires.5.a"
+		add_inflation = 5
+	}
+}
+
+# Liberty desire
+country_event = {
+	id = fragile_empires.6
+	title = "fragile_empires.6.t"
+	desc = "fragile_empires.6.d"
+	picture = REVOLUTION_eventPicture
+	
+	trigger = {
+		OR = {
+			personal_union = 1
+			vassal = 1
+		}
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "fragile_empires.6.a"
+		every_subject_country = {
+			add_liberty_desire = 50
+		}
+	}
+}
+
+# Even more unrest
+country_event = {
+	id = fragile_empires.7
+	title = "fragile_empires.7.t"
+	desc = "fragile_empires.7.d"
+	picture = REVOLUTION_eventPicture
+	
+	trigger = {
+		NOT = { has_country_modifier = decadence_unrest }
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "fragile_empires.7.a"
+		add_country_modifier = {
+			name = decadence_unrest
+			duration = 1825
+		}
+		every_owned_province = { add_nationalism = 10 }
+	}
+}

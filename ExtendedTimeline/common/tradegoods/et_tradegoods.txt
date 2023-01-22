@@ -1,0 +1,158 @@
+
+oil = {
+	color = { 0 0 0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 8 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		OR = {
+			development = 20
+			owner = { innovativeness = 20 }
+		}
+		provincial_institution_progress = {
+			which = enlightenment
+			value = 100
+		}
+		owner = { adm_tech = 81 }
+		owner = { has_institution = enlightenment }
+	}
+	
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	province = {
+		local_regiment_cost = -0.2
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+uranium = {
+	color = { 0.3 0.99 0.3 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 5 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		OR = {
+			development = 20
+			owner = { innovativeness = 20 }
+		}
+		provincial_institution_progress = {
+			which = enlightenment
+			value = 100
+		}
+		owner = { adm_tech = 87 }
+		owner = { has_institution = enlightenment }
+	}
+	
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	province = {
+		local_production_efficiency = 0.15
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+coal = {
+	color = { 0.0 1.0 1.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 8 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		OR = {
+			development = 20
+			owner = { innovativeness = 20 }
+		}
+		provincial_institution_progress = {
+			which = enlightenment
+			value = 100
+		}
+		owner = { adm_tech = 78 }
+		owner = { has_institution = enlightenment }
+	}
+	
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	province = {
+		local_state_maintenance_modifier = -0.2
+	}
+
+	chance = {
+		factor = 1
+	}
+}
+
+aluminum = {
+	color = { 0.6 0.6 0.6 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 6 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		OR = {
+			development = 20
+			owner = { innovativeness = 20 }
+		}
+		provincial_institution_progress = {
+			which = enlightenment
+			value = 100
+		}
+		owner = { adm_tech = 82 }
+		owner = { has_institution = enlightenment }
+	}
+	
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	province = {
+		local_friendly_movement_speed = 0.2
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+cars = {
+	color = { 0.99 0 0 }
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	province = {
+		local_development_cost = -0.15
+	}
+	chance = {
+		factor = 0
+	}
+}
+
+electronics = {
+	color = { 0.1 0.3 0.99 }
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	province = {
+		allowed_num_of_buildings = 1
+	}
+	chance = {
+		factor = 0
+	}
+}

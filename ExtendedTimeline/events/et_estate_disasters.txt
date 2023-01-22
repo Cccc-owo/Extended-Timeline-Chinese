@@ -1,0 +1,134 @@
+namespace = etf_event_disaster
+
+#Capitalist coup
+country_event = {
+	id =  etf_event_disaster.1
+	title =  etf_event_disaster.1.t
+	desc =  etf_event_disaster.1.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = corporations_estate_in_power
+	}
+	
+	option = {
+		name = " etf_event_disaster.1.r"
+		if = {
+			limit = {
+				government = monarchy
+			}
+			change_government = republic
+			add_government_reform = oligarchy_reform
+		}
+		add_government_reform = single_party_system
+		add_government_reform = oligarchic_reform
+		define_ruler = {
+			adm = 1
+			dip = 4
+			mil = 1
+		}
+	}
+
+}
+
+#Capitalists lose power
+country_event = {
+	id =  etf_event_disaster.2
+	title =  etf_event_disaster.2.t
+	desc =  etf_event_disaster.2.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = " etf_event_disaster.2.r"
+	}
+}
+
+#Military coup
+country_event = {
+	id =  etf_event_disaster.5
+	title =  etf_event_disaster.5.t
+	desc =  etf_event_disaster.5.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = military_estate_in_power
+	}
+	
+	option = {
+		name = " etf_event_disaster.5.r"
+		add_government_reform = dictatorial_rule
+		add_government_reform = military_government
+		define_ruler = {
+			adm = 1
+			dip = 1
+			mil = 4
+		}
+	}
+
+}
+
+#Military loses power
+country_event = {
+	id =  etf_event_disaster.6
+	title =  etf_event_disaster.6.t
+	desc =  etf_event_disaster.6.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = " etf_event_disaster.6.r"
+	}
+}
+
+#Workers coup
+country_event = {
+	id =  etf_event_disaster.7
+	title =  etf_event_disaster.7.t
+	desc =  etf_event_disaster.7.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = workers_estate_in_power
+	}
+	
+	option = {
+		name = " etf_event_disaster.7.r"
+		if = {
+			limit = {
+				NOT = { government = republic }
+			}
+			change_government = republic
+		}
+		add_government_reform = single_party_system
+		add_government_reform = communist_government
+		define_ruler = {
+			adm = 4
+			dip = 1
+			mil = 1
+		}
+	}
+
+}
+
+#Workers lose power
+country_event = {
+	id =  etf_event_disaster.8
+	title =  etf_event_disaster.8.t
+	desc =  etf_event_disaster.8.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = " etf_event_disaster.8.r"
+	}
+}

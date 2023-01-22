@@ -1,0 +1,216 @@
+baekje_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = BKJ
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	bkj_unite_mahan_confederacy_mission = {
+		icon = mission_unite_home_region
+		required_missions = { } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = south_korea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			south_korea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "bkj_mahan_united"
+				duration = 9125
+			}
+		}
+	}
+	bkj_eastern_expansion_mission = {
+		icon = et_mission_chinese_navy
+		required_missions = { bkj_eastern_expansion_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = eastern_korea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			eastern_korea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_navy_tradition = 20
+		}
+	}
+	bkj_liberate_the_north_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { }	#none
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = western_korea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			western_korea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_manpower = 10
+			add_army_tradition = 15
+		}
+	}
+	bkj_seize_pyongan_mission = {
+		icon = mission_asian_city
+		required_missions = { bkj_liberate_the_north_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1845	#Pyongan
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1845
+		}
+		effect = {
+			pyongan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	bkj_conquer_goryeo_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { bkj_seize_pyongan_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = pyongan_area
+				area = hamgyeong_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			pyongan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hamgyeong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_ruler_modifier = {
+				name = "gog_king_of_goryeo"
+				duration = -1
+			}
+		}
+	}
+}
+
+baekje_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = BKJ
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	bkj_great_eight_families_mission = {
+		icon = et_mission_forbidden_city
+		required_missions = { } #none
+		position = 3
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 75
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "bkj_daeseongpaljok_support"
+				duration = 9125
+			}
+		}
+	}
+	bkj_jwapyeong_mission = {
+		icon = mission_scholar_officials
+		required_missions = { } #none
+		position = 4
+		trigger = {
+			has_institution = legalism
+			has_advisor = yes
+			stability = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "bkj_jwapyeong"
+				duration = 9125
+			}
+		}
+	}
+	bkj_relation_with_ibon_mission = {
+		icon = mission_japanese_fort
+		required_missions = { } #none
+		position = 5
+		trigger = {
+			any_country = {
+				primary_culture = japanese
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		effect = {
+			add_sailors = 500
+			define_advisor = {
+				type = naval_reformer
+				skill = 3
+				discount = yes
+				culture = japanese
+				religion = shinto
+			}
+		}
+	}
+}

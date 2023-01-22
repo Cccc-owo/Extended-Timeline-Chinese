@@ -1,0 +1,797 @@
+northern_song_conquest_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SNG
+			started_in = 960.1.1
+			NOT = { started_in = 1127.1.1 }
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	sng_conquer_bashu_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { } #none
+		position = 1
+		completed_by = 966.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = chuanbei_area
+				area = sichuan_area
+				area = chuannan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			chuanbei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sichuan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			chuannan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 15
+		}
+	}
+	sng_claim_the_mandate_mission = {
+		icon = mission_empire
+		required_missions = { sng_conquer_bashu_mission }
+		position = 2
+		completed_by = 978.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = hunan_area 
+				area = jiangxi_area 
+				area = fujian_area 
+				area = west_guangdong_area  
+				area = guangdong_area  
+				area = guangzhou_area  
+				area = guangxi_area  
+				area = huguang_area 	#hubei 
+				area = henan_area  
+				area = north_henan_area  
+				area = anhui_area  
+				area = south_anhui_area   
+				area = zhejiang_area   
+				area = jiangsu_area   
+				area = south_jiangsu_area   
+				area = shandong_area   
+				area = west_shandong_area   
+				area = south_hebei_area 
+				area = shaanxi_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				is_emperor_of_china = yes
+				has_reform = celestial_empire
+			}
+			hunan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			jiangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			fujian_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			west_guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			guangzhou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			guangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			huguang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			henan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			north_henan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			anhui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			south_anhui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}   
+			zhejiang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}   
+			jiangsu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}   
+			south_jiangsu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}   
+			shandong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}   
+			west_shandong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}   
+			south_hebei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			shaanxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				}
+				add_mandate = 20
+			}
+			if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" } 
+				}
+				add_legitimacy = 50
+			}
+		}
+	}
+	sng_cross_great_ditch_mission = {
+		icon = mission_konkani_pirates
+		required_missions = { sng_claim_the_mandate_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1816		#Beijing
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1816
+		}
+		effect = {
+			add_prestige = 10
+			
+			china_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sng_destroy_the_khitans_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { sng_cross_great_ditch_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = inner_mongolia_area
+				area = eastern_mongolia
+				area = liaoning_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			inner_mongolia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			eastern_mongolia = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			liaoning_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				}
+				add_mandate = 10
+			}
+			if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" } 
+				}
+				add_legitimacy = 25
+			}
+		}
+	}
+	sng_conquer_xi_xia_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { sng_destroy_the_khitans_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = ordos_area
+				area = west_gansu_area
+				area = gansu_area 		#east gansu
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ordos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				}
+				add_mandate = 10
+			}
+			if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" } 
+				}
+				add_legitimacy = 25
+			}
+		}
+	}
+	sng_occupy_dai_viet_mission = {
+		icon = mission_rice_field
+		required_missions = { sng_conquer_xi_xia_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = red_river_delta_area
+				area = vietnam_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sng_jungle_warfare_experience"
+				duration = 10950
+			}
+		}
+	}
+}
+
+northern_song_conquest_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SNG
+			started_in = 960.1.1
+			NOT = { started_in = 1127.1.1 }
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	sng_conquer_goryeo_mission = {
+		icon = mission_invade_island
+		required_missions = { sng_conquer_xi_xia_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = korea_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 20
+		}
+	}
+}
+
+
+southern_song_conquest_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SNG
+			started_in = 1127.1.1
+			NOT = { started_in = 1279.3.19 }
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	sng_recover_the_huai_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = jiangsu_area 	#north
+				area = anhui_area 		#north
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			jiangsu_area = {
+				type = all
+				owned_by = ROOT
+			}
+			anhui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			
+		}
+	}
+	sng_retake_former_capitals_mission = {
+		icon = mission_asian_city
+		required_missions = { sng_recover_the_huai_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 688	#Kaifeng
+				province_id = 700	#Xi'an
+				province_id = 1836	#Luoyang
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				is_emperor_of_china = yes
+				has_reform = celestial_empire
+			}
+			owns_core_province = 688
+			owns_core_province = 700
+			owns_core_province = 1836
+		}
+		effect = {
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				}
+				add_mandate = 10
+			}
+			if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" } 
+				}
+				add_legitimacy = 25
+			}
+		}
+	}
+	sng_drive_out_the_traitors_mission = {
+		icon = mission_unite_home_region
+		required_missions = { sng_retake_former_capitals_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = shaanxi_area
+				area = shanxi_area
+				area = henan_area 
+				area = north_henan_area 
+				area = hebei_area  
+				area = south_hebei_area 
+				area = shandong_area  
+				area = west_shandong_area  
+				area = liaoning_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			shaanxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shanxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			henan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_henan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			hebei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			south_hebei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			shandong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			west_shandong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  
+			liaoning_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				}
+				add_mandate = 10
+			}
+			if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" } 
+				}
+				add_legitimacy = 25
+			}
+		}
+	}
+	sng_conquer_xi_xia_mission = {
+		icon = mission_great_wall
+		required_missions = { sng_drive_out_the_traitors_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = ordos_area
+				area = west_gansu_area
+				area = gansu_area 		#east gansu
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ordos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				}
+				add_mandate = 10
+			}
+			if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" } 
+				}
+				add_legitimacy = 25
+			}
+		}
+	}
+	sng_decimate_the_manchu_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { sng_conquer_xi_xia_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = ilan_hala_area
+				area = ningguta_area
+				area = jilin_area 
+				area = eastern_mongolia
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ilan_hala_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ningguta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jilin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			eastern_mongolia = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				}
+				add_mandate = 10
+			}
+			if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" } 
+				}
+				add_legitimacy = 25
+			}
+		}
+	}
+	sng_suppress_the_hordes_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { sng_decimate_the_manchu_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = inner_mongolia_area
+				area = outer_mongolia_area
+				area = central_mongolia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			inner_mongolia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			outer_mongolia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_mongolia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+			if = {
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				}
+				add_mandate = 10
+			}
+			if = {
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" } 
+				}
+				add_legitimacy = 25
+			}
+		}
+	}
+}
+
+southern_song_conquest_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SNG
+			started_in = 1127.1.1
+			NOT = { started_in = 1279.3.19 }
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	sng_conquer_goryeo_mission = {
+		icon = mission_defy_the_dragon
+		required_missions = { sng_decimate_the_manchu_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = korea_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 20
+		}
+	}
+}
+
+song_both_domestic_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SNG
+			started_in = 960.1.1
+			NOT = { started_in = 1279.3.19 }
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	sng_create_standing_navy_mission = {
+		icon = mission_junk_boat
+		required_missions = {  }
+		position = 3
+		trigger = {
+			navy_tradition = 75
+			navy_size_percentage = 1.00
+			num_of_admirals = 1
+		}
+		effect = {
+			add_dip_power = 75
+			add_country_modifier = {
+				name = "sng_standing_navy"
+				duration = 9125
+			}
+		}
+	}
+	sng_civil_examinations_mission = {
+		icon = mission_scholar_officials
+		required_missions = {  }
+		position = 4
+		trigger = {
+			legitimacy_equivalent = 90		#meritocracy
+			NOT = { corruption = 1 }
+			NOT = { yearly_corruption_increase = 0.001 }
+			OR = {
+				statesman = 3
+				diplomat = 3
+				master_of_mint = 3
+				treasurer = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sng_civil_examinations"
+				duration = 10950
+			}
+		}
+	}
+	sng_iron_industry_mission = {
+		icon = mission_asian_trader
+		required_missions = { }
+		position = 5
+		trigger = {
+			production_leader = {
+				trade_goods = iron
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sng_iron_industry"
+				duration = 9125
+			}
+		}
+	}
+	sng_research_gunpowder_mission = {
+		icon = mission_asian_cannon
+		required_missions = {  }
+		position = 6
+		trigger = {
+			adm_tech = 42
+			dip_tech = 42
+			mil_tech = 42
+			natural_scientist = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kha_gunpowder_warfare"
+				duration = -1
+			}
+		}
+	}
+}

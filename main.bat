@@ -2,7 +2,6 @@
 @ECHO OFF
 set mod_desc=ETCLP.mod
 set mod_dir=ETCLP
-set ET_link=https://download2290.mediafire.com/8g7gs3km2wcg/5n25z3luqddjm7j/ExtendedTimeline+1.14.4.zip
 ::=====setting environment end=====
 ::=====checking=====
 ECHO Time:%date%
@@ -12,9 +11,6 @@ if not exist output\%mod_dir% mkdir output\%mod_dir%\
 if exist mod.zip del /F /S /Q mod.zip
 if not exist ExtendedTimeline\ ( mkdir ExtendedTimeline\ ) else ( del /F /S /Q ExtendedTimeline\ & rmdir /S /Q ExtendedTimeline\ & mkdir ExtendedTimeline\ )
 ::=====checking end=====
-::=====downloading files=====
-wget.exe -O "ET.zip" %ET_link%
-::=====downloading files end=====
 ::=====integrating files=====
 ECHO.
 ECHO Copying started.

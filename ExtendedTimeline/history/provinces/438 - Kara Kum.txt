@@ -1,0 +1,54 @@
+#438 - Karakum
+
+culture = parthian
+religion = zoroastrian
+capital = "Geok-Tepe"
+trade_goods = livestock
+hre = no
+discovered_by = indian
+discovered_by = asian
+discovered_by = early_indian
+discovered_by = nomad_group
+discovered_by = eastern_nomad_group
+discovered_by = western_nomad_group
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+base_tax = 1
+base_production = 1
+base_manpower = 1
+
+600.1.1 = { culture = turkmeni }
+750.1.1 = { owner = OGH controller = OGH add_core = OGH is_city = yes }
+940.1.1 = { religion = sunni }
+1035.1.1 = { owner = SEL controller = SEL add_core = SEL remove_core = OGH }
+1120.1.1 = { owner = OGH controller = OGH add_core = OGH remove_core = SEL }
+1153.1.1 = { owner = KHW controller = KHW add_core = KHW remove_core = OGH }
+1231.1.1 = { owner = KHA controller = KHA add_core = KHA add_core = PER remove_core = KHW }
+1260.1.1 = { owner = ILK controller = ILK add_core = ILK remove_core = KHA }
+1335.1.1 = { owner = NOG controller = NOG add_core = NOG remove_core = ILK }
+1380.1.1 = { owner = TIM controller = TIM add_core = TIM remove_core = NOG }
+
+1409.5.13 = { #Ulugh Beg is made Governor of Samarkand
+	owner = TRS
+	controller = TRS
+	add_core = TRS
+}
+1448.3.1 = { #Ulugh Beg takes Herat and reunites the core of the Timurid Empire
+	owner = TIM
+	controller = TIM
+	remove_core = TRS
+}
+1502.1.1 = { owner = KHO controller = KHO add_core = KHO remove_core = TIM } # The end of the Timurids in Samarkand
+1505.1.1 = { controller = BUK }
+1506.1.1 = { owner = BUK add_core = BUK remove_core = KHO unrest = 0 } # Conquered by Muhammad Shaybani
+1511.1.1 = { owner = KHI controller = KHI remove_core = BUK } # Khiva separates from Uzbeks
+1717.1.1 = { discovered_by = RUS }
+
+1879.1.1   = { owner = RUS controller = RUS add_core = RUS capital = "Derweze" }
+1922.12.30 = { owner = SOV controller = SOV add_core = SOV remove_core = RUS }
+1924.10.27 = { add_core = TRK remove_core = KHI remove_core = SHY }
+1991.10.27 = { owner = TRK controller = TRK remove_core = SOV remove_core = RUS }
+
+
+

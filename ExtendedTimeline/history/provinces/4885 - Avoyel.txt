@@ -1,0 +1,74 @@
+#2139 - Natchitoches
+
+culture = natchez
+religion = totemism
+capital = "Avoyel"
+trade_goods = unknown
+hre = no
+discovered_by = north_american
+base_tax = 3
+base_production = 2
+base_manpower = 1
+native_size = 20
+native_ferocity = 3
+native_hostileness = 9
+
+1200.1.1  = { owner = PLA controller = PLA add_core = PLA is_city = yes trade_goods = cotton }
+1420.1.1  = {	
+	owner = ---
+	controller = ---
+	remove_core = PLA
+	is_city = no
+	trade_goods = unknown
+	tribal_owner = NTC
+}
+
+1541.1.1  = { discovered_by = SPA } # Hernando de Soto
+1670.1.1  = { discovered_by = FRA } # Robert Cavelier de La Salle
+1722.1.1 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	trade_goods = cotton
+	is_city = yes
+	religion = catholic
+	culture = cosmopolitan_french
+} # French settlement
+1762.1.1 = {
+	owner = SPA
+	controller = SPA
+	remove_core = FRA
+	trade_goods = grain
+} # Treaty of Fontainebleau, secretely ceded to Spain
+1763.1.1  = { unrest = 5 } # The French resisted the Spanish rule
+1764.1.1  = { unrest = 0 } # Eventually subdued
+1770.1.1  = { culture = french_louisianan }
+1787.1.1  = { add_core = SPA }
+1800.10.1 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	remove_core = SPA
+} # Treaty of San Ildefonso
+1803.4.3 = {
+	owner = USA
+	controller = USA
+	add_core = USA
+	remove_core = FRA
+} # The Louisiana purchase
+
+1830.1.1   = { culture = british_louisianan }
+1840.1.1   = { religion = protestant }
+1845.1.1   = { capital = "Monroe" }
+1851.1.1 = { base_production = 3 }
+1861.1.26  = { owner = LOU controller = LOU add_core = LOU }
+1861.2.8   = { owner = CSA controller = CSA add_core = CSA remove_core = LOU }
+1865.5.5   = { owner = USA controller = USA remove_core = CSA }
+1875.1.1 = { base_production = 4 }
+1880.1.1 = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1901.1.1 = { base_manpower = 2 }
+1910.1.1 = { discovered_by = western }
+1925.1.1 = { base_manpower = 3 }
+1951.1.1 = { base_tax = 4 }
+1975.1.1 = { base_tax = 5 }
+2000.1.1 = { base_production = 5 }

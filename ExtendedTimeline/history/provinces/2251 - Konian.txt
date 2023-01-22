@@ -1,0 +1,43 @@
+#1122 - Konian
+
+latent_trade_goods = {
+	aluminum
+}
+
+culture = mali
+religion = shamanism
+capital = "Beyla"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 30
+native_ferocity = 4
+native_hostileness = 6 
+
+add_permanent_province_modifier = {
+	name = hard_to_colonize
+	duration = -1
+}
+
+1605.1.1 = { culture = mali } #Collapse of Mali sparks major migrations of Mande into region
+
+1850.1.1   = { religion = sunni }
+1860.1.1 = { discovered_by = FRA discovered_by = FR2 }
+1890.1.1 = { 	owner = FR2
+		controller = FR2
+		add_core = FR2
+		is_city = yes
+		capital = "Nzérékoré"
+		trade_goods = grain
+	   }
+1910.1.1 = { discovered_by = western }
+1920.1.1   = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1930.1.1   = { trade_goods = aluminum }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1942.11.16 = { owner = FR2 controller = FR2 remove_core = FRV } # Under Free French control after Operation Torch
+1958.10.2  = { owner = GUI controller = GUI add_core = GUI remove_core = FR2 }
+
+
+

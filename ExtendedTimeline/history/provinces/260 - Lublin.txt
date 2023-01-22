@@ -1,0 +1,84 @@
+#260 - Lublin
+
+latent_trade_goods = {
+	coal
+}
+
+owner = VNE
+controller = VNE
+add_core = VNE
+is_city = yes
+capital= "Lublin"
+culture = polish
+religion = slavic
+trade_goods = cloth
+hre = no
+discovered_by = GCR
+discovered_by = GEP
+discovered_by = VNE
+base_tax = 1
+base_production = 1
+base_manpower = 1
+center_of_trade = 2
+
+140.1.1 = { owner = GCR controller = GCR add_core = GCR remove_core = VNE culture = gothic religion = germanic }
+150.1.1 = { owner = VNE controller = VNE add_core = VNE remove_core = GCR culture = polish religion = slavic }
+500.1.1 = { discovered_by = western discovered_by = eastern }
+550.1.1 = { owner = LDN controller = LDN add_core = LDN remove_core = VNE }
+600.1.1 = { base_manpower = 2 }
+700.1.1 = { base_tax = 3 base_production = 3 }
+800.1.1 = { base_manpower = 3 }
+900.1.1 = { owner = VIS controller = VIS add_core = VIS remove_core = LDN }
+901.1.1 = { base_tax = 4 base_production = 4 }
+940.1.1 = { owner = POL controller = POL add_core = POL }
+1000.1.1 = { discovered_by = muslim discovered_by = ottoman }
+1050.1.1 = { religion = catholic }
+1100.1.1 = { base_tax = 5 base_production = 5 }
+1138.10.28 = { owner = SNZ controller = SNZ add_core = SNZ }
+1177.1.1 = { owner = POL controller = POL add_core = POL }
+1289.1.1 = { owner = VOL controller = VOL add_core = VOL }
+1302.1.1 = { owner = POL controller = POL remove_core = VOL }
+
+1490.1.1 = { unrest = 6 } # Uprising led by Mukha
+1492.1.1 = { unrest = 0 } 
+1550.1.1 = { religion = reformed }
+1569.7.1 = {
+	owner = PLC
+	controller = PLC
+	remove_core = POL
+	add_core = PLC
+} # Union of Lublin
+1588.1.1 = { revolt = { type = revolutionary_rebels size = 0 } controller = REB } # Civil war
+1589.1.1 = { revolt = {} controller = PLC } # Coronation of Sigismund III
+1596.1.1 = { unrest = 4 } # Religious struggles, union of Brest
+1597.1.1 = { unrest = 0 }
+1733.1.1 = { revolt = { type = revolutionary_rebels size = 0 } controller = REB } # The war of Polish succession
+1735.1.1 = { revolt = {} controller = PLC }
+1781.1.1 = { unrest = 4 } # Struggle against serfdom
+1794.3.24 = { unrest = 8 } # Kosciuszko uprising
+1794.11.16 = { unrest = 0 } # The end of the uprising
+1795.10.24 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+} # Third partition of Poland
+1807.7.9 = {
+	owner = POL
+	controller = POL
+	add_core = POL
+	remove_core = HAB
+} # The Duchy of Warsaw is established after the treaty of Tilsit, ruled by Frederick Augustus I of Saxony
+1812.12.12 = { controller = RUS }
+1814.4.11 = {
+	owner = RUS
+	add_core = RUS
+} # Napoleon abdicates
+
+1910.1.1 = { discovered_by = asian }
+1915.8.1   = { controller = GER }
+1918.3.3   = { owner = POL controller = POL remove_core = RUS }
+1939.10.6  = { owner = GER controller = GER }
+1940.1.1   = { religion = catholic }
+1944.7.24  = { controller = SOV }
+1945.5.8   = { owner = POL controller = POL }
+

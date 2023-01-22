@@ -1,0 +1,352 @@
+bel_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = BEL
+	}
+	has_country_shield = yes
+
+	bel_begin_the_colonisation_of_congo = {
+		icon = mission_trade_company_region_abroad
+		required_missions = { }
+		completed_by = 1892.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = lower_kasai
+				province_id = 1901
+				province_id = 4079
+				province_id = 4087
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_kasai = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1901 = { country_or_non_sovereign_subject_holds = ROOT }
+			4079 = { country_or_non_sovereign_subject_holds = ROOT }
+			4087 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			add_dip_power = 50
+			
+			sankuru_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			luba_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_kongo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1797 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			3229 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			3230 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	bel_colonization_of_eastern_congo = {
+		icon = mission_assemble_an_army
+		required_missions = { bel_begin_the_colonisation_of_congo }
+		completed_by = 1895.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = sankuru_area
+				area = luba_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sankuru_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			luba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			katanga_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rwanda_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			4070 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	bel_colonization_of_southern_congo = {
+		icon = mission_cannons_firing
+		required_missions = { bel_colonization_of_eastern_congo }
+		provinces_to_highlight = {
+			OR = {
+				area = katanga_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			katanga_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 25
+		}
+	}
+}
+
+bel_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = BEL
+	}
+	has_country_shield = yes
+
+	bel_colonization_of_northern_congo = {
+		icon = mission_conquer_50_development
+		required_missions = { bel_begin_the_colonisation_of_congo }
+		position = 2
+		completed_by = 1892.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = upper_kongo_area
+				province_id = 1797
+				province_id = 3229
+				province_id = 3230
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			upper_kongo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1797 = { country_or_non_sovereign_subject_holds = ROOT }
+			3229 = { country_or_non_sovereign_subject_holds = ROOT }
+			3230 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 25
+		}
+	}
+
+	bel_rwanda_and_burundi = {
+		icon = mission_have_two_subjects
+		required_missions = { bel_colonization_of_eastern_congo }
+		completed_by = 1919.6.28
+		provinces_to_highlight = {
+			OR = {
+				area = rwanda_area
+				province_id = 4070
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			rwanda_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4070 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 25
+		}
+	}
+}
+
+bel_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = BEL
+	}
+	has_country_shield = yes
+	
+	build_army_mission_bel = {
+		icon = mission_build_up_to_force_limit
+		required_missions = {  } 
+		trigger = {
+			army_size_percentage = 1 
+		}
+		effect = { 
+			add_country_modifier = {
+				name = "thriving_arms_industry"
+				duration = 9125
+			}
+			luxemburg_liege_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	bel_eastern_expansion = {
+		icon = mission_assemble_an_army
+		required_missions = { build_army_mission_bel }
+		provinces_to_highlight = {
+			area = luxemburg_liege_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			luxemburg_liege_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			netherlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			holland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			frisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	bel_unite_the_benelux = {
+		icon = mission_unite_home_region
+		required_missions = { bel_eastern_expansion }
+		provinces_to_highlight = {
+			OR = {
+				area = netherlands_area
+				area = holland_area
+				area = frisia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			netherlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			holland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			frisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+			add_adm_power = 50
+			
+			lower_rhineland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	bel_to_rhine = {
+		icon = mission_conquer_50_development
+		required_missions = { bel_unite_the_benelux }
+		provinces_to_highlight = {
+			area = lower_rhineland_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_rhineland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+			add_prestige = 25
+		}
+	}
+}

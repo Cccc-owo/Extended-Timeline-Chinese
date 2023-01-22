@@ -1,0 +1,89 @@
+cult_of_the_dead =
+{
+	stability_cost_modifier = -0.1
+
+	allow = {
+		OR = {
+			has_unlocked_cult = cult_of_the_dead
+			technology_group = middle_eastern
+			technology_group = muslim
+			culture_group = maghrebi
+		}
+		religion = shamanism
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = cult_of_the_dead
+				}
+			}
+		}
+	}
+	sprite = 18
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+egyptian_cult =
+{
+	tolerance_heretic = 2
+
+	allow = {
+		OR = {
+			has_unlocked_cult = egyptian_cult
+			technology_group = middle_eastern
+			technology_group = muslim
+			culture_group = nilotic
+		}
+		religion = shamanism
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = egyptian_cult
+				}
+			}
+		}
+	}
+	sprite = 19
+
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			any_owned_province = { religion = egyptian }
+			factor = 3
+		}
+	}
+}
+
+hellenism_cult =
+{
+	build_cost = -0.1
+	allow = {
+		OR = {
+			has_unlocked_cult = hellenism_cult
+			technology_group = middle_eastern
+			technology_group = muslim
+			culture_group = byzantine
+		}
+		religion = shamanism
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = hellenism_cult
+				}
+			}
+		}
+	}
+	sprite = 20
+
+	ai_will_do = {
+		factor = 1
+	}
+}

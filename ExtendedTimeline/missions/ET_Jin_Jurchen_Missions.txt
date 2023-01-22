@@ -1,0 +1,328 @@
+jin_jurchen_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = CJN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	jin_take_the_southern_capital_mission = {
+		icon = mission_great_wall
+		required_missions = { }	#none
+		position = 1
+		completed_by = 1125.1.1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1816	#Beijing
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1816
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	jin_decimate_the_liao_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { jin_take_the_southern_capital_mission }
+		position = 3
+		completed_by = 1125.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = inner_mongolia_area
+				area = central_mongolia_area
+				area = hebei_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			inner_mongolia_area= {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_mongolia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hebei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "jin_emperor_of_the_north"
+				duration = 9125
+			}
+		}
+	}
+	jin_jingkang_incident_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { jin_decimate_the_liao_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 688	#Kaifeng
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 688
+		}
+		effect = {
+			add_army_tradition = 15
+		}
+	}
+	jin_destroy_the_song_mission = {
+		icon = mission_unite_home_region
+		required_missions = { jin_jingkang_incident_mission jin_subjugate_xi_xia_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				superregion = china_superregion
+			}
+			NOT = {
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				is_emperor_of_china = yes
+				has_reform = celestial_empire
+			}
+			china_superregion = {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_mandate = 25
+			add_ruler_modifier = {
+				name = "great_unifier"
+				duration = -1
+			}
+		}
+	}
+}
+
+jin_jurchen_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = CJN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	jin_subjugate_xi_xia_mission = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { jin_jingkang_incident_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = ordos_area
+				area = gansu_area
+				area = west_gansu_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ordos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+}
+
+jin_jurchen_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = CJN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	jin_tame_the_tatars_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { jin_jingkang_incident_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = heilongjiang_area		#west heilongjian
+			}
+			NOT = {
+				country_or_vassal_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			heilongjiang_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "jin_tatar_vassalage"
+				duration = 9125
+			}
+		}
+	}
+}
+
+jin_jurchen_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = CJN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	jin_research_gunpowder_mission = {
+		icon = mission_asian_cannon
+		required_missions = { jin_merge_chinese_institutions_mission }
+		position = 6
+		trigger = {
+			adm_tech = 42
+			dip_tech = 42
+			mil_tech = 42
+			natural_scientist = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sng_gunpowder_warfare"
+				duration = -1
+			}
+		}
+	}
+	jin_subdue_the_mongols_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { jin_tame_the_tatars_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = outer_mongolia_area
+				area = uliastai_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			outer_mongolia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			uliastai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "jin_tatar_vassalage"
+				duration = 9125
+			}
+		}
+	}
+}
+
+jin_jurchen_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = CJN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	jin_superior_cavalry_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			num_of_cavalry = 20
+			OR = {
+				army_professionalism = 0.80
+				army_tradition = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "jin_superior_cavalry_mod"
+				duration = 9125
+			}
+		}
+	}
+	jin_tatar_mercenaries_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = {  }
+		position = 4
+		trigger = {
+			num_of_mercenaries = 10
+		}
+		effect = {
+			add_country_modifier = {
+				name = "jin_tatar_mercenaries"
+				duration = 9125
+			}
+		}
+	}
+	jin_merge_chinese_institutions_mission = {
+		icon = mission_scholar_officials
+		required_missions = {  }
+		position = 5
+		trigger = {
+			stability = 3
+			num_accepted_cultures = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "jin_sinicized_government"
+				duration = 9125
+			}
+		}
+	}
+}

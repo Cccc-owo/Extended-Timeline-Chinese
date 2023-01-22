@@ -1,0 +1,201 @@
+sardinia_piedmont_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = SPI
+		NOT = { has_dlc = "Emperor" }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	spi_independenza_italiana_mission = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { } #none
+		position = 1
+		completed_by = 1859.11.10
+		provinces_to_highlight = {
+			OR = {
+				region = italy_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			is_vassal = no
+			
+			num_of_owned_provinces_with = {
+				region = italy_region
+				value = 10
+			}
+			
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spi_free_sardinia"
+				duration = 9125
+			}
+		}
+	}
+	spi_fusione_perfetta_mission = {
+		icon = mission_monarch_signing
+		required_missions = { } #none
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2986		#Sassari
+				province_id = 127		#Cagliari
+				area = piedmont_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 2
+			owns_core_province = 2986
+			owns_core_province = 127
+			piedmont_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			
+			2986 = {
+				NOT = { local_autonomy = 30 }
+			}
+			127 = {
+				NOT = { local_autonomy = 30 }
+			}
+			#Piedmont area
+			103 = {
+				NOT = { local_autonomy = 30 }
+			}
+			1875 = {
+				NOT = { local_autonomy = 30 }
+			}
+			3123 = {
+				NOT = { local_autonomy = 30 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spi_perfect_fusion"
+				duration = 9125
+			}
+		}
+	}
+	spi_conquista_settentrionale_mission = {
+		icon = mission_rule_italy
+		required_missions = { spi_fusione_perfetta_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = liguria_area
+				area = emilia_romagna_area
+				area = tuscany_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			liguria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			emilia_romagna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tuscany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			
+		}
+		effect = {
+			italy_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	spi_spedizione_dei_mille_mission = {
+		icon = mission_giuseppe_garibaldi
+		required_missions = { spi_conquista_settentrionale_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 124
+				province_id = 125
+				province_id = 2982
+				area = naples_area
+				area = calabria_area
+				area = apulia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			#Sicily mainland
+			owns_or_non_sovereign_subject_of = 124
+			owns_or_non_sovereign_subject_of = 125
+			owns_or_non_sovereign_subject_of = 2982
+			
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}	
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spi_red_shirts_of_the_thousand"
+				duration = 10950
+			}
+		}
+	}
+	spi_risorgimento_mission = {
+		icon = mission_mf_italy_coa
+		required_missions = { spi_spedizione_dei_mille_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				region = italy_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			italy_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spi_risorgimento_successful"
+				duration = 9125
+			}
+		}
+	}
+}

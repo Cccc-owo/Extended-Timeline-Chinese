@@ -1,0 +1,79 @@
+#354 - Tripoli
+
+owner = ROM
+controller = ROM
+culture = eastern_berber
+religion = shamanism
+capital = "Leptis Magna"
+trade_goods = cloth
+hre = no
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = ROM
+center_of_trade = 2
+
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+420.1.1 = { religion = chalcedonism }
+439.1.1 = { owner = VAN controller = VAN add_core = VAN remove_core = ROW }
+523.1.1 = { owner = LAG controller = LAG add_core = LAG remove_core = VAN }
+533.1.1 = { owner = BYZ controller = BYZ add_core = BYZ }
+645.1.1 = { capital = "Tripoli" }
+666.1.1 = { owner = UMA controller = UMA add_core = UMA remove_core = BYZ }
+700.1.1 = { religion = sunni culture = tunisian }
+745.1.1 = { owner = TUN controller = TUN add_core = TUN remove_core = UMA }
+757.6.1 = { owner = ABA controller = ABA add_core = ABA }
+800.1.1 = { owner = TUN controller = TUN add_core = TUN remove_core = ABA }
+909.1.1 = { owner = FAT controller = FAT add_core = FAT }
+973.1.1 = { owner = TUN controller = TUN add_core = TUN remove_core = FAT }
+1027.1.1 = { owner = TRP controller = TRP add_core = TRP }
+1146.1.1 = { owner = SIC controller = SIC add_core = SIC }
+1158.1.1 = { owner = MOR controller = MOR add_core = MOR remove_core = SIC }
+1174.1.1 = { owner = MAM controller = MAM add_core = MAM }
+1191.1.1 = { owner = TUN controller = TUN add_core = TUN }
+1212.1.1 = { owner = MOR controller = MOR remove_core = MAM }
+1229.1.1 = { owner = TUN controller = TUN add_core = TUN remove_core = MOR }
+1321.1.1 = { owner = TRP controller = TRP add_core = TRP }
+1401.1.1 = { owner = TUN controller = TUN add_core = TUN }
+
+1510.1.1  = { owner = CAS controller = CAS add_core = CAS }
+1516.1.23 = {	owner = SPA	
+		controller = SPA
+		add_core = SPA
+		remove_core = CAS
+	    }
+1528.1.1  = {	owner = KNI
+		controller = KNI
+		add_core = KNI
+		remove_core = SPA
+	    } # Ferdinand gave Tripoli to the Knights of St John
+1551.8.1  = {	owner = TRP
+		controller = TRP
+		add_core = TRP
+		remove_core = KNI
+		remove_core = TUN
+	    } # Turgut Reis takes Tripoli
+1609.1.1  = { revolt = { type = revolutionary_rebels size = 2 } controller = REB } # Janissary revolt
+1610.1.1  = { revolt = {} controller = TRP }
+1711.1.1  = { unrest = 6 } # The Ottoman governor is killed by Ahmad Karmanli
+1712.1.1  = { unrest = 0 } # Fortifications are restored
+
+1835.5.26  = { owner = TUR controller = TUR add_core = TUR }
+1910.1.1 = { discovered_by = asian }
+1912.10.18 = { owner = ITA controller = ITA add_core = ITA add_core = LBY remove_core = TUR }
+1943.1.15  = { controller = GBR }
+1943.9.8   = { owner = GBR remove_core = ITA }
+1951.12.24 = { owner = LBY controller = LBY }
+1960.1.1   = { base_manpower = 2 }
+1980.1.1   = { base_tax = 3 }
+2000.1.1   = { base_production = 3 }
+2014.8.8   = { revolt = { type = pretender_rebels size = 1 } controller = REB } #New General National Congress
+

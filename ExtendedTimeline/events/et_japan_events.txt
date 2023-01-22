@@ -1,0 +1,466 @@
+namespace = et_japan
+
+#Birth of Shinto 
+province_event = {
+
+	id = et_japan.1
+	title = "et.EVTNAME20"
+	desc = "et.EVTDESC20"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		region = japan_region
+		NOT = { religion = shinto }
+		NOT = { has_global_flag = shinto_rebirth }
+		culture_group = japanese_g
+		is_year = 712
+		NOT = { started_in = 712.1.1 }
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	immediate = {
+		set_global_flag = shinto_rebirth
+	}
+	
+	option = {
+		name = "et.EVTOPTA20"
+		change_religion = shinto
+		add_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 3650
+		}
+	}
+}
+
+#Spread of Shinto 
+province_event = {
+
+	id = et_japan.2
+	title = "et.EVTNAME21"
+	desc = "et.EVTDESC21"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		region = japan_region
+		OR = {
+			started_in = 712.1.1
+			has_global_flag = shinto_rebirth
+		}
+		culture_group = japanese_g
+		NOT = { religion = shinto }
+		is_year = 700
+		NOT = { is_year = 1000 }
+	}
+	mean_time_to_happen = {
+		months = 1000
+
+		modifier = {
+			factor = 0.8
+			religion = animism
+		}
+		modifier = {
+			factor = 0.8
+			owner = { religion = animism }
+		}
+		modifier = {
+			factor = 0.7
+			is_year = 800
+		}
+		modifier = {
+			factor = 0.7
+			any_neighbor_province = { religion = shinto }
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA21"
+		change_religion = shinto
+		add_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 3650
+		}
+	}
+}
+
+#Fujiwara Regency
+country_event = {
+
+	id = et_japan.3
+	title = "et_japan.3.t"
+	desc = "et_japan.3.d"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		capital_scope = { region = japan_region }
+		num_of_cities = 25
+		has_regency = yes
+		has_consort_regency = no
+		heir_age = 14
+		NOT = { has_country_flag = fujiwara_regency_event }
+		NOT = { has_reform = shogunate }
+		NOT = { started_in = 1080.1.1 }
+		NOT = { is_year = 1800 }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		set_country_flag = fujiwara_regency_event
+	}
+	
+	option = {
+		name = "et_japan.3.a"
+		add_prestige = -10
+		add_legitimacy = -20
+		add_country_modifier = {
+			name = fujiwara_regency
+			duration = -1
+		}
+		add_estate_influence_modifier = {
+			estate = estate_nobles
+			desc = FUJIWARA_REGENCY
+			influence = 20
+			duration = 7300
+		}
+		define_heir = {
+			claim = 50
+			age = 4
+		}
+	}
+	
+	option = {
+		name = "et_japan.3.b"
+		add_government_reform = shogunate
+		if = {
+			limit = { owns = 4192 NOT = { capital = 4192 } }
+			4192 = { add_core = KIY }
+			create_vassal = KIY
+		}
+		if = {
+			limit = { owns = 4131 NOT = { capital = 4131 } }
+			4131 = { add_core = AB0 }
+			create_vassal = AB0
+		}
+		if = {
+			limit = { owns = 1024 NOT = { capital = 1024 } }
+			1024 = { add_core = JOO }
+			create_vassal = JOO
+		}
+		if = {
+			limit = { owns = 4191 NOT = { capital = 4191 } }
+			4191 = { add_core = KMK }
+			create_vassal = KMK
+		}
+		if = {
+			limit = { owns = 4190 NOT = { capital = 4190 } }
+			4190 = { add_core = CBA }
+			create_vassal = CBA
+		}
+		if = {
+			limit = { owns = 1028 NOT = { capital = 1028 } }
+			1028 = { add_core = HTK }
+			create_vassal = HTK
+		}
+		if = {
+			limit = { owns = 1837 NOT = { capital = 1837 } }
+			1837 = { add_core = SAI }
+			create_vassal = SAI
+		}
+		if = {
+			limit = { owns = 1835 NOT = { capital = 1835 } }
+			1835 = { add_core = TKI }
+			create_vassal = TKI
+		}
+		if = {
+			limit = { owns = 1830 NOT = { capital = 1830 } }
+			1830 = { add_core = ASA }
+			create_vassal = ASA
+		}
+		if = {
+			limit = { owns = 4651 NOT = { capital = 4651 } }
+			4651 = { add_core = SOO }
+			create_vassal = SOO
+		}
+		if = {
+			limit = { owns = 1017 NOT = { capital = 1017 } }
+			1017 = { add_core = OUC }
+			create_vassal = OUC
+		}
+		if = {
+			limit = { owns = 1818 NOT = { capital = 1818 } }
+			1818 = { add_core = HRD }
+			create_vassal = HRD
+		}
+		if = {
+			limit = { owns = 4182 NOT = { capital = 4182 } }
+			4182 = { add_core = TAC }
+			create_vassal = TAC
+		}
+		if = {
+			limit = { owns = 4181 NOT = { capital = 4181 } }
+			4181 = { add_core = KKC }
+			create_vassal = KKC
+		}
+		if = {
+			limit = { owns = 1014 NOT = { capital = 1014 } }
+			1014 = { add_core = OGA }
+			create_vassal = OGA
+		}
+		if = {
+			limit = { owns = 4186 NOT = { capital = 4186 } }
+			4186 = { add_core = KNO }
+			create_vassal = KNO
+		}
+		if = {
+			limit = { owns = 1839 NOT = { capital = 1839 } }
+			1839 = { add_core = III }
+			create_vassal = III
+		}
+		if = {
+			limit = { owns = 1027 NOT = { capital = 1027 } }
+			1027 = { add_core = STK }
+			create_vassal = STK
+		}
+		if = {
+			limit = { owns = 4359 NOT = { capital = 4359 } }
+			4359 = { add_core = TIA }
+			create_vassal = TIA
+		}
+		if = {
+			limit = { owns = 1025 NOT = { capital = 1025 } }
+			1025 = { add_core = AKT }
+			create_vassal = AKT
+		}
+	}
+}
+
+#Heir deposed
+country_event = {
+
+	id = et_japan.4
+	title = "et_japan.4.t"
+	desc = "et_japan.4.d"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		has_country_modifier = fujiwara_regency
+		has_regency = yes
+		has_consort_regency = no
+		heir_age = 14
+		estate_influence = {
+			estate = estate_nobles
+			influence = 50
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "et_japan.4.a"
+		define_heir = {
+			claim = 50
+			age = 2
+		}
+	}
+}
+
+#End of Fujiwara Regency
+country_event = {
+
+	id = et_japan.5
+	title = "et_japan.5.t"
+	desc = "et_japan.5.d"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		has_country_modifier = fujiwara_regency
+		has_regency = no
+	}
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = "et_japan.5.a"
+		remove_country_modifier = fujiwara_regency
+		add_legitimacy = 20
+		add_prestige = 10
+	}
+}
+
+#Clans gain power
+country_event = {
+
+	id = et_japan.6
+	title = "et_japan.6.t"
+	desc = "et_japan.6.d"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		capital_scope = { region = japan_region }
+		num_of_cities = 25
+		NOT = { has_reform = shogunate }
+		NOT = { started_in = 1080.1.1 }
+		NOT = { is_year = 1800 }
+		estate_influence = {
+			estate = estate_nobles
+			influence = 80
+		}
+		NOT = { has_country_flag = powerful_clans_event }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	immediate = {
+		set_country_flag = powerful_clans_event
+	}
+	
+	option = {
+		name = "et_japan.6.a"
+		add_stability = -1
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+			}
+			noble_rebels = 2
+		}
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+			}
+			noble_rebels = 2
+		}
+		random_owned_province = {
+			limit = { 
+				region = japan_region 
+				NOT = { area = hokkaido_area }
+				NOT = { province_id = 1015 }
+				NOT = { province_id = 3239 }
+				NOT = { province_id = 4651 }
+			}
+			noble_rebels = 2
+		}
+	}
+	
+	option = {
+		name = "et_japan.6.b"
+		add_government_reform = shogunate
+		if = {
+			limit = { owns = 4192 NOT = { capital = 4192 } }
+			4192 = { add_core = KIY }
+			create_vassal = KIY
+		}
+		if = {
+			limit = { owns = 4131 NOT = { capital = 4131 } }
+			4131 = { add_core = AB0 }
+			create_vassal = AB0
+		}
+		if = {
+			limit = { owns = 1024 NOT = { capital = 1024 } }
+			1024 = { add_core = JOO }
+			create_vassal = JOO
+		}
+		if = {
+			limit = { owns = 4191 NOT = { capital = 4191 } }
+			4191 = { add_core = KMK }
+			create_vassal = KMK
+		}
+		if = {
+			limit = { owns = 4190 NOT = { capital = 4190 } }
+			4190 = { add_core = CBA }
+			create_vassal = CBA
+		}
+		if = {
+			limit = { owns = 1028 NOT = { capital = 1028 } }
+			1028 = { add_core = HTK }
+			create_vassal = HTK
+		}
+		if = {
+			limit = { owns = 1837 NOT = { capital = 1837 } }
+			1837 = { add_core = SAI }
+			create_vassal = SAI
+		}
+		if = {
+			limit = { owns = 1835 NOT = { capital = 1835 } }
+			1835 = { add_core = TKI }
+			create_vassal = TKI
+		}
+		if = {
+			limit = { owns = 1830 NOT = { capital = 1830 } }
+			1830 = { add_core = ASA }
+			create_vassal = ASA
+		}
+		if = {
+			limit = { owns = 4651 NOT = { capital = 4651 } }
+			4651 = { add_core = SOO }
+			create_vassal = SOO
+		}
+		if = {
+			limit = { owns = 1017 NOT = { capital = 1017 } }
+			1017 = { add_core = OUC }
+			create_vassal = OUC
+		}
+		if = {
+			limit = { owns = 1818 NOT = { capital = 1818 } }
+			1818 = { add_core = HRD }
+			create_vassal = HRD
+		}
+		if = {
+			limit = { owns = 4182 NOT = { capital = 4182 } }
+			4182 = { add_core = TAC }
+			create_vassal = TAC
+		}
+		if = {
+			limit = { owns = 4181 NOT = { capital = 4181 } }
+			4181 = { add_core = KKC }
+			create_vassal = KKC
+		}
+		if = {
+			limit = { owns = 1014 NOT = { capital = 1014 } }
+			1014 = { add_core = OGA }
+			create_vassal = OGA
+		}
+		if = {
+			limit = { owns = 4186 NOT = { capital = 4186 } }
+			4186 = { add_core = KNO }
+			create_vassal = KNO
+		}
+		if = {
+			limit = { owns = 1839 NOT = { capital = 1839 } }
+			1839 = { add_core = III }
+			create_vassal = III
+		}
+		if = {
+			limit = { owns = 1027 NOT = { capital = 1027 } }
+			1027 = { add_core = STK }
+			create_vassal = STK
+		}
+		if = {
+			limit = { owns = 4359 NOT = { capital = 4359 } }
+			4359 = { add_core = TIA }
+			create_vassal = TIA
+		}
+		if = {
+			limit = { owns = 1025 NOT = { capital = 1025 } }
+			1025 = { add_core = AKT }
+			create_vassal = AKT
+		}
+	}
+}

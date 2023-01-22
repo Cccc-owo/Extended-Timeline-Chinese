@@ -1,0 +1,810 @@
+# Old homeland is abandoned
+province_event = {
+	id = et.29
+	title = "et.EVTNAME29"
+	desc = "et.EVTDESC29"
+	picture = BORDER_TENSION_eventPicture
+
+	trigger = {
+		has_province_modifier = barbarian_homeland
+		owner = { is_at_war = no }
+	}
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.05
+			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by = ROM }
+				NOT = { owned_by = ROW }
+				NOT = { owned_by = BYZ }
+				NOT = { owned_by = GLL }
+			}
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA29"
+		
+		remove_province_modifier = barbarian_homeland
+		owner = {
+			set_country_flag = successful_migration
+			if = {
+				limit = { num_of_cities = 9 }
+				add_adm_power = 10
+				add_dip_power = 10
+				add_mil_power = 10
+			}
+			if = {
+				limit = { NOT = { has_country_modifier = recent_migration } }
+				add_country_modifier = {
+					name = recent_migration
+					duration = 3650
+				}
+			}
+		}
+		
+		if = {
+			limit = { 
+				culture = pommeranian 
+				NOT = { exists = POM }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = POM
+			add_core = POM
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = hannoverian
+				NOT = { exists = ANI }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = ANI
+			add_core = ANI
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = hessian
+				NOT = { exists = HRM }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = HRM
+			add_core = HRM
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = saxon
+				NOT = { exists = SAX }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = SAX
+			add_core = SAX
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = franconian
+				NOT = { exists = THU }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = THU
+			add_core = THU
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = swabian
+				NOT = { exists = EAL }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = EAL
+			add_core = EAL
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = bavarian
+				NOT = { exists = MRM }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = MRM
+			add_core = MRM
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = austrian
+				NOT = { exists = QUA }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = QUA
+			add_core = QUA
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = dutch
+				NOT = { exists = FRY }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = FRY
+			add_core = FRY
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = gothic
+				NOT = { exists = GCR }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = GCR
+			add_core = GCR
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = gepid
+				NOT = { exists = GEP }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = GEP
+			add_core = GEP
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = vandal
+				NOT = { exists = VAN }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = VAN
+			add_core = VAN
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = langobardi
+				NOT = { exists = LOM }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = LOM
+			add_core = LOM
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = burgundione
+				NOT = { exists = BUR }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = BUR
+			add_core = BUR
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = { 
+				culture = frankish
+				NOT = { exists = FRK }
+				owner = { num_of_cities = 9 }
+			}
+			owner = { remove_core = ROOT }
+			cede_province = FRK
+			add_core = FRK
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = {
+				NOT = { has_province_flag = barb_province_ceded }
+				owner = { num_of_cities = 9 }
+				any_neighbor_province = { 
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by = ROM }
+					NOT = { owned_by = ROW }
+					NOT = { owned_by = BYZ }
+					NOT = { owned_by = GLL }
+				}
+			}
+			owner = { remove_core = ROOT }
+			random_neighbor_province = { 
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by = ROM }
+					NOT = { owned_by = ROW }
+					NOT = { owned_by = BYZ }
+					NOT = { owned_by = GLL }
+				}
+				owner = {
+					ROOT = { cede_province = PREV }
+					add_core = ROOT
+				}
+			}
+			set_province_flag = barb_province_ceded
+		}
+		if = {
+			limit = {
+				NOT = { has_province_flag = barb_province_ceded }
+				owner = { num_of_cities = 9 }
+				any_country = { 
+					NOT = { owns = ROOT }
+					has_reform = barbarian_reform
+				}
+			}
+			owner = { remove_core = ROOT }
+			random_country = { 
+				limit = {
+					NOT = { owns = ROOT }
+					has_reform = barbarian_reform
+				}
+				ROOT = { cede_province = PREV }
+				add_core = ROOT
+			}
+			set_province_flag = barb_province_ceded
+		}
+	}
+}
+
+# Serbs
+country_event = {
+	id = et.22
+	title = "et.EVTNAME22"
+	desc = "et.EVTDESC22"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 141
+		is_year = 610
+		NOT = { is_year = 800 }
+		NOT = { stability = 2 }
+		141 = {
+			NOT = { culture = serbian }
+			NOT = { religion = slavic }
+			NOT = { owned_by = SER }
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "et.EVTOPTA22"
+		4362 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = SER
+		}
+		141 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = SER
+		}
+		140 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = SER
+		}
+		139 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = SER
+		}
+		1827 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = SER
+		}
+		1828 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = SER
+		}
+		1831 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = SER
+		}
+		3117 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = SER
+		}
+		138 = {
+			change_religion = slavic
+			change_culture = serbian
+			add_core = DOC
+		}
+	}
+}
+
+# Croats
+country_event = {
+	id = et.23
+	title = "et.EVTNAME23"
+	desc = "et.EVTDESC23"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 131
+		is_year = 620
+		NOT = { is_year = 800 }
+		NOT = { stability = 2 }
+		131 = {
+			NOT = { culture = croatian }
+			NOT = { religion = slavic }
+			NOT = { owned_by = CRO }
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "et.EVTOPTA23"
+		130 = {
+			change_religion = slavic
+			change_culture = croatian
+			add_core = CRO
+		}
+		131 = {
+			change_religion = slavic
+			change_culture = croatian
+			add_core = CRO
+		}
+		136 = {
+			change_religion = slavic
+			change_culture = croatian
+			add_core = CRO
+		}
+		152 = {
+			change_religion = slavic
+			change_culture = croatian
+			add_core = CRO
+		}
+		1767 = {
+			change_religion = slavic
+			change_culture = croatian
+			add_core = CRO
+		}
+		1826 = {
+			change_religion = slavic
+			change_culture = croatian
+			add_core = CRO
+		}
+		4173 = {
+			change_religion = slavic
+			change_culture = croatian
+			add_core = CRO
+		}
+	}
+}
+
+# Suebi
+country_event = {
+	id = et.36
+	title = "et.EVTNAME36"
+	desc = "et.EVTDESC36"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = ROW
+		}
+		owns = 206
+		NOT = { exists = EAL }
+		is_year = 400
+		NOT = { stability = 2 }
+		206 = {
+			NOT = { culture = galician }
+			NOT = { religion = germanic }
+			NOT = { owned_by = EAL }
+		}
+	}
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = "et.EVTOPTA36"
+		206 = {
+			change_religion = germanic
+			change_culture = galician
+			add_core = EAL
+			nationalist_rebels = 2
+			change_siege = 20
+		}
+		207 = {
+			change_religion = germanic
+			change_culture = galician
+			add_core = EAL
+		}
+		208 = {
+			change_religion = germanic
+			change_culture = galician
+			add_core = EAL
+		}
+		227 = {
+			change_religion = germanic
+			change_culture = galician
+			add_core = EAL
+		}
+		228 = {
+			change_religion = germanic
+			change_culture = galician
+			add_core = EAL
+		}
+		231 = {
+			change_religion = germanic
+			change_culture = galician
+			add_core = EAL
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		232 = {
+			change_religion = germanic
+			change_culture = galician
+			add_core = EAL
+		}
+		1851 = {
+			change_religion = germanic
+			change_culture = galician
+			add_core = EAL
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		EAL = { 
+			change_primary_culture = galician 
+			change_religion = germanic
+		}
+	}
+}
+
+# Vandals
+country_event = {
+	id = et.37
+	title = "et.EVTNAME37"
+	desc = "et.EVTDESC37"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = ROW
+		}
+		owns = 223
+		NOT = { exists = VAN }
+		is_year = 400
+		NOT = { is_year = 800 }
+		NOT = { stability = 2 }
+		217 = {
+			NOT = { culture = vandal }
+			NOT = { owned_by = VAN }
+		}
+	}
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = "et.EVTOPTA37"
+		222 = {
+			change_culture = vandal
+			add_core = VAN
+		}
+		223 = {
+			change_culture = vandal
+			add_core = VAN
+			nationalist_rebels = 2
+			change_siege = 20
+		}
+		224 = {
+			change_culture = vandal
+			add_core = VAN
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		225 = {
+			change_culture = vandal
+			add_core = VAN
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		226 = {
+			change_culture = vandal
+			add_core = VAN
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		1748 = {
+			change_culture = vandal
+			add_core = VAN
+		}
+		1749 = {
+			change_culture = vandal
+			add_core = VAN
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+	}
+}
+
+
+# Visigoths
+country_event = {
+	id = et.44
+	title = "et.EVTNAME44"
+	desc = "et.EVTDESC44"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = ROW
+		}
+		NOT = { exists = GVI }
+		owns = 175
+		is_year = 380
+		NOT = { is_year = 800 }
+		NOT = { stability = 2 }
+		175 = {
+			NOT = { culture = gothic }
+			NOT = { owned_by = GVI }
+		}
+	}
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = "et.EVTOPTA44"
+		GVI = { change_religion = arianism }
+		create_alliance = GVI
+		if = {
+			limit = { owns = 175 }
+			175 = {
+				change_culture = gothic
+				cede_province = GVI
+				add_core = GVI
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 173 }
+			173 = {
+				change_culture = gothic
+				cede_province = GVI
+				add_core = GVI
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 176 }
+			176 = {
+				change_culture = gothic
+				cede_province = GVI
+				add_core = GVI
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 174 }
+			174 = {
+				change_culture = gothic
+				cede_province = GVI
+				add_core = GVI
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 196 }
+			196 = {
+				change_culture = gothic
+				cede_province = GVI
+				add_core = GVI
+				change_religion = arianism
+			}
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTB44"
+		GVI = { change_religion = arianism }
+		175 = {
+			change_culture = gothic
+			add_core = GVI
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		173 = {
+			change_culture = gothic
+			add_core = GVI
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		176 = {
+			change_culture = gothic
+			add_core = GVI
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		174 = {
+			change_culture = gothic
+			add_core = GVI
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		196 = {
+			change_culture = gothic
+			add_core = GVI
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+	}
+}
+
+# Ostrogoths
+country_event = {
+	id = et.45
+	title = "et.EVTNAME45"
+	desc = "et.EVTDESC45"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = ROW
+		}
+		NOT = { exists = OST }
+		owns = 140
+		is_year = 380
+		NOT = { is_year = 800 }
+		NOT = { stability = 2 }
+		140 = { 
+			NOT = { culture = gothic }
+			NOT = { owned_by = OST }
+		}
+	}
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = "et.EVTOPTA44"
+		OST = { change_religion = arianism }
+		create_alliance = OST
+		if = {
+			limit = { owns = 140 }
+			140 = {
+				change_culture = gothic
+				cede_province = OST
+				add_core = OST
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 139 }
+			139 = {
+				change_culture = gothic
+				cede_province = OST
+				add_core = OST
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 1831 }
+			1831 = {
+				change_culture = gothic
+				cede_province = OST
+				add_core = OST
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 1828 }
+			1828 = {
+				change_culture = gothic
+				cede_province = OST
+				add_core = OST
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 1767 }
+			1767 = {
+				change_culture = gothic
+				cede_province = OST
+				add_core = OST
+				change_religion = arianism
+			}
+		}
+		if = {
+			limit = { owns = 3002 }
+			3002 = {
+				change_culture = gothic
+				cede_province = OST
+				add_core = OST
+				change_religion = arianism
+			}
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTB44"
+		OST = { change_religion = arianism }
+		140 = {
+			change_culture = gothic
+			add_core = OST
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		139 = {
+			change_culture = gothic
+			add_core = OST
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		1831 = {
+			change_culture = gothic
+			add_core = OST
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		1828 = {
+			change_culture = gothic
+			add_core = OST
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		1767 = {
+			change_culture = gothic
+			add_core = OST
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+		3002 = {
+			change_culture = gothic
+			add_core = OST
+			change_religion = arianism
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+	}
+}

@@ -1,0 +1,624 @@
+usa_missions_ext_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = USA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	usa_independence = {
+		icon = mission_assemble_an_army
+		required_missions = { }
+		completed_by = 1783.9.3
+		trigger = {
+			is_subject = no
+			is_at_war = no
+		}
+		effect = {
+			northeast_america_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	defend_the_american_colonies = {
+		icon = mission_cannons_firing
+		required_missions = { usa_independence }
+		completed_by = 1807.1.1
+		provinces_to_highlight = {
+			region = northeast_america_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			northeast_america_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 50
+			add_stability = 2
+			southeast_america_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	conquer_florida = {
+		icon = mission_unite_home_region
+		required_missions = { defend_the_american_colonies }
+		completed_by = 1825.1.1
+		provinces_to_highlight = {
+			region = southeast_america_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			southeast_america_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "military_victory"
+				duration = 7300
+			}
+		}
+	}
+	reach_the_mississippi = {
+		icon = mission_settlers_north_america
+		required_missions = { conquer_florida }
+		completed_by = 1825.1.1
+		provinces_to_highlight = {
+			region = mississippi_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = usa_old_man_river.tooltip
+				num_of_owned_provinces_with = {
+					region = mississippi_region
+					value = 10
+				}
+			}
+			OR = {
+				has_idea_group = exploration_ideas
+				has_idea_group = expansion_ideas
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "colonial_enthusiasm"
+				duration = 7300
+			}
+		}
+	}
+
+	usa_acquire_texas_mission = {
+		icon = mission_collect_yasak
+		required_missions = { reach_the_mississippi }
+		position = 5
+		completed_by = 1845.12.29
+		provinces_to_highlight = {
+			OR = {
+				area = texas_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			texas_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			coastal_prarie_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			llano_estacado_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	usa_sea_to_shining_sea_mission = {
+		icon = mission_look_west
+		required_missions = { usa_acquire_texas_mission }
+		position = 6
+		completed_by = 1848.2.4
+		provinces_to_highlight = {
+			OR = {
+				area = california_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				area = california_area
+				value = 3
+			}
+		}
+		effect = {
+			central_valley_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_california_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oregon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	usa_manifest_destiny_mission = {
+		icon = mission_colonize_california
+		required_missions = { usa_sea_to_shining_sea_mission }
+		position = 7
+		completed_by = 1863.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = oregon_area
+				area = northern_california_area
+				area = great_basin_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			oregon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_california_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			great_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_manifest_destiny"
+				duration = 7300
+			}
+			arizona_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			alaska_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	usa_the_last_frontier_mission = {
+		icon = mission_colonize_alaska
+		required_missions = { usa_manifest_destiny_mission }
+		position = 8
+		completed_by = 1867.10.18
+		provinces_to_highlight = {
+			OR = {
+				area = alaska_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			alaska_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_last_frontier"
+				duration = 10950	#30 years
+			}
+		}
+	}
+	usa_hawaiian_islands_mission = {
+		icon = mission_potosi_silver
+		required_missions = { usa_the_last_frontier_mission }
+		position = 9
+		completed_by = 1898.7.4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1240		#Hawaii
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			has_discovered = 1240
+			owns_or_non_sovereign_subject_of = 1240		#Hawaii
+		}
+		effect = {
+			west_micronesia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+usa_missions_ext_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = USA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	usa_monroe_doctrine_mission = {
+		icon = mission_colonize_the_caribbean
+		required_missions = { usa_acquire_texas_mission }
+		position = 6
+		completed_by = 1868.10.10
+		provinces_to_highlight = {
+			OR = {
+				superregion = central_america_superregion 
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			all_country = {
+				OR = {
+					NOT = { capital_scope = { continent = north_america } }
+					is_colonial_nation = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_big_stick"
+				duration = 9125		#25 years
+			}
+		}
+	}
+	usa_puerto_rico_mission = {
+		icon = mission_rb_scottish_north_sea_trade
+		required_missions = { usa_sea_to_shining_sea_mission }
+		position = 7
+		completed_by = 1898.8.12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 492	#Puerto Rico
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 492		#Puerto Rico
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_mahanian_doctrine"
+				duration = 9125		#25 years
+			}
+		}
+	}
+	usa_50_states_mission = {
+		icon = mission_usa_old_western_regions_map
+		required_missions = { usa_manifest_destiny_mission }
+		position = 8
+		trigger = {
+			num_of_states = 50
+		}
+		effect = {
+			add_republican_tradition = 50
+		}
+	}
+}
+
+usa_missions_ext_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = USA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	usa_the_14th_colony_mission = {
+		icon = mission_settlers_north_america
+		required_missions = { usa_acquire_texas_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = canada_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				region = canada_region
+				value = 4
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	usa_panama_canal_mission = {
+		icon = mission_new_kingdom_of_granada
+		required_missions = { usa_monroe_doctrine_mission }
+		position = 7
+		completed_by = 1914.8.15
+		provinces_to_highlight = {
+			OR = {
+				province_id = 835
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			has_great_project = { type = panama_canal tier = 1 }
+		}
+		effect = {
+			add_prestige = 30
+			add_sailors = 500
+		}
+	}
+	usa_the_phillipines_mission = {
+		icon = mission_las_islas_filipinas
+		required_missions = { usa_puerto_rico_mission }
+		position = 8
+		completed_by = 1898.8.12
+		provinces_to_highlight = {
+			OR = {
+				area = visayas_area
+				area = luzon_area
+				area = southern_luzon_area
+				area = mindanao_area
+				area = west_mindanao_area
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			visayas_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			luzon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			southern_luzon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mindanao_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_mindanao_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_across_the_pacific"
+				duration = 9125		#25 years
+			}
+		}
+	}
+}
+
+usa_missions_ext_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = USA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	usa_proxy_warfare_mission = {
+		icon = mission_end_arakan_piracy
+		required_missions = { usa_new_superpower_mission }
+		position = 6
+		trigger = {
+			any_rival_country = {
+				has_spawned_supported_rebels = USA
+			}
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+}
+
+usa_missions_ext_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = USA
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	usa_federal_reserve_act_mission = {
+		icon = mission_rb_college_of_justice
+		required_missions = {  }
+		position = 1
+		completed_by = 1913.12.23
+		trigger = {
+			treasury_office = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_federal_reserve_act_mod"
+				duration = -1	#25 years
+			}
+		}
+	}
+	usa_state_universities_mission = {
+		icon = mission_rb_the_education_acts
+		required_missions = {  }
+		position = 2
+		trigger = {
+			university = 7
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_state_university_system"
+				duration = -1
+			}
+		}
+	}
+	usa_transcontinental_railroad_mission = {
+		icon = mission_steam_locomotive
+		required_missions = {  }
+		position = 3
+		trigger = {
+			central_plains_area = {
+				has_building = railroad
+			}
+			high_plains_area = {
+				has_building = railroad
+			}
+			colorado_plateau_area = {
+				has_building = railroad
+			}
+			utah_area = {
+				has_building = railroad
+			}
+			great_basin_area = {
+				has_building = railroad
+			}
+			california_area = {
+				has_building = railroad
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_transcontinental_railroad"
+				duration = -1
+			}
+		}
+	}
+	usa_interstate_highways_mission = {
+		icon = mission_rb_scottish_the_darien_scheme
+		required_missions = {  }
+		position = 4
+		trigger = {
+			highway = 25
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_interstate_highway_system"
+				duration = -1
+			}
+		}
+	}
+	usa_new_superpower_mission = {
+		icon = mission_assemble_an_army
+		required_missions = {  }
+		position = 5
+		trigger = {
+			NOT = { great_power_rank = 3 }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_world_superpower"
+				duration = 10950
+			}
+		}
+	}
+	usa_american_empire_mission = {
+		icon = mission_raid_on_valencia
+		required_missions = { usa_new_superpower_mission }
+		position = 6
+		trigger = {
+			num_of_continents = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "usa_imperial_america"
+				duration = 10950
+			}
+		}
+	}
+}

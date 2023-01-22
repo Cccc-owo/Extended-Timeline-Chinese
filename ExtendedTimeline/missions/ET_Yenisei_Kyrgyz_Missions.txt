@@ -1,0 +1,600 @@
+yky_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = YKY
+	}
+	has_country_shield = yes
+
+	xiongnu_war_yky = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			owned_by = XIO
+		}
+		trigger = {
+			OR = {
+				war_score_against = {
+					who = XIO
+					value = 25
+				}
+				NOT = { exists = XIO }
+			}
+		}
+		effect = {
+			1065 = {
+				add_core = ROOT
+				cede_province = ROOT
+			}
+			4222 = {
+				add_core = ROOT
+				cede_province = ROOT
+			}
+		}
+	}
+	mongolia_yky = {
+		icon = mission_conquer_5_states
+		required_missions = { xiongnu_war_yky }
+		provinces_to_highlight = {
+			region = mongolia_region
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			mongolia_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+	uyghur_khaganate_yky = {
+		icon = mission_empire
+		required_missions = { mongolia_yky }
+		provinces_to_highlight = {
+			OR = {
+				area = north_zungaria
+				area = zungaria_area
+				area = tarim_basin_area
+				area = shanshan_area
+				area = kashgaria_area
+			}
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			north_zungaria = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			zungaria_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			tarim_basin_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			shanshan_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			kashgaria_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+	jetisu_yky = {
+		icon = mission_unite_home_region
+		required_missions = { uyghur_khaganate_yky }
+		provinces_to_highlight = {
+			OR = {
+				area = jetysuu_area
+				area = arys_area
+				area = ferghana_area
+			}
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			jetysuu_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			arys_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			ferghana_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+	central_asia_yky = {
+		icon = mission_assemble_an_army
+		required_missions = { jetisu_yky }
+		provinces_to_highlight = {
+			region = central_asia_region
+			is_city = yes
+		}
+		trigger = {
+			central_asia_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_legitimacy = 15
+			add_horde_unity = 15
+			add_country_modifier = {
+				name = central_asia_yky_mod
+				duration = 7300
+			}
+		}
+	}
+}
+
+yky_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = YKY
+	}
+	has_country_shield = yes
+
+	beijing_yky = {
+		icon = mission_great_wall
+		required_missions = { mongolia_yky }
+		position = 3
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			province_id = 1816
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 1816
+		}
+		effect = {
+			north_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tang_dynasty_yky = {
+		icon = mission_chinese_general_riding
+		required_missions = { beijing_yky }
+		provinces_to_highlight = {
+			owner = {
+				is_emperor_of_china = yes
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				OR = {
+					is_emperor_of_china = yes
+					NOT = {
+						any_country = { is_emperor_of_china = yes }
+					}
+				}
+			}
+			else = {
+				north_china_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_city = no
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = tang_dynasty_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	fuyu_kyrgyz_yky = {
+		icon = mission_non-western_soldiers
+		required_missions = { jetisu_yky }
+		provinces_to_highlight = {
+			region = manchuria_region
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			manchuria_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			korea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	korea_yky = {
+		icon = mission_conquer_50_development
+		required_missions = { fuyu_kyrgyz_yky }
+		provinces_to_highlight = {
+			region = korea_region
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_stability = 1
+		}
+	}
+}
+
+yky_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = YKY
+	}
+	has_country_shield = yes
+
+	military_expansion_yky = {
+		icon = mission_build_up_to_force_limit
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = military_expansion_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	construction_of_forts_yky = {
+		icon = mission_arabian_fort
+		required_missions = { military_expansion_yky }
+		trigger = {
+			any_owned_province = {
+				OR = {
+					has_building = fort_15th
+					has_building = fort_16th
+					has_building = fort_17th
+					has_building = fort_18th
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = construction_of_forts_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	road_system_yky = {
+		icon = mission_early_game_buildings
+		required_missions = { construction_of_forts_yky }
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						has_building = road
+						has_building = highway
+						has_building = railroad
+						has_building = mass_transit_system
+					}
+				}
+				amount = 15
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = road_system_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	workshops_yky = {
+		icon = mission_have_manufactories
+		required_missions = { road_system_yky }
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						has_building = storehouse
+						has_building = windmill
+						has_building = workshop
+						has_building = counting_house
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_years_of_income = 1
+		}
+	}
+	marketplaces_yky = {
+		icon = mission_asian_trader
+		required_missions = { workshops_yky }
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						has_building = marketplace
+						has_building = trade_post
+						has_building = trade_depot
+						has_building = treasury_office
+					}
+				}
+				amount = 15
+			}
+		}
+		effect = {
+			add_years_of_income = 2
+		}
+	}
+}
+
+yky_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = YKY
+	}
+	has_country_shield = yes
+
+	gokturk_administration_yky = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { orkhon_script_yky }
+		position = 2
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				development = 20
+			}
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+	trade_fleet_yky = {
+		icon = mission_galleys_in_port
+		required_missions = {  }
+		trigger = {
+			num_of_light_ship = 10
+		}
+		effect = {
+			add_country_modifier = {
+				name = trade_fleet_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	military_fleet_yky = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { trade_fleet_yky }
+		trigger = {
+			navy_size_percentage = 0.50
+		}
+		effect = {
+			add_country_modifier = {
+				name = military_fleet_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	kyushu_yky = {
+		icon = mission_invade_island
+		required_missions = { military_fleet_yky }
+		provinces_to_highlight = {
+			area = kyushu_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kyushu_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = kyushu_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	japan_yky = {
+		icon = mission_japanese_fort
+		required_missions = { kyushu_yky }
+		provinces_to_highlight = {
+			region = japan_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			japan_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+}
+
+yky_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = YKY
+	}
+	has_country_shield = yes
+
+	orkhon_script_yky = {
+		icon = mission_alliances
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			has_institution = writing
+		}
+		effect = {
+			add_country_modifier = {
+				name = orkhon_script_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	trade_links_yky = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { orkhon_script_yky }
+		trigger = {
+			home_trade_node = { highest_value_trade_node = yes is_strongest_trade_power = ROOT }
+		}
+		effect = {
+			add_country_modifier = {
+				name = trade_links_yky_mod
+				duration = 7300
+			}
+		}
+	}
+	fur_trade_yky = {
+		icon = mission_trade_company_region_abroad
+		required_missions = { trade_links_yky }
+		provinces_to_highlight = {
+			trade_goods = fur
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			trading_bonus = { trade_goods = fur value = yes }
+		}
+		effect = {
+			add_country_modifier = {
+				name = trade_links_yky_mod
+				duration = -1
+			}
+		}
+	}
+	multi_ethnic_empire_yky = {
+		icon = mission_colonial
+		required_missions = {  }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				culture = kirgiz
+			}
+		}
+		effect = {
+			add_stability = 1
+		}
+	}
+	state_church_yky = {
+		icon = mission_religious
+		required_missions = { multi_ethnic_empire_yky }
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						has_building = glorious_monument
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = state_church_yky_mod
+				duration = -1
+			}
+		}
+	}
+}

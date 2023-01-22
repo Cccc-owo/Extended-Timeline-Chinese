@@ -1,0 +1,82 @@
+#521 - Kathiawar
+
+owner = WSA
+controller = WSA
+culture = gujarati
+religion = hinduism
+capital = "Rajkot"
+trade_goods = dyes
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+discovered_by = nomad_group
+discovered_by = eastern_nomad_group
+discovered_by = western_nomad_group
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = indian
+discovered_by = early_indian
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = WSA
+
+405.1.1 = { owner = GUP controller = GUP add_core = GUP remove_core = WSA }
+475.1.1 = { owner = GUJ controller = GUJ add_core = GUJ remove_core = GUP }
+734.1.1 = { owner = PRB controller = PRB add_core = PRB remove_core = GUJ }
+875.1.1 = { owner = JGD controller = JGD add_core = JGD remove_core = PRB }
+1080.1.1 = { religion = jainism }
+1147.1.1 = { owner = KAT controller = KAT add_core = KAT remove_core = JGD }
+1190.1.1 = { religion = hinduism }
+
+1470.1.1 = {
+	owner = GUJ
+	controller = GUJ
+	add_core = GUJ
+}
+1498.1.1 = { discovered_by = POR }
+1540.1.1 = {
+	owner = NVR
+	controller = NVR
+	remove_core = GUJ
+} # Kathiawar independent while Ahmad Shahis are busy with internal conflicts
+1573.6.1 = {
+	owner = MUG
+	controller = MUG
+	add_core = MUG
+} # Conquered by Akbar
+1622.3.1 = {
+	controller = REB
+	revolt = { 
+	type = pretender_rebels 
+	size = 0 
+	name = "Khurrams Faction" 
+	leader = "Shah Jahan Timurid"
+	} 
+} #Should be named Khurram at this point
+1622.7.1 = { controller = MUG revolt = { } } #Retaken by Jahangir and Nur Jahan
+1640.1.1 = {
+	owner = RJK
+	controller = RJK
+}
+1725.1.1 = { #Set up vassalage
+	owner = BDA
+	controller = BDA
+	add_core = BDA
+	remove_core = MUG	
+}
+1802.1.1 = {
+	owner = RJK
+	controller = RJK
+	remove_core = BDA	
+}
+
+1925.1.1 = { base_manpower = 2 }
+1930.1.1  = { add_core = INI }
+1947.8.15 = { owner = INI controller = INI }
+1950.1.1 = { base_tax = 3 }
+1975.1.1 = { base_production = 3 }
+2000.1.1 = { base_tax = 4 base_production = 4 base_manpower = 3 }

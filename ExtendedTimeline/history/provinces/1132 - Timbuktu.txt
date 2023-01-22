@@ -1,0 +1,62 @@
+#1132 - Timbuktu
+
+culture = tuareg
+base_manpower = 2
+religion = shamanism
+capital = "Timbuktu"
+trade_goods = unknown
+hre = no
+discovered_by = sub_saharan
+base_tax = 3
+base_production = 3
+native_size = 30
+native_ferocity = 4.5
+native_hostileness = 8 
+center_of_trade = 2
+
+350.1.1 = { owner = TMB controller = TMB add_core = TMB is_city = yes trade_goods = cloth }
+800.1.1 = { base_tax = 4 base_production = 4 }
+900.1.1 = { base_tax = 5 base_production = 5 }
+1000.1.1 = { base_tax = 6 base_production = 6 }
+1100.1.1 = { base_tax = 7 base_production = 7 }
+1200.1.1 = { base_tax = 8 base_production = 8 religion = sunni }
+1324.1.1 = { owner = MAL controller = MAL add_core = MAL }
+1330.1.1 = { fort_15th = yes } # Sankore Mosque and Madrasa was the center of Islamis scholarship in Bilad al-Sudan
+1353.1.1 = { discovered_by = MOR } #Ibn Battuta
+1389.1.1 = { owner = TMB controller = TMB remove_core = MAL }
+
+1469.1.1 = { owner = SON controller = SON add_core = SON culture = songhai } # Conquered by Sunni Ali Ber of Songhai
+1471.1.1 = { unrest = 7 } # Muslim leaders in city launch revolt to end Songhai rule
+1472.1.1 = { unrest = 0 } # Sunni Ali represses Muslim leadership of Timbuktu
+1586.1.1 = { revolt = { type = revolutionary_rebels size = 1 } controller = REB } # Civil war between Al-Sadduk and Ishak
+1588.1.1 = { revolt = {} controller = SON unrest = 7 } # Ishak reconquers lands in revolt, uneasy on throne
+1591.5.1 = { owner = MOR controller = MOR add_core = MOR } #moroccans seize Timbuktu
+1593.1.1 = { unrest = 7 } # Moroccans launches purge of city elite
+1618.1.1 = { owner = TMB controller = TMB add_core = TMB remove_core = MOR } #Moroccans no longer appoint governors, local Moroccans, the Arma, rule on their own (recycle TMB tag)
+1642.1.1 = { remove_core = SON } # Collapse of last vestiges of unity among Songhai
+1675.1.1 = { unrest = 4 } # under vassalage of Bambara kingdom of Kaladian Kulibali
+1683.1.1 = { unrest = 1 } # Bambara overlordship lost in wake of death of death of Kaladian Kulibali
+1716.1.1 = { unrest = 7 } # Mansur ibn Masud's Coup and wave of repression
+1720.1.1 = { unrest = 0 } # Mansur ibn Masud overthrown and Arma restored
+1737.1.1 = { unrest = 3 } # Tuareg raids destablize the region
+1752.1.1 = { unrest = 4 } # Bambara kingdom of Mamali Kulibali make Timbuktu tributary of Bambara
+1756.1.1 = { unrest = 9 } # Denkoro seizes power in wake of father Mamali's death, civil war
+1757.1.1 = { unrest = 2 } # Bambara control lost in wake of civil wars in Segu
+1770.1.1 = { unrest = 3 } # Tuareg lay seige to city, causing famine
+1771.1.1 = { unrest = 0 } # Tuareg siege resolved via negotiation
+1773.1.1 = { unrest = 2 } # Bambara overlordship restored by Ngolo Diarra, Bambara overseers appointed in city
+
+1826.1.1   = { owner = ZAF controller = ZAF add_core = ZAF }
+1828.1.1   = { discovered_by = FRA }
+1855.1.1   = { discovered_by = GER discovered_by = PRU } #Heinrich Barth
+1862.3.16  = { owner = SOF controller = SOF add_core = SOF remove_core = ZAF }
+1880.1.1   = { base_tax = 3 base_production = 3 }
+1890.1.1   = { owner = TMB controller = TMB add_core = TMB remove_core = SOF }
+1893.12.15 = { owner = FR2 controller = FR2 add_core = FR2 }
+1910.1.1 = { discovered_by = western discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1942.11.16 = { owner = FR2 controller = FR2 remove_core = FRV } # Under Free French control after Operation Torch
+1960.6.20  = { owner = MAL controller = MAL add_core = MAL remove_core = FR2 }
+2012.4.1   = { revolt = { type = nationalist_rebels size = 1 } controller = REB }
+2012.6.26  = { revolt = {} controller = MAL }
+

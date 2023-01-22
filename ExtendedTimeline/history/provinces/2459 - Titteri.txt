@@ -1,0 +1,70 @@
+#2577 - Titteri
+
+owner = MRN
+controller = MRN
+culture = berber
+religion = shamanism
+capital = "Medea"
+trade_goods = grain
+hre = no
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = MRN
+
+40.1.1 = { owner = ROM controller = ROM add_core = ROM }
+360.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+429.1.1 = { owner = ATV controller = ATV add_core = ATV remove_core = ROW }
+578.1.1 = { owner = OUA controller = OUA add_core = OUA remove_core = ATV }
+708.1.1 = { owner = UMA controller = UMA add_core = UMA }
+741.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } #Great Berber revolt
+743.1.1 = { owner = MZB controller = MZB add_core = MZB remove_core = UMA revolt = {} } #Caliphate loses control of the region
+777.1.1 = { religion = ibadi }
+780.1.1 = { culture = algerian }
+909.1.1 = { owner = FAT controller = FAT add_core = FAT remove_core = MZB }
+940.1.1 = { religion = shiite }
+973.1.1 = { owner = TUN controller = TUN add_core = TUN remove_core = FAT }
+1018.1.1 = { owner = KBA controller = KBA add_core = KBA remove_core = TUN }
+1050.1.1 = { religion = sunni }
+1152.1.1 = { owner = MOR controller = MOR add_core = MOR remove_core = KBA }
+1235.1.1 = { owner = TLC controller = TLC add_core = TLC remove_core = MOR }
+1337.1.1 = { owner = MOR controller = MOR }
+1348.1.1 = { owner = TLC controller = TLC }
+1352.1.1 = { owner = MOR controller = MOR }
+1359.1.1 = { owner = TLC controller = TLC }
+
+1517.1.1 = {
+	owner = ALG
+	controller = ALG
+	add_core = ALG
+	remove_core = TLC
+}
+1755.1.1 = { base_manpower = 2 }
+1785.1.1 = { base_production = 2 }
+1815.1.1 = { base_production = 3 }
+
+1845.1.1 = { base_tax = 2 }
+1847.12.21 = { owner = FRA controller = FRA add_core = FRA }
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+	     } # Republic proclaimed
+1875.1.1 = { base_manpower = 3 }
+1905.1.1 = { base_tax = 3 }
+1910.1.1 = { discovered_by = asian }
+1935.1.1 = { base_tax = 4 }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1942.11.16 = { owner = FR2 controller = FR2 remove_core = FRV } # Under Free French control after Operation Torch
+1962.7.3   = { owner = ALG controller = ALG remove_core = FR2 }
+1965.1.1 = { base_production = 4 }
+2000.1.1 = { base_tax = 5 base_manpower = 4 }

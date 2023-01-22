@@ -1,0 +1,259 @@
+funan_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+		potential = {
+		AND = {
+			tag = FUN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	fun_trade_empire_mission = {
+		icon = mission_junk_boat
+		required_missions = { } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1365		#Gulf of Siam
+				province_id = 1361		#Malacca
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			#Gulf of Siam
+			1365 = {
+				is_strongest_trade_power = ROOT
+			}
+			
+			#Malacca
+			1361 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "fun_world_trade_monopoly"
+				duration = 10950
+			}
+		}
+	}
+	fun_grand_merchant_fleet_mission = {
+		icon = mission_khmer_galleys
+		required_missions = { } #none
+		position = 2
+		trigger = {
+			num_of_light_ship = 20
+		}
+		effect = {
+			add_country_modifier = {
+				name = "fun_trade_armada"
+				duration = 10950
+			}
+		}
+	}
+	fun_monopolize_the_gulf_mission = {
+		icon = mission_end_arakan_piracy
+		required_missions = { } #none
+		position = 3
+		completed_by = 150.1.1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 600		#Ayutthaya
+				province_id = 603		#Rayong
+				province_id = 2387		#Phetchaburi
+				area = north_tenasserim_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 600
+			owns_core_province = 603
+			owns_core_province = 2387
+			north_tenasserim_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 30
+		}
+	}
+	fun_control_the_mekong_mission = {
+		icon = mission_conquer_siam
+		required_missions = { fun_monopolize_the_gulf_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = mekong_area
+				area = cambodia_area
+				area = khorat_area
+				area = south_laos_area
+			}
+			NOT = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			mekong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			khorat_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			south_laos_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "fun_mekong_control"
+				duration = 10950
+			}
+		}
+	}
+	fun_seize_mon_ports_mission = {
+		icon = mission_sanchi_stupa
+		required_missions = { fun_control_the_mekong_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = lower_burma_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lower_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "fun_indian_ocean_access"
+				duration = 10950
+			}
+		}
+	}
+}
+
+funan_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+		potential = {
+		AND = {
+			tag = FUN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	fun_dig_canals_mission = {
+		icon = mission_cromandel_coast
+		required_missions = { } #none
+		position = 3
+		trigger = {
+			road = 10
+			custom_trigger_tooltip = {
+				tooltip = improve_10_different_provinces
+				
+				calc_true_if = {
+					all_owned_province = {
+						num_of_times_improved = 1
+					}
+					amount = 10
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "fun_canal_system"
+				duration = 10950
+			}
+		}
+	}
+	fun_subjugate_cham_polities_mission = {
+		icon = mission_lower_burma_campaign
+		required_missions = { }	#none
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = champa_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			champa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+		}
+	}
+	fun_conquer_vietnam_mission = {
+		icon = mission_emperor_of_hindusthan
+		required_missions = { fun_subjugate_cham_polities_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = vietnam_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 30
+			
+			
+			red_river_delta_area = {
+				limit = {
+					NOT = { owned_by = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}

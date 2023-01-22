@@ -1,0 +1,1991 @@
+#######################
+#ET Institution Events#
+#######################
+
+namespace = et_institutions
+
+#Imperialism
+country_event = {
+	id = et_institutions.1
+	title = et_institutions.1.t
+	desc = et_institutions.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.1.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.1.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_imperialism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.100 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.101 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.100
+	title = et_institutions.1.t
+	desc = et_institutions.100.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.1.a
+		custom_tooltip = et_institutions.1.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.101
+	title = et_institutions.1.t
+	desc = et_institutions.101.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.1.a
+		custom_tooltip = et_institutions.1.a.tt
+	}
+}
+
+
+#Industrialization
+country_event = {
+	id = et_institutions.2
+	title = et_institutions.2.t
+	desc = et_institutions.2.d
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.2.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.2.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_industrialization"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.200 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.201 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.200
+	title = et_institutions.2.t
+	desc = et_institutions.200.d
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.2.a
+		custom_tooltip = et_institutions.2.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.201
+	title = et_institutions.2.t
+	desc = et_institutions.201.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.2.a
+		custom_tooltip = et_institutions.2.a.tt
+	}
+}
+
+
+#Nationalism
+country_event = {
+	id = et_institutions.3
+	title = et_institutions.3.t
+	desc = et_institutions.3.d
+	picture = REFORM_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.3.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.3.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_nationalism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.300 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.301 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.300
+	title = et_institutions.3.t
+	desc = et_institutions.300.d
+	picture = REFORM_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.3.a
+		custom_tooltip = et_institutions.3.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.301
+	title = et_institutions.3.t
+	desc = et_institutions.301.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.3.a
+		custom_tooltip = et_institutions.3.a.tt
+	}
+}
+
+
+#Electrification
+country_event = {
+	id = et_institutions.4
+	title = et_institutions.4.t
+	desc = et_institutions.4.d
+	picture = BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.4.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.4.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_electrification"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.400 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.401 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.400
+	title = et_institutions.4.t
+	desc = et_institutions.400.d
+	picture = BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.4.a
+		custom_tooltip = et_institutions.4.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.401
+	title = et_institutions.4.t
+	desc = et_institutions.401.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.4.a
+		custom_tooltip = et_institutions.4.a.tt
+	}
+}
+
+
+#Globalization
+country_event = {
+	id = et_institutions.5
+	title = et_institutions.5.t
+	desc = et_institutions.5.d
+	picture = EUROPEAN_DEBATE_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.5.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.5.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_globalization"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.500 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.501 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.500
+	title = et_institutions.5.t
+	desc = et_institutions.500.d
+	picture = EUROPEAN_DEBATE_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.5.a
+		custom_tooltip = et_institutions.5.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.501
+	title = et_institutions.5.t
+	desc = et_institutions.501.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.5.a
+		custom_tooltip = et_institutions.5.a.tt
+	}
+}
+
+
+#The Internet
+country_event = {
+	id = et_institutions.6
+	title = et_institutions.6.t
+	desc = et_institutions.6.d
+	picture = EUROPEAN_DEBATE_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.6.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.6.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_the_internet"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.600 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.601 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.600
+	title = et_institutions.6.t
+	desc = et_institutions.600.d
+	picture = EUROPEAN_DEBATE_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.6.a
+		custom_tooltip = et_institutions.6.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.601
+	title = et_institutions.6.t
+	desc = et_institutions.601.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.6.a
+		custom_tooltip = et_institutions.6.a.tt
+	}
+}
+
+#Legalism
+country_event = {
+	id = et_institutions.11
+	title = et_institutions.11.t
+	desc = et_institutions.11.d
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.11.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.11.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_legalism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1100 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1101 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1100
+	title = et_institutions.11.t
+	desc = et_institutions.1100.d
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.11.a
+		custom_tooltip = et_institutions.11.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1101
+	title = et_institutions.11.t
+	desc = et_institutions.1101.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.11.a
+		custom_tooltip = et_institutions.11.a.tt
+	}
+}
+
+#Ancient Imperialism
+country_event = {
+	id = et_institutions.12
+	title = et_institutions.12.t
+	desc = et_institutions.12.d
+	picture = ROMAN_ROAD_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.12.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.12.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_ancient_imperialism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1200 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1201 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1200
+	title = et_institutions.12.t
+	desc = et_institutions.1200.d
+	picture = ROMAN_ROAD_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.12.a
+		custom_tooltip = et_institutions.12.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1201
+	title = et_institutions.12.t
+	desc = et_institutions.1201.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.12.a
+		custom_tooltip = et_institutions.12.a.tt
+	}
+}
+
+#Caste System
+country_event = {
+	id = et_institutions.13
+	title = et_institutions.13.t
+	desc = et_institutions.13.d
+	picture = STREET_SPEECH_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.13.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.13.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_caste_system"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1300 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1301 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1300
+	title = et_institutions.13.t
+	desc = et_institutions.1300.d
+	picture = STREET_SPEECH_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.13.a
+		custom_tooltip = et_institutions.13.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1301
+	title = et_institutions.13.t
+	desc = et_institutions.1301.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.13.a
+		custom_tooltip = et_institutions.13.a.tt
+	}
+}
+
+#Organized Religion
+country_event = {
+	id = et_institutions.14
+	title = et_institutions.14.t
+	desc = et_institutions.14.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.14.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.14.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_organized_religion"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1400 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1401 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1400
+	title = et_institutions.14.t
+	desc = et_institutions.1400.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.14.a
+		custom_tooltip = et_institutions.14.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1401
+	title = et_institutions.14.t
+	desc = et_institutions.1401.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.14.a
+		custom_tooltip = et_institutions.14.a.tt
+	}
+}
+
+#Serfdom
+country_event = {
+	id = et_institutions.15
+	title = et_institutions.15.t
+	desc = et_institutions.15.d
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.15.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.15.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_serfdom"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1500 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1501 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1500
+	title = et_institutions.15.t
+	desc = et_institutions.1500.d
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.15.a
+		custom_tooltip = et_institutions.15.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1501
+	title = et_institutions.15.t
+	desc = et_institutions.1501.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.15.a
+		custom_tooltip = et_institutions.15.a.tt
+	}
+}
+
+#Manorialism
+country_event = {
+	id = et_institutions.16
+	title = et_institutions.16.t
+	desc = et_institutions.16.d
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.16.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.16.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_manorialism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1600 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1601 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1600
+	title = et_institutions.16.t
+	desc = et_institutions.1600.d
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.16.a
+		custom_tooltip = et_institutions.16.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1601
+	title = et_institutions.16.t
+	desc = et_institutions.1601.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.16.a
+		custom_tooltip = et_institutions.16.a.tt
+	}
+}
+
+#Early Feudalism
+country_event = {
+	id = et_institutions.17
+	title = et_institutions.17.t
+	desc = et_institutions.17.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.17.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.17.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_early_feudalism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1700 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1701 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1700
+	title = et_institutions.17.t
+	desc = et_institutions.1700.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.17.a
+		custom_tooltip = et_institutions.17.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1701
+	title = et_institutions.17.t
+	desc = et_institutions.1701.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.17.a
+		custom_tooltip = et_institutions.17.a.tt
+	}
+}
+
+#Crop Rotation
+country_event = {
+	id = et_institutions.18
+	title = et_institutions.18.t
+	desc = et_institutions.18.d
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.18.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.18.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_crop_rotation"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1800 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1801 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1800
+	title = et_institutions.18.t
+	desc = et_institutions.1800.d
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.18.a
+		custom_tooltip = et_institutions.18.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1801
+	title = et_institutions.18.t
+	desc = et_institutions.1801.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.18.a
+		custom_tooltip = et_institutions.18.a.tt
+	}
+}
+
+#Civil Service
+country_event = {
+	id = et_institutions.19
+	title = et_institutions.19.t
+	desc = et_institutions.19.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.19.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.19.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_civil_service"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.1900 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.1901 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.1900
+	title = et_institutions.19.t
+	desc = et_institutions.1900.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.19.a
+		custom_tooltip = et_institutions.19.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.1901
+	title = et_institutions.19.t
+	desc = et_institutions.1901.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.19.a
+		custom_tooltip = et_institutions.19.a.tt
+	}
+}
+
+#Manuscripts
+country_event = {
+	id = et_institutions.20
+	title = et_institutions.20.t
+	desc = et_institutions.20.d
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.20.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.20.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_manuscript_culture"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.2000 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.2001 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.2000
+	title = et_institutions.20.t
+	desc = et_institutions.2000.d
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.20.a
+		custom_tooltip = et_institutions.20.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.2001
+	title = et_institutions.20.t
+	desc = et_institutions.2001.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.20.a
+		custom_tooltip = et_institutions.20.a.tt
+	}
+}
+
+#Scholasticism
+country_event = {
+	id = et_institutions.21
+	title = et_institutions.21.t
+	desc = et_institutions.21.d
+	picture = UNIVERSITY_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.21.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.21.a.tt
+		FROM = {
+			add_building = university
+			add_permanent_province_modifier = {
+				name = "birthplace_of_scholasticism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.2100 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.2101 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.2100
+	title = et_institutions.21.t
+	desc = et_institutions.2100.d
+	picture = UNIVERSITY_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.21.a
+		custom_tooltip = et_institutions.21.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.2101
+	title = et_institutions.21.t
+	desc = et_institutions.2101.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.21.a
+		custom_tooltip = et_institutions.21.a.tt
+	}
+}
+
+#Guilds
+country_event = {
+	id = et_institutions.22
+	title = et_institutions.22.t
+	desc = et_institutions.22.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.22.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.22.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_guilds"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.2200 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.2201 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.2200
+	title = et_institutions.22.t
+	desc = et_institutions.2200.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.22.a
+		custom_tooltip = et_institutions.22.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.2201
+	title = et_institutions.22.t
+	desc = et_institutions.2201.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.22.a
+		custom_tooltip = et_institutions.22.a.tt
+	}
+}
+
+#Medicine
+country_event = {
+	id = et_institutions.23
+	title = et_institutions.23.t
+	desc = et_institutions.23.d
+	picture = FAMINE_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.23.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.23.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_medicine"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.2300 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.2301 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.2300
+	title = et_institutions.23.t
+	desc = et_institutions.2300.d
+	picture = FAMINE_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.23.a
+		custom_tooltip = et_institutions.23.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.2301
+	title = et_institutions.23.t
+	desc = et_institutions.2301.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.23.a
+		custom_tooltip = et_institutions.23.a.tt
+	}
+}
+
+#Feudalism
+country_event = {
+	id = et_institutions.24
+	title = et_institutions.24.t
+	desc = et_institutions.24.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = et_institutions.24.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = et_institutions.24.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_feudalism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = et_institutions.2400 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+				}
+				country_event = { id = et_institutions.2401 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = et_institutions.2400
+	title = et_institutions.24.t
+	desc = et_institutions.2400.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.24.a
+		custom_tooltip = et_institutions.24.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = et_institutions.2401
+	title = et_institutions.24.t
+	desc = et_institutions.2401.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_institutions.24.a
+		custom_tooltip = et_institutions.24.a.tt
+	}
+}

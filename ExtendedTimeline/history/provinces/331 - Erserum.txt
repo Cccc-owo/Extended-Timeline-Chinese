@@ -1,0 +1,87 @@
+#331 - Erzurum
+
+owner = ARM
+controller = ARM
+culture = armenian
+religion = armenian_religion
+capital = "Karno Kaghak"
+trade_goods = livestock
+hre = no
+discovered_by = barbarian
+discovered_by = western
+discovered_by = nomad_group
+discovered_by = western_nomad_group
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes
+add_core = ARM
+
+114.1.1 = { owner = ROM controller = ROM add_core = ROM }
+117.1.1 = { owner = ARM controller = ARM remove_core = ROM }
+387.1.1 = { owner = ROM controller = ROM add_core = ROM remove_core = ARM }
+390.1.1 = { capital = "Theodosiopolis" }
+395.1.17 = { controller = BYZ owner = BYZ add_core = BYZ remove_core = ROM } # Final division of the empire
+440.1.1 = { religion = chalcedonism }
+451.11.1 = { religion = coptic }
+701.1.1 = { owner = ARM controller = ARM add_core = ARM add_core = UMA }
+750.1.1 = { add_core = ABA remove_core = UMA }
+800.1.1 = { base_tax = 4 base_production = 4 }
+860.1.1 = { owner = KAY controller = KAY add_core = KAY }
+884.1.1 = { remove_core = ABA }
+949.1.1 = { owner = BYZ controller = BYZ add_core = BYZ }
+1000.1.1 = { base_manpower = 4 }
+1071.8.26 = { owner = SLT controller = SLT add_core = SLT capital = "Erzurum" }
+1201.1.1 = { owner = RUM controller = RUM add_core = RUM }
+1234.1.1 = { owner = KHA controller = KHA add_core = KHA remove_core = RUM }
+1260.1.1 = { owner = ILK controller = ILK add_core = ILK remove_core = KHA }
+1335.1.1 = { owner = ERE controller = ERE add_core = ERE remove_core = ILK }
+1378.1.1 = { owner = QAR controller = QAR add_core = QAR remove_core = ERE }
+1399.1.1 = { owner = TIM controller = TIM }
+
+1402.1.1 = {	owner = AKK
+		controller = AKK
+		add_core = AKK
+		remove_core = TIM
+	   } # The Ak Koyunlu
+1435.1.1 = { unrest = 10 } #Ak Koyunlu Civil War
+1453.1.1 = { discovered_by = western unrest = 0 } #Ak Koyunlu Civil War
+#1468 - Usun Hassan takes Erzerum from other Ak Koyunlu ruler.
+1496.2.8 = { controller = REB revolt = { type = pretender_rebels size = 0 name = "Qasim Jahangir's Faction" leader = "Qasim Jahangir Ak Koyunlu" } } # Civil war in Ak Koyunlu
+1507.1.1 = {
+	owner = PER
+	controller = PER
+	add_core = PER
+		revolt = { }
+	remove_core = AKK
+} # The Safavids took over
+1514.8.23 = {
+	owner = TUR
+	controller = TUR
+	add_core = TUR
+	remove_core = PER
+} # Conquered by the Ottomans
+1658.1.1 = { revolt = { type = revolutionary_rebels size = 0.5 } controller = REB } # Revolt of Abaza Hasan Pasha
+1659.1.1 = { revolt = {} controller = TUR }
+
+1837.1.1 = { base_production = 5 }
+1875.1.1 = { base_tax = 5 }
+1910.1.1 = { discovered_by = asian }
+1912.1.1 = { base_manpower = 5 }
+1915.4.1   = { religion = sunni culture = turkish } #Armenian genocide
+1916.2.16  = { controller = RUS }
+1918.3.3   = { controller = TUR }
+1920.4.24  = { owner = TKY controller = TKY add_core = TKY }
+1920.8.10  = { owner = ARM controller = ARM add_core = ARM }
+1920.12.2  = { owner = TKY controller = TKY }
+1922.11.1  = { remove_core = TUR }
+1951.1.1 = { base_production = 6 }
+2000.1.1 = { base_tax = 6 }
+
+
+

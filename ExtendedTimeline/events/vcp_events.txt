@@ -1,0 +1,272 @@
+namespace = vcp
+
+#Nobles attempt to seize the power
+country_event = {
+
+	id = vcp.1
+	title = "vcp.EVTNAME1"
+	desc = "vcp.EVTDESC1"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		NOT = { legitimacy = 30 }
+		NOT = { is_year = 1900 }
+		NOT = { government = republic }
+		adm_tech = 38
+	}
+	
+	mean_time_to_happen = {
+		months = 16000
+
+		modifier = {
+			factor = 0.8
+			has_regency = yes
+		}
+		
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 0 }
+		}
+		
+		modifier = {
+			factor = 0.7
+			NOT = { legitimacy = 30 }
+		}
+		
+	}
+	
+	option = {
+		name = "vcp.EVTNAME1.a"			# Noble succeeds
+		add_government_reform = noble_elite_reform
+		kill_ruler = yes
+		add_country_modifier = {
+			name = "powerful_nobles"
+			duration = 3600
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+	option = {
+		name = "vcp.EVTNAME1.b"			# Noble fails
+		add_stability  = -1
+		random_owned_province = {
+			limit = { is_core = ROOT }
+			pretender_rebels = 1
+			change_siege = 20		#so they take them quickly
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+}
+
+#Volkhavs support withdraw
+country_event = {
+
+	id = vcp.3
+	title = "vcp.EVTNAME3"
+	desc = "vcp.EVTDESC3"
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		NOT = { religion_group = slavic_pagan }
+		has_country_modifier = volkhvs_supproted
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "vcp.EVTNAME3.a"			# They will pay!
+		remove_country_modifier = volkhvs_supproted
+		add_country_modifier = {
+			name = "volkhvs_rebellion"
+			duration = 3600
+		}
+	}
+}
+
+#Spread of Christianity - Owner of Uppsala
+province_event = {
+	id = vcp.4
+	title = "vcp.EVTNAME4"
+	desc = "vcp.EVTDESC4"
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		is_religion_enabled = catholic
+		NOT = { is_year = 1050 }
+		owner = {
+			religious_unity = 0.5 #To spread wider needs political decision
+			is_core = 1 #any country that controls Uppsala
+			controls = 1
+			NOT = { has_country_modifier = uppsala_resists_christianization }
+			NOT = { has_country_modifier = norse_renaissance }
+		}
+		religion = norse_pagan_reformed
+		NOT = { province_id = 1 } #Uppsala
+	}
+	
+	mean_time_to_happen = {
+		months = 1600
+
+		modifier = {
+			factor = 0.5
+			owner = { religion = catholic }
+		}
+	}
+	
+	option = {
+		name = "vcp.EVTNAME4.a"			#Christianity getting stronger
+		change_religion = catholic
+		add_province_modifier  = {
+			name = "religious_zeal_lesser"
+			duration = 3600
+		}
+	}
+}
+
+#Spread of Christianity - Other Norse
+province_event = {
+	id = vcp.5
+	title = "vcp.EVTNAME4"
+	desc = "vcp.EVTDESC4"
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		is_religion_enabled = catholic
+		NOT = { is_year = 1050 }
+		owner = {
+			religious_unity = 0.4 #To spread wider needs political decision
+			NOT = { controls = 1 } #any country that controls Uppsala
+		}
+		religion = norse_pagan_reformed
+	}
+	
+	mean_time_to_happen = {
+		months = 1600
+
+		modifier = {
+			factor = 0.5
+			owner = { religion = catholic }
+		}
+	}
+	
+	option = {
+		name = "vcp.EVTNAME4.a"			#Christianity getting stronger
+		change_religion = catholic
+		add_province_modifier  = {
+			name = "religious_zeal_lesser"
+			duration = 3600
+		}
+	}
+}
+
+#Norse renaissance
+country_event = {
+	id = vcp.6
+	title = "vcp.EVTNAME6"
+	desc = "vcp.EVTDESC6"
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		has_country_modifier = uppsala_resists_christianization
+		religious_unity = 1
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "vcp.EVTNAME6.a"			# Excellent
+		remove_country_modifier = uppsala_resists_christianization
+		add_country_modifier = {
+			name = "norse_renaissance"
+			duration = -1
+		}
+	}
+}
+
+#Upsalla suppressed
+country_event = {
+	id = vcp.7
+	title = "vcp.EVTNAME7"
+	desc = "vcp.EVTDESC7"
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		has_country_modifier = uppsala_resists_christianization
+		NOT = { religion = norse_pagan_reformed }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "vcp.EVTNAME7.a"			# Excellent
+		remove_country_modifier = uppsala_resists_christianization
+	}
+}
+
+#Norse renaissance ended
+country_event = {
+	id = vcp.8
+	title = "vcp.EVTNAME8"
+	desc = "vcp.EVTDESC8"
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		has_country_modifier = norse_renaissance
+		NOT = { religion = norse_pagan_reformed }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "vcp.EVTNAME8.a"			# Excellent
+		remove_country_modifier = norse_renaissance
+	}
+}
+
+
+#Spread of Christianity - Slavic
+province_event = {
+	id = vcp.9
+	title = "vcp.EVTNAME9"
+	desc = "vcp.EVTDESC9"
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		is_religion_enabled = orthodox
+		owner = { religious_unity = 0.4 } #To spread wider needs political decision
+		NOT = { is_year = 1050 }
+		is_year = 890
+		OR = {
+			religion = slavic
+			religion = romuva
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 0.5
+			owner = { religion = orthodox }
+		}
+	}
+	
+	option = {
+		name = "vcp.EVTNAME9.a"			#Christianity getting stronger
+		change_religion = orthodox
+		add_province_modifier  = {
+			name = "religious_zeal_lesser"
+			duration = 3600
+		}
+	}
+}

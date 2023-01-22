@@ -1,0 +1,454 @@
+########################
+#Hellenic Flavor Events#
+########################
+
+namespace = hellenic_flavor
+
+#Millenial Anniversary of Rome
+country_event = {
+	id = hellenic_flavor.1
+	title = hellenic_flavor.1.t
+	desc = hellenic_flavor.1.d
+	picture = NEW_HEIR_eventPicture
+
+	trigger = {
+		owns = 118
+		118 = {
+			has_owner_religion = yes
+			religion = hellenism
+		}
+		is_year = 247
+		NOT = { is_year = 248 }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = hellenic_flavor.1.a
+		add_stability = 1
+		118 = {
+			add_province_modifier = {
+				name = rome_celebrates
+				duration = 365
+			}
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.1.b
+		add_stability = 1
+		add_country_modifier = {
+			name = empire_celebrates
+			duration = 365
+		}
+	}
+}
+
+#Secular Games
+country_event = {
+	id = hellenic_flavor.2
+	title = hellenic_flavor.2.t
+	desc = hellenic_flavor.2.d
+	picture = THEATRE_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = hellenism
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+	
+	option = {
+		name = hellenic_flavor.2.a
+		add_years_of_income = -1
+		add_stability = 1
+	}
+
+	option = {
+		name = hellenic_flavor.2.b
+		add_years_of_income = -0.5
+		add_prestige = 20
+	}
+
+	option = {
+		name = hellenic_flavor.2.c
+		add_years_of_income = -0.2
+		add_prestige = 5
+	}
+
+	option = {
+		name = hellenic_flavor.2.e
+		add_prestige = -15
+	}
+}
+		
+#Sacrifice To The Gods
+country_event = {
+	id = hellenic_flavor.3
+	title = hellenic_flavor.3.t
+	desc = hellenic_flavor.3.d
+	picture = FEAST_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = hellenism
+		NOT = { has_country_modifier = large_sacrifice }
+		NOT = { has_country_modifier = small_sacrifice }
+		NOT = { has_country_modifier = animal_sacrifice }
+		NOT = { has_country_modifier = et_human_sacrifice }
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = {
+		name = hellenic_flavor.3.a
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = large_sacrifice
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.3.b
+		add_years_of_income = -0.2
+		add_country_modifier = {
+			name = small_sacrifice
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.3.c
+		add_country_modifier = {
+			name = animal_sacrifice
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.3.e
+		add_stability = -1
+		add_country_modifier = {
+			name = et_human_sacrifice
+			duration = 1825
+		}
+	}
+}
+
+#College of Pontiffs
+country_event = {
+	id = hellenic_flavor.4
+	title = hellenic_flavor.4.t
+	desc = hellenic_flavor.4.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ROM
+		religion = hellenism
+		NOT = { has_country_modifier = listen_pontiffs }
+		NOT = { has_country_modifier = ignore_pontiffs }
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	option = {
+		name = hellenic_flavor.4.a
+		add_country_modifier = {
+			name = listen_pontiffs
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.4.b
+		add_country_modifier = {
+			name = ignore_pontiffs
+			duration = 1825
+		}
+	}
+}
+
+#The Augurs
+country_event = {
+	id = hellenic_flavor.5
+	title = hellenic_flavor.5.t
+	desc = hellenic_flavor.5.d
+	picture = FAMINE_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = hellenism
+		NOT = { has_country_modifier = augurs }
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	option = {
+		name = hellenic_flavor.5.a
+		add_country_modifier = {
+			name = augurs
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.5.b
+		add_stability = -1
+	}
+}
+
+	
+#End of the Vestal Virgins
+country_event = {
+	id = hellenic_flavor.6
+	title = hellenic_flavor.6.t
+	desc = hellenic_flavor.6.d
+	picture = RELIGION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion = hellenism
+		is_year = 350
+		dominant_religion = chalcedonism
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = hellenic_flavor.6.a
+		add_adm_power = 30
+	}
+
+	option = {
+		name = hellenic_flavor.6.b
+		define_advisor = {
+			name = "Coelia Concordia"
+			type = theologian
+			skill = 3
+		}
+	}
+}
+	
+
+#The Flamines
+country_event = {
+	id = hellenic_flavor.7
+	title = hellenic_flavor.7.t
+	desc = hellenic_flavor.7.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = no
+	
+	trigger = {
+		religion = hellenism
+		NOT = { has_ruler_flag = the_flamines }
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_ruler_flag = the_flamines
+	}
+
+	option = {
+		name = hellenic_flavor.7.a
+		add_country_modifier = {
+			name = cult_of_jupiter
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.7.b
+		add_country_modifier = {
+			name = cult_of_mars
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.7.c
+		add_country_modifier = {
+			name = cult_of_quirinus
+			duration = 1825
+		}
+	}
+
+	option = {
+		trigger = {
+			government = monarchy
+		}
+		name = hellenic_flavor.7.e
+		add_country_modifier = {
+			name = imperial_cult
+			duration = 1825
+		}
+	}
+}
+
+#The Fetiales
+country_event = {
+	id = hellenic_flavor.8
+	title = hellenic_flavor.8.t
+	desc = hellenic_flavor.8.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = hellenism
+		tag = ROM
+		NOT = { has_country_modifier = offensive_fetial }
+		NOT = { has_country_modifier = defensive_fetial }
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+
+	option = {
+		name = hellenic_flavor.8.a
+		add_country_modifier = {
+			name = offensive_fetial
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.8.b
+		add_country_modifier = {
+			name = defensive_fetial
+			duration = 1825
+		}
+	}
+}
+
+#The Epulones
+country_event = {
+	id = hellenic_flavor.9
+	title = hellenic_flavor.9.t
+	desc = hellenic_flavor.9.d
+	picture = FEAST_eventPicture
+
+	fire_only_once = no
+	
+	trigger = {
+		religion = hellenism
+	}
+
+	mean_time_to_happen = {
+		months = 800
+	}
+
+	option = {
+		name = hellenic_flavor.9.a
+		add_years_of_income = -2
+		add_stability = 1
+	}
+
+	option = {
+		name = hellenic_flavor.9.b
+		add_prestige = -1
+	}
+}
+
+#Arval Brethren
+country_event = {
+	id = hellenic_flavor.10
+	title = hellenic_flavor.10.t
+	desc = hellenic_flavor.10.d
+	picture = FARMING_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = hellenism
+		NOT = { is_year = 325 }
+		NOT = { has_country_modifier = brethren_harvest }
+		NOT = { has_country_modifier = brethren_famine }
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	option = {
+		name = hellenic_flavor.10.a
+		add_years_of_income = -1
+		random_list = {
+			75 = {
+				add_country_modifier = {
+					name = brethren_harvest
+					duration = 365
+				}
+			}
+			25 = {
+				add_country_modifier = {
+					name = brethren_famine
+					duration = 365
+				}
+			}
+		}
+
+	}
+
+	option = {
+		name = hellenic_flavor.10.b
+		add_years_of_income = -0.5
+		random_list = {
+			50 = {
+				add_country_modifier = {
+					name = brethren_harvest
+					duration = 365
+				}
+			}
+			50 = {
+				add_country_modifier = {
+					name = brethren_famine
+					duration = 365
+				}
+			}
+		}
+	}
+
+	option = {
+		name = hellenic_flavor.10.c
+		random_list = {
+			25 = {
+				add_country_modifier = {
+					name = brethren_harvest
+					duration = 365
+				}
+			}
+			75 = {
+				add_country_modifier = {
+					name = brethren_famine
+					duration = 365
+				}
+			}
+		}
+	}
+}

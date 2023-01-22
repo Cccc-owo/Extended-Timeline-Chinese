@@ -1,0 +1,92 @@
+#43 - Danzig
+
+owner = GCR
+controller = GCR
+add_core = GCR
+is_city = yes
+capital = "Gdansk"
+culture = gothic
+religion = germanic
+trade_goods = grain
+hre = no
+discovered_by = barbarian
+discovered_by = western
+base_tax = 2
+base_production = 2
+base_manpower = 2
+center_of_trade = 2
+
+add_permanent_province_modifier = {
+	name = vistula_estuary_modifier
+	duration = -1
+}
+
+140.1.1 = { owner = LEM controller = LEM add_core = LEM remove_core = GCR culture = pommeranian }
+500.1.1 = { owner = PMR controller = PMR add_core = PMR remove_core = LEM culture = kashubian religion = romuva discovered_by = eastern }
+700.1.1 = { discovered_by = western }
+880.1.1 = { religion = slavic }
+900.1.1 = { base_tax = 3 base_production = 3 }
+965.1.1 = { owner = POL controller = POL add_core = POL } #Conquered by Mieszko, exact date unknown
+1000.1.1 = { base_tax = 4 base_production = 4 }
+1026.1.1 = { owner = PMR controller = PMR remove_core = POL } #Boleslaw the Brave dies; Dynastic crisis results in Pomerania seceding. Pagan reaction.
+1047.1.1 = { owner = POL controller = POL add_core = POL } #Casimir I the Restorer reconquers East Pomerania
+1050.1.1 = { religion = catholic }
+1060.1.1 = { owner = PMR controller = PMR remove_core = POL } #Boleslaw the Bold looses control over Pomerania. Again.
+1100.1.1 = { base_tax = 5 base_production = 5 }
+#1150 East Pomerania becomes vassal of Poland
+1200.1.1 = { base_tax = 6 base_production = 6 discovered_by = muslim discovered_by = ottoman }
+#1227.1.1 The Gąsawa Bloodbath. No more a polish vassal.
+1294.12.29 = { owner = POL controller = POL add_core = POL } #East Pomerania rejoins Poland
+1300.1.1 = { base_tax = 7 base_production = 7 }
+1308.11.13 = { owner = TEU controller = TEU add_core = TEU } #Teutonic takeover of Danzig
+1310.1.1 = { culture = prussian remove_core = POL capital = "Danzig" } #Gdansk Massacre
+
+1454.2.10  = { add_core = POL revolt = { type = revolutionary_rebels size = 0 } controller = REB }  # Thirteen Years War
+1466.10.19 = {	revolt = {}
+		owner = POL
+		controller = POL
+		add_core = PRU
+		remove_core = TEU
+		} # Peace of Torun
+1523.1.25  = { unrest = 6 } # Iconoclast riots
+1525.1.1   = { unrest = 0 }
+1550.1.1   = { religion = protestant }
+1569.7.1  = {	owner = PLC
+		controller = PLC
+		add_core = PLC
+	    } # Union of Lublin, Polish administration
+1572.1.1   = { unrest = 6 } # Sigismund II dies
+1575.12.12 = { owner = HSA controller = HSA add_core = HSA } # Danzig rebels
+1577.12.16 = { owner = PLC controller = PLC } # Danzig War, retaken by Poland
+1588.1.1   = { revolt = { type = revolutionary_rebels size = 0 } controller = REB } # Civil war
+1589.1.1   = { revolt = {} controller = PLC unrest = 0 } # Coronation of Sigismund III
+1669.1.1   = { remove_core = HSA } # last Hanseatic conference
+1704.1.1   = { controller = SWE } # Under siege by Sweden
+1706.9.24  = { controller = PLC } # Treaty of Altranstadt
+1733.1.1   = { revolt = { type = revolutionary_rebels size = 0 } controller = REB } # The war of Polish succession
+1734.6.30  = { controller = RUS } # Russian siege of Danzig
+1735.10.3  = { revolt = {} controller = PLC } # War of Polish successio ends
+1793.9.25  = { owner = PRU controller = PRU } # Occupied and later on annexed by Prussia
+1794.3.24  = { unrest = 5 } # Kosciuszko uprising
+1794.11.16 = { unrest = 0 } # The end of the uprising
+1807.5.24  = { controller = FRA } # Occupied by French troops
+1807.7.9   = {	owner = DNZ
+		controller = DNZ
+		add_core = DNZ
+		remove_core = PRU
+		} # Free city of Danzig, Treaty of Tilsit
+1814.1.2   = {	owner = PRU
+		controller = PRU
+		add_core = PRU
+		} # Retaken by Prussia
+
+1871.1.18  = { owner = GER controller = GER add_core = GER remove_core = PRU } # German unification
+1910.1.1 = { discovered_by = asian }
+1919.6.28  = { owner = DNZ controller = DNZ add_core = DNZ add_core = POL }
+1939.9.2   = { owner = GER controller = GER add_core = GER }
+1940.1.1   = { religion = catholic }
+1945.3.30  = { controller = SOV }
+1945.5.8   = { owner = POL controller = POL add_core = POL remove_core = DNZ remove_core = GER culture = polish capital = "Gdansk" }
+
+
+

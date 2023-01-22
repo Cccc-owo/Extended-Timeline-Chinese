@@ -1,0 +1,249 @@
+namespace = et_kor
+
+#Silla rebels
+country_event = {
+	id = et_kor.1
+	title = "et_kor.1.t"
+	desc = "et_kor.1.d"
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		owns = 2745
+		owns = 736
+		government = tribal
+		NOT = { has_country_flag = silla_event_fired }
+		OR = {
+			culture_group = korean_g
+			culture_group = japanese_g
+		}
+		capital_scope = { region = korea_region }
+		is_at_war = no
+		NOT = { exists = SLL }
+		stability = 0
+		is_subject = no
+	}
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 0.5
+			stability = 2
+		}
+		modifier = {
+			factor = 0.5
+			stability = 3
+		}
+		modifier = {
+			factor = 0.5
+			2745 = { is_prosperous = yes }
+		}
+	}
+	immediate = {
+		save_event_target_as = silla_revolt_root_tag
+		set_country_flag = reformation_samhan
+		set_country_flag = silla_event_fired
+	}
+	option = {
+		name = "et_kor.1.a"
+		change_tag = SLL
+		add_stability = -1
+		change_government = monarchy
+		if = {
+			limit = { NOT = { primary_culture = korean } }
+			change_primary_culture = korean
+		}
+		2745 = {
+			if = {
+				limit = { NOT = { culture = korean } }
+				change_culture = korean
+			}
+		}
+		every_owned_province = {
+			limit = {
+				NOT = { province_id = 2745 }
+				NOT = { province_id = 4651 }
+				NOT = { province_id = 4227 }
+				NOT = { province_id = 4228 }
+				NOT = { province_id = 737 }
+				NOT = { province_id = 2741 }
+			}
+			add_core = event_target:silla_revolt_root_tag
+			cede_province = event_target:silla_revolt_root_tag
+		}
+		ai_chance = { 
+			factor = 100
+		}
+	}
+	option = {
+		name = "et_kor.1.b"
+		add_stability = -2
+		2745 = {
+			if = {
+				limit = { NOT = { culture = korean } }
+				change_culture = korean
+			}
+			add_core = SLL
+			nationalist_rebels = 4
+		}
+		ai_chance = { 
+			factor = 0
+		}
+	}
+}
+
+#Baekje rebels
+country_event = {
+	id = et_kor.2
+	title = "et_kor.2.t"
+	desc = "et_kor.2.d"
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		owns = 735
+		owns = 1013
+		government = tribal
+		NOT = { has_country_flag = baekje_event_fired }
+		OR = {
+			culture_group = korean_g
+			culture_group = japanese_g
+		}
+		capital_scope = { region = korea_region }
+		is_at_war = no
+		NOT = { exists = BKJ }
+		stability = 0
+		is_subject = no
+	}
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 0.5
+			stability = 2
+		}
+		modifier = {
+			factor = 0.5
+			stability = 3
+		}
+		modifier = {
+			factor = 0.5
+			735 = { is_prosperous = yes }
+		}
+	}
+	immediate = {
+		save_event_target_as = baekje_revolt_root_tag
+		set_country_flag = reformation_samhan
+		set_country_flag = baekje_event_fired
+	}
+	option = {
+		name = "et_kor.2.a"
+		change_tag = BKJ
+		add_stability = -1
+		change_government = monarchy
+		if = {
+			limit = { NOT = { primary_culture = korean } }
+			change_primary_culture = korean
+		}
+		735 = {
+			if = {
+				limit = { NOT = { culture = korean } }
+				change_culture = korean
+			}
+		}
+		every_owned_province = {
+			limit = {
+				NOT = { area = pyongan_area }
+				NOT = { area = western_korea_area }
+			}
+			add_core = event_target:baekje_revolt_root_tag
+			cede_province = event_target:baekje_revolt_root_tag
+		}
+		ai_chance = { 
+			factor = 100
+		}
+	}
+	option = {
+		name = "et_kor.2.b"
+		add_stability = -2
+		735 = {
+			if = {
+				limit = { NOT = { culture = korean } }
+				change_culture = korean
+			}
+			add_core = BKJ
+			nationalist_rebels = 4
+		}
+		4230 = {
+			add_core = BKJ
+		}
+		ai_chance = { 
+			factor = 0
+		}
+	}
+}
+
+#Gaya
+country_event = {
+	id = et_kor.3
+	title = "et_kor.3.t"
+	desc = "et_kor.3.d"
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		tag = GAY
+		government = tribal
+		NOT = { has_country_flag = gaya_event_fired }
+		OR = {
+			culture_group = korean_g
+			culture_group = japanese_g
+		}
+		capital_scope = { region = korea_region }
+		is_at_war = no
+		stability = 0
+		is_subject = no
+	}
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 0.5
+			stability = 2
+		}
+		modifier = {
+			factor = 0.5
+			stability = 3
+		}
+		modifier = {
+			factor = 0.5
+			735 = { is_prosperous = yes }
+		}
+	}
+	immediate = {
+		set_country_flag = reformation_samhan
+		set_country_flag = gaya_event_fired
+	}
+	option = {
+		name = "et_kor.3.a"
+		override_country_name = GAYA
+		add_stability = -1
+		if = {
+			limit = { NOT = { primary_culture = korean } }
+			change_primary_culture = korean
+		}
+		capital_scope = {
+			if = {
+				limit = { NOT = { culture = korean } }
+				change_culture = korean
+			}
+		}
+		ai_chance = { 
+			factor = 100
+		}
+	}
+	option = {
+		name = "et_kor.3.b"
+		add_stability = -1
+		capital_scope = {
+			noble_rebels = 2
+		}
+		ai_chance = { 
+			factor = 0
+		}
+	}
+}

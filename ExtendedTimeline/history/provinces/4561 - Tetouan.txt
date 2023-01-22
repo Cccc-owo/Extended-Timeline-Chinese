@@ -1,0 +1,88 @@
+#343 - Fez
+
+owner = MRN
+controller = MRN
+culture = berber
+religion = shamanism
+capital = "Tamuda"
+trade_goods = grain
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = MRN
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+
+40.1.1 = { owner = ROM controller = ROM add_core = ROM }
+320.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+429.1.1 = { owner = MOO controller = MOO add_core = MOO remove_core = ROW }
+550.1.1 = { base_tax = 2 }
+708.1.1 = { owner = UMA controller = UMA add_core = UMA remove_core = MOO capital = "Tetouan" }
+735.1.1 = { religion = ibadi } #Many Berbers become Kharijite
+740.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } #Great Berber revolt
+743.1.1 = { owner = NEK controller = NEK add_core = NEK remove_core = UMA revolt = {} } #Caliphate loses control of the region
+750.1.1 = { base_tax = 3 base_production = 2 }
+950.1.1 = { base_manpower = 2 }
+1019.1.1 = { owner = CRD controller = CRD add_core = CRD add_core = CRD }
+1031.1.1 = { owner = FEZ controller = FEZ add_core = FEZ remove_core = CRD remove_core = NEK }
+1033.5.1 = { owner = TLC controller = TLC add_core = TLC }
+1039.1.1 = { owner = FEZ controller = FEZ add_core = FEZ remove_core = TLC }
+1070.1.1 = { owner = MOR controller = MOR add_core = MOR remove_core = FEZ }
+1080.1.1 = { religion = sunni }
+1150.1.1 = { base_tax = 4 }
+
+1465.1.1 = { unrest = 5 } #Marinid Sultan killed by mob. Mohammed ibn Ali Amrani-Joutey (Idrisid) proclaims himself Sultan. Unrest in the entire country. 
+1472.1.1 = {
+	owner = FEZ
+	controller = FEZ
+	add_core = FEZ
+	unrest = 0
+} #Wattasids take control over Fez, nominal ruler over much of Morocco.
+ # Began to decline & loose importance
+1549.1.1 = {
+	owner = MOR
+	controller = MOR
+}	#Fall of Fez
+1603.8.1 = { unrest = 5 } # The death of the Saadita Ahmad I al-Mansur
+1627.1.1 = {
+	revolt = {
+		type = nationalist_rebels
+		size = 1
+		leader = "Sidi al-Ayachi"
+	}
+}
+1638.10.26 = {
+	revolt = { }
+	owner = FEZ
+	controller = FEZ
+} #Dilawites seize the region from squabling Saadite claimants
+1668.7.20 = {
+	owner = TFL
+	controller = TFL
+	add_core = TFL
+	unrest = 0
+}	#Alaouites
+1668.9.7 = {
+	owner = MOR
+	controller = MOR
+	remove_core = TFL
+} #Alaouites reunifies the country
+1672.1.1 = { unrest = 4 } # Oppositions against Ismail, & the idea of a unified state
+1727.1.1 = { unrest = 0 }
+
+1910.1.1 = { discovered_by = asian }
+1912.3.30  = { owner = SPA controller = SPA add_core = SPA }
+1921.9.18  = { revolt = { type = nationalist_rebels size = 1 } controller = REB }
+1926.5.27  = { revolt = {} controller = SPA }
+1956.4.7   = { owner = MOR controller = MOR remove_core = SPA }
+
+
+

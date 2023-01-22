@@ -1,0 +1,115 @@
+
+namespace = et
+
+#Mission to Moon: Launch
+country_event = {
+	id = et.90
+	title = et.EVTNAME90
+	desc = et.EVTDESC90
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = et.EVTOPTA90
+		add_prestige = 5
+		if = {
+			limit = { NOT = { has_global_flag = man_on_moon } }
+			country_event = {
+				id = et.91
+				days = 8
+			}
+		}
+		if = {
+			limit = { has_global_flag = man_on_moon }
+			country_event = {
+				id = et.92
+				days = 8
+			}
+		}
+		set_global_flag = man_on_moon
+	}
+}
+
+#Mission to Moon: First
+country_event = {
+	id = et.91
+	title = et.EVTNAME91
+	desc = et.EVTDESC91
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = et.EVTOPTA91
+		add_prestige = 50
+		add_legitimacy = 25
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		set_country_flag = first_to_get_man_on_moon
+	}
+}
+
+#Mission to Moon: Not first
+country_event = {
+	id = et.92
+	title = et.EVTNAME92
+	desc = et.EVTDESC92
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = et.EVTOPTA92
+		add_prestige = 20
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+}
+
+#Moon Base
+country_event = {
+	id = et.93
+	title = et.EVTNAME93
+	desc = et.EVTDESC93
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = et.EVTOPTA93
+		add_prestige = 50
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_country_modifier = {
+			name = moon_base
+			duration = -1
+		}
+	}
+}
+
+#Mars Base
+country_event = {
+	id = et.94
+	title = et.EVTNAME94
+	desc = et.EVTDESC94
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = et.EVTOPTA94
+		add_prestige = 50
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_country_modifier = {
+			name = mars_base
+			duration = -1
+		}
+	}
+}

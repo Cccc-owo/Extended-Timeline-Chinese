@@ -1,0 +1,2488 @@
+################
+#Dynasty Events#
+################
+
+namespace = dynasties
+
+####################
+#FIRST FITNA EVENTS#
+####################
+
+#First Fitna Starts
+country_event = {
+	id = dynasties.1
+	title = dynasties.1.t
+	desc = dynasties.1.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = has_first_fitna
+	}
+
+	option = {
+		name = dynasties.1.a
+		add_stability = -2
+		if = {
+			limit = { egypt_region = { owned_by = ROOT } }
+			random_owned_province = {
+				limit = { region = egypt_region }
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 5
+					leader = "Muawiyah Umayyad"
+				}
+			}
+			random_owned_province = {
+				limit = { region = egypt_region }
+				pretender_rebels = 3
+			}
+			random_owned_province = {
+				limit = { region = egypt_region }
+				pretender_rebels = 3
+			}
+		}
+		else_if = {
+			limit = { mashriq_region = { owned_by = ROOT } }
+			random_owned_province = {
+				limit = { region = mashriq_region }
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 5
+					leader = "Muawiyah Umayyad"
+				}
+			}
+			random_owned_province = {
+				limit = { region = mashriq_region }
+				pretender_rebels = 3
+			}
+			random_owned_province = {
+				limit = { region = mashriq_region }
+				pretender_rebels = 3
+			}
+		}
+		else = {
+			random_owned_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 5
+					leader = "Muawiyah Umayyad"
+				}
+			}
+			random_owned_province = {
+				pretender_rebels = 3
+			}
+			random_owned_province = {
+				pretender_rebels = 3
+			}
+		}
+	}
+}
+
+#'Amr ibn al-As Joins the Fight
+country_event = {
+	id = dynasties.2
+	title = dynasties.2.t
+	desc = dynasties.2.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_country_flag = muawiya_in_power }
+	}
+
+	option = {
+		name = dynasties.2.a
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 4
+				leader = "Amr ibn al-As"
+			}
+		}
+	}
+}
+
+#Aisha bint Abu Bakr Join
+country_event = {
+	id = dynasties.3
+	title = dynasties.3.t
+	desc = dynasties.3.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_country_flag = muawiya_in_power }
+	}
+
+	option = {
+		name = dynasties.3.a
+		if = { 
+			limit = { any_owned_province = { area = syria_area } }
+			random_owned_province = {
+				limit = { area = syria_area }
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 4
+					leader = "Aisha bint Abu-Bakr"
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 4
+					leader = "Aisha bint Abu-Bakr"
+				}
+			}
+		}
+	}
+}
+
+#More Umayyads Join
+country_event = {
+	id = dynasties.4
+	title = dynasties.4.t
+	desc = dynasties.4.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = muawiya_in_power }
+		NOT = {
+			had_country_flag = { 
+				flag = has_first_fitna
+				days = 7300
+			}
+		}
+		any_owned_province = {
+			region = mashriq_region
+		}
+	}
+
+	option = {
+		name = dynasties.4.a
+		random_list = {
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Yazid Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Marwan Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Abd al-Malik Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Umar Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Al-Walid Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Suleyman Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Hisham Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Ibrahim Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Al-Himar Umayyad"
+					}
+				}
+			}
+			10 = {
+				random_owned_province = {
+					limit = {
+						region = mashriq_region
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 4
+						leader = "Abd Al-Aziz Umayyad"
+					}
+				}
+			}
+		}
+	}
+}
+
+#Umayyad Victory
+country_event = {
+	id = dynasties.5
+	title = dynasties.5.t
+	desc = dynasties.5.d
+	picture = STREET_SPEACH_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_disaster = first_fitna
+		NOT = { has_country_flag = muawiya_in_power }
+	}
+
+	immediate = {
+		clr_country_flag = has_first_fitna
+		clr_country_flag = ruler_hasan
+		clr_country_flag = ruler_ali
+	}
+
+	option = {
+		set_country_flag = had_first_fitna
+		name = dynasties.5.a
+		disband_rebels = pretender_rebels
+		define_ruler = {
+			name = "Muawiyah"
+			dynasty = "Umayyad"
+			age = 59
+			claim = 100
+			adm = 5
+			dip = 5
+			mil = 5
+		}
+		define_heir = {
+			name = "Yazid"
+			dynasty = "Umayyad"
+			claim = 100
+			age = 14
+			adm = 4
+			dip = 5
+			mil = 5
+		}
+		change_tag = UMA
+		swap_free_idea_group = yes
+		change_government = monarchy
+		add_government_reform = caliphate_reform
+		end_disaster = first_fitna
+		add_stability = 1
+		if = { 
+			limit = { owns = 382 }
+			set_capital = 382
+		}
+		if = {
+			limit = { NOT = { is_religion_enabled = shiite } }
+			enable_religion = shiite
+		}
+		if = {
+			limit = { NOT = { is_religion_enabled = sunni } }
+			enable_religion = sunni
+		}
+		if = { 
+			limit = { NOT = { religion = sunni } }
+			change_religion = sunni
+		}
+		every_province = {
+			limit = { religion = islam }
+			change_religion = sunni
+		}
+		every_country = {
+			limit = { religion = islam }
+			change_religion = sunni
+		}
+	}
+}
+	
+#Alid Victory
+country_event = {
+	id = dynasties.6
+	title = dynasties.6.t
+	desc = dynasties.6.d
+	picture = STREET_SPEACH_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_disaster = first_fitna
+		has_country_flag = muawiya_in_power
+	}
+
+	option = {
+		name = dynasties.6.a
+		add_manpower = 4
+		ai_chance = { factor = 90 }
+	}
+	
+	immediate = {
+		clr_country_flag = has_first_fitna
+		clr_country_flag = ruler_hasan
+		clr_country_flag = ruler_ali
+	}
+
+	option = {
+		name = dynasties.6.a
+		set_country_flag = had_first_fitna
+		disband_rebels = pretender_rebels
+		disband_rebels = shiite_rebels
+		set_ruler = alid_ruler
+		override_country_name = ALID
+		set_country_flag = dyn_name_alid_flag
+		set_country_flag = has_dynastic_dynamic_name
+		change_government = monarchy
+		add_government_reform = caliphate_reform
+		end_disaster = first_fitna
+		add_stability = 1
+		if = {
+			limit = { NOT = { is_religion_enabled = shiite } }
+			enable_religion = shiite
+		}
+		if = {
+			limit = { NOT = { is_religion_enabled = sunni } }
+			enable_religion = sunni
+		}
+		if = { 
+			limit = { NOT = { religion = shiite } }
+			change_religion = shiite
+		}
+		every_province = {
+			limit = { religion = islam }
+			change_religion = shiite
+		}
+		every_country = {
+			limit = { religion = islam }
+			change_religion = shiite
+		}
+	}
+}		
+	
+#End of First Fitna
+country_event = {
+	id = dynasties.7
+	title = dynasties.7.t
+	desc = dynasties.7.d
+	picture = STREET_SPEACH_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = had_first_fitna
+	}
+
+	option = {
+		name = dynasties.7.a
+		add_stability = 1
+		if = { 
+			limit = { NOT = { government = monarchy } }
+			change_government = monarchy
+			add_government_reform = caliphate_reform
+		}
+		if = {
+			limit = { 
+				OR = {
+					dynasty = "Umayyad" 
+					has_country_flag = umayyad_dynasty_in_power
+				}
+				NOT = { tag = UMA }
+			}
+			change_tag = UMA
+			swap_free_idea_group = yes
+		}
+		if = {
+			limit = {
+				dynasty = "Alid"
+				NOT = { has_country_flag = dyn_name_alid_flag }
+			}
+			override_country_name = ALID
+			set_country_flag = dyn_name_alid_flag
+			set_country_flag = has_dynastic_dynamic_name
+		}
+	}
+}		
+
+###########################
+#END OF FIRST FITNA EVENTS#
+###########################
+
+#Husayn ibn Ali Revolts
+country_event = {
+	id = dynasties.8
+	title = dynasties.8.t
+	desc = dynasties.8.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = UMA
+	}
+
+	mean_time_to_happen = {
+		years = 75
+	}
+
+	option = {
+		name = dynasties.8.a
+		add_prestige = -10
+		add_years_of_income = -1
+		set_country_flag = husayn_ali_murdered
+		ai_chance = { factor = 40 }
+	}
+
+	option = {
+		name = dynasties.8.b
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 4
+				leader = "Husayn ibn Ali"
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+
+	option = {
+		name = dynasties.8.c
+		change_tag = FAT
+		swap_free_idea_group = yes
+		set_capital = 384
+		change_primary_culture = bedouin_arabic
+		define_ruler = {
+			name = "Husayn"
+			dynasty = "Fatimid"
+			age = 54
+			claim = 100
+			adm = 3
+			dip = 2
+			mil = 2
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+####################
+#ABBASID REVOLUTION#
+####################
+
+#Abbasid Revolution Begins
+country_event = {
+	id = dynasties.9
+	title = dynasties.9.t
+	desc = dynasties.9.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = dynasties.9.a
+		set_country_flag = abbasid_revolution
+		add_stability = -2
+		if = {
+			limit = {
+				any_owned_province = {
+					region = persia_region 
+				}
+			}
+			random_owned_province = {
+				limit = {
+					region = persia_region 
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 5
+					leader = "Abu al-Abbas"
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_owned_province = {
+						region = persia_region 
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { religion = sunni }
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 5
+					leader = "As-Saffah Abbasid"
+				}
+			}
+		}	
+	}
+}
+
+#Abu Muslim helps the Abbasids
+country_event = {
+	id = dynasties.10
+	title = dynasties.10.t
+	desc = dynasties.10.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		had_country_flag = {
+			flag = abbasid_revolution
+			days = 60
+		}
+		any_owned_province = {
+			OR = {
+				area = syria_area
+				area = palestine_area
+				area = rakka_area
+				region = egypt_region
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.10.a
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = syria_area
+					area = palestine_area
+					area = rakka_area
+					region = egypt_region
+				}
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 5
+				leader = "Abu Muslim"
+			}
+		}		
+	}
+}
+
+#Khorasan Phase
+country_event = {
+	id = dynasties.11
+	title = dynasties.11.t
+	desc = dynasties.11.d
+	picture = CIVIL_WAR
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		had_country_flag = {
+			flag = abbasid_revolution
+			days = 120
+		}
+		any_owned_province = {
+			region = khorasan_region
+		}
+	}
+
+	option = {
+		name = dynasties.11.a
+		random_owned_province = {
+			limit = {
+				region = khorasan_region
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 5
+				leader = "Qahtaba al-Tai"
+			}
+		}
+	}
+}
+
+#Mesopotamian Phase
+country_event = {
+	id = dynasties.12
+	title = dynasties.12.t
+	desc = dynasties.12.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		had_country_flag = {
+			flag = abbasid_revolution
+			days = 1095
+		}
+		any_owned_province = {
+			OR = {
+				area = al_jazira_area
+				area = iraq_arabi_area
+				area = basra_area
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.12.a
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = al_jazira_area
+					area = iraq_arabi_area
+					area = basra_area
+				}
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 5
+				leader = "As-Saffah Abbasid"
+			}
+		}
+	}
+}
+
+#End Arabization
+country_event = {
+	id = dynasties.13
+	title = dynasties.13.t
+	desc = dynasties.13.d
+	picture = REFORM_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dynasties.13.a
+		add_stability = -2
+		set_country_flag = end_arabization
+		add_country_modifier = {
+			name = end_arabization
+			duration = 1825
+		}
+	}
+	
+	option = {
+		name = dynasties.13.b
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 5
+				leader = "As-Saffah Abbasid"
+			}
+		}
+	}
+}	
+
+#Accept Heathens
+country_event = {
+	id = dynasties.14
+	title = dynasties.14.t
+	desc = dynasties.14.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dynasties.14.a
+		set_country_flag = accept_heathens
+		add_stability = -2
+		add_country_modifier = {
+			name = accept_heathens
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = dynasties.14.b
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 5
+				leader = "As-Saffah Abbasid"
+			}
+		}
+	}
+}
+
+#Non-Arabs Revolt
+country_event = {
+	id = dynasties.15
+	title = dynasties.15.t
+	desc = dynasties.15.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_modifier = end_arabization }
+		any_owned_province = {
+			NOT = { culture = bedouin_arabic }
+		}
+	}
+
+	option = {
+		name = dynasties.15.a
+		random_owned_province = {
+			limit = {
+				NOT = { culture = bedouin_arabic }
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 5
+				leader = "As-Saffah Abbasid"
+			}
+		}
+	}
+}
+
+#Non-Muslim Revolt
+country_event = {
+	id = dynasties.16
+	title = dynasties.16.t
+	desc = dynasties.16.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_modifier = accept_heathens }
+		any_owned_province = {
+			NOT = { religion = sunni }
+			NOT = { religion = shiite }
+		}
+	}
+
+	option = {
+		name = dynasties.16.a
+		random_owned_province = {
+			limit = {
+				NOT = { religion = sunni }
+				NOT = { religion = shiite }
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 5
+				leader = "As-Saffah Abbasid"
+			}
+		}
+	}
+}
+
+#More Abbasids Join
+country_event = {
+	id = dynasties.17
+	title = dynasties.17.t
+	desc = dynasties.17.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_province = {
+			region = persia_region
+		}
+	}
+
+	option = {
+		name = dynasties.17.a
+		random_owned_province = {
+			limit = {
+				region = persia_region
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 4
+				leader = "As-Saffah Abbasid"
+			}
+		}
+	}
+}
+
+#Surrender to the Abbasids
+country_event = {
+	id = dynasties.18
+	title = dynasties.18.t
+	desc = dynasties.18.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = dynasties.18.a
+		add_manpower = 5
+	}
+
+	option = {
+		name = dynasties.18.b
+		end_disaster = abbasid_revolution
+		disband_rebels = pretender_rebels
+		clr_country_flag = abbasid_revolution
+		set_country_flag = won_abbasid_revolution
+		change_tag = ABA
+		swap_free_idea_group = yes
+		set_capital = 410
+		add_government_reform = caliphate_reform
+		add_stability = 1
+		kill_heir = { allow_new_heir = no }
+		define_ruler = {
+			name = "Abu'l Abbas As-Saffah"
+			dynasty = "Abbasid"
+			age = 29
+			claim = 100
+			dip = 4
+			adm = 5
+			mil = 5
+		}
+	}
+}
+
+#Lost to the Abbasids
+country_event = {
+	id = dynasties.19
+	title = dynasties.19.t
+	desc = dynasties.19.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = abbasid_revolution
+		dynasty = "Abbasid"
+	}
+
+	option = {
+		name = dynasties.19.a
+		end_disaster = abbasid_revolution
+		disband_rebels = pretender_rebels
+		clr_country_flag = abbasid_revolution
+		set_country_flag = won_abbasid_revolution
+		change_tag = ABA
+		swap_free_idea_group = yes
+		set_capital = 410
+		add_government_reform = caliphate_reform
+		add_stability = 3
+		kill_heir = { allow_new_heir = no }
+		define_ruler = {
+			name = "Abu'l Abbas As-Saffah"
+			dynasty = "Abbasid"
+			age = 29
+			claim = 100
+			dip = 4
+			adm = 5
+			mil = 5
+		}
+	}
+}
+
+#Abbasids Lost
+country_event = {
+	id = dynasties.20
+	title = dynasties.20.t
+	desc = {
+	   trigger = { dynasty = "Abbasid" }
+	   desc = dynasties.19.d
+	}
+	desc = {
+	   trigger = { NOT = { dynasty = "Abbasid" } }
+	   desc = dynasties.20.d
+	}
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = dynasties.19.a
+		trigger = {
+			dynasty = "Abbasid"
+		}
+		disband_rebels = pretender_rebels
+		clr_country_flag = abbasid_revolution
+		set_country_flag = won_abbasid_revolution
+		change_tag = ABA
+		swap_free_idea_group = yes
+		set_capital = 410
+		add_government_reform = caliphate_reform
+		add_stability = 3
+		kill_heir = { allow_new_heir = no }
+		define_ruler = {
+			name = "Abu'l Abbas As-Saffah"
+			dynasty = "Abbasid"
+			age = 29
+			claim = 100
+			dip = 4
+			adm = 5
+			mil = 5
+		}
+	}
+
+	option = {
+		name = dynasties.20.a
+		trigger = {
+			NOT = { dynasty = "Abbasid" }
+		}
+		add_stability = 2
+		add_prestige = 50
+		disband_rebels = pretender_rebels
+		set_country_flag = failed_revolution
+	}
+}
+
+##################################
+#END OF ABBASID REVOLUTION EVENTS#
+##################################
+
+#Umayyad Andalusia
+country_event = {
+	id = dynasties.21
+	title = dynasties.21.t
+	desc = dynasties.21.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { exists = UMA }
+		tag = ABA
+		has_country_flag = won_abbasid_revolution
+		owns = 225
+	}
+
+	mean_time_to_happen = {
+		years = 6
+	}
+
+	option = {
+		name = dynasties.21.a
+		ai_chance = { factor = 100 }
+		every_core_province = {
+			limit = {
+				region = iberia_region
+			}
+			add_core = UMA
+		}
+		release = UMA
+		UMA = {
+			change_government = monarchy
+			add_government_reform = caliphate_reform
+		}
+	}
+
+	option = {
+		name = dynasties.21.b
+		every_core_province = {
+			limit = {
+				region = iberia_region
+			}
+			add_core = UMA
+		}
+		random_core_province = {
+			limit = {
+				region = iberia_region
+			}
+			spawn_rebels  = {
+				type = nationalist_rebels
+				size = 4
+			}
+		}
+		random_core_province = {
+			limit = {
+				region = iberia_region
+			}
+			spawn_rebels  = {
+				type = nationalist_rebels
+				size = 4
+			}
+		}
+		random_core_province = {
+			limit = {
+				region = iberia_region
+			}
+			spawn_rebels  = {
+				type = nationalist_rebels
+				size = 4
+			}
+		}
+		random_core_province = {
+			limit = {
+				region = iberia_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+			}
+		}
+	}
+}
+
+#####################
+#Independence Events#
+#####################
+
+#Idrisids take power
+country_event = {
+	id = dynasties.35
+	title = dynasties.35.t
+	desc = dynasties.35.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = caliphate_reform
+		NOT = { exists = MOR }
+		religion_group = muslim
+		is_year = 750
+		NOT = { is_year = 1000 }
+		any_owned_province = {
+			OR = {
+				area = tafilalt_area
+				area = sus_area
+				area = marrekesh_area
+				area = fez_area
+				area = northern_morocco_area
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 100
+	}
+
+	immediate = {
+		hidden_effect = {
+			MOR = {
+				add_core = 342
+				add_core = 2467
+				add_core = 334
+				add_core = 343
+				add_core = 335
+				add_core = 1751
+				add_core = 2465
+				add_core = 349
+				add_core = 2463
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.35.a
+		release = MOR
+		MOR = {
+			define_ruler = {
+				name = "Idris I"
+				dynasty = "Idrisid"
+				adm = 5
+				dip = 3
+				mil = 3
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.35.b
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = tafilalt_area
+					area = sus_area
+					area = marrekesh_area
+					area = fez_area
+					area = northern_morocco_area
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				leader = "Idris Idrisid"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = tafilalt_area
+					area = sus_area
+					area = marrekesh_area
+					area = fez_area
+					area = northern_morocco_area
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				leader = "Idris Idrisid"
+			}
+		}
+	}
+}
+
+#Berber Tribes Join Idrisids
+country_event = {
+	id = dynasties.36
+	title = dynasties.36.t
+	desc = dynasties.36.d
+	picture = BATTLE_eventPicture
+
+	trigger = {
+		tag = MOR
+		OR = {
+			AND = {
+				exists = SOS
+				SOS = {
+					ai = yes
+				}
+				NOT = {
+					SOS = {
+						num_of_owned_provinces_with = {
+							value = 5
+							is_core = SOS
+						}
+					}
+				}
+			}
+			AND = {
+				exists = TFL
+				TFL = {
+					ai = yes
+				}
+				NOT = {
+					TFL = {
+						num_of_owned_provinces_with = {
+							value = 3
+							is_core = TFL
+						}
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = dynasties.36.a
+		random_neighbor_country = {
+			limit = {
+				OR = {
+					AND = {
+						tag = SOS
+						NOT = {
+							SOS = {
+								num_of_owned_provinces_with = {
+									value = 5
+									is_core = SOS
+								}
+							}
+						}
+					}
+					AND = {
+						tag = TFL
+						NOT = {
+							TFL = {
+								num_of_owned_provinces_with = {
+									value = 3
+									is_core = TFL
+								}
+							}
+						}
+					}
+				}
+			}
+			ROOT = { inherit = PREV }
+		}
+	}
+}
+
+#Rustamid Dynasty Declares Independence
+country_event = {
+	id = dynasties.37
+	title = dynasties.37.t
+	desc = dynasties.37.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion_group = muslim
+		is_year = 777
+		NOT = { is_year = 900 }
+		any_owned_province = {
+			OR = {
+				area = algiers_area
+				area = kabylia_area
+				area = north_saharan_area
+			}
+		}
+		NOT = { exists = MZB }
+		has_reform = caliphate_reform
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	immediate = {
+		hidden_effect = {
+			MZB = {
+				add_core = 336
+				add_core = 2461
+				add_core = 337
+				add_core = 2462
+				add_core = 2459
+				add_core = 350
+				add_core = 2457
+				add_core = 2456
+				add_core = 2472
+				add_core = 338
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.37.a
+		release = MZB
+		MZB = {
+			define_ruler = {
+				name = "'Abdu r-Rahman"
+				dynasty = "Rustamid"
+				age = 30
+				claim = 85
+				adm = 2
+				dip = 3
+				mil = 2
+			}
+			change_religion = ibadi
+		}
+	}
+
+	option = {
+		name = dynasties.37.b
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = algiers_area
+					area = kabylia_area
+					area = north_saharan_area
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				leader = "Abdu r-Rahman Rustamid"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = algiers_area
+					area = kabylia_area
+					area = north_saharan_area
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				leader = "Abdu r-Rahman Rustamid"
+			}
+		}
+	}
+}
+
+#Aghlabids take Tunisia
+country_event = {
+	id = dynasties.38
+	title = dynasties.38.t
+	desc = dynasties.38.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion_group = muslim
+		is_year = 800
+		NOT = { is_year = 900 }
+		any_owned_province = {
+			OR = {
+				area = kabylia_area
+				area = tunisia_area
+				area = tripolitania_area
+			}
+		}
+		NOT = { exists = TUN }
+		has_reform = caliphate_reform
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	immediate = {
+		hidden_effect = {
+			TUN = {
+				add_core = 341
+				add_core = 2455
+				add_core = 2454
+				add_core = 2473
+				add_core = 1882
+				add_core = 339
+				add_core = 340
+				add_core = 2458
+				add_core = 351
+				add_core = 352
+				add_core = 2453
+				add_core = 353
+				add_core = 2452
+				add_core = 354
+				add_core = 2451
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.38.a
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = kabylia_area
+					area = tunisia_area
+					area = tripolitania_area
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Ibrahim ibn al-Aghlab Aghlabid"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = kabylia_area
+					area = tunisia_area
+					area = tripolitania_area
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Ibrahim ibn al-Aghlab Aghlabid"
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.38.b
+		release = TUN
+		TUN = {
+			define_ruler = {
+				name =  "Ibrahim I ibn al-Aghlab"
+				dynasty = "Aghlabid"
+				claim = 75
+				age = 44
+				adm = 0
+				dip = 0
+				mil = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dynasties.40
+	title = dynasties.40.t
+	desc = dynasties.40.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = caliphate_reform
+		owns = 454
+		owns = 457
+		owns = 458
+		owns = 446
+		num_of_generals = 4
+		is_year = 800
+		NOT = { is_year = 1000 }
+		NOT = { exists = BUK }
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_id = 454
+						province_id = 453
+						province_id = 442
+						province_id = 445
+						province_id = 444
+						province_id = 457
+						province_id = 1967
+						province_id = 2363
+						province_id = 2356
+						province_id = 455
+						province_id = 456
+						province_id = 1969
+						province_id = 459
+						province_id = 446
+						province_id = 458
+						province_id = 2228
+					}
+				}
+				add_core = BUK
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.40.a
+		random_owned_province = {
+			limit = {
+				OR = {
+					province_id = 454
+					province_id = 453
+					province_id = 442
+					province_id = 445
+					province_id = 444
+					province_id = 457
+					province_id = 1967
+					province_id = 2363
+					province_id = 2356
+					province_id = 455
+					province_id = 456
+					province_id = 1969
+					province_id = 459
+					province_id = 446
+					province_id = 458
+					province_id = 2228
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Ahmad ibn Asad Samanid"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					province_id = 454
+					province_id = 453
+					province_id = 442
+					province_id = 445
+					province_id = 444
+					province_id = 457
+					province_id = 1967
+					province_id = 2363
+					province_id = 2356
+					province_id = 455
+					province_id = 456
+					province_id = 1969
+					province_id = 459
+					province_id = 446
+					province_id = 458
+					province_id = 2228
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Ahmad ibn Asad Samanid"
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.40.b
+		release = BUK
+		BUK = {
+			define_ruler = {
+				name = "Ahmad ibn Asad"
+				dynasty = "Samanid"
+				adm = 4
+				dip = 3
+				mil = 5
+			}
+		}
+	}
+}
+
+#Tahirids become Vassals
+country_event = {
+	id = dynasties.41
+	title = dynasties.41.t
+	desc = dynasties.41.d
+	picture = BAD_WITH_MONARCH
+
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 800
+		NOT = { is_year = 900 }
+		has_reform = caliphate_reform
+		NOT = { stability = 0 }
+		war_exhaustion = 4
+		num_of_generals = 1
+		NOT = { exists = KHO }
+		any_owned_province = {
+			region = persia_region
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 25
+	}
+
+	option = {
+		name = dynasties.41.a
+	}
+
+	option = {
+		name = dynasties.41.b
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = persia_region
+				}
+				add_core = KHO
+				remove_core = ROOT
+			}
+		}
+		release_vassal = KHO
+		KHO = {
+			define_ruler = {
+				name = "Tahir I"
+				dynasty = "Tahirid"
+				adm = 2
+				dip = 1
+				mil = 2
+			}
+		}
+	}
+}
+
+#Saffarids rebel from Tahirid
+country_event = {
+	id = dynasties.42
+	title = dynasties.42.t
+	desc = dynasties.42.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = caliphate_reform
+		KHO = {
+			vassal_of = ROOT
+			NOT = { stability = 2 }
+		}
+		is_year = 860
+		NOT = { is_year = 900 }
+		NOT = { stability = 1 }
+		NOT = { exists = SIS }
+	}
+
+	mean_time_to_happen = {
+		years = 40
+	}
+
+	immediate = {
+		hidden_effect = {
+			KHO = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							province_id = 434
+							province_id = 2232
+							province_id = 2230
+							province_id = 2233
+							province_id = 575
+							province_id = 435
+							province_id = 447
+							province_id = 2229
+							province_id = 2224
+						}
+					}
+					add_core = SIS
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = dynasties.42.a
+		KHO = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						province_id = 434
+						province_id = 2232
+						province_id = 2230
+						province_id = 2233
+						province_id = 575
+						province_id = 435
+						province_id = 447
+						province_id = 2229
+						province_id = 2224
+					}
+				}
+				spawn_rebels = {
+					type = nationalist_rebels
+					size = 4
+					leader = "Ya'qub ibn Layth Saffarid"
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						province_id = 434
+						province_id = 2232
+						province_id = 2230
+						province_id = 2233
+						province_id = 575
+						province_id = 435
+						province_id = 447
+						province_id = 2229
+						province_id = 2224
+					}
+				}
+				spawn_rebels = {
+					type = nationalist_rebels
+					size = 4
+					leader = "Ya'qub ibn Layth Saffarid"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.42.b
+		KHO = {
+			release = SIS
+		}
+	}
+}
+
+#Tulunids revolt
+country_event = {
+	id = dynasties.43
+	title = dynasties.43.t
+	desc = dynasties.43.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = caliphate_reform
+		any_owned_province = {
+			region = egypt_region
+		}
+		NOT = { stability = -1 }
+		war_exhaustion = 5
+		is_year = 860
+		NOT = { is_year = 900 }
+		NOT = { exists = EGY }
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = egypt_region
+				}
+				add_core = EGY
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.43.a
+		release = EGY
+		EGY = {
+			define_ruler = {
+				name = "Ahmad bin Tulun"
+				dynasty = "Tulunid"
+				adm = 2
+				dip = 3
+				mil = 3
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.43.b
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Ahmad bin Tulun Tulunid"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Ahmad bin Tulun Tulunid"
+			}
+		}
+	}
+}
+
+#Yemen becomes independent
+country_event = {
+	id = dynasties.44
+	title = dynasties.44.t
+	desc = dynasties.44.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = caliphate_reform
+		is_year = 897
+		NOT = { stability = 1 }
+		NOT = { exists = ADE }
+		OR = {
+			war_exhaustion = 5
+			NOT = { stability = 0 }
+			NOT = { num_of_cities = 50 }
+		}
+		any_owned_province = {
+			OR = { 
+				area = yemen_area
+				area = hadramut_area
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = { 
+						area = yemen_area
+						area = hadramut_area
+					}
+					NOT = { province_id = 401 }
+				}
+				add_core = ADE
+			}
+			random_owned_province = {
+				limit = {
+					OR = { 
+						area = yemen_area
+						area = hadramut_area
+					}
+					NOT = { province_id = 401 }
+				}
+				change_religion = shiite
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.44.a
+		random_owned_province = {
+			limit = {
+				OR = { 
+					area = yemen_area
+					area = hadramut_area
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Al-Hadi ila'l-Haqq Yahya Rassid"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = { 
+					area = yemen_area
+					area = hadramut_area
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Al-Hadi ila'l-Haqq Yahya Rassid"
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.44.b
+		release = ADE
+		ADE = {
+			define_ruler = {
+				name = "Al-Hadi ila'l-Haqq Yahya"
+				dynasty = "Rassid"
+				adm = 2
+				dip = 1
+				mil = 4
+			}
+		}
+	}
+}
+
+#Qarmatians revolt
+country_event = {
+	id = dynasties.45
+	title = dynasties.45.t
+	desc = dynasties.45.d
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		has_reform = caliphate_reform
+		is_year = 899
+		NOT = { stability = 1 }
+		NOT = { exists = QRM }
+		NOT = { has_country_flag = qarmatian_revolt_happened }
+		OR = {
+			war_exhaustion = 5
+			NOT = { stability = 0 }
+			NOT = { num_of_cities = 45 }
+		}
+		any_owned_province = {
+			OR = {
+				province_id = 2347
+				province_id = 394
+				province_id = 396
+				province_id = 395
+				province_id = 2339
+				province_id = 2333
+				province_id = 404
+				province_id = 397
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = qarmatian_revolt_happened
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_id = 2347
+						province_id = 394
+						province_id = 396
+						province_id = 395
+						province_id = 2339
+						province_id = 2333
+						province_id = 404
+						province_id = 397
+					}
+				}
+				add_core = QRM
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.45.a
+		random_owned_province = {
+			limit = {
+				OR = {
+					province_id = 2347
+					province_id = 394
+					province_id = 396
+					province_id = 395
+					province_id = 2339
+					province_id = 2333
+					province_id = 404
+					province_id = 397
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Abu-Sa'id Jannabi Qarmatian"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					province_id = 2347
+					province_id = 394
+					province_id = 396
+					province_id = 395
+					province_id = 2339
+					province_id = 2333
+					province_id = 404
+					province_id = 397
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+				leader = "Abu-Sa'id Jannabi Qarmatian"
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.45.b
+		release = QRM
+		QRM = {
+			change_religion = shiite
+			define_ruler = {
+				name = "Abu-Sa'id Jannabi"
+				dynasty = "Qarmatian"
+				adm = 3
+				dip = 2
+				mil = 5
+			}
+		}
+	}
+}
+
+#Oman Declares independence
+country_event = {
+	id = dynasties.46
+	title = dynasties.46.t
+	desc = dynasties.46.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 850
+		NOT = { is_year = 1000 }
+		has_reform = caliphate_reform
+		NOT = { exists = OMA }
+		NOT = { stability = 1 }
+		any_owned_province = {
+			area = oman_area
+			religion = ibadi
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					area = oman_area
+				}
+				add_core = OMA
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.46.a
+		random_owned_province = {
+			limit = {
+				area = oman_area
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+			}
+		}
+		random_owned_province = {
+			limit = {
+				area = oman_area
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 4
+			}
+		}
+	}
+
+	option = {
+		name = dynasties.46.b
+		release = OMA
+	}
+}
+
+#Fatimid Revolt
+province_event = {
+	id = dynasties.47
+	title = dynasties.47.t
+	desc = dynasties.47.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		area = tunisia_area
+		NOT = { exists = FAT }
+		owner = {
+			NOT = { stability = 0 }
+		}
+		is_year = 850
+		NOT = { is_year = 1180 }
+	}
+
+	mean_time_to_happen = {
+		years = 20
+	}
+
+	option = {
+		name = dynasties.47.a
+		spawn_rebels = {
+			type = pretender_rebels
+			size = 6
+			leader = "Abdullah al-Mahdi Billah Fatimid"
+		}
+	}
+
+	option = {
+		name = dynasties.47.b
+		trigger = {
+			owner = {
+				any_owned_province = {
+					area = tunisia_area
+					is_capital = yes
+				}
+			}
+		}
+		owner = {
+			change_tag = FAT
+			swap_free_idea_group = yes
+			change_religion = shiite
+			define_ruler = {
+				name = "Abdullah al-Mahdi Billah"
+				dynasty = "Fatimid"
+				adm = 5
+				dip = 3
+				mil = 5
+			}
+		}
+	}
+}
+
+#Ghaznavids take command
+country_event = {
+	id = dynasties.48
+	title = dynasties.48.t
+	desc = dynasties.48.d
+	picture = CIVIL_WAR
+
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 950
+		NOT = { is_year = 1200 }
+		NOT = { legitimacy = 75 }
+		num_of_revolts = 1
+		war_exhaustion = 4
+		NOT = { exists = GHZ }
+		any_owned_province = {
+			is_capital = yes
+			region = khorasan_region
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 10
+	}
+
+	option = {
+		name = dynasties.48.a
+		change_tag = GHZ
+		swap_free_idea_group = yes
+		define_ruler = {
+			name = "Ishaq"
+			dynasty = "Ghaznavid"
+			adm = 4
+			dip = 1
+			mil = 1
+		}
+	}
+
+	option = {
+		name = dynasties.48.b
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 4
+				leader = "Ishaq Ghaznavid"
+			}
+		}
+	}
+}
+
+#Seljuqs revolt
+province_event = {
+	id = dynasties.49
+	title = dynasties.49.t
+	desc = dynasties.49.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			province_id = 436
+			province_id = 445
+		}
+		is_year = 985
+		NOT = { is_year = 1300 }
+		NOT = { exists = SEL }
+		owner = {
+			NOT = { stability = 1 }
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 200
+	}
+
+	option = {
+		name = dynasties.49.a
+		owner = {
+			every_owned_province = {
+				limit = {
+					region = khorasan_region
+				}
+				add_core = SEL
+			}
+			random_owned_province = {
+				limit = {
+					region = khorasan_region
+				}
+				spawn_rebels = {
+					type = nationalist_rebels
+					size = 4
+					leader = "Seljuq Seljuk"
+				}
+			}
+			random_owned_province = {
+				limit = {
+					region = khorasan_region
+				}
+				spawn_rebels = {
+					type = nationalist_rebels
+					size = 4
+					leader = "Seljuq Seljuk"
+				}
+			}
+		}
+	}
+}
+
+#Ayyubid Take Egypt
+country_event = {
+	id = dynasties.51
+	title = dynasties.51.t
+	desc = dynasties.51.d
+	picture = CIVIL_WAR
+	
+	fire_only_once = yes
+
+	trigger = {
+		owns = 361
+		is_year = 1150
+		NOT = { is_year = 1300 }
+		NOT = { exists = EGY }
+		any_province = {
+			OR = {
+				region = mashriq_region
+				region = caucasia_region
+			}
+			owner = {
+				primary_culture = turkish
+			}
+		}
+		361 = {
+			owner = {
+				religion_group = muslim
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 40
+	}
+
+	option = {
+		name = dynasties.51.a
+		361 = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 4
+				leader = "Salah ad-Din Ayyubid"
+			}
+		}
+	}
+}
+
+############################
+#End of Independence Events#
+############################
+
+#Enlist the Mamluks
+country_event = {
+	id = dynasties.52
+	title = dynasties.52.t
+	desc = dynasties.52.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 361
+		is_year = 1240
+		NOT = { is_year = 1500 }
+		NOT = { exists = MAM }
+	}
+
+	mean_time_to_happen = {
+		years = 20
+	}
+
+	option = {
+		name = dynasties.52.a
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = mamluk_soldiers
+			duration = 9125
+		}
+		ai_chance = { factor = 100 }
+	}
+
+	option = {
+		name = dynasties.52.b
+		add_prestige = -5
+	}
+}
+
+#Mamluks Take Control of the Sultanate
+country_event = {
+	id = dynasties.53
+	title = dynasties.53.t
+	desc = dynasties.53.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		has_country_modifier = mamluk_soldiers
+		NOT = { exists = MAM }
+	}
+
+	immediate = {
+		hidden_effect = {
+			remove_country_modifier = mamluk_soldiers
+		}
+	}
+
+	option = {
+		name = dynasties.53.a
+		change_tag = MAM
+		swap_free_idea_group = yes
+		kill_heir = { allow_new_heir = no }
+		define_ruler = {
+			name = "Aybak"
+			dynasty = "Bahri"
+			adm = 3
+			dip = 3
+			mil = 3
+		}
+	}	
+
+	option = {
+		name = dynasties.53.b
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 4
+				leader = "Aybak Bahri"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 4
+				leader = "Aybak Bahri"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 4
+				leader = "Aybak Bahri"
+			}
+		}
+	}
+}
+
+#Dynastic country name
+country_event = {
+	id = dynasties.54
+	title = dynasties.54.t
+	desc = dynasties.54.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		needs_dynastic_country_name_trigger_et = yes
+		NOT = { has_country_flag = has_dynastic_dynamic_name }
+	}
+
+	option = {
+		name = dynasties.54.a
+		set_dynastic_country_name_effect_et = yes
+		ai_chance = { 
+			factor = 100
+		}
+	}	
+
+	option = {
+		name = dynasties.54.b
+		ai_chance = { 
+			factor = 0
+		}
+	}
+}
+
+#Clear dynastic country name
+country_event = {
+	id = dynasties.55
+	title = dynasties.55.t
+	desc = dynasties.55.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		invalid_dynastic_country_name_trigger_et = yes
+	}
+
+	option = {
+		name = dynasties.55.a
+		clear_dynastic_country_name_effect_et = yes
+		ai_chance = { 
+			factor = 1
+		}
+	}	
+	
+	option = {
+		name = dynasties.55.b
+		trigger = {
+			needs_dynastic_country_name_trigger_et = yes
+		}
+		clear_dynastic_country_name_effect_et = yes
+		set_dynastic_country_name_effect_et = yes
+		ai_chance = { 
+			factor = 99
+		}
+	}
+}

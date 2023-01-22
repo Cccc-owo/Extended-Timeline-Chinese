@@ -1,0 +1,57 @@
+#335 - Melilla
+
+owner = MRN
+controller = MRN
+religion = shamanism
+culture = berber
+capital = "Rusadir"
+trade_goods = fish
+hre = no
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+base_tax = 3
+base_production = 3
+base_manpower = 1
+is_city = yes
+add_core = MRN
+
+40.1.1 = { owner = ROM controller = ROM add_core = ROM }
+380.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+429.1.1 = { owner = VAN controller = VAN add_core = VAN remove_core = ROW }
+534.3.1 = { owner = BYZ controller = BYZ add_core = BYZ remove_core = VAN }
+702.1.1 = { owner = UMA controller = UMA add_core = UMA remove_core = BYZ capital = "Melilla" }
+735.1.1 = { religion = ibadi } #Many Berbers become Kharijite
+740.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } #Great Berber revolt
+743.1.1 = { owner = NEK controller = NEK add_core = NEK remove_core = UMA revolt = {} } #Caliphate loses control of the region
+1019.1.1 = { owner = CRD controller = CRD add_core = CRD }
+1031.1.1 = { owner = FEZ controller = FEZ add_core = FEZ remove_core = CRD remove_core = NEK }
+1033.5.1 = { owner = TLC controller = TLC add_core = TLC }
+1039.1.1 = { owner = FEZ controller = FEZ add_core = FEZ remove_core = TLC }
+1070.1.1 = { owner = MOR controller = MOR add_core = MOR remove_core = FEZ }
+1080.1.1 = { religion = sunni }
+
+1472.1.1 = {
+	owner = FEZ
+	controller = FEZ
+} #Wattasids take control over Fez, nominal ruler over much of Morocco.
+1497.9.17   = {	owner = CAS
+		controller = CAS
+		add_core = CAS
+	     } # Conquered by the Duke of Medina Sidonia
+1516.1.23  = {	controller = SPA
+		owner = SPA
+		add_core = SPA
+	     }
+1556.1.1   = { remove_core = MOR } # Formally annexed Melilla
+1713.4.11  = { remove_core = CAS }
+1780.12.25 = { add_core = MOR } # Treaty of Aranjuez, Spain ceded some territory to Morocco
+
+1910.1.1 = { discovered_by = asian }
+1921.9.18  = { revolt = { type = nationalist_rebels size = 1 } controller = REB }
+1926.5.27  = { revolt = {} controller = SPA }

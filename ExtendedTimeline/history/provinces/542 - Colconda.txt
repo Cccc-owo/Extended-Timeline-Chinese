@@ -1,0 +1,86 @@
+#2224 - Colconda
+
+owner = STV
+controller = STV
+culture = telegu
+religion = mahayana
+capital = "Golconda"
+trade_goods = gems #Diamonds
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = indian
+discovered_by = early_indian
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = STV
+center_of_trade = 1
+
+add_permanent_province_modifier = {
+	name = diamond_mines_of_golconda_modifier
+	duration = -1
+}
+
+220.1.1 = { owner = YOR controller = YOR add_core = YOR remove_core = STV }
+270.1.1 = { owner = VAK controller = VAK add_core = VAK remove_core = YOR }
+260.1.1 = { religion = hinduism }
+500.1.1 = { owner = YOR controller = YOR add_core = YOR remove_core = VAK }
+616.1.1 = { owner = CLY controller = CLY add_core = CLY remove_core = YOR }
+753.1.1 = { owner = TLG controller = TLG add_core = TLG remove_core = CLY }
+800.1.1 = { discovered_by = nomad_group }
+900.1.1 = { base_tax = 3 base_production = 3 }
+1000.1.1 = { base_tax = 4 base_production = 4 }
+1100.1.1 = { base_tax = 5 base_production = 5 }
+1324.1.1 = { owner = DLH controller = DLH add_core = DLH }
+1330.1.1 = { owner = TLG controller = TLG remove_core = DLH }
+
+1365.1.1 = {
+	owner = BAH
+	controller = BAH
+}
+1405.1.1 = { add_core = BAH }
+1453.1.1 = {
+	controller = REB
+	revolt = {
+		type = nationalist_rebels size = 1
+	}
+} #Governor of Telingana revolts, invites Kalji intervention
+1456.1.1 = { controller = BAH revolt = { } }	#End of Revolt
+1490.1.1 = {
+	remove_core = BAH 
+	owner = GOC
+	controller = GOC
+} # The Breakup of the Bahmani sultanate # Qutb Shahi dynasty
+1498.1.1 = { discovered_by = POR }
+1550.1.1 = { fort_15th = yes } #Golconda fort
+1590.1.1 = { capital = "Hyderabad" }
+1686.1.1 = { controller = MUG }
+1687.1.1 = {
+	owner = MUG
+	add_core = MUG
+}
+1712.1.1 = { add_core = DEC }	#Viceroyalty of the Deccan
+1724.1.1 = {
+	owner = DEC
+	controller = DEC
+	remove_core = MUG
+} # Asif Jah declared himself Nizam-al-Mulk
+
+1875.1.1 = { base_manpower = 2 }
+1901.1.1 = { base_manpower = 4 }
+1910.1.1 = { discovered_by = western discovered_by = eastern }
+1925.1.1 = { base_manpower = 6 }
+1930.1.1  = { add_core = INI }
+1948.9.1  = { owner = INI controller = INI remove_core = DEC }
+1951.1.1 = { base_tax = 6 base_production = 6 }
+1975.1.1 = { base_tax = 8 base_production = 8 base_manpower = 7 }
+2000.1.1 = { base_tax = 10 base_production = 11 base_manpower = 10 }
+
+
+

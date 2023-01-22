@@ -1,0 +1,83 @@
+estate_corporations = {
+	icon = 3
+
+	# If true, country will get estate
+	trigger = {
+		NOT = { has_government_attribute = is_merchant_republic }
+		NOT = { has_reform = pirate_republic_reform }
+		NOT = { has_reform = veche_republic }
+		NOT = { has_reform = cossacks_reform }
+		NOT = { government = native }
+		NOT = { has_reform = trading_city }
+		NOT = { has_reform = siberian_tribe }
+		NOT = { is_revolutionary_republic_trigger = yes }
+		NOT = { has_reform = revolutionary_empire_reform }
+		NOT = { has_reform = roman_empire_reform }
+		OR = {
+			NOT = { has_reform = celestial_empire }
+			has_dlc = "Mandate of Heaven"
+		}
+		is_nomad = no
+		is_colonial_nation = no
+		OR = {
+			has_reform = multi_party_system
+			has_reform = single_party_system
+			has_reform = military_government
+			has_reform = fascist_government
+		}
+	}
+	
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		global_trade_goods_size_modifier = 0.1
+		trade_efficiency = 0.2
+		development_cost = -0.2
+	}
+	country_modifier_neutral = {
+		trade_efficiency = 0.1
+		development_cost = -0.1
+	}	
+	country_modifier_angry = {
+		global_trade_goods_size_modifier = -0.1
+		trade_efficiency = -0.1
+		development_cost = 0.1
+	}
+	land_ownership_modifier = {
+		capitalists_loyalty_modifier = 0.2
+	}
+	
+	# Influence modifiers
+	base_influence = 20
+	influence_modifier = {
+		desc = ET_COR_OLIGARCHIC_GOVERNMENT
+		trigger = {
+			has_reform = oligarchic_reform
+		}	
+		influence = 20
+	}
+	
+	# Loyalty modifiers
+	loyalty_modifier = {
+		desc = ET_COR_OLIGARCHIC_GOVERNMENT
+		trigger = {
+			has_reform = oligarchic_reform
+		}
+		loyalty = 10
+	}
+	
+	color = { 194 180 27 }
+	
+	privileges = {
+		estate_corporate_land_rights
+		estate_corporate_loosen_regulations
+		estate_corporate_lower_taxes
+		estate_corporate_raise_taxes
+		estate_corporate_advisors
+	}
+	
+	agendas = {
+		estate_burghers_develop_x
+	}
+	
+	influence_from_dev_modifier = 1.0
+}

@@ -1,0 +1,799 @@
+
+namespace = et_china
+
+# Rise of a new dynasty
+country_event = {
+	id = et_china.1
+	title = "et_china.1.t"
+	desc = "et_china.1.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		government = monarchy
+		has_new_dynasty = yes
+		culture_group = east_asian
+		is_subject = no
+		is_at_war = no
+		NOT = { primary_culture = manchu_new }
+		NOT = { tag = CHN }
+	}
+
+	option = {
+		name = "et_china.1.a"
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.CHC"
+		trigger = {
+			NOT = { exists = CHC }
+			capital_scope = { OR = { area = hunan_area area = huguang_area } }
+		}
+		change_tag = CHC
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.HND"
+		trigger = {
+			NOT = { exists = HND }
+		}
+		change_tag = HND
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.JIN"
+		trigger = {
+			NOT = { exists = JIN }
+			NOT = { exists = CJN }
+		}
+		change_tag = JIN
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.LNG"
+		trigger = {
+			NOT = { exists = LNG }
+			capital_scope = { OR = { area = gansu_area area = west_gansu_area } }
+		}
+		change_tag = LNG
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.CMI"
+		trigger = {
+			NOT = { exists = CMI }
+			primary_culture = miao
+		}
+		change_tag = CMI
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.MIN"
+		trigger = {
+			NOT = { exists = MIN }
+			primary_culture = chimin
+		}
+		change_tag = MIN
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.MNG"
+		trigger = {
+			NOT = { exists = MNG }
+		}
+		change_tag = MNG
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.NNG"
+		trigger = {
+			NOT = { exists = NNG }
+		}
+		change_tag = NNG
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.QIC"
+		trigger = {
+			NOT = { exists = QIC }
+		}
+		change_tag = QIC
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.QIN"
+		trigger = {
+			NOT = { exists = QIN }
+		}
+		change_tag = QIN
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.SHU"
+		trigger = {
+			NOT = { exists = SHU }
+			capital_scope = { OR = { area = sichuan_area area = chuanbei_area } }
+		}
+		change_tag = SHU
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.SNG"
+		trigger = {
+			NOT = { exists = SNG }
+		}
+		change_tag = SNG
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.SUI"
+		trigger = {
+			NOT = { exists = SUI }
+		}
+		change_tag = SUI
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.TNG"
+		trigger = {
+			NOT = { exists = TNG }
+		}
+		change_tag = TNG
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.WEI"
+		trigger = {
+			NOT = { exists = WEI }
+			capital_scope = { OR = { area = north_henan_area area = henan_area } }
+		}
+		change_tag = WEI
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.WUU"
+		trigger = {
+			NOT = { exists = WUU }
+			primary_culture = wu
+		}
+		change_tag = WUU
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.XIA"
+		trigger = {
+			NOT = { exists = XIA }
+		}
+		change_tag = XIA
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.XIN"
+		trigger = {
+			NOT = { exists = XIN }
+		}
+		change_tag = XIN
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.YAN"
+		trigger = {
+			NOT = { exists = YAN }
+			capital_scope = { OR = { area = hebei_area area = liaoning_area } }
+		}
+		change_tag = YAN
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.ZAO"
+		trigger = {
+			NOT = { exists = ZAO }
+			capital_scope = { OR = { area = shanxi_area area = inner_mongolia_area } }
+		}
+		change_tag = ZAO
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+	option = {
+		name = "et_china.1.CZH"
+		trigger = {
+			NOT = { exists = CZH }
+		}
+		change_tag = CZH
+		add_legitimacy = -30
+		add_stability = -1
+		add_country_modifier = {
+			name = new_dynasty_of_china
+			duration = 3650
+		}
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -20
+		}
+	}
+}
+
+#Bon Harmonization
+country_event = {
+	id = et_china.2
+	title = "et_china.2.t"
+	desc = "et_china.2.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion = tibetan_bon }
+				save_event_target_as = tibetan_bon_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.2.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_bon"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Muism Harmonization
+country_event = {
+	id = et_china.3
+	title = "et_china.3.t"
+	desc = "et_china.3.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion = muism }
+				save_event_target_as = muism_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.3.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_muism"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Tengri Harmonization
+country_event = {
+	id = et_china.4
+	title = "et_china.4.t"
+	desc = "et_china.4.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion = tengri_pagan_reformed }
+				save_event_target_as = tengri_pagan_reformed_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.4.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_tengri"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Hellenic Harmonization
+country_event = {
+	id = et_china.5
+	title = "et_china.5.t"
+	desc = "et_china.5.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = hellenic }
+				save_event_target_as = hellenic_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.5.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_hellenic"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Irreligious Harmonization
+country_event = {
+	id = et_china.6
+	title = "et_china.6.t"
+	desc = "et_china.6.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = secular }
+				save_event_target_as = secular_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.6.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_irreligious"
+				duration = -1
+			}
+		}
+	}
+}
+
+#American Harmonization
+country_event = {
+	id = et_china.7
+	title = "et_china.7.t"
+	desc = "et_china.7.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = american_pagan }
+				save_event_target_as = american_pagan_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.7.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_american"
+				duration = -1
+			}
+		}
+	}
+}
+
+#North European Harmonization
+country_event = {
+	id = et_china.8
+	title = "et_china.8.t"
+	desc = "et_china.8.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = slavic_pagan }
+				save_event_target_as = slavic_pagan_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.8.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_north_european"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Germanic Harmonization
+country_event = {
+	id = et_china.9
+	title = "et_china.9.t"
+	desc = "et_china.9.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = german_pagan }
+				save_event_target_as = german_pagan_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.9.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_german"
+				duration = -1
+			}
+		}
+	}
+}
+
+#African Harmonization
+country_event = {
+	id = et_china.10
+	title = "et_china.10.t"
+	desc = "et_china.10.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = african_pagan }
+				save_event_target_as = african_pagan_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.10.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_african"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Mesopotamian Harmonization
+country_event = {
+	id = et_china.11
+	title = "et_china.11.t"
+	desc = "et_china.11.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = mesopotamian }
+				save_event_target_as = mesopotamian_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.11.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_mesopotamian"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Buddhic Harmonization
+country_event = {
+	id = et_china.12
+	title = "et_china.12.t"
+	desc = "et_china.12.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = buddhic }
+				save_event_target_as = buddhic_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.12.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_mahayana"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Satsana Phi Harmonization
+country_event = {
+	id = et_china.13
+	title = "et_china.13.t"
+	desc = "et_china.13.d"
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion = satsana_phi }
+				save_event_target_as = satsana_phi_province
+			}
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = "et_china.13.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_satsana_phi"
+				duration = -1
+			}
+		}
+	}
+}

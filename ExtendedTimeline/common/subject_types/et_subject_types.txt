@@ -1,0 +1,191 @@
+
+eu_state =
+{
+	copy_from = default
+	
+	sprite = GFX_icon_alliance
+	diplomacy_overlord_sprite = GFX_icon_alliance
+	diplomacy_subject_sprite = GFX_icon_alliance
+	
+	diplomacy_view_class = 0
+
+	takes_diplo_slot = no
+	pays_overlord = 0.0
+	forcelimit_bonus = 1.0
+	forcelimit_to_overlord = 0.0
+	relative_power_class = 0
+	
+	modifier_subject = clear
+}
+
+protectorate = {
+	copy_from = default
+	
+	# Graphics:
+	sprite = GFX_icon_vassal
+	diplomacy_overlord_sprite = GFX_diplomacy_leadvassal
+	diplomacy_subject_sprite = GFX_diplomacy_amvassal
+
+	# Properties:
+	transfer_trade_if_merchant_republic = yes
+	joins_overlords_wars = no
+	can_be_annexed = no
+	takes_diplo_slot = no
+	has_power_projection = no
+	overlord_protects_external = yes
+
+	max_government_rank = 1
+
+	liberty_desire_development_ratio = 0.25
+	liberty_desire_same_dynasty = -1.0
+	pays_overlord = 1.0
+	forcelimit_bonus = 1.0
+	forcelimit_to_overlord = 0.1
+
+	relative_power_class = 2
+	
+	restoration_cb = cb_disloyal_vassal
+
+	# Subject Interactions:
+	enforce_religion = no
+	sacrifice_ruler = yes
+	sacrifice_heir = yes
+	divert_trade = yes
+	seize_territory = yes
+
+	# Modifiers:
+	modifier_subject = {
+		modifier = vassal_nation
+	}
+	modifier_overlord = {
+		modifier = vassal_subject
+	}
+
+	overlord_opinion_modifier = is_vassal
+	subject_opinion_modifier = is_vassal
+}
+
+client_kingdom = {
+	copy_from = default
+	
+	# Graphics:
+	sprite = GFX_icon_vassal
+	diplomacy_overlord_sprite = GFX_diplomacy_leadvassal
+	diplomacy_subject_sprite = GFX_diplomacy_amvassal
+
+	# Properties:
+	transfer_trade_if_merchant_republic = yes
+	takes_diplo_slot = no
+	has_power_projection = no
+	gets_help_with_rebels = yes
+	overlord_can_fabricate_for = no
+
+	max_government_rank = 2
+	trust_on_start = 40
+
+	base_liberty_desire = -10
+	liberty_desire_development_ratio = 0.25
+	liberty_desire_same_dynasty = -5.0
+	pays_overlord = 1.0
+	forcelimit_bonus = 1.0
+	forcelimit_to_overlord = 0.1
+
+	relative_power_class = 2
+	
+	restoration_cb = cb_disloyal_vassal
+
+	# Subject Interactions:
+	scutage = yes
+	divert_trade = yes
+	place_relative_on_throne = yes
+
+	# Modifiers:
+	modifier_subject = {
+		modifier = vassal_nation
+	}
+	modifier_overlord = {
+		modifier = vassal_subject
+	}
+
+	overlord_opinion_modifier = is_vassal
+	subject_opinion_modifier = is_vassal
+}
+
+associated_state = {
+	copy_from = default
+	
+	# Graphics:
+	sprite = GFX_icon_vassal
+	diplomacy_overlord_sprite = GFX_diplomacy_leadvassal
+	diplomacy_subject_sprite = GFX_diplomacy_amvassal
+
+	# Properties:
+	joins_overlords_wars = no
+	overlord_protects_external = yes
+
+	max_government_rank = 2
+	trust_on_start = 40
+
+	base_liberty_desire = -10
+	liberty_desire_development_ratio = 0.25
+	liberty_desire_same_dynasty = 0
+	pays_overlord = 0.5
+	forcelimit_bonus = 0.5
+	forcelimit_to_overlord = 0.05
+
+	relative_power_class = 2
+	
+	restoration_cb = cb_disloyal_vassal
+
+	# Subject Interactions:
+	scutage = yes
+	divert_trade = yes
+
+	# Modifiers:
+	modifier_subject = {
+		modifier = vassal_nation
+	}
+	modifier_overlord = {
+		modifier = vassal_subject
+	}
+
+	overlord_opinion_modifier = is_vassal
+	subject_opinion_modifier = is_vassal
+}
+
+dominion = {
+	copy_from = default
+
+	# Graphics:
+	sprite = GFX_court_union
+	diplomacy_overlord_sprite = GFX_diplomacy_leadunions
+	diplomacy_subject_sprite = GFX_diplomacy_inunion
+
+	# Properties:
+	has_overlords_ruler = yes
+	is_voluntary = yes
+	overlord_can_attack = no
+	gets_help_with_rebels = yes
+	can_have_subjects_of_other_types = yes
+
+	liberty_desire_negative_prestige = 1.0
+	military_focus = 0.66
+
+	relative_power_class = 1
+
+	restoration_cb = cb_restore_personal_union
+	
+	# Subject Interactions:
+	placate_rulers = no
+	enforce_culture = no
+	siphon_income = yes
+	support_loyalists = yes
+
+	# Modifiers:
+	modifier_overlord = {
+		modifier = union_subject
+	}
+
+	overlord_opinion_modifier = in_union
+	subject_opinion_modifier = in_union
+}

@@ -1,0 +1,4294 @@
+rsd_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = RSD
+	}
+	has_country_shield = yes
+
+	hejaz_rsd = {
+		icon = mission_arabian_fort
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = tabuk_area
+				area = medina_area
+				area = mecca_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tabuk_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			medina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mecca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			nafud_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			qasim_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_permanent_claim = 2335
+			add_permanent_claim = 2336
+			add_permanent_claim = 4275
+			add_permanent_claim = 2339
+			capital_scope = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = hejaz_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	najd_rsd = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { hejaz_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = nafud_area
+				area = qasim_area
+				province_id = 2335
+				province_id = 2336
+				province_id = 4275
+				province_id = 2339
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			nafud_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			qasim_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_or_non_sovereign_subject_of = 2335
+			owns_or_non_sovereign_subject_of = 2336
+			owns_or_non_sovereign_subject_of = 4275
+			owns_or_non_sovereign_subject_of = 2339
+		}
+		effect = {
+			add_prestige = 15
+			asir_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tihama_al_yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hadramut_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mahra_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			capital_scope = {
+				ROOT = {
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = najd_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	yemen_rsd = {
+		icon = mission_asian_trader
+		required_missions = { najd_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = asir_area
+				area = tihama_al_yemen_area
+				area = upper_yemen_area
+				area = yemen_area
+				area = hadramut_area
+				area = mahra_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			asir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tihama_al_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hadramut_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mahra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			bahrain_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			pirate_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mascat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oman_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dhofar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			capital_scope = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = yemen_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	oman_rsd = {
+		icon = mission_unite_home_region
+		required_missions = { yemen_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = bahrain_area
+				area = pirate_coast_area
+				area = mascat_area
+				area = oman_area
+				area = dhofar_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			bahrain_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			pirate_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mascat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			oman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dhofar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			capital_scope = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = oman_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	ummah_arab_rsd = {
+		icon = mission_religious
+		required_missions = { oman_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = tabuk_area
+				area = medina_area
+				area = mecca_area
+				area = nafud_area
+				area = qasim_area
+				province_id = 2335
+				province_id = 2336
+				province_id = 4275
+				province_id = 2339
+				area = asir_area
+				area = tihama_al_yemen_area
+				area = upper_yemen_area
+				area = yemen_area
+				area = hadramut_area
+				area = mahra_area
+				area = bahrain_area
+				area = pirate_coast_area
+				area = mascat_area
+				area = oman_area
+				area = dhofar_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			tabuk_area = {
+				type = all
+				religion = ROOT
+			}
+			medina_area = {
+				type = all
+				religion = ROOT
+			}
+			mecca_area = {
+				type = all
+				religion = ROOT
+			}
+			nafud_area = {
+				type = all
+				religion = ROOT
+			}
+			qasim_area = {
+				type = all
+				religion = ROOT
+			}
+			2335 = {
+				religion = ROOT
+			}
+			2336 = {
+				religion = ROOT
+			}
+			4275 = {
+				religion = ROOT
+			}
+			2339 = {
+				religion = ROOT
+			}
+			asir_area = {
+				type = all
+				religion = ROOT
+			}
+			tihama_al_yemen_area = {
+				type = all
+				religion = ROOT
+			}
+			upper_yemen_area = {
+				type = all
+				religion = ROOT
+			}
+			yemen_area = {
+				type = all
+				religion = ROOT
+			}
+			hadramut_area = {
+				type = all
+				religion = ROOT
+			}
+			mahra_area = {
+				type = all
+				religion = ROOT
+			}
+			bahrain_area = {
+				type = all
+				religion = ROOT
+			}
+			pirate_coast_area = {
+				type = all
+				religion = ROOT
+			}
+			mascat_area = {
+				type = all
+				religion = ROOT
+			}
+			oman_area = {
+				type = all
+				religion = ROOT
+			}
+			dhofar_area = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ummah_arab_rsd_mod
+				duration = -1
+			}
+		}
+	}
+	england_rsd = {
+		icon = mission_invade_island
+		required_missions = { gaul_rsd }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = wessex_area
+				area = home_counties_area
+				area = east_anglia_area
+				area = east_midlands_area
+				area = west_midlands_area
+				area = wales_area
+				area = yorkshire_area
+				area = scottish_marches_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			scottish_marches_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			lowlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			highlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kingdom_of_the_isles_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ulster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			connacht_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			leinster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			munster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			236 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = england_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	britannia_rsd = {
+		icon = mission_galleys_in_port
+		required_missions = { england_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = lowlands_area
+				area = highlands_area
+				area = kingdom_of_the_isles_area
+				area = ulster_area
+				area = connacht_area
+				area = leinster_area
+				area = munster_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lowlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kingdom_of_the_isles_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			connacht_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			leinster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			munster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			236 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = britannia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+}
+
+rsd_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = RSD
+	}
+	has_country_shield = yes
+
+	egypt_rsd = {
+		icon = mission_early_game_buildings
+		required_missions = { israel_rsd }
+		position = 2
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = gulf_of_arabia_area
+				area = delta_area
+				area = bahari_area
+				area = vostani_area
+				area = said_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			gulf_of_arabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vostani_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			said_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			tripolitania_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			djerba_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tunisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kabylia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			361 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = egypt_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	africa_rsd = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { egypt_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = tripolitania_area
+				area = djerba_area
+				area = tunisia_area
+				area = kabylia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			djerba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			ouled_nail_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hautes_plaines_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			algiers_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			fez_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			marrekesh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			341 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = africa_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	mauretania_rsd = {
+		icon = mission_non-western_soldiers
+		required_missions = { africa_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = ouled_nail_area
+				area = hautes_plaines_area
+				area = algiers_area
+				area = fez_area
+				area = northern_morocco_area
+				area = western_morocco_area
+				area = marrekesh_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hautes_plaines_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			fez_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			marrekesh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			344 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = mauretania_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	ummah_africa_rsd = {
+		icon = mission_religious
+		required_missions = { mauretania_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = gulf_of_arabia_area
+				area = delta_area
+				area = bahari_area
+				area = vostani_area
+				area = said_area
+				area = tripolitania_area
+				area = djerba_area
+				area = tunisia_area
+				area = kabylia_area
+				area = ouled_nail_area
+				area = hautes_plaines_area
+				area = algiers_area
+				area = fez_area
+				area = northern_morocco_area
+				area = western_morocco_area
+				area = marrekesh_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			gulf_of_arabia_area = {
+				type = all
+				religion = ROOT
+			}
+			delta_area = {
+				type = all
+				religion = ROOT
+			}
+			bahari_area = {
+				type = all
+				religion = ROOT
+			}
+			vostani_area = {
+				type = all
+				religion = ROOT
+			}
+			said_area = {
+				type = all
+				religion = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				religion = ROOT
+			}
+			djerba_area = {
+				type = all
+				religion = ROOT
+			}
+			tunisia_area = {
+				type = all
+				religion = ROOT
+			}
+			kabylia_area = {
+				type = all
+				religion = ROOT
+			}
+			ouled_nail_area = {
+				type = all
+				religion = ROOT
+			}
+			hautes_plaines_area = {
+				type = all
+				religion = ROOT
+			}
+			algiers_area = {
+				type = all
+				religion = ROOT
+			}
+			fez_area = {
+				type = all
+				religion = ROOT
+			}
+			northern_morocco_area = {
+				type = all
+				religion = ROOT
+			}
+			western_morocco_area = {
+				type = all
+				religion = ROOT
+			}
+			marrekesh_area = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ummah_africa_rsd_mod
+				duration = -1
+			}
+		}
+	}
+	hispania_rsd = {
+		icon = mission_have_two_subjects
+		required_missions = {  }
+		provinces_to_highlight = {
+			region = iberia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			iberia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			france_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			219 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = hispania_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	gaul_rsd = {
+		icon = mission_conquer_50_development
+		required_missions = { hispania_rsd }
+		provinces_to_highlight = {
+			region = france_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			france_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			wessex_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			home_counties_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_anglia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_midlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_midlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			wales_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yorkshire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			scottish_marches_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			italy_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			183 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = gaul_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	italia_rsd = {
+		icon = mission_hands_praying
+		required_missions = { gaul_rsd }
+		provinces_to_highlight = {
+			region = italy_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			italy_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			romandie_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			switzerland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tirol_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			118 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = italia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	raetia_rsd = {
+		icon = mission_european_church
+		required_missions = { italia_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = romandie_area
+				area = switzerland_area
+				area = tirol_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			romandie_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			switzerland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tirol_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			165 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = raetia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	ummah_rome_rsd = {
+		icon = mission_religious
+		required_missions = {
+			britannia_rsd
+			raetia_rsd
+			dalmatia_rsd
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = iberia_region
+				region = france_region
+				region = italy_region
+				region = british_isles_region
+				area = bulgaria_area
+				area = serbia_area
+				area = albania_area
+				area = rascia_area
+				area = bosnia_area
+				area = east_adriatic_coast_area
+				area = croatia_area
+				area = carinthia_area
+				area = romandie_area
+				area = switzerland_area
+				area = tirol_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			iberia_region = {
+				type = all
+				religion = ROOT
+			}
+			france_region = {
+				type = all
+				religion = ROOT
+			}
+			italy_region = {
+				type = all
+				religion = ROOT
+			}
+			british_isles_region = {
+				type = all
+				religion = ROOT
+			}
+			bulgaria_area = {
+				type = all
+				religion = ROOT
+			}
+			serbia_area = {
+				type = all
+				religion = ROOT
+			}
+			albania_area = {
+				type = all
+				religion = ROOT
+			}
+			rascia_area = {
+				type = all
+				religion = ROOT
+			}
+			bosnia_area = {
+				type = all
+				religion = ROOT
+			}
+			east_adriatic_coast_area = {
+				type = all
+				religion = ROOT
+			}
+			croatia_area = {
+				type = all
+				religion = ROOT
+			}
+			carinthia_area = {
+				type = all
+				religion = ROOT
+			}
+			romandie_area = {
+				type = all
+				religion = ROOT
+			}
+			switzerland_area = {
+				type = all
+				religion = ROOT
+			}
+			tirol_area = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ummah_rome_rsd_mod
+				duration = -1
+			}
+		}
+	}
+}
+
+rsd_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = RSD
+	}
+	has_country_shield = yes
+
+	israel_rsd = {
+		icon = mission_mosque
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			area = palestine_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			gulf_of_arabia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			delta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bahari_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			vostani_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			said_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			syria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			aleppo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			syrian_desert_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			379 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = israel_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	syria_rsd = {
+		icon = mission_asian_trader
+		required_missions = { israel_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+				area = aleppo_area
+				area = syrian_desert_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syrian_desert_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			dulkadir_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cukurova_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			karaman_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ankara_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kastamonu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			germiyan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			377 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = syria_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	anatolia_rsd = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { syria_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = dulkadir_area
+				area = rum_area
+				area = cukurova_area
+				area = karaman_area
+				area = ankara_area
+				area = kastamonu_area
+				area = germiyan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			dulkadir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cukurova_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ankara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kastamonu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			germiyan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			326 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = anatolia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	ummah_holy_rsd = {
+		icon = mission_religious
+		required_missions = { anatolia_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = palestine_area
+				area = syria_area
+				area = aleppo_area
+				area = syrian_desert_area
+				area = dulkadir_area
+				area = rum_area
+				area = cukurova_area
+				area = karaman_area
+				area = ankara_area
+				area = kastamonu_area
+				area = germiyan_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			palestine_area = {
+				type = all
+				religion = ROOT
+			}
+			syria_area = {
+				type = all
+				religion = ROOT
+			}
+			aleppo_area = {
+				type = all
+				religion = ROOT
+			}
+			syrian_desert_area = {
+				type = all
+				religion = ROOT
+			}
+			dulkadir_area = {
+				type = all
+				religion = ROOT
+			}
+			rum_area = {
+				type = all
+				religion = ROOT
+			}
+			cukurova_area = {
+				type = all
+				religion = ROOT
+			}
+			karaman_area = {
+				type = all
+				religion = ROOT
+			}
+			ankara_area = {
+				type = all
+				religion = ROOT
+			}
+			kastamonu_area = {
+				type = all
+				religion = ROOT
+			}
+			germiyan_area = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ummah_holy_rsd_mod
+				duration = -1
+			}
+		}
+	}
+	asia_rsd = {
+		icon = mission_unite_home_region
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+				area = aydin_area
+				area = hudavendigar_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			318 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = asia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	thracia_rsd = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { asia_rsd }
+		provinces_to_highlight = {
+			area = thrace_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			aegean_archipelago_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_greece_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			macedonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			151 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = thracia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	greece_rsd = {
+		icon = mission_non-western_soldiers
+		required_missions = { thracia_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = aegean_archipelago_area
+				area = morea_area
+				area = northern_greece_area
+				area = macedonia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			146 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = greece_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	ummah_yunan_rsd = {
+		icon = mission_religious
+		required_missions = { greece_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = aydin_area
+				area = hudavendigar_area
+				area = thrace_area
+				area = aegean_archipelago_area
+				area = morea_area
+				area = northern_greece_area
+				area = macedonia_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			aydin_area = {
+				type = all
+				religion = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				religion = ROOT
+			}
+			thrace_area = {
+				type = all
+				religion = ROOT
+			}
+			aegean_archipelago_area = {
+				type = all
+				religion = ROOT
+			}
+			morea_area = {
+				type = all
+				religion = ROOT
+			}
+			northern_greece_area = {
+				type = all
+				religion = ROOT
+			}
+			macedonia_area = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ummah_yunan_rsd_mod
+				duration = -1
+			}
+		}
+	}
+	dalmatia_rsd = {
+		icon = mission_conquer_5_states
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+				area = bulgaria_area
+				area = serbia_area
+				area = albania_area
+				area = rascia_area
+				area = bosnia_area
+				area = east_adriatic_coast_area
+				area = croatia_area
+				area = carinthia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			bulgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			serbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rascia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bosnia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_adriatic_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			croatia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			carinthia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			wallachia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			southern_transylvania_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1765 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = dalmatia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	dacia_rsd = {
+		icon = mission_empire
+		required_missions = { dalmatia_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = wallachia_area
+				area = hudavendigar_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			wallachia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			southern_transylvania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			156 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = dacia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+}
+
+rsd_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = RSD
+	}
+	has_country_shield = yes
+
+	armenia_rsd = {
+		icon = mission_hands_praying
+		required_missions = { iraq_rsd }
+		position = 2
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = erzurum_area
+				area = north_kurdistan_area
+				area = samtskhe_area
+				area = tabriz_area
+				area = armenia_area
+				area = shirvan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			erzurum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_kurdistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			samtskhe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tabriz_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			armenia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shirvan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			imereti_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kartli_kakheti_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			419 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = armenia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	iberia_rsd = {
+		icon = mission_high_income
+		required_missions = { armenia_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = imereti_area
+				area = kartli_kakheti_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			2196 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = iberia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	ummah_iran_rsd = {
+		icon = mission_religious
+		required_missions = { parthia_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = basra_area
+				area = iraq_arabi_area
+				area = al_jazira_area
+				area = shahrizor_area
+				area = azerbaijan_area
+				area = luristan_area
+				area = khuzestan_area
+				area = isfahan_area
+				area = farsistan_area
+				area = kerman_area
+				area = persian_gulf_coast
+				area = mogostan_area
+				area = iraq_e_ajam_area
+				area = mashhad_area
+				area = birjand_area
+				area = herat_area
+				area = merv_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			basra_area = {
+				type = all
+				religion = ROOT
+			}
+			iraq_arabi_area = {
+				type = all
+				religion = ROOT
+			}
+			al_jazira_area = {
+				type = all
+				religion = ROOT
+			}
+			shahrizor_area = {
+				type = all
+				religion = ROOT
+			}
+			azerbaijan_area = {
+				type = all
+				religion = ROOT
+			}
+			luristan_area = {
+				type = all
+				religion = ROOT
+			}
+			khuzestan_area = {
+				type = all
+				religion = ROOT
+			}
+			isfahan_area = {
+				type = all
+				religion = ROOT
+			}
+			farsistan_area = {
+				type = all
+				religion = ROOT
+			}
+			kerman_area = {
+				type = all
+				religion = ROOT
+			}
+			persian_gulf_coast = {
+				type = all
+				religion = ROOT
+			}
+			mogostan_area = {
+				type = all
+				religion = ROOT
+			}
+			iraq_e_ajam_area = {
+				type = all
+				religion = ROOT
+			}
+			mashhad_area = {
+				type = all
+				religion = ROOT
+			}
+			birjand_area = {
+				type = all
+				religion = ROOT
+			}
+			herat_area = {
+				type = all
+				religion = ROOT
+			}
+			merv_area = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ummah_iran_rsd_mod
+				duration = -1
+			}
+		}
+	}
+	afghanistan_rsd = {
+		icon = mission_arabian_fort
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+				area = sistan_area
+				area = ghor_area
+				area = kabulistan_area
+				area = balkh_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			erzurum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ghor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabulistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			balkh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			makran_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kalat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sindh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			multan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lahore_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			marwar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			451 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = afghanistan_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	sindh_rsd = {
+		icon = mission_buddhist_monk_praying
+		required_missions = { afghanistan_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = makran_area
+				area = kalat_area
+				area = sindh_area
+				area = northern_sindh_area
+				area = multan_area
+				area = lahore_area
+				area = marwar_area
+				area = sind_sagar_area
+				area = jangladesh_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			makran_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kalat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sindh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_sindh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			multan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lahore_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			marwar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sind_sagar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jangladesh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			patan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			saurashtra_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ahmedabad_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tapti_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mewar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			507 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = sindh_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	gujarat_rsd = {
+		icon = mission_asian_trader
+		required_missions = { sindh_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = patan_area
+				area = saurashtra_area
+				area = ahmedabad_area
+				area = tapti_area
+				area = mewar_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			patan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saurashtra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ahmedabad_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tapti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mewar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			malwa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gondwana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			garjat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			orissa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bundelkhand_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			baghelkhand_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_mahanadi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gird_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			khandesh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			berar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			telingana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ahmednagar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			desh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			konkan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sirhind_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_doab_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jaipur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_doab_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oudh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_doab_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			purvanchal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bihar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jharkhand_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			516 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = gujarat_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	deccan_rsd = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { gujarat_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = malwa_area
+				area = gondwana_area
+				area = garjat_area
+				area = orissa_area
+				area = bundelkhand_area
+				area = baghelkhand_area
+				area = upper_mahanadi_area
+				area = gird_area
+				area = khandesh_area
+				area = berar_area
+				area = telingana_area
+				area = ahmednagar_area
+				area = desh_area
+				area = konkan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			malwa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gondwana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			garjat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			orissa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bundelkhand_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			baghelkhand_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_mahanadi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gird_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			khandesh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			berar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			telingana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ahmednagar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			desh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			konkan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			andhra_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			golconda_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			maidan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kanara_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			raichur_doab_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rayalaseema_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mysore_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			coromandel_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_carnatic_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_carnatic_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kongu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tanjore_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			malabar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			madura_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lanka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_lanka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			545 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = deccan_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	southind_rsd = {
+		icon = mission_indian_soldier_elephant
+		required_missions = { deccan_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = andhra_area
+				area = golconda_area
+				area = maidan_area
+				area = kanara_area
+				area = raichur_doab_area
+				area = rayalaseema_area
+				area = mysore_area
+				area = coromandel_area
+				area = north_carnatic_area
+				area = south_carnatic_area
+				area = kongu_area
+				area = tanjore_area
+				area = malabar_area
+				area = madura_area
+				area = lanka_area
+				area = south_lanka_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			andhra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			golconda_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			maidan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kanara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			raichur_doab_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rayalaseema_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mysore_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			coromandel_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_carnatic_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_carnatic_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kongu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tanjore_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			malabar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			madura_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lanka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_lanka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			534 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = southind_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	ummah_hind_rsd = {
+		icon = mission_religious
+		required_missions = {
+			southind_rsd
+			bengal_rsd
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = west_india_region
+				region = deccan_region
+				region = coromandel_region
+				area = sistan_area
+				area = ghor_area
+				area = kabulistan_area
+				area = balkh_area
+				area = makran_area
+				area = kalat_area
+				area = multan_area
+				area = lahore_area
+				area = sind_sagar_area
+				area = garjat_area
+				area = orissa_area
+				area = bundelkhand_area
+				area = baghelkhand_area
+				area = upper_mahanadi_area
+				area = gird_area
+				area = sirhind_area
+				area = upper_doab_area
+				area = katehar_area
+				area = mithila_area
+				area = oudh_area
+				area = lower_doab_area
+				area = purvanchal_area
+				area = bihar_area
+				area = jharkhand_area
+				area = west_bengal_area
+				area = north_bengal_area
+				area = east_bengal_area
+				area = gaur_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			west_india_region = {
+				type = all
+				religion = ROOT
+			}
+			deccan_region = {
+				type = all
+				religion = ROOT
+			}
+			coromandel_region = {
+				type = all
+				religion = ROOT
+			}
+			sistan_area = {
+				type = all
+				religion = ROOT
+			}
+			ghor_area = {
+				type = all
+				religion = ROOT
+			}
+			kabulistan_area = {
+				type = all
+				religion = ROOT
+			}
+			balkh_area = {
+				type = all
+				religion = ROOT
+			}
+			makran_area = {
+				type = all
+				religion = ROOT
+			}
+			kalat_area = {
+				type = all
+				religion = ROOT
+			}
+			multan_area = {
+				type = all
+				religion = ROOT
+			}
+			lahore_area = {
+				type = all
+				religion = ROOT
+			}
+			sind_sagar_area = {
+				type = all
+				religion = ROOT
+			}
+			garjat_area = {
+				type = all
+				religion = ROOT
+			}
+			orissa_area = {
+				type = all
+				religion = ROOT
+			}
+			bundelkhand_area = {
+				type = all
+				religion = ROOT
+			}
+			baghelkhand_area = {
+				type = all
+				religion = ROOT
+			}
+			upper_mahanadi_area = {
+				type = all
+				religion = ROOT
+			}
+			gird_area = {
+				type = all
+				religion = ROOT
+			}
+			sirhind_area = {
+				type = all
+				religion = ROOT
+			}
+			upper_doab_area = {
+				type = all
+				religion = ROOT
+			}
+			katehar_area = {
+				type = all
+				religion = ROOT
+			}
+			mithila_area = {
+				type = all
+				religion = ROOT
+			}
+			oudh_area = {
+				type = all
+				religion = ROOT
+			}
+			lower_doab_area = {
+				type = all
+				religion = ROOT
+			}
+			purvanchal_area = {
+				type = all
+				religion = ROOT
+			}
+			bihar_area = {
+				type = all
+				religion = ROOT
+			}
+			jharkhand_area = {
+				type = all
+				religion = ROOT
+			}
+			west_bengal_area = {
+				type = all
+				religion = ROOT
+			}
+			north_bengal_area = {
+				type = all
+				religion = ROOT
+			}
+			east_bengal_area = {
+				type = all
+				religion = ROOT
+			}
+			gaur_area = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ummah_hind_rsd_mod
+				duration = -1
+			}
+		}
+	}
+}
+
+rsd_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = RSD
+	}
+	has_country_shield = yes
+
+	iraq_rsd = {
+		icon = mission_dominate_home_trade_node
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = basra_area
+				area = iraq_arabi_area
+				area = al_jazira_area
+				area = shahrizor_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			basra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			iraq_arabi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			al_jazira_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shahrizor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			azerbaijan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			luristan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			khuzestan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			isfahan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			farsistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kerman_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			persian_gulf_coast = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mogostan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			410 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = iraq_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	persia_rsd = {
+		icon = mission_assemble_an_army
+		required_missions = { iraq_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = azerbaijan_area
+				area = luristan_area
+				area = khuzestan_area
+				area = isfahan_area
+				area = farsistan_area
+				area = kerman_area
+				area = persian_gulf_coast
+				area = mogostan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			azerbaijan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			luristan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			khuzestan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			isfahan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			farsistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kerman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			persian_gulf_coast = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mogostan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			iraq_e_ajam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mashhad_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			birjand_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			herat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			merv_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2218 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = persia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	parthia_rsd = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { persia_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = iraq_e_ajam_area
+				area = mashhad_area
+				area = birjand_area
+				area = herat_area
+				area = merv_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			iraq_e_ajam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mashhad_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			birjand_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			herat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			merv_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			transcaspia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			khiva_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			transoxiana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kyzylkum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			arys_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ferghana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			436 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = parthia_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	transoxiana_rsd = {
+		icon = mission_chinese_general_riding
+		required_missions = { parthia_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = transcaspia_area
+				area = khiva_area
+				area = transoxiana_area
+				area = kyzylkum_area
+				area = arys_area
+				area = ferghana_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			transcaspia_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			khiva_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			transoxiana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kyzylkum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			arys_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ferghana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			utsang_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			changtang_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ngari_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tsang_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			amdo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kham_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			455 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = transoxiana_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	tibet_rsd = {
+		icon = mission_japanese_fort
+		required_missions = { transoxiana_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = utsang_area
+				area = changtang_area
+				area = ngari_area
+				area = tsang_area
+				area = amdo_area
+				area = kham_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			utsang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			changtang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ngari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tsang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			amdo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kham_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			north_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			xinan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2131 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = tibet_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	china_rsd = {
+		icon = mission_great_wall
+		required_missions = { tibet_rsd }
+		provinces_to_highlight = {
+			OR = {
+				region = north_china_region
+				region = south_china_region
+				region = xinan_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			north_china_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_china_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			xinan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			700 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = china_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	ummah_siyn_rsd = {
+		icon = mission_religious
+		required_missions = { china_rsd }
+		provinces_to_highlight = {
+			OR = {
+				region = north_china_region
+				region = south_china_region
+				region = xinan_region
+				area = transcaspia_area
+				area = khiva_area
+				area = transoxiana_area
+				area = kyzylkum_area
+				area = arys_area
+				area = ferghana_area
+				area = utsang_area
+				area = changtang_area
+				area = ngari_area
+				area = tsang_area
+				area = amdo_area
+				area = kham_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			north_china_region = {
+				type = all
+				religion = ROOT
+			}
+			south_china_region = {
+				type = all
+				religion = ROOT
+			}
+			xinan_region = {
+				type = all
+				religion = ROOT
+			}
+			transcaspia_area = {
+				type = all
+				religion = ROOT
+			}
+			khiva_area = {
+				type = all
+				religion = ROOT
+			}
+			transoxiana_area = {
+				type = all
+				religion = ROOT
+			}
+			kyzylkum_area = {
+				type = all
+				religion = ROOT
+			}
+			arys_area = {
+				type = all
+				religion = ROOT
+			}
+			ferghana_area = {
+				type = all
+				religion = ROOT
+			}
+			utsang_area = {
+				type = all
+				religion = ROOT
+			}
+			changtang_area = {
+				type = all
+				religion = ROOT
+			}
+			ngari_area = {
+				type = all
+				religion = ROOT
+			}
+			tsang_area = {
+				type = all
+				religion = ROOT
+			}
+			amdo_area = {
+				type = all
+				religion = ROOT
+			}
+			kham_area = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ummah_siyn_rsd_mod
+				duration = -1
+			}
+		}
+	}
+	delhi_rsd = {
+		icon = mission_war_chest
+		required_missions = { gujarat_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = sirhind_area
+				area = upper_doab_area
+				area = jaipur_area
+				area = katehar_area
+				area = mithila_area
+				area = oudh_area
+				area = lower_doab_area
+				area = purvanchal_area
+				area = bihar_area
+				area = jharkhand_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sirhind_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_doab_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jaipur_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			katehar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mithila_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			oudh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_doab_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			purvanchal_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bihar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jharkhand_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			west_bengal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_bengal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_bengal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gaur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			522 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = delhi_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	bengal_rsd = {
+		icon = mission_empire
+		required_missions = { delhi_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = west_bengal_area
+				area = north_bengal_area
+				area = east_bengal_area
+				area = gaur_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			west_bengal_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_bengal_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_bengal_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gaur_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			tripura_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			arakan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chindwin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_burma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kachin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			naga_hills_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shan_hill_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			karenni_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_burma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_burma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			564 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = bengal_rsd_mod
+				duration = 730
+			}
+		}
+	}
+	burma_rsd = {
+		icon = mission_trade_company_region_abroad
+		required_missions = { bengal_rsd }
+		provinces_to_highlight = {
+			OR = {
+				area = tripura_area
+				area = arakan_area
+				area = chindwin_area
+				area = upper_burma_area
+				area = kachin_area
+				area = naga_hills_area
+				area = shan_hill_area
+				area = karenni_area
+				area = central_burma_area
+				area = lower_burma_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tripura_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			arakan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			chindwin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kachin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			naga_hills_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shan_hill_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karenni_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			586 = {
+				ROOT = {
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					infantry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+					cavalry = PREV
+				}
+			}
+			add_country_modifier = {
+				name = burma_rsd_mod
+				duration = 730
+			}
+		}
+	}
+}

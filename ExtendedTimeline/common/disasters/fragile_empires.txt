@@ -1,0 +1,110 @@
+fragile_empires = {
+	potential = {
+		OR = {
+			government = monarchy
+			government = tribal
+		}
+		is_nomad = no
+		NOT = { has_reform = celestial_empire }
+		NOT = { has_reform = roman_empire_reform }
+		NOT = { has_reform = roman_republic_reform }
+		is_subject = no
+		uses_doom = no
+		num_of_cities = 60
+		OR = {
+			NOT = { has_reform = caliphate_reform }
+			is_year = 750
+		}
+		NOT = { adm_tech = 47 }
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		NOT = { stability = 1 }
+		NOT = { legitimacy = 80 }
+		num_of_cities = 80
+	}
+	
+	can_stop = { 
+		OR = {
+			has_any_disaster = yes
+			stability = 3
+			NOT = { num_of_cities = 75 }
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 2
+			NOT = { prestige = 0 }
+		}
+		modifier = {
+			factor = 2
+			war_exhaustion = 5
+		} 
+		modifier = {
+			factor = 1
+			num_of_loans = 10
+			NOT = { num_of_loans = 25 }
+		}	
+		modifier = {
+			factor = 2
+			num_of_loans = 25
+		}	
+		modifier = {
+			factor = 4
+			is_bankrupt = yes
+		}	
+		modifier = {
+			factor = 1
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = -1 }
+		}	
+		modifier = {
+			factor = 4
+			NOT = { stability = -2 }
+		}	
+		modifier = {
+			factor = 2
+			NOT = { legitimacy = 40 }
+		}	
+		modifier = {
+			factor = 4
+			NOT = { legitimacy = 20 }
+		}	
+		modifier = {
+			factor = 2
+			num_of_cities = 160
+		}	
+
+	}
+	
+	can_end = {
+		stability = 3
+		legitimacy = 60
+	}
+
+	modifier = {
+		global_unrest = 10
+		stability_cost_modifier = 0.1
+	}	
+	
+	on_start = fragile_empires.1
+	on_end = fragile_empires.2
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = fragile_empires.3
+			100 = fragile_empires.5
+			100 = fragile_empires.6
+			100 = fragile_empires.7
+		}
+	}
+}
+

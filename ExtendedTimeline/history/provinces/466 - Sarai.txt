@@ -1,0 +1,58 @@
+#466 - Sarai
+
+owner = ALN
+controller = ALN
+add_core = ALN
+is_city = yes
+culture = alan
+religion = tengri_pagan_reformed
+capital = "Sarai"
+trade_goods = wool
+hre = no
+discovered_by = nomad_group
+discovered_by = eastern_nomad_group
+discovered_by = western_nomad_group
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+base_tax = 2
+base_production = 2
+base_manpower = 2
+center_of_trade = 1
+
+320.1.1 = { owner = HNS controller = HNS add_core = HNS remove_core = ALN culture = hunnic }
+376.1.1 = { add_core = KHZ culture = khazar }
+448.1.1 = { owner = KHZ controller = KHZ remove_core = HNS }
+700.1.1 = { base_tax = 3 base_production = 3 }
+800.1.1 = { base_manpower = 3 discovered_by = eastern }
+900.1.1 = { base_tax = 4 base_production = 4 }
+920.1.1 = { religion = sunni }
+969.1.1 = { owner = PEC controller = PEC add_core = PEC remove_core = KHZ culture = cuman }
+1000.1.1 = { base_manpower = 4 }
+1037.1.1 = { owner = CUM controller = CUM add_core = CUM remove_core = PEC }
+1100.1.1 = { base_tax = 5 base_production = 5 }
+1200.1.1 = { base_manpower = 5 }
+1236.1.1 = { owner = KHA controller = KHA add_core = KHA add_core = AST remove_core = CUM culture = astrakhani }
+1260.1.1 = { owner = WHH controller = WHH add_core = WHH remove_core = KHA }
+1300.1.1 = { base_tax = 6 base_production = 6 }
+1372.1.1 = { owner = BHO controller = BHO add_core = BHO }
+1374.1.1 = { owner = WHH controller = WHH remove_core = BHO }
+1378.1.1 = { owner = GLH controller = GLH add_core = GLH }
+
+1442.1.1  = { owner = GOL controller = GOL add_core = GOL remove_core = GLH }
+1502.6.1  = { owner = AST controller = AST remove_core = GOL } # Golden Horde destroyed by Crimea
+1556.6.2  = { owner = RUS controller = RUS add_core = RUS remove_core = AST } # Russians acquire Volga after fall of Astrakhan
+1556.8.1  = { base_tax = 3 base_production = 3 base_manpower = 2 } #Sarai destroyed
+1600.1.1  = { citysize = 6840 culture = russian religion = orthodox }
+1670.3.1   = { revolt = { type = anti_tax_rebels size = 2 name = "Stepan Razin" } controller = REB unrest = 6 } # Razin rebellion
+1671.4.14   = { revolt = { } controller = RUS unrest = 0 } # Razin captured
+1773.9.13  = { revolt = { type = anti_tax_rebels size = 2 name = "Yemelyan Pugachev" } controller = REB unrest = 6 } # Pugachev rebellion
+1775.2.1 = { revolt = {} controller = RUS unrest = 0 } # Pugachev is captured
+
+1910.1.1 = { discovered_by = asian }
+1922.12.30 = { owner = SOV controller = SOV add_core = SOV remove_core = RUS }
+1959.1.1   = { capital = "Akhtubinsk" }
+1991.12.25 = { owner = RUS controller = RUS add_core = RUS remove_core = SOV }
+
+
+

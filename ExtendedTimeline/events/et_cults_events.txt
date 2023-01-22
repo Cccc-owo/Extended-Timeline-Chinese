@@ -1,0 +1,425 @@
+#########################################################
+# Events from CPBM made by zebenji modified by qweytr
+#########################################################
+
+namespace = et_cults
+
+# Festivities of Yennayer
+country_event = {
+	id = et_cults.1
+	title = et_cults.1.t
+	desc = et_cults.1.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		religion = shamanism
+		culture_group = maghrebi
+		is_month = 1
+		NOT = { has_country_modifier = yennayer_done1 }
+		NOT = { has_country_modifier = yennayer_done2 }
+		NOT = { has_country_modifier = yennayer_done3 }
+		NOT = { has_country_modifier = yennayer_done4 }
+		NOT = { has_country_modifier = yennayer_not_done }
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = et_cults.1.a
+		add_adm_power = -25
+		add_years_of_income = -0.2
+		random_list = {
+			55 = {
+				add_country_modifier = {
+				name = yennayer_done1
+				duration = 365
+				}
+			}
+			15 = {
+				add_country_modifier = {
+				name = yennayer_done2
+				duration = 365
+				}
+			}
+			15 = {
+				add_country_modifier = {
+				name = yennayer_done3
+				duration = 365
+				}
+			}
+			15 = {
+				add_country_modifier = {
+				name = yennayer_done4
+				duration = 365
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_cults.1.b
+		add_country_modifier = {
+			name = yennayer_not_done
+			duration = 365
+		}
+		random_list = {
+			80 = { }
+			20 = { add_stability = -1 }
+		}
+	}
+}
+
+# Madghacen
+country_event = {
+	id = et_cults.3
+	title = et_cults.3.t
+	desc = et_cults.3.d
+	picture = CPBM_TUMULUS_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			has_adopted_cult = cult_of_the_dead
+			has_adopted_cult = egyptian_cult
+			has_adopted_cult = hellenism_cult
+		}
+		owns = 2458
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	option = {
+		name = et_cults.EVTOPT4A
+		add_years_of_income = -1.5
+		add_country_modifier = {
+			name = restored_mzora
+			duration = -1
+		}
+	}
+
+	option = {
+		name = et_cults.EVTOPT4B
+		add_prestige = -5
+	}
+}
+
+# Construction of a Pyramid
+country_event = {
+	id = et_cults.4
+	title = et_cults.4.t
+	desc = et_cults.4.d
+	picture = CPBM_TUMULUS2_eventPicture
+
+	trigger = {
+		OR = {
+			has_adopted_cult = cult_of_the_dead
+			has_adopted_cult = egyptian_cult
+			has_adopted_cult = hellenism_cult
+		}
+		ruler_age = 40
+		legitimacy = 90
+		OR = {
+			adm = 3
+			dip = 3
+			mil = 3
+		}
+		NOT = { has_ruler_modifier = berber_pyramid_built }
+		NOT = { has_ruler_flag = berber_pyramid_event }
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+	
+	immediate = {
+		set_ruler_flag = berber_pyramid_event
+	}
+
+	option = {
+		name = et_cults.4.a
+		add_adm_power = -20
+		add_years_of_income = -0.5
+		add_prestige = 10
+		add_ruler_modifier = {
+			name = berber_pyramid_built
+			duration = -1
+		}
+		random_owned_province = {
+			limit = { religion = shamanism }
+			add_province_modifier = {
+				name = berber_pyramid
+				duration = 73000
+			}
+		}
+	}
+
+	option = {
+		name = et_cults.4.b
+		add_prestige = -5
+	}
+}
+
+# Tislit n Anzar
+province_event = {
+	id = et_cults.5
+	title = et_cults.5.t
+	desc = et_cults.5.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		religion = shamanism
+		culture_group = maghrebi
+		has_climate = arid
+		owner = { 
+			religion = shamanism 
+			culture_group = maghrebi
+		}
+		NOT = { has_province_modifier = tislit_anzar }
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	option = {
+		name = et_cults.5.a
+		owner = { add_adm_power = -25 }
+		add_province_modifier = {
+			name = tislit_anzar
+			duration = 365
+		}
+	}
+	
+	option = {
+		name = et_cults.5.b
+		owner = { add_prestige = -5 }
+	}
+}
+
+# A Night With the (Not Walking) Dead
+country_event = {
+	id = et_cults.6
+	title = et_cults.6.t
+	desc = et_cults.6.d
+	picture = CPBM_TUMULUS2_eventPicture
+
+	trigger = {
+		has_adopted_cult = cult_of_the_dead
+		NOT = { has_ruler_flag = night_with_the_dead }
+	}
+
+	mean_time_to_happen = {
+		months = 900
+	}
+	
+	immediate = {
+		set_ruler_flag = night_with_the_dead
+	}
+
+	option = {
+		name = et_cults.6.a
+		hidden_effect = {
+			random_list = {
+				50 = {
+					country_event = {
+						id = et_cults.7
+						days = 5
+					}
+				}
+				45 = {
+					country_event = {
+						id = et_cults.8
+						days = 5
+					}
+				}
+				5 = {
+					country_event = {
+						id = et_cults.9
+						days = 5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = et_cults.6.b
+		add_prestige = -5
+	}
+}
+
+# A Night With the Dead: Cold
+country_event = {
+	id = et_cults.7
+	title = et_cults.7.t
+	desc = et_cults.7.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_cults.7.a
+		add_legitimacy = 5
+	}
+}
+
+# A Night With the Dead: Knowledge
+country_event = {
+	id = et_cults.8
+	title = et_cults.8.t
+	desc = et_cults.8.d
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_cults.8.a
+		random_list = {
+			30 = { add_legitimacy = 10 }
+			15 = { add_adm_power = 100 }
+			15 = { add_dip_power = 100 }
+			15 = { add_mil_power = 100 }
+			8 = { change_adm = 1 }
+			8 = { change_dip = 1 }
+			8 = { change_mil = 1 }
+			1 = { change_adm = 1 change_dip = 1 change_mil = 1 }
+		}
+	}
+}
+
+# A Night With the Dead: Death (Mwhahahaha!)
+country_event = {
+	id = et_cults.9
+	title = et_cults.9.t
+	desc = et_cults.9.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_cults.9.a
+		kill_ruler = yes
+	}
+}
+
+# Affinities With Hellenism
+country_event = {
+	id = et_cults.10
+	title = et_cults.10.t
+	desc = et_cults.10.d
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		has_adopted_cult = hellenism_cult
+		any_neighbor_country = {
+			religion = hellenism
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 900
+	}
+
+	option = {
+		name = et_cults.10.a
+		add_dip_power = 10
+		every_neighbor_country = {
+			limit = { religion = hellenism }
+			add_opinion = { who = ROOT modifier = opinion_improved_relations }
+		}
+	}
+}
+
+# Affinities With Egyptian religion
+country_event = {
+	id = et_cults.11
+	title = et_cults.11.t
+	desc = et_cults.11.d
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		has_adopted_cult = egyptian_cult
+		any_neighbor_country = {
+			religion = egyptian
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 900
+	}
+
+	option = {
+		name = et_cults.11.a
+		add_dip_power = 10
+		every_neighbor_country = {
+			limit = { religion = egyptian }
+			add_opinion = { who = ROOT modifier = opinion_improved_relations }
+		}
+	}
+}
+
+#Unlocking Hellenic Cult
+country_event = {
+	id = et_cults.12
+	title = et_cults.12.t
+	desc = et_cults.12.d
+	picture = CPBM_ROMAN_TEMPLE_eventPicture
+	
+	trigger = {
+		has_dlc = "Rights of Man"
+		religion = shamanism
+		NOT = { has_unlocked_cult = hellenism_cult }
+		OR = {
+			any_neighbor_country = {
+				religion = hellenism
+			}
+			any_owned_province = {
+				religion = hellenism
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 500
+	}
+
+	option = {
+		name = et_cults.12.a
+		unlock_cult = hellenism_cult 
+	}
+}
+
+#Unlocking Egyptian Cult
+country_event = {
+	id = et_cults.13
+	title = et_cults.13.t
+	desc = et_cults.13.d
+	picture = CPBM_PYRAMID_eventPicture
+	
+	trigger = {
+		has_dlc = "Rights of Man"
+		religion = shamanism
+		NOT = { has_unlocked_cult = egyptian_cult }
+		OR = {
+			any_neighbor_country = {
+				religion = egyptian
+			}
+			any_owned_province = {
+				religion = egyptian
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 500
+	}
+
+	option = {
+		name = et_cults.12.a
+		unlock_cult = egyptian_cult 
+	}
+}

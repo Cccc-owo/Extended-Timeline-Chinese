@@ -1,0 +1,988 @@
+danish_missions_kalmar = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = DAN
+		NOT = { has_dlc = "Lions of the North" }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	denmark_norway_integration = {
+		icon = mission_have_two_subjects
+		required_missions = { }
+		completed_by = 1536.1.1
+		provinces_to_highlight = {
+			OR = {
+				area = northern_norway
+				area = eastern_norway
+				area = western_norway
+				area = subarctic_islands_area
+				area = iceland_area
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			northern_norway = {
+				type = all
+				owned_by = ROOT
+			}
+			eastern_norway = {
+				type = all
+				owned_by = ROOT
+			}
+			western_norway = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "denmark_norway_united"
+				duration = 5475
+			}
+			if = {
+				limit = {
+					NOT = {
+						SWE = {
+							junior_union_with = ROOT
+						}
+					}
+				}
+				svealand_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				norrland_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				gotaland_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				vastra_gotaland_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				ostra_svealand_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+			}
+			else = {
+				add_adm_power = 50
+			}
+		}
+		ai_weight = {
+			factor = 500	#Historical conquest
+		}
+	}
+	denmark_sweden_integration = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { denmark_norway_integration }
+		provinces_to_highlight = {
+			OR = {
+				area = svealand_area
+				area = norrland_area
+				area = gotaland_area
+				area = vastra_gotaland_area
+				area = ostra_svealand_area
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			svealand_area = {
+				type = all
+				owned_by = ROOT
+			}
+			norrland_area = {
+				type = all
+				owned_by = ROOT
+			}
+			gotaland_area = {
+				type = all
+				owned_by = ROOT
+			}
+			vastra_gotaland_area = {
+				type = all
+				owned_by = ROOT
+			}
+			ostra_svealand_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "united_scandinavia"
+				duration = 5475
+			}
+			scandinavia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	finland_dan = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { denmark_sweden_integration }
+		provinces_to_highlight = {
+			OR = {
+				area = bothnia_area
+				area = finland_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			bothnia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			finland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_mil_power = 100
+			laponia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_karelia = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			karelia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	finns_dan = {
+		icon = mission_non-western_soldiers
+		required_missions = { finland_dan }
+		provinces_to_highlight = {
+			OR = {
+				area = laponia_area
+				area = north_karelia
+				area = karelia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			laponia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_karelia = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karelia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_army_tradition = 10
+		}
+	}
+	
+}
+
+danish_missions_baltic = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = DAN
+		NOT = { has_dlc = "Lions of the North" }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	denmark_baltic_fleet = {
+		icon = mission_galleys_in_port
+		required_missions = { }
+		trigger = {
+			naval_forcelimit = 25
+			navy_size_percentage = 0.9
+		}
+		effect = {
+			35 = { # osel
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			estonia_ingria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_weight = {
+			factor = 500	#Historical conquest
+		}
+	}
+	control_osel = {
+		icon = mission_sea_battles
+		required_missions = { denmark_baltic_fleet }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 35
+				area = estonia_ingria_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			35 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			estonia_ingria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			45 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			43 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			33 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+		ai_weight = {
+			factor = 500	#Historical conquest
+		}
+	}
+	danish_controlled_cot = {
+		icon = mission_hanseatic_city
+		required_missions = { control_osel }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 43
+				province_id = 45
+				province_id = 33
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			45 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			43 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			33 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "baltic_ambition_new"
+				duration = 5475
+			}
+			livonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			curonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	livonia_dan = {
+		icon = mission_cannons_firing
+		required_missions = { danish_controlled_cot }
+		provinces_to_highlight = {
+			OR = {
+				area = livonia_area
+				area = curonia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			livonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			curonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_army_tradition = 10
+		}
+	}
+	iceland_dan = {
+		icon = mission_colonial
+		required_missions = { isles_dan }
+		position = 5
+		provinces_to_highlight = {
+			area = iceland_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			iceland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			greenland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	greenland_dan = {
+		icon = et_mission_viking_longboat
+		required_missions = { iceland_dan }
+		provinces_to_highlight = {
+			area = greenland_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			greenland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 10
+			labrador_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			newfoundland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	vinland_dan = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { greenland_dan }
+		provinces_to_highlight = {
+			OR = {
+				area = labrador_area
+				area = newfoundland_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			labrador_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			newfoundland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 250
+		}
+	}
+	ireland_dan = {
+		icon = mission_have_two_subjects
+		required_missions = { england_dan }
+		provinces_to_highlight = {
+			OR = {
+				area = ulster_area
+				area = leinster_area
+				area = connacht_area
+				area = munster_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			leinster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			connacht_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			munster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_legitimacy = 25
+		}
+	}
+}
+
+dan_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = DAN
+		NOT = { has_dlc = "Lions of the North" }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	navy_dan = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { denmark_baltic_fleet }
+		position = 2
+		trigger = { 
+			OR = {
+				num_of_heavy_ship = 10 
+				num_of_galley = 30
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "naval_enthusiasm_mission"
+				duration = 9125 #25 years
+			}
+			369 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			subarctic_islands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	isles_dan = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { navy_dan }
+		position = 4
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = subarctic_islands_area
+				province_id = 369
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			subarctic_islands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_or_non_sovereign_subject_of = 369
+		}
+		effect = {
+			add_legitimacy = 15
+			kingdom_of_the_isles_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iceland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sudhreyjar_dan = {
+		icon = mission_sea_battles
+		required_missions = { isles_dan }
+		position = 5
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			area = kingdom_of_the_isles_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kingdom_of_the_isles_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_legitimacy = 20
+			highlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lowlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			scottish_marches_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	scotland_dan = {
+		icon = mission_alliances
+		required_missions = { sudhreyjar_dan }
+		provinces_to_highlight = {
+			OR = {
+				area = highlands_area
+				area = lowlands_area
+				area = scottish_marches_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lowlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			scottish_marches_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 20
+			wales_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_midlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yorkshire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_midlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			wessex_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_anglia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			home_counties_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	england_dan = {
+		icon = mission_war_chest
+		required_missions = { scotland_dan }
+		provinces_to_highlight = {
+			OR = {
+				area = wales_area
+				area = west_midlands_area
+				area = yorkshire_area
+				area = east_midlands_area
+				area = wessex_area
+				area = east_anglia_area
+				area = home_counties_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_legitimacy = 25
+			normandy_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ulster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			leinster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			connacht_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			munster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	normandy_dan = {
+		icon = mission_galleys_in_port
+		required_missions = { england_dan }
+		provinces_to_highlight = {
+			area = normandy_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			normandy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sicily_dan = {
+		icon = mission_invade_island
+		required_missions = { normandy_dan }
+		provinces_to_highlight = {
+			area = sicily_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_legitimacy = 15
+		}
+	}
+	
+}
+
+dan_slot5 = { 
+	slot = 5 
+	generic = no
+	potential = {
+		tag = DAN
+		NOT = { has_dlc = "Lions of the North" }
+	}
+	
+	army_dan = { 
+		icon = mission_build_up_to_force_limit
+		required_missions = {  } 
+		trigger = {
+			army_size_percentage = 1 
+		}
+		effect = { 
+			add_country_modifier = {
+				name = "thriving_arms_industry"
+				duration = 9125 #25 years
+			}
+			holstein_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	schleswig_dan = {
+		icon = mission_cannons_firing
+		required_missions = { army_dan }
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			area = holstein_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			holstein_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_stability = 1
+			mecklenburg_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			vorpommern_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hinter_pommern_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pomerania_dan = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { schleswig_dan }
+		provinces_to_highlight = {
+			OR = {
+				area = mecklenburg_area
+				area = vorpommern_area
+				area = hinter_pommern_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			mecklenburg_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vorpommern_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hinter_pommern_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			lower_saxony_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			weser_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	saxony_dan = {
+		icon = mission_empire
+		required_missions = { pomerania_dan }
+		provinces_to_highlight = {
+			OR = {
+				area = lower_saxony_area
+				area = weser_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_saxony_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			weser_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 1.5
+		}
+	}
+}

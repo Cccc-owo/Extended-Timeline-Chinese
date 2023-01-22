@@ -1,0 +1,993 @@
+jhn_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = JHN
+	}
+	has_country_shield = yes
+
+	qin_legalism_jhn = {
+		icon = mission_kowtow
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			stability = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = qin_legalism_jhn_mod
+				duration = 5480
+			}
+		}
+	}
+	reformation_jhn = {
+		icon = mission_conquer_50_development
+		required_missions = { qin_legalism_jhn }
+		trigger = {
+			has_country_flag = reformation_samhan
+		}
+		effect = {
+			complete_mission = reformation_is_gay
+			complete_mission = reformation_mhn
+			change_innovativeness = 3
+		}
+	}
+	dongyi_trade_jin = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { han_vs_han_jin }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 1376
+			has_discovered = ROOT
+		}
+		trigger = {
+			1376 = {
+				trade_share = {
+					country = ROOT
+					share = 60
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = dongyi_trade_jin_mod
+				duration = -1
+			}
+		}
+	}
+	beijing_trade_jin = {
+		icon = mission_chinese_general_riding
+		required_missions = { dongyi_trade_jin }
+		provinces_to_highlight = {
+			province_id = 4233
+			has_discovered = ROOT
+		}
+		trigger = {
+			4233 = {
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = beijing_trade_jin_mod
+				duration = -1
+			}
+		}
+	}
+	hangzhou_trade_jin = {
+		icon = mission_asian_city
+		required_missions = { beijing_trade_jin }
+		provinces_to_highlight = {
+			province_id = 684
+			has_discovered = ROOT
+		}
+		trigger = {
+			684 = {
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = hangzhou_trade_jin_mod
+				duration = -1
+			}
+		}
+	}
+	tibet_jin = {
+		icon = mission_empire
+		required_missions = { ling_han_ling_jin_jin }
+		provinces_to_highlight = {
+			region = tibet_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			tibet_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = tibet_jin_mod
+				duration = 9125
+			}
+		}
+	}
+	canton_trade_jin = {
+		icon = mission_asian_trader
+		required_missions = { chinese_court_jin }
+		provinces_to_highlight = {
+			province_id = 1371
+			has_discovered = ROOT
+		}
+		trigger = {
+			1371 = {
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = canton_trade_jin_mod
+				duration = -1
+			}
+		}
+	}
+	iron_fist_jin = {
+		icon = mission_war_chest
+		required_missions = { canton_trade_jin }
+		provinces_to_highlight = {
+			has_discovered = ROOT
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			trade_goods = iron
+		}
+		trigger = {
+			trading_bonus = {
+				trade_goods = iron
+				value = yes
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = iron_fist_jin_mod
+				duration = -1
+			}
+		}
+	}
+}
+
+jhn_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = JHN
+	}
+	has_country_shield = yes
+
+	build_treasury_jhn = {
+		icon = mission_high_income
+		required_missions = {  }
+		position = 1
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			NOT = { num_of_loans = 1 }
+			treasury = 500
+		}
+		effect = {
+			add_country_modifier = {
+				name = "strong_treasury" # Note vanilla modifier
+				duration = 9125
+			}
+		}
+	}
+	hire_advisors_jhn = {
+		icon = mission_scholar_officials
+		required_missions = { build_treasury_jhn }
+		trigger = {
+			advisor = treasurer
+		}
+		effect = {
+			complete_mission = byeonhan_army_gay
+			complete_mission = naval_advisors_mhn
+			add_prestige = 15
+		}
+	}
+	han_vs_han_jin = {
+		icon = mission_japanese_fort
+		required_missions = { restore_jin_jin }
+		position = 4
+		provinces_to_highlight = {
+			region = korea_region
+			owned_by = HND
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				NOT = { controlled_by = HND }
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = han_vs_han_jin_mod
+				duration = 9125
+			}
+		}
+	}
+	buyeo_jin = {
+		icon = mission_asian_cannon
+		required_missions = { han_vs_han_jin }
+		provinces_to_highlight = {
+			OR = {
+				area = western_korea_area
+				area = pyongan_area
+				area = hamgyeong_area
+				area = liaoning_area
+				area = jilin_area
+				area = ningguta_area
+				area = furdan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			western_korea_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			pyongan_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			hamgyeong_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			liaoning_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			jilin_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			ningguta_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			furdan_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = buyeo_jin_mod
+				duration = 9125
+			}
+		}
+	}
+	mighty_kingdom_jin = {
+		icon = mission_unite_home_region
+		required_missions = { buyeo_jin }
+		trigger = {
+			grown_by_development = 300
+		}
+		effect = {
+			add_legitimacy = 15
+			add_prestige = 10
+		}
+	}
+	ling_han_ling_jin_jin = {
+		icon = mission_great_wall
+		required_missions = { mighty_kingdom_jin }
+		trigger = {
+			is_emperor_of_china = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = ling_han_ling_jin_jin_mod
+				duration = 18250
+			}
+		}
+	}
+	chinese_court_jin = {
+		icon = mission_scholar_officials
+		required_missions = { ling_han_ling_jin_jin }
+		provinces_to_highlight = {
+			country_or_non_sovereign_subject_holds = ROOT
+			culture_group = east_asian
+		}
+		trigger = {
+			calc_true_if = {
+				accepted_culture = manchu_new
+				accepted_culture = chihan
+				accepted_culture = miao
+				accepted_culture = cantonese
+				accepted_culture = jin
+				accepted_culture = wu
+				accepted_culture = chimin
+				accepted_culture = hakka
+				accepted_culture = gan
+				accepted_culture = xiang
+				accepted_culture = sichuanese
+				accepted_culture = jianghuai
+				accepted_culture = xibei
+				accepted_culture = hubei
+				accepted_culture = zhongyuan
+				accepted_culture = shandong_culture
+				accepted_culture = taiwanese
+				accepted_culture = bai
+				amount = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = chinese_court_jin_mod
+				duration = 9125
+			}
+		}
+	}
+	xiongnu_campaign_jin = {
+		icon = mission_manchu_warrior
+		required_missions = { chinese_court_jin }
+		provinces_to_highlight = {
+			OR = {
+				area = ordos_area
+				area = inner_mongolia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			ordos_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			inner_mongolia_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = xiongnu_campaign_jin_mod
+				duration = 9125
+			}
+		}
+	}
+	cheonson_jin = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { xiongnu_campaign_jin }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1816
+				province_id = 2492
+				province_id = 1821
+				province_id = 616
+				province_id = 717
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns = 1816
+			owns = 2492
+			owns = 1821
+			owns = 616
+			owns = 717
+		}
+		effect = {
+			add_legitimacy = 15
+			add_country_modifier = {
+				name = cheonson_jin_mod
+				duration = -1
+			}
+		}
+	}
+}
+
+jhn_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = JHN
+	}
+	has_country_shield = yes
+
+	chinese_friendship_jhn = {
+		icon = mission_alliances
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			OR = {
+				reverse_has_opinion = {
+					who = HND
+					value = 150
+				}
+				NOT = {
+					exists = HND
+				}
+			}
+		}
+		effect = {
+			add_truce_with = HND
+			add_legitimacy = 15
+		}
+	}
+	seek_allies_jhn = {
+		icon = mission_asian_trader
+		required_missions = { chinese_friendship_jhn }
+		trigger = {
+			num_of_allies = 2
+		}
+		effect = {
+			complete_mission = diplomats_in_japan_have_turned_gay
+			complete_mission = subjugate_baekje_mhn
+			add_country_modifier = {
+				name = "seek_allies_jhn_mod"
+				duration = 5480
+			}
+		}
+	}
+	restore_jin_jin = {
+		icon = mission_unite_home_region
+		required_missions = {
+			reformation_jhn
+			hire_advisors_jhn
+			seek_allies_jhn
+			urban_society_jhn
+			defensive_works_jhn
+
+			reformation_is_gay
+			byeonhan_army_gay
+			diplomats_in_japan_have_turned_gay
+			military_advisors_gay
+			trade_fleet_gay
+
+			reformation_mhn
+			naval_advisors_mhn
+			subjugate_baekje_mhn
+			border_forts_mhn
+		}
+		provinces_to_highlight = {
+			OR = {
+				owned_by = JHN
+				owned_by = GAY
+				owned_by = MHN
+				province_id = 736
+				province_id = 737
+				province_id = 4227
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					tag = JHN
+				}
+				NOT = {
+					exists = GAY
+				}
+				NOT = {
+					exists = MHN
+				}
+			}
+			if = {
+				limit = {
+					tag = GAY
+				}
+				NOT = {
+					exists = JHN
+				}
+				NOT = {
+					exists = MHN
+				}
+			}
+			if = {
+				limit = {
+					tag = MHN
+				}
+				NOT = {
+					exists = JHN
+				}
+				NOT = {
+					exists = GAY
+				}
+			}
+			owns = 736
+			owns = 737
+			owns = 4227
+		}
+		effect = {
+			override_country_name = CJN
+			add_country_modifier = {
+				name = restore_jin_jin_mod
+				duration = -1
+			}
+		}
+	}
+}
+
+jhn_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = JHN
+	}
+	has_country_shield = yes
+
+	conquer_byeonhan_jhn = {
+		icon = mission_assemble_an_army
+		required_missions = {  }
+		position = 1
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			NOT = { exists = GAY }
+		}
+		effect = {
+			add_years_of_income = 1.0
+		}
+	}
+	urban_society_jhn = {
+		icon = mission_conquer_50_development
+		required_missions = { conquer_byeonhan_jhn }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { development = 10 }
+		}
+		trigger = {
+			all_owned_province = {
+				development = 10
+			}
+		}
+		effect = {
+			complete_mission = military_advisors_gay
+			complete_mission = border_forts_mhn
+			add_country_modifier = {
+				name = "urban_society_jhn_mod"
+				duration = 9125
+			}
+		}
+	}
+	tamna_jin = {
+		icon = mission_invade_island
+		required_missions = { restore_jin_jin }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 2516
+		}
+		trigger = {
+			owns = 2516
+		}
+		effect = {
+			add_prestige = 5
+			add_country_modifier = {
+				name = tamna_jin_mod
+				duration = 5480
+			}
+		}
+	}
+	suppress_wokou_jin = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { tamna_jin }
+		provinces_to_highlight = {
+			culture_group = japanese_g
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			any_country = {
+				culture_group = japanese_g
+				PREV = {
+					has_won_war_against = {
+						who = PREV
+						max_years_since = 100
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = suppress_wokou_jin_mod
+				duration = 9125
+			}
+		}
+	}
+	gyuju_jin = {
+		icon = mission_japanese_samurai
+		required_missions = { suppress_wokou_jin }
+		provinces_to_highlight = {
+			OR = {
+				area = northern_kyushu
+				area = kyushu_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			northern_kyushu = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			kyushu_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = gyuju_jin_mod
+				duration = 5480
+			}
+		}
+	}
+	southern_honshu_jin = {
+		icon = mission_japanese_fort
+		required_missions = { gyuju_jin }
+		provinces_to_highlight = {
+			OR = {
+				area = saigoku_area
+				area = sanindo_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			saigoku_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			sanindo_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = southern_honshu_jin_mod
+				duration = 5480
+			}
+		}
+	}
+	yamato_jin = {
+		icon = mission_asian_city
+		required_missions = { southern_honshu_jin }
+		provinces_to_highlight = {
+			area = kinai_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			kinai_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = yamato_jin_mod
+				duration = 9125
+			}
+		}
+	}
+	emishi_jin = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { yamato_jin }
+		provinces_to_highlight = {
+			OR = {
+				area = chubu_area
+				area = eastern_chubu_area
+				area = hokuriku_area
+				area = kanto_area
+				area = eastern_kanto_area
+				area = thohoku_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			chubu_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			eastern_chubu_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			hokuriku_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			kanto_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			eastern_kanto_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			thohoku_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = emishi_jin_mod
+				duration = 9125
+			}
+		}
+	}
+	hokkaido_jin = {
+		icon = mission_conquer_5_states
+		required_missions = { emishi_jin }
+		provinces_to_highlight = {
+			area = hokkaido_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			hokkaido_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = hokkaido_jin_mod
+				duration = 5480
+			}
+		}
+	}
+}
+
+jhn_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = JHN
+	}
+	has_country_shield = yes
+
+	unified_culture_jhn = {
+		icon = mission_noble_council
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				AND = {
+					ROOT = {
+						primary_culture = jinhan
+					}
+					culture = korean
+				}
+				AND = {
+					ROOT = {
+						primary_culture = korean
+					}
+					culture = jinhan
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				all_owned_province = {
+					culture = jinhan
+				}
+				all_owned_province = {
+					culture = korean
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "unified_culture_jhn_mod"
+				duration = 5480
+			}
+		}
+	}
+	defensive_works_jhn = {
+		icon = mission_japanese_fort
+		required_missions = { unified_culture_jhn }
+		trigger = {
+			capital_scope = { has_building = fort_et }
+		}
+		effect = {
+			complete_mission = trade_fleet_gay
+			add_years_of_income = 0.25
+			add_country_modifier = {
+				name = "defensive_works_jhn_mod"
+				duration = 5480
+			}
+		}
+	}
+	respected_nation_jin = {
+		icon = mission_noble_council
+		required_missions = { tamna_jin }
+		position = 5
+		trigger = {
+			prestige = 80
+		}
+		effect = {
+			add_legitimacy = 20
+			add_stability = 1
+		}
+	}
+	king_kings_jin = {
+		icon = mission_empire
+		required_missions = { respected_nation_jin }
+		trigger = {
+			num_of_non_tributary_subjects = 3
+		}
+		effect = {
+			add_splendor = 100
+		}
+	}
+	shikoku_jin = {
+		icon = mission_sea_battles
+		required_missions = { gyuju_jin }
+		provinces_to_highlight = {
+			area = shikoku_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+		trigger = {
+			shikoku_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = shikoku_jin_mod
+				duration = 5480
+			}
+		}
+	}
+	temples_jin = {
+		icon = mission_buddhist_monk_praying
+		required_missions = {
+			southern_honshu_jin
+			shikoku_jin
+		}
+		provinces_to_highlight = {
+			country_or_non_sovereign_subject_holds = ROOT
+			NOT = { has_building = glorious_monument }
+		}
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					has_building = glorious_monument
+				}
+				amount = 15
+			}
+		}
+		effect = {
+			add_dip_power = 150
+		}
+	}
+	religious_unity_jin = {
+		icon = mission_hands_praying
+		required_missions = { temples_jin }
+		trigger = {
+			religious_unity = 0.99
+		}
+		effect = {
+			add_stability = 1
+			add_years_of_income = 0.5
+		}
+	}
+	bongjeongsa_jin = {
+		icon = mission_early_game_buildings
+		required_missions = { religious_unity_jin }
+		trigger = {
+			any_owned_province  = { development = 50 }
+		}
+		effect = {
+			capital_scope = { 
+				add_province_modifier = { 
+    					name = bongjeongsa_jin_mod
+    					duration = -1  
+    					desc = bongjeongsa_jin_mod_tooltip
+				}
+			}
+		}
+	}
+}

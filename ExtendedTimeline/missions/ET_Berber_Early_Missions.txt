@@ -1,0 +1,561 @@
+berber_early_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		culture_group = maghrebi
+		NOT = { primary_culture = eastern_berber }
+		NOT = { religion_group = muslim }
+	}
+	has_country_shield = yes
+
+	berber_dominate_mauritania = {
+		icon = mission_non-western_soldiers
+		required_missions = { berber_build_to_forcelimit }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = tafilalt_area
+				area = sus_area
+				area = southern_morocco_area
+				area = western_morocco_area
+				area = marrekesh_area
+				area = fez_area
+				area = northern_morocco_area
+			}
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						area = tafilalt_area
+						area = sus_area
+						area = southern_morocco_area
+						area = western_morocco_area
+						area = marrekesh_area
+						area = fez_area
+						area = northern_morocco_area
+					}
+				}
+				amount = 12
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			
+			tafilalt_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sus_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			southern_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			marrekesh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			fez_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	berber_develop_volubilis = {
+		icon = mission_arabian_fort
+		required_missions = { berber_dominate_mauritania }
+		provinces_to_highlight = {
+			province_id = 343
+		}
+		trigger = {
+			owns = 343
+			343 = {
+				development = 15
+			}
+		}
+		effect = {
+			add_adm_power = 20
+			343 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+
+	berber_control_gibraltar = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { berber_develop_volubilis }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 334
+				province_id = 226
+				province_id = 1749
+				province_id = 1751
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns = 334
+			owns = 226
+			owns = 1749
+			owns = 1751
+			1293 = {
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+		}
+		effect = {
+			334 = {
+				add_province_modifier = {
+					name = "dominant_trade_hub"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+berber_early_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		culture_group = maghrebi
+		NOT = { primary_culture = eastern_berber }
+		NOT = { religion_group = muslim }
+	}
+	has_country_shield = yes
+
+	berber_build_to_forcelimit = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { }
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "thriving_arms_industry"
+				duration = 9125 #25 years
+			}
+		}
+	}
+
+	berber_unite_the_berbers = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { berber_dominate_mauritania berber_dominate_numidia }
+		provinces_to_highlight = {
+			OR = {
+				area = tafilalt_area
+				area = sus_area
+				area = southern_morocco_area
+				area = western_morocco_area
+				area = marrekesh_area
+				area = fez_area
+				area = northern_morocco_area
+				
+				area = north_saharan_area
+				area = ouled_nail_area
+				area = hautes_plaines_area
+				area = kabylia_area
+				area = barbary_coast_area
+				area = algiers_area
+				area = djerba_area
+				area = tunisia_area
+			}
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tafilalt_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sus_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			southern_morocco_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			marrekesh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			fez_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_saharan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hautes_plaines_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			djerba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_adm_power = 50
+			fezzan_area = {
+				limit = {
+					is_city = yes
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tripolitania_area = {
+				limit = {
+					is_city = yes
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	berber_conquer_garamantia = {
+		icon = mission_bedouins
+		required_missions = { berber_unite_the_berbers }
+		provinces_to_highlight = {
+			OR = {
+				area = fezzan_area
+				area = tripolitania_area
+			}
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			fezzan_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			cyrenaica_area = {
+				limit = {
+					is_city = yes
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			al_wahat_area = {
+				limit = {
+					is_city = yes
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	berber_legacy_of_shoshenq = {
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { berber_conquer_garamantia }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 361
+				province_id = 358
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns = 358
+			owns = 361
+		}
+		effect = {
+			add_legitimacy = 50
+			egypt_region = {
+				limit = {
+					is_city = yes
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+berber_early_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		culture_group = maghrebi
+		NOT = { primary_culture = eastern_berber }
+		NOT = { religion_group = muslim }
+	}
+	has_country_shield = yes
+	
+	berber_dominate_numidia = {
+		icon = mission_conquer_50_development
+		required_missions = { berber_build_to_forcelimit }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = north_saharan_area
+				area = ouled_nail_area
+				area = hautes_plaines_area
+				area = kabylia_area
+				area = barbary_coast_area
+				area = algiers_area
+				area = djerba_area
+				area = tunisia_area
+			}
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						area = north_saharan_area
+						area = ouled_nail_area
+						area = hautes_plaines_area
+						area = kabylia_area
+						area = barbary_coast_area
+						area = algiers_area
+						area = djerba_area
+						area = tunisia_area
+					}
+				}
+				amount = 12
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			
+			north_saharan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ouled_nail_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hautes_plaines_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kabylia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			barbary_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			algiers_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			djerba_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tunisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	berber_develop_cirta = {
+		icon = mission_central_asian_city
+		required_missions = { berber_dominate_numidia }
+		provinces_to_highlight = {
+			province_id = 340
+		}
+		trigger = {
+			owns = 340
+			340 = {
+				development = 15
+			}
+		}
+		effect = {
+			add_adm_power = 20
+			340 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	
+	berber_mediterramean_navy = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { berber_develop_cirta }
+		trigger = { 
+			num_of_galley = 25
+		}
+		effect = {
+			add_country_modifier = {
+				name = "naval_enthusiasm_mission"
+				duration = 9125 #25 years
+			}
+			sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	berber_control_sicily = {
+		icon = mission_invade_island
+		required_missions = { berber_mediterramean_navy }
+		provinces_to_highlight = {
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+			}
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			corsica_sardinia_area = {
+				limit = {
+					is_city = yes
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}

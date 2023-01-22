@@ -1,0 +1,218 @@
+namespace = tex
+
+#Alamo
+country_event = {
+	id =  tex.1
+	title = "tex.1.t"
+	desc = "tex.1.d"
+	picture = WOUNDED_SOLDIERS_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TEX
+		war_with = MEX
+		is_year = 1830
+		war_exhaustion = 2
+		NOT = { is_year = 1890 }
+	}
+	
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "tex.1.a"
+		add_war_exhaustion = -2
+		add_prestige = 5
+		add_army_tradition = 5
+		add_manpower = 10
+	}
+}
+
+#Stephen Austin
+country_event = {
+	id = tex.2
+	title = tex.2.t
+	desc = tex.2.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TEX
+		primary_culture = american
+		is_year = 1820
+		NOT = { is_year = 1837 }
+	}
+	
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "tex.2.a"
+		add_dip_power = 100
+		define_advisor = {
+			type = statesman
+			name = "Stephen Austin"
+			discount = yes
+			skill = 3
+		}
+	}
+}
+
+#Sam Houston
+country_event = {
+	id = tex.3
+	title = tex.3.t
+	desc = tex.3.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TEX
+		primary_culture = american
+		is_year = 1832
+		NOT = { is_year = 1860 }
+	}
+	
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "tex.3.a"
+		define_ruler = {
+			name = "Sam Houston"
+			mil = 5
+			adm = 4
+			dip = 2
+		}
+	}
+	option = {
+		name = "tex.3.b"
+		define_general = {
+			name = "Sam Houston"
+			fire = 5
+			shock = 2
+			manuever = 5
+			siege = 2
+		}
+	}
+	option = {
+		name = "tex.3.c"
+		define_advisor = {
+			type = diplomat
+			name = "Sam Houston"
+			discount = yes
+			skill = 3
+		}
+	}
+}
+
+#Move the capital to Austin
+country_event = {
+	id = tex.4
+	title = tex.4.t
+	desc = tex.4.d
+	picture = COLONIZATION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TEX
+		is_year = 1839
+		is_at_war = no
+		owns = 4627
+		NOT = { capital = 4627 }
+	}
+	
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "tex.4.a"
+		add_treasury = -200
+		add_adm_power = -10
+		set_capital = 4627
+		4627 = {
+			add_base_tax = 3
+			add_base_production = 2
+			add_base_manpower = 3
+		}
+	}
+	option = {
+		name = "tex.4.b"
+		add_prestige = -10
+	}
+}
+
+#The Fate of Texas
+country_event = {
+	id = tex.5
+	title = tex.5.t
+	desc = tex.5.d
+	picture = COLONIZATION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TEX
+		is_at_war = no	
+		is_year = 1845
+		ai = yes
+		exists = USA
+		government = republic
+		USA = { primary_culture = ROOT }
+	}
+	
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "tex.5.a"
+		USA = {
+			country_event = { id = tex.6 }
+		}
+	}
+	option = {
+		name = "tex.5.b"
+		california_region = { 
+			add_permanent_claim = TEX
+		} 
+		add_stability = -1
+		add_country_modifier = {
+			name = tex_west
+			duration = 18250
+		}
+	}
+}
+
+country_event = {
+	id = tex.6
+	title = tex.6.t
+	desc = tex.6.d
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tex.6.a"
+		ai_chance = { 
+			factor = 100
+		}
+		inherit = TEX
+		add_prestige = 10
+	}
+	option = {
+		name = "tex.6.b"
+		ai_chance = { 
+			factor = 0
+		}
+		add_prestige = -10
+	}
+}

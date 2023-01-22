@@ -1,0 +1,68 @@
+#3108 - Eger
+
+owner = MRM
+controller = MRM
+add_core = MRM
+is_city = yes
+capital = "Eger"
+culture = bavarian
+religion = germanic
+trade_goods = gold #Joachimstal mines
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 1
+base_production = 1
+base_manpower = 2
+
+395.1.1 = { owner = VAN controller = VAN add_core = VAN remove_core = MRM culture = vandal }
+417.1.1 = { owner = BAV controller = BAV add_core = BAV remove_core = VAN culture = bavarian }
+450.1.1 = { owner = RGL controller = RGL add_core = RGL remove_core = BAV }
+454.1.1 = { owner = LOM controller = LOM add_core = LOM remove_core = RGL culture = langobardi }
+550.1.1 = { owner = BOH controller = BOH add_core = BOH remove_core = LOM culture = czech religion = slavic }
+700.1.1 = { base_tax = 2 base_production = 2 }
+860.1.1 = { owner = MVA controller = MVA add_core = MVA }
+894.1.1 = { owner = BOH controller = BOH remove_core = MVA }
+900.1.1 = { base_tax = 3 base_production = 3 religion = catholic }
+962.2.2 = { hre = yes }
+1100.1.1 = { base_tax = 4 base_production = 4 }
+
+1419.12.1 = { unrest = 5 } # Hussite Wars, Battle of Nekmir
+1436.7.5 = { unrest = 0 } # Peace is signed in Jihlava
+1457.1.1 = { unrest = 5 } # George of Podiebrand had to secure recognition from the German and Catholic towns
+1471.1.1 = { unrest = 0 }
+1526.8.30 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	remove_core = BOH
+} # Battle of Mohac where Lajos II dies -> Habsburg succession
+1576.1.1 = { religion = protestant }
+1618.5.23 = { # Defenstration of Prague
+	owner = BOH
+	controller = BOH
+	add_core = BOH
+}
+1620.11.8 = {
+	owner = HAB
+	controller = HAB
+	remove_core = BOH
+} # Tilly beats the Winterking. Deus Vult!
+1627.1.1 = { religion = catholic } # Order from Ferdinand II to reconvert to Catholicism, many Protestant leave the country
+1785.1.1 = { base_manpower = 3 }
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+
+1845.1.1 = { base_tax = 5 }
+1850.1.1   = { culture = bavarian }
+1910.1.1 = { discovered_by = asian }
+1918.10.28 = { owner = CZS controller = CZS add_core = CZS remove_core = HAB capital = "Cheb" }
+1938.9.21  = { owner = GER controller = GER add_core = GER }
+1945.5.6   = { controller = USA }
+1945.5.8   = { owner = CZS controller = CZS remove_core = GER culture = czech }
+1992.12.31 = { owner = CZE controller = CZE add_core = CZE remove_core = CZS }
+

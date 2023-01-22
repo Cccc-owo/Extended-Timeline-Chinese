@@ -1,0 +1,715 @@
+dai_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = DAI
+	}
+	has_country_shield = yes
+	
+	take_thuan_hoa = {
+		icon = mission_unite_home_region
+		required_missions = { }
+		completed_by = 1306.1.1
+		provinces_to_highlight = {
+			province_id = 610
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns = 610
+		}
+		effect = {
+			champa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	conquer_champa = {
+		icon = mission_high_income
+		required_missions = { take_thuan_hoa }
+		provinces_to_highlight = {
+			OR = {
+				area = champa_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			champa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			mekong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	conquer_mekong = {
+		icon = mission_assemble_an_army
+		required_missions = { conquer_champa }
+		provinces_to_highlight = {
+			OR = {
+				area = mekong_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			mekong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			cambodia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_laos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_laos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	conquer_laos = {
+		icon = mission_arabian_fort
+		required_missions = { conquer_mekong }
+		provinces_to_highlight = {
+			OR = {
+				area = south_laos_area
+				area = north_laos_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			south_laos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_laos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			khorat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	take_khorat = {
+		icon = mission_conquer_5_states
+		required_missions = { conquer_laos }
+		provinces_to_highlight = {
+			OR = {
+				area = khorat_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			khorat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			northern_thai_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	conquer_north_thailand = {
+		icon = mission_have_two_subjects
+		required_missions = { take_khorat }
+		provinces_to_highlight = {
+			OR = {
+				area = northern_thai_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			northern_thai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			lower_burma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			karenni_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shan_hill_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	push_into_burma = {
+		icon = mission_pf_map_table
+		required_missions = { conquer_north_thailand }
+		provinces_to_highlight = {
+			OR = {
+				area = karenni_area
+				area = shan_hill_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			karenni_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shan_hill_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			kachin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	take_kachin = {
+		icon = mission_indian_soldier_elephant
+		required_missions = { push_into_burma }
+		provinces_to_highlight = {
+			OR = {
+				area = kachin_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kachin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			chindwin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	take_chin = {
+		icon = mission_indian_soldier_elephant
+		required_missions = { take_kachin }
+		provinces_to_highlight = {
+			OR = {
+				area = chindwin_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			chindwin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 25
+		}
+	}
+}
+
+dai_slot_2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = DAI
+	}
+	has_country_shield = yes
+
+	conquer_cambodia = {
+		icon = mission_conquer_50_development
+		required_missions = { conquer_mekong }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = cambodia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			central_thai_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	take_central_thailand = {
+		icon = mission_non-western_soldiers
+		required_missions = { conquer_cambodia }
+		provinces_to_highlight = {
+			OR = {
+				area = central_thai_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			central_thai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 25
+		}
+	}
+
+	take_lower_burma = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { conquer_north_thailand }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = lower_burma_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			upper_burma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			arakan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	dominate_burma = {
+		icon = mission_empire
+		required_missions = { conquer_north_thailand }
+		provinces_to_highlight = {
+			OR = {
+				area = upper_burma_area
+				area = arakan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			upper_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			arakan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 25
+		}
+	}
+}
+
+dai_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = DAI
+	}
+	has_country_shield = yes
+
+	secure_yun_gui_frontier = {
+		icon = mission_unite_home_region
+		required_missions = { restore_nan_viet }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = yun_gui_borderland_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			yun_gui_borderland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			sichuan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	conquer_sichuan = {
+		icon = mission_high_income
+		required_missions = { secure_yun_gui_frontier }
+		provinces_to_highlight = {
+			OR = {
+				area = sichuan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sichuan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 25
+		}
+	}
+}
+
+dai_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = DAI
+	}
+	has_country_shield = yes
+
+	restore_nan_viet = {
+		icon = mission_indian_soldier_elephant
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				area = guangxi_area
+				area = west_guangdong_area
+				area = guangzhou_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			guangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guangzhou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			yun_gui_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yun_gui_borderland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	expand_northwards = {
+		icon = mission_pf_map_table
+		required_missions = { restore_nan_viet }
+		provinces_to_highlight = {
+			OR = {
+				area = yun_gui_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			yun_gui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			chuannan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	march_on_chuannan = {
+		icon = mission_pf_map_table
+		required_missions = { expand_northwards }
+		provinces_to_highlight = {
+			OR = {
+				area = chuannan_area 
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			chuannan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			guangdong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	take_guangdong = {
+		icon = mission_arabian_fort
+		required_missions = { march_on_chuannan }
+		provinces_to_highlight = {
+			OR = {
+				area = guangdong_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			fujian_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hunan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jiangxi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	expand_along_the_coast = {
+		icon = mission_conquer_50_development
+		required_missions = { take_guangdong }
+		provinces_to_highlight = {
+			OR = {
+				area = fujian_area
+				area = hunan_area
+				area = jiangxi_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			fujian_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hunan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jiangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			huguang_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	take_hubei = {
+		icon = mission_have_two_subjects
+		required_missions = { expand_along_the_coast }
+		provinces_to_highlight = {
+			OR = {
+				area = huguang_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			huguang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			south_jiangsu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_anhui_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zhejiang_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	unite_yue = {
+		icon = mission_conquer_5_states
+		required_missions = { take_hubei }
+		provinces_to_highlight = {
+			OR = {
+				area = south_jiangsu_area
+				area = south_anhui_area
+				area = zhejiang_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			south_jiangsu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_anhui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zhejiang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_prestige = 25
+		}
+	}
+	
+	declare_new_dynasty = {
+		icon = mission_empire
+		required_missions = { unite_yue }
+		trigger = {
+			is_emperor_of_china = yes
+			imperial_mandate = 50
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_prestige = 50
+		}
+	}
+
+}

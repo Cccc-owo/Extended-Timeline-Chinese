@@ -1,0 +1,375 @@
+dacian_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = DAC
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	dac_contend_for_the_black_sea_mission = {
+		icon = mission_map_black_sea_antique
+		required_missions = {  } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = yedisan_area
+				area = crimea_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			yedisan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 20
+			add_dip_power = 100
+			zaporizhia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	
+	dac_subjugate_the_iazyges_mission = {
+		icon = mission_avar_mounted_archers
+		required_missions = {  } #none
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = alfold_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			alfold_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			transdanubia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	dac_subdue_the_barbarians_mission = {
+		icon = mission_celtic_warriors_charge
+		required_missions = { dac_subjugate_the_iazyges_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = slovakia_area
+				area = red_ruthenia_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			slovakia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			red_ruthenia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 35
+			add_country_modifier = {
+				name = "leones_frenatoris"
+				duration = 7300
+			}
+		}
+	}
+	dac_invade_magna_germania_mission = {
+		icon = mission_gothic_warrior_4th_ce
+		required_missions = { dac_subdue_the_barbarians_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = malopolska_area
+				area = bohemia_area
+				area = silesia_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			malopolska_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bohemia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			silesia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "epithet_the_conqueror"
+				duration = -1
+			}
+		}
+	}
+	
+	
+	dac_seize_moesia_inferior_mission = {
+		icon = mission_west_roman_soldier
+		required_missions = {  } #none
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = silistria_area
+				province_id = 4704		#Tarnovo/Novae
+				province_id = 150		#Pleven
+				province_id = 2746		#Vidin
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			silistria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_or_non_sovereign_subject_of = 4704 
+			owns_or_non_sovereign_subject_of = 150
+			owns_or_non_sovereign_subject_of = 2746
+		}
+		effect = {
+			bulgaria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	dac_vanquish_the_romans_mission = {
+		icon = mission_kneeling_before_king
+		required_missions = { dac_seize_moesia_inferior_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = bulgaria_area
+				area = serbia_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			bulgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			serbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_army_tradition = 25
+		}
+	}
+}
+
+dacian_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = DAC
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	dac_conquer_thracia_mission = {
+		icon = mission_city_of_the_world's_desire
+		required_missions = { dac_seize_moesia_inferior_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 40
+			add_army_tradition = 15
+		}
+	}
+	dac_the_great_dacian_empire_mission = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { dac_conquer_thracia_mission dac_vanquish_the_romans_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = balkan_region
+ 			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 151
+			balkan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 30
+			add_ruler_modifier = {
+				name = "great_conqueror"
+				duration = -1
+			}
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+}
+
+dacian_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = DAC
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	dac_sarmizegetusa_regia_mission = {
+		icon = mission_castle_construction_medieval
+		required_missions = {  } #none
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1951	#Hunyad
+		}
+		trigger = {
+			capital = 1951
+			1951 = {
+				base_manpower = 5
+			}
+			1951 = {
+				development = 15
+			}
+		}
+		effect = {
+			1951 = {
+				add_province_modifier = {
+					name = "fortresses_of_the_orastie_mountains"
+					duration = -1
+				}
+			}
+		}
+	}
+	dac_hub_of_cultures_mission = {
+		icon = mission_indo_scythians
+		required_missions = {  } #none
+		position = 4
+		trigger = {
+			num_accepted_cultures = 2
+			num_of_owned_provinces_with = {
+				value = 10
+				has_owner_accepted_culture = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "dac_many_peoples_one_dacia"
+				duration = -1
+			}
+		}
+	}
+	dac_spread_zalmoxism_mission = {
+		icon = mission_hands_praying
+		required_missions = {  } #none
+		position = 5
+		trigger = {
+			grown_by_development = 25
+			religious_unity = 0.95
+		}
+		effect = {
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 30
+			}
+		}
+	}
+	dac_temples_to_zalmoxis_mission = {
+		icon = mission_roman_forum_imperial
+		required_missions = { dac_spread_zalmoxism_mission } #none
+		position = 6
+		trigger = {
+			OR = {
+				glorious_monument = 10
+				temple = 10
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "epithet_the_pious"
+				duration = -1
+			}
+		}
+	}
+}

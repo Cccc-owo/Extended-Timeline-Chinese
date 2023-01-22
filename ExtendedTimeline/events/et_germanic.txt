@@ -1,0 +1,172 @@
+########################
+#Germanic Flavor Events#
+########################
+
+namespace = germanic_flavor
+
+#Blot
+country_event = {
+	id = germanic_flavor.1
+	title = germanic_flavor.1.t
+	desc = germanic_flavor.1.d
+	picture = FEAST_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = germanic
+		NOT = { has_country_modifier = horse_blot }
+		NOT = { has_country_modifier = human_blot }
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	option = {
+		name = germanic_flavor.1.a
+		add_country_modifier = {
+			name = horse_blot
+			duration = 730
+		}
+	}
+
+	option = {
+		name = germanic_flavor.1.b
+		trigger = {
+			is_at_war = yes
+		}
+		add_country_modifier = {
+			name = human_blot
+			duration = 730
+		}
+	}
+
+	option = {
+		name = germanic_flavor.1.c
+		add_prestige = -1
+	}
+}
+
+#Better Conversion
+country_event = {
+	id = germanic_flavor.2
+	title = germanic_flavor.2.t
+	desc = germanic_flavor.2.d
+	picture = STREET_SPEECH_eventPicture
+
+	fire_only_once = no
+
+	trigger = {
+		religion = germanic
+		any_core_province = {
+			religion = hellenism
+		}
+		NOT = { has_country_modifier = force_germanic }
+	}
+
+	mean_time_to_happen = {
+		months = 100
+	}
+
+	option = {
+		name = germanic_flavor.2.a
+		add_country_modifier = {
+			name = force_germanic
+			duration = 365
+		}
+	}
+
+	option = {
+		name = germanic_flavor.2.b
+		add_prestige = 5
+	}
+}
+
+#The Black Worm
+country_event = {
+	id = germanic_flavor.3
+	title = germanic_flavor.3.t
+	desc = germanic_flavor.3.d
+	picture = BIG_BOOK_eventPicture
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 1000
+	}
+
+	trigger = {
+		religion = germanic
+	}
+
+	option = {
+		name = germanic_flavor.3.a
+		hidden_effect = {
+			random_list = {
+				75 = {
+					set_ruler_flag = no_treasure_found
+					add_prestige = 1
+				}
+				25 = {
+					set_ruler_flag = treasure_found
+					add_prestige = 5
+				}
+			}
+		}
+	}
+
+	option = {
+		name = germanic_flavor.3.b
+		add_prestige = 15
+	}
+}
+
+#The Black Worm - No Treasure
+country_event = {
+	id = germanic_flavor.4
+	title = germanic_flavor.4.t
+	desc = germanic_flavor.4.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_ruler_flag = no_treasure_found
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}	
+
+	option = {
+		name = germanic_flavor.4.a
+		add_prestige = -5
+	}
+}
+
+#The Black Worm - Treasure Found
+country_event = {
+	id = germanic_flavor.5
+	title = germanic_flavor.5.t
+	desc = germanic_flavor.5.d
+	picture = ARTWORK_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_ruler_flag = treasure_found
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = germanic_flavor.5.a
+		add_prestige = 50
+		add_stability = 1
+		add_treasury = 200
+	}
+}
+		

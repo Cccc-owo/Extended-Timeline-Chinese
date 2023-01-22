@@ -1,0 +1,164 @@
+namespace = et
+
+#Spread of Buddhism to Japan
+province_event = {
+
+	id = et.19
+	title = "et.EVTNAME19"
+	desc = "et.EVTDESC19"
+	picture = BUDDHA_eventPicture
+	
+	trigger = {
+		region = japan_region
+		NOT = { religion = mahayana }
+		is_year = 550
+		NOT = { is_year = 800 }
+		OR = {
+			NOT = { religion = confucianism }
+			owner = { NOT = { religion = confucianism } }
+		}
+	}
+	mean_time_to_happen = {
+		months = 1200
+
+		modifier = {
+			factor = 0.8
+			is_year = 650
+		}
+		modifier = {
+			factor = 0.8
+			any_neighbor_province = { religion = mahayana }
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA19"
+		change_religion = mahayana
+		add_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 3650
+		}
+	}
+}
+
+#Spread of Buddhism to Korea
+province_event = {
+
+	id = et.60
+	title = "et.EVTNAME60"
+	desc = "et.EVTDESC60"
+	picture = BUDDHA_eventPicture
+	
+	trigger = {
+		religion = muism
+		OR = {
+			region = korea_region
+			culture = korean
+			owner = { primary_culture = korean }
+		}
+		is_year = 350
+		NOT = { is_year = 500 }
+	}
+	mean_time_to_happen = {
+		months = 1200
+
+		modifier = {
+			factor = 0.8
+			is_year = 450
+		}
+		modifier = {
+			factor = 0.8
+			any_neighbor_province = { religion = mahayana }
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA60"
+		change_religion = mahayana
+		add_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 3650
+		}
+	}
+}
+
+#Birth of Vajrayana
+country_event = {
+
+	id = et.61
+	title = "et.EVTNAME61"
+	desc = "et.EVTDESC61"
+	picture = BUDDHA_eventPicture
+	
+	trigger = {
+		NOT = { is_religion_enabled = vajrayana }
+		religion = tibetan_bon
+		is_year = 610
+		NOT = { has_country_flag = vajrayana_birth }
+	}
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	immediate = {
+		set_country_flag = vajrayana_birth
+	}
+	
+	option = {
+		name = "et.EVTOPTA61"
+		ai_chance = { 
+			factor = 100
+		}
+		enable_religion = vajrayana
+		change_religion = vajrayana
+		add_country_modifier = {
+			name = birth_of_vajrayana
+			duration = 3560
+		}
+		random_owned_province = {
+			change_religion = vajrayana
+			add_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "et.EVTOPTB61"
+		ai_chance = { 
+			factor = 0
+		}
+		add_stability = -1
+	}
+}
+
+#Spread of Vajrayana
+province_event = {
+
+	id = et.62
+	title = "et.EVTNAME62"
+	desc = "et.EVTDESC62"
+	picture = BUDDHA_eventPicture
+	
+	trigger = {
+		religion = tibetan_bon
+		owner = { religion = vajrayana }
+	}
+	mean_time_to_happen = {
+		months = 1200
+
+		modifier = {
+			factor = 0.7
+			any_neighbor_province = { religion = vajrayana }
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA62"
+		change_religion = vajrayana
+		add_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 3650
+		}
+	}
+}

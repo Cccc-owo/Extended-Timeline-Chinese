@@ -1,0 +1,161 @@
+
+namespace = et_satsana_phi
+
+#Spirit Houses
+province_event = {
+	id = et_satsana_phi.1
+	title = et_satsana_phi.1.t
+	desc = et_satsana_phi.1.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		owner = { religion = satsana_phi }
+		NOT = { religion = satsana_phi }
+		NOT = { local_autonomy = 50 }
+		NOT = { has_province_modifier = built_spirit_houses }
+	}
+
+	mean_time_to_happen = {
+		months = 3600
+	}
+
+	option = {
+		name = et_satsana_phi.1.a
+		owner = { add_years_of_income = -0.2 }
+		add_province_modifier = {
+			name = built_spirit_houses
+			duration = 9125
+		}
+	}
+
+	option = {
+		name = et_satsana_phi.1.b
+		owner = { add_prestige = -2 }
+	}
+}
+
+#Phi Fa
+country_event = {
+	id = et_satsana_phi.2
+	title = et_satsana_phi.2.t
+	desc = et_satsana_phi.2.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = satsana_phi
+		has_regency = no
+		NOT = { has_ruler_modifier = phi_fa_ritual }
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+
+	option = {
+		name = et_satsana_phi.2.a
+		add_years_of_income = -0.2
+		add_ruler_modifier = {
+			name = phi_fa_ritual
+		}
+	}
+
+	option = {
+		name = et_satsana_phi.2.b
+		add_prestige = -2
+	}
+}
+
+#Baci - Adm effect
+country_event = {
+	id = et_satsana_phi.3
+	title = et_satsana_phi.3.t
+	desc = et_satsana_phi.3.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = satsana_phi
+		has_regency = no
+		NOT = { has_ruler_modifier = baci_ritual_adm }
+		NOT = { has_ruler_modifier = baci_ritual_dip }
+		NOT = { has_ruler_modifier = baci_ritual_mil }
+	}
+
+	option = {
+		name = et_satsana_phi.3.a
+		add_years_of_income = -0.2
+		add_ruler_modifier = {
+			name = baci_ritual_adm
+		}
+	}
+
+	option = {
+		name = et_satsana_phi.3.b
+		add_prestige = -2
+	}
+}
+
+#Baci - Mil effect
+country_event = {
+	id = et_satsana_phi.4
+	title = et_satsana_phi.4.t
+	desc = et_satsana_phi.4.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = satsana_phi
+		has_regency = no
+		NOT = { has_ruler_modifier = baci_ritual_adm }
+		NOT = { has_ruler_modifier = baci_ritual_dip }
+		NOT = { has_ruler_modifier = baci_ritual_mil }
+	}
+
+	option = {
+		name = et_satsana_phi.4.a
+		add_years_of_income = -0.2
+		add_ruler_modifier = {
+			name = baci_ritual_mil
+		}
+	}
+
+	option = {
+		name = et_satsana_phi.4.b
+		add_prestige = -2
+	}
+}
+
+#Baci - Dip effect
+country_event = {
+	id = et_satsana_phi.5
+	title = et_satsana_phi.5.t
+	desc = et_satsana_phi.5.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		religion = satsana_phi
+		has_regency = no
+		NOT = { has_ruler_modifier = baci_ritual_adm }
+		NOT = { has_ruler_modifier = baci_ritual_dip }
+		NOT = { has_ruler_modifier = baci_ritual_mil }
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+
+	option = {
+		name = et_satsana_phi.5.a
+		add_years_of_income = -0.2
+		add_ruler_modifier = {
+			name = baci_ritual_dip
+		}
+	}
+
+	option = {
+		name = et_satsana_phi.5.b
+		add_prestige = -2
+	}
+}

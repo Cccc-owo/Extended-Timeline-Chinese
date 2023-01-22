@@ -1,0 +1,995 @@
+namespace = nov
+
+#Rogue General
+country_event = {
+
+	id = nov.1
+	title = "nov.EVTNAME1"
+	desc = "nov.EVTDESC1"
+	picture = ROMAN_ARMY_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+		faction_in_power = generals
+		NOT = { legitimacy = 75 }
+	}
+	mean_time_to_happen = {
+		months = 250
+
+		modifier = {
+			factor = 1.5
+			stability = 3
+		}
+		modifier = {
+			factor = 1.5
+			stability = 2
+		}
+		modifier = {
+			factor = 1.5
+			stability = 1
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 30 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 10 }
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTA1"
+		random_owned_province = {
+			pretender_rebels = 3
+		}
+		add_stability = -1
+	}
+}
+
+#Emperor assassinated by generals
+country_event = {
+
+	id = nov.2
+	title = "nov.EVTNAME2"
+	desc = "nov.EVTDESC2"
+	picture = ASSASSINATION_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+		faction_in_power = generals
+		NOT = { legitimacy = 75 }
+		has_regency = no
+	}
+	mean_time_to_happen = {
+		months = 500
+
+		modifier = {
+			factor = 1.5
+			stability = 3
+		}
+		modifier = {
+			factor = 1.5
+			stability = 2
+		}
+		modifier = {
+			factor = 1.5
+			stability = 1
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 30 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 10 }
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTA2"
+		kill_ruler = yes
+		add_legitimacy = -5
+		add_stability = -1
+	}
+}
+
+#Peasant uprisings due to high taxes
+country_event = {
+
+	id = nov.3
+	title = "nov.EVTNAME3"
+	desc = "nov.EVTDESC3"
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+		faction_in_power = senators
+	}
+	mean_time_to_happen = {
+		months = 240
+
+		modifier = {
+			factor = 1.5
+			stability = 3
+		}
+		modifier = {
+			factor = 1.5
+			stability = 2
+		}
+		modifier = {
+			factor = 1.5
+			stability = 1
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 30 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 10 }
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTA3"
+		add_country_modifier = {
+			name = lowered_taxes
+			duration = 1825
+		}
+	}
+	option = {
+		name = "nov.EVTOPTB3"
+		random_owned_province = {
+			anti_tax_rebels = 3
+		}
+		add_stability = -1
+	}
+}
+
+#Emperor assassinated by senators
+country_event = {
+
+	id = nov.4
+	title = "nov.EVTNAME4"
+	desc = "nov.EVTDESC4"
+	picture = ASSASSINATION_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+		faction_in_power = senators
+		NOT = { stability = 2 }
+		NOT = { legitimacy = 80 }
+		has_regency = no
+	}
+	mean_time_to_happen = {
+		months = 450
+
+		modifier = {
+			factor = 1.5
+			stability = 1
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 30 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 10 }
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTA4"
+		kill_ruler = yes
+		add_legitimacy = -10
+		add_stability = -1
+	}
+}
+
+#Heir challenged by the senate
+country_event = {
+
+	id = nov.5
+	title = "nov.EVTNAME5"
+	desc = "nov.EVTDESC5"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		has_reform = roman_empire_reform
+		NOT = { legitimacy = 80 }
+		NOT = { dip = 3 }
+	}
+
+	option = {
+		name = "nov.EVTOPTA5"
+		add_faction_influence = { faction = imperials influence = 10 }
+		add_legitimacy = 10
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "nov.EVTOPTB5"
+		add_faction_influence = { faction = senators influence = 10 }
+		add_faction_influence = { faction = imperials influence = -10 }
+		define_ruler = {
+			adm = 2
+			dip = 4
+			mil = 1
+		}
+		add_prestige = -10
+		add_legitimacy = -20
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { faction_in_power = senators }
+			}
+		}
+	}
+}
+
+#Heir challenged by the generals
+country_event = {
+
+	id = nov.8
+	title = "nov.EVTNAME8"
+	desc = "nov.EVTDESC8"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		has_reform = roman_empire_reform
+		NOT = { legitimacy = 80 }
+		dip = 3
+		NOT = { mil = 3 }
+	}
+
+	option = {
+		name = "nov.EVTOPTA8"
+		add_faction_influence = { faction = imperials influence = 10 }
+		add_legitimacy = 10
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "nov.EVTOPTB8"
+		add_faction_influence = { faction = generals influence = 10 }
+		add_faction_influence = { faction = imperials influence = -10 }
+		define_ruler = {
+			adm = 2
+			dip = 1
+			mil = 4
+		}
+		add_prestige = -10
+		add_legitimacy = -20
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { faction_in_power = generals }
+			}
+		}
+	}
+}
+
+#Series event 1: large revolt under generals
+country_event = {
+
+	id = nov.6
+	title = "nov.EVTNAME6"
+	desc = "nov.EVTDESC6"
+	picture = ROMAN_ARMY_eventPicture
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = roman_empire_reform
+		faction_in_power = generals
+		NOT = { has_country_flag = series_event_one }
+		NOT = { stability = 2 }
+		NOT = { legitimacy = 80 }
+	}
+	mean_time_to_happen = {
+		months = 300
+
+		modifier = {
+			factor = 1.5
+			stability = 1
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 30 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 10 }
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTA6"
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		set_country_flag = series_event_one 
+		add_stability = -2
+	}
+}
+
+#Series event 1: large revolt under senators
+country_event = {
+
+	id = nov.7
+	title = "nov.EVTNAME7"
+	desc = "nov.EVTDESC7"
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = roman_empire_reform
+		faction_in_power = senators
+		NOT = { has_country_flag = series_event_one }
+	}
+	mean_time_to_happen = {
+		months = 300
+
+		modifier = {
+			factor = 2
+			stability = 3
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { stability = 3 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 1.1
+			legitimacy = 90
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { legitimacy = 80 }
+		}
+		modifier = {
+			factor = 0.6
+			NOT = { legitimacy = 60 }
+		}
+		modifier = {
+			factor = 0.4
+			NOT = { legitimacy = 40 }
+		}
+		modifier = {
+			factor = 0.2
+			NOT = { legitimacy = 20 }
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTA7"
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		random_owned_province = { pretender_rebels = 5 }
+		set_country_flag = series_event_one
+		add_stability = -2
+	}
+}
+
+#Scandal destroys reputation of major political figure for military party
+country_event = {
+
+	id = nov.13
+	title = "nov.EVTNAME13"
+	desc = "nov.EVTDESC13"
+	picture = ACCUSATION_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+		num_of_generals = 1
+	}
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = "nov.EVTOPTA13"
+		add_prestige = -10
+		add_faction_influence = { faction = generals influence = -5 }
+	}
+
+	option = {
+		name = "nov.EVTOPTB13"
+		kill_leader = { type = random }
+		add_faction_influence = { faction = generals influence = -15 }
+	}
+}
+
+#Senator wins the Emperor's ear
+country_event = {
+
+	id = nov.14
+	title = "nov.EVTNAME14"
+	desc = "nov.EVTDESC14"
+	picture = COURT_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+	}
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = "nov.EVTOPTA14"
+		add_faction_influence = { faction = senators influence = 10 }
+	}
+}
+
+#Senator murdered
+country_event = {
+
+	id = nov.15
+	title = "nov.EVTNAME15"
+	desc = "nov.EVTDESC15"
+	picture = DEATH_OF_HEIR_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+	}
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = "nov.EVTOPTA15"
+		add_faction_influence = { faction = senators influence = -10 }
+	}
+}
+
+#Faux pas by Emperor
+country_event = {
+
+	id = nov.17
+	title = "nov.EVTNAME17"
+	desc = "nov.EVTDESC17"
+	picture = OVEREXTENSION_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+	}
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = "nov.EVTOPTA17"
+		add_faction_influence = { faction = imperials influence = -10 }
+		add_legitimacy = -10
+	}
+}
+
+#A Foederati gains the Emperor's ear
+country_event = {
+
+	id = nov.18
+	title = "nov.EVTNAME18"
+	desc = "nov.EVTDESC18"
+	picture = COURT_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+	}
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = "nov.EVTOPTA18"
+		add_faction_influence = { faction = generals influence = 10 }
+		add_legitimacy = -5
+	}
+}
+
+#The senate resists imperial authority
+country_event = {
+
+	id = nov.19
+	title = "nov.EVTNAME19"
+	desc = "nov.EVTDESC19"
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	trigger = {
+		has_reform = roman_empire_reform
+		faction_in_power = senators
+	}
+	mean_time_to_happen = {
+		months = 300
+
+		modifier = {
+			factor = 1.5
+			stability = 3
+		}
+		modifier = {
+			factor = 1.5
+			stability = 2
+		}
+		modifier = {
+			factor = 0.25
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.25
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 1.1
+			legitimacy = 80
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { legitimacy = 60 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { legitimacy = 40 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { legitimacy = 20 }
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTA19"
+		add_faction_influence = { faction = senators influence = 10 }
+		add_faction_influence = { faction = imperials influence = -5 }
+		add_stability = -1
+		add_legitimacy = -10
+	}
+}
+
+#The Emperor is helpless in the face of a barbarian migration
+province_event = {
+
+	id = nov.20
+	title = "nov.EVTNAME20"
+	desc = "nov.EVTDESC20"
+	picture = BORDER_TENSION_eventPicture
+
+	trigger = {
+		owner = { 
+			NOT = { mil_tech = 17 }
+			NOT = { government = tribal }
+		}
+		NOT = { has_building = fort_15th }
+		any_neighbor_province = { 
+			owner = { has_reform = barbarian_reform } 
+		}
+		NOT = { has_province_modifier = raided_province }
+	}
+	mean_time_to_happen = {
+		months = 5000
+
+		modifier = {
+			factor = 1.5
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { stability = 0 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { stability = -1 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { stability = -2 } }
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTA20"
+		owner = { add_prestige = -10 }
+		add_province_modifier = {
+			name = raided_province
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTB20"
+		random_neighbor_province = {
+			limit = { owner = { has_reform = barbarian_reform } }
+			owner = { add_opinion = { who = ROOT modifier = border_friction_from_event } }
+		}
+		add_province_modifier = {
+			name = raided_province
+			duration = 1825
+		}
+	}
+}
+
+#Year of the four emperors, start
+country_event = {
+
+	id = nov.21
+	title = "nov.EVTNAME21"
+	desc = "nov.EVTDESC21"
+	picture = CIVIL_WAR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ROM
+		NOT = { adm = 1 }
+		NOT = { is_year = 150 }
+	}
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = {
+		name = "nov.EVTOPTA21"
+		add_legitimacy = -20
+		random_owned_province = {
+			limit = { region = france_region }
+			pretender_rebels = 2
+		}
+		random_owned_province = {
+			limit = { region = iberia_region }
+			pretender_rebels = 2
+		}
+		add_faction_influence = { faction = imperials influence = -20 }
+		add_country_modifier = {
+			name = year_of_the_four_emperors
+			duration = 366
+		}
+		hidden_effect = {
+			country_event = {
+				id = nov.22
+				days = 365
+			}
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTB21"
+		define_ruler = {
+			name = "Galba"
+			dynasty = "Severius Sulpicius"
+			claim = 20
+			adm = 2
+			dip = 2
+			mil = 2
+		}
+		add_faction_influence = { faction = imperials influence = -20 }
+		add_country_modifier = {
+			name = year_of_the_four_emperors
+			duration = 366
+		}
+		hidden_effect = {
+			country_event = {
+				id = nov.22
+				days = 365
+			}
+		}
+	}
+}
+
+#Year of the four emperors, end
+country_event = {
+
+	id = nov.22
+	title = "nov.EVTNAME22"
+	desc = "nov.EVTDESC22"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = "nov.EVTOPTA22"
+		add_legitimacy = 20
+		add_stability = 1
+		add_adm_power = 50
+		remove_country_modifier = year_of_the_four_emperors
+	}
+}
+
+#Year of the four emperors, Otho
+country_event = {
+
+	id = nov.23
+	title = "nov.EVTNAME23"
+	desc = "nov.EVTDESC23"
+	picture = CIVIL_WAR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_modifier = year_of_the_four_emperors
+		owns = 118
+	}
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	option = {
+		name = "nov.EVTOPTA23"
+		118 = { pretender_rebels = 2 }
+	}
+
+	option = {
+		name = "nov.EVTOPTB23"
+		define_ruler = {
+			name = "Otho"
+			dynasty = "Marcus Salvius"
+			claim = 20
+			adm = 1
+			dip = 4
+			mil = 1
+		}
+	}
+}
+
+#Year of the four emperors, Vitellius
+country_event = {
+
+	id = nov.24
+	title = "nov.EVTNAME24"
+	desc = "nov.EVTDESC24"
+	picture = CIVIL_WAR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_modifier = year_of_the_four_emperors
+	}
+	mean_time_to_happen = {
+		months = 5
+	}
+
+	option = {
+		name = "nov.EVTOPTA24"
+		random_owned_province = {
+			limit = { OR = { region = low_countries_region region = north_german_region } }
+			pretender_rebels = 2
+		}
+		random_owned_province = {
+			limit = { region = british_isles_region }
+			pretender_rebels = 2
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTB24"
+		define_ruler = {
+			name = "Vitellius"
+			dynasty = "Aulus"
+			claim = 20
+			adm = 3
+			dip = 2
+			mil = 2
+		}
+	}
+}
+
+#Year of the four emperors, Vespasianus
+country_event = {
+
+	id = nov.25
+	title = "nov.EVTNAME25"
+	desc = "nov.EVTDESC25"
+	picture = CIVIL_WAR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_modifier = year_of_the_four_emperors
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "nov.EVTOPTA25"
+		random_owned_province = {
+			limit = { region = balkan_region }
+			pretender_rebels = 2
+		}
+		random_owned_province = {
+			limit = { region = mashriq_region }
+			pretender_rebels = 2
+		}
+	}
+
+	option = {
+		name = "nov.EVTOPTB25"
+		define_ruler = {
+			name = "Vespasian"
+			dynasty = "Flavian"
+			claim = 20
+			adm = 4
+			dip = 3
+			mil = 6
+		}
+	}
+}
+
+#Year of the four emperors, misc
+country_event = {
+
+	id = nov.26
+	title = "nov.EVTNAME26"
+	desc = "nov.EVTDESC26"
+	picture = ACCUSATION_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_modifier = year_of_the_four_emperors
+		NOT = { adm = 1 }
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "nov.EVTOPTA26"
+		add_legitimacy = -20
+		add_faction_influence = { faction = imperials influence = -20 }
+	}
+}
+
+#Great fire of Rome
+country_event = {
+
+	id = nov.27
+	title = "nov.EVTNAME27"
+	desc = "nov.EVTDESC27"
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		OR = { 
+			tag = ROM 
+			tag = ROW
+		}
+		capital = 118
+		118 = {
+			base_tax = 4
+			base_production = 4
+			base_manpower = 4
+		}
+	}
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	option = {
+		name = "nov.EVTOPTA27"
+		add_adm_power = -100
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = "nov.EVTOPTB27"
+		add_prestige = -20
+		118 = {
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+		}
+	}
+}

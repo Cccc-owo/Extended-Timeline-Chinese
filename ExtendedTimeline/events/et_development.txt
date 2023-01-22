@@ -1,0 +1,329 @@
+namespace = et
+
+# Plague
+province_event = {
+
+	id = et.69
+	title = "et.EVTNAME69"
+	desc = "et.EVTDESC69"
+	picture = PLAGUE_eventPicture
+
+	trigger = {
+		OR = {
+			AND = {
+				development = 20
+				NOT = { province_has_center_of_trade_of_level = 1 }
+			}
+			AND = {
+				development = 24
+				NOT = { province_has_center_of_trade_of_level = 2 }
+			}
+			development = 28
+		}
+		owner = { NOT = { has_institution = medicine } }
+		owner = { NOT = { adm_tech = 55 } }
+		owner = { NOT = { has_country_modifier = et_plague_tribal } }
+		NOT = { has_province_modifier = et_plague }
+	}
+	mean_time_to_happen = {
+		months = 3200
+
+		modifier = {
+			factor = 0.5
+			has_terrain = jungle
+		}
+		modifier = {
+			factor = 0.1
+			any_neighbor_province = { has_province_modifier = et_plague }
+		}
+		modifier = {
+			factor = 0.5
+			development = 25
+		}
+		modifier = {
+			factor = 0.4
+			development = 30
+		}
+		modifier = {
+			factor = 0.3
+			development = 35
+		}
+		modifier = {
+			factor = 0.2
+			development = 40
+		}
+		modifier = {
+			factor = 0.1
+			development = 45
+		}
+		modifier = {
+			factor = 1.5
+			owner = { adm_tech = 26 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { adm_tech = 36 }
+		}
+		modifier = {
+			factor = 3
+			is_capital = yes
+			owner = { total_development = 150 }
+		}
+		modifier = {
+			factor = 3
+			is_capital = yes
+			owner = { total_development = 300 }
+		}
+		modifier = {
+			factor = 2
+			province_has_center_of_trade_of_level = 1
+		}
+		modifier = {
+			factor = 3
+			province_has_center_of_trade_of_level = 2
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA69"
+		if = {
+			limit = { government = native }
+			add_country_modifier = {
+				name = et_plague_tribal
+				duration = 3650
+			}
+		}
+		else = {
+			if = { 
+				limit = { base_tax = 4 }
+				add_base_tax = -3
+			}
+			if = { 
+				limit = { base_production = 4 }
+				add_base_production = -3
+			}
+			if = { 
+				limit = { base_manpower = 4 }
+				add_base_manpower = -3
+			}
+		}
+		add_province_modifier = {
+			name = et_plague
+			duration = 1825
+		}
+	}
+}
+
+#Famine
+province_event = {
+
+	id = et.70
+	title = "et.EVTNAME70"
+	desc = "et.EVTDESC70"
+	picture = FAMINE_eventPicture
+
+	trigger = {	
+		development = 16
+		owner = { NOT = { has_institution = medicine } }
+		owner = { NOT = { adm_tech = 55 } }
+		NOT = { has_province_modifier = et_famine }
+		owner = { NOT = { has_country_modifier = et_famine_tribal } }
+		OR = {
+			NOT = { province_has_center_of_trade_of_level = 1 }
+			has_terrain = desert
+			has_terrain = mountain
+			has_terrain = savannah
+			has_terrain = steppe
+		}
+	}
+	mean_time_to_happen = {
+		months = 4000
+
+		modifier = {
+			factor = 0.6
+			has_terrain = desert
+		}
+		modifier = {
+			factor = 0.8
+			has_terrain = steppe
+		}
+		modifier = {
+			factor = 0.8
+			has_terrain = savannah
+		}
+		modifier = {
+			factor = 0.8
+			has_terrain = mountain
+		}
+		modifier = {
+			factor = 0.8
+			development = 20
+		}
+		modifier = {
+			factor = 0.8
+			development = 25
+		}
+		modifier = {
+			factor = 0.7
+			development = 30
+		}
+		modifier = {
+			factor = 0.6
+			development = 35
+		}
+		modifier = {
+			factor = 0.4
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			owner = { adm_tech = 26 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { adm_tech = 36 }
+		}
+		modifier = {
+			factor = 3
+			is_capital = yes
+			owner = { total_development = 150 }
+		}
+		modifier = {
+			factor = 3
+			is_capital = yes
+			owner = { total_development = 300 }
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA70"
+		if = {
+			limit = { government = native }
+			add_country_modifier = {
+				name = et_famine_tribal
+				duration = 3650
+			}
+		}
+		else = {
+			if = { 
+				limit = { base_tax = 3 }
+				add_base_tax = -2
+			}
+			if = { 
+				limit = { base_production = 3 }
+				add_base_production = -2
+			}
+			if = { 
+				limit = { base_manpower = 3 }
+				add_base_manpower = -2
+			}
+		}
+		add_province_modifier = {
+			name = et_famine
+			duration = 1825
+		}
+	}
+}
+
+#Drought
+province_event = {
+
+	id = et.71
+	title = "et.EVTNAME71"
+	desc = "et.EVTDESC71"
+	picture = FAMINE_eventPicture
+
+	trigger = {	
+		development = 10
+		owner = { NOT = { has_institution = medicine } }
+		owner = { NOT = { adm_tech = 55 } }
+		owner = { NOT = { has_country_modifier = et_drought_tribal } }
+		OR = {
+			has_terrain = desert
+			has_terrain = mountain
+			has_terrain = savannah
+			has_terrain = steppe
+		}
+		NOT = { has_province_modifier = et_drought }
+		NOT = { province_has_center_of_trade_of_level = 2 }
+	}
+	mean_time_to_happen = {
+		months = 2400
+
+		modifier = {
+			factor = 0.6
+			has_terrain = desert
+		}
+		modifier = {
+			factor = 0.8
+			development = 15
+		}
+		modifier = {
+			factor = 0.8
+			development = 20
+		}
+		modifier = {
+			factor = 0.8
+			development = 25
+		}
+		modifier = {
+			factor = 0.7
+			development = 30
+		}
+		modifier = {
+			factor = 0.6
+			development = 35
+		}
+		modifier = {
+			factor = 1.2
+			owner = { adm_tech = 26 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { adm_tech = 36 }
+		}
+		modifier = {
+			factor = 3
+			is_capital = yes
+			owner = { total_development = 150 }
+		}
+		modifier = {
+			factor = 3
+			is_capital = yes
+			owner = { total_development = 300 }
+		}
+		modifier = {
+			factor = 2
+			province_has_center_of_trade_of_level = 1
+		}
+	}
+	
+	option = {
+		name = "et.EVTOPTA71"
+		if = {
+			limit = { government = native }
+			add_country_modifier = {
+				name = et_drought_tribal
+				duration = 3650
+			}
+		}
+		else = {
+			if = { 
+				limit = { base_tax = 3 }
+				add_base_tax = -2
+			}
+			if = { 
+				limit = { base_production = 3 }
+				add_base_production = -2
+			}
+			if = { 
+				limit = { base_manpower = 3 }
+				add_base_manpower = -2
+			}
+		}
+		add_province_modifier = {
+			name = et_drought
+			duration = 1825
+		}
+	}
+}

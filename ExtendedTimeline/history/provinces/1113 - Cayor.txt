@@ -1,0 +1,56 @@
+#1113 - Cayor
+
+culture = senegambian
+base_manpower = 2
+religion = shamanism
+capital = "Mboul"
+trade_goods = unknown
+hre = no
+discovered_by = sub_saharan
+base_tax = 3
+base_production = 3
+native_size = 50
+native_ferocity = 4.5
+native_hostileness = 9
+
+2.1.1 = {
+	add_permanent_province_modifier = {
+		name = senegal_estuary_modifier
+		duration = -1
+	}
+}
+
+1285.1.1 = { owner = MAL controller = MAL add_core = MAL is_city = yes trade_goods = slaves }
+1350.1.1 = { owner = JOL controller = JOL add_core = JOL remove_core = MAL }
+
+1445.1.1 = { discovered_by = POR }
+1482.1.1 = { unrest = 4 } #Bemoy revolt against Jolof governors, aided by Portuguese
+1498.1.1 = { unrest = 4 } #Fulani incursions begin 
+1512.1.1 = { unrest = 0 } #leader of Fulani killed in battle, stability returns under Jolof dominance
+1549.1.1 = { unrest = 6 } #Kayor breaks free from Jolof control
+1552.1.1 = { unrest = 4 } #Waalo breaks free from Jolof control
+1593.1.1 = { unrest = 5 } #Fulani expansionism under Samba Lemu destablilizes Waalo and much of Kayor
+1651.1.1 = { fort_15th = yes } # Representing Fort Jakob
+1673.1.1 = { unrest = 10 } #Marabouts under Nasir al-Din launch invasion of Waalo and Kayor
+1674.1.1 = { unrest = 4 } #Nasir al-Din seize Waalo and Kayor
+1678.1.1 = { unrest = 8 } #Rebellion against Marabout control with French support restores old dynasties of Waalo and Kayor
+1724.1.1 = { unrest = 4 } #Civil war in Waalo
+1733.1.1 = { unrest = 4 } #Accession of Njaag Aram Bakar marks era of Waalo expansion into Kayor
+1765.1.1 = { unrest = 6 } #British subsidize successful Kayor war to liberate lands lost to Waalo
+1774.1.1 = { unrest = 4 } #Trzaza Moors invade Lower Senegal Valley, become kingmakers in Waalo
+1775.1.1 = { fort_15th = no fort_16th = yes } # Representing Fort James
+1785.1.1 = { unrest = 7 } #Agitation among marabouts inspired by Torodo success creates unrest in Kayor and Waalo
+1790.1.1 = { unrest = 9 } #Amari Ngoone Ndela launches major persecution of Torodo sympathizers
+1791.1.1 = { unrest = 1 } #Amari defeats the Torodo at Bungoy, ends Torodo threat and secures Kayor control
+1800.1.1 = { religion = sunni }
+
+1875.1.1   = { owner = FR2 controller = FR2 add_core = FR2 }
+1902.1.1   = { capital = "Dakar" }
+1910.1.1 = { discovered_by = western discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1942.11.16 = { owner = FR2 controller = FR2 remove_core = FRV } # Under Free French control after Operation Torch
+1960.6.20  = { owner = MAL controller = MAL add_core = MAL add_core = SGL remove_core = FR2 culture = senegambian }
+1960.8.20  = { owner = SGL controller = SGL remove_core = MAL }
+
+
+

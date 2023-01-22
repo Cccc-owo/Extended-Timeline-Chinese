@@ -1,0 +1,394 @@
+tang_missions_ext_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TNG
+		}
+	}
+	has_country_shield = yes
+	
+	tng_mandate_of_heaven_mission = {
+		icon = mission_empire
+		required_missions = { } 	#none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				region = south_china_region
+				region = xinan_region
+				region = north_china_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+		
+			num_of_owned_provinces_with = {
+				region = xinan_region
+				value = 9
+			}
+			north_china_region = {
+				type = all
+				owned_by = ROOT
+			}
+			
+			guangdong_area = {
+				type = all
+				owned_by = ROOT
+			}
+			west_guangdong_area = {
+				type = all
+				owned_by = ROOT
+			}
+			guangzhou_area = {
+				type = all
+				owned_by = ROOT
+			}
+			fujian_area = {
+				type = all
+				owned_by = ROOT
+			}
+			jiangxi_area = {
+				type = all
+				owned_by = ROOT
+			}
+			huguang_area = {
+				type = all
+				owned_by = ROOT
+			}
+			hunan_area = {
+				type = all
+				owned_by = ROOT
+			}
+			zhejiang_area = {
+				type = all
+				owned_by = ROOT
+			}
+			south_anhui_area = {
+				type = all
+				owned_by = ROOT
+			}
+			jiangsu_area = {
+				type = all
+				owned_by = ROOT
+			}
+			south_jiangsu_area  = {
+				type = all
+				owned_by = ROOT
+			}
+			guangxi_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_legitimacy = 10
+			south_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { area = taiwan_area }
+				}
+				add_core = ROOT
+			}
+			xinan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_core = ROOT
+			}
+			north_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_core = ROOT
+			}
+		}
+	}
+	tng_subjugate_tuyuhun_mission = {
+		icon = mission_great_wall
+		required_missions = { tng_mandate_of_heaven_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = gansu_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = tng_frontier_expansion
+				duration = 10950 #30 years
+			}
+		}
+	}
+	tng_the_eastern_turks_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { tng_subjugate_tuyuhun_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = ordos_area
+				area = outer_mongolia_area
+				area = inner_mongolia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			ordos_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			outer_mongolia_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			inner_mongolia_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			zungaria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jetysuu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			balchasj_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			altai_sayan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tng_the_western_turks_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { tng_the_eastern_turks_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = zungaria_area
+				area = jetysuu_area
+				area = balchasj_area
+				area = altai_sayan_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			zungaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jetysuu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			balchasj_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			altai_sayan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = tng_silk_road_taxation
+				duration = 10950 #30 years
+			}
+		}
+	}
+	tng_subjugate_the_tibetans_mission = {
+		icon = mission_unite_home_region
+		required_missions = { tng_tarim_basin_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = tibet_region
+			}
+			NOT = {
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+		}
+		trigger = {
+			tibet_region= {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_prestige = 15
+		}
+	}
+}
+
+tang_missions_ext_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TNG
+		}
+	}
+	has_country_shield = yes
+	
+	tng_tarim_basin_mission = {
+		icon = mission_bedouins
+		required_missions = { tng_the_eastern_turks_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = tarim_basin_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			tarim_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_prestige = 15
+		}
+	}
+	tng_conquer_goguryeo_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { tng_tarim_basin_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = liaoning_area
+				area = pyongan_area
+				area = hamgyeong_area
+				area = jilin_area
+				area = heilongjiang_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			liaoning_area= {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			pyongan_area= {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hamgyeong_area= {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jilin_area= {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			heilongjiang_area= {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			korea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+tang_missions_ext_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TNG
+		}
+	}
+	has_country_shield = yes
+	
+	tng_develop_changan_mission = {
+		icon = mission_asian_city
+		required_missions = { }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 700	#Xi'an
+			}
+		}
+		trigger = {
+			capital = 700	#Xi'an
+			700 = {
+				development = 20
+				base_manpower = 6
+			}
+		}
+		effect = {
+			add_prestige = 10
+			700 = {
+				add_province_modifier = {
+					name = "urban_expansion"
+					duration = -1
+				}	
+			}
+		}
+	}
+	tng_enact_equal_field_system_mission = {
+		icon = mission_rice_field
+		required_missions = {  }
+		position = 4
+		trigger = {
+			stability = 3
+		}
+		effect = {
+			add_legitimacy = 50
+			add_heir_claim = 100
+			add_country_modifier = {
+				name = "chinese_equal_field_system_mod"
+				duration = 10950
+			}
+		}
+	}
+}

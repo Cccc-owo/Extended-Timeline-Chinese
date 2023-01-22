@@ -1,0 +1,528 @@
+sengoku_unifier_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ODA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	oda_subjugate_chugoku = {
+		icon = mission_invade_island
+		required_missions = { oda_new_capital }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = saigoku_area
+				area = sanindo_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			saigoku_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sanindo_area   = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+		}
+	}
+}
+
+sengoku_unifier_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ODA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	oda_consolidate_owari = {
+		icon = mission_oda_clan_war_banner
+		required_missions = { }
+		position = 1
+		completed_by = 1568.1.1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1030
+			}
+		}
+		trigger = {
+			owns_core_province = 1030	#Owari
+			army_size_percentage = 1
+			stability = 1
+		}
+		effect = {
+			add_yearly_manpower = 0.75
+		}
+	}
+	oda_besiege_inabayama = {
+		icon = mission_japanese_fort
+		required_missions = { oda_consolidate_owari }
+		position = 2
+		completed_by = 1568.1.1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1835
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			owns = 1835	#Mino
+		}
+		effect = {
+			1835 = {
+				add_base_manpower = 1
+				rename_capital = "Gifu"
+			}
+		}
+	}
+	oda_conquer_echizen = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { oda_besiege_inabayama }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1023
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			owns_core_province = 1023	#Echizen
+		}
+		effect = {
+			#Tango
+			4315 = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	oda_ishiyama_hongangji = {
+		icon = mission_japanese_castle_burning
+		required_missions = { oda_conquer_echizen }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1021
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 1021	#Settsu
+		}
+		effect = {
+			#Tango
+			4315 = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	oda_new_capital = {
+		icon = mission_colonial
+		required_missions = { oda_ishiyama_hongangji }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = kinai_area
+			}
+		}
+		trigger = {
+			kinai_area = {
+				has_building = fort_16th
+				development = 18
+			}
+			capital_scope = {
+				area = kinai_area
+			}
+		}
+		effect = {
+			add_prestige = 7
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+			}
+		}
+	}
+	oda_subjugate_shikoku = {
+		icon = mission_japanese_samurai
+		required_missions = { oda_new_capital }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = shikoku_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			shikoku_area   = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_sailors = 500
+			add_dip_power = 100
+		}
+	}
+	oda_kyushu_campaign = {
+		icon = mission_rb_conquer_ireland
+		required_missions = { oda_subjugate_shikoku oda_subjugate_chugoku }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = northern_kyushu
+				area = kyushu_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			northern_kyushu  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kyushu_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 25
+		}
+	}
+}
+
+sengoku_unifier_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ODA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	oda_intensive_firearms = {
+		icon = mission_japanese_arquebus
+		required_missions = { }	#none
+		position = 1
+		trigger = {
+			army_tradition = 40
+			barracks = 3
+			mil_tech = 51
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oda_triple_volley_firing"
+				duration = -1
+			}
+		}
+	}
+	oda_samurai_steel = {
+		icon = mission_trade_with_japan
+		required_missions = { }	#none
+		position = 2
+		trigger = {
+			num_of_heavy_ship = 10
+			num_of_artillery = 6
+		}
+		effect = {
+			add_navy_tradition = 10
+			add_yearly_sailors = 2
+		}
+	}
+	oda_fushimi_era = {
+		icon = mission_noble_council
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			total_development = 60
+			glorious_monument = 3
+			trade_depot = 3
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+	oda_secure_mikawa = {
+		icon = mission_tokugawa_shogunate
+		required_missions = { }	#none
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4360
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			OR = {
+				owns_or_subject_of = 4360	#Mikawa
+				alliance_with = TKG
+			}
+		}
+		effect = {
+			add_historical_friend = TKG
+		}
+	}
+	oda_furinkazan = {
+		icon = mission_conquer_5_states
+		required_missions = { oda_secure_mikawa }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4188
+				province_id = 1029
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			OR = {
+				owns_core_province = 4188	#Shinano
+				owns_core_province = 1029	#Kai
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			add_army_tradition = 5
+		}
+	}
+	oda_dragon_and_tiger_of_echigo = {
+		icon = mission_defy_the_dragon
+		required_missions = { oda_furinkazan }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1024
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			OR = {
+				owns_core_province = 1024	#Echigo
+			}
+		}
+		effect = {
+			add_prestige = 5
+		}
+	}
+	oda_besiege_odawara_mission = {
+		icon = mission_cannons_firing
+		required_missions = { oda_dragon_and_tiger_of_echigo }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4189	#Sagami
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 4189		#Sagami
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oda_cannon_siegecraft"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	oda_great_unifier = {
+		icon = mission_oda_nobunaga
+		required_missions = { oda_besiege_odawara_mission oda_kyushu_campaign }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1028	#Musashi
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			japan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "oda_sengoku_great_unifier"
+				duration = -1
+			}
+		}
+	}
+}
+
+sengoku_unifier_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ODA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	oda_quell_saika_ikki = {
+		icon = mission_landsknecht_soldier
+		required_missions = { oda_dragon_and_tiger_of_echigo }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4187
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			OR = {
+				owns_core_province = 4187	#Kii
+			}
+			4187 = {
+				NOT = { unrest = 1 }
+				NOT = { local_autonomy = 10 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oda_saika_ikki"
+				duration = 9125 #25 years
+			}
+		}
+	}
+}
+
+sengoku_unifier_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ODA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	oda_influence_imperial_court = {
+		icon = mission_vedic_education
+		required_missions = { }
+		position = 3
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 70
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	oda_march_to_kyoto = {
+		icon = mission_asian_city
+		required_missions = { }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1020
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			has_reform = shogunate
+			owns = 1020	#Kyoto
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oda_sengoku_great_unifier"
+				duration = 10950 #30 years	
+			}
+			japan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	oda_conquest_of_korea = {
+		icon = mission_unite_home_region
+		required_missions = { oda_march_to_kyoto }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				region = korea_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 5
+			korea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					owned_by = ROOT
+				}
+				add_core = ROOT
+			}
+		}
+	}
+	oda_invasion_of_china = {
+		icon = et_mission_forbidden_city
+		required_missions = { oda_conquest_of_korea }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				superregion = china_superregion
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				superregion = china_superregion
+				value = 55
+			}
+		}
+		effect = {
+			china_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}

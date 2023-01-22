@@ -1,0 +1,593 @@
+country_decisions = {
+
+	convert_to_chalcedonism = {
+		major = yes
+		potential = {
+			OR = {
+				religion_group = pagan
+				religion_group = hellenic
+				religion = armenian_religion
+				religion = georgian_religion
+				religion_group = german_pagan
+				religion_group = slavic_pagan
+				religion_group = african_pagan
+				religion = tengri_pagan_reformed
+				religion_group = mesopotamian
+				religion_group = american_pagan
+			}
+			any_core_province = {
+				religion = chalcedonism
+			}
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = chalcedonism }
+			}
+			is_force_converted = no
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = chalcedonism
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = chalcedonism }
+			}
+		}
+	}
+
+	convert_to_catholic = {
+		major = yes
+		potential = {
+			OR = {
+				religion_group = pagan
+				religion_group = hellenic
+				religion = armenian_religion
+				religion = georgian_religion
+				religion_group = german_pagan
+				religion_group = slavic_pagan
+				religion_group = african_pagan
+				religion = tengri_pagan_reformed
+				religion_group = mesopotamian
+				religion_group = american_pagan
+			}
+			is_religion_enabled = catholic
+			any_core_province = {
+				religion = catholic
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = catholic }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = catholic
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = catholic }
+			}
+		}
+	}
+
+	convert_to_orthodox = {
+		major = yes
+		potential = {
+			OR = {
+				religion_group = pagan
+				religion_group = hellenic
+				religion = armenian_religion
+				religion = georgian_religion
+				religion_group = german_pagan
+				religion_group = slavic_pagan
+				religion_group = african_pagan
+				religion = tengri_pagan_reformed
+				religion_group = mesopotamian
+				religion_group = american_pagan
+			}
+			is_religion_enabled = orthodox
+			any_core_province = {
+				religion = orthodox
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = orthodox }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = orthodox
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = orthodox }
+			}
+		}
+	}
+
+	convert_to_arianism = {
+		major = yes
+		potential = {
+			OR = {
+				religion_group = pagan
+				religion_group = hellenic
+				religion = armenian_religion
+				religion = georgian_religion
+				religion_group = german_pagan
+				religion_group = slavic_pagan
+				religion_group = african_pagan
+				religion = tengri_pagan_reformed
+				religion_group = mesopotamian
+				religion_group = american_pagan
+			}
+			any_core_province = {
+				religion = arianism
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = arianism }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = arianism
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = arianism }
+			}
+		}
+	}
+
+	convert_to_coptic = {
+		major = yes
+		potential = {
+			OR = {
+				religion_group = pagan
+				religion_group = hellenic
+				religion = armenian_religion
+				religion = georgian_religion
+				religion_group = german_pagan
+				religion_group = slavic_pagan
+				religion_group = african_pagan
+				religion = tengri_pagan_reformed
+				religion_group = mesopotamian
+				religion_group = american_pagan
+			}
+			any_core_province = {
+				religion = coptic
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = coptic }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = coptic
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = coptic }
+			}
+		}
+	}
+
+	convert_to_nestorianism = {
+		major = yes
+		potential = {
+			OR = {
+				religion_group = pagan
+				religion_group = hellenic
+				religion = armenian_religion
+				religion = georgian_religion
+				religion_group = german_pagan
+				religion_group = slavic_pagan
+				religion_group = african_pagan
+				religion = tengri_pagan_reformed
+				religion_group = mesopotamian
+				religion_group = american_pagan
+			}
+			any_core_province = {
+				religion = nestorian
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = nestorian }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = nestorian
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = nestorian }
+			}
+		}
+	}
+
+	convert_to_sunni = {
+		major = yes
+		potential = {
+			OR = {
+				religion_group = pagan
+				religion_group = hellenic
+				religion = armenian_religion
+				religion = georgian_religion
+				religion_group = german_pagan
+				religion_group = slavic_pagan
+				religion_group = african_pagan
+				religion = tengri_pagan_reformed
+				religion_group = mesopotamian
+				religion_group = american_pagan
+			}
+			any_core_province = {
+				religion = sunni
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = sunni }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = sunni
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = sunni }
+			}
+		}
+	}
+
+	adopt_secularism = {
+		major = yes
+		potential = {
+			adm_tech = 79
+			NOT = { religion = secularism }
+			NOT = { government = theocracy }
+			NOT = { has_reform = caliphate_reform }
+			NOT = { has_reform = feudal_theocracy }
+			NOT = { has_reform = iqta }
+			is_force_converted = no
+			is_part_of_hre = no
+			is_emperor = no
+			is_emperor_of_china = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = secularism }
+			}
+		}
+		allow = {
+			stability = 2
+			is_at_war = no
+		}
+		effect = {
+			change_religion = secularism
+			add_stability = -1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { adm_tech = 82 }
+				NOT = { has_idea_group = humanist_ideas }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					religion_group = muslim
+					has_idea_group = religious_ideas
+				}
+				NOT = { adm_tech = 86 }
+			}
+			modifier = {
+				factor = 0
+				is_subject = yes
+				overlord = { NOT = { religion = secularism } }
+			}
+		}
+	}
+
+	convert_to_buddhism = {
+		major = yes
+		potential = {
+			OR = {
+				religion = animism
+				religion = shamanist
+				religion = muism
+			}
+			OR = {
+				culture_group = japanese_g
+				primary_culture = korean
+			}
+			any_core_province = {
+				religion = mahayana
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = mahayana }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = mahayana
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = mahayana }
+			}
+		}
+	}
+
+	convert_to_shinto = {
+		major = yes
+		potential = {
+			OR = {
+				religion = animism
+				religion = mahayana
+			}
+			primary_culture = japanese
+			any_core_province = {
+				religion = shinto
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = shinto }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = shinto
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = shinto }
+			}
+		}
+	}
+
+	abandon_secularism = {
+		major = yes
+		potential = {
+			religion = secularism
+			NOT = { has_country_flag = secularism_abolished }
+			is_force_converted = no
+		}
+		allow = {
+			stability = 2
+			is_at_war = no
+		}
+		effect = {
+			add_stability = -4
+			set_country_flag = secularism_abolished
+			country_event = {
+				id = et.28
+				days = 1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	convert_to_manichaeism = {
+		major = yes
+		potential = {
+			OR = {
+				religion = animism
+				religion = shamanist
+				religion = hellenism
+				religion = zamolxism
+				religion = nabataean
+				religion = totemism
+				religion = mesoamerican_religion
+				religion = south_american
+				religion = druidism
+				religion = germanic
+				religion = norse_pagan_reformed
+				religion = suomenusko
+				religion = romuva
+				religion = slavic
+				religion = tengri_pagan_reformed
+				religion = shamanism
+				religion = ashurism
+				religion = south_arabian
+				religion = egyptian
+				religion = nahuatl
+				religion = inti
+			}
+			any_core_province = {
+				religion = manichaeism
+			}
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = manichaeism }
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = manichaeism
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = manichaeism }
+			}
+		}
+	}
+
+	convert_to_armenian_religion = {
+		major = yes
+		potential = {
+			primary_culture = armenian
+			NOT = { religion = armenian_religion }
+			NOT = { religion_group = christian }
+			NOT = { religion_group = muslim }
+			is_force_converted = no
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = armenian_religion }
+			}
+		}
+		allow = {
+			any_core_province = {
+				religion = armenian_religion
+			}
+			ruler_religion = armenian_religion
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = armenian_religion
+			add_stability = -3
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	convert_to_cathar = {
+		major = yes
+		potential = {
+			religion_group = christian
+			NOT = { religion = cathar }
+			any_core_province = {
+				religion = cathar
+			}
+			is_force_converted = no
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = cathar
+			add_stability = -2
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = cathar }
+			}
+		}
+	}
+}

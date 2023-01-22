@@ -1,0 +1,356 @@
+country_decisions = {
+
+	dummy_empire_declining = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			remove_country_modifier = empire_destabilized
+			add_country_modifier = {
+				name = empire_declining
+			duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dummy_empire_fragmenting = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			remove_country_modifier = empire_declining
+			add_country_modifier = {
+				name = empire_fragmenting
+			duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dummy_empire_collapsing = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			remove_country_modifier = empire_fragmenting
+			add_country_modifier = {
+				name = empire_collapsing
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dummy_clear_decline = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			remove_country_modifier = empire_destabilized
+			remove_country_modifier = empire_declining
+			remove_country_modifier = empire_fragmenting
+			remove_country_modifier = empire_collapsing
+			remove_country_modifier = total_collapse
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dummy_pax_romana = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = pax_romana
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dummy_rise_of_islam = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = rise_of_islam
+				duration = 10950
+			}
+			set_country_flag = early_caliphate
+			arabia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = RSD
+			}
+			mashriq_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = RSD
+			}
+			egypt_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = RSD
+			}
+			add_stability = 2
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dummy_nomad_conquest = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			if = {
+				limit = { NOT = { is_year = 1260 } }
+				add_country_modifier = {
+					name = nomadic_conquest
+					duration = 21900
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dummy_st_petersburg = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			set_country_flag = relocated_capital_st_petersburg
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_space_program = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = space_program
+				duration = -1
+			}
+			set_country_flag = satellite_into_orbit
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_space_station = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = space_station
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_moon_mission = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			set_country_flag = moon_misson_in_progress
+			set_global_flag = man_on_moon
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_clear_revolution = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			set_revolution_target = XXX
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_byz_mission_enable = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			set_country_flag = byz_missions_enabled
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_constantinople = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			set_country_flag = relocated_capital_constantinople
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_water_chenla = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			override_country_name = WATER_CHENLA
+			set_country_flag = is_water_chenla
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_abu_dhabi = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			override_country_name = ABU_DHABI
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_gaya = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			override_country_name = GAYA
+			set_country_flag = gaya_event_fired
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_join_eu = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = european_union
+				duration = -1
+			}
+			every_owned_province = { set_in_empire = yes }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	dummy_leave_eu = {
+		potential = {
+			always = no
+		}
+		allow = {
+			always = no
+		}
+		effect = {
+			remove_country_modifier = european_union
+			every_owned_province = { set_in_empire = no }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

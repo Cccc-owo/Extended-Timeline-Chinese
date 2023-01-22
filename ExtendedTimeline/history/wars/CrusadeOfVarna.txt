@@ -1,0 +1,51 @@
+name = "Crusade of Varna"
+
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 149	#Edirne, since Varna (4688) would be too unrealistically easy for crusaders
+}
+
+1443.10.1 = {
+	add_attacker = POL
+	add_attacker = HUN
+	add_attacker = SER
+	add_attacker = BOH
+	add_attacker = WAL
+	add_attacker = MOL
+	add_attacker = PAP
+	add_defender = TUR
+}
+
+1443.11.1 = {
+	battle = {
+		name = "Nish"
+		location = 2121		#Nis
+		attacker = {
+			commander = "John Hunyadi"	# John Hunyadi
+			infantry = 21000
+			cavalry = 12000
+			losses = 6	# percent
+			country = HUN
+		}
+		defender = {
+			commander = "Kasim Pasha"	# Kasim Pasha
+			infantry = 15000
+			cavalry = 12000
+			losses = 20	# percent
+			country = TUR
+		}
+		result = yes
+	}
+}
+
+1444.11.1 = {
+	rem_attacker = POL
+	rem_attacker = HUN
+	rem_attacker = SER
+	rem_attacker = BOH
+	rem_attacker = WAL
+	rem_attacker = MOL
+	rem_attacker = PAP
+	rem_defender = TUR
+}

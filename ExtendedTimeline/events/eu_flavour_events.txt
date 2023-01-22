@@ -1,0 +1,278 @@
+namespace = european_union_flavour
+
+# Receive European founds
+country_event = {
+	id = european_union_flavour.1
+	title = european_union_flavour.1.t
+	desc = european_union_flavour.1.d
+	picture = ECONOMY_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	option = {
+		name = european_union_flavour.1.a
+		add_treasury = 100
+		change_variable = { which = eu_authority value = 5 }
+	}
+	option = {
+		name = european_union_flavour.1.b
+		add_prestige = 5
+		change_variable = { which = eu_authority value = 5 }
+	}
+}
+
+#Agricultural policy
+country_event = {
+	id = european_union_flavour.2
+	title = european_union_flavour.2.t
+	desc = european_union_flavour.2.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	option = {
+		name = european_union_flavour.2.a
+		add_country_modifier = {
+			name = european_production_policy
+			duration = 600
+		}
+		change_variable = { which = eu_authority value = 5 }
+	}
+}
+
+#Support Creativity
+country_event = {
+	id = european_union_flavour.3
+	title = european_union_flavour.3.t
+	desc = european_union_flavour.3.d
+	picture = THEATRE_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = european_union_flavour.3.a
+		add_prestige = 5
+		add_adm_power = 15
+		change_variable = { which = eu_authority value = 5 }
+	}
+}
+
+#Human Rights
+country_event = {
+	id = european_union_flavour.4
+	title = european_union_flavour.4.t
+	desc = european_union_flavour.4.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = european_union_flavour.4.a
+		add_prestige = 5
+		add_dip_power = 15
+		change_variable = { which = eu_authority value = 5 }
+	}
+}
+
+#Humanitarian Aid
+country_event = {
+	id = european_union_flavour.5
+	title = european_union_flavour.5.t
+	desc = european_union_flavour.5.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = {
+		name = european_union_flavour.5.a
+		add_treasury = -200
+		add_prestige = 20
+		change_variable = { which = eu_authority value = 5 }
+	}
+	option = {
+		name = european_union_flavour.5.b
+		add_prestige = -5
+		change_variable = { which = eu_authority value = -10 }
+	}
+}
+
+#Justice Programme
+country_event = {
+	id = european_union_flavour.6
+	title = european_union_flavour.6.t
+	desc = european_union_flavour.6.d
+	picture = BIG_BOOK_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 1500
+	}
+	
+	option = {
+		name = european_union_flavour.6.a
+		add_stability = 1
+	}
+}
+
+#Life Programme
+country_event = {
+	id = european_union_flavour.7
+	title = european_union_flavour.7.t
+	desc = european_union_flavour.7.d
+	picture = ADVISOR_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 1500
+	}
+	
+	option = {
+		name = european_union_flavour.7.a
+		add_country_modifier = {
+			name = european_enviroment_policy
+			duration = 1200
+		}
+		change_variable = { which = eu_authority value = 5 }
+	}
+}
+
+#Consumer Programme
+country_event = {
+	id = european_union_flavour.8
+	title = european_union_flavour.8.t
+	desc = european_union_flavour.8.d
+	picture = TRADEGOODS_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 1500
+	}
+	
+	option = {
+		name = european_union_flavour.8.a
+		add_country_modifier = {
+			name = european_consumer_policy
+			duration = 1200
+		}
+		change_variable = { which = eu_authority value = 5 }
+	}
+}
+
+#Social Innovation
+country_event = {
+	id = european_union_flavour.9
+	title = european_union_flavour.9.t
+	desc = european_union_flavour.9.d
+	picture = REFORM_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+	}
+	
+	mean_time_to_happen = {
+		months = 1500
+	}
+	
+	option = {
+		name = european_union_flavour.9.a
+		add_stability = 1
+		change_variable = { which = eu_authority value = 5 }
+	}
+}
+
+# Equal development
+country_event = {
+	id = european_union_flavour.11
+	title = european_union_flavour.11.t
+	desc = european_union_flavour.11.d
+	picture = ECONOMY_eventPicture
+
+	trigger = {
+		has_country_modifier = european_union
+		NOT = { total_development = 200 }
+		any_owned_province = {
+			NOT = { base_tax = 3 }
+			NOT = { has_province_modifier = equal_development }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = european_union_flavour.11.a
+		every_owned_province = {
+			limit = {
+				NOT = { base_tax = 3 }
+			}
+			add_province_modifier = {
+				name = equal_development
+				duration = 600
+			}
+		}
+		EUR = {
+			every_subject_country = {
+				limit = {
+					total_development = 300
+				}
+				country_event = { id = european_union_flavour.12 }
+			}
+		}
+	}
+}
+
+#Equal development receiver
+country_event = {
+	id = european_union_flavour.12
+	title = european_union_flavour.12.t
+	desc = european_union_flavour.12.d
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = european_union_flavour.12.a
+		add_treasury = -250
+		change_variable = { which = eu_authority value = 5 }
+	}
+}

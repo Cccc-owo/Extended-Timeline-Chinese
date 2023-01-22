@@ -1,0 +1,199 @@
+country_decisions = {
+
+	declare_fascist_dictatorship = {
+		major = yes
+		potential = {
+			has_faction = national_socialist_party
+		}
+		allow = {
+			is_subject = no
+			is_at_war = no
+			stability = 1
+			NOT = { republican_tradition = 50 }
+			faction_influence = {
+				faction = national_socialist_party
+				influence = 50
+			}
+		}
+		effect = {
+			add_stability = -2
+			if = {
+				limit = { government = monarchy }
+				change_government = republic
+			}
+			add_government_reform = dictatorial_rule
+			add_government_reform = fascist_government
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	declare_communist_dictatorship = {
+		major = yes
+		potential = {
+			has_faction = communist_party
+		}
+		allow = {
+			is_subject = no
+			is_at_war = no
+			stability = 1
+			NOT = { republican_tradition = 50 }
+			faction_influence = {
+				faction = communist_party
+				influence = 50
+			}
+		}
+		effect = {
+			add_stability = -2
+			if = {
+				limit = { government = monarchy }
+				change_government = republic
+			}									  
+			add_government_reform = dictatorial_rule
+			add_government_reform = communist_government
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	disestablish_monarchy = {
+		major = yes
+		potential = {
+			government = parliamentary_monarchy
+			OR = {
+				has_faction = liberal_party
+				has_faction = social_democratic_party
+			}
+		}
+		allow = {
+			is_subject = no
+			is_at_war = no
+			stability = 2
+			OR = {
+				faction_influence = {
+					faction = liberal_party
+					influence = 50
+				}
+				faction_influence = {
+					faction = social_democratic_party
+					influence = 50
+				}
+			}
+		}
+		effect = {
+			add_stability = -1
+			change_government = republic
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	adopt_state_atheism = {
+		potential = {
+			OR = {
+				has_reform = communist_government
+				has_faction = communist_party
+			}
+			NOT = { has_country_modifier = state_atheism }
+			NOT = { has_country_modifier = state_atheism_abolished }
+		}
+		allow = {
+			OR = {
+				has_reform = communist_government
+				has_reform = fascist_government
+				has_reform = military_dictatorship
+				AND = {
+					has_faction = communist_party
+					faction_in_power = communist_party
+				}
+			}
+			is_subject = no
+			is_at_war = no
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = state_atheism
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_reform = communist_government }
+			}
+		}
+	}
+
+	abolish_state_atheism = {
+		potential = {
+			has_country_modifier = state_atheism
+		}
+		allow = {
+			is_subject = no
+			is_at_war = no
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			remove_country_modifier = state_atheism
+			add_country_modifier = {
+				name = state_atheism_abolished
+				duration = 3650
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_reform = communist_government
+			}
+		}
+	}
+	
+	enforce_cultural_assimilation = {
+		potential = {
+			adm_tech = 83
+			NOT = { has_country_modifier = cultural_assimilation_enforced }
+		}
+		allow = {
+			dip_power = 200
+		}
+		effect = {
+			add_dip_power = -200
+			add_country_modifier = {
+				name = cultural_assimilation_enforced
+				duration = 3650
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_reform = dictatorial_rule }
+			}
+			modifier = {
+				factor = 0
+				NOT = { religion = secularism }
+			}
+			modifier = {
+				factor = 0
+				is_at_war = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_province = {
+						NOT = { culture = ROOT }
+						any_neighbor_province = { culture = ROOT }
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+country_decisions = {
+	
+	enthrone_the_seljuk_sultan = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_seljuk_flag }
+			NOT = { exists = SEL }
+			OR = {
+				has_global_flag = seljuk_rose_up
+				started_in	= 1035.1.1
+			}
+			OR = {
+				government = monarchy
+				government = tribal
+			}
+			culture_group = oghuz
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = MUG }
+			NOT = { tag = PER }
+			NOT = { tag = TUR }
+			NOT = { tag = TKY }
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+				tag = OGH
+				tag = KRM
+			}
+			NOT = { has_reform = tribal_federation }
+			NOT = { has_reform = feudal_theocracy }
+			OR = {
+				religion_group = muslim
+				religion = tengri_pagan_reformed
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4326	# Nishapur
+				province_id = 445	# Merv
+				province_id = 428	# Teheran/Rayy
+				province_id = 436	# Birjand
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = SEL }
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			AND = {
+				owns_core_province = 428	# Teheran/Rayy
+				owns_core_province = 445	# Merv
+				owns_core_province = 436	# Birjand
+				owns_core_province = 4326	# Nishapur
+			}
+		}
+		effect = {
+			4326 = {
+				move_capital_effect = yes
+			}
+			change_tag = SEL
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = { government = tribal }
+				change_government = monarchy
+			}
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			set_country_flag = formed_seljuk_flag
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

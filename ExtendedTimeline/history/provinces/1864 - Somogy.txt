@@ -1,0 +1,80 @@
+#1864 - Somogy
+
+latent_trade_goods = {
+	coal
+}
+
+owner = ROM
+controller = ROM 
+culture = pannonian
+religion = druidism
+capital = "Aquincum"
+trade_goods = livestock
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = ROM
+
+
+340.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+420.1.1 = { culture = austrian religion = germanic }
+447.1.1 = { owner = OST controller = OST add_core = OST remove_core = ROW capital = "Kaposvár" }
+530.1.1 = { owner = GEP controller = GEP add_core = GEP remove_core = OST }
+567.1.1 = { owner = AVR controller = AVR add_core = AVR remove_core = GEP culture = avar religion = tengri_pagan_reformed }
+600.1.1 = { base_manpower = 2 }
+800.1.1 = { base_tax = 2 base_production = 2 }
+846.1.1 = { owner = PNN controller = PNN add_core = PNN remove_core = AVR culture = croatian }
+850.1.1 = { religion = chalcedonism }
+867.1.1 = { religion = catholic }
+897.1.1 = { owner = HUN controller = HUN add_core = HUN remove_core = PNN culture = hungarian }
+1200.1.1 = { base_tax = 3 base_production = 3 }
+
+1506.1.1 = { revolt = { type = anti_tax_rebels size = 2 } controller = REB } # Szekely rebellion
+1507.1.1 = { revolt = {} controller = HUN } # Estimated
+1514.4.1 = { revolt = { type = anti_tax_rebels size = 2 } controller = REB } # Peasant rebellion against Hungary's magnates
+1515.1.1 = { revolt = {} controller = HUN } # Estimated
+1526.8.30 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+} # Hungary fractured after Battle of Mohacs
+1529.9.1 = { controller = TUR } # Occupied by Suleiman I during march on Vienna
+1533.6.22 = { owner = TRA add_core = TRA }
+1542.1.1 = {
+	owner = TUR
+	controller = HAB 
+	remove_core = TRA
+	add_core = TUR
+}
+1543.6.1 = { controller = TUR } # Without Ferdinand's support, the citizens couldn't hold Pecs anymore
+1545.8.1 = { remove_core = HAB } # Treaty of Adrianople ends the Ottoman-Habsburg War
+1567.1.1 = { religion = reformed } # Synod of Debrecen
+1660.1.1 = { religion = catholic }
+1686.10.22 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	remove_core = TUR
+ } # The Ottomans surrender to the army led by Louis of Baden
+1755.1.1 = { base_tax = 4 }
+1785.1.1 = { base_manpower = 4 }
+
+1815.1.1 = { base_tax = 5 }
+1870.1.1   = { capital = "Pécs" }
+1905.1.1 = { base_production = 4 }
+1910.1.1 = { discovered_by = asian }
+1918.10.31 = { owner = HUN controller = HUN remove_core = HAB }
+1965.1.1 = { base_production = 5 }
+
+
+

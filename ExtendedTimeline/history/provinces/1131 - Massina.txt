@@ -1,0 +1,59 @@
+#1131 - Massina
+
+culture = bambara
+base_manpower = 1
+religion = shamanism
+capital = "Macina"
+trade_goods = unknown
+hre = no
+discovered_by = sub_saharan
+base_tax = 4
+base_production = 4
+native_size = 50
+native_ferocity = 4
+native_hostileness = 9
+center_of_trade = 1
+
+350.1.1 = { owner = GHA controller = GHA add_core = GHA is_city = yes trade_goods = grain }
+1077.1.1 = { owner = ZAF controller = ZAF add_core = ZAF }
+1121.1.1 = { owner = GHA controller = GHA remove_core = ZAF }
+1240.1.1 = { owner = MAL controller = MAL add_core = MAL remove_core = GHA }
+1389.1.1 = { owner = ZAF controller = ZAF add_core = ZAF remove_core = MAL }
+
+1460.1.1   = { citysize = 5000 } #Songhai raids devastate region
+# 1466.1.1   = { unrest = 3 } #Songhai raids devastate region
+1471.1.1   = { owner = SON controller = SON add_core = SON } #Conquered by Sunni Ali Ber of Songhai
+1475.1.1   = { citysize = 8000 } #Recovery under Songhai control
+1481.1.1   = { unrest = 3 citysize = 5000 } #Mossi Raid led by Nasere I devastates region
+1525.1.1   = { citysize = 8000 } #Revival under Askiya Muhammad
+1550.1.1   = { citysize = 9000 } #Era of Prosperity under Askiya Dawud
+1575.1.1   = { citysize = 11000 } #Era of Prosperity under Askiya Dawud
+1591.3.15 = { owner = ZAF controller = ZAF } #Collapse of Songhai in wake of Tondibi
+1600.1.1   = { remove_core = MAL } #Collapse of Mali State
+1642.1.1   = { remove_core = SON } #Collapse of last vestiges of unity among Songhai
+1660.1.1   = { owner = SOF controller = SOF add_core = SOF } #Bambara conquers region
+1685.1.1   = { revolt = { type = revolutionary_rebels size = 1 } controller = REB } #Bambara decline after death of Kaniadan Kulibali
+1720.1.1   = { revolt = {} controller = SOF } #Mamia Kulibali restores Bambara authority in region
+1756.1.1   = { unrest = 9 } # Denkoro seizes power in wake of father Mamali's death, civil war
+1766.1.1   = { unrest = 0 } # Ngolo Diarra restores authortiy of Segu state, ends civil war
+1819.1.1   = {	owner = ZAF
+		controller = ZAF
+		add_core = ZAF
+		remove_core = SOF
+	     } # The Massina Empire, recylcing the JNN tag
+
+1862.3.16  = { owner = SOF controller = SOF add_core = SOF remove_core = ZAF } # Conquered by the Toucouleur Empire
+1870.1.1   = { religion = sunni }
+1880.1.1   = { discovered_by = western }
+1890.1.1   = { owner = FR2 controller = FR2 add_core = FR2 }
+1940.1.1   = {  discovered_by = eastern
+		discovered_by = muslim
+		discovered_by = ottoman
+		discovered_by = asian
+	     }
+1940.6.14  = { owner = FRV controller = FRV add_core = FRV } # Vichy France
+1942.11.16 = { owner = FR2 controller = FR2 remove_core = FRV } # Under Free French control after Operation Torch
+1960.6.20  = { owner = MAL controller = MAL add_core = MAL remove_core = FR2 remove_core = SOF }
+
+
+

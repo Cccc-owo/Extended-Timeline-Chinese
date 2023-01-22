@@ -1,0 +1,56 @@
+#650 - Tidore
+
+culture = papuan
+religion = animism
+capital = "Tidore"
+trade_goods = unknown
+hre = no
+discovered_by = TID
+discovered_by = TER
+discovered_by = MGD
+discovered_by = LUW
+discovered_by = LNO
+discovered_by = LFA
+discovered_by = BNJ
+discovered_by = KUT
+discovered_by = SUN
+discovered_by = PLB
+discovered_by = DMK
+discovered_by = CRB
+discovered_by = BTN
+discovered_by = BLM
+discovered_by = BEI
+discovered_by = BAN
+discovered_by = BLI
+discovered_by = MKS
+discovered_by = MAJ
+base_tax = 4
+base_production = 4
+base_manpower = 2
+native_size = 5
+native_ferocity = 1
+native_hostileness = 1
+
+add_permanent_province_modifier = {
+	name = spice_islands_modifier
+	duration = -1
+}
+
+1081.1.1 = { owner = TID controller = TID add_core = TID is_city = yes trade_goods = cloves }
+
+1486.1.1 = { religion = sunni }
+1512.1.1 = { discovered_by = POR } # Francisco Serrão
+1781.1.1 = { owner = NED controller = NED unrest = 6 } # Rebellion against the Dutch
+1800.1.1   = { discovered_by = chinese discovered_by = asian }
+1810.1.1 = { unrest = 0 add_core = NED }
+
+1910.1.1 = { discovered_by = western }
+1912.9.10  = { add_core = IDN remove_core = TID }
+1940.1.1   = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman }
+1942.3.9   = { owner = JAP controller = JAP }
+1945.8.15  = { owner = NED revolt = { type = nationalist_rebels size = 1 } controller = REB }
+1945.8.17  = { owner = IDN revolt = {} controller = IDN }
+1949.12.27 = { remove_core = NED }
+
+
+

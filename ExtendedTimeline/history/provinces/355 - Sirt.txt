@@ -1,0 +1,56 @@
+#355 - Sirt
+
+latent_trade_goods = {
+	oil
+}
+
+owner = ROM
+controller = ROM
+culture = eastern_berber
+religion = shamanism
+capital = "Arae Philaenorum"
+trade_goods = fish
+hre = no
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = ROM
+
+350.1.1 = { owner = LAG controller = LAG add_core = LAG remove_core = ROM }
+547.1.1 = { owner = BYZ controller = BYZ add_core = BYZ }
+650.1.1 = { owner = RSD controller = RSD add_core = RSD remove_core = BYZ capital = "Ben Jawad" }
+661.7.28 = { owner = UMA controller = UMA add_core = UMA remove_core = RSD }
+720.1.1 = { religion = sunni culture = tunisian }
+745.1.1 = { owner = TUN controller = TUN add_core = TUN remove_core = UMA }
+757.6.1 = { owner = ABA controller = ABA add_core = ABA }
+868.9.15 = { owner = EGY controller = EGY add_core = EGY remove_core = ABA }
+905.1.10 = { owner = ABA controller = ABA add_core = ABA remove_core = EGY }
+909.1.1 = { owner = FAT controller = FAT add_core = FAT remove_core = ABA }
+973.1.1 = { owner = TUN controller = TUN add_core = TUN remove_core = FAT }
+1027.1.1 = { owner = TRP controller = TRP add_core = TRP remove_core = TUN }
+1051.1.1 = { owner = CYR controller = CYR add_core = CYR }
+1173.1.1 = { owner = MAM controller = MAM add_core = MAM }
+1212.1.1 = { owner = EGY controller = EGY add_core = EGY remove_core = MAM }
+1240.1.1 = { owner = FZA controller = FZA add_core = FZA remove_core = EGY }
+
+1558.1.1 = {
+	owner = TRP
+	controller = TRP
+} #Turgut Reis conquers Sirte
+
+1835.5.26  = { owner = TUR controller = TUR add_core = TUR }
+1910.1.1 = { discovered_by = asian }
+1912.10.18 = { owner = ITA controller = ITA add_core = ITA add_core = LBY remove_core = TUR }
+1943.9.8   = { owner = GBR controller = GBR remove_core = ITA }
+1951.12.24 = { owner = LBY controller = LBY }
+1961.1.1   = { trade_goods = oil }
+2015.2.1   = { revolt = { type = fanatic_rebels size = 2 } controller = REB } #Captured by ISIL
+2016.12.6  = { revolt = { type = pretender_rebels size = 1 } controller = REB } #Under GNA control

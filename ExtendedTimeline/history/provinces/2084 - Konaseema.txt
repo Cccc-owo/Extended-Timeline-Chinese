@@ -1,0 +1,121 @@
+#2228 - Konaseema
+
+owner = STV
+controller = STV
+culture = telegu
+religion = jainism
+capital = "Rajahmundry"
+trade_goods = cloth
+hre = no
+discovered_by = chinese
+discovered_by = asian
+discovered_by = early_chinese
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = indian
+discovered_by = early_indian
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = STV
+
+add_permanent_province_modifier = {
+	name = godavari_estuary_modifier
+	duration = -1
+}
+
+220.1.1 = { owner = YOR controller = YOR add_core = YOR remove_core = STV }
+620.1.1 = { religion = hinduism }
+800.1.1 = { base_manpower = 3 }
+1000.1.1 = { base_production = 4 }
+1200.1.1 = { base_production = 5 }
+1216.1.1 = { owner = TLG controller = TLG add_core = TLG }
+1325.1.1 = { owner = YOR controller = YOR add_core = YOR remove_core = TLG }
+
+1445.1.1 = { controller = ORI } # Conquered by Gajapatis
+1448.1.1 = {
+	owner = ORI
+	add_core = ORI
+} # Conquered by Gajapatis
+1466.1.1 = {
+	controller = REB
+	revolt = {
+		size = 1
+		type = nationalist_rebels
+	}
+} # Gajapati gains lost during civil war
+1468.1.1 = {
+	controller = BAH
+	owner = BAH
+	revolt = { }
+} #Given to/taken by Bahmanis due to involvement in Gajapati civil war
+1476.1.1 = { controller = ORI }	#New Gajapati invasion started by Gajapati governor retaking Kondavidu fort
+1478.1.1 = { controller = BAH } #Kondavidu is beseiged and falls
+1482.3.26 = {
+	controller = ORI
+	owner = ORI
+} # Reconquered by Gajapatis during messy Bahmani sucession
+1498.1.1 = { discovered_by = POR }
+1514.6.1 = { controller = VIJ } # Fall of Udayagiri
+1516.6.1 = { owner = VIJ add_core = VIJ } # Vijayanagar expansion
+1565.7.1 = {
+	owner = GOC
+	controller = GOC
+	add_core = GOC
+	remove_core = VIJ
+} # Conquered by Golconda
+1686.1.1 = { controller = MUG }
+1687.1.1 = {
+	owner = MUG
+	add_core = MUG
+}
+1712.1.1 = {
+	add_core = DEC
+	remove_core = GOC
+}	#Viceroyalty of the Deccan
+1724.1.1 = {
+	owner = DEC
+	controller = DEC
+	remove_core = MUG
+} # Asif Jah declared himself Nizam-al-Mulk
+1750.1.1 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+} # To France
+1759.1.1 = { controller = GBR } # Lally withdraws all forces from the northern Circars which are then promptly seized by col. Forde
+1763.2.10 = {
+	owner = DEC
+	controller = DEC
+	remove_core = FRA
+} #Control returned to Nizam
+1766.11.12 = {
+	owner = GBR
+	controller = GBR
+	add_core = GBR
+	add_to_trade_company = GBR
+	add_trade_company_investment = {
+		investment = company_depot
+		investor = GBR
+	}
+	add_trade_company_investment = {
+		investment = military_administration
+		investor = GBR
+	}
+	add_trade_company_investment = {
+		investment = brokers_exchange
+		investor = GBR
+	}
+} # Northern Circars to Britain
+
+1910.1.1 = { discovered_by = western discovered_by = eastern }
+1925.1.1 = { base_manpower = 3 }
+1930.1.1  = { add_core = INI remove_core = GOC }
+1947.8.15 = { owner = INI controller = INI remove_core = GBR }
+1950.1.1 = { base_tax = 4 base_production = 4 }
+1975.1.1 = { base_tax = 5 base_production = 5 base_manpower = 4 }
+2000.1.1 = { base_tax = 6 base_production = 6 base_manpower = 5 }
+
+

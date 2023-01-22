@@ -1,0 +1,88 @@
+#156 - Temes
+
+owner = DAC
+controller = DAC
+culture = dacian
+religion = zamolxism
+capital = "Argidava"
+trade_goods = wool
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+add_core = DAC
+
+106.1.1 = { owner = ROM controller = ROM add_core = ROM }
+160.1.1 = { remove_core = DAC }
+273.1.1 = { owner = GVI controller = GVI add_core = GVI remove_core = ROM capital = "Timisoara" culture = gothic religion = germanic }
+376.1.1 = { owner = HNS controller = HNS add_core = HNS remove_core = GVI }
+469.1.1 = { owner = GEP controller = GEP add_core = GEP remove_core = HNS culture = gepid }
+567.1.1 = { owner = AVR controller = AVR add_core = AVR remove_core = GEP religion = tengri_pagan_reformed }
+800.1.1 = { base_tax = 3 base_production = 3 }
+804.1.1 = { owner = BUL controller = BUL add_core = BUL remove_core = AVR culture = romanian }
+890.1.1 = { religion = orthodox }
+930.1.1 = { owner = BNT controller = BNT add_core = BNT remove_core = BUL }
+1003.1.1 = { owner = HUN controller = HUN add_core = HUN }
+1010.1.1 = { religion = catholic }
+1307.1.1 = { fort_15th = yes }
+
+1514.1.1 = { revolt = { type = anti_tax_rebels size = 2 } controller = REB } # Rebel peasant troops led by Gheorghe Doja
+1514.6.1 = { revolt = {} controller = HUN } # Estimated
+1526.8.30 = {
+	owner = TRA 
+	add_core = TRA
+} #Hungary fractured after Battle of Mohacs, controller since 1514
+1551.7.19 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	add_core = TUR
+} # Ferdinand gains Transylvania from Treaty of Weissenburg, provoking the Ottomans
+1552.7.17 = { controller = TUR } # Ottoman occupation of Temesvar, gained control over region
+1556.10.1 = {
+	owner = TRA
+	controller = TRA
+}# Isabella Jagiello is restored as queen of Transylvania, and cedes Banat
+1562.6.1 = { remove_core = HAB } # The end of the Ottoman-Habsburg War
+1567.1.1 = { religion = reformed } # Synod of Debrecen
+1570.1.1 = {
+	owner = TUR
+	controller = TUR
+	add_core = HAB
+	remove_core = TRA
+} #Treaty of Speyer gives Temes to Habsburgs, but Ottomans hold the region
+1700.1.1 = { religion = orthodox }
+1703.1.1 = { revolt = { type = nationalist_rebels size = 1 } controller = REB } # Kuruc rebellion, lead by Francisc Rakoczy
+1718.1.1 = {
+	revolt = {}
+	owner = HAB
+	controller = HAB
+	remove_core = TUR
+} # The House of Habsburg is recognized as new ruler
+1738.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } # Uprising against the imperial authority
+1739.1.1 = { revolt = {} controller = HAB }
+1751.1.1 = { base_tax = 4 }
+1769.1.1 = { revolt = { type = nationalist_rebels size = 2 } controller = REB } # Anti Habsburg uprisings
+1770.1.1 = { revolt = {} controller = HAB } # Estimated
+1775.1.1 = { base_production = 4 }
+
+1801.1.1 = { base_production = 5 base_manpower = 3 }
+1825.1.1 = { base_manpower = 4 }
+1850.1.1 = { base_tax = 6 }
+1875.1.1 = { base_production = 6 }
+1901.1.1 = { base_manpower = 5 }
+1910.1.1 = { discovered_by = asian }
+1918.10.31 = { owner = HUN controller = HUN add_core = HUN remove_core = HAB }
+1920.6.4   = { owner = RMN controller = RMN add_core = RMN remove_core = HUN } #Treaty of Trianon
+1925.1.1 = { base_manpower = 6 }
+
+
+

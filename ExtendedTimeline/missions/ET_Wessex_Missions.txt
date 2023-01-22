@@ -1,0 +1,305 @@
+wessex_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = WSX
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	wsx_unite_wessex_mission = {
+		icon = mission_rb_unite_the_clans
+		required_missions = { } #none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = wessex_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_legitimacy = 20
+		}
+	}
+	wsx_challenge_mercia_mission = {
+		icon = mission_unite_home_region
+		required_missions = { wsx_unite_wessex_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 240	#Mercia
+				province_id = 239	#Gleawcester
+				province_id = 4372	#Coventry
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 240 
+			owns_or_non_sovereign_subject_of = 239
+			owns_or_non_sovereign_subject_of = 4372
+		}
+		effect = {
+			add_country_modifier = {
+				name = "wsx_king_of_mercia"
+				duration = 10950		#30 years
+			}
+		}
+	}
+	wsx_claim_the_thames_mission = {
+		icon = mission_advance_to_the_dnieper
+		required_missions = { wsx_challenge_mercia_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = home_counties_area	#London
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_army_tradition = 20
+		}
+	}
+	wsx_conquer_the_danelaw_mission = {
+		icon = mission_rb_unite_the_clans
+		required_missions = { wsx_claim_the_thames_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = british_isles_region
+			}
+			AND = {
+				owned_by = DAN
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			british_isles_region = {
+				type = all
+				NOT = { owned_by = DAN }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "wsx_defender_of_england"
+				duration = 10950		#30 years
+			}
+		}
+	}
+	wsx_defeat_the_northumbrians_mission = {
+		icon = mission_rb_into_england
+		required_missions = { wsx_conquer_the_danelaw_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = east_midlands_area
+				area = yorkshire_area
+				province_id = 246		#Northymbria
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				owns_or_non_sovereign_subject_of = 246		#Northymbria
+				
+				#vassalized Northumberland
+				NOL = {
+					vassal_of = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "wsx_king_of_northumbria"
+				duration = 10950		#30 years
+			}
+		}
+	}
+	wsx_unite_the_heptarchy_mission = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { wsx_defeat_the_northumbrians_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = east_anglia_area
+				area = west_midlands_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "wsx_king_of_england"
+				duration = 10950
+			}
+		}
+	}
+	wsx_conquer_the_irish_mission = {
+		icon = mission_rb_conquer_leinster
+		required_missions = { wsx_unite_the_heptarchy_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = munster_area
+				area = connacht_area
+				area = leinster_area
+				area = ulster_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			munster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			connacht_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			leinster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "wsx_king_of_ireland"
+				duration = 10950
+			}
+		}
+	}
+}
+
+wessex_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = WSX
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	wsx_conquer_the_welsh_mission = {
+		icon = mission_conquer_50_development
+		required_missions = { wsx_defeat_the_northumbrians_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = wales_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "wsx_king_of_wales"
+				duration = 10950
+			}
+		}
+	}
+	wsx_conquer_the_scots_mission = {
+		icon = mission_rb_conquer_scotland
+		required_missions = { wsx_unite_the_heptarchy_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = lowlands_area
+				area = highlands_area
+				area = scottish_marches_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lowlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			scottish_marches_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "wsx_king_of_scotland"
+				duration = 10950
+			}
+		}
+	}
+}

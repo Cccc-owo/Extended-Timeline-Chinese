@@ -1,0 +1,80 @@
+#3114 - Lwow
+
+latent_trade_goods = {
+	coal
+}
+
+owner = BAS
+controller = BAS
+add_core = BAS
+is_city = yes
+capital= "Lwów"
+culture = pannonian
+religion = druidism
+trade_goods = dyes #Polish cochineal
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 1
+base_production = 1
+base_manpower = 1
+center_of_trade = 1
+
+150.1.1 = { culture = gothic religion = germanic }
+200.1.1 = { owner = GEP controller = GEP add_core = GEP remove_core = BAS culture = gepid }
+450.1.1 = { owner = WHC controller = WHC add_core = WHC remove_core = GEP culture = ruthenian religion = slavic }
+700.1.1 = { base_tax = 2 base_production = 2 }
+800.1.1 = { base_manpower = 2 }
+804.1.1 = { owner = HUN controller = HUN add_core = HUN add_core = UKR }
+900.1.1 = { base_tax = 3 base_production = 3 }
+960.1.1 = { owner = POL controller = POL add_core = POL remove_core = HUN remove_core = WHC }
+981.1.1 = { owner = KRU controller = KRU add_core = KRU remove_core = POL }
+988.1.1 = { religion = orthodox }
+1000.1.1 = { base_tax = 4 base_production = 4 }
+1054.2.20 = { owner = VOL controller = VOL add_core = VOL add_core = KIE remove_core = KRU }
+1100.1.1 = { base_tax = 5 base_production = 5 }
+1199.1.1 = { remove_core = KIE }
+1349.1.1 = { owner = POL controller = POL add_core = POL }
+
+1569.7.1 = {
+	owner = PLC
+	controller = PLC
+	remove_core = POL
+	add_core = PLC
+} # Union of Lublin
+1572.1.1 = { unrest = 6 } # Sigismund II dies
+1588.1.1 = { revolt = { type = revolutionary_rebels size = 0 } controller = REB } # Civil war
+1589.1.1 = { revolt = {} controller = PLC unrest = 0 } # Coronation of Sigismund III
+1591.1.1 = { unrest = 5 } # Kosinski uprising
+1593.1.1 = { unrest = 0 }
+1594.1.1 = { unrest = 6 } # Nalewajko uprising
+1596.1.1 = { unrest = 0 } 
+1648.1.1 = { revolt = { type = nationalist_rebels size = 0 } controller = REB add_core = ZAZ } # Struggle for liberation, Bogdan Zenon Chmielnicki rebellion
+1654.1.1 = { revolt = {} controller = PLC remove_core = ZAZ }
+1655.1.1 = { controller = SWE } # The Deluge
+1660.1.1 = { controller = PLC }
+1772.8.5 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	remove_core = PLC
+} # First partition of Poland
+
+1910.1.1 = { discovered_by = asian }
+1914.9.1   = { controller = RUS }
+1915.6.1   = { controller = HAB }
+1918.11.11 = { owner = POL controller = POL add_core = POL remove_core = HAB }
+1939.9.21  = { controller = SOV }
+1939.10.6  = { owner = SOV }
+1941.6.30  = { controller = GER }
+1944.7.25  = { controller = SOV }
+1945.5.8   = { remove_core = POL }
+1991.8.24  = { owner = UKR controller = UKR add_core = UKR remove_core = SOV capital= "Lviv" }
+
+
+

@@ -1,0 +1,218 @@
+country_decisions = {
+	
+	unify_islam = {
+		major = yes
+		potential = {
+			ai = no
+			religion_group = muslim
+			num_of_cities = 10
+			NOT = {
+				has_country_flag = unified_islam
+			}
+			NOT = {
+				has_global_flag = unified_islam_global
+			}
+			NOT = { tag = PAP } # NO
+			is_emperor_of_china = no
+			NOT = { has_reform = shogunate }
+			NOT = { has_reform = celestial_empire }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 504
+				province_id = 225
+				province_id = 151
+				province_id = 410
+				province_id = 385
+				province_id = 384
+				province_id = 124
+				province_id = 125
+				province_id = 425
+				province_id = 382
+				province_id = 454
+				province_id = 347
+				province_id = 388
+				province_id = 400				
+			}
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		allow = {
+			religion_group = muslim
+			owns_or_vassal_of = 504
+			owns_or_vassal_of = 225
+			owns_or_vassal_of = 151
+			owns_or_vassal_of = 410
+			owns_or_vassal_of = 385
+			owns_or_vassal_of = 384
+			owns_or_vassal_of = 124
+			owns_or_vassal_of = 125
+			owns_or_vassal_of = 425
+			owns_or_vassal_of = 382
+			owns_or_vassal_of = 454
+			owns_or_vassal_of = 347
+			owns_or_vassal_of = 388
+			owns_or_vassal_of = 400
+			all_country = {
+				AND = {
+					NOT = { has_reform = caliphate_reform }
+					NOT = { has_reform = caliphate_theocratic_reform }
+				}
+			}
+			adm_power = 100
+			mil_power = 100
+			dip_power = 100
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 3
+					}
+				}
+				set_government_rank = 3
+			}
+			set_country_flag = unified_islam
+			set_global_flag = unified_islam_global
+			if = {
+				limit = {
+					government = monarchy
+					NOT = { has_reform = caliphate_reform }
+					is_revolutionary = no
+				}
+				add_government_reform = caliphate_reform
+			}
+			if = {
+				limit = {
+					NOT = { government = monarchy }
+					NOT = { has_reform = caliphate_theocratic_reform }
+					is_revolutionary = no
+				}
+				change_government = theocracy
+				add_government_reform = caliphate_theocratic_reform
+			}
+			add_country_modifier = {
+				name = unified_islam
+				duration = 1825
+			}
+			add_adm_power = -100
+			add_mil_power = -100
+			add_dip_power = -100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	change_religion_sunni = {
+		potential = {
+			has_dlc = "Star and Crescent"
+			religion = shiite
+			dominant_religion = sunni
+			is_free_or_tributary_trigger = yes
+			is_force_converted = no
+		}
+		allow = {
+			capital_scope = {
+				religion = sunni
+			}
+		}
+		effect = {
+			add_stability = -2
+			add_piety = -1
+			change_religion = sunni
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	change_religion_shiite = {
+		potential = {
+			has_dlc = "Star and Crescent"
+			religion = sunni
+			dominant_religion = shiite
+			is_free_or_tributary_trigger = yes
+			is_force_converted = no
+		}
+		allow = {
+			capital_scope = {
+				religion = shiite
+			}
+		}
+		effect = {
+			add_stability = -2
+			add_piety = -1
+			change_religion = shiite		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	
+	abandon_the_legal_ways = {
+		potential = {
+			has_dlc = "Cradle of Civilization"
+			OR = {
+				has_government_attribute = allow_piety_switch_decision
+				AND = {
+					has_dlc = "Leviathan"
+					1211 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = harar_jugol
+							tier = 3
+						}
+					}
+				}
+			}
+			uses_piety = yes
+		}
+		allow = {
+			piety = 0.5
+			stability = -2
+		}
+		effect = {
+			add_stability = -1
+			add_piety = -2
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	
+	return_to_the_legal_ways = {
+		potential = {
+			has_dlc = "Cradle of Civilization"
+			OR = {
+				has_government_attribute = allow_piety_switch_decision
+				AND = {
+					has_dlc = "Leviathan"
+					1211 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = harar_jugol
+							tier = 3
+						}
+					}
+				}
+			}
+			uses_piety = yes
+		}
+		allow = {
+			NOT = { piety = -0.49 }
+			stability = -2
+		}
+		effect = {
+			add_stability = -1
+			add_piety = 2
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}

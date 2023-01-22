@@ -1,0 +1,740 @@
+
+namespace = et_nuke
+
+country_event = {
+	id = et_nuke.1
+	title = et_nuke.1.t
+	desc = et_nuke.1.d
+	picture = NUCLEAR_ENERGY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			capital_scope = { set_province_flag = nuke_target save_event_target_as = capital }
+			if = {
+				limit = { any_owned_province = { development = 100 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 100 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 60 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 60 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 40 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 40 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 20 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 20 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 10 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 10 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 3 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 3 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 2 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 2 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 1 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 1 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { fort_level = 2 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { fort_level = 2 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = fort
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { has_port = yes NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { has_port = yes NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = port
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = random_province
+					set_province_flag = nuke_target
+				}
+			}
+		}
+	}
+	
+	option = { #Capital
+		name = et_nuke.1.a
+		goto = event_target:capital
+		event_target:capital = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Major City
+		name = et_nuke.1.b
+		goto = event_target:major_city
+		trigger = { has_saved_event_target = major_city }
+		event_target:major_city = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Center of Trade
+		name = et_nuke.1.c
+		goto = event_target:center_of_trade
+		trigger = { has_saved_event_target = center_of_trade }
+		event_target:center_of_trade = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Fortification
+		name = et_nuke.1.dd
+		goto = event_target:fort
+		trigger = { has_saved_event_target = fort }
+		event_target:fort = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Port
+		name = et_nuke.1.e
+		goto = event_target:port
+		trigger = { has_saved_event_target = port }
+		event_target:port = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Random Province
+		name = et_nuke.1.f
+		goto = event_target:random_province
+		trigger = { has_saved_event_target = random_province }
+		event_target:random_province = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #More options
+		name = et_nuke.1.g
+		country_event = {
+			id = et_nuke.4
+		}
+	}
+	option = { #Cancel
+		name = et_nuke.1.h
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+country_event = {
+	id = et_nuke.2
+	title = et_nuke.2.t
+	desc = et_nuke.2.d
+	picture = NUCLEAR_ENERGY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { #Push the Big Red Button
+		name = et_nuke.2.a
+		change_variable = {
+			which = num_of_nuclear_weapons
+			value = -1
+		}
+		if = {
+			limit = { NOT = { has_global_flag = nukes_used } }
+			set_global_flag = nukes_used
+			add_country_modifier = {
+				name = used_nukes
+				duration = 7300
+			}
+		}
+		event_target:nuke_target_province = {
+			province_event = {
+				id = et_nuke.3
+			}
+			owner = {
+				add_opinion = {
+					who = ROOT
+					modifier = nuked_us
+				}
+			}
+		}
+		clear_global_event_target = nuke_target_province
+	}
+	option = { #Abort Mission
+		name = et_nuke.2.b
+		clear_global_event_target = nuke_target_province
+	}
+}
+
+province_event = {
+	id = et_nuke.3
+	title = et_nuke.3.t
+	desc = et_nuke.3.d
+	picture = NUCLEAR_ENERGY_eventPicture
+	goto = ROOT
+
+	is_triggered_only = yes
+	
+	option = { #
+		name = et_nuke.3.a
+		add_devastation = 100
+		owner = { add_war_exhaustion = 4 }
+		kill_units = { amount = 10 }
+		add_province_modifier = {
+			name = province_nuked
+			duration = 1825
+		}
+		if = {
+			limit = { base_tax = 20 }
+			add_base_tax = -10
+		}
+		else_if = {
+			limit = { base_tax = 6 }
+			add_base_tax = -5
+		}
+		else = { set_base_tax = 1 }
+		if = {
+			limit = { base_production = 20 }
+			add_base_production = -10
+		}
+		else_if = {
+			limit = { base_production = 6 }
+			add_base_production = -5
+		}
+		else = { set_base_production = 1 }
+		if = {
+			limit = { base_manpower = 20 }
+			add_base_manpower = -10
+		}
+		else_if = {
+			limit = { base_manpower = 6 }
+			add_base_manpower = -5
+		}
+		else = { set_base_manpower = 1 }
+	}
+}
+
+country_event = {
+	id = et_nuke.4
+	title = et_nuke.1.t
+	desc = et_nuke.1.d
+	picture = NUCLEAR_ENERGY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			if = {
+				limit = { any_owned_province = { development = 100 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 100 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 60 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 60 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 40 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 40 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 20 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 20 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 10 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 10 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 3 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 3 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 2 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 2 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 1 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 1 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { fort_level = 2 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { fort_level = 2 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = fort
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { has_port = yes NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { has_port = yes NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = port
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = random_province
+					set_province_flag = nuke_target
+				}
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.b
+		trigger = { has_saved_event_target = major_city }
+		event_target:major_city = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Center of Trade
+		name = et_nuke.1.c
+		trigger = { has_saved_event_target = center_of_trade }
+		event_target:center_of_trade = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Fortification
+		name = et_nuke.1.dd
+		trigger = { has_saved_event_target = fort }
+		event_target:fort = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Port
+		name = et_nuke.1.e
+		trigger = { has_saved_event_target = port }
+		event_target:port = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Random Province
+		name = et_nuke.1.f
+		trigger = { has_saved_event_target = random_province }
+		event_target:random_province = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #More options
+		name = et_nuke.1.g
+		country_event = {
+			id = et_nuke.5
+		}
+	}
+	option = { #Cancel
+		name = et_nuke.1.h
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+country_event = {
+	id = et_nuke.5
+	title = et_nuke.1.t
+	desc = et_nuke.1.d
+	picture = NUCLEAR_ENERGY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			if = {
+				limit = { any_owned_province = { development = 100 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 100 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 60 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 60 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 40 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 40 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 20 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 20 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { development = 10 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { development = 10 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = major_city
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 3 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 3 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 2 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 2 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			else_if = {
+				limit = { any_owned_province = { province_has_center_of_trade_of_level = 1 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 1 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = center_of_trade
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { fort_level = 2 NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { fort_level = 2 NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = fort
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { has_port = yes NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { has_port = yes NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = port
+					set_province_flag = nuke_target
+				}
+			}
+			if = {
+				limit = { any_owned_province = { NOT = { has_province_flag = nuke_target } } }
+				random_owned_province = {
+					limit = { NOT = { has_province_flag = nuke_target } }
+					save_event_target_as = random_province
+					set_province_flag = nuke_target
+				}
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.b
+		trigger = { has_saved_event_target = major_city }
+		event_target:major_city = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Center of Trade
+		name = et_nuke.1.c
+		trigger = { has_saved_event_target = center_of_trade }
+		event_target:center_of_trade = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Fortification
+		name = et_nuke.1.dd
+		trigger = { has_saved_event_target = fort }
+		event_target:fort = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Port
+		name = et_nuke.1.e
+		trigger = { has_saved_event_target = port }
+		event_target:port = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #Random Province
+		name = et_nuke.1.f
+		trigger = { has_saved_event_target = random_province }
+		event_target:random_province = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+	option = { #More options
+		name = et_nuke.1.g
+		country_event = {
+			id = et_nuke.4
+		}
+	}
+	option = { #Cancel
+		name = et_nuke.1.h
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = nuke_target }
+				clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}

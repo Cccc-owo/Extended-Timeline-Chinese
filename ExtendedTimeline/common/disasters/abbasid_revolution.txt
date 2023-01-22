@@ -1,0 +1,106 @@
+abbasid_revolution = {
+	potential = {
+		OR = {
+			tag = UMA
+			AND = {
+				tag = RSD
+				OR = {
+					has_country_modifier = had_first_fitna
+					is_year = 800
+				}
+			}
+		}
+		is_year = 725
+		NOT = { has_country_flag = failed_revolution }
+		NOT = { is_year = 900 }	
+		NOT = { exists = ABA }
+		any_owned_province = {
+			region = persia_region
+		}
+	}
+
+	can_start = {
+		has_any_disaster = no
+	}
+
+	can_stop = {
+		has_any_disaster = yes
+	}
+
+	progress = {
+		modifier = {
+			factor = 1
+			has_country_flag = husayn_ali_murdered
+		}
+		modifier = {
+			factor = 2
+			all_heretic_province = {
+				NOT = { tolerance_to_this = 1 }
+			}
+		}
+		modifier = {
+			factor = 2
+			any_owned_province = {
+				culture = persian
+			}
+			NOT = { accepted_culture = persian }
+		}
+	}
+
+	can_end = {
+		OR = {
+			AND = {
+				OR = {
+					accepted_culture = persian
+					NOT = {
+						any_owned_province = {
+							culture = persian
+						}
+					}
+				}
+				all_heretic_province = {
+					tolerance_to_this = 1 
+				}
+			}
+			OR = {
+				AND = {
+					had_country_flag = { 
+						flag = abbasid_revolution
+						days = 1825
+					}
+					NOT = { num_of_revolts = 1 }
+				}
+				had_country_flag = { 
+					flag = abbasid_revolution
+					days = 7200
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		global_unrest = 2
+		stability_cost_modifier = 0.1
+	}	
+
+	on_start = dynasties.9
+
+	on_end = dynasties.20
+	
+	on_monthly = {
+		events = {
+		dynasties.10
+		dynasties.11
+		dynasties.12
+		}
+		random_events = {
+			1000 = 0
+			25 = dynasties.13
+			25 = dynasties.14
+			50 = dynasties.15
+			50 = dynasties.16
+			50 = dynasties.17
+			15 = dynasties.18
+		}
+	}
+}

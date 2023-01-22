@@ -1,0 +1,72 @@
+#191 - Nevers
+
+owner = ROM
+controller = ROM 
+capital = "Noviodunum"
+is_city = yes
+culture = gallian
+religion = druidism
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 1
+base_production = 1
+trade_goods = livestock
+base_manpower = 1
+add_core = ROM
+
+260.1.1 = { add_core = GLL revolt = { type = nationalist_rebels size = 1 } controller = REB }
+268.1.1 = { controller = ROM remove_core = GLL revolt = {} }
+360.1.1 = { capital = "Nevirnum" religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+461.11.1 = { owner = BUR controller = BUR add_core = BUR remove_core = ROW capital = "Nevers" culture = burgundione }
+486.6.1 = { culture = burgundian }
+500.1.1 = { base_tax = 2 base_production = 2 }
+534.1.1 = { owner = NEU controller = NEU add_core = NEU }
+558.12.23 = { owner = FRK controller = FRK add_core = FRK remove_core = NEU }
+561.11.29 = { owner = ORL controller = ORL add_core = ORL }
+592.3.28 = { owner = AUT controller = AUT add_core = AUT }
+595.1.1 = { owner = ORL controller = ORL remove_core = AUT }
+612.1.1 = { owner = AUT controller = AUT add_core = AUT remove_core = ORL }
+613.10.10 = { owner = FRK controller = FRK add_core = FRK remove_core = AUT }
+634.1.1 = { owner = NEU controller = NEU add_core = NEU }
+679.12.23 = { owner = FRK controller = FRK }
+700.1.1 = { base_manpower = 2 }
+800.1.1 = { base_tax = 3 base_production = 3 }
+840.6.21 = { owner = FRW controller = FRW add_core = FRW remove_core = FRK }
+867.1.1 = { religion = catholic }
+900.1.1 = { base_manpower = 3 }
+987.7.3 = { owner = FRA controller = FRA add_core = FRA remove_core = FRW }
+1000.1.1 = { base_tax = 4 base_production = 4 }
+1032.1.1 = { owner = BUR controller = BUR add_core = BUR add_core = NEV remove_core = FRA }
+1200.1.1 = { base_tax = 5 base_production = 5 }
+1280.6.2 = { owner = NEV controller = NEV add_core = NEV add_core = BUR }
+
+1539.1.1 = { owner = FRA controller = FRA add_core = FRA remove_core = NEV }
+1588.12.1 = { unrest = 5 } # Henri de Guise assassinated at Blois, Ultra-Catholics into a frenzy
+1594.1.1 = { unrest = 0 } # 'Paris vaut bien une messe!', Henri converts to Catholicism
+1639.1.1 = { unrest = 3 }
+1641.1.1 = { unrest = 0 }
+1650.1.14 = { unrest = 7 } # Mazarin arrests the Princes Condé, Conti & Longueville, the beginning of the Second Fronde
+1651.4.1 = { unrest = 4 } # An unstable peace is concluded
+1651.12.1 = { unrest = 7 } # Mazarin returns from exile, Condé sides with Spain, situation heats up again
+1652.10.21 = { unrest = 0 } # The King is allowed to enter Paris again, Mazarin leaves France for good. Second Fronde over.
+
+1870.1.1   = { culture = cosmopolitan_french }
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+		remove_core = BUR
+	     } # Republic proclaimed
+1910.1.1 = { discovered_by = asian }
+1940.6.14  = { owner = GER controller = GER } # France surrendered to Nazi Garmany
+1944.8.25  = { owner = FR2 controller = FR2 } # France liberated by allied forces
+
+
+

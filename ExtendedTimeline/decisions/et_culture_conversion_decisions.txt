@@ -1,0 +1,78 @@
+country_decisions = {
+
+	cultural_shift_to_french = {
+		major = yes
+		potential = {
+			primary_culture = frankish
+			any_core_province = {
+				culture = cosmopolitan_french
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_primary_culture = cosmopolitan_french
+			add_stability = -1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_culture = cosmopolitan_french }
+			}
+		}
+	}
+
+	cultural_shift_to_burgundian = {
+		major = yes
+		potential = {
+			primary_culture = burgundione
+			any_core_province = {
+				culture = burgundian
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_primary_culture = burgundian
+			add_stability = -1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_culture = burgundian }
+			}
+		}
+	}
+
+	cultural_shift_to_lombard = {
+		major = yes
+		potential = {
+			primary_culture = langobardi
+			any_core_province = {
+				culture = lombard
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_primary_culture = lombard
+			add_stability = -1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_culture = lombard }
+			}
+		}
+	}
+
+}

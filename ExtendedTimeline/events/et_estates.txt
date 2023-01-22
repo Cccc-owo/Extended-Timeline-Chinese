@@ -1,0 +1,129 @@
+
+namespace = et_estates
+
+#Corporate donations
+country_event = {
+	id = et_estates.1
+	title = et_estates.1.t
+	desc = et_estates.1.d
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_estate = estate_corporations
+		NOT = { has_estate_privilege = estate_corporate_loosen_regulations }
+	}
+
+	option = {
+		name = et_estates.1.a
+		add_years_of_income = 0.2
+		add_corruption = 5
+		add_estate_loyalty = {
+			estate = estate_corporations
+			loyalty = 10
+		}
+	}
+
+	option = {
+		name = et_estates.1.b
+		add_estate_loyalty = {
+			estate = estate_corporations
+			loyalty = -10
+		}
+	}
+}
+
+#Strike
+country_event = {
+	id = et_estates.2
+	title = et_estates.2.t
+	desc = et_estates.2.d
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_estate = estate_workers
+		NOT = {
+			estate_loyalty = {
+				estate = estate_workers
+				loyalty = 40
+			}
+		}
+		NOT =  { has_estate_privilege = estate_workers_rights }
+	}
+
+	option = {
+		name = et_estates.2.a
+		add_estate_loyalty = {
+			estate = estate_corporations
+			loyalty = -10
+		}
+		add_estate_loyalty = {
+			estate = estate_workers
+			loyalty = 10
+		}
+	}
+
+	option = {
+		name = et_estates.2.b
+		add_corruption = 5
+	}
+	
+	option = {
+		name = et_estates.2.c
+		add_stability = -1
+	}
+}
+
+#Outsourcing
+country_event = {
+	id = et_estates.3
+	title = et_estates.3.t
+	desc = et_estates.3.d
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_estate = estate_corporations
+	}
+
+	option = {
+		name = et_estates.2.a
+		add_years_of_income = -0.2
+		add_estate_loyalty = {
+			estate = estate_corporations
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_workers
+			loyalty = 10
+		}
+	}
+
+	option = {
+		name = et_estates.2.b
+		add_estate_loyalty = {
+			estate = estate_workers
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_corporations
+			loyalty = -10
+		}
+	}
+	
+	option = {
+		name = et_estates.2.c
+		add_estate_loyalty = {
+			estate = estate_workers
+			loyalty = -10
+		}
+		add_estate_loyalty = {
+			estate = estate_corporations
+			loyalty = 10
+		}
+	}
+}

@@ -1,0 +1,440 @@
+#Start of an Expedition
+
+namespace = et_norse
+
+country_event = {
+
+	id = et_norse.1
+	title = "et.EVTNAME40"
+	desc = "et.EVTDESC40"
+	picture = SHIP_SAILING_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = "et.EVTOPTA40"
+		clr_country_flag = norse_exploration_start
+		add_prestige = 5
+		add_country_modifier = {
+			name = norse_exploration
+			duration = -1
+		}
+	}
+}
+
+#Successful Expedition
+country_event = {
+
+	id = et_norse.2
+	title = "et.EVTNAME41"
+	desc = "et.EVTDESC41"
+	picture = SHIP_SAILING_eventPicture
+	
+	trigger = {
+		has_country_modifier = norse_exploration
+	}
+	
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	immediate = {
+		remove_country_modifier = norse_exploration
+	}
+	
+	option = {
+		name = "et.EVTOPTA41"
+		add_prestige = 10
+		if = {
+			limit = { 
+				2578 = { NOT = { has_discovered = ROOT } }
+				982 = { has_discovered = ROOT }
+				980  = { has_discovered = ROOT }  
+				997  = { has_discovered = ROOT }  
+				1104  = { has_discovered = ROOT } 
+				370  = { has_discovered = ROOT } 
+				1979 = { has_discovered = ROOT } 
+				1978 = { has_discovered = ROOT } 
+			}
+			discover_province = 986
+			discover_province = 2578
+			discover_province = 1490
+		}
+		if = {
+			limit = { 
+				982 = { NOT = { has_discovered = ROOT } }
+				980  = { has_discovered = ROOT }  
+				997  = { has_discovered = ROOT }  
+				1104  = { has_discovered = ROOT } 
+				370  = { has_discovered = ROOT } 
+				1979 = { has_discovered = ROOT } 
+				1978 = { has_discovered = ROOT } 
+			}
+			discover_province = 982
+			discover_province = 983
+			discover_province = 1494
+			discover_province = 1491
+		}
+		if = {
+			limit = { 
+				980 = { NOT = { has_discovered = ROOT } }
+				997  = { has_discovered = ROOT }  
+				1104  = { has_discovered = ROOT } 
+				370  = { has_discovered = ROOT } 
+				1979 = { has_discovered = ROOT } 
+				1978 = { has_discovered = ROOT } 
+			}
+			discover_province = 980
+			discover_province = 981
+			discover_province = 2573
+			discover_province = 1493
+			discover_province = 1495
+		}
+		if = {
+			limit = { 
+				997 = { NOT = { has_discovered = ROOT } } 
+				1104  = { has_discovered = ROOT } 
+				370  = { has_discovered = ROOT } 
+				1979 = { has_discovered = ROOT } 
+				1978 = { has_discovered = ROOT } 
+			}
+			discover_province = 997
+			discover_province = 2575
+			discover_province = 2574
+			discover_province = 1483
+		}
+		if = {
+			limit = { 
+				1104 = { NOT = { has_discovered = ROOT } } 
+				370  = { has_discovered = ROOT } 
+				1979 = { has_discovered = ROOT } 
+				1978 = { has_discovered = ROOT } 
+			}
+			discover_province = 1104
+			discover_province = 1105
+			discover_province = 1804
+			discover_province = 1481
+			discover_province = 1924
+			discover_province = 1482
+			discover_province = 1498
+		}
+		if = {
+			limit = { 
+				1610 = { NOT = { has_discovered = ROOT } } 
+				1979 = { has_discovered = ROOT } 
+				1978 = { has_discovered = ROOT } 
+			}
+			discover_province = 370
+			discover_province = 371
+			discover_province = 3046
+			discover_province = 1475
+			discover_province = 1477
+			discover_province = 1480
+			discover_province = 1610
+		}
+		if = {
+			limit = { 
+				1979 = { NOT = { has_discovered = ROOT } } 
+				1978 = { has_discovered = ROOT } 
+			}
+			discover_province = 1979
+			discover_province = 1476
+		}
+		if = {
+			limit = { 
+				1978 = { NOT = { has_discovered = ROOT } } 
+			}
+			discover_province = 1978
+			discover_province = 1281
+			discover_province = 1473
+			discover_province = 1975
+		}
+	}
+}
+
+#Failed Expedition
+country_event = {
+
+	id = et_norse.3
+	title = "et.EVTNAME42"
+	desc = "et.EVTDESC42"
+	picture = SHIP_SAILING_eventPicture
+	
+	trigger = {
+		has_country_modifier = norse_exploration
+	}
+	
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	immediate = {
+		remove_country_modifier = norse_exploration
+	}
+	
+	option = {
+		name = "et.EVTOPTA42"
+		remove_country_modifier = norse_exploration
+		add_prestige = -15
+	}
+}
+
+#Norse colonization end
+country_event = {
+
+	id = et_norse.4
+	title = "et_norse.4.t"
+	desc = "et_norse.4.d"
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "et_norse.4.a"
+		if = {
+			limit = {
+				OR = {
+					any_owned_province = {
+						NOT = { continent = europe }
+						NOT = { area = greenland_area }
+					}
+					colony = 1
+				}
+			}
+			add_dip_power = -100
+			add_years_of_income = -0.8
+		}
+		else_if = {
+			limit = {
+				any_owned_province = {
+					area = greenland_area
+				}
+			}
+			add_dip_power = -80
+			add_years_of_income = -0.6
+		}
+		else = {
+			add_dip_power = -60
+			add_years_of_income = -0.4
+		}
+		hidden_effect = {
+			country_event = {
+				id = et_norse.4
+				days = 1825
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = { 
+				factor = 0
+				NOT = { num_of_colonies = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = "et_norse.4.b"
+		remove_country_modifier = norse_colonization
+		ai_chance = { 
+			factor = 50
+			modifier = { 
+				factor = 0
+				num_of_colonies = 1
+			}
+		}
+	}
+}
+
+#Abandoning Greenland
+country_event = {
+
+	id = et_norse.5
+	title = "et_norse.5.t"
+	desc = "et_norse.5.d"
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		greenland_area = { owned_by = ROOT }
+		is_year = 1360
+		NOT = { is_year = 1450 }
+		NOT = { has_country_modifier = greenland_food_support }
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = "et_norse.5.a"
+		every_owned_province = {
+			limit = { area = greenland_area }
+			cede_province = ---
+			remove_core = ROOT
+			change_culture = inuit
+			change_religion = shamanist 
+			change_native_size = 5
+			change_native_ferocity = 2
+			change_native_hostileness = 9
+			change_trade_goods = unknown
+			add_colony_size = -1000
+		}
+		ai_chance = { 
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "et_norse.5.b"
+		add_adm_power = -50
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = greenland_food_support
+			duration = 3650
+		}
+		ai_chance = { 
+			factor = 0
+		}
+	}
+}
+
+#Iceland colonized
+country_event = {
+
+	id = et_norse.6
+	title = "et_norse.6.t"
+	desc = "et_norse.6.d"
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		is_year = 950
+		OR = {
+			370 = { is_empty = yes }
+			371 = { is_empty = yes }
+		}
+		OR = {
+			western_norway = { owned_by = ROOT }
+			subarctic_islands_area = { owned_by = ROOT }
+		}
+		OR = {
+			culture_group = scandinavian
+			religion = norse_pagan_reformed
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = "et_norse.6.a"
+		370 = {
+			discover_country = ROOT
+			every_neighbor_province = { discover_country = ICE }
+			add_core = ICE
+			change_culture = icelandic
+		}
+		371 = {
+			discover_country = ROOT
+			every_neighbor_province = { discover_country = ICE }
+			add_core = ICE
+			change_culture = icelandic
+		}
+		3046 = {
+			discover_country = ROOT
+			every_neighbor_province = { discover_country = ICE }
+			add_core = ICE
+			change_culture = icelandic
+		}
+		if = {
+			limit = { 370 = { is_empty = yes } }
+			370 = {
+				cede_province = ICE
+				change_trade_goods = fish
+			}
+		}
+		if = {
+			limit = { 371 = { is_empty = yes } }
+			371 = {
+				cede_province = ICE
+				change_trade_goods = fish
+			}
+		}
+		if = {
+			limit = { 3046 = { is_empty = yes } }
+			3046 = {
+				cede_province = ICE
+				change_trade_goods = fish
+			}
+		}
+	}
+}
+
+#Inuits come to Greenland
+country_event = {
+
+	id = et_norse.7
+	title = "et_norse.7.t"
+	desc = "et_norse.7.d"
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		greenland_area = { owned_by = ROOT }
+		is_year = 1300
+		greenland_area = { culture = uninhabited }
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = "et_norse.7.a"
+		greenland_area = {
+			limit = { culture = uninhabited }
+			change_culture = inuit
+			change_religion = shamanist 
+			change_native_size = 5
+			change_native_ferocity = 2
+			change_native_hostileness = 9
+		}
+	}
+}
+
+#Inuits raids in Greenland
+province_event = {
+
+	id = et_norse.8
+	title = "et_norse.8.t"
+	desc = "et_norse.8.d"
+	picture = BORDER_TENSION_eventPicture
+	
+	trigger = {
+		area = greenland_area
+		NOT = { is_year = 1500 }
+		OR = {
+			any_neighbor_province = {
+				is_empty = yes
+				culture = inuit
+			}
+			province_id = 3043
+		}
+		NOT = { has_province_modifier = inuit_raids }
+	}
+	
+	mean_time_to_happen = {
+		months = 480
+	}
+	
+	option = {
+		name = "et_norse.8.a"
+		add_devastation = 20
+		add_province_modifier = {
+			name = inuit_raids
+			duration = 3650
+		}
+	}
+}

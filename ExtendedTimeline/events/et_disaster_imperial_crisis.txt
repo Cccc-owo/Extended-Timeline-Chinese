@@ -1,0 +1,307 @@
+namespace = imperial_crisis
+
+# Disaster start
+country_event = {
+	id = imperial_crisis.1
+	title = "imperial_crisis.1.t"
+	desc = "imperial_crisis.1.d"
+	picture = REVOLUTION_eventPicture
+		
+	is_triggered_only = yes
+
+	option = {
+		name = "imperial_crisis.1.a"
+		add_stability = -2
+		add_legitimacy = -20
+		add_inflation = 5
+		add_faction_influence = { faction = imperials influence = -10 }
+		add_faction_influence = { faction = generals influence = 20 }
+		define_ruler = {
+			name = "Maximinus Thrax"
+			dynasty = "Julius Verus"
+			claim = 20
+			adm = 2
+			dip = 1
+			mil = 3
+		}
+		hidden_effect = {
+			country_event = {
+				id = imperial_crisis.3
+				days = 60
+			}
+		}
+	}
+}
+
+# Disaster end
+country_event = {
+	id = imperial_crisis.2
+	title = "imperial_crisis.2.t"
+	desc = "imperial_crisis.2.d"
+	picture = REVOLUTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "imperial_crisis.2.a"
+		add_stability = 3
+		set_country_flag = had_imperial_crisis
+	}
+}
+
+# Increased Separatism
+country_event = {
+	id = imperial_crisis.3
+	title = "imperial_crisis.3.t"
+	desc = "imperial_crisis.3.d"
+	picture = REVOLUTION_eventPicture
+	
+	trigger = {
+		NOT = { has_country_flag = separatism_in_rome }
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "imperial_crisis.3.a"
+		every_owned_province = {
+			limit = { NOT = { culture_group = latin } }
+			add_nationalism = 5
+		}
+		set_country_flag = separatism_in_rome
+	}
+}
+
+# Gallia warning
+country_event = {
+	id = imperial_crisis.4
+	title = "imperial_crisis.4.t"
+	desc = "imperial_crisis.4.d"
+	picture = REVOLUTION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = separatism_in_rome
+		any_owned_province = {
+			OR = {
+				area = normandy_area
+				area = ile_de_france_area
+				area = champagne_area
+				area = loire_area
+				area = picardy_area
+				area = lorraine_area
+				region = low_countries_region
+			}
+			OR = {
+				culture = roman
+				culture = gallian
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "imperial_crisis.4.a"
+		add_prestige = -5
+		hidden_effect = {
+			country_event = {
+				id = imperial_crisis.6
+				days = 730
+			}
+		}
+	}
+}
+
+# Palmyra warning
+country_event = {
+	id = imperial_crisis.5
+	title = "imperial_crisis.5.t"
+	desc = "imperial_crisis.5.d"
+	picture = REVOLUTION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = separatism_in_rome
+		any_owned_province = {
+			OR = {
+				region = anatolia_region
+				region = mashriq_region
+			}
+			OR = {
+				culture = roman
+				culture = aramaic
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "imperial_crisis.5.a"
+		add_prestige = -5
+		hidden_effect = {
+			country_event = {
+				id = imperial_crisis.7
+				days = 730
+			}
+		}
+	}
+}
+
+# Gallic Empire
+country_event = {
+	id = imperial_crisis.6
+	title = "imperial_crisis.6.t"
+	desc = "imperial_crisis.6.d"
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "imperial_crisis.6.a"
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = normandy_area
+					area = ile_de_france_area
+					area = champagne_area
+					area = loire_area
+					area = picardy_area
+					area = lorraine_area
+					region = low_countries_region
+				}
+				OR = {
+					culture = roman
+					culture = gallian
+				}
+			}
+			add_core = GLL
+			if = {
+				limit = { culture = roman }
+				change_culture = gallian
+			}
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+	}
+}
+
+# Palmyrene Empire
+country_event = {
+	id = imperial_crisis.7
+	title = "imperial_crisis.7.t"
+	desc = "imperial_crisis.7.d"
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "imperial_crisis.7.a"
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = anatolia_region
+					region = mashriq_region
+				}
+				OR = {
+					culture = roman
+					culture = aramaic
+				}
+				
+			}
+			add_core = PLM
+			if = {
+				limit = { culture = roman }
+				change_culture = aramaic
+			}
+			nationalist_rebels = 1
+			change_siege = 20
+		}
+	}
+}
+
+# Plague of Cyprian
+country_event = {
+	id = imperial_crisis.8
+	title = "imperial_crisis.8.t"
+	desc = "imperial_crisis.8.d"
+	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "imperial_crisis.8.a"
+		add_yearly_manpower = -2
+		random_owned_province = {
+			limit = { base_manpower = 3 }
+			if = { 
+				limit = { base_tax = 2 }
+				add_base_tax = -1
+			}
+			if = { 
+				limit = { base_production = 2 }
+				add_base_production = -1
+			}
+			add_base_manpower = -2
+		}
+	}
+}
+
+# Ruler killed by Praetorians
+country_event = {
+	id = imperial_crisis.9
+	title = "imperial_crisis.9.t"
+	desc = "imperial_crisis.9.d"
+	picture = REVOLUTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { adm = 4 }
+		NOT = { mil = 4 }
+	}
+
+	option = {
+		name = "imperial_crisis.9.a"
+		if = {
+			limit = { NOT = { has_regency = yes } }
+			kill_ruler = yes
+		}
+		if = {
+			limit = { has_regency = yes }
+			kill_heir = { allow_new_heir = no }
+			define_ruler = {}
+		}
+		add_faction_influence = { faction = imperials influence = -10 }
+	}
+}
+
+# Strong ruler
+country_event = {
+	id = imperial_crisis.10
+	title = "imperial_crisis.10.t"
+	desc = "imperial_crisis.10.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			adm = 4
+			mil = 4 
+		}
+	}
+
+	option = {
+		name = "imperial_crisis.10.a"
+		add_stability = 1
+		add_legitimacy = 10
+	}
+}

@@ -1,0 +1,76 @@
+#1743 - Cambray
+
+latent_trade_goods = {
+	coal
+}
+
+owner = ROM
+controller = ROM
+capital = "Bagacum"
+is_city = yes
+culture = belgae
+religion = germanic
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 1
+base_production = 1
+trade_goods = grain
+base_manpower = 1
+add_core = ROM
+
+260.1.1 = { add_core = GLL revolt = { type = nationalist_rebels size = 1 } controller = REB culture = gallian }
+274.1.1 = { controller = ROM remove_core = GLL revolt = {} culture = belgae }
+360.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+461.11.1 = { owner = SOI controller = SOI add_core = SOI }
+480.6.1 = { remove_core = ROW }
+486.6.1 = { owner = FRK controller = FRK add_core = FRK remove_core = SOI capital = "Cambray" culture = wallonian }
+511.11.27 = { owner = SOI controller = SOI add_core = SOI }
+558.12.23 = { owner = FRK controller = FRK add_core = FRK }
+561.11.29 = { owner = SOI controller = SOI }
+567.12.1 = { owner = NEU controller = NEU add_core = NEU remove_core = SOI }
+600.1.1 = { base_tax = 2 base_production = 2 }
+613.10.10 = { owner = FRK controller = FRK add_core = FRK remove_core = NEU }
+634.1.1 = { owner = NEU controller = NEU }
+679.12.23 = { owner = FRK controller = FRK }
+800.1.1 = { base_tax = 3 base_production = 3 }
+840.6.21 = { owner = FRW controller = FRW add_core = FRW remove_core = FRK }
+867.1.1 = { religion = catholic }
+925.1.1 = { owner = LOT controller = LOT add_core = LOT remove_core = FRW }
+948.1.1 = { owner = CBR controller = CBR add_core = CBR remove_core = LOT }
+962.2.2 = { hre = yes }
+1000.1.1 = { base_manpower = 2 }
+1200.1.1 = { base_tax = 4 base_production = 4 }
+1300.1.1 = { base_tax = 5 base_production = 5 }
+1349.1.1 = { owner = BUR controller = BUR add_core = BUR hre = no }
+1382.1.1 = { owner = FLA controller = FLA }
+1384.1.30 = { owner = BUR controller = BUR }
+
+1477.1.5 = { owner = FRA controller = FRA add_core = FRA remove_core = BUR } # Charles the Bold dies and Louis XII takes Artois
+1543.1.1 = { owner = SPA controller = SPA add_core = SPA remove_core = FRA } # Conquered by Charles V
+1665.9.17  = { add_claim = FRA } # Louis XIV's father-in-law, Philip IV of Spain, dies
+1677.4.19 = { owner = FRA controller = FRA add_core = FRA remove_core = SPA } # Captured by Louis XIV
+1684.1.1 = { culture = cosmopolitan_french }
+1789.5.5 = { base_tax = 6 base_production = 6 } # The General Estates
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+
+1870.9.4   = {  owner = FR2
+		controller = PRU
+		add_core = FR2
+		remove_core = FRA
+	     } # Republic proclaimed
+1871.1.18  = { controller = GER }
+1871.5.10  = { controller = FR2 }
+1910.1.1 = { discovered_by = asian }
+1914.10.1  = { controller = GER }
+1918.9.5   = { controller = FR2 }
+1940.5.27  = { controller = GER }
+1940.6.14  = { owner = GER } # France surrendered to Nazi Garmany
+1944.9.2   = { owner = FR2 controller = FR2 }
+

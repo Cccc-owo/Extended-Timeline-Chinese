@@ -1,0 +1,73 @@
+#893 - Chitimacha
+
+culture = natchez
+religion = totemism
+capital = "Chitimacha"
+trade_goods = unknown
+hre = no
+discovered_by = north_american
+base_tax = 5
+base_production = 3
+base_manpower = 2
+native_size = 15
+native_ferocity = 3 
+native_hostileness = 8
+center_of_trade = 1
+
+add_permanent_province_modifier = {
+	name = mississippi_estuary_modifier
+	duration = -1
+}
+
+1519.1.1  = { discovered_by = SPA } # Alvarez de Piñeda explored the Gulf Coast
+1670.1.1  = { discovered_by = FRA } # René Robert Cavelier claimed the area for France.
+1700.1.1 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	religion = catholic
+	culture = cosmopolitan_french
+	is_city = yes
+	trade_goods = cotton
+} #First settlements, Fort d'Iberville
+1722.1.1  = { capital = "La Nouvelle-Orléans" }
+1762.1.1  = {	
+	owner = SPA
+	controller = SPA
+	remove_core = FRA
+} # Treaty of Fontainebleau, secretely ceded to Spain
+1763.1.1  = { unrest = 5 } # The French resisted Spanish rule
+1764.1.1  = { unrest = 0 } # Eventually subdued
+1770.1.1  = { culture = french_louisianan }
+1787.1.1  = { add_core = SPA }
+1800.10.1 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	remove_core = SPA
+}# Treaty of San Ildefonso
+1803.4.3  = {	
+	owner = USA
+	controller = USA
+	add_core = USA
+	remove_core = FRA
+	capital = "New Orleans"
+} # The Louisiana purchase
+
+1861.1.26  = { owner = LOU controller = LOU add_core = LOU }
+1861.2.8   = { owner = CSA controller = CSA add_core = CSA remove_core = LOU }
+1865.5.5   = { owner = USA controller = USA remove_core = CSA }
+1875.1.1 = { base_tax = 5 base_production = 4 base_manpower = 8 }
+1890.1.1   = { culture = british_louisianan }
+1880.1.1 = { discovered_by = eastern discovered_by = muslim discovered_by = ottoman discovered_by = asian }
+1901.1.1 = { base_tax = 8 base_production = 7 base_manpower = 9 }
+1910.1.1 = { discovered_by = western }
+1925.1.1 = { base_tax = 13 base_production = 14 base_manpower = 13 }
+1940.1.1   = { trade_goods = oil }
+1951.1.1 = { base_tax = 14 base_production = 19 base_manpower = 18 }
+1975.1.1 = { base_tax = 19 base_production = 22 base_manpower = 23 }
+2000.1.1 = { base_tax = 27 base_production = 31 base_manpower = 27 }
+
+
+
+

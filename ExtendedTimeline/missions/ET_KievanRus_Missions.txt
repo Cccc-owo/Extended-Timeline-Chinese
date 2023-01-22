@@ -1,0 +1,746 @@
+kievenrus_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = KRU
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+		
+	subjugate_lendians_kru = {
+		icon = mission_extent_yasak_to_the_east
+		required_missions = {  }
+		position = 1
+		completed_by = 981.1.1
+		
+		provinces_to_highlight = {
+			OR = {
+				area = volhynia_area
+				province_id = 277
+				province_id = 278
+				province_id = 4537
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			volhynia_area = { 
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			277 = { country_or_non_sovereign_subject_holds = ROOT }
+			278 = { country_or_non_sovereign_subject_holds = ROOT }
+			4537 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			269 = { add_permanent_claim = ROOT }
+			1937 = { add_permanent_claim = ROOT }
+			add_manpower = 1
+		}
+	}
+	secure_the_west_kru = {
+		icon = kingdom_of_cyprus
+		required_missions = { subjugate_lendians_kru }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = lithuania_area
+				province_id = 260
+				province_id = 269
+				province_id = 270
+				province_id = 1937
+				province_id = 4538
+				
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			lithuania_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			260 = { owned_by = ROOT }
+			269 = { owned_by = ROOT }
+			270 = { owned_by = ROOT }
+			1937 = { owned_by = ROOT }
+			4538 = { owned_by = ROOT }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "tng_frontier_expansion"
+				duration = 3650
+			}
+		}
+	}
+	growing_wealth_kru = {
+		icon = dominant_economy
+		required_missions = { secure_the_west_kru }
+		position = 3
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				has_building = windmill
+			}
+			share_of_starting_income = 5
+		}
+		effect = {
+			add_mercantilism = 5
+			add_corruption = -10
+		}
+	}
+	men_of_the_north_kru = {
+		icon = et_mission_viking_longboat
+		required_missions = { integrate_novgorod_kru }
+		position = 5
+		
+		trigger = {
+			OR = {
+				any_hired_mercenary_company = {
+					home_province = {
+						region = scandinavia_region
+					}
+				}
+				any_ally = {
+					capital_scope = {
+						region = scandinavia_region
+					}
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "friendship_for_eternity_et"
+			}
+		}
+	}
+}
+kievenrus_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = KRU
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+		
+	subjugate_dregovichs_kru = {
+		icon = mission_have_two_subjects
+		required_missions = { true_ruler_rus_kru }
+		position = 2
+		completed_by = 880.1.1
+		
+		provinces_to_highlight = {
+			OR = {
+				area = minsk_area
+				area = white_ruthenia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			AND = {
+				minsk_area = { 
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				white_ruthenia_area = { 
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			smolensk_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			pskov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			4243 = { add_permanent_claim = ROOT }
+			add_prestige = 10
+		}
+	}
+	northern_expansion_kru = {
+		icon = the_russian_campaign
+		required_missions = { subjugate_dregovichs_kru }
+		position = 3
+		completed_by = 881.1.1
+		
+		provinces_to_highlight = {
+			OR = {
+				area = smolensk_area
+				area = pskov_area
+				province_id = 4243
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			AND = {
+				smolensk_area = { 
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				pskov_area = { 
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				4243 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		effect = {
+			add_casus_belli = {
+					type = cb_restore_personal_union
+					months = 300
+					target = NOV
+				}
+			add_adm_power = 100
+		}
+	}
+	integrate_novgorod_kru = {
+		icon = mission_conquer_novgorod
+		required_missions = { northern_expansion_kru }
+		position = 4
+		completed_by = 882.1.1
+		
+		provinces_to_highlight = {
+			OR = {
+				area = novgorod_area
+				area = pskov_area
+				province_id = 33
+				province_id = 34
+				province_id = 1752
+				province_id = 1959
+				province_id = 1961
+				province_id = 4261
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			AND = {
+				novgorod_area = { 
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				pskov_area = { 
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				33 = { country_or_non_sovereign_subject_holds = ROOT }
+				34 = { country_or_non_sovereign_subject_holds = ROOT }
+				1752 = { country_or_non_sovereign_subject_holds = ROOT }
+				1959 = { country_or_non_sovereign_subject_holds = ROOT }
+				1961 = { country_or_non_sovereign_subject_holds = ROOT }
+				4261 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		effect = {
+			change_government = monarchy
+			308 = { add_permanent_claim = ROOT }
+			4117 = { add_permanent_claim = ROOT }
+			4115 = { add_permanent_claim = ROOT }
+			suzdal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			moscow_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			vladimir_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tver_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	under_one_rule_kru = {
+		icon = mission_rule_ruthenia
+		required_missions = { integrate_novgorod_kru }
+		position = 5
+		completed_by = 1000.1.1
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 294
+				province_id = 308
+				province_id = 4117
+				province_id = 4115
+				area = suzdal_area
+				area = moscow_area
+				area = vladimir_area
+				area = tver_area
+				area = oka_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			suzdal_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			moscow_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			vladimir_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			tver_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			oka_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			308 = { owned_by = ROOT }
+			4275 = { owned_by = ROOT }
+			4374 = { owned_by = ROOT }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "under_one_rule_et"
+				duration = 3650
+			}
+		}
+	}
+}
+kievenrus_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = KRU
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+	
+	true_ruler_rus_kru = {
+		icon = king_of_poland
+		required_missions = {  }
+		position = 1
+		completed_by = 880.1.1
+		
+		trigger = {
+			OR = {
+				AND = {
+					monthly_mil = 10
+					army_size_percentage = 1
+				}
+				AND = {
+					monthly_dip = 10
+					treasury = 150
+				}
+				AND = {
+					monthly_adm = 10
+					stability = 1
+				}
+			}
+		}
+		effect = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				months = 300
+				target = DRE
+			}
+		}
+	}
+	friend_or_foe_kru = {
+		icon = mission_attila_the_hun
+		required_missions = { true_ruler_rus_kru }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = east_dniepr_area
+				area = podolia_volhynia_area
+				province_id = 282
+				province_id = 283
+				province_id = 1944
+				province_id = 2607
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				OR = {
+					alliance_with = PEC
+					alliance_with = HUN
+				}
+				limit = { exists = PEC is_neighbor_of = PEC }
+				limit = { exists = HUN }
+			}
+			else = {
+				east_dniepr_area = { 
+					type = all
+					owned_by = ROOT
+				}
+				podolia_volhynia_area = { 
+					type = all
+					owned_by = ROOT
+				}
+				282 = { owned_by = ROOT }
+				283 = { owned_by = ROOT }
+				1944 = { owned_by = ROOT }
+				2406 = { owned_by = ROOT }
+			}
+		}
+		effect = {
+			podolia_volhynia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			282 = { add_permanent_claim = ROOT }
+			283 = { add_permanent_claim = ROOT }
+			1944 = { add_permanent_claim = ROOT }
+			2406 = { add_permanent_claim = ROOT }
+			add_prestige = 15
+		}
+	}
+	secure_the_south_kru = {
+		icon = mission_advance_to_the_dnieper
+		required_missions = { friend_or_foe_kru }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = bessarabia_area
+				area = moldavia_area
+				area = red_ruthenia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			bessarabia_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			moldavia_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			red_ruthenia_area = { 
+				type = all
+				owned_by = ROOT
+			}
+		}
+	}
+}
+kievenrus_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = KRU
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes	
+	
+	dniestr_trade_route_kru = {
+		icon = danubian_power
+		required_missions = { friend_or_foe_kru byzantine_relations_kru }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					NOT = { is_strongest_trade_power = ROOT }
+					province_id = 310
+				}
+				AND = {
+					NOT = { is_strongest_trade_power = ROOT }
+					province_id = 280
+				}
+				AND = {
+					NOT = { province_trade_power = 50 }
+					province_id = 1322
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				full_idea_group = early_trade_ideas
+				AND = {
+					310 = {
+						is_strongest_trade_power = ROOT
+					}
+					280 = {
+						is_strongest_trade_power = ROOT
+					}
+					1322 = {
+						province_trade_power = 50
+					}
+				}
+			}
+		}
+		effect = {
+			crimea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			287 = { add_permanent_claim = ROOT }
+			1974 = { add_permanent_claim = ROOT }
+			2447 = { add_permanent_claim = ROOT }
+		}
+	}
+	khazar_rus_conflict_kru = {
+		icon = mission_indo_scythians
+		required_missions = { dniestr_trade_route_kru }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 284
+				province_id = 287
+				province_id = 1974
+				province_id = 2447
+				province_id = 285
+				province_id = 2410
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			284 = { country_or_non_sovereign_subject_holds = ROOT }
+			287 = { country_or_non_sovereign_subject_holds = ROOT }
+			1974 = { country_or_non_sovereign_subject_holds = ROOT }
+			2447 = { country_or_non_sovereign_subject_holds = ROOT }
+			OR = {
+				285 = { country_or_non_sovereign_subject_holds = ROOT }
+				2410 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "slavic_warfare_et"
+				duration = 3650
+			}
+		}
+	}
+	demand_tribute_kru = {
+		icon = mission_cossack_cavalry
+		required_missions = { khazar_rus_conflict_kru }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				area = astrakhan_area
+				area = lower_don_area
+				area = sloboda_ukraine_area
+			}
+			NOT = { controlled_by = ROOT }
+		}
+		trigger = {
+			bessarabia_area = { 
+				type = all
+				controlled_by = ROOT
+			}
+			moldavia_area = { 
+				type = all
+				controlled_by = ROOT
+			}
+			red_ruthenia_area = { 
+				type = all
+				controlled_by = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "plunder_for_the_state_et"
+				duration = 7300
+			}
+			add_prestige = 15
+		}
+	}
+}
+kievenrus_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = KRU
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes	
+	
+	develop_kyiv_kru = {
+		icon = mission_early_game_buildings
+		required_missions = {  }
+		position = 1
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 280
+			}
+		}
+		trigger = {
+			280 = {
+				development = 20
+				num_of_buildings_in_province = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = efficient_trade_et
+				duration = 7300
+			}
+		}
+	}
+	byzantine_relations_kru = {
+		icon = carolingian_empire
+		required_missions = { develop_kyiv_kru }
+		position = 2
+		
+		provinces_to_highlight = {
+			owned_by = BYZ
+		}
+		trigger = {
+			if = {
+				limit = { exists = BYZ }
+				OR = {
+					alliance_with = BYZ
+					BYZ = {
+						custom_trigger_tooltip = {
+							tooltip = rivalled_or_rival_of
+							OR = {
+								is_rival = root
+								root = { is_rival = prev }
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = has_been_insulted_by_root
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			add_adm_power = 50
+		}
+	}
+	a_new_religion_kru = {
+		icon = mission_pf_cross
+		required_missions = {  }
+		position = 3
+		
+		trigger = {
+			OR = {
+				is_year = 988
+				religion = orthodox 
+				religion = sunni
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name= "divine_arrival_et"
+				duration = 5475
+			}
+		}
+	}
+	convert_the_land_kru = {
+		icon = mission_restore_kiev
+		required_missions = { a_new_religion_kru }
+		position = 4
+		
+		trigger = { 
+			religious_unity = 1
+			num_of_owned_provinces_with = {
+				value = 20
+				has_building = temple
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name= "master_of_negotiations_et"
+				duration = 3650
+			}
+		}
+	}
+	small_discrepancies_kru = {
+		icon = take_constantinople
+		required_missions = { khazar_rus_conflict_kru convert_the_land_kru }
+		position = 5
+		
+		provinces_to_highlight = {
+			province_id = 151
+		}
+		trigger = {
+			OR = {
+				BYZ = {
+					has_opinion = {
+						who = ROOT
+						value = 180
+					}
+				}
+				151 = { controlled_by = ROOT }
+			}
+		}
+		effect = {
+			add_treasury = 500
+			add_stability = 1
+		}
+	}
+}

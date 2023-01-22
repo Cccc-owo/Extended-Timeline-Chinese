@@ -1,0 +1,177 @@
+
+namespace = et_fra
+
+#Boulanger
+country_event = {
+	id = et_fra.1
+	title = et_fra.1.t
+	desc = et_fra.1.d
+	picture = REVOLUTION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = FRA
+			tag = FR2
+		}
+		is_year = 1875
+		NOT = { is_year = 1895 }
+		government = republic
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = et_fra.1.a
+		add_stability = -1
+		capital_scope = {
+			add_province_modifier = {
+				name = political_instability
+				duration = 1825
+			}
+		}
+	}
+
+	option = {
+		name = et_fra.1.b
+		add_stability = -1
+		if = {
+			limit = { dominant_religion = protestant NOT = { religion = protestant }  }
+			change_religion = protestant
+		}
+		if = {
+			limit = { dominant_religion = reformed NOT = { religion = reformed } }
+			change_religion = reformed
+		}
+		if = {
+			limit = { dominant_religion = arianism NOT = { religion = arianism } }
+			change_religion = arianism
+		}
+		if = {
+			limit = { dominant_religion = chalcedonism NOT = { religion = chalcedonism } }
+			change_religion = chalcedonism
+		}
+		if = {
+			limit = { dominant_religion = orthodox NOT = { religion = orthodox } }
+			change_religion = orthodox
+		}
+		if = {
+			limit = { 
+				NOT = { dominant_religion = protestant }
+				NOT = { dominant_religion = reformed }
+				NOT = { dominant_religion = arianism }
+				NOT = { dominant_religion = chalcedonism }
+				NOT = { dominant_religion = orthodox }
+				NOT = { religion = catholic }
+			}
+			change_religion = catholic
+		}
+		country_event = {
+			id = et_fra.2
+			days = 5
+		}
+	}
+}
+
+#Boulanger successful
+country_event = {
+	id = et_fra.2
+	title = et_fra.2.t
+	desc = et_fra.2.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_fra.2.a
+		change_government = monarchy
+		define_ruler = { 
+			culture = ROOT
+			religion = catholic
+		}
+	}
+
+	option = {
+		name = et_fra.2.b
+		country_event = {
+			id = et_fra.4
+			days = 5
+		}
+	}
+}
+
+#The Boulanger Dynasty to Rule France
+country_event = {
+	id = et_fra.4
+	title = et_fra.4.t
+	desc = et_fra.4.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_fra.4.a
+		change_government = monarchy
+		define_ruler = {
+			name = "Georges"
+			dynasty = "Boulanger"
+			adm = 3
+			dip = 3
+			mil = 5
+		}
+	}
+
+	option = {
+		name = et_fra.4.b
+		add_government_reform = presidential_despot_reform
+		define_ruler = {
+			name = "Georges Boulanger"
+			adm = 3
+			dip = 3
+			mil = 5
+		}
+	}
+}
+
+#Paris Commune
+country_event = {
+	id = et_fra.5
+	title = et_fra.5.t
+	desc = et_fra.5.d
+	picture = REVOLUTION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = FRA
+			tag = FR2
+		}
+		war_exhaustion = 4
+		NOT = { stability = 1 }
+		adm_tech = 79
+		NOT = { has_reform = communist_dictatorship }
+		NOT = { has_reform = socialist_republic }
+		NOT = { has_reform = communist_government }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		add_stability = -1
+		capital_scope = {
+			communist_rebels = 4
+		}
+	}
+
+	option = {
+		add_stability = -2
+		add_adm_power = -100
+		add_government_reform = communist_government
+	}
+}

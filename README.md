@@ -37,7 +37,7 @@
 |[cn_text](cn_text)|翻译后的文本文件|使用 EU4 双字节补丁特殊编码，[源项目](https://paratranz.cn/projects/5342/)|
 |[eu4_chinese](eu4_chinese)|52汉化组欧陆风云 4 简体中文汉化|[源项目](https://paratranz.cn/projects/2)|
 |[eu4_chinese_sup](eu4_chinese_sup)|52汉化组欧陆风云 4 简体中文汉化补充包|[源项目](https://paratranz.cn/projects/2)|
-|ExtendedTimeline|ET 源文件|[Paradox Forum 页面](https://forum.paradoxplaza.com/forum/threads/mod-extended-timeline.740866/)/运行 ```main.bat``` 时会自动下载|
+|[ExtendedTimeline](ExtendedTimeline)|ET 源文件|[Paradox Forum](https://forum.paradoxplaza.com/forum/threads/mod-extended-timeline.740866/)|
 |[mod_descriptor](mod_descriptor)|mod 描述符文件||
 |output|输出文件夹|运行 ```main.bat``` 时会自动建立|
 

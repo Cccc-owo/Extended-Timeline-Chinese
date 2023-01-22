@@ -1,0 +1,66 @@
+#278 - Pinsk
+    
+culture = byelorussian
+religion = slavic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = unknown
+base_manpower = 1
+capital = "Nowogrodek"
+
+500.1.1 = { discovered_by = eastern }
+550.1.1 = { owner = LDN controller = LDN add_core = LDN is_city = yes trade_goods = wool }
+700.1.1 = { discovered_by = western }
+981.1.1 = { owner = KRU controller = KRU add_core = KRU remove_core = LDN }
+1000.1.1 = { religion = orthodox discovered_by = nomad_group }
+1054.2.20 = { owner = KIE controller = KIE add_core = KIE remove_core = KRU }
+1100.1.1 = { discovered_by = muslim discovered_by = ottoman }
+1162.1.1 = { owner = TRV controller = TRV add_core = TRV remove_core = KIE }
+1200.1.1 = { base_tax = 2 }
+1230.1.1 = { owner = VOL controller = VOL add_core = VOL }
+1240.1.1 = { owner = TRV controller = TRV add_core = TRV }
+1320.1.1 = { owner = LIT controller = LIT add_core = LIT remove_core = VOL }
+1350.1.1 = { religion = orthodox }
+
+1569.7.1 = {
+	owner = PLC
+	controller = PLC
+	add_core = PLC
+} # Union of Lublin
+1648.1.1 = {
+	revolt = { type = nationalist_rebels size = 1 }
+	controller = REB
+	add_core = UKR
+	add_core = ZAZ
+} # Ukrainian Cossack
+1654.1.1 = { revolt = {} controller = PLC remove_core = ZAZ }
+1655.10.5 = { controller = RUS } # Occupied, Pinsk and castle completely destroyed 
+1656.1.1 = { controller = PLC }
+ # Destroyed again, this time by the Swedish army, Karl XII
+1793.1.23 = {
+	owner = RUS
+	controller = RUS
+	add_core = RUS
+}
+1794.3.24 = { unrest = 5 } # Kosciuszko uprising, minimize the Russian influence
+1794.11.16 = { unrest = 0 }
+
+1871.1.1   = { capital = "Baranavichy" }
+1910.1.1 = { discovered_by = asian }
+1915.10.1  = { controller = GER }
+1918.3.3   = { controller = RUS } # Treaty of Brest-Litovsk
+1918.3.25  = { owner = BLR controller = BLR add_core = BLR remove_core = UKR }
+1919.3.18  = { controller = POL }
+1920.7.17  = { controller = BLR }
+1920.9.30  = { controller = POL }
+1921.3.18  = { owner = POL add_core = POL remove_core = RUS } # Peace of Riga
+1939.9.17  = { controller = SOV }
+1939.10.6  = { owner = SOV add_core = SOV }
+1941.6.25  = { controller = GER }
+1944.7.6   = { controller = SOV }
+1945.5.8   = { remove_core = POL }
+1990.7.27  = { owner = BLR controller = BLR remove_core = SOV }
+
+
+

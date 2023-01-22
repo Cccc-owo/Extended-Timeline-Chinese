@@ -1,0 +1,66 @@
+##############
+#Muism Events#
+##############
+
+namespace = muism
+
+#Legacy of Dangun
+country_event = {
+	id = muism.1
+	title = muism.1.t
+	desc = muism.1.d
+	picture = COMET_SIGHTED_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion = muism
+		owns = 733
+		owns = 2743
+		NOT = { is_year = 300 }
+	}
+
+	mean_time_to_happen = {
+		years = 10
+	}
+
+	option = {
+		name = muism.1.a
+		add_stability = 1
+	}
+
+	option = {
+		name = muism.1.b
+		add_prestige = 25
+	}
+}
+
+#The Gut
+country_event = {
+	id = muism.2
+	title = muism.2.t
+	desc = muism.2.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		religion = muism
+		NOT = { has_country_modifier = muinism_gut }
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = {
+		name = muism.2.a
+		add_years_of_income = -0.75
+		add_country_modifier = {
+			name = muinism_gut
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = muism.2.b
+	}
+}

@@ -1,0 +1,202 @@
+namespace = et_government_event
+
+# Fascist ruler dies
+country_event = {
+	id = et_government_event.1
+	title = et_government_event.1.t
+	desc = et_government_event.1.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = fascist_government
+		has_reform = dictatorial_rule
+	}
+	
+	option = {
+		name = et_government_event.1.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				calc_true_if = {
+					all_country = {
+						has_reform = fascist_government
+					}
+					amount = 10
+				}
+			}
+			modifier = {
+				factor = 3
+				tag = SPA
+			}
+		}
+		change_government = monarchy
+		add_government_reform = autocracy_reform
+		add_government_reform = political_absolutism_reform
+		add_government_reform = authoritarian_rule
+		add_government_reform = oligarchic_reform
+		add_government_reform = royal_power
+		define_ruler = {
+			claim = 100
+		}
+	}
+	
+	option = {
+		name = et_government_event.1.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				calc_true_if = {
+					all_country = {
+						has_reform = fascist_government
+					}
+					amount = 10
+				}
+			}
+		}
+		add_government_reform = single_party_system
+		add_government_reform = democracy_reform
+		add_republican_tradition = -10
+	}
+	
+	option = {
+		name = et_government_event.1.c
+		ai_chance = {
+			factor = 50
+		}
+		add_republican_tradition = 10
+	}
+}
+
+# Communist ruler dies
+country_event = {
+	id = et_government_event.2
+	title = et_government_event.1.t
+	desc = et_government_event.1.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = communist_government
+		has_reform = dictatorial_rule
+	}
+	
+	option = {
+		name = et_government_event.1.a
+		ai_chance = {
+			factor = 0
+		}
+		change_government = monarchy
+		add_government_reform = autocracy_reform
+		add_government_reform = political_absolutism_reform
+		add_government_reform = authoritarian_rule
+		add_government_reform = oligarchic_reform
+		add_government_reform = royal_power
+		define_ruler = {
+			claim = 100
+		}
+	}
+	
+	option = {
+		name = et_government_event.1.b
+		ai_chance = {
+			factor = 0
+		}
+		add_government_reform = single_party_system
+		add_republican_tradition = 10
+	}
+	
+	option = {
+		name = et_government_event.1.c
+		ai_chance = {
+			factor = 100
+		}
+		add_republican_tradition = -10
+	}
+}
+
+# Burghers seize power
+country_event = {
+	id = et_government_event.3
+	title = et_government_event.3.t
+	desc = et_government_event.3.d
+	picture = BURGHER_ESTATE_UPSET_eventPicture
+	
+	trigger = {
+		has_disaster = estate_burghers_disaster
+		had_country_flag = {
+			flag = burghers_estate_in_power
+			days = 1825
+		}
+		government = monarchy
+		NOT = { num_of_cities = 20 }
+		NOT = { has_ruler_flag = et_government_event3_fired }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		set_ruler_flag = et_government_event3_fired
+	}
+	
+	option = {
+		name = et_government_event.3.a
+		add_legitimacy = -25
+		add_stability = -1
+	}
+	
+	option = {
+		name = et_government_event.3.b
+		end_disaster = estate_burghers_disaster
+		clr_country_flag = burghers_estate_in_power
+		change_government = republic
+		kill_ruler = yes
+	}
+}
+
+# Clergy seizes power
+country_event = {
+	id = et_government_event.4
+	title = et_government_event.4.t
+	desc = et_government_event.4.d
+	picture = CHURCH_ESTATE_UPSET_eventPicture
+	
+	trigger = {
+		has_disaster = estate_church_disaster
+		had_country_flag = {
+			flag = church_estate_in_power
+			days = 1825
+		}
+		government = monarchy
+		NOT = { num_of_cities = 20 }
+		NOT = { has_ruler_flag = et_government_event4_fired }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		set_ruler_flag = et_government_event4_fired
+	}
+	
+	option = {
+		name = et_government_event.4.a
+		add_legitimacy = -25
+		add_stability = -1
+	}
+	
+	option = {
+		name = et_government_event.4.b
+		end_disaster = estate_church_disaster
+		clr_country_flag = church_estate_in_power
+		change_government = theocracy
+		kill_ruler = yes
+	}
+}

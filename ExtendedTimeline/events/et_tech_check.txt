@@ -1,0 +1,151 @@
+namespace = et
+
+country_event = {
+	id = et.57
+	title = "et.EVTNAME58"
+	desc = "et.EVTDESC58"
+	picture = ADVISOR_eventPicture
+
+	trigger = {
+		technology_group = western
+		NOT = { adm_tech = 18 }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "et.EVTOPTA58"
+		change_technology_group = barbarian
+		change_unit_type = barbarian
+	}
+}
+
+country_event = {
+	id = et.58
+	title = "et.EVTNAME58"
+	desc = "et.EVTDESC58"
+	picture = ADVISOR_eventPicture
+
+	trigger = {
+		OR = {
+			AND = {
+				technology_group = muslim
+				NOT = { religion_group = muslim }
+				NOT = { adm_tech = 20 }
+			}
+			AND = {
+				technology_group = ottoman
+				NOT = { adm_tech = 21 }
+			}
+			AND = {
+				technology_group = eastern
+				NOT = { adm_tech = 18 }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "et.EVTOPTA58"
+		change_technology_group = middle_eastern
+		change_unit_type = middle_eastern
+	}
+}
+
+country_event = {
+	id = et.59
+	title = "et.EVTNAME59"
+	desc = "et.EVTDESC59"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	trigger = {
+		has_reform = margraviate
+		is_part_of_hre = no
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = "et.EVTOPTA59"
+		add_government_reform = feudalism_reform
+	}
+}
+
+country_event = {
+	id = et.73
+	title = "et.EVTNAME58"
+	desc = "et.EVTDESC58"
+	picture = ADVISOR_eventPicture
+
+	trigger = {
+		AND = {
+			technology_group = chinese
+			NOT = { adm_tech = 24 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "et.EVTOPTA58"
+		change_technology_group = early_chinese
+		change_unit_type = early_chinese
+	}
+}
+
+country_event = {
+	id = et.74
+	title = "et.EVTNAME58"
+	desc = "et.EVTDESC58"
+	picture = ADVISOR_eventPicture
+
+	trigger = {
+		AND = {
+			technology_group = indian
+			NOT = { adm_tech = 24 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "et.EVTOPTA58"
+		change_technology_group = early_indian
+		change_unit_type = early_indian
+	}
+}
+
+country_event = {
+	id = et.75
+	title = "et.EVTNAME58"
+	desc = "et.EVTDESC58"
+	picture = ADVISOR_eventPicture
+
+	trigger = {
+		AND = {
+			technology_group = nomad_group
+			NOT = { adm_tech = 24 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "et.EVTOPTA58"
+		change_technology_group = western_nomad_group
+		change_unit_type = western_nomad_group
+	}
+}

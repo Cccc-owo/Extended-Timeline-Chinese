@@ -1,0 +1,429 @@
+namespace = great_plague
+
+# Disaster start
+country_event = {
+	id = great_plague.1
+	title = "great_plague.1.t"
+	desc = "great_plague.1.d"
+	picture = PLAGUE_eventPicture
+		
+	is_triggered_only = yes
+	
+	immediate = {
+		random_owned_province = {
+			set_country_flag = had_the_great_plague
+			limit = { 
+				development = 12
+				NOT = { has_province_modifier = great_plague_province } 
+			}
+			add_devastation = 25
+			if = {
+				limit = { base_tax = 2 NOT = { base_tax = 4 } }
+				add_base_tax = -1
+			}
+			if = {
+				limit = { base_tax = 4 NOT = { base_tax = 7 } }
+				add_base_tax = -2
+			}
+			if = {
+				limit = { base_tax = 8 NOT = { base_tax = 11 } }
+				add_base_tax = -3
+			}
+			if = {
+				limit = { base_tax = 12 }
+				add_base_tax = -4
+			}
+			if = {
+				limit = { base_production = 2 NOT = { base_production = 4 } }
+				add_base_production = -1
+			}
+			if = {
+				limit = { base_production = 4 NOT = { base_production = 7 } }
+				add_base_production = -2
+			}
+			if = {
+				limit = { base_production = 8 NOT = { base_production = 11 } }
+				add_base_production = -3
+			}
+			if = {
+				limit = { base_production = 12 }
+				add_base_production = -4
+			}
+			if = {
+				limit = { base_manpower = 2 NOT = { base_manpower = 4 } }
+				add_base_manpower = -1
+			}
+			if = {
+				limit = { base_manpower = 4 NOT = { base_manpower = 7 } }
+				add_base_manpower = -2
+			}
+			if = {
+				limit = { base_manpower = 8 NOT = { base_manpower = 11 } }
+				add_base_manpower = -3
+			}
+			if = {
+				limit = { base_manpower = 12 }
+				add_base_manpower = -4
+			}
+			add_province_modifier = {
+				name = great_plague_province
+				duration = 1825
+			}
+		}
+	}
+
+	option = {
+		name = "great_plague.1.a"
+		add_stability = -1
+	}
+}
+
+# Disaster end
+country_event = {
+	id = great_plague.2
+	title = "great_plague.2.t"
+	desc = "great_plague.2.d"
+	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "great_plague.2.a"
+		set_country_flag = had_the_great_plague
+		add_country_modifier = {
+			name = aftermath_of_the_plague
+			duration = 3650
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_flag = had_great_plague }
+				clr_province_flag = had_great_plague
+			}
+		}
+	}
+}
+
+# Plague Spreads
+province_event = {
+	id = great_plague.3
+	title = "great_plague.3.t"
+	desc = "great_plague.3.d"
+	picture = PLAGUE_eventPicture
+	
+	trigger = {
+		owner = { has_disaster = great_plague }
+		NOT = { has_province_flag = had_great_plague }
+		OR = {
+			development = 14
+			province_has_center_of_trade_of_level = 1
+		}
+		OR = {
+			any_neighbor_province = { has_province_modifier = great_plague_province }
+			AND = { 
+				has_port = yes
+				any_province = { 
+					region = ROOT
+					has_province_modifier = great_plague_province
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+		
+		modifier = {
+			factor = 0.5
+			development = 20
+		}
+		modifier = {
+			factor = 0.5
+			development = 25
+		}
+		modifier = {
+			factor = 0.5
+			development = 30
+		}
+	}
+	
+	option = {
+		name = "great_plague.3.a"
+		set_province_flag = had_great_plague
+		add_devastation = 25
+		if = {
+			limit = { base_tax = 2 NOT = { base_tax = 4 } }
+			add_base_tax = -1
+		}
+		if = {
+			limit = { base_tax = 4 NOT = { base_tax = 7 } }
+			add_base_tax = -2
+		}
+		if = {
+			limit = { base_tax = 8 NOT = { base_tax = 11 } }
+			add_base_tax = -3
+		}
+		if = {
+			limit = { base_tax = 12 }
+			add_base_tax = -4
+		}
+		if = {
+			limit = { base_production = 2 NOT = { base_production = 4 } }
+			add_base_production = -1
+		}
+		if = {
+			limit = { base_production = 4 NOT = { base_production = 7 } }
+			add_base_production = -2
+		}
+		if = {
+			limit = { base_production = 8 NOT = { base_production = 11 } }
+			add_base_production = -3
+		}
+		if = {
+			limit = { base_production = 12 }
+			add_base_production = -4
+		}
+		if = {
+			limit = { base_manpower = 2 NOT = { base_manpower = 4 } }
+			add_base_manpower = -1
+		}
+		if = {
+			limit = { base_manpower = 4 NOT = { base_manpower = 7 } }
+			add_base_manpower = -2
+		}
+		if = {
+			limit = { base_manpower = 8 NOT = { base_manpower = 11 } }
+			add_base_manpower = -3
+		}
+		if = {
+			limit = { base_manpower = 12 }
+			add_base_manpower = -4
+		}
+		add_province_modifier = {
+			name = great_plague_province
+			duration = 1825
+		}
+	}
+}
+
+country_event = {	 #Plague kills ruler
+	id = great_plague.4
+	title = great_plague.4.t
+	desc = great_plague.4.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_regency = no
+	}
+	
+	option = {
+		name = great_plague.4.a
+		kill_ruler = yes
+	}
+}
+
+country_event = {	 #Plague kills advisor
+	id = great_plague.5
+	title = great_plague.5.t
+	desc = great_plague.5.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_advisor = yes
+	}
+	
+	option = {
+		name = great_plague.5.a
+		kill_advisor = random
+	}
+}
+
+country_event = {	 #Plague kills heir
+	id = great_plague.6
+	title = great_plague.6.t
+	desc = great_plague.6.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_heir = yes
+	}
+	
+	option = {
+		name = great_plague.6.a
+		kill_heir = {}
+	}
+}
+	
+country_event = {	 #black death kills soldiers
+	id = great_plague.7
+	title = great_plague.7.t
+	desc = great_plague.7.d
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		manpower = 0
+	}
+	
+	option = {
+		name = great_plague.7.a
+		add_yearly_manpower = -1
+		add_yearly_sailors = -1
+	}
+}
+
+country_event = {	 #black death disrupts trade
+	id = great_plague.8
+	title = great_plague.8.t
+	desc = great_plague.8.d
+	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plague_trade_disrupted }
+	}
+	
+	option = {
+		name = great_plague.7.a
+		add_country_modifier = {
+			name = plague_trade_disrupted
+			duration = 1825
+		}
+	}
+}
+
+country_event = {	 #Black Plague
+	id = great_plague.10
+	title = great_plague.10.t
+	desc = great_plague.10.d
+	picture = PLAGUE_eventPicture
+	
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		owns = 112
+		is_year = 1280
+		NOT = { started_in = 1353.1.1 }
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	option = {
+		name = great_plague.10.a
+		set_global_flag = great_plague_started
+		112 = {
+			add_devastation = 25
+			if = {
+				limit = { base_tax = 2 NOT = { base_tax = 4 } }
+				add_base_tax = -1
+			}
+			if = {
+				limit = { base_tax = 4 NOT = { base_tax = 7 } }
+				add_base_tax = -2
+			}
+			if = {
+				limit = { base_tax = 8 NOT = { base_tax = 11 } }
+				add_base_tax = -3
+			}
+			if = {
+				limit = { base_tax = 12 }
+				add_base_tax = -4
+			}
+			if = {
+				limit = { base_production = 2 NOT = { base_production = 4 } }
+				add_base_production = -1
+			}
+			if = {
+				limit = { base_production = 4 NOT = { base_production = 7 } }
+				add_base_production = -2
+			}
+			if = {
+				limit = { base_production = 8 NOT = { base_production = 11 } }
+				add_base_production = -3
+			}
+			if = {
+				limit = { base_production = 12 }
+				add_base_production = -4
+			}
+			if = {
+				limit = { base_manpower = 2 NOT = { base_manpower = 4 } }
+				add_base_manpower = -1
+			}
+			if = {
+				limit = { base_manpower = 4 NOT = { base_manpower = 7 } }
+				add_base_manpower = -2
+			}
+			if = {
+				limit = { base_manpower = 8 NOT = { base_manpower = 11 } }
+				add_base_manpower = -3
+			}
+			if = {
+				limit = { base_manpower = 12 }
+				add_base_manpower = -4
+			}
+			add_province_modifier = {
+				name = great_plague_province
+				duration = 1825
+			}
+		}
+		every_country = { clr_country_flag = had_the_great_plague }
+	}
+}
+
+#country_event = {	 #Antonine Plague start
+#	id = great_plague.11
+#	title = great_plague.11.t
+#	desc = great_plague.11.d
+#	picture = PLAGUE_eventPicture
+#	
+#	major = yes
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		owns = 118
+#		is_year = 150
+#		NOT = { started_in = 180.1.1 }
+#	}
+#	
+#	mean_time_to_happen = {
+#		months = 600
+#	}
+#	
+#	option = {
+#		name = great_plague.11.a
+#	}
+#}
+
+#country_event = {	 #Plague of Justinian
+#	id = great_plague.12
+#	title = great_plague.12.t
+#	desc = great_plague.12.d
+#	picture = PLAGUE_eventPicture
+#	
+#	major = yes
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		owns = 151
+#		is_year = 500
+#		NOT = { started_in = 542.1.1 }
+#	}
+#	
+#	mean_time_to_happen = {
+#		months = 600
+#	}
+#	
+#	option = {
+#		name = great_plague.12.a
+#	}
+#}

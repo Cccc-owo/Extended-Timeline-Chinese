@@ -1,0 +1,391 @@
+
+large_empire = {
+	potential = {
+		NOT = { adm_tech = 32 }
+	}
+
+	trigger = {
+		OR = {
+			AND = {
+				NOT = { adm_tech = 19 }
+				num_of_cities = 80
+				NOT = { num_of_cities = 160 }
+			}
+			AND = {
+				adm_tech = 19
+				NOT = { adm_tech = 32 }
+				num_of_cities = 160
+			}
+		}
+	}
+
+	land_forcelimit_modifier = -0.1
+	global_manpower_modifier = -0.1
+	global_tax_modifier = -0.05
+	global_unrest = 1
+	stability_cost_modifier = 0.1
+}
+
+huge_empire = {
+	potential = {
+		NOT = { adm_tech = 19 }
+	}
+
+	trigger = {
+		NOT = { adm_tech = 19 }
+		num_of_cities = 160
+	}
+
+	land_forcelimit_modifier = -0.2
+	global_manpower_modifier = -0.2
+	global_tax_modifier = -0.1
+	global_unrest = 2
+	stability_cost_modifier = 0.2
+}
+
+primitive_government = {
+	potential = {
+		has_reform = barbarian_reform
+	}
+
+	trigger = {
+		has_reform = barbarian_reform
+		adm_tech = 21
+	}
+
+	land_forcelimit_modifier = -0.5
+	global_manpower_modifier = -0.5
+	global_regiment_cost = 0.4
+	technology_cost = 0.5
+	global_unrest = 1
+}
+
+large_tribe = {
+	potential = {
+		government = native
+	}
+
+	trigger = {
+		government = native
+		num_of_cities = 8
+	}
+
+	colonist_placement_chance = -10
+}
+
+classical_age_modifier = {
+	potential = {
+		current_age = classical_age
+	}
+
+	trigger = {
+		current_age = classical_age
+	}
+
+	discipline = -0.1
+	naval_forcelimit_modifier = -0.5
+	envoy_travel_time = 0.2
+	development_cost = 2.2
+	culture_conversion_cost = 1.2
+	tribal_development_growth = -1
+}
+
+late_classical_age_modifier = {
+	potential = {
+		current_age = late_classical_age
+	}
+
+	trigger = {
+		current_age = late_classical_age
+	}
+
+	discipline = -0.1
+	naval_forcelimit_modifier = -0.5
+	envoy_travel_time = 0.2
+	development_cost = 2
+	culture_conversion_cost = 1
+	tribal_development_growth = -1
+}
+
+age_of_migrations_modifier = {
+	potential = {
+		current_age = age_of_migrations
+	}
+
+	trigger = {
+		current_age = age_of_migrations
+	}
+
+	discipline = -0.1
+	naval_forcelimit_modifier = -0.4
+	envoy_travel_time = 0.2
+	development_cost = 1.75
+	culture_conversion_cost = 0.8
+	tribal_development_growth = -1
+}
+
+dark_age_modifier = {
+	potential = {
+		current_age = dark_age
+	}
+
+	trigger = {
+		current_age = dark_age
+	}
+
+	discipline = -0.075
+	naval_forcelimit_modifier = -0.4
+	envoy_travel_time = 0.2
+	development_cost = 1.5
+	culture_conversion_cost = 0.8
+	tribal_development_growth = -1
+}
+
+feudal_age_modifier = {
+	potential = {
+		current_age = feudal_age
+	}
+
+	trigger = {
+		current_age = feudal_age
+	}
+
+	discipline = -0.075
+	naval_forcelimit_modifier = -0.3
+	envoy_travel_time = 0.2
+	development_cost = 1.25
+	culture_conversion_cost = 0.8
+	tribal_development_growth = -0.75
+}
+
+high_middle_ages_modifier = {
+	potential = {
+		current_age = high_middle_ages
+	}
+
+	trigger = {
+		current_age = high_middle_ages
+	}
+
+	discipline = -0.05
+	naval_forcelimit_modifier = -0.3
+	envoy_travel_time = 0.1
+	development_cost = 1
+	culture_conversion_cost = 0.6
+	tribal_development_growth = -0.5
+}
+
+late_middle_ages_modifier = {
+	potential = {
+		current_age = late_middle_ages
+	}
+
+	trigger = {
+		current_age = late_middle_ages
+	}
+
+	discipline = -0.05
+	naval_forcelimit_modifier = -0.2
+	envoy_travel_time = 0.1
+	development_cost = 0.75
+	culture_conversion_cost = 0.4
+	tribal_development_growth = -0.25
+}
+
+industrial_age_modifier = {
+	potential = {
+		current_age = industrial_age
+	}
+
+	trigger = {
+		current_age = industrial_age
+	}
+
+	envoy_travel_time = -0.4
+	diplomatic_upkeep = 3
+	free_leader_pool = 1
+	siege_ability = 0.50
+	movement_speed = 0.1
+	technology_cost = 0.1
+	development_cost = -0.1
+	culture_conversion_cost = -0.15
+	land_maintenance_modifier = 0.1
+	global_regiment_cost = 0.25
+	land_forcelimit_modifier = -0.15
+	stability_cost_modifier = 0.1
+	ae_impact = 0.1
+	land_morale = -0.15
+}
+
+great_war_age_modifier = {
+	potential = {
+		current_age = great_war_age
+	}
+
+	trigger = {
+		current_age = great_war_age
+	}
+
+	envoy_travel_time = -0.6
+	diplomatic_upkeep = 5
+	free_leader_pool = 2
+	siege_ability = 0.75
+	movement_speed = 0.2
+	technology_cost = 0.2
+	development_cost = -0.2
+	culture_conversion_cost = -0.3
+	land_maintenance_modifier = 0.2
+	global_regiment_cost = 0.5
+	land_forcelimit_modifier = -0.3
+	stability_cost_modifier = 0.2
+	ae_impact = 0.25
+	land_morale = -0.3
+}
+
+information_age_modifier = {
+	potential = {
+		current_age = information_age
+	}
+
+	trigger = {
+		current_age = information_age
+	}
+
+	envoy_travel_time = -0.8
+	diplomatic_upkeep = 6
+	free_leader_pool = 2
+	siege_ability = 1
+	movement_speed = 0.3
+	technology_cost = 0.3
+	development_cost = -0.3
+	culture_conversion_cost = -0.3
+	land_maintenance_modifier = 0.3
+	global_regiment_cost = 0.75
+	land_forcelimit_modifier = -0.45
+	ae_impact = 0.5
+	land_morale = -0.45
+}
+
+ai_rome = {
+	potential = {
+		ai = yes
+		tag = ROM
+	}
+
+	trigger = {
+		ai = yes
+		tag = ROM
+		NOT = { is_year = 400 }
+	}
+
+	global_unrest = -2
+}
+
+inferior_nuclear_strength = {
+	potential = {
+		OR = {
+			current_age = great_war_age
+			current_age = information_age
+		}
+	}
+
+	trigger = {
+		is_at_war = yes
+		any_country = {
+			war_with = ROOT
+			NOT = {
+				ROOT = {
+					check_variable = {
+						which = num_of_nuclear_weapons
+						which = PREV
+					}
+				}
+			}
+		}
+	}
+
+	land_morale = -0.15
+}
+
+chalcedonism_rome = {
+	potential = {
+		NOT = { has_dlc = "Rights of Man" }
+		religion = chalcedonism
+	}
+
+	trigger = {
+		118 = {
+			religion = chalcedonism
+			owner = { religion = chalcedonism }
+		}
+	}
+
+	tolerance_own = 2
+}
+
+chalcedonism_constantinople = {
+	potential = {
+		NOT = { has_dlc = "Rights of Man" }
+		religion = chalcedonism
+	}
+
+	trigger = {
+		151 = {
+			religion = chalcedonism
+			owner = { religion = chalcedonism }
+		}
+	}
+
+	stability_cost_modifier = -0.15
+}
+
+chalcedonism_alexandria = {
+	potential = {
+		NOT = { has_dlc = "Rights of Man" }
+		religion = chalcedonism
+	}
+
+	trigger = {
+		358 = {
+			religion = chalcedonism
+			owner = { religion = chalcedonism }
+		}
+	}
+
+	legitimacy = 0.5
+	horde_unity = 0.5
+	republican_tradition = 0.2
+	devotion = 0.5
+}
+
+chalcedonism_antioch = {
+	potential = {
+		NOT = { has_dlc = "Rights of Man" }
+		religion = chalcedonism
+	}
+
+	trigger = {
+		2313 = {
+			religion = chalcedonism
+			owner = { religion = chalcedonism }
+		}
+	}
+
+	manpower_recovery_speed = 0.1
+}
+
+chalcedonism_jerusalem = {
+	potential = {
+		NOT = { has_dlc = "Rights of Man" }
+		religion = chalcedonism
+	}
+
+	trigger = {
+		379 = {
+			religion = chalcedonism
+			owner = { religion = chalcedonism }
+		}
+	}
+
+	global_missionary_strength = 0.015
+}

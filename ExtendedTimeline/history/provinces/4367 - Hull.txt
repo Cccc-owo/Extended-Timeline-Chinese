@@ -1,0 +1,71 @@
+#245 - Yorkshire
+
+owner = BGT
+controller = BGT
+culture = briton
+religion = druidism
+hre = no
+discovered_by = roman_group
+discovered_by = eastern
+discovered_by = barbarian
+discovered_by = western
+base_tax = 1
+base_production = 1
+trade_goods = naval_supplies
+base_manpower = 1
+capital = "Gabrantovicorum"
+is_city = yes
+add_core = BGT
+
+71.1.1 = { controller = ROM }
+78.1.1 = { owner = ROM add_core = ROM }
+380.1.1 = { add_core = DEI remove_core = BGT }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+410.1.1 = { owner = DEI controller = DEI add_core = DEI remove_core = ROW remove_core = BGT culture = welsh capital = "Hull" }
+559.1.1 = { culture = anglo_saxon religion = germanic }
+604.1.1 = { owner = BRN controller = BRN add_core = BRN }
+616.1.1 = { owner = DEI controller = DEI remove_core = BRN }
+640.1.1 = { religion = chalcedonism }
+654.1.1 = { owner = NOL controller = NOL add_core = NOL }
+867.1.1 = { owner = DAN controller = DAN add_core = DAN religion = norse_pagan_reformed culture = danish }
+950.1.1 = { base_tax = 2 base_production = 2 discovered_by = muslim discovered_by = ottoman }
+954.1.1 = { owner = ENG controller = ENG add_core = ENG remove_core = DEI remove_core = DAN religion = catholic culture = anglo_saxon }
+1000.1.1 = { remove_core = NOL }
+1066.12.25 = { culture = english }
+1150.1.1 = { base_tax = 3 base_production = 3 }
+
+1453.1.1 = { unrest = 5 } # Start of the War of the Roses
+1459.9.23 = { unrest = 0 revolt = { type = pretender_rebels size = 3 leader = "Edward of York" } controller = REB } # The Battle of Blore Heath
+1459.10.12 = { revolt = {} unrest = 5 } # The Lancastrians are back in control after the battle of Ludford Bridge
+1461.4.1 = { unrest = 0 revolt = { type = pretender_rebels size = 3 leader = "Edward of York" } controller = REB } # Capture of York after Battle of Towton
+1461.6.28 = { revolt = {} unrest = 2 controller = ENG } # Coronation of Edward IV
+1467.1.1 = { unrest = 5 } # Rivalry between Edward IV & Warwick
+1470.3.1 = { unrest = 0 revolt = { type = revolutionary_rebels size = 2 leader = "Richard Neville" } controller = REB }
+1470.10.6 = { revolt = {} controller = ENG } # Readeption of Henry VI
+1471.1.1 = { unrest = 8 } # Unpopularity of Warwick & War with Burgundy
+1471.3.1 = { unrest = 0 revolt = { type = revolutionary_rebels size = 2 leader = "Edward of York" } controller = REB }
+1471.5.4 = { revolt = {} unrest = 2 controller = ENG } # Murder of Henry VI & Restoration of Edward IV
+1483.6.26 = { unrest = 8 } # Revulsion at Supposed Murder of the Princes in the Tower
+1485.8.23 = { unrest = 0 } # Battle of Bosworth Field & the End of the War of the Roses
+1600.1.1 = { religion = anglican }
+1644.7.2 = { revolt = { type = revolutionary_rebels size = 2 } controller = REB } # Battle of Marston Moor
+1646.5.5 = { revolt = {} controller = ENG } # End of First English Civil War
+1707.5.12 = {	owner = GBR
+	controller = GBR
+	add_core = GBR
+	remove_core = ENG
+}
+1751.1.1 = { base_tax = 6 base_production = 5 }
+1775.1.1 = { base_tax = 9 base_manpower = 3 }
+
+1801.1.1 = { base_tax = 10 base_production = 6 base_manpower = 4 }
+1825.1.1 = { base_production = 9 }
+1850.1.1 = { base_manpower = 5 }
+1875.1.1 = { base_manpower = 8 }
+1900.1.1 = { base_manpower = 10 }
+1910.1.1 = { discovered_by = asian }
+1925.1.1 = { base_production = 10 }
+1950.1.1 = { base_production = 11 }
+
+
+

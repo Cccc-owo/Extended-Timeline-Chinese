@@ -1,0 +1,87 @@
+#75 - Elsass
+
+owner = ROM
+controller = ROM 
+capital = "Argentoratum"
+is_city = yes
+culture = swiss
+religion = germanic
+hre = no
+discovered_by = ottoman
+discovered_by = middle_eastern
+discovered_by = muslim
+discovered_by = barbarian
+discovered_by = western
+discovered_by = roman_group
+discovered_by = eastern
+base_tax = 1
+base_production = 1
+trade_goods = wine
+base_manpower = 1
+add_core = ROM
+center_of_trade = 1
+
+360.1.1 = { religion = chalcedonism }
+395.1.17 = { controller = ROW owner = ROW add_core = ROW remove_core = ROM } # Final division of the empire
+461.1.1 = { owner = ALM controller = ALM add_core = ALM capital = "Straﬂburg" remove_core = ROW }
+500.1.1 = { base_manpower = 2 }
+600.1.1 = { base_tax = 2 base_production = 2 }
+700.1.1 = { base_tax = 3 base_production = 3 }
+746.1.1 = { owner = FRK controller = FRK add_core = FRK }
+840.6.21 = { owner = FRD controller = FRD add_core = FRD remove_core = FRK }
+855.9.30 = { owner = LOT controller = LOT add_core = LOT remove_core = FRD }
+867.1.1 = { religion = catholic }
+870.8.8 = { owner = FRE controller = FRE add_core = FRE remove_core = LOT }
+900.1.1 = { base_manpower = 3 }
+911.11.10 = { owner = LOT controller = LOT add_core = LOT remove_core = FRE remove_core = ALM }
+925.1.1 = { owner = SWA controller = SWA add_core = SWA remove_core = LOT }
+962.2.2 = { hre = yes }
+982.1.1 = { owner = ALS controller = ALS add_core = ALS remove_core = SWA }
+1000.1.1 = { base_tax = 4 base_production = 4 }
+1100.1.1 = { base_manpower = 4 }
+1200.1.1 = { base_tax = 5 base_production = 5 }
+1250.1.1 = { trade_goods = paper }
+1262.1.1 = { fort_15th = yes }
+1300.1.1 = { base_tax = 6 base_production = 6 }
+
+1467.6.15 = { add_core = BUR } # Charles the Bold ascends and lays claims on the Alsace
+1469.1.1 = { owner = BUR controller = BUR } # Upper Alsace given to Charles the Bold by Archduke Sigismund
+1474.1.1 = { unrest = 7 } # Breisgau and Upper Alsace revolt against Charles the Bold
+1474.5.9 = { revolt = { type = revolutionary_rebels size = 2 } controller = REB } # Rebels arrest & execute Charles' puppet von Hagenbach
+1477.1.5 = { revolt = {} owner = ALS controller = ALS remove_core = BUR unrest = 0 } # Charles the Bold dies, Alsace re-established
+1525.1.1 = { religion = protestant unrest = 5 } # Unrest in the Alsace
+1525.5.1 = { unrest = 15 } # Heavy unrests now: Peasant's War about to start
+1525.5.14 = { unrest = 0 revolt = { type = anti_tax_rebels size = 2 } controller = REB } # Rebels take control of Strasbourg in the Peasant's War
+1525.6.15 = { revolt = {} controller = ALS unrest = 10 } # Duke Antoine of Lorraine takes back the land and punishes the peasant's brutally
+1525.6.23 = { unrest = 15 } # Duke Antoine executes a few leaders of the rebellion: heavy unrest again
+1525.9.18 = { unrest = 5 } # The Offenburg Agreement: Peace is being restored
+1526.1.1 = { unrest = 0 } # Peace restored everywhere
+1583.1.1 = { fort_15th = no fort_16th = yes }
+1648.1.1 = { fort_16th = no fort_17th = yes }
+1670.1.1 = { add_core = FRA } # Louis XIV lays claims through the Chambres de RÈunion
+1681.1.1 = { owner = FRA controller = FRA } # Louis XIV annexes Strasbourg 
+1685.10.18 = { unrest = 8 } # Edict of Nantes revoked by Louis XIV
+1686.1.17 = { religion = catholic unrest = 0 } # Dragonnard campaign succesful: region reverts back to Catholicism
+1715.1.1 = { fort_17th = no fort_18th = yes }
+1749.1.1 = { base_tax = 8 base_production = 8 } # Machault & the 5% tax
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+
+1870.9.4   = {  owner = FR2
+		controller = FR2
+		add_core = FR2
+		remove_core = FRA
+		remove_core = ALS
+	     } # Republic proclaimed
+1870.10.24 = { controller = PRU }
+1871.1.18  = { controller = GER }
+1871.5.10  = { owner = GER add_core = GER } # Treaty of Frankfurt
+1910.1.1 = { discovered_by = asian }
+1918.11.21 = { controller = FR2 }
+1919.6.28  = { owner = FR2 } # Treaty of Versailles
+1940.6.14  = { owner = GER controller = GER } # France surrendered to Nazi Garmany
+1944.11.23 = { controller = FR2 }
+1945.5.8   = { owner = FR2 controller = FR2 remove_core = GER }
+1946.1.1   = { culture = burgundian }
+
+
+

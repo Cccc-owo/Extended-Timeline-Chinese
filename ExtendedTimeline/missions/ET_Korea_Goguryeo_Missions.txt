@@ -1,0 +1,234 @@
+goguryeo_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GOG
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	gog_militarize_the_state_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { } #none
+		position = 1
+		trigger = {
+			OR = {
+				army_tradition = 40
+				army_professionalism = 0.80
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gog_compulsory_enlistment"
+				duration = 9125
+			}
+		}
+	}
+	gog_moon_fortresses_mission = {
+		icon = mission_korean_hwaseong_fortress_18th
+		required_missions = { } #none
+		position = 2
+		trigger = {
+			fort_15th = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gog_moon_fortresses"
+				duration = 9125
+			}
+		}
+	}
+	gog_unify_samhan_mission = {
+		icon = mission_unite_home_region
+		required_missions = { } #none
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				region = korea_region
+			}
+			NOT = {
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gog_king_of_goryeo"
+				duration = 9125
+			}
+		}
+	}
+	gog_conquer_guandong_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = { gog_unify_samhan_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = ningguta_area
+				area = jilin_area 		#South 
+			}
+			NOT = {
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ningguta_area = {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+			jilin_area = {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			add_prestige = 15
+		}
+	}
+	gog_seize_liaodong_mission = {
+		icon = mission_manchu_warrior
+		required_missions = { gog_conquer_guandong_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = liaoning_area
+			}
+			NOT = {
+				country_or_vassal_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			liaoning_area = {
+				type = all
+				OR = {
+					is_empty = yes
+					country_or_vassal_holds = ROOT
+				}
+			}
+			jilin_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 20
+			add_prestige = 10
+		}
+	}
+}
+
+goguryeo_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GOG
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	gog_legacy_of_jumong_mission = {
+		icon = mission_scholar_officials
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			legitimacy = 95
+			OR = {
+				glorious_monument = 4
+				temple = 4
+			}
+		}
+		effect = {
+			add_prestige = 5
+			add_country_modifier = {
+				name = "gog_son_of_heaven"
+				duration = 9125
+			}
+		}
+	}
+	gog_cultivate_the_fields_mission = {
+		icon = mission_rice_field
+		required_missions = { }	#none
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = gog_cultivate_the_fields_mission.tooltip
+		
+				calc_true_if = {
+					any_owned_province = {
+						development = 12
+					}
+					amount = 4
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gog_abundant_army_supplies"
+				duration = 9125
+			}
+		}
+	}
+	gog_develop_pyeongan_mission = {
+		icon = mission_asian_city
+		required_missions = { }	#none
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1845	#Pyongan
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1845
+			
+			1845 = {
+			 	is_capital = yes
+			}
+			
+			1845 = {
+				num_of_times_improved = 6
+			}
+		}
+		effect = {
+			add_prestige = 5
+			1845 = {	
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+}
