@@ -8,7 +8,7 @@
 [![GitHub tag](https://img.shields.io/github/v/release/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project?sort=semver&style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/tags)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project?style=flat-square)](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/graphs/commit-activity)
 
-「Extended Timeline」模组的中文汉化整合版
+「Extended Timeline」模组的中文汉化子模组
 
 [ParaTranz 项目](https://paratranz.cn/projects/5342/)
 
@@ -20,11 +20,13 @@
 
 <details><summary>本地版使用教程</summary>
 
-下载 [Releases](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/releases/latest) 中的 ```mod.zip```，原样解压 ```mod.zip``` 至 ```文档 > Paradox Interactive > Europa Universalis IV > mod``` 目录下。打开启动器 ```dowser.exe```（正版玩家直接启动游戏相当于打开启动器），在**边栏**的**播放集**一页中，点击右上角的**添加更多 MOD**，将本模组加入播放集。接着确保本模组启用的情况下，关闭其他不兼容的模组（如原版汉化模组、Extended Timeline及其他修改较大的模组），返回主页开始游戏即可。
+~~下载 [Releases](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/releases/latest) 中的 ```mod.zip```，原样解压 ```mod.zip``` 至 ```文档 > Paradox Interactive > Europa Universalis IV > mod``` 目录下。打开启动器 ```dowser.exe```（正版玩家直接启动游戏相当于打开启动器），在**边栏**的**播放集**一页中，点击右上角的**添加更多 MOD**，将本模组加入播放集。接着确保本模组启用的情况下，关闭其他不兼容的模组（如原版汉化模组、Extended Timeline及其他修改较大的模组），返回主页开始游戏即可。~~
+
+等待更新...
 
 </details>
 
-注意：**请不要将本 Mod 与「汉化 Mod」或原版「Extended Timeline」一起使用，本 Mod 已将汉化和 ET 整合。**
+注意：**请不要将本 Mod 与「汉化 Mod」一起使用，本 Mod 已整合原版汉化，但需要和 ET 一起运行。**
 
 ## 文件夹结构说明 / Folders structure of the repository
 
@@ -35,11 +37,13 @@
 |[cn_text](cn_text)|翻译后的文本文件|使用 EU4 双字节补丁特殊编码，[源项目](https://paratranz.cn/projects/5342/)|
 |[eu4_chinese](eu4_chinese)|52汉化组欧陆风云 4 简体中文汉化|[源项目](https://paratranz.cn/projects/2)|
 |[eu4_chinese_sup](eu4_chinese_sup)|52汉化组欧陆风云 4 简体中文汉化补充包|[源项目](https://paratranz.cn/projects/2)|
-|[ExtendedTimeline](ExtendedTimeline)|ET 源文件|包含整个 mod，[Paradox Forum 页面](https://forum.paradoxplaza.com/forum/threads/mod-extended-timeline.740866/)|
+|ExtendedTimeline|ET 源文件|[Paradox Forum 页面](https://forum.paradoxplaza.com/forum/threads/mod-extended-timeline.740866/)/运行 ```main.bat``` 时会自动下载|
 |[mod_descriptor](mod_descriptor)|mod 描述符文件||
 |output|输出文件夹|运行 ```main.bat``` 时会自动建立|
 
 ```7z.exe``` 和 ```7z.dll``` 提取自官方 7-Zip 22.01 (2022-07-15)
+
+```wget.exe``` 版本 v1.21.3
 
 ## 贡献者 / Contributors
 
@@ -52,6 +56,8 @@
 |[15910637182](https://github.com/15910637182) ([ParaTranz](https://paratranz.cn/users/37197/profile))|[IsaacChen0527](https://github.com/IsaacChen0527) ([ParaTranz](https://paratranz.cn/users/37202/profile))|[zhuxizheng](https://github.com/zhuxizheng) ([ParaTranz](https://paratranz.cn/users/20486/profile))|[Observl](https://github.com/Observl) ([ParaTranz](https://paratranz.cn/users/37218/profile))|[Cloudflipper](https://github.com/Cloudflipper) ([ParaTranz](https://paratranz.cn/users/37269/profile))|
 
 ## 鸣谢 / Credits
+
+[Europa Universalis IV 52 汉化组]((https://paratranz.cn/projects/2)
 
 [原 Extended Timeline 汉化项目](https://paratranz.cn/projects/32)
 
