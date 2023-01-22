@@ -2,6 +2,7 @@
 @ECHO OFF
 set mod_desc=ETCLP.mod
 set mod_dir=ETCLP
+set ET_link=https://download2290.mediafire.com/8g7gs3km2wcg/5n25z3luqddjm7j/ExtendedTimeline+1.14.4.zip
 ::=====setting environment end=====
 ::=====checking=====
 ECHO Time:%date%
@@ -9,7 +10,11 @@ ECHO Checking the required folder...
 if not exist output\ ( mkdir output\ ) else ( del /F /S /Q output\ & rmdir /S /Q output\ & mkdir output\ )
 if not exist output\%mod_dir% mkdir output\%mod_dir%\
 if exist mod.zip del /F /S /Q mod.zip
+if not exist ExtendedTimeline\ ( mkdir ExtendedTimeline\ ) else ( del /F /S /Q ExtendedTimeline\ & rmdir /S /Q ExtendedTimeline\ & mkdir ExtendedTimeline\ )
 ::=====checking end=====
+::=====downloading files=====
+wget.exe -O "ET.zip" %ET_link%
+::=====downloading files end=====
 ::=====integrating files=====
 ECHO.
 ECHO Copying started.
@@ -17,7 +22,7 @@ ECHO.
 xcopy eu4_chinese\ output\%mod_dir%\ /E /Q /C /Y
 xcopy eu4_chinese_sup\ output\%mod_dir%\ /E /Q /C /Y
 del /F /S /Q output\%mod_dir%\history\provinces
-xcopy ExtendedTimeline\ output\%mod_dir%\ /E /Q /C /Y
+@REM xcopy ExtendedTimeline\ output\%mod_dir%\ /E /Q /C /Y
 xcopy cn_text\ output\%mod_dir%\ /E /Q /C /Y
 xcopy addition\ output\%mod_dir%\ /E /Q /C /Y
 xcopy mod_descriptor\ output\ /E /Q /C /Y
@@ -30,9 +35,10 @@ ren output\%mod_dir%\%mod_desc% descriptor.mod
 ECHO.
 ECHO Copying the file is finished, finishing the aftermath...
 ECHO.
+7z.exe x ET.zip ExtendedTimeline/ -o.
 ::====fix crash====
-del /F /S /Q output\%mod_dir%\*_DE.txt
-del /F /S /Q output\%mod_dir%\*_DE.txt
+@REM del /F /S /Q output\%mod_dir%\*_DE.txt
+@REM del /F /S /Q output\%mod_dir%\*_DE.txt
 xcopy ExtendedTimeline\common\scripted_effects\00_scripted_effects.txt output\ETCLP\common\scripted_effects\ /Q /C /Y
 xcopy ExtendedTimeline\common\scripted_triggers\00_scripted_triggers.txt output\ETCLP\common\scripted_triggers\ /Q /C /Y
 ::====fix crash end====
