@@ -57,7 +57,7 @@
 
 ## 鸣谢 / Credits
 
-[Europa Universalis IV 52 汉化组]((https://paratranz.cn/projects/2)
+[Europa Universalis IV 52 汉化组](https://paratranz.cn/projects/2)
 
 [原 Extended Timeline 汉化项目](https://paratranz.cn/projects/32)
 
