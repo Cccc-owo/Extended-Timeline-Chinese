@@ -6,12 +6,18 @@ env:
 # Controls when the workflow will run
 on:
   push:
+    branches:
+      - main
+      - nightly-update
     paths-ignore:
       - 'README.md'
       - 'DEV.md'
       - 'CHANGELOG.md'
       - '.gitignore'
   pull_request:
+    branches:
+      - main
+      - nightly-update
     paths-ignore:
       - 'README.md'
       - 'DEV.md'
