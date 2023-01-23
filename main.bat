@@ -9,7 +9,6 @@ ECHO Checking the required folder...
 if not exist output\ ( mkdir output\ ) else ( del /F /S /Q output\ & rmdir /S /Q output\ & mkdir output\ )
 if not exist output\%mod_dir% mkdir output\%mod_dir%\
 if exist mod.zip del /F /S /Q mod.zip
-if not exist ExtendedTimeline\ ( mkdir ExtendedTimeline\ ) else ( del /F /S /Q ExtendedTimeline\ & rmdir /S /Q ExtendedTimeline\ & mkdir ExtendedTimeline\ )
 ::=====checking end=====
 ::=====integrating files=====
 ECHO.
