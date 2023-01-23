@@ -64,3 +64,9 @@
 [Extended Timeline 日化项目](https://paratranz.cn/projects/148)
 
 [Extended Timeline 1.29.5 个人汉化项目](https://paratranz.cn/projects/881)
+
+## 免责声明 / Disclaimer
+
+根据 CC BY-NC-SA 4.0 协议，在此声明：
+
+本项目整合了 [Europa Universalis IV 52 汉化组](https://paratranz.cn/projects/2)的文本，且以覆盖形式（指游戏本地化机制的 ```localisation/replace```）对其有所修改。
