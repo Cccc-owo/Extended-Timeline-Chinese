@@ -2,6 +2,18 @@
 
 汉化组成员：见 [README](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project#%E8%B4%A1%E7%8C%AE%E8%80%85--contributors)
 
+## v1.14.4-b13
+
+又是个小更新。
+
+- 🌐更新汉化
+- ↘本次汉化更新主要包括部分国家理念和动态地名的汉化
+- ✍️更新地图字体：补充缺字（邽）
+
+---
+
+<details><summary>历史更新日志</summary>
+
 ## v1.14.4-b12
 
 只是个小更新。
@@ -9,10 +21,6 @@
 - 🌐更新汉化
 - ✍️更新地图字体：「方正北魏楷书」 => 「方正公文楷体」
 - 🖼️更新缩略图
-
----
-
-<details><summary>历史更新日志</summary>
 
 ## v1.14.4-b11
 
