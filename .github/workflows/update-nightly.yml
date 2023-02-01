@@ -36,6 +36,7 @@ jobs:
           mkdir temp
           unzip text.zip -d temp
           cp temp/special/* cn_text/ -r
+          cp temp/chars.txt .
 
       - name: Cleanup the folder
         run: |
