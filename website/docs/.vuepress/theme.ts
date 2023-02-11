@@ -3,7 +3,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://et.iscccc.eu.org",
+  hostname: "https://etcn.netlify.app/",
 
   author: {
     name: "Cccc_",

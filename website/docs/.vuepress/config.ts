@@ -12,8 +12,8 @@ export default defineUserConfig({
     },
     "/": {
       lang: "zh-CN",
-      title: "文档演示",
-      description: "vuepress-theme-hope 的文档演示",
+      title: "ET 中文社区网站",
+      description: "Extended Timeline的中文交流网站",
     },
   },
 

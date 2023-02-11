@@ -4,18 +4,24 @@ export const zhSidebar = sidebar({
   "/": [
     "",
     {
-      icon: "discover",
-      text: "案例",
-      prefix: "demo/",
-      link: "demo/",
+      icon: "page",
+      text: "汉化项目",
+      prefix: "ETCLP/",
+      link: "/ETCE",
       children: "structure",
     },
     {
-      text: "文档",
-      icon: "note",
-      prefix: "guide/",
+      icon: "page",
+      text: "华夏拓展",
+      prefix: "ETCE/",
+      link: "/ETCE",
       children: "structure",
     },
-    "slides",
+    {
+      icon: "profile",
+      text: "关于",
+      prefix: "about/",
+      link: "/about",
+    },
   ],
 });
