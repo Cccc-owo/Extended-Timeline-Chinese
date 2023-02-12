@@ -1,0 +1,47 @@
+# This is a basic workflow that is manually triggered
+
+name: Update-Website-Package
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  schedule:
+    - cron: '00 9 * * SAT'
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  Update-Dependices:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Update
+        run: |
+          pnpm run docs:update-package
+
+      - uses: fregante/setup-git-user@v1.1.0
+
+      - name: Commit Changes & Push to Remote Branch
+        run: |
+          git add -A
+          git commit -m "chore: update deps"
+          git push -u origin
