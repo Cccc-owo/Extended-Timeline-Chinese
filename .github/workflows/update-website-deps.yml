@@ -36,6 +36,7 @@ jobs:
 
       - name: Update
         run: |
+          rm pnpm-lock.yaml
           pnpm run docs:update-package
 
       - uses: fregante/setup-git-user@v1.1.0
