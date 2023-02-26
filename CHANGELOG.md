@@ -2,6 +2,15 @@
 
 汉化组成员：见 [README](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project#%E8%B4%A1%E7%8C%AE%E8%80%85--contributors)
 
+## v1.14.4-b15
+
+- 🌐更新汉化
+- 🎇欢迎新的翻译成员：@Communileo （虛白Lemon）
+
+---
+
+<details><summary>历史更新日志</summary>
+
 ## v1.14.4-b14
 
 又又是个小更新。
@@ -9,11 +18,7 @@
 - 🌐更新汉化
 - ↘本次汉化更新主要包括部分国家理念和动态地名的汉化
 - ✍️更新地图字体：补充缺字
-- 🎇欢迎新的翻译成员：@Chiangkaisheck
-
----
-
-<details><summary>历史更新日志</summary>
+- 🎇欢迎新的翻译成员：@Chiangkaisheck （止波里）
 
 ## v1.14.4-b13
 
