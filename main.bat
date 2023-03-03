@@ -21,7 +21,7 @@ del /F /S /Q output\%mod_dir%\history\provinces
 xcopy cn_text\ output\%mod_dir%\ /E /Q /C /Y
 xcopy addition\ output\%mod_dir%\ /E /Q /C /Y
 xcopy mod_descriptor\ output\ /E /Q /C /Y
-ECHO path="mod/ETCLP" >> output\%mod_desc%
+ECHO path="mod/%mod_dir%" >> output\%mod_desc%
 xcopy mod_descriptor\%mod_desc% output\%mod_dir%\ /Q /C /Y
 del /F /S /Q output\%mod_dir%\descriptor.mod
 ren output\%mod_dir%\%mod_desc% descriptor.mod
@@ -30,22 +30,22 @@ ren output\%mod_dir%\%mod_desc% descriptor.mod
 ECHO.
 ECHO Copying the file is finished, finishing the aftermath...
 ECHO.
-7z.exe x ET.zip ExtendedTimeline/ -o.
+@REM 7z.exe x ET.zip ExtendedTimeline/ -o.
 ::====fix crash====
 @REM del /F /S /Q output\%mod_dir%\*_DE.txt
 @REM del /F /S /Q output\%mod_dir%\*_DE.txt
-xcopy ExtendedTimeline\common\scripted_effects\00_scripted_effects.txt output\ETCLP\common\scripted_effects\ /Q /C /Y
-xcopy ExtendedTimeline\common\scripted_triggers\00_scripted_triggers.txt output\ETCLP\common\scripted_triggers\ /Q /C /Y
+xcopy ExtendedTimeline\common\scripted_effects\00_scripted_effects.txt output\%mod_dir%\common\scripted_effects\ /Q /C /Y
+xcopy ExtendedTimeline\common\scripted_triggers\00_scripted_triggers.txt output\%mod_dir%\common\scripted_triggers\ /Q /C /Y
 ::====fix crash end====
-xcopy CHANGELOG.md output\ETCLP\ /Q /C /Y
+xcopy CHANGELOG.md output\%mod_dir%\ /Q /C /Y
 del output\%mod_dir%\thumbnail.png
-xcopy thumbnail.png output\ETCLP\ /Q /C /Y
-del /F /S /Q output\%mod_dir%\*_DE.txt
-del /F /S /Q output\%mod_dir%\*_FR.txt
-del /F /S /Q output\%mod_dir%\*_SP.txt
-del /F /S /Q output\%mod_dir%\localisation\*_l_french.yml
-del /F /S /Q output\%mod_dir%\localisation\*_l_german.yml
-del /F /S /Q output\%mod_dir%\localisation\*_l_spanish.yml
+xcopy thumbnail.png output\%mod_dir%\ /Q /C /Y
+@REM del /F /S /Q output\%mod_dir%\*_DE.txt
+@REM del /F /S /Q output\%mod_dir%\*_FR.txt
+@REM del /F /S /Q output\%mod_dir%\*_SP.txt
+@REM del /F /S /Q output\%mod_dir%\localisation\*_l_french.yml
+@REM del /F /S /Q output\%mod_dir%\localisation\*_l_german.yml
+@REM del /F /S /Q output\%mod_dir%\localisation\*_l_spanish.yml
 ECHO.
 ECHO Compressing the generated files...
 7z.exe a mod.zip .\output\*
