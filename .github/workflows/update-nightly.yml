@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3
 
       - name: Switch branch
         run: git checkout -b nightly-update
@@ -43,7 +43,7 @@ jobs:
           rm -r temp
 
       - name: Setup git user
-        uses: fregante/setup-git-user@v2.0.1
+        uses: fregante/setup-git-user@v2
 
       - name: Commit Changes & Push to Remote Branch
         run: |
@@ -53,7 +53,7 @@ jobs:
           Co-authored-by: Cccc_ <47687154+Cccc-owo@users.noreply.github.com>
           Co-authored-by: shuaichao189 <38562980+shuaichao189@users.noreply.github.com>
           Co-authored-by: Zhujianfei1 <98221113+Zhujianfei1@users.noreply.github.com>
-          Co-authored-by: Charles Huang <54112189+CHuang227@users.noreply.github.com>
+          Co-authored-by: CH. <54112189+CHuang227@users.noreply.github.com>
           Co-authored-by: Fritzwang <122777315+Fritzwang@users.noreply.github.com>
           Co-authored-by: 15910637182 <122958141+15910637182@users.noreply.github.com>
           Co-authored-by: IsaacChen0527 <41335976+IsaacChen0527@users.noreply.github.com>
@@ -62,5 +62,6 @@ jobs:
           Co-authored-by: Cloudflipper <123280088+Cloudflipper@users.noreply.github.com>
           Co-authored-by: Kar0606 <123638219+Kar0606@users.noreply.github.com>
           Co-authored-by: 止波里 <70061078+Chiangkaisheck@users.noreply.github.com>
-          Co-authored-by: Communileo <104324132+Communileo@users.noreply.github.com>"
+          Co-authored-by: 虛白Lemon <104324132+VoidLemon@users.noreply.github.com>
+          Co-authored-by: SphinX1633 <94877214+SphinX1633@users.noreply.github.com>"
           git push -u origin nightly-update -f
