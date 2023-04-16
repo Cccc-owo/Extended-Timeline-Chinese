@@ -4530,7 +4530,7 @@ add_prestige_or_monarch_power = {
   hidden_effect = {
     for = {
       amount = $amount$
-      effect = "\nif = {\nlimit = {\nNOT = { prestige = 100 }\n}\nadd_prestige = 1\n}\nelse = {\nadd_adm_power = 1\nadd_dip_power = 1\nadd_mil_power = 1\n}\n"
+      effect = " if = { limit = { NOT = { prestige = 100 } } add_prestige = 1 } else = { add_adm_power = 1 add_dip_power = 1 add_mil_power = 1 } "
     }
   }
 }
@@ -4592,7 +4592,7 @@ create_units_of_type = {
   ] hidden_effect = {
     for = {
       amount = $amount$
-      effect = "\n$province$ = { $unit_type$ = PREV }\n"
+      effect = " $province$ = { $unit_type$ = PREV } "
     }
   }
 }
@@ -4602,7 +4602,7 @@ create_units_of_type_in_province = {
     $who$ = {
       for = {
         amount = $amount$
-        effect = "\nPREV = { $unit_type$ = $who$ }\n"
+        effect = " PREV = { $unit_type$ = $who$ } "
       }
     }
   }
