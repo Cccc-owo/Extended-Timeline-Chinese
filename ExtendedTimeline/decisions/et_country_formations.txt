@@ -806,12 +806,9 @@ country_decisions = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			NOT = { exists = CHN }
-			OR = {
-				primary_culture = chihan
-				primary_culture = cantonese
-				primary_culture = manchu
-			}
+			NOT = { tag = CHN }
+			culture_group = east_asian
+			NOT = { government = monarchy }
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -827,7 +824,12 @@ country_decisions = {
 			}
 		}
 		allow = {
-			adm_tech = 76
+			NOT = { exists = CHN }
+			OR = {
+				is_emperor_of_china = yes
+				NOT = { any_country = { is_emperor_of_china = yes } }
+			}
+			adm_tech = 65
 			NOT = { government = monarchy }
 			is_subject = no
 			is_at_war = no
@@ -838,8 +840,10 @@ country_decisions = {
 			owns_core_province = 679
 		}
 		effect = {
-			random_owned_province = {
-				add_base_tax = 1
+			capital_scope = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
 			}
 			add_prestige = 25
 			change_tag = CHN
@@ -1513,10 +1517,7 @@ country_decisions = {
 				is_playing_custom_nation = no
 			}
 			NOT = { exists = MDG }
-			OR = {
-				primary_culture = madagascan
-				primary_culture = madagasque
-			}
+			primary_culture = madagasque
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -2866,7 +2867,6 @@ country_decisions = {
 			NOT = { exists = BUL }
 			is_subject = no
 			is_at_war = no
-			is_nomad = no
 			owns_core_province = 2447
 			owns_core_province = 286
 			owns_core_province = 2411
@@ -2969,6 +2969,196 @@ country_decisions = {
 			if = {
 				limit = { NOT = { government_rank = 2 } }
 				set_government_rank = 2
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400 #
+	}
+	
+	sardinian_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = SAR }
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = ITA }
+			NOT = { tag = SPI }
+			OR = {
+				primary_culture = sardinian
+				AND = {
+					OR = {
+						capital = 127
+						capital = 4735
+						capital = 2986
+					}
+					NOT = { num_of_cities = 5 }
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 127
+				province_id = 4735
+				province_id = 2986
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = SAR }
+			is_subject = no
+			is_at_war = no
+			owns_core_province = 127
+			owns_core_province = 4735
+			owns_core_province = 2986
+		}
+		effect = {
+			change_tag = SAR
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400 #
+	}
+	
+	turkestan_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = TKS }
+			culture_group = altaic
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 461
+				province_id = 458
+				province_id = 454
+				province_id = 441
+				province_id = 712
+				province_id = 476
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 78
+			NOT = { exists = TKS }
+			is_subject = no
+			is_at_war = no
+			owns_core_province = 461
+			owns_core_province = 458
+			owns_core_province = 454
+			owns_core_province = 441
+			owns_core_province = 712
+			owns_core_province = 476
+		}
+		effect = {
+			change_tag = TKS
+			remove_non_electors_emperors_from_empire_effect = yes
+			central_asia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = TKS
+			}
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400 #
+	}
+	
+	gotaland_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				tag = GEE
+				tag = GEW
+				culture = gutnish
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2
+				province_id = 7
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = GTL }
+			OR = {
+				tag = GEE
+				NOT = { exists = GEE }
+			}
+			OR = {
+				tag = GEW
+				NOT = { exists = GEW }
+			}
+			is_subject = no
+			is_at_war = no
+			owns_core_province = 2
+			owns_core_province = 7
+		}
+		effect = {
+			change_tag = GTL
+			remove_non_electors_emperors_from_empire_effect = yes
+			gotaland_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = GTL
+			}
+			vastra_gotaland_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = GTL
 			}
 			add_prestige = 25
 			add_country_modifier = {

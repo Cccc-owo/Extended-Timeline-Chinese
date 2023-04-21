@@ -1565,63 +1565,6 @@ country_decisions = {
 		}
 	}
 
-	california_nation = {
-		major = yes
-		potential = {
-			NOT = { exists = CAL }
-			NOT = { has_country_flag = changed_from_colonial_nation }
-			is_nomad = no
-			is_random_new_world = no
-			OR = {
-				is_former_colonial_nation = yes
-				is_colonial_nation = yes
-			}
-			colonial_california = {
-				owned_by = ROOT
-			}
-			OR = {
-				ai = no
-				AND = {
-					ai = yes
-					num_of_cities = 2	
-				}
-			}
-		}
-		provinces_to_highlight = {
-			OR = {
-				province_id = 868
-				province_id = 869
-				province_id = 2021
-				province_id = 871
-			}
-			OR = {
-				NOT = { owned_by = ROOT }
-				NOT = { is_core = ROOT }
-			}
-		}
-		allow = {
-			is_former_colonial_nation = yes
-			is_subject = no
-			is_at_war = no
-			owns_core_province = 868
-			owns_core_province = 869
-			owns_core_province = 2021
-			owns_core_province = 871
-		}
-		effect = {
-			add_prestige = 25
-			change_tag = CAL
-			set_country_flag = changed_from_colonial_nation
-			add_country_modifier = {
-				name = "centralization_modifier"
-				duration = 7300
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	cuba_nation = {
 		major = yes
 		potential = {

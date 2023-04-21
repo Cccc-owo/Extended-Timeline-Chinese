@@ -73,7 +73,9 @@ estate_church_build_temple_in_y = {
 		}
     }
     task_completed_effect = {
-		on_completed_agenda_effect_church = yes
+		on_completed_agenda_effect = {
+			estate = estate_church
+		}
 		add_estate_loyalty = {
 			estate = estate_church
 			loyalty = 10
@@ -85,6 +87,7 @@ estate_church_build_temple_in_y = {
 					estate = estate_church
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_church }
 			}
 			take_estate_land_share_small = { estate = estate_church }
 		}
@@ -95,6 +98,8 @@ estate_church_build_temple_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -199,6 +204,9 @@ estate_brahmins_build_temple_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_brahmins
+		}
 		add_estate_loyalty = {
 			estate = estate_brahmins
 			loyalty = 10
@@ -210,6 +218,7 @@ estate_brahmins_build_temple_in_y = {
 					estate = estate_brahmins
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_brahmins }
 			}
 			take_estate_land_share_small = { estate = estate_brahmins }
 		}
@@ -231,6 +240,8 @@ estate_brahmins_build_temple_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -323,6 +334,9 @@ estate_nobles_build_army_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_nobles
+		}
 		add_estate_loyalty = {
 			estate = estate_nobles
 			loyalty = 10
@@ -334,6 +348,7 @@ estate_nobles_build_army_building_in_y = {
 					estate = estate_nobles
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_nobles }
 			}
 			take_estate_land_share_small = { estate = estate_nobles }
 		}
@@ -344,6 +359,8 @@ estate_nobles_build_army_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -436,6 +453,9 @@ estate_rajput_build_army_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_rajput
+		}
 		add_estate_loyalty = {
 			estate = estate_rajput
 			loyalty = 10
@@ -447,6 +467,7 @@ estate_rajput_build_army_building_in_y = {
 					estate = estate_rajput
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_rajput }
 			}
 			take_estate_land_share_small = { estate = estate_rajput }
 		}
@@ -457,6 +478,8 @@ estate_rajput_build_army_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -549,6 +572,9 @@ estate_maratha_build_army_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_maratha
+		}
 		add_estate_loyalty = {
 			estate = estate_maratha
 			loyalty = 10
@@ -560,6 +586,7 @@ estate_maratha_build_army_building_in_y = {
 					estate = estate_maratha
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_maratha }
 			}
 			take_estate_land_share_small = { estate = estate_maratha }
 		}
@@ -570,6 +597,8 @@ estate_maratha_build_army_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -680,6 +709,9 @@ estate_nobles_build_fort_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_nobles
+		}
 		add_estate_loyalty = {
 			estate = estate_nobles
 			loyalty = 10
@@ -689,6 +721,8 @@ estate_nobles_build_fort_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -799,6 +833,9 @@ estate_rajput_build_fort_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_rajput
+		}
 		add_estate_loyalty = {
 			estate = estate_rajput
 			loyalty = 10
@@ -808,6 +845,8 @@ estate_rajput_build_fort_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -918,6 +957,9 @@ estate_maratha_build_fort_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_maratha
+		}
 		add_estate_loyalty = {
 			estate = estate_maratha
 			loyalty = 10
@@ -927,6 +969,8 @@ estate_maratha_build_fort_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1035,6 +1079,9 @@ estate_burghers_build_trade_building_in_y = {
 		}
 	}
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_burghers
+		}
 		add_estate_loyalty = {
 			estate = estate_burghers
 			loyalty = 10
@@ -1046,6 +1093,7 @@ estate_burghers_build_trade_building_in_y = {
 					estate = estate_burghers
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_burghers }
 			}
 			take_estate_land_share_small = { estate = estate_burghers }
 		}
@@ -1056,6 +1104,8 @@ estate_burghers_build_trade_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1135,6 +1185,9 @@ estate_burghers_build_port_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_burghers
+		}
 		add_estate_loyalty = {
 			estate = estate_burghers
 			loyalty = 10
@@ -1146,6 +1199,7 @@ estate_burghers_build_port_building_in_y = {
 					estate = estate_burghers
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_burghers }
 			}
 			take_estate_land_share_small = { estate = estate_burghers }
 		}
@@ -1156,6 +1210,8 @@ estate_burghers_build_port_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1267,6 +1323,9 @@ estate_burghers_build_production_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_burghers
+		}
 		add_estate_loyalty = {
 			estate = estate_burghers
 			loyalty = 10
@@ -1278,6 +1337,7 @@ estate_burghers_build_production_building_in_y = {
 					estate = estate_burghers
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_burghers }
 			}
 			take_estate_land_share_small = { estate = estate_burghers }
 		}
@@ -1288,6 +1348,8 @@ estate_burghers_build_production_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1397,6 +1459,9 @@ estate_vaisyas_build_trade_building_in_y = {
 		}
 	}
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_vaisyas
+		}
 		add_estate_loyalty = {
 			estate = estate_vaisyas
 			loyalty = 10
@@ -1408,6 +1473,7 @@ estate_vaisyas_build_trade_building_in_y = {
 					estate = estate_vaisyas
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_vaisyas }
 			}
 			take_estate_land_share_small = { estate = estate_vaisyas }
 		}
@@ -1418,6 +1484,8 @@ estate_vaisyas_build_trade_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1503,6 +1571,9 @@ estate_vaisyas_build_port_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_vaisyas
+		}
 		add_estate_loyalty = {
 			estate = estate_vaisyas
 			loyalty = 10
@@ -1514,6 +1585,7 @@ estate_vaisyas_build_port_building_in_y = {
 					estate = estate_vaisyas
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_vaisyas }
 			}
 			take_estate_land_share_small = { estate = estate_vaisyas }
 		}
@@ -1524,6 +1596,8 @@ estate_vaisyas_build_port_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1635,6 +1709,9 @@ estate_vaisyas_build_production_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_vaisyas
+		}
 		add_estate_loyalty = {
 			estate = estate_vaisyas
 			loyalty = 10
@@ -1646,6 +1723,7 @@ estate_vaisyas_build_production_building_in_y = {
 					estate = estate_vaisyas
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_vaisyas }
 			}
 			take_estate_land_share_small = { estate = estate_vaisyas }
 		}
@@ -1656,6 +1734,8 @@ estate_vaisyas_build_production_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1765,6 +1845,9 @@ estate_jains_build_trade_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_jains
+		}
 		add_estate_loyalty = {
 			estate = estate_jains
 			loyalty = 10
@@ -1776,6 +1859,7 @@ estate_jains_build_trade_building_in_y = {
 					estate = estate_jains
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_jains }
 			}
 			take_estate_land_share_small = { estate = estate_jains }
 		}
@@ -1786,6 +1870,8 @@ estate_jains_build_trade_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1864,6 +1950,9 @@ estate_jains_build_port_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_jains
+		}
 		add_estate_loyalty = {
 			estate = estate_jains
 			loyalty = 10
@@ -1875,6 +1964,7 @@ estate_jains_build_port_building_in_y = {
 					estate = estate_jains
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_jains }
 			}
 			take_estate_land_share_small = { estate = estate_jains }
 		}
@@ -1885,6 +1975,8 @@ estate_jains_build_port_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -1996,6 +2088,9 @@ estate_jains_build_production_building_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_jains
+		}
 		add_estate_loyalty = {
 			estate = estate_jains
 			loyalty = 10
@@ -2007,6 +2102,7 @@ estate_jains_build_production_building_in_y = {
 					estate = estate_jains
 					territory = 10
 				}
+				estate_not_has_exempt_from_seize_land_privilege = { estate = estate_jains }
 			}
 			take_estate_land_share_small = { estate = estate_jains }
 		}
@@ -2017,6 +2113,8 @@ estate_jains_build_production_building_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2110,6 +2208,9 @@ estate_nobles_build_manufactory_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_nobles
+		}
 		add_estate_loyalty = {
 			estate = estate_nobles
 			loyalty = 10
@@ -2123,6 +2224,8 @@ estate_nobles_build_manufactory_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2215,6 +2318,9 @@ estate_rajput_build_manufactory_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_rajput
+		}
 		add_estate_loyalty = {
 			estate = estate_rajput
 			loyalty = 10
@@ -2228,6 +2334,8 @@ estate_rajput_build_manufactory_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2320,6 +2428,9 @@ estate_maratha_build_manufactory_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_maratha
+		}
 		add_estate_loyalty = {
 			estate = estate_maratha
 			loyalty = 10
@@ -2333,6 +2444,8 @@ estate_maratha_build_manufactory_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2424,6 +2537,9 @@ estate_burghers_build_manufactory_in_y = {
 		has_manufactory_trigger_et = yes
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_burghers
+		}
 		add_estate_loyalty = {
 			estate = estate_burghers
 			loyalty = 10
@@ -2437,6 +2553,8 @@ estate_burghers_build_manufactory_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2529,6 +2647,9 @@ estate_vaisyas_build_manufactory_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_vaisyas
+		}
 		add_estate_loyalty = {
 			estate = estate_vaisyas
 			loyalty = 10
@@ -2542,6 +2663,8 @@ estate_vaisyas_build_manufactory_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2634,6 +2757,9 @@ estate_jains_build_manufactory_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_jains
+		}
 		add_estate_loyalty = {
 			estate = estate_jains
 			loyalty = 10
@@ -2647,6 +2773,8 @@ estate_jains_build_manufactory_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2743,6 +2871,9 @@ estate_church_build_manufactory_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_church
+		}
 		add_estate_loyalty = {
 			estate = estate_church
 			loyalty = 10
@@ -2756,6 +2887,8 @@ estate_church_build_manufactory_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2852,6 +2985,9 @@ estate_brahmins_build_manufactory_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_brahmins
+		}
 		add_estate_loyalty = {
 			estate = estate_brahmins
 			loyalty = 10
@@ -2865,6 +3001,8 @@ estate_brahmins_build_manufactory_in_y = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -2974,6 +3112,9 @@ estate_church_build_university_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_church
+		}
 		add_estate_loyalty = {
 			estate = estate_church
 			loyalty = 10
@@ -2983,6 +3124,8 @@ estate_church_build_university_in_y = {
 		add_mil_power = 35
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -3088,6 +3231,9 @@ estate_brahmins_build_university_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_brahmins
+		}
 		add_estate_loyalty = {
 			estate = estate_brahmins
 			loyalty = 10
@@ -3097,6 +3243,8 @@ estate_brahmins_build_university_in_y = {
 		add_mil_power = 35
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -3203,6 +3351,9 @@ estate_nobles_build_university_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_nobles
+		}
 		add_estate_loyalty = {
 			estate = estate_nobles
 			loyalty = 10
@@ -3212,6 +3363,8 @@ estate_nobles_build_university_in_y = {
 		add_mil_power = 35
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -3317,6 +3470,9 @@ estate_maratha_build_university_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_maratha
+		}
 		add_estate_loyalty = {
 			estate = estate_maratha
 			loyalty = 10
@@ -3326,6 +3482,8 @@ estate_maratha_build_university_in_y = {
 		add_mil_power = 35
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -3431,6 +3589,9 @@ estate_rajput_build_university_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_rajput
+		}
 		add_estate_loyalty = {
 			estate = estate_rajput
 			loyalty = 10
@@ -3440,6 +3601,8 @@ estate_rajput_build_university_in_y = {
 		add_mil_power = 35
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -3545,6 +3708,9 @@ estate_burghers_build_university_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_burghers
+		}
 		add_estate_loyalty = {
 			estate = estate_burghers
 			loyalty = 10
@@ -3554,6 +3720,8 @@ estate_burghers_build_university_in_y = {
 		add_mil_power = 35
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -3659,6 +3827,9 @@ estate_vaisyas_build_university_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_vaisyas
+		}
 		add_estate_loyalty = {
 			estate = estate_vaisyas
 			loyalty = 10
@@ -3668,6 +3839,8 @@ estate_vaisyas_build_university_in_y = {
 		add_mil_power = 35
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -3773,6 +3946,9 @@ estate_jains_build_university_in_y = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_jains
+		}
 		add_estate_loyalty = {
 			estate = estate_jains
 			loyalty = 10
@@ -3782,6 +3958,8 @@ estate_jains_build_university_in_y = {
 		add_mil_power = 35
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -3910,6 +4088,9 @@ estate_church_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_church
+		}
 		add_estate_loyalty = {
 			estate = estate_church
 			loyalty = 10
@@ -3917,6 +4098,8 @@ estate_church_develop_x = {
 		add_prestige = 10
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -4075,6 +4258,9 @@ estate_brahmins_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_brahmins
+		}
 		add_estate_loyalty = {
 			estate = estate_brahmins
 			loyalty = 10
@@ -4082,6 +4268,8 @@ estate_brahmins_develop_x = {
 		add_prestige = 10
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -4205,6 +4393,9 @@ estate_nobles_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_nobles
+		}
 		add_estate_loyalty = {
 			estate = estate_nobles
 			loyalty = 10
@@ -4212,6 +4403,8 @@ estate_nobles_develop_x = {
 		 add_yearly_manpower = 0.3
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -4335,6 +4528,9 @@ estate_rajput_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_rajput
+		}
 		add_estate_loyalty = {
 			estate = estate_rajput
 			loyalty = 10
@@ -4342,6 +4538,8 @@ estate_rajput_develop_x = {
 		 add_yearly_manpower = 0.3
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -4465,6 +4663,9 @@ estate_maratha_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_maratha
+		}
 		add_estate_loyalty = {
 			estate = estate_maratha
 			loyalty = 10
@@ -4472,6 +4673,8 @@ estate_maratha_develop_x = {
 		 add_yearly_manpower = 0.3
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -4595,6 +4798,9 @@ estate_burghers_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_burghers
+		}
 		add_estate_loyalty = {
 			estate = estate_burghers
 			loyalty = 10
@@ -4602,6 +4808,8 @@ estate_burghers_develop_x = {
 		add_years_of_income = 0.3
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -4725,6 +4933,9 @@ estate_vaisyas_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_vaisyas
+		}
 		add_estate_loyalty = {
 			estate = estate_vaisyas
 			loyalty = 10
@@ -4732,6 +4943,8 @@ estate_vaisyas_develop_x = {
 		add_years_of_income = 0.3
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -4855,6 +5068,9 @@ estate_jains_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_jains
+		}
 		add_estate_loyalty = {
 			estate = estate_jains
 			loyalty = 10
@@ -4862,6 +5078,8 @@ estate_jains_develop_x = {
 		add_years_of_income = 0.3
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -5104,6 +5322,9 @@ estate_nomadic_tribes_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_nomadic_tribes
+		}
 		add_estate_loyalty = {
 			estate = estate_nomadic_tribes
 			loyalty = 10
@@ -5131,6 +5352,8 @@ estate_nomadic_tribes_develop_x = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }
@@ -5335,6 +5558,9 @@ estate_cossacks_develop_x = {
 		}
     }
     task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_cossacks
+		}
 		add_estate_loyalty = {
 			estate = estate_cossacks
 			loyalty = 10
@@ -5362,6 +5588,8 @@ estate_cossacks_develop_x = {
 		}
     }
     failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
 		event_target:agenda_province = {
 			if = {
 				limit = { owned_by = root }

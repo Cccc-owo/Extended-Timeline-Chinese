@@ -292,28 +292,6 @@ custodian_of_the_two_holy_mosques = {
 ######################################
 # Catholic control of Rome.
 ######################################
-catholic_rome = {
-	potential = {
-		normal_or_historical_nations = yes
-		has_discovered = 118	# Roma
-		religion = catholic
-		NOT = { tag = PAP }
-	}
-
-	trigger = {	
-		NOT = { overlord_of = PAP }
-		owns_or_vassal_of = 118 # Roma		
-		NOT = { tag = ITA }
-		NOT = { tag = HLR }
-		NOT = { tag = ROW }
-		NOT = { tag = ROM }
-	}
-
-	papal_influence = -10
-	diplomatic_reputation = -1
-	#icon = 9
-}
-
 papal_subjugation = {
 	potential = {
 		normal_or_historical_nations = yes
@@ -349,6 +327,10 @@ papal_subjugation = {
 				}
 				NOT = { hre_reform_passed = privilegia_de_non_appelando }
 			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = no_dip_malus_reward_tt
+			NOT = { has_country_flag = general_flag_for_FU_Rome_flag }			
 		}
 	}
 

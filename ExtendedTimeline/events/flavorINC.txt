@@ -1,7 +1,7 @@
 #######################################################
 # Flavor Events for the Incas
 #
-# Scripted by Sara Wendel-Örtqvist
+# Scripted by Sara Wendel-Ã–rtqvist
 #######################################################
 
 namespace = flavor_inc
@@ -144,6 +144,7 @@ country_event = {
 	
 	option = { #Let us create a worthy capital!
 		name = flavor_inc.3.a
+		goto = 808
 		set_country_flag = inc_cusco_began
 		808 = {
 			add_province_modifier = {
@@ -167,7 +168,7 @@ country_event = {
 	title = flavor_inc.4.t
 	desc = flavor_inc.4.d
 	picture = CITY_VIEW_eventPicture
-	
+	goto = 808
 	fire_only_once = yes
 	
 	trigger = {
@@ -219,6 +220,9 @@ country_event = {
 	
 	option = { #Make it great.
 		name = flavor_inc.5.a
+		goto = 808
+		set_capital = 808
+		808 = { add_base_tax = 4 }
 		add_adm_power = -50
 		add_years_of_income = -0.1
 		if = {

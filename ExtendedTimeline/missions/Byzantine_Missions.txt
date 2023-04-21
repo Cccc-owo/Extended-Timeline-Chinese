@@ -301,7 +301,19 @@ byz_generic_slot_2 = {
 				limit = {
 					NOT = { has_dlc = "Purple Phoenix" }
 				}
-				country_event = { id = flavor_byz.2 }
+				add_country_modifier = {
+					name = "conversion_of_rome"
+					duration = 7300
+				}
+				hidden_effect = {
+					every_country = {
+						limit = { 
+							religion = catholic 
+							knows_country = BYZ
+						}
+						country_event = { id = flavor_byz.2 }
+					}
+				}
 			}
 		}
 		ai_weight = {
@@ -453,6 +465,9 @@ byz_east = {
 				}
 			}
 		}
+		ai_weight = {
+			factor = 500	#Byzantium is basically Ottomans in its conquest behavior
+		}
 	}
 }
 
@@ -593,6 +608,9 @@ byz_generic_slot_5 = {
 				duration = -1
 			}
 		}
+		ai_weight = {
+			factor = 500	#Byzantium is basically Ottomans in its conquest behavior
+		}
 	}
 	
 	convert_asia_minor = {
@@ -632,6 +650,9 @@ byz_generic_slot_5 = {
 			add_permanent_claim = 379
 			add_permanent_claim = 2313
 		}
+		ai_weight = {
+			factor = 500	#Byzantium is basically Ottomans in its conquest behavior
+		}
 	}
 	
 	the_pentarchy = {
@@ -663,6 +684,9 @@ byz_generic_slot_5 = {
 				duration = -1
 			}
 			country_event = { id = catholic_flavor.3 }
+		}
+		ai_weight = {
+			factor = 500	#Byzantium is basically Ottomans in its conquest behavior
 		}
 	}
 }

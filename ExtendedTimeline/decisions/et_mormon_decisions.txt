@@ -1,0 +1,49 @@
+country_decisions = {
+
+	ban_polygamy = {
+		potential = {
+			religion = mormon
+			has_country_modifier = mormon_polygamy
+		}
+		allow = {
+			adm_power = 40
+			religion = mormon
+			has_country_modifier = mormon_polygamy
+		}
+		effect = {
+			add_adm_power = -40
+			remove_country_modifier = mormon_polygamy
+			add_country_modifier = {
+				name = marital_freedom
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	legalize_polygamy = {
+		potential = {
+			religion = mormon
+			has_country_modifier = marital_freedom
+		}
+		allow = {
+			adm_power = 40
+			religion = mormon
+			has_country_modifier = marital_freedom
+		}
+		effect = {
+			add_adm_power = -40
+			remove_country_modifier = marital_freedom
+			add_country_modifier = {
+				name = mormon_polygamy
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}
