@@ -113,7 +113,10 @@ country_decisions = {
 			hidden_effect = {
 				every_owned_province = { set_in_empire = yes }
 				every_country = {
-					limit = { ai = no }
+					limit = {
+						ai = no 
+						has_country_modifier = european_union	#Changed to reduce spam
+					}
 					country_event = { id = european_union.3 }
 				}
 			}

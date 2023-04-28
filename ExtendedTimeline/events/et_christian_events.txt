@@ -979,13 +979,15 @@ country_event = {
 			any_owned_province = { religion = chalcedonism }
 			AND = {
 				is_year = 400
-				ROW = { owns = 118 }
-				ROW = { religion = chalcedonism }
-			}
-			AND = {
-				is_year = 400
-				ROM = { owns = 118 }
-				ROM = { religion = chalcedonism }
+				118 = {
+					owner = { 
+						religion = chalcedonism 
+						OR = {
+							tag = ROM
+							tag = ROW
+						}
+					}
+				}
 			}
 			any_province = {
 				religion = chalcedonism

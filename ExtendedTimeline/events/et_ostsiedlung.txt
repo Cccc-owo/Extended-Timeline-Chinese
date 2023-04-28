@@ -1,0 +1,466 @@
+########################################
+# Ostsiedlung events
+# Written by Jey the Count
+########################################
+
+namespace = et_ostsiedlung
+
+#Question of German settlement
+country_event = {
+	id = et_ostsiedlung.1
+	title = et_ostsiedlung.1.t
+	desc = et_ostsiedlung.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		culture_group = west_slavic
+		is_year = 1100
+		is_part_of_hre = yes
+		NOT = { has_country_flag = et_ostsiedlung_start }
+	}
+
+	mean_time_to_happen = {
+		years = 5
+	}
+
+	immediate = {
+		set_country_flag = et_ostsiedlung_start
+	}
+
+	option = { #Let's welcome them.
+		name = et_ostsiedlung.1.a
+		add_country_modifier = { 
+			name = german_settlement
+			duration = -1  
+		}
+		custom_tooltip = et_ostsiedlung_tooltip
+		ai_chance = { factor = 100 } #historically accurate
+	}
+
+	option = { #We should protect our identity.
+		name = et_ostsiedlung.1.b
+		add_prestige = 10
+		ai_chance = { factor = 0 }
+	}	
+}
+
+#Germans in province
+province_event = {
+	id = et_ostsiedlung.2
+	title = et_ostsiedlung.2.t
+	desc = et_ostsiedlung.2.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+		NOT = { is_year = 1400 }
+		owner = {
+			OR = {
+				AND = {
+					culture_group = west_slavic
+					has_country_modifier = german_settlement
+				}
+				culture_group = germanic
+			}
+			is_part_of_hre = yes
+		}
+		culture_group = west_slavic
+		religion = catholic
+		any_neighbor_province = {
+			culture_group = germanic
+		} 
+	}
+	
+	mean_time_to_happen = {
+		years = 40
+	}
+	
+	option = { #Interesting.
+		name = et_ostsiedlung.2.a
+		if = {
+			limit = { 
+				OR = {
+					province_id = 2993
+					province_id = 4749
+					province_id = 46
+					province_id = 2996
+					province_id = 4747
+					area = vorpommern_area
+					area = hinter_pommern_area
+					culture = kashubian 
+				}
+			}
+			change_culture = pommeranian
+		}
+		else_if = {
+			limit = { 
+				province_id = 45
+				any_neighbor_province = { culture = lower_saxon }
+			}	
+			change_culture = lower_saxon
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					culture = polabian
+					culture = sorbian
+					culture = polish
+					AND = {
+						OR = {
+							province_id = 1771
+							province_id = 2967
+						}
+						any_neighbor_province = { culture = saxon }
+					}
+				}
+			}	
+			change_culture = saxon
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					culture = schlesian
+					area = lusatia_area
+				}
+			}	
+			change_culture = silesian_german
+		}
+		else_if = {
+			limit = { 
+				province_id = 267
+				any_neighbor_province = { culture = bavarian }
+			}	
+			change_culture = bavarian
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					culture = czech
+					culture = slovak
+				}
+			}
+			change_culture = austrian
+		}
+		ai_chance = { 
+			factor = 75 
+			modifier = { #Only for gameplay purposes, in reality even the Czechs got partially germanized
+				factor = 0
+				owner = {
+					OR = {
+						government_rank = 2
+						total_development = 100
+						primary_culture = czech
+						primary_culture = polish
+						primary_culture = slovak
+					}
+				}
+			}
+		}
+	}
+	
+	option = { #We need to reverse this process.
+		name = et_ostsiedlung.2.b
+		trigger = {
+			owner = { culture_group = west_slavic }
+		}
+		owner = { add_dip_power = 50 }
+		ai_chance = { factor = 25 }
+	}
+}
+
+#Heir adopts German culture 
+country_event = {
+	id = et_ostsiedlung.3
+	title = et_ostsiedlung.3.t
+	desc = et_ostsiedlung.3.d
+	picture = WESTERNISATION_eventPicture
+
+	trigger = {
+		culture_group = west_slavic
+		has_country_modifier = german_settlement
+		has_heir = yes
+		NOT = {
+			OR = {
+				heir_culture = pommeranian
+				heir_culture = prussian
+				heir_culture = baltic_german
+				heir_culture = lower_saxon
+				heir_culture = hannoverian
+				heir_culture = hessian
+				heir_culture = saxon
+				heir_culture = franconian
+				heir_culture = swabian
+				heir_culture = swiss
+				heir_culture = bavarian
+				heir_culture = austrian
+				heir_culture = dutch
+				heir_culture = frisian
+				heir_culture = flemish
+				heir_culture = gothic
+				heir_culture = gepid
+				heir_culture = vandal
+				heir_culture = anglo_saxon
+				heir_culture = langobardi
+				heir_culture = burgundione
+				heir_culture = frankish
+				heir_culture = quadian
+				heir_culture = scirian
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = { #How cosmopolitan!
+		name = et_ostsiedlung.3.a
+		if = {
+			limit = { primary_culture = kashubian }	
+			set_heir_culture = pommeranian
+		}
+		if = {
+			limit = { primary_culture = polabian }	
+			set_heir_culture = pommeranian
+		}
+		if = {
+			limit = { primary_culture = schlesian }	
+			set_heir_culture = silesian_german
+		}
+		if = {
+			limit = { primary_culture = sorbian }	
+			set_heir_culture = silesian_german
+		}
+		if = {
+			limit = { primary_culture = czech }	
+			set_heir_culture = austrian #or Bavarian
+		}
+		if = {
+			limit = { primary_culture = slovak }	
+			set_heir_culture = austrian
+		}
+		if = {
+			limit = { primary_culture = polish }	
+			set_heir_culture = saxon
+		}
+	}
+}
+
+#Our new German identity
+country_event = {
+	id = et_ostsiedlung.4
+	title = et_ostsiedlung.4.t
+	desc = et_ostsiedlung.4.d
+	picture = HRE_eventPicture
+
+	trigger = {
+		culture_group = west_slavic
+		has_country_modifier = german_settlement
+		variable_arithmetic_trigger = {
+			export_to_variable = { which = total value = trigger_value:num_of_cities }
+			export_to_variable = { which = cult value = 0 }
+			all_owned_province = {
+				if = {
+					limit = {
+						culture_group = germanic
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = cult value = 1 }
+					}
+				}
+			}
+			divide_variable = { which = total value = 2 }
+			check_variable = { which = cult which = total }
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 20
+	}
+
+	option = { #Ja, wunderbar.
+		name = et_ostsiedlung.4.a
+		if = {
+			limit = { primary_culture = kashubian }	
+			change_primary_culture = pommeranian
+			set_heir_culture = pommeranian
+			set_ruler_culture = pommeranian
+		}
+		if = {
+			limit = { primary_culture = polabian }	
+			change_primary_culture = saxon
+			set_heir_culture = saxon
+			set_ruler_culture = saxon
+		}
+		if = {
+			limit = { primary_culture = schlesian }	
+			change_primary_culture = silesian_german
+			set_heir_culture = silesian_german
+			set_ruler_culture = silesian_german
+		}
+		if = {
+			limit = { primary_culture = sorbian }	
+			change_primary_culture = saxon
+			set_heir_culture = saxon
+			set_ruler_culture = saxon
+		}
+		if = {
+			limit = { primary_culture = czech }	
+			change_primary_culture = austrian
+			set_heir_culture = austrian
+			set_ruler_culture = austrian
+		}
+		if = {
+			limit = { primary_culture = slovak }	
+			change_primary_culture = austrian
+			set_heir_culture = austrian
+			set_ruler_culture = austrian
+		}
+		if = {
+			limit = { primary_culture = polish }	
+			change_primary_culture = saxon
+			set_heir_culture = saxon
+			set_ruler_culture = saxon
+		}
+		remove_country_modifier = german_settlement
+		
+		
+		ai_chance = { factor = 25 }
+	}
+
+	option = { #We will not abbandon our roots.
+		name = et_ostsiedlung.4.b
+		remove_country_modifier = german_settlement
+		custom_tooltip = et_ostsiedlung_end_tooltip
+	}
+}
+
+#Anti-German riots in province
+province_event = {
+	id = et_ostsiedlung.5
+	title = et_ostsiedlung.5.t
+	desc = et_ostsiedlung.5.d
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		owner = {
+			OR = {
+				AND = {
+					culture_group = west_slavic
+					has_country_modifier = german_settlement
+				}
+				culture_group = germanic
+			}
+			is_part_of_hre = yes
+		}
+		culture_group = west_slavic
+		religion = catholic
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = { #Oh well.
+		name = et_ostsiedlung.5.a
+		add_devastation = 10
+		if = {
+			limit = { base_tax = 2 }
+			random = { 
+				chance = 33 
+				add_base_tax = -1
+			}
+		}
+		if = {
+			limit = { base_production = 2 }
+			random = { 
+				chance = 33 
+				add_base_production = -1
+			}
+		}
+		if = {
+			limit = { base_manpower = 2 }
+			random = { 
+				chance = 33 
+				add_base_manpower = -1
+			}
+		}
+	}
+
+	option = { #Compensate the settlers.
+		name = et_ostsiedlung.5.b
+		owner = {
+			add_years_of_income = -0.1
+		}
+	}
+}
+
+#German settlement leads to development
+province_event = {
+	id = et_ostsiedlung.6
+	title = et_ostsiedlung.6.t
+	desc = et_ostsiedlung.6.d
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		owner = {
+			OR = {
+				AND = {
+					culture_group = west_slavic
+					has_country_modifier = german_settlement
+				}
+				culture_group = germanic
+			}
+			is_part_of_hre = yes
+		}
+		culture_group = west_slavic
+		religion = catholic
+	}
+
+	mean_time_to_happen = {
+		years = 50
+	}
+
+	option = { #Splendid news!
+		name = et_ostsiedlung.6.a
+		random = { 
+			chance = 50
+			add_base_tax = 1
+		}
+		random = { 
+			chance = 50 
+			add_base_production = 1
+		}
+		random = { 
+			chance = 50 
+			add_base_manpower = 1
+		}
+	}
+}
+
+#German settlement ends
+country_event = {
+	id = et_ostsiedlung.7
+	title = et_ostsiedlung.7.t
+	desc = et_ostsiedlung.7.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		OR = {
+			is_year = 1400
+			is_part_of_hre = no
+		}
+		has_country_modifier = german_settlement
+		NOT = { has_country_flag = et_ostsiedlung_end }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #An and of an era.
+		name = et_ostsiedlung.7.a
+		remove_country_modifier = german_settlement
+		custom_tooltip = et_ostsiedlung_end_tooltip
+		set_country_flag = et_ostsiedlung_end
+	}
+}

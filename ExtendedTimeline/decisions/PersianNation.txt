@@ -11,6 +11,10 @@ country_decisions = {
 				is_playing_custom_nation = no
 			}
 			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			OR = {
 				ai = no
 				NOT = { exists = PER }
 			}
@@ -81,6 +85,7 @@ country_decisions = {
 			is_at_war = no
 			is_tribal = no
 			NOT = { exists = PER }
+			NOT = { exists = SAS }
 			owns_core_province = 414		# Hamadan
 			owns_core_province = 429		# Isfahan
 			owns_core_province = 433		# Yazd

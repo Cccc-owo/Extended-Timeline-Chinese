@@ -3570,13 +3570,13 @@ country_event = {
       modifier = {
         factor = 0.6
         any_subject_country = {
-          prestige = overlord
+          prestige = prev
         }
       }
       modifier = {
         factor = 0.5
         any_subject_country = {
-          diplomatic_reputation = overlord
+          diplomatic_reputation = prev
         }
       }
     }
@@ -3614,17 +3614,13 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 14
-          who = ROOT
         }
       }
       modifier = {
         factor = 0.5
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 11
-          who = ROOT
         }
       }
     }
@@ -3672,29 +3668,25 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 14
-          who = ROOT
         }
       }
       modifier = {
         factor = 0.5
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 11
-          who = ROOT
         }
       }
       modifier = {
         factor = 1.1
         any_subject_country = {
-          prestige = overlord
+          prestige = prev
         }
       }
       modifier = {
         factor = 1.25
         any_subject_country = {
-          diplomatic_reputation = overlord
+          diplomatic_reputation = prev
         }
       }
     }
@@ -3788,11 +3780,19 @@ country_event = {
       }
       modifier = {
         factor = 0.6
-        prestige = overlord
+        overlord = {
+          root = {
+            prestige = prev
+          }
+        }
       }
       modifier = {
         factor = 0.5
-        diplomatic_reputation = overlord
+        overlord = {
+          root = {
+            diplomatic_reputation = prev
+          }
+        }
       }
       modifier = {
         OR = {
@@ -3900,17 +3900,13 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 14
-          who = ROOT
         }
       }
       modifier = {
         factor = 0.5
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 11
-          who = ROOT
         }
       }
       modifier = {
@@ -4232,17 +4228,13 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 14
-          who = ROOT
         }
       }
       modifier = {
         factor = 0.5
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 11
-          who = ROOT
         }
       }
       modifier = {
@@ -4729,9 +4721,9 @@ country_event = {
             has_ruler_flag = suggested_ruler_flag
           }
         }
-      }
-      country_event = {
-        id = kalmar_union_events.4
+        country_event = {
+          id = kalmar_union_events.4
+        }
       }
     }
   }
@@ -4826,17 +4818,13 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 14
-          who = ROOT
         }
       }
       modifier = {
         factor = 0.5
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 11
-          who = ROOT
         }
       }
     }
@@ -5037,17 +5025,13 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 14
-          who = ROOT
         }
       }
       modifier = {
         factor = 0.5
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 11
-          who = ROOT
         }
       }
     }
@@ -5098,17 +5082,13 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 14
-          who = ROOT
         }
       }
       modifier = {
         factor = 0.5
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 11
-          who = ROOT
         }
       }
     }
@@ -5296,17 +5276,13 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 14
-          who = ROOT
         }
       }
       modifier = {
         factor = 0.5
         ruler_total_stats = {
-          custom_tooltip = none
           stats = 11
-          who = ROOT
         }
       }
       modifier = {

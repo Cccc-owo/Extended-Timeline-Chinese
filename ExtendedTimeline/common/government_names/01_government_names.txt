@@ -418,30 +418,6 @@ federal_monarchy_monarchists = {
 	}
 }
 
-gov_revolutionary_republic = {
-	rank = {
-		1 = GOV_REVOLUTIONARY_REPUBLIC
-		2 = GOV_REVOLUTIONARY_REPUBLIC
-		3 = GOV_REVOLUTIONARY_REPUBLIC
-	}
-	
-	ruler_male = {
-		1 = CONSUL
-		2 = CONSUL
-		3 = CONSUL
-	}
-
-	ruler_female = {
-		1 = CONSULESS
-		2 = CONSULESS
-		3 = CONSULESS
-	}
-
-	trigger = {
-		is_revolutionary_republic_trigger = yes
-	}
-}
-
 noble_republic = {
 	rank = {
 		1 = PRINCEDOM
@@ -584,6 +560,40 @@ gov_daimyo = {
 	trigger = {
 		has_reform = daimyo
 		NOT = { tag = JAP }
+	}
+}
+
+gov_appanage = {
+	rank = {
+		1 = APPANAGE
+	}
+	
+	ruler_male = {
+		1 = DUKE
+	}
+	
+	ruler_female = {
+		1 = DUCHESS
+	}
+	
+	consort_male = {
+		1 = DUKE
+	}
+
+	consort_female = {
+		1 = DUCHESS
+	}
+
+	heir_male = {
+		1 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+	}
+	
+	trigger = {
+		has_reform = appanage_reform
 	}
 }
 
@@ -903,8 +913,7 @@ ikko_ikki_peasants = {
 	}
 
 	trigger = {
-		has_reform = peasants_republic
-		has_country_flag = ikko_ikki_peasants_flag
+		has_reform = ikko_ikki_republic_reform
 		OR = {
 			religion_group = eastern
 			culture_group = japanese_g
@@ -949,11 +958,7 @@ ikko_ikki_temple = {
 	}
 
 	trigger = {
-		OR = {
-			has_reform = leading_clergy_reform
-			has_reform = monastic_order_reform
-		}
-		has_country_flag = ikko_ikki_peasants_flag
+		has_reform = ikko_ikki_reform
 		OR = {
 			religion_group = eastern
 			culture_group = japanese_g
@@ -1064,12 +1069,6 @@ northerner_monastic_order = {
 		1 = FIRST_RANGER
 		2 = LORD_COMMANDER
 		3 = LORD_COMMANDER
-	}
-
-	ruler_female = {
-		1 = FIRST_RANGER
-		2 = LADY_COMMANDER
-		3 = LADY_COMMANDER
 	}
 	
 	ruler_female = {

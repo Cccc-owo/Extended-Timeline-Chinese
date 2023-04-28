@@ -2,16 +2,23 @@
 
 汉化组成员：见 [README](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project#%E8%B4%A1%E7%8C%AE%E8%80%85--contributors)
 
+## v1.15.1-r1
+
+- 🎇ETCLP 的第一个正式版！（是的，之前的都是测试版……）
+- 🌐更新汉化——感谢52汉化组的无私奉献！
+- ✍️更新地图字体：补充缺字
+- 🎇欢迎新的翻译成员：@MrEmptiness
+
+---
+
+<details><summary>历史更新日志</summary>
+
 ## v1.14.4-b16
 
 - 🌐更新汉化
 - ↘本次汉化更新补完了国家理念汉化，更新了部分动态地名及文化人名的汉化
 - ✍️更新地图字体：补充缺字
 - 🎇欢迎新的翻译成员：@SphinX1633
-
----
-
-<details><summary>历史更新日志</summary>
 
 ## v1.14.4-b15
 

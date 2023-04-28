@@ -378,6 +378,7 @@ christian = {
 			expel_heretics_aspect
 			diplomats_of_the_reformation_aspect
 			icons_of_the_church_aspect
+			spread_the_book_of_common_prayer
 		}
 		aspects_name = ANGLICAN_ASPECTS
 		
@@ -758,7 +759,7 @@ christian = {
 				visible = {
 					always = yes
 				}
-				
+
 				ai_will_do = {
 					factor = 0.05
 					modifier = {
@@ -829,11 +830,11 @@ christian = {
 			icon_nicholas = {
 				improve_relation_modifier = 0.25
 				ae_impact = -0.1
-
+				
 				visible = {
 					always = yes
 				}
-
+				
 				allow = {
 					always = yes
 				}
@@ -1104,6 +1105,35 @@ christian = {
 				}
 			}
 		}
+	}
+	
+	mormon = {
+		color = { 175 198 235 }
+		icon = 58
+		allowed_conversion = {
+			catholic
+			protestant
+			reformed
+		}
+		country = {
+			stability_cost_modifier = -0.1
+			missionaries = 1
+		}
+		country_as_secondary = {
+			stability_cost_modifier = -0.2
+			missionaries = 1
+		}
+		province = {
+			local_missionary_strength = -0.03
+		}
+		on_convert = {
+			change_religion = mormon
+			add_stability = -3
+		}
+
+		heretic = { FUNDAMENTALIST LIBERAL }
+		fervor = yes
+		date = 1830.3.1
 	}
 	
 	harmonized_modifier = harmonized_christian
@@ -1812,7 +1842,7 @@ muslim = {
 		
 		date = 661.7.28
 	}
-
+	
 	ibadi = {
 		color = { 0 102 0 }
 		icon = 10
@@ -1844,7 +1874,7 @@ buddhic = {
 
 	flags_with_emblem_percentage = 33
 	flag_emblem_index_range = { 58 80 }
-	
+
 	buddhism = { #Theravada
 		color = { 204 76 0 }
 		icon = 45
@@ -1868,10 +1898,12 @@ buddhic = {
 				duration = 3650
 			}
 		}
+		
 		heretic = { ZEN }
+		
 		uses_karma = yes
 	}
-
+	
 	vajrayana = {
 		color = { 204 76 76 }
 		icon = 46
@@ -1896,12 +1928,14 @@ buddhic = {
 				duration = 3650
 			}
 		}
+		
 		heretic = { ZEN }
+		
 		uses_karma = yes
 
 		date = 630.1.1
 	}
-
+	
 	mahayana = {
 		color = { 204 76 127 }
 		icon = 44
@@ -1925,7 +1959,9 @@ buddhic = {
 				duration = 3650
 			}
 		}
+		
 		heretic = { ZEN }
+		
 		uses_karma = yes
 	}
 	
@@ -2006,7 +2042,7 @@ dharmic = {
 		heretic = { MASANDIS }
 
 		date = 1499.01.01
-		
+
 		gurus = {
 			guru_nanak = {
 				trigger = {

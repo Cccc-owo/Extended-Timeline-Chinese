@@ -266,7 +266,7 @@ country_event = {
 		OR = {
 			is_former_colonial_nation = yes
 			AND = {
-				is_year = 1700
+				is_year = 1600
 				is_colonial_nation = yes
 			}
 		}
@@ -282,8 +282,8 @@ country_event = {
 					}
 				}
 			}
-			liberty_desire = 25
-			is_year = 1760
+			liberty_desire = 50
+			is_year = 1700
 		}
 		capital_scope = { 
 			OR = {
@@ -2902,7 +2902,7 @@ province_event = {
 	picture = CULTURE_eventPicture
 
 	trigger = {
-		is_year = 1740
+		is_year = 1700
 		OR = {
 			continent = north_america
 			continent = south_america
@@ -5359,9 +5359,11 @@ province_event = {
 
     trigger = {
         region = anatolia_region
-		culture_group = byzantine
+		NOT = { culture_group = oghuz }
+		NOT = { culture_group = altaic }
+		NOT = { culture_group = iranian }
+		NOT = { culture_group = caucasian }
         owner = {
-			religion_group = muslim
             OR = {
 				culture_group = oghuz
 				culture_group = altaic
@@ -5565,5 +5567,24 @@ province_event = {
     option = {
         name = culture.22.a
         change_culture = azerbaijani
+    }
+}
+
+#Province abandoned
+province_event = {
+    id = culture.23
+    title = culture.23.t
+    desc = culture.23.d
+    picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+		culture = uninhabited
+    }
+
+    option = {
+        name = culture.22.a
+        decolonize = THIS
     }
 }

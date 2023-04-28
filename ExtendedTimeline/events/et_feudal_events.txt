@@ -215,21 +215,21 @@ country_event = {
 				72 = { add_core = SWA set_province_flag = splittag1_prov }
 			}
 		}
-		if = { limit = { owns = 1876 NOT = { exists = FRC } }
+		if = { limit = { owns = 1876 NOT = { exists = FKN } }
 			if = { limit = { is_variable_equal = { which = splittags_set value = 2 } }
 				set_variable = { which = splittags_set value = 3 }
-				FRC = { save_global_event_target_as = splittag3 }
-				1876 = { add_core = FRC set_province_flag = splittag3_prov }
+				FKN = { save_global_event_target_as = splittag3 }
+				1876 = { add_core = FKN set_province_flag = splittag3_prov }
 			}
 			if = { limit = { is_variable_equal = { which = splittags_set value = 1 } }
 				set_variable = { which = splittags_set value = 2 }
-				FRC = { save_global_event_target_as = splittag2 }
-				1876 = { add_core = FRC set_province_flag = splittag2_prov }
+				FKN = { save_global_event_target_as = splittag2 }
+				1876 = { add_core = FKN set_province_flag = splittag2_prov }
 			}
 			if = { limit = { is_variable_equal = { which = splittags_set value = 0 } }
 				set_variable = { which = splittags_set value = 1 }
-				FRC = { save_global_event_target_as = splittag1 }
-				1876 = { add_core = FRC set_province_flag = splittag1_prov }
+				FKN = { save_global_event_target_as = splittag1 }
+				1876 = { add_core = FKN set_province_flag = splittag1_prov }
 			}
 		}
 		if = { limit = { owns = 134 NOT = { exists = HAB } }

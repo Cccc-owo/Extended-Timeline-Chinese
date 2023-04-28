@@ -92,10 +92,17 @@ country_decisions = {
 			is_free_or_tributary_trigger = yes
 		}
 		effect = {
-			4678 = {
-				move_capital_effect = yes
+			hidden_effect = {
+				set_global_flag = is_forming_the_mongol_empire
+				1 = {
+					province_event = {
+						id = passive_effects_events.13
+						days = 10
+					}
+				}
 			}
 			change_tag = MGE
+			on_change_tag_effect = yes
 			if = {
 				limit = {
 					NOT = {
@@ -111,7 +118,10 @@ country_decisions = {
 				dismantle_empire_of_china = yes
 			}
 			if = {
-				limit = { is_revolutionary = no }
+				limit = { 
+					is_revolutionary = no
+					NOT = { has_reform = holy_horde_reform }
+				}
 				change_government = tribal
 				add_government_reform = great_mongol_state_reform
 			}
@@ -122,7 +132,7 @@ country_decisions = {
 			set_country_flag = mongol_empire_flag
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	
@@ -196,6 +206,10 @@ country_decisions = {
 				is_playing_custom_nation = no
 			}
 			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			OR = {
 				culture_group = tartar
 				culture_group = mongolic
 				culture_group = altaic
@@ -228,6 +242,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = ILK
+			on_change_tag_effect = yes
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300

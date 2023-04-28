@@ -883,6 +883,12 @@ country_event = {
       16 = {
         is_empty = yes
       }
+      3 = {
+        is_empty = yes
+      }
+      2 = {
+        is_empty = yes
+      }
     }
   }
   mean_time_to_happen = {
@@ -953,36 +959,6 @@ country_event = {
     26 = {
       add_core = GEW
     }
-    GEW = {
-      every_neighbor_country = {
-        add_truce_with = GEW
-      }
-    }
-  }
-}
-country_event = {
-  id = et.111
-  title = "et.EVTNAME100"
-  desc = "et.EVTDESC100"
-  picture = CITY_DEVELOPMENT_eventPicture
-  fire_only_once = yes
-  trigger = {
-    owns = 1982
-    is_year = 360
-    OR = {
-      3 = {
-        is_empty = yes
-      }
-      2 = {
-        is_empty = yes
-      }
-    }
-  }
-  mean_time_to_happen = {
-    months = 240
-  }
-  option = {
-    name = "et.EVTOPTA100"
     if = {
       limit = {
         3 = {
@@ -1021,6 +997,11 @@ country_event = {
     }
     1982 = {
       add_core = GEE
+    }
+    GEW = {
+      every_neighbor_country = {
+        add_truce_with = GEW
+      }
     }
     GEE = {
       every_neighbor_country = {
@@ -1123,7 +1104,7 @@ country_event = {
   }
 }
 country_event = {
-  id = et.113
+  id = et.114
   title = "et.EVTNAME100"
   desc = "et.EVTDESC100"
   picture = CITY_DEVELOPMENT_eventPicture
@@ -1132,10 +1113,16 @@ country_event = {
     owns = 5
     is_year = 700
     OR = {
+      24 = {
+        is_empty = yes
+      }
+      23 = {
+        is_empty = yes
+      }
       17 = {
         is_empty = yes
       }
-      22 = {
+      20 = {
         is_empty = yes
       }
     }
@@ -1181,36 +1168,6 @@ country_event = {
         change_trade_goods = naval_supplies
       }
     }
-    VES = {
-      every_neighbor_country = {
-        add_truce_with = VES
-      }
-    }
-  }
-}
-country_event = {
-  id = et.114
-  title = "et.EVTNAME100"
-  desc = "et.EVTDESC100"
-  picture = CITY_DEVELOPMENT_eventPicture
-  fire_only_once = yes
-  trigger = {
-    owns = 17
-    is_year = 700
-    OR = {
-      24 = {
-        is_empty = yes
-      }
-      23 = {
-        is_empty = yes
-      }
-    }
-  }
-  mean_time_to_happen = {
-    months = 240
-  }
-  option = {
-    name = "et.EVTOPTA100"
     if = {
       limit = {
         4144 = {
@@ -1271,51 +1228,6 @@ country_event = {
         change_trade_goods = fish
       }
     }
-    AGD = {
-      every_neighbor_country = {
-        add_truce_with = AGD
-      }
-    }
-    ROG = {
-      every_neighbor_country = {
-        add_truce_with = AGD
-      }
-    }
-    HOR = {
-      every_neighbor_country = {
-        add_truce_with = AGD
-      }
-    }
-    RMD = {
-      every_neighbor_country = {
-        add_truce_with = AGD
-      }
-    }
-  }
-}
-country_event = {
-  id = et.115
-  title = "et.EVTNAME100"
-  desc = "et.EVTDESC100"
-  picture = CITY_DEVELOPMENT_eventPicture
-  fire_only_once = yes
-  trigger = {
-    owns = 22
-    is_year = 700
-    OR = {
-      20 = {
-        is_empty = yes
-      }
-      21 = {
-        is_empty = yes
-      }
-    }
-  }
-  mean_time_to_happen = {
-    months = 240
-  }
-  option = {
-    name = "et.EVTOPTA100"
     if = {
       limit = {
         20 = {
@@ -1338,6 +1250,31 @@ country_event = {
         cede_province = HAL
         add_core = HAL
         change_trade_goods = fish
+      }
+    }
+    VES = {
+      every_neighbor_country = {
+        add_truce_with = VES
+      }
+    }
+    AGD = {
+      every_neighbor_country = {
+        add_truce_with = AGD
+      }
+    }
+    ROG = {
+      every_neighbor_country = {
+        add_truce_with = ROG
+      }
+    }
+    HOR = {
+      every_neighbor_country = {
+        add_truce_with = HOR
+      }
+    }
+    RMD = {
+      every_neighbor_country = {
+        add_truce_with = RMD
       }
     }
     HAL = {
@@ -6794,7 +6731,7 @@ country_event = {
   picture = SHIP_SAILING_eventPicture
   fire_only_once = yes
   trigger = {
-    owns = 2793
+    owns = 2790
     is_year = 1190
     OR = {
       2792 = {
@@ -8822,7 +8759,7 @@ country_event = {
   picture = CITY_DEVELOPMENT_eventPicture
   fire_only_once = yes
   trigger = {
-    owns = 1189
+    owns = 1184
     is_year = 1400
     OR = {
       4040 = {

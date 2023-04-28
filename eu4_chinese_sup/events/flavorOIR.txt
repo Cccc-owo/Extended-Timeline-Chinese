@@ -190,12 +190,23 @@ country_event = {
   }
   trigger = {
     tag = OIR
-    FROM = {
-      province_id = 1816
+    OR = {
+      FROM = {
+        province_id = 1816
+      }
+      AND = {
+        war_with = MNG
+        1816 = {
+          controlled_by = ROOT
+        }
+      }
     }
     MNG = {
       has_country_flag = mng_emperor_captured
     }
+  }
+  mean_time_to_happen = {
+    days = 1
   }
   option = {
     name = "flavor_oir.5.a"

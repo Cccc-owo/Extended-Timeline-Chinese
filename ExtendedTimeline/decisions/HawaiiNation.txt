@@ -1,0 +1,55 @@
+country_decisions = {
+
+	unite_hawaii = {
+		major = yes
+		potential = {
+			OR = {
+				tag = HAW
+				tag = KAA
+				tag = MAU
+				tag = OAH
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1240
+				province_id = 4934
+				province_id = 4935
+				province_id = 4936
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				is_city = no
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			owns_core_province = 1240
+			owns_core_province = 4934
+			owns_core_province = 4935
+			owns_core_province = 4936
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = united_hawaii_ideas
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

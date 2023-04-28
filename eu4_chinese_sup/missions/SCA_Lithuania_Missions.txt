@@ -75,7 +75,7 @@ lit_dlc_1 = {
         add_patriarch_authority = 0.1
       }
       else = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = dip
           amount = 1
         }
@@ -299,7 +299,7 @@ lit_dlc_2 = {
           duration = -1
         }
       }
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = adm
         amount = 1
       }
@@ -511,7 +511,7 @@ lit_dlc_3 = {
         add_ruler_personality = architectural_visionary_personality
       }
       else = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = adm
           amount = 2
         }
@@ -844,7 +844,9 @@ lit_dlc_4 = {
         every_province = {
           limit = {
             OR = {
-              owned_by = overlord
+              owner = {
+                overlord_of = LIT
+              }
               country_or_non_sovereign_subject_holds = ROOT
             }
             has_terrain = steppe
@@ -898,11 +900,10 @@ lit_dlc_4 = {
       }
     }
     effect = {
-      add_power_projection = {
+      add_permanent_power_projection = {
         type = 25_permanent_power_projection
         amount = 25
       }
-      custom_tooltip = zim_amongst_the_great_powers_tt
       add_country_modifier = {
         name = lit_golden_age_lit_modifier
         duration = 9125
@@ -1140,15 +1141,15 @@ lit_dlc_5 = {
       }
       custom_tooltip = pol_alternatively_tt
       tooltip = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = adm
           amount = 1
         }
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = dip
           amount = 1
         }
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = mil
           amount = 1
         }
@@ -1176,15 +1177,15 @@ lit_dlc_5 = {
           }
         }
         else = {
-          add_stat_or_monarch_power = {
+          change_ruler_stat = {
             stat = adm
             amount = 1
           }
-          add_stat_or_monarch_power = {
+          change_ruler_stat = {
             stat = dip
             amount = 1
           }
-          add_stat_or_monarch_power = {
+          change_ruler_stat = {
             stat = mil
             amount = 1
           }
