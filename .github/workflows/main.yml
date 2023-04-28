@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: ETCLP
-          path: mod.zip
+          path: ETCLP.zip
 
   nightly-release:
     permissions: write-all
@@ -54,7 +54,7 @@ jobs:
           prerelease: true
           title: "test Build"
           files: |
-            mod.zip
+            ETCLP.zip
 
   release:
     permissions: write-all
@@ -72,13 +72,13 @@ jobs:
       #- name: Unzip the artifact
       #  run: |
       #    mkdir temp
-      #    unzip mod.zip -d temp
+      #    unzip ETCLP.zip -d temp
 
       - name: Release Action
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
-            mod.zip
+            ETCLP.zip
           body_path: CHANGELOG.md
           discussion_category_name: "公告"
 
