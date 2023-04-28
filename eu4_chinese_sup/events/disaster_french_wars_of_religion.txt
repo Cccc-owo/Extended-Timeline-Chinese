@@ -242,13 +242,6 @@ country_event = {
     goto = capital
     ai_chance = {
       factor = 25
-      modifier = {
-        factor = 0
-        OR = {
-          has_country_flag = FRA_supports_catholic_minority
-          has_country_flag = FRA_supports_protestant_minority
-        }
-      }
     }
     add_stability = -2
     capital_scope = {
@@ -1868,7 +1861,14 @@ country_event = {
     add_stability = 3
     add_prestige = -50
     remove_country_modifier = french_catholics
-    clr_country_flag = FRA_supports_catholic_majority
+    if = {
+      limit = {
+        NOT = {
+          has_dlc = "Domination"
+        }
+      }
+      clr_country_flag = FRA_supports_catholic_majority
+    }
     set_country_flag = FRA_wars_of_religion_ended
   }
   option = {
@@ -1889,7 +1889,14 @@ country_event = {
     add_prestige = -50
     remove_country_modifier = french_protestants
     remove_country_modifier = french_reformed
-    clr_country_flag = FRA_supports_protestant_majority
+    if = {
+      limit = {
+        NOT = {
+          has_dlc = "Domination"
+        }
+      }
+      clr_country_flag = FRA_supports_protestant_majority
+    }
     set_country_flag = FRA_wars_of_religion_ended
   }
   option = {

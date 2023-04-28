@@ -90,7 +90,7 @@ country_event = {
       hidden_effect = {
         for_variable_amount = {
           variable = election_term
-          effect = "\nadd_absolutism = 10\n"
+          effect = " add_absolutism = 10 "
         }
       }
       hidden_effect = {
@@ -270,7 +270,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -326,7 +326,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -383,7 +383,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -469,7 +469,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -556,7 +556,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -612,7 +612,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -668,7 +668,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -724,7 +724,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -778,7 +778,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
         capital_scope = {
           has_port = yes
         }
@@ -1094,6 +1094,7 @@ country_event = {
       has_dlc = "Lions of the North"
     }
     has_government_attribute = is_pirate_republic_reform
+    num_of_ports = 1
     any_country = {
       num_of_heavy_ship = 3
       any_trade_node = {
@@ -1105,9 +1106,6 @@ country_event = {
       capital_scope = {
         has_discovered = ROOT
       }
-    }
-    any_owned_province = {
-      has_port = yes
     }
   }
   immediate = {

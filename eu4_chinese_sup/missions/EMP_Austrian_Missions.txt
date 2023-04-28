@@ -985,8 +985,20 @@ emp_hab_minorities_branch = {
             primary_culture = slovak
           }
         }
-        add_accepted_culture_or_dip_power = {
-          culture = slovak
+        if = {
+          limit = {
+            has_updated_culture = {
+              culture = slavic
+            }
+          }
+          add_accepted_culture_or_dip_power = {
+            culture = slovak_new
+          }
+        }
+        else = {
+          add_accepted_culture_or_dip_power = {
+            culture = slovak
+          }
         }
         if = {
           limit = {
@@ -1588,15 +1600,6 @@ emp_hab_western_expansion_branch = {
   has_country_shield = yes
   emp_hab_connect_further_austria = {
     icon = connect_further_austria
-    ai_weight = {
-      factor = 3
-      modifier = {
-        factor = 0.33
-        NOT = {
-          owns = 1880
-        }
-      }
-    }
     position = 9
     required_missions = {}
     provinces_to_highlight = {
@@ -1676,6 +1679,12 @@ emp_hab_western_expansion_branch = {
       modifier = {
         is_emperor = yes
         factor = 0
+      }
+      modifier = {
+        factor = 0.33
+        NOT = {
+          owns = 1880
+        }
       }
     }
   }
@@ -1902,9 +1911,6 @@ emp_hab_balkans = {
   emp_hab_take_serbia = {
     icon = defeat_the_serbs
     position = 7
-    ai_weight = {
-      factor = 2
-    }
     required_missions = {
       austrian_croatia
     }
@@ -2000,9 +2006,6 @@ emp_hab_balkans_2 = {
   emp_hab_take_wallachia_bulgaria = {
     icon = push_on_to_bulgaria
     position = 8
-    ai_weight = {
-      factor = 2
-    }
     required_missions = {
       emp_hab_take_serbia
       conquer_transylvania
@@ -2075,9 +2078,6 @@ emp_hab_balkans_2 = {
   emp_hab_scourge_of_europe = {
     icon = mission_ottoman_diplomacy
     position = 10
-    ai_weight = {
-      factor = 2
-    }
     required_missions = {
       emp_hab_take_wallachia_bulgaria
     }
@@ -2147,9 +2147,6 @@ emp_hab_more_italy_branch = {
   emp_hab_veneto_lombardy = {
     icon = kingdom_of_lombardy
     position = 9
-    ai_weight = {
-      factor = 3
-    }
     required_missions = {
       austrian_italian_ambition
     }
@@ -2268,9 +2265,6 @@ emp_hab_more_italy_branch = {
   emp_hab_naples = {
     icon = union_with_naples
     position = 10
-    ai_weight = {
-      factor = 3
-    }
     required_missions = {
       emp_hab_veneto_lombardy
     }

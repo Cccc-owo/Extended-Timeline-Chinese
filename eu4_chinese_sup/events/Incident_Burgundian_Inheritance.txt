@@ -577,6 +577,10 @@ country_event = {
           }
         }
       }
+      modifier = {
+        factor = 10
+        has_country_flag = fra_guaranteed_succession_flag
+      }
     }
     custom_tooltip = marry_french_tt
     every_subject_country = {
@@ -638,6 +642,12 @@ country_event = {
           }
         }
       }
+    }
+    if = {
+      limit = {
+        has_country_flag = fra_guaranteed_succession_flag
+      }
+      clr_country_flag = fra_guaranteed_succession_flag
     }
   }
 }

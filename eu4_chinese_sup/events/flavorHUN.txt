@@ -939,7 +939,7 @@ country_event = {
     add_prestige = 5
     define_advisor = {
       type = statesman
-      name = "TXlš¯e·ôTaSR"  # Tamás Bakócz
+      name = "v–lšÀN œÑy(ƒ"  # Tamás Bakócz
       culture = hungarian
       discount = yes
       skill = 2
@@ -1808,7 +1808,7 @@ country_event = {
     name = flavor_hun.23.a
     add_adm_power = 50
     define_advisor = {
-      name = "³uSÀNê·XblšÀN"  # Tamás Nádasdy
+      name = "v–lšÀN ³uSÀNê"  # Tamás Nádasdy
       culture = hungarian
       type = master_of_mint
       skill = 3
@@ -1819,7 +1819,7 @@ country_event = {
     name = flavor_hun.23.b
     add_dip_power = 50
     define_advisor = {
-      name = "³uSÀNê·XblšÀN"  # Tamás Nádasdy
+      name = "v–lšÀN ³uSÀNê"  # Tamás Nádasdy
       culture = hungarian
       type = diplomat
       skill = 3
@@ -1830,7 +1830,7 @@ country_event = {
     name = flavor_hun.23.c
     add_mil_power = 50
     define_advisor = {
-      name = "³uSÀNê·XblšÀN"  # Tamás Nádasdy
+      name = "v–lšÀN ³uSÀNê"  # Tamás Nádasdy
       type = fortification_expert
       culture = hungarian
       skill = 3
@@ -1893,6 +1893,7 @@ country_event = {
     }
     set_global_flag = hungary_inherited
     change_tag = TRA
+    on_change_tag_effect = yes
     define_ruler = {
       name = "šNú‹ÀN"  # János
       culture = hungarian
@@ -2277,7 +2278,7 @@ country_event = {
   option = {
     name = flavor_hun.28.a
     define_advisor = {
-      name = "ÃWS·Vê·v–lšÀN"  # Tamás Erdödy
+      name = "v–lšÀN Œ‚S·Vê"  # Tamás Erdödy
       culture = hungarian
       skill = 3
       discount = yes
@@ -2287,7 +2288,7 @@ country_event = {
   option = {
     name = flavor_hun.28.b
     define_general = {
-      name = "ÃWS·Vê·v–lšÀN"  # Tamás Erdödy
+      name = "v–lšÀN Œ‚S·Vê"  # Tamás Erdödy
       shock = 3
       fire = 3
       manuever = 2
@@ -2345,7 +2346,7 @@ country_event = {
   option = {
     name = flavor_hun.29.a
     define_advisor = {
-      name = "·VætO·lš RÀN"  # Matthias Dévay
+      name = "lš RÀN ãNƒlO"  # Matthias Dévay
       skill = 3
       discount = yes
       religion = protestant
@@ -2372,7 +2373,7 @@ country_event = {
       clr_province_flag = magyar_reform
     }
     define_advisor = {
-      name = "Xblš¯e („ÉbÈTPŸ"  # Thomas Szalaházy
+      name = "v–lšÀN ÍumÈTPŸ"  # Thomas Szalaházy
       culture = hungarian
       religion = catholic
       skill = 3
@@ -2430,7 +2431,7 @@ country_event = {
       }
     }
     define_advisor = {
-      name = "Å–ªR¯e·Xoú‹<SLN¯e"  # Janus Pannonius
+      name = "Å–ªR¯e Xoú‹<SLN¯e"  # Janus Pannonius
       type = philosopher
       culture = croatian
       skill = 2
@@ -2526,11 +2527,28 @@ country_event = {
       }
       if = {
         limit = {
-          NOT = {
-            culture = slovak
+          has_updated_culture = {
+            culture = slavic
           }
         }
-        change_culture = slovak
+        if = {
+          limit = {
+            NOT = {
+              culture = slovak_new
+            }
+          }
+          change_culture = slovak_new
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            NOT = {
+              culture = slovak
+            }
+          }
+          change_culture = slovak
+        }
       }
       add_local_autonomy = 40
       add_province_modifier = {
@@ -2555,11 +2573,28 @@ country_event = {
       }
       if = {
         limit = {
-          NOT = {
-            culture = slovak
+          has_updated_culture = {
+            culture = slavic
           }
         }
-        change_culture = slovak
+        if = {
+          limit = {
+            NOT = {
+              culture = slovak_new
+            }
+          }
+          change_culture = slovak_new
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            NOT = {
+              culture = slovak
+            }
+          }
+          change_culture = slovak
+        }
       }
       add_province_modifier = {
         name = "slovak_national_awakening"
@@ -2640,7 +2675,7 @@ country_event = {
     }
     define_ruler = {
       name = "9&O(ƒ"  # Ferenc
-      dynasty = "ÉbÑyGY"  # Rákóczy
+      dynasty = "ÉbÑyPŸ"  # Rákóczy
       culture = hungarian
       adm = 4
       dip = 5
@@ -2668,7 +2703,7 @@ country_event = {
         size = 2
         culture = hungarian
         leader = "9&O(ƒ"  # Ferenc
-        leader_dynasty = "ÉbÑyGY"  # Rákóczy
+        leader_dynasty = "ÉbÑyPŸ"  # Rákóczy
       }
     }
   }
@@ -2708,7 +2743,7 @@ country_event = {
           }
           define_ruler = {
             name = "9&O(ƒ"  # Ferenc
-            dynasty = "ÉbÑyGY"  # Rákóczy
+            dynasty = "ÉbÑyPŸ"  # Rákóczy
             culture = hungarian
             adm = 4
             dip = 5
@@ -2738,7 +2773,7 @@ country_event = {
         culture = hungarian
         size = 3
         leader = "9&O(ƒ"  # Ferenc
-        leader_dynasty = "ÉbÑyGY"  # Rákóczy
+        leader_dynasty = "ÉbÑyPŸ"  # Rákóczy
       }
     }
   }
@@ -2759,7 +2794,7 @@ country_event = {
       hidden_effect = {
         define_ruler = {
           name = "9&O(ƒ"  # Ferenc
-          dynasty = "ÉbÑyGY"  # Rákóczy
+          dynasty = "ÉbÑyPŸ"  # Rákóczy
           culture = hungarian
           adm = 4
           dip = 5
@@ -2832,7 +2867,7 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 3
-        leader = "9&O(ƒ ÉbÑyPŸ II"  # Ferenc II Rákóczy
+        leader = "9&O(ƒ II ÉbÑyPŸ"  # Ferenc II Rákóczy
       }
     }
   }

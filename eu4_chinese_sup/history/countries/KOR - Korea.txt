@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = confucian_bureaucracy
+add_government_reform = korean_monarchy
 primary_culture = korean
 religion = confucianism
 add_harmonized_religion = mahayana
@@ -90,7 +90,24 @@ capital = 735
   clear_scripted_personalities = yes
   add_ruler_personality = careful_personality
   add_ruler_personality = well_advised_personality
-  set_estate_privilege = estate_church_inwards_perfection
+  if = {
+    limit = {
+      NOT = {
+        has_dlc = "Domination"
+      }
+    }
+    set_estate_privilege = estate_church_inwards_perfection
+  }
+  if = {
+    limit = {
+      has_dlc = "Domination"
+    }
+    add_country_modifier = {
+      name = no_perfectionism_focus
+      duration = -1
+      desc = has_no_perfectionism_focus
+    }
+  }
   set_country_flag = starts_with_inwards_perfection
 }
 1444.10.29 = {

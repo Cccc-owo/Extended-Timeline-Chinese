@@ -685,19 +685,19 @@ swe_scandinavian_colonialism_mission_slot = {
               OR = {
                 has_river_estuary_trigger = yes
                 province_has_center_of_trade_of_level = 1
-                NOT = {
-                  is_core = ROOT
-                }
-                NOT = {
-                  is_permanent_claim = ROOT
-                }
-                NOT = {
-                  owner = {
-                    is_subject_of = ROOT
-                  }
-                }
-                has_port = yes
               }
+              NOT = {
+                is_core = ROOT
+              }
+              NOT = {
+                is_permanent_claim = ROOT
+              }
+              NOT = {
+                owner = {
+                  is_subject_of = ROOT
+                }
+              }
+              has_port = yes
             }
             add_permanent_claim = ROOT
           }
@@ -706,19 +706,19 @@ swe_scandinavian_colonialism_mission_slot = {
               OR = {
                 has_river_estuary_trigger = yes
                 province_has_center_of_trade_of_level = 1
-                NOT = {
-                  is_core = ROOT
-                }
-                NOT = {
-                  is_permanent_claim = ROOT
-                }
-                NOT = {
-                  owner = {
-                    is_subject_of = ROOT
-                  }
-                }
-                has_port = yes
               }
+              NOT = {
+                is_core = ROOT
+              }
+              NOT = {
+                is_permanent_claim = ROOT
+              }
+              NOT = {
+                owner = {
+                  is_subject_of = ROOT
+                }
+              }
+              has_port = yes
             }
             add_permanent_claim = ROOT
           }
@@ -3751,8 +3751,20 @@ swe_swedish_military_mission_slot = {
           }
         }
         add_adm_power = 150
-        add_accepted_culture_or_dip_power = {
-          culture = polish
+        if = {
+          limit = {
+            has_updated_culture = {
+              culture = slavic
+            }
+          }
+          add_accepted_culture_or_dip_power = {
+            culture = polish_new
+          }
+        }
+        else = {
+          add_accepted_culture_or_dip_power = {
+            culture = polish
+          }
         }
         poland_region = {
           limit = {
@@ -4322,7 +4334,7 @@ swe_religion_mission_slot = {
         }
       }
       else = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = dip
           amount = 1
         }
@@ -4331,7 +4343,7 @@ swe_religion_mission_slot = {
         estate = estate_church
         loyalty = 15
       }
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = mil
         amount = 1
       }
@@ -4475,7 +4487,7 @@ swe_religion_mission_slot = {
       custom_tooltip = swe_catholic_effects_tt
       add_papal_influence = 200
       add_war_exhaustion = -2
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = mil
         amount = 2
       }
@@ -4500,7 +4512,7 @@ swe_religion_mission_slot = {
         }
       }
       else = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = dip
           amount = 1
         }
@@ -4509,7 +4521,7 @@ swe_religion_mission_slot = {
       add_church_power = 200
       add_fervor = 100
       add_war_exhaustion = -2
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = mil
         amount = 2
       }
@@ -4535,13 +4547,13 @@ swe_religion_mission_slot = {
         }
       }
       else = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = dip
           amount = 1
         }
       }
       custom_tooltip = swe_humanist_effects_tt
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = dip
         amount = 3
       }
@@ -4873,7 +4885,7 @@ swe_catholic_mission_slot = {
     effect = {
       add_papal_influence = 200
       add_war_exhaustion = -2
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = mil
         amount = 2
       }
@@ -4930,7 +4942,7 @@ swe_catholic_mission_slot = {
         custom_tooltip = swe_catholic_30_years_war_at
       }
       else = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = dip
           amount = 1
         }
@@ -5154,7 +5166,7 @@ swe_protestant_mission_slot = {
         }
       }
       else = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = dip
           amount = 1
         }
@@ -5163,7 +5175,7 @@ swe_protestant_mission_slot = {
         estate = estate_church
         loyalty = 15
       }
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = mil
         amount = 1
       }
@@ -5224,7 +5236,7 @@ swe_protestant_mission_slot = {
       add_church_power = 200
       add_fervor = 100
       add_war_exhaustion = -2
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = mil
         amount = 2
       }
@@ -5250,7 +5262,7 @@ swe_protestant_mission_slot = {
         }
       }
       else = {
-        add_stat_or_monarch_power = {
+        change_ruler_stat = {
           stat = dip
           amount = 1
         }
@@ -5421,7 +5433,7 @@ swe_humanist_mission_slot = {
       }
     }
     effect = {
-      add_stat_or_monarch_power = {
+      change_ruler_stat = {
         stat = dip
         amount = 3
       }
@@ -6779,6 +6791,7 @@ swe_sca_competent_fleet_slot = {
       }
       OR = {
         full_idea_group = maritime_ideas
+        full_idea_group = quality_ideas
         full_idea_group = naval_ideas
         naval_reformer = 3
       }
@@ -6838,6 +6851,9 @@ swe_sca_competent_fleet_slot = {
               full_idea_group = maritime_ideas
             }
             NOT = {
+              full_idea_group = quality_ideas
+            }
+            NOT = {
               full_idea_group = naval_ideas
             }
           }
@@ -6863,8 +6879,9 @@ swe_sca_competent_fleet_slot = {
     }
     trigger = {
       OR = {
-        full_idea_group = naval_ideas
         full_idea_group = maritime_ideas
+        full_idea_group = quality_ideas
+        full_idea_group = naval_ideas
         AND = {
           max_sailors = 50000
           num_of_owned_provinces_with = {
@@ -6894,6 +6911,7 @@ swe_sca_competent_fleet_slot = {
           limit = {
             OR = {
               full_idea_group = naval_ideas
+              full_idea_group = quality_ideas
               full_idea_group = maritime_ideas
             }
           }
@@ -6923,7 +6941,7 @@ swe_sca_competent_fleet_slot = {
         limit = {
           has_dlc = "Golden Century"
         }
-        has_or_building_flagship = no
+        has_spare_flagship_capacity = yes
       }
     }
     effect = {

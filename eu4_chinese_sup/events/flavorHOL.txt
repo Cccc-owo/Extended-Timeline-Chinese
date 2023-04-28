@@ -171,7 +171,7 @@ country_event = {
   trigger = {
     tag = NED
     NOT = {
-      has_reform = dutch_republic
+      has_government_attribute = has_dutch_election
     }
     NOT = {
       has_reform = celestial_empire
@@ -183,7 +183,7 @@ country_event = {
     months = 96
   }
   option = {
-    name = "flavor_hol.EVTOPTA3502"
+    name = "flavor_hol.EVTOPTB3502"
     ai_chance = {
       factor = 100
     }
@@ -193,7 +193,7 @@ country_event = {
           government = republic
         }
       }
-      change_government_to_republic = yes
+      change_government = republic
     }
     if = {
       limit = {
@@ -204,30 +204,25 @@ country_event = {
     add_government_reform = dutch_republic
   }
   option = {
-    name = "flavor_hol.EVTOPTB3502"
+    name = "flavor_hol.EVTOPTA3502"
     ai_chance = {
       factor = 0
-    }
-    trigger = {
-      always = no
-      NOT = {
-        government = republic
-      }
-      NOT = {
-        has_dlc = "Dharma"
-      }
-      NOT = {
-        has_dlc = "Emperor"
-      }
     }
     if = {
       limit = {
         NOT = {
-          government = republic
+          government = monarchy
         }
       }
-      change_government = republic
+      change_government = monarchy
     }
+    if = {
+      limit = {
+        has_reform = parliamentary_reform
+      }
+      remove_government_reform = parliamentary_reform
+    }
+    add_government_reform = stadthalter_monarchy_reform
   }
   option = {
     name = "flavor_hol.EVTOPTC3502"
@@ -396,7 +391,7 @@ country_event = {
     NOT = {
       is_year = 1700
     }
-    has_reform = dutch_republic
+    has_government_attribute = has_dutch_election
   }
   mean_time_to_happen = {
     months = 200
@@ -426,7 +421,7 @@ country_event = {
     revolution_target_exists = yes
     OR = {
       government = monarchy
-      has_reform = dutch_republic
+      has_government_attribute = has_dutch_election
     }
     NOT = {
       stability = 3
@@ -1029,7 +1024,7 @@ country_event = {
     }
     NED = {
       is_subject = no
-      has_reform = dutch_republic
+      has_government_attribute = has_dutch_election
       num_of_cities = 6
       OR = {
         religion = protestant
