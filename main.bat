@@ -8,7 +8,7 @@ ECHO Time:%date%
 ECHO Checking the required folder...
 if not exist output\ ( mkdir output\ ) else ( del /F /S /Q output\ & rmdir /S /Q output\ & mkdir output\ )
 if not exist output\%mod_dir% mkdir output\%mod_dir%\
-if exist mod.zip del /F /S /Q mod.zip
+if exist *.zip del /F /S /Q *.zip
 ::=====checking end=====
 ::=====integrating files=====
 ECHO.
@@ -16,14 +16,14 @@ ECHO Copying started.
 ECHO.
 xcopy eu4_chinese\ output\%mod_dir%\ /E /Q /C /Y
 xcopy eu4_chinese_sup\ output\%mod_dir%\ /E /Q /C /Y
+del /F /S /Q output\%mod_dir%\descriptor.mod
 del /F /S /Q output\%mod_dir%\history\provinces
 @REM xcopy ExtendedTimeline\ output\%mod_dir%\ /E /Q /C /Y
 xcopy cn_text\ output\%mod_dir%\ /E /Q /C /Y
 xcopy addition\ output\%mod_dir%\ /E /Q /C /Y
-xcopy mod_descriptor\ output\ /E /Q /C /Y
+xcopy mod_descriptor\%mod_desc% output\ /E /Q /C /Y
 ECHO path="mod/%mod_dir%" >> output\%mod_desc%
 xcopy mod_descriptor\%mod_desc% output\%mod_dir%\ /Q /C /Y
-del /F /S /Q output\%mod_dir%\descriptor.mod
 ren output\%mod_dir%\%mod_desc% descriptor.mod
 ::=====integrating files end=====
 ::=====post-processing=====
@@ -47,8 +47,8 @@ xcopy thumbnail.png output\%mod_dir%\ /Q /C /Y
 @REM del /F /S /Q output\%mod_dir%\localisation\*_l_german.yml
 @REM del /F /S /Q output\%mod_dir%\localisation\*_l_spanish.yml
 ECHO.
-ECHO Compressing the generated files...
-7z.exe a mod.zip .\output\*
+ECHO Compressing the mod files...
+7z.exe a %mod_dir%.zip .\output\%mod_dir%*
 ::=====post-processing end=====
 
 ECHO.
