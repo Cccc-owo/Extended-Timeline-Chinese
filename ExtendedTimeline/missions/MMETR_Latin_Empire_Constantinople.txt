@@ -1,0 +1,1618 @@
+latin_empire_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = LAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lat_claims_on_thessalonica_mission = {
+		icon = mission_plus_ultra
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				AND = {
+					legitimacy = 90
+					has_spy_network_in = {
+						who = THS
+						value = 30
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = lat_claims_on_thessalonica_mission.tt
+					OR = {
+						overlord_of = THS
+						NOT = {
+							exists = THS
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = THS
+					NOT = { 
+						overlord_of = THS
+					}
+				}
+				country_event = {
+					id = mmetr_LAT_mission_events.1
+				}
+				tooltip = {
+					add_casus_belli = {
+						target = THS
+						type = cb_vassalize_mission
+						months = 360
+					}
+					THS = {
+						every_owned_province = {
+							limit = {
+								NOT = { is_core = ROOT }
+								NOT = { is_permanent_claim = ROOT }
+							}
+							add_permanent_claim = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+	lat_crush_the_komnenodoukai_mission = {
+		icon = despot_of_epirus
+		required_missions = { lat_humble_the_thessalonians_mission }
+		position = 3
+		provinces_to_highlight = {
+			area = northern_greece_area		#Epirus
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				overlord_of = EPI
+				NOT = {
+					exists = EPI
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.2
+			}
+			custom_tooltip = lat_crush_the_komnenodoukai_mission.tt
+			tooltip = {
+				northern_greece_area = {
+					add_province_modifier = {
+						name = "me_lat_greek_reintegration"
+						duration = 10950
+					}
+				}
+				northern_greece_area = {
+					add_province_modifier = {
+						name = "me_lat_latinization_of_epirus"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	lat_catholicization_of_albania_mission = {
+		icon = pacify_the_albanian_lands
+		required_missions = { lat_crush_the_komnenodoukai_mission }
+		position = 4
+		provinces_to_highlight = {
+			area = albania_area
+			NOT = {
+				religion = catholic
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholic
+			}
+		}
+		effect = {
+			add_papal_influence = 15
+			add_country_modifier = {
+				name = "me_lat_archbishopric_of_durres"
+				duration = 10950
+			}
+			custom_tooltip = lat_catholicization_of_albania_mission.tt
+			country_event = {
+				id = mmetr_LAT_mission_events.3
+			}
+		}
+	}
+	lat_bulgarian_menace_mission = {
+		icon = mission_krums_nikephoros_skull_cup
+		required_missions = {  }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+				area = bulgaria_area
+				area = silistria_area
+				area = wallachia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bulgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			silistria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wallachia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			add_power_projection = {
+				type = mission_rewards_power_projection		#Adding Power Projection
+				amount = 15
+			}
+			country_event = {
+				id = mmetr_LAT_mission_events.4
+			}
+			serbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rascia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lat_subjugate_the_serbs_mission = {
+		icon = reissue_the_mining_code
+		required_missions = { lat_bulgarian_menace_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = serbia_area
+				area = rascia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			serbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rascia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.5
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_via_de_zenta"
+					duration = 10950
+				}
+			}
+		}
+	}
+	lat_question_of_the_economy_mission = {
+		icon = reform_the_monte
+		required_missions = { lat_hybrid_administration_mission }
+		position = 9
+		trigger = {
+			share_of_starting_income = 1.5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_economy_recovered"
+				duration = 10950
+			}
+		}
+	}
+	lat_cultivate_foodstuffs_mission = {
+		icon = mission_latin_farmer_latifundia
+		required_missions = { lat_question_of_the_economy_mission }
+		position = 11
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = storehouse
+					has_building = windmill
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 7
+				OR = {
+					trade_goods = grain
+					trade_goods = fish
+					trade_goods = livestock
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.12
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_abundant_supplies"
+					duration = 10950
+				}
+			}
+		}
+	}
+	lat_latin_emporia_mission = {
+		icon = secure_the_republic
+		required_missions = { lat_cultivate_foodstuffs_mission }
+		position = 13
+		provinces_to_highlight = {
+			province_has_center_of_trade_of_level = 2
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				province_has_center_of_trade_of_level = 2
+				OR = {
+					has_building = marketplace
+					has_building = trade_post
+					has_building = trade_depot
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_trade_fleet_of_constantinople"
+				duration = 10950
+			}
+		}
+	}
+}
+
+latin_empire_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = LAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lat_humble_the_thessalonians_mission = {
+		icon = mission_medieval_surrender_keys
+		required_missions = { lat_claims_on_thessalonica_mission lat_partitio_regni_graeci_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 148
+				province_id = 4702
+				province_id = 147
+				province_id = 1853
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 148
+			owns_or_non_sovereign_subject_of = 4702
+			owns_or_non_sovereign_subject_of = 147
+			owns_or_non_sovereign_subject_of = 1853
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_expanding_realm"
+				duration = 10950
+			}
+		}
+	}
+	lat_hegemon_of_hellas_mission = {
+		icon = mission_pf_map_table
+		required_missions = { lat_humble_the_thessalonians_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = central_greece_area
+				area = morea_area
+			}
+			NOT = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						tag = VEN
+						alliance_with = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			central_greece_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						tag = VEN
+						alliance_with = ROOT
+					}
+				}
+			}
+			morea_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						tag = VEN
+						alliance_with = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_crusaders_of_the_empire"
+				duration = 10950
+			}
+		}
+	}
+	lat_catholic_hellenes_mission = {
+		icon = mission_mass_baptism
+		required_missions = { lat_hegemon_of_hellas_mission }
+		position = 5
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				religion = catholic
+				culture_group = byzantine
+			}
+			num_of_owned_provinces_with = {
+				value = 2
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+				OR = {
+					area = central_greece_area
+					area = morea_area
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_conversion_of_the_hellenes"
+				duration = 10950
+			}
+		}
+	}
+	lat_pax_romana_mission = {
+		icon = mission_west_rome_chi_rho_flag
+		required_missions = { lat_catholic_hellenes_mission lat_bulgarian_menace_mission lat_march_to_trapezus_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 151
+			NOT = {
+				is_capital_of = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			capital = 151	#Constantinople
+			stability = 3
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			OR = {
+				has_had_golden_age = yes
+				in_golden_age = yes
+				is_great_power = yes
+				grown_by_development = 100
+			}
+		}
+		effect = {
+			add_legitimacy = 50
+			add_country_modifier = {
+				name = "me_lat_pax_romana"
+				duration = 10950
+			}
+		}
+	}
+	lat_hybrid_administration_mission = {
+		icon = mission_monarch_in_throne_room
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = ROOT
+			culture_group = byzantine
+			local_autonomy_above_min = 10
+		}
+		trigger = {
+			stability = 1
+			prestige = 25
+			NOT = { corruption = 1 }
+			num_of_owned_provinces_with = {
+				value = 10
+				culture_group = byzantine
+				NOT = { local_autonomy_above_min = 10 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_latin_administration"
+				duration = 10950
+			}
+		}
+	}
+	lat_greek_cooperation_mission = {
+		icon = mission_pf_cross
+		required_missions = { lat_hybrid_administration_mission }
+		position = 10
+		trigger = {
+			accepted_culture = greek
+			num_of_owned_provinces_with = {
+				value = 10
+				culture = greek
+				NOT = { unrest = 5 }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.11
+			}
+			custom_tooltip = lat_greek_cooperation_mission.tt
+		}
+	}
+	lat_wealth_of_an_empire_mission = {
+		icon = mission_war_chest
+		required_missions = { lat_cultivate_foodstuffs_mission }
+		position = 12
+		trigger = {
+			treasury = 2000
+		}
+		effect = {
+			add_prestige = 10
+			add_adm_power = 50
+			add_country_modifier = {
+				name = "me_lat_well_managed_treasury"
+				duration = 10950
+			}
+		}
+	}
+	lat_renovate_the_hagia_sophia_mission = {
+		icon = take_constantinople
+		required_missions = { lat_wealth_of_an_empire_mission lat_relics_of_greece_mission }
+		position = 14
+		provinces_to_highlight = {
+			province_id = 151
+			OR = {
+				NOT = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					has_great_project = {
+						type = hagia_sophia
+						tier = 3
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 151	#Constantinople
+			151 = {
+				has_great_project = {
+					type = hagia_sophia
+					tier = 3
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			country_event = {
+				id = mmetr_LAT_mission_events.14
+			}
+			custom_tooltip = lat_crush_the_komnenodoukai_mission.tt
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_hagia_sophia_pilgrims"
+					duration = 10950
+				}
+				add_country_modifier = {
+					name = "me_lat_catholic_renovation"
+					duration = 10950
+				}
+			}
+		}
+	}
+}
+
+latin_empire_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = LAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lat_partitio_regni_graeci_mission = {
+		icon = la_latinocrazia
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_generals = 1
+			army_size_percentage = 1.0
+			manpower_percentage = 0.60
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.8
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_army_of_constantinople"
+					duration = 10950
+				}
+				thrace_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				hudavendigar_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				aydin_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				kastamonu_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				aegean_archipelago_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				
+				#Trebizond
+				330 = {
+					if = {
+						limit = {
+							NOT = { owned_by = ROOT }
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	lat_conquest_of_bithynia_mission = {
+		icon = mission_consolidate_the_state
+		required_missions = { lat_partitio_regni_graeci_mission }
+		position = 3
+		provinces_to_highlight = {
+			area = hudavendigar_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.7
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_victorious_army"
+					duration = 10950
+				}
+				ankara_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	lat_march_to_trapezus_mission = {
+		icon = unite_the_realm
+		required_missions = { lat_conquest_of_bithynia_mission }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 330	#Trebizond
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 330		#Trebizond
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.10
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_trade_of_trapezus"
+					duration = 10950
+				}
+			}
+		}
+	}
+	lat_foothold_in_taurica_mission = {
+		icon = mission_retake_ceuta
+		required_missions = { lat_march_to_trapezus_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = crimea_area
+					OR = {
+						NOT = {
+							owned_by = ROOT
+						}
+						AND = {
+							owned_by = ROOT
+							NOT = {
+								OR = {
+									has_building = marketplace
+									has_building = trade_post
+									has_building = trade_depot
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 1322	#Crimea trade node
+					NOT = {
+						is_strongest_trade_power = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			1322 = {
+				is_strongest_trade_power = ROOT
+			}
+			any_owned_province = {
+				area = crimea_area
+				OR = {
+					has_building = marketplace
+					has_building = trade_post
+					has_building = trade_depot
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_ships_of_taurica"
+				duration = 10950
+			}
+		}
+	}
+	lat_frankokratia_mission = {
+		icon = indian_dominance
+		required_missions = { lat_hybrid_administration_mission lat_queen_of_all_cities_mission }
+		position = 9
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_frankokratia"
+				duration = 10950
+			}
+		}
+	}
+	lat_vassals_of_constantinople_mission = {
+		icon = spread_the_von_wettins
+		required_missions = { lat_frankokratia_mission }
+		position = 10
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = lat_vassals_of_constantinople_mission.tt
+				calc_true_if = {
+					all_subject_country = {
+						religion = catholic
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_latin_hegemony"
+				duration = 10950
+			}
+		}
+	}
+	lat_invite_the_holy_orders_mission = {
+		icon = mission_united_knight_order
+		required_missions = { lat_patriarch_of_constantinople_mission }
+		position = 12
+		trigger = {
+			adm_tech = 36
+			num_of_owned_provinces_with = {
+				value = 10
+				NOT = {
+					religion = catholic
+				}
+			}
+			OR = {
+				army_tradition = 40
+				army_professionalism = 0.30
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_holy_orders"
+				duration = 10950
+			}
+			country_event = {
+				id = mmetr_LAT_mission_events.16
+			}
+			custom_tooltip = lat_invite_the_holy_orders_mission.tt
+		}
+	}
+	lat_relics_of_greece_mission = {
+		icon = chivalry_is_not_dead
+		required_missions = { lat_sponsor_latin_churches_mission }
+		position = 13
+		provinces_to_highlight = {
+			province_id = 151
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			prestige = 50
+			owns_core_province = 151
+			stability = 2
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.15
+			}
+		}
+	}
+}
+
+latin_empire_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = LAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lat_control_the_aegean_coast_mission = {
+		icon = reclaim_the_aegean
+		required_missions = { lat_partitio_regni_graeci_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2296
+				province_id = 2297
+				province_id = 318
+				province_id = 4309
+				province_id = 2348
+				province_id = 4700
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 2296
+			owns_or_non_sovereign_subject_of = 2297
+			owns_or_non_sovereign_subject_of = 318
+			owns_or_non_sovereign_subject_of = 4309
+			owns_or_non_sovereign_subject_of = 2348
+			owns_or_non_sovereign_subject_of = 4700
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_aegean_cities"
+				duration = 10950
+			}
+			germiyan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lat_the_seljuks_of_rum_mission = {
+		icon = mission_seljuk_rum_flag
+		required_missions = { lat_control_the_aegean_coast_mission lat_conquest_of_bithynia_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = germiyan_area
+				area = ankara_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			germiyan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ankara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.9
+			}
+			rum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			karaman_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			aleppo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			syria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lat_renovatio_in_turchia_mission = {
+		icon = mission_castle_construction_medieval
+		required_missions = { lat_the_seljuks_of_rum_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = rum_area
+				area = karaman_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			rum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				papal_influence = 40
+				invested_papal_influence = 30
+			}
+		}
+		effect = {
+			custom_tooltip = lat_renovatio_in_turchia_mission.tt
+			country_event = {
+				id = mmetr_LAT_mission_events.13
+			}
+			add_country_modifier = {
+				name = "me_lat_restoration_of_asia_minor"
+				duration = 10950
+			}
+			anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lat_campaign_in_georgia_mission = {
+		icon = mission_sassanid_golden_cataphract_attack
+		required_missions = { lat_march_to_trapezus_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = imereti_area
+				area = kartli_kakheti_area
+				area = armenia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			armenia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_defender_of_eastern_christians"
+				duration = 10950
+			}
+		}
+	}
+	lat_queen_of_all_cities_mission = {
+		icon = the_latin_empire
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 151
+			OR = {
+				NOT = {
+					is_capital_of = ROOT
+				}
+				NOT = {
+					num_of_times_improved_by_owner = 3
+				}
+				NOT = {
+					num_of_buildings_in_province = 3
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			capital = 151	#Constantinople
+			151 = {
+				num_of_times_improved_by_owner = 3
+			}
+			151 = {
+				num_of_buildings_in_province = 2
+			}
+		}
+		effect = {
+			151 = {
+				add_province_modifier = {
+					name = "me_lat_queen_of_cities"
+					duration = 10950
+				}
+			}
+		}
+	}
+	lat_patriarch_of_constantinople_mission = {
+		icon = invest_in_the_provinces
+		required_missions = { lat_queen_of_all_cities_mission }
+		position = 11
+		provinces_to_highlight = {
+			province_id = 151
+			OR = {
+				NOT = { 
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					has_building = temple
+				}
+				NOT = {
+					has_building = cathedral
+				}
+			}
+			has_building = ROOT
+		}
+		trigger = {
+			papal_influence = 30
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 3
+			}
+			owns_core_province = 151
+			151 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.18
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_latin_patriarch_of_constantinople"
+					duration = 10950
+				}
+			}
+		}
+	}
+	lat_sponsor_latin_churches_mission = {
+		icon = catholic_volunteers
+		required_missions = { lat_patriarch_of_constantinople_mission }
+		position = 12
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_catholic_churches_of_the_east"
+				duration = 10950
+			}
+		}
+	}
+	lat_cardinals_of_constantinople_mission = {
+		icon = mission_religious
+		required_missions = { lat_sponsor_latin_churches_mission }
+		position = 14
+		trigger = {
+			num_of_cardinals = 3
+		}
+		effect = {
+			add_papal_influence = 40
+			add_country_modifier = {
+				name = "me_lat_church_favors"
+				duration = 10950
+			}
+		}
+	}
+}
+
+latin_empire_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = LAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lat_imperial_fleet_mission = {
+		icon = crusader_fleet
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_admirals = 1
+			navy_size_percentage = 1.0
+			navy_size = 20
+			num_of_galley = 10
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.6
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_venetian_galleys"
+					duration = 10950
+				}
+			}
+		}
+	}
+	lat_thalassocratic_authority_mission = {
+		icon = build_a_roman_navy
+		required_missions = { lat_imperial_fleet_mission }
+		position = 2
+		trigger = {
+			navy_tradition = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_grand_fleet_of_constantinople"
+				duration = 10950
+			}
+		}
+	}
+	lat_smother_the_embers_mission = {
+		icon = mission_pf_soldier
+		required_missions = { lat_control_the_aegean_coast_mission }
+		position = 3
+		provinces_to_highlight = {
+			owned_by = NCA
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				NOT = {
+					exists = NCA	#Nicaea
+				}
+				overlord_of = NCA
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_emperor_of_emperors"
+				duration = 10950
+			}
+		}
+	}
+	lat_the_sands_of_syria_mission = {
+		icon = et_mission_crusader
+		required_missions = { lat_the_seljuks_of_rum_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+				area = aleppo_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			syria_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						religion = catholic
+					}
+				}
+			}
+			aleppo_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						religion = catholic
+					}
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					area = syria_area
+					area = aleppo_area
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			add_country_modifier = {
+				name = "me_lat_crusaders_of_the_levant"
+				duration = 10950
+			}
+			palestine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lat_defender_of_jerusalem_mission = {
+		icon = jerusalem
+		required_missions = { lat_the_sands_of_syria_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 379	#Judea
+			NOT = {
+				OR = {
+					owns_or_non_sovereign_subject_of = 379
+					AND = {
+						alliance_with = KOJ
+						reverse_has_opinion = {
+							who = KOJ
+							value = 150
+						}
+						KOJ = {
+							owns = 379
+						}
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				owns_or_non_sovereign_subject_of = 379
+				AND = {
+					alliance_with = KOJ
+					reverse_has_opinion = {
+						who = KOJ
+						value = 150
+					}
+					KOJ = {
+						owns = 379
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.17
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lat_protector_of_the_holy_land"
+					duration = 10950
+				}
+				palestine_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_lat_relics_of_jerusalem"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	lat_new_caesar_in_egypt_mission = {
+		icon = mission_conquer_alexandria
+		required_missions = { lat_defender_of_jerusalem_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 361	#Cairo
+				province_id = 358	#Alexandria
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns = 361	#Cairo
+			owns = 358	#Alexandria
+			num_of_owned_provinces_with = {
+				value = 12
+				region = egypt_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_egyptian_breadbasket"
+				duration = 10950
+			}
+			egypt_region = {
+				limit = {
+					is_empty = no
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lat_venetian_merchants_mission = {
+		icon = purely_for_commerce
+		required_missions = {  }
+		position = 8
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_burghers
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_venetian_loans"
+				duration = 10950
+			}
+			define_advisor = {
+				type = trader
+				skill = 2
+				discount = yes
+				culture = venetian
+				religion = catholic
+			}
+			if = {
+				limit = {
+					exists = VEN
+				}
+				add_historical_friend = VEN
+				VEN = {
+					add_historical_friend = ROOT
+				}
+			}
+		}
+	}
+	lat_crossroads_of_trade_mission = {
+		icon = sources_of_trade
+		required_missions = { lat_venetian_merchants_mission lat_queen_of_all_cities_mission }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 1320		#Constantinople Trade Node
+			NOT = {
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			#Constantinople Trade Node
+			1320 = {
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			add_country_modifier = {
+				name = "me_lat_trade_empire"
+				duration = 10950
+			}
+		}
+	}
+	lat_undermine_the_venetokratia_mission = {
+		icon = nuova_promissione_ducale
+		required_missions = { lat_crossroads_of_trade_mission }
+		position = 10
+		trigger = {
+			VEN = {
+				custom_trigger_tooltip = {
+					tooltip = lat_undermine_the_venetokratia_mission.tt
+					OR = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = insulted
+						}
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = scornfully_insulted
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			remove_historical_friend = VEN
+			VEN = {
+				remove_historical_friend = ROOT
+			}
+			custom_tooltip = lat_undermine_the_venetokratia_mission.tt2
+			hidden_effect = {
+				every_province = {
+					limit = {
+						country_or_subject_holds = VEN
+						OR = {
+							region = balkan_region
+							region = anatolia_region
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	lat_spear_of_roma_mission = {
+		icon = mission_normans_of_sicily
+		required_missions = { lat_patriarch_of_constantinople_mission }
+		position = 12
+		trigger = {
+			army_tradition = 70
+			OR = {
+				papal_influence = 50
+				alliance_with = PAP
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_sword_of_christendom"
+				duration = 10950
+			}
+		}
+	}
+	lat_shield_of_christendom_mission = {
+		icon = shield_of_christendom
+		required_missions = { lat_spear_of_roma_mission lat_sponsor_latin_churches_mission }
+		position = 13
+		trigger = {
+			is_defender_of_faith = yes
+			is_defender_of_faith_of_tier = 3
+			power_projection = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lat_never_ending_crusade"
+				duration = -1
+			}
+		}
+	}
+	lat_mending_the_schism_mission = {
+		icon = end_the_schism
+		required_missions = { lat_shield_of_christendom_mission }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				region = balkan_region
+				region = anatolia_region
+			}
+			OR = {
+				religion = catholic
+				AND = {
+					religion_group = christian
+					NOT = {
+						religion = catholic
+					}
+				}
+			}
+			has_building = ROOT
+		}
+		trigger = {
+			religion = catholic
+			balkan_region = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = lat_mending_the_schism_mission.tt
+					OR = {
+						religion = catholic
+						NOT = {
+							religion_group = christian
+						}
+					}
+				}
+			}
+			anatolia_region = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = lat_mending_the_schism_mission.tt
+					OR = {
+						religion = catholic
+						NOT = {
+							religion_group = christian
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = lat_mending_the_schism_mission.tt2
+				all_owned_province = {
+					OR = {
+						religion = catholic
+						NOT = {
+							religion_group = christian
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LAT_mission_events.19
+			}
+			tooltip = {
+				add_papal_influence = 50
+				add_prestige = 50
+				add_country_modifier = {
+					name = "me_lat_holy_unifier"
+					duration = 10950
+				}
+			}
+		}
+	}
+	
+}

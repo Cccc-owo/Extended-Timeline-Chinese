@@ -1056,50 +1056,57 @@ highest_supply_limit_in_area = {
 
 # Has current fort level
 province_has_current_tech_fort_trigger = {
-	custom_trigger_tooltip = {
-		tooltip = province_has_current_tech_fort_trigger_tt
-		if = {
-			limit = {
-				owner = {
-					NOT = { mil_tech = 14 }
-				}
-			}
-			has_building = fort_15th
-		}
-		else_if = {
-			limit = {
-				owner = {
-					AND = {
-						mil_tech = 14
-						NOT = { mil_tech = 19 }
-					}
-				}
-			}
-			has_building = fort_16th
-		}
-		else_if = {
-			limit = {
-				owner = {
-					AND = {
-						mil_tech = 19
-						NOT = { mil_tech = 24 }
-					}
-				}
-			}
-			has_building = fort_17th
-		}
-		else_if = {
-			limit = {
-				owner = {
-					mil_tech = 24
-				}
-			}
-			has_building = fort_18th
-		}
-	}
+    custom_trigger_tooltip = {
+        tooltip = province_has_current_tech_fort_trigger_tt
+        if = {
+            limit = {
+                owner = {
+                    NOT = { mil_tech = 17 }
+                }
+            }
+            has_building = fort_et
+        }
+        else_if = {
+            limit = {
+                owner = {
+                    AND = {
+                        mil_tech = 17
+                        NOT = { mil_tech = 59 }
+                    }
+                }
+            }
+            has_building = fort_15th
+        }
+        else_if = {
+            limit = {
+                owner = {
+                    AND = {
+                        mil_tech = 59
+                        NOT = { mil_tech = 64 }
+                    }
+                }
+            }
+            has_building = fort_16th
+        }
+        else_if = {
+            limit = {
+                owner = {
+                    mil_tech = 64
+                    NOT = { mil_tech = 69 }
+                }
+            }
+            has_building = fort_17th
+        }
+        else_if = {
+            limit = {
+                owner = {
+                    mil_tech = 69
+                }
+            }
+            has_building = fort_18th
+        }
+    }
 }
-
-
 
 province_has_current_tech_trade_trigger = {
 	custom_trigger_tooltip = {
@@ -2316,7 +2323,7 @@ province_is_buddhist_or_accepts_buddhism = {
 					religion = buddhism
 					OR = {
 						has_owner_religion = yes
-						owner = { has_harmonized_with = buddhism }
+						owner = { has_harmonized_with = buddhic }
 						owner = { secondary_religion = buddhism }
 					}
 				}
@@ -2324,7 +2331,7 @@ province_is_buddhist_or_accepts_buddhism = {
 					religion = vajrayana
 					OR = {
 						has_owner_religion = yes
-						owner = { has_harmonized_with = vajrayana }
+						owner = { has_harmonized_with = buddhic }
 						owner = { secondary_religion = vajrayana }
 					}
 				}
@@ -2332,7 +2339,7 @@ province_is_buddhist_or_accepts_buddhism = {
 					religion = mahayana
 					OR = {
 						has_owner_religion = yes
-						owner = { has_harmonized_with = mahayana }
+						owner = { has_harmonized_with = buddhic }
 						owner = { secondary_religion = mahayana }
 					}
 				}

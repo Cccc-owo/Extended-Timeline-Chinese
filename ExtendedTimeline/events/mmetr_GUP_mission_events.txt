@@ -1,0 +1,147 @@
+namespace = mmetr_GUP_mission_events
+
+# Bengal Land Administration
+country_event = {
+	id = mmetr_GUP_mission_events.1
+	title = "mmetr_GUP_mission_events.1.t"
+	desc = "mmetr_GUP_mission_events.1.desc"
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_GUP_mission_events.1.a"
+		
+		west_bengal_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_gup_bengal_delta_administration"
+				duration = 7300
+			}
+		}
+		east_bengal_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_gup_bengal_delta_administration"
+				duration = 7300
+			}
+		}
+	}
+}
+
+# Legendary Heroes of Madhyadesha
+country_event = {
+	id = mmetr_GUP_mission_events.2
+	title = "mmetr_GUP_mission_events.2.t"
+	desc = "mmetr_GUP_mission_events.2.desc"
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_GUP_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_gup_hero_of_madhyadesha"
+			duration = 5475
+		}
+	}
+}
+
+# Scientific Developments
+country_event = {
+	id = mmetr_GUP_mission_events.3
+	title = "mmetr_GUP_mission_events.3.t"
+	desc = "mmetr_GUP_mission_events.3.desc"
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_GUP_mission_events.3.a"
+		
+		add_country_modifier = {
+			name = "me_gup_gupta_chemistry"
+			duration = 5475
+		}
+	}
+}
+
+# Golden Age of India
+country_event = {
+	id = mmetr_GUP_mission_events.4
+	title = "mmetr_GUP_mission_events.4.t"
+	desc = "mmetr_GUP_mission_events.4.desc"
+	picture = ARTWORK_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_GUP_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_gup_golden_age_of_india"
+			duration = 7300
+		}
+	}
+}
+
+# Question of Buddhism
+country_event = {
+	id = mmetr_GUP_mission_events.5
+	title = "mmetr_GUP_mission_events.5.t"
+	desc = "mmetr_GUP_mission_events.5.desc"
+	picture = BUDDHA_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_GUP_mission_events.5.a"
+		
+		change_religion = mahayana
+		set_ruler_religion = mahayana
+	}
+	
+	option = {
+		name = "mmetr_GUP_mission_events.5.b"
+		
+		change_religion = buddhism		#Theravada
+		set_ruler_religion = buddhism
+	}
+	
+	option = {
+		name = "mmetr_GUP_mission_events.5.c"
+		
+		if = {
+			limit = {
+				has_dlc = "Wealth of Nations"
+				religion = hinduism
+			}
+			custom_tooltip = buddha_deity_tt	#Gain Buddha personal deity
+			hidden_effect = {
+				set_country_flag = unlock_buddha_personal_deity
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = maj_religious_unity
+				duration = -1
+			}
+		}
+	}
+}
+

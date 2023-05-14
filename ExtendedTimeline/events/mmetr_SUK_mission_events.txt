@@ -1,0 +1,238 @@
+namespace = mmetr_SUK_mission_events
+
+# An Elephant for the [Root.Monarch.GetTitle]
+country_event = {
+	id = mmetr_SUK_mission_events.2
+	title = "mmetr_SUK_mission_events.2.t"
+	desc = "mmetr_SUK_mission_events.2.desc"
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.2.a"
+		
+		add_ruler_modifier = {
+			name = "me_suk_elephant_wachirawit"
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "mmetr_SUK_mission_events.2.b"
+		
+		add_ruler_modifier = {
+			name = "me_suk_elephant_hiran"
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "mmetr_SUK_mission_events.2.c"
+		
+		add_ruler_modifier = {
+			name = "me_suk_elephant_mechai"
+			duration = -1
+		}
+	}
+}
+
+# Wat Mahathat
+country_event = {
+	id = mmetr_SUK_mission_events.3
+	title = "mmetr_SUK_mission_events.3.t"
+	desc = "mmetr_SUK_mission_events.3.desc"
+	picture = SHWEDAGON_PAGON_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.3.a"
+		
+		601 = {
+			add_province_modifier = {
+				name = "me_suk_wat_mahathat"
+				duration = -1
+			}
+		}
+	}
+}
+
+# The Land of One Million Rice Fields
+country_event = {
+	id = mmetr_SUK_mission_events.4
+	title = "mmetr_SUK_mission_events.4.t"
+	desc = "mmetr_SUK_mission_events.4.desc"
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.4.a"
+		
+		add_karma = 10
+		northern_thai_area = {		#Chiang Mai Area
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = LNA
+			add_core = LNA
+		}
+		vassalize = LNA
+	}
+	
+	option = {
+		name = "mmetr_SUK_mission_events.4.b"
+		
+		
+	}
+}
+
+# The Thais of Ayutthaya
+country_event = {
+	id = mmetr_SUK_mission_events.5
+	title = "mmetr_SUK_mission_events.5.t"
+	desc = "mmetr_SUK_mission_events.5.desc"
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.5.a"
+		
+		capital_scope = {
+			add_base_manpower = 1
+		}
+	}
+	
+	option = {
+		name = "mmetr_SUK_mission_events.5.b"
+		
+		600 = {		#Ayutthaya
+			add_base_manpower = 1
+		}
+	}
+}
+
+# The Lao People of the East
+country_event = {
+	id = mmetr_SUK_mission_events.6
+	title = "mmetr_SUK_mission_events.6.t"
+	desc = "mmetr_SUK_mission_events.6.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_suk_integration_policy"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_SUK_mission_events.6.b"
+		
+		add_country_modifier = {
+			name = "me_suk_assimilation_policy"
+			duration = 10950
+		}
+	}
+}
+
+# Angkor Captured
+country_event = {
+	id = mmetr_SUK_mission_events.7
+	title = "mmetr_SUK_mission_events.7.t"
+	desc = "mmetr_SUK_mission_events.7.desc"
+	picture = MMETR_ANGKOR_WAT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.7.a"
+		
+		add_years_of_income = 0.5
+		609 = {
+			add_unrest = 5
+		}
+	}
+	
+	option = {
+		name = "mmetr_SUK_mission_events.7.b"
+		
+		add_karma = 20
+	}
+}
+
+# Thai Silk
+country_event = {
+	id = mmetr_SUK_mission_events.8
+	title = "mmetr_SUK_mission_events.8.t"
+	desc = "mmetr_SUK_mission_events.8.desc"
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_suk_thai_silk"
+			duration = 10950
+		}
+	}
+}
+
+# Sangkhalok Ware
+country_event = {
+	id = mmetr_SUK_mission_events.9
+	title = "mmetr_SUK_mission_events.9.t"
+	desc = "mmetr_SUK_mission_events.9.desc"
+	picture = ARTWORK_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.9.a"
+		
+		add_dip_power = 20
+		add_country_modifier = {
+			name = "me_suk_chinese_trade"
+			duration = 10950
+		}
+	}
+}
+
+# Mon of Martaban-Hanthawaddy
+country_event = {
+	id = mmetr_SUK_mission_events.10
+	title = "mmetr_SUK_mission_events.10.t"
+	desc = "mmetr_SUK_mission_events.10.desc"
+	picture = SHWEDAGON_PAGON_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_SUK_mission_events.9.a"
+		
+		add_karma = 10
+		lower_burma_area = {		#Pegu
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = PEG
+			add_core = PEG
+		}
+		vassalize = PEG
+	}
+	
+	option = {
+		name = "mmetr_SUK_mission_events.9.b"
+		
+		
+	}
+}
+

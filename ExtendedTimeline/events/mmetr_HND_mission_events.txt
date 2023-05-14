@@ -1,0 +1,154 @@
+namespace = mmetr_HND_mission_events
+
+# The Northern Army
+country_event = {
+	id = mmetr_HND_mission_events.1
+	title = "mmetr_HND_mission_events.1.t"
+	desc = "mmetr_HND_mission_events.1.desc"
+	picture = east_asian_LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HND_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = me_hnd_beijun
+			duration = 7300
+		}
+	}
+}
+
+# The End of the Northern Wars
+country_event = {
+	id = mmetr_HND_mission_events.2
+	title = "mmetr_HND_mission_events.2.t"
+	desc = "mmetr_HND_mission_events.2.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HND_mission_events.2.a"
+		
+		add_prestige = 20
+		add_country_modifier = {
+			name = me_hnd_harsher_tribute
+			duration = 10950
+		}
+	}
+}
+
+# The Five Barbarians
+country_event = {
+	id = mmetr_HND_mission_events.3
+	title = "mmetr_HND_mission_events.3.t"
+	desc = "mmetr_HND_mission_events.3.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HND_mission_events.3.a"
+		
+		create_subject = {
+			subject_type = client_kingdom
+			subject = QIA
+		}
+	}
+}
+
+# The Jade Gate
+country_event = {
+	id = mmetr_HND_mission_events.4
+	title = "mmetr_HND_mission_events.4.t"
+	desc = "mmetr_HND_mission_events.4.desc"
+	picture = muslimgfx_MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HND_mission_events.4.a"
+		
+		707 = {
+			add_permanent_province_modifier = {
+				name = me_hnd_jade_gate
+				duration = -1
+			}
+		}
+	}
+}
+
+# Four Commanderies of Han
+country_event = {
+	id = mmetr_HND_mission_events.5
+	title = "mmetr_HND_mission_events.5.t"
+	desc = "mmetr_HND_mission_events.5.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HND_mission_events.5.a"
+		
+		add_dip_power = 100
+		2744 = {
+			add_province_modifier = {
+				name = "me_hnd_commandery_administration"
+				duration = 9125
+			}
+		}
+		1845 = {
+			add_province_modifier = {
+				name = "me_hnd_commandery_administration"
+				duration = 9125
+			}
+		}
+		733 = {
+			add_province_modifier = {
+				name = "me_hnd_commandery_administration"
+				duration = 9125
+			}
+		}
+		4231 = {
+			add_province_modifier = {
+				name = "me_hnd_commandery_administration"
+				duration = 9125
+			}
+		}
+		4232 = {
+			add_province_modifier = {
+				name = "me_hnd_commandery_administration"
+				duration = 9125
+			}
+		}
+		732 = {
+			add_province_modifier = {
+				name = "me_hnd_commandery_administration"
+				duration = 9125
+			}
+		}
+	}
+}
+
+# Visitors from Wa
+country_event = {
+	id = mmetr_HND_mission_events.6
+	title = "mmetr_HND_mission_events.6.t"
+	desc = "mmetr_HND_mission_events.6.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HND_mission_events.6.a"
+		
+		define_advisor = {
+			type = philosopher
+			skill = 2
+			culture = japanese
+			religion = shinto
+		}
+	}
+}
+

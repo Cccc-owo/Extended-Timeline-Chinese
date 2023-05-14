@@ -2019,7 +2019,20 @@ road = {
 	}
 
 	ai_will_do = {
-		factor = 1 #Lots of logic in code instead, that multiplies with this value
+		#Tricks the AI into thinking this building makes money, so it will build this
+		#100.1%, AI Should only build this last
+		factor = 100.1
+
+		modifier = {
+			#AI Wont build this if they losing money or are low on money
+			factor = -1000
+			NOT = {
+				OR = {
+					treasury = 90 # Does AI have road cost + 10?
+					monthly_income = 0 #If AI is making no money, do not build this
+				}
+			}
+		}
 	} 
 }
 
@@ -2036,7 +2049,20 @@ highway = {
 	}
 
 	ai_will_do = {
-		factor = 1 #Lots of logic in code instead, that multiplies with this value
+		#Tricks the AI into thinking this building makes money, so it will build this
+		#100.2%, AI Should only build this last
+		factor = 100.2
+
+		modifier = {
+			#AI Wont build this if they losing money or are low on money
+			factor = -1000
+			NOT = {
+				OR = {
+					treasury = 150 # Does AI have Highway cost + 30?
+					monthly_income = 0 #If AI is making no money, do not build this
+				}
+			}
+		}
 	} 
 }
 
@@ -2068,7 +2094,20 @@ railroad = {
 	}
 
 	ai_will_do = {
-		factor = 2 #Lots of logic in code instead, that multiplies with this value
+		#Tricks the AI into thinking this building makes money, so it will build this
+		#100.3%, AI Should only build this if nothing else makes money
+		factor = 100.3
+
+		modifier = {
+			#AI Wont build this if they losing money or are low on money
+			factor = -1000
+			NOT = {
+				OR = {
+					treasury = 120 # Does AI have Railroad cost + 20?
+					monthly_income = 0 #If AI is making no money, do not build this
+				}
+			}
+		}
 	} 
 }
 
@@ -2098,7 +2137,9 @@ mass_transit_system = {
 	}
 
 	ai_will_do = {
-		factor = 1 #Lots of logic in code instead, that multiplies with this value
+		#This Building has a Tax Modifier, It makes money
+		#The AI Should be building this natrually
+		factor = 1
 	} 
 }
 
@@ -2117,17 +2158,16 @@ glorious_monument = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 0
-			NOT = { base_tax = 3 }
-		}		
+			#Build in Provences that have Unrest
+			factor = 100.1
+			unrest = 1
+		}
 		modifier = {
-			factor = 0.5
-			NOT = { base_tax = 5 }
-		}			
-		modifier = {
-			factor = 0.1
-			is_overseas = yes
-		}		
+			#Does Province have the Owner's Religion?
+			factor = 2
+			has_owner_religion = no
+			owner = { NOT = { religion = secular } }
+		}
 	}
 }
 
@@ -2195,17 +2235,16 @@ temple = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 0
-			NOT = { base_tax = 3 }
-		}		
+			#Build in Provences that have Unrest
+			factor = 105
+			unrest = 1
+		}
 		modifier = {
-			factor = 0.5
-			NOT = { base_tax = 5 }
-		}			
-		modifier = {
-			factor = 0.1
-			is_overseas = yes
-		}		
+			#Does Province have the Owner's Religion?
+			factor = 2
+			has_owner_religion = no
+			owner = { NOT = { religion = secular } }
+		}
 	}
 }
 
@@ -2275,17 +2314,16 @@ cathedral = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 0
-			NOT = { base_tax = 3 }
-		}		
+			#Build in Provences that have Unrest
+			factor = 110
+			unrest = 1
+		}
 		modifier = {
-			factor = 0.5
-			NOT = { base_tax = 5 }
-		}			
-		modifier = {
-			factor = 0.1
-			is_overseas = yes
-		}	
+			#Does Province have the Owner's Religion?
+			factor = 2
+			has_owner_religion = no
+			owner = { NOT = { religion = secular } }
+		}
 	}
 }
 

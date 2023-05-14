@@ -1,0 +1,1063 @@
+sicily_norman_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SIC
+			tag = TTS
+		}
+		OR = {
+			primary_culture = normand
+			dynasty = "de Hauteville"
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sic_cement_norman_rule_mission = {
+		icon = mission_sicily_roger_keys_to_city
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+			}
+			NOT = { 
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 2
+			sicily_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			western_sicily_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+		effect = {
+			add_legitimacy = 20
+			sicily_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "me_sic_norman_rule"
+					duration = 7300
+				}
+			}
+			western_sicily_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "me_sic_norman_rule"
+					duration = 7300
+				}
+			}
+		}
+	}
+	sic_prosperous_palermo_mission = {
+		icon = mission_castle_construction_medieval
+		required_missions = { sic_cement_norman_rule_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 125	#Palermo
+			NOT = {
+				owned_by = ROOT
+				num_of_times_improved_by_owner = 5
+				num_of_buildings_in_province = 2
+			}
+		}
+		trigger = {
+			owns_core_province = 125
+			capital = 125
+			125 = {
+				num_of_times_improved_by_owner = 5
+			}
+			125 = {
+				num_of_buildings_in_province = 2
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SIC_mission_events.2
+			}
+			tooltip = {
+				125 = {
+					add_province_modifier = {
+						name = "me_sic_palazzo_dei_normanni"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	sic_win_over_the_corfiots_mission = {
+		icon = mission_medieval_surrender_keys
+		required_missions = { sic_peninsular_campaign_mission sic_prosperous_palermo_mission }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 142	#Corfu
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = sic_win_over_the_corfiots_mission.tt
+					owns_or_non_sovereign_subject_of = 142
+				}
+				AND = {
+					142 = {
+						owner = {
+							has_spy_network_from = {
+								who = ROOT
+								value = 50
+							}
+						}
+					}
+					treasury = 50
+				}
+			}	
+		}
+		effect = {
+			add_treasury = -50
+			if = {
+				limit = { 
+					NOT = {
+						owns_or_non_sovereign_subject_of = 142
+					}
+				}
+				custom_tooltip = sic_win_over_the_corfiots_mission.tt2
+				country_event = {
+					id = mmetr_SIC_mission_events.4		#mmetr_SIC_mission_events.5 is Ping for owner of 142
+				}
+				tooltip = {
+					142 = {
+						cede_province = ROOT
+					}
+					142 = {
+						owner = {
+							add_opinion = {
+								who = ROOT
+								modifier = sae_supported_defectors_op
+							}
+						}
+					}
+				}
+			}
+			northern_greece_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sic_epirote_foothold_mission = {
+		icon = mission_pf_soldier
+		required_missions = { sic_win_over_the_corfiots_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = northern_greece_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_glory_in_greece"
+				duration = 10950
+			}
+		}
+	}
+	sic_to_the_aegean_mission = {
+		icon = cross_the_pindus
+		required_missions = { sic_epirote_foothold_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = central_greece_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			central_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+			add_navy_tradition = 15
+			central_greece_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_sic_aegean_outposts"
+					duration = 10950
+				}
+			}
+		}
+	}
+	sic_besiege_the_emperor_mission = {
+		icon = the_latin_empire
+		required_missions = { sic_to_the_aegean_mission sic_peloponnesian_campaign_mission }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 151	#Constantinople
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				owns_or_non_sovereign_subject_of = 151	#Constantinople
+				AND = {
+					NOT = { owned_by = ROOT }
+					controls = 151
+				}
+			}
+		}
+		effect = {
+			add_prestige = 30
+			add_ruler_modifier = {
+				name = "me_sic_great_besieger"
+				duration = -1
+			}
+		}
+	}
+}
+
+sicily_norman_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SIC
+			tag = TTS
+		}
+		OR = {
+			primary_culture = normand
+			dynasty = "de Hauteville"
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sic_mediterranean_trade_mission = {
+		icon = purely_for_commerce
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			trade_goods = grain
+			owned_by = ROOT
+			NOT = { has_building = windmill }
+		}
+		trigger = {
+			home_trade_node = {
+				trade_share = {
+					country = ROOT
+					share = 25
+				}
+			}
+			any_owned_province = [
+				trade_goods = grain
+				has_building = windmill
+			}
+		}
+		effect = {
+			add_mercantilism = 1
+			add_country_modifier = {
+				name = "me_sic_durum_wheat_trade"
+				duration = 10950
+			}
+		}
+	}
+	sic_muslim_integration_mission = {
+		icon = mission_muslim_prayer
+		required_missions = { sic_cement_norman_rule_mission }
+		position = 2
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_burghers
+				value = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_muslim_communities"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "me_sic_muslim_administration"
+				duration = 7300
+			}
+			define_advisor = {
+				type = trader
+				skill = 2
+				culture = al_misr_arabic
+				religion = sunni
+				discount = yes
+			}
+		}
+	}
+	sic_the_royal_mantle_mission = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { sic_prosperous_palermo_mission sic_muslim_integration_mission }
+		position = 3
+		trigger = {
+			prestige = 50
+		}
+		effect = {
+			add_legitimacy = 50
+			add_country_modifier = {
+				name = "me_sic_norman_royal_mantle"
+				duration = 7300
+			}
+		}
+	}
+	sic_western_islands_mission = {
+		icon = mission_mediterranean_islands
+		required_missions = { sic_peninsular_campaign_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = corsica_sardinia_area
+				area = baleares_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			baleares_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 10
+			country_event = {
+				id = mmetr_SIC_mission_events.3
+			}
+			add_country_modifier = {
+				name = "me_sic_western_mediterranean_fleet"
+				duration = 10950
+			}
+		}
+	}
+	sic_hegemonize_the_republics_mission = {
+		icon = pulverize_pisa
+		required_missions = { sic_northern_march_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 101	#Genoa
+				province_id = 115	#Pisa
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 101	#Genoa
+			owns_or_non_sovereign_subject_of = 115	#Pisa
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_northern_merchants"
+				duration = -1
+			}
+		}
+	}
+	sic_sack_of_corinth_mission = {
+		icon = mission_unite_home_region
+		required_missions = { sic_epirote_foothold_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 4701		#Corinth
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				owns_or_non_sovereign_subject_of = 4701		#Corinth
+				AND = {
+					NOT = { owned_by = ROOT }
+					controls = 4701
+					is_looted = yes
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.2
+			country_event = {
+				id = mmetr_SIC_mission_events.6
+			}
+		}
+	}
+	sic_peloponnesian_campaign_mission = {
+		icon = reclaim_the_aegean
+		required_missions = { sic_sack_of_corinth_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = morea_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_king_of_greece"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "me_sic_victorious_army"
+				duration = 10950
+			}
+		}
+	}
+}
+
+sicily_norman_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SIC
+			tag = TTS
+		}
+		OR = {
+			primary_culture = normand
+			dynasty = "de Hauteville"
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sic_hauteville_claims_mission = {
+		icon = mission_normans_of_sicily
+		required_missions = {  }
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oma_buildforces_mod"
+				duration = 5475
+			}
+			sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			apulia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			naples_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sic_peninsular_campaign_mission = {
+		icon = king_of_naples
+		required_missions = { sic_hauteville_claims_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = apulia_area
+				area = calabria_area
+				area = naples_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				NOT = { nationalism = 1 }
+			}
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				NOT = { nationalism = 1 }
+			}
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				NOT = { nationalism = 1 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_king_of_sicilia_and_napoli"
+				duration = 5475
+			}
+		}
+	}
+	sic_northern_march_mission = {
+		icon = mission_medieval_siege
+		required_missions = { sic_peninsular_campaign_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = tuscany_area
+				area = emilia_romagna_area
+				area = central_italy_area
+				area = lazio_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 7
+				OR = {
+					area = tuscany_area
+					area = emilia_romagna_area
+					area = central_italy_area
+					area = lazio_area
+				}
+			}
+		}
+		effect = {
+			add_manpower = 2
+			add_country_modifier = {
+				name = "me_sic_italian_unifier"
+				duration = 9125
+			}
+		}
+	}
+	sic_the_crown_of_italia_mission = {
+		icon = complete_the_risorgimento
+		required_missions = { sic_northern_march_mission }
+		position = 5
+		provinces_to_highlight = {
+			region = italy_region
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 25
+				region = italy_region
+				is_core = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_prestige = 20
+			italy_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sic_vanquish_barbary_piracy_mission = {
+		icon = rule_corsica
+		required_missions = { sic_kingdom_of_africa_mission }
+		position = 6
+		provinces_to_highlight = {
+			area = tripolitania_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			tripolitania_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_piracy_suppressed"
+				duration = 10950
+			}
+		}
+	}
+	sic_challenge_the_almohads_mission = {
+		icon = mission_reclaim_morocco
+		required_missions = { sic_vanquish_barbary_piracy_mission }
+		position = 7
+		provinces_to_highlight = {
+			area = kabylia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = sic_challenge_the_almohads_mission.tt
+			maghreb_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "me_sic_undisputed_king_of_africa"
+					duration = 10950
+				}
+			}
+		}
+	}
+	sic_african_expansion_mission = {
+		icon = mission_imperial_cities
+		required_missions = { sic_challenge_the_almohads_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = maghreb_region
+				region = egypt_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				OR = {
+					region = maghreb_region
+					region = egypt_region
+				}
+			}
+		}
+		effect = {
+			add_province_modifier = {
+				name = "me_sic_undisputed_king_of_africa"
+				duration = 10950
+			}
+		}
+	}
+}
+
+sicily_norman_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SIC
+			tag = TTS
+		}
+		OR = {
+			primary_culture = normand
+			dynasty = "de Hauteville"
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sic_encastellation_mission = {
+		icon = fortress_of_belgrade
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 4
+				fort_level = 1
+			}
+			num_of_owned_provinces_with = {
+				value = 2
+				fort_level = 2
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SIC_mission_events.1
+			}
+			custom_tooltip = sic_encastellation_mission.tt
+			tooltip = {
+				every_owned_province = {
+					limit = {
+						fort_level = 1
+					}
+					add_province_modifier = {
+						name = "me_sic_norman_augmentations"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+	sic_appease_the_barons_mission = {
+		icon = hand-picked_bureaucrats
+		required_missions = { sic_hauteville_claims_mission }
+		position = 2
+		trigger = {
+			OR = {
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 4
+				}
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 80
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_nobles_reined_in"
+				duration = 10950
+			}
+		}
+	}
+	sic_sicilian_navy_mission = {
+		icon = mission_sea_battles
+		required_missions = { sic_peninsular_campaign_mission }
+		position = 4
+		trigger = {
+			navy_size_percentage = 0.9
+			num_of_galley = 10
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_great_sicilian_navy"
+				duration = 10950
+			}
+		}
+	}
+	sic_kingdom_of_africa_mission = {
+		icon = king_of_kings
+		required_missions = { sic_sicilian_navy_mission }
+		position = 5
+		provinces_to_highlight = {
+			area = tunisia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_kingdom_of_africa"
+				duration = -1
+			}
+		}
+	}
+	sic_placate_the_tunisians_mission = {
+		icon = mission_friends_or_enemies
+		required_missions = { sic_kingdom_of_africa_mission }
+		position = 6
+		provinces_to_highlight = {
+			area = tunisia_area
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nationalism = 1
+			unrest = 3
+		}
+		trigger = {
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tunisia_area = {
+				type = all
+				NOT = { nationalism = 1 }
+			}
+			tunisia_area = {
+				type = all
+				NOT = { unrest = 3 }
+			}
+			any_owned_province = {
+				region = maghreb_region
+				fort_level = 1
+			}
+		}
+		effect = {
+			tunisia_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_sic_norman_rule_in_africa"
+					duration = 10950
+				}
+			}
+		}
+	}
+	sic_where_worlds_meet_mission = {
+		icon = mission_african_trade_post
+		required_missions = { sic_placate_the_tunisians_mission sic_muslim_diplomacy_mission }
+		position = 8
+		trigger = {
+			num_accepted_cultures = 2
+			grown_by_development = 75
+			num_of_owned_provinces_with = {
+				value = 25
+				has_owner_culture = no
+			}
+		}
+		effect = {
+			add_province_modifier = {
+				name = "me_sic_norman_arab_byzantine_kingdom"
+				duration = -1
+			}
+		}
+	}
+}
+
+sicily_norman_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SIC
+			tag = TTS
+		}
+		OR = {
+			primary_culture = normand
+			dynasty = "de Hauteville"
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sic_sponsor_churches_mission = {
+		icon = mission_crown_of_jesus_roger_ii
+		required_missions = {  }
+		position = 1
+		trigger = {
+			capital_scope = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_arab_norman_cathedrals"
+				duration = 10950
+			}
+		}
+	}
+	sic_papal_relations_mission = {
+		icon = holy_state
+		required_missions = { sic_sponsor_churches_mission }
+		position = 2
+		trigger = {
+			OR = {
+				AND = {
+					alliance_with = PAP
+					reverse_has_opinion = {
+						who = PAP
+						value = 100
+					}
+				}
+				papal_influence = 50
+				num_of_cardinals = 2
+				is_papal_controller = yes
+				AND = {
+					owns = 118		#Roma
+					NOT = { exists = PAP }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_restored_roman_rites"
+				duration = -1
+			}
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	sic_assizes_of_ariano_mission = {
+		icon = mission_monarch_signing
+		required_missions = { sic_papal_relations_mission sic_appease_the_barons_mission }
+		position = 3
+		trigger = {
+			OR = {
+				crown_land_share = 50
+				AND = {
+					crown_land_share = estate_nobles
+					all_state_province = {
+						NOT = { local_autonomy = 15 }
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_assizes_of_ariano"
+				duration = -1
+			}
+		}
+	}
+	sic_norman_crusaders_mission = {
+		icon = mission_crusaders_castle_siege
+		required_missions = { sic_sicilian_navy_mission }
+		position = 5
+		trigger = {
+			OR = {
+				any_ally = {
+					capital_scope = {
+						region = mashriq_region
+					}
+					has_matching_religion = ROOT
+				}
+				any_province = {
+					region = mashriq_region
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SIC_mission_events.7
+			}
+		}
+	}
+	sic_king_of_jerusalem_mission = {
+		icon = mission_jerusalem_dome_of_the_rock
+		required_missions = { sic_norman_crusaders_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = aleppo_area
+				area = syria_area
+				area = palestine_area
+				area = trans_jordan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 379	#Jerusalem
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 6
+				OR = {
+					area = aleppo_area
+					area = syria_area
+					area = palestine_area
+					area = trans_jordan_area
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_king_of_jerusalem"
+				duration = 10950
+			}
+		}
+	}
+	sic_muslim_diplomacy_mission = {
+		icon = mission_fatimid_caliphate
+		required_missions = { sic_placate_the_tunisians_mission }
+		position = 7
+		trigger = {
+			any_country = {
+				NOT = { tag = ROOT }
+				religion_group = muslim
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sic_foreign_market_privileges"
+				duration = 9125
+			}
+		}
+	}
+}

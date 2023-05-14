@@ -1,0 +1,227 @@
+namespace = mmetr_SAE_mission_events
+
+# Merchants of Amalfi
+country_event = {
+	id = mmetr_SAE_mission_events.1
+	title = "mmetr_SAE_mission_events.1.t"
+	desc = "mmetr_SAE_mission_events.1.desc"
+	picture = HARBOUR_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAE_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_sae_tavole_amalfitane"
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = "mmetr_SAE_mission_events.1.b"
+		
+		add_country_modifier = {
+			name = "me_sae_muslim_trade_privileges"
+			duration = 9125
+		}
+	}
+}
+
+# The Lombard Legacy
+country_event = {
+	id = mmetr_SAE_mission_events.2
+	title = "mmetr_SAE_mission_events.2.t"
+	desc = "mmetr_SAE_mission_events.2.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAE_mission_events.2.a"
+		
+		override_country_name = LANGOBARDIA_COUNTRY_NAME
+	}
+	
+	option = {
+		name = "mmetr_SAE_mission_events.2.b"
+		
+		
+	}
+}
+
+# Fealty to Constantinople?
+country_event = {
+	id = mmetr_SAE_mission_events.3
+	title = "mmetr_SAE_mission_events.3.t"
+	desc = "mmetr_SAE_mission_events.3.desc"
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAE_mission_events.3.a"
+		
+		add_prestige = -10
+		BYZ = {
+			create_subject = {
+				subject_type = tributary_state_general		#NEW mod subject type
+				subject = ROOT
+			}
+		}
+		BYZ = {
+			country_event = {
+				id = mmetr_SAE_mission_events.4		#Ping for BYZ
+			}
+		}
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "mmetr_SAE_mission_events.3.b"
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Salerno Swears Fealty
+country_event = {
+	id = mmetr_SAE_mission_events.4
+	title = "mmetr_SAE_mission_events.4.t"
+	desc = "mmetr_SAE_mission_events.4.desc"
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAE_mission_events.4.a"
+		
+		custom_tooltip = mmetr_SAE_mission_events.4.tt
+	}
+}
+
+# Salerno Joins the Empire!
+country_event = {
+	id = mmetr_SAE_mission_events.5
+	title = "mmetr_SAE_mission_events.5.t"
+	desc = "mmetr_SAE_mission_events.5.desc"
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAE_mission_events.5.a"
+		
+		set_in_empire = yes		#join the HRE!
+	}
+}
+
+# Lombard Rebels Defect!
+country_event = {
+	id = mmetr_SAE_mission_events.6
+	title = "mmetr_SAE_mission_events.6.t"
+	desc = "mmetr_SAE_mission_events.6.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAE_mission_events.6.a"
+		
+		every_province = {
+			limit = {
+				OR = {
+					area = calabria_area
+					area = apulia_area
+				}
+				owned_by = BYZ
+			}
+			cede_province = ROOT
+			add_core = ROOT
+			add_nationalism = -10
+			add_unrest = -10
+		}
+		BYZ = {
+			add_opinion = {
+				who = ROOT
+				modifier = sae_supported_defectors_op
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of = BYZ
+			}
+			grant_independence = yes
+		}
+		hidden_effect = {
+			BYZ = {
+				country_event = {
+					id = mmetr_SAE_mission_events.7
+				}
+			}
+		}
+	}
+}
+
+# Lombard Rebels Defect! - Byzantine Ping
+country_event = {
+	id = mmetr_SAE_mission_events.7
+	title = "mmetr_SAE_mission_events.7.t"
+	desc = "mmetr_SAE_mission_events.7.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAE_mission_events.7.a"
+		
+		tooltip = {
+			every_province = {
+				limit = {
+					OR = {
+						area = calabria_area
+						area = apulia_area
+					}
+					owned_by = BYZ
+				}
+				cede_province = SAE
+			}
+			BYZ = {
+				add_opinion = {
+					who = SAE
+					modifier = renounced_as_heretics
+				}
+			}
+			if = {
+				limit = {
+					SAE = {
+						is_subject_of = BYZ
+					}
+				}
+				SAE = {
+					grant_independence = yes
+				}
+			}
+		}
+	}
+}
+

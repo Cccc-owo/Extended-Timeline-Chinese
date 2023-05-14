@@ -1,0 +1,195 @@
+country_decisions = {
+	reform_the_chalcedonism_faith = {
+		major = yes
+		potential = {
+			NOT = { has_global_flag = reformed_the_chalcedonism_faith }
+			religion = chalcedonism
+			is_year = 650
+			NOT = { is_religion_enabled = orthodox }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151
+				province_id = 118
+				province_id = 358
+				province_id = 2313
+				province_id = 379
+			}
+			OR = {
+				AND = {
+					NOT = { owned_by = ROOT }
+					OR = {
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						owner = {
+							liberty_desire = 50
+						}
+					}
+				}
+				NOT = { religion = chalcedonism }
+				has_owner_religion = no
+				NOT = { is_core = owner }
+			}
+		}
+		allow = {
+			religion = chalcedonism
+			is_subject = no
+			has_regency = no
+			stability = 3
+			prestige = 75
+			is_at_war = no
+			if = {
+				limit = {
+					uses_legitimacy = yes
+				}
+				legitimacy_equivalent = 100
+			}
+			else_if = {
+				limit = {
+					OR = {
+						uses_devotion = yes
+						uses_horde_unity = yes
+						uses_meritocracy = yes
+					}
+				}
+				legitimacy_equivalent = 85
+			}
+			else_if = {
+				limit = {
+					uses_republican_tradition = yes
+				}
+				legitimacy_equivalent = 75
+			}
+			crown_land_share = 50
+			religious_unity = 0.9
+			if = {
+				limit = {
+					OR = {
+						ai = no
+						is_defender_of_faith = yes
+						any_country = {
+							is_defender_of_faith = yes
+							religion = ROOT
+						}
+					}
+				}
+				is_defender_of_faith = yes
+			}
+			if = {
+				limit = {
+					has_estate = estate_church
+				}
+				estate_loyalty = {
+					estate = estate_church
+					higher_than_influence = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = reform_the_chalcedonism_faith_trigger_tt_151
+				151 = {
+					owned_by = ROOT
+					religion = chalcedonism
+					is_core = owner
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = reform_the_chalcedonism_faith_trigger_tt_118
+				118 = {
+					owned_by = ROOT
+					religion = chalcedonism
+					is_core = owner
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = reform_the_chalcedonism_faith_trigger_tt_358
+				358 = {
+					owned_by = ROOT
+					religion = chalcedonism
+					is_core = owner
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = reform_the_chalcedonism_faith_trigger_tt_2313
+				2313 = {
+					owned_by = ROOT
+					religion = chalcedonism
+					is_core = owner
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = reform_the_chalcedonism_faith_trigger_tt_379
+				379 = {
+					owned_by = ROOT
+					religion = chalcedonism
+					is_core = owner
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = reform_the_chalcedonism_faith_trigger_tt_no_arianism
+				all_owned_province = {
+					NOT = { religion = arianism }
+				}
+			}
+		}
+		effect = {
+			set_global_flag = reformed_the_chalcedonism_faith
+			add_stability = -1
+			if = {
+				limit = {
+					has_estate = estate_church
+				}
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = -10
+				}
+			}
+			if = {
+				limit = {
+					NOT = { is_religion_enabled = reformed_chalcedonism }
+				}
+				enable_religion = reformed_chalcedonism
+			}
+			change_religion = reformed_chalcedonism
+			custom_tooltip = chalcedonism_provinces_convert_to_reformed_chalcedonism_tt
+			custom_tooltip = all_chalcedonism_provinces_and_countries_convert_tt
+			hidden_effect = {
+				set_defender_of_the_faith = { who = ROOT religion = reformed_chalcedonism }
+				every_owned_province = {
+					limit = {
+						religion = chalcedonism
+					}
+					change_religion = reformed_chalcedonism
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						NOT = { religion = chalcedonism }
+						any_owned_province = {
+							religion = chalcedonism
+						}
+					}
+					every_owned_province = {
+						limit = {
+							religion = chalcedonism
+						}
+						province_event = { id = et_reformed_chalcedonism_events.2 } # convert province, randomness doesn't work in decisions
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						religion = chalcedonism
+					}
+					country_event = { id = et_reformed_chalcedonism_events.1 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				normal_or_historical_nations = yes
+				NOT = { is_year = 850 }
+			}
+		}
+	}
+}

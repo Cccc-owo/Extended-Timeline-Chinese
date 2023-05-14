@@ -98,3 +98,33 @@ merc_compagnia_della_stella = {
 		infantry_power = 0.05
 	}
 }
+
+# Remnant Khwarezmid armies after Mongol invasion, historically hired by Seljuks and Ayyubids
+merc_khwarazmiyya = {
+	regiments_per_development = 0.04
+	cost_modifier = 0.8
+	
+	home_province = 454 # Samarkand
+	
+	cavalry_weight = 0.9
+	sprites = { dlc002_mam_sprite_pack }	#uses Mamluks sprite pack
+	trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		has_global_flag = merc_khwarazmiyya_remnant_army_flag
+		any_owned_province = {
+			OR = {
+				region = khorasan_region
+				region = persia_region
+				region = anatolia_region
+				region = egypt_region
+				region = arabia_region
+			}
+		}
+	}
+	modifier = {
+		cav_to_inf_ratio = 1
+		cavalry_power = 0.1
+		movement_speed = 0.2
+	}
+}
+

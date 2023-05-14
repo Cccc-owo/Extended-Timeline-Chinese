@@ -46,9 +46,19 @@ country_decisions = {
 		potential = {
 			NOT = { hre_size = 3 }
 			NOT = { exists = HLR }
-			religion = catholic
+			OR = {
+				religion = catholic
+				religion = chalcedonism
+				religion = reformed_chalcedonism
+			}
 			NOT = { has_global_flag = hre_formed }
 			NOT = { started_in = 962.2.2 }
+			JMN = {
+				is_emperor = yes
+			}
+			capital_scope = {
+				continent = europe
+			}
 		}
 		allow = {
 			OR = {
@@ -70,46 +80,100 @@ country_decisions = {
 		}
 		effect = {
 			set_global_flag = hre_formed
+			hidden_effect = {
+				if = {
+					limit = {
+						religion = reformed_chalcedonism
+					}
+					set_hre_religion_treaty = yes # to prevent disbanding
+					set_hre_religion = reformed_chalcedonism
+				}
+				if = {
+					limit = {
+						religion = chalcedonism
+					}
+					set_hre_religion_treaty = yes # to prevent disbanding
+					set_hre_religion = chalcedonism
+				}
+			}
 			if = {
 				limit = { is_female = yes }
 				set_allow_female_emperor = yes
 			}
 			set_emperor = yes
 			elector = yes
-			every_owned_province = { set_in_empire = yes }
-			every_country = {
-				limit = { is_subject_of = ROOT }
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							religion = chalcedonism
+							religion = reformed_chalcedonism
+						}
+					}
+					set_hre_religion_treaty = no # emperor changed, won't disband now
+					set_hre_religion_locked = yes # no leagues without catholic
+				}
+				every_owned_province = {
+					limit = {
+						continent = europe
+					}
+					set_in_empire = yes
+				}
+			}
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						continent = europe
+					}
+				}
 				elector = yes
-				every_owned_province = { set_in_empire = yes }
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							continent = europe
+						}
+						set_in_empire = yes
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					religion = ROOT
+					OR = {
+						culture_group = ROOT
+						is_neighbor_of = ROOT
+						AND = {
+							marriage_with = ROOT
+							alliance_with = ROOT
+						}
+					}
+					NOT = { tag = ROM }
+					NOT = { tag = ROW }
+					NOT = { tag = BYZ }
+					capital_scope = {
+						continent = europe
+						NOT = { region = british_isles_region }
+					}
+				}
+				tooltip = { set_in_empire = yes }
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							NOT = { region = british_isles_region }
+							continent = europe
+						}
+						set_in_empire = yes
+					}
+				}
 			}
 			hidden_effect = {
-				every_country = {
-					limit = {
-						religion = catholic
-						OR = {
-							culture_group = ROOT
-							is_neighbor_of = ROOT
-							AND = {
-								marriage_with = ROOT
-								alliance_with = ROOT
-							}
-						}
-						NOT = { tag = ROM }
-						NOT = { tag = ROW }
-						NOT = { tag = BYZ }
-					}
-					every_owned_province = { 
-						limit = { NOT = { region = british_isles_region } }
-						set_in_empire = yes 
-					}
-				}
-				JMN = { 
+				JMN = {
 					elector = no
-					kill_ruler = yes 
+					kill_ruler = yes
 				}
-				3104 = { 
-					set_in_empire = no 
-					cede_province = XXX
+				3104 = {
+					set_in_empire = no
+					cede_province = ---
 					remove_core = JMN
 				}
 			}
@@ -267,6 +331,8 @@ country_decisions = {
 		potential = {
 			tag = KRU
 			NOT = { government_rank = 3 }
+			culture_group = east_slavic
+			religion = orthodox
 		}
 		allow = {
 			adm_tech = 41
@@ -278,7 +344,18 @@ country_decisions = {
 				limit = { NOT = { government = monarchy } }
 				change_government = monarchy
 			}
-			add_government_reform = tsardom
+			if = {
+				limit = {
+					OR = {
+						primary_culture = ruthenian
+						primary_culture = byelorussian
+					}
+				}
+				add_government_reform = ruthenian_tsardom
+			}
+			else = {
+				add_government_reform = tsardom
+			}
 			set_government_rank = 3
 			add_prestige = 20
 		}

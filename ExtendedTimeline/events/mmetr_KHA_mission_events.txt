@@ -1,0 +1,518 @@
+namespace = mmetr_KHA_mission_events
+
+# The Western Liao
+country_event = {
+	id = mmetr_KHA_mission_events.1
+	title = "mmetr_KHA_mission_events.1.t"
+	desc = "mmetr_KHA_mission_events.1.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.1.a"
+		
+		add_horde_unity = 10
+		
+		define_advisor = {
+			type = diplomat
+			skill = 2
+			culture = khitan
+			religion = mahayana
+			discount = yes
+		}
+	}
+}
+
+# Fall of the Khwarezmids
+country_event = {
+	id = mmetr_KHA_mission_events.2
+	title = "mmetr_KHA_mission_events.2.t"
+	desc = "mmetr_KHA_mission_events.2.desc"
+	picture = MMETR_BATTLEFIELD_AFTERMATH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.2.a"
+		
+		add_prestige = 20
+		
+		custom_tooltip = mmetr_KHA_mission_events.2.tt
+		hidden_effect = {
+			set_global_flag = merc_khwarazmiyya_remnant_army_flag
+		}
+	}
+}
+
+# Importation of Persian Artisans
+country_event = {
+	id = mmetr_KHA_mission_events.3
+	title = "mmetr_KHA_mission_events.3.t"
+	desc = "mmetr_KHA_mission_events.3.desc"
+	picture = ARTWORK_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.3.a"
+		
+		capital_scope = {
+			add_base_production = 1
+		}
+		
+		define_advisor = {
+			type = artist
+			skill = 2
+			culture = persian
+			religion = shiite
+			discount = yes
+		}
+	}
+}
+
+# An Ilkhan in Baghdad
+country_event = {
+	id = mmetr_KHA_mission_events.4
+	title = "mmetr_KHA_mission_events.4.t"
+	desc = "mmetr_KHA_mission_events.4.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.4.a"
+		
+		410 = {
+			add_province_modifier = {
+				name = "me_kha_et_reconstruction_efforts"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Hashashin of the Nizari Ismaili State
+country_event = {
+	id = mmetr_KHA_mission_events.5
+	title = "mmetr_KHA_mission_events.5.t"
+	desc = "mmetr_KHA_mission_events.5.desc"
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.5.a"
+		
+		define_advisor = {
+			type = spymaster
+			skill = 3
+			culture = al_suryah_arabic
+			religion = shiite
+			discount = yes
+		}
+	}
+}
+
+# The Mamluks of Egypt
+country_event = {
+	id = mmetr_KHA_mission_events.6
+	title = "mmetr_KHA_mission_events.6.t"
+	desc = "mmetr_KHA_mission_events.6.desc"
+	picture = MILITARY_CAMP_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_kha_et_mamluk_auxiliaries"
+			duration = 10950
+		}
+	}
+}
+
+# The Uighurs of the Empire
+country_event = {
+	id = mmetr_KHA_mission_events.7
+	title = "mmetr_KHA_mission_events.7.t"
+	desc = "mmetr_KHA_mission_events.7.desc"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.7.a"
+		
+		add_prestige = 5
+		define_advisor = {
+			type = statesman
+			name = "Tata-tunga"
+			skill = 3
+			culture = uyghur
+			religion = tengri_pagan_reformed
+			discount = yes
+		}
+	}
+}
+
+# The Conquest of Zhongdu
+country_event = {
+	id = mmetr_KHA_mission_events.8
+	title = "mmetr_KHA_mission_events.8.t"
+	desc = "mmetr_KHA_mission_events.8.desc"
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_kha_et_taxation_policy"
+			duration = 7300
+		}
+		define_advisor = {
+			type = statesman
+			name = "Yelü Chucai"
+			skill = 3
+			culture = khitan
+			religion = confucianism		#Was a Confucian scholar
+			discount = yes
+		}
+	}
+}
+
+# The Sakya Lama of Tibet
+country_event = {
+	id = mmetr_KHA_mission_events.9
+	title = "mmetr_KHA_mission_events.9.t"
+	desc = "mmetr_KHA_mission_events.9.desc"
+	picture = BUDDHA_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.9.a"
+		
+		tibet_region = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_kha_et_sakya_lama_autonomy"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Spoils of Kaifeng
+country_event = {
+	id = mmetr_KHA_mission_events.10
+	title = "mmetr_KHA_mission_events.10.t"
+	desc = "mmetr_KHA_mission_events.10.desc"
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.10.a"
+		
+		custom_tooltip = mmetr_KHA_mission_events.10.tt
+		add_years_of_income = 0.5
+	}
+}
+
+# The Eradication of the Western Xia
+country_event = {
+	id = mmetr_KHA_mission_events.11
+	title = "mmetr_KHA_mission_events.11.t"
+	desc = "mmetr_KHA_mission_events.11.desc"
+	picture = MMETR_BATTLEFIELD_AFTERMATH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.11.a"
+		
+		custom_tooltip = mmetr_KHA_mission_events.11.tt
+		
+		every_owned_province = {
+			limit = {
+				culture = tangut
+			}
+			add_province_modifier = {
+				name = "me_kha_et_cultural_assimilation_policy"
+				duration = 14600
+			}
+		}
+	}
+}
+
+# The Seljuks of Rum Swear Allegiance
+country_event = {
+	id = mmetr_KHA_mission_events.12
+	title = "mmetr_KHA_mission_events.12.t"
+	desc = "mmetr_KHA_mission_events.12.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.12.a"
+		
+		add_country_modifier = {
+			name = "me_kha_et_seljuk_caravanserais"
+			duration = 10950
+		}
+		
+		define_advisor = {
+			type = trader
+			skill = 2
+			culture = turkish
+			religion = sunni
+		}
+	}
+}
+
+# Korean Warships
+country_event = {
+	id = mmetr_KHA_mission_events.13
+	title = "mmetr_KHA_mission_events.13.t"
+	desc = "mmetr_KHA_mission_events.13.desc"
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.13.a"
+		
+		add_country_modifier = {
+			name = "me_kha_et_korean_warships"
+			duration = 10950
+		}
+	}
+}
+
+# Overcoming the Kamikaze
+country_event = {
+	id = mmetr_KHA_mission_events.14
+	title = "mmetr_KHA_mission_events.14.t"
+	desc = "mmetr_KHA_mission_events.14.desc"
+	picture = MMETR_BATTLEFIELD_AFTERMATH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.14.a"
+		
+		add_country_modifier = {
+			name = "me_kha_et_khagan_of_the_seas"
+			duration = 10950
+		}
+	}
+}
+
+# Conquest of the Rus'
+country_event = {
+	id = mmetr_KHA_mission_events.15
+	title = "mmetr_KHA_mission_events.15.t"
+	desc = "mmetr_KHA_mission_events.15.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.15.a"
+		
+		if = {
+			limit = {
+				exists = NOV
+			}
+			add_casus_belli = {
+				target = NOV
+				type = cb_vassalize_mission
+				months = 240
+			}
+		}
+		russia_region = {
+			limit = {
+				country_or_vassal_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_kha_et_mongol_vassalage"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Tsar Kneels Before [Root.Monarch.GetTitle] [Root.Monarch.GetName]
+country_event = {
+	id = mmetr_KHA_mission_events.16
+	title = "mmetr_KHA_mission_events.16.t"
+	desc = "mmetr_KHA_mission_events.16.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.16.a"
+		
+		add_manpower = 1
+		add_horde_unity = 10
+		add_prestige = 15
+	}
+}
+
+# The Pope Meets the [Root.Monarch.GetTitle]
+country_event = {
+	id = mmetr_KHA_mission_events.17
+	title = "mmetr_KHA_mission_events.17.t"
+	desc = "mmetr_KHA_mission_events.17.desc"
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.17.a"
+		
+		if = {
+			limit = {
+				NOT = {
+					overlord_of = PAP
+				}
+			}
+			118 = {
+				cede_province = PAP
+				add_core = PAP
+			}
+			vassalize = PAP
+		}
+		add_country_modifier = {
+			name = "me_kha_et_custody_of_pope"
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "mmetr_KHA_mission_events.17.b"
+		
+		trigger = {
+			NOT = {
+				overlord_of = PAP
+			}
+		}
+		
+		add_prestige = 15
+		add_country_modifier = {
+			name = "me_kha_et_custody_of_pope"
+			duration = -1
+		}
+	}
+}
+
+# The Fall of the Holy Roman Empire
+country_event = {
+	id = mmetr_KHA_mission_events.18
+	title = "mmetr_KHA_mission_events.18.t"
+	desc = "mmetr_KHA_mission_events.18.desc"
+	picture = MMETR_BATTLEFIELD_AFTERMATH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.18.a"
+		
+		add_country_modifier = {
+			name = "me_kha_et_destroyer_of_empires"
+			duration = -1
+		}
+	}
+}
+
+# Mongol City of Qaraqorum
+country_event = {
+	id = mmetr_KHA_mission_events.19
+	title = "mmetr_KHA_mission_events.19.t"
+	desc = "mmetr_KHA_mission_events.19.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.19.a"
+		
+		4678 = {
+			add_base_tax = 1
+			add_province_modifier = {
+				name = "me_kha_et_silver_tree_of_qaraqorum"
+				duration = -1
+			}
+		}
+	}
+}
+
+# The Great Yassa
+country_event = {
+	id = mmetr_KHA_mission_events.20
+	title = "mmetr_KHA_mission_events.20.t"
+	desc = "mmetr_KHA_mission_events.20.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.20.a"
+		
+		add_country_modifier = {
+			name = "me_kha_et_great_yassa"
+			duration = -1
+		}
+	}
+}
+
+# The Armies of the Great [Root.Monarch.GetTitle]
+country_event = {
+	id = mmetr_KHA_mission_events.21
+	title = "mmetr_KHA_mission_events.21.t"
+	desc = "mmetr_KHA_mission_events.21.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.21.a"
+		
+		add_country_modifier = {
+			name = "me_kha_et_tumen_system"
+			duration = -1
+		}
+	}
+}
+
+# The Yam
+country_event = {
+	id = mmetr_KHA_mission_events.22
+	title = "mmetr_KHA_mission_events.22.t"
+	desc = "mmetr_KHA_mission_events.22.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KHA_mission_events.22.a"
+		
+		custom_tooltip = kha_et_establish_the_yam_mission.tt
+		hidden_effect = {
+			set_country_flag = enables_estate_burghers_flag
+		}
+		add_country_modifier = {
+			name = "kha_et_yam"
+			duration = -1
+		}
+	}
+}
+

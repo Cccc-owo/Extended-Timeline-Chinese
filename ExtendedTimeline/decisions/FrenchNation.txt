@@ -89,6 +89,8 @@ country_decisions = {
 				move_capital_effect = yes
 			}
 			change_tag = FRA
+			on_change_tag_effect = yes
+			restore_country_name = yes
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -118,6 +120,10 @@ country_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+	 			factor = 0
+	 			dynasty = "Carolingian"		#prevents West Francia from always forming France
+			}
 		}
 	}
 	

@@ -1,0 +1,513 @@
+reformed_chalcedonism_aspect_host_council_adm = {
+	sprite = "GFX_innovativeness_aspect"
+	cost = 200
+	potential = {
+		all_countries_including_self = {
+			OR = {
+				NOT = { religion = reformed_chalcedonism }
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_strengthen_the_church }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_strengthen_the_church }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_missionary_reform }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_missionary_reform }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_monastery_reform }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_monastery_reform }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_church_service_reform }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_church_service_reform }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_reform_the_list_of_prohibited_books }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_reform_the_list_of_prohibited_books }
+				}
+			}
+		}
+	}
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = reformed_chalcedonism_aspect_host_council_adm_held
+			}
+			custom_trigger_tooltip = {
+				tooltip = reformed_chalcedonism_aspect_host_council_adm_last_3_years_ago_tt
+				had_global_flag = { flag = reformed_chalcedonism_aspect_host_council_adm_held days = 1095 }
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = reformed_chalcedonism_aspect_host_council_adm_hosted
+			}
+			custom_trigger_tooltip = {
+				tooltip = reformed_chalcedonism_aspect_own_host_council_adm_last_5_years_ago_tt
+				had_country_flag = { flag = reformed_chalcedonism_aspect_host_council_adm_hosted days = 1825 }
+			}
+		}
+		capital_scope = {
+			religion = reformed_chalcedonism
+			development = 10
+		}
+	}
+	effect = {
+		clr_global_flag = reformed_chalcedonism_aspect_host_council_adm_held
+		set_global_flag = reformed_chalcedonism_aspect_host_council_adm_held
+		clr_country_flag = reformed_chalcedonism_aspect_host_council_adm_hosted
+		set_country_flag = reformed_chalcedonism_aspect_host_council_adm_hosted
+		country_event = { id = et_reformed_chalcedonism_events.3 }
+		hidden_effect = {
+			export_to_variable = {
+				which = reformed_chalcedonism_aspect_host_council_adm_own_year
+				value = trigger_value:is_year
+			}
+			REB = {
+				export_to_variable = {
+					which = reformed_chalcedonism_aspect_host_council_adm_year
+					value = trigger_value:is_year
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		# AI will use them every 4 / 6 years
+		modifier = {
+			factor = 0
+			OR = {
+				AND = {
+					has_global_flag = reformed_chalcedonism_aspect_host_council_adm_held
+					NOT = { had_global_flag = { flag = reformed_chalcedonism_aspect_host_council_adm_held days = 1460 } }
+				}
+				AND = {
+					has_country_flag = reformed_chalcedonism_aspect_host_council_adm_hosted
+					NOT = { had_country_flag = { flag = reformed_chalcedonism_aspect_host_council_adm_hosted days = 2190 } }
+				}
+			}
+		}
+		# a newly converted country could possible not have a modifier despite others do, but they can pick something else then
+		# not worth tons of all_country checks, imo
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_focus_to_spread_the_faith }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_focus_to_spread_the_faith }
+					NOT = { prestige = 0 }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_missionary_reform }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_missionary_reform }
+					NOT = { religious_unity = 0.95 }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_monastery_reform }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_monastery_reform }
+					OR = {
+						num_of_loans = 1
+						NOT = {
+							any_owned_province = {
+								development = 15
+							}
+						}
+					}
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_church_service_reform }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_church_service_reform }
+					OR = {
+						unrest = 0
+						NOT = { stability = 0 }
+					}
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_host_modifier_reform_the_list_of_prohibited_books }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_adm_modifier_reform_the_list_of_prohibited_books }
+					any_known_country = {
+						tech_difference = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+reformed_chalcedonism_aspect_host_council_dip = {
+	sprite = "GFX_diplomats_of_the_reformation_aspect"
+	cost = 200
+	potential = {
+		all_countries_including_self = {
+			OR = {
+				NOT = { religion = reformed_chalcedonism }
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_importance_of_the_commandment_to_love_ones_neighbor }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_importance_of_the_commandment_to_love_ones_neighbor }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_reform_diplomacy_between_brothers_in_faith }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_reform_diplomacy_between_brothers_in_faith }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_reform_the_fasting_regulations }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_reform_the_fasting_regulations }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_reform_code_of_conduct_in_war }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_reform_code_of_conduct_in_war }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_importance_of_loyalty_to_overlord }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_importance_of_loyalty_to_overlord }
+				}
+			}
+		}
+	}
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = reformed_chalcedonism_aspect_host_council_dip_held
+			}
+			custom_trigger_tooltip = {
+				tooltip = reformed_chalcedonism_aspect_host_council_dip_last_3_years_ago_tt
+				had_global_flag = { flag = reformed_chalcedonism_aspect_host_council_dip_held days = 1095 }
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = reformed_chalcedonism_aspect_host_council_dip_hosted
+			}
+			custom_trigger_tooltip = {
+				tooltip = reformed_chalcedonism_aspect_own_host_council_dip_last_5_years_ago_tt
+				had_country_flag = { flag = reformed_chalcedonism_aspect_host_council_dip_hosted days = 1825 }
+			}
+		}
+		capital_scope = {
+			religion = reformed_chalcedonism
+			development = 10
+		}
+	}
+	effect = {
+		clr_global_flag = reformed_chalcedonism_aspect_host_council_dip_held
+		set_global_flag = reformed_chalcedonism_aspect_host_council_dip_held
+		clr_country_flag = reformed_chalcedonism_aspect_host_council_dip_hosted
+		set_country_flag = reformed_chalcedonism_aspect_host_council_dip_hosted
+		country_event = { id = et_reformed_chalcedonism_events.4 }
+		hidden_effect = {
+			export_to_variable = {
+				which = reformed_chalcedonism_aspect_host_council_dip_own_year
+				value = trigger_value:is_year
+			}
+			REB = {
+				export_to_variable = {
+					which = reformed_chalcedonism_aspect_host_council_dip_year
+					value = trigger_value:is_year
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		# AI will use them every 4 / 6 years
+		modifier = {
+			factor = 0
+			OR = {
+				AND = {
+					has_global_flag = reformed_chalcedonism_aspect_host_council_dip_held
+					NOT = { had_global_flag = { flag = reformed_chalcedonism_aspect_host_council_dip_held days = 1460 } }
+				}
+				AND = {
+					has_country_flag = reformed_chalcedonism_aspect_host_council_dip_hosted
+					NOT = { had_country_flag = { flag = reformed_chalcedonism_aspect_host_council_dip_hosted days = 2190 } }
+				}
+			}
+		}
+		# a newly converted country could possible not have a modifier despite others do, but they can pick something else then
+		# not worth tons of all_country checks, imo
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_importance_of_the_commandment_to_love_ones_neighbor }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_importance_of_the_commandment_to_love_ones_neighbor }
+					any_known_country = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = aggressive_expansion
+						}
+						NOT = {
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = aggressive_expansion
+								value = -50
+							}
+						}
+					}
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_reform_the_fasting_regulations }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_reform_the_fasting_regulations }
+					num_of_loans = 1
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_reform_code_of_conduct_in_war }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_reform_code_of_conduct_in_war }
+					war_exhaustion = 3
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_host_modifier_importance_of_loyalty_to_overlord }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_dip_modifier_importance_of_loyalty_to_overlord }
+					num_of_subjects = 1
+					any_subject_country = {
+						OR = {
+							is_subject_of_type = vassal
+							is_subject_of_type = personal_union
+							AND = {
+								same_continent = ROOT
+								is_subject_other_than_tributary_trigger = yes
+								is_colonial_nation = no
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+reformed_chalcedonism_aspect_host_council_mil = {
+	sprite = "GFX_icons_of_the_church_icon"
+	cost = 200
+	potential = {
+		all_countries_including_self = {
+			OR = {
+				NOT = { religion = reformed_chalcedonism }
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_focus_to_spread_the_faith }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_focus_to_spread_the_faith }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_call_for_holy_war }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_call_for_holy_war }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_call_for_protection_of_the_holy_land }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_call_for_protection_of_the_holy_land }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_reform_the_commandment_thou_shalt_not_steal }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_reform_the_commandment_thou_shalt_not_steal }
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_allow_clergy_in_the_military }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_allow_clergy_in_the_military }
+				}
+			}
+		}
+	}
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = reformed_chalcedonism_aspect_host_council_mil_held
+			}
+			custom_trigger_tooltip = {
+				tooltip = reformed_chalcedonism_aspect_host_council_mil_last_3_years_ago_tt
+				had_global_flag = { flag = reformed_chalcedonism_aspect_host_council_mil_held days = 1095 }
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = reformed_chalcedonism_aspect_host_council_mil_hosted
+			}
+			custom_trigger_tooltip = {
+				tooltip = reformed_chalcedonism_aspect_own_host_council_mil_last_5_years_ago_tt
+				had_country_flag = { flag = reformed_chalcedonism_aspect_host_council_mil_hosted days = 1825 }
+			}
+		}
+		capital_scope = {
+			religion = reformed_chalcedonism
+			development = 10
+		}
+	}
+	effect = {
+		clr_global_flag = reformed_chalcedonism_aspect_host_council_mil_held
+		set_global_flag = reformed_chalcedonism_aspect_host_council_mil_held
+		clr_country_flag = reformed_chalcedonism_aspect_host_council_mil_hosted
+		set_country_flag = reformed_chalcedonism_aspect_host_council_mil_hosted
+		country_event = { id = et_reformed_chalcedonism_events.5 }
+		hidden_effect = {
+			export_to_variable = {
+				which = reformed_chalcedonism_aspect_host_council_mil_own_year
+				value = trigger_value:is_year
+			}
+			REB = {
+				export_to_variable = {
+					which = reformed_chalcedonism_aspect_host_council_mil_year
+					value = trigger_value:is_year
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		# AI will use them every 4 / 6 years
+		modifier = {
+			factor = 0
+			OR = {
+				AND = {
+					has_global_flag = reformed_chalcedonism_aspect_host_council_mil_held
+					NOT = { had_global_flag = { flag = reformed_chalcedonism_aspect_host_council_mil_held days = 1460 } }
+				}
+				AND = {
+					has_country_flag = reformed_chalcedonism_aspect_host_council_mil_hosted
+					NOT = { had_country_flag = { flag = reformed_chalcedonism_aspect_host_council_mil_hosted days = 2190 } }
+				}
+			}
+		}
+		# a newly converted country could possible not have a modifier despite others do, but they can pick something else then
+		# not worth tons of all_country checks, imo
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_focus_to_spread_the_faith }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_focus_to_spread_the_faith }
+					is_subject = no
+					any_neighbor_country = {
+						is_subject = no
+						religion_group = ROOT
+						NOT = { religion = ROOT }
+						NOT = { total_development = 150 }
+					}
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_call_for_holy_war }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_call_for_holy_war }
+					is_at_war = yes
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_call_for_protection_of_the_holy_land }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_call_for_protection_of_the_holy_land }
+					OR = {
+						NOT = { num_of_cities = 10 }
+						is_in_war = {
+							defenders = ROOT
+						}
+						num_of_owned_provinces_with = {
+							value = 50
+							fort_level = 4
+						}
+					}
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_reform_the_commandment_thou_shalt_not_steal }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_reform_the_commandment_thou_shalt_not_steal }
+					is_nomad = yes
+				}
+				AND = {
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_host_modifier_allow_clergy_in_the_military }
+					NOT = { has_country_modifier = reformed_chalcedonism_council_mil_modifier_allow_clergy_in_the_military }
+					OR = {
+						NOT = { army_size = 50 }
+						NOT = { max_manpower = 50 }
+					}
+				}
+			}
+		}
+	}
+}
+
+reformed_chalcedonism_aspect_improve_relations_with_brothers_in_faith = {
+	sprite = "GFX_grant_monopoly_icon"
+	cost = 200
+	potential = {
+		ai = no # AI won't do this (and no need to check triggers for them)
+		any_known_country = {
+			religion = ROOT
+		}
+	}
+	trigger = {
+		has_regency = no
+	}
+	effect = {
+		custom_tooltip = reformed_chalcedonism_aspect_improve_relations_with_brothers_in_faith_tt
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					religion = ROOT
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = et_reformed_chalcedonism_improve_relations_with_brothers_in_faith_opinion
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+reformed_chalcedonism_aspect_become_defender_of_faith = {
+	sprite = "GFX_reformed_chalcedonism_aspect_become_defender_of_faith_icon"
+	cost = 200
+	potential = {
+		ai = no # AI won't do this (and no need to check triggers for them)
+		# can't do it, if DoF is a player or if there is no DoF
+		is_defender_of_faith = no
+		any_country = {
+			is_defender_of_faith = yes
+			religion = ROOT
+			ai = yes
+		}
+	}
+	trigger = {
+		is_subject = no
+		has_regency = no
+		is_female = no
+		OR = {
+			army_size = 50
+			custom_trigger_tooltip = {
+				tooltip = reformed_chalcedonism_aspect_become_defender_of_faith_tt_army
+				any_country = {
+					is_defender_of_faith = yes
+					religion = ROOT
+					NOT = { army_size = ROOT }
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = reformed_chalcedonism_aspect_become_defender_of_faith_tt
+			any_country = {
+				is_defender_of_faith = yes
+				religion = ROOT
+				had_country_flag = { flag = claimed_defender_of_faith_flag days = 731 }
+				variable_arithmetic_trigger = { # has more than current DoF's prestige/2
+					export_to_variable = {
+						which = their_prestige
+						value = trigger_value:prestige
+					}
+					export_to_variable = {
+						which = our_prestige
+						value = trigger_value:prestige
+						who = ROOT
+					}
+					divide_variable = { which = their_prestige value = 2 }
+					check_variable = { which = our_prestige which = their_prestige }
+				}
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = reformed_chalcedonism_aspect_become_defender_of_faith_tt_become_dotf
+		hidden_effect = {
+			set_defender_of_the_faith = { who = ROOT }
+			add_prestige = 15
+		}
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}

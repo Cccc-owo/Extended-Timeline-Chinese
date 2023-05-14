@@ -3,6 +3,7 @@ country_decisions = {
 	convert_to_chalcedonism = {
 		major = yes
 		potential = {
+			NOT = { has_global_flag = reformed_the_chalcedonism_faith }
 			OR = {
 				religion_group = pagan
 				religion_group = hellenic
@@ -41,6 +42,53 @@ country_decisions = {
 			modifier = {
 				factor = 0
 				NOT = { dominant_religion = chalcedonism }
+			}
+		}
+	}
+
+	convert_to_reformed_chalcedonism = {
+		major = yes
+		potential = {
+			has_global_flag = reformed_the_chalcedonism_faith
+			OR = {
+				religion_group = pagan
+				religion_group = hellenic
+				religion = armenian_religion
+				religion = georgian_religion
+				religion_group = german_pagan
+				religion_group = slavic_pagan
+				religion_group = african_pagan
+				religion = tengri_pagan_reformed
+				religion_group = mesopotamian
+				religion_group = american_pagan
+			}
+			any_owned_province = {
+				is_core = ROOT
+				religion = reformed_chalcedonism
+			}
+			OR = {
+				is_free_or_tributary_trigger = yes
+				overlord = { religion = reformed_chalcedonism }
+			}
+			is_force_converted = no
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = reformed_chalcedonism
+			add_stability = -4
+			add_country_modifier = {
+				name = "recent_conversion"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { dominant_religion = reformed_chalcedonism }
 			}
 		}
 	}

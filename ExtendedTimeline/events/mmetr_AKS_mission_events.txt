@@ -1,0 +1,322 @@
+namespace = mmetr_AKS_mission_events
+
+# Kingdom of D'mt
+country_event = {
+	id = mmetr_AKS_mission_events.1
+	title = "mmetr_AKS_mission_events.1.t"
+	desc = "mmetr_AKS_mission_events.1.desc"
+	picture = FORT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_aks_legacy_of_dmt"
+			duration = 10950
+		}
+	}
+	
+}
+
+# Rule Yamnat
+country_event = {
+	id = mmetr_AKS_mission_events.2
+	title = "mmetr_AKS_mission_events.2.t"
+	desc = "mmetr_AKS_mission_events.2.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_aks_overseas_empire"
+			duration = -1
+		}
+	}
+	
+}
+
+# The Conquest of Nubia
+country_event = {
+	id = mmetr_AKS_mission_events.3
+	title = "mmetr_AKS_mission_events.3.t"
+	desc = "mmetr_AKS_mission_events.3.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.3.a"
+		
+		add_country_modifier = {
+			name = "me_aks_nile_river_transports"
+			duration = -1
+		}
+		add_country_modifier = {
+			name = "me_aks_nubian_integration"
+			duration = 10950
+		}
+	}
+	
+}
+
+# The Sacking of Meroe
+country_event = {
+	id = mmetr_AKS_mission_events.4
+	title = "mmetr_AKS_mission_events.4.t"
+	desc = "mmetr_AKS_mission_events.4.desc"
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.4.a"
+		
+		capital_scope = {
+			add_base_tax = 1
+			add_base_manpower = 1
+		}
+	}
+	
+	option = {
+		name = "mmetr_AKS_mission_events.4.b"
+		
+		capital_scope = {
+			add_base_tax = 1
+		}
+		2797 = {	#Meroe
+			add_province_modifier = {
+				name = "me_aks_given_mercy"
+				duration = 7300
+			}
+		}
+	}
+	
+}
+
+# Grand [Root.GetAdjective] Navy
+country_event = {
+	id = mmetr_AKS_mission_events.5
+	title = "mmetr_AKS_mission_events.5.t"
+	desc = "mmetr_AKS_mission_events.5.desc"
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_aks_trade_protection"
+			duration = 10950
+		}
+	}
+	
+}
+
+# The Spices of India
+country_event = {
+	id = mmetr_AKS_mission_events.6
+	title = "mmetr_AKS_mission_events.6.t"
+	desc = "mmetr_AKS_mission_events.6.desc"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_aks_indian_monopoly"
+			duration = -1
+		}
+	}
+	
+}
+
+# Emperor of the Nile
+country_event = {
+	id = mmetr_AKS_mission_events.7
+	title = "mmetr_AKS_mission_events.7.t"
+	desc = "mmetr_AKS_mission_events.7.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.7.a"
+		
+		add_prestige = 50
+	}
+	
+}
+
+# A Brilliant Capital in Aksum
+country_event = {
+	id = mmetr_AKS_mission_events.8
+	title = "mmetr_AKS_mission_events.8.t"
+	desc = "mmetr_AKS_mission_events.8.desc"
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.8.a"
+		
+		capital_scope = {
+			add_province_modifier = {
+				name = "me_aks_bolstered_fortifications"
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_AKS_mission_events.8.b"
+		
+		capital_scope = {
+			add_province_modifier = {
+				name = "me_aks_expanded_marketplace"
+				duration = -1
+			}
+		}
+	}
+	
+}
+
+# Aksumite Coinage
+country_event = {
+	id = mmetr_AKS_mission_events.9
+	title = "mmetr_AKS_mission_events.9.t"
+	desc = "mmetr_AKS_mission_events.9.desc"
+	picture = CORRUPTION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.9.a"
+		
+		add_country_modifier = {
+			name = "me_aks_aksumite_coinage"
+			duration = -1
+		}
+		define_advisor = {
+			type = master_of_mint
+			skill = 2
+			discount = yes
+		}
+	}
+	
+}
+
+# A Solomonid Empire
+country_event = {
+	id = mmetr_AKS_mission_events.10
+	title = "mmetr_AKS_mission_events.10.t"
+	desc = "mmetr_AKS_mission_events.10.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.10.a"
+		
+		override_country_name = SOLOMONID_EMPIRE_COUNTRY_NAME
+		set_capital = 379
+	}
+	
+	option = {
+		name = "mmetr_AKS_mission_events.10.b"
+		
+		override_country_name = SOLOMONID_EMPIRE_COUNTRY_NAME
+	}
+	
+	option = {
+		name = "mmetr_AKS_mission_events.10.c"
+		
+		set_capital = 379
+	}
+	
+	option = {
+		name = "mmetr_AKS_mission_events.10.d"
+		
+		
+	}
+	
+}
+
+# A Bishop in Aksum
+country_event = {
+	id = mmetr_AKS_mission_events.11
+	title = "mmetr_AKS_mission_events.11.t"
+	desc = "mmetr_AKS_mission_events.11.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.11.a"
+		
+		add_country_modifier = {
+			name = "me_aks_bishop_of_ethiopia"
+			duration = -1
+		}
+	}
+	
+}
+
+# Divergences in Doctrine
+country_event = {
+	id = mmetr_AKS_mission_events.12
+	title = "mmetr_AKS_mission_events.12.t"
+	desc = "mmetr_AKS_mission_events.12.desc"
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.12.a"
+		
+		change_religion = coptic
+		capital_scope = {
+			change_religion = coptic
+		}
+		
+		add_country_modifier = {
+			name = "me_aks_doctrinal_transition"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_AKS_mission_events.12.b"
+		
+		
+	}
+	
+}
+
+# Frankincense of Arabia
+country_event = {
+	id = mmetr_AKS_mission_events.13
+	title = "mmetr_AKS_mission_events.13.t"
+	desc = "mmetr_AKS_mission_events.13.desc"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_AKS_mission_events.13.a"
+		
+		add_country_modifier = {
+			name = "me_aks_frankincense_trade"
+			duration = -1
+		}
+	}
+	
+}
+

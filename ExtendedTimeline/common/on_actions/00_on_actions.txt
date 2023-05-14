@@ -328,9 +328,19 @@ on_religion_change = {
 		remove_country_modifier = fra_jerusalem_modifier
 	}
 	###remove mormon modifiers
-		remove_country_modifier = mormon_polygamy
-		remove_country_modifier = marital_freedom
-		remove_country_modifier = deseret_alphabet
+	remove_country_modifier = mormon_polygamy
+	remove_country_modifier = marital_freedom
+	remove_country_modifier = deseret_alphabet
+		
+	# if you convert to chalcedonism via button after it has been reformed
+	if = {
+		limit = {
+			religion = chalcedonism
+			has_global_flag = reformed_the_chalcedonism_faith
+		}
+		change_religion = reformed_chalcedonism
+	}
+
 	events = {
 		muslim_school_events.20 #Pick School
 		propagate_religion_events.7 #Propagated Country is now Muslim

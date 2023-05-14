@@ -1,0 +1,314 @@
+namespace = mmetr_NAN_mission_events
+
+# The Tibetan Campaign
+country_event = {
+	id = mmetr_NAN_mission_events.1
+	title = "mmetr_NAN_mission_events.1.t"
+	desc = "mmetr_NAN_mission_events.1.desc"
+	picture = NUSANTARA_QUEEN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.1.a"
+		
+		add_manpower = 1
+		add_country_modifier = {
+			name = "me_nan_mountain_warfare"
+			duration = 10950
+		}
+		utsang_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		tsang_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# Imperial Capital of Tibet
+country_event = {
+	id = mmetr_NAN_mission_events.2
+	title = "mmetr_NAN_mission_events.2.t"
+	desc = "mmetr_NAN_mission_events.2.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.2.a"
+		
+		tibet_region = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_nan_benevolent_rule"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_NAN_mission_events.2.b"
+		
+		tibet_region = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_nan_harsh_extraction"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# An Empire in Tibet
+country_event = {
+	id = mmetr_NAN_mission_events.3
+	title = "mmetr_NAN_mission_events.3.t"
+	desc = "mmetr_NAN_mission_events.3.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.3.a"
+		
+		add_country_modifier = {
+			name = "me_nan_imperial_expansion"
+			duration = -1
+		}
+	}
+}
+
+# The Cities of the Pyu
+country_event = {
+	id = mmetr_NAN_mission_events.4
+	title = "mmetr_NAN_mission_events.4.t"
+	desc = "mmetr_NAN_mission_events.4.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_nan_city_levies"
+			duration = 10950
+		}
+		if = {
+			limit = {
+				religion_group = buddhic
+			}
+			add_country_modifier = {
+				name = "me_nan_common_followers_of_lord_buddha"
+				duration = 7300
+			}
+		}
+	}
+}
+
+# Chakravartin of Angkor
+country_event = {
+	id = mmetr_NAN_mission_events.5
+	title = "mmetr_NAN_mission_events.5.t"
+	desc = "mmetr_NAN_mission_events.5.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.5.a"
+		
+		add_prestige = 20
+		add_country_modifier = {
+			name = "me_nan_chakravartin"
+			duration = -1
+		}
+		add_country_modifier = {
+			name = "me_nan_war_elephants_of_the_south"
+			duration = -1
+		}
+	}
+}
+
+# Legacy of the Cuan Clan
+country_event = {
+	id = mmetr_NAN_mission_events.6
+	title = "mmetr_NAN_mission_events.6.t"
+	desc = "mmetr_NAN_mission_events.6.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.6.a"
+		
+		set_capital = 679	#Chengdu
+	}
+	
+	option = {
+		name = "mmetr_NAN_mission_events.6.b"
+		
+	}
+}
+
+# Rulers of Chang'an
+country_event = {
+	id = mmetr_NAN_mission_events.7
+	title = "mmetr_NAN_mission_events.7.t"
+	desc = "mmetr_NAN_mission_events.7.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.7.a"
+		
+		capital_scope = {
+			add_country_modifier = {
+				name = "me_nan_spoils_from_changan"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_NAN_mission_events.7.b"
+		
+		#Chang'an
+		700 = {
+			add_country_modifier = {
+				name = "me_nan_sponsored_immediate_restoration"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# Siege of Songping
+country_event = {
+	id = mmetr_NAN_mission_events.8
+	title = "mmetr_NAN_mission_events.8.t"
+	desc = "mmetr_NAN_mission_events.8.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.8.a"
+		
+		red_river_delta_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_nan_benevolent_liberators"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_NAN_mission_events.8.b"
+		
+		red_river_delta_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_nan_strict_rice_collection"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Heavenly Empire of Zhao
+country_event = {
+	id = mmetr_NAN_mission_events.9
+	title = "mmetr_NAN_mission_events.9.t"
+	desc = "mmetr_NAN_mission_events.9.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.9.a"
+		
+		override_country_name = ZHAO_NAME
+	}
+	
+	option = {
+		name = "mmetr_NAN_mission_events.9.b"
+		
+		
+	}
+}
+
+# The Question of Diplomacy
+country_event = {
+	id = mmetr_NAN_mission_events.10
+	title = "mmetr_NAN_mission_events.10.t"
+	desc = "mmetr_NAN_mission_events.10.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.10.a"
+		
+		random_country = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			create_subject = {
+				subject_type = tributary_state
+				subject = ROOT
+			}
+			hidden_effect = {
+				country_event = {
+					id = mmetr_NAN_mission_events.11
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_NAN_mission_events.10.b"
+		
+		
+	}
+}
+
+# Nanzhao Pays Tribute
+country_event = {
+	id = mmetr_NAN_mission_events.11
+	title = "mmetr_NAN_mission_events.11.t"
+	desc = "mmetr_NAN_mission_events.11.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_NAN_mission_events.11.a"
+		
+		tooltip = {
+			create_subject = {
+				subject_type = tributary_state
+				subject = FROM
+			}
+		}
+	}
+}

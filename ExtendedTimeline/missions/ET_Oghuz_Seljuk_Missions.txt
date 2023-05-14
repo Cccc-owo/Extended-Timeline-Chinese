@@ -30,19 +30,34 @@ oghuz_seljuk_missions_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			439 = { country_or_non_sovereign_subject_holds = ROOT }
-			443 = { country_or_non_sovereign_subject_holds = ROOT }
-			1970 = { country_or_non_sovereign_subject_holds = ROOT }
-			2370 = { country_or_non_sovereign_subject_holds = ROOT }
-			2352 = { country_or_non_sovereign_subject_holds = ROOT }
-			kazakhstan_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			nogai_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+				439 = { 
+					OR = {
+						is_empty = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				443 = { 
+					OR = {
+						is_empty = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				1970 = { country_or_non_sovereign_subject_holds = ROOT }
+				2370 = { 
+					OR = {
+						is_empty = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				2352 = { country_or_non_sovereign_subject_holds = ROOT }
+				kazakhstan_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				nogai_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
 		}
 		effect = {
 			astrakhan_area = {
@@ -68,36 +83,61 @@ oghuz_seljuk_missions_1 = {
 			}
 			if = {
 				limit = {
-					438 = {
+					2370 = {
 						is_empty = yes
 					}
 				}
-				438 = {
-					add_core = ROOT
-					cede_province = ROOT
+				2370 = {
+					create_colony = 200
+					add_permanent_province_modifier = {
+						name = maj_colony_modifier
+						duration = -1
+					}
+					change_religion = ROOT
+					change_culture = ROOT
 				}
-			} else = {
-				438 = { add_core = ROOT }
 			}
 			if = {
 				limit = {
-					2349 = {
+					443 = {
 						is_empty = yes
 					}
 				}
-				2349 = {
-					add_core = ROOT
-					cede_province = ROOT
+				443 = {
+					create_colony = 200
+					add_permanent_province_modifier = {
+						name = maj_colony_modifier
+						duration = -1
+					}
+					change_religion = ROOT
+					change_culture = ROOT
 				}
-			} else = {
-				2349 = { add_core = ROOT }
 			}
+			if = {
+				limit = {
+					439 = {
+						is_empty = yes
+					}
+				}
+				439 = {
+					create_colony = 200
+					add_permanent_province_modifier = {
+						name = maj_colony_modifier
+						duration = -1
+					}
+					change_religion = ROOT
+					change_culture = ROOT
+				}
+			} 
 			if = {
 				limit = {
 					owns_core_province = 1970
 				}
 				1970 = {
-					move_capital_effect = yes
+					if = {
+						limit = { tag = OGH }
+						move_capital_effect = yes
+					}
 					add_base_tax = 1
 					add_base_production = 1
 					add_base_manpower = 1
@@ -767,7 +807,43 @@ oghuz_seljuk_missions_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			add_prestige = 25
+			4326 = {
+					add_base_tax = 1
+					add_base_production = 2
+					add_base_manpower = 2
+				}
+			if = {
+				limit = {
+					438 = {
+						is_empty = yes
+					}
+				}
+				438 = {
+					create_colony = 200
+					add_permanent_province_modifier = {
+						name = maj_colony_modifier
+						duration = -1
+					}
+					change_religion = ROOT
+					change_culture = ROOT
+				}
+			} 
+			if = {
+				limit = {
+					2349 = {
+						is_empty = yes
+					}
+				}
+				2349 = {
+					create_colony = 200
+					add_permanent_province_modifier = {
+						name = maj_colony_modifier
+						duration = -1
+					}
+					change_religion = ROOT
+					change_culture = ROOT
+				}
+			} 
 		}
 	}
 	into_quhistan_ogh = {
@@ -1078,17 +1154,6 @@ oghuz_seljuk_missions_4 = {
 			448 = { controlled_by = ROOT }
 		}
 		effect = {
-			if = {
-				limit = { 
-					ai = yes 
-					ROOT = { is_subject = no }
-				}
-				add_country_modifier = {
-					name = rise_of_an_empire_ai_et
-					duration = 27375
-				}
-				set_country_flag = ai_cheat_et
-			}
 			sistan_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT }

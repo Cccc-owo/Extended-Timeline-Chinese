@@ -1,0 +1,1312 @@
+leon_mmetr_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = LON
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lon_union_of_leon_castile_mission = {
+		icon = mission_leon_coa
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			area = castille_area
+			NOT = { owned_by = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				senior_union_with = CAS
+				CAS = {
+					is_subject_of = ROOT
+				}
+				castille_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LON_mission_events.1
+			}
+		}
+	}
+	lon_unity_among_brothers_mission = {
+		icon = mission_diplomatic_relation
+		required_missions = { lon_union_of_leon_castile_mission lon_fraternidad_cristiana_mission }
+		position = 2
+		trigger = {
+			stability = 3
+			OR = {
+				accepted_culture = castillian
+				accepted_culture = aragonese
+				accepted_culture = catalan
+				accepted_culture = galician
+				accepted_culture = portugese
+			}
+		}
+		effect = {
+			add_manpower = 2
+			add_adm_power = 75
+		}
+	}
+	lon_blood_runs_deep_mission = {
+		icon = spread_the_von_wettins
+		required_missions = { lon_unity_among_brothers_mission }
+		position = 3
+		trigger = {
+			calc_true_if = {
+				all_country = {
+					NOT = { tag = ROOT }
+					dynasty = ROOT
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_dynastic_network"
+				duration = 10950
+			}
+		}
+	}
+	lon_reino_de_galicia_mission = {
+		icon = mission_war_for_the_crown
+		required_missions = {  }
+		position = 4
+		provinces_to_highlight = {
+			area = galicia_area
+			NOT = { 
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			galicia_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+		effect = {
+			galicia_area = {
+				add_province_modifier = {
+					name = "me_lon_leonese_integration"
+					duration = 9125
+				}
+			}
+		}
+	}
+	lon_camino_de_santiago_mission = {
+		icon = restore_the_hospitallers
+		required_missions = { lon_reino_de_galicia_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 206	#A Coruna / Galicia, where Santiago de Compostela is found
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+				religion_group = christian
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			is_at_war = no
+			owns_core_province = 206
+			206 = {
+				has_owner_religion = yes
+			}
+			206 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			206 = {
+				num_of_times_improved_by_owner = 2
+			}
+			206 = {
+				NOT = {
+					unrest = 3
+					devastation = 10
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LON_mission_events.2
+			}
+			tooltip = {
+				add_dip_power = 50
+				206 = {
+					add_province_modifier = {
+						name = "me_lon_cult_of_saint_james"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	lon_ambassadors_in_rome_mission = {
+		icon = sway_the_pope
+		required_missions = { lon_camino_de_santiago_mission lon_sponsor_churches_mission }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = PAP
+		}
+		trigger = {
+			OR = {
+				AND = {
+					religion = catholic
+					papal_influence = 50
+					PAP = {
+						has_opinion = {
+							who = root
+							value = 100
+						}
+					}
+				}
+				AND = {
+					NOT = { religion = chalcedonism }
+					NOT = { religion = catholic }
+					OR = {
+						NOT = { exists = PAP }
+						PAP = {
+							custom_trigger_tooltip = {
+								tooltip = rivalled_or_rival_of
+								OR = {
+									is_rival = root
+									root = { is_rival = prev }
+								}
+							}
+							custom_trigger_tooltip = {
+								tooltip = has_been_insulted_by_root
+								OR = {
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = insulted
+									}
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = scornfully_insulted
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					OR = {
+						religion = chalcedonism
+						religion = catholic
+					}
+				}
+				add_country_modifier = {
+					name = bur_special_place_in_popes_heart
+					duration = 7300
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = bur_pope_is_hated
+					duration = 7300
+				}
+			}
+		}
+	}
+	lon_leonese_cardinals_mission = {
+		icon = invest_in_the_provinces
+		required_missions = { lon_ambassadors_in_rome_mission }
+		position = 10
+		trigger = {
+			num_of_cardinals = 2
+		}
+		effect = {
+			add_prestige = 10
+			add_dip_power = 100
+		}
+	}
+}
+
+leon_mmetr_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = LON
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lon_fraternidad_cristiana_mission = {
+		icon = mission_crusaders_mass_crusade
+		required_missions = {  }
+		position = 1
+		trigger = {
+			religion_group = christian
+			OR = {
+				any_ally = {
+					religion_group = christian
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					capital_scope = {
+						region = iberia_region
+					}
+				}
+				any_subject_country = {
+					religion_group = christian
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					capital_scope = {
+						region = iberia_region
+					}
+				}
+				NOT = {
+					any_country = {
+						religion_group = christian
+						capital_scope = {
+							region = iberia_region
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_christian_brotherhood"
+				duration = 9125
+			}
+		}
+	}
+	lon_conclude_la_reconquista_mission = {
+		icon = mission_reclaim_andalucia
+		required_missions = { lon_fraternidad_cristiana_mission lon_la_reconquista_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = aragon_area
+				area = catalonia_area
+				area = valencia_area
+				area = lower_andalucia_area
+				area = upper_andalucia_area
+				area = castille_area
+				area = toledo_area
+				area = asturias_area
+				area = leon_area
+				area = extremadura_area
+				area = alentejo_area
+				area = beieras_area
+				area = basque_country
+				area = galicia_area
+			}
+			NOT = {
+				owner = {
+					religion_group = christian
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			aragon_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			catalonia_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			valencia_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			lower_andalucia_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			upper_andalucia_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			castille_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			toledo_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			asturias_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			leon_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			extremadura_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			alentejo_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			beieras_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			basque_country = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+			galicia_area = {
+				type = all
+				owner = {
+					religion_group = christian
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_legitimacy = 50
+		}
+	}
+	lon_begin_the_repoblacion_mission = {
+		icon = sources_of_trade
+		required_missions = { lon_liberate_toledo_mission }
+		position = 3
+		provinces_to_highlight = {
+			area = toledo_area
+			NOT = {
+				has_owner_religion = yes
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+		}
+		trigger = {
+			toledo_area = {
+				type = all
+				has_owner_religion = yes
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_repoblacion_begins"
+				duration = 9125
+			}
+		}
+	}
+	lon_leonese_inquisition_mission = {
+		icon = support_the_orders
+		required_missions = { lon_begin_the_repoblacion_mission }
+		position = 4
+		trigger = {
+			OR = {
+				inquisitor = 2
+				theologian = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_leonese_inquisition"
+				duration = 9125
+			}
+		}
+	}
+	lon_a_vassal_in_navarra_mission = {
+		icon = mission_subjugate_navarra
+		required_missions = { lon_reino_de_galicia_mission }
+		position = 5
+		provinces_to_highlight = {
+			area = basque_country
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			basque_country = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+		}
+	}
+	lon_onwards_to_aragon_mission = {
+		icon = mission_guilds_of_barcelona
+		required_missions = { lon_a_vassal_in_navarra_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = aragon_area
+				area = catalonia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			aragon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			catalonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_union_of_brothers"
+				duration = 10950
+			}
+		}
+	}
+	lon_sponsor_churches_mission = {
+		icon = fund_the_monasteries
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_papal_influence = 5
+			add_country_modifier = {
+				name = "me_lon_leonese_architects"
+				duration = 10950
+			}
+		}
+	}
+	lon_invite_the_holy_knights_mission = {
+		icon = mission_livonian_knights
+		required_missions = { lon_sponsor_churches_mission }
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = lon_invite_the_holy_knights_mission.tt
+				has_country_flag = enabled_holy_orders_estate_flag
+			}
+		}
+		effect = {
+			add_estate_loyalty = {
+				estate = estate_holy_orders
+				loyalty = 15
+			}
+		}
+	}
+	lon_la_cruzada_eterna_mission = {
+		icon = shield_of_christendom
+		required_missions = { lon_invite_the_holy_knights_mission }
+		position = 9
+		trigger = {
+			army_tradition = 30
+			has_border_with_religious_enemy = yes
+			num_of_owned_provinces_with = {
+				value = 7
+				NOT = { religion_group = christian }
+				NOT = { region = iberia_region }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LON_mission_events.6
+			}
+			custom_tooltip = lon_la_cruzada_eterna_mission.tt
+		}
+	}
+	lon_campeon_de_cristiandad_mission = {
+		icon = mission_knights_templar_charge
+		required_missions = { lon_la_cruzada_eterna_mission lon_cruzada_en_africa_mission }
+		position = 10
+		trigger = {
+			is_defender_of_faith = yes
+			religious_unity = 1.00
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+}
+
+leon_mmetr_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = LON
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lon_la_reconquista_mission = {
+		icon = mission_crusaders_mass_crusade_king
+		required_missions = {  }
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oma_buildforces_mod"
+				duration = 5475
+			}
+			asturias_area = {
+				limit = {
+					owner = {
+						NOT = { religion_group = christian }
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			castille_area = {
+				limit = {
+					owner = {
+						NOT = { religion_group = christian }
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			leon_area = {
+				limit = {
+					owner = {
+						NOT = { religion_group = christian }
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			galicia_area = {
+				limit = {
+					owner = {
+						NOT = { religion_group = christian }
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			toledo_area = {
+				limit = {
+					owner = {
+						NOT = { religion_group = christian }
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lon_liberate_toledo_mission = {
+		icon = mission_medieval_siege
+		required_missions = { lon_la_reconquista_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = toledo_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 219 	#Toledo
+			toledo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			toledo_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_lon_liberation_of_toledo"
+					duration = 9125
+				}
+			}
+		}
+	}
+	lon_battle_for_valencia_mission = {
+		icon = mission_valencian_silk
+		required_missions = { lon_liberate_toledo_mission }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 220
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns = 220	#Valencia
+			NOT = { exists = VAL }
+		}
+		effect = {
+			tooltip = {
+				220 = {
+					add_province_modifier = {
+						name = "me_lon_valencian_fortifications"
+						duration = 9125
+					}
+				}
+			}
+			country_event = {
+				id = mmetr_LON_mission_events.3
+			}
+		}
+	}
+	lon_umayyad_capital_mission = {
+		icon = mission_restore_caliphate_of_cordoba
+		required_missions = { lon_battle_for_valencia_mission lon_la_marcha_a_sevilla_mission }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 225
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 225	#Cordoba
+			225 = {
+				num_of_times_improved_by_owner = 2
+			}
+			225 = {
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LON_mission_events.5
+			}
+		}
+	}
+	lon_successor_of_the_visigoths_mission = {
+		icon = mission_visigothic_king_alaric
+		required_missions = { lon_umayyad_capital_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = lower_andalucia_area
+				area = upper_andalucia_area
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lower_andalucia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			upper_andalucia_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_heirs_of_the_goths"
+				duration = 10950
+			}
+			iberia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lon_expel_the_moriscos_mission = {
+		icon = mission_expel_the_moriscos
+		required_missions = { lon_successor_of_the_visigoths_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = upper_andalucia_area
+				area = lower_andalucia_area
+			}
+			NOT = { culture = ROOT }
+		}
+		trigger = {
+			upper_andalucia_area = {
+				type = all
+				culture = ROOT
+			}
+			lower_andalucia_area = {
+				type = all
+				culture = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			add_country_modifier = {
+				name = "displaced_moriscos"
+				duration = 7300
+			}
+		}
+	}
+	lon_cruzada_en_africa_mission = {
+		icon = mission_teutonic_lancer
+		required_missions = { lon_invite_the_holy_knights_mission lon_expel_the_moriscos_mission lon_humble_the_moroccans_mission }
+		position = 9
+		provinces_to_highlight = {
+			region = maghreb_region
+			NOT = {
+				religion_group = christian
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion_group = christian
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 15
+					region = maghreb_region
+					religion_group = christian
+				}
+				AND = {
+					num_of_owned_provinces_with = {
+						value = 10
+						region = maghreb_region
+						religion_group = christian
+					}
+					any_subject_country = {
+						capital_scope = {
+							region = maghreb_region
+						}
+						religion_group = christian
+					}
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			add_papal_influence = 20
+			add_church_power = 20
+			add_fervor = 40
+		}
+	}
+}
+
+leon_mmetr_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = LON
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lon_castillos_de_leon_mission = {
+		icon = mission_tear_down_spanish_strongholds
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 2
+				fort_level = 2
+				is_core = yes
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_castillos_de_leon"
+				duration = 7300
+			}
+		}
+	}
+	lon_legacy_of_asturias_mission = {
+		icon = chivalry_is_not_dead
+		required_missions = { lon_castillos_de_leon_mission }
+		position = 2
+		provinces_to_highlight = {
+			area = asturias_area
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			prestige = 50
+			asturias_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			OR = {
+				senior_union_with = ASU		#Asturias
+				NOT = { exists = ASU }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_LON_mission_events.4
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_lon_cross_of_victory"
+					duration = -1
+				}
+			}
+		}
+	}
+	lon_control_extremadura_mission = {
+		icon = unite_the_realm
+		required_missions = {  }
+		position = 3
+		provinces_to_highlight = {
+			area = extremadura_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			extremadura_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			extremadura_area = {
+				add_province_modifier = {
+					name = "me_lon_forward_momentum"
+					duration = 9125
+				}
+			}
+		}
+	}
+	lon_la_marcha_a_sevilla_mission = {
+		icon = mission_conquer_algiers
+		required_missions = { lon_control_extremadura_mission }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 224
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 224		#Seville/Sevilla
+		}
+		effect = {
+			lower_andalucia_area = {
+				limit = {
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_andalucia_area = {
+				limit = {
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lon_knights_of_the_crown_mission = {
+		icon = mission_knight
+		required_missions = {  }
+		position = 5
+		trigger = {
+			OR = {
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 4
+				}
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 80
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_royal_knights"
+				duration = -1
+			}
+		}
+	}
+	lon_conquest_of_ceuta_mission = {
+		icon = mission_retake_ceuta
+		required_missions = { lon_knights_of_the_crown_mission lon_umayyad_capital_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1751	#Ceuta
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 1751
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_trans_african_trade"
+				duration = 10950
+			}
+		}
+	}
+	lon_humble_the_moroccans_mission = {
+		icon = mission_reclaim_morocco
+		required_missions = { lon_conquest_of_ceuta_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 343	#Fez
+				province_id = 344	#Marrakech
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 343
+			owns_or_non_sovereign_subject_of = 344
+		}
+		effect = {
+			add_prestige = 10
+			add_army_tradition = 10
+		}
+	}
+	lon_west_african_ports_mission = {
+		icon = mission_west_african_ports
+		required_missions = { lon_humble_the_moroccans_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = guinea_region
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				province_id = 1466
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			guinea_region = {
+				owned_by = ROOT
+			}
+			1466 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+		}
+	}
+	lon_city_of_gold_mission = {
+		icon = mission_zambezi_gold
+		required_missions = { lon_mundus_novus_mission }
+		position = 10
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			any_province = {
+				trade_goods = gold
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						is_colonial_nation_of = ROOT
+					}
+				}
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+			add_prestige = 10
+		}
+	}
+}
+
+leon_mmetr_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = LON
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lon_consult_the_cortes_mission = {
+		icon = hand-picked_bureaucrats
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 2
+			}
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_cortes_of_leon"
+				duration = -1
+			}
+		}
+	}
+	lon_develop_leon_mission = {
+		icon = mission_golden_century
+		required_missions = { lon_consult_the_cortes_mission lon_castillos_de_leon_mission }
+		position = 2
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				area = leon_area
+			}
+			capital_scope = {
+				num_of_times_improved_by_owner = 2
+			}
+			capital_scope = {
+				OR = {
+					num_of_buildings_in_province = 4
+					NOT = { num_free_building_slots = 1 }
+				}
+			}
+		}
+		effect = {
+			add_prestige = 5
+			capital_scope = {
+				add_province_modifier = {
+					name = "me_lon_palace_of_leon"
+					duration = -1
+				}
+			}
+		}
+	}
+	lon_collect_parias_mission = {
+		icon = mission_sicily_roger_keys_to_city
+		required_missions = { lon_liberate_toledo_mission }
+		position = 3
+		trigger = {
+			num_of_subjects = 2
+			any_subject_country = {
+				religion_group = muslim
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_lon_parias"
+				duration = 10950
+			}
+		}
+	}
+	lon_order_of_alcantara_mission = {
+		icon = mission_united_knight_order
+		required_missions = { lon_control_extremadura_mission }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 2927		#Alcantara
+			NOT = {
+				num_of_times_improved_by_owner = 3
+				base_manpower = 4
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			adm_tech = 36
+			owns_core_province = 2927
+			2927 = {
+				num_of_times_improved_by_owner = 3
+				base_manpower = 4
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			country_event = {
+				id = mmetr_LON_mission_events.7
+			}
+			tooltip = {
+				extremadura_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_lon_order_of_alcantara"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	lon_military_reforms_mission = {
+		icon = mission_teutonic_riders
+		required_missions = { lon_order_of_alcantara_mission lon_knights_of_the_crown_mission }
+		position = 6
+		trigger = {
+			OR = {
+				army_tradition = 80
+				army_professionalism = 0.55
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "me_lon_semi_standing_army"
+				duration = 7300
+			}
+		}
+	}
+	lon_armada_de_leon_mission = {
+		icon = mission_spanish_armada
+		required_missions = {  }
+		position = 7
+		trigger = {
+			navy_size = 30
+		}
+		effect = {
+			add_navy_tradition = 10
+		}
+	}
+	lon_discover_the_caribbean_mission = {
+		icon = mission_native_reductions
+		required_missions = { lon_armada_de_leon_mission }
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_discover_caribbean
+				colonial_the_carribean = { has_discovered = ROOT }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					owns_core_province = 224
+				}
+				set_country_flag = sevilla_trade_center_flag
+				country_event = { id = flavor_spa.3153 }
+			}
+			add_country_modifier = {
+				name = "spa_hispaniola_discovered"
+				duration = 5475
+			}
+		}
+	}
+	lon_mundus_novus_mission = {
+		icon = mission_iberian_conquistador
+		required_missions = { lon_discover_the_caribbean_mission }
+		position = 9
+		provinces_to_highlight = {
+			colonial_region = colonial_the_carribean
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_caribbean
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 1
+					colonial_region = colonial_the_carribean
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = "the_unknown_frontier"
+				duration = 5475
+			}
+		}
+	}
+	lon_nuevo_leon_mission = {
+		icon = mission_found_havana
+		required_missions = { lon_mundus_novus_mission }
+		position = 10
+		trigger = {
+			any_subject_country = {
+				is_colonial_nation_of = ROOT
+				num_of_cities = 10
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_mercantilism = 1
+			add_country_modifier = {
+				name = "me_lon_colonial_power"
+				duration = 9125
+			}
+		}
+	}
+	
+	
+}

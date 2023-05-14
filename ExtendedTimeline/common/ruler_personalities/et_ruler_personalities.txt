@@ -1,0 +1,44 @@
+
+sickly_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = { ruler_has_personality = immortal_personality }
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				NOT = { has_institution = industrialization }
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			NOT = { heir_has_personality = immortal_personality }
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				NOT = { has_institution = industrialization }
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			NOT = { consort_has_personality = immortal_personality }
+		}
+
+		chance = {
+			modifier = {
+				factor = 1
+				NOT = { has_institution = industrialization }
+			}
+		}
+	}
+	
+	monarch_lifespan = -0.25
+	nation_designer_cost = -2
+} #1 less bad

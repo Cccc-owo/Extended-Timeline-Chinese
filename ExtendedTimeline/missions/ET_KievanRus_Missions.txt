@@ -36,8 +36,29 @@ kievenrus_missions_1 = {
 		}
 		effect = {
 			269 = { add_permanent_claim = ROOT }
+			270 = { add_permanent_claim = ROOT }
 			1937 = { add_permanent_claim = ROOT }
-			add_manpower = 1
+			lithuania_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mazovia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sandomierz_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 	secure_the_west_kru = {
@@ -48,12 +69,11 @@ kievenrus_missions_1 = {
 		provinces_to_highlight = {
 			OR = {
 				area = lithuania_area
-				province_id = 260
+				area = mazovia_area
+				area = sandomierz_area
 				province_id = 269
 				province_id = 270
-				province_id = 1937
-				province_id = 4538
-				
+				province_id = 1937			
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -62,16 +82,54 @@ kievenrus_missions_1 = {
 				type = all
 				owned_by = ROOT
 			}
-			260 = { owned_by = ROOT }
+			sandomierz_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			mazovia_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			malopolska_area = { 
+				type = all
+				owned_by = ROOT
+			}
 			269 = { owned_by = ROOT }
 			270 = { owned_by = ROOT }
 			1937 = { owned_by = ROOT }
-			4538 = { owned_by = ROOT }
 		}
 		effect = {
 			add_country_modifier = {
 				name = "tng_frontier_expansion"
-				duration = 3650
+				duration = 5475
+			}
+			samogitia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_prussia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kuyavia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_prussia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -211,7 +269,25 @@ kievenrus_missions_2 = {
 					months = 300
 					target = NOV
 				}
-			add_adm_power = 100
+			novgorod_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			pskov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			33 = { add_permanent_claim = ROOT }
+			34 = { add_permanent_claim = ROOT }
+			1752 = { add_permanent_claim = ROOT }
+			1961 = { add_permanent_claim = ROOT }
+			4261 = { add_permanent_claim = ROOT }
 		}
 	}
 	integrate_novgorod_kru = {
@@ -255,7 +331,7 @@ kievenrus_missions_2 = {
 			change_government = monarchy
 			308 = { add_permanent_claim = ROOT }
 			4117 = { add_permanent_claim = ROOT }
-			4115 = { add_permanent_claim = ROOT }
+			4250 = { add_permanent_claim = ROOT }
 			suzdal_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -277,14 +353,14 @@ kievenrus_missions_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			tver_area = {
+			oka_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
-			oka_area = {
+			ryazan_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -301,10 +377,13 @@ kievenrus_missions_2 = {
 		
 		provinces_to_highlight = {
 			OR = {
-				province_id = 294
+				province_id = 4250
 				province_id = 308
 				province_id = 4117
-				province_id = 4115
+				province_id = 4249
+				province_id = 4248
+				province_id = 294
+				area = ryazan_area
 				area = suzdal_area
 				area = moscow_area
 				area = vladimir_area
@@ -334,14 +413,21 @@ kievenrus_missions_2 = {
 				type = all
 				owned_by = ROOT
 			}
+			ryazan_area = { 
+				type = all
+				owned_by = ROOT
+			}
+			294 = { owned_by = ROOT }
 			308 = { owned_by = ROOT }
-			4275 = { owned_by = ROOT }
-			4374 = { owned_by = ROOT }
+			4117 = { owned_by = ROOT }
+			4250 = { owned_by = ROOT }
+			4248 = { owned_by = ROOT }
+			4249 = { owned_by = ROOT }
 		}
 		effect = {
 			add_country_modifier = {
 				name = "under_one_rule_et"
-				duration = 3650
+				duration = 5475
 			}
 		}
 	}
@@ -400,7 +486,7 @@ kievenrus_missions_3 = {
 				province_id = 282
 				province_id = 283
 				province_id = 1944
-				province_id = 2607
+				province_id = 2406
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -470,6 +556,36 @@ kievenrus_missions_3 = {
 				owned_by = ROOT
 			}
 		}
+		effect = {
+			wallachia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			transylvania_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			southern_transylvania_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			alfold_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
 	}
 }
 kievenrus_missions_4 = {
@@ -529,7 +645,7 @@ kievenrus_missions_4 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			287 = { add_permanent_claim = ROOT }
+			286 = { add_permanent_claim = ROOT }
 			1974 = { add_permanent_claim = ROOT }
 			2447 = { add_permanent_claim = ROOT }
 		}
@@ -542,7 +658,7 @@ kievenrus_missions_4 = {
 		provinces_to_highlight = {
 			OR = {
 				province_id = 284
-				province_id = 287
+				province_id = 286
 				province_id = 1974
 				province_id = 2447
 				province_id = 285
@@ -552,7 +668,7 @@ kievenrus_missions_4 = {
 		}
 		trigger = {
 			284 = { country_or_non_sovereign_subject_holds = ROOT }
-			287 = { country_or_non_sovereign_subject_holds = ROOT }
+			286 = { country_or_non_sovereign_subject_holds = ROOT }
 			1974 = { country_or_non_sovereign_subject_holds = ROOT }
 			2447 = { country_or_non_sovereign_subject_holds = ROOT }
 			OR = {
@@ -563,7 +679,7 @@ kievenrus_missions_4 = {
 		effect = {
 			add_country_modifier = {
 				name = "slavic_warfare_et"
-				duration = 3650
+				duration = 7300
 			}
 		}
 	}
@@ -599,7 +715,8 @@ kievenrus_missions_4 = {
 				name = "plunder_for_the_state_et"
 				duration = 7300
 			}
-			add_prestige = 15
+			add_prestige = 30
+			add_manpower = 8
 		}
 	}
 }
@@ -715,7 +832,7 @@ kievenrus_missions_5 = {
 		effect = {
 			add_country_modifier = {
 				name= "master_of_negotiations_et"
-				duration = 3650
+				duration = 9125
 			}
 		}
 	}

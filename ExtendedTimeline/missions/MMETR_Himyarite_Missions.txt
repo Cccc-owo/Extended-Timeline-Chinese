@@ -1,0 +1,1535 @@
+himyarite_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_himyarite_navy_mission = {
+		icon = mission_arabian_sea_trade
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				navy_size = QAT		#larger than Qataban
+				NOT = { exists = QAT }
+			}
+			navy_size = 15
+			num_of_light_ship = 4
+			num_of_admirals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_him_merchant_fleet"
+				duration = 10950
+			}
+		}
+	}
+	him_influence_across_the_sea_mission = {
+		icon = mission_demand_garjat_fealty
+		required_missions = { him_himyarite_navy_mission }
+		position = 3
+		provinces_to_highlight = {
+			area = aussa_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			aussa_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_him_gate_to_the_red_sea"
+				duration = 10950
+			}
+			tigray_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_ethiopia_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	him_vanquish_the_aksumites_mission = {
+		icon = mission_aksum_obelisk
+		required_missions = { him_influence_across_the_sea_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = tigray_area
+				area = central_ethiopia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			tigray_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_ethiopia_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			OR = {
+				overlord_of = AKS
+				NOT = { exists = AKS }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.1
+			}
+			dongola_area = {
+				discover_country = ROOT
+			}
+			lower_nubia_area = {
+				discover_country = ROOT
+			}
+		}
+	}
+	him_control_the_nile_mission = {
+		icon = mission_nubian_pyramids
+		required_missions = { him_vanquish_the_aksumites_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = dongola_area
+				area = lower_nubia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			dongola_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_nubia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 40
+			country_event = {
+				id = mmetr_HIM_mission_events.6
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_him_war_elephants_of_kush"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+himyarite_missions_jewish_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		religion = jewish
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_lord_of_heaven_word_mission = {
+		icon = mission_hands_praying
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_owner_religion = no
+		}
+		trigger = {
+			grown_by_states = 3
+			religious_unity = 0.99
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_him_union_of_the_faith"
+				duration = 10950
+			}
+		}
+	}
+	him_parting_the_red_sea_mission = {
+		icon = the_land_of_moses
+		required_missions = { him_lord_of_heaven_word_mission }
+		position = 9
+		provinces_to_highlight = {
+			superregion = africa_superregion
+			owned_by = ROOT
+			has_owner_religion = no
+		}
+		trigger = {
+			religion = jewish
+			num_of_owned_provinces_with = {
+				value = 10
+				superregion = africa_superregion
+				has_owner_religion = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				superregion = africa_superregion
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "me_him_religious_mission"
+				duration = 10950
+			}
+		}
+	}
+}
+himyarite_missions_south_arabian_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		religion = south_arabian
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_spread_the_faith_mission = {
+		icon = mission_hands_praying
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_owner_religion = no
+		}
+		trigger = {
+			grown_by_states = 3
+			religious_unity = 0.99
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_him_union_of_the_faith"
+				duration = 10950
+			}
+		}
+	}
+	him_mission_across_the_sea_mission = {
+		icon = mission_zim_strong_rulership
+		required_missions = { him_spread_the_faith_mission }
+		position = 9
+		provinces_to_highlight = {
+			superregion = africa_superregion
+			owned_by = ROOT
+			has_owner_religion = no
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				superregion = africa_superregion
+				has_owner_religion = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				superregion = africa_superregion
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "me_him_religious_mission"
+				duration = 10950
+			}
+		}
+	}
+}
+
+himyarite_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_great_power_diplomacy_mission = {
+		icon = a_roman_empire
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				reverse_has_opinion = {
+					who = ROM
+					value = 120
+				}
+				reverse_has_opinion = {
+					who = BYZ
+					value = 120
+				}
+				reverse_has_opinion = {
+					who = ROW
+					value = 120
+				}
+				AND = {
+					NOT = { exists = ROM }
+					NOT = { exists = ROW }
+					NOT = { exists = BYZ }
+				}
+			}
+			OR = {
+				reverse_has_opinion = {
+					who = PRT
+					value = 120
+				}
+				reverse_has_opinion = {
+					who = SAS
+					value = 120
+				}
+				AND = {
+					NOT = { exists = SAS }
+					NOT = { exists = PRT }
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.3
+			}
+		}
+	}
+	him_erythraean_sea_trade_mission = {
+		icon = mission_dominate_persian_gulf
+		required_missions = { him_himyarite_navy_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 4346		#Gulf of Aden
+			NOT = {
+				trade_share = {	
+					country = ROOT
+					share = 70
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			4346 = {
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			add_country_modifier = {
+				name = "me_him_erythraean_sea_fleet"
+				duration = -1
+			}
+		}
+	}
+	him_colonize_socotra_mission = {
+		icon = mission_colonial
+		required_missions = { him_erythraean_sea_trade_mission him_hadramaut_frankincense_mission }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 1099
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			manpower = 2	#2000 manpower
+			years_of_income = 0.5
+			OR = {
+				1099 = {
+					is_empty = yes
+					has_discovered = ROOT
+				}
+				owns_core_province = 1099
+			}
+		}
+		effect = {
+			add_years_of_income = -0.5
+			add_manpower = -2
+			if = {
+				limit = {
+					1099 = {
+						is_empty = yes
+					}
+				}
+				1099 = {
+					cede_province = ROOT
+				}
+				1099 = {
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "me_him_trading_checkpoint"
+						duration = 10950
+					}
+				}
+			}
+			else = {
+				1099 = {
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "me_him_trading_checkpoint"
+						duration = 10950
+					}
+				}
+			}
+			somaliland_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			majarteen_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	him_city_states_of_punt_mission = {
+		icon = mission_zanzibari_trade
+		required_missions = { him_colonize_socotra_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = somaliland_area
+				area = majarteen_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			somaliland_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			majarteen_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_him_macrobian_markets"
+				duration = 10950
+			}
+			define_advisor = {
+				type = trader
+				discount = yes
+				skill = 2
+				culture = somali
+				religion = shamanism
+			}
+		}
+	}
+	him_thalassocratic_empire_mission = {
+		icon = mission_roman_ship_mosaic
+		required_missions = { him_city_states_of_punt_mission him_vanquish_the_aksumites_mission }
+		position = 6
+		trigger = {
+			navy_tradition = 70
+			num_of_owned_provinces_with = {
+				value = 10
+				has_port = yes
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_dip_power = 50
+			add_country_modifier = {
+				name = "me_him_lord_of_many_seas"
+				duration = -1
+			}
+		}
+	}
+}
+himyarite_missions_jewish_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		religion = jewish
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_monuments_to_rahmanan_mission = {
+		icon = mission_reclaim_dehli
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+			NOT = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		trigger = {
+			capital_scope = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_legitimacy = 25
+			add_country_modifier = {
+				name = "me_him_temples_of_rahmanan"
+				duration = 10950
+			}
+			capital_scope = {
+				add_province_modifier = {
+					name = "me_him_central_temple_of_rahmanan"
+					duration = -1
+				}
+			}
+		}
+	}
+	him_temple_of_jerusalem_mission = {
+		icon = mission_jerusalem_second_temple
+		required_missions = { him_monuments_to_rahmanan_mission }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 379	#Judea
+			OR = {
+				NOT = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					OR = {
+						has_building = glorious_monument
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+				has_owner_religion = no
+			}
+		}
+		trigger = {
+			religion = jewish
+			owns_core_province = 379	#Mecca
+			379 = {
+				has_owner_religion = yes
+			}
+			379 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.12
+			}
+			tooltip = {
+				add_prestige = 30
+				379 = {
+					add_province_modifier = {
+						name = "me_him_temple_of_jerusalem"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+himyarite_missions_south_arabian_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		religion = south_arabian
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_children_of_athtar_mission = {
+		icon = mission_pagan_religious_rite
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+			NOT = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		trigger = {
+			capital_scope = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_legitimacy = 25
+			add_country_modifier = {
+				name = "me_him_temples_of_athtar"
+				duration = 10950
+			}
+			capital_scope = {
+				add_province_modifier = {
+					name = "me_him_central_temple_of_athtar"
+					duration = -1
+				}
+			}
+		}
+	}
+	him_pantheon_of_the_kaaba_mission = {
+		icon = mission_into_arabia
+		required_missions = { him_children_of_athtar_mission }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 385	#Mecca
+			OR = {
+				NOT = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					OR = {
+						has_building = glorious_monument
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+				has_owner_religion = no
+			}
+		}
+		trigger = {
+			owns_core_province = 385	#Mecca
+			385 = {
+				has_owner_religion = yes
+			}
+			385 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.11
+			}
+			tooltip = {
+				385 = {
+					add_province_modifier = {
+						name = "me_him_custodians_of_the_kaaba"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+himyarite_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_armies_of_dhu_raydan_mission = {
+		icon = mission_himyarite_soldier
+		required_missions = {  }
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oma_buildforces_mod"
+				duration = 5475
+			}
+			upper_yemen_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yemen_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tihama_al_yemen_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	him_overpower_qataban_mission = {
+		icon = mission_turning_the_tables
+		required_missions = { him_armies_of_dhu_raydan_mission }
+		position = 2
+		completed_by = 280.1.1
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 389	#Timna
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+				AND = {
+					owned_by = QAT
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}	
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 389
+			OR = {
+				overlord_of = QAT
+				NOT = { exists = QAT }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.2
+			}
+		}
+	}
+	him_hadramaut_frankincense_mission = {
+		icon = mission_consume_the_baghels
+		required_missions = { him_overpower_qataban_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = hadramut_area
+				area = mahra_area
+			}
+			is_empty = no
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			any_owned_province = {
+				is_state_core = yes
+				trade_goods = incense
+			}
+			hadramut_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			mahra_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.5
+			}
+			tooltip = {
+				add_mercantilism = 2
+				add_country_modifier = {
+					name = "me_him_the_incense_route"
+					duration = -1
+				}
+			}
+		}
+	}
+	him_control_omana_mission = {
+		icon = mission_growth_of_surat
+		required_missions = { him_hadramaut_frankincense_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = pirate_coast_area
+				area = mascat_area
+				area = oman_area
+			}
+			is_empty = no
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			pirate_coast_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			mascat_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			oman_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.8
+			}
+		}
+	}
+	him_sail_to_mesopotamia_mission = {
+		icon = mission_babylonia_ishtar_gate
+		required_missions = { him_control_omana_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 408
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 408
+		}
+		effect = {
+			add_navy_tradition = 20
+			add_army_tradition = 10
+			add_country_modifier = {
+				name = "me_him_mesopotamian_shipbuilding"
+				duration = -1
+			}
+		}
+	}
+	him_the_jews_of_yathrib_mission = {		#for BOTH religions, different event and reward depending on religion
+		icon = mission_cope_with_refugees
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 384	#Yathrib
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 384
+			if = {
+				limit = {
+					religion = jewish
+				}
+				384 = {
+					has_owner_religion = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = { religion = jewish }
+				}
+				stability = 2
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					religion = jewish
+				}
+				add_country_modifier = {
+					name = "me_him_followers_of_rahmanan"
+					duration = 10950
+				}
+			}
+			if = {
+				limit = {
+					NOT = { religion = jewish }
+				}
+				custom_tooltip = him_the_jews_of_yathrib_mission.tt
+				country_event = {
+					id = mmetr_HIM_mission_events.10
+				}
+			}
+		}
+	}
+}
+himyarite_missions_jewish_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		religion = jewish
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_invite_jewish_scholars_mission = {
+		icon = mission_court_education
+		required_missions = { him_monuments_to_rahmanan_mission him_the_jews_of_yathrib_mission }
+		position = 9
+		trigger = {
+			religion = jewish
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 3
+			}
+			OR = {
+				employed_advisor = {
+					religion = jewish
+					type = theologian
+				}
+				employed_advisor = {
+					religion = jewish
+					type = inquisitor
+				}
+				employed_advisor = {
+					religion = jewish
+					type = philosopher
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.13
+			}
+			tooltip = {
+				add_adm_power = 50
+				add_country_modifier = {
+					name = "me_him_jewish_immigration"
+					duration = 10950
+				}
+			}
+		}
+	}
+}
+himyarite_missions_south_arabian_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		religion = south_arabian
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_priests_of_the_sanctuaries_mission = {
+		icon = mission_court_education
+		required_missions = { him_children_of_athtar_mission }
+		position = 9
+		trigger = {
+			religion = south_arabian
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_him_priestly_advisors"
+				duration = -1
+			}
+		}
+	}
+}
+
+himyarite_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_aksumite_rivalry_mission = {
+		icon = mission_aksumite_governor
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				AND = {
+					army_size = AKS		#Aksum
+					is_rival = AKS
+					AKS = {
+						custom_trigger_tooltip = {
+							tooltip = shu_wu_diplomacy_mission.tt
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+				}
+				NOT = { exists = AKS }
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	him_subjugate_the_sabaeans_mission = {
+		icon = mission_seljuk_captives
+		required_missions = { him_armies_of_dhu_raydan_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 2344 	#Marib
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+				AND = {
+					owned_by = SAA	#Saba
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}	
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2344 	#Marib
+			OR = {
+				overlord_of = SAA
+				NOT = { exists = SAA }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.4
+			}
+		}
+	}
+	him_king_of_yemen_mission = {
+		icon = mission_marathi_fiefs
+		required_missions = { him_subjugate_the_sabaeans_mission him_hadramaut_frankincense_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = tihama_al_yemen_area
+				area = upper_yemen_area
+				area = yemen_area
+				area = hadramut_area
+				area = asir_area
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 3
+			tihama_al_yemen_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			upper_yemen_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			yemen_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			hadramut_area = {
+				type = all
+				OR = {
+					is_empty = yes
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+			asir_area = {
+				type = all
+				OR = {
+					is_empty = yes
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HIM_mission_events.7
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_him_king_of_saba_dhu_raydan_hadramwt_and_yamant"
+					duration = -1
+				}
+			}
+		}
+	}
+	him_arabian_monopoly_mission = {
+		icon = mission_trade_in_gold_coast
+		required_missions = { him_control_omana_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4346		#Gulf of Aden
+				province_id = 1334		#Hormuz
+			}
+			NOT = {
+				is_strongest_trade_power = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			4346 = {
+				is_strongest_trade_power = ROOT
+			}
+			1334 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+			add_country_modifier = {
+				name = "me_him_multi_seas_trading"
+				duration = -1
+			}
+		}
+	}
+	him_tribes_of_the_confederation_mission = {
+		icon = mission_reclaim_morocco
+		required_missions = {  }
+		position = 7
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_him_loyal_aqial"
+				duration = 10950
+			}
+		}
+	}
+	him_develop_the_great_cities_mission = {
+		icon = mission_occupy_alexandria
+		required_missions = { him_tribes_of_the_confederation_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 387	#Mocha, Zafar
+						province_id = 390 	#Sana'a
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { num_of_times_improved_by_owner = 4 }
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 2343	#Hadramaut
+						province_id = 389	#Timna
+						province_id = 2344	#Marib
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { num_of_times_improved_by_owner = 2 }
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 387
+			387 = {
+				num_of_times_improved_by_owner = 4
+			}
+			owns_core_province = 390
+			390 = {
+				num_of_times_improved_by_owner = 4
+			}
+			owns_core_province = 2343
+			2343 = {
+				num_of_times_improved_by_owner = 2
+			}
+			owns_core_province = 389
+			389 = {
+				num_of_times_improved_by_owner = 2
+			}
+			owns_core_province = 2344
+			2344 = {
+				num_of_times_improved_by_owner = 2
+			}
+		}
+		effect = {
+			390 = {
+				add_country_modifier = {
+					name = "me_him_expanding_city"
+					duration = 10950
+				}
+			}
+			387 = {
+				add_country_modifier = {
+					name = "me_him_expanding_city"
+					duration = 10950
+				}
+			}
+			add_country_modifier = {
+				name = "me_him_population_boom"
+				duration = 14600
+			}
+		}
+	}
+	him_urban_expansion_mission = {
+		icon = mission_al-wadi_al-kabir
+		required_missions = { him_develop_the_great_cities_mission }
+		position = 10
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				development = 20
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_him_regional_capitals"
+				duration = -1
+			}
+		}
+	}
+}
+
+himyarite_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HIM
+			was_tag = HIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	him_develop_himyar_mission = {
+		icon = mission_secure_khandesh
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			trade_goods = incense
+			OR = { 
+				NOT = { owned_by = ROOT }
+				AND = {
+					owned_by = ROOT
+					NOT = { base_production = 7 }
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				trade_goods = incense
+				base_production = 5
+			}
+		}
+		effect = {
+			add_dip_power = 75
+			custom_tooltip = him_develop_himyar_mission.tt
+			every_owned_province = {
+				limit = {
+					trade_goods = incense
+				}
+				add_province_modifier = {
+					name = "me_him_frankincense_abundance"
+					duration = 10950
+				}
+			}
+		}
+	}
+	him_renovate_the_marib_dam_mission = {
+		icon = mission_shipyards_of_gujarat
+		required_missions = { him_develop_himyar_mission him_subjugate_the_sabaeans_mission }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 2344 	# Marib
+			NOT = {
+				has_great_project = {
+					type = marib_dam
+					tier = 3
+				}
+			}
+		}
+		trigger = {
+			owns_core_province = 2344
+			2344 = {
+				has_great_project = {
+					type = marib_dam
+					tier = 3
+				}
+			}
+		}
+		effect = {
+			add_prestige = 50
+			add_adm_power = 100
+		}
+	}
+	him_liberate_dedan_mission = {		#The March North, renamed
+		icon = mission_afghan_frontier
+		required_missions = { him_king_of_yemen_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = medina_area
+				area = mecca_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			medina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mecca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			country_event = {
+				id = mmetr_HIM_mission_events.9
+			}
+			tabuk_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	him_trounce_the_nabataeans_mission = {
+		icon = mission_invade_maharashtra
+		required_missions = { him_liberate_dedan_mission }
+		position = 6
+		provinces_to_highlight = {
+			area = tabuk_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tabuk_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 25
+			add_country_modifier = {
+				name = "me_him_nabataean_trade_routes"
+				duration = -1
+			}
+		}
+	}
+	him_support_the_merchants_mission = {
+		icon = mission_merchant_of_gujarat
+		required_missions = { him_tribes_of_the_confederation_mission }
+		position = 8
+		trigger = {
+			num_of_light_ship = 5
+			num_of_estate_agendas_completed = {
+				estate = estate_burghers
+				value = 4
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = trader
+				discount = yes
+				skill = 2
+			}
+		}
+	}
+	him_great_wealth_of_kings_mission = {
+		icon = mission_war_chest
+		required_missions = { him_support_the_merchants_mission him_develop_the_great_cities_mission }
+		position = 10
+		trigger = {
+			share_of_starting_income = 2
+			treasury = 2000
+		}
+		effect = {
+			add_prestige = 30
+			add_country_modifier = {
+				name = "strong_treasury"
+				duration = 10950
+			}
+		}
+	}
+}

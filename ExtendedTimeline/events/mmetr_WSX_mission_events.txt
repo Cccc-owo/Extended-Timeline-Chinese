@@ -1,0 +1,67 @@
+namespace = mmetr_WSX_mission_events
+
+# Military Reforms
+country_event = {
+	id = mmetr_WSX_mission_events.1
+	title = "mmetr_WSX_mission_events.1.t"
+	desc = "mmetr_WSX_mission_events.1.desc"
+	picture = MMETR_ANGLO_SAXON_COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_WSX_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_wsx_trinoda_necessitas"
+			duration = 10950
+		}
+	}
+}
+
+# Promoting Education
+country_event = {
+	id = mmetr_WSX_mission_events.2
+	title = "mmetr_WSX_mission_events.2.t"
+	desc = "mmetr_WSX_mission_events.2.desc"
+	picture = MMETR_ANGLO_SAXON_COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_WSX_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_wsx_education_in_peace"
+			duration = 10950
+		}
+	}
+}
+
+# Frontier Raiding
+country_event = {
+	id = mmetr_WSX_mission_events.3
+	title = "mmetr_WSX_mission_events.3.t"
+	desc = "mmetr_WSX_mission_events.3.desc"
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_WSX_mission_events.3.a"
+		
+		scottish_marches_area = {
+			add_province_modifier = {
+				name = "me_wsx_frontier_raids"
+				duration = 10950
+			}
+		}
+	}
+}
+

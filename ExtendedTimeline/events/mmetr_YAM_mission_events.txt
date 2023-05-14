@@ -1,0 +1,115 @@
+namespace = mmetr_YAM_mission_events
+
+# Uji Members Offer Service
+country_event = {
+	id = mmetr_YAM_mission_events.2
+	title = "mmetr_YAM_mission_events.2.t"
+	desc = "mmetr_YAM_mission_events.2.desc"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_YAM_mission_events.2.a"
+		
+		define_advisor = {
+			type = treasurer
+			skill = 2
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_YAM_mission_events.2.b"
+		
+		define_advisor = {
+			type = diplomat
+			skill = 2
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_YAM_mission_events.2.c"
+		
+		define_advisor = {
+			type = commandant
+			skill = 2
+			discount = yes
+		}
+	}
+}
+
+# Buddhism Arrives in Yamato
+country_event = {
+	id = mmetr_YAM_mission_events.3
+	title = "mmetr_YAM_mission_events.3.t"
+	desc = "mmetr_YAM_mission_events.3.desc"
+	picture = BUDDHA_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_YAM_mission_events.3.a"
+		
+		change_religion = mahayana
+		add_country_modifier = {
+			name = "me_yam_buddhist_policy"
+			duration = 10950
+		}
+		add_stability = 1
+		if = {
+			limit = {
+				NOT = { religion_group = buddhic }
+			}
+			custom_tooltip = mmetr_YAM_mission_events.3.tt
+		}
+	}
+	
+	option = {
+		name = "mmetr_YAM_mission_events.3.b"
+		
+		
+	}
+}
+
+# Azumi Navigators of Kyushu
+country_event = {
+	id = mmetr_YAM_mission_events.4
+	title = "mmetr_YAM_mission_events.4.t"
+	desc = "mmetr_YAM_mission_events.4.desc"
+	picture = HARBOUR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_YAM_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_yam_azumi_navigators"
+			duration = 10950
+		}
+	}
+}
+
+# Dogo Onsen
+country_event = {
+	id = mmetr_YAM_mission_events.5
+	title = "mmetr_YAM_mission_events.5.t"
+	desc = "mmetr_YAM_mission_events.5.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_YAM_mission_events.5.a"
+		
+		4186 = {	#Iyo / Dogo
+			add_base_manpower = 1
+			add_province_modifier = {
+				name = "me_yam_dogo_onsen"
+				duration = -1
+			}
+		}
+	}
+}

@@ -1,0 +1,764 @@
+yamato_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YAM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yam_great_city_of_yamato_mission = {
+		icon = mission_japanese_castle_surrounded
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1832	#Yamato
+			}
+			OR = {
+				NOT = { has_building = glorious_monument }
+			 	NOT = { num_of_times_improved_by_owner = 4 }
+			 	NOT = { is_capital_of = ROOT }
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			1832 = {
+				is_capital_of = ROOT
+				has_building = glorious_monument
+			 	num_of_times_improved_by_owner = 4
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			1832 = {
+				add_province_modifier = {
+					name = "me_yam_yamato_palace"
+					duration = -1
+				}
+			}
+		}
+	}
+	yam_consolidate_the_heartland_mission = {
+		icon = mission_japanese_fortification
+		required_missions = { yam_great_city_of_yamato_mission yam_rice_cultivation_mission }
+		position = 2
+		trigger = {
+			grown_by_development = 50
+		}
+		effect = {
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = "growth_of_capital"
+						duration = 9125 #25 years
+					}
+				}
+			}
+		}
+	}
+	yam_michi_no_oku_mission = {
+		icon = mission_mongol_charge
+		required_missions = { yam_conquer_owari_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4190
+				province_id = 1027
+				province_id = 4191
+				province_id = 1026
+				province_id = 1025
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4190
+			owns_or_non_sovereign_subject_of = 1027
+			owns_or_non_sovereign_subject_of = 4191
+			owns_or_non_sovereign_subject_of = 1026
+			owns_or_non_sovereign_subject_of = 1025
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_emishi_subjugated"
+				duration = 9125
+			}
+		}
+	}
+	yam_integrate_the_mojin_mission = {
+		icon = mission_japanese_marriage
+		required_missions = { yam_michi_no_oku_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = thohoku_area
+				area = eastern_kanto_area
+			}
+		}
+		trigger = {
+			thohoku_area = {
+				type = all
+				NOT = { culture = emishi }
+			}
+			eastern_kanto_area = {
+				type = all
+				NOT = { culture = emishi }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_emishi_cavalry"
+				duration = 9125
+			}
+		}
+	}
+	yam_ainu_relations_mission = {
+		icon = mission_protect_white_sea_trade
+		required_missions = { yam_integrate_the_mojin_mission }
+		position = 5
+		provinces_to_highlight = {
+			area = hokkaido_area
+			is_empty = no
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hokkaido_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 25
+			thohoku_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_yam_ainu_markets"
+					duration = 7300
+				}
+			}
+		}
+	}
+}
+
+yamato_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YAM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yam_rice_cultivation_mission = {
+		icon = mission_rice_field
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			region = japan_region
+			trade_goods = grain
+			OR = {
+				NOT = { base_production = 5 }
+				NOT = { owned_by = ROOT }
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				region = japan_region
+				trade_goods = grain
+				base_production = 4
+				num_of_times_improved_by_owner = 1
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_population_growth"
+				duration = 10950
+			}
+		}
+	}
+	yam_nippon_trade_mission = {
+		icon = mission_chinese_market
+		required_missions = { yam_rice_cultivation_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 1376		#Nippon trade node
+			has_discovered = ROOT
+		}
+		trigger = {
+			1376 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			define_advisor = {
+				type = trader
+				skill = 2
+				discount = yes
+			}
+		}
+	}
+	yam_eastern_march_mission = {
+		icon = mission_japanese_castle_burning
+		required_missions = { yam_conquer_owari_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = sanindo_area
+				area = saigoku_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sanindo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saigoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 5
+		}
+	}
+	yam_sail_to_kyushu_mission = {
+		icon = mission_naval_dominance
+		required_missions = { yam_eastern_march_mission yam_iyo_no_shima_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {						#Kyushu provinces that are NOT Ryukyu
+				province_id = 1012		#Satsuma
+				province_id = 4180		#Hyuga
+				province_id = 4181		#Higo
+				province_id = 1014		#Bungo
+				province_id = 1818		#Chikuzen
+				province_id = 4182		#Hizen
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 1012		#Satsuma
+			owns_or_non_sovereign_subject_of = 4180		#Hyuga
+			owns_or_non_sovereign_subject_of = 4181		#Higo
+			owns_or_non_sovereign_subject_of = 1014		#Bungo
+			owns_or_non_sovereign_subject_of = 1818		#Chikuzen
+			owns_or_non_sovereign_subject_of = 4182		#Hizen
+		}
+		effect = {
+			country_event = {
+				id = mmetr_YAM_mission_events.4
+			}
+			tooltip = {
+				add_sailors = 10
+				add_country_modifier = {
+					name = "me_yam_azumi_navigators"
+					duration = 10950
+				}
+			}
+		}
+	}
+	yam_unite_the_yayoi_jin_mission = {
+		icon = mission_japanese_emperor_court
+		required_missions = { yam_sail_to_kyushu_mission }
+		position = 6
+		provinces_to_highlight = {
+			culture = japanese
+			is_empty = no
+			NOT = { owned_by = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = yam_unite_the_yayoi_jin_mission.tt
+				NOT = {
+					any_province = {
+						culture = japanese
+						is_empty = no
+						NOT = { owned_by = ROOT }
+					}
+				}
+			}
+		}
+		effect = {
+			add_legitimacy = 50
+			add_country_modifier = {
+				name = "me_yam_yayoi_united"
+				duration = 10950
+			}
+		}
+	}
+}
+
+yamato_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YAM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yam_yamato_army_mission = {
+		icon = mission_chinese_training
+		required_missions = {  }
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oma_buildforces_mod"
+				duration = 5475
+			}
+		}
+	}
+	yam_conquer_owari_mission = {
+		icon = mission_japanese_samurai
+		required_missions = { yam_yamato_army_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = chubu_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			chubu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+		}
+	}
+	yam_iyo_no_shima_mission = {
+		icon = mission_end_arakan_piracy
+		required_missions = { yam_conquer_owari_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = shikoku_area
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			shikoku_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_YAM_mission_events.5
+			}
+			tooltip = {
+				4186 = {	#Iyo / Dogo
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "me_yam_dogo_onsen"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	yam_buddhist_mission_mission = {
+		icon = mission_japanese_warrior_monks
+		required_missions = { yam_overseas_expedition_mission }
+		position = 5
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { has_owner_religion = yes }
+		}
+		trigger = {
+			religion_group = buddhic
+			religious_unity = 0.98
+		}
+		effect = {
+			add_karma = 15
+			add_country_modifier = {
+				name = "me_yam_patron_of_the_lord_buddha"
+				duration = 10950
+			}
+		}
+	}
+	yam_dharmachakra_of_the_sun_mission = {
+		icon = mission_dharma_mission_religious_harmony
+		required_missions = { yam_buddhist_mission_mission }
+		position = 6
+		provinces_to_highlight = {
+			region = japan_region
+			OR = {
+				NOT = { 
+					owner = {
+						religion_group = buddhic
+					}
+				}
+				AND = {
+					owned_by = ROOT
+					NOT = { has_owner_religion = yes }
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion_group = buddhic
+			japan_region = {
+				type = all
+				OR = {
+					owner = {
+						religion_group = buddhic
+					}
+					is_empty = yes
+				}
+			}
+			all_owned_province = {
+				religion_group = buddhic
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_karma = 20
+		}
+	}
+}
+
+yamato_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YAM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yam_waves_of_susanoo_mission = {
+		icon = mission_look_west
+		required_missions = {  }
+		position = 1
+		trigger = {
+			navy_size = 20
+			num_of_galley = 7
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_fury_of_susanoo"
+				duration = 5475
+			}
+		}
+	}
+	yam_invasion_of_korea_mission = {
+		icon = mission_korean_castle_assault
+		required_missions = { yam_waves_of_susanoo_mission yam_yamato_army_mission }
+		position = 2
+		provinces_to_highlight = {
+			region = korea_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = korea_region
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 5
+			add_navy_tradition = 10
+			add_country_modifier = {
+				name = "me_yam_expanding_empire"
+				duration = 7300
+			}
+		}
+	}
+	yam_control_kanto_mission = {
+		icon = mission_japanese_fort
+		required_missions = { yam_conquer_owari_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = kanto_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kanto_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 50
+		}
+	}
+	yam_overseas_expedition_mission = {
+		icon = mission_chinese_warlords_alliance
+		required_missions = {  }
+		position = 4
+		trigger = {
+			OR = {
+				any_country = {
+					is_emperor_of_china = yes
+					has_opinion = {
+						who = root
+						value = 80
+					}
+				}
+				any_country = {
+					is_emperor_of_china = yes
+					has_spy_network_from = {
+						who = ROOT
+						value = 35
+					}
+				}
+				AND = {
+					NOT = {
+						any_country = {
+							is_emperor_of_china = yes
+						}
+					}
+					any_country = {
+						any_owned_province = {
+							superregion = china_superregion
+						}
+						has_spy_network_from = {
+							who = ROOT
+							value = 30
+						}
+					}
+				}
+				#Hangzhou
+				684 = {
+					has_merchant = ROOT
+				}
+				#Beijing
+				1816 = {
+					has_merchant = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_land_of_the_rising_sun"
+				duration = -1
+			}
+			random_owned_province = {
+				limit = { NOT = { religion = mahayana } }
+				change_religion = mahayana
+			}
+			if = {
+				limit = {
+					NOT = { religion = mahayana }
+				}
+				country_event = {
+					id = mmetr_YAM_mission_events.3
+				}
+			}
+		}
+	}
+	yam_enact_the_ritsuryou_mission = {
+		icon = mission_kowtow
+		required_missions = { yam_overseas_expedition_mission }
+		position = 5
+		trigger = {
+			stability = 3
+			has_institution = legalism
+			monthly_adm = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_ritsuryou"
+				duration = -1
+			}
+		}
+	}
+	yam_juushichijou_kenpou_mission = {
+		icon = mission_chinese_edict
+		required_missions = { yam_buddhist_mission_mission }
+		position = 6
+		trigger = {
+			religion_group = buddhic
+			karma = 35
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_juushichijou_kenpou"
+				duration = 10950
+			}
+		}
+	}
+	
+}
+
+yamato_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YAM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yam_yamato_temples_mission = {
+		icon = mission_japanese_temple_gate
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}			
+			}
+			capital_scope = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}	
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_patron_of_the_gods"
+				duration = 10950
+			}
+		}
+	}
+	yam_spiritual_leader_mission = {
+		icon = mission_hands_praying
+		required_missions = { yam_yamato_temples_mission }
+		position = 2
+		trigger = {
+			religious_unity = 1.0
+			legitimacy_equivalent = 90
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_spiritual_mission"
+				duration = 10950
+			}
+		}
+	}
+	yam_the_noble_clans_mission = {
+		icon = mission_japanese_daimyo_nobles
+		required_missions = {  }
+		position = 3
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_uji_appeased"
+				duration = 10950
+			}
+			country_event = {
+				id = mmetr_YAM_mission_events.2
+			}
+		}
+	}
+	yam_rein_in_the_clans_mission = {
+		icon = mission_japanese_daimyo_surrender
+		required_missions = { yam_the_noble_clans_mission }
+		position = 4
+		trigger = {
+			has_regency = no
+			OR = {
+				crown_land_share = 50
+				NOT = {
+					estate_influence = {
+						estate = estate_nobles
+						influence = 25
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_mil_power = 50
+			add_prestige = 10
+		}
+	}
+	yam_kanii_juunikai_mission = {
+		icon = mission_chinese_officials_in_line
+		required_missions = { yam_overseas_expedition_mission }
+		position = 5
+		trigger = {
+			has_institution = legalism
+			OR = {
+				philosopher = 2
+				treasurer = 2
+				master_of_mint = 2
+				statesman = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_yam_twelve_level_cap_and_rank_system"
+				duration = -1
+			}
+		}
+	}
+}

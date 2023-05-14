@@ -1,0 +1,162 @@
+yellow_turban_rebellion = {
+	potential = {
+		tag = HND
+		NOT = { has_country_flag = yellow_turban_rebellion_happened }
+		normal_or_historical_nations = yes
+		is_year = 150
+		NOT = { started_in = 189.9.28 } 
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		is_year = 170
+		NOT = { is_year = 250 }
+		if = {
+			limit = {	
+				has_dlc = "Mandate of Heaven"
+			}
+			OR = {
+				AND = {
+					NOT = { imperial_mandate = 50 }
+					is_emperor_of_china = yes
+				}
+				NOT = { is_emperor_of_china = yes }
+				NOT = { stability = -2 }
+			}
+		}
+		else = {
+			OR = {
+				has_country_modifier = the_mandate_of_heaven_lost
+				has_country_modifier = lost_mandate_of_heaven
+				AND = {
+					NOT = { stability = -2 }
+					NOT = { legitimacy = 50 }
+				}
+			}
+		}
+	}
+	
+	can_stop = {
+		has_any_disaster = yes
+		if = {
+			limit = {
+				has_dlc = "Mandate of Heaven"
+			}
+			imperial_mandate = 50
+		}
+		else = {
+			NOT = { has_country_modifier = the_mandate_of_heaven_lost }
+			NOT = { has_country_modifier = lost_mandate_of_heaven }
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 10
+			has_dlc = "Mandate of Heaven"
+			NOT = { is_emperor_of_china = yes }
+		}
+		modifier = {
+			factor = 2
+			NOT = { imperial_mandate = 50 }
+			imperial_mandate = 30
+		}
+		modifier = {
+			factor = 3
+			NOT = { imperial_mandate = 30 }
+			imperial_mandate = 10
+		}
+		modifier = {
+			factor = 10
+			NOT = { imperial_mandate = 10 }
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 5
+		}
+		modifier = {
+			factor = 3
+			num_of_loans = 10
+		}
+		modifier = {
+			factor = 5
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 2
+			corruption = 5
+			NOT = { corruption = 10 }
+		}
+		modifier = {
+			factor = 5
+			corruption = 10
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 10
+			NOT = { stability = -2 }
+		}
+	}
+	
+	can_end = {
+		if = {
+			limit = {
+				has_dlc = "Mandate of Heaven"
+			}
+			OR = {
+				imperial_mandate = 70
+				is_emperor_of_china = no
+			}
+		}
+		else = {
+			stability = 3
+		}
+		is_bankrupt = no
+		NOT = { num_of_loans = 5 }
+		NOT = { corruption = 5 }
+		NOT = { num_of_rebel_armies = 1 }
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+	}
+	
+	modifier = {
+		land_morale = -0.15
+		technology_cost = 0.2
+		global_unrest = 15
+		global_monthly_devastation = 0.08
+		global_tax_modifier = -0.4
+		global_trade_goods_size_modifier = -0.3
+	}
+	
+	on_start = yellow_turban_rebellion.1
+	on_end = yellow_turban_rebellion.2
+	
+	on_monthly = {
+		events = {
+			yellow_turban_rebellion.4		#Governors Granted Autonomy
+			yellow_turban_rebellion.3		#Liang Province Rebellion
+			yellow_turban_rebellion.13		#Gongsun Du Liaodong Autonomy
+			yellow_turban_rebellion.17		#The Yellow Sky Reigns - Zhang brothers succeed
+		}
+		random_events = {
+			3000 = 0
+			100 = yellow_turban_rebellion.5		#Yellow Turbans in Jing
+			100 = yellow_turban_rebellion.6		#Yellow Turbans in Yi
+			100 = yellow_turban_rebellion.7		#White Wave Bandits
+			100 = yellow_turban_rebellion.8		#Advisor Suspected of Treason
+			100 = yellow_turban_rebellion.9		#Generic peasant revolt event, repeatable
+			50 = yellow_turban_rebellion.10		#Nomad Raid - repeatable
+			100 = yellow_turban_rebellion.11	#Local Militias Support the Han
+			50 = yellow_turban_rebellion.12		#Local Prefect Recruits Han Loyalists
+			100 = yellow_turban_rebellion.14	#Ma Xiang Pretender Emperor
+			100 = yellow_turban_rebellion.15	#Ou Xing Invades Changsha
+			50 = yellow_turban_rebellion.16		#Eunuchs Ignore Rebel Reports
+		}
+	}
+}

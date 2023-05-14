@@ -1,0 +1,108 @@
+abbasid_fitna = {
+	potential = {
+		tag = ABA
+		NOT = { has_country_flag = abbasid_fitna_happened }
+		normal_or_historical_nations = yes
+		is_year = 800
+		NOT = { is_year = 1000 }
+		NOT = { started_in = 950.1.1 } 
+		num_of_cities = 100
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		is_year = 820
+		NOT = { is_year = 1000 }
+		NOT = { stability = -1 }
+		num_of_cities = 100
+	}
+	
+	can_stop = {
+		has_any_disaster = yes
+		stability = 3
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			num_of_loans = 5
+		}
+		modifier = {
+			factor = 3
+			num_of_loans = 10
+		}
+		modifier = {
+			factor = 5
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 2
+			corruption = 5
+			NOT = { corruption = 10 }
+		}
+		modifier = {
+			factor = 5
+			corruption = 10
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 10
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 10
+			has_heir = no
+		}
+		modifier = {
+			factor = 5
+			heir_has_ruler_dynasty = no
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				NOT = { adm = 3 }
+				NOT = { dip = 3 }
+				NOT = { mil = 3 }
+			}
+		}
+	}
+	
+	can_end = {
+		stability = 2
+		NOT = { num_of_rebel_armies = 1 }
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+	}
+	
+	modifier = {
+		global_unrest = 10
+		stability_cost_modifier = 0.1
+	}
+	
+	on_start = abbasid_fitna.1		#Anarchy at $CAPITAL_CITY$
+	on_end = abbasid_fitna.2
+	
+	on_monthly = {
+		events = {
+			abbasid_fitna.3		#Mysterious Death of the Caliph
+			abbasid_fitna.4		#Rivals Challenge the Caliph
+			abbasid_fitna.5		#Rivals Executed
+			abbasid_fitna.7		#Zanj Rebellion
+			abbasid_fitna.10	#Kharijite Rebellion - main large scale rebellion
+			abbasid_fitna.11	#Kharijite Rebel Leader Humiliated
+		}
+		random_events = {
+			1500 = 0
+			100 = abbasid_fitna.6	#Alids / Shiite rebels
+			100 = abbasid_fitna.8	#Zanj rebel remnants, can trigger between half year to 10 years after main Zanj Rebellion
+			50 = abbasid_fitna.9	#Soldiers riot
+			25 = abbasid_fitna.12	#Advisor Assassinated
+		}
+	}
+}

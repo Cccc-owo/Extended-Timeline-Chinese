@@ -1,0 +1,366 @@
+namespace = mmetr_HIM_mission_events
+
+# The King of Ethiopia
+country_event = {
+	id = mmetr_HIM_mission_events.1
+	title = "mmetr_HIM_mission_events.1.t"
+	desc = "mmetr_HIM_mission_events.1.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_him_king_of_ethiopia"
+			duration = -1
+		}
+	}
+}
+
+# King of Qataban and Dhu Raydan
+country_event = {
+	id = mmetr_HIM_mission_events.2
+	title = "mmetr_HIM_mission_events.2.t"
+	desc = "mmetr_HIM_mission_events.2.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_him_integration_of_qataban"
+			duration = 10950
+		}
+	}
+}
+
+# The Question of Neutrality
+country_event = {
+	id = mmetr_HIM_mission_events.3
+	title = "mmetr_HIM_mission_events.3.t"
+	desc = "mmetr_HIM_mission_events.3.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.3.a"
+		
+		add_country_modifier = {
+			name = "me_him_full_trade_neutrality"
+			duration = 14600
+		}
+	}
+	
+	option = {
+		name = "mmetr_HIM_mission_events.3.b"
+		
+		add_country_modifier = {
+			name = "me_him_partial_trading_neutrality"
+			duration = 14600
+		}
+	}
+}
+
+# Temples of the Sabaean Capital
+country_event = {
+	id = mmetr_HIM_mission_events.4
+	title = "mmetr_HIM_mission_events.4.t"
+	desc = "mmetr_HIM_mission_events.4.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.4.a"
+		
+		2344 = {	#Marib
+			add_province_modifier = {
+				name = "me_him_treasures_of_the_sabaean_temples"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_HIM_mission_events.4.b"
+		
+		trigger = {
+			2344 = {
+				NOT = { is_capital_of = ROOT }
+			}
+		}
+		
+		capital_scope = {
+			add_province_modifier = {
+				name = "me_him_treasures_taken_from_the_sabaean_temples"
+				duration = 10950
+			}
+		}
+		2344 = {	#Marib
+			add_province_modifier = {
+				name = "me_him_treasures_stolen"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Source of Frankincense
+country_event = {
+	id = mmetr_HIM_mission_events.5
+	title = "mmetr_HIM_mission_events.5.t"
+	desc = "mmetr_HIM_mission_events.5.desc"
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.5.a"
+		
+		add_mercantilism = 2
+		add_country_modifier = {
+			name = "me_him_the_incense_route"
+			duration = -1
+		}
+	}
+}
+
+# Hegemon of the Upper Nile
+country_event = {
+	id = mmetr_HIM_mission_events.6
+	title = "mmetr_HIM_mission_events.6.t"
+	desc = "mmetr_HIM_mission_events.6.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_him_war_elephants_of_kush"
+			duration = -1
+		}
+	}
+}
+
+# King of Saba, Dhu Raydan, Hadramwt and Yamant
+country_event = {
+	id = mmetr_HIM_mission_events.7
+	title = "mmetr_HIM_mission_events.7.t"
+	desc = "mmetr_HIM_mission_events.7.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.7.a"
+		
+		add_country_modifier = {
+			name = "me_him_king_of_saba_dhu_raydan_hadramwt_and_yamant"
+			duration = -1
+		}
+	}
+}
+
+# Qanats of Oman
+country_event = {
+	id = mmetr_HIM_mission_events.8
+	title = "mmetr_HIM_mission_events.8.t"
+	desc = "mmetr_HIM_mission_events.8.desc"
+	picture = ROMAN_ACQUEDUCT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.8.a"
+		
+		pirate_coast_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_him_himyarite_colonies"
+				duration = 10950
+			}
+		}
+		mascat_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_him_himyarite_colonies"
+				duration = 10950
+			}
+		}
+		oman_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_him_himyarite_colonies"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# Arab Tribes of the North
+country_event = {
+	id = mmetr_HIM_mission_events.9
+	title = "mmetr_HIM_mission_events.9.t"
+	desc = "mmetr_HIM_mission_events.9.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.9.a"
+		
+		mecca_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_him_tribal_autonomy_policy"
+				duration = 10950
+			}
+		}
+		medina_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_him_tribal_autonomy_policy"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_HIM_mission_events.9.b"
+		
+		mecca_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_him_tribal_assimilation_policy"
+				duration = 10950
+			}
+		}
+		medina_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_him_tribal_assimilation_policy"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Jewish Scholars of Yathrib
+country_event = {
+	id = mmetr_HIM_mission_events.10
+	title = "mmetr_HIM_mission_events.10.t"
+	desc = "mmetr_HIM_mission_events.10.desc"
+	picture = JUDAISM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.10.a"
+		
+		change_religion = jewish
+		custom_tooltip = mmetr_HIM_mission_events.10.tt
+		swap_non_generic_missions = yes
+		
+		add_country_modifier = {
+			name = "me_him_followers_of_rahmanan"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_HIM_mission_events.10.b"
+		
+		add_country_modifier = {
+			name = "me_him_open_tolerance"
+			duration = 10950
+		}
+		
+		custom_tooltip = mmetr_HIM_mission_events.10.tt2
+		
+		set_country_flag = unlock_decision_to_adopt_judaism_flag_mmetr
+	}
+}
+
+# The [Root.Monarch.GetTitle] and the Kaaba
+country_event = {
+	id = mmetr_HIM_mission_events.11
+	title = "mmetr_HIM_mission_events.11.t"
+	desc = "mmetr_HIM_mission_events.11.desc"
+	picture = muslimgfx_HAJJ_eventPicture		#Kaaba event picture from Sword and Crescent
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.11.a"
+		
+		385 = {
+			add_province_modifier = {
+				name = "me_him_custodians_of_the_kaaba"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Third Temple of Jerusalem
+country_event = {
+	id = mmetr_HIM_mission_events.12
+	title = "mmetr_HIM_mission_events.12.t"
+	desc = "mmetr_HIM_mission_events.12.desc"
+	picture = JUDAISM_TEMPLE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.12.a"
+		
+		add_prestige = 30
+		379 = {
+			add_province_modifier = {
+				name = "me_him_temple_of_jerusalem"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Jewish Immigration
+country_event = {
+	id = mmetr_HIM_mission_events.13
+	title = "mmetr_HIM_mission_events.13.t"
+	desc = "mmetr_HIM_mission_events.13.desc"
+	picture = JUDAISM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_HIM_mission_events.13.a"
+		
+		add_adm_power = 50
+		add_country_modifier = {
+			name = "me_him_jewish_immigration"
+			duration = 10950
+		}
+	}
+}

@@ -1,0 +1,291 @@
+#########################################
+#Holy Orders
+#########################################
+estate_holy_orders_land_rights = {
+	icon = privilege_grant_autonomy
+	land_share = 5
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.05
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 1.4
+			num_of_territories = 15		#+10 more than nobles
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 25
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 35
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_holy_orders
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_holy_orders_land_rights }
+		}
+		modifier = {
+			factor = 0
+			NOT = { governing_capacity_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 40 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 60 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_holy_orders_land_rights }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 30 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 50 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_holy_orders_land_rights }
+		}
+		modifier = {
+			factor = 0.8
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
+		}
+	}
+}
+
+estate_holy_orders_financial_control = {
+	icon = privilege_gold_mint
+	max_absolutism = -5
+	influence = 0.1
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+		burghers_loyalty_modifier = -0.1
+	}
+	benefits = {
+		burghers_influence_modifier = -0.05
+		global_tax_modifier = 0.075
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 40
+				}
+			}
+		}
+	}
+}
+
+estate_holy_orders_letters_of_credit = {
+	icon = privilege_lighten_dhimmi_tax_burden
+	max_absolutism = -5
+	influence = 0.1
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		interest = -0.5
+		inflation_reduction = 0.15
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				num_of_loans = 1
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				num_of_loans = 3
+			}
+		}
+	}
+}
+
+estate_holy_orders_holy_knights = {
+	icon = privilege_limited_war_support
+	max_absolutism = -5
+	loyalty = 0.1
+	influence = 0.15
+	penalties = {
+		nobles_loyalty_modifier = -0.05
+	}
+	benefits = {
+		free_leader_pool = 1
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_holy_orders_militaris_ordinis = {
+	icon = privilege_manpower_holy_orders
+	max_absolutism = -5
+	influence = 0.1
+	penalties = {
+		nobles_loyalty_modifier = -0.05
+	}
+	benefits = {
+		manpower_recovery_speed = 0.1
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_holy_orders_heed_knightly_council = {
+	icon = privilege_empty_throne
+	max_absolutism = -5
+	influence = 0.1
+	loyalty = 0.05
+	can_select = { 
+		NOT = { has_estate_privilege = estate_nobles_advisors }
+	}
+	penalties = {
+		nobles_loyalty_modifier = -0.05
+	}
+	benefits = {
+		mil_advisor_cost = -0.25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_holy_orders_heathen_estates = {
+	icon = privilege_demand_more_troops
+	max_absolutism = -5
+	influence = 0.1
+	can_select = {
+		any_owned_province = {
+			NOT = { religion_group = christian }
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+		global_heathen_missionary_strength = 0.01
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_holy_orders_colonial_domains = {
+	icon = privilege_grant_new_world_charter
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.05
+	is_valid = {
+		OR = {
+			num_of_colonists = 1
+			num_of_colonies = 1
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+		native_assimilation = 0.5
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+

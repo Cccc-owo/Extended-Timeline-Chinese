@@ -1,0 +1,122 @@
+namespace = mmetr_Generic_events
+
+# Order in the Colonies
+country_event = {
+	id = mmetr_Generic_events.1
+	title = "mmetr_Generic_events.1.t"
+	desc = "mmetr_Generic_events.1.desc"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_events.1.a"
+		
+		add_country_modifier = {
+			name = "gencol_mutual_contract"
+			duration = 7300
+		}
+	}
+	option = {
+		name = "mmetr_Generic_events.1.b"
+		
+		add_country_modifier = {
+			name = "gencol_harsh_treatment"
+			duration = 7300
+		}
+	}
+}
+
+# Colonial Mobilization
+country_event = {
+	id = mmetr_Generic_events.2
+	title = "mmetr_Generic_events.2.t"
+	desc = "mmetr_Generic_events.2.desc"
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_events.2.a"
+		
+		add_country_modifier = {
+			name = "gencol_defending_our_home"
+			duration = 5475	#15 years
+		}
+	}
+	option = {
+		name = "mmetr_Generic_events.2.b"
+		
+		add_country_modifier = {
+			name = "gencol_attacking_the_aggressors"
+			duration = 5475	#15 years
+		}
+	}
+}
+
+# Colonial Awakening
+country_event = {
+	id = mmetr_Generic_events.3
+	title = "mmetr_Generic_events.3.t"
+	desc = "mmetr_Generic_events.3.desc"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_events.3.a"
+		
+		add_country_modifier = {
+			name = "gencol_colonial_religious_awakening"
+			duration = 7300
+		}
+	}
+}
+
+# Governor's Council
+country_event = {
+	id = mmetr_Generic_events.4
+	title = "mmetr_Generic_events.4.t"
+	desc = "mmetr_Generic_events.4.desc"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_events.4.a"
+		
+		add_country_modifier = {
+			name = "gencol_governors_council_same_culture"
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = "mmetr_Generic_events.4.b"
+		
+		add_country_modifier = {
+			name = "gencol_governors_council_all_talent_welcome"
+			duration = 9125
+		}
+	}
+}
+
+# Colonial Cities
+country_event = {
+	id = mmetr_Generic_events.5
+	title = "mmetr_Generic_events.5.t"
+	desc = "mmetr_Generic_events.5.desc"
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_events.5.a"
+		
+		add_country_modifier = {
+			name = "gencol_urbanization"
+			duration = 9125
+		}
+	}
+}
+

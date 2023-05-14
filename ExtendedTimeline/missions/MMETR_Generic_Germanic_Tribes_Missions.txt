@@ -1,0 +1,1020 @@
+generic_germanic_tribes_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { started_in = 476.9.4 }
+		culture_group = germanic
+		OR = {
+			technology_group = barbarian
+			is_tribal = yes
+		}
+		NOT = {
+			OR = {				#expand this list of tags as unique mission trees added
+				tag = VAN
+			}
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	gertribe_reliable_allies_mission = {
+		icon = mission_medieval_marriage
+		required_missions = {  }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = gertribe_reliable_allies_mission.tt
+				calc_true_if = {
+					all_ally = {
+						has_opinion = {
+							who = ROOT
+							value = 120
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_honorable_diplomacy"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_vassals_of_root_mission = {
+		icon = mission_kneeling_before_king
+		required_missions = { gertribe_reliable_allies_mission }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = gertribe_vassals_of_root_mission.tt
+				calc_true_if = {
+					all_subject_country = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_Generic_Germanic_mission_events.1
+			}
+		}
+	}
+	gertribe_expand_root_mission = {
+		icon = mission_road_construction_ancient
+		required_missions = { gertribe_rally_the_warbands_mission }
+		position = 5
+		trigger = {
+			grown_by_states = 3
+			grown_by_development = 30
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_expanding_confederation"
+				duration = 10950
+			}
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = "growth_of_capital"
+						duration = 9125 #25 years
+					}
+				}
+			}
+		}
+	}
+	gertribe_reign_over_capitalregion_mission = {
+		icon = mission_unite_home_region
+		required_missions = { gertribe_expand_root_mission }
+		position = 6
+		provinces_to_highlight = {
+			region_for_scope_province = {
+				is_capital_of = ROOT
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = gertribe_reign_over_capitalregion_mission.tt
+				capital_scope = {
+					region_for_scope_province = {
+						type = all
+						OR = {
+							country_or_non_sovereign_subject_holds = ROOT
+							is_empty = yes
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+				name = "me_gertribe_regional_power"
+				duration = 10950
+			}
+			if = {
+				limit = {
+					NOT = { 
+						government_rank = 2
+					}
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	gertribe_sack_of_rome_mission = {
+		icon = mission_roman_plunder
+		required_missions = { gertribe_cross_the_roman_limes_mission }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 118	#Roma
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				owns = 118
+				AND = {
+					controls = 118
+					NOT = {
+						owns = 118
+					}
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_war_exhaustion = -2
+			add_years_of_income = 1.00
+			capital_scope = {
+				add_base_production = 1		#brought back from Rome
+			}
+		}
+	}
+	gertribe_conquest_of_italy_mission = {
+		icon = mission_roman_forum_imperial
+		required_missions = { gertribe_sack_of_rome_mission gertribe_far_from_home_mission }
+		position = 9
+		provinces_to_highlight = {
+			region = italy_region
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			italy_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_king_of_italy"
+				duration = 10950
+			}
+		}
+	}
+}
+
+generic_germanic_tribes_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { started_in = 476.9.4 }
+		culture_group = germanic
+		OR = {
+			technology_group = barbarian
+			is_tribal = yes
+		}
+		NOT = {
+			OR = {				#expand this list of tags as unique mission trees added
+				tag = VAN
+			}
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	gertribe_appease_the_nobles_mission = {
+		icon = mission_celtic_nobles
+		required_missions = { gertribe_reliable_allies_mission }
+		position = 2
+		trigger = {
+			OR = {
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 4
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nomadic_tribes
+					value = 4
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_sippe"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_rally_the_warbands_mission = {
+		icon = mission_gothic_warrior_4th_ce
+		required_missions = {  }
+		position = 4
+		trigger = {
+			army_size_percentage = 1.0
+			OR = {
+				is_monarch_leader = yes
+				is_heir_leader = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_rallied_the_comitatus"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_cross_the_roman_limes_mission = {
+		icon = give_him_back_his_legions
+		required_missions = { gertribe_rally_the_warbands_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				is_core = ROM
+				is_core = ROW
+				is_core = BYZ
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				OR = {
+					is_core = ROM
+					is_core = ROW
+					is_core = BYZ
+					region = france_region
+					region = italy_region
+					region = iberia_region
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = "me_gertribe_germanic_settlement"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_ruler_of_many_mission = {
+		icon = mission_se_birdmen
+		required_missions = { gertribe_cross_the_roman_limes_mission }
+		position = 8
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				is_state = yes
+				NOT = { 
+					culture_group = germanic
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_multicultural_confederation"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "me_gertribe_multicultural_aides"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_migration_to_scythia_mission = {
+		icon = mission_indo_scythians
+		required_missions = { gertribe_far_from_home_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = ruthenia_region
+				region = crimea_region
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				is_core = ROOT
+				OR = {
+					region = ruthenia_region
+					region = crimea_region
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "me_gertribe_sarmatian_cavalry"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_cities_of_taurica_mission = {
+		icon = mission_roman_ship_mosaic
+		required_missions = { gertribe_migration_to_scythia_mission }
+		position = 11
+		provinces_to_highlight = {
+			province_id = 284		#Charax / Crimea
+			NOT = {
+				OR = {
+					num_of_times_improved_by_owner = 4
+					owned_by = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 284	#Charax / Crimea
+			284 = {
+				num_of_times_improved_by_owner = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_euxine_sea_trade"
+				duration = 10950
+			}
+			284 = {
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "me_gertribe_germanic_fortification_of_charax"
+					duration = 10950
+				}
+			}
+		}
+	}
+}
+
+generic_germanic_tribes_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { started_in = 476.9.4 }
+		culture_group = germanic
+		OR = {
+			technology_group = barbarian
+			is_tribal = yes
+		}
+		NOT = {
+			OR = {				#expand this list of tags as unique mission trees added
+				tag = VAN
+			}
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	gertribe_thriving_villages_mission = {
+		icon = mission_ne_longhouses
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				development = 8
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				base_production = 4
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_production = 1
+			}
+			add_country_modifier = {
+				name = "me_gertribe_bountiful_harvests"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_amber_trading_mission = {
+		icon = mission_zambezi_gold
+		required_missions = { gertribe_thriving_villages_mission }
+		position = 2
+		trigger = {
+			any_trade_node = {
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_amber_trade"
+				duration = -1
+			}
+		}
+	}
+	gertribe_spoils_of_conquest_mission = {
+		icon = mission_entrepot_of_india
+		required_missions = { gertribe_amber_trading_mission gertribe_establish_trade_posts_mission }
+		position = 3
+		trigger = {
+			treasury = 1000
+			share_of_starting_income = 2.0
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_organized_pillaging"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "me_gertribe_overflowing_coffers"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_heritage_of_war_mission = {
+		icon = mission_mongol_raze
+		required_missions = { gertribe_rally_the_warbands_mission }
+		position = 5
+		trigger = {
+			army_tradition = 70
+		}
+		effect = {
+			country_event = {
+				id = mmetr_Generic_Germanic_mission_events.2
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_gertribe_infantry_wedge_formation"
+					duration = 10950
+				}
+			}
+		}
+	}
+	gertribe_study_siegecraft_mission = {
+		icon = mission_dice_roll_roman
+		required_missions = { gertribe_heritage_of_war_mission gertribe_construct_earthworks_mission }
+		position = 6
+		trigger = {
+			monthly_mil = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_art_of_siegecraft"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_far_from_home_mission = {
+		icon = a_roman_empire
+		required_missions = {  }		#removed Roman Limes mission so do not have to own Roman core
+		position = 8
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				is_core = ROOT
+				NOT = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+						region = scandinavia_region
+					}
+				}
+			}
+			capital_scope = {
+				NOT = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+						region = scandinavia_region
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_great_migration"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_across_the_rhine_mission = {
+		icon = mission_advance_to_the_dnieper
+		required_missions = { gertribe_far_from_home_mission }
+		position = 10
+		provinces_to_highlight = {
+			region = france_region
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				region = france_region
+				is_core = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "me_gertribe_crossing_the_rhenus"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_lord_of_the_celts_mission = {
+		icon = mission_celtic_nobles
+		required_missions = { gertribe_across_the_rhine_mission }
+		position = 12
+		provinces_to_highlight = {
+			region = france_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			france_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 20
+				culture_group = gaelic
+			}
+		}
+		effect = {
+			add_adm_power = 75
+			add_dip_power = 75
+			add_country_modifier = {
+				name = "me_gertribe_lord_of_gallia"
+				duration = 10950
+			}
+		}
+	}
+}
+
+generic_germanic_tribes_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { started_in = 476.9.4 }
+		culture_group = germanic
+		OR = {
+			technology_group = barbarian
+			is_tribal = yes
+		}
+		NOT = {
+			OR = {				#expand this list of tags as unique mission trees added
+				tag = VAN
+			}
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	gertribe_establish_trade_posts_mission = {
+		icon = return_visby_to_the_league
+		required_missions = { gertribe_thriving_villages_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_has_center_of_trade_of_level = 2
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 2
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		effect = {
+			add_dip_power = 75
+			add_country_modifier = {
+				name = "me_gertribe_germanic_trading_posts"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_develop_capital_mission = {
+		icon = mission_che_the_council_house
+		required_missions = {  }
+		position = 4
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+			NOT = {
+				num_of_times_improved_by_owner = 5
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				num_of_times_improved_by_owner = 5
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = "me_gertribe_expanding_capital"
+					duration = 10950
+				}
+			}
+		}
+	}
+	gertribe_construct_earthworks_mission = {
+		icon = mission_ne_palisades
+		required_missions = { gertribe_develop_capital_mission }
+		position = 5
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				fort_level = 1
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = "me_gertribe_hillfort"
+					duration = 10950
+				}
+			}
+			add_country_modifier = {
+				name = "me_gertribe_hillforts"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_king_of_same_culture_mission = {
+		icon = mission_visigothic_king_alaric
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			culture = ROOT
+			NOT = {
+				owned_by = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = gertribe_king_of_same_culture_mission.tt
+				NOT = {
+					any_province = {
+						culture = ROOT
+						NOT = { owned_by = ROOT }
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_Generic_Germanic_mission_events.4
+			}
+			tooltip = {
+				if = {
+					limit = {
+						NOT = { 
+							government_rank = 2
+						}
+					}
+					set_government_rank = 2
+				}
+				add_country_modifier = {
+					name = "me_gertribe_united_under_one_king"
+					duration = 10950
+				}
+			}
+		}
+	}
+	gertribe_settle_in_illyria_mission = {
+		icon = mission_roman_caesars_legions
+		required_missions = { gertribe_far_from_home_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = balkan_region
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				is_core = ROOT
+				region = balkan_region
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "me_gertribe_coastal_power"
+				duration = 10950
+			}
+			add_country_modifier = {
+				name = "me_gertribe_illyrian_piracy"
+				duration = -1
+			}
+		}
+	}
+	gertribe_march_into_greece_mission = {
+		icon = mission_greco_roman_market
+		required_missions = { gertribe_settle_in_illyria_mission }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = central_greece_area
+				area = morea_area
+				area = northern_greece_area		#Epirus
+				area = macedonia_area
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				is_core = ROOT
+				OR = {
+					area = central_greece_area
+					area = morea_area
+					area = northern_greece_area		#Epirus
+					area = macedonia_area
+				}
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+			add_country_modifier = {
+				name = "me_gertribe_germani_in_greece"
+				duration = 10950
+			}
+		}
+	}
+}
+
+generic_germanic_tribes_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { started_in = 476.9.4 }
+		culture_group = germanic
+		OR = {
+			technology_group = barbarian
+			is_tribal = yes
+		}
+		NOT = {
+			OR = {				#expand this list of tags as unique mission trees added
+				tag = VAN
+			}
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	gertribe_the_sacred_groves_mission = {
+		icon = mission_che_the_cave_country
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				has_terrain = forest
+				has_terrain = woods
+			}
+			OR = {
+				NOT = {
+					owned_by = ROOT
+				}
+				AND = {
+					has_owner_religion = no
+					owned_by = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 2
+			religious_unity = 0.9
+			num_of_owned_provinces_with = {
+				value = 7
+				has_owner_religion = yes
+				OR = {
+					has_terrain = forest
+					has_terrain = woods
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_Generic_Germanic_mission_events.3
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_gertribe_germanic_holy_sites"
+					duration = 10950
+				}
+			}
+		}
+	}
+	gertribe_house_the_idols_mission = {
+		icon = mission_pagan_religious_rite
+		required_missions = { gertribe_thriving_villages_mission gertribe_the_sacred_groves_mission }
+		position = 2
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_statues_of_the_gods"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_ironworks_mission = {
+		icon = mission_iron_and_copper
+		required_missions = { gertribe_develop_capital_mission }
+		position = 5
+		provinces_to_highlight = {
+			trade_goods = iron
+			owned_by = ROOT
+			NOT = {
+				base_production = 7
+			}
+		}
+		trigger = {
+			any_owned_province = {
+				trade_goods = iron
+				base_production = 7
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_germanic_ironsmiths"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_germanic_confederation_mission = {
+		icon = mission_germanic_shields
+		required_missions = {  }
+		position = 6
+		trigger = {
+			num_accepted_cultures = 1
+			num_of_owned_provinces_with = {
+				value = 10
+				culture_group = germanic
+				has_owner_culture = no
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_gertribe_confederation_of_many"
+				duration = -1
+			}
+		}
+	}
+	gertribe_magna_germania_mission = {
+		icon = a_real_roman_empire
+		required_missions = { gertribe_germanic_confederation_mission gertribe_king_of_same_culture_mission }
+		position = 8
+		provinces_to_highlight = {
+			region = north_german_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			north_german_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 60
+				culture_group = germanic
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_Generic_Germanic_mission_events.5
+			}
+			custom_tooltip = gertribe_magna_germania_mission.tt
+			add_prestige = 30
+			add_country_modifier = {
+				name = "me_gertribe_king_of_the_germani"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_foothold_in_hispania_mission = {
+		icon = mission_latin_farmer_latifundia
+		required_missions = { gertribe_far_from_home_mission }
+		position = 9
+		provinces_to_highlight = {
+			region = iberia_region
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				is_core = ROOT
+				region = iberia_region
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "me_gertribe_latifundia_of_hispania"
+				duration = 10950
+			}
+		}
+	}
+	gertribe_breadbasket_of_africa_mission = {
+		icon = africa_proconsulare
+		required_missions = { gertribe_foothold_in_hispania_mission }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 341
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 341	#Carthago
+		}
+		effect = {
+			341 = {
+				add_province_modifier = {
+					name = "me_gertribe_breadbasket_of_empires"
+					duration = 10950
+				}
+			}
+		}
+	}
+}

@@ -2296,6 +2296,7 @@ country_decisions = {
 			primary_culture = northern_thai
 			NOT = { tag = LNA }
 			NOT = { tag = SIA }
+			NOT = { tag = SUK }
 			OR = {
 				ai = no
 				AND = {
@@ -3170,5 +3171,252 @@ country_decisions = {
 			factor = 1
 		}
 		ai_importance = 400 #
+	}
+	
+east_francia_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			NOT = { tag = FRE }
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = FRK }
+			NOT = { tag = ENG }
+			NOT = { tag = EUR }
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 15
+					adm_tech = 20
+				}
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					NOT = { government = theocracy }
+				}
+			}
+			NOT = { government = tribal }
+			OR = {
+				culture_group = germanic
+				primary_culture = jute
+			}
+			NOT = { primary_culture = dutch }
+			NOT = { primary_culture = flemish }
+			NOT = { primary_culture = anglo_saxon }
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+					}
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								is_core = ROOT
+								OR = {
+									region = north_german_region
+									region = south_german_region
+								}
+								value = 50
+							}
+						}
+					}
+				}
+				province_id = 50
+				province_id = 1878
+				province_id = 65
+				province_id = 63
+				AND = {
+					ROOT = {
+						NOT = { owns_core_province = 1868 }
+						NOT = { owns_core_province = 70 }
+					}
+					OR = {
+						province_id = 1868
+						province_id = 70
+					}
+				}
+				AND = {
+					ROOT = {
+						NOT = { owns_core_province = 1876 }
+						NOT = { owns_core_province = 67 }
+					}
+					OR = {
+						province_id = 1876
+						province_id = 67
+					}
+				}
+				AND = {
+					ROOT = {
+						NOT = { owns_core_province = 1762 }
+						NOT = { owns_core_province = 85 }
+					}
+					OR = {
+						province_id = 1762
+						province_id = 85
+					}
+				}
+				AND = {
+					ROOT = {
+						NOT = { owns_core_province = 266 }
+						NOT = { owns_core_province = 188 }
+					}
+					OR = {
+						province_id = 266
+						province_id = 188
+					}
+				}
+				AND = {
+					ROOT = {
+						NOT = { owns_core_province = 44 }
+						NOT = { owns_core_province = 45 }
+					}
+					OR = {
+						province_id = 44
+						province_id = 45
+					}
+				}
+				AND = {
+					ROOT = {
+						NOT = { owns_core_province = 61 }
+						NOT = { owns_core_province = 97 }
+					}
+					OR = {
+						province_id = 61
+						province_id = 97
+					}
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = FRE }
+			NOT = { exists = GER }
+			adm_tech = 20
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			OR = {
+				is_emperor = yes
+				NOT = { hre_size = 1 }
+			}
+			owns_core_province = 50	# Berlin
+			owns_core_province = 1878 # Aachen
+			owns_core_province = 65	# München
+			owns_core_province = 63	# Erfurt
+			OR = {
+				owns_core_province = 1868 # Augsburg
+				owns_core_province = 70 # Wurttemberg
+			}
+			OR = {
+				owns_core_province = 67	# Nürnberg
+				owns_core_province = 1876 # Frankfurt
+			}
+			OR = {
+				owns_core_province = 1762 # Niederhessen
+				owns_core_province = 85	# Köln
+			}
+			OR = {
+				owns_core_province = 266 # Prague
+				owns_core_province = 188 # Metz
+			}
+			OR = {
+				owns_core_province = 44	# Hamburg
+				owns_core_province = 45	# Lubeck
+			}
+			OR = {
+				owns_core_province = 61 # Dresden
+				owns_core_province = 97 # Holland
+			}
+			num_of_owned_provinces_with = {
+				is_core = ROOT
+				OR = {
+					region = north_german_region
+					region = south_german_region
+				}
+				value = 50
+			}
+		}
+		effect = {
+			on_change_tag_effect = yes
+			hidden_effect = {
+				restore_country_name = yes
+				restore_country_color = yes
+			}
+			change_tag = FRE
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = hre_formed
+						started_in = 962.2.2 # HRE exists historically
+						is_emperor = yes # just in case
+					}
+				}
+				override_country_name = FRE_GERMANY
+				change_country_color = { color = { 170  150  90 } }
+			}
+			else_if = {
+				limit = {
+					NOT = { started_in = 680.1.1 } # Francia exists as the big empire after this
+				}
+				override_country_name = FRE_GERMANIA
+				change_country_color = { color = { 170  150  90 } }
+			}
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_east_francia_flag
+			set_country_flag = formed_germany_flag # also prevents forming Germany later, just in case
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = { has_idea_group = karling_ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { adm_tech = 18 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { num_of_owned_provinces_with = { OR = { region = north_german_region region = south_german_region } value = 25 } }
+			}
+		}
 	}
 }

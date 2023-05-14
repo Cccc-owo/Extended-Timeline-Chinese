@@ -1,0 +1,234 @@
+namespace = mmetr_SIC_mission_events
+
+# Norman Castles
+country_event = {
+	id = mmetr_SIC_mission_events.1
+	title = "mmetr_SIC_mission_events.1.t"
+	desc = "mmetr_SIC_mission_events.1.desc"
+	picture = FORT_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SIC_mission_events.1.a"
+		
+		every_owned_province = {
+			limit = {
+				fort_level = 1
+			}
+			add_province_modifier = {
+				name = "me_sic_norman_augmentations"
+				duration = 9125
+			}
+		}
+	}
+}
+
+# Palazzo dei Normanni
+country_event = {
+	id = mmetr_SIC_mission_events.2
+	title = "mmetr_SIC_mission_events.2.t"
+	desc = "mmetr_SIC_mission_events.2.desc"
+	picture = HOUSE_OF_TRADE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SIC_mission_events.2.a"
+		
+		125 = {
+			add_province_modifier = {
+				name = "me_sic_palazzo_dei_normanni"
+				duration = -1
+			}
+		}
+	}
+}
+
+# King of the Western Mediterranean
+country_event = {
+	id = mmetr_SIC_mission_events.3
+	title = "mmetr_SIC_mission_events.3.t"
+	desc = "mmetr_SIC_mission_events.3.desc"
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SIC_mission_events.3.a"	#Release Christian Majorca
+		
+		baleares_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = MJO		#Catholic Majorca tag
+			add_core = MJO
+		}
+		vassalize = MJO
+		MJO = {
+			change_government = monarchy
+			add_government_reform = feudalism_reform
+			change_religion = catholic
+			define_ruler = {
+				claim = 95
+				culture = normand
+				religion = catholic
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_SIC_mission_events.3.b"
+		
+		
+	}
+}
+
+# Corfu Defects!
+country_event = {
+	id = mmetr_SIC_mission_events.4
+	title = "mmetr_SIC_mission_events.4.t"
+	desc = "mmetr_SIC_mission_events.4.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			142 = {
+				owner = {
+					add_opinion = {
+						who = ROOT
+						modifier = sae_supported_defectors_op
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_SIC_mission_events.4.a"
+		
+		hidden_effect = {
+			142 = {
+				owner = {
+					country_event = {
+						id = mmetr_SIC_mission_events.5
+					}
+				}
+			}
+		}
+		142 = {
+			cede_province = ROOT
+		}
+		142 = {
+			add_nationalism = -15
+			add_unrest = -15
+		}
+	}
+}
+
+# Corfu Defects! - ping for Byzantium or other owner of Corfu
+country_event = {
+	id = mmetr_SIC_mission_events.5
+	title = "mmetr_SIC_mission_events.5.t"
+	desc = "mmetr_SIC_mission_events.5.desc"
+	picture = CORRUPTION_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SIC_mission_events.5.a"
+		
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = sae_supported_defectors_op
+			}
+			142 = {
+				cede_province = FROM
+			}
+		}
+	}
+}
+
+# Relics of Saint Theodore
+country_event = {
+	id = mmetr_SIC_mission_events.6
+	title = "mmetr_SIC_mission_events.6.t"
+	desc = "mmetr_SIC_mission_events.6.desc"
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SIC_mission_events.6.a"
+		
+		add_prestige = 20
+		add_papal_influence = 10
+	}
+}
+
+# Greek from Antioch Pledges Fealty
+country_event = {
+	id = mmetr_SIC_mission_events.7
+	title = "mmetr_SIC_mission_events.7.t"
+	desc = "mmetr_SIC_mission_events.7.desc"
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SIC_mission_events.7.a"	#Historically, Hideyoshi executed Suzuki Shigeoki / Saika Magoichi
+		
+		define_general = {
+			name = "George of Antioch"
+			fire = 2
+			shock = 5
+			manuever = 4
+			siege = 2
+			trait = hardy_warrior_personality
+		}
+	}
+	
+	option = {
+		name = "mmetr_SIC_mission_events.7.b"	#Historically, Hideyoshi executed Suzuki Shigeoki / Saika Magoichi
+		
+		define_advisor = {
+			type = commandant
+			name = "George of Antioch"
+			skill = 2
+			culture = greek
+			religion = catholic
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_SIC_mission_events.7.c"	#Historically, Hideyoshi executed Suzuki Shigeoki / Saika Magoichi
+		
+		define_admiral = {
+			name = "George of Antioch"
+			shock = 4
+			fire = 2
+			manuever = 4
+			siege = 2
+			trait = prize_hunter_personality
+		}
+	}
+}
+

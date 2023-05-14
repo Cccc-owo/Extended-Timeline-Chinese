@@ -1,0 +1,285 @@
+namespace = mmetr_ROW_mission_events
+
+# Hunnic Tribute
+country_event = {
+	id = mmetr_ROW_mission_events.1
+	title = "mmetr_ROW_mission_events.1.t"
+	desc = "mmetr_ROW_mission_events.1.desc"
+	picture = MMETR_NOMAD_ATTACK_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ROW_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_row_hunnic_auxiliaries"
+			duration = 10950
+		}
+	}
+}
+
+# Roman Legions of Old
+country_event = {
+	id = mmetr_ROW_mission_events.2
+	title = "mmetr_ROW_mission_events.2.t"
+	desc = "mmetr_ROW_mission_events.2.desc"
+	picture = MMETR_CAESARS_LEGIONS_eventPicture
+
+	is_triggered_only = yes
+	 
+	
+	option = {
+		name = "mmetr_ROW_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_row_roman_legions_reinvigorated"
+			duration = 9125
+		}
+	}
+}
+
+# Spoils of War
+country_event = {
+	id = mmetr_ROW_mission_events.3
+	title = "mmetr_ROW_mission_events.3.t"
+	desc = "mmetr_ROW_mission_events.3.desc"
+	picture = MMETR_CAESARS_LEGIONS_eventPicture
+
+	is_triggered_only = yes
+	 
+	
+	option = {
+		name = "mmetr_ROW_mission_events.3.a"
+		
+		add_country_modifier = {
+			name = "me_row_infrastructure_investments"
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = "mmetr_ROW_mission_events.3.b"
+		
+		add_country_modifier = {
+			name = "me_row_spoils_to_the_legions"
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = "mmetr_ROW_mission_events.3.c"
+		
+		add_country_modifier = {
+			name = "me_row_spoils_to_the_people"
+			duration = 9125
+		}
+	}
+}
+
+# Codification of Roman Law
+country_event = {
+	id = mmetr_ROW_mission_events.4
+	title = "mmetr_ROW_mission_events.4.t"
+	desc = "mmetr_ROW_mission_events.4.desc"
+	picture = REFORM_eventPicture
+
+	is_triggered_only = yes
+	 
+	
+	option = {
+		name = "mmetr_ROW_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_row_ius_gentium"
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "mmetr_ROW_mission_events.4.b"
+		
+		add_country_modifier = {
+			name = "me_row_ius_romanum"
+			duration = -1
+		}
+	}
+}
+
+# Devout Bishops of the Empire
+country_event = {
+	id = mmetr_ROW_mission_events.5
+	title = "mmetr_ROW_mission_events.5.t"
+	desc = "mmetr_ROW_mission_events.5.desc"
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+	 
+	
+	option = {
+		name = "mmetr_ROW_mission_events.5.a"
+		
+		if = {
+			limit = {
+				NOT = { is_year = 430 }		#Augustine passed away in 430
+			}
+			define_advisor = {
+				type = theologian
+				name = "Augustine of Hippo"
+				skill = 3
+				culture = berber
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
+		}
+		else = {
+			define_advisor = {
+				type = theologian
+				skill = 3
+				culture = berber		#Augustine of Hippo's culture
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
+		}
+	}
+}
+
+# Legions of Teutoburg Avenged
+country_event = {
+	id = mmetr_ROW_mission_events.6
+	title = "mmetr_ROW_mission_events.6.t"
+	desc = "mmetr_ROW_mission_events.6.desc"
+	picture = MMETR_CAESARS_LEGIONS_eventPicture
+
+	is_triggered_only = yes
+	 
+	
+	option = {
+		name = "mmetr_ROW_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_row_roman_legions_reinvigorated"
+			duration = 10950
+		}
+	}
+}
+
+# Brave Limitanei of Britannia
+country_event = {
+	id = mmetr_ROW_mission_events.7
+	title = "mmetr_ROW_mission_events.7.t"
+	desc = "mmetr_ROW_mission_events.7.desc"
+	picture = MMETR_CAESARS_LEGIONS_eventPicture
+
+	is_triggered_only = yes
+	 
+	
+	option = {
+		name = "mmetr_ROW_mission_events.7.a"
+		
+		scottish_marches_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_row_limitanei_of_britannia"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Imperator of Rome
+country_event = {
+	id = mmetr_ROW_mission_events.10
+	title = "mmetr_ROW_mission_events.10.t"
+	desc = "mmetr_ROW_mission_events.10.desc"
+	picture = MMETR_CAESARS_LEGIONS_eventPicture
+
+	is_triggered_only = yes
+	 
+	
+	option = {
+		name = "mmetr_ROW_mission_events.10.a"
+		
+		add_ruler_modifier = {
+			name = "me_row_victorious_imperator"
+			duration = -1
+		}
+	}
+}
+
+# Magna Germania
+country_event = {
+	id = mmetr_ROW_mission_events.11
+	title = "mmetr_ROW_mission_events.11.t"
+	desc = "mmetr_ROW_mission_events.11.desc"
+	picture = MMETR_CAESARS_LEGIONS_eventPicture
+
+	is_triggered_only = yes
+	 
+	
+	option = {
+		name = "mmetr_ROW_mission_events.11.a"
+		
+		add_ruler_modifier = {
+			name = "me_row_frontier_provinciae"
+			duration = -1
+		}
+		
+		define_advisor = {
+			type = trader
+			skill = 3
+			discount = yes
+			culture = gothic
+		}
+	}
+}
+
+# Ecumenical Council in $CAPITAL_CITY$
+country_event = {
+	id = mmetr_ROW_mission_events.12
+	title = "mmetr_ROW_mission_events.12.t"
+	desc = "mmetr_ROW_mission_events.12.desc"
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ROW_mission_events.12.a"
+		
+		add_country_modifier = {
+			name = "me_row_tolerated_heresies"
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "mmetr_ROW_mission_events.12.b"
+		
+		add_country_modifier = {
+			name = "me_row_newly_established_doctrine"
+			duration = 14600
+		}
+	}
+}
+
+# Redditor Lucis Aeternae
+country_event = {
+	id = mmetr_ROW_mission_events.13
+	title = "mmetr_ROW_mission_events.13.t"
+	desc = "mmetr_ROW_mission_events.13.desc"
+	picture = MMETR_CAESARS_LEGIONS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ROW_mission_events.13.a"
+		
+		add_ruler_modifier = {
+			name = "me_row_redditor_lucis_aeternae"
+			duration = -1
+		}
+	}
+}
+

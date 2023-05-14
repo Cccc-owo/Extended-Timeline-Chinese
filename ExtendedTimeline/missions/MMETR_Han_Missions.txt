@@ -1,0 +1,948 @@
+hnd_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HND
+		}
+		NOT = { started_in = 300.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	hnd_the_azure_sky_reigns_mission = {
+		icon = mission_chu_shi_biao
+		required_missions = { }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = hnd_the_azure_sky_reigns_mission.tt
+				has_country_flag = yellow_turban_rebellion_happened
+			}
+		}
+		effect = {
+			add_adm_power = 75
+			add_dip_power = 75
+		}
+	}
+	hnd_center_of_the_earth_mission = {
+		icon = mission_seize_the_dragon_throne
+		required_missions = { }
+		position = 2
+		provinces_to_highlight = {
+			superregion = china_superregion
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			china_superregion = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				all_subject_country = {
+					is_subject_of_type = tributary_state
+				}
+				amount = 12
+			}
+		}
+		effect = {
+			add_mandate = 10
+		}
+	}
+	hnd_wansui_wanwansui_mission = {
+		icon = mission_chinese_edict
+		required_missions = { hnd_center_of_the_earth_mission }
+		position = 3
+		trigger = {
+			is_emperor_of_china = yes
+			
+			custom_trigger_tooltip = {
+				tooltip = hnd_wansui_wanwansui_mission.tt
+				OR = {
+					AND = {
+						empire_of_china_reform_passed = establish_gaituguiliu_decision
+						empire_of_china_reform_passed = seaban_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = establish_gaituguiliu_decision
+						empire_of_china_reform_passed = reform_land_tax_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = establish_gaituguiliu_decision
+						empire_of_china_reform_passed = military_governors_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = establish_gaituguiliu_decision
+						empire_of_china_reform_passed = centralizing_top_government_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = establish_gaituguiliu_decision
+						empire_of_china_reform_passed = vassalize_tributaries_decision
+					}
+					
+					AND = {
+						empire_of_china_reform_passed = seaban_decision
+						empire_of_china_reform_passed = reform_land_tax_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = seaban_decision
+						empire_of_china_reform_passed = military_governors_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = seaban_decision
+						empire_of_china_reform_passed = centralizing_top_government_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = seaban_decision
+						empire_of_china_reform_passed = vassalize_tributaries_decision
+					}
+					
+					AND = {
+						empire_of_china_reform_passed = reform_land_tax_decision
+						empire_of_china_reform_passed = military_governors_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = reform_land_tax_decision
+						empire_of_china_reform_passed = centralizing_top_government_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = reform_land_tax_decision
+						empire_of_china_reform_passed = vassalize_tributaries_decision
+					}
+					
+					AND = {
+						empire_of_china_reform_passed = military_governors_decision
+						empire_of_china_reform_passed = centralizing_top_government_decision
+					}
+					AND = {
+						empire_of_china_reform_passed = military_governors_decision
+						empire_of_china_reform_passed = vassalize_tributaries_decision
+					}
+					
+					AND = {
+						empire_of_china_reform_passed = vassalize_tributaries_decision
+						empire_of_china_reform_passed = centralizing_top_government_decision
+					}
+					
+					
+				}
+			}
+		}
+		effect = {
+			add_prestige = 30
+			add_dip_power = 100
+		}
+	}
+	hnd_check_the_eunuchs_mission = {
+		icon = mission_scholar_officials
+		required_missions = { hnd_confucian_administration_mission }
+		position = 5
+		trigger = {
+			estate_loyalty = {
+				estate = estate_eunuchs
+				loyalty = 65
+			}
+			NOT = {
+				estate_influence = {
+					estate = estate_eunuchs
+					influence = 80
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_hnd_eunuchs_in_check"
+				duration = 9125
+			}
+		}
+	}
+}
+
+hnd_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HND
+		}
+		NOT = { started_in = 300.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	hnd_korean_tribute_mission = {
+		icon = mission_chinese_merchant
+		required_missions = { hnd_bolster_the_beijun_mission  }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = korea_region
+					NOT = {
+						country_or_vassal_holds = ROOT
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 2744
+						province_id = 1845
+						province_id = 733
+						province_id = 4231
+						province_id = 4232
+						province_id = 732
+					}
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2744
+			owns_core_province = 1845
+			owns_core_province = 733
+			owns_core_province = 4231
+			owns_core_province = 4232
+			owns_core_province = 732
+			custom_trigger_tooltip = {
+				tooltip = hnd_korean_tribute_mission.tt
+				korea_region = {
+					type = all
+					country_or_vassal_holds = ROOT
+				}
+			}
+			
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HND_mission_events.5
+			}
+			tooltip = {
+				add_dip_power = 100
+				2744 = {
+					add_province_modifier = {
+						name = "me_hnd_commandery_administration"
+						duration = 9125
+					}
+				}
+				1845 = {
+					add_province_modifier = {
+						name = "me_hnd_commandery_administration"
+						duration = 9125
+					}
+				}
+				733 = {
+					add_province_modifier = {
+						name = "me_hnd_commandery_administration"
+						duration = 9125
+					}
+				}
+				4231 = {
+					add_province_modifier = {
+						name = "me_hnd_commandery_administration"
+						duration = 9125
+					}
+				}
+				4232 = {
+					add_province_modifier = {
+						name = "me_hnd_commandery_administration"
+						duration = 9125
+					}
+				}
+				732 = {
+					add_province_modifier = {
+						name = "me_hnd_commandery_administration"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+	hnd_ambassadors_from_wa_mission = {
+		icon = mission_chinese_warlords_alliance
+		required_missions = { hnd_korean_tribute_mission  }
+		position = 3
+		trigger = {
+			any_country = {
+				capital_scope = {
+					region = japan_region
+				}
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					trust = { 
+						who = ROOT 
+						value = 60
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HND_mission_events.6
+			}
+			tooltip = {
+				define_advisor = {
+					type = philosopher
+					skill = 2
+					culture = japanese
+					religion = shinto
+				}
+			}
+		}
+	}
+	hnd_confucian_administration_mission = {
+		icon = mission_chinese_officials_in_line
+		required_missions = {   }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = hnd_confucian_administration_mission.tt
+				OR = {
+					AND = {
+						OR = {
+							philosopher = 3
+							natural_scientist = 3
+							artist = 3
+							treasurer = 3
+							master_of_mint = 3
+							inquisitor = 3
+						}
+						OR = {
+							statesman = 3
+							naval_reformer = 3
+							trader = 3
+							spymaster = 3
+							colonial_governor = 3
+							diplomat = 3
+							navigator = 3
+						}
+					}
+					AND = {
+						OR = {
+							army_reformer = 3
+							army_organiser = 3
+							commandant = 3
+							quartermaster = 3
+							recruitmaster = 3
+							fortification_expert = 3
+							grand_captain = 3
+						}
+						OR = {
+							statesman = 3
+							naval_reformer = 3
+							trader = 3
+							spymaster = 3
+							colonial_governor = 3
+							diplomat = 3
+							navigator = 3
+						}
+					}
+					AND = {
+						OR = {
+							army_reformer = 3
+							army_organiser = 3
+							commandant = 3
+							quartermaster = 3
+							recruitmaster = 3
+							fortification_expert = 3
+							grand_captain = 3
+						}
+						OR = {
+							philosopher = 3
+							natural_scientist = 3
+							artist = 3
+							treasurer = 3
+							master_of_mint = 3
+							inquisitor = 3
+						}
+					}
+				}
+				
+			}
+		}
+		effect = {
+			add_legitimacy_equivalent = {
+				amount = 20
+				republican_tradition = 10
+			}
+			add_country_modifier = {
+				name = "me_hnd_tingyi"
+				duration = 10950
+			}
+		}
+	}
+	hnd_princes_of_the_han_mission = {
+		icon = mission_chinese_son_of_heaven
+		required_missions = { hnd_confucian_administration_mission  }
+		position = 6
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_hnd_imperial_scions_of_the_han"
+				duration = 18250
+			}
+		}
+	}
+}
+
+hnd_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HND
+		}
+		NOT = { started_in = 300.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	hnd_bolster_the_beijun_mission = {
+		icon = mission_han_army
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_generals = 2
+			army_size_percentage = 0.9
+			OR = {
+				num_of_cavalry = 15
+				cavalry_fraction = 0.10
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HND_mission_events.1
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = me_hnd_beijun
+					duration = 9125
+				}
+			}
+		}
+	}
+	hnd_wu_hu_diplomacy_mission = {
+		icon = mission_nomad_camp
+		required_missions = { hnd_bolster_the_beijun_mission  }
+		position = 2
+		trigger = {
+			overlord_of = QIA	#Qiang
+			reverse_has_opinion = {
+				who = QIA
+				value = 150
+			}
+			OR = {
+				SXI = {		#Southern Xiongnu
+					is_subject_of = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				NOT = { exists = SXI }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HND_mission_events.3
+			}
+			tooltip = {
+				create_subject = {
+					subject_type = client_kingdom
+					subject = QIA
+				}
+			}
+		}
+	}
+	hnd_the_twin_capitals_mission = {
+		icon = et_mission_forbidden_city
+		required_missions = { hnd_confucian_administration_mission  }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1836	#Luoyang
+				province_id = 700	#Chang'an / Shaanxi
+			}
+			NOT = {
+				num_of_times_improved_by_owner = 3
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1836
+			owns_core_province = 700
+			1836 = {
+				num_of_times_improved_by_owner = 3
+			}
+			700 = {
+				num_of_times_improved_by_owner = 3
+			}
+			OR = {
+				capital = 1836
+				capital = 700
+			}
+		}
+		effect = {
+			1836 = {
+				add_province_modifier = {
+					name = "me_hnd_ancestral_capital"
+					duration = 9125
+				}
+			}
+			700 = {
+				add_province_modifier = {
+					name = "me_hnd_ancestral_capital"
+					duration = 9125
+				}
+			}
+		}
+	}
+	hnd_golden_age_of_the_han_mission = {
+		icon = mission_chinese_monarch_horseback
+		required_missions = { hnd_the_twin_capitals_mission hnd_jiaozhi_development_mission  }
+		position = 7
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				OR = {
+					has_had_golden_age = yes
+					in_golden_age = yes
+				}
+			}
+			else = {
+				prestige = 90
+				stability = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_hnd_golden_age_of_china"
+				duration = 7300
+			}
+		}
+	}
+}
+
+hnd_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HND
+		}
+		NOT = { started_in = 300.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	hnd_conclude_the_xiongnu_wars_mission = {
+		icon = mission_xianbei_desert_warriors
+		required_missions = { hnd_bolster_the_beijun_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = central_mongolia_area
+				area = inner_mongolia_area
+				area = outer_mongolia_area
+				area = uliastai_area
+				area = eastern_mongolia
+			}
+			NOT = {
+				country_or_vassal_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			central_mongolia_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			inner_mongolia_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			outer_mongolia_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			uliastai_area = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			eastern_mongolia = {
+				type = all
+				country_or_vassal_holds = ROOT
+			}
+			OR = {
+				overlord_of = XIO
+				XIO = {
+					NOT = { num_of_cities = 5 }
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HND_mission_events.2
+			}
+			tooltip = {
+				add_prestige = 20
+				add_country_modifier = {
+					name = me_hnd_harsher_tribute
+					duration = 10950
+				}
+			}
+		}
+	}
+	hnd_western_protectorate_mission = {
+		icon = mission_chinese_training
+		required_missions = { hnd_wu_hu_diplomacy_mission hnd_the_hexi_corridor_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = kashgaria_area
+				area = tarim_basin_area		#North Altishahr
+				area = shanshan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kashgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tarim_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shanshan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 75
+		}
+	}
+	hnd_jiaozhi_development_mission = {
+		icon = mission_a_million_rice_fields
+		required_missions = { hnd_the_twin_capitals_mission hnd_land_of_abundance_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = guangxi_area
+				area = west_guangdong_area
+				area = guangdong_area
+				area = red_river_delta_area
+				area = vietnam_area
+			}
+			NOT = {
+				num_of_times_improved_by_owner = 1
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 7
+				num_of_times_improved_by_owner = 1
+				OR = {
+					area = guangxi_area
+					area = west_guangdong_area
+					area = guangdong_area
+					area = red_river_delta_area
+					area = vietnam_area
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_hnd_frontier_integration"
+				duration = 9125
+			}
+		}
+	}
+	hnd_integrate_nanyue_mission = {
+		icon = mission_mnd_dai_universities
+		required_missions = { hnd_jiaozhi_development_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = red_river_delta_area
+				area = vietnam_area
+			}
+			NOT = {
+				num_of_times_improved_by_owner = 1
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+			stability = 3
+			red_river_delta_area = {
+				type = all
+				owned_by = ROOT
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+			vietnam_area = {
+				type = all
+				owned_by = ROOT
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 75
+			add_dip_power = 75
+		}
+	}
+}
+
+hnd_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HND
+		}
+		NOT = { started_in = 300.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	hnd_control_the_silk_road_mission = {
+		icon = mission_chinese_market
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { silk = 8 }
+					}
+				}
+				trade_goods = silk
+				has_discovered = ROOT
+			}
+			else = {
+				always = no
+			}
+		}
+		trigger = {
+			production_leader = {
+				trade_goods = silk
+			}
+			silk = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "silk_road_modifier"
+				duration = 7300
+			}
+			add_mercantilism = 2
+		}
+	}
+	hnd_the_hexi_corridor_mission = {
+		icon = mission_conquer_malwa_bah
+		required_missions = {  }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 4207	#Turpan
+						province_id = 2122	#Khamil / Kumul
+						province_id = 707	#Yumen (Yumen Pass / Jade Gate and trade node)
+						province_id = 708	#Zhangye
+						province_id = 2182	#Liangzhou
+						province_id = 699	#Yunwu
+						province_id = 2180	#Tianshui
+					}
+					NOT = {
+						country_or_vassal_holds = ROOT
+					}
+				}
+				AND = {
+					province_id = 707	#Yumen
+					NOT = {
+						is_strongest_trade_power = ROOT
+					}
+					has_discovered = ROOT
+				}
+				AND = {
+					province_id = 707	#Yumen
+					NOT = {
+						development = 9
+					}
+					has_discovered = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_subject_of = 4207	#Turpan
+			owns_or_subject_of = 2122	#Khamil / Kumul
+			owns_or_subject_of = 707	#Yumen (Yumen Pass / Jade Gate and trade node)
+			owns_or_subject_of = 708	#Zhangye
+			owns_or_subject_of = 2182	#Liangzhou
+			owns_or_subject_of = 699	#Yunwu
+			owns_or_subject_of = 2180	#Tianshui
+			707 = {
+				is_strongest_trade_power = ROOT
+			}
+			707 = {
+				development = 8
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HND_mission_events.4
+			}
+			tooltip = {
+				707 = {
+					add_permanent_province_modifier = {
+						name = me_hnd_jade_gate
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	hnd_expand_the_great_wall_mission = {
+		icon = mission_great_wall
+		required_missions = { hnd_the_hexi_corridor_mission }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 698 	# Ningxia, where Great Wall of China great project can be built
+		}
+		trigger = {
+			owns_core_province = 698
+			698 = {
+				has_great_project = {
+					type = the_great_wall_of_china
+					tier = 2
+				}
+			}
+		}
+		effect = {
+			add_prestige = 40
+			add_mandate = 5
+		}
+	}
+	hnd_land_of_abundance_mission = {
+		icon = mission_chinese_harvest
+		required_missions = {  }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = xinan_region
+					NOT = {
+						country_or_vassal_holds = ROOT
+					}
+				}
+				AND = {
+					province_id = 679 # Chengdu
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+				AND = {
+					province_id = 679 # Chengdu
+					NOT = {
+						num_of_times_improved_by_owner = 3
+					}
+				}
+				AND = {
+					province_id = 689
+					NOT = {
+						num_of_times_improved_by_owner = 3
+					}
+				}
+				AND = {
+					province_id = 689
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 689	#Hanzhong / Nanzheng
+			689 = {
+				num_of_times_improved_by_owner = 2
+			}
+			owns_core_province = 679	#Chengdu
+			679 = {
+				num_of_times_improved_by_owner = 2
+			}
+			xinan_region = {
+				type = all
+				OR = {
+					country_or_vassal_holds = ROOT
+					is_empty = yes
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = xinan_region
+				development = 10
+			}
+		}
+		effect = {
+			xinan_region = {
+				limit = {
+					country_or_vassal_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_hnd_abundant_harvest_in_yizhou"
+					duration = 10950
+				}
+			}
+		}
+	}
+	hnd_religious_harmony_mission = {
+		icon = mission_patronize_local_gods
+		required_missions = { hnd_land_of_abundance_mission }
+		position = 7
+		trigger = {
+			num_of_harmonized = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_hnd_societal_harmony"
+				duration = 10950
+			}
+		}
+	}
+	
+}

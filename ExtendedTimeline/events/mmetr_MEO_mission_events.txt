@@ -1,0 +1,571 @@
+namespace = mmetr_MEO_mission_events
+
+# Legacy of Queen Amanirenas
+country_event = {
+	id = mmetr_MEO_mission_events.1
+	title = "mmetr_MEO_mission_events.1.t"
+	desc = "mmetr_MEO_mission_events.1.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_meo_meroe_victorious"
+			duration = 10950
+		}
+	}
+	
+}
+
+# The Royal Capital in Meroë
+country_event = {
+	id = mmetr_MEO_mission_events.2
+	title = "mmetr_MEO_mission_events.2.t"
+	desc = "mmetr_MEO_mission_events.2.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.2.a"
+		
+		2797 = {
+			add_base_tax = 1
+			add_province_modifier = {
+				name = "me_meo_prosperous_capital"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_MEO_mission_events.2.b"
+		
+		2797 = {
+			add_base_production = 1
+			add_province_modifier = {
+				name = "me_meo_prosperous_capital"
+				duration = 10950
+			}
+		}
+	}
+	
+}
+
+# Temple of Amun Restored
+country_event = {
+	id = mmetr_MEO_mission_events.3
+	title = "mmetr_MEO_mission_events.3.t"
+	desc = "mmetr_MEO_mission_events.3.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.3.a"
+		
+		1228 = {	#Napata
+			add_province_modifier = {
+				name = "me_meo_temple_of_amun"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Egyptian Ambitions
+country_event = {
+	id = mmetr_MEO_mission_events.4
+	title = "mmetr_MEO_mission_events.4.t"
+	desc = "mmetr_MEO_mission_events.4.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_meo_offensive_campaign"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_MEO_mission_events.4.b"
+		
+		add_country_modifier = {
+			name = "me_meo_defensive_fortifications"
+			duration = 10950
+		}
+	}
+}
+
+# [Root.Monarch.GetTitle] of the Nile
+country_event = {
+	id = mmetr_MEO_mission_events.5
+	title = "mmetr_MEO_mission_events.5.t"
+	desc = "mmetr_MEO_mission_events.5.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_meo_kings_of_the_nile"
+			duration = -1
+		}
+		egypt_region = {
+			limit = {
+				is_empty = no
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# The Wayekiye Family of Dodekaschoinos
+country_event = {
+	id = mmetr_MEO_mission_events.6
+	title = "mmetr_MEO_mission_events.6.t"
+	desc = "mmetr_MEO_mission_events.6.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.6.a"
+		
+		define_advisor = {
+			name = "Paese Wayekiye"
+			type = theologian
+			skill = 2
+			discount = yes
+			culture = kushite
+			religion = egyptian
+		}
+		
+		1231 = {
+			add_country_modifier = {
+				name = "me_meo_temple_of_philae"
+				duration = -1
+			}
+		}
+	}
+}
+
+# The 33rd Dynasty of Egypt
+country_event = {
+	id = mmetr_MEO_mission_events.7
+	title = "mmetr_MEO_mission_events.7.t"
+	desc = "mmetr_MEO_mission_events.7.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.7.a"	#Become Kushite Pharaoh
+		
+		
+		add_accepted_culture = old_egyptian
+		
+		add_country_modifier = {
+			name = "me_meo_egyptian_dynasty"
+			duration = -1
+		}
+		
+		if = {
+			limit = {
+				religion = egyptian
+			}
+			change_government = monarchy
+			add_government_reform = kemetic_monarchy_reform
+		}
+	}
+	
+	option = {
+		name = "mmetr_MEO_mission_events.7.b"	#Egyptianization
+		
+		
+		change_primary_culture = old_egyptian
+		add_accepted_culture = kushite
+		
+		add_country_modifier = {
+			name = "me_meo_egyptian_dynasty"
+			duration = -1
+		}
+		
+		add_country_modifier = {
+			name = "me_meo_egyptianization"
+			duration = 10950
+		}
+		
+		if = {
+			limit = {
+				religion = egyptian
+			}
+			change_government = monarchy
+			add_government_reform = kemetic_monarchy_reform
+		}
+	}
+	
+	option = {
+		name = "mmetr_MEO_mission_events.7.c"	#Maintain status quo
+		
+		add_accepted_culture = old_egyptian
+		
+		add_country_modifier = {
+			name = "me_meo_egyptian_dynasty"
+			duration = -1
+		}
+	}
+}
+
+# Ever-Expanding Empire
+country_event = {
+	id = mmetr_MEO_mission_events.8
+	title = "mmetr_MEO_mission_events.8.t"
+	desc = "mmetr_MEO_mission_events.8.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_meo_kushite_imperial_administration"
+			duration = -1
+		}
+		
+		add_country_modifier = {
+			name = "me_meo_ever_victorious_army"
+			duration = 10950
+		}
+	}
+}
+
+# The Son of Ra
+country_event = {
+	id = mmetr_MEO_mission_events.9
+	title = "mmetr_MEO_mission_events.9.t"
+	desc = "mmetr_MEO_mission_events.9.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.9.a"
+		
+		add_country_modifier = {
+			name = "me_meo_beloved_of_maat"
+			duration = -1
+		}
+	}
+}
+
+# The Land of Punt
+country_event = {
+	id = mmetr_MEO_mission_events.10
+	title = "mmetr_MEO_mission_events.10.t"
+	desc = "mmetr_MEO_mission_events.10.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.10.a"
+		
+		add_country_modifier = {
+			name = "me_meo_land_of_the_gods"
+			duration = 10950
+		}
+		
+		somaliland_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+		majarteen_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+		yemen_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+		hadramut_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# The Land of Frankincense
+country_event = {
+	id = mmetr_MEO_mission_events.11
+	title = "mmetr_MEO_mission_events.11.t"
+	desc = "mmetr_MEO_mission_events.11.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.11.a"
+		
+		add_navy_tradition = 20
+		add_country_modifier = {
+			name = "me_meo_arabian_trade_networks"
+			duration = 10950
+		}
+	}
+}
+
+# The Incense Route
+country_event = {
+	id = mmetr_MEO_mission_events.12
+	title = "mmetr_MEO_mission_events.12.t"
+	desc = "mmetr_MEO_mission_events.12.desc"
+	picture = MMETR_SOUTH_ARABIAN_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.12.a"
+		
+		every_owned_province = {
+			limit = {
+				region = arabia_region
+				trade_goods = incense
+				base_production = 7
+			}
+			add_province_modifier = {
+				name = "me_meo_frankincense_production"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Musawwarat es-Sufra
+country_event = {
+	id = mmetr_MEO_mission_events.13
+	title = "mmetr_MEO_mission_events.13.t"
+	desc = "mmetr_MEO_mission_events.13.desc"
+	picture = FORT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.13.a"
+		
+		add_country_modifier = {
+			name = "me_meo_kushite_war_elephants"
+			duration = 10950
+		}
+		2797 = {
+			add_province_modifier = {
+				name = "me_meo_great_enclosure_of_musawwarat_es_sufra"
+				duration = -1
+			}
+		}
+	}
+}
+
+# The Ivory Dispute
+country_event = {
+	id = mmetr_MEO_mission_events.14
+	title = "mmetr_MEO_mission_events.14.t"
+	desc = "mmetr_MEO_mission_events.14.desc"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.14.a"
+		
+		if = {
+			limit = {
+				NOT = {
+					owns_or_non_sovereign_subject_of = 1227
+				}
+			}
+			1227 = {	#Aksum
+				owner = {
+					reverse_add_casus_belli = {
+						target = ROOT
+						type = cb_trade_war_triggered
+						months = 360
+					}
+				}
+			}
+		}
+		upper_nubia_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+		tigray_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# The Ivory Trade
+country_event = {
+	id = mmetr_MEO_mission_events.15
+	title = "mmetr_MEO_mission_events.15.t"
+	desc = "mmetr_MEO_mission_events.15.desc"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.15.a"		#Oobja Trade Good changes to Ivory
+		
+		1226 = {
+			change_trade_goods = ivory
+		}
+		
+		add_country_modifier = {
+			name = "me_meo_kushite_trade_goods"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_MEO_mission_events.15.b"		#Keep status quo
+		
+		add_dip_power = 25
+		
+		add_country_modifier = {
+			name = "me_meo_kushite_trade_goods"
+			duration = 10950
+		}
+	}
+}
+
+# The Silphium Herb of Cyrenaica
+country_event = {
+	id = mmetr_MEO_mission_events.16
+	title = "mmetr_MEO_mission_events.16.t"
+	desc = "mmetr_MEO_mission_events.16.desc"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.16.a"		#Oobja Trade Good changes to Ivory
+		
+		add_country_modifier = {
+			name = "me_meo_silphium_production"
+			duration = -1
+		}
+	}
+}
+
+# Peace with Rome - Kushite event
+country_event = {
+	id = mmetr_MEO_mission_events.17
+	title = "mmetr_MEO_mission_events.17.t"
+	desc = "mmetr_MEO_mission_events.17.desc"
+	picture = MMETR_CAESARS_LEGIONS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.17.a"
+		
+		if = {
+			limit = {
+				reverse_has_opinion = {
+					who = ROM
+					value = 100
+				}
+			}
+			add_truce_with = ROM
+			ROM = {
+				country_event = {
+					id = mmetr_MEO_mission_events.18
+				}
+			}
+		}
+		if = {
+			limit = {
+				reverse_has_opinion = {
+					who = ROW
+					value = 100
+				}
+			}
+			add_truce_with = ROW
+			ROW = {
+				country_event = {
+					id = mmetr_MEO_mission_events.18
+				}
+			}
+		}
+		if = {
+			limit = {
+				reverse_has_opinion = {
+					who = BYZ
+					value = 100
+				}
+			}
+			add_truce_with = BYZ
+			BYZ = {
+				country_event = {
+					id = mmetr_MEO_mission_events.18
+				}
+			}
+		}
+	}
+}
+
+# Peace with [FROM.GetName]	- Roman event
+country_event = {
+	id = mmetr_MEO_mission_events.18
+	title = "mmetr_MEO_mission_events.18.t"
+	desc = "mmetr_MEO_mission_events.18.desc"
+	picture = CPBM_PYRAMID_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_MEO_mission_events.18.a"		#Oobja Trade Good changes to Ivory
+		
+		tooltip = {
+			add_truce_with = FROM
+		}
+	}
+}

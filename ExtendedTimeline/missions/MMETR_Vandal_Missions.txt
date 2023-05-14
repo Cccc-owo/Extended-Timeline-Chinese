@@ -1,0 +1,984 @@
+vandal_conquest_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = VAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	van_sack_of_rome_mission = {
+		icon = mission_roman_plunder
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 118	#Roma
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			is_at_war = yes
+			
+			#Sacking of Roma
+			118 = {
+				controlled_by = ROOT
+				NOT = { owned_by = ROOT }
+				is_looted = yes
+			}
+			118 = {
+				owner = {
+					war_with = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_VAN_mission_events.1
+			}
+		}
+	}
+	van_vandal_rule_in_hispalis_mission = {
+		icon = mission_plus_ultra
+		required_missions = {
+			van_muster_vandal_levy_mission
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 224	#Seville / Hispalis
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 224
+		}
+		effect = {
+			224 = {
+				add_base_manpower = 1
+			}
+		}
+	}
+	van_carthago_nova_mission = {
+		icon = fortify_malta
+		required_missions = {
+			van_vandal_rule_in_hispalis_mission
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 221	#Murcia / Carthago Nova
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 221
+			221 = {
+				num_of_times_improved_by_owner = 3
+				base_production = 4
+			}
+		}
+		effect = {
+			221 = {
+				add_province_modifier = {
+					name = "me_van_port_of_carthago_nova"
+					duration = 9125
+				}
+			}
+		}
+	}
+	van_rule_hispania_mission = {
+		icon = mission_reclaim_andalucia
+		required_missions = {
+			van_carthago_nova_mission
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = iberia_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 30
+				region = iberia_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_van_rex_of_the_iberians"
+				duration = 9125
+			}
+		}
+	}
+	van_mare_nostrum_mission = {
+		icon = mission_rb_mediterranean_authority
+		required_missions = {
+			van_consolidate_sicily_mission
+		}
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = corsica_sardinia_area
+				area = baleares_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			baleares_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 35
+		}
+	}
+	van_arianism_triumphs_mission = {
+		icon = mission_west_rome_chi_rho_flag
+		required_missions = {
+			van_invasion_of_italia_mission
+		}
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = italy_region
+			}
+			NOT = {
+				religion = arianism
+			}
+			owned_by = ROOT
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion = arianism
+			num_of_owned_provinces_with = {
+				value = 10
+				region = italy_region
+				religion = arianism
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_van_arius_messenger"
+				duration = 9125
+			}
+		}
+	}
+}
+
+vandal_conquest_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = VAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	van_muster_vandal_levy_mission = {
+		icon = mission_baltic_prussian_pagans
+		required_missions = { }
+		position = 1
+		trigger = {
+			army_size_percentage = 1.0
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oma_buildforces_mod"
+				duration = 5475
+			}
+		}
+	}
+	van_sortes_vandalorum_mission = {
+		icon = mission_gothic_warrior_4th_ce
+		required_missions = {
+			van_muster_vandal_levy_mission
+			van_african_migration_mission
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				region = maghreb_region
+			}
+			NOT = { base_manpower = 3 }
+			owned_by = ROOT
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = maghreb_region
+				base_manpower = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_van_sortes_vandalorum"
+				duration = 7300
+			}
+		}
+	}
+	van_african_trade_networks_mission = {
+		icon = mission_trade_in_gold_coast
+		required_missions = {
+			van_cultivate_african_grain_mission
+		}
+		position = 3
+		provinces_to_highlight = {
+			province_id = 341
+			has_discovered = ROOT
+		}
+		trigger = {
+			341 = {		#Tunis
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_van_african_trade"
+				duration = 7300
+			}
+		}
+	}
+	van_consolidate_sicily_mission = {
+		icon = mission_seize_the_isles
+		required_missions = {
+			van_capture_carthago_mission
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sicily_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			western_sicily_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			any_owned_province = {
+				area = sicily_area
+				fort_level = 1
+			}
+		}
+		effect = {
+			sicily_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "me_van_sicilian_fortifications"
+					duration = 7300
+				}
+			}
+			naples_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	van_invasion_of_italia_mission = {
+		icon = mission_roman_caesars_legions
+		required_missions = {
+			van_consolidate_sicily_mission
+		}
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = naples_area
+				area = calabria_area
+				area = apulia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			lazio_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	van_patrician_of_italia_mission = {
+		icon = mission_roman_forum_imperial
+		required_missions = {
+			van_invasion_of_italia_mission
+		}
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = lazio_area
+				area = central_italy_area
+				area = tuscany_area
+				area = emilia_romagna_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lazio_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_italy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tuscany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			emilia_romagna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_van_patrician_of_italy"
+				duration = -1
+			}
+		}
+	}
+	van_empire_of_vandalia_mission = {
+		icon = a_real_roman_empire
+		required_missions = {
+			van_patrician_of_italia_mission
+			van_subdue_the_mauri_mission
+		}
+		position = 7
+		trigger = {
+			grown_by_development = 200
+			stability = 3
+			is_tribal = no
+			government = monarchy
+			num_accepted_cultures = 2
+		}
+		effect = {
+			add_prestige = 30
+			add_country_modifier = {
+				name = "imperial_ambition"
+				duration = 9125
+			}
+			country_event = {
+				id = mmetr_VAN_mission_events.6		#government form change option
+			}
+		}
+	}
+}
+
+vandal_conquest_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = VAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	van_african_migration_mission = {
+		icon = mission_west_roman_soldier
+		required_missions = { }
+		position = 1
+		completed_by = 439.1.1
+		provinces_to_highlight = {
+			OR = {
+				region = maghreb_region
+			}
+			NOT = { owned_by = ROOT }
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				region = maghreb_region
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				region = maghreb_region
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_manpower = 1
+			}
+			add_manpower = 2
+			
+			tunisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	van_cultivate_african_grain_mission = {
+		icon = mission_latin_farmer_latifundia
+		required_missions = {
+			van_african_migration_mission
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 341	#Carthage
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 341
+			341 = {
+				num_of_times_improved_by_owner = 3
+				base_production = 7
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = maghreb_region
+				num_of_times_improved_by_owner = 1
+				base_production = 3
+			}
+		}
+		effect = {
+			tunisia_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "me_van_breadbasket_of_empires"
+					duration = -1
+				}
+			}
+		}
+	}
+	van_capture_carthago_mission = {
+		icon = africa_proconsulare
+		required_missions = { }
+		position = 3
+		completed_by = 439.1.1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 341	#Carthage
+			}
+			NOT = { owned_by = ROOT }
+			NOT = { is_core = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 341
+		}
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = "me_van_king_of_carthage"
+				duration = 10950
+			}
+		}
+	}
+	van_mauro_roman_subjects_mission = {
+		icon = mission_protect_granada
+		required_missions = {
+			van_capture_carthago_mission
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = barbary_coast_area
+				area = algiers_area
+				area = hautes_plaines_area
+				area = ouled_nail_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hautes_plaines_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			fez_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	van_control_mauretania_mission = {
+		icon = mission_moroccan_ports
+		required_missions = {
+			van_mauro_roman_subjects_mission
+		}
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = fez_area
+				area = northern_morocco_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT		#includes Tributaries
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			fez_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			northern_morocco_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_sailors = 50
+			add_country_modifier = {
+				name = "me_van_mauri_sailors"
+				duration = 9125
+			}
+		}
+	}
+	van_subdue_the_mauri_mission = {
+		icon = mission_reconquer_ceuta
+		required_missions = {
+			van_control_mauretania_mission
+		}
+		position = 6
+		trigger = {
+			stability = 2
+			num_of_owned_provinces_with = {
+				value = 10
+				region = maghreb_region
+				has_owner_accepted_culture = yes
+				NOT = { local_autonomy_above_min = 10 }
+				NOT = { unrest = 1 }
+				NOT = { nationalism = 1 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_van_loyal_mauri_auxiliaries"
+				duration = 9125
+			}
+		}
+	}
+	van_carthage_reborn_mission = {
+		icon = mission_carthage_tanit
+		required_missions = {
+			van_subdue_the_mauri_mission
+		}
+		position = 7
+		trigger = {
+			owns_core_province = 341
+			num_accepted_cultures = 2
+			341 = {
+				is_capital_of = ROOT
+			}
+			home_trade_node = {
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			country_event = {
+				id = mmetr_VAN_mission_events.8		#option to change name to Carthage
+			}
+		}
+	}
+}
+
+vandal_conquest_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = VAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	van_rex_vandalorum_et_alanorum_mission = {
+		icon = mission_kneeling_before_king
+		required_missions = { }
+		position = 1
+		trigger = {
+			stability = 3
+			num_accepted_cultures = 1
+			legitimacy_equivalent = 100
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_van_rex_vandalorum_et_alanorum"
+				duration = -1
+			}
+		}
+	}
+	van_mighty_vandal_fleet_mission = {
+		icon = mission_combat_barbary_piracy
+		required_missions = { }
+		position = 2
+		trigger = {
+			navy_size = 30
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_van_grand_vandal_fleet"
+				duration = 7300
+			}
+		}
+	}
+	van_vandalic_piracy_mission = {
+		icon = mission_raid_on_genoa
+		required_missions = {
+			van_mighty_vandal_fleet_mission
+		}
+		position = 3
+		trigger = {
+			any_active_trade_node = {
+				has_privateer_share_in_trade_node = {
+					who = ROOT
+					share = 0.2
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+			add_country_modifier = {
+				name = "me_van_vandal_raiders"
+				duration = -1
+			}
+		}
+	}
+	van_great_palace_in_carthage_mission = {
+		icon = mission_al-wadi_al-kabir
+		required_missions = {
+			van_capture_carthago_mission
+			van_vandalic_piracy_mission
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 341	#Carthage
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			treasury = 100
+			owns_core_province = 341
+			341 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			add_treasury = -100
+			341 = {
+				add_province_modifier = {
+					name = "me_van_vandal_palace"
+					duration = -1
+				}
+			}
+		}
+	}
+	van_thriving_provincials_mission = {
+		icon = sources_of_trade
+		required_missions = {
+			van_mauro_roman_subjects_mission
+		}
+		position = 5
+		trigger = {
+			share_of_starting_income = 2.5
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			define_advisor = {
+				type = natural_scientist
+				skill = 2
+				culture = berber
+				religion = chalcedonism
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	van_bishop_of_carthage_mission = {
+		icon = answer_the_roman_question
+		required_missions = {
+			van_build_arian_churches_mission
+		}
+		position = 6
+		trigger = {
+			religion = arianism
+			owns_core_province = 341
+			monthly_dip = 10
+		}
+		effect = {
+			country_event = {
+				id = mmetr_VAN_mission_events.7
+			}
+		}
+	}
+}
+
+vandal_conquest_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = VAN
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	van_unite_the_tribes_mission = {
+		icon = mission_germanic_shields
+		required_missions = { }
+		position = 1
+		trigger = {
+			OR = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 75
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 4
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "me_van_vandal_tribes_united"
+				duration = 9125
+			}
+		}
+	}
+	van_extract_payment_mission = {
+		icon = reform_the_monte
+		required_missions = { }
+		position = 2
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Art of War"
+				}
+				num_of_war_reparations = 3
+			}
+			else = {
+				share_of_starting_income = 1.25
+			}
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+	van_golden_hoard_mission = {
+		icon = mission_war_chest
+		required_missions = {
+			van_extract_payment_mission
+			van_vandalic_piracy_mission
+		}
+		position = 4
+		trigger = {
+			NOT= { num_of_loans = 1 }
+			treasury = 1500
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "strong_treasury"
+				duration = 9125
+			}
+		}
+	}
+	van_build_arian_churches_mission = {
+		icon = public_works
+		required_missions = { }	#none
+		position = 5
+		trigger = {
+			religion = arianism
+			num_of_owned_provinces_with = {
+				value = 15
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_country_modifier = {
+				name = "me_van_widespread_missionaries"
+				duration = 10950
+			}
+		}
+	}
+	van_convert_the_heretics_mission = {
+		icon = mission_mass_baptism
+		required_missions = { 
+			van_build_arian_churches_mission
+		}
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = maghreb_region
+			}
+			owned_by = ROOT
+			NOT = {
+				religion = arianism
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion = arianism
+			num_of_religion = {
+				religion = arianism
+				value = 0.8
+			}
+			num_of_owned_provinces_with = {
+				value = 20
+				region = maghreb_region
+				religion = arianism
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_VAN_mission_events.4		#1-3 are part of sack of Rome event chain
+			}
+		}
+	}
+	van_first_arian_patriarch_mission = {
+		icon = mission_arius_arianism
+		required_missions = { 
+			van_convert_the_heretics_mission
+		}
+		position = 7
+		trigger = {
+			religion = arianism
+			OR = {
+				is_defender_of_faith = yes
+				patriarch_authority = 0.8
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_VAN_mission_events.5
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_van_arian_patriarch"
+					duration = 18250	#50 years
+				}
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,84 @@
+et_acoemetaen_order = {
+	icon = GFX_holy_order_icon_et_acoemetaen_order
+	trigger = {
+		religion = reformed_chalcedonism
+	}
+	cost = 50
+	cost_type = adm_power
+	per_province_effect = {
+		add_base_tax = 1
+	}
+	per_province_abandon_effect = {
+		add_base_tax = -1
+	}
+	modifier = {
+		local_missionary_strength = 0.015
+		local_governing_cost = -0.25
+	}
+	ai_priority = {
+		factor = 1
+		modifier = {
+			factor = 2
+			NOT = { religion = ROOT }
+		}
+		modifier = {
+			factor = 2
+			development = 15
+			ROOT = {
+				governing_capacity_percentage = 1.1
+			}
+		}
+	}
+}
+
+et_benedictine_order = {
+	icon = GFX_holy_order_icon_et_benedictine_order
+	trigger = {
+		religion = reformed_chalcedonism
+	}
+	cost = 50
+	cost_type = dip_power
+	per_province_effect = {
+		add_base_production = 1
+	}
+	per_province_abandon_effect = {
+		add_base_production = -1
+	}
+	modifier = {
+		local_institution_spread = 0.1
+		local_production_efficiency = 0.1
+	}
+	ai_priority = {
+		factor = 1
+		modifier = {
+			factor = 2
+			base_production = 10
+		}
+	}
+}
+
+et_maurician_order = {
+	icon = GFX_holy_order_icon_et_maurician_order
+	trigger = {
+		religion = reformed_chalcedonism
+	}
+	cost = 50
+	cost_type = mil_power
+	per_province_effect = {
+		add_base_manpower = 1
+	}
+	per_province_abandon_effect = {
+		add_base_manpower = -1
+	}
+	modifier = {
+		local_defensiveness = 0.1
+		local_manpower_modifier = 0.1
+	}
+	ai_priority = {
+		factor = 1
+		modifier = {
+			factor = 2
+			base_manpower = 10
+		}
+	}
+}

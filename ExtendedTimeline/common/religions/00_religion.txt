@@ -880,6 +880,51 @@ christian = {
 					}
 				}
 			}
+			
+			#New added in mod
+			icon_olga = {
+				global_missionary_strength = 0.02
+				harsh_treatment_cost = -0.25
+
+				visible = {
+					culture_group = east_slavic
+					OR = {
+						started_in = 1547.1.1
+						has_country_flag = saint_olga_of_kiev_icon_enabled_flag
+					}
+				}
+
+				allow = {
+					culture_group = east_slavic
+					OR = {
+						started_in = 1547.1.1
+						has_country_flag = saint_olga_of_kiev_icon_enabled_flag
+					}
+				}
+				ai_will_do = {
+					factor = 0.01
+					modifier = {
+						factor = 0
+						NOT = {
+							calc_true_if = {
+								all_owned_province = {
+									NOT = { religion = orthodox }
+								}
+								amount = 1
+							}
+						}
+					}
+					modifier = {
+						factor = 3
+						calc_true_if = {
+							all_owned_province = {
+								NOT = { religion = orthodox }
+							}
+							amount = 10
+						}
+					}
+				}
+			}
 		}
 
 		date = 867.1.1
@@ -1134,6 +1179,39 @@ christian = {
 		heretic = { FUNDAMENTALIST LIBERAL }
 		fervor = yes
 		date = 1830.3.1
+	}
+	
+	reformed_chalcedonism = {
+		color = { 220 180 70 }
+		icon = 59
+		allowed_conversion = {
+		}
+		country = {
+			tolerance_own = 1
+			warscore_cost_vs_other_religion = -0.1
+			reform_progress_growth = 0.1
+		}
+
+		country_as_secondary = {
+			tolerance_heathen = 1
+			reform_progress_growth = 0.05
+		}
+
+		on_convert = {
+			change_religion = reformed_chalcedonism
+		}
+
+		uses_church_power = yes
+		aspects = {
+			reformed_chalcedonism_aspect_host_council_adm
+			reformed_chalcedonism_aspect_host_council_dip
+			reformed_chalcedonism_aspect_host_council_mil
+			reformed_chalcedonism_aspect_improve_relations_with_brothers_in_faith
+			reformed_chalcedonism_aspect_become_defender_of_faith
+		}
+		aspects_name = REFORMED_CHALCEDONIAN_ASPECTS
+
+		heretic = { BOGOMILIST WALDENSIAN FRATICELLI HUSSITE LOLLARD SOCINIAN }
 	}
 	
 	harmonized_modifier = harmonized_christian
@@ -2645,6 +2723,8 @@ dharmic = {
 				duration = 3650
 			}
 		}
+		
+		uses_karma = yes		#New added in mod
 		
 		heretic = { BHAKTI }
 	}

@@ -1,0 +1,37 @@
+namespace = mmetr_UMA_mission_events
+
+# Kharijites Rebel
+country_event = {
+	id = mmetr_UMA_mission_events.1
+	title = "mmetr_UMA_mission_events.1.t"
+	desc = "mmetr_UMA_mission_events.1.desc"
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "mmetr_UMA_mission_events.1.a"
+		
+		custom_tooltip = uma_root_out_kharijites_mission.tt
+		
+		set_country_flag = kharijite_umayyad_rebellion_flag
+		
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					area = bahrain_area
+				}
+				spawn_rebels = {
+					type = ibadi_rebels		#called "Khawarij" in game!
+					size = 2
+				}
+			}
+		}
+	}
+}

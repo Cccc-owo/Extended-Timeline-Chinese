@@ -15,17 +15,19 @@ country_decisions = {
 				ai = no
 			}
 			NOT = { exists = GER }
+			NOT = { exists = FRE }
 			NOT = { tag = PAP }
 			NOT = { tag = HLR }
 			NOT = { tag = FRK }
 			NOT = { tag = ENG }
 			NOT = { tag = EUR }
+			adm_tech = 48 # vanilla
 			OR = {
 				ai = no
 				AND = {
 					ai = yes
 					num_of_cities = 15
-					adm_tech = 20
+					adm_tech = 65
 				}
 			}
 			OR = {
@@ -156,7 +158,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			adm_tech = 20
+			adm_tech = 65
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
@@ -199,6 +201,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = GER
+			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			emperor = {
 				add_opinion = {
@@ -222,7 +225,7 @@ country_decisions = {
 					NOT = { owned_by = ROOT }
 				}
 				add_permanent_claim = GER
-			}			
+			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -241,7 +244,7 @@ country_decisions = {
 			factor = 100
 			modifier = {
 				factor = 0
-				NOT = { adm_tech = 18 }
+				NOT = { adm_tech = 63 }
 			}
 			modifier = {
 				factor = 0

@@ -1,0 +1,54 @@
+namespace = mmetr_ITA_Odoacer_mission_events
+
+
+# Question of the State Religion
+country_event = {
+	id = mmetr_ITA_Odoacer_mission_events.2
+	title = "mmetr_ITA_Odoacer_mission_events.2.t"
+	desc = "mmetr_ITA_Odoacer_mission_events.2.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_ITA_Odoacer_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_ita_old_faith"
+			duration = 7300
+		}
+	}
+	
+	option = {
+		name = "mmetr_ITA_Odoacer_mission_events.2.b"
+		
+		tooltip = {
+			add_stability = -1
+		}
+		
+		if = {
+			limit = {
+				religion = arianism
+			}
+			change_religion = chalcedonism
+		}
+		else_if = {
+			limit = {
+				religion = chalcedonism
+			}
+			change_religion = arianism
+		}
+		
+		hidden_effect = {
+			add_stability = 2		#makes up for -3 stability of conversion effect!
+		}
+		
+		add_country_modifier = {
+			name = "me_ita_new_faith"
+			duration = 7300
+		}
+	}
+}
+

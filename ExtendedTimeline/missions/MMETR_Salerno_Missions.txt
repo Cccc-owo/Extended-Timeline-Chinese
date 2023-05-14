@@ -1,0 +1,808 @@
+salerno_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAE
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sae_merchants_of_amalfi_mission = {
+		icon = purely_for_commerce
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 2983	#Salerno province, which Amalfi is in
+			NOT = { 
+				OR = {
+					has_building = marketplace
+					has_building = trade_post
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2983
+			2983 = {
+				OR = {
+					has_building = marketplace
+					has_building = trade_post
+				}
+			}
+			2983 = {
+				base_production = 3
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			custom_tooltip = sae_merchants_of_amalfi_mission.tt
+			country_event = {
+				id = mmetr_SAE_mission_events.1
+			}
+		}
+	}
+	sae_duces_of_amalfi_mission = {
+		icon = rein_in_the_nobles
+		required_missions = { sae_merchants_of_amalfi_mission }
+		position = 2
+		trigger = {
+			OR = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 70
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 3
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_amalfian_vassals"
+				duration = -1
+			}
+		}
+	}
+	sae_nobles_of_capua_mission = {
+		icon = hand-picked_bureaucrats
+		required_missions = { sae_conquer_napoli_mission }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 121	#Napoli
+			NOT = { 
+				num_of_times_improved_by_owner = 3
+				num_of_buildings_in_province = 2
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			121 = {
+				num_of_times_improved_by_owner = 3
+			}
+			121 = {
+				num_of_buildings_in_province = 2
+			}
+		}
+		effect = {
+			add_years_of_income = 0.1
+			121 = {
+				add_province_modifier = {
+					name = "me_sae_nobles_pacified"
+					duration = 9125
+				}
+			}
+		}
+	}
+	sae_beneventano_union_mission = {
+		icon = mission_medieval_surrender_keys
+		required_missions = {  }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2985	#Foggia
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 2985
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = sae_beneventano_union_mission.tt
+					NOT = {
+						any_province = {
+							owned_by = BNV
+							region = italy_region
+						}
+					}
+				}
+				BNV = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_prince_of_salerno_and_benevento"
+				duration = 10950
+			}
+		}
+	}
+	sae_salernitanos_in_sicily_mission = {
+		icon = king_of_sicily
+		required_missions = { sae_beneventano_union_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4736		#Mainland Sicily
+				province_id = 4737
+				province_id = 124
+				province_id = 125
+				province_id = 2982
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4736		#Mainland Sicily
+			owns_or_non_sovereign_subject_of = 4737
+			owns_or_non_sovereign_subject_of = 124
+			owns_or_non_sovereign_subject_of = 125
+			owns_or_non_sovereign_subject_of = 2982
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_prince_of_sicily"
+				duration = 10950
+			}
+		}
+	}
+	sae_prince_of_the_meridione_mission = {
+		icon = king_of_naples
+		required_missions = {
+			sae_salernitanos_in_sicily_mission
+			sae_apulia_and_calabria_mission
+		}
+		position = 7
+		trigger = {
+			prestige = 75
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_ruler_of_the_meridione"
+				duration = 10950
+			}
+		}
+	}
+}
+
+salerno_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAE
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sae_conquer_napoli_mission = {
+		icon = develop_naples
+		required_missions = { }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 121	#Naples
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 121
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = NAP
+					NAP = { is_subject_of = root }
+				}
+				NAP = { add_liberty_desire = -25 }
+			}
+			apulia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sae_subjects_in_spoleto_mission = {
+		icon = take_the_bishoprics
+		required_missions = { sae_conquer_napoli_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4731	#Spoleto
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4731
+		}
+		effect = {
+			add_army_tradition = 10
+			tuscany_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sae_tuscan_campaign_mission = {
+		icon = league_of_the_public_weal
+		required_missions = { sae_subjects_in_spoleto_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = tuscany_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tuscany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			emilia_romagna_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lombardy_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sae_legacy_of_the_lombards_mission = {
+		icon = kingdom_of_lombardy
+		required_missions = { sae_tuscan_campaign_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 104	#Milan / Lombardia
+				province_id = 4728	#Pavia, former Lombard kingdom capital
+				province_id = 114	#Ravenna / Romagna
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 104
+			owns_or_non_sovereign_subject_of = 4728
+			owns_or_non_sovereign_subject_of = 114
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_langobardian_legacy"
+				duration = 9125
+			}
+			country_event = {
+				id = mmetr_SAE_mission_events.2
+			}
+		}
+	}
+	sae_apulia_and_calabria_mission = {
+		icon = confront_the_lombards
+		required_missions = { sae_beneventano_union_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = calabria_area
+				area = apulia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_army_tradition = 20
+		}
+	}
+}
+
+salerno_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAE
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sae_la_capitale_del_sud_mission = {
+		icon = renaissance_city
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 2983	#Salerno
+			NOT = { 
+				num_of_times_improved_by_owner = 5
+				num_of_buildings_in_province = 2
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2983
+			2983 = {
+				is_capital_of = ROOT
+			}
+			2983 = {
+				num_of_times_improved_by_owner = 5
+			}
+			2983 = {
+				num_of_buildings_in_province = 1
+			}
+		}
+		effect = {
+			2983 = {
+				add_province_modifier = {
+					name = "me_sae_la_capitale_del_sud"
+					duration = -1
+				}
+			}
+		}
+	}
+	sae_opulenta_salernitanum_mission = {
+		icon = reform_the_state
+		required_missions = { sae_la_capitale_del_sud_mission }
+		position = 2
+		trigger = {
+			OR = {
+				treasury = 200
+				home_trade_node = {
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_opulenta_salernitanum"
+				duration = 9125
+			}
+		}
+	}
+	sae_abbey_of_monte_cassino_mission = {
+		icon = alpine_defenses
+		required_missions = { sae_conquer_napoli_mission }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 121	#Napoli
+			NOT = { 
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			121 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			theologian = 2
+		}
+		effect = {
+			121 = {
+				add_province_modifier = {
+					name = "me_sae_abbey_of_monte_cassino"
+					duration = -1
+				}
+			}
+		}
+	}
+	sae_byzantine_relations_mission = {
+		icon = mission_pf_cross
+		required_missions = { }
+		position = 4
+		trigger = {
+			151 = {
+				owner = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+		}
+		effect = {
+			add_truce_with = BYZ
+			custom_tooltip = sae_byzantine_relations_mission.tt		#can choose to become a Protectorate
+			country_event = {
+				id = mmetr_SAE_mission_events.3		#event 4 is a ping event for Byzantium
+			}
+		}
+	}
+	sae_lombards_of_the_south_mission = {
+		icon = reissue_the_mining_code
+		required_missions = {
+			sae_byzantine_relations_mission
+			sae_norman_warriors_mission
+		}
+		position = 5
+		trigger = {
+			has_spy_network_in = {
+				who = BYZ
+				value = 75
+			}
+			treasury = 100
+			dip_power = 300
+			custom_trigger_tooltip = {
+				tooltip = sae_lombards_of_the_south_mission.tt
+				any_province = {
+					OR = {
+						area = calabria_area
+						area = apulia_area
+					}
+					owned_by = BYZ
+				}
+			}
+		}
+		effect = {
+			add_treasury = -100
+			add_dip_power = -300
+			country_event = {
+				id = mmetr_SAE_mission_events.6
+			}
+			custom_tooltip = sae_lombards_of_the_south_mission.tt2
+		}
+	}
+}
+
+salerno_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAE
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sae_allies_in_matrimony_mission = {
+		icon = mission_medieval_marriage
+		required_missions = { }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = sae_allies_in_matrimony_mission.tt
+				num_of_allies = 2
+				calc_true_if = {
+					all_ally = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+						marriage_with = ROOT
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "influential_diplomacy"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	sae_saracen_relations_mission = {
+		icon = mission_saladin_takes_jerusalem
+		required_missions = { }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = sae_saracen_relations_mission.tt
+				calc_true_if = {
+					all_country = {
+						religion_group = muslim
+						has_opinion = {
+							who = ROOT
+							value = 80
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_muslim_intellectual_trade"
+				duration = 9125
+			}
+		}
+	}
+	sae_norman_warriors_mission = {
+		icon = mission_normans_of_sicily
+		required_missions = { }
+		position = 4
+		trigger = {
+			OR = {
+				at_war_with_religious_enemy = yes
+				monthly_dip = 6
+			}
+		}
+		effect = {
+			add_manpower = 1
+			add_country_modifier = {
+				name = "me_sae_norman_warriors"
+				duration = 9125
+			}
+		}
+	}
+	sae_salerno_in_the_empire_mission = {
+		icon = switzerland_and_the_empire
+		required_missions = { sae_papal_relations_mission }
+		position = 6
+		trigger = {
+			dip_power = 200
+			is_subject = no
+			hre_size = 2
+			OR = {
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				emperor = {
+					alliance_with = ROOT
+				}
+			}
+		}
+		effect = {
+			add_dip_power = -200
+			tooltip = {
+				set_in_empire = yes		#join the HRE!
+			}
+			country_event = {
+				id = mmetr_SAE_mission_events.5
+			}
+		}
+	}
+	sae_prince_elector_of_salerno_mission = {
+		icon = mission_monarch_signing
+		required_missions = { sae_salerno_in_the_empire_mission }
+		position = 7
+		trigger = {
+			is_part_of_hre = yes
+			OR = {
+				is_elector = yes
+				is_emperor = yes
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_adm_power = 75
+			add_dip_power = 75
+		}
+	}
+}
+
+salerno_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAE
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sae_schola_medica_salernitana_mission = {
+		icon = mission_early_modern_university
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 2983	#Salerno province, which Amalfi is in
+			NOT = { 
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2983
+			2983 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			natural_scientist = 2
+		}
+		effect = {
+			2983 = {
+				add_province_modifier = {
+					name = "me_sae_schola_medica_salernitana"
+					duration = -1
+				}
+			}
+		}
+	}
+	sae_translate_arabic_texts_mission = {
+		icon = bibliotheca_corviana
+		required_missions = { 
+			sae_schola_medica_salernitana_mission
+			sae_saracen_relations_mission
+		}
+		position = 3
+		trigger = {
+			OR = {
+				trader = 2
+				has_institution = manuscripts
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_translated_medical_texts"
+				duration = 7300
+			}
+		}
+	}
+	sae_center_of_medicine_mission = {
+		icon = geneva_conventions
+		required_missions = { 
+			sae_translate_arabic_texts_mission
+		}
+		position = 4
+		trigger = {
+			OR = {
+				natural_scientist = 2
+				has_institution = medicine
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_center_of_medicine"
+				duration = 7300
+			}
+		}
+	}
+	sae_papal_relations_mission = {
+		icon = sway_the_pope
+		required_missions = { }
+		position = 5
+		provinces_to_highlight = {
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							religion = catholic
+							religion = chalcedonism
+						}
+					}
+				}
+				owner = { tag = PAP }
+			}
+			else = {
+				province_id = 118
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					exists = PAP
+					OR = {
+						religion = catholic
+						religion = chalcedonism
+					}
+					NOT = { is_rival = PAP }
+				}
+				OR = {
+					num_of_cardinals = 2
+					alliance_with = PAP
+					PAP = {
+						has_opinion = {
+							who = ROOT
+							value = 120
+						}
+					}
+				}
+			}
+			else = {
+				owns_core_province = 118
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_papal_influence = 15
+		}
+	}
+	sae_implement_cluniac_reforms_mission = {
+		icon = influence_the_church
+		required_missions = { sae_papal_relations_mission }
+		position = 6
+		trigger = {
+			OR = {
+				theologian = 2
+				AND = {
+					theologian = 1
+					stability = 3
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sae_cluniac_reforms"
+				duration = 10950
+			}
+		}
+	}
+	
+	
+}

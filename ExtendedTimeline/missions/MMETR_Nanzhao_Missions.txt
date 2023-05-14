@@ -1,0 +1,1178 @@
+nanzhao_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = NAN
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	nan_black_and_white_mywa_mission = {
+		icon = mission_chinese_officials_in_line
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 4
+				}
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 80
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_black_and_white_mywa"
+				duration = 10950
+			}
+		}
+	}
+	nan_invigorate_the_luojuzi_mission = {
+		icon = mission_mnd_dai_control_the_army
+		required_missions = { nan_black_and_white_mywa_mission }
+		position = 3
+		trigger = {
+			OR = {
+				army_tradition = 60
+				army_professionalism = 0.50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_luojuzi"
+				duration = -1
+			}
+		}
+	}
+	nan_defeat_the_tibetans_mission = {
+		icon = mission_korean_castle_assault
+		required_missions = { nan_armies_of_the_zhao_mission }
+		position = 4
+		provinces_to_highlight = {
+			region = tibet_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				region = tibet_region
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_NAN_mission_events.1
+			}
+			tooltip = {
+				add_manpower = 1
+				add_country_modifier = {
+					name = "me_nan_mountain_warfare"
+					duration = 10950
+				}
+				utsang_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				tsang_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	nan_seize_lhasa_mission = {
+		icon = mission_asian_city
+		required_missions = { nan_defeat_the_tibetans_mission }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 677		#Lhasa
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 677
+		}
+		effect = {
+			add_prestige = 15
+			tibet_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+				id = mmetr_NAN_mission_events.2
+			}
+			custom_tooltip = nan_seize_lhasa_mission.tt
+			tooltip = {
+				tibet_region = {
+					add_province_modifier = {
+						name = "me_nan_benevolent_rule"
+						duration = 10950
+					}
+					add_province_modifier = {
+						name = "me_nan_harsh_extraction"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	nan_empire_of_tibet_mission = {
+		icon = mission_tibetan_empire
+		required_missions = { nan_seize_lhasa_mission }
+		position = 6
+		provinces_to_highlight = {
+			region = tibet_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			tibet_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			country_event = {
+				id = mmetr_NAN_mission_events.3
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_nan_imperial_expansion"
+					duration = -1
+				}
+			}
+		}
+	}
+	nan_control_the_riverlands_mission = {
+		icon = mission_control_the_desh
+		required_missions = { nan_capture_chengdu_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = huguang_area		#Hubei
+				area = hunan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			huguang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hunan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_beyond_bashu"
+				duration = 10950
+			}
+			south_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+}
+
+nanzhao_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = NAN
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	nan_kingdom_of_many_mission = {
+		icon = mission_suppress_the_saophasa
+		required_missions = { nan_black_and_white_mywa_mission nan_develop_nanzhao_mission }
+		position = 2
+		trigger = {
+			num_accepted_cultures = 1
+			num_of_owned_provinces_with = {
+				value = 20
+				has_owner_culture = no
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_multiethnic_kingdom"
+				duration = -1
+			}
+		}
+	}
+	nan_invasion_of_annan_mission = {
+		icon = mission_mnd_siam_subjugate_vietnam
+		required_missions = { nan_armies_of_the_zhao_mission }
+		position = 4
+		provinces_to_highlight = {
+			area = red_river_delta_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_NAN_mission_events.8
+			}
+			vietnam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	nan_colonize_nanyue_mission = {
+		icon = mission_mnd_dai_universities
+		required_missions = { nan_invasion_of_annan_mission }
+		position = 5
+		provinces_to_highlight = {
+			area = vietnam_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vietnam_area = {
+				type = all
+				NOT = { unrest = 5 }
+			}
+		}
+		effect = {
+			add_adm_power = 75
+			add_dip_power = 75
+			add_country_modifier = {
+				name = "me_nan_military_colonies"
+				duration = 10950
+			}
+		}
+	}
+	nan_capture_chengdu_mission = {
+		icon = mission_ancient_chinese_army_in_siege
+		required_missions = { nan_march_to_yizhou_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 679	#Chengdu
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 679	#Chengdu
+		}
+		effect = {
+			country_event = {
+				id = mmetr_NAN_mission_events.6
+			}
+			add_prestige = 20
+			add_country_modifier = {
+				name = "me_nan_art_of_siegecraft"
+				duration = 10950
+			}
+			chuanbei_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			700 = {		#Chang'an
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	nan_besiege_changan_mission = {
+		icon = mission_chinese_fortress_siege
+		required_missions = { nan_capture_chengdu_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 700
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 700
+		}
+		effect = {
+			country_event = {
+				id = mmetr_NAN_mission_events.7
+			}
+			add_prestige = 25
+			add_adm_power = 100
+			add_country_modifier = {
+				name = "me_nan_hegemon_of_changan"
+				duration = 10950
+			}
+		}
+	}
+	
+}
+
+nanzhao_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = NAN
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	nan_develop_nanzhao_mission = {
+		icon = mission_mnd_dai_imperial_citadel
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = yun_gui_area
+				area = yun_gui_borderland_area
+				area = chuannan_area
+			}
+		}
+		trigger = {
+			capital_scope = {
+				num_of_times_improved_by_owner = 3
+			}
+			capital_scope = {
+				num_of_buildings_in_province = 2
+			}
+			development_in_provinces = {
+				value = 50
+				OR = {
+					area = yun_gui_area
+					area = yun_gui_borderland_area
+					area = chuannan_area
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_economic_growth"
+				duration = 10950
+			}
+		}
+	}
+	nan_empire_of_the_south_mission = {
+		icon = et_mission_forbidden_city
+		required_missions = { nan_develop_nanzhao_mission }
+		position = 2
+		trigger = {
+			grown_by_states = 5
+			num_of_owned_provinces_with = {
+				value = 2
+				fort_level = 2
+			}
+			num_of_owned_provinces_with = {
+				value = 15
+				num_of_buildings_in_province = 1
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_thriving_state"
+				duration = 10950
+			}
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	nan_armies_of_the_zhao_mission = {
+		icon = mission_chinese_training
+		required_missions = {  }
+		position = 3
+		trigger = {
+			num_of_generals = 1
+			army_size_percentage = 1.0
+			manpower_percentage = 0.60
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_brave_warriors_of_zhao"
+				duration = 10950
+			}
+			sichuan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kham_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kachin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shan_hill_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			red_river_delta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	nan_march_to_yizhou_mission = {
+		icon = mission_chinese_monarch_horseback
+		required_missions = { nan_armies_of_the_zhao_mission }
+		position = 5
+		provinces_to_highlight = {
+			area = sichuan_area
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 2
+				area = sichuan_area
+				is_core = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_victorious_army"
+				duration = 10950
+			}
+		}
+	}
+	nan_king_of_yunnan_mission = {		#changed to King of Jiannan
+		icon = mission_chinese_edict
+		required_missions = { nan_march_to_yizhou_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = sichuan_area
+				area = chuanbei_area
+				area = chuannan_area
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sichuan_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			chuanbei_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			chuannan_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_jiannan_administrators"
+				duration = -1
+			}
+		}
+	}
+	nan_the_mandate_of_heaven_mission = {
+		icon = mission_chinese_son_of_heaven
+		required_missions = { nan_king_of_yunnan_mission nan_besiege_changan_mission }
+		position = 8
+		provinces_to_highlight = {
+			region = xinan_region
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				OR = {
+					is_emperor_of_china = yes
+					NOT = {
+						any_country = {
+							is_emperor_of_china = yes
+						}
+					}
+				}
+			}
+			xinan_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+					is_emperor_of_china = yes
+				}
+				add_mandate_large_effect = yes
+			}
+			else_if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+					any_country = {
+						is_emperor_of_china = yes
+					}
+				}
+				custom_tooltip = tau_dragon_throne_fake_mandate # Mandate effects normally don't appear for countries that don't have the Mandate mechanic enabled, as in they're not the current Emperor of China
+			}
+			else = {
+				add_prestige = 20
+				add_stability_or_adm_power = yes
+				if = {
+					limit = {
+						NOT = {
+							government_rank = 3
+						}
+					}
+					set_government_rank = 3
+				}
+			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+				name = "me_nan_imperial_administration"
+				duration = -1
+			}
+			country_event = {
+				id = mmetr_NAN_mission_events.9
+			}
+			custom_tooltip = nan_the_mandate_of_heaven_mission.tt
+		}
+	}
+	
+}
+
+nanzhao_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = NAN
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	nan_chinese_diplomacy_mission = {
+		icon = mission_chinese_warlords_alliance
+		required_missions = {  }
+		position = 1
+		trigger = {
+			is_free_or_tributary_trigger = yes
+			if = {
+				limit = {
+					any_country = {
+						is_emperor_of_china = yes
+						NOT = { tag = ROOT } 
+					}
+				}
+				OR = {
+					any_country = {
+						is_emperor_of_china = yes
+						has_opinion = {
+							who = ROOT
+							value = 80
+						}
+					}
+					any_country = {
+						is_emperor_of_china = yes
+						trust = { 
+							who = ROOT
+							value = 70
+						}
+					}
+					any_country = { 
+						is_emperor_of_china = yes 
+						OR = { 
+							has_opinion_modifier = {
+								who = ROOT  
+								modifier = insulted
+							}
+							has_opinion_modifier = {
+								who = ROOT  
+								modifier = scornfully_insulted
+							}
+						}
+					}
+				}
+			}
+			else = {
+				OR = {
+					any_country = {
+						culture_group = east_asian
+						has_opinion = {
+							who = ROOT
+							value = 80
+						}
+					}
+					any_country = {
+						culture_group = east_asian
+						trust = { 
+							who = ROOT
+							value = 70
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = nan_chinese_diplomacy_mission.tt
+			if = {
+				limit = {
+					any_country = {
+						is_emperor_of_china = yes
+						NOT = {
+							alliance_with = ROOT
+						}
+					}
+					OR = {
+						any_country = {
+							is_emperor_of_china = yes
+							has_opinion = {
+								who = ROOT
+								value = 80
+							}
+						}
+						any_country = {
+							is_emperor_of_china = yes
+							trust = { 
+								who = ROOT
+								value = 70
+							}
+						}
+					}
+				}
+				country_event = {
+					id = mmetr_NAN_mission_events.10
+				}
+			}
+			else = {
+				add_prestige = 15
+			}
+			add_country_modifier = {
+				name = "me_nan_chinese_statecraft"
+				duration = 10950
+			}
+		}
+	}
+	nan_three_pagodas_of_chongsheng_mission = {
+		icon = mission_chinese_castle_tower
+		required_missions = { nan_chinese_diplomacy_mission nan_sponsor_temples_mission }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 661	#Dali
+			OR = {
+				NOT = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					has_great_project = {
+						type = three_pagodas_chongsheng
+						tier = 2
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 661	#Dali
+			661 = {
+				has_great_project = {
+					type = three_pagodas_chongsheng
+					tier = 2
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "me_nan_devout_followers_of_the_dharma"
+				duration = 10950
+			}
+		}
+	}
+	nan_descend_upon_the_shan_mission = {
+		icon = mission_chinese_planning_war
+		required_missions = { nan_armies_of_the_zhao_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = kachin_area
+				area = shan_hill_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kachin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shan_hill_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_tai_mueang_tribute"
+				duration = 10950
+			}
+			upper_burma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_burma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	nan_subdue_the_pyu_cities_mission = {
+		icon = mission_annex_prome
+		required_missions = { nan_descend_upon_the_shan_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = upper_burma_area
+				area = central_burma_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			upper_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			vientiane_area = {
+				limit = {
+					is_empty = no
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_laos_area = {
+				limit = {
+					is_empty = no
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+				id = mmetr_NAN_mission_events.4
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_nan_city_levies"
+					duration = 10950
+				}
+				if = {
+					limit = {
+						religion_group = buddhic
+					}
+					add_country_modifier = {
+						name = "me_nan_common_followers_of_lord_buddha"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	nan_southern_settlement_mission = {
+		icon = mission_a_million_rice_fields
+		required_missions = { nan_subdue_the_pyu_cities_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = north_laos_area	#Luang Prabang
+				area = vientiane_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			north_laos_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			vientiane_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			development_in_provinces = {
+				value = 25
+				OR = {
+					area = north_laos_area
+					area = vientiane_area
+					area = champasak_area
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_expanding_kingdom"
+				duration = 10950
+			}
+		}
+	}
+	nan_conquest_of_angkor_mission = {
+		icon = mission_angkor_wat
+		required_missions = { nan_southern_settlement_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = angkor_area
+				area = mekong_area
+				area = cambodia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			angkor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mekong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				overlord_of = KHM
+				NOT = {
+					exists = KHM
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_NAN_mission_events.5
+			}
+			tooltip = {
+				add_prestige = 20
+				add_country_modifier = {
+					name = "me_nan_chakravartin"
+					duration = -1
+				}
+				add_country_modifier = {
+					name = "me_nan_war_elephants_of_the_south"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+}
+
+nanzhao_missions_5_independence = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = NAN
+		}
+		started_in = 704.1.1	#only after subjugated by Tibet
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	nan_defy_the_tsenpo_mission = {
+		icon = mission_tibetan_empire
+		completed_by = 738.1.1		#independent after 738
+		required_missions = {  }
+		position = 1
+		trigger = {
+			is_free_or_tributary_trigger = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_new_regional_power"
+				duration = 7300
+			}
+		}
+	}
+}
+	
+nanzhao_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = NAN
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	nan_sponsor_temples_mission = {
+		icon = mission_mnd_dai_temples
+		required_missions = {  }
+		position = 2
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_sponsored_tantric_teachings"
+				duration = 10950
+			}
+		}
+	}
+	nan_wisdom_of_the_azhali_mission = {
+		icon = mission_protect_lankan_buddhism
+		required_missions = { nan_sponsor_temples_mission }
+		position = 3
+		trigger = {
+			religion_group = buddhic
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = theologian
+				skill = 2
+				religion = vajrayana
+				discount = yes
+			}
+			add_country_modifier = {
+				name = "me_nan_guidance_of_the_azhali"
+				duration = -1
+			}
+		}
+	}
+	nan_followers_of_the_tantric_path_mission = {
+		icon = mission_dharma_mission_religious_harmony
+		required_missions = { nan_wisdom_of_the_azhali_mission }
+		position = 4
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				has_owner_religion = yes
+			}
+		}
+		trigger = {
+			religion_group = buddhic
+			religious_unity = 1.0
+			grown_by_states = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_azhaliist_tradition"
+				duration = -1
+			}
+		}
+	}
+	nan_rule_miandian_mission = {
+		icon = mission_restore_the_pagan_kingdom
+		required_missions = { nan_subdue_the_pyu_cities_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = lower_burma_area
+				area = arakan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lower_burma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			arakan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			navy_size = 15
+			navy_size_percentage = 1.0
+		}
+		effect = {
+			add_navy_tradition = 10
+			add_country_modifier = {
+				name = "me_nan_indian_maritime_trade"
+				duration = 10950
+			}
+		}
+	}
+	nan_river_valley_mandala_mission = {
+		icon = mission_a_great_mandala
+		required_missions = { nan_southern_settlement_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = northern_thai_area
+				area = sukhothai_area
+				area = central_thai_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			northern_thai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sukhothai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_thai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_nan_mandala_of_vassal_cities"
+				duration = -1
+			}
+		}
+	}
+	
+}

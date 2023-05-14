@@ -1,0 +1,407 @@
+namespace = mmetr_KUS_mission_events
+
+# The Fourth Buddhist Council
+country_event = {
+	id = mmetr_KUS_mission_events.1
+	title = "mmetr_KUS_mission_events.1.t"
+	desc = "mmetr_KUS_mission_events.1.desc"
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = me_kus_fourth_buddhist_council
+			duration = 10950
+		}
+	}
+}
+
+# Summer Palace of the Kushana
+country_event = {
+	id = mmetr_KUS_mission_events.2
+	title = "mmetr_KUS_mission_events.2.t"
+	desc = "mmetr_KUS_mission_events.2.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.2.a"
+		
+		451 = {
+			rename_capital = "Kapisa"
+		}
+		451 = {
+			add_province_modifier = {
+				name = "me_kus_summer_palace_of_kapisa"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Decimation of the Wusun
+country_event = {
+	id = mmetr_KUS_mission_events.4
+	title = "mmetr_KUS_mission_events.4.t"
+	desc = "mmetr_KUS_mission_events.4.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.4.a"
+		
+		add_legitimacy = 20
+		
+		zungaria_area = {	#South Dzungaria
+			limit = {
+				NOT = {
+					has_discovered = ROOT
+				}
+			}
+			discover_country = ROOT
+		}
+		north_zungaria = {	#North Dzungaria
+			limit = {
+				NOT = {
+					has_discovered = ROOT
+				}
+			}
+			discover_country = ROOT
+		}
+		jetysuu_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_kus_wusun_integration"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# Silk Road Cities of the Oases
+country_event = {
+	id = mmetr_KUS_mission_events.5
+	title = "mmetr_KUS_mission_events.5.t"
+	desc = "mmetr_KUS_mission_events.5.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = me_kus_oases_merchants
+			duration = 10950
+		}
+	}
+}
+
+# Xiongnu Defeated
+country_event = {
+	id = mmetr_KUS_mission_events.6
+	title = "mmetr_KUS_mission_events.6.t"
+	desc = "mmetr_KUS_mission_events.6.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_kus_ancestors_avenged"
+			duration = -1
+		}
+		
+		add_legitimacy = 50
+		
+		turpan_kumul_area = {
+			limit = {
+				NOT = {
+					has_discovered = ROOT
+				}
+			}
+			discover_country = ROOT
+		}
+		707 = {		#Yumen
+			if = {
+				limit = {
+					NOT = {
+						has_discovered = ROOT
+					}
+				}
+				discover_country = ROOT
+			}
+		}
+	}
+}
+
+# The New Ai-Khanoum
+country_event = {
+	id = mmetr_KUS_mission_events.7
+	title = "mmetr_KUS_mission_events.7.t"
+	desc = "mmetr_KUS_mission_events.7.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.7.a"
+		
+		4343 = {
+			rename_capital = "Ai-Khanoum"
+			add_province_modifier = {
+				name = "me_kus_ai_khanoum"
+				duration = -1
+			}
+		}
+	}
+}
+
+# The Greek Yavana Artists
+country_event = {
+	id = mmetr_KUS_mission_events.8
+	title = "mmetr_KUS_mission_events.8.t"
+	desc = "mmetr_KUS_mission_events.8.desc"
+	picture = ARTWORK_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.8.a"
+		
+		define_advisor = {
+			type = artist
+			skill = 3
+			culture = bactrian
+			religion = hellenism
+			discount = yes
+		}
+		add_country_modifier = {
+			name = "me_kus_patron_of_the_yavanas"
+			duration = 10950
+		}
+	}
+}
+
+# A New Capital in Gandhara?
+country_event = {
+	id = mmetr_KUS_mission_events.9
+	title = "mmetr_KUS_mission_events.9.t"
+	desc = "mmetr_KUS_mission_events.9.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.9.a"
+		
+		set_capital = 578	#Peshawar
+	}
+	
+	option = {
+		name = "mmetr_KUS_mission_events.9.b"
+		
+		
+	}
+}
+
+# Astamahasthanas of the Lord Buddha
+country_event = {
+	id = mmetr_KUS_mission_events.10
+	title = "mmetr_KUS_mission_events.10.t"
+	desc = "mmetr_KUS_mission_events.10.desc"
+	picture = BUDDHA_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.10.a"
+		
+		add_country_modifier = {
+			name = "me_kus_custodian_of_the_astamahanas"
+			duration = -1
+		}
+	}
+}
+
+# Legacy of Ashoka
+country_event = {
+	id = mmetr_KUS_mission_events.11
+	title = "mmetr_KUS_mission_events.11.t"
+	desc = "mmetr_KUS_mission_events.11.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.11.a"
+		
+		add_country_modifier = {
+			name = "me_kus_devaputra_shao_shaonanoshao"
+			duration = -1
+		}
+		if = {
+			limit = {
+				government_rank = 3
+			}
+			set_government_rank = 3
+		}
+		if = {
+			limit = {
+				religion_group = buddhic
+			}
+			add_country_modifier = {
+				name = "me_kus_legacy_of_ashoka"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# Lord of Dakshinapatha
+country_event = {
+	id = mmetr_KUS_mission_events.12
+	title = "mmetr_KUS_mission_events.12.t"
+	desc = "mmetr_KUS_mission_events.12.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.12.a"
+		
+		add_country_modifier = {
+			name = "me_kus_lord_of_dakshinapatha"
+			duration = -1
+		}
+	}
+}
+
+# Religious Art of Mathura
+country_event = {
+	id = mmetr_KUS_mission_events.13
+	title = "mmetr_KUS_mission_events.13.t"
+	desc = "mmetr_KUS_mission_events.13.desc"
+	picture = BUDDHA_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.13.a"
+		
+		add_country_modifier = {
+			name = "me_kus_religious_icons_of_mathura"
+			duration = 10950
+		}
+	}
+}
+
+# The Sakan Satraps of Saurashtra
+country_event = {
+	id = mmetr_KUS_mission_events.14
+	title = "mmetr_KUS_mission_events.14.t"
+	desc = "mmetr_KUS_mission_events.14.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.14.a"
+		
+		saurashtra_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = WSA
+			add_core = WSA
+		}
+		ahmedabad_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = WSA
+			add_core = WSA
+		}
+		patan_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = WSA
+			add_core = WSA
+		}
+		create_subject = {
+			subject_type = client_kingdom
+			subject = WSA
+		}
+		custom_tooltip = mmetr_KUS_mission_events.14.tt
+	}
+	
+	option = {
+		name = "mmetr_KUS_mission_events.14.b"
+		
+		
+	}
+	
+	option = {
+		name = "mmetr_KUS_mission_events.14.c"
+		
+		trigger = {
+			overlord_of = WSA
+		}
+		
+		create_subject = {
+			subject_type = client_kingdom
+			subject = WSA
+		}
+		custom_tooltip = mmetr_KUS_mission_events.14.tt
+	}
+}
+
+# The Liberation of Sakastan
+country_event = {
+	id = mmetr_KUS_mission_events.15
+	title = "mmetr_KUS_mission_events.15.t"
+	desc = "mmetr_KUS_mission_events.15.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_KUS_mission_events.15.a"
+		
+		sistan_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = SIS
+			add_core = SIS
+		}
+		vassalize = SIS
+		SIS = {
+			override_country_name = SAKASTAN_NAME
+		}
+	}
+	
+	option = {
+		name = "mmetr_KUS_mission_events.15.b"
+		
+		if = {
+			limit = {
+				overlord_of = SIS
+			}
+			SIS = {
+				override_country_name = SAKASTAN_NAME
+			}
+		}
+	}
+}
+
