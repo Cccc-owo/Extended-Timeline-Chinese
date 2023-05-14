@@ -387,8 +387,20 @@ byz_generic_slot_2 = {
             has_dlc = "Purple Phoenix"
           }
         }
-        country_event = {
-          id = flavor_byz.2
+        add_country_modifier = {
+          name = "conversion_of_rome"
+          duration = 7300
+        }
+        hidden_effect = {
+          every_country = {
+            limit = {
+              religion = catholic
+              knows_country = BYZ
+            }
+            country_event = {
+              id = flavor_byz.2
+            }
+          }
         }
       }
     }
@@ -589,6 +601,9 @@ byz_east = {
           add_permanent_claim = ROOT
         }
       }
+    }
+    ai_weight = {
+      factor = 500
     }
   }
 }
@@ -811,6 +826,9 @@ byz_generic_slot_5 = {
         duration = -1
       }
     }
+    ai_weight = {
+      factor = 500
+    }
   }
   convert_asia_minor = {
     icon = mission_non-western_soldiers
@@ -855,6 +873,9 @@ byz_generic_slot_5 = {
       add_permanent_claim = 379
       add_permanent_claim = 2313
     }
+    ai_weight = {
+      factor = 500
+    }
   }
   the_pentarchy = {
     icon = mission_empire
@@ -887,6 +908,9 @@ byz_generic_slot_5 = {
       country_event = {
         id = catholic_flavor.3
       }
+    }
+    ai_weight = {
+      factor = 500
     }
   }
 }

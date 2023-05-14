@@ -61,9 +61,17 @@ province_event = {
   desc = "asy.EVTDESC3"
   picture = BORDER_TENSION_eventPicture
   trigger = {
+    region = mashriq_region
     owner = {
-      tag = ASY
       primary_culture = assyrian
+      NOT = {
+        calc_true_if = {
+          all_owned_province = {
+            culture = assyrian
+          }
+          amount = 16
+        }
+      }
     }
     NOT = {
       culture_group = mesopotamian

@@ -668,7 +668,7 @@ QAT_ideas = {
     naval_forcelimit_modifier = 0.20
   }
 }
-THL_ideas = {
+THB_ideas = {
   start = {
     army_tradition_decay = -0.01
     discipline = 0.05
@@ -677,7 +677,7 @@ THL_ideas = {
     naval_forcelimit_modifier = 0.25
   }
   trigger = {
-    tag = THL
+    tag = THB
   }
   free = yes
   taksin_the_great = {
@@ -2161,10 +2161,10 @@ CSA_ideas = {
     global_trade_goods_size_modifier = 0.1
   }
   the_cause_CSA = {
-    land_morale = 0.20
+    land_morale = 0.15
   }
   struggle_for_survival = {
-    discipline = 0.1
+    discipline = 0.05
   }
   ranch_traditions = {
     manpower_recovery_speed = 0.2
@@ -2253,7 +2253,7 @@ SVG_ideas = {
 FOX_ideas = {
   start = {
     global_unrest = -1
-    migration_cooldown = -0.2
+    hostile_attrition = 1
   }
   bonus = {
     land_morale = 0.20
@@ -2272,7 +2272,7 @@ FOX_ideas = {
     diplomatic_reputation = 3
   }
   resistance_to_new_france = {
-    discipline = 0.1
+    discipline = 0.05
   }
   fox_and_wolf_rivers = {
     global_trade_power = 0.2
@@ -2739,7 +2739,7 @@ BFA_ideas = {
 }
 ELS_ideas = {
   start = {
-    republican_tradition = 0.5
+    republican_tradition = 0.3
     trade_efficiency = 0.1
   }
   bonus = {
@@ -2750,7 +2750,7 @@ ELS_ideas = {
   }
   free = yes
   the_savior = {
-    discipline = 0.1
+    discipline = 0.05
   }
   mestizos = {
     num_accepted_cultures = 1
@@ -2765,7 +2765,7 @@ ELS_ideas = {
     global_tax_modifier = 0.1
   }
   the_football_war = {
-    land_morale = 0.20
+    land_morale = 0.15
   }
   estadio_cuscatlan = {
     global_unrest = -1
@@ -4456,41 +4456,6 @@ crusader_ideas = {
     land_morale = 0.15
   }
 }
-LAT_ideas = {
-  start = {
-    global_tax_modifier = 0.10
-    land_morale = 0.1
-  }
-  bonus = {
-    global_manpower_modifier = 0.2
-  }
-  trigger = {
-    tag = LAT
-  }
-  free = yes
-  latinokratia = {
-    num_accepted_cultures = 1
-  }
-  latin_patriarchate = {
-    tolerance_own = 2
-    tolerance_heretic = 1
-  }
-  crown_of_thorns_latin_empire = {
-    global_unrest = -2
-  }
-  imperium_romaniae_latin_empire = {
-    legitimacy = 1
-  }
-  western_administration_principles_latin_empire = {
-    adm_tech_cost_modifier = -0.1
-  }
-  venetian_merchants_and_mercenaries_latin_empire = {
-    mercenary_cost = -0.25
-  }
-  traditions_of_warfare_latin_empire = {
-    army_tradition = 1
-  }
-}
 HNS_ideas = {
   start = {
     cavalry_power = 0.1
@@ -5571,7 +5536,7 @@ ANL_ideas = {
     development_cost = -0.1
   }
   trigger = {
-    tag = AGE
+    tag = ANI
   }
   free = yes
   cult_of_nerthus = {
@@ -5742,7 +5707,7 @@ HAW_ideas = {
     light_ship_cost = -0.20
   }
   trigger = {
-    tag = HAW
+    has_country_flag = united_hawaii_ideas
   }
   free = yes
   western_advisors_hawaii = {
@@ -6685,6 +6650,13 @@ pacific_ideas = {
     capital_scope = {
       island = yes
       continent = oceania
+    }
+    NOT = {
+      tag = HAW
+      tag = KAA
+      tag = MAU
+      tag = OAH
+      tag = UHW
     }
   }
   free = yes
@@ -9630,5 +9602,213 @@ BZT_ideas = {
   }
   cyrillic_alphabet_bzt = {
     diplomatic_reputation = 2
+  }
+}
+SNZ_ideas = {
+  start = {
+    improve_relation_modifier = 0.1
+    prestige_decay = -0.01
+  }
+  bonus = {
+    diplomats = 1
+  }
+  trigger = {
+    tag = SNZ
+  }
+  free = yes
+  mongol_threat_snz = {
+    garrison_size = 0.15
+  }
+  vistula_and_san_snz = {
+    land_attrition = -0.2
+  }
+  commerce_with_the_rus_snz = {
+    caravan_power = 0.2
+    center_of_trade_upgrade_cost = -0.15
+  }
+  neighbour_of_the_senior_snz = {
+    diplomatic_reputation = 1
+  }
+  the_royal_seat_snz = {
+    fabricate_claims_cost = -0.25
+  }
+  fertile_chernozem_fields_snz = {
+    global_trade_goods_size_modifier = 0.1
+  }
+  church_against_the_criminals_snz = {
+    stability_cost_modifier = -0.10
+  }
+}
+GPO_ideas = {
+  start = {
+    production_efficiency = 0.1
+    global_unrest = -1
+  }
+  bonus = {
+    global_autonomy = -0.05
+  }
+  trigger = {
+    tag = GPO
+  }
+  free = yes
+  cradle_of_polish_state_gpo = {
+    legitimacy = 1
+    prestige = 1
+  }
+  archdiocese_of_gniezno_gpo = {
+    tolerance_own = 2
+  }
+  brandenburger_raids_gpo = {
+    land_morale = 0.1
+  }
+  ostrow_tumski_fort_gpo = {
+    fort_maintenance_modifier = -0.2
+  }
+  restorers_of_polish_state_gpo = {
+    fabricate_claims_cost = -0.25
+  }
+  local_druzhina_gpo = {
+    leader_land_manuever = 1
+  }
+  magdeburg_rights_gpo = {
+    development_cost = -0.1
+  }
+}
+QRM_ideas = {
+  start = {
+    cavalry_power = 0.10
+    light_ship_cost = -0.1
+  }
+  bonus = {
+    global_heretic_missionary_strength = 0.03
+  }
+  trigger = {
+    tag = QRM
+  }
+  free = yes
+  mahdi_qarmatia = {
+    land_morale = 0.10
+  }
+  al_hasa_qarmatia = {
+    defensiveness = 0.20
+  }
+  black_stone_qarmatia = {
+    morale_damage = 0.025
+  }
+  slave_society_qarmatia = {
+    global_tax_modifier = 0.05
+  }
+  tawila_qarmatia = {
+    global_trade_power = 0.2
+  }
+  al_sada_al_ruasa_qarmatia = {
+    advisor_cost = -0.25
+  }
+  tribute_networks_qarmatia = {
+    vassal_income = 0.2
+  }
+}
+PRG_ideas = {
+  start = {
+    technology_cost = -0.05
+    global_institution_spread = 0.1
+  }
+  bonus = {
+    land_forcelimit_modifier = 0.25
+  }
+  trigger = {
+    tag = PRG
+  }
+  free = yes
+  prg_el_supremo = {
+    republican_tradition = 0.3
+  }
+  prg_marriage_restrictions = {
+    culture_conversion_cost = -0.2
+  }
+  prg_battle_of_cerro_cora = {
+    land_morale = 0.1
+  }
+  prg_river_warfare = {
+    global_trade_power = 0.1
+    global_ship_cost = -0.1
+  }
+  prg_demographic_recovery = {
+    manpower_recovery_speed = 0.2
+  }
+  prg_self_sufficiency = {
+    production_efficiency = 0.1
+  }
+  prg_fortress_humaita = {
+    garrison_size = 0.2
+  }
+}
+GRL_ideas = {
+  start = {
+    global_sailors_modifier = 0.25
+    global_tax_modifier = 0.1
+  }
+  bonus = {
+    hostile_attrition = 1
+  }
+  trigger = {
+    tag = GRL
+  }
+  free = yes
+  grl_false_promises = {
+    global_colonial_growth = 20
+  }
+  grl_arctic_umiaq_line = {
+    development_cost = -0.1
+  }
+  grl_life_in_the_arctic = {
+    land_morale = 0.1
+  }
+  grl_kayaks = {
+    naval_forcelimit_modifier = 0.25
+  }
+  grl_natural_resources = {
+    global_trade_goods_size_modifier = 0.2
+  }
+  grl_towards_self_sufficiency = {
+    global_allowed_num_of_buildings = 1
+    build_cost = -0.05
+  }
+  grl_home_rule = {
+    reform_progress_growth = 0.15
+  }
+}
+SNX_ideas = {
+  start = {
+    infantry_power = 0.1
+    land_morale = 0.1
+  }
+  bonus = {
+    fire_damage = 0.1
+  }
+  trigger = {
+    tag = SNX
+  }
+  free = yes
+  snx_survival_of_the_sanada = {
+    manpower_recovery_speed = 0.1
+  }
+  snx_favorable_diplomacy = {
+    diplomatic_upkeep = 1
+  }
+  snx_ueda_castle = {
+    garrison_size = 0.2
+  }
+  snx_rokumonsen = {
+    discipline = 0.05
+  }
+  snx_imperial_blood = {
+    diplomatic_reputation = 1
+  }
+  snx_sanada_maru = {
+    defensiveness = 0.1
+  }
+  snx_nippon_ichi_no_hei = {
+    army_tradition = 0.5
   }
 }
