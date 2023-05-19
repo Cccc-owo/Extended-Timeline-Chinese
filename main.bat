@@ -34,8 +34,8 @@ ECHO.
 ::====fix crash====
 @REM del /F /S /Q output\%mod_dir%\*_DE.txt
 @REM del /F /S /Q output\%mod_dir%\*_DE.txt
-xcopy ExtendedTimeline\common\scripted_effects\00_scripted_effects.txt output\%mod_dir%\common\scripted_effects\ /Q /C /Y
-xcopy ExtendedTimeline\common\scripted_triggers\00_scripted_triggers.txt output\%mod_dir%\common\scripted_triggers\ /Q /C /Y
+@REM xcopy ExtendedTimeline\common\scripted_effects\00_scripted_effects.txt output\%mod_dir%\common\scripted_effects\ /Q /C /Y
+@REM xcopy ExtendedTimeline\common\scripted_triggers\00_scripted_triggers.txt output\%mod_dir%\common\scripted_triggers\ /Q /C /Y
 ::====fix crash end====
 xcopy CHANGELOG.md output\%mod_dir%\ /Q /C /Y
 del output\%mod_dir%\thumbnail.png
