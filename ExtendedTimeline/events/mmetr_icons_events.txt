@@ -1,0 +1,43 @@
+namespace = personal_deities_orthodox_icons_events_mmetr
+
+# Olga of Kiev Icon appearance event
+country_event = {
+	id = personal_deities_orthodox_icons_events_mmetr.1
+	title = "personal_deities_orthodox_icons_events_mmetr.1.t"
+	desc = "personal_deities_orthodox_icons_events_mmetr.1.desc"
+	picture = MMETR_STEPPE_CAVALRY_ANCIENT_eventPicture
+
+	trigger = {
+		OR = {
+			culture_group = east_slavic
+			tag = KRU
+			tag = RUS
+		}
+		religion = orthodox
+		NOT = { 
+			has_country_flag = saint_olga_of_kiev_icon_enabled_flag
+			started_in = 1547.1.1		#already has St. Olga icon unlocked
+		}
+		started_in = 945.1.1		#rule start of Olga
+		is_year = 1500
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 0 }
+		}
+	}
+	
+	option = {
+		name = "personal_deities_orthodox_icons_events_mmetr.1.a"
+		
+		custom_tooltip = personal_deities_orthodox_icons_events_mmetr.1.tt
+		hidden_effect = {
+			set_country_flag = saint_olga_of_kiev_icon_enabled_flag
+		}
+	}
+}
+

@@ -1,0 +1,1464 @@
+mmetr_egypt_ayyubid_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_war_for_unification_mission = {
+		icon = mission_defeat_mewar
+		required_missions = {  }
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+			num_of_generals = 1
+			manpower_percentage = 0.50
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_unification_army"
+				duration = 9125
+			}
+		}
+	}
+	
+	egy_consolidate_hadramawt_mission = {
+		icon = mission_conquer_aden
+		required_missions = { egy_war_for_unification_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = tihama_al_yemen_area
+				area = upper_yemen_area
+				area = yemen_area		#Lower Yemen
+				area = hadramut_area
+				area = mahra_area
+				area = asir_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tihama_al_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hadramut_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mahra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			asir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tihama_al_yemen_area = {
+				add_province_modifier = {
+					name = "me_egy_yemeni_trade"
+					duration = 7300
+				}
+			}
+			yemen_area = {
+				add_province_modifier = {
+					name = "me_egy_yemeni_trade"
+					duration = 7300
+				}
+			}
+			hadramut_area = {
+				add_province_modifier = {
+					name = "me_egy_yemeni_trade"
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	egy_red_sea_trade_mission = {
+		icon = mission_arabian_sea_trade
+		required_missions = { egy_consolidate_hadramawt_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = tihama_al_yemen_area
+				area = medina_area
+				area = mecca_area
+				area = tabuk_area
+				area = red_sea_coast_area
+				area = asir_area
+			}
+			NOT = {
+				has_building = marketplace
+			}
+			owned_by = ROOT
+			has_discovered = ROOT
+		}
+		trigger = {
+			2329 = {	#Yanbu
+				has_building = marketplace
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				has_building = marketplace
+				NOT = {
+					province_id = 2329
+				}
+				OR = {
+					area = tihama_al_yemen_area
+					area = medina_area
+					area = mecca_area
+					area = tabuk_area
+					area = red_sea_coast_area
+					area = asir_area
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_red_sea_trade_steering"
+				duration = 7300
+			}
+		}
+	}
+	
+	egy_expand_into_nubia_mission = {
+		icon = mission_nubian_pyramids
+		required_missions = { egy_red_sea_trade_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = lower_nubia_area
+				area = dongola_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lower_nubia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dongola_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_egy_sultan_of_egypt_and_nubia"
+				duration = -1
+			}
+		}
+	}
+	
+	egy_control_jerusalem_mission = {
+		icon = kingdom_of_heaven
+		required_missions = { } #none
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 379	#Jerusalem
+				area = palestine_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 379
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			custom_tooltip = egy_control_jerusalem_mission.tt
+			hidden_effect = {
+				mashriq_region = {
+					limit = {
+						owner = {
+							religion_group = christian
+						}
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	egy_defeat_the_crusaders_mission = {
+		icon = mission_saladin_crusaders_surrender
+		required_missions = { egy_control_jerusalem_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = mashriq_region
+			}
+			owner = {
+				religion_group = christian
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 379
+			mashriq_region = {
+				type = all
+				NOT = {
+					owner = {
+						religion_group = christian
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_sultan_of_jerusalem"
+				duration = 10950
+			}
+		}
+	}
+	
+	egy_return_of_christians_mission = {
+		icon = crusader_fleet
+		required_missions = { egy_defeat_the_crusaders_mission }
+		position = 7
+		trigger = {
+			any_owned_province = {
+				religion = catholic
+				OR = {
+					area = syria_area
+					area = aleppo_area
+					area = palestine_area
+				}
+			}
+			any_country = {
+				custom_trigger_tooltip = {
+					tooltip = egy_return_of_christians_mission.tt2
+					NOT = { tag = ROOT }
+					religion = catholic
+				}
+				capital_scope = {
+					superregion = europe_superregion
+				}
+				has_opinion = {
+					who = ROOT
+					value = 90
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = egy_return_of_christians_mission.tt
+			
+			country_event = {
+				id = mmetr_EGY_mission_events.3
+			}
+		}
+	}
+	
+	egy_reconquest_of_sicily_mission = {
+		icon = king_of_sicily
+		required_missions = { egy_italian_merchants_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4736		#Sicily
+				province_id = 4737
+				province_id = 124
+				province_id = 125
+				province_id = 2982
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4736		#Sicily
+			owns_or_non_sovereign_subject_of = 4737
+			owns_or_non_sovereign_subject_of = 124
+			owns_or_non_sovereign_subject_of = 125
+			owns_or_non_sovereign_subject_of = 2982
+		}
+		effect = {
+			country_event = {
+				id = mmetr_EGY_mission_events.1
+			}
+			
+			custom_tooltip = mmetr_EGY_mission_events.1.tt
+			
+			tooltip = {
+				western_sicily_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_egy_emir_in_sicily"
+						duration = 10950
+					}
+				}
+				sicily_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_egy_emir_in_sicily"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+}
+
+mmetr_egypt_ayyubid_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_defender_of_islam_mission = {
+		icon = mission_saladin_takes_jerusalem
+		required_missions = {  }
+		position = 1
+		trigger = {
+			is_defender_of_faith = yes
+			religious_unity = 1
+			if = {
+				limit = {
+					uses_piety = yes
+				}
+				NOT = { piety = -0.75 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gen_eur_defender"
+				duration = 5475
+			}
+		}
+	}
+	
+	egy_unite_the_arab_states_mission = {
+		icon = mission_fatimid_caliphate
+		required_missions = { egy_war_for_unification_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = nafud_area
+				area = qasim_area
+				
+				#yamamah_area except for uncolonized 1779
+				province_id = 2336
+				province_id = 2335
+				province_id = 2339
+				province_id = 4275
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			nafud_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			qasim_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2336 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2335 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2339 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4275 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			nafud_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_egy_arab_tributary_relations
+					duration = 9125
+				}
+			}
+			qasim_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_egy_arab_tributary_relations
+					duration = 9125
+				}
+			}
+			yamamah_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_egy_arab_tributary_relations
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	egy_bahraini_trade_links_mission = {
+		icon = mission_riches_of_golconda
+		required_missions = { egy_unite_the_arab_states_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1335
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			1335 = {			#Basra trade node
+				trade_share = {
+					country = ROOT
+					share = 20
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_bahraini_trade"
+				duration = 10950
+			}
+		}
+	}
+	
+	egy_tripoli_and_cyrenaica_mission = {
+		icon = mission_control_the_barbary_coast
+		required_missions = { egy_red_sea_trade_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = tripolitania_area
+				
+				#coastal Cyrenaica
+				province_id = 357	#Darnah
+				province_id = 356
+				province_id = 2326
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			357 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			356 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2326 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tunisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kabylia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	egy_challenge_the_almohads_mission = {
+		icon = mission_imperial_cities
+		required_missions = { egy_tripoli_and_cyrenaica_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = tunisia_area
+				area = kabylia_area
+				area = barbary_coast_area
+				area = fez_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			fez_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_champion_of_baghdad"
+				duration = 9125
+			}
+		}
+	}
+	
+	egy_restore_jerusalem_mission = {
+		icon = jerusalem
+		required_missions = { egy_control_jerusalem_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 379	#Jerusalem
+			}
+			NOT = {
+				has_owner_religion = yes
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+				num_of_times_improved_by_owner = 2
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 379
+			379 = {
+				has_owner_religion = yes
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			379 = {
+				num_of_times_improved_by_owner = 2
+			}
+		}
+		effect = {
+			379 = {
+				add_province_modifier = {
+					name = "me_egy_muslim_architecture_restored"
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	egy_italian_merchants_mission = {
+		icon = nuova_promissione_ducale
+		required_missions = { egy_defeat_the_crusaders_mission }
+		position = 7
+		trigger = {
+			any_owned_province = {
+				has_port = yes
+				has_building = marketplace
+			}
+			any_country = {
+				culture_group = latin		#Italian
+				any_owned_province = {
+					has_port = yes
+				}
+				has_opinion = {
+					who = ROOT
+					value = 80
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_italian_trade"
+				duration = 7300
+			}
+		}
+	}
+	
+	egy_expand_indian_trade_mission = {
+		icon = mission_dominate_persian_gulf
+		required_missions = { egy_italian_merchants_mission egy_client_in_hormuz_mission }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 1334		#Hormuz node
+		}
+		trigger = {
+			1334 = {		#Hormuz trade node
+				trade_share = {
+					country = root
+					share = 50
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_middlemen_of_indian_trade"
+				duration = 9125 #25 years
+			}
+		}
+	}
+}
+
+mmetr_egypt_ayyubid_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_united_islamic_front_mission = {
+		icon = mission_turning_the_tables
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_allies = 2
+			calc_true_if = {
+				all_ally = {
+					has_matching_religion = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "influential_diplomacy"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	
+	egy_fealty_of_the_clans_mission = {
+		icon = mission_reclaim_morocco
+		required_missions = { egy_united_islamic_front_mission }
+		position = 2
+		trigger = {
+			OR = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 70
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 4
+				}
+			}
+		}
+		effect = {
+			add_estate_loyalty_modifier = {
+				estate = estate_nobles
+				desc = egy_fealty_of_the_clans_mission.tt
+				loyalty = 15
+				duration = -1
+			}
+		}
+	}
+	
+	egy_ally_the_assassins_mission = {
+		icon = mission_eliminate_pretenders
+		required_missions = { egy_fealty_of_the_clans_mission }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1849	#Hamah
+		}
+		trigger = {
+			owns = 1849	#Hamah
+			stability = 2
+			army_tradition = 60
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_order_of_the_assassins"
+				duration = 9125
+			}
+		}
+	}
+	
+	egy_sunni_egypt_mission = {
+		icon = mission_umayyad_court
+		required_missions = { } #none
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = egypt_region
+			}
+			owned_by = ROOT
+			NOT = {
+				has_owner_religion = yes
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = egy_sunni_egypt_mission.tt
+				NOT = {
+					any_owned_province = {
+						has_owner_religion = no
+						region = egypt_region
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_champion_of_the_sunni_faith"
+				duration = 10950
+			}
+		}
+	}
+	
+	egy_custodian_of_two_mosques_mission = {
+		icon = mission_into_arabia
+		required_missions = { egy_sunni_egypt_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 385	#Mecca / Makkah
+				province_id = 384	#Medina
+			}
+		}
+		trigger = {
+			owns_core_province = 385
+			owns_core_province = 384
+			385 = {
+				has_owner_religion = yes
+				num_of_times_improved_by_owner = 2
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			384 = {
+				has_owner_religion = yes
+				num_of_times_improved_by_owner = 2
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_custodian_of_the_two_mosques"
+				duration = 10950	#30 years
+			}
+		}
+	}
+	
+	egy_amir_al_hajj_mission = {
+		icon = mission_levantine_restoration
+		required_missions = { egy_custodian_of_two_mosques_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 385	#Mecca / Makkah
+				province_id = 384	#Medina
+			}
+		}
+		trigger = {
+			owns_core_province = 385
+			owns_core_province = 384
+			385 = {
+				NOT = {
+					devastation = 1
+				}
+				has_owner_religion = yes
+			}
+			384 = {
+				NOT = {
+					devastation = 1
+				}
+				has_owner_religion = yes
+			}
+			OR = {
+				385 = {
+					fort_level = 1
+					base_manpower = 5
+				}
+				384 = {
+					fort_level = 1
+					base_manpower = 5
+				}
+			}
+		}
+		effect = {
+			385 = {
+				add_province_modifier = {
+					name = "me_egy_amir_al_hajj"
+					duration = -1
+				}
+			}
+			384 = {
+				add_province_modifier = {
+					name = "me_egy_amir_al_hajj"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	egy_defensive_fleet_mission = {
+		icon = mission_combat_barbary_piracy
+		required_missions = { egy_amir_al_hajj_mission }
+		position = 7
+		trigger = {
+			OR = {
+				num_of_heavy_ship = 10		#vanilla mission
+				num_of_galley = 30
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "naval_enthusiasm_mission"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	
+	egy_client_in_hormuz_mission = {
+		icon = mission_arabian_ports
+		required_missions = { egy_defensive_fleet_mission egy_finish_off_east_seljuks_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2999	#Hormuz
+				area = pirate_coast_area
+			}
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 2999
+			pirate_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_estate_agendas_completed = {
+				estate = estate_burghers
+				value = 3
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			2999 = {
+				add_province_modifier = {
+					name = "me_egy_hormuz_merchants"
+					duration = 9125
+				}
+			}
+		}
+	}
+}
+
+mmetr_egypt_ayyubid_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_ayyubid_fortifications_mission = {
+		icon = mission_fortify_rajputana
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				fort_level = 2
+				base_manpower = 5
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					fort_level = 2
+					base_manpower = 5
+				}
+				add_province_modifier = {
+					name = "me_egy_ayyubid_defenses"
+					duration = 10950
+				}
+			}
+		}
+	}
+	
+	egy_sunni_madrasa_mission = {
+		icon = mission_assert_control_over_delhi
+		required_missions = { egy_ayyubid_fortifications_mission egy_united_islamic_front_mission }
+		position = 2
+		trigger = {
+			OR = {
+				temple = 7
+				cathedral = 7
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = theologian
+				skill = 2
+				cost_multiplier = 0.5
+			}
+			add_country_modifier = {
+				name = "me_egy_ayyubid_madrasas"
+				duration = 10950
+			}
+		}
+	}
+	
+	egy_patron_of_medicine_mission = {
+		icon = mission_ahmadabad_paper
+		required_missions = { egy_sunni_madrasa_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 361	#Cairo
+			}
+		}
+		trigger = {
+			owns_core_province = 361
+			OR = {
+				natural_scientist = 2
+				361 = {
+					num_of_times_improved_by_owner = 2
+				}
+			}
+			361 = {
+				OR = { 
+					has_building = workshop
+					has_building = courthouse 
+				} 
+			} 
+		}
+		effect = {
+			361 = {
+				add_province_modifier = {
+					name = "me_egy_cairo_hospital"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	egy_ayyubid_cities_mission = {
+		icon = mission_arabian_fort
+		required_missions = { egy_sunni_egypt_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 382	#Damascus
+				province_id = 377	#Aleppo
+				province_id = 361	#Cairo
+			}
+		}
+		trigger = {
+			owns_core_province = 382
+			owns_core_province = 377
+			owns_core_province = 361
+			382 = {
+				NOT = { num_free_building_slots = 1 }
+			}
+			377 = {
+				NOT = { num_free_building_slots = 1 }
+			}
+			361 = {
+				NOT = { num_free_building_slots = 1 }
+			}
+		}
+		effect = {
+			382 = {
+				add_province_modifier = {
+					name = "me_egy_ayyubid_development"
+					duration = 10950
+				}
+			}
+			377 = {
+				add_province_modifier = {
+					name = "me_egy_ayyubid_development"
+					duration = 10950
+				}
+			}
+			361 = {
+				add_province_modifier = {
+					name = "me_egy_ayyubid_development"
+					duration = 10950
+				}
+			}
+		}
+	}
+	
+	egy_finish_off_east_seljuks_mission = {
+		icon = mission_seljuk_rum_sultanate_banners
+		required_missions = { egy_northern_dynasties_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 414	#Hamadan
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 414
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_seljuq_administrators"
+				duration = 9125
+			}
+			iraq_e_ajam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			isfahan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	egy_challenge_the_khwarezmids_mission = {
+		icon = mission_persianate_empire
+		required_missions = { egy_finish_off_east_seljuks_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = iraq_e_ajam_area
+				area = isfahan_area
+				area = birjand_area
+				area = mashhad_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			iraq_e_ajam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			isfahan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			birjand_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mashhad_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_sultan_of_persia"
+				duration = -1
+			}
+		}
+	}
+	
+	egy_roman_alliance_mission = {
+		icon = end_the_schism
+		required_missions = { egy_seljuks_of_rum_mission }
+		position = 9
+		trigger = {
+			OR = {
+				AND = {
+					alliance_with = BYZ
+					reverse_has_opinion = {
+						who = BYZ
+						value = 100
+					}
+				}
+				AND = {
+					alliance_with = ROM
+					reverse_has_opinion = {
+						who = ROM
+						value = 100
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = BYZ
+				}
+				add_trust = {
+					who = BYZ
+					value = 25
+					mutual = yes
+				}
+			}
+			if = {
+				limit = {
+					exists = ROM
+				}
+				add_trust = {
+					who = ROM
+					value = 25
+					mutual = yes
+				}
+			}
+		}
+	}
+}
+
+mmetr_egypt_ayyubid_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = EGY
+			started_in = 1171.1.1
+			NOT = { started_in = 1251.1.1 }
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	egy_ally_the_caliphate_mission = {
+		icon = mission_black_standard_of_the_eagle
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				has_guaranteed = ABA
+				alliance_with = ABA
+			}
+			reverse_has_opinion = {
+				who = ABA
+				value = 150
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_sultan_of_egypt_and_syria"
+				duration = 7300
+			}
+			add_trust = {
+				who = ABA
+				value = 25
+				mutual = yes
+			}
+		}
+	}
+	
+	egy_guardian_of_the_caliph_mission = {
+		icon = mission_restore_caliphate_of_cordoba
+		required_missions = { egy_ally_the_caliphate_mission }
+		position = 2
+		trigger = {
+			OR = {
+				ABA = {
+					is_subject_of = ROOT
+				}
+				AND = {
+					owns = 410		#Baghdad
+					NOT = { exists = ABA }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_guardian_of_baghdad"
+				duration = 10950
+			}
+		}
+	}
+	
+	egy_expand_the_cairo_citadel_mission = {
+		icon = mission_cairo_citadel
+		required_missions = { egy_sunni_madrasa_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 361	#Cairo
+			}
+		}
+		trigger = {
+			owns_core_province = 361
+			361 = {
+				num_of_times_improved_by_owner = 2
+			}
+			361 = {
+				fort_level = 2
+				has_building = armory
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			361 = {
+				add_province_modifier = {
+					name = "me_egy_saladin_citadel"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	egy_alexandrian_trade_mission = {
+		icon = mission_occupy_alexandria
+		required_missions = { egy_expand_the_cairo_citadel_mission }
+		position = 4
+		trigger = {
+			home_trade_node = {
+				trade_share = {
+					country = root
+					share = 70
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_foreign_trade_connections"
+				duration = 9125
+			}
+		}
+	}
+	
+	egy_subdue_the_zengids_mission = {
+		icon = mission_pacify_punjab
+		required_missions = {  } #none
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 411	#Mosul
+				province_id = 377	#Aleppo
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 411
+			owns_or_non_sovereign_subject_of = 377
+		}
+		effect = {
+			add_army_tradition = 10
+		}
+	}
+	
+	egy_northern_dynasties_mission = {
+		icon = mission_deccanis
+		required_missions = { egy_subdue_the_zengids_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = tabriz_area
+				area = north_kurdistan_area
+				area = al_jazira_area
+			}
+			NOT = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						alliance_with = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tabriz_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						alliance_with = ROOT
+					}
+				}
+			}
+			north_kurdistan_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						alliance_with = ROOT
+					}
+				}
+			}
+			al_jazira_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						alliance_with = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			dulkadir_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	egy_seljuks_of_rum_mission = {
+		icon = mission_seljuk_rum_flag
+		required_missions = { egy_northern_dynasties_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = ankara_area
+				area = karaman_area
+				area = rum_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ankara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_seljuq_caravanserais"
+				duration = 10950
+			}
+		}
+	}
+	
+	egy_first_roman_war_mission = {
+		icon = mission_city_of_the_world's_desire
+		required_missions = { egy_seljuks_of_rum_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151		#Constantinople
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 151
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_egy_sultan_of_rome"
+				duration = 10950
+			}
+		}
+	}
+	
+	
+}
+

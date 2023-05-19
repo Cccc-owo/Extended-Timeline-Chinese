@@ -1,0 +1,614 @@
+namespace = mmetr_FUN_mission_events
+
+# Grand Ships of Vyadhapura
+country_event = {
+	id = mmetr_FUN_mission_events.1
+	title = "mmetr_FUN_mission_events.1.t"
+	desc = "mmetr_FUN_mission_events.1.desc"
+	picture = MALAYAN_PORT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_fun_trading_fleet_of_funan"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_FUN_mission_events.1.b"
+		
+		add_country_modifier = {
+			name = "me_fun_raiding_fleet_of_funan"
+			duration = 10950
+		}
+	}
+}
+
+# Musicians of Funan in China
+country_event = {
+	id = mmetr_FUN_mission_events.2
+	title = "mmetr_FUN_mission_events.2.t"
+	desc = "mmetr_FUN_mission_events.2.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.2.a"
+		
+		add_dip_power = 50
+		add_country_modifier = {
+			name = "me_fun_trade_diplomacy"
+			duration = 10950
+		}
+		
+		if = {
+			limit = {
+				any_country = {
+					is_emperor_of_china = ROOT
+					OR = {
+						trust = { 
+							who = ROOT
+							value = 60
+						}
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					is_emperor_of_china = ROOT
+				}
+				country_event = {
+					id = mmetr_FUN_mission_events.3
+				}
+				add_trust = {
+					who = THIS
+					value = 10
+					mutual = yes
+				}
+			}
+		}
+		else = {
+			random_country = {
+				limit = {
+					capital_scope = {
+						superregion = china_superregion
+					}
+					OR = {
+						trust = { 
+							who = ROOT
+							value = 60
+						}
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
+				country_event = {
+					id = mmetr_FUN_mission_events.3
+				}
+				add_trust = {
+					who = THIS
+					value = 10
+					mutual = yes
+				}
+			}
+		}
+	}
+}
+
+# Musicians from Funan
+country_event = {
+	id = mmetr_FUN_mission_events.3
+	title = "mmetr_FUN_mission_events.3.t"
+	desc = "mmetr_FUN_mission_events.3.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.3.a"
+		tooltip = {
+			add_trust = {
+				who = FROM		#Funan
+				value = 10
+				mutual = yes
+			}
+		}
+	}
+}
+
+# The Lunar Kingdom
+country_event = {
+	id = mmetr_FUN_mission_events.4
+	title = "mmetr_FUN_mission_events.4.t"
+	desc = "mmetr_FUN_mission_events.4.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_fun_army_of_the_moon"
+			duration = 5475
+		}
+		mekong_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		khorat_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		angkor_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		cambodia_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		central_thai_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# Fierce Navies of Champa
+country_event = {
+	id = mmetr_FUN_mission_events.5
+	title = "mmetr_FUN_mission_events.5.t"
+	desc = "mmetr_FUN_mission_events.5.desc"
+	picture = MALAYAN_PORT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_fun_champa_fleets"
+			duration = 10950
+		}
+	}
+}
+
+# The [Root.Monarch.GetTitle] of the Mountain
+country_event = {
+	id = mmetr_FUN_mission_events.6
+	title = "mmetr_FUN_mission_events.6.t"
+	desc = "mmetr_FUN_mission_events.6.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.6.a"
+		
+		angkor_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = CNA		#Chenla
+			add_core = CNA
+		}
+		
+		vassalize = CNA
+		
+		CNA = {
+			add_country_modifier = {
+				name = "me_fun_granted_autonomy"
+				duration = 1825
+			}
+		}
+		
+		if = {
+			limit = {
+				religion = hinduism
+			}
+			CNA = {
+				change_religion = hinduism
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_FUN_mission_events.6.b"
+		
+		
+	}
+}
+
+# Dragon Throne of Funan
+country_event = {
+	id = mmetr_FUN_mission_events.7
+	title = "mmetr_FUN_mission_events.7.t"
+	desc = "mmetr_FUN_mission_events.7.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.7.a"
+		
+		add_prestige = 10
+		2380 = {
+			add_province_modifier = {
+				name = "me_fun_golden_dragon_throne"
+				duration = -1
+			}
+		}
+	}
+}
+
+# The Talented Brahmins of India
+country_event = {
+	id = mmetr_FUN_mission_events.8
+	title = "mmetr_FUN_mission_events.8.t"
+	desc = "mmetr_FUN_mission_events.8.desc"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.8.a"
+		
+		define_advisor = {
+			type = theologian
+			skill = 2
+			culture = oriya
+			religion = hinduism
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_FUN_mission_events.8.b"
+		
+		define_advisor = {
+			type = statesman
+			skill = 2
+			culture = oriya
+			religion = hinduism
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_FUN_mission_events.8.c"
+		
+		define_advisor = {
+			type = natural_scientist
+			skill = 2
+			culture = oriya
+			religion = hinduism
+			discount = yes
+		}
+	}
+}
+
+# The Buddhists of the Mon Cities
+country_event = {
+	id = mmetr_FUN_mission_events.9
+	title = "mmetr_FUN_mission_events.9.t"
+	desc = "mmetr_FUN_mission_events.9.desc"
+	picture = BUDDHA_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.9.a"
+		
+		if = {
+			limit = {
+				NOT = { accepted_culture = mon }
+			}
+			add_accepted_culture = mon
+		}
+		else_if = {
+			limit = {
+				accepted_culture = mon
+			}
+			add_dip_power = 100
+		}
+		add_country_modifier = {
+			name = "me_fun_mon_buddhists"
+			duration = 7300
+		}
+	}
+}	
+
+# The Great King of Funan
+country_event = {
+	id = mmetr_FUN_mission_events.10
+	title = "mmetr_FUN_mission_events.10.t"
+	desc = "mmetr_FUN_mission_events.10.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_FUN_mission_events.10.a"
+		
+		add_country_modifier = {
+			name = "me_fun_great_king_of_funan"
+			duration = 10950
+		}
+		
+		north_malaya_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+		malaya_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+		malacca_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+		johor_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				is_empty = no
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}	
+
+# The Land of Red Earth
+country_event = {
+	id = mmetr_FUN_mission_events.11
+	title = "mmetr_FUN_mission_events.11.t"
+	desc = "mmetr_FUN_mission_events.11.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_FUN_mission_events.11.a"
+		
+		599 = {
+			if = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				cede_province = CTU		#Chi-Tu
+				add_core = CTU
+			}
+		}
+		
+		vassalize = CTU
+		
+		CTU = {
+			add_country_modifier = {
+				name = "me_fun_granted_autonomy"
+				duration = 1825
+			}
+			define_ruler = {
+				dynasty = ROOT
+				culture = ROOT
+				religion = ROOT
+				age = 20
+				claim = 95
+			}
+		}
+		
+		if = {
+			limit = {
+				religion = hinduism
+			}
+			CTU = {
+				change_religion = hinduism
+			}
+		}
+		
+	}
+	
+	option = {
+		name = "mmetr_FUN_mission_events.11.b"
+		
+		
+	}
+}
+
+# The [Root.Monarch.GetTitle] of Vanga
+country_event = {
+	id = mmetr_FUN_mission_events.12
+	title = "mmetr_FUN_mission_events.12.t"
+	desc = "mmetr_FUN_mission_events.12.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_FUN_mission_events.12.a"
+		
+		add_country_modifier = {
+			name = "me_fun_maharaja_of_vanga"
+			duration = -1
+		}
+		orissa_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# King Kaundinya's Homeland
+country_event = {
+	id = mmetr_FUN_mission_events.13
+	title = "mmetr_FUN_mission_events.13.t"
+	desc = "mmetr_FUN_mission_events.13.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_FUN_mission_events.13.a"
+		
+		add_prestige = 25
+		add_navy_tradition = 20
+		add_country_modifier = {
+			name = "me_fun_brahmin_of_kalinga"
+			duration = -1
+		}
+	}
+}
+
+# City of Emperors
+country_event = {
+	id = mmetr_FUN_mission_events.14
+	title = "mmetr_FUN_mission_events.14.t"
+	desc = "mmetr_FUN_mission_events.14.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_FUN_mission_events.14.a"
+		
+		set_government_rank = 3
+		add_country_modifier = {
+			name = "me_fun_maharajadhiraja"
+			duration = -1
+		}
+	}
+}
+
+# Chinese Expansion
+country_event = {
+	id = mmetr_FUN_mission_events.15
+	title = "mmetr_FUN_mission_events.15.t"
+	desc = "mmetr_FUN_mission_events.15.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_FUN_mission_events.15.a"
+		
+		add_army_tradition = 20
+		add_country_modifier = {
+			name = "me_fun_chinese_conscripts"
+			duration = 10950
+		}
+	}
+}
+
+# Naval Base in the Bay of Bengal
+country_event = {
+	id = mmetr_FUN_mission_events.16
+	title = "mmetr_FUN_mission_events.16.t"
+	desc = "mmetr_FUN_mission_events.16.desc"
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_FUN_mission_events.16.a"
+		
+		if = {
+			limit = {
+				574 = {
+					is_empty = yes
+				}
+			}
+			574 = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		574 = {
+			add_province_modifier = {
+				name = "me_fun_funanese_naval_base"
+				duration = -1
+			}
+		}
+	}
+}
+
+# A Gift from India for the [Root.Monarch.GetTitle]
+country_event = {
+	id = mmetr_FUN_mission_events.17
+	title = "mmetr_FUN_mission_events.17.t"
+	desc = "mmetr_FUN_mission_events.17.desc"
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_FUN_mission_events.17.a"
+		
+		add_country_modifier = {
+			name = "me_fun_indian_horses_gifted"
+			duration = 9125
+		}
+	}
+}
+
+# The Question of Sinicization
+country_event = {
+	id = mmetr_FUN_mission_events.18
+	title = "mmetr_FUN_mission_events.18.t"
+	desc = "mmetr_FUN_mission_events.18.desc"
+	picture = east_asian_COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_FUN_mission_events.18.a"
+		
+		change_primary_culture = sino_khmer_new		#New in mod MMETR
+	}
+	
+	option = {
+		name = "mmetr_FUN_mission_events.18.b"
+		
+		add_prestige = 5
+	}
+}

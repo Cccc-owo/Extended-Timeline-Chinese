@@ -22,7 +22,7 @@ barbarian_reform = {
   }
 }
 caliphate_reform = {
-  icon = "muslim_highlighted"
+  icon = "caliphate"
   allow_normal_conversion = no
   potential = {
     religion_group = muslim
@@ -37,10 +37,22 @@ caliphate_reform = {
   }
   modifiers = {
     governing_capacity = 100
-    land_morale = 0.05
-    discipline = 0.05
+    tolerance_own = 3
+    legitimacy = 1
     global_missionary_strength = 0.02
     max_absolutism = 5
+  }
+  custom_attributes = {
+    enables_divine_idea_group = yes
+    enables_aristocratic_idea_group = no
+  }
+  conditional = {
+    allow = {
+      has_dlc = "Cradle of Civilization"
+    }
+    government_abilities = {
+      feudal_theocracy_mechanic
+    }
   }
   ai = {
     factor = 0.5
@@ -65,17 +77,25 @@ caliphate_theocratic_reform = {
   }
   modifiers = {
     governing_capacity = 100
-    land_morale = 0.05
-    discipline = 0.05
+    tolerance_own = 3
+    legitimacy = 1
     global_missionary_strength = 0.02
     max_absolutism = 5
+  }
+  conditional = {
+    allow = {
+      has_dlc = "Cradle of Civilization"
+    }
+    government_abilities = {
+      feudal_theocracy_mechanic
+    }
   }
   ai = {
     factor = 0.5
   }
 }
 roman_empire_reform = {
-  icon = "king"
+  icon = "roman_empire"
   allow_normal_conversion = no
   potential = {
     has_reform = roman_empire_reform
@@ -139,7 +159,7 @@ salic_reform = {
     factor = 0.5
   }
 }
-imperial_march_reform = {
+margraviate_reform = {
   icon = "castle"
   allow_normal_conversion = yes
   potential = {
@@ -151,8 +171,8 @@ imperial_march_reform = {
     is_part_of_hre = yes
   }
   modifiers = {
-    land_forcelimit_modifier = 0.15
-    global_manpower_modifier = 0.15
+    fort_maintenance_modifier = -0.2
+    defensiveness = 0.1
   }
   ai = {
     factor = 0.5
@@ -325,6 +345,26 @@ somali_maritime_city_state = {
   custom_attributes = {
     enables_plutocratic_idea_group = yes
     enables_aristocratic_idea_group = no
+  }
+  ai = {
+    factor = 0.5
+  }
+}
+crusader_state = {
+  icon = "religious_permanent_revolution_reform"
+  allow_normal_conversion = no
+  potential = {
+    has_reform = crusader_state
+  }
+  valid_for_nation_designer = yes
+  nation_designer_cost = 15
+  lock_level_when_selected = no
+  nation_designer_trigger = {
+    religion = catholic
+  }
+  modifiers = {
+    cb_on_religious_enemies = yes
+    global_manpower_modifier = 0.15
   }
   ai = {
     factor = 0.5
@@ -653,7 +693,9 @@ military_government = {
     allow = {
       has_dlc = "Rights of Man"
     }
-    militarised_society = yes
+    government_abilities = {
+      militarization_mechanic
+    }
   }
   ai = {
     factor = 0.5
@@ -726,7 +768,9 @@ fascist_government = {
     allow = {
       has_dlc = "Rights of Man"
     }
-    militarised_society = yes
+    government_abilities = {
+      militarization_mechanic
+    }
   }
   ai = {
     factor = 0.5

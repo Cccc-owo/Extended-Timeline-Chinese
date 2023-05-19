@@ -101,8 +101,8 @@ country_event = {
 		custom_tooltip = flavor_sel.1.tooltip
 		hidden_effect = {
 			SEL = {
-				add_manpower = 25
-				add_treasury = 1000
+				add_manpower = 75
+				add_treasury = 1500
 				add_country_modifier = {
 					name = rise_of_an_empire_ai_et
 					duration = 18250
@@ -166,8 +166,8 @@ country_event = {
 		}
 		hidden_effect = {
 			SEL = {
-				add_manpower = 25
-				add_treasury = 1000
+				add_manpower = 75
+				add_treasury = 1500
 				add_country_modifier = {
 					name = rise_of_an_empire_ai_et
 					duration = 18250
@@ -301,10 +301,7 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		4326 = {
-			move_capital_effect = yes
-			add_core = ROOT
-		}
+		
 		change_tag = SEL
 		if = {
 			limit = {
@@ -316,6 +313,25 @@ country_event = {
 		set_global_flag = seljuk_rose_up
 		change_government = monarchy
 		country_event = { id = ideagroups.1 } #Swap Ideas
+		
+		4326 = {
+			move_capital_effect = yes
+			add_core = ROOT
+			if = {
+				limit = {
+					province_has_center_of_trade_of_level = 1
+					NOT = { province_has_center_of_trade_of_level = 3 }
+				}
+				add_center_of_trade_level = 1
+			}
+			else = {
+				limit = {
+					NOT = { province_has_center_of_trade_of_level = 1 }
+				}
+				center_of_trade = 2
+			}
+		}
+		2221 = { add_center_of_trade_level = -1 }
 	}
 	option = {
 		name = "flavor_sel.3.b"

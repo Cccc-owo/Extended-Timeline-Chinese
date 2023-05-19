@@ -4,6 +4,30 @@
 #Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
 
 #ET
+usa_federal_republic = {
+	rank = {
+		1 = FEDERAL_REPUBLIC
+		2 = FEDERAL_REPUBLIC
+		3 = FEDERAL_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = PRESIDENT
+		2 = PRESIDENT
+		3 = PRESIDENT
+	}
+	
+	ruler_female = {
+		1 = PRESIDENT_fem
+		2 = PRESIDENT_fem
+		3 = PRESIDENT_fem
+	}
+	
+	trigger = {
+		has_reform = federal_republic
+	}
+}
+
 german_fascism = {
 	rank = {
 		1 = FASCIST_DICTATORSHIP
@@ -447,7 +471,7 @@ gov_constitutional_republic_2 = {
 	}
 	
 	ruler_male = {
-		1 = CHANCELOR
+		1 = PRESIDENT
 		2 = PRESIDENT
 		3 = PRESIDENT
 	}
@@ -461,13 +485,11 @@ gov_constitutional_republic_2 = {
 	trigger = {
 		government = republic
 		OR = {
-			has_reform = constitutional_republic
 			has_reform = presidential_reform
 			has_reform = parliamentary_reform
-			has_reform = presidental_republic
 		}
 		OR = {
-			tag = IND
+			tag = INI
 			tag = ITA
 			tag = FR2
 		}

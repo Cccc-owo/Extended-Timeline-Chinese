@@ -1,7 +1,6 @@
 decline_of_mali = {
 	ended_by_country_breaking_to_rebels = no
 	potential = {
-		is_year = 1389
 		has_dlc = "Origins"
 		NOT = { has_country_flag = had_decline_of_mali }
 		NOT = { has_country_flag = formed_mali_flag }	#A formed Mali should not go through a decline
@@ -15,6 +14,9 @@ decline_of_mali = {
 	can_start = {
 		has_any_disaster = no
 		NOT = { mission_completed = mal_absolute_authority }
+		
+		#added
+		started_in = 1337.1.1		#after death of Mansa Musa
 	}
 	
 	can_stop = { 

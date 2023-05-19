@@ -1,0 +1,280 @@
+namespace = mmetr_VAN_mission_events
+
+# The Sack of Rome - Bishop of Rome offers a deal
+country_event = {
+	id = mmetr_VAN_mission_events.1
+	title = "mmetr_VAN_mission_events.1.t"
+	desc = "mmetr_VAN_mission_events.1.desc"
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_VAN_mission_events.1.a"
+		
+		country_event = {
+			id = mmetr_VAN_mission_events.2
+		}
+		
+		custom_tooltip = mmetr_VAN_mission_events.1.att
+		tooltip = {
+			add_prestige = 20
+			add_war_exhaustion = -2
+			add_years_of_income = 1.00
+			capital_scope = {
+				add_base_production = 1		#slaves brought back from Rome
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_VAN_mission_events.1.b"
+		
+		
+		country_event = {
+			id = mmetr_VAN_mission_events.3
+		}
+		
+		custom_tooltip = mmetr_VAN_mission_events.1.btt
+		tooltip = {
+			add_prestige = 20
+			add_war_exhaustion = -1
+			add_years_of_income = 0.5
+			capital_scope = {
+				add_base_production = 1		#slaves brought back from Rome
+			}
+			118 = {	#Roma
+				add_base_manpower = -1
+			}
+		}
+	}
+}
+
+# The Sack of Rome - Make deal with the Pope
+country_event = {
+	id = mmetr_VAN_mission_events.2
+	title = "mmetr_VAN_mission_events.2.t"
+	desc = "mmetr_VAN_mission_events.2.desc"
+	picture = MMETR_GERMANIC_SACK_OF_ROME_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_VAN_mission_events.2.a"
+		
+		add_prestige = 20
+		add_war_exhaustion = -1
+		add_years_of_income = 1.00
+		capital_scope = {
+			add_base_production = 1		#slaves brought back from Rome
+		}
+	}
+}
+
+# The Sack of Rome - Ignore the Pope
+country_event = {
+	id = mmetr_VAN_mission_events.3
+	title = "mmetr_VAN_mission_events.3.t"
+	desc = "mmetr_VAN_mission_events.3.desc"
+	picture = MMETR_GERMANIC_SACK_OF_ROME_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_VAN_mission_events.3.a"
+		
+		add_prestige = 20
+		add_war_exhaustion = -0.5
+		add_years_of_income = 0.5
+		capital_scope = {
+			add_base_production = 1		#slaves brought back from Rome
+		}
+		118 = {	#Roma
+			add_base_manpower = -1
+		}
+	}
+}
+
+# Dealing with the Heretics
+country_event = {
+	id = mmetr_VAN_mission_events.4
+	title = "mmetr_VAN_mission_events.4.t"
+	desc = "mmetr_VAN_mission_events.4.desc"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_VAN_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_van_persecuting_heretics"
+			duration = 7300
+		}
+	}
+	
+	option = {
+		name = "mmetr_VAN_mission_events.4.b"
+		
+		add_country_modifier = {
+			name = "me_van_doctrinal_tolerance"
+			duration = 7300
+		}
+	}
+}
+
+# Arian Patriarch of Africa
+country_event = {
+	id = mmetr_VAN_mission_events.5
+	title = "mmetr_VAN_mission_events.5.t"
+	desc = "mmetr_VAN_mission_events.5.desc"
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_VAN_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_van_arian_patriarch"
+			duration = 10950
+		}
+	}
+	
+}
+
+# Empire of the Vandals
+country_event = {
+	id = mmetr_VAN_mission_events.6
+	title = "mmetr_VAN_mission_events.6.t"
+	desc = "mmetr_VAN_mission_events.6.desc"
+	picture = MMETR_CORONATION_CHARLEMAGNE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = germanic_empire_gov_available
+		}
+	}
+	
+	option = {
+		name = "mmetr_VAN_mission_events.6.a"
+		
+		add_government_reform = germanic_empire_ancient_reform
+	}
+	
+	option = {
+		name = "mmetr_VAN_mission_events.6.b"
+		
+		custom_tooltip = mmetr_VAN_mission_events.6.tt
+	}
+	
+}
+
+# Heretic Bishop of Carthage
+country_event = {
+	id = mmetr_VAN_mission_events.7
+	title = "mmetr_VAN_mission_events.7.t"
+	desc = "mmetr_VAN_mission_events.7.desc"
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_VAN_mission_events.7.a"
+		
+		add_country_modifier = {
+			name = "me_van_chalcedonian_bishop_of_carthage"
+			duration = 7300
+		}
+		if = {
+			limit = {
+				exists = BYZ
+			}
+			reverse_add_opinion = {
+				who = BYZ
+				modifier = van_bishop_of_carthage_protected_op
+			}
+		}
+		if = {
+			limit = {
+				exists = ROW
+			}
+			reverse_add_opinion = {
+				who = ROW
+				modifier = van_bishop_of_carthage_protected_op
+			}
+		}
+		if = {
+			limit = {
+				exists = ROM
+			}
+			reverse_add_opinion = {
+				who = ROM
+				modifier = van_bishop_of_carthage_protected_op
+			}
+		}
+		if = {
+			limit = {
+				exists = PAP
+			}
+			reverse_add_opinion = {
+				who = PAP
+				modifier = van_bishop_of_carthage_protected_op
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_VAN_mission_events.7.b"
+		
+		add_country_modifier = {
+			name = "me_van_bishop_of_carthage_vacancy"
+			duration = 7300
+		}
+	}
+	
+}
+
+# Heirs of the Legacy of Carthage?
+country_event = {
+	id = mmetr_VAN_mission_events.8
+	title = "mmetr_VAN_mission_events.8.t"
+	desc = "mmetr_VAN_mission_events.8.desc"
+	picture = MMETR_GERMANIC_SACK_OF_ROME_eventPicture
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_VAN_mission_events.8.a"
+		
+		override_country_name = CARTHAGE_COUNTRY_NAME
+		
+		ai_chance = { factor = 90 }
+	}
+	
+	option = {
+		name = "mmetr_VAN_mission_events.8.b"
+		
+		ai_chance = { factor = 10 }
+	}
+	
+}
+

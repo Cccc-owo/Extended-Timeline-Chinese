@@ -1,0 +1,424 @@
+namespace = mmetr_TYT_mission_events
+
+# The Toyotomi and Hashiba Name
+country_event = {
+	id = mmetr_TYT_mission_events.1
+	title = "mmetr_TYT_mission_events.1.t"
+	desc = "mmetr_TYT_mission_events.1.desc"
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_tyt_toyotomi_hashiba_clan"
+			duration = 7300
+		}
+	}
+}
+
+# Osaka Castle
+country_event = {
+	id = mmetr_TYT_mission_events.2
+	title = "mmetr_TYT_mission_events.2.t"
+	desc = "mmetr_TYT_mission_events.2.desc"
+	picture = MMETR_HIMEJI_CASTLE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.2.a"
+		
+		1021 = {
+			add_province_modifier = {
+				name = "me_tyt_osaka_castle"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Kiyosu Conference
+country_event = {
+	id = mmetr_TYT_mission_events.3
+	title = "mmetr_TYT_mission_events.3.t"
+	desc = "mmetr_TYT_mission_events.3.desc"
+	picture = MMETR_HIMEJI_CASTLE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.3.a"
+		
+		add_prestige = 10
+		add_legitimacy = 50
+		add_absolutism = 10
+	}
+}
+
+# Toyotomi Tanegashima
+country_event = {
+	id = mmetr_TYT_mission_events.4
+	title = "mmetr_TYT_mission_events.4.t"
+	desc = "mmetr_TYT_mission_events.4.desc"
+	picture = FIREARMS_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_tyt_firearms_production"
+			duration = 5475
+		}
+	}
+}
+
+# Saika-ikki
+country_event = {
+	id = mmetr_TYT_mission_events.5
+	title = "mmetr_TYT_mission_events.5.t"
+	desc = "mmetr_TYT_mission_events.5.desc"
+	picture = FIREARMS_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.5.a"	#Historically, Hideyoshi executed Suzuki Shigeoki / Saika Magoichi
+		
+		define_general = {
+			name = "Saika Magoichi"
+			fire = 6
+			shock = 2
+			manuever = 2
+			siege = 0
+			trait = master_of_arms_personality
+		}
+	}
+	
+	option = {
+		name = "mmetr_TYT_mission_events.5.b"	#Historically, Hideyoshi executed Suzuki Shigeoki / Saika Magoichi
+		
+		define_advisor = {
+			type = commandant
+			name = "Saika Magoichi"
+			skill = 2
+			culture = japanese
+			religion = mahayana		#Ikko-ikki sect were from Jodo Shinsu sect of Mahayana Buddhism
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_TYT_mission_events.5.c"		#Execute Magoichi, but recruit Saika-ikki soldiers
+		
+		add_country_modifier = {
+			name = "me_tyt_saika_ikki"
+			duration = 7300
+		}
+	}
+}
+
+# The Fate of the Confiscated Swords
+country_event = {
+	id = mmetr_TYT_mission_events.6
+	title = "mmetr_TYT_mission_events.6.t"
+	desc = "mmetr_TYT_mission_events.6.desc"
+	picture = BUDDHA_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.6.a"
+		
+		trigger = {
+			any_owned_province  = {
+				num_free_building_slots = 1
+				NOT = {
+					OR = {
+						has_building = glorious_monument
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+			}
+		}
+		
+		random_owned_province = {
+			limit = {
+				num_free_building_slots = 1
+				NOT = {
+					OR = {
+						has_building = glorious_monument
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+			}
+			add_building = glorious_monument
+		}
+	}
+	
+	option = {
+		name = "mmetr_TYT_mission_events.6.b"
+		
+		add_prestige = 5
+	}
+}
+
+# Invasion of China
+country_event = {
+	id = mmetr_TYT_mission_events.7
+	title = "mmetr_TYT_mission_events.7.t"
+	desc = "mmetr_TYT_mission_events.7.desc"
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.7.a"
+		
+		add_adm_power = 100
+		add_country_modifier = {
+			name = "me_tyt_chinese_conscripts"
+			duration = 7300
+		}
+	}
+}
+
+# Japanese Dynasty in China
+country_event = {
+	id = mmetr_TYT_mission_events.8
+	title = "mmetr_TYT_mission_events.8.t"
+	desc = "mmetr_TYT_mission_events.8.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_tyt_chinese_assimilation"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_TYT_mission_events.8.b"
+		
+		add_country_modifier = {
+			name = "me_tyt_chinese_integration"
+			duration = -1
+		}
+	}
+}
+
+# Fujiwara Lineage Inherited
+country_event = {
+	id = mmetr_TYT_mission_events.9
+	title = "mmetr_TYT_mission_events.9.t"
+	desc = "mmetr_TYT_mission_events.9.desc"
+	picture = MMETR_IMPERIAL_COURT_JAPAN_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.9.a"
+		
+		add_country_modifier = {
+			name = "me_tyt_fujiwara_adoption"
+			duration = 10950
+		}
+	}
+}
+
+# Kampaku, the Imperial Regent
+country_event = {
+	id = mmetr_TYT_mission_events.10
+	title = "mmetr_TYT_mission_events.10.t"
+	desc = "mmetr_TYT_mission_events.10.desc"
+	picture = MMETR_IMPERIAL_COURT_JAPAN_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.10.a"
+		
+		hidden_effect = {
+			set_country_flag = unlocked_imperial_regent_kampaku_ruler_title
+		}
+		custom_tooltip = tyt_kampaku_mission.tt
+		tooltip = {	
+			add_country_modifier = {
+				name = "me_tyt_kampaku_regent"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Hoko-ji Temple
+country_event = {
+	id = mmetr_TYT_mission_events.11
+	title = "mmetr_TYT_mission_events.11.t"
+	desc = "mmetr_TYT_mission_events.11.desc"
+	picture = MMETR_HIMEJI_CASTLE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.11.a"
+		
+		add_prestige = 10
+		capital_scope = {
+			add_country_modifier = {
+				name = "me_tyt_hokoji"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Matsumae Clan of Hokkaido
+country_event = {
+	id = mmetr_TYT_mission_events.12
+	title = "mmetr_TYT_mission_events.12.t"
+	desc = "mmetr_TYT_mission_events.12.desc"
+	picture = MMETR_HIMEJI_CASTLE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.12.a"
+		
+		custom_tooltip = mmetr_TYT_mission_events.12.tt
+		hidden_effect = {
+			hokkaido_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				cede_province = TKD		#descended from Takeda, use same crest
+				add_core = TKD
+			}
+			vassalize = TKD
+			TKD = {
+				change_government = monarchy
+				add_government_reform = daimyo
+				override_country_name = MATSUMAE	#renames Takeda to Matsumae
+				define_ruler = {
+					dynasty = "Matsumae"
+					age = 40
+					claim = 95
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_TYT_mission_events.12.b"
+		
+		
+	}
+}
+
+# The Way of Tea
+country_event = {
+	id = mmetr_TYT_mission_events.13
+	title = "mmetr_TYT_mission_events.13.t"
+	desc = "mmetr_TYT_mission_events.13.desc"
+	picture = MMETR_HIMEJI_CASTLE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.13.a"
+		
+		add_country_modifier = {
+			name = "me_tyt_way_of_tea"
+			duration = 7300
+		}
+	}
+}
+
+# A Performance for the Emperor - Noh Theater Hideyoshi performed in front of Emperor with Daimyo
+country_event = {
+	id = mmetr_TYT_mission_events.14
+	title = "mmetr_TYT_mission_events.14.t"
+	desc = "mmetr_TYT_mission_events.14.desc"
+	picture = THEATRE_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.14.a"
+		
+		add_prestige = 5
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 5
+		}
+	}
+}
+
+# Kirishitan Question
+country_event = {
+	id = mmetr_TYT_mission_events.15
+	title = "mmetr_TYT_mission_events.15.t"
+	desc = "mmetr_TYT_mission_events.15.desc"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_TYT_mission_events.15.a"
+		
+		add_country_modifier = {
+			name = "me_tyt_kirishitan_tolerance"
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "mmetr_TYT_mission_events.15.b"
+		
+		add_country_modifier = {
+			name = "me_tyt_kirishitan_suppression"
+			duration = -1
+		}
+	}
+}
+

@@ -1,0 +1,117 @@
+namespace = mmetr_Generic_Germanic_mission_events
+
+# Confederating the Vassal Tribes
+country_event = {
+	id = mmetr_Generic_Germanic_mission_events.1
+	title = "mmetr_Generic_Germanic_mission_events.1.t"
+	desc = "mmetr_Generic_Germanic_mission_events.1.desc"
+	picture = MILITARY_CAMP_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_Germanic_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_gertribe_vassal_retinues"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_Generic_Germanic_mission_events.1.b"
+		
+		add_country_modifier = {
+			name = "me_gertribe_vassal_unity"
+			duration = 10950
+		}
+	}
+}
+
+# Wild Boar's Head Formation
+country_event = {
+	id = mmetr_Generic_Germanic_mission_events.2
+	title = "mmetr_Generic_Germanic_mission_events.2.t"
+	desc = "mmetr_Generic_Germanic_mission_events.2.desc"
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_Germanic_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_gertribe_infantry_wedge_formation"
+			duration = 10950
+		}
+	}
+}
+
+# Sacred Grounds of [Root.GetName]
+country_event = {
+	id = mmetr_Generic_Germanic_mission_events.3
+	title = "mmetr_Generic_Germanic_mission_events.3.t"
+	desc = "mmetr_Generic_Germanic_mission_events.3.desc"
+	picture = CPBM_TUMULUS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_Germanic_mission_events.3.a"
+		
+		add_country_modifier = {
+			name = "me_gertribe_germanic_holy_sites"
+			duration = 10950
+		}
+	}
+}
+
+# King of [Root.GetName]
+country_event = {
+	id = mmetr_Generic_Germanic_mission_events.4
+	title = "mmetr_Generic_Germanic_mission_events.4.t"
+	desc = "mmetr_Generic_Germanic_mission_events.4.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_Germanic_mission_events.4.a"
+		
+		if = {
+			limit = {
+				NOT = { 
+					government_rank = 2
+				}
+			}
+			set_government_rank = 2
+		}
+		
+		add_country_modifier = {
+			name = "me_gertribe_united_under_one_king"
+			duration = 10950
+		}
+	}
+}
+
+# Unification of Germania
+country_event = {
+	id = mmetr_Generic_Germanic_mission_events.5
+	title = "mmetr_Generic_Germanic_mission_events.5.t"
+	desc = "mmetr_Generic_Germanic_mission_events.5.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_Generic_Germanic_mission_events.5.a"
+		
+		override_country_name = GERMANIA_NAME
+	}
+	
+	option = {
+		name = "mmetr_Generic_Germanic_mission_events.5.b"
+		
+		
+	}
+}

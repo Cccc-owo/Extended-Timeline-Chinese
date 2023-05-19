@@ -1,0 +1,171 @@
+namespace = mmetr_EGY_mission_events
+
+# Emirate of Sicily Vassal Spawn Option
+country_event = {
+	id = mmetr_EGY_mission_events.1
+	title = "mmetr_EGY_mission_events.1.t"
+	desc = "mmetr_EGY_mission_events.1.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_EGY_mission_events.1.a"
+		
+		custom_tooltip = mmetr_EGY_mission_events.1.tt
+		hidden_effect = {
+			every_province = {
+				limit = {
+					OR = {
+						province_id = 4736		#Sicily provinces
+						province_id = 4737
+						province_id = 124
+						province_id = 125
+						province_id = 2982
+					}
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				cede_province = SCL
+				add_core = SCL
+			}
+		}
+		
+		SCL = {
+			change_religion = sunni
+		}
+		vassalize = SCL
+		
+		western_sicily_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_egy_emir_in_sicily"
+				duration = 10950
+			}
+		}
+		sicily_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_egy_emir_in_sicily"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_EGY_mission_events.1.b"
+		
+		western_sicily_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_egy_emir_in_sicily"
+				duration = 10950
+			}
+		}
+		sicily_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_egy_emir_in_sicily"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# Christian Refugees Sent Home
+country_event = {
+	id = mmetr_EGY_mission_events.3
+	title = "mmetr_EGY_mission_events.3.t"
+	desc = "mmetr_EGY_mission_events.3.desc"
+	picture = PRAYING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					religion = catholic
+					capital_scope = {
+						superregion = europe_superregion
+					}
+					has_opinion = {
+						who = ROOT
+						value = 90
+					}
+				}
+				save_event_target_as = me_egy_catholic_recipient_country
+			}
+			
+			random_owned_province = {
+				limit = {
+					religion = catholic
+					OR = {
+						area = syria_area
+						area = aleppo_area
+						area = palestine_area
+					}
+				}
+				save_event_target_as = me_egy_catholic_catholic_province
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_EGY_mission_events.3.a"
+		
+		event_target:me_egy_catholic_catholic_province = {
+			change_religion = ROOT
+		}
+		
+		event_target:me_egy_catholic_recipient_country = {
+			capital_scope = {
+				add_base_tax = 1
+			}
+			
+			hidden_effect = {
+				country_event = {
+					id = mmetr_EGY_mission_events.4
+				}
+			}
+		}
+	}
+}
+
+# Christian Refugees Sent Home - Ping to European nation
+country_event = {
+	id = mmetr_EGY_mission_events.4
+	title = "mmetr_EGY_mission_events.4.t"
+	desc = "mmetr_EGY_mission_events.4.desc"
+	picture = PRAYING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		tooltip = {
+			capital_scope = {
+				add_base_tax = 1
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_EGY_mission_events.4.a"
+		
+	}
+}
+

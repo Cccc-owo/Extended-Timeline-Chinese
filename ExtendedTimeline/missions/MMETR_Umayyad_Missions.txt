@@ -1,0 +1,1298 @@
+umayyad_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = UMA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	uma_continue_expansion_mission = {
+		icon = mission_retake_ceuta
+		required_missions = { } #none
+		position = 1
+		
+		trigger = {
+			army_size_percentage = 0.8
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oma_buildforces_mod"
+				duration = 5475
+			}
+		}
+	}
+	
+	uma_secure_ifriqiyah_mission = {
+		icon = mission_conquer_alexandria
+		required_missions = { uma_continue_expansion_mission }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = tripolitania_area
+				area = djerba_area
+				area = ouled_nail_area
+				area = north_saharan_area
+				area = tunisia_area
+				area = kabylia_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			djerba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_saharan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tripolitania_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_province_of_ifriqiya
+					duration = 9125
+				}
+			}
+			djerba_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_province_of_ifriqiya
+					duration = 9125
+				}
+			}
+			tunisia_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_province_of_ifriqiya
+					duration = 9125
+				}
+			}
+			kabylia_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_province_of_ifriqiya
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	uma_berber_diplomacy_mission = {
+		icon = mission_protect_granada
+		required_missions = { uma_secure_ifriqiyah_mission }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = barbary_coast_area
+				area = algiers_area
+				area = fez_area
+				area = northern_morocco_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 2
+				fort_level = 2
+				region = maghreb_region
+			}
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			fez_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = me_uma_berber_ambassadors
+				duration = 9125
+			}
+		}
+	}
+	
+	uma_conquest_al_andalus_mission = {
+		icon = mission_reclaim_andalucia
+		required_missions = { uma_berber_diplomacy_mission }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				region = iberia_region
+			}
+			NOT = { 
+				OR = {
+					province_id = 333	#Baleares
+					province_id = 4559
+					province_id = 4560
+				}
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			owns_all_provinces = {
+				region = iberia_region
+				NOT = { 
+					OR = {
+						province_id = 333 
+						province_id = 4559 
+						province_id = 4560
+					}
+				}
+			}
+		}
+		
+		effect = {
+			iberia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_andalusian_dhimmi
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	uma_andalusian_administration_mission = {
+		icon = mission_develop_cordoba
+		required_missions = { uma_conquest_al_andalus_mission }
+		position = 6
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 225	#Cordoba
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			owns_core_province = 225
+			225 = {
+				num_of_times_improved_by_owner = 2
+				fort_level = 2
+			}
+		}
+		
+		effect = {
+			225 = {
+				add_province_modifier = {
+					name = me_uma_regional_capital
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	uma_cross_the_pyrenees_mission = {
+		icon = mission_invade_occitania
+		required_missions = { uma_andalusian_administration_mission }
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				area = pyrenees_area	#Gascony
+				area = languedoc_area
+				area = guyenne_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			pyrenees_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			languedoc_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guyenne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_unstoppable_army
+				duration = 7300
+			}
+		}
+	}
+	
+	uma_defeat_franks_mission = {
+		icon = centralize_france
+		required_missions = { uma_cross_the_pyrenees_mission }
+		position = 8
+		
+		provinces_to_highlight = {
+			OR = {
+				culture = cosmopolitan_french	#Francien
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				culture = cosmopolitan_french	#Francien
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_undefeatable_caliph
+				duration = 7300
+			}
+		}
+	}
+	
+}
+
+umayyad_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = UMA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	uma_establish_barid_mission = {
+		icon = mission_reclaim_lost_territory
+		required_missions = { } #none
+		position = 1
+		
+		trigger = {
+			road = 20
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_barid"
+				duration = 10950
+			}
+		}
+	}
+	
+	uma_march_to_ferghana_mission = {
+		icon = mission_central_asian_city
+		required_missions = { uma_continue_expansion_mission uma_establish_barid_mission }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = ferghana_area
+				area = transoxiana_area
+				area = khiva_area
+				area = merv_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			transoxiana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			khiva_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			merv_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			transoxiana_area = {		#Samarkand area
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_sogdian_garrison
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	uma_destroy_fire_temples_mission = {
+		icon = mission_azar_goshnasp_sas
+		required_missions = { uma_march_to_ferghana_mission }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = central_asia_region
+			}
+			owned_by = ROOT
+			has_owner_religion = no
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			424 = {
+				has_owner_religion = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = central_asia_region
+				has_owner_religion = yes
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_incentivized_conversion
+				duration = 5475
+			}
+		}
+	}
+	
+	uma_sway_iranians_mission = {
+		icon = mission_kaviani_banner_sasanian
+		required_missions = { } #none
+		position = 4
+		
+		trigger = {
+			prestige = 90
+			num_of_owned_provinces_with = {
+				value = 10
+				region = persia_region
+				NOT = { unrest = 2 }
+			}
+		}
+		
+		effect = {
+			persia_region = {
+				add_province_modifier = {
+					name = me_uma_persian_mission
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	uma_convert_persia_mission = {
+		icon = mission_hands_praying
+		required_missions = { uma_sway_iranians_mission }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				region = persia_region
+			}
+			owned_by = ROOT
+			has_owner_religion = no
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = persia_region
+				has_owner_religion = yes
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					culture = persian
+				}
+				add_province_modifier = {
+					name = "me_uma_first_persian_converts"
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	uma_arabize_persia_mission = {
+		icon = mission_into_persia_2
+		required_missions = { uma_convert_persia_mission }
+		position = 6
+		
+		provinces_to_highlight = {
+			OR = {
+				region = persia_region
+			}
+			owned_by = ROOT
+			has_owner_culture = no
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				region = persia_region
+				has_owner_culture = yes
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_arabs_first"
+				duration = 7300
+			}
+		}
+	}
+	
+	uma_pacify_goths_mission = {
+		icon = mission_kneeling_before_king
+		required_missions = { uma_andalusian_administration_mission }
+		position = 7
+		
+		trigger = {
+			stability = 2
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		
+		effect = {
+			define_advisor = {
+				type = statesman
+				skill = 2
+				culture = gothic
+				religion = chalcedonism
+				discount = yes
+			}
+		}
+	}
+	
+	uma_rule_the_sea_mission = {
+		icon = mission_look_west
+		required_missions = { uma_pacify_goths_mission }
+		position = 8
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 333		#Baleares
+				province_id = 4559		
+				province_id = 4560		
+				province_id = 1247		#Corsica and Sardinia
+				province_id = 2986
+				province_id = 4735
+				province_id = 127
+				province_id = 4736		#Sicily
+				province_id = 4737
+				province_id = 124
+				province_id = 125
+				province_id = 2982
+				province_id = 163		#Crete
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			navy_size_percentage = 0.75
+			owns_or_non_sovereign_subject_of = 333		#Baleares
+			owns_or_non_sovereign_subject_of = 4559
+			owns_or_non_sovereign_subject_of = 4560
+			owns_or_non_sovereign_subject_of = 1247		#Corsica and Sardinia
+			owns_or_non_sovereign_subject_of = 2986
+			owns_or_non_sovereign_subject_of = 4735
+			owns_or_non_sovereign_subject_of = 127
+			owns_or_non_sovereign_subject_of = 4736		#Sicily
+			owns_or_non_sovereign_subject_of = 4737
+			owns_or_non_sovereign_subject_of = 124
+			owns_or_non_sovereign_subject_of = 125
+			owns_or_non_sovereign_subject_of = 2982
+			owns_or_non_sovereign_subject_of = 163		#Crete
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_umayyad_naval_power"
+				duration = 10950
+			}
+		}
+	}
+}
+
+umayyad_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = UMA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	uma_consolidate_the_caliphate_mission = {
+		icon = mission_restore_faith_in_the_throne
+		required_missions = { } #none
+		position = 1
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 385	#Mecca
+				province_id = 384	#Medina
+				province_id = 382	#Damascus
+				province_id = 358	#Alexandria
+				province_id = 429	#Isfahan
+			}
+			owned_by = ROOT
+			has_owner_culture = no
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			stability = 2
+			NOT = { average_unrest = 3 }
+			owns_core_province = 385	#Mecca
+			owns_core_province = 384	#Medina
+			owns_core_province = 382	#Damascus
+			owns_core_province = 358	#Alexandria
+			owns_core_province = 429	#Isfahan
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_multi_city_coalition"
+				duration = 5475
+			}
+		}
+	}
+	
+	uma_qudaa_allies_mission = {
+		icon = mission_umayyad_court
+		required_missions = { uma_consolidate_the_caliphate_mission }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+			}
+			NOT = { 
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 65
+			}
+			OR = {
+				has_estate_privilege = estate_nobles_advisors
+				has_estate_privilege = estate_nobles_right_of_counsel
+			}
+			syria_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_qudaa_allies"
+				duration = 7300
+			}
+		}
+	}
+	
+	uma_appease_the_clans_mission = {
+		icon = mission_fatimid_caliphate
+		required_missions = { uma_qudaa_allies_mission uma_develop_dimashq_mission }
+		position = 3
+		
+		trigger = {
+			OR = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 80
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 5
+				}
+			}
+		}
+		
+		effect = {
+			#Iraq
+			iraq_arabi_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_appeased_clans
+					duration = 9125
+				}
+			}
+			al_jazira_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_appeased_clans
+					duration = 9125
+				}
+			}
+			arabia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_appeased_clans
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	uma_integrate_mawali_mission = {
+		icon = mission_levantine_restoration
+		required_missions = { uma_appease_the_clans_mission }
+		position = 4
+		
+		trigger = {
+			num_accepted_cultures = 3
+			num_of_owned_provinces_with = {
+				value = 75
+				has_owner_culture = no
+				has_owner_religion = yes
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_mawali_integration
+				duration = -1
+			}
+		}
+	}
+	
+	uma_unify_the_community_mission = {
+		icon = mission_into_arabia
+		required_missions = { uma_integrate_mawali_mission }
+		position = 6
+		
+		trigger = {
+			religious_unity = 0.75
+			num_of_owned_provinces_with = {
+				value = 100
+				has_owner_religion = yes
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_united_ummah
+				duration = 9125
+			}
+		}
+	}
+	
+	uma_root_out_kharijites_mission = {
+		icon = mission_eliminate_pretenders
+		required_missions = { uma_unify_the_community_mission }
+		position = 7
+		
+		trigger = {
+			is_at_war = no
+			stability = 0
+			bahrain_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			custom_tooltip = uma_root_out_kharijites_mission.tt
+			country_event = { 
+				id = mmetr_UMA_mission_events.1
+			}
+		}
+	}
+	
+	uma_defeat_the_kharijites_mission = {
+		icon = mission_unite_home_region
+		required_missions = { uma_root_out_kharijites_mission }
+		position = 8
+		
+		trigger = {
+			has_country_flag = kharijite_umayyad_rebellion_flag
+			
+			NOT = { num_of_rebel_armies = 1 }
+			
+			custom_trigger_tooltip = {
+				tooltip = uma_defeat_the_kharijites_mission.tt
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_kharijite_conflict_resolved
+				duration = 10950
+			}
+		}
+	}
+}
+
+umayyad_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = UMA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	uma_develop_dimashq_mission = {
+		icon = mission_into_persia_1
+		required_missions = { uma_consolidate_the_caliphate_mission }
+		position = 2
+		
+		provinces_to_highlight = {
+			province_id = 382
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			owns_core_province = 382	#Damascus
+			382 = {
+				has_building = temple		#Mosque
+				fort_level = 2
+				num_of_times_improved_by_owner = 2
+			}
+		}
+		
+		effect = {
+			382 = {
+				add_province_modifier = {
+					name = "me_uma_seat_of_the_caliphate"
+					duration = 12775	#35 years
+				}
+			}
+		}
+	}
+	
+	uma_syrian_metropolis_mission = {
+		icon = mission_into_persia_2
+		required_missions = { uma_develop_dimashq_mission }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+				area = aleppo_area
+			}
+			NOT = {
+				num_of_times_improved_by_owner = 1
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				num_of_times_improved_by_owner = 1
+				OR = {
+					area = syria_area
+					area = aleppo_area
+				}
+			}
+		}
+		
+		effect = {
+			syria_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = me_uma_syrian_development
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	uma_alid_negotiations_mission = {
+		icon = mission_restore_caliphate_of_cordoba
+		required_missions = { uma_appease_the_clans_mission }
+		position = 4
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 4
+				religion = shiite
+				OR = {
+					has_building = temple
+					has_building = glorious_monument
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_sectarian_tolerance
+				duration = 9125
+			}
+		}
+	}
+	
+	uma_placate_dhimmi_mission = {
+		icon = mission_cope_with_refugees
+		required_missions = { uma_integrate_mawali_mission }
+		position = 5
+		
+		trigger = {
+			OR = {
+				estate_loyalty = {
+					estate = estate_dhimmi
+					loyalty = 70
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_dhimmi
+					value = 3
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_dhimmi_protections
+				duration = 9125
+			}
+		}
+	}
+	
+	uma_dhimmi_traders_mission = {
+		icon = mission_african_gold
+		required_missions = { uma_placate_dhimmi_mission }
+		position = 6
+		
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_burghers
+				value = 2
+			}
+			377 = {		#Aleppo
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = me_uma_dhimmi_trade_networks
+				duration = 9125
+			}
+		}
+	}
+	
+	uma_control_indus_mission = {
+		icon = mission_advance_to_the_arabian_sea
+		required_missions = { } #none
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				area = sindh_area
+				area = northern_sindh_area
+				area = multan_area
+				area = lahore_area
+				area = sind_sagar_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			sindh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_sindh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			multan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lahore_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sind_sagar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 7
+				has_owner_religion = yes
+				OR = {
+					area = sindh_area
+					area = northern_sindh_area
+					area = multan_area
+					area = lahore_area
+					area = sind_sagar_area
+				}
+			}
+		}
+		
+		effect = {
+			patan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			marwar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jangladesh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	uma_invade_hindustan_mission = {
+		icon = mission_delhi_resurgent
+		required_missions = { uma_control_indus_mission }
+		position = 8
+		
+		provinces_to_highlight = {
+			OR = {
+				area = patan_area
+				area = marwar_area
+				area = jangladesh_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			patan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			marwar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jangladesh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_great_conqueror"
+				duration = 9125
+			}
+		}
+	}
+}
+
+umayyad_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = UMA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	uma_avert_a_second_fitna_mission = {
+		icon = mission_al_andalus
+		required_missions = { } #none
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = uma_avert_a_second_fitna_mission.tooltip
+				has_country_flag = husayn_ali_murdered
+			}
+			tag = UMA
+			custom_trigger_tooltip = {
+				tooltip = uma_avert_a_second_fitna_mission_spawned_rebels.tooltip
+				NOT = { num_of_rebel_armies = 1 }
+			}				
+		}
+		effect = {
+			add_legitimacy = 50
+			add_heir_claim = 100
+			add_adm_power = 100
+		}
+	}
+	
+	uma_crush_the_revolution_mission = {
+		icon = mission_spoils_of_war
+		required_missions = { } #none
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = uma_crush_the_revolution_mission.tooltip
+				has_country_flag = failed_revolution
+			}
+			tag = UMA
+			custom_trigger_tooltip = {
+				tooltip = uma_avert_a_second_fitna_mission_spawned_rebels.tooltip
+				NOT = { num_of_rebel_armies = 1 }
+			}	
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "epithet_the_victorious"
+				duration = -1
+			}
+		}
+	}
+	
+	uma_legacy_of_uthman_mission = {
+		icon = mission_black_standard_of_the_eagle
+		required_missions = { uma_crush_the_revolution_mission }
+		position = 3
+		trigger = {
+			army_tradition = 80
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_uthmans_legacy"
+				duration = 7300
+			}
+		}
+	}
+	
+	uma_push_back_the_romans_mission = {
+		icon = mission_west_roman_soldier
+		required_missions = { } #none
+		position = 4
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				region = anatolia_region
+			}
+		}
+		
+		effect = {
+			151 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	uma_besiege_al_qustantiniyya_mission = {
+		icon = mission_city_of_the_world's_desire
+		required_missions = { uma_push_back_the_romans_mission }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151		#Constantinople
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			owns_core_province = 151
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_rhumiyyat_al_khubra"
+				duration = 10950
+			}
+		}
+	}
+	
+	uma_caliph_of_rome_mission = {
+		icon = take_constantinople
+		required_missions = { uma_besiege_al_qustantiniyya_mission }
+		position = 6
+		
+		trigger = {
+			151 = {
+				has_building = temple
+				fort_level = 2
+				has_owner_religion = yes
+				num_of_times_improved_by_owner = 2
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_caliph_of_the_romans"
+				duration = -1
+			}
+		}
+	}
+	
+	uma_invasion_of_italy_mission = {
+		icon = give_him_back_his_legions
+		required_missions = { uma_caliph_of_rome_mission }
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				region = italy_region
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			italy_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_adm_power = 100
+			add_army_tradition = 25
+		}
+	}
+	
+	uma_people_of_god_united_mission = {
+		icon = ark_of_the_covenant
+		required_missions = { uma_invasion_of_italy_mission }
+		position = 8
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = uma_people_of_god_united_mission.tt
+				NOT = {
+					any_province = {
+						religion_group = christian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+				NOT = {
+					any_province = {
+						religion_group = muslim
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+				NOT = {
+					any_province = {
+						religion_group = jewish_group
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			}
+			
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "me_uma_universal_khalifa"
+				duration = 10950
+			}
+		}
+	}
+	
+	
+}

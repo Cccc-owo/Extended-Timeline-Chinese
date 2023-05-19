@@ -744,6 +744,11 @@ peasants_republic = {
       have_had_reform = stateless_society
     }
   }
+  trigger = {
+    is_not_blocked_by_estate_privilege = {
+      estate = estate_nobles
+    }
+  }
   valid_for_nation_designer = yes
   nation_designer_cost = 20
   legacy_equivalent = peasants_republic_legacy
@@ -790,6 +795,9 @@ ikko_ikki_republic_reform = {
   }
   trigger = {
     religion_group = eastern
+    is_not_blocked_by_estate_privilege = {
+      estate = estate_nobles
+    }
   }
   valid_for_nation_designer = yes
   nation_designer_trigger = {
@@ -830,6 +838,11 @@ kongsi_federation = {
     OR = {
       tag = LFA
       have_had_reform = kongsi_federation
+    }
+  }
+  trigger = {
+    is_not_blocked_by_estate_privilege = {
+      estate = estate_nobles
     }
   }
   valid_for_nation_designer = yes
@@ -1018,19 +1031,6 @@ veche_republic = {
   }
   conditional = {
     allow = {
-      has_dlc = "Mare Nostrum"
-      NOT = {
-        has_dlc = "Res Publica"
-      }
-      NOT = {
-        has_dlc = "Third Rome"
-      }
-    }
-    can_form_trade_league = yes
-    trade_city_reform = trading_city
-  }
-  conditional = {
-    allow = {
       has_dlc = "Res Publica"
       has_dlc = "Mare Nostrum"
     }
@@ -1172,7 +1172,7 @@ great_russian_republic_reform = {
     global_manpower_modifier = 0.2
     merchants = 2
     governing_capacity = 350
-    yearly_absolutism = 0.05
+    yearly_absolutism = 0.5
     global_autonomy = -0.05
     embracement_cost = -0.5
     max_absolutism = 50
@@ -1228,6 +1228,11 @@ american_republic = {
       has_reform = american_republic
     }
   }
+  trigger = {
+    is_not_blocked_by_estate_privilege = {
+      estate = estate_nobles
+    }
+  }
   valid_for_nation_designer = yes
   nation_designer_cost = 15
   nation_designer_trigger = {
@@ -1271,6 +1276,11 @@ federal_republic = {
         }
       }
       has_reform = federal_republic
+    }
+  }
+  trigger = {
+    is_not_blocked_by_estate_privilege = {
+      estate = estate_nobles
     }
   }
   legacy_equivalent = federal_republic_legacy
@@ -1890,6 +1900,11 @@ cossacks_reform = {
       }
       has_reform = cossacks_reform
       have_had_reform = cossacks_reform
+    }
+  }
+  trigger = {
+    is_not_blocked_by_estate_privilege = {
+      estate = estate_nobles
     }
   }
   raze_province = yes

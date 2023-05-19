@@ -1,0 +1,1143 @@
+toyotomi_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TYT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	tyt_osaka_castle_mission = {
+		icon = mission_japanese_fort
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 1021		#Settsu
+			NOT = {
+				has_building = fort_16th
+				base_manpower = 6
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1021
+			1021 = {
+				has_building = fort_16th
+			}
+			1021 = {
+				base_manpower = 6
+			}
+		}
+		effect = {
+			tooltip = {
+				1021 = {
+					add_province_modifier = {
+						name = "me_tyt_osaka_castle"
+						duration = -1
+					}
+				}
+			}
+			country_event = {
+				id = mmetr_TYT_mission_events.2
+			}
+		}
+	}
+	tyt_saika_ikki_mission = {
+		icon = mission_japanese_ashigaru_entrenched
+		required_missions = { tyt_osaka_castle_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 4187	#Kii
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			is_at_war = no
+			army_tradition = 40
+			owns_or_non_sovereign_subject_of = 4187		#Kii, where Saika's Ota Castle is located
+			4187 = {
+				num_of_units_in_province = {	#physically march troops to Ota Castle
+					who = ROOT
+					amount = 10
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.5
+			}
+		}
+	}
+	tyt_invasion_of_shikoku_mission = {
+		icon = mission_japanese_daimyo_surrender
+		required_missions = { tyt_unification_war_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = shikoku_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			shikoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_chosokabe_marines"
+				duration = 5475
+			}
+		}
+	}
+	tyt_sword_hunt_mission = {
+		icon = mission_japanese_samurai
+		required_missions = { tyt_invasion_of_shikoku_mission tyt_kyushu_campaign_mission  }
+		position = 5
+		trigger = {
+			stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			NOT = { average_unrest = 1 }
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.6
+			}
+			add_country_modifier = {
+				name = "me_tyt_sword_ban_first_wave"
+				duration = 7300
+			}
+		}
+	}
+	tyt_great_fleet_mission = {
+		icon = mission_japanese_warship
+		required_missions = { tyt_great_unifier_mission  }
+		position = 7
+		trigger = {
+			num_of_galley = 30
+		}
+		effect = {
+			add_navy_tradition = 10
+		}
+	}
+	tyt_chinese_campaign_mission = {
+		icon = mission_chinese_planning_war
+		required_missions = { tyt_landfall_in_korea_mission }
+		position = 9
+		provinces_to_highlight = {
+			superregion = china_superregion
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				superregion = china_superregion
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.7
+			}
+			tooltip = {
+				add_adm_power = 100
+				add_country_modifier = {
+					name = "me_tyt_chinese_conscripts"
+					duration = 7300
+				}
+			}
+		}
+	}
+}
+
+toyotomi_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TYT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	tyt_marriage_allies_mission = {
+		icon = mission_japanese_marriage
+		required_missions = {  }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tyt_marriage_allies_mission.tt
+				calc_true_if = {
+					all_ally = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+						marriage_with = ROOT
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				add_country_modifier = {
+					name = "me_tyt_toyotomi_hashiba_clan"
+					duration = 7300
+				}
+			}
+			country_event = {
+				id = mmetr_TYT_mission_events.1
+			}
+		}
+	}
+	tyt_unification_war_mission = {
+		icon = mission_oda_nobunaga
+		required_missions = { tyt_secure_kyoto_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 1020
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1020
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_heir_of_nobunagas_ambition"
+				duration = 5475
+			}
+			sanindo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			saigoku_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shikoku_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tyt_chugoku_capitulation_mission = {
+		icon = mission_japanese_letter_battlefield
+		required_missions = { tyt_unification_war_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = sanindo_area
+				area = saigoku_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sanindo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saigoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			northern_kyushu = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kyushu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tyt_kyushu_campaign_mission = {
+		icon = mission_japanese_river_crossing
+		required_missions = { tyt_chugoku_capitulation_mission tyt_invasion_of_shikoku_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {						#Kyushu provinces that are NOT Ryukyu
+				province_id = 1012		#Satsuma
+				province_id = 4180		#Hyuga
+				province_id = 4181		#Higo
+				province_id = 1014		#Bungo
+				province_id = 1818		#Chikuzen
+				province_id = 4182		#Hizen
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 1012		#Satsuma
+			owns_or_non_sovereign_subject_of = 4180		#Hyuga
+			owns_or_non_sovereign_subject_of = 4181		#Higo
+			owns_or_non_sovereign_subject_of = 1014		#Bungo
+			owns_or_non_sovereign_subject_of = 1818		#Chikuzen
+			owns_or_non_sovereign_subject_of = 4182		#Hizen
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_kyushu_naval_bases"
+				duration = 10950
+			}
+		}
+	}
+	tyt_great_unifier_mission = {
+		icon = mission_oda_clan_war_banner
+		required_missions = { tyt_kyushu_campaign_mission tyt_subdue_tohoku_mission tyt_besiege_odawara_mission }
+		position = 6
+		provinces_to_highlight = {
+			area = kanto_area
+			area = eastern_kanto_area
+			area = shikoku_area
+			area = hokuriku_area
+			area = eastern_chubu_area
+			area = chubu_area
+			area = kinai_area
+			area = thohoku_area
+			area = saigoku_area
+			area = sanindo_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kanto_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			eastern_kanto_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shikoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hokuriku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			eastern_chubu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			chubu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kinai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			thohoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saigoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sanindo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_tyt_great_unifier"
+				duration = -1
+			}
+		}
+	}
+	tyt_nobunagas_ambition_mission = {
+		icon = mission_oda_nobunaga
+		required_missions = { tyt_great_unifier_mission }
+		position = 7
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				OR = {
+					army_professionalism = 0.40
+					army_tradition = 60
+				}
+			}
+			else = {
+				army_tradition = 60
+			}
+		}
+		effect = {
+			south_korea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			eastern_korea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tyt_landfall_in_korea_mission = {
+		icon = mission_korean_castle_assault
+		required_missions = { tyt_nobunagas_ambition_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = south_korea_area
+				area = eastern_korea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			south_korea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			eastern_korea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_kamikaze"
+				duration = 10950
+			}
+			korea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tyt_invade_korea_mission = {
+		icon = mission_korean_archer_imjin_war
+		required_missions = { tyt_landfall_in_korea_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = korea_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_adm_power = 75
+			add_dip_power = 75
+			add_country_modifier = {
+				name = "me_tyt_korean_turtle_ships"
+				duration = -1
+			}
+		}
+	}
+	tyt_hideyoshis_dream_mission = {
+		icon = mission_chinese_edict
+		required_missions = { tyt_invade_korea_mission tyt_chinese_campaign_mission }
+		position = 10
+		provinces_to_highlight = {
+			region = north_china_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				OR = {
+					is_emperor_of_china = yes
+					NOT = {
+						any_country = {
+							is_emperor_of_china = yes
+						}
+					}
+				}
+			}
+			owns_or_non_sovereign_subject_of = 1816		#Beijing
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 25
+				region = north_china_region
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			
+			country_event = {
+				id = mmetr_TYT_mission_events.8
+			}
+		}
+	}	
+}
+
+toyotomi_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TYT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	tyt_secure_kyoto_mission = {
+		icon = mission_japanese_daimyo_armor
+		required_missions = {  }
+		position = 1
+		completed_by = 1582.7.2
+		provinces_to_highlight = {
+			province_id = 1020
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1020
+			NOT = { exists = AKE }
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.3
+			}
+		}
+	}
+	tyt_jurakudai_palace_mission = {
+		icon = mission_japanese_castle_surrounded
+		required_missions = { tyt_secure_kyoto_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 1020
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+				num_of_times_improved_by_owner = 3
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1020	#Kyoto
+			1020 = {
+				num_of_times_improved_by_owner = 3
+			}
+		}
+		effect = {
+			1020 = {
+				add_province_modifier = {
+					name = "me_tyt_jurakudai_palace"
+					duration = -1
+				}
+			}
+		}
+	}
+	tyt_to_echizen_and_echigo_mission = {
+		icon = mission_japanese_fortification
+		required_missions = { tyt_unification_war_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = hokuriku_area
+			}
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hokuriku_area = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = tyt_to_echizen_and_echigo_mission.tt
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			eastern_chubu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chubu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tyt_conquest_of_chubu_mission = {
+		icon = mission_japanese_samurai_victory
+		required_missions = { tyt_to_echizen_and_echigo_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = eastern_chubu_area
+				area = chubu_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			eastern_chubu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			chubu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			kanto_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			eastern_kanto_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tyt_subdue_tohoku_mission = {
+		icon = mission_tokugawa_samurai_army_array
+		required_missions = { tyt_conquest_of_chubu_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = thohoku_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			thohoku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_lord_of_the_northern_realm"
+				duration = 5475
+			}
+		}
+	}
+	tyt_sail_to_ryukyu_mission = {
+		icon = mission_invade_island
+		required_missions = { tyt_great_unifier_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 1015 # Shuri / Ryukyu / Okinawa
+			NOT = { 
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_subject_of = 1015	#can be a Tributary
+		}
+		effect = {
+			add_navy_tradition = 10
+			add_prestige = 5
+		}
+	}
+	tyt_tanegashima_production_mission = {
+		icon = mission_japanese_arquebus
+		required_missions = { tyt_foreign_trade_mission }
+		position = 9
+		trigger = {
+			weapons = 5		#Weapons Manufactory buildings
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.4
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_tyt_firearms_production"
+					duration = 5475
+				}
+			}
+		}
+	}
+	
+	
+}
+
+toyotomi_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TYT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	tyt_court_titles_mission = {
+		icon = mission_scholar_officials
+		required_missions = {  }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tyt_court_titles_mission.tt
+				OR = {
+					has_ruler_flag = given_fifth_rank_court_rank_japan
+					has_ruler_flag = given_fourth_rank_court_rank_japan
+					has_ruler_flag = given_third_rank_court_rank_japan
+					has_ruler_flag = given_second_rank_court_rank_japan
+					has_ruler_flag = given_first_rank_court_rank_japan
+				}
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = diplomat
+				skill = 2
+				culture = japanese
+				religion = shinto
+				discount = yes
+			}
+		}
+	}
+	tyt_humble_the_tokugawa_mission = {
+		icon = mission_tokugawa_shogunate
+		required_missions = { tyt_unification_war_mission }
+		position = 3
+		provinces_to_highlight = {
+			owned_by = TKG
+		}
+		trigger = {
+			NOT = { war_with = TKG }
+			OR = {
+				NOT = { exists = TKG }
+				TKG = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			add_legitimacy = 50
+			add_dip_power = 50
+		}
+	}
+	tyt_besiege_odawara_mission = {
+		icon = mission_japanese_castle_burning
+		required_missions = { tyt_humble_the_tokugawa_mission tyt_conquest_of_chubu_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4189	#Sagami, in which Odawara Castle is located
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4189
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_art_of_siegecraft"
+				duration = 5475
+			}
+		}
+	}
+	tyt_way_of_tea_mission = {
+		icon = mission_japanese_tea_ceremony_culture
+		required_missions = { tyt_peace_and_stability_mission }
+		position = 6
+		provinces_to_highlight = {
+			trade_goods = tea
+			owned_by = ROOT
+			NOT = { has_building = plantations }
+		}
+		trigger = {
+			theologian = 1
+			any_owned_province = {
+				trade_goods = tea
+				has_building = plantations
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.13
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_tyt_way_of_tea"
+					duration = 7300
+				}
+			}
+		}
+	}
+	tyt_noh_theater_mission = {
+		icon = mission_chinese_warlords_alliance
+		required_missions = { tyt_way_of_tea_mission }
+		position = 7
+		trigger = {
+			artist = 1
+			is_at_war = no
+			stability = 1
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.14
+			}
+			tooltip = {
+				add_prestige = 5
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 5
+				}
+			}
+		}
+	}
+	tyt_foreign_trade_mission = {
+		icon = mission_japanese_western_trade
+		required_missions = {  }	#none
+		position = 8
+		trigger = {
+			prestige = 20
+			any_country = {
+				capital_scope = {
+					superregion = europe_superregion
+				}
+				has_opinion = {
+					who = ROOT
+					value = 80
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_european_cannons"
+				duration = -1
+			}
+		}
+	}
+	tyt_christian_question_mission = {
+		icon = mission_japanese_christian_missionary
+		required_missions = { tyt_foreign_trade_mission tyt_patron_of_temples_mission }
+		position = 9
+		trigger = {
+			isolationism = 1
+			OR = {
+				any_owned_province = {
+					religion_group = christian
+				}
+				any_subject_country = {
+					OR = {
+						religion_group = christian
+						any_owned_province = {
+							religion_group = christian
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.15
+			}
+		}
+	}
+}
+
+toyotomi_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TYT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	tyt_secure_noble_lineage_mission = {
+		icon = mission_japanese_daimyo_nobles
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 1020
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1020	#Kyoto
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 3
+			}
+		}
+		effect = {
+			tooltip = {
+				add_country_modifier = {
+					name = "me_tyt_fujiwara_adoption"
+					duration = 10950
+				}
+			}
+			country_event = {
+				id = mmetr_TYT_mission_events.9
+			}
+		}
+	}
+	tyt_kampaku_mission = {
+		icon = mission_japanese_emperor_court
+		required_missions = { tyt_secure_noble_lineage_mission tyt_court_titles_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 1020
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1020	#Kyoto
+			prestige = 80
+		}
+		effect = {
+			hidden_effect = {
+				set_country_flag = unlocked_imperial_regent_kampaku_ruler_title
+			}
+			custom_tooltip = tyt_kampaku_mission.tt
+			add_country_modifier = {
+				name = "me_tyt_kampaku_regent"
+				duration = -1
+			}
+			country_event = {
+				id = mmetr_TYT_mission_events.10
+			}
+		}
+	}
+	tyt_ainu_relations_mission = {
+		icon = mission_extent_yasak_to_the_east
+		required_missions = {  }	#none
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1031
+				province_id = 1847
+				province_id = 1852
+				province_id = 4193
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4193
+			OR = {
+				ANU = {		#Ainu
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				ANU = {
+					is_subject_of = ROOT
+				}
+				AND = {
+					owns_or_non_sovereign_subject_of = 1031
+					owns_or_non_sovereign_subject_of = 1847
+					owns_or_non_sovereign_subject_of = 1852
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { exists = TKD }	#Takeda
+				}
+				country_event = {
+					id = mmetr_TYT_mission_events.12
+				}
+			}
+			4193 = {
+				add_province_modifier = {
+					name = "me_tyt_ainu_trade"
+					duration = 7300
+				}
+			}
+		}
+	}
+	tyt_peace_and_stability_mission = {
+		icon = mission_chinese_market
+		required_missions = {  }	#none
+		position = 5
+		trigger = {
+			is_at_war = no
+			stability = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_respite_from_the_chaos"
+				duration = 10950
+			}
+		}
+	}
+	tyt_patron_of_temples_mission = {
+		icon = mission_japanese_temple_gate
+		required_missions = { tyt_peace_and_stability_mission }
+		position = 8
+		trigger = {
+			capital_scope = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_TYT_mission_events.11
+			}
+			tooltip = {
+				add_prestige = 10
+				capital_scope = {
+					add_country_modifier = {
+						name = "me_tyt_hokoji"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	tyt_ikko_ikki_allies_mission = {
+		icon = mission_japanese_warrior_monks
+		required_missions = { tyt_patron_of_temples_mission }
+		position = 9
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_tyt_ikko_ikki_monks"
+				duration = 10950
+			}
+		}
+	}
+}

@@ -1,0 +1,343 @@
+namespace = mmetr_SAS_mission_events
+
+# Emissary to China
+country_event = {
+	id = mmetr_SAS_mission_events.1
+	title = "mmetr_SAS_mission_events.1.t"
+	desc = "mmetr_SAS_mission_events.1.desc"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.1.a"
+		
+		tooltip = {
+			add_country_modifier = {
+				name = "me_sas_chinese_diplomatic_ties"
+				duration = 10950
+			}
+			north_china_region = {
+				discover_country = SAS		#Sassanids discovers Northern China region
+			}
+			kashgaria_area = {
+				discover_country = SAS		#Sassanids discovers Northern China region
+			}
+			shanshan_area = {
+				discover_country = SAS		#Sassanids discovers Northern China region
+			}
+		}
+	}
+}
+
+# A Stable Persian Realm
+country_event = {
+	id = mmetr_SAS_mission_events.2
+	title = "mmetr_SAS_mission_events.2.t"
+	desc = "mmetr_SAS_mission_events.2.desc"
+	picture = MMETR_SASSANID_AHURA_MAZDA_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.2.a"
+		
+		add_adm_power = 25
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 5
+		}
+	}
+	
+	option = {
+		name = "mmetr_SAS_mission_events.2.b"
+		
+		add_dip_power = 25
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = 5
+		}
+	}
+	
+	option = {
+		name = "mmetr_SAS_mission_events.2.c"
+		
+		add_mil_power = 25
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 5
+		}
+	}
+}
+
+# Kingdom of the Lakhmids
+country_event = {
+	id = mmetr_SAS_mission_events.3
+	title = "mmetr_SAS_mission_events.3.t"
+	desc = "mmetr_SAS_mission_events.3.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.3.a"
+		
+		add_dip_power = 15
+		bahrain_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_province_modifier = {
+				name = "me_sas_arab_governance"
+				duration = 5474
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_SAS_mission_events.3.b"
+		
+		add_dip_power = 15
+		bahrain_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_province_modifier = {
+				name = "me_sas_direct_arab_rule"
+				duration = 5474
+			}
+		}
+	}
+	
+}
+
+# Trade and Merchant Syndicate
+country_event = {
+	id = mmetr_SAS_mission_events.4
+	title = "mmetr_SAS_mission_events.4.t"
+	desc = "mmetr_SAS_mission_events.4.desc"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_sas_trade_syndicate_cooperation"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_SAS_mission_events.4.b"
+		
+		add_country_modifier = {
+			name = "me_sas_coordinated_trade_fleets"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_SAS_mission_events.4.c"
+		
+		add_dip_power = -10
+		add_country_modifier = {
+			name = "me_sas_expanded_trade_syndicate"
+			duration = 10950
+		}
+	}
+	
+}
+
+# Shah of Turan
+country_event = {
+	id = mmetr_SAS_mission_events.5
+	title = "mmetr_SAS_mission_events.5.t"
+	desc = "mmetr_SAS_mission_events.5.desc"
+	picture = MMETR_SASSANID_AHURA_MAZDA_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_sas_shah_of_turan"
+			duration = 10950
+		}
+	}
+	
+}
+
+# Kushanshah
+country_event = {
+	id = mmetr_SAS_mission_events.6
+	title = "mmetr_SAS_mission_events.6.t"
+	desc = "mmetr_SAS_mission_events.6.desc"
+	picture = MMETR_SASSANID_AHURA_MAZDA_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.6.a"
+		
+		add_adm_power = 25
+		
+		if = {			#creates new vassal
+			limit = {
+				NOT = { exists = KSA }
+			}
+			custom_tooltip = mmetr_SAS_mission_events.6.tt1
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = ghor_area
+							area = kabulistan_area
+							area = balkh_area
+						}
+					}
+					cede_province = KSA
+					add_core = KSA
+				}
+			}
+			vassalize = KSA
+		}
+		else_if = {			#cedes to existing vassal
+			limit = {
+				KSA = {
+					is_subject_of = ROOT
+				}
+			}
+			custom_tooltip = mmetr_SAS_mission_events.6.tt2
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = ghor_area
+							area = kabulistan_area
+							area = balkh_area
+						}
+					}
+					cede_province = KSA
+					add_core = KSA
+				}
+			}
+		}
+		
+	}
+	
+	option = {
+		name = "mmetr_SAS_mission_events.6.b"
+		
+		add_adm_power = 25
+		
+	}
+	
+}
+
+# Dehqan Appeasement
+country_event = {
+	id = mmetr_SAS_mission_events.7
+	title = "mmetr_SAS_mission_events.7.t"
+	desc = "mmetr_SAS_mission_events.7.desc"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.7.a"
+		
+		add_country_modifier = {
+			name = "me_sas_loyal_dihqans"
+			duration = 7300
+		}
+	}
+}
+
+# Asvaran Cataphracts
+country_event = {
+	id = mmetr_SAS_mission_events.8
+	title = "mmetr_SAS_mission_events.8.t"
+	desc = "mmetr_SAS_mission_events.8.desc"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_sas_asvaran_cataphracts"
+			duration = 9125
+		}
+	}
+}
+
+# Xerxes' Dream
+country_event = {
+	id = mmetr_SAS_mission_events.9
+	title = "mmetr_SAS_mission_events.9.t"
+	desc = "mmetr_SAS_mission_events.9.desc"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.9.a"
+		
+		add_country_modifier = {
+			name = "me_sas_persian_empire_in_greece"
+			duration = -1
+		}
+	}
+}
+
+# The Three Great Fires
+country_event = {
+	id = mmetr_SAS_mission_events.10
+	title = "mmetr_SAS_mission_events.10.t"
+	desc = "mmetr_SAS_mission_events.10.desc"
+	picture = MMETR_SASSANID_AHURA_MAZDA_eventPicture
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_SAS_mission_events.10.a"
+		
+		2223 = {
+			add_province_modifier = {
+				name = "me_sas_azar_farnbag"
+				duration = -1
+			}
+		}
+		2235 = {
+			add_province_modifier = {
+				name = "me_sas_azar_barzin"
+				duration = -1
+			}
+		}
+	}
+}
+

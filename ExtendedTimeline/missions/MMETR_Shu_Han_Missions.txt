@@ -1,0 +1,1306 @@
+shu_han_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SHU
+			was_tag = SHU
+		}
+		NOT = { started_in = 280.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	shu_yizhou_industries_mission = {
+		icon = mission_high_income
+		required_missions = { shu_develop_chengdu_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				trade_goods = salt
+				trade_goods = iron
+			}
+			OR = {
+				owned_by = ROOT
+				has_discovered = ROOT
+			}
+		}
+		trigger = {
+			any_owned_province = {
+				trade_goods = salt
+				base_production = 5
+				num_of_times_improved_by_owner = 3
+			}
+			any_owned_province = {
+				trade_goods = iron
+				base_production = 5
+				num_of_times_improved_by_owner = 3
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.10
+			}
+			custom_tooltip = shu_yizhou_industries_mission.tt
+		}
+	}
+	shu_bureau_of_silk_mission = {
+		icon = mission_chinese_market
+		required_missions = { shu_yizhou_industries_mission }
+		position = 3
+		provinces_to_highlight = {
+			trade_goods = silk
+			has_discovered = ROOT
+		}
+		trigger = {
+			production_leader = {
+				trade_goods = silk
+			}
+			silk = 5
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.11
+			}
+			tooltip = {
+				add_mercantilism = 2
+				add_country_modifier = {
+					name = "me_shu_bureau_of_silk"
+					duration = 10950
+				}
+			}
+		}
+	}
+	shu_white_feather_guard_mission = {
+		icon = mission_chinese_training
+		required_missions = { shu_armies_of_shu_han_mission }
+		position = 5
+		trigger = {
+			num_of_infantry = 20
+			army_tradition = 70
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.2
+			}
+			custom_tooltip = shu_white_feather_guard_mission.tt
+			tooltip = {
+				capital_scope = {
+					add_province_modifier = {
+						name = "me_shu_white_feather_guard_recruitment"
+						duration = -1
+					}
+				}
+				add_country_modifier = {
+					name = "me_shu_white_feather_guard"
+					duration = -1
+				}
+			}
+		}
+	}
+	shu_chukonu_tactics_mission = {
+		icon = mission_chinese_gunpowder_crossbow
+		required_missions = { shu_white_feather_guard_mission }
+		position = 6
+		trigger = {
+			OR = {
+				army_reformer = 2
+				army_organiser = 2
+				fortification_expert = 2	#Military Engineer
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_zhuge_nu"
+				duration = -1
+			}
+		}
+	}
+	shu_fortifications_of_shu_mission = {
+		icon = mission_great_wall
+		required_missions = { shu_king_of_hanzhong_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 689
+			OR = {
+				NOT = { 
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = { base_manpower = 5 }
+				NOT = { fort_level = 1 }
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 689
+			689 = {
+				fort_level = 1
+				base_manpower = 5
+			}
+			capital_scope = {
+				fort_level = 1
+				base_manpower = 5
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				fort_level = 1
+				base_manpower = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_double_gates_strategy"
+				duration = 10950
+			}
+		}
+	}
+	shu_western_protectorate_mission = {
+		icon = mission_chinese_planning_war
+		required_missions = { shu_pacify_the_qiang_mission shu_fortifications_of_shu_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = kashgaria_area
+				area = tarim_basin_area		#North Altishahr
+				area = shanshan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kashgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tarim_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shanshan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			custom_tooltip = hnd_western_protectorate_mission.tt
+			
+			#Same exact event as HND Han missions! (works for both tags!)
+			
+			country_event = {
+				id = mmetr_HND_mission_events.7
+			}
+		}
+	}
+	shu_subdue_the_xianbei_mission = {
+		icon = mission_xianbei_desert_warriors
+		required_missions = { shu_conquest_of_zhongyuan_mission }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = ordos_area
+				area = inner_mongolia_area
+				area = central_mongolia_area	#Gobi
+				area = outer_mongolia_area
+				area = uliastai_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT		#includes tributaries
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ordos_area = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = shu_subdue_the_xianbei_mission.tt
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			inner_mongolia_area = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = shu_subdue_the_xianbei_mission.tt
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			central_mongolia_area = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = shu_subdue_the_xianbei_mission.tt
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			outer_mongolia_area = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = shu_subdue_the_xianbei_mission.tt
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			uliastai_area = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = shu_subdue_the_xianbei_mission.tt
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			OR = { 
+				overlord_of = XIB
+				NOT = { exists = XIB }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_HND_mission_events.18	#Hostage from the Xianbei
+			}
+			add_country_modifier = {
+				name = "me_shu_xianbei_subjects"
+				duration = 10950
+			}
+		}
+	}
+}
+
+shu_han_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SHU
+			was_tag = SHU
+		}
+		NOT = { started_in = 280.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	shu_develop_chengdu_mission = {
+		icon = et_mission_forbidden_city
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 679 # Chengdu
+			OR = {
+				NOT = {
+					base_production = 8
+					development = 20
+				}
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			silk = 1	#at least one Silk province
+			owns_core_province = 679
+			679 = {
+				base_production = 8
+				development = 20
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.8
+			}
+			tooltip = {
+				add_prestige = 20
+				679 = {
+					add_province_modifier = {
+						name = "me_shu_city_of_silk"
+						duration = -1
+					}
+				}
+			}
+			if = {
+				limit = {
+					679 = {
+						NOT = { trade_goods = silk }
+					}
+				}
+				679 = {
+					change_trade_goods = silk
+				}
+			}
+		}
+	}
+	shu_infrastructure_projects_mission = {
+		icon = mission_asian_trader
+		required_missions = { shu_develop_chengdu_mission }
+		position = 3
+		trigger = {
+			grown_by_development = 50
+			road = 20
+			num_of_owned_provinces_with = {
+				value = 25
+				num_of_buildings_in_province = 1
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_benevolent_administration"
+				duration = 10950
+			}
+		}
+	}
+	shu_armies_of_shu_han_mission = {
+		icon = mission_han_army
+		required_missions = {  }
+		position = 4
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.5
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_mass_mobilization"
+				duration = 10950
+			}
+			gansu_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_gansu_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shaanxi_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	shu_king_of_hanzhong_mission = {
+		icon = mission_chinese_monarch_horseback
+		required_missions = { shu_armies_of_shu_han_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 689	#Hanzhong
+			OR = {
+				NOT = { 
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				OR = {
+					NOT = { base_manpower = 5 }
+					fort_level = 1
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 689
+			689 = {
+				OR = {
+					fort_level = 1
+					base_manpower = 5
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.1
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_hnd_king_of_hanzhong"
+					duration = 10950
+				}
+				700 = {		#Chang'an
+					if = {
+						limit = {
+							NOT = { owned_by = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				1836 = {	#Luoyang
+					if = {
+						limit = {
+							NOT = { owned_by = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				gansu_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				west_gansu_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	shu_control_liangzhou_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { shu_king_of_hanzhong_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = gansu_area
+				area = west_gansu_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_gansu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_jade_gate"
+				duration = 10950
+			}
+		}
+	}
+	shu_pacify_the_qiang_mission = {
+		icon = mission_nomad_camp
+		required_missions = { shu_control_liangzhou_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = amdo_area
+				area = kham_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT
+				NOT = { unrest = 2 }
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			amdo_area = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = { unrest = 2 }
+			}
+			kham_area = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = { unrest = 2 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_qiang_tribal_cavalry"
+				duration = 10950
+			}
+		}
+	}
+	shu_conquest_of_zhongyuan_mission = {
+		icon = mission_asian_city
+		required_missions = { shu_capital_in_luoyang_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = henan_area
+				area = north_henan_area
+				area = anhui_area
+				area = jiangsu_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			henan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_henan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			anhui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jiangsu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.3
+			}
+			north_china_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+shu_han_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SHU
+			was_tag = SHU
+		}
+		NOT = { started_in = 280.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	shu_logistics_innovations_mission = {
+		icon = mission_chinese_harvest
+		required_missions = { shu_develop_chengdu_mission }
+		position = 2
+		trigger = {
+			monthly_adm = 10
+			NOT = { average_home_autonomy = 30 }
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.9		#Innovations of Shu
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_shu_wooden_ox_and_flowing_horse"
+					duration = 7300
+				}
+				add_country_modifier = {
+					name = "me_shu_tuntian_system"
+					duration = -1
+				}
+			}
+		}
+	}
+	shu_pacify_the_nanman_mission = {
+		icon = mission_conquer_burma
+		required_missions = {  }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = yun_gui_area					#Yun-Gui Hinterland
+				area = yun_gui_borderland_area		#Yun-Gui Frontier
+			}
+			NOT = { country_or_subject_holds = ROOT }
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			yun_gui_area = {
+				type = all
+				OR = {
+					country_or_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			yun_gui_borderland_area = {
+				type = all
+				OR = {
+					country_or_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			OR = {
+				overlord_of = CNM	#Cuanman
+				NOT = { exists = CNM }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.17		#Rise of the Cuan Clan
+			}
+		}
+	}
+	shu_annexation_of_jiaozhi_mission = {
+		icon = mission_a_million_rice_fields
+		required_missions = { shu_pacify_the_nanman_mission shu_armies_of_shu_han_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = west_guangdong_area
+				area = guangzhou_area
+				area = guangxi_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			west_guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guangzhou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_jiaozhi_shipyards"
+				duration = 10950
+			}
+		}
+	}
+	shu_chu_shi_biao_mission = {
+		icon = mission_chu_shi_biao
+		required_missions = { shu_king_of_hanzhong_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 700
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 700	#Chang'an
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.4
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_shu_forward_momentum"
+					duration = 7300
+				}
+				1836 = {	#Luoyang
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_core = ROOT
+				}
+			}
+		}
+	}
+	shu_capital_in_luoyang_mission = {
+		icon = mission_chinese_son_of_heaven
+		required_missions = { shu_chu_shi_biao_mission }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 1836
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 1836	#Luoyang
+			1836 = {
+				is_capital_of = ROOT
+			}
+			NOT = { exists = HND }
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.5
+			}
+			custom_tooltip = shu_capital_in_luoyang_mission.tt
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_legitimacy = 100
+			add_mandate = 10
+		}
+	}
+	shu_wansui_wanwansui_mission = {
+		icon = mission_chinese_edict
+		required_missions = { shu_conquest_of_zhongyuan_mission shu_northern_march_mission }
+		position = 11
+		provinces_to_highlight = {
+			superregion = china_superregion
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					is_emperor_of_china = ROOT
+				}
+				imperial_mandate = 75
+			}
+			if = {
+				limit = {
+					NOT = { is_emperor_of_china = ROOT }
+				}
+				legitimacy = 100
+			}
+			china_superregion = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_prestige = 30
+			add_country_modifier = {
+				name = "me_shu_son_of_heaven"
+				duration = 10950
+			}
+		}
+	}
+}
+
+shu_han_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SHU
+			was_tag = SHU
+		}
+		NOT = { started_in = 280.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	shu_confucian_legalism_mission = {
+		icon = mission_chinese_officials_in_line
+		required_missions = {  }
+		position = 1
+		trigger = {
+			stability = 3
+			NOT = { corruption = 0.1 }
+			NOT = { num_of_rebel_armies = 1 }
+		}
+		effect = {
+			add_adm_power = 50
+			add_country_modifier = {
+				name = "me_shu_confucian_legalism"
+				duration = 7300
+			}
+		}
+	}
+	shu_meritocratic_education_mission = {
+		icon = mission_scholar_officials
+		required_missions = { shu_confucian_legalism_mission }
+		position = 2
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { writing = 50 }
+		}
+		trigger = {
+			all_owned_province = {
+				writing = 50
+			}
+			custom_trigger_tooltip = {
+				tooltip = shu_meritocratic_education_mission.tt
+				
+				has_any_skill_3_advisor = yes	#new mod scripted trigger
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.7
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_shu_great_education_residence"
+					duration = -1
+				}
+			}
+		}
+	}
+	shu_kongmings_legacy_mission = {
+		icon = mission_chu_shi_biao
+		required_missions = { shu_logistics_innovations_mission shu_curb_the_nobles_mission shu_meritocratic_education_mission }
+		position = 3
+		trigger = {
+			meritocracy = 90
+			harmony = 90
+			all_owned_province = {
+				legalism = 90
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_legacy_of_zhuge_liang"
+				duration = -1
+			}
+		}
+	}
+	shu_wu_diplomacy_mission = {
+		icon = mission_chinese_warlords_alliance
+		required_missions = {  }
+		position = 4
+		trigger = {
+			OR = {
+				alliance_with = WUU
+				overlord_of = WUU
+				WUU = {
+					is_rival = ROOT
+					custom_trigger_tooltip = {
+						tooltip = shu_wu_diplomacy_mission.tt
+						OR = {
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = insulted
+							}
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = scornfully_insulted
+							}
+						}
+					}
+				}
+				NOT = { exists = WUU }
+			}
+		}
+		effect = {
+			custom_tooltip = shu_wu_diplomacy_mission.tt2
+			if = {
+				limit = {
+					OR = {
+						alliance_with = WUU
+						overlord_of = WUU
+					}
+				}
+				add_historical_friend = WUU
+				WUU = {
+					add_historical_friend = ROOT
+				}
+			}
+			if = {
+				limit = {
+					is_rival = WUU
+				}
+				hunan_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				huguang_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	shu_settle_the_yue_mission = {
+		icon = mission_mnd_dai_universities
+		required_missions = { shu_jingzhou_campaign_mission shu_annexation_of_jiaozhi_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = red_river_delta_area
+				area = vietnam_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.15
+			}
+		}
+	}
+	shu_control_the_coast_mission = {
+		icon = mission_open_up_china
+		required_missions = { shu_invasion_of_wu_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = zhejiang_area
+				area = fujian_area
+				area = guangdong_area	#East Guangdong
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			zhejiang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			fujian_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.16
+			}
+		}
+	}
+	shu_build_a_proper_navy_mission = {
+		icon = mission_to_the_south_china_sea
+		required_missions = { shu_control_the_coast_mission shu_seize_jianye_mission }
+		position = 9
+		trigger = {
+			num_of_admirals = 1
+			navy_size = 25
+			navy_tradition = 40
+		}
+		effect = {
+			add_dip_power = 100
+			add_country_modifier = {
+				name = "me_shu_trade_beyond_shu"
+				duration = 10950
+			}
+		}
+	}
+	shu_northern_march_mission = {
+		icon = mission_korean_castle_assault
+		required_missions = { shu_capital_in_luoyang_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = shanxi_area
+				area = south_hebei_area
+				area = west_shandong_area
+				area = shandong_area		#East Shandong
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			shanxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_hebei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_shandong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shandong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "me_shu_victorious_army"
+				duration = 10950
+			}
+			north_china_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+shu_han_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SHU
+			was_tag = SHU
+		}
+		NOT = { started_in = 280.1.1 }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	shu_curb_the_nobles_mission = {
+		icon = mission_kowtow
+		required_missions = { shu_confucian_legalism_mission }
+		position = 2
+		trigger = {
+			NOT = { corruption = 1 }
+			OR = {
+				NOT = {
+					estate_influence = {
+						estate = estate_nobles
+						influence = 30
+					}
+				}
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 70
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id =  mmetr_SHU_Han_mission_events.6		#Purge of the Corrupt
+			}
+		}
+	}
+	shu_check_the_eunuchs_mission = {
+		icon = mission_chinese_merchant
+		required_missions = { shu_curb_the_nobles_mission }
+		position = 3
+		trigger = {
+			estate_loyalty = {
+				estate = estate_eunuchs
+				loyalty = 40
+			}
+			NOT = {
+				estate_influence = {
+					estate = estate_eunuchs
+					influence = 30
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.12
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_shu_loyal_court"
+					duration = 10950
+				}
+			}
+		}
+	}
+	shu_jingzhou_campaign_mission = {
+		icon = mission_chinese_general_riding
+		required_missions = {  }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = huguang_area		#Hubei
+				area = hunan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			huguang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hunan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.13
+			}
+			tooltip = {
+				add_prestige = 20
+				add_country_modifier = {
+					name = "me_shu_claims_fulfilled"
+					duration = 10950
+				}
+				huguang_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+					}
+					add_core = ROOT
+				}
+				hunan_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+					}
+					add_core = ROOT
+				}
+				jiangxi_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				south_anhui_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	shu_invasion_of_wu_mission = {
+		icon = mission_ancient_chinese_army_in_siege
+		required_missions = { shu_jingzhou_campaign_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = jiangxi_area
+				area = south_anhui_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			jiangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_anhui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+			add_dip_power = 100
+			south_jiangsu_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zhejiang_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			fujian_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	shu_seize_jianye_mission = {
+		icon = mission_chinese_fortress_siege
+		required_missions = { shu_invasion_of_wu_mission }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 1821		#Jianye
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns = 1821		#Jianye
+			OR = {
+				overlord_of = WUU
+				china_superregion = {
+					type = all
+					NOT = { owned_by = WUU }
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SHU_Han_mission_events.14
+			}
+		}
+	}
+	shu_hanguo_tribute_mission = {
+		icon = mission_korean_manuscript_map
+		required_missions = { shu_northern_march_mission }
+		position = 11
+		provinces_to_highlight = {
+			region = korea_region
+			NOT = {
+				country_or_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			korea_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_shu_vassal_king_tribute"
+				duration = 10950
+			}
+		}
+	}
+}

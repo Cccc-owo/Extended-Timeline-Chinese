@@ -1,0 +1,211 @@
+namespace = mmetr_LON_mission_events
+
+# Crown of León-Castile
+country_event = {
+	id = mmetr_LON_mission_events.1
+	title = "mmetr_LON_mission_events.1.t"
+	desc = "mmetr_LON_mission_events.1.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_LON_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_lon_crown_of_leon_castile"
+			duration = 10950
+		}
+	}
+}
+
+# Cult of Santiago
+country_event = {
+	id = mmetr_LON_mission_events.2
+	title = "mmetr_LON_mission_events.2.t"
+	desc = "mmetr_LON_mission_events.2.desc"
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_LON_mission_events.2.a"
+		
+		206 = {
+			rename_capital = "Santiago de Compostela"
+		}
+		add_dip_power = 50
+		206 = {
+			add_province_modifier = {
+				name = "me_lon_cult_of_saint_james"
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_LON_mission_events.2.b"
+		
+		add_dip_power = 50
+		206 = {
+			add_province_modifier = {
+				name = "me_lon_cult_of_saint_james"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Los Castillos de Valencia
+country_event = {
+	id = mmetr_LON_mission_events.3
+	title = "mmetr_LON_mission_events.3.t"
+	desc = "mmetr_LON_mission_events.3.desc"
+	picture = FORT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_LON_mission_events.3.a"
+		
+		220 = {
+			add_province_modifier = {
+				name = "me_lon_valencian_fortifications"
+				duration = 9125
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_LON_mission_events.3.b"
+		
+		220 = {
+			cede_province = VAL
+			add_core = VAL
+		}
+		vassalize = VAL
+		hidden_effect = {
+			220 = {
+				owner = {
+					change_religion = ROOT
+					define_ruler = {
+						claim = 90
+						culture = leonese
+						religion = catholic
+						female = no
+					}
+				}
+			}
+		}
+		
+		220 = {
+			add_province_modifier = {
+				name = "me_lon_valencian_fortifications"
+				duration = 9125
+			}
+		}
+	}
+}
+
+# Cross of Victory - Cruz de la Victoria
+country_event = {
+	id = mmetr_LON_mission_events.4
+	title = "mmetr_LON_mission_events.4.t"
+	desc = "mmetr_LON_mission_events.4.desc"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_LON_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_lon_cross_of_victory"
+			duration = -1
+		}
+	}
+}
+
+# Muslim Talents of Cordoba
+country_event = {
+	id = mmetr_LON_mission_events.5
+	title = "mmetr_LON_mission_events.5.t"
+	desc = "mmetr_LON_mission_events.5.desc"
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_LON_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_lon_iberian_priority"
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = "mmetr_LON_mission_events.5.b"
+		
+		225 = {
+			add_province_modifier = {
+				name = "me_lon_cordoban_administrators"
+				duration = 10950
+			}
+		}
+		define_advisor = {
+			type = treasurer
+			skill = 2
+			cost_multiplier = 0.5
+			culture = andalucian
+			religion = sunni
+		}
+	}
+}
+
+# An Iberian Crusader State?
+country_event = {
+	id = mmetr_LON_mission_events.6
+	title = "mmetr_LON_mission_events.6.t"
+	desc = "mmetr_LON_mission_events.6.desc"
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_LON_mission_events.6.a"
+		
+		add_government_reform = crusader_state
+	}
+	
+	option = {
+		name = "mmetr_LON_mission_events.6.b"
+		
+		add_prestige = 5
+	}
+}
+
+# Order of Alcantara
+country_event = {
+	id = mmetr_LON_mission_events.7
+	title = "mmetr_LON_mission_events.7.t"
+	desc = "mmetr_LON_mission_events.7.desc"
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_LON_mission_events.7.a"
+		
+		extremadura_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_lon_order_of_alcantara"
+				duration = -1
+			}
+		}
+	}
+}
+

@@ -1,0 +1,1160 @@
+wessex_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			OR = {
+				tag = WSX
+				AND = {
+					tag = ENG	#Anglo-Saxon England
+					primary_culture = anglo_saxon	
+				}
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	wsx_expand_the_witan_mission = {
+		icon = reissue_the_mining_code
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 2
+			}
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_expanded_witan"
+				duration = 10950
+			}
+		}
+	}
+	wsx_heed_witan_redes_mission = {
+		icon = mission_monarch_signing
+		required_missions = { wsx_expand_the_witan_mission }
+		position = 3
+		trigger = {
+			OR = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 80
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 5
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_loyal_witan"
+				duration = 10950
+			}
+		}
+	}
+	wsx_great_fleet_of_wessex_mission = {
+		icon = mission_rb_into_ireland
+		required_missions = { }
+		position = 5
+		trigger = {
+			navy_size_percentage = 1.0
+			navy_size = 15
+			num_of_admirals = 1
+		}
+		effect = {
+			add_navy_tradition = 10
+		}
+	}
+	wsx_conquest_of_ireland_mission = {
+		icon = mission_rb_conquer_leinster
+		required_missions = { 
+			wsx_great_fleet_of_wessex_mission
+			wsx_britons_of_cornwall_mission
+		}
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = munster_area
+				area = connacht_area
+				area = ulster_area
+				area = leinster_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			munster_area = {
+				type = all
+				owned_by = ROOT
+			}
+			connacht_area = {
+				type = all
+				owned_by = ROOT
+			}
+			ulster_area = {
+				type = all
+				owned_by = ROOT
+			}
+			leinster_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			munster_area = { 
+				add_province_modifier = {
+					name = "eng_irish_revolts"
+					duration = 10950
+				}
+			}
+			connacht_area = { 
+				add_province_modifier = {
+					name = "eng_irish_revolts"
+					duration = 10950
+				}
+			}
+			ulster_area = { 
+				add_province_modifier = {
+					name = "eng_irish_revolts"
+					duration = 10950
+				}
+			}
+			leinster_area = { 
+				add_province_modifier = {
+					name = "eng_irish_revolts"
+					duration = 10950
+				}
+			}
+		}
+	}
+	wsx_celtic_assimilation_mission = {
+		icon = mission_medieval_marriage
+		required_missions = { 
+			wsx_conquest_of_ireland_mission
+			wsx_vanquish_the_welsh_kings_mission
+		}
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = wales_area
+				area = munster_area
+				area = connacht_area
+				area = leinster_area
+				area = ulster_area
+			}
+			NOT = {
+				has_owner_culture = yes
+			}
+			owned_by = ROOT
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 7
+				has_owner_culture = yes
+				OR = {
+					area = wales_area
+					area = munster_area
+					area = connacht_area
+					area = leinster_area
+					area = ulster_area
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_anglicized_counsel"
+				duration = 10950
+			}
+		}
+	}
+	wsx_english_channel_trade_mission = {
+		icon = mission_rb_monopolize_the_channel
+		required_missions = { 
+			wsx_drive_out_the_invaders_mission
+		}
+		position = 9
+		provinces_to_highlight = {
+			province_id = 1269		#English Channel trade node
+			has_discovered = ROOT
+			NOT = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		trigger = {
+			1269 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			add_mercantilism = 2
+			add_prestige = 15
+		}
+	}
+	wsx_scandinavian_intervention_mission = {
+		icon = mission_viking_pillage
+		required_missions = { 
+			wsx_north_sea_empire_mission
+		}
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				region = scandinavia_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = scandinavia_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_interventionist_policy"
+				duration = 10950
+			}
+		}
+	}
+}
+
+wessex_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			OR = {
+				tag = WSX
+				AND = {
+					tag = ENG	#Anglo-Saxon England
+					primary_culture = anglo_saxon	
+				}
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	wsx_acquire_vassals_mission = {
+		icon = mission_medieval_surrender_keys
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_non_tributary_subjects = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "obedient_subjects"
+				duration = 9125
+			}
+		}
+	}
+	wsx_anglo_saxon_feudalism_mission = {
+		icon = mission_kneeling_before_king
+		required_missions = { 
+			wsx_expand_the_witan_mission
+			wsx_acquire_vassals_mission
+			wsx_reform_the_military_mission
+		}
+		position = 2
+		trigger = {
+			has_institution = early_feudalism
+			has_reform = feudalism_reform
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+	wsx_herepaths_mission = {
+		icon = mission_road_construction_ancient
+		required_missions = { 
+			wsx_burghal_hidage_mission
+		}
+		position = 3
+		trigger = {
+			road = 10
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_herepath_road_system"
+				duration = -1
+			}
+		}
+	}
+	wsx_britons_of_cornwall_mission = {
+		icon = defeat_the_english
+		required_missions = { 
+			wsx_levy_the_fyrd_mission
+		}
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = wessex_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	wsx_vanquish_the_welsh_kings_mission = {
+		icon = mission_king_of_wales_on_horseback
+		required_missions = { 
+			wsx_britons_of_cornwall_mission
+			wsx_challenge_mercia_mission
+		}
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = wales_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_briton_subjects"
+				duration = 10950
+			}
+		}
+	}
+	wsx_drive_out_the_invaders_mission = {
+		icon = mission_rb_into_england
+		required_missions = { }
+		position = 8
+		provinces_to_highlight = {
+			region = british_isles_region
+			owned_by = DAN
+		}
+		trigger = {
+			british_isles_region = {
+				type = all
+				NOT = { owned_by = DAN }
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+		}
+	}
+	wsx_north_sea_empire_mission = {
+		icon = mission_viking_longboat
+		required_missions = {
+			wsx_drive_out_the_invaders_mission
+			wsx_king_of_the_anglo_saxons_mission
+		}
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = denmark_area
+				area = skaneland_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				DAN = {
+					is_subject_of = ROOT
+					num_of_owned_provinces_with = {
+						value = 3
+						region = scandinavia_region
+					}
+				}
+				AND = {
+					denmark_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					skaneland_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "cyning_of_the_north_sea"
+				duration = -1
+			}
+		}
+	}
+	wsx_anglo_saxon_chronicle_mission = {
+		icon = reform_the_nomocanon
+		required_missions = {
+			wsx_earldoms_of_the_heptarchy_mission
+		}
+		position = 11
+		trigger = {
+			prestige = 90
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_anglo_saxon_chronicle"
+				duration = 9125
+			}
+		}
+	}
+}
+
+wessex_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			OR = {
+				tag = WSX
+				AND = {
+					tag = ENG	#Anglo-Saxon England
+					primary_culture = anglo_saxon	
+				}
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	wsx_reform_the_military_mission = {
+		icon = mission_germanic_shields
+		required_missions = { }
+		position = 1
+		trigger = {
+			OR = {
+				army_professionalism = 0.40
+				army_tradition = 60
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_WSX_mission_events.1
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_wsx_trinoda_necessitas"
+					duration = 10950
+				}
+			}
+		}
+	}
+	wsx_burghal_hidage_mission = {
+		icon = mission_castle_construction_medieval
+		required_missions = {
+			wsx_reform_the_military_mission
+		}
+		position = 2
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				region = british_isles_region
+				fort_level = 1
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_burghal_hidage"
+				duration = 10950
+			}
+		}
+	}
+	wsx_security_for_the_realm_mission = {
+		icon = mission_rb_conquer_wales
+		required_missions = {
+			wsx_burghal_hidage_mission
+		}
+		position = 3
+		trigger = {
+			OR = {
+				philosopher = 2
+				natural_scientist = 2
+			}
+			stability = 3
+			is_at_war = no
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+		}
+		effect = {
+			country_event = {
+				id = mmetr_WSX_mission_events.2
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_wsx_education_in_peace"
+					duration = 10950
+				}
+			}
+		}
+	}
+	wsx_levy_the_fyrd_mission = {
+		icon = mission_baltic_prussian_pagans
+		required_missions = { }
+		position = 4
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			home_counties_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			wessex_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			4372 = {		#Coventry
+				add_permanent_claim = ROOT
+			}
+			237 = {		#Oxfordshire
+				add_permanent_claim = ROOT
+			}
+			239 = {		#Gloucestershire
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	wsx_challenge_mercia_mission = {
+		icon = mission_unite_home_region
+		required_missions = {
+			wsx_levy_the_fyrd_mission
+		}
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4372	#Coventry
+				province_id = 237	#Oxfordshire
+				province_id = 239	#Gloucestershire
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4372
+			owns_or_non_sovereign_subject_of = 240
+			owns_or_non_sovereign_subject_of = 239
+		}
+		effect = {
+			west_midlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_midlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	wsx_march_to_northumbria_mission = {
+		icon = mission_rb_scottish_the_darien_scheme
+		required_missions = {
+			wsx_challenge_mercia_mission
+			wsx_eastern_anglo_saxons_mission
+		}
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 246	#Newcastle
+				area = yorkshire_area
+				area = east_midlands_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 246
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_wsx_king_in_the_north"
+				duration = -1
+			}
+		}
+	}
+	wsx_king_of_the_anglo_saxons_mission = {
+		icon = mission_map_london_britannia
+		required_missions = {
+			wsx_march_to_northumbria_mission
+		}
+		position = 9
+		provinces_to_highlight = {
+			culture = anglo_saxon
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = wsx_king_of_the_anglo_saxons_mission.tt
+				NOT = {
+					any_province = {
+						culture = anglo_saxon
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_legitimacy = 50
+		}
+	}
+	wsx_earldoms_of_the_heptarchy_mission = {
+		icon = mission_monarch_in_throne_room
+		required_missions = {
+			wsx_king_of_the_anglo_saxons_mission
+		}
+		position = 10
+		trigger = {
+			num_of_states = 7
+			num_of_generals = 2
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_wsx_seven_kingdoms_one_king"
+				duration = -1
+			}
+		}
+	}
+	wsx_cross_the_channel_mission = {
+		icon = mission_stamford_bridge_anglo_saxon
+		required_missions = {
+			wsx_earldoms_of_the_heptarchy_mission
+			wsx_northern_campaign_mission
+		}
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = normandy_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			normandy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 20
+		}
+	}
+	wsx_an_english_empire_mission = {
+		icon = mission_empire
+		required_missions = {
+			wsx_cross_the_channel_mission
+		}
+		position = 12
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Common Sense"
+				}
+				government_rank	= 3
+				else = {
+					total_development	= 1000
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 75
+			add_dip_power = 75
+			add_mil_power = 75
+		}
+	}
+}
+
+wessex_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			OR = {
+				tag = WSX
+				AND = {
+					tag = ENG	#Anglo-Saxon England
+					primary_culture = anglo_saxon	
+				}
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	wsx_followers_of_christ_mission = {
+		icon = mission_crusaders_mass_crusade_king
+		required_missions = {
+			wsx_the_question_of_faith_mission
+		}
+		position = 2
+		trigger = {
+			religion_group = christian
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_religious_fervor"
+				duration = 10950
+			}
+		}
+	}
+	wsx_baptize_the_anglo_saxons_mission = {
+		icon = mission_mass_baptism
+		required_missions = {
+			wsx_followers_of_christ_mission
+		}
+		position = 3
+		trigger = {
+			religious_unity = 1.0
+			num_of_owned_provinces_with = {
+				value = 20
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_messenger_of_god"
+				duration = 10950
+			}
+		}
+	}
+	wsx_claim_the_temese_mission = {
+		icon = mission_advance_to_the_dnieper
+		required_missions = {
+			wsx_levy_the_fyrd_mission
+		}
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = home_counties_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_thames_river_fleet"
+				duration = 10950
+			}
+			east_anglia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	wsx_eastern_anglo_saxons_mission = {
+		icon = mission_gothic_warrior_4th_ce
+		required_missions = {
+			wsx_claim_the_temese_mission
+		}
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = east_anglia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+		}
+	}
+	wsx_secure_the_frontier_mission = {
+		icon = mission_rb_unite_the_clans
+		required_missions = {
+			wsx_march_to_northumbria_mission
+		}
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = scottish_marches_area	#Northern England in game
+			}
+			NOT = { 
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			scottish_marches_area = {
+				type = all
+				owned_by = ROOT
+			}
+			any_owned_province = {
+				area = scottish_marches_area
+				fort_level = 1
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_WSX_mission_events.3
+			}
+			tooltip = {
+				scottish_marches_area = {
+					add_province_modifier = {
+						name = "me_wsx_frontier_raids"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	wsx_northern_campaign_mission = {
+		icon = mission_rb_conquer_the_highlands
+		required_missions = {
+			wsx_secure_the_frontier_mission
+			wsx_king_of_the_anglo_saxons_mission
+		}
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = lowlands_area
+				area = highlands_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			lowlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_king_of_britannia"
+				duration = 10950
+			}
+		}
+	}
+	wsx_continental_authority_mission = {
+		icon = the_crown_of_lothair
+		required_missions = {
+			wsx_cross_the_channel_mission
+		}
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 183 	#Paris / Il-de-France
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 183
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				OR = {
+					region = france_region
+					region = north_german_region
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_army_tradition = 20
+		}
+	}
+}
+
+wessex_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			OR = {
+				tag = WSX
+				AND = {
+					tag = ENG	#Anglo-Saxon England
+					primary_culture = anglo_saxon	
+				}
+			}
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	wsx_the_question_of_faith_mission = {
+		icon = geneva_conventions
+		required_missions = { }
+		position = 1
+		trigger = {
+			any_owned_province = {
+				religion_group = christian
+			}
+		}
+		effect = {
+			
+		}
+	}
+	wsx_woden_born_mission = {
+		icon = unite_the_wittelsbachs
+		required_missions = {
+			wsx_the_question_of_faith_mission
+		}
+		position = 2
+		trigger = {
+			religion_group = german_pagan
+			num_of_owned_provinces_with = {
+				value = 12
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_religious_fervor"
+				duration = 10950
+			}
+		}
+	}
+	wsx_glory_to_woden_mission = {
+		icon = mission_thor_painting
+		required_missions = {
+			wsx_woden_born_mission
+		}
+		position = 3
+		trigger = {
+			religious_unity = 1.0
+			army_tradition = 75
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_sons_of_woden"
+				duration = 10950
+			}
+		}
+	}
+	wsx_consolidate_wessex_mission = {
+		icon = return_visby_to_the_league
+		required_missions = { }
+		position = 5
+		trigger = {
+			storehouse = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_wsx_surplus_food"
+				duration = 10950
+			}
+		}
+	}
+	wsx_castra_of_the_romans_mission = {
+		icon = a_place_among_the_great_powers
+		required_missions = {
+			wsx_consolidate_wessex_mission
+			wsx_claim_the_temese_mission
+		}
+		position = 6
+		provinces_to_highlight = {
+			province_id = 236	#London / Londinium
+		}
+		trigger = {
+			owns_core_province = 236
+			236 = {
+				fort_level = 2
+				num_of_times_improved_by_owner = 3
+			}
+		}
+		effect = {
+			236 = {
+				add_province_modifier = {
+					name = "me_wsx_roman_walls_restored"
+					duration = 10950
+				}
+			}
+		}
+	}
+	wsx_journey_to_the_west_mission = {		#vanilla English mission Discover the Americas
+		icon = mission_establish_high_seas_navy
+		required_missions = {
+			wsx_secure_the_frontier_mission
+		}
+		position = 9
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = miss_discover_eastern_america
+					colonial_eastern_america = { has_discovered = ROOT }
+				}
+				custom_trigger_tooltip = {
+					tooltip = wsx_journey_to_the_west_mission.tt
+					colonial_canada = { has_discovered = ROOT }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_unknown_frontier"
+				duration = 10950
+			}
+			add_dip_power = 50
+		}
+	}
+	wsx_settle_in_vinland_mission = {		#vanilla English mission Settle in America
+		icon = mission_collect_yasak
+		required_missions = {
+			wsx_journey_to_the_west_mission
+		}
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				colonial_region = colonial_eastern_america
+				colonial_region = colonial_canada
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = wsx_settle_in_vinland_mission.tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 1
+					OR = {
+						colonial_region = colonial_eastern_america
+						colonial_region = colonial_canada
+					}
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			create_conquistador = {
+				tradition = 80
+			}
+		}
+	}
+	wsx_anglo_saxon_colonies_mission = {		#vanilla English mission Thirteen Colonies
+		icon = mission_rb_the_thirteen_colonies
+		required_missions = {
+			wsx_settle_in_vinland_mission
+		}
+		position = 11
+		provinces_to_highlight = {
+			colonial_region = colonial_eastern_america
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				colonial_region = colonial_eastern_america
+				is_city = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "eng_rb_thirteen_colonies_mod"
+				duration = -1
+			}
+		}
+	}
+	wsx_colonial_empire_mission = {
+		icon = mission_rb_settle_the_north
+		required_missions = {
+			wsx_anglo_saxon_colonies_mission
+		}
+		position = 12
+		trigger = {
+			num_of_continents = 4
+		}
+		effect = {
+			add_prestige = 25
+			add_dip_power = 100
+		}
+	}
+	
+	
+}

@@ -1,0 +1,2026 @@
+fatimid_mmetr_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	fat_appeal_to_the_dhimmi_mission = {
+		icon = chivalry_is_not_dead
+		required_missions = { fat_awliya_allah_mission }
+		position = 2
+		trigger = {
+			OR = {
+				num_of_estate_agendas_completed = {
+					estate = estate_dhimmi
+					value = 3
+				}
+				estate_loyalty = {
+					estate = estate_dhimmi
+					loyalty = 75
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_meritocratic_system"
+				duration = 14600
+			}
+		}
+	}
+	fat_kutama_cavalry_mission = {
+		icon = mission_protect_granada
+		required_missions = {  }
+		position = 4
+		provinces_to_highlight = {
+			area = kabylia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				num_of_cavalry = 15
+				cavalry_fraction = 0.2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_kutama_cavalry"
+				duration = -1
+			}
+			country_event = {
+				id = mmetr_FAT_mission_events.12	#Choose Berber Advisor
+			}
+		}
+	}
+	fat_hegemonize_the_maghreb_mission = {
+		icon = mission_traverse_the_sahara
+		required_missions = { fat_kutama_cavalry_mission fat_palaces_of_tunis_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = algiers_area
+				area = fez_area
+				area = northern_morocco_area
+				area = hautes_plaines_area		#Central Morocco
+				area = western_morocco_area		#Gharb
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			fez_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hautes_plaines_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_maghrebi_subjects"
+				duration = 10950
+			}
+			lower_andalucia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_andalucia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fat_challenge_cordoba_mission = {
+		icon = mission_develop_cordoba
+		required_missions = { fat_hegemonize_the_maghreb_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 225
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 225		#Cordoba
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.13	#The Martyrdom of Husayn ibn Ali
+			}
+			tooltip = {
+				add_power_projection = {
+					type = mission_rewards_power_projection		#Adding Power Projection
+					amount = 20
+				}
+				add_country_modifier = {
+					name = "me_fat_memory_of_martyrdom"
+					duration = 10950
+				}
+			}
+		}
+	}
+	fat_dominate_al_andalus_mission = {
+		icon = mission_umayyad_court
+		required_missions = { fat_challenge_cordoba_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = lower_andalucia_area
+				area = upper_andalucia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fat_dominate_al_andalus_mission.tt
+				calc_true_if = {
+					all_province = {
+						country_or_non_sovereign_subject_holds = ROOT
+						region = iberia_region
+					}
+					amount = 30
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_caliph_of_al_andalus"
+				duration = -1
+			}
+			iberia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fat_the_caliph_in_rome_mission = {
+		icon = answer_the_roman_question
+		required_missions = { fat_landfall_in_siqilliya_mission }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 118
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 118	#Roma
+			num_of_owned_provinces_with = {
+				value = 6
+				region = italy_region
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.22
+			}
+			add_dip_power = 100
+			add_power_projection = {
+				type = mission_rewards_power_projection		#Adding Power Projection
+				amount = 25
+			}
+			lazio_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_italy_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tuscany_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			emilia_romagna_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fat_viceroy_of_italiya_mission = {
+		icon = kingdom_of_lombardy
+		required_missions = { fat_the_caliph_in_rome_mission fat_mediterranean_powerhouse_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = tuscany_area
+				area = emilia_romagna_area
+				area = lazio_area
+				area = central_italy_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tuscany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			emilia_romagna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lazio_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_italy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			add_navy_tradition = 20
+			add_country_modifier = {
+				name = "me_fat_mediterranean_expansion"
+				duration = 10950
+			}
+		}
+	}
+	fat_caliph_of_caliphs_mission = {
+		icon = mission_restore_faith_in_the_throne
+		required_missions = { fat_unify_bilad_al_arab_mission }
+		position = 12
+		trigger = {
+			development = 1000
+		}
+		effect = {
+			add_prestige = 30
+			add_country_modifier = {
+				name = "me_fat_the_rightly_guided_one"
+				duration = 10950
+			}
+		}
+	}
+}
+
+fatimid_mmetr_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	fat_awliya_allah_mission = {
+		icon = mission_friends_or_enemies
+		required_missions = {  }
+		position = 1
+		trigger = {
+			religion_group = muslim
+			calc_true_if = {
+				all_country = {
+					has_matching_religion = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 120
+					}
+					OR = {
+						alliance_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_allies_of_the_faith"
+				duration = 10950
+			}
+		}
+	}
+	fat_protector_of_all_shiites_mission = {
+		icon = mission_al_andalus
+		required_missions = { fat_awliya_allah_mission }
+		position = 3
+		trigger = {
+			religion = shiite
+			is_defender_of_faith_of_tier = 2	#works for non-Emperor DLC as well
+			num_of_owned_provinces_with = {
+				value = 50
+				religion = shiite
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.1
+			}
+			custom_tooltip = fat_protector_of_all_shiites_mission.tt
+			tooltip = {
+				add_country_modifier = {
+					name = "me_fat_defensive_holy_war"
+					duration = 10950
+				}
+				add_country_modifier = {
+					name = "me_fat_offensive_holy_war"
+					duration = 10950
+				}
+			}
+		}
+	}
+	fat_lord_of_ifriqiyah_mission = {
+		icon = mission_found_udaipur
+		required_missions = { fat_kutama_berbers_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = tunisia_area
+				area = kabylia_area
+				area = djerba_area
+				area = tripolitania_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			djerba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tunisia_area = {
+				type = all
+				NOT = { unrest = 5 }
+			}
+			kabylia_area = {
+				type = all
+				NOT = { unrest = 5 }
+			}
+		}
+		effect = {
+			maghreb_region = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_fat_expansion_of_ifriqiyah"
+					duration = 10950
+				}
+			}
+		}
+	}
+	fat_palaces_of_tunis_mission = {
+		icon = mission_cairo_citadel
+		required_missions = { fat_lord_of_ifriqiyah_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4566
+				province_id = 2473
+			}
+			OR = {
+				NOT = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					num_of_times_improved_by_owner = 3
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 4566	#Kairwan / Kairouan
+			owns_core_province = 2473	#Souss / Mahdia
+			4566 = {
+				num_of_times_improved_by_owner = 3
+			}
+			2473 = {
+				num_of_times_improved_by_owner = 3
+			}
+			development_in_provinces = {
+				value = 55
+				area = tunisia_area
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.21
+			}
+			tooltip = {
+				add_prestige = 15
+				4566 = {
+					rename_capital = "El-Mansuriya"
+				}
+				4566 = {
+					add_province_modifier = {
+						name = "me_fat_fatimid_palace"
+						duration = -1
+					}
+				}
+				2473 = {
+					add_province_modifier = {
+						name = "me_fat_fatimid_palace"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	fat_fleet_of_the_khalifa_mission = {
+		icon = mission_arabian_sea_trade
+		required_missions = { fat_palaces_of_tunis_mission }
+		position = 6
+		trigger = {
+			navy_size = 20
+			navy_size_percentage = 0.9
+			num_of_admirals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_fatimid_fleet"
+				duration = 9125
+			}
+			sicily_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fat_landfall_in_siqilliya_mission = {
+		icon = mission_sicily_roger_keys_to_city
+		required_missions = { fat_fleet_of_the_khalifa_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.14	#Greek Fire Event at Battle of the Straits
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_fat_greek_fire"
+					duration = 10950
+				}
+			}
+		}
+	}
+	fat_mediterranean_powerhouse_mission = {
+		icon = mission_rb_mediterranean_authority
+		required_missions = { fat_landfall_in_siqilliya_mission }
+		position = 9
+		provinces_to_highlight = {
+			area = corsica_sardinia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			358 = {		#Alexandria
+				has_most_province_trade_power = ROOT
+			}
+			341 = {		#Tunis
+				has_most_province_trade_power = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					has_building = marketplace
+					has_building = trade_post
+					has_building = trade_depot
+				}
+			}
+			OR = {
+				navy_size = BYZ
+				navy_tradition = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_overseas_trade_expansion"
+				duration = 10950
+			}
+			add_country_modifier = {
+				name = "me_fat_standing_navy"
+				duration = -1
+			}
+		}
+	}
+	fat_secure_the_red_sea_mission = {
+		icon = mission_dominate_persian_gulf
+		required_missions = { fat_arabian_expansion_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = mahra_area
+						area = dhofar_area
+						area = oman_area
+						area = mascat_area
+						area = pirate_coast_area
+					}
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				AND = {
+					province_id = 4346		#Gulf of Aden
+					NOT = {
+						is_strongest_trade_power = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			mahra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dhofar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			oman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mascat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			pirate_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4346 = {		#Gulf of Adeb Trade Node
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_indian_trade"
+				duration = 10950
+			}
+		}
+	}
+	fat_unify_bilad_al_arab_mission = {
+		icon = mission_turning_the_tables
+		required_missions = { fat_secure_the_red_sea_mission fat_subdue_the_qarmatians_mission }
+		position = 11
+		provinces_to_highlight = {
+			region = arabia_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			arabia_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_arabian_unification"
+				duration = 10950
+			}
+			arabia_region = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_fat_arabian_missionaries"
+					duration = 10950
+				}
+			}
+		}
+	}
+}
+
+
+fatimid_mmetr_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	fat_caliphal_administration_mission = {
+		icon = mission_restore_caliphate_of_cordoba
+		required_missions = {  }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fat_caliphal_administration_mission.tt
+				OR = {
+					AND = {
+						has_adm_advisor = yes	#vanilla Scripted_trigger
+						has_dip_advisor = yes	#vanilla Scripted_trigger
+					}
+					AND = {
+						has_adm_advisor = yes	#vanilla Scripted_trigger
+						has_mil_advisor = yes	#vanilla Scripted_trigger
+					}
+					AND = {
+						has_dip_advisor = yes	#vanilla Scripted_trigger
+						has_mil_advisor = yes	#vanilla Scripted_trigger
+					}
+				}
+			}
+			OR = {
+				monthly_adm = 5
+				grown_by_states = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_vizier_led_bureaucracy"
+				duration = -1
+			}
+		}
+	}
+	fat_cash_crop_agriculture_mission = {
+		icon = prosperity_for_all
+		required_missions = { fat_caliphal_administration_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				trade_goods = spices
+				trade_goods = grain
+				trade_goods = cloth
+				trade_goods = sugar
+				trade_goods = cotton
+			}
+			NOT = {
+				base_production = 7
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = storehouse
+					has_building = windmill
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				region = egypt_region
+				OR = {
+					has_building = storehouse
+					has_building = windmill
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 7
+				base_production = 7
+				OR = {
+					trade_goods = spices
+					trade_goods = grain
+					trade_goods = cloth
+					trade_goods = sugar
+					trade_goods = cotton
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.4
+			}
+			tooltip = {
+				add_dip_power = 50
+				add_country_modifier = {
+					name = "me_fat_the_flax_trade"
+					duration = -1
+				}
+			}
+		}
+	}
+	fat_kutama_berbers_mission = {
+		icon = mission_reconquer_ceuta
+		required_missions = {  }
+		position = 3
+		trigger = {
+			num_of_generals = 1
+			army_size_percentage = 1.0
+			manpower_percentage = 0.60
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_kutama_tribal_forces"
+				duration = 10950
+			}
+			delta_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cyrenaica_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tripolitania_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			djerba_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tunisia_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fat_makurian_relations_mission = {
+		icon = mission_zim_strong_rulership
+		required_missions = { fat_kutama_berbers_mission }
+		position = 4
+		provinces_to_highlight = {
+			owner = {
+				OR = {
+					tag = MAK	#Makuria
+					tag = NBI	#Nubia
+				}
+				NOT = {
+					OR = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+						alliance_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			any_known_country = {
+				OR = {
+					tag = MAK	#Makuria
+					tag = NBI	#Nubia
+				}
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					alliance_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.11
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_fat_slave_soldiers"
+					duration = 10950
+				}
+			}
+			if = {		#not just a tooltip to avoid decreased opinion decay preventing effect when event lasts for more than one day
+				limit = {
+					MAK = {
+						OR = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+							alliance_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				MAK = {
+					add_historical_friend = ROOT
+				}
+				add_historical_friend = MAK
+			}
+			else_if = {
+				limit = {
+					NBI = {
+						OR = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+							alliance_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				NBI = {
+					add_historical_friend = ROOT
+				}
+				add_historical_friend = NBI
+			}
+		}
+	}
+	fat_spread_the_dawa_mission = {
+		icon = mission_muslim_prayer
+		required_missions = { fat_egyptian_ambitions_mission }
+		position = 5
+		provinces_to_highlight = {
+			region = egypt_region
+			owned_by = ROOT
+			NOT = {
+				religion = shiite
+			}
+		}
+		trigger = {
+			religion = shiite
+			num_of_owned_provinces_with = {
+				value = 15
+				religion = shiite
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_ismaili_organization"
+				duration = 10950
+			}
+		}
+	}
+	fat_custodian_of_the_holy_cities_mission = {
+		icon = mission_into_arabia
+		required_missions = { fat_imam_caliph_of_egypt_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = mecca_area
+						area = medina_area
+					}
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 385	#Mecca
+						province_id = 384	#Medina
+					}
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 385	#Mecca
+			owns_core_province = 384	#Medina
+			mecca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			medina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.8
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_fat_suzerain_of_hejaz"
+					duration = 10950
+				}
+				mecca_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_fat_loyal_sharifate_of_mecca"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	fat_arabian_expansion_mission = {
+		icon = mission_seljuk_captives
+		required_missions = { fat_custodian_of_the_holy_cities_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = tihama_al_yemen_area
+				area = asir_area
+				area = upper_yemen_area
+				area = yemen_area
+				area = hadramut_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tihama_al_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			asir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hadramut_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.15
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_fat_south_arabian_trade_networks"
+					duration = -1
+				}
+				tihama_al_yemen_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_fat_fatamid_dai_of_yemen"
+						duration = 10950
+					}
+				}
+				asir_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_fat_fatamid_dai_of_yemen"
+						duration = 10950
+					}
+				}
+				upper_yemen_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_fat_fatamid_dai_of_yemen"
+						duration = 10950
+					}
+				}
+				yemen_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_fat_fatamid_dai_of_yemen"
+						duration = 10950
+					}
+				}
+				hadramut_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "me_fat_fatamid_dai_of_yemen"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	fat_subdue_the_qarmatians_mission = {
+		icon = mission_camel_cataphracts_prt_sas
+		required_missions = { fat_arabian_expansion_mission fat_the_abbasid_capital_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				province_id = 394	#El Qatif, Bahrain area
+				province_id = 2347	#Al Hasa
+				province_id = 396	#Bahrain
+				province_id = 395	#Qatar
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 394
+			owns_or_non_sovereign_subject_of = 2347
+			owns_or_non_sovereign_subject_of = 396
+			owns_or_non_sovereign_subject_of = 395
+			OR = {
+				NOT = { exists = QRM }
+				overlord_of = QRM		#Qarmatians
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.20
+			}
+			add_country_modifier = {
+				name = "me_fat_qarmatian_estates"
+				duration = 10950
+			}
+		}
+	}
+	fat_legacy_of_the_first_imam_mission = {
+		icon = mission_al_andalus
+		required_missions = { fat_unify_bilad_al_arab_mission fat_iranian_campaign_mission }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				region = persia_region
+				region = egypt_region
+				region = mashriq_region
+				region = arabia_region
+				region = maghreb_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			persia_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			egypt_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			mashriq_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			arabia_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			maghreb_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.25
+			}
+			custom_tooltip = fat_legacy_of_the_first_imam_mission.tt
+			add_legitimacy = 100
+			add_prestige = 50
+			add_country_modifier = {
+				name = "me_fat_caliphate_authority_restored"
+				duration = -1
+			}
+		}
+	}
+}
+
+fatimid_mmetr_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	fat_codification_by_the_jurists_mission = {
+		icon = mission_reclaim_morocco
+		required_missions = { fat_caliphal_administration_mission fat_ismaili_mosques_mission }
+		position = 2
+		trigger = {
+			religion = shiite
+			stability = 3
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 4
+			}
+			OR = {
+				piety = 0.70
+				NOT = { piety = -0.70 }
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.3
+			}
+			tooltip = {
+				define_advisor = {
+					type = theologian
+					skill = 3
+					discount = yes
+				}
+				add_country_modifier = {
+					name = "me_fat_daaim_al_islam"
+					duration = -1
+				}
+			}
+		}
+	}
+	fat_egyptian_ambitions_mission = {
+		icon = mission_rb_seize_alexandria
+		required_missions = { fat_kutama_berbers_mission }
+		position = 4
+		completed_by = 969.6.1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 361
+				province_id = 358
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 361	#Cairo
+			owns_core_province = 358	#Alexandria
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.5
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_fat_victorious_army"
+					duration = 10950
+				}
+				egypt_region = {
+					limit = {
+						is_empty = no
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	fat_imam_caliph_of_egypt_mission = {
+		icon = mission_fatimid_caliphate
+		required_missions = { fat_egyptian_ambitions_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = delta_area
+				area = bahari_area
+				area = vostani_area
+				area = said_area			#not including Lower Nubia, which is in Egypt region
+				area = gulf_of_arabia_area
+				area = al_wahat_area
+			}
+			is_empty = no
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 2
+			capital_scope = {
+				region = egypt_region
+			}
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vostani_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			said_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gulf_of_arabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			al_wahat_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.7
+			}
+			syria_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			palestine_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fat_hegemon_of_syria_mission = {
+		icon = mission_saladin_takes_jerusalem
+		required_missions = { fat_imam_caliph_of_egypt_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+				area = aleppo_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 377	#Aleppo
+			owns_core_province = 382	#Damascus
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.9
+			}
+			tooltip = {
+				add_army_tradition = 15
+				add_country_modifier = {
+					name = "me_fat_reigned_in_governors"
+					duration = 10950
+				}
+			}
+			al_jazira_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iraq_arabi_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			basra_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fat_the_abbasid_capital_mission = {
+		icon = mission_black_standard_of_the_eagle
+		required_missions = { fat_hegemon_of_syria_mission }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 410
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 410	#Baghdad
+			mashriq_region = {
+				type = all
+				NOT = {
+					owned_by = ABA	#Abbasids
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.16	#The Revolution Reaches Baghdad
+			}
+			tooltip = {
+				add_prestige = 25
+				add_legitimacy = 50
+				add_country_modifier = {
+					name = "me_fat_caliphate_in_baghdad"
+					duration = 10950
+				}
+			}
+			luristan_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			khuzestan_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			farsistan_area = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			persian_gulf_coast = {
+				limit = {
+					is_empty = no
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fat_iranian_campaign_mission = {
+		icon = mission_persianate_empire
+		required_missions = { fat_the_abbasid_capital_mission }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = luristan_area
+				area = khuzestan_area
+				area = farsistan_area
+				area = persian_gulf_coast
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			luristan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			khuzestan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			farsistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			persian_gulf_coast = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_persian_administration"
+				duration = 10950
+			}
+		}
+	}
+}
+
+fatimid_mmetr_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	fat_ismaili_mosques_mission = {
+		icon = mission_mosque
+		required_missions = {  }
+		position = 1
+		trigger = {
+			religion = shiite
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_ismaili_mosques"
+				duration = 10950
+			}
+		}
+	}
+	fat_patron_of_the_arts_mission = {
+		icon = porcelain_from_meissen
+		required_missions = { fat_ismaili_mosques_mission }
+		position = 2
+		trigger = {
+			OR = {		
+				artist = 2
+				ADM = 3
+				monthly_adm = 8
+			}
+			num_of_owned_provinces_with = {
+				value = 20
+				num_of_buildings_in_province = 1
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.2
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_fat_rock_crystal_ewers"
+					duration = -1
+				}
+			}
+		}
+	}
+	fat_descendants_of_fatima_mission = {
+		icon = mission_hands_praying
+		required_missions = { fat_patron_of_the_arts_mission fat_codification_by_the_jurists_mission }
+		position = 3
+		trigger = {
+			prestige = 90
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_legacy_of_fatima"
+				duration = 10950
+			}
+		}
+	}
+	fat_turkish_ghulam_mission = {					#moved here from 1.1
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { fat_kutama_berbers_mission }
+		position = 4
+		trigger = {
+			army_tradition = 70
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_turkish_ghulam"
+				duration = 10950
+			}
+		}
+	}
+	fat_develop_al_qahira_mission = {
+		icon = mission_into_persia_2
+		required_missions = { fat_egyptian_ambitions_mission }
+		position = 5
+		provinces_to_highlight = {
+			province_id =  361	#Cairo
+			OR = {
+				NOT = {
+					num_of_times_improved_by_owner = 5
+				}
+				NOT = {
+					fort_level = 2
+				}
+				NOT = {
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+			}
+		}
+		trigger = {
+			owns_core_province = 361
+			361 = {
+				num_of_times_improved_by_owner = 5
+			}
+			361 = {
+				fort_level = 2
+			}
+			361 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.6
+			}
+			tooltip = {
+				add_adm_power = 100
+				361 = {
+					add_province_modifier = {
+						name = "me_fat_dar_al_khalifa"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	fat_al_azhar_university_mission = {
+		icon = mission_into_persia_1
+		required_missions = { fat_develop_al_qahira_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 361
+			OR = {
+				NOT = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					has_great_project = {
+						type = al_azhar_mosque
+						tier = 2
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 361	#Cairo
+			361 = {
+				has_great_project = {
+					type = al_azhar_mosque
+					tier = 2
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.23	#Advisor Choice Event
+			}
+			custom_tooltip = fat_al_azhar_university_mission.tt
+			add_country_modifier = {
+				name = "me_fat_scholars_of_al_azhar_mosque"
+				duration = 10950
+			}
+		}
+	}
+	fat_renovate_jerusalem_mission = {
+		icon = mission_jerusalem_dome_of_the_rock
+		required_missions = { fat_imam_caliph_of_egypt_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 379
+			OR = {
+				NOT = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+				NOT = {
+					num_of_times_improved_by_owner = 3
+				}
+				NOT = {
+					num_of_buildings_in_province = 3
+				}
+				NOT = {
+					OR = {
+						has_owner_religion = yes
+						tolerance_to_this = 1
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 379	#Jerusalem
+			379 = {
+				num_of_times_improved_by_owner = 3
+			}
+			379 = {
+				num_of_buildings_in_province = 3
+			}
+			379 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			OR = {
+				379 = {
+					has_owner_religion = yes
+				}
+				379 = {
+					tolerance_to_this = 1	#tolerance of at least X towards the religion of the country or scoped province
+				}
+				estate_loyalty = {
+					estate = estate_dhimmi
+					loyalty = 65
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			379 = {
+				add_province_modifier = {
+					name = "me_fat_fatimid_patronage"
+					duration = -1
+				}
+			}
+			country_event = {
+				id = mmetr_FAT_mission_events.10
+			}
+		}
+	}
+	fat_drive_back_the_romans_mission = {
+		icon = mission_pf_soldier
+		required_missions = { fat_hegemon_of_syria_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = anatolia_region
+				province_id = 2313 			#Antioch
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2313	#Antioch
+			num_of_owned_provinces_with = {
+				value = 10
+				region = anatolia_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_offensive_momentum"
+				duration = 10950
+			}
+			country_event = {
+				id = mmetr_FAT_mission_events.17
+			}
+		}
+	}
+	fat_besiege_qustantiniyya_mission = {
+		icon = mission_city_of_the_world's_desire
+		required_missions = { fat_drive_back_the_romans_mission }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 151	#Constantinople
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns = 151
+		}
+		effect = {
+			add_prestige = 25		#effect separate from Event effects!
+			151 = {
+				add_province_modifier = {
+					name = "me_fat_caliph_of_qustantiniyya"
+					duration = -1
+				}
+			}
+			country_event = {
+				id = mmetr_FAT_mission_events.18
+			}
+		}
+	}
+	fat_ismaili_revolution_mission = {
+		icon = mission_muslim_prayer
+		required_missions = { fat_the_abbasid_capital_mission }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 410
+			OR = {
+				has_owner_religion = no
+				NOT = { owned_by = ROOT }
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion = shiite
+			religious_school = {
+				group = muslim
+				school = ismaili_school
+			}
+			num_of_owned_provinces_with = {
+				value = 50
+				has_owner_religion = yes
+			}
+			410 = {
+				owned_by = ROOT
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_fat_continuing_the_revolution"
+				duration = -1
+			}
+		}
+	}
+	fat_complete_the_revolution_mission = {
+		icon = mission_fatimid_caliphate
+		required_missions = { fat_ismaili_revolution_mission fat_iranian_campaign_mission }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				region = egypt_region
+				region = mashriq_region
+				region = arabia_region
+				region = persia_region
+			}
+			religion_group = muslim
+			NOT = { religion = shiite }
+			has_discovered = ROOT
+			is_empty = no
+		}
+		trigger = {
+			religion = shiite
+			egypt_region = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = fat_complete_the_revolution_mission.tt
+					OR = {
+						is_empty = yes
+						religion = shiite
+						NOT = {
+							religion_group = muslim
+						}
+					}
+				}
+			}
+			mashriq_region = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = fat_complete_the_revolution_mission.tt
+					OR = {
+						is_empty = yes
+						religion = shiite
+						NOT = {
+							religion_group = muslim
+						}
+					}
+				}
+			}
+			arabia_region = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = fat_complete_the_revolution_mission.tt
+					OR = {
+						is_empty = yes
+						religion = shiite
+						NOT = {
+							religion_group = muslim
+						}
+					}
+				}
+			}
+			persia_region = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = fat_complete_the_revolution_mission.tt
+					OR = {
+						is_empty = yes
+						religion = shiite
+						NOT = {
+							religion_group = muslim
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_FAT_mission_events.19
+			}
+			tooltip = {
+				add_prestige = 40
+				add_legitimacy = 100
+				add_country_modifier = {
+					name = "me_fat_leading_the_revolution"
+					duration = -1
+				}
+			}
+		}
+	}
+}

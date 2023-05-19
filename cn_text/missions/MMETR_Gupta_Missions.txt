@@ -1,0 +1,1381 @@
+gupta_missions_1 = {
+  slot = 1
+  generic = no
+  ai = yes
+  potential = {
+    OR = {
+      tag = GUP
+    }
+    NOT = {
+      map_setup = map_setup_random
+    }
+  }
+  has_country_shield = yes
+  gup_scientific_advancements_mission = {
+    icon = mission_ahmadabad_paper
+    required_missions = {}
+    position = 1
+    trigger = {
+      OR = {
+        natural_scientist = 3
+        AND = {
+          natural_scientist = 2
+          capital_scope = {
+            development = 17
+          }
+        }
+      }
+    }
+    effect = {
+      country_event = {
+        id = mmetr_GUP_mission_events.3
+      }
+      tooltip = {
+        add_country_modifier = {
+          name = "me_gup_gupta_chemistry"
+          duration = 5475
+        }
+      }
+    }
+  }
+  gup_artistic_rejuvenation_mission = {
+    icon = mission_gujarati_textiles
+    required_missions = {
+      gup_scientific_advancements_mission
+      gup_canonize_the_epics_mission
+    }
+    position = 2
+    trigger = {
+      OR = {
+        artist = 2
+        custom_trigger_tooltip = {
+          tooltip = gup_artistic_rejuvenation_mission.tt
+          num_of_owned_provinces_with = {
+            value = 10
+            OR = {
+              has_building = glorious_monument
+              has_building = temple
+            }
+          }
+        }
+      }
+    }
+    effect = {
+      add_prestige = 10
+    }
+  }
+  gup_golden_age_of_india_mission = {
+    icon = mission_prosperity_in_bengal
+    required_missions = {
+      gup_artistic_rejuvenation_mission
+    }
+    position = 3
+    trigger = {
+      if = {
+        limit = {
+          has_dlc = "Mandate of Heaven"
+        }
+        OR = {
+          has_had_golden_age = yes
+          in_golden_age = yes
+        }
+      }
+      else_if = {
+        limit = {
+          NOT = {
+            has_dlc = "Mandate of Heaven"
+          }
+        }
+        prestige = 95
+        stability = 3
+      }
+    }
+    effect = {
+      tooltip = {
+        add_country_modifier = {
+          name = "me_gup_golden_age_of_india"
+          duration = 7300
+        }
+      }
+      country_event = {
+        id = mmetr_GUP_mission_events.4
+      }
+    }
+  }
+  gup_gupta_pillars_mission = {
+    icon = mission_onward_to_gaur
+    required_missions = {
+      gup_into_the_deccan_mission
+    }
+    position = 5
+    provinces_to_highlight = {
+      OR = {
+        region = deccan_region
+      }
+      NOT = {
+        has_building = glorious_monument
+      }
+      owned_by = ROOT
+      has_discovered = ROOT
+    }
+    trigger = {
+      num_of_owned_provinces_with = {
+        value = 5
+        has_building = glorious_monument
+        region = deccan_region
+      }
+      num_of_owned_provinces_with = {
+        value = 10
+        region = deccan_region
+        has_owner_accepted_culture = yes
+      }
+    }
+    effect = {
+      custom_tooltip = gup_gupta_pillars_mission.tt
+      every_owned_province = {
+        limit = {
+          region = deccan_region
+          has_building = glorious_monument
+        }
+        add_province_modifier = {
+          name = "me_gup_gupta_pillar"
+          duration = 7300
+        }
+      }
+    }
+  }
+  gup_consolidate_new_conquests_mission = {
+    icon = mission_conquer_malwa_guj
+    required_missions = {
+      gup_gupta_pillars_mission
+    }
+    position = 6
+    trigger = {
+      grown_by_development = 100
+      num_accepted_cultures = 2
+      NOT = {
+        average_unrest = 3
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_magadha_empire"
+        duration = -1
+      }
+    }
+  }
+  gup_legacy_of_ashoka_mission = {
+    icon = mission_sanchi_stupa
+    required_missions = {}
+    position = 8
+    provinces_to_highlight = {
+      province_id = 4461
+      NOT = {
+        owned_by = ROOT
+        is_core = ROOT
+        num_of_times_improved_by_owner = 2
+        OR = {
+          has_building = glorious_monument
+          has_building = temple
+        }
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      owns_core_province = 4461
+      4461 = {
+        num_of_times_improved_by_owner = 2
+        OR = {
+          has_building = glorious_monument
+          has_building = temple
+        }
+      }
+    }
+    effect = {
+      4461 = {
+        add_province_modifier = {
+          name = "me_gup_sanchi_stupa"
+          duration = -1
+        }
+      }
+    }
+  }
+  gup_mahabodhi_temple_mission = {
+    icon = mission_city_of_victory_bah
+    required_missions = {
+      gup_legacy_of_ashoka_mission
+    }
+    position = 9
+    provinces_to_highlight = {
+      province_id = 558
+      NOT = {
+        owned_by = ROOT
+        is_core = ROOT
+        base_tax = 6
+        OR = {
+          has_building = glorious_monument
+          has_building = temple
+        }
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      owns_core_province = 558
+      558 = {
+        base_tax = 6
+        OR = {
+          has_building = glorious_monument
+          has_building = temple
+        }
+      }
+    }
+    effect = {
+      558 = {
+        add_province_modifier = {
+          name = "me_gup_mahabodhi_temple"
+          duration = -1
+        }
+      }
+    }
+  }
+  gup_question_of_buddhism_mission = {
+    icon = mission_buddhist_monk_praying
+    required_missions = {
+      gup_mahabodhi_temple_mission
+    }
+    position = 10
+    trigger = {
+      custom_trigger_tooltip = {
+        tooltip = gup_question_of_buddhism_mission.tt
+        OR = {
+          any_subject_country = {
+            religion_group = buddhic
+            has_opinion = {
+              who = ROOT
+              value = 100
+            }
+          }
+          any_ally = {
+            religion_group = buddhic
+            has_opinion = {
+              who = ROOT
+              value = 100
+            }
+          }
+        }
+      }
+    }
+    effect = {
+      country_event = {
+        id = mmetr_GUP_mission_events.5
+      }
+      custom_tooltip = gup_question_of_buddhism_mission.tt2
+    }
+  }
+}
+gupta_missions_2 = {
+  slot = 2
+  generic = no
+  ai = yes
+  potential = {
+    OR = {
+      tag = GUP
+    }
+    NOT = {
+      map_setup = map_setup_random
+    }
+  }
+  has_country_shield = yes
+  gup_canonize_the_epics_mission = {
+    icon = mission_court_education
+    required_missions = {}
+    position = 1
+    trigger = {
+      prestige = 50
+      has_institution = organized_religion
+      religion = hinduism
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_great_literary_works"
+        duration = 5475
+      }
+    }
+  }
+  gup_control_the_ganges_basin_mission = {
+    icon = mission_control_the_ganges_delta
+    required_missions = {}
+    position = 2
+    completed_by = 320.1.1
+    provinces_to_highlight = {
+      OR = {
+        area = bihar_area
+        area = gaur_area
+        area = purvanchal_area
+        area = lower_doab_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      bihar_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      gaur_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      purvanchal_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      lower_doab_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_maharajadhiraja"
+        duration = 7300
+      }
+    }
+  }
+  gup_raja_of_madhyadesha_basin_mission = {
+    icon = mission_unite_rajputana
+    required_missions = {
+      gup_control_the_ganges_basin_mission
+      gup_great_magadha_army_mission
+    }
+    position = 3
+    provinces_to_highlight = {
+      OR = {
+        area = jaipur_area
+        area = jangladesh_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      num_of_owned_provinces_with = {
+        value = 3
+        fort_level = 1
+        region = west_india_region
+      }
+      jaipur_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      jangladesh_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      country_event = {
+        id = mmetr_GUP_mission_events.2
+      }
+      tooltip = {
+        add_country_modifier = {
+          name = "me_gup_hero_of_madhyadesha"
+          duration = 5475
+        }
+      }
+    }
+  }
+  gup_into_the_deccan_mission = {
+    icon = mission_unite_the_deccan
+    required_missions = {
+      gup_raja_of_madhyadesha_basin_mission
+    }
+    position = 4
+    provinces_to_highlight = {
+      OR = {
+        area = gondwana_area
+        area = telingana_area
+        area = berar_area
+        area = ahmednagar_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      gondwana_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      telingana_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      berar_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      ahmednagar_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_lord_of_dakshinapatha"
+        duration = 7300
+      }
+    }
+  }
+  gup_crowns_of_tamilakam_mission = {
+    icon = mission_the_tamil_trade_guilds
+    required_missions = {
+      gup_into_the_deccan_mission
+      gup_subjugate_the_andhras_mission
+    }
+    position = 6
+    provinces_to_highlight = {
+      OR = {
+        area = tanjore_area
+        area = madura_area
+        area = kongu_area
+        area = malabar_area
+        province_id = 1340
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      1340 = {
+        trade_share = {
+          country = ROOT
+          share = 40
+        }
+      }
+      tanjore_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      madura_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      kongu_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      malabar_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_tamil_merchant_links"
+        duration = -1
+      }
+    }
+  }
+  gup_march_to_anuradhapura_mission = {
+    icon = mission_conquer_lanka
+    required_missions = {
+      gup_crowns_of_tamilakam_mission
+    }
+    position = 7
+    provinces_to_highlight = {
+      OR = {
+        area = lanka_area
+        area = south_lanka_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      lanka_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      south_lanka_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      any_owned_province = {
+        OR = {
+          area = lanka_area
+          area = south_lanka_area
+        }
+        has_building = glorious_monument
+      }
+    }
+    effect = {
+      custom_tooltip = gup_march_to_anuradhapura_mission.tt
+      hidden_effect = {
+        random_owned_province = {
+          limit = {
+            OR = {
+              area = lanka_area
+              area = south_lanka_area
+            }
+            has_building = glorious_monument
+          }
+          add_base_production = 1
+        }
+      }
+    }
+  }
+  gup_buddhist_council_mission = {
+    icon = mission_protect_lankan_buddhism
+    required_missions = {
+      gup_march_to_anuradhapura_mission
+      gup_legacy_of_ashoka_mission
+    }
+    position = 9
+    trigger = {
+      is_at_war = no
+      has_regency = no
+      stability = 3
+      legitimacy = 100
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_new_buddhist_council_held"
+        duration = 5475
+      }
+    }
+  }
+}
+gupta_missions_3 = {
+  slot = 3
+  generic = no
+  ai = yes
+  potential = {
+    OR = {
+      tag = GUP
+    }
+    NOT = {
+      map_setup = map_setup_random
+    }
+  }
+  has_country_shield = yes
+  gup_rule_bengal_mission = {
+    icon = mission_conquer_bengal_dlh
+    required_missions = {}
+    position = 1
+    completed_by = 350.1.1
+    provinces_to_highlight = {
+      OR = {
+        area = jharkhand_area
+        area = west_bengal_area
+        area = east_bengal_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      jharkhand_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      west_bengal_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      east_bengal_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      any_owned_province = {
+        is_state = yes
+        OR = {
+          area = west_bengal_area
+          area = east_bengal_area
+        }
+      }
+    }
+    effect = {
+      country_event = {
+        id = mmetr_GUP_mission_events.1
+      }
+      tooltip = {
+        west_bengal_area = {
+          limit = {
+            country_or_non_sovereign_subject_holds = ROOT
+          }
+          add_province_modifier = {
+            name = "me_gup_bengal_delta_administration"
+            duration = 7300
+          }
+        }
+        east_bengal_area = {
+          limit = {
+            country_or_non_sovereign_subject_holds = ROOT
+          }
+          add_province_modifier = {
+            name = "me_gup_bengal_delta_administration"
+            duration = 7300
+          }
+        }
+      }
+    }
+  }
+  gup_great_magadha_army_mission = {
+    icon = mission_prepare_an_invasion_force
+    required_missions = {}
+    position = 2
+    trigger = {
+      army_size_percentage = 1
+      manpower_percentage = 0.6
+      num_of_generals = 1
+    }
+    effect = {
+      add_country_modifier = {
+        name = "oma_buildforces_mod"
+        duration = 5475
+      }
+      orissa_area = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            owned_by = ROOT
+          }
+        }
+        add_permanent_claim = ROOT
+      }
+      mewar_area = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            owned_by = ROOT
+          }
+        }
+        add_permanent_claim = ROOT
+      }
+      malwa_area = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            owned_by = ROOT
+          }
+        }
+        add_permanent_claim = ROOT
+      }
+      gondwana_area = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            owned_by = ROOT
+          }
+        }
+        add_permanent_claim = ROOT
+      }
+    }
+  }
+  gup_conquest_of_kalinga_mission = {
+    icon = mission_conquer_orissa_vij
+    required_missions = {
+      gup_great_magadha_army_mission
+    }
+    position = 4
+    provinces_to_highlight = {
+      OR = {
+        province_id = 549
+        province_id = 2080
+        area = orissa_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      owns_or_non_sovereign_subject_of = 549
+      owns_or_non_sovereign_subject_of = 2080
+      orissa_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      num_of_owned_provinces_with = {
+        value = 2
+        has_building = road
+        OR = {
+          area = orissa_area
+          area = andhra_area
+        }
+      }
+    }
+    effect = {
+      andhra_area = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            owned_by = ROOT
+          }
+        }
+        add_permanent_claim = ROOT
+      }
+      north_carnatic_area = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            owned_by = ROOT
+          }
+        }
+        add_permanent_claim = ROOT
+      }
+    }
+  }
+  gup_subjugate_the_andhras_mission = {
+    icon = mission_conquer_andhra_vij
+    required_missions = {
+      gup_conquest_of_kalinga_mission
+    }
+    position = 5
+    provinces_to_highlight = {
+      OR = {
+        area = andhra_area
+        area = north_carnatic_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      andhra_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      north_carnatic_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      add_army_tradition = 10
+    }
+  }
+  gup_mauryan_legacy_mission = {
+    icon = mission_rajendras_ambition
+    required_missions = {
+      gup_subjugate_the_andhras_mission
+      gup_control_the_sindhu_river_mission
+    }
+    position = 6
+    provinces_to_highlight = {
+      OR = {
+        area = south_carnatic_area
+        area = mysore_area
+        area = kanara_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      south_carnatic_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      mysore_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      kanara_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_mauryan_legacy"
+        duration = 7300
+      }
+    }
+  }
+  gup_emperor_of_all_indians_mission = {
+    icon = mission_emperor_of_hindusthan
+    required_missions = {
+      gup_mauryan_legacy_mission
+      gup_march_to_anuradhapura_mission
+    }
+    position = 8
+    provinces_to_highlight = {
+      superregion = india_superregion
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      stability = 2
+      india_superregion = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_maharaja_of_jambudvipa"
+        duration = -1
+      }
+    }
+  }
+}
+gupta_missions_4 = {
+  slot = 4
+  generic = no
+  ai = yes
+  potential = {
+    OR = {
+      tag = GUP
+    }
+    NOT = {
+      map_setup = map_setup_random
+    }
+  }
+  has_country_shield = yes
+  gup_gupta_cities_mission = {
+    icon = mission_develop_the_capital
+    required_missions = {}
+    position = 1
+    provinces_to_highlight = {
+      OR = {
+        province_id = 558
+        province_id = 4495
+        province_id = 524
+        province_id = 556
+      }
+      NOT = {
+        owned_by = ROOT
+        is_core = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      capital = 558
+      558 = {
+        num_of_times_improved_by_owner = 3
+      }
+      owns_core_province = 4495
+      4495 = {
+        num_of_times_improved_by_owner = 3
+      }
+      owns_core_province = 524
+      524 = {
+        num_of_times_improved_by_owner = 1
+      }
+      owns_core_province = 556
+      556 = {
+        num_of_times_improved_by_owner = 1
+      }
+    }
+    effect = {
+      4495 = {
+        change_province_name = "?–0ŽN–"  # Ayodhya
+        add_province_modifier = {
+          name = "me_gup_birthplace_of_rama"
+          duration = -1
+        }
+      }
+    }
+  }
+  gup_maintain_mauryan_roads_mission = {
+    icon = mission_the_grand_trunk_road_bng
+    required_missions = {
+      gup_gupta_cities_mission
+    }
+    position = 2
+    provinces_to_highlight = {
+      OR = {
+        superregion = india_superregion
+      }
+      NOT = {
+        has_building = road
+      }
+      owned_by = ROOT
+      has_discovered = ROOT
+    }
+    trigger = {
+      num_of_owned_provinces_with = {
+        value = 20
+        has_building = road
+        superregion = india_superregion
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_road_network"
+        duration = 7300
+      }
+    }
+  }
+  gup_sakan_kshatrapas_mission = {
+    icon = mission_indo_scythians
+    required_missions = {
+      gup_great_magadha_army_mission
+    }
+    position = 3
+    provinces_to_highlight = {
+      OR = {
+        province_id = 4461
+        area = saurashtra_area
+        area = patan_area
+        area = ahmedabad_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      owns_or_non_sovereign_subject_of = 4461
+      saurashtra_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      patan_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      ahmedabad_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      west_india_region = {
+        limit = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
+        add_province_modifier = {
+          name = "me_gup_caste_rules_enforced"
+          duration = 5475
+        }
+      }
+    }
+  }
+  gup_gupta_rule_in_taxila_mission = {
+    icon = mission_subjugate_rajputana
+    required_missions = {
+      gup_sakan_kshatrapas_mission
+    }
+    position = 4
+    provinces_to_highlight = {
+      province_id = 2077
+      NOT = {
+        num_of_times_improved_by_owner = 4
+      }
+    }
+    trigger = {
+      owns_core_province = 2077
+      2077 = {
+        num_of_times_improved_by_owner = 4
+      }
+    }
+    effect = {
+      2077 = {
+        add_province_modifier = {
+          name = "me_gup_taxila_university"
+          duration = 5475
+        }
+      }
+    }
+  }
+  gup_control_the_sindhu_river_mission = {
+    icon = mission_advance_to_the_arabian_sea
+    required_missions = {
+      gup_gupta_rule_in_taxila_mission
+    }
+    position = 5
+    provinces_to_highlight = {
+      OR = {
+        area = sindh_area
+        area = northern_sindh_area
+        area = multan_area
+        area = lahore_area
+        area = sind_sagar_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      sindh_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      northern_sindh_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      multan_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      lahore_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      sind_sagar_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      sindh_area = {
+        limit = {
+          owns_or_non_sovereign_subject_of = ROOT
+        }
+        add_province_modifier = {
+          name = "me_gup_sindhu_river_irrigation"
+          duration = 7300
+        }
+      }
+      northern_sindh_area = {
+        limit = {
+          owns_or_non_sovereign_subject_of = ROOT
+        }
+        add_province_modifier = {
+          name = "me_gup_sindhu_river_irrigation"
+          duration = 7300
+        }
+      }
+      multan_area = {
+        limit = {
+          owns_or_non_sovereign_subject_of = ROOT
+        }
+        add_province_modifier = {
+          name = "me_gup_sindhu_river_irrigation"
+          duration = 7300
+        }
+      }
+    }
+  }
+  gup_gupta_feudatories_mission = {
+    icon = mission_rajput_mansabdars
+    required_missions = {
+      gup_subjugate_the_andhras_mission
+    }
+    position = 6
+    trigger = {
+      custom_trigger_tooltip = {
+        tooltip = gup_gupta_feudatories_mission.tt
+        calc_true_if = {
+          all_subject_country = {
+            has_opinion = {
+              who = ROOT
+              value = 100
+            }
+          }
+          amount = 2
+        }
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "obedient_subjects"
+        duration = 9125
+      }
+    }
+  }
+  gup_sanatana_dharma_mission = {
+    icon = mission_dharma_mission_religious_harmony
+    required_missions = {
+      gup_strengthen_the_brahmans_mission
+    }
+    position = 9
+    trigger = {
+      NOT = {
+        average_unrest = 1
+      }
+      num_of_owned_provinces_with = {
+        value = 20
+        OR = {
+          has_building = glorious_monument
+          has_building = temple
+        }
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_sanatana_dharma"
+        duration = -1
+      }
+    }
+  }
+}
+gupta_missions_5 = {
+  slot = 5
+  generic = no
+  ai = yes
+  potential = {
+    OR = {
+      tag = GUP
+    }
+    NOT = {
+      map_setup = map_setup_random
+    }
+  }
+  has_country_shield = yes
+  gup_bengal_bay_trade_mission = {
+    icon = mission_the_chola_campaigns
+    required_missions = {}
+    position = 1
+    provinces_to_highlight = {
+      OR = {
+        AND = {
+          province_id = 1343
+          NOT = {
+            1343 = {
+              trade_share = {
+                country = ROOT
+                share = 50
+              }
+            }
+          }
+        }
+        AND = {
+          province_id = 561
+          NOT = {
+            owned_by = ROOT
+            is_core = ROOT
+            561 = {
+              province_has_center_of_trade_of_level = 2
+            }
+          }
+        }
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      1343 = {
+        trade_share = {
+          country = ROOT
+          share = 50
+        }
+      }
+      owns_core_province = 561
+      561 = {
+        province_has_center_of_trade_of_level = 2
+      }
+    }
+    effect = {
+      add_mercantilism = 2
+      add_years_of_income = 0.3
+      add_dip_power = 100
+    }
+  }
+  gup_wealth_of_india_mission = {
+    icon = mission_entrepot_of_india
+    required_missions = {
+      gup_bengal_bay_trade_mission
+      gup_gupta_cities_mission
+    }
+    position = 2
+    provinces_to_highlight = {}
+    trigger = {
+      years_of_income = 2
+      production_leader = {
+        trade_goods = spices
+      }
+      trading_bonus = {
+        trade_goods = spices
+        value = yes
+      }
+      production_leader = {
+        trade_goods = silk
+      }
+      trading_bonus = {
+        trade_goods = silk
+        value = yes
+      }
+      production_leader = {
+        trade_goods = gems
+      }
+      trading_bonus = {
+        trade_goods = gems
+        value = yes
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "hin_riches_modifier"
+        duration = 7300
+      }
+    }
+  }
+  gup_imperial_cavalry_mission = {
+    icon = mission_persian_heavy_cataphract_cavalry
+    required_missions = {}
+    position = 3
+    trigger = {
+      cavalry_fraction = 0.2
+      num_of_cavalry = 15
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_heavy_cavalry"
+        duration = 10950
+      }
+    }
+  }
+  gup_challenge_the_persians_mission = {
+    icon = mission_sassanid_golden_cataphract_attack
+    required_missions = {
+      gup_imperial_cavalry_mission
+      gup_gupta_rule_in_taxila_mission
+    }
+    position = 5
+    provinces_to_highlight = {
+      OR = {
+        area = makran_area
+        area = sistan_area
+        area = ghor_area
+        area = kabulistan_area
+        area = balkh_area
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      makran_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      sistan_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      ghor_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      kabulistan_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      balkh_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+    }
+    effect = {
+      add_prestige = 20
+      add_army_tradition = 10
+    }
+  }
+  gup_westward_expansion_mission = {
+    icon = mission_sassanid_golden_cataphract
+    required_missions = {
+      gup_challenge_the_persians_mission
+      gup_mauryan_legacy_mission
+    }
+    position = 7
+    provinces_to_highlight = {
+      OR = {
+        region = khorasan_region
+        region = persia_region
+      }
+      NOT = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      has_discovered = ROOT
+    }
+    trigger = {
+      num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+        value = 30
+        OR = {
+          region = khorasan_region
+          region = persia_region
+        }
+      }
+    }
+    effect = {
+      add_ruler_modifier = {
+        name = "me_gup_great_conqueror"
+        duration = -1
+      }
+    }
+  }
+  gup_strengthen_the_brahmans_mission = {
+    icon = mission_brahmin_administrators
+    required_missions = {}
+    position = 8
+    trigger = {
+      religion = hinduism
+      if = {
+        limit = {
+          has_estate = estate_brahmins
+        }
+        num_of_estate_agendas_completed = {
+          estate = estate_brahmins
+          value = 4
+        }
+      }
+      else_if = {
+        limit = {
+          has_estate = estate_church
+        }
+        num_of_estate_agendas_completed = {
+          estate = estate_church
+          value = 4
+        }
+      }
+      else_if = {
+        theologian = 3
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = "me_gup_caste_system_reasserted"
+        duration = 7300
+      }
+    }
+  }
+  gup_hindu_revival_mission = {
+    icon = mission_patronize_local_gods
+    required_missions = {
+      gup_strengthen_the_brahmans_mission
+    }
+    position = 9
+    trigger = {
+      religion = hinduism
+      religious_unity = 0.90
+    }
+    effect = {
+      define_advisor = {
+        type = theologian
+        skill = 3
+        culture = bihari
+        religion = hinduism
+        discount = yes
+      }
+    }
+  }
+}

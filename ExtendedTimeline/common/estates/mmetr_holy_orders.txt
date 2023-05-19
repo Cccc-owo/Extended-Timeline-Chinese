@@ -1,0 +1,159 @@
+estate_holy_orders = {
+	icon = 6
+
+	# If true, country will get estate
+	trigger = {
+		religion_group = christian
+		adm_tech = 36		#Monastery technology level - 35 is Theocracy
+		OR = {
+			has_reform = monastic_order_reform
+			has_reform = militarized_crusader_order_reform
+			tag = KOJ
+			has_country_flag = enabled_holy_orders_estate_flag
+		}
+		is_nomad = no
+		is_colonial_nation = no
+		NOT = { has_reform = revolutionary_empire_reform }
+	}
+
+	country_modifier_happy = {
+		cavalry_power = 0.1
+		cavalry_cost = -0.1
+		papal_influence = 1
+		devotion = 0.5
+		church_power_modifier = 0.1
+		monthly_fervor_increase = 1
+	}
+	country_modifier_neutral = {
+		cavalry_power = 0.1
+	}	
+	country_modifier_angry = {
+		papal_influence = -1
+		devotion = -0.5
+		church_power_modifier = -0.25
+		monthly_fervor_increase = -1
+		global_unrest = 1
+	}
+	land_ownership_modifier = {
+		holy_orders_loyalty_modifier = 0.2
+	}
+
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = owner
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 5
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { development = 7 }
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { is_state_core = owner }
+		}
+	}
+	
+	#Influence Modifiers
+	
+	base_influence = 10
+	
+	influence_modifier = {
+		desc = EST_VAL_STATE_MONASTIC_ORDER_IN_POWER
+		trigger = {
+			OR = {
+				has_reform = monastic_order_reform
+				has_reform = militarized_crusader_order_reform
+			}
+		}	
+		influence = 20
+	}
+	influence_modifier = {
+		desc = EST_VAL_STATE_RELIGIOUS_MINORITY
+		trigger = {
+			NOT = { dominant_religion = ROOT }
+		}	
+		influence = -15
+	}
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_church_disaster
+			}
+		}
+		influence = -40
+	}
+	
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_church_disaster
+			}
+		}
+		loyalty = -20
+	}
+	loyalty_modifier = {
+		desc = EST_KNI_CONQUEST_OF_JERUSALEM
+		trigger = {
+			owns_core_province = 379
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_HIGH_DEVOTION
+		trigger = {
+			devotion = 90
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_HIGH_PAP_INFLUENCE
+		trigger = {
+			papal_influence = 60
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_WAR_WITH_RELIGIOUS_ENEMY
+		trigger = {
+			at_war_with_religious_enemy = yes
+		}
+		loyalty = 10
+	}
+	
+	#Alternative naming of estates - none
+	
+	color = { 114 128 216 }
+	
+	privileges = {
+		estate_holy_orders_land_rights
+		estate_holy_orders_financial_control
+		estate_holy_orders_letters_of_credit
+		estate_holy_orders_holy_knights
+		estate_holy_orders_militaris_ordinis
+		estate_holy_orders_grant_castles
+		estate_holy_orders_heed_knightly_council
+		estate_holy_orders_heathen_estates
+		estate_holy_orders_colonial_domains
+	}
+
+	agendas = {
+		
+	}
+	
+	influence_from_dev_modifier = 1.0
+}

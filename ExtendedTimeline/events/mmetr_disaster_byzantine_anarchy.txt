@@ -1,0 +1,318 @@
+###########################################################
+# Events for Estate Disasters
+###########################################################
+
+namespace = byzantine_anarchy
+
+# Pretender Revolts Against the Emperor
+country_event = {
+	id = byzantine_anarchy.1
+	title = "byzantine_anarchy.1.t"
+	desc = "byzantine_anarchy.1.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	major = yes		#makes notification pop up for others
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = byzantine_anarchy_happened
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					NOT = { is_capital_of = ROOT }
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 5
+					win = yes
+				}
+				add_local_autonomy = 25
+			}
+		}
+	}
+	
+	option = {
+		name = "byzantine_anarchy.1.a"
+		
+		add_stability = -2
+	}
+}
+
+# End of the Anarchy
+country_event = {
+	id = byzantine_anarchy.2
+	title = "byzantine_anarchy.2.t"
+	desc = "byzantine_anarchy.2.desc"
+	picture = MMETR_BATTLEFIELD_AFTERMATH_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "byzantine_anarchy.2.a"
+		
+		add_stability = 1
+		add_legitimacy = 20
+	}
+}
+
+# Themata of Hellas Rebels!
+country_event = {
+	id = byzantine_anarchy.3
+	title = "byzantine_anarchy.3.t"
+	desc = "byzantine_anarchy.3.desc"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			area = central_greece_area
+		}
+	}
+	
+	option = {
+		name = "byzantine_anarchy.3.a"
+		
+		random_owned_province = {
+			limit = {
+				area = central_greece_area
+			}
+			spawn_rebels = {
+				type = military_rebels
+				size = 3
+				win = yes
+			}
+			add_local_autonomy = 25
+		}
+	}
+}
+
+# Themata of Peloponessos Rebels!
+country_event = {
+	id = byzantine_anarchy.4
+	title = "byzantine_anarchy.4.t"
+	desc = "byzantine_anarchy.4.desc"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			area = morea_area
+		}
+	}
+	
+	option = {
+		name = "byzantine_anarchy.4.a"
+		
+		random_owned_province = {
+			limit = {
+				area = morea_area
+			}
+			spawn_rebels = {
+				type = military_rebels
+				size = 3
+				win = yes
+			}
+			add_local_autonomy = 25
+		}
+	}
+}
+
+# Themata of Makedonia Rebels!
+country_event = {
+	id = byzantine_anarchy.5
+	title = "byzantine_anarchy.5.t"
+	desc = "byzantine_anarchy.5.desc"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			area = macedonia_area
+		}
+	}
+	
+	option = {
+		name = "byzantine_anarchy.5.a"
+		
+		random_owned_province = {
+			limit = {
+				area = macedonia_area
+			}
+			spawn_rebels = {
+				type = military_rebels
+				size = 3
+				win = yes
+			}
+			add_local_autonomy = 25
+		}
+	}
+}
+
+# Anatolikon Themata Rebels!
+country_event = {
+	id = byzantine_anarchy.6
+	title = "byzantine_anarchy.6.t"
+	desc = "byzantine_anarchy.6.desc"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			region = anatolia_region
+		}
+	}
+	
+	option = {
+		name = "byzantine_anarchy.6.a"
+		
+		random_owned_province = {
+			limit = {
+				region = anatolia_region
+			}
+			spawn_rebels = {
+				type = military_rebels
+				size = 3
+				win = yes
+			}
+			add_local_autonomy = 25
+		}
+		
+		random_owned_province = {
+			limit = {
+				region = anatolia_region
+			}
+			spawn_rebels = {
+				type = military_rebels
+				size = 2
+				win = yes
+			}
+			add_local_autonomy = 25
+		}
+	}
+}
+
+# Advisor Suspected of Treason
+country_event = {
+	id = byzantine_anarchy.7
+	title = "byzantine_anarchy.7.t"
+	desc = "byzantine_anarchy.7.desc"
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_advisor = yes
+	}
+	
+	option = {
+		name = "byzantine_anarchy.7.a"
+		
+		kill_advisor = random
+	}
+	
+	option = {
+		name = "byzantine_anarchy.7.b"
+		
+		add_corruption = 2
+		add_prestige = -20
+	}
+}
+
+# Heir Captured by Rebels!
+country_event = {
+	id = byzantine_anarchy.8
+	title = "byzantine_anarchy.8.t"
+	desc = "byzantine_anarchy.8.desc"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_heir = yes
+	}
+	
+	option = {
+		name = "byzantine_anarchy.8.a"
+		
+		add_years_of_income = -1.5
+	}
+	
+	option = {
+		name = "byzantine_anarchy.8.b"
+		
+		kill_heir = { allow_new_heir = no }
+		add_prestige = -30
+		add_stability = -1
+	}
+}
+
+# Troops Demand a Bonus
+country_event = {
+	id = byzantine_anarchy.9
+	title = "byzantine_anarchy.9.t"
+	desc = "byzantine_anarchy.9.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		years_of_income = 1.5
+		NOT = {
+			has_spawned_rebels = pretender_rebels
+		}
+	}
+	
+	option = {
+		name = "byzantine_anarchy.9.a"
+		
+		add_years_of_income = -2.0
+	}
+	
+	option = {
+		name = "byzantine_anarchy.9.b"
+		
+		if = {
+			limit = {
+				any_owned_province = {
+					region = balkan_region
+				}
+			}
+			random_owned_province = {
+				limit = {
+					region = balkan_region
+				}
+				spawn_rebels = {
+					type = military_rebels
+					size = 2
+					win = yes
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				spawn_rebels = {
+					type = military_rebels
+					size = 2
+					win = yes
+				}
+			}
+		}
+	}
+}
+
+

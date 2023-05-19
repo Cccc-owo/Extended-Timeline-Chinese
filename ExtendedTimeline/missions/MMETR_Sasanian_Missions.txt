@@ -1,0 +1,1368 @@
+sasanian_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAS
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sas_paygan_conscripts_mission = {
+		icon = mission_cope_with_refugees
+		required_missions = { }	#none
+		position = 1
+		trigger = {
+			army_size_percentage = 1.0
+			manpower_percentage = 0.60
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_paygan_conscripts"
+				duration = 5475
+			}
+		}
+	}
+	
+	sas_expansion_of_mining_mission = {
+		icon = mission_jawal_silver_mine
+		required_missions = { sas_paygan_conscripts_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {		#metals
+				trade_goods = copper
+				trade_goods = gold
+				trade_goods = iron
+			}
+			owned_by = ROOT
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				base_production = 5
+				OR = {
+					trade_goods = copper
+					trade_goods = gold
+					trade_goods = iron
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_armory_of_asia"
+				duration = 9125
+			}
+		}
+	}
+	
+	sas_arabian_colonies_mission = {
+		icon = mission_merchant_of_gujarat
+		required_missions = { sas_expansion_of_mining_mission sas_lakhmid_allies_mission }
+		position = 3
+		provinces_to_highlight = {
+			owned_by = ROOT
+			region = arabia_region
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				region = arabia_region
+				num_of_times_improved_by_owner = 1
+			}
+		}
+		effect = {
+			custom_tooltip = sas_arabian_colonies_mission.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						region = arabia_region
+						num_of_times_improved_by_owner = 1
+					}
+					add_province_modifier = {
+						name = "me_sas_arabian_settlement"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+	
+	sas_seize_the_silk_road_mission = {
+		icon = mission_conquer_malwa_bah
+		required_missions = { }
+		position = 4
+		provinces_to_highlight = {
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { silk = 8 }
+					}
+				}
+				trade_goods = silk
+				has_discovered = ROOT
+			}
+			else = {
+				always = no
+			}
+		}
+		trigger = {
+			trader = 1
+			production_leader = {
+				trade_goods = silk
+			}
+			silk = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "silk_road_modifier"
+				duration = 7300
+			}
+			add_mercantilism = 2
+		}
+	}
+	
+	sas_chinese_trade_mission = {
+		icon = mission_asian_city
+		required_missions = { sas_seize_the_silk_road_mission }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 454
+			has_discovered = ROOT
+		}
+		trigger = {
+			dip_power = 100
+			454 = {				#Samarkand
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {
+			add_dip_power = -100
+			country_event = {
+				id = mmetr_SAS_mission_events.1
+			}
+			add_country_modifier = {
+				name = "me_sas_chinese_diplomatic_ties"
+				duration = 10950
+			}
+			1836 = {
+				discover_country = SAS		#Sassanids discover Luoyang, next to Shaanxi / Chang'an
+			}
+			gansu_area = {
+				discover_country = SAS		#Sassanids discovers western north China
+			}
+			west_gansu_area = {
+				discover_country = SAS		#Sassanids discovers western north China
+			}
+			shaanxi_area = {
+				discover_country = SAS		#Sassanids discovers western north China
+			}
+			kashgaria_area = {
+				discover_country = SAS		#Sassanids discovers Northern China region
+			}
+			shanshan_area = {
+				discover_country = SAS		#Sassanids discovers Northern China region
+			}
+		}
+	}
+	
+	sas_win_mowbed_loyalty_mission = {
+		icon = mission_rajput_trade_guilds
+		required_missions = { sas_consolidate_eranshahr_mission }
+		position = 6
+		trigger = {
+			religion = zoroastrian
+			OR = {
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 70
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_church
+					value = 3
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_mowbed_loyalty"
+				duration = 10950
+			}
+		}
+	}
+	
+	sas_adur_gushnasp_mission = {
+		icon = mission_azar_goshnasp_sas
+		required_missions = { sas_win_mowbed_loyalty_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2212	#Zanjan
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2212	#Zanjan
+			2212 = {
+				religion = zoroastrian
+			}
+			2212 = {
+				fort_level = 1
+			}
+			2212 = {
+				num_of_times_improved_by_owner = 3
+			}
+			2212 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_custodian_of_azar_goshnasp"
+				duration = 10950
+			}
+			2212 = {
+				add_province_modifier = {
+					name = "me_sas_azar_goshnasp"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+sasanian_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAS
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sas_cultivate_mesopotamia_mission = {
+		icon = mission_babylonia_ishtar_gate
+		required_missions = { }	#none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = basra_area
+				area = iraq_arabi_area
+				area = al_jazira_area
+			}
+			owned_by = ROOT
+			has_discovered = ROOT
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 80
+				OR = {
+					area = basra_area
+					area = iraq_arabi_area
+					area = al_jazira_area
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = sas_cultivate_mesopotamia_mission.tt
+			basra_area = {
+				limit = {
+					owned_by = ROOT
+					development = 12		#only for at least 10 development provinces
+				}
+				add_province_modifier = {
+					name = me_sas_thriving_metropolis
+					duration = 10950
+				}
+			}
+			iraq_arabi_area = {
+				limit = {
+					owned_by = ROOT
+					development = 12
+				}
+				add_province_modifier = {
+					name = me_sas_thriving_metropolis
+					duration = 10950
+				}
+			}
+			bahrain_area = {
+				limit = {
+					owned_by = ROOT
+					development = 12
+				}
+				add_province_modifier = {
+					name = me_sas_thriving_metropolis
+					duration = 10950
+				}
+			}
+		}
+	}
+	
+	sas_lakhmid_allies_mission = {
+		icon = mission_conquer_sindh_mer
+		required_missions = { }	#none
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = bahrain_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				LKH = { 	#Lakhmids
+					is_subject_of = ROOT
+				}
+				bahrain_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SAS_mission_events.3
+			}
+		}
+	}
+	
+	sas_persian_gulf_monopoly_mission = {
+		icon = mission_dominate_persian_gulf
+		required_missions = { sas_lakhmid_allies_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = mascat_area			#Muscat
+				area = pirate_coast_area
+				province_id = 1334			#Hormuz trade node
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			1334 = {
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+			mascat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			pirate_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_sasanian_mechants"
+				duration = 7300
+			}
+		}
+	}
+	
+	sas_friends_in_yemen_mission = {
+		icon = mission_into_africa
+		required_missions = { sas_persian_gulf_monopoly_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = tihama_al_yemen_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tihama_al_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 10
+		}
+	}
+	
+	sas_consolidate_eranshahr_mission = {
+		icon = mission_kaviani_banner_sasanian
+		required_missions = { }	#none
+		position = 5
+		trigger = {
+			stability = 3
+			is_at_war = no
+		}
+		effect = {
+			add_prestige = 5
+			country_event = {
+				id = mmetr_SAS_mission_events.2
+			}
+		}
+	}
+	
+	sas_ho_tohkshan_bod_mission = {
+		icon = mission_entrepot_of_india
+		required_missions = { sas_consolidate_eranshahr_mission }
+		position = 6
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_burghers
+				value = 3
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SAS_mission_events.4
+			}
+		}
+	}
+	
+	sas_sasanian_bureaucracy_mission = {
+		icon = mission_gharbianss
+		required_missions = { 
+			sas_win_mowbed_loyalty_mission
+			sas_ho_tohkshan_bod_mission
+			sas_persian_nobility_mission
+		}
+		position = 7
+		trigger = {
+			full_idea_group = early_adm_ideas
+			grown_by_states = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = me_sas_sasanian_bureaucracy
+				duration = -1
+			}
+		}
+	}
+	
+	sas_temples_to_ahura_mazda_mission = {
+		icon = mission_zoroastrian_fire_temple_ateshgah
+		required_missions = { }	#none
+		position = 8
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_flames_of_atar"
+				duration = 14600
+			}
+		}
+	}
+	
+	sas_three_great_fires_mission = {
+		icon = mission_zoroastrian_fire_temple
+		required_missions = { 
+			sas_adur_gushnasp_mission
+			sas_temples_to_ahura_mazda_mission
+		}
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2223		#Larestan, in Fars, in which modern-day Karyan is located
+				province_id = 2235		#Sabzevar, in Khorasan, in which modern-day Mehr is located
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			2223 = {
+				num_of_times_improved_by_owner = 5
+			}
+			2223 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+			2235 = {
+				num_of_times_improved_by_owner = 5
+			}
+			2235 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SAS_mission_events.10
+			}
+			tooltip = {
+				2223 = {
+					add_province_modifier = {
+						name = "me_sas_azar_farnbag"
+						duration = -1
+					}
+				}
+				2235 = {
+					add_province_modifier = {
+						name = "me_sas_azar_barzin"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+sasanian_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAS
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sas_march_to_makuran_mission = {
+		icon = mission_demand_garjat_fealty
+		required_missions = { }	#none
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = makran_area
+				area = sistan_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			makran_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 5
+			add_manpower = 5
+		}
+	}
+	
+	sas_expand_into_turan_mission = {
+		icon = mission_camel_archers_vs_elephants
+		required_missions = { sas_march_to_makuran_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = merv_area
+				area = ghor_area
+				area = kabulistan_area
+				area = balkh_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			merv_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ghor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabulistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			balkh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SAS_mission_events.5
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_sas_shah_of_turan"
+					duration = 10950
+				}
+			}
+		}
+	}
+	
+	sas_kushanshah_mission = {
+		icon = mission_conquer_bengal_dlh
+		required_missions = { sas_expand_into_turan_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				region = khorasan_region
+				region = persia_region
+				region = central_asia_region
+			}
+			country_or_non_sovereign_subject_holds = KUS
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				NOT = { exists = KSA }
+				KSA = {
+					is_subject_of = ROOT
+				}
+			}
+			ghor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabulistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			balkh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			khorasan_region = {
+				type = all
+				NOT = { country_or_non_sovereign_subject_holds = KUS }	#Kushans
+			}
+			persia_region = {
+				type = all
+				NOT = { country_or_non_sovereign_subject_holds = KUS }	#Kushans
+			}
+			central_asia_region = {
+				type = all
+				NOT = { country_or_non_sovereign_subject_holds = KUS }	#Kushans
+			}
+		}
+		effect = {
+			tooltip = {
+				add_adm_power = 25
+			}
+			country_event = {
+				id = mmetr_SAS_mission_events.6		#can release/cede provinces to Kushano-Sassanids vassal
+			}
+		}
+	}
+	
+	sas_acquire_osroene_mission = {
+		icon = mission_conquer_malwa_mer
+		required_missions = { sas_roman_war_preparations_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = al_jazira_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				OSR = { #Osroene
+					is_subject_of = ROOT
+				}
+				al_jazira_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+		}
+	}
+	
+	sas_persian_nobility_mission = {
+		icon = mission_unite_rajputana
+		required_missions = { sas_consolidate_eranshahr_mission }
+		position = 6
+		trigger = {
+			OR = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 70
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 4
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SAS_mission_events.7
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_sas_loyal_dihqans"
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	sas_azadan_warrior_caste_mission = {
+		icon = et_mission_cataphract
+		required_missions = { sas_persian_nobility_mission }
+		position = 7
+		trigger = {
+			num_of_generals = 3
+			has_mil_advisor_2 = yes
+			OR = {
+				army_tradition = 80
+				army_professionalism = 0.50
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SAS_mission_events.8
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_sas_asvaran_cataphracts"
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	sas_conquest_of_thrace_mission = {
+		icon = mission_secure_khandesh
+		required_missions = { sas_invasion_of_anatolia_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+				province_id = 2750	#Thracia, Province Separate From Area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2750 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+	
+	sas_invasion_of_greece_mission = {
+		icon = cross_the_pindus
+		required_missions = { sas_conquest_of_thrace_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = macedonia_area
+				area = northern_greece_area
+				area = morea_area
+				area = central_greece_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_SAS_mission_events.9
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_sas_persian_empire_in_greece"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	sas_persian_goods_in_greece_mission = {
+		icon = mission_greco_roman_market
+		required_missions = { sas_invasion_of_greece_mission }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 1320
+			has_discovered = ROOT
+		}
+		trigger = {
+			1320 = {			#Constantinople trade node
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			add_dip_power = 50
+		}
+	}
+}
+
+sasanian_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAS
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sas_capital_in_ctesiphon_mission = {
+		icon = mission_into_persia_1
+		required_missions = { }	#none
+		position = 1
+		provinces_to_highlight = {
+			province_id = 410		#Ctesiphon
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns = 410
+			410 = {
+				is_capital_of = ROOT
+			}
+			410 = {
+				fort_level = 2
+			}
+			410 = {
+				num_of_times_improved_by_owner = 5
+			}
+			410 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			410 = {
+				add_province_modifier = {
+					name = "me_sas_multicultural_center"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	sas_restore_the_royal_roads_mission = {
+		icon = et_mission_road
+		required_missions = { sas_capital_in_ctesiphon_mission }
+		position = 2
+		trigger = {
+			road = 20
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_royal_roads"
+				duration = -1
+			}
+		}
+	}
+	
+	sas_roman_war_preparations_mission = {
+		icon = a_roman_empire
+		required_missions = { }	#none
+		position = 3
+		trigger = {
+			army_size_percentage = 0.9
+			manpower_percentage = 0.6
+			num_of_generals = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = "oma_buildforces_mod"
+				duration = 5475
+			}
+		}
+	}
+	
+	sas_conquest_of_syria_mission = {
+		icon = mission_sassanid_golden_cataphract
+		required_missions = { sas_roman_war_preparations_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = aleppo_area
+				area = syria_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_roman_conquest"
+				duration = 3650
+			}
+		}
+	}
+	
+	sas_invasion_of_anatolia_mission = {
+		icon = mission_sassanid_golden_cataphract_attack
+		required_missions = { sas_conquest_of_syria_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = hudavendigar_area
+				area = aydin_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_sas_glorious_commander"
+				duration = -1
+			}
+		}
+	}
+	
+	sas_vanquish_the_romans_mission = {
+		icon = take_constantinople
+		required_missions = { sas_invasion_of_anatolia_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151		#Constantinople
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 151
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_sas_the_besieger"
+				duration = -1
+			}
+		}
+	}
+	
+	sas_achaemenid_legacy_mission = {
+		icon = mission_persianate_empire
+		required_missions = { 
+			sas_vanquish_the_romans_mission
+			sas_conquest_of_thrace_mission
+			sas_invasion_of_egypt_mission 
+		}
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = anatolia_region
+				area = aegean_archipelago_area	#Crete and Cyclades
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 3
+			anatolia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_sas_heir_of_the_achaemenids"
+				duration = 5475
+			}
+		}
+	}
+	
+	sas_shah_of_all_shahs_mission = {
+		icon = mission_persian_heavy_cataphract_cavalry
+		required_missions = { 
+			sas_achaemenid_legacy_mission
+			sas_here_to_stay_mission
+			sas_invasion_of_greece_mission
+		}
+		position = 10
+		trigger = {
+			total_development = 1000
+			monthly_adm = 8
+		}
+		effect = {
+			add_prestige = 30
+			add_country_modifier = {
+				name = "me_sas_universal_shahanshah"
+				duration = -1
+			}
+		}
+	}
+}
+
+sasanian_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = SAS
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	has_country_shield = yes
+
+	sas_shahanshah_mission = {
+		icon = mission_kaviani_banner_close
+		required_missions = { }	#none
+		position = 1
+		trigger = {
+			num_of_non_tributary_subjects = 2
+		}
+		effect = {
+			add_legitimacy = 25
+			add_country_modifier = {
+				name = "obedient_subjects"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	
+	sas_academy_of_gondishapur_mission = {
+		icon = mission_court_education
+		required_missions = { sas_capital_in_ctesiphon_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 4290	#Sush / Susa, next to historical Gondishapur
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 4290
+			4290 = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+				}
+			}
+			OR = {
+				natural_scientist = 2
+				theologian = 2
+			}
+		}
+		effect = {
+			4290 = {
+				add_province_modifier = {
+					name = "me_sas_gondishapur_academy"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	sas_sasanian_splendor_mission = {	#Khwarrah of the Shahanshah
+		icon = reform_the_monte
+		required_missions = { sas_academy_of_gondishapur_mission }	#removed roads mission requirement since only has tech 10 in 224, but needs tech 15
+		position = 3
+		trigger = {
+			grown_by_development = 75
+			years_of_income = 3
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "me_sas_khwarrah_gifted"
+				duration = -1
+			}
+			if = { 
+				limit = { 
+					has_dlc = "Mandate of Heaven" 
+				} 
+				add_splendor = 50
+			}
+			if = { 
+				limit = { 
+					NOT = { has_dlc = "Mandate of Heaven" }
+				} 
+				add_prestige = 25
+			}
+		}
+	}
+	
+	sas_client_kings_in_armenia_mission = {
+		icon = fortress_of_belgrade
+		required_missions = { sas_roman_war_preparations_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = armenia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				ARM = {
+					is_subject_of = ROOT
+				}
+				armenia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			shirvan_area = {
+				limit = {
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_empty = yes }
+					NOT = { is_wasteland = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+			kartli_kakheti_area = {
+				limit = {
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_empty = yes }
+					NOT = { is_wasteland = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	sas_control_the_caucasus_mission = {
+		icon = claim_the_borderlands
+		required_missions = { sas_client_kings_in_armenia_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = kartli_kakheti_area
+				area = shirvan_area
+				area = imereti_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shirvan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			caucasia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "me_sas_golden_throne_of_the_marzban"
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	sas_secure_palestine_mission = {
+		icon = mission_levant_cypus_map_17th
+		required_missions = { sas_conquest_of_syria_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = palestine_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+		}
+	}
+	
+	sas_invasion_of_egypt_mission = {
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { sas_secure_palestine_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = delta_area
+				area = bahari_area
+				area = vostani_area
+				area = gulf_of_arabia_area	#Red Sea Hills
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vostani_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gulf_of_arabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sas_shah_of_egypt"
+				duration = 5475
+			}
+			egypt_region = {
+				limit = {
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_empty = yes }
+					NOT = { is_wasteland = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	sas_here_to_stay_mission = {
+		icon = mission_conquer_alexandria
+		required_missions = { sas_invasion_of_egypt_mission }
+		position = 9
+		trigger = {
+			any_owned_province = {
+				region = egypt_region
+				owned_by = ROOT
+				is_core = ROOT
+				is_state = yes		#is part of a state
+				NOT = { local_autonomy_above_min = 10 }
+				NOT = { nationalism = 1 }
+			}
+		}
+		effect = {
+			egypt_region = {
+				limit = {
+					owned_by = ROOT
+					is_core = ROOT
+					is_state = yes
+				}
+				add_province_modifier = {
+					name = "me_sas_sasanian_egyptian_administrators"
+					duration = 7300
+				}
+			}
+		}
+	}
+}

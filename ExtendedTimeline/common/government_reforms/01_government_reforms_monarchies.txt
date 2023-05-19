@@ -328,7 +328,7 @@ feudal_france_reform = {
 	custom_attributes = {
 		locked_government_type = yes
 		has_appanages = yes
-		need_crownland_to_annex = yes
+		#need_crownland_to_annex = yes
 		nobility_loyalty_hit_on_integration = yes
 	}
 }
@@ -2380,7 +2380,7 @@ russian_empire_reform = {
 
 	modifiers = {
 		max_absolutism = 10
-		yearly_absolutism = 0.05
+		yearly_absolutism = 0.5
 		global_autonomy = -0.05
 		global_manpower_modifier = 0.20
 		embracement_cost = -0.5
@@ -2425,7 +2425,6 @@ mamluk_government = {
 
 	modifiers = {
 		num_accepted_cultures = 3
-		#-50% cost to promote cultures
 		global_autonomy = -0.025
 		monarch_admin_power = 2
 		same_culture_advisor_cost = -0.25
@@ -3030,7 +3029,6 @@ uparaja_reform = {
 negusa_nagast = {
 	icon = "negusa_nagast"
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
 	potential = {
 		OR = {
 			have_had_reform = negusa_nagast
@@ -3073,7 +3071,6 @@ negusa_nagast = {
 solomonic_empire = {
 	icon = "solomonic_empire"
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
 	potential = {
 		OR = {
 			have_had_reform = solomonic_empire
@@ -3262,7 +3259,6 @@ polish_elective_monarchy = {
 		}
 	}
 	legacy_equivalent = elective_monarchy_legacy
-	lock_level_when_selected = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 50
 	nation_designer_trigger = {
@@ -3315,7 +3311,6 @@ polish_autocratic_monarchy = {
 		}
 	}
 	legacy_equivalent = despotic_monarchy
-	lock_level_when_selected = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 75
 	nation_designer_trigger = {
@@ -3530,7 +3525,7 @@ livonian_trade_monarchy = {
 	modifiers = {
 		merchants = 1
 		global_ship_trade_power = 0.25
-		trade_goods_size_modifier = 0.15
+		global_trade_goods_size_modifier = 0.15
 		burghers_influence_modifier = 0.05
 		governing_capacity_modifier = -0.5		
 	}
@@ -3836,6 +3831,7 @@ livonian_constitutional_monarchy = {
 				government_reform = livonian_constitutional_monarchy
 			}
 		}
+		is_not_blocked_by_estate_privilege = { estate = estate_nobles }
 	}
 	valid_for_nation_designer = yes
 	nation_designer_trigger = {
@@ -4278,7 +4274,6 @@ grant_nobles_electorate_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-		has_idea_group = aristocracy_ideas
 	}
 	trigger = {
 		has_idea_group = aristocracy_ideas
@@ -4345,7 +4340,6 @@ blackmail_nobility_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-		has_idea_group = spy_ideas
 		NOT = { has_estate_privilege = estate_nobles_golden_liberty }
 	}
 	trigger = {
@@ -6295,18 +6289,27 @@ japanese_divine_empire = {
 		}
 		NOT = { has_reform = absolute_shogunate_reform }
 	}
-	trigger = { 
-		num_of_estate_privileges = {
-			estate = estate_nobles 
-			value = 6 
+	trigger = {
+		if = { 
+			limit = { has_estate = estate_nobles }
+			num_of_estate_privileges = {
+				estate = estate_nobles 
+				value = 6 
+			}
 		}
-		num_of_estate_privileges = {
-			estate = estate_burghers 
-			value = 6 
+		if = { 
+			limit = { has_estate = estate_burghers }
+			num_of_estate_privileges = {
+				estate = estate_burghers 
+				value = 6 
+			}
 		}
-		num_of_estate_privileges = {
-			estate = estate_church 
-			value = 6 
+		if = { 
+			limit = { has_estate = estate_church }
+			num_of_estate_privileges = {
+				estate = estate_church 
+				value = 6 
+			}
 		}
 	}
 	valid_for_nation_designer = yes

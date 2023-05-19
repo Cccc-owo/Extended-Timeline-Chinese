@@ -64,3 +64,50 @@ check_num_of_nukes = {
 		always = no
 	}
 }
+
+make_client_kingdom_direct_vassal = {
+	category = influence
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no 	#Whether the recipient gets an option to decline
+
+	is_visible = {
+		FROM = {
+			is_subject_of_type_with_overlord = { 
+				who = ROOT
+				type = client_kingdom
+			}
+		}
+	}
+	is_allowed = {
+		FROM = {
+			is_subject_of_type_with_overlord = { 
+				who = ROOT
+				type = client_kingdom
+			}
+		}
+		FROM = { NOT = { liberty_desire = 25 } }
+		reverse_has_opinion = {
+			who = FROM
+			value = 175
+		}
+	}
+	on_accept = {
+		custom_tooltip = make_client_kingdom_direct_vassal.tt
+		create_subject = {
+			subject_type = vassal
+			subject = FROM
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}

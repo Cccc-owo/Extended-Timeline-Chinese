@@ -1,0 +1,74 @@
+namespace = mmetrFlavor_JAP
+
+# Imperial Court Rank Granted
+country_event = {
+	id = mmetrFlavor_JAP.1
+	title = "mmetrFlavor_JAP.1.t"
+	desc = "mmetrFlavor_JAP.1.desc"
+	picture = MMETR_IMPERIAL_COURT_JAPAN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetrFlavor_JAP.1.a"
+		
+		if = {
+			limit = {
+				NOT = { has_ruler_flag = given_fifth_rank_court_rank_japan }
+			}
+			add_ruler_modifier = {
+				name = "fifth_rank_court_rank_japan_mod"
+				duration = -1
+			}
+			set_ruler_flag = given_fifth_rank_court_rank_japan
+		}
+		else_if = {
+			limit = {
+				has_ruler_flag = given_fifth_rank_court_rank_japan
+				NOT = { has_ruler_flag = given_fourth_rank_court_rank_japan }
+			}
+			add_ruler_modifier = {
+				name = "fourth_rank_court_rank_japan_mod"
+				duration = -1
+			}
+			set_ruler_flag = given_fourth_rank_court_rank_japan
+			remove_country_modifier = fifth_rank_court_rank_japan_mod
+		}
+		else_if = {
+			limit = {
+				has_ruler_flag = given_fourth_rank_court_rank_japan
+				NOT = { has_ruler_flag = given_third_rank_court_rank_japan }
+			}
+			add_ruler_modifier = {
+				name = "third_rank_court_rank_japan_mod"
+				duration = -1
+			}
+			set_ruler_flag = given_third_rank_court_rank_japan
+			remove_country_modifier = fourth_rank_court_rank_japan_mod
+		}
+		else_if = {
+			limit = {
+				has_ruler_flag = given_third_rank_court_rank_japan
+				NOT = { has_ruler_flag = given_second_rank_court_rank_japan }
+			}
+			add_ruler_modifier = {
+				name = "second_rank_court_rank_japan_mod"
+				duration = -1
+			}
+			set_ruler_flag = given_second_rank_court_rank_japan
+			remove_country_modifier = third_rank_court_rank_japan_mod
+		}
+		else_if = {
+			limit = {
+				has_ruler_flag = given_second_rank_court_rank_japan
+				NOT = { has_ruler_flag = given_first_rank_court_rank_japan }
+			}
+			add_ruler_modifier = {
+				name = "first_rank_court_rank_japan_mod"
+				duration = -1
+			}
+			set_ruler_flag = given_first_rank_court_rank_japan
+			remove_country_modifier = second_rank_court_rank_japan_mod
+		}
+	}
+}

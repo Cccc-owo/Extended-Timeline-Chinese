@@ -1,0 +1,548 @@
+###########################################################
+# Events for Estate Disasters
+###########################################################
+
+namespace = abbasid_fitna
+
+# Anarchy at $CAPITAL_CITY$
+country_event = {
+	id = abbasid_fitna.1
+	title = "abbasid_fitna.1.t"
+	desc = "abbasid_fitna.1.desc"
+	picture = ASSASSINATION_eventPicture
+	
+	major = yes		#makes notification pop up for others
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			kill_ruler = yes
+			set_country_flag = abbasid_fitna_started_flag
+			define_ruler = {
+				dynasty = "Abbasid"
+				age = 25
+				claim = 40
+				culture = ROOT
+				religion = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.1.a"
+		
+		custom_tooltip = abbasid_fitna.1.tt
+		add_stability = -2
+		add_legitimacy = -20
+	}
+}
+
+# Abbasid Fitna Averted
+country_event = {
+	id = abbasid_fitna.2
+	title = "abbasid_fitna.2.t"
+	desc = "abbasid_fitna.2.desc"
+	picture = WOUNDED_SOLDIERS_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "abbasid_fitna.2.a"
+		
+		add_stability = 1
+		add_legitimacy = 20
+	}
+}
+
+# Mysterious Death of the Caliph
+country_event = {
+	id = abbasid_fitna.3
+	title = "abbasid_fitna.3.t"
+	desc = "abbasid_fitna.3.desc"
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	major = yes
+	is_triggered_only = yes		#so only fires within disaster
+	fire_only_once = yes
+	
+	trigger = {
+		had_country_flag = {
+			flag = abbasid_fitna_started_flag
+			days = 720		#disaster has gone on for 2 years
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			kill_ruler = yes
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.3.a"
+		
+		set_country_flag = chose_al_mutazz
+		
+		define_ruler = {
+			name = "Al-Mu'tazz"
+			dynasty = "Abbasid"
+			age = 20
+			claim = 50
+			culture = ROOT
+			religion = ROOT
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.3.b"
+		
+		set_country_flag = chose_al_muayyad
+		
+		define_ruler = {
+			name = "Al-Mu'ayyad"
+			dynasty = "Abbasid"
+			age = 25
+			claim = 50
+			culture = ROOT
+			religion = ROOT
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.3.c"
+		
+		set_country_flag = chose_al_mustain
+		
+		define_ruler = {
+			name = "Al-Musta'in"
+			dynasty = "Abbasid"
+			age = 31
+			claim = 50
+			culture = ROOT
+			religion = ROOT
+		}
+	}
+}
+
+# Rivals Challenge the Caliph!
+country_event = {
+	id = abbasid_fitna.4
+	title = "abbasid_fitna.4.t"
+	desc = "abbasid_fitna.4.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	major = yes
+	is_triggered_only = yes		#so only fires within disaster
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			has_country_flag = chose_al_mutazz
+			has_country_flag = chose_al_muayyad
+			has_country_flag = chose_al_mustain
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = fitna_disaster_abbasid_civil_war
+			if = {
+				limit = {
+					has_country_flag = chose_al_mutazz
+				}
+				random_owned_province = {
+					limit = { is_in_capital_area = yes }
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 7
+						leader = "Al-Mu'ayyad"
+						leader_dynasty = "Abbasid"
+					}
+				}
+				random_owned_province = {
+					limit = { is_in_capital_area = no }
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 7
+						leader = "Al-Musta'in"
+						leader_dynasty = "Abbasid"
+					}
+				}
+			
+			}
+			else_if = {
+				limit = {
+					has_country_flag = chose_al_muayyad
+				}
+				random_owned_province = {
+					limit = { is_in_capital_area = yes }
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 7
+						leader = "Al-Mu'tazz"
+						leader_dynasty = "Abbasid"
+					}
+				}
+				random_owned_province = {
+					limit = { is_in_capital_area = no }
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 7
+						leader = "Al-Musta'in"
+						leader_dynasty = "Abbasid"
+					}
+				}
+			
+			}
+			else_if = {
+				limit = {
+					has_country_flag = chose_al_mustain
+				}
+				random_owned_province = {
+					limit = { is_in_capital_area = yes }
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 7
+						leader = "Al-Mu'tazz"
+						leader_dynasty = "Abbasid"
+					}
+				}
+				random_owned_province = {
+					limit = { is_in_capital_area = no }
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 7
+						leader = "Al-Mu'ayyad"
+						leader_dynasty = "Abbasid"
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.4.a"
+		
+		
+	}
+}
+
+# Rivals Executed
+country_event = {
+	id = abbasid_fitna.5
+	title = "abbasid_fitna.5.t"
+	desc = "abbasid_fitna.5.desc"
+	picture = MMETR_CRUCIFIXION_eventPicture
+	
+	major = yes
+	is_triggered_only = yes		#so only fires within disaster
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = fitna_disaster_abbasid_civil_war
+		NOT = { has_spawned_rebels = pretender_rebels }
+	}
+	
+	option = {
+		name = "abbasid_fitna.5.a"
+		
+		add_legitimacy = 10
+	}
+}
+
+# Alid Revolt in [aba_alid_rebel_province.GetAreaName]
+country_event = {
+	id = abbasid_fitna.6
+	title = "abbasid_fitna.6.t"
+	desc = "abbasid_fitna.6.desc"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	goto = aba_alid_rebel_province
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { religion = shiite }
+		any_owned_province = {
+			religion = shiite
+			NOT = { local_autonomy = 75 }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = shiite
+					NOT = { local_autonomy = 75 }
+				}
+				save_event_target_as = aba_alid_rebel_province
+			}
+			event_target:aba_alid_rebel_province = {
+				spawn_rebels = {
+					type = shiite_rebels
+					size = 6
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = abbasid_fitna.6.a
+		
+		
+	}
+	
+}
+
+# Zanj Rebellion
+country_event = {
+	id = abbasid_fitna.7
+	title = "abbasid_fitna.7.t"
+	desc = "abbasid_fitna.7.desc"
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes		#so only fires within disaster
+	fire_only_once = yes
+	
+	trigger = {
+		had_country_flag = {
+			flag = abbasid_fitna_started_flag
+			days = 1640		#disaster has gone on for about 4.5 years
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_zanj_rebellion
+			random_owned_province = {
+				spawn_rebels = {
+					type = slave_rebels		#new rebel type
+					size = 7
+					leader = "Ali ibn Muhammad"
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = slave_rebels
+					size = 6
+					leader = "Sulayman ibn Jami"
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = slave_rebels
+					size = 6
+					leader = "Yahya ibn Muhammad al-Bahrani"
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.7.a"
+		
+		
+	}
+	
+}
+
+# Zanj Rebel Remnants in [aba_zanj_remnants_prov.GetAreaName]
+country_event = {
+	id = abbasid_fitna.8
+	title = "abbasid_fitna.8.t"
+	desc = "abbasid_fitna.8.desc"
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes		#can trigger more than once
+	
+	goto = aba_zanj_remnants_prov
+	
+	trigger = {
+		had_country_flag = {
+			flag = had_zanj_rebellion
+			days = 180		#Zanj Rebellion happened half a year ago
+		}
+		NOT = {
+			had_country_flag = {
+				flag = had_zanj_rebellion
+				days = 3650		#Zanj Rebellion happened 10 years ago
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = aba_zanj_remnants_prov
+			}
+			event_target:aba_zanj_remnants_prov = {
+				spawn_rebels = {
+					type = slave_rebels
+					size = 5
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.8.a"
+		
+		
+	}
+}
+
+# Abbasid Soldiers Riot
+country_event = {
+	id = abbasid_fitna.9
+	title = "abbasid_fitna.9.t"
+	desc = "abbasid_fitna.9.desc"
+	picture = BORDER_TENSION_eventPicture
+	
+	major = yes
+	is_triggered_only = yes		#can trigger more than once
+	
+	trigger = {
+		OR = {
+			war_exhaustion = 10
+			NOT = { stability = 1 }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				spawn_rebels = {
+					type = military_rebels		#new rebel type
+					size = 2
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.9.a"
+		
+	}
+}
+
+
+# Kharijite Rebellion
+country_event = {
+	id = abbasid_fitna.10
+	title = "abbasid_fitna.10.t"
+	desc = "abbasid_fitna.10.desc"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	major = yes
+	is_triggered_only = yes		#so only fires within disaster
+	fire_only_once = yes
+	
+	trigger = {
+		had_country_flag = {
+			flag = abbasid_fitna_started_flag
+			days = 1095		#disaster has gone on for 3 years
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = aba_disaster_had_kharijite_rebellion
+			if = {
+				limit = {
+					any_owned_province = {
+						religion = ibadi
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = ibadi
+					}
+					spawn_rebels = {
+						type = ibadi_rebels
+						size = 6
+						leader = "Musawir"
+					}
+				}
+			}
+			else = {
+				random_owned_province = {
+					spawn_rebels = {
+						type = ibadi_rebels
+						size = 6
+						leader = "Musawir"
+					}
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = ibadi_rebels
+					size = 6
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = ibadi_rebels
+					size = 6
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "abbasid_fitna.10.a"
+		
+		
+	}
+	
+}
+
+# Kharijite Rebel Leader Humiliated
+country_event = {
+	id = abbasid_fitna.11
+	title = "abbasid_fitna.11.t"
+	desc = "abbasid_fitna.11.desc"
+	picture = MMETR_CRUCIFIXION_eventPicture
+	
+	major = yes
+	is_triggered_only = yes		#so only fires within disaster
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = aba_disaster_had_kharijite_rebellion
+		NOT = { has_spawned_rebels = ibadi_rebels }
+	}
+	
+	option = {
+		name = "abbasid_fitna.11.a"
+		
+		add_legitimacy = 5
+	}
+}
+
+# Advisor Assassinated
+country_event = {
+	id = abbasid_fitna.12
+	title = "abbasid_fitna.12.t"
+	desc = "abbasid_fitna.12.desc"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes		#so only fires within disaster
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { stability = 1 }
+		has_advisor = yes
+	}
+	
+	option = {
+		name = "abbasid_fitna.12.a"
+		
+		kill_advisor = random
+	}
+}
+

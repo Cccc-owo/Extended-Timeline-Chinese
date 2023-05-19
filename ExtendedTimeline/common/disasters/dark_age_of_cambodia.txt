@@ -1,0 +1,84 @@
+dark_age_of_cambodia = {
+	potential = {
+		has_dlc = "Leviathan"
+		NOT = { has_country_flag = had_dark_age }
+		uses_doom = no
+		is_free_or_tributary_trigger = yes
+		normal_or_historical_nations = yes
+		tag = KHM
+		
+		#added
+		OR = {
+			started_in = 1431.1.1		#start of Dark Ages / post-Angkor period
+			is_year = 1430
+		}
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		OR = {
+			started_in = 1431.1.1		#start of Dark Ages / post-Angkor period
+			AND = {
+				is_year = 1430
+				NOT = { stability = -1 }
+			}
+		}
+	}
+	
+	can_stop = { 
+		has_any_disaster = yes
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 100
+			tag = KHM
+			started_in = 1431.1.1	#added
+		}
+		
+		#added
+		modifier = {
+			factor = 15
+			tag = KHM
+			NOT = { started_in = 1431.1.1 }
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 20
+			tag = KHM
+			NOT = { started_in = 1431.1.1 }
+			NOT = { stability = -2 }
+		}
+	}
+	
+	can_end = {
+		OR = {
+			mission_completed = mnd_khm_resurgence
+			
+			#added
+			AND = {
+				NOT = { started_in = 1431.1.1 }
+				stability = 3
+				NOT = { num_of_rebel_armies = 1 }
+				NOT = { num_of_rebel_controlled_provinces = 1 }
+			}
+		}
+	}
+	
+
+	modifier = {
+		all_power_cost = 0.25
+	}
+	
+	on_start = khmer.1
+	on_end = khmer.2
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = {
+		}
+	}
+}
+

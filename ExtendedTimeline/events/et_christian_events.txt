@@ -10,13 +10,14 @@ province_event = {
 	
 	trigger = {
 		NOT = { religion = chalcedonism }
+		NOT = { religion = reformed_chalcedonism }
 		owner = { religion = hellenism }
 		religion = hellenism
 		is_year = 40
 		NOT = { is_year = 800 }
 	}
 	mean_time_to_happen = {
-		months = 4000
+		months = 3600
 
 		modifier = {
 			factor = 1.5
@@ -40,11 +41,16 @@ province_event = {
 		}
 		modifier = {
 			factor = 0.5
-			owner = { 
+			owner = {
 				OR = {
 					tag = ROM
-					any_owned_province = { religion = chalcedonism }
-				} 
+					any_owned_province = {
+						OR = {
+							religion = chalcedonism
+							religion = reformed_chalcedonism
+						}
+					}
+				}
 			}
 		}
 		modifier = {
@@ -59,7 +65,15 @@ province_event = {
 	
 	option = {
 		name = "et.EVTOPTA1"
-		change_religion = chalcedonism
+		if = {
+			limit = {
+				has_global_flag = reformed_the_chalcedonism_faith
+			}
+			change_religion = reformed_chalcedonism
+		}
+		else = {
+			change_religion = chalcedonism
+		}
 		add_province_modifier = {
 			name = "religious_zeal_at_conv"
 			duration = 3650
@@ -77,9 +91,15 @@ province_event = {
 	
 	trigger = {
 		NOT = { religion = chalcedonism }
+		NOT = { religion = reformed_chalcedonism }
 		NOT = { religion = coptic }
 		NOT = { religion = nestorian }
-		any_neighbor_province = { religion = chalcedonism }
+		any_neighbor_province = {
+			OR = {
+				religion = chalcedonism
+				religion = reformed_chalcedonism
+			}
+		}
 		NOT = { is_year = 867 }
 		NOT = { is_religion_enabled = orthodox }
 	}
@@ -156,7 +176,14 @@ province_event = {
 		}
 		modifier = {
 			factor = 0.5
-			owner = { any_owned_province = { religion = chalcedonism } }
+			owner = {
+				any_owned_province = {
+					OR = {
+						religion = chalcedonism
+						religion = reformed_chalcedonism
+					}
+				}
+			}
 		}
 		modifier = {
 			factor = 3
@@ -177,7 +204,15 @@ province_event = {
 	
 	option = {
 		name = "et.EVTOPTA2"
-		change_religion = chalcedonism
+		if = {
+			limit = {
+				has_global_flag = reformed_the_chalcedonism_faith
+			}
+			change_religion = reformed_chalcedonism
+		}
+		else = {
+			change_religion = chalcedonism
+		}
 		add_province_modifier = {
 			name = "religious_zeal_at_conv"
 			duration = 3650
@@ -194,8 +229,14 @@ province_event = {
 	picture = RELIGIOUS_CONVERSION_eventPicture
 	
 	trigger = {
-		owner = { religion = chalcedonism }
+		owner = {
+			OR = {
+				religion = chalcedonism
+				religion = reformed_chalcedonism
+			}
+		}
 		NOT = { religion = chalcedonism }
+		NOT = { religion = reformed_chalcedonism }
 		NOT = { religion = coptic }
 		NOT = { religion = nestorian }
 		NOT = { is_year = 867 }
@@ -240,7 +281,15 @@ province_event = {
 	
 	option = {
 		name = "et.EVTOPTA3"
-		change_religion = chalcedonism
+		if = {
+			limit = {
+				has_global_flag = reformed_the_chalcedonism_faith
+			}
+			change_religion = reformed_chalcedonism
+		}
+		else = {
+			change_religion = chalcedonism
+		}
 		add_province_modifier = {
 			name = "religious_zeal_at_conv"
 			duration = 3650
@@ -260,6 +309,7 @@ country_event = {
 
 	trigger = {
 		tag = PAP
+		NOT = { has_global_flag = reformed_the_chalcedonism_faith }
 		NOT = { is_religion_enabled = orthodox }
 		religion = chalcedonism
 		is_year = 840
@@ -319,6 +369,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		NOT = { has_global_flag = reformed_the_chalcedonism_faith }
 		NOT = { exists = PAP }
 		NOT = { is_religion_enabled = orthodox }
 		religion = chalcedonism
@@ -976,12 +1027,20 @@ country_event = {
 		}
 		NOT = { has_country_flag = saint_patrick_visited }
 		OR = {
-			any_owned_province = { religion = chalcedonism }
+			any_owned_province = {
+				OR = {
+					religion = chalcedonism
+					religion = reformed_chalcedonism
+				}
+			}
 			AND = {
 				is_year = 400
 				118 = {
 					owner = { 
-						religion = chalcedonism 
+						OR = {
+							religion = chalcedonism
+							religion = reformed_chalcedonism
+						}
 						OR = {
 							tag = ROM
 							tag = ROW
@@ -990,8 +1049,16 @@ country_event = {
 				}
 			}
 			any_province = {
-				religion = chalcedonism
-				owner = { religion = chalcedonism }
+				OR = {
+					religion = chalcedonism
+					religion = reformed_chalcedonism
+				}
+				owner = { 
+					OR = {
+						religion = chalcedonism
+						religion = reformed_chalcedonism
+					}
+				}
 				OR = {
 					area = normandy_area
 					area = brittany_area
@@ -1002,7 +1069,10 @@ country_event = {
 				}
 			}
 			any_country = {
-				religion = chalcedonism
+				OR = {
+					religion = chalcedonism
+					religion = reformed_chalcedonism
+				}
 				is_great_power = yes
 				capital_scope = { continent = europe }
 			}
@@ -1024,7 +1094,15 @@ country_event = {
 				region = british_isles_region 
 				NOT = { religion_group = christian }
 			}
-			change_religion = chalcedonism
+			if = {
+				limit = {
+					has_global_flag = reformed_the_chalcedonism_faith
+				}
+				change_religion = reformed_chalcedonism
+			}
+			else = {
+				change_religion = chalcedonism
+			}
 			add_province_modifier = {
 				name = "religious_zeal_at_conv"
 				duration = 7300
@@ -1039,13 +1117,29 @@ country_event = {
 			factor = 5
 		}
 		set_country_flag = saint_patrick_visited
-		change_religion = chalcedonism
+		if = {
+			limit = {
+				has_global_flag = reformed_the_chalcedonism_faith
+			}
+			change_religion = reformed_chalcedonism
+		}
+		else = {
+			change_religion = chalcedonism
+		}
 		random_owned_province = {
 			limit = { 
 				region = british_isles_region 
 				NOT = { religion_group = christian }
 			}
-			change_religion = chalcedonism
+			if = {
+				limit = {
+					has_global_flag = reformed_the_chalcedonism_faith
+				}
+				change_religion = reformed_chalcedonism
+			}
+			else = {
+				change_religion = chalcedonism
+			}
 			add_province_modifier = {
 				name = "religious_zeal_at_conv"
 				duration = 7300

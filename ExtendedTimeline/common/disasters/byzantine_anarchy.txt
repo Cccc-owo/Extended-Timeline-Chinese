@@ -1,0 +1,103 @@
+byzantine_anarchy = {
+	potential = {
+		OR = {
+			tag = BYZ
+			was_tag = BYZ
+		}
+		NOT = { has_country_flag = byzantine_anarchy_happened }
+		normal_or_historical_nations = yes
+		is_year = 450
+		NOT = { exists = ROW }
+		NOT = { started_in = 1077.1.1 }		#Seljuk Rum invasion of Anatolia
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		NOT = { stability = 0 }
+		OR = {
+			NOT = { adm = 3 }
+			NOT = { mil = 3 }
+			NOT = { prestige = 0 }
+			NOT = { legitimacy = 70 }
+			NOT = { stability = -2 }
+		}
+	}
+	
+	can_stop = {
+		has_any_disaster = yes
+		stability = 3
+	}
+	
+	progress = {
+		modifier = {
+			factor = 2
+			OR = {
+				ruler_has_personality = drunkard_personality
+				ruler_has_personality = cruel_personality
+				ruler_has_personality = craven_personality
+				ruler_has_personality = malevolent_personality
+			}
+		}
+		modifier = {
+			factor = 2
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 2
+			corruption = 5
+			NOT = { corruption = 10 }
+		}
+		modifier = {
+			factor = 5
+			corruption = 10
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 10
+			has_heir = no
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				NOT = { adm = 3 }
+				NOT = { dip = 3 }
+				NOT = { mil = 3 }
+			}
+		}
+	}
+	
+	can_end = {
+		stability = 3
+		NOT = { num_of_rebel_armies = 1 }
+	}
+	
+	modifier = {
+		global_unrest = 10
+		stability_cost_modifier = 0.1
+		global_tax_modifier = -0.1
+		land_morale = -0.1
+	}
+	
+	on_start = byzantine_anarchy.1
+	on_end = byzantine_anarchy.2
+	
+	on_monthly = {
+		random_events = {
+			1000 = 0
+			100 = byzantine_anarchy.3
+			100 = byzantine_anarchy.4
+			100 = byzantine_anarchy.5
+			100 = byzantine_anarchy.6
+			100 = byzantine_anarchy.7
+			25 = byzantine_anarchy.8
+			100 = byzantine_anarchy.9
+		}
+	}
+}

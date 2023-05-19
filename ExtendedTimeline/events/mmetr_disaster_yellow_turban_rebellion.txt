@@ -1,0 +1,982 @@
+###########################################################
+# Events for Estate Disasters
+###########################################################
+
+namespace = yellow_turban_rebellion
+
+# Yellow Turban Rebellion - Start Event
+country_event = {
+	id = yellow_turban_rebellion.1
+	title = "yellow_turban_rebellion.1.t"
+	desc = "yellow_turban_rebellion.1.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	major = yes		#makes notification pop up for others
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = yellow_turban_rebellion_started_flag
+			
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					region = north_china_region
+					NOT = {
+						area = gansu_area
+						area = west_gansu_area
+					}
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 6
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					region = north_china_region
+					NOT = {
+						area = gansu_area
+						area = west_gansu_area
+					}
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = china_superregion
+					NOT = {
+						area = gansu_area
+						area = west_gansu_area
+					}
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 6
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = china_superregion
+					NOT = {
+						area = gansu_area
+						area = west_gansu_area
+					}
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = china_superregion
+					NOT = {
+						area = gansu_area
+						area = west_gansu_area
+					}
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.1.a"
+		
+		add_stability = -2
+		add_mandate = -25
+		add_corruption = 5
+	}
+}
+
+# Yellow Turban Rebellion - End Event
+country_event = {
+	id = yellow_turban_rebellion.2
+	title = "yellow_turban_rebellion.2.t"
+	desc = "yellow_turban_rebellion.2.desc"
+	picture = MMETR_BATTLEFIELD_AFTERMATH_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = yellow_turban_rebellion_happened
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.2.a"
+		add_stability = 1
+		add_mandate = 20
+	}
+}
+
+# Rebellion in Liang Province
+country_event = {
+	id = yellow_turban_rebellion.3
+	title = "yellow_turban_rebellion.3.t"
+	desc = "yellow_turban_rebellion.3.desc"
+	picture = MONGOL_BANNERS_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		OR = {
+			NOT = { exists = LNG }	#Liang
+		}
+		any_owned_province = {
+			OR = {
+				area = gansu_area
+				area = west_gansu_area
+				area = turpan_kumul_area
+			}
+		}
+		had_country_flag = {
+			flag = yellow_turban_rebellion_started_flag
+			days = 365		#disaster has gone on for 1 year
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = gansu_area
+						area = west_gansu_area
+						area = turpan_kumul_area
+					}
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+				}
+				add_core = LNG
+				cede_province = LNG
+				clear_rebels = yes
+			}
+			LNG = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.3.a"
+		
+		custom_tooltip = yellow_turban_rebellion.3.tt
+	}
+}
+
+# Inspectors Granted Autonomy
+country_event = {
+	id = yellow_turban_rebellion.4
+	title = "yellow_turban_rebellion.4.t"
+	desc = "yellow_turban_rebellion.4.desc"
+	picture = LAND_MILITARY_eventPictures
+	
+	is_triggered_only = yes		#only fires through disaster
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		NOT = { stability = 0 }
+		average_unrest = 10
+		had_country_flag = {
+			flag = yellow_turban_rebellion_started_flag
+			days = 1095		#disaster has gone on for 3 years
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {		#Jingzhou autonomy
+				limit = {
+					OR = {
+						area = hunan_area
+						area = huguang_area	#Hubei
+					}
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+				}
+				add_core = JNG
+				cede_province = JNG
+			}
+			JNG = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Biao"		#Liu Biao
+					dynasty = "Liu"
+					adm = 4
+					dip = 4
+					mil = 4
+					age = 45
+					claim = 90
+				}
+			}
+			create_march = JNG
+			
+			every_owned_province = {		#Yizhou autonomy - Shu
+				limit = {
+					OR = {
+						region = xinan_region
+						area = kham_area
+					}
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+				}
+				add_core = SHU
+				cede_province = SHU
+			}
+			SHU = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Yan"		#Liu Yan
+					dynasty = "Liu"
+					adm = 2
+					dip = 3
+					mil = 3
+					age = 34
+					claim = 90
+				}
+			}
+			create_march = SHU
+			
+			every_owned_province = {		#Yangzhou autonomy - Wu
+				limit = {
+					OR = {
+						area = south_anhui_area
+						area = jiangxi_area
+						area = zhejiang_area
+						area = fujian_area
+					}
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+				}
+				add_core = WUU
+				cede_province = WUU
+			}
+			WUU = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Yan"		#Liu Yao
+					dynasty = "Liu"
+					adm = 3
+					dip = 3
+					mil = 3
+					age = 30
+					claim = 90
+				}
+			}
+			create_march = WUU
+			
+			every_owned_province = {		#Jiaozhi autonomy - Yue
+				limit = {
+					OR = {
+						area = guangdong_area
+						area = west_guangdong_area
+						area = guangzhou_area
+						area = guangxi_area
+						area = vietnam_area
+						area = tay_nguyen_area
+						area = red_river_delta_area
+					}
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+				}
+				add_core = YUE
+				cede_province = YUE
+			}
+			YUE = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Xie"		#Shi Xie
+					dynasty = "Shi"
+					adm = 3
+					dip = 3
+					mil = 2
+					age = 48
+					claim = 90
+				}
+			}
+			create_march = YUE
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.4.a"
+		
+		custom_tooltip = yellow_turban_rebellion.4.tt
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.4.b"
+		
+		custom_tooltip = yellow_turban_rebellion.4.tt
+		
+		switch_tag = JNG
+		
+		ai_chance = { factor = 0 }
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.4.c"
+		
+		custom_tooltip = yellow_turban_rebellion.4.tt
+		
+		switch_tag = SHU
+		
+		ai_chance = { factor = 0 }
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.4.d"
+		
+		custom_tooltip = yellow_turban_rebellion.4.tt
+		
+		switch_tag = WUU
+		
+		ai_chance = { factor = 0 }
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.4.e"
+		
+		custom_tooltip = yellow_turban_rebellion.4.tt
+		
+		switch_tag = YUE
+		
+		ai_chance = { factor = 0 }
+	}
+}
+
+
+# Yellow Turbans in Jing
+country_event = {
+	id = yellow_turban_rebellion.5
+	title = "yellow_turban_rebellion.5.t"
+	desc = "yellow_turban_rebellion.5.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			OR = {
+				area = hunan_area
+				area = huguang_area
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						area = hunan_area
+						area = huguang_area
+					}
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.5.a"
+		
+		custom_tooltip = yellow_turban_rebellion.5.tt
+	}
+}
+
+# Yellow Turbans in Yi
+country_event = {
+	id = yellow_turban_rebellion.6
+	title = "yellow_turban_rebellion.6.t"
+	desc = "yellow_turban_rebellion.6.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			region = xinan_region
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					region = xinan_region
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.6.a"
+		
+		custom_tooltip = yellow_turban_rebellion.6.tt
+	}
+}
+
+# White Wave Bandits
+country_event = {
+	id = yellow_turban_rebellion.7
+	title = "yellow_turban_rebellion.7.t"
+	desc = "yellow_turban_rebellion.7.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			area = shaanxi_area
+			NOT = { is_capital = yes }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					area = shaanxi_area
+					NOT = { is_capital = yes }
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 5
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.7.a"
+		
+		custom_tooltip = yellow_turban_rebellion.7.tt
+	}
+}
+
+
+# Advisor Suspected of Treason
+country_event = {
+	id = yellow_turban_rebellion.8
+	title = "yellow_turban_rebellion.8.t"
+	desc = "yellow_turban_rebellion.8.desc"
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_advisor = yes
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.8.a"
+		
+		kill_advisor = random
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.8.b"
+		
+		add_corruption = 2
+	}
+}
+
+# Peasants Revolt in [han_yt_disaster_rebel_province.GetAreaName]	- same as ming_crisis.6
+country_event = {
+	id = yellow_turban_rebellion.9
+	title = "yellow_turban_rebellion.9.t"
+	desc = "yellow_turban_rebellion.9.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	goto = han_yt_disaster_rebel_province
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			is_state = yes
+			superregion = china_superregion
+			NOT = { local_autonomy = 75 }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = china_superregion
+					NOT = { local_autonomy = 75 }
+				}
+				save_event_target_as = han_yt_disaster_rebel_province
+			}
+		}
+	}
+	
+	option = {
+		name = yellow_turban_rebellion.9.a
+		ai_chance = { factor = 1 }
+		add_mandate = 5
+		event_target:han_yt_disaster_rebel_province = {
+			spawn_rebels = {
+				type = anti_tax_rebels 
+				size = 6
+			}
+		}
+	}
+	option = {
+		name = yellow_turban_rebellion.9.b
+		ai_chance = { factor = 0 }
+		add_mandate = -10
+		event_target:han_yt_disaster_rebel_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_local_autonomy = 50
+			}
+		}
+	}
+}
+
+
+# Nomad Raid - repeatable
+country_event = {
+	id = yellow_turban_rebellion.10
+	title = "yellow_turban_rebellion.10.t"
+	desc = "yellow_turban_rebellion.10.desc"
+	picture = MONGOL_BANNERS_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			region = north_china_region
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {		#land frontier province
+						NOT = { owned_by = ROOT }
+						is_sea = no
+					}
+				}
+				spawn_rebels = {
+					type = nomad_rebels		#New rebel type
+					size = 2
+				}
+			}
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {		#land frontier province
+						NOT = { owned_by = ROOT }
+						is_sea = no
+					}
+				}
+				spawn_rebels = {
+					type = nomad_rebels		#New rebel type
+					size = 2
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = yellow_turban_rebellion.10.a
+		
+		custom_tooltip = yellow_turban_rebellion.10.tt
+	}
+}
+
+# Local Militias Support the Han
+country_event = {
+	id = yellow_turban_rebellion.11
+	title = "yellow_turban_rebellion.11.t"
+	desc = "yellow_turban_rebellion.11.desc"
+	picture = east_asian_LAND_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { manpower_percentage = 0.70 }
+	}
+	
+	option = {
+		name = yellow_turban_rebellion.11.a
+		
+		add_manpower = 0.5	#500
+	}
+}
+
+# Local Prefect Recruits Han Loyalists
+country_event = {
+	id = yellow_turban_rebellion.12
+	title = "yellow_turban_rebellion.12.t"
+	desc = "yellow_turban_rebellion.12.desc"
+	picture = east_asian_LAND_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { manpower_percentage = 0.70 }
+	}
+	
+	option = {
+		name = yellow_turban_rebellion.12.a
+		
+		add_manpower = 1	#1000
+	}
+}
+
+# Liaodong Autonomy
+country_event = {
+	id = yellow_turban_rebellion.13
+	title = "yellow_turban_rebellion.13.t"
+	desc = "yellow_turban_rebellion.13.desc"
+	picture = east_asian_LAND_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			area = liaoning_area
+		}
+		NOT = {
+			overlord_of = YAN
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {		#Liaodong autonomy
+				limit = {
+					OR = {
+						area = liaoning_area
+						region = korea_region
+					}
+				}
+				add_core = YAN
+				cede_province = YAN
+			}
+			YAN = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Du"		#Gongsun Du
+					dynasty = "Gongsun"
+					adm = 2
+					dip = 4
+					mil = 4
+					age = 39
+					claim = 90
+				}
+			}
+			add_truce_with = YAN
+		}
+	}
+	
+	option = {
+		name = yellow_turban_rebellion.13.a
+		
+		
+	}
+	
+	option = {
+		name = yellow_turban_rebellion.13.b
+		
+		switch_tag = YAN
+		
+		ai_chance = { factor = 0 }
+	}
+}
+
+# Yellow Turban Remnants Declare an Emperor - Ma Xiang
+country_event = {
+	id = yellow_turban_rebellion.14
+	title = "yellow_turban_rebellion.14.t"
+	desc = "yellow_turban_rebellion.14.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			region = xinan_region
+			NOT = { is_capital = yes }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					region = xinan_region
+					NOT = { is_capital = yes }
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 3
+					leader = "Ma Xiang"
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.14.a"
+		
+		custom_tooltip = yellow_turban_rebellion.14.tt
+	}
+}
+
+# Ou Xing Invades Changsha
+country_event = {
+	id = yellow_turban_rebellion.15
+	title = "yellow_turban_rebellion.15.t"
+	desc = "yellow_turban_rebellion.15.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		owns = 671	#Changsha
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.15.a"
+		
+		671 = {
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 3
+			}
+		}
+	}
+}
+
+# Eunuchs Ignore Rebel Reports
+country_event = {
+	id = yellow_turban_rebellion.16
+	title = "yellow_turban_rebellion.16.t"
+	desc = "yellow_turban_rebellion.16.desc"
+	picture = MMETR_TEN_EUNUCHS_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "yellow_turban_rebellion.16.a"
+		
+		add_country_modifier = {
+			name = "disaster_eunuch_interference_of_rebel_reports"
+			duration = 1095		#3 years
+		}
+	}
+}
+
+# The Yellow Sky Reigns
+country_event = {
+	id = yellow_turban_rebellion.17
+	title = "yellow_turban_rebellion.17.t"
+	desc = "yellow_turban_rebellion.17.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { exists = ZAO }
+		num_of_owned_provinces_with = {
+			value = 10
+			region = north_china_region
+			controlled_by = REB
+		}
+		
+		#Luoyang
+		1836 = {
+			controlled_by = REB
+		}
+		any_owned_province = {
+			OR = {
+				area = shanxi_area
+				area = south_hebei_area
+				area = hebei_area
+				area = west_shandong_area
+				area = shandong_area
+				area = north_henan_area
+				area = henan_area
+				area = anhui_area
+				area = jiangsu_area
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+					OR = {
+						province_id = 1836
+						area = shanxi_area
+						area = south_hebei_area
+						area = hebei_area
+						area = west_shandong_area
+						area = shandong_area
+						area = north_henan_area
+						area = henan_area
+						area = anhui_area
+						area = jiangsu_area
+					}
+				}
+				add_core = ZAO
+				clear_rebels = yes
+			}
+			every_owned_province = { #get rid of bordergore from random Mongolian provinces
+				limit = {
+					region = mongolia_region
+					any_neighbor_province = {
+						is_core = ZAO
+					}
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+				}
+				add_core = ZAO
+				clear_rebels = yes
+			}
+			release = ZAO
+			ZAO = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = theocratic_monarchy_ancient_reform		#new MMETR reform
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Jue"
+					dynasty = "Zhang"
+					adm = 2
+					dip = 5
+					mil = 5
+				}
+				add_yearly_manpower = 15
+				add_years_of_income = 15
+			}
+		}
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.17.a"
+		
+		add_mandate = -5
+	}
+	
+	option = {
+		name = "yellow_turban_rebellion.17.b"
+		
+		switch_tag = ZAO
+	}
+}
+
+

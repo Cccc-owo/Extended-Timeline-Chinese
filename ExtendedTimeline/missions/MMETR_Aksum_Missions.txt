@@ -1,0 +1,1300 @@
+aksumite_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = AKS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	aks_subjugate_the_macrobians_mission = {
+		icon = mission_zanzibari_trade
+		required_missions = { aks_control_the_coast_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = somaliland_area
+				area = majarteen_area
+				area = ifat_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT		#includes Tributaries
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			somaliland_area = {
+				type = all
+				OR = {
+					country_or_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			majarteen_area = {
+				type = all
+				OR = {
+					country_or_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			ifat_area = {
+				type = all
+				OR = {
+					country_or_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_aks_merchants_of_punt"
+				duration = 10950
+			}
+		}
+	}
+	aks_indian_monopoly_mission = {
+		icon = mission_dominate_persian_gulf
+		required_missions = { aks_subjugate_the_macrobians_mission }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 4346		#Gulf of Aden
+			NOT = {
+				trade_share = {	
+					country = ROOT
+					share = 50
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			4346 = {
+				trade_share = {	
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				add_country_modifier = {
+					name = "me_aks_indian_monopoly"
+					duration = -1
+				}
+			}
+			country_event = {
+				id = mmetr_AKS_mission_events.6
+			}
+		}
+	}
+	aks_aksumite_navy_mission = {
+		icon = mission_arabian_sea_trade
+		required_missions = { aks_reunite_dmt_mission }
+		position = 4
+		trigger = {
+			OR = {
+				num_of_light_ship = 5
+				navy_size = 15
+			}
+			navy_size_percentage = 1.0
+			navy_size = HIM
+			navy_size = SAA
+			navy_size = QAT
+			navy_size = HDR
+			navy_size = YEM
+		}
+		effect = {
+			add_navy_tradition = 15
+			country_event = {
+				id = mmetr_AKS_mission_events.5
+			}
+		}
+	}
+	aks_colonize_socotra_mission = {
+		icon = mission_demand_garjat_fealty
+		required_missions = { aks_aksumite_navy_mission aks_king_of_yamnat_mission }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 1099
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			manpower = 2	#2000 manpower
+			years_of_income = 0.5
+			OR = {
+				1099 = {
+					is_empty = yes
+					has_discovered = ROOT
+				}
+				owns_core_province = 1099
+			}
+		}
+		effect = {
+			add_years_of_income = -0.5
+			add_manpower = -2
+			if = {
+				limit = {
+					1099 = {
+						is_empty = yes
+					}
+				}
+				1099 = {
+					cede_province = ROOT
+				}
+				1099 = {
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "me_him_trading_checkpoint"
+						duration = 10950
+					}
+				}
+			}
+			else = {
+				1099 = {
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "me_him_trading_checkpoint"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	aks_develop_aksum_mission = {
+		icon = mission_aksum_obelisk
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 1227
+			NOT = {
+				development = 12
+				num_of_times_improved_by_owner = 3
+				is_capital_of = ROOT
+			}
+		}
+		trigger = {
+			1227 = {
+				development = 12
+			}
+			1227 = {
+				num_of_times_improved_by_owner = 3
+			}
+			1227 = {
+				is_capital_of = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_AKS_mission_events.8
+			}
+		}
+	}
+	aks_aksumite_mint_mission = {
+		icon = dominant_economy
+		required_missions = { aks_develop_aksum_mission }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 1224
+			NOT = {
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			1224 = {		#Ethiopia trade node
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				add_country_modifier = {
+					name = "me_aks_aksumite_coinage"
+					duration = -1
+				}
+				define_advisor = {
+					type = master_of_mint
+					skill = 2
+					discount = yes
+				}
+			}
+			country_event = {
+				id = mmetr_AKS_mission_events.9
+			}
+		}
+	}
+	aks_great_power_of_aksum_mission = {
+		icon = a_real_roman_empire
+		required_missions = { aks_aksumite_mint_mission }
+		position = 10
+		trigger = {
+			is_great_power = yes
+		}
+		effect = {
+			add_prestige = 50
+			add_legitimacy = 50
+			add_dip_power = 75
+		}
+	}
+	
+}
+
+aksumite_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = AKS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	aks_control_the_coast_mission = {
+		icon = mission_occupy_alexandria
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1230
+				province_id = 2765
+				province_id = 1215
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_subject_of = 1230
+			owns_or_subject_of = 2765
+			owns_or_subject_of = 1215
+		}
+		effect = {
+			somaliland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+			ifat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+			majarteen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	aks_reunite_dmt_mission = {
+		icon = mission_aksumite_governor
+		required_missions = { aks_control_the_coast_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = aussa_area
+				area = tigray_area
+				area = central_ethiopia_area
+				area = shewa_area
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			aussa_area = {
+				type = all
+				OR = {
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					is_empty = yes
+				}
+			}
+			tigray_area = {
+				type = all
+				OR = {
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					is_empty = yes
+				}
+			}
+			central_ethiopia_area = {
+				type = all
+				OR = {
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					is_empty = yes
+				}
+			}
+			shewa_area = {
+				type = all
+				OR = {
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			country_event = {
+				id = mmetr_AKS_mission_events.1
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_aks_legacy_of_dmt"
+					duration = 10950
+				}
+			}
+		}
+	}
+	aks_erect_great_stelae_mission = {
+		icon = mission_aksum_obelisk_construction
+		required_missions = { aks_reunite_dmt_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				is_capital_of = ROOT
+				province_id = 1227	#Aksum
+			}
+			NOT = {
+				has_building = glorious_monument
+			}
+		}
+		trigger = {
+			owns_core_province = 1227
+			1227 = {
+				OR = {
+					has_building = glorious_monument
+					has_great_project = {
+						type = obelisk_of_axum
+						tier = 1
+					}
+				}
+				
+			}
+			capital_scope = {
+				has_building = glorious_monument
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				has_building = glorious_monument
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_aks_great_stelae_of_aksum"
+				duration = 10950
+			}
+		}
+	}
+	aks_restore_the_marib_dam_mission = {
+		icon = mission_shipyards_of_gujarat
+		required_missions = { aks_king_of_yamnat_mission }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 2344		#Ma'rib
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { num_of_times_improved_by_owner = 3 }
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2344
+			2344 = {
+				OR = {
+					num_of_times_improved_by_owner = 5
+					AND = {
+						has_great_project = {
+							type = marib_dam
+							tier = 2
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			upper_yemen_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_aks_irrigation_development"
+					duration = -1
+				}
+			}
+			yemen_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_aks_irrigation_development"
+					duration = -1
+				}
+			}
+			tihama_al_yemen_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_aks_irrigation_development"
+					duration = -1
+				}
+			}
+			asir_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = "me_aks_irrigation_development"
+					duration = -1
+				}
+			}
+		}
+	}
+	aks_roman_diplomacy_mission = {
+		icon = a_roman_empire
+		required_missions = { aks_develop_aksum_mission }
+		position = 8
+		trigger = {
+			any_country = {
+				has_opinion = {
+					who = ROOT
+					value = 90
+				}
+				OR = {
+					tag = ROM
+					tag = ROW
+					tag = BYZ
+					primary_culture = roman
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_aks_roman_trade"
+				duration = 10950
+			}
+		}
+	}
+	aks_overflowing_treasury_mission = {
+		icon = mission_entrepot_of_india
+		required_missions = { aks_aksumite_mint_mission }
+		position = 10
+		trigger = {
+			share_of_starting_income = 1.5
+			years_of_income = 2
+		}
+		effect = {
+			define_advisor = {
+				type = treasurer
+				skill = 2
+				discount = yes
+			}
+		}
+	}
+	
+}
+
+aksumite_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = AKS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	aks_arabian_diplomacy_mission = {
+		icon = mission_friends_or_enemies
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				calc_true_if = {
+					all_subject_country = {
+						capital_scope = {
+							region = arabia_region
+						}
+						has_opinion = {
+							who = ROOT
+							value = 120
+						}
+					}
+					amount = 1
+				}
+				calc_true_if = {
+					all_ally = {
+						capital_scope = {
+							region = arabia_region
+						}
+						has_opinion = {
+							who = ROOT
+							value = 120
+						}
+					}
+					amount = 1
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_aks_foreign_intervention"
+				duration = 7300
+			}
+		}
+	}
+	aks_war_with_the_himyarites_mission = {
+		icon = mission_himyarite_soldier
+		required_missions = { aks_control_the_coast_mission }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 387
+				province_id = 388
+				province_id = 4280
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 387
+			owns_or_non_sovereign_subject_of = 388
+			owns_or_non_sovereign_subject_of = 4280
+		}
+		effect = {
+			add_navy_tradition = 20
+			tihama_al_yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+			yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+			hadramut_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	aks_king_of_yamnat_mission = {
+		icon = mission_secure_hajj_ports
+		required_missions = { aks_war_with_the_himyarites_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = tihama_al_yemen_area
+				area = upper_yemen_area
+				area = yemen_area
+				area = hadramut_area
+				area = asir_area
+				area = mahra_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			tihama_al_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yemen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hadramut_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			asir_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			mahra_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_AKS_mission_events.2
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_aks_overseas_empire"
+					duration = -1
+				}
+			}
+			add_prestige = 20
+		}
+	}
+	aks_yemeni_frankincense_mission = {
+		icon = mission_arabian_ports
+		required_missions = { aks_king_of_yamnat_mission }
+		position = 6
+		provinces_to_highlight = {
+			region = arabia_region
+			owned_by = ROOT
+			NOT = {
+				base_production = 5
+				num_of_times_improved_by_owner = 1
+			}
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				region = arabia_region
+				base_production = 5
+				num_of_times_improved_by_owner = 1
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_AKS_mission_events.13
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_aks_frankincense_trade"
+					duration = -1
+				}
+			}
+		}
+	}
+
+}
+
+aksumite_christian_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = AKS
+		}
+		religion_group = christian		#unlocks via branching mission if Christian
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	aks_bishop_of_ethiopia_mission = {
+		icon = invest_in_the_provinces
+		required_missions = { aks_question_of_the_faith_mission }
+		position = 8
+		trigger = {
+			theologian = 2
+		}
+		effect = {
+			country_event = {
+				id = mmetr_AKS_mission_events.11
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_aks_bishop_of_ethiopia"
+					duration = -1
+				}
+			}
+		}
+	}
+	aks_first_church_of_aksum_mission = {
+		icon = prester_john
+		required_missions = { aks_bishop_of_ethiopia_mission }
+		position = 9
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_aks_aksumite_doctrine"
+				duration = -1
+			}
+			if = {
+				limit = {
+					NOT = { religion = coptic }
+				}
+				country_event = {
+					id = mmetr_AKS_mission_events.12
+				}
+				custom_tooltip = aks_first_church_of_aksum_mission.tt
+			}
+		}
+	}
+	
+}
+
+aksumite_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = AKS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	aks_northern_campaign_mission = {
+		icon = mission_son_military_expertise
+		required_missions = {  }
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			upper_nubia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+				if = {
+					limit = {
+						NOT = { has_discovered = ROOT }
+					}
+					discover_country = ROOT
+				}
+			}
+		}
+	}
+	aks_conquer_the_beja_mission = {
+		icon = mission_mal_fighting_musa
+		required_missions = { aks_northern_campaign_mission }
+		position = 4
+		provinces_to_highlight = {
+			area = red_sea_coast_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			red_sea_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_aks_beja_tribute"
+				duration = 9125
+			}
+		}
+	}
+	aks_red_sea_ports_mission = {
+		icon = invest_in_the_rich_trades
+		required_missions = { aks_conquer_the_beja_mission aks_king_of_yamnat_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 358	#Alexandria trade node
+				province_id = 4346	#Gulf of Aden
+				province_id = 1224	#Ethiopia trade node
+			}
+			NOT = {
+				trade_share = {	
+					country = ROOT
+					share = 25
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			358 = {
+				trade_share = {	
+					country = ROOT
+					share = 25
+				}
+			}
+			4346 = {
+				trade_share = {	
+					country = ROOT
+					share = 25
+				}
+			}
+			1224 = {
+				trade_share = {	
+					country = ROOT
+					share = 25
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_aks_red_sea_merchants"
+				duration = -1
+			}
+			add_mercantilism = 1
+		}
+	}
+	aks_a_new_breadbasket_mission = {
+		icon = mission_pol_breadbasket_europe
+		required_missions = { aks_emperor_of_egypt_mission }
+		position = 6
+		provinces_to_highlight = {
+			region = egypt_region
+			owned_by = ROOT
+			NOT = {
+				base_production = 5
+				num_of_times_improved_by_owner = 1
+			}
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				region = egypt_region
+				base_production = 5
+				num_of_times_improved_by_owner = 1
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_aks_nile_breadbasket"
+				duration = -1
+			}
+		}
+	}
+	aks_question_of_the_faith_mission = {
+		icon = mission_unknown_mission
+		required_missions = {  }
+		position = 7
+		completed_by = 325.1.1
+		trigger = {
+			OR = {
+				religion_group = christian
+				any_country = {
+					religion = chalcedonism
+					has_opinion = {
+						who = ROOT
+						value = 75
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { religion_group = christian }
+				}
+				change_religion = chalcedonism
+			}
+			custom_tooltip = aks_question_of_the_faith_mission.tt
+			swap_non_generic_missions = yes		#unlocks branching missions
+		}
+	}
+	
+}
+
+aksumite_christian_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = AKS
+		}
+		religion_group = christian		#unlocks via branching mission if Christian
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	aks_convert_the_aksumites_mission = {
+		icon = mission_mass_baptism
+		required_missions = { aks_question_of_the_faith_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = aussa_area
+				area = tigray_area
+				area = central_ethiopia_area
+				area = shewa_area
+			}
+			NOT = {
+				religion = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion_group = christian
+			religious_unity = 0.8
+			aussa_area = {
+				type = all
+				OR = {
+					religion = ROOT
+					is_empty = yes
+				}
+			}
+			tigray_area = {
+				type = all
+				OR = {
+					religion = ROOT
+					is_empty = yes
+				}
+			}
+			central_ethiopia_area = {
+				type = all
+				OR = {
+					religion = ROOT
+					is_empty = yes
+				}
+			}
+			shewa_area = {
+				type = all
+				OR = {
+					religion = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "me_aks_messengers_of_gods_word"
+				duration = 14600
+			}
+		}
+	}
+	aks_descendants_of_solomon_mission = {
+		icon = befriend_ethiopia
+		required_missions = { aks_convert_the_aksumites_mission }
+		position = 10
+		trigger = {
+			monthly_adm = 10
+			monthly_dip = 10
+			monthly_mil = 10
+		}
+		effect = {
+			add_legitimacy = 50
+			add_prestige = 25
+			add_country_modifier = {
+				name = "me_aks_descendants_of_solomon"
+				duration = -1
+			}
+		}
+	}
+	
+}
+
+aksumite_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = AKS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	aks_up_the_nile_mission = {
+		icon = mission_reconquer_ceuta
+		required_missions = { aks_northern_campaign_mission }
+		position = 2
+		provinces_to_highlight = {
+			area = upper_nubia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			upper_nubia_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_AKS_mission_events.4
+			}
+			lower_nubia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+			dongola_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	aks_march_to_meroe_mission = {
+		icon = mission_nubian_pyramids
+		required_missions = { aks_up_the_nile_mission }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = lower_nubia_area
+				area = dongola_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			lower_nubia_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			dongola_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 25
+			country_event = {
+				id = mmetr_AKS_mission_events.3
+			}
+			said_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	aks_emperor_of_egypt_mission = {
+		icon = mission_conquer_alexandria
+		required_missions = { aks_march_to_meroe_mission aks_conquer_the_beja_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = said_area
+						area = vostani_area
+						area = bahari_area
+					}
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				AND = {
+					province_id = 358	#Alexandria
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 358	#Alexandria
+			said_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vostani_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_AKS_mission_events.7
+			}
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			egypt_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+}
+
+aksumite_christian_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = AKS
+		}
+		religion_group = christian		#unlocks via branching mission if Christian
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	aks_to_the_holy_land_mission = {
+		icon = ark_of_the_covenant
+		required_missions = { aks_question_of_the_faith_mission aks_emperor_of_egypt_mission }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 379 	#Jerusalem
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 379
+		}
+		effect = {
+			add_prestige = 50
+			country_event = {
+				id = mmetr_AKS_mission_events.10
+			}
+			custom_tooltip = aks_to_the_holy_land_mission.tt
+		}
+	}
+	aks_missionaries_to_yamnat_mission = {
+		icon = mission_hands_praying
+		required_missions = { aks_convert_the_aksumites_mission }
+		position = 9
+		provinces_to_highlight = {
+			region = arabia_region
+			country_or_non_sovereign_subject_holds = ROOT
+			NOT = {
+				religion_group = christian
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			calc_true_if = {
+				all_province = {
+					region = arabia_region
+					religion_group = christian
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_prestige = 20
+			define_advisor = {
+				type = inquisitor
+				skill = 2
+				culture = yemeni_culture
+				discount = yes
+			}
+		}
+	}
+	
+}
