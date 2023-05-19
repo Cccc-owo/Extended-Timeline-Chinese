@@ -2,15 +2,21 @@
 
 汉化组成员：见 [README](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project#%E8%B4%A1%E7%8C%AE%E8%80%85--contributors)
 
-## v1.15.1-r2
+## v1.15.3-r3
 
-- 🌐更新ET汉化
+- 🌐更新ET汉化，适配ET v1.15.3 & EU4 v1.35.3
 - 🌐更新原版汉化——感谢52汉化组的无私奉献！
 - ✍️更新地图字体：补充缺字
 
 ---
 
 <details><summary>历史更新日志</summary>
+
+## v1.15.1-r2
+
+- 🌐更新ET汉化
+- 🌐更新原版汉化——感谢52汉化组的无私奉献！
+- ✍️更新地图字体：补充缺字
 
 ## v1.15.1-r1
 
