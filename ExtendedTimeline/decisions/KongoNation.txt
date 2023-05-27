@@ -48,8 +48,14 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { exists = KON }
-			NOT = { exists = CNG }
-			NOT = { exists = DRC }
+			OR = {
+				NOT = { exists = CNG }
+				tag = CNG
+			}
+			OR = {
+				NOT = { exists = DRC }
+				tag = DRC
+			}
 			is_at_war = no
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
@@ -61,6 +67,15 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = KON
+			if = {
+				limit = {
+					OR = {
+						tag = CNG
+						tag = DRC
+					}
+				}
+				override_country_name = CONGO
+			}
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = { NOT = { government_rank = 2 } }

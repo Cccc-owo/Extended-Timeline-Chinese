@@ -311,7 +311,7 @@ patriarch_authority_global = {
 pasha_state = {
 	local_governing_cost = -0.2
 	min_local_autonomy = 20
-	state_maintenance_modifier = -0.33
+	local_state_maintenance_modifier = -0.33
 	local_autonomy = -0.1
 	local_tolerance_of_heathens = 10
 }
@@ -695,18 +695,18 @@ bank_loan = {
 }
 
 inflation = {
-	build_cost = 0.01						#1% for each inflation step.
-	infantry_cost = 0.01					#1% for each inflation step
-	cavalry_cost = 0.01						#1% for each inflation step
-	artillery_cost = 0.01					#1% for each inflation step
-	heavy_ship_cost = 0.01					#1% for each inflation step
-	light_ship_cost = 0.01					#1% for each inflation step
-	galley_cost = 0.01						#1% for each inflation step
-	transport_cost = 0.01					#1% for each inflation step
-	flagship_cost = 0.01					#1% for each inflation step
-	advisor_cost = 0.01						#1% for each inflation step
-	mercenary_cost = 0.01					#1% for each inflation step
-	fort_maintenance_modifier = 0.01		#1% for each inflation step
+	build_cost = 0.01									#1% for each inflation step.
+	infantry_cost = 0.01								#1% for each inflation step
+	cavalry_cost = 0.01									#1% for each inflation step
+	artillery_cost = 0.01								#1% for each inflation step
+	heavy_ship_cost = 0.01								#1% for each inflation step
+	light_ship_cost = 0.01								#1% for each inflation step
+	galley_cost = 0.01									#1% for each inflation step
+	transport_cost = 0.01								#1% for each inflation step
+	flagship_cost = 0.01								#1% for each inflation step
+	advisor_cost = 0.01									#1% for each inflation step
+	mercenary_cost = 0.01								#1% for each inflation step
+	fort_maintenance_modifier = 0.01					#1% for each inflation step
 	missionary_maintenance_cost = 0.01					#1% for each inflation step
 	colony_cost_modifier = 0.01							#1% for each inflation step
 	great_project_upgrade_cost = 0.01					#1% for each inflation step
@@ -1485,6 +1485,11 @@ same_religion_subject_bonus_mod = {
 	production_efficiency = 0.15
 }
 
+eyalet_modifier = {
+	global_manpower = -5
+	land_forcelimit	= -5
+}
+
 #scales to amount of up-to-date forts compared to total development
 maintained_forts = {
 	army_tradition = 1
@@ -2040,7 +2045,7 @@ galleass_ship = {
 caravel_ship = {
 	movement_speed_in_fleet_modifier = 1 
 	naval_attrition = -0.25
-	global_ship_trade_power = 0.33
+	ship_trade_power_modifier = 0.33
 }
 
 voc_indiamen_ship = {
