@@ -1614,7 +1614,9 @@ DOM_Qing_Missions_2 = {
       }
     }
     trigger = {
-      tag = MCH
+      is_or_was_tag = {
+        tag = MCH
+      }
       army_size = 25
       OR = {
         power_projection = 50
@@ -3001,6 +3003,17 @@ DOM_Qing_Missions_2_b = {
         }
         add_permanent_claim = ROOT
       }
+      burma_region = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            is_permanent_claim = ROOT
+          }
+        }
+        add_permanent_claim = ROOT
+      }
     }
   }
   qng_campaign_in_burma = {
@@ -3010,31 +3023,15 @@ DOM_Qing_Missions_2_b = {
     }
     position = 14
     provinces_to_highlight = {
-      OR = {
-        area = karenni_area
-        area = shan_hill_area
-        area = kachin_area
-      }
+      region = burma_region
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
       }
     }
     trigger = {
-      karenni_area = {
-        type = all
-        country_or_non_sovereign_subject_holds = ROOT
-      }
-      shan_hill_area = {
-        type = all
-        country_or_non_sovereign_subject_holds = ROOT
-      }
-      kachin_area = {
-        type = all
-        country_or_non_sovereign_subject_holds = ROOT
-      }
-      lower_burma_area = {
-        type = all
-        country_or_non_sovereign_subject_holds = ROOT
+      num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+        region = burma_region
+        value = 25
       }
     }
     effect = {
@@ -3137,9 +3134,9 @@ chinese_kingdoms_3 = {
           add_mil_tech = 1
         }
         else = {
-          add_adm_power = 100
-          add_dip_power = 100
-          add_mil_power = 100
+          add_adm_power = 150
+          add_dip_power = 150
+          add_mil_power = 150
         }
       }
     }
@@ -3179,7 +3176,7 @@ chinese_kingdoms_3 = {
       }
       if = {
         limit = {
-          is_emperor_of_china = ROOT
+          is_emperor_of_china = yes
         }
         add_mandate = 25
       }
@@ -4839,117 +4836,49 @@ ming_missions_3_b = {
       }
     }
     effect = {
-      custom_tooltip = mng_zhishi_reward_tt
-      tooltip = {
-        add_country_modifier = {
-          name = mng_well_governed_era_modifier
-          duration = 9125
-        }
-        add_power_projection = {
-          type = 25_permanent_power_projection
-          amount = 10
-        }
-        change_ruler_stat = {
-          stat = adm
-          amount = 1
-        }
-        change_ruler_stat = {
-          stat = dip
-          amount = 1
-        }
-        change_ruler_stat = {
-          stat = mil
-          amount = 1
-        }
-      }
-      custom_tooltip = mng_shengshi_reward_tt
-      tooltip = {
-        add_country_modifier = {
-          name = mng_prosperous_era_modifier
-          duration = -1
-        }
-        if = {
-          limit = {
-            has_dlc = "Mandate of Heaven"
-          }
-          if = {
-            limit = {
-              has_had_golden_age = yes
-            }
-            reset_golden_age = yes
-          }
-          else_if = {
-            limit = {
-              in_golden_age = yes
-            }
-            extend_golden_age = 240
-          }
-        }
-        add_power_projection = {
-          type = 25_permanent_power_projection
-          amount = 25
-        }
-      }
       custom_tooltip = mng_passing_reform_grants_10_estate_loyalty_tt
-      hidden_effect = {
+      add_power_projection = {
+        type = 25_permanent_power_projection
+        amount = 25
+      }
+      custom_tooltip = zim_amongst_the_great_powers_tt
+      add_country_modifier = {
+        name = mng_prosperous_era_modifier
+        duration = -1
+      }
+      if = {
+        limit = {
+          has_dlc = "Mandate of Heaven"
+        }
         if = {
           limit = {
-            OR = {
-              in_golden_age = yes
-              monthly_income = 500
-            }
-            monthly_adm = 12
+            has_had_golden_age = yes
           }
-          add_country_modifier = {
-            name = mng_prosperous_era_modifier
-            duration = -1
-          }
-          if = {
-            limit = {
-              has_dlc = "Mandate of Heaven"
-            }
-            if = {
-              limit = {
-                has_had_golden_age = yes
-              }
-              reset_golden_age = yes
-            }
-            else_if = {
-              limit = {
-                in_golden_age = yes
-              }
-              extend_golden_age = 240
-            }
-          }
-          add_power_projection = {
-            type = 25_permanent_power_projection
-            amount = 25
-          }
-          custom_tooltip = mng_passing_reform_grants_10_estate_loyalty_tt
-          set_country_flag = mng_shengshi_reward_flag
+          reset_golden_age = yes
         }
-        else = {
-          add_country_modifier = {
-            name = mng_well_governed_era_modifier
-            duration = 9125
+        else_if = {
+          limit = {
+            in_golden_age = yes
           }
-          add_power_projection = {
-            type = 25_permanent_power_projection
-            amount = 10
-          }
-          change_ruler_stat = {
-            stat = adm
-            amount = 1
-          }
-          change_ruler_stat = {
-            stat = dip
-            amount = 1
-          }
-          change_ruler_stat = {
-            stat = mil
-            amount = 1
-          }
+          extend_golden_age = 240
         }
+      }
+      set_country_flag = mng_shengshi_reward_flag
+      add_country_modifier = {
+        name = mng_well_governed_era_modifier
+        duration = 9125
+      }
+      change_ruler_stat = {
+        stat = adm
+        amount = 1
+      }
+      change_ruler_stat = {
+        stat = dip
+        amount = 1
+      }
+      change_ruler_stat = {
+        stat = mil
+        amount = 1
       }
     }
   }
@@ -5356,7 +5285,7 @@ chinese_kingdoms_4 = {
       }
       if = {
         limit = {
-          is_emperor_of_china = ROOT
+          is_emperor_of_china = yes
         }
         add_mandate = 25
       }
@@ -7671,10 +7600,8 @@ ming_missions_5_b = {
             add_mandate = 10
           }
           else = {
-            owner = {
-              add_prestige_or_monarch_power = {
-                amount = 25
-              }
+            add_prestige_or_monarch_power = {
+              amount = 25
             }
           }
         }

@@ -288,15 +288,16 @@ country_event = {
   }
   option = {
     name = "flavor_ara.EVTOPTC6"
-    trigger = {
-      OR = {
-        NOT = {
-          legitimacy = 50
-        }
-        NOT = {
-          stability = 0
-        }
+    if = {
+      limit = {
+        stability = 0
       }
+      add_stability = -3
+    }
+    else = {
+      add_adm_power = -50
+      add_dip_power = -50
+      add_mil_power = -50
     }
     every_owned_province = {
       limit = {

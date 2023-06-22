@@ -921,22 +921,34 @@ french_missions_1_Continuation_a = {
     position = 9
     trigger = {
       num_of_explorers = 1
-      custom_trigger_tooltip = {
-        tooltip = fra_canada_discovery.tooltip
-        colonial_canada = {
-          has_discovered = ROOT
+      if = {
+        limit = {
+          is_random_new_world = no
+        }
+        custom_trigger_tooltip = {
+          tooltip = fra_canada_discovery.tooltip
+          colonial_canada = {
+            has_discovered = ROOT
+          }
+        }
+        custom_trigger_tooltip = {
+          tooltip = fra_carib_discovery.tooltip
+          colonial_the_carribean = {
+            has_discovered = ROOT
+          }
+        }
+        custom_trigger_tooltip = {
+          tooltip = fra_louis_discovery.tooltip
+          colonial_louisiana = {
+            has_discovered = ROOT
+          }
         }
       }
-      custom_trigger_tooltip = {
-        tooltip = fra_carib_discovery.tooltip
-        colonial_the_carribean = {
-          has_discovered = ROOT
-        }
-      }
-      custom_trigger_tooltip = {
-        tooltip = fra_louis_discovery.tooltip
-        colonial_louisiana = {
-          has_discovered = ROOT
+      else = {
+        OR = {
+          national_focus = DIP
+          full_idea_group = exploration_ideas
+          num_of_light_ship = 25
         }
       }
     }
@@ -963,9 +975,20 @@ french_missions_1_Continuation_a = {
       }
     }
     trigger = {
-      num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-        region = canada_region
-        value = 10
+      if = {
+        limit = {
+          is_random_new_world = no
+        }
+        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+          region = canada_region
+          value = 10
+        }
+      }
+      else = {
+        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+          continent = new_world
+          value = 10
+        }
       }
     }
     effect = {
@@ -1061,9 +1084,17 @@ french_missions_1_Continuation_a = {
         }
         amount = 2
       }
-      num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-        region = guinea_region
-        value = 5
+      if = {
+        limit = {
+          is_random_new_world = no
+        }
+        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+          region = guinea_region
+          value = 5
+        }
+      }
+      else = {
+        mercantilism = 25
       }
     }
     effect = {
@@ -1082,10 +1113,22 @@ french_missions_1_Continuation_a = {
     position = 12
     provinces_to_highlight = {
       superregion = india_superregion
-      OR = {
+      if = {
+        limit = {
+          ROOT = {
+            NOT = {
+              num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                superregion = india_superregion
+                value = 20
+              }
+            }
+          }
+        }
         NOT = {
           country_or_non_sovereign_subject_holds = ROOT
         }
+      }
+      else = {
         AND = {
           NOT = {
             country_or_non_sovereign_subject_holds = ROOT
@@ -1493,7 +1536,34 @@ french_rev_missions_1 = {
         country_or_non_sovereign_subject_holds = ROOT
       }
     }
-    trigger = {}
+    trigger = {
+      iberia_region = {
+        type = all
+        NOT = {
+          average_autonomy_above_min = 5
+        }
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      OR = {
+        AND = {
+          accepted_culture = castillian
+          accepted_culture = aragonese
+          accepted_culture = portugese
+        }
+        iberia_region = {
+          type = all
+          culture = ROOT
+        }
+        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+          region = iberia_region
+          num_of_units_in_province = {
+            who = ROOT
+            amount = 50
+          }
+          value = 4
+        }
+      }
+    }
     effect = {
       add_country_modifier = {
         name = fra_iberian_domination_modifier
@@ -2004,6 +2074,10 @@ french_missions_2_Continuation_b = {
     }
     trigger = {
       OR = {
+        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+          region = iberia_region
+          value = 15
+        }
         any_ally = {
           total_development = 450
           culture_group = iberian
@@ -2017,6 +2091,7 @@ french_missions_2_Continuation_b = {
           }
         }
         AND = {
+          grown_by_development = 300
           any_country = {
             capital_scope = {
               region = iberia_region
@@ -2037,11 +2112,6 @@ french_missions_2_Continuation_b = {
             }
             is_enemy = ROOT
           }
-          grown_by_development = 300
-        }
-        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-          region = iberia_region
-          value = 15
         }
       }
     }
@@ -2083,9 +2153,34 @@ french_missions_2_Continuation_b = {
       hidden_effect = {
         if = {
           limit = {
-            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-              region = iberia_region
-              value = 15
+            OR = {
+              num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                region = iberia_region
+                value = 15
+              }
+              AND = {
+                any_country = {
+                  capital_scope = {
+                    region = iberia_region
+                  }
+                  OR = {
+                    is_great_power = yes
+                    total_development = 250
+                  }
+                  OR = {
+                    has_opinion_modifier = {
+                      who = ROOT
+                      modifier = scornfully_insulted
+                    }
+                    has_opinion_modifier = {
+                      who = ROOT
+                      modifier = insulted
+                    }
+                  }
+                  is_enemy = ROOT
+                }
+                grown_by_development = 300
+              }
             }
           }
           country_event = {
@@ -2161,18 +2256,36 @@ french_missions_2_Continuation_b = {
       }
     }
     trigger = {
-      any_subject_country = {
-        custom_trigger_tooltip = {
-          tooltip = any_type_colony_tt
-          OR = {
-            is_subject_of_type = colony
-            is_subject_of_type = crown_colony
-            is_subject_of_type = private_enterprise
-            is_subject_of_type = self_governing_colony
+      if = {
+        limit = {
+          is_random_new_world = no
+        }
+        any_subject_country = {
+          custom_trigger_tooltip = {
+            tooltip = any_type_colony_tt
+            OR = {
+              is_subject_of_type = colony
+              is_subject_of_type = crown_colony
+              is_subject_of_type = private_enterprise
+              is_subject_of_type = self_governing_colony
+            }
+          }
+          capital_scope = {
+            colonial_region = colonial_the_carribean
           }
         }
-        capital_scope = {
-          colonial_region = colonial_the_carribean
+      }
+      else = {
+        any_subject_country = {
+          custom_trigger_tooltip = {
+            tooltip = any_type_colony_tt
+            OR = {
+              is_subject_of_type = colony
+              is_subject_of_type = crown_colony
+              is_subject_of_type = private_enterprise
+              is_subject_of_type = self_governing_colony
+            }
+          }
         }
       }
     }
@@ -2254,11 +2367,23 @@ french_missions_2_Continuation_b = {
       has_manufactory_trigger = no
     }
     trigger = {
-      num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-        region = canada_region
-        trade_goods = fur
-        value = 4
-        has_manufactory_trigger = yes
+      if = {
+        limit = {
+          is_random_new_world = no
+        }
+        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+          region = canada_region
+          trade_goods = fur
+          value = 4
+          has_manufactory_trigger = yes
+        }
+      }
+      else = {
+        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+          trade_goods = fur
+          value = 4
+          has_manufactory_trigger = yes
+        }
       }
     }
     effect = {
@@ -2278,6 +2403,96 @@ french_missions_2_Continuation_b = {
           }
           type = random
           amount = 6
+          add_province_modifier = {
+            name = fra_hudson_bay_fur_modifier
+            duration = -1
+          }
+        }
+        random_owned_province = {
+          limit = {
+            NOT = {
+              has_province_modifier = fra_hudson_bay_fur_modifier
+            }
+            region = canada_region
+            country_or_non_sovereign_subject_holds = ROOT
+            trade_goods = fur
+            has_manufactory_trigger = yes
+          }
+          add_province_modifier = {
+            name = fra_hudson_bay_fur_modifier
+            duration = -1
+          }
+        }
+        random_owned_province = {
+          limit = {
+            NOT = {
+              has_province_modifier = fra_hudson_bay_fur_modifier
+            }
+            region = canada_region
+            country_or_non_sovereign_subject_holds = ROOT
+            trade_goods = fur
+            has_manufactory_trigger = yes
+          }
+          add_province_modifier = {
+            name = fra_hudson_bay_fur_modifier
+            duration = -1
+          }
+        }
+        random_owned_province = {
+          limit = {
+            NOT = {
+              has_province_modifier = fra_hudson_bay_fur_modifier
+            }
+            region = canada_region
+            country_or_non_sovereign_subject_holds = ROOT
+            trade_goods = fur
+            has_manufactory_trigger = yes
+          }
+          add_province_modifier = {
+            name = fra_hudson_bay_fur_modifier
+            duration = -1
+          }
+        }
+        random_owned_province = {
+          limit = {
+            NOT = {
+              has_province_modifier = fra_hudson_bay_fur_modifier
+            }
+            region = canada_region
+            country_or_non_sovereign_subject_holds = ROOT
+            trade_goods = fur
+            has_manufactory_trigger = yes
+          }
+          add_province_modifier = {
+            name = fra_hudson_bay_fur_modifier
+            duration = -1
+          }
+        }
+        random_owned_province = {
+          limit = {
+            NOT = {
+              has_province_modifier = fra_hudson_bay_fur_modifier
+            }
+            region = canada_region
+            country_or_non_sovereign_subject_holds = ROOT
+            trade_goods = fur
+            has_manufactory_trigger = yes
+          }
+          add_province_modifier = {
+            name = fra_hudson_bay_fur_modifier
+            duration = -1
+          }
+        }
+        random_owned_province = {
+          limit = {
+            NOT = {
+              has_province_modifier = fra_hudson_bay_fur_modifier
+            }
+            region = canada_region
+            country_or_non_sovereign_subject_holds = ROOT
+            trade_goods = fur
+            has_manufactory_trigger = yes
+          }
           add_province_modifier = {
             name = fra_hudson_bay_fur_modifier
             duration = -1
@@ -4186,6 +4401,12 @@ french_missions_4_normal = {
         duration = 7300
       }
       custom_tooltip = fra_if_pro_190_opinion_and_100_trust_tt
+      tooltip = {
+        add_country_modifier = {
+          name = fra_close_ties_modifier
+          duration = 9125
+        }
+      }
       hidden_effect = {
         if = {
           limit = {
@@ -4201,7 +4422,10 @@ french_missions_4_normal = {
               }
             }
           }
-          inherit = PRO
+          add_country_modifier = {
+            name = fra_close_ties_modifier
+            duration = 9125
+          }
         }
       }
     }
@@ -7005,7 +7229,7 @@ fra_missions_5_continuation = {
       custom_tooltip = fra_alternatively_tt
       tooltip = {
         4696 = {
-          add_base_production = 2
+          add_base_production = 3
           add_province_modifier = {
             name = fra_toulon_dockyards_modifier
             duration = -1

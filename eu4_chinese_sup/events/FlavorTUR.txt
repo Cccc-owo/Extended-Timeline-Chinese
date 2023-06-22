@@ -6680,6 +6680,14 @@ country_event = {
     MAM = {
       remove_historical_rival = ROOT
       every_subject_country = {
+        limit = {
+          NOT = {
+            total_development = 75
+          }
+          capital_scope = {
+            superregion = near_east_superregion
+          }
+        }
         overlord = {
           inherit = PREV
         }
@@ -6761,6 +6769,7 @@ country_event = {
   option = {
     name = flavor_tur.243.a
     restore_country_name = yes
+    restore_country_color = yes
     clr_country_flag = has_eyalet_country_name
     remove_country_modifier = tur_mamlukian_administration
     add_prestige = 20
@@ -7813,9 +7822,16 @@ country_event = {
     NOT = {
       has_heir_flag = tur_purged_line_flag
     }
+    NOT = {
+      has_ruler_modifier = tur_secured_vali_ahad_modifier
+    }
   }
   mean_time_to_happen = {
     months = 60
+    modifier = {
+      factor = 3
+      has_heir_flag = tur_has_had_line_event_flag
+    }
   }
   option = {
     name = flavor_tur.265.a
@@ -7985,11 +8001,20 @@ country_event = {
   }
   option = {
     name = flavor_tur.265.b
-    add_legitimacy = -30
+    if = {
+      limit = {
+        has_heir_flag = tur_has_had_line_event_flag
+      }
+      add_legitimacy = -20
+    }
+    else = {
+      add_legitimacy = -30
+    }
     ai_chance = {
       factor = 5
     }
     custom_tooltip = tur_the_administration_will_be_damaged_somehow
+    set_heir_flag = tur_has_had_line_event_flag
     hidden_effect = {
       random_list = {
         20 = {
@@ -8022,6 +8047,9 @@ country_event = {
   }
   option = {
     name = flavor_tur.265.c
+    ai_chance = {
+      factor = 1000
+    }
     add_legitimacy = -5
     trigger = {
       OR = {
@@ -8528,7 +8556,10 @@ country_event = {
     TUR = {
       is_rival = HAB
       NOT = {
-        is_rival = TUR
+        is_rival = FRA
+      }
+      NOT = {
+        war_with = FRA
       }
     }
   }
@@ -9562,24 +9593,7 @@ country_event = {
   title = flavor_tur.1000.t
   desc = flavor_tur.1000.desc
   picture = EYALET_eventPicture
-  trigger = {
-    OR = {
-      has_country_flag = has_eyalet_country_name
-      has_country_flag = has_eyalet_color
-    }
-    NOT = {
-      has_country_modifier = tur_mamlukian_administration
-    }
-    NOT = {
-      is_subject_of_type = eyalet
-    }
-    NOT = {
-      is_subject_of_type = core_eyalet
-    }
-  }
-  mean_time_to_happen = {
-    months = 1
-  }
+  is_triggered_only = yes
   option = {
     name = flavor_tur.1000.a
     clr_country_flag = has_eyalet_country_name

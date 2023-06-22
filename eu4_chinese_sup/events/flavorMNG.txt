@@ -2747,7 +2747,7 @@ country_event = {
     }
   }
   mean_time_to_happen = {
-    months = 600
+    months = 700
   }
   option = {
     name = flavor_mng.46.a
@@ -2830,6 +2830,7 @@ country_event = {
       every_owned_province = {
         limit = {
           is_yellow_river_province_trigger = yes
+          development = 15
         }
         if = {
           limit = {
@@ -2854,6 +2855,7 @@ country_event = {
         else_if = {
           limit = {
             has_dlc = "Mandate of Heaven"
+            development = 15
           }
           add_devastation = 30
           random_list = {
@@ -2868,7 +2870,10 @@ country_event = {
             }
           }
         }
-        else = {
+        else_if = {
+          limit = {
+            development = 15
+          }
           add_base_tax = -2
           add_base_production = -2
           add_base_manpower = -2
@@ -2975,6 +2980,7 @@ country_event = {
         else_if = {
           limit = {
             has_dlc = "Mandate of Heaven"
+            development = 15
           }
           add_devastation = 30
           random_list = {
@@ -2989,7 +2995,10 @@ country_event = {
             }
           }
         }
-        else = {
+        else_if = {
+          limit = {
+            development = 15
+          }
           add_base_tax = -2
           add_base_production = -2
           add_base_manpower = -2
@@ -3012,11 +3021,7 @@ country_event = {
   }
   goto = yangtze_river_event_target
   mean_time_to_happen = {
-    months = 500
-    modifier = {
-      factor = 1.1
-      has_ruler_flag = stall_flood_events_flag
-    }
+    months = 700
   }
   immediate = {
     hidden_effect = {
@@ -3067,17 +3072,35 @@ country_event = {
       if = {
         limit = {
           has_dlc = "Mandate of Heaven"
+          has_country_flag = mng_flood_events_less_devastating_flag
         }
-        add_devastation = 50
+        add_devastation = 20
         random_list = {
           33 = {
-            add_base_tax = -2
+            add_base_tax = -1
           }
           33 = {
-            add_base_production = -2
+            add_base_production = -1
           }
           33 = {
-            add_base_manpower = -2
+            add_base_manpower = -1
+          }
+        }
+      }
+      else_if = {
+        limit = {
+          has_dlc = "Mandate of Heaven"
+        }
+        add_devastation = 30
+        random_list = {
+          33 = {
+            add_base_tax = -3
+          }
+          33 = {
+            add_base_production = -3
+          }
+          33 = {
+            add_base_manpower = -3
           }
         }
       }
@@ -3095,21 +3118,45 @@ country_event = {
         if = {
           limit = {
             has_dlc = "Mandate of Heaven"
+            owner = {
+              has_country_flag = mng_flood_events_less_devastating_flag
+            }
+          }
+          add_devastation = 20
+          random_list = {
+            33 = {
+              add_base_tax = -1
+            }
+            33 = {
+              add_base_production = -1
+            }
+            33 = {
+              add_base_manpower = -1
+            }
+          }
+        }
+        else_if = {
+          limit = {
+            has_dlc = "Mandate of Heaven"
+            development = 15
           }
           add_devastation = 30
           random_list = {
             33 = {
-              add_base_tax = -2
+              add_base_tax = -3
             }
             33 = {
-              add_base_production = -2
+              add_base_production = -3
             }
             33 = {
-              add_base_manpower = -2
+              add_base_manpower = -3
             }
           }
         }
-        else = {
+        else_if = {
+          limit = {
+            development = 15
+          }
           add_base_tax = -2
           add_base_production = -2
           add_base_manpower = -2
@@ -3150,17 +3197,35 @@ country_event = {
       if = {
         limit = {
           has_dlc = "Mandate of Heaven"
+          has_country_flag = mng_flood_events_less_devastating_flag
+        }
+        add_devastation = 20
+        random_list = {
+          33 = {
+            add_base_tax = -1
+          }
+          33 = {
+            add_base_production = -1
+          }
+          33 = {
+            add_base_manpower = -1
+          }
+        }
+      }
+      else_if = {
+        limit = {
+          has_dlc = "Mandate of Heaven"
         }
         add_devastation = 30
         random_list = {
           33 = {
-            add_base_tax = -2
+            add_base_tax = -3
           }
           33 = {
-            add_base_production = -2
+            add_base_production = -3
           }
           33 = {
-            add_base_manpower = -2
+            add_base_manpower = -3
           }
         }
       }
@@ -3178,21 +3243,45 @@ country_event = {
         if = {
           limit = {
             has_dlc = "Mandate of Heaven"
+            owner = {
+              has_country_flag = mng_flood_events_less_devastating_flag
+            }
+          }
+          add_devastation = 20
+          random_list = {
+            33 = {
+              add_base_tax = -1
+            }
+            33 = {
+              add_base_production = -1
+            }
+            33 = {
+              add_base_manpower = -1
+            }
+          }
+        }
+        else_if = {
+          limit = {
+            has_dlc = "Mandate of Heaven"
+            development = 15
           }
           add_devastation = 30
           random_list = {
             33 = {
-              add_base_tax = -2
+              add_base_tax = -3
             }
             33 = {
-              add_base_production = -2
+              add_base_production = -3
             }
             33 = {
-              add_base_manpower = -2
+              add_base_manpower = -3
             }
           }
         }
-        else = {
+        else_if = {
+          limit = {
+            development = 15
+          }
           add_base_tax = -2
           add_base_production = -2
           add_base_manpower = -2

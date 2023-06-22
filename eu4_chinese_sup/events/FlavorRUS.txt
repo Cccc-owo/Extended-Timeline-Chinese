@@ -1917,6 +1917,7 @@ country_event = {
     }
     government = monarchy
     dynasty = "Yu̑KQ"  # Rurikovich
+    is_lesser_in_union = no
     is_year = 1500
     NOT = {
       is_year = 1600
@@ -3260,6 +3261,7 @@ country_event = {
       is_year = 1700
     }
     government = monarchy
+    is_lesser_in_union = no
     has_regency = no
     OR = {
       has_heir = no
@@ -3366,6 +3368,7 @@ country_event = {
       is_year = 1800
     }
     government = monarchy
+    is_lesser_in_union = no
     NOT = {
       adm = 3
     }
@@ -3743,6 +3746,10 @@ country_event = {
       multiply_variable = {
         which = money_to_transfer
         value = 3
+      }
+      set_variable = {
+        which = money_to_transfer_info
+        which = money_to_transfer
       }
     }
   }

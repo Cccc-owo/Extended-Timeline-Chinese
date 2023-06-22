@@ -1014,17 +1014,6 @@ gc_por_3 = {
         amount = 15
       }
       add_years_of_income = 1
-      majarteen_area = {
-        limit = {
-          NOT = {
-            is_core = ROOT
-          }
-          NOT = {
-            is_permanent_claim = ROOT
-          }
-        }
-        add_claim = ROOT
-      }
       zimbabwe_area = {
         limit = {
           NOT = {
@@ -1045,9 +1034,6 @@ gc_por_3 = {
             is_permanent_claim = ROOT
           }
         }
-        add_permanent_claim = ROOT
-      }
-      1201 = {
         add_permanent_claim = ROOT
       }
     }
@@ -1276,6 +1262,9 @@ gc_por_4 = {
       1192 = {
         add_permanent_claim = ROOT
       }
+      1201 = {
+        add_permanent_claim = ROOT
+      }
     }
   }
   gc_por_conquers_zanzibar = {
@@ -1348,6 +1337,17 @@ gc_por_4 = {
         }
         add_navy_tradition = 15
       }
+      majarteen_area = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            is_permanent_claim = ROOT
+          }
+        }
+        add_claim = ROOT
+      }
     }
   }
   gc_portugal_discovers_india = {
@@ -1388,6 +1388,9 @@ gc_por_4 = {
             is_permanent_claim = ROOT
           }
         }
+        add_permanent_claim = ROOT
+      }
+      596 = {
         add_permanent_claim = ROOT
       }
       if = {
@@ -2052,15 +2055,7 @@ gc_por_5_continued = {
         duration = 9125
       }
       596 = {
-        if = {
-          limit = {
-            NOT = {
-              is_permanent_claim = ROOT
-              is_core = ROOT
-            }
-          }
-          add_permanent_claim = ROOT
-        }
+        add_permanent_claim = ROOT
       }
     }
   }

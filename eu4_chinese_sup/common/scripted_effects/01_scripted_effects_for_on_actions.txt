@@ -1434,6 +1434,7 @@ ladislaus_postumus_union_effect = {
           has_country_flag = hun_ladislaus_postumus_heir
           has_country_flag = hun_ladislaus_postumus_king
         }
+        is_subject = no
       }
     }
     country_event = {
@@ -1450,6 +1451,7 @@ ladislaus_postumus_union_effect = {
       tag = HUN
       has_ruler = "…bÍèØe≥RØe 0WêyÅPR0 I"  # Ladislaus Postumus I
       has_regency = no
+      is_subject = no
       HAB = {
         has_ruler = "…bÍèØe≥RØe 0WêyÅPR0"  # Ladislaus Postumus
       }
@@ -2155,6 +2157,10 @@ on_battle_won_unit_effect = {
     limit = {
       unit_owner = {
         has_government_mechanic = ottoman_decadence_mechanic
+        check_variable = {
+          which = land_units_lost
+          value = 1
+        }
       }
       is_ruler_commanding_unit = yes
     }
@@ -2176,10 +2182,6 @@ on_battle_won_unit_effect = {
         value = 1000
       }
       change_variable = {
-        which = monarch_kill
-        value = 1
-      }
-      change_variable = {
         which = monarch_losses
         value = 1
       }
@@ -2194,6 +2196,10 @@ on_battle_won_unit_effect = {
             value = 1
           }
         }
+        change_variable = {
+          which = monarch_kill
+          value = -1
+        }
         add_government_power = {
           mechanic_type = ottoman_decadence_mechanic
           power_type = ottoman_decadence
@@ -2202,7 +2208,7 @@ on_battle_won_unit_effect = {
       }
       multiply_variable = {
         which = monarch_kill
-        value = 100
+        value = 10
       }
       while = {
         limit = {
@@ -2210,6 +2216,10 @@ on_battle_won_unit_effect = {
             which = monarch_kill
             value = 1
           }
+        }
+        change_variable = {
+          which = monarch_kill
+          value = -1
         }
         add_government_power = {
           mechanic_type = ottoman_decadence_mechanic
@@ -2225,6 +2235,10 @@ on_battle_lost_unit_effect = {
     limit = {
       unit_owner = {
         has_government_mechanic = ottoman_decadence_mechanic
+        check_variable = {
+          which = land_units_killed
+          value = 1
+        }
       }
       is_ruler_commanding_unit = yes
     }
@@ -2249,10 +2263,6 @@ on_battle_lost_unit_effect = {
         which = monarch_kill
         value = 1
       }
-      change_variable = {
-        which = monarch_losses
-        value = 1
-      }
       divide_variable = {
         which = monarch_losses
         which = monarch_kill
@@ -2264,6 +2274,10 @@ on_battle_lost_unit_effect = {
             value = 1
           }
         }
+        change_variable = {
+          which = monarch_losses
+          value = -1
+        }
         add_government_power = {
           mechanic_type = ottoman_decadence_mechanic
           power_type = ottoman_decadence
@@ -2272,7 +2286,7 @@ on_battle_lost_unit_effect = {
       }
       multiply_variable = {
         which = monarch_losses
-        value = 100
+        value = 10
       }
       while = {
         limit = {
@@ -2280,6 +2294,10 @@ on_battle_lost_unit_effect = {
             which = monarch_losses
             value = 1
           }
+        }
+        change_variable = {
+          which = monarch_losses
+          value = -1
         }
         add_government_power = {
           mechanic_type = ottoman_decadence_mechanic
@@ -4005,5 +4023,38 @@ on_general_recruited_effect = {
       has_country_modifier = fra_french_papal_military_cooperation_modifier
     }
     add_army_professionalism = 0.015
+  }
+}
+on_sale_of_titles_effect = {
+  hidden_effect = {
+    change_variable = {
+      which = sale_of_titles_counter
+      value = 1
+    }
+  }
+}
+on_summon_the_diet_effect = {
+  hidden_effect = {
+    change_variable = {
+      which = summon_the_diet_counter
+      value = 1
+    }
+  }
+}
+on_seize_land_effect = {
+  hidden_effect = {
+    change_variable = {
+      which = seize_land_counter
+      value = 1
+    }
+    if = {
+      limit = {
+        has_government_attribute = has_appanages
+      }
+      change_variable = {
+        which = can_annex_appanages_points
+        value = 1
+      }
+    }
   }
 }

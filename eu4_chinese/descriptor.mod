@@ -1,8 +1,7 @@
-version="3.9.2"
+version="3.9.3"
 tags={
 	"Translation"
 }
-name="Chinese Language Mod for 1.35"
-picture="thumbnail.png"
+name="Chinese Language Mod"
 supported_version="1.35.*"
-remote_file_id="1999050560"
+remote_file_id="2976470733"

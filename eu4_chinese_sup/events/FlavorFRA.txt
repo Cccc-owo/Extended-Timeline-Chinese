@@ -2109,14 +2109,14 @@ country_event = {
           is_subject_of = PRO
         }
       }
+      inherit = LOR
     }
-    inherit = LOR
     add_stability_or_adm_power = yes
   }
   option = {
     name = flavor_fra.106.b
     ai_chance = {
-      factor = 90
+      factor = 0
     }
     break_alliance = FRA
     break_marriage = FRA
@@ -2822,6 +2822,11 @@ country_event = {
     add_country_modifier = {
       name = fra_integration_french_legal_code_modifier
       duration = 7300
+    }
+    add_liberty_desire = -100
+    add_historical_friend = FRA
+    FRA = {
+      add_historical_friend = PAP
     }
   }
   option = {

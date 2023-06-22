@@ -16,10 +16,51 @@ dom_cas_missions_1 = {
     }
   }
   has_country_shield = yes
+  gc_cas_spa_army_ready2 = {
+    icon = mission_assemble_an_army
+    required_missions = {}
+    completed_by = 1445.1.1
+    position = 1
+    trigger = {
+      army_size_percentage = 1
+      navy_size_percentage = 1
+      num_of_generals = 1
+    }
+    effect = {
+      add_country_modifier = {
+        name = "spa_rb_morale"
+        duration = 5475
+      }
+      upper_andalucia_area = {
+        limit = {
+          NOT = {
+            is_core = ROOT
+          }
+          NOT = {
+            is_permanent_claim = ROOT
+          }
+        }
+        add_permanent_claim = ROOT
+      }
+      210 = {
+        if = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
+      }
+    }
+  }
   gc_cas_spa_reconquista_one2 = {
     icon = mission_unite_home_region
-    required_missions = {}
-    position = 1
+    required_missions = {
+      gc_cas_spa_army_ready2
+    }
+    position = 2
     provinces_to_highlight = {
       area = upper_andalucia_area
       NOT = {
@@ -58,7 +99,7 @@ dom_cas_missions_1 = {
     required_missions = {
       gc_cas_spa_reconquista_one2
     }
-    position = 2
+    position = 3
     provinces_to_highlight = {
       area = northern_morocco_area
       NOT = {
@@ -104,10 +145,9 @@ dom_cas_missions_1 = {
     icon = mission_religious
     required_missions = {
       gc_cas_spa_reconquista_four2
-      spa_papal_favor
     }
     completed_by = 1511.1.1
-    position = 3
+    position = 4
     provinces_to_highlight = {
       region = iberia_region
       NOT = {
@@ -136,46 +176,6 @@ dom_cas_missions_1 = {
       }
       add_prestige_or_monarch_power = {
         amount = 10
-      }
-    }
-  }
-  spa_raise_army = {
-    icon = mission_castillian_aggression
-    required_missions = {}
-    position = 4
-    trigger = {
-      if = {
-        limit = {
-          ai = no
-        }
-        army_size_percentage = 0.85
-        navy_size_percentage = 0.85
-        OR = {
-          army_tradition = 50
-          army_professionalism = 0.15
-        }
-        OR = {
-          navy_tradition = 30
-          has_flagship = yes
-          num_of_heavy_ship = 8
-        }
-      }
-      else = {
-        army_size_percentage = 0.65
-        navy_size_percentage = 0.65
-        OR = {
-          army_tradition = 50
-          army_professionalism = 0.15
-          navy_tradition = 30
-          has_flagship = yes
-          num_of_heavy_ship = 8
-        }
-      }
-    }
-    effect = {
-      add_country_modifier = {
-        name = spa_backed_by_the_army_modifier
-        duration = 9125
       }
     }
   }
@@ -972,9 +972,13 @@ dom_cas_missions_2 = {
   spa_papal_favor = {
     icon = catholic_confraternity
     required_missions = {
-      gc_cas_spa_reconquista_one2
+      gc_cas_spa_army_ready2
     }
     position = 2
+    provinces_to_highlight = {
+      owned_by = PAP
+      is_capital = yes
+    }
     trigger = {
       if = {
         limit = {
@@ -1115,6 +1119,46 @@ dom_cas_missions_2 = {
       }
     }
   }
+  spa_raise_army = {
+    icon = mission_castillian_aggression
+    required_missions = {}
+    position = 4
+    trigger = {
+      if = {
+        limit = {
+          ai = no
+        }
+        army_size_percentage = 0.85
+        navy_size_percentage = 0.85
+        OR = {
+          army_tradition = 50
+          army_professionalism = 0.15
+        }
+        OR = {
+          navy_tradition = 30
+          has_flagship = yes
+          num_of_heavy_ship = 8
+        }
+      }
+      else = {
+        army_size_percentage = 0.65
+        navy_size_percentage = 0.65
+        OR = {
+          army_tradition = 50
+          army_professionalism = 0.15
+          navy_tradition = 30
+          has_flagship = yes
+          num_of_heavy_ship = 8
+        }
+      }
+    }
+    effect = {
+      add_country_modifier = {
+        name = spa_backed_by_the_army_modifier
+        duration = 9125
+      }
+    }
+  }
   spa_tercios_system = {
     icon = spa_tercios_system
     required_missions = {
@@ -1132,6 +1176,7 @@ dom_cas_missions_2 = {
       }
     }
     effect = {
+      set_country_flag = enable_tercios_reform_flag
       add_government_reform = tercios_reform
       if = {
         limit = {
@@ -1453,14 +1498,15 @@ dom_cas_missions_2_b = {
         area = languedoc_area
         area = guyenne_area
         area = pyrenees_area
-        province_id = 201
+        area = provence_area
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
       }
     }
     trigger = {
-      201 = {
+      provence_area = {
+        type = all
         country_or_non_sovereign_subject_holds = ROOT
       }
       savoy_dauphine_area = {
@@ -1481,12 +1527,6 @@ dom_cas_missions_2_b = {
       }
     }
     effect = {
-      201 = {
-        add_province_modifier = {
-          name = "ara_toulon_dockyard"
-          duration = -1
-        }
-      }
       france_region = {
         limit = {
           NOT = {
@@ -1497,6 +1537,14 @@ dom_cas_missions_2_b = {
           }
         }
         add_claim = ROOT
+      }
+      change_ruler_stat = {
+        stat = dip
+        amount = 1
+      }
+      change_ruler_stat = {
+        stat = mil
+        amount = 1
       }
     }
   }
@@ -2548,7 +2596,7 @@ dom_cas_missions_3 = {
     }
   }
   gc_spa_hre2 = {
-    icon = mission_imperial_spain
+    icon = spa_universal_monarchy
     required_missions = {
       gc_spa_invade_england2
       gc_spa_spanish_netherlands2
@@ -3428,7 +3476,7 @@ dom_cas_missions_4 = {
     }
   }
   spa_fecho_imperio = {
-    icon = spa_universal_monarchy
+    icon = mission_imperial_spain
     required_missions = {
       gc_spa_austrian_union2
       spa_new_capital
@@ -4292,7 +4340,10 @@ dom_cas_missions_5 = {
     provinces_to_highlight = {
       OR = {
         province_id = 217
-        is_capital = yes
+        AND = {
+          owned_by = ROOT
+          is_capital = yes
+        }
       }
     }
     trigger = {
@@ -4517,49 +4568,69 @@ dom_cas_missions_5_b = {
       }
     }
     effect = {
-      savoy_dauphine_area = {
+      if = {
         limit = {
           NOT = {
-            is_permanent_claim = ROOT
-          }
-          NOT = {
-            is_core = ROOT
+            mission_completed = gc_ara_occitania2
           }
         }
-        add_permanent_claim = ROOT
+        savoy_dauphine_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
+        languedoc_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
+        guyenne_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
+        pyrenees_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
       }
-      languedoc_area = {
-        limit = {
-          NOT = {
-            is_permanent_claim = ROOT
-          }
-          NOT = {
-            is_core = ROOT
-          }
+      else = {
+        add_mil_power = 100
+        add_ruler_modifier = {
+          name = ara_victory_over_provence_modifier
+          duration = -1
         }
-        add_permanent_claim = ROOT
       }
-      guyenne_area = {
-        limit = {
-          NOT = {
-            is_permanent_claim = ROOT
-          }
-          NOT = {
-            is_core = ROOT
-          }
+      4696 = {
+        add_province_modifier = {
+          name = "ara_toulon_dockyard"
+          duration = -1
         }
-        add_permanent_claim = ROOT
-      }
-      pyrenees_area = {
-        limit = {
-          NOT = {
-            is_permanent_claim = ROOT
-          }
-          NOT = {
-            is_core = ROOT
-          }
-        }
-        add_permanent_claim = ROOT
       }
     }
   }

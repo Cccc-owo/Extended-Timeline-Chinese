@@ -2049,24 +2049,38 @@ DOM_japanse_missions_3_a = {
       tooltip = {
         swap_non_generic_missions = yes
       }
-      custom_tooltip = a_kirishitan_realm_tt
-      tooltip = {
-        override_country_name = KRJ
-        add_country_modifier = {
-          name = jap_protectors_east_catholicism
-          duration = -1
+      if = {
+        limit = {
+          has_dlc = "Mandate of Heaven"
+        }
+        custom_tooltip = a_kirishitan_realm_tt
+        tooltip = {
+          override_country_name = KRJ
+          add_country_modifier = {
+            name = jap_protectors_east_catholicism
+            duration = -1
+          }
+        }
+        custom_tooltip = significant_christian_presence_tt
+        tooltip = {
+          set_estate_privilege = estate_church_japanese_christian_communities_privilege
+        }
+        custom_tooltip = christianity_defeated_tt
+        tooltip = {
+          add_country_modifier = {
+            name = jap_shinto_warriors_modifier
+            duration = -1
+          }
         }
       }
-      custom_tooltip = significant_christian_presence_tt
-      tooltip = {
-        set_estate_privilege = estate_church_japanese_christian_communities_privilege
-      }
-      custom_tooltip = christianity_defeated_tt
-      tooltip = {
-        add_country_modifier = {
-          name = jap_shinto_warriors_modifier
-          duration = -1
+      else = {
+        tooltip = {
+          add_country_modifier = {
+            name = jap_shinto_warriors_modifier
+            duration = -1
+          }
         }
+        set_country_flag = christianity_defeated_flag
       }
       hidden_effect = {
         if = {
@@ -2196,7 +2210,6 @@ DOM_japanse_missions_3_b = {
     NOT = {
       map_setup = map_setup_random
     }
-    has_dlc = "Mandate of Heaven"
     NOT = {
       has_country_flag = a_kirishitan_realm
     }
@@ -2272,6 +2285,33 @@ DOM_japanse_missions_3_b = {
         if = {
           limit = {
             absolutism = 100
+            if = {
+              limit = {
+                has_estate = estate_nobles
+              }
+              num_of_estate_privileges = {
+                estate = estate_nobles
+                value = 6
+              }
+            }
+            if = {
+              limit = {
+                has_estate = estate_burghers
+              }
+              num_of_estate_privileges = {
+                estate = estate_burghers
+                value = 6
+              }
+            }
+            if = {
+              limit = {
+                has_estate = estate_church
+              }
+              num_of_estate_privileges = {
+                estate = estate_church
+                value = 6
+              }
+            }
           }
           set_country_flag = has_overriden_name_flag
           override_country_name = JPS
@@ -2322,15 +2362,19 @@ DOM_japanse_missions_3_c = {
         value = 1000
         religion_group = christian
       }
-      calc_true_if = {
-        all_country = {
-          custom_trigger_tooltip = {
-            tooltip = force_converted_christian_group
-            is_force_converted = yes
-            religion_group = christian
+      OR = {
+        is_defender_of_faith = yes
+        is_great_power = yes
+        if = {
+          limit = {
+            has_estate = estate_church
+          }
+          estate_loyalty = {
+            estate = estate_church
+            loyalty = 60
           }
         }
-        amount = 10
+        full_idea_group = religious_ideas
       }
     }
     effect = {
