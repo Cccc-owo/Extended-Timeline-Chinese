@@ -45,15 +45,7 @@
 
 ## 贡献者 / Contributors
 
-排名以加入项目时间为顺序
-
-|[![avatar](https://avatars.githubusercontent.com/u/47687154?v=4)](https://github.com/Cccc-owo)|[![avatar](https://avatars.githubusercontent.com/u/38562980?v=4)](https://github.com/shuaichao189)|[![avatar](https://avatars.githubusercontent.com/u/98221113?v=4)](https://github.com/Zhujianfei1)|[![avatar](https://avatars.githubusercontent.com/u/54112189?v=4)](https://github.com/CHuang227)|[![avatar](https://avatars.githubusercontent.com/u/122777315?v=4)](https://github.com/Fritzwang)|
-|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-|[Cccc_](https://github.com/Cccc-owo) ([ParaTranz](https://paratranz.cn/users/23550/profile))|[shuaichao189](https://github.com/shuaichao189) ([ParaTranz](https://paratranz.cn/users/7232/profile))|[Zhujianfei](https://github.com/Zhujianfei1) ([ParaTranz](https://paratranz.cn/users/26954/profile))|[CHuang227](https://github.com/CHuang227) ([ParaTranz](https://paratranz.cn/users/32894/profile))|[Fritzwang](https://github.com/Fritzwang) ([ParaTranz](https://paratranz.cn/users/37160/profile))
-|[![avatar](https://avatars.githubusercontent.com/u/122958141?v=4)](https://github.com/15910637182)|[![avatar](https://avatars.githubusercontent.com/u/41335976?v=4)](https://github.com/IsaacChen0527)|[![avatar](https://avatars.githubusercontent.com/u/79087199?v=4)](https://github.com/zhuxizheng)|[![avatar](https://avatars.githubusercontent.com/u/63183098?v=4)](https://github.com/Observl)|[![avatar](https://avatars.githubusercontent.com/u/123280088?v=4)](https://github.com/Cloudflipper)|
-|[15910637182](https://github.com/15910637182) ([ParaTranz](https://paratranz.cn/users/37197/profile))|[IsaacChen0527](https://github.com/IsaacChen0527) ([ParaTranz](https://paratranz.cn/users/37202/profile))|[zhuxizheng](https://github.com/zhuxizheng) ([ParaTranz](https://paratranz.cn/users/20486/profile))|[Observl](https://github.com/Observl) ([ParaTranz](https://paratranz.cn/users/37218/profile))|[Cloudflipper](https://github.com/Cloudflipper) ([ParaTranz](https://paratranz.cn/users/37269/profile))|
-|[![avatar](https://avatars.githubusercontent.com/u/123638219?v=4)](https://github.com/Kar0606)|[![avatar](https://avatars.githubusercontent.com/u/70061078?v=4)](https://github.com/Chiangkaisheck)|![avatar](https://avatars.githubusercontent.com/u/104324132?v=4)|![avatar](https://avatars.githubusercontent.com/u/94877214?v=4)||
-|[Kar0606](https://github.com/Kar0606) ([ParaTranz](https://paratranz.cn/users/37362/profile))|[止波里](https://github.com/Chiangkaisheck) ([ParaTranz](https://paratranz.cn/users/31796/profile))|[虛白Lemon](https://github.com/VoidLemon) ([ParaTranz](https://paratranz.cn/users/29902/profile))|[SphinX1633](https://github.com/SphinX1633) ([ParaTranz](https://paratranz.cn/users/25426/profile))||
+见 [ParaTranz](https://paratranz.cn/projects/5342/members)
 
 ## 鸣谢 / Credits
 
