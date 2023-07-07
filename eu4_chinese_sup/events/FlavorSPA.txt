@@ -39,6 +39,7 @@ country_event = {
               casus_belli = cb_independence_war
             }
           }
+          government = monarchy
         }
         num_of_cities = 25
       }
@@ -70,10 +71,12 @@ country_event = {
               casus_belli = cb_independence_war
             }
           }
+          government = monarchy
         }
         num_of_cities = 16
       }
     }
+    government = monarchy
     is_year = 1450
     NOT = {
       is_year = 1530
@@ -2786,8 +2789,19 @@ country_event = {
       spawn_rebels = {
         type = noble_rebels
         size = 2
+        leader = "?–SætW ·V bS³u"  # Alvaro de Luna
         win = yes
         should_take_capital = yes
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_leader = "?–SætW ·V bS³u"  # Alvaro de Luna
+        }
+        kill_leader = {
+          type = "?–SætW ·V bS³u"  # Alvaro de Luna
+        }
       }
     }
     custom_tooltip = cas_impact_mission_tt
@@ -2816,9 +2830,6 @@ country_event = {
       add_estate_loyalty = {
         estate = estate_nobles
         loyalty = 20
-      }
-      kill_leader = {
-        type = "?–SætW ·V bS³u"  # Alvaro de Luna
       }
       custom_tooltip = spa_no_isabella_event_tt
       set_country_flag = no_isabella_event_flag

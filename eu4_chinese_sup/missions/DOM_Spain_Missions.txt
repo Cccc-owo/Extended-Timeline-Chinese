@@ -314,6 +314,7 @@ dom_cas_missions_1 = {
           }
           add_permanent_claim = ROOT
         }
+        custom_tooltip = cas_armada_info_tt
       }
     }
   }
@@ -670,6 +671,24 @@ dom_cas_missions_1_b = {
       }
       if = {
         limit = {
+          NOT = {
+            mission_completed = gc_ara_naples2
+          }
+        }
+        provence_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
+      }
+      if = {
+        limit = {
           has_dlc = "Rights of Man"
           NOT = {
             num_of_ruler_traits = {
@@ -678,6 +697,57 @@ dom_cas_missions_1_b = {
           }
         }
         add_ruler_personality = entrepreneur_personality
+      }
+      if = {
+        limit = {
+          NOT = {
+            mission_completed = gc_ara_occitania2
+          }
+        }
+        savoy_dauphine_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
+        languedoc_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
+        guyenne_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
+        pyrenees_area = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+          }
+          add_permanent_claim = ROOT
+        }
       }
       add_mercantilism = 5
     }
@@ -1498,17 +1568,12 @@ dom_cas_missions_2_b = {
         area = languedoc_area
         area = guyenne_area
         area = pyrenees_area
-        area = provence_area
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
       }
     }
     trigger = {
-      provence_area = {
-        type = all
-        country_or_non_sovereign_subject_holds = ROOT
-      }
       savoy_dauphine_area = {
         type = all
         country_or_non_sovereign_subject_holds = ROOT
@@ -2141,8 +2206,10 @@ dom_cas_missions_3 = {
           valid_for_personal_unions_trigger = yes
           POR = {
             valid_for_personal_unions_trigger = yes
-            alliance_with = ROOT
-            marriage_with = ROOT
+            OR = {
+              alliance_with = ROOT
+              marriage_with = ROOT
+            }
           }
         }
         custom_tooltip = spa_pu_por_tt
@@ -3960,7 +4027,7 @@ dom_cas_missions_4_c = {
         fire = 5
         manuever = 6
         siege = 1
-        name = "ÃWSWS ÑySyr¯e"  # Hernán Cortés
+        name = "ÃWSWS ÑySyr¯e"  # Hernýÿn Cortýÿs
       }
       490 = {
         add_base_production = 3
@@ -4571,7 +4638,7 @@ dom_cas_missions_5_b = {
       if = {
         limit = {
           NOT = {
-            mission_completed = gc_ara_occitania2
+            mission_completed = gc_ara_genoa2
           }
         }
         savoy_dauphine_area = {
