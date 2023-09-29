@@ -694,7 +694,7 @@ country_event = {
       type = natural_scientist
       discount = yes
       skill = 2
-      name = "√WôÇ…b∑çi`"  # Eliza Lucas
+      name = "åÇâÉ(Ñ bSaSØe"  # Eliza Lucas
     }
   }
   option = {
@@ -714,24 +714,33 @@ country_event = {
   fire_only_once = yes
   trigger = {
     OR = {
-      tag = SPA
       AND = {
-        NOT = {
-          exists = SPA
+        OR = {
+          tag = SPA
+          AND = {
+            NOT = {
+              exists = SPA
+            }
+            tag = CAS
+          }
         }
-        tag = CAS
+        is_year = 1450
+        NOT = {
+          is_year = 1504
+        }
+        has_regency = no
+        has_government_attribute = heir
+        is_lesser_in_union = no
+        government = monarchy
+        NOT = {
+          has_disaster = castilian_civil_war
+        }
       }
-    }
-    is_year = 1450
-    NOT = {
-      is_year = 1504
-    }
-    has_regency = no
-    has_government_attribute = heir
-    is_lesser_in_union = no
-    government = monarchy
-    NOT = {
-      has_disaster = castilian_civil_war
+      AND = {
+        has_disaster = castilian_civil_war
+        has_country_flag = cas_aragon_candidate
+        has_country_flag = civil_war_in_castile
+      }
     }
     NOT = {
       has_country_flag = no_isabella_event_flag
@@ -754,6 +763,7 @@ country_event = {
       age = 5
       female = yes
     }
+    set_country_flag = cas_isabel_heir_accepted_flag
     if = {
       limit = {
         has_dlc = "Rights of Man"
@@ -1366,7 +1376,7 @@ country_event = {
   option = {
     name = women_history_events.20.a
     define_ruler = {
-      name = "YWFZO"  # Tarabai
+      name = "TX…b‹b"  # Tarabai
       culture = marathi
       dynasty = "´Éâyr"  # Mohite
       DIP = 4
@@ -4284,7 +4294,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "1rSÂe+RTX∑wm&OZ∑0å<SeYØeaS"  # Elzbieta Helena Sieniawska
+      name = "1rSÂe+RTX∑wm&OZ∑0å<SöN+YØeaS"  # Elzbieta Helena Sieniawska
       culture = polish
       type = diplomat
       discount = yes
@@ -4296,7 +4306,7 @@ country_event = {
     name = women_history_events.68.b
     define_ruler = {
       name = "1rSÂe+RTX wm&OZ"  # Elzbieta Helena
-      dynasty = "0å<SeYØeaS"  # Sieniawska
+      dynasty = "0å<SöN+YØeaS"  # Sieniawska
       culture = polish
       adm = 3
       dip = 4

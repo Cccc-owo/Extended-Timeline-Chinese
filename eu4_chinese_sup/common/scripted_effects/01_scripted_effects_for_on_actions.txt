@@ -2327,6 +2327,10 @@ on_battle_won_country_effect = {
       }
     }
     ROOT = {
+      set_variable = {
+        which = land_units_killed_var
+        which = land_units_killed
+      }
       multiply_variable = {
         which = land_units_killed_var
         value = 0.1
@@ -2617,6 +2621,9 @@ on_culture_demoted_effect = {
         NOT = {
           accepted_culture = polish
         }
+        NOT = {
+          accepted_culture = slovak
+        }
       }
     }
     remove_country_modifier = rus_west_slavic_union
@@ -2630,9 +2637,6 @@ on_culture_demoted_effect = {
         }
         NOT = {
           accepted_culture = romanian
-        }
-        NOT = {
-          accepted_culture = slovak
         }
         NOT = {
           accepted_culture = transylvanian
@@ -4056,5 +4060,75 @@ on_seize_land_effect = {
         value = 1
       }
     }
+  }
+}
+on_heir_disinherited_or_death_effect = {
+  if = {
+    limit = {
+      has_country_flag = heir_dip_education
+    }
+    clr_country_flag = heir_dip_education
+  }
+  if = {
+    limit = {
+      has_country_flag = heir_mil_education
+    }
+    clr_country_flag = heir_mil_education
+  }
+  if = {
+    limit = {
+      has_country_flag = heir_adm_education
+    }
+    clr_country_flag = heir_adm_education
+  }
+  if = {
+    limit = {
+      has_ruler_flag = well_advised_tutored_heir
+    }
+    clr_ruler_flag = well_advised_tutored_heir
+  }
+  if = {
+    limit = {
+      has_ruler_flag = heir_went_on_grand_tour
+    }
+    clr_ruler_flag = heir_went_on_grand_tour
+  }
+  if = {
+    limit = {
+      has_country_flag = albrecht_achilles_flag
+    }
+    clr_country_flag = albrecht_achilles_flag
+  }
+  if = {
+    limit = {
+      has_ruler_flag = sancaga_cikma
+    }
+    clr_ruler_flag = sancaga_cikma
+    every_owned_province = {
+      limit = {
+        has_province_modifier = heir_in_training
+      }
+      remove_province_modifier = heir_in_training
+    }
+  }
+  if = {
+    limit = {
+      has_ruler_flag = returned_from_sancaga_sikma_province
+    }
+    clr_ruler_flag = returned_from_sancaga_sikma_province
+  }
+  if = {
+    limit = {
+      primary_culture = maori
+    }
+    country_event = {
+      id = polynesian.26
+    }
+  }
+  if = {
+    limit = {
+      has_any_heir_cult_active = yes
+    }
+    remove_heir_cult = yes
   }
 }

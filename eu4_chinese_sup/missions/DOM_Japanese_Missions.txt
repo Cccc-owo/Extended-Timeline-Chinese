@@ -132,6 +132,7 @@ DOM_japanse_missions_1 = {
     effect = {
       custom_tooltip = jap_kaikoku_tt
       tooltip = {
+        swap_non_generic_missions = yes
         add_country_modifier = {
           name = jap_exchange_ideas_modifier
           duration = 9125
@@ -183,6 +184,7 @@ DOM_japanse_missions_1 = {
             name = jap_exchange_ideas_modifier
             duration = 9125
           }
+          swap_non_generic_missions = yes
           if = {
             limit = {
               has_dlc = "Rights of Man"
@@ -205,6 +207,7 @@ DOM_japanse_missions_1 = {
           limit = {
             has_country_flag = jap_chose_trade_with_west_flag
           }
+          swap_non_generic_missions = yes
           every_owned_province = {
             limit = {
               has_trade_building_trigger = yes
@@ -1594,24 +1597,22 @@ japanese_missions_eoc_2 = {
     position = 12
     trigger = {
       OR = {
-        custom_trigger_tooltip = {
-          tooltip = mng_5_tribs_with_opinion_and_lib_desire_tt
-          calc_true_if = {
-            all_subject_country = {
-              is_subject_of_type_with_overlord = {
-                who = ROOT
-                type = tributary_state
-              }
-              NOT = {
-                liberty_desire = 10
-              }
-              has_opinion = {
-                who = ROOT
-                value = 120
-              }
+        calc_true_if = {
+          all_subject_country = {
+            is_subject_of_type_with_overlord = {
+              who = ROOT
+              type = tributary_state
             }
-            amount = 5
+            NOT = {
+              liberty_desire = 10
+            }
+            has_opinion = {
+              who = ROOT
+              value = 120
+            }
           }
+          desc = mng_5_tribs_with_opinion_and_lib_desire_tt
+          amount = 5
         }
         calc_true_if = {
           all_ally = {
@@ -2058,7 +2059,7 @@ DOM_japanse_missions_3_a = {
           override_country_name = KRJ
           add_country_modifier = {
             name = jap_protectors_east_catholicism
-            duration = -1
+            duration = 10950
           }
         }
         custom_tooltip = significant_christian_presence_tt
@@ -2091,7 +2092,7 @@ DOM_japanse_missions_3_a = {
           set_country_flag = has_overriden_name_flag
           add_country_modifier = {
             name = jap_protectors_east_catholicism
-            duration = -1
+            duration = 10950
           }
         }
         else_if = {

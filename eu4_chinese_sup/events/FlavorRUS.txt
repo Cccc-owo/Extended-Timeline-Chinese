@@ -2563,6 +2563,7 @@ country_event = {
     hidden_effect = {
       finland_area = {
         add_core = FIN
+        remove_core = ROOT
         if = {
           limit = {
             NOT = {
@@ -2574,6 +2575,7 @@ country_event = {
       }
       bothnia_area = {
         add_core = FIN
+        remove_core = ROOT
         if = {
           limit = {
             NOT = {
@@ -2583,8 +2585,45 @@ country_event = {
           cede_province = ROOT
         }
       }
-      laponia_area = {
+      1930 = {
         add_core = FIN
+        remove_core = ROOT
+        if = {
+          limit = {
+            NOT = {
+              owned_by = ROOT
+            }
+          }
+          cede_province = ROOT
+        }
+      }
+      32 = {
+        add_core = FIN
+        remove_core = ROOT
+        if = {
+          limit = {
+            NOT = {
+              owned_by = ROOT
+            }
+          }
+          cede_province = ROOT
+        }
+      }
+      4124 = {
+        add_core = FIN
+        remove_core = ROOT
+        if = {
+          limit = {
+            NOT = {
+              owned_by = ROOT
+            }
+          }
+          cede_province = ROOT
+        }
+      }
+      4151 = {
+        add_core = FIN
+        remove_core = ROOT
         if = {
           limit = {
             NOT = {
@@ -4455,6 +4494,7 @@ country_event = {
     NOT = {
       has_country_flag = rus_peasant_fate
     }
+    has_estate = estate_nobles
   }
   mean_time_to_happen = {
     months = 12
@@ -4465,7 +4505,17 @@ country_event = {
       factor = 75
     }
     add_stability = -1
-    set_estate_privilege = estate_nobles_early_serfdom
+    if = {
+      limit = {
+        NOT = {
+          has_estate_privilege = estate_nobles_early_serfdom
+        }
+        NOT = {
+          has_estate_privilege = estate_nobles_increased_peasant_freedom
+        }
+      }
+      set_estate_privilege = estate_nobles_early_serfdom
+    }
   }
   option = {
     name = "flavor_rus.EVTOPTB3416"
@@ -4473,7 +4523,17 @@ country_event = {
       factor = 25
     }
     add_stability = -1
-    set_estate_privilege = estate_nobles_increased_peasant_freedom
+    if = {
+      limit = {
+        NOT = {
+          has_estate_privilege = estate_nobles_early_serfdom
+        }
+        NOT = {
+          has_estate_privilege = estate_nobles_increased_peasant_freedom
+        }
+      }
+      set_estate_privilege = estate_nobles_increased_peasant_freedom
+    }
   }
 }
 country_event = {
