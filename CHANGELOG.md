@@ -2,16 +2,22 @@
 
 汉化组成员：见 [ParaTranz](https://paratranz.cn/projects/5342/members)
 
+## v1.15.4-r7
+
+- 🌐更新ET汉化
+- 🌐更新原版汉化
+- 🎇欢迎新的翻译成员：@cielow
+
+---
+
+<details><summary>历史更新日志</summary>
+
 ## v1.15.4-r6
 
 - 🌐适配EU4 v1.35.5
 - 🌐更新ET汉化
 - 🌐更新原版汉化——感谢52汉化组的无私奉献！
 - 🎇欢迎新的翻译成员：@areukiiiddingme
-
----
-
-<details><summary>历史更新日志</summary>
 
 ## v1.15.4-r5
 
