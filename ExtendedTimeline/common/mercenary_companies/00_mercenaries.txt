@@ -756,35 +756,34 @@ merc_flemish_company = {
 	sprites = { dlc042_ned_sprite_pack dlc028_ned_sprite_pack westerngfx_sprite_pack }
     trigger = {
 		is_allowed_to_recruit_mercenaries = yes
-			AND = {
-				OR = {
-					capital_scope = { 
-						OR = {
-							region = south_german_region
-							region = north_german_region
-							region = low_countries_region
-							region = british_isles_region
-							region = france_region
-						}
-					}
-					any_owned_province = {
+		AND = {
+			OR = {
+				capital_scope = { 
+					OR = {
+						region = south_german_region
+						region = north_german_region
 						region = low_countries_region
+						region = british_isles_region
+						region = france_region
 					}
 				}
-				OR = {
-					current_age = high_middle_ages
-					current_age = late_middle_ages
-					current_age = age_of_discovery
-					current_age = age_of_reformation
-					current_age = age_of_absolutism
-					current_age = age_of_revolutions
+				any_owned_province = {
+					region = low_countries_region
 				}
 			}
-			has_country_modifier = mercenaries_to_the_standard
-			has_country_modifier = glut_of_mercs
-			has_unlocked_merc_company = {
-				merc_company = merc_flemish_company
+			OR = {
+				current_age = high_middle_ages
+				current_age = late_middle_ages
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+				current_age = age_of_absolutism
+				current_age = age_of_revolutions
 			}
+		}
+		has_country_modifier = mercenaries_to_the_standard
+		has_country_modifier = glut_of_mercs
+		has_unlocked_merc_company = {
+			merc_company = merc_flemish_company
 		}
 	}
 	modifier = {
@@ -896,9 +895,8 @@ merc_huai_army = {
 		OR = {
 			capital_scope = {
 				OR = {
-						superregion = china_superregion 
-						superregion = tartary_superregion
-					}
+					superregion = china_superregion 
+					superregion = tartary_superregion
 				}
 				any_owned_province = {
 					superregion = china_superregion 
@@ -2777,6 +2775,92 @@ merc_righteous_army = {
         is_allowed_to_recruit_mercenaries = yes
 	}
 	modifier = {
+	}
+}
+
+merc_byz_turkish_janissaries = {
+    regiments_per_development = 0.04
+    home_province = 326 # Ankara
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0 #Pure infantry
+	cavalry_cap = 0 
+	sprites = { dlc006_byz_sprite_pack easterngfx_sprite_pack }
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		has_country_flag = BYZ_janissary_merc_company
+	}
+	modifier = { 
+		infantry_power = 0.1
+		morale_damage_received = -0.1
+	}
+}
+
+merc_byz_varangian_guard = {
+    regiments_per_development = 0.02 #1 regiment every 50 dev. Reaches max at 400 dev.
+	max_size = 8
+	min_size = 8
+	no_additional_manpower_from_max_size = yes
+    home_province = 151 # Constantinople
+	cavalry_weight = 0 #Pure infantry
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_cap = 0 
+	sprites = { dlc006_byz_sprite_pack easterngfx_sprite_pack }
+    trigger = {
+		tag = BYZ
+		is_allowed_to_recruit_mercenaries = yes
+		OR = {
+			mission_completed = BYZ_varangian_guard
+			AND = {
+				is_year = 870
+				any_country = { religion = norse_pagan_reformed }
+			}
+		}
+	}
+	modifier = { 
+		fire_damage_received = -0.33 #very powerful, but very limited numbers.
+		shock_damage_received = -0.33
+		morale_damage_received = -0.33
+	}
+}
+
+merc_byz_palace_guard = {
+    regiments_per_development = 0.01
+	max_size = 5 
+	min_size = 5
+	no_additional_manpower_from_max_size = yes
+	mercenary_desc_key = FREE_OF_FORCELIMIT_COST
+	cost_modifier = 1.25
+	counts_towards_force_limit = no 
+    home_province = 151 # Constantinople
+	cavalry_weight = 0 #Pure infantry
+	cavalry_cap = 0 
+	sprites = { dlc006_byz_sprite_pack easterngfx_sprite_pack }
+    trigger = {
+		is_allowed_to_recruit_mercenaries = yes
+		tag = BYZ
+	}
+	modifier = { 
+	}
+}
+
+wandering_knights_of_rhodes = {
+    regiments_per_development = 0.03 #1 regiment every 10 dev. Reaches max at 100.
+	max_size = 40
+	cost_modifier = 1
+	counts_towards_force_limit = no 
+    home_province = 320 # Rhodes
+	cavalry_weight = 0.2
+	artillery_weight = 0
+	cavalry_cap = 6
+	sprites = { dlc040_kni_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		KNI = { exists = no }
+		capital_scope = { continent = europe }
+		religion_group = christian
+	}
+	modifier = { 
+		shock_damage = 0.05
+		morale_damage = 0.05
 	}
 }
 

@@ -196,10 +196,15 @@ country_event = {
 		NOT = { has_ruler = "Muhammad" }
 		NOT = { has_ruler = "Ali" }
 		NOT = { has_disaster = first_fitna }
+		NOT = { has_country_flag = had_first_fitna }
 	}
 	
 	mean_time_to_happen = {
 		months = 120
+		modifier = {
+			factor = 0.5
+			NOT = { has_country_modifier = rise_of_islam }
+		}
 	}
 
 	option = {

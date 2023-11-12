@@ -90,7 +90,7 @@ oghuz_seljuk_missions_1 = {
 				2370 = {
 					create_colony = 200
 					add_permanent_province_modifier = {
-						name = maj_colony_modifier
+						name = ogh_turkic_colony_et
 						duration = -1
 					}
 					change_religion = ROOT
@@ -106,7 +106,7 @@ oghuz_seljuk_missions_1 = {
 				443 = {
 					create_colony = 200
 					add_permanent_province_modifier = {
-						name = maj_colony_modifier
+						name = ogh_turkic_colony_et
 						duration = -1
 					}
 					change_religion = ROOT
@@ -122,7 +122,7 @@ oghuz_seljuk_missions_1 = {
 				439 = {
 					create_colony = 200
 					add_permanent_province_modifier = {
-						name = maj_colony_modifier
+						name = ogh_turkic_colony_et
 						duration = -1
 					}
 					change_religion = ROOT
@@ -142,6 +142,10 @@ oghuz_seljuk_missions_1 = {
 					add_base_production = 1
 					add_base_manpower = 1
 				}
+			}
+			add_country_modifier = {
+				name = ogh_colonial_management_et
+					duration = 5475
 			}
 		}
 	}
@@ -254,11 +258,17 @@ oghuz_seljuk_missions_1 = {
 			}
 			saratov_area = {
 				type = all
-				owned_by = ROOT
+				OR = {
+					owned_by = ROOT
+					is_empty = yes
+				}
 			}
 			tambov_area = {
 				type = all
-				owned_by = ROOT
+				OR = {
+					owned_by = ROOT
+					is_empty = yes
+				}
 			}
 		}
 		effect = {
@@ -821,7 +831,7 @@ oghuz_seljuk_missions_3 = {
 				438 = {
 					create_colony = 200
 					add_permanent_province_modifier = {
-						name = maj_colony_modifier
+						name = ogh_turkic_colony_et
 						duration = -1
 					}
 					change_religion = ROOT
@@ -837,13 +847,17 @@ oghuz_seljuk_missions_3 = {
 				2349 = {
 					create_colony = 200
 					add_permanent_province_modifier = {
-						name = maj_colony_modifier
+						name = ogh_turkic_colony_et
 						duration = -1
 					}
 					change_religion = ROOT
 					change_culture = ROOT
 				}
-			} 
+			}
+			add_country_modifier = {
+				name = ogh_colonial_management_et
+					duration = 5475
+			}
 		}
 	}
 	into_quhistan_ogh = {

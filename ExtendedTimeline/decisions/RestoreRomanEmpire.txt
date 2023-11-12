@@ -87,8 +87,9 @@ country_decisions = {
 			118 = {
 				move_capital_effect = yes
 			}
+			restore_country_name = yes
 			change_tag = ROM
-			restore_country_name_effect = yes
+			on_change_tag_effect = yes
 			custom_tooltip = roman_culture_provinces_tooltip
 			change_primary_culture = roman
 			custom_tooltip = restore_roman_empire_tt
@@ -101,7 +102,7 @@ country_decisions = {
 				}
 			}
 			set_government_rank = 3
-			add_prestige = 50
+			add_prestige_or_monarch_power = { amount = 50 }
 			add_core = 118 # Rome
 			#if = {
 			#	limit = {

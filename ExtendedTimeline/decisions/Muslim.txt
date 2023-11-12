@@ -40,20 +40,20 @@ country_decisions = {
 		}
 		allow = {
 			religion_group = muslim
-			owns_or_vassal_of = 504
-			owns_or_vassal_of = 225
-			owns_or_vassal_of = 151
-			owns_or_vassal_of = 410
-			owns_or_vassal_of = 385
-			owns_or_vassal_of = 384
-			owns_or_vassal_of = 124
-			owns_or_vassal_of = 125
-			owns_or_vassal_of = 425
-			owns_or_vassal_of = 382
-			owns_or_vassal_of = 454
-			owns_or_vassal_of = 347
-			owns_or_vassal_of = 388
-			owns_or_vassal_of = 400
+			owns_or_non_sovereign_subject_of = 504
+			owns_or_non_sovereign_subject_of = 225
+			owns_or_non_sovereign_subject_of = 151
+			owns_or_non_sovereign_subject_of = 410
+			owns_or_non_sovereign_subject_of = 385
+			owns_or_non_sovereign_subject_of = 384
+			owns_or_non_sovereign_subject_of = 124
+			owns_or_non_sovereign_subject_of = 125
+			owns_or_non_sovereign_subject_of = 425
+			owns_or_non_sovereign_subject_of = 382
+			owns_or_non_sovereign_subject_of = 454
+			owns_or_non_sovereign_subject_of = 347
+			owns_or_non_sovereign_subject_of = 388
+			owns_or_non_sovereign_subject_of = 400
 			all_country = {
 				AND = {
 					NOT = { has_reform = caliphate_reform }
@@ -94,11 +94,21 @@ country_decisions = {
 			}
 			add_country_modifier = {
 				name = unified_islam
-				duration = 1825
+				duration = 18250
 			}
 			add_adm_power = -100
 			add_mil_power = -100
 			add_dip_power = -100
+			
+			if = {
+				limit = {
+					has_country_flag = ARB_upgraded_uniting_islam
+				}
+				add_country_modifier = {
+					name = ARB_united_islam_upgraded
+					duration = -1
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -124,7 +134,7 @@ country_decisions = {
 			change_religion = sunni
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	
@@ -147,7 +157,7 @@ country_decisions = {
 			change_religion = shiite		
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 

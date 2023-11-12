@@ -1,0 +1,411 @@
+byzrump_first = {
+	slot = 1
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+	potential = {
+		OR = {
+			tag = EPI
+			tag = TRE
+			tag = NCA
+			tag = ACH
+			tag = ATH
+			tag = MOE
+			tag = THS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	byzrump_forces = {
+		icon = mission_pf_soldier
+		required_missions = { }
+		position = 1
+		
+		trigger = {
+			army_size_percentage = 0.8
+			num_of_generals = 1
+			is_subject = no
+		}
+
+		effect = {
+			macedonia_area = { add_permanent_claim = ROOT }
+			northern_greece_area = { add_permanent_claim = ROOT }
+			morea_area = { add_permanent_claim = ROOT }
+			thrace_area = { add_permanent_claim = ROOT }
+			albania_area = { add_permanent_claim = ROOT }
+			aegean_archipelago_area = { add_permanent_claim = ROOT }
+			central_greece_area = { add_permanent_claim = ROOT }
+			hudavendigar_area = { add_permanent_claim = ROOT }
+			aydin_area = { add_permanent_claim = ROOT }
+			kastamonu_area = { add_permanent_claim = ROOT }
+			151 = { add_core = ROOT }
+			hidden_effect = { set_country_flag = formed_byzantium_flag }
+		}
+	}
+	
+	byzrump_greece = {
+		icon = mission_reclaim_lost_territory
+		required_missions = { byzrump_forces }
+		position = 2
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				OR = {
+					area = macedonia_area
+					area = northern_greece_area
+					area = morea_area
+					area = thrace_area
+					area = albania_area
+					area = central_greece_area
+				}
+			}
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = macedonia_area
+				area = northern_greece_area
+				area = morea_area
+				area = thrace_area
+				area = albania_area
+				area = aegean_archipelago_area
+				area = central_greece_area 
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		effect = {
+			add_army_tradition = 20
+			add_mil_power = 100
+			every_province = {
+				limit = {
+					NOT = { is_core = ROOT }
+					OR = {
+						area = macedonia_area
+						area = northern_greece_area
+						area = morea_area
+						area = thrace_area
+						area = albania_area
+						area = aegean_archipelago_area
+						agea = central_greece_area
+					}
+				}
+				add_territorial_core = ROOT
+			}
+		}
+	}
+
+	byzrump_anatolia = {
+		icon = mission_reclaim_lost_territory
+		required_missions = { byzrump_forces }
+		position = 3
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				OR = {
+					area = hudavendigar_area
+					area = aydin_area
+					area = kastamonu_area
+					area = aegean_archipelago_area
+				}
+			}
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = hudavendigar_area
+				area = aydin_area
+				area = kastamonu_area
+				area = aegean_archipelago_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		effect = {
+			add_navy_tradition = 20
+			add_dip_power = 100
+			every_province = {
+				limit = {
+					NOT = { is_core = ROOT }
+					OR = {
+						area = hudavendigar_area
+						area = aydin_area
+						area = kastamonu_area
+						area = aegean_archipelago_area
+					}
+				}
+				add_territorial_core = ROOT
+			}
+		}
+	}
+
+	byzrump_unite = {
+		icon = mission_unite_home_region
+		required_missions = { byzrump_forces }
+		position = 4
+		
+		trigger = {
+			EPI = {
+				OR = {
+					tag = ROOT
+					NOT = { exists = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { is_subject_of_type = tributary_state }
+					}
+				}
+			}
+			TRE = {
+				OR = {
+					tag = ROOT
+					NOT = { exists = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { is_subject_of_type = tributary_state }
+					}
+				}
+			}
+			NCA = {
+				OR = {
+					tag = ROOT
+					NOT = { exists = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { is_subject_of_type = tributary_state }
+					}
+				}
+			}
+			ACH = {
+				OR = {
+					tag = ROOT
+					NOT = { exists = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { is_subject_of_type = tributary_state }
+					}
+				}
+			}
+			ATH = {
+				OR = {
+					tag = ROOT
+					NOT = { exists = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { is_subject_of_type = tributary_state }
+					}
+				}
+			}
+			MOE = {
+				OR = {
+					tag = ROOT
+					NOT = { exists = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { is_subject_of_type = tributary_state }
+					}
+				}
+			}
+			MAC = {
+				OR = {
+					tag = ROOT
+					NOT = { exists = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { is_subject_of_type = tributary_state }
+					}
+				}
+			}
+			THS = {
+				OR = {
+					tag = ROOT
+					NOT = { exists = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { is_subject_of_type = tributary_state }
+					}
+				}
+			}
+		}
+		
+		provinces_to_highlight = { }
+		
+		effect = {
+			every_subject_country = {
+				limit = {
+					OR = {
+						tag = EPI
+						tag = TRE
+						tag = NCA
+						tag = ACH
+						tag = ATH
+						tag = MOE
+						tag = THS
+					}
+				}
+				ROOT = { inherit = PREV }
+			}
+			every_owned_province = {
+				add_province_modifier = {
+					name = tur_resettlement_of_constantinople
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	byzrump_recover = {
+		icon = mission_city_of_the_world's_desire
+		required_missions = { byzrump_unite }
+		position = 5
+		
+		trigger = {
+			all_owned_province = {
+				development = 6
+				NOT = { devastation = 1 }
+			}
+			NOT = { corruption = 1 }
+			NOT = { inflation = 1 }
+			NOT = { is_in_deficit = yes }
+			is_at_war = no
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				NOT = { development = 6 }
+				devastation = 1
+			}
+			owned_by = ROOT
+		}
+		
+		effect = {
+			add_treasury = 1000
+			add_stability_or_adm_power = yes
+			add_manpower = 20
+			add_sailors = 500
+		}
+	}
+	
+	byzrump_restore = {
+		icon = mission_empire
+		required_missions = { byzrump_recover }
+		position = 6
+		
+		trigger = {
+			normal_or_historical_nations = yes
+			NOT = { exists = BYZ }
+			NOT = { exists = LAE }
+			
+			owns = 149	# Edirne
+			owns = 144  # Epiros
+			owns = 147	# Salonica
+			owns = 148	# Macedonia
+			owns = 146	# Athens
+			owns = 145	# Morea
+			owns = 1773	# Achea
+			owns = 316	# Bithynia
+			owns = 317	# Bursa
+			owns = 318	# Smyrna
+			owns = 1853	# Kozani
+			owns = 2296	# Biga
+			owns = 151  # Constantinople
+			151 = {		# Constantinople
+				is_state = yes
+			}
+
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151	# Constantinople
+				province_id = 149	# Edirne
+				province_id = 144	# Epiros
+				province_id = 147	# Salonica
+				province_id = 148	# Macedonia
+				province_id = 146	# Athens
+				province_id = 145	# Morea
+				province_id = 1773	# Achea
+				province_id = 316	# Bithynia
+				province_id = 317	# Bursa
+				province_id = 318	# Smyrna
+				province_id = 1853	# Kozani
+				province_id = 2296	# Biga
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		effect = {
+			set_capital = 151
+			if = {
+				limit = {
+					NOT = { culture_group = byzantine }
+					NOT = { accepted_culture = greek }
+				}
+				add_accepted_culture = greek
+			}
+			balkan_region = { add_permanent_claim = ROOT }
+			anatolia_region = { add_permanent_claim = ROOT }
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 100
+			add_legitimacy = 100
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					NOT = { has_country_modifier = european_union }
+					is_elector = no
+				}
+				every_owned_province = {
+					limit = { is_part_of_hre = yes }
+					set_in_empire = no
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_global_flag = hagia_sophia_now_mosque }
+					clr_global_flag = hagia_sophia_now_mosque
+					show_ambient_object = hagia_sophia
+					hide_ambient_object = hagia_sophia_minarets
+				}
+			}
+			set_government_rank = 3
+
+			if = {
+				limit = {
+					OR = {
+						religion = orthodox
+						religion = chalcedonism
+					}
+				}
+				change_tag = BYZ
+			} else_if = {
+				limit = {
+					OR = {
+						religion = catholic
+						religion = protestant
+						religion = reformed
+						religion = anglican
+						religion = hussite
+					}
+				}
+				change_tag = LAE
+			} else_if = {
+				limit = { religion_group = muslim }
+				change_tag = RUM
+			}
+			on_change_tag_effect = yes
+			restore_country_name = yes
+			swap_non_generic_missions = yes
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+	}
+}

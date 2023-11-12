@@ -39,13 +39,13 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = JAP
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
 			set_country_flag = formed_japan_flag
 			remove_non_electors_emperors_from_empire_effect = yes
 			remove_government_reform = daimyo
 			remove_government_reform = indep_daimyo
-			set_legacy_government = despotic_monarchy
-			swap_non_generic_missions = yes
-			set_government_rank = 2
+			set_government_rank = 3
 			add_legitimacy = 100
 			add_adm_power = 100
 			add_dip_power = 100
@@ -55,6 +55,18 @@ country_decisions = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
+			if = { 
+				limit = { has_dlc = "Domination" }
+				add_country_modifier = {
+					name = jap_grant_samurai_modifier
+					duration = -1 
+				}
+			}
+			if = {
+				limit = { ai = no }
+				on_change_tag_effect = yes
+			}
+			change_japan_formable_color = yes 
 		}
 		ai_will_do = {
 			factor = 1

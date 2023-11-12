@@ -332,11 +332,11 @@ himyarite_missions_2 = {
 					value = 120
 				}
 				reverse_has_opinion = {
-					who = SAS
+					who = ERS
 					value = 120
 				}
 				AND = {
-					NOT = { exists = SAS }
+					NOT = { exists = ERS }
 					NOT = { exists = PRT }
 				}
 			}
@@ -833,8 +833,7 @@ himyarite_missions_3 = {
 			has_discovered = ROOT
 		}
 		trigger = {
-			any_owned_province = {
-				is_state_core = yes
+			any_core_province = {
 				trade_goods = incense
 			}
 			hadramut_area = {

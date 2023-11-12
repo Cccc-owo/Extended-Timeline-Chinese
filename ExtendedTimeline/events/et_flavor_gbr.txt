@@ -1,0 +1,33 @@
+
+namespace = et_gbr
+
+
+country_event = {
+	id = et_gbr.1
+	title = et_gbr.1.t
+	desc = et_gbr.1.d
+	picture = CULTURE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = et_gbr.1.a
+	}
+
+	option = {
+		name = et_gbr.1.b
+		change_primary_culture = anglois
+		set_ruler_culture = anglois
+		if = {
+			limit = { has_heir = yes }
+			set_heir_culture = anglois
+		}
+		if = {
+			limit = { has_consort = yes }
+			set_consort_culture = anglois
+		}
+		capital_scope = {
+			change_culture = anglois
+		}
+	}
+}

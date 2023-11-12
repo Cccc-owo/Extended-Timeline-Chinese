@@ -6,10 +6,15 @@ first_fitna = {
 		}
 		NOT = { has_country_flag = had_first_fitna }
 		religion = islam
+		NOT = { has_country_flag = ruler_muhammmad }
+		NOT = { has_country_flag = ruler_abu_bakr }
+		NOT = { has_country_flag = ruler_umar }
+		NOT = { has_country_flag = ruler_uthman }
 	}
 
 	can_start = {
 		has_any_disaster = no
+		religion = islam
 	}
 
 	can_stop = {
@@ -19,7 +24,7 @@ first_fitna = {
 	progress = {
 		modifier = {
 			factor = 1
-			always = yes
+			NOT = { has_country_modifier = rise_of_islam }
 		}
 		modifier = {
 			factor = 2

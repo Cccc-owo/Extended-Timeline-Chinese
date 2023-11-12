@@ -61,6 +61,11 @@ country_decisions = {
 		effect = {
 			change_tag = EGY
 			if = {
+				limit = { has_dlc = "King of Kings" }
+				set_country_flag = egyptian_government_reform_flag
+			}
+			on_change_tag_effect = yes
+			if = {
 				limit = {
 					has_reform = mamluk_government
 				}
@@ -78,6 +83,10 @@ country_decisions = {
 				limit = { has_reform = mamluk_government }
 				remove_government_reform = mamluk_government
 				#set_legacy_government = administrative_monarchy
+			}
+			if = {
+				limit = { has_dlc = "King of Kings" }
+				add_government_reform = egyptian_government_reform
 			}
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -99,6 +108,8 @@ country_decisions = {
 				add_permanent_claim = EGY
 			}
 			set_country_flag = formed_egypt_flag
+			swap_free_idea_group = yes
+			swap_non_generic_missions = yes
 		}
 		ai_will_do = {
 			factor = 0
@@ -109,7 +120,10 @@ country_decisions = {
 	adopt_mamluk_government = {
 		major = yes
 		potential = {
-			has_reform = iqta
+			or = {
+				has_reform = iqta
+				has_reform = barbary_sultanate_reform
+			}
 			NOT = { has_country_flag = formed_mamluks }
 			was_never_end_game_tag_trigger = yes
 			NOT = { tag = MAM }
@@ -118,7 +132,6 @@ country_decisions = {
 			NOT = { tag = TUR }
 			NOT = { tag = ARB }
 			NOT = { tag = EGY }
-			NOT = { has_country_flag = adopted_mamluk_govt }
 			OR = {
 				ai = no
 				NOT = { exists = MAM }
@@ -153,6 +166,7 @@ country_decisions = {
 				move_capital_effect = yes
 			}
 			change_tag = MAM
+			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
 			if = {
 				limit = { has_regency = no }
@@ -169,7 +183,7 @@ country_decisions = {
 							government = monarchy
 						}
 					}
-					change_government_to_monarchy = yes
+					change_government = monarchy
 				}
 				set_government_rank = 2
 				add_government_reform = mamluk_government
@@ -186,7 +200,7 @@ country_decisions = {
 				egypt_region = {
 					limit = {
 						NOT = { is_core = MAM }
-						NOT = { is_claim = MAM }
+						NOT = { is_permanent_claim = MAM }
 					}
 					add_permanent_claim = MAM
 				}

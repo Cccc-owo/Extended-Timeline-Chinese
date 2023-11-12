@@ -6,18 +6,27 @@ estate_eunuchs = {
 	# If true, country will get estate
 	trigger = {
 		has_dlc = "Domination"
-		NOT = { has_country_flag = disables_estate_eunuchs_flag }
+		NOT = { has_disabled_estate = { estate = estate_eunuchs } }
 		OR = {
-			has_country_flag = enables_estate_eunuchs_flag
+			has_enabled_estate = { estate = estate_eunuchs }
 			is_emperor_of_china = yes 
+			AND = {
+				has_unlocked_estate = { estate = estate_eunuchs }
+				NOT = { has_government_attribute = is_pirate_republic_reform }
+				NOT = { government = native }
+				NOT = { has_reform = siberian_tribe }
+				NOT = { is_revolutionary_republic_trigger = yes }
+				NOT = { has_reform = revolutionary_empire_reform }
+				NOT = { has_reform = roman_empire_reform }
+				NOT = { has_reform = multi_party_system }
+				NOT = { has_reform = single_party_system }
+				NOT = { has_reform = military_government }
+				NOT = { has_reform = communist_government }
+				NOT = { has_reform = fascist_government }
+				is_nomad = no
+				is_colonial_nation = no
+			}
 		}
-		NOT = { is_revolutionary_republic_trigger = yes }
-		NOT = { has_reform = roman_empire_reform }
-		NOT = { has_reform = multi_party_system }
-		NOT = { has_reform = single_party_system }
-		NOT = { has_reform = military_government }
-		NOT = { has_reform = communist_government }
-		NOT = { has_reform = fascist_government }
 	}
 
 	# These scale with loyalty & power
@@ -74,15 +83,8 @@ estate_eunuchs = {
 	influence_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER
 		trigger = {
-			OR = {
-				has_disaster = estate_nobility_disaster
-				has_disaster = estate_church_disaster
-				has_disaster = estate_burghers_disaster
-				has_disaster = estate_brahmins_disaster
-				has_disaster = estate_vaisyas_disaster
-				has_disaster = estate_jains_disaster
-				has_disaster = estate_nomadic_tribes_disaster
-			}
+			has_any_estate_disaster_active = yes
+			has_not_own_estate_disaster_active = { estate = estate_eunuchs }
 		}
 		influence = -40
 	}
@@ -132,15 +134,8 @@ estate_eunuchs = {
 	loyalty_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
 		trigger = {
-			OR = {
-				has_disaster = estate_nobility_disaster
-				has_disaster = estate_church_disaster
-				has_disaster = estate_burghers_disaster
-				has_disaster = estate_brahmins_disaster
-				has_disaster = estate_vaisyas_disaster
-				has_disaster = estate_jains_disaster
-				has_disaster = estate_nomadic_tribes_disaster
-			}
+			has_any_estate_disaster_active = yes
+			has_not_own_estate_disaster_active = { estate = estate_eunuchs }
 		}
 		loyalty = -20
 	}

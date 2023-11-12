@@ -26,14 +26,11 @@ east_indian_trade_route = {
 		has_discovered = 1460 # Cape of Good Hope
 		num_of_ports = 4
 		has_idea = quest_for_the_new_world
-		any_active_trade_node = {
-			has_merchant = ROOT
-			OR = {
-				province_id = 1361 # Straits of Johor
-				province_id = 1343 # Ganges Delta
-				province_id = 504 # Sind
-				province_id = 1340 # Comorin Cape
-			}
+		OR = {
+			1361 = { has_merchant = ROOT } #Straits of Johor
+			1343 = { has_merchant = ROOT } #Ganges Delta
+			504 = { has_merchant = ROOT } #Sind
+			1340 = { has_merchant = ROOT } #Comorin Cape
 		}
 	}
 
@@ -292,6 +289,7 @@ custodian_of_the_two_holy_mosques = {
 ######################################
 # Catholic control of Rome.
 ######################################
+
 papal_subjugation = {
 	potential = {
 		normal_or_historical_nations = yes
@@ -821,7 +819,7 @@ great_peasants_war_triggered_modifier = {
 	}
 	trigger = {
 		is_part_of_hre = yes
-		NOT = { has_reform = peasants_republic }
+		NOT = { has_government_attribute = is_peasants_republic }
 	}
 	global_unrest = 6
 }
@@ -838,7 +836,7 @@ great_peasants_war_concessions_triggered_modifier = {
 	}
 	trigger = {
 		is_part_of_hre = yes
-		NOT = { has_reform = peasants_republic }
+		NOT = { has_government_attribute = is_peasants_republic }
 	}
 	global_tax_modifier = -0.05
 }
@@ -948,4 +946,35 @@ judaism_yom_kippur_aspect_defensive_war_modifier = {
 	}
 	manpower_recovery_speed = 0.20
 	church_power_modifier = 0.25
+}
+
+######################################
+# Government Reform Specific
+######################################
+
+ahmudan_system_attacker = {
+	potential = {
+		has_government_attribute = ahmudan_system
+	}
+
+	trigger = {
+		is_at_war = yes
+	}
+	global_regiment_cost = -0.1
+	manpower_recovery_speed = 0.2
+}
+
+ahmudan_system_defender = {
+	potential = {
+		has_government_attribute = ahmudan_system
+	}
+
+	trigger = {
+		is_in_war = {
+			defenders = ROOT
+		}
+	}
+	land_morale = 0.075
+	defensiveness = 0.15
+	manpower_recovery_speed = 0.1
 }

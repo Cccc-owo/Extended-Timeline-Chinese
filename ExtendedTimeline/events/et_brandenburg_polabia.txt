@@ -1,0 +1,826 @@
+########################################
+# Events concerning Brandenburg
+# and the region of Polabia
+# Written by Jey the Count
+########################################
+
+namespace = et_brandenburg_polabia
+
+#Establishment of the Northern March
+country_event = {
+	id = et_brandenburg_polabia.1
+	title = et_brandenburg_polabia.1.t
+	desc = et_brandenburg_polabia.1.d
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 925
+		NOT = { is_year = 1000 }
+		NOT = { exists = BRA }
+		culture_group = germanic
+		num_of_owned_provinces_with = {
+			area = mittelmark_area
+			value = 4
+		}
+		owns = 2964
+		owns = 4786
+		any_owned_province = {
+			culture_group = west_slavic
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 10
+	}
+
+	option = { #A splendind idea!
+		name = et_brandenburg_polabia.1.a
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = mittelmark_area
+					province_id = 2964
+					province_id = 4786
+					culture_group = west_slavic
+				}
+			}
+			add_core = BRA
+			hidden_effect = {
+				remove_core = ROOT
+			}
+		}
+		release = BRA
+		create_alliance = BRA
+		BRA = {
+			override_country_name = NORDMARK
+			hidden_effect = {
+				add_government_reform = imperial_march_reform
+				define_ruler = {
+					name = "Gero"
+					dynasty = "von Merseburg"
+					adm = 4
+					dip = 2
+					mil = 5
+				}
+				add_ruler_personality = sickly_personality
+				set_country_flag = nordmark_flag
+				2964 = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 100 } #historically accurate
+	}
+
+	option = { #We shouldn't decentralise our domain
+		name = et_brandenburg_polabia.1.b
+		every_owned_province = {
+			limit = {
+				culture_group = west_slavic
+			}
+			add_unrest = 5
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+
+#Death of Margrave Gero
+country_event = {
+	id = et_brandenburg_polabia.2
+	title = et_brandenburg_polabia.2.t
+	desc = et_brandenburg_polabia.2.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Allow for the split
+		name = et_brandenburg_polabia.2.a
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = lusatia_area
+					area = silesia_area
+					province_id = 59
+				}
+			}
+			add_core = SOR
+			hidden_effect = {
+				remove_core = ROOT
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 61
+					province_id = 2965
+					province_id = 62
+					area = thuringia_area
+					area = erzgebirge_area
+					area = bohemia_area
+				}
+			}
+			add_core = MEI
+			hidden_effect = {
+				remove_core = ROOT
+			}
+		}
+		release = SOR
+		hidden_effect = {
+			SOR = {
+				change_primary_culture = saxon
+				set_ruler_culture = saxon
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+		}
+		release = MEI
+		hidden_effect = {
+			MEI = {
+				change_primary_culture = saxon
+				set_ruler_culture = saxon
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+		}
+		add_stability = 1
+		ai_chance = { factor = 75 } #historically accurate
+	}
+
+	option = { #Try to enforce unity
+		name = et_brandenburg_polabia.2.b
+		add_stability = -1
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = lusatia_area
+					area = silesia_area
+					area = thuringia_area
+					area = erzgebirge_area
+					area = bohemia_area
+					area = south_saxony_area
+				}
+			}
+			spawn_rebels = {
+				size = 1
+				type = noble_rebels
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = lusatia_area
+					area = silesia_area
+					area = thuringia_area
+					area = erzgebirge_area
+					area = bohemia_area
+					area = south_saxony_area
+				}
+			}
+			spawn_rebels = {
+				size = 1
+				type = noble_rebels
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = lusatia_area
+					area = silesia_area
+					area = thuringia_area
+					area = erzgebirge_area
+					area = bohemia_area
+					area = south_saxony_area
+				}
+			}
+			spawn_rebels = {
+				size = 1
+				type = noble_rebels
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+
+	option = { #Settle on a compromise
+		name = et_brandenburg_polabia.2.c
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = lusatia_area
+					area = silesia_area
+					province_id = 59
+				}
+			}
+			add_core = SOR
+			hidden_effect = {
+				remove_core = ROOT
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 61
+					province_id = 2965
+					province_id = 62
+					area = thuringia_area
+					area = erzgebirge_area
+					area = bohemia_area
+				}
+			}
+			add_core = MEI
+			hidden_effect = {
+				remove_core = ROOT
+			}
+		}
+		release  = SOR
+		vassalize  = SOR
+		hidden_effect = {
+			SOR = {
+				change_primary_culture = saxon
+				set_ruler_culture = saxon
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+		}
+		release  = MEI
+		vassalize  = MEI
+		hidden_effect = {
+			MEI = {
+				change_primary_culture = saxon
+				set_ruler_culture = saxon
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 25 }
+	}	
+
+	after = {
+		clr_country_flag = nordmark_flag
+	}
+}
+
+#Pagans split from the Empire!
+country_event = {
+	id = et_brandenburg_polabia.3
+	title = et_brandenburg_polabia.3.t
+	desc = et_brandenburg_polabia.3.d
+	picture = ANGRY_MOB_eventPicture
+
+	immediate = {
+		random_country = {
+			limit = {
+				OR = { #pagan!
+					religion = animism
+					religion = shamanist
+					religion = dreamtime
+					religion = totemism
+					religion = mesoamerican_religion
+					religion = south_american
+					religion = nahuatl
+					religion = inti
+					religion = romuva
+					religion = slavic
+					religion = suomenusko
+					religion = norse_pagan_reformed
+					religion = germanic
+					religion = egyptian
+					religion = shamanism
+				}
+				is_part_of_hre = yes
+			}
+			save_event_target_as = cursed_pagans
+		}
+	}
+
+	trigger = {
+		any_country = {
+			OR = { #pagan!
+				religion = animism
+				religion = shamanist
+				religion = dreamtime
+				religion = totemism
+				religion = mesoamerican_religion
+				religion = south_american
+				religion = nahuatl
+				religion = inti
+				religion = romuva
+				religion = slavic
+				religion = suomenusko
+				religion = norse_pagan_reformed
+				religion = germanic
+				religion = egyptian
+				religion = shamanism
+			}
+			is_part_of_hre = yes
+		}
+		is_emperor = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Unacceptable!
+		name = et_brandenburg_polabia.3.a
+		event_target:cursed_pagans = {
+			set_in_empire = no
+		}
+		add_casus_belli = {
+			target = event_target:cursed_pagans
+			type = cb_vassalize_mission
+			months = 60
+		}
+	}
+}
+
+#Great Lutitian Revolt
+country_event = {
+	id = et_brandenburg_polabia.4
+	title = et_brandenburg_polabia.4.t
+	desc = et_brandenburg_polabia.4.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BRA
+		num_of_owned_provinces_with = {
+			culture_group = west_slavic
+			value = 5
+		}
+		is_year = 940
+		NOT = { is_year = 1100 }
+		NOT = {
+			has_ruler = "Gero"
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 20
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = west_slavic
+				}
+				add_core = KOP
+			}
+		}
+	}
+
+	option = { #Offer concessions
+		name = et_brandenburg_polabia.4.a
+		every_owned_province = {
+			limit = {
+				culture_group = west_slavic
+			}
+			set_local_autonomy = 100
+			add_unrest = -5
+		}
+		add_prestige = -25
+		ai_chance = { factor = 5 }
+	}
+
+	option = { #Send the troops
+		name = et_brandenburg_polabia.4.b
+		random_owned_province = {
+			limit = {
+				culture_group = west_slavic
+			}
+			spawn_rebels = {
+				size = 2
+				type = nationalist_rebels
+				separatists_target = KOP
+				win = yes
+			}
+		}
+		random_owned_province = {
+			limit = {
+				culture_group = west_slavic
+			}
+			spawn_rebels = {
+				size = 1
+				type = nationalist_rebels
+				separatists_target = KOP
+				win = yes
+			}
+		}
+		random_owned_province = {
+			limit = {
+				culture_group = west_slavic
+			}
+			spawn_rebels = {
+				size = 1
+				type = nationalist_rebels
+				separatists_target = KOP
+				win = yes
+			}
+		}
+		ai_chance = { factor = 70 } #historically accurate
+	}
+
+	option = { #Abbandon most of the territory and reoragnise
+		name = et_brandenburg_polabia.4.c
+		add_stability = 2
+		release = KOP
+		ai_chance = { factor = 25 }
+	}
+}
+
+#The House of Ascania and the Margraviate of Brandenburg
+country_event = {
+	id = et_brandenburg_polabia.5
+	title = et_brandenburg_polabia.5.t
+	desc = et_brandenburg_polabia.5.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 1134
+		NOT = { is_year = 1170 }
+		tag = BRA
+		NOT = {
+			has_ruler = "Albrecht I der Bär"
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #He will make a great margrave
+		name = et_brandenburg_polabia.5.a
+		define_ruler = {
+			name = "Albrecht I der Bär"
+			dynasty = "Askanier"
+			
+			adm = 4
+			dip = 3
+			mil = 3
+		}
+
+		define_ruler_to_general = {
+			fire = 4
+			shock = 5
+			manuever = 2
+			siege = 2
+		}
+		hidden_effect = {
+			restore_country_name = yes
+		}
+		custom_tooltip = et_brandenburg_polabia.5.tooltip
+		if = {
+			limit = {
+				owns = 4748
+			}
+			set_capital = 4748
+		}
+		every_province = {
+			limit = {
+				area = mittelmark_area
+				NOT = { is_core = BRA }
+			}
+			add_core = BRA
+		}
+	}
+
+	option = { #We don't need him
+		name = et_brandenburg_polabia.5.b
+		add_stability_or_adm_power = yes
+	}
+}
+
+#Albrecht Achilles - Ansbach
+country_event = {
+	id = et_brandenburg_polabia.6
+	title = et_brandenburg_polabia.6.t
+	desc = et_brandenburg_polabia.6.d
+	picture = NEW_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ANS
+		is_year = 1410
+		has_heir = no
+		exists = BRA
+		dynasty = BRA
+	}
+
+	mean_time_to_happen = {
+		years = 4
+	}
+
+	immediate = {
+		hidden_effect = {
+			define_heir = {
+				name = "Albrecht Achilles"
+				dynasty = ROOT
+				claim = 95
+				adm = 3
+				dip = 3
+				mil = 2
+				age = 20
+			}
+		}
+	}
+
+	option = { #And heir of Brandenburg he will be.
+		name = et_brandenburg_polabia.6.a
+		if = {
+			limit = {
+				NOT = { marriage_with = BRA }
+			}
+			create_marriage = BRA
+		}
+		set_country_flag = albrecht_achilles_flag_ANS_heir
+		custom_tooltip = et_brandenburg_polabia.6.tooltip
+	}
+
+	option = { #Let's enjoy our separateness.
+		name = et_brandenburg_polabia.6.b
+		add_prestige = 25
+	}
+}
+
+#Albrecht Achilles - Brandenburg
+country_event = {
+	id = et_brandenburg_polabia.7
+	title = et_brandenburg_polabia.7.t
+	desc = et_brandenburg_polabia.7.d
+	picture = NEW_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BRA
+		has_heir = no
+		ANS = {
+			OR = {
+				has_country_flag = albrecht_achilles_flag_ANS_heir
+				has_country_flag = albrecht_achilles_flag_ANS_monarch
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = disposatio_achillea_fix_flag
+			# I'm sorry it looks how it looks, but blame EU4 devs for not allowing me to set the age directly 
+			ANS = {
+				if = {
+					limit = {
+						has_country_flag = albrecht_achilles_flag_ANS_heir
+					}
+					trigger_switch = {
+						on_trigger = heir_age
+						100 = { BRA = { spawn_aa_helper = { age = 100 } } }
+						99 = { BRA = { spawn_aa_helper = { age = 99 } } }
+						98 = { BRA = { spawn_aa_helper = { age = 98 } } }
+						97 = { BRA = { spawn_aa_helper = { age = 97 } } }
+						96 = { BRA = { spawn_aa_helper = { age = 96 } } }
+						95 = { BRA = { spawn_aa_helper = { age = 95 } } }
+						94 = { BRA = { spawn_aa_helper = { age = 94 } } }
+						93 = { BRA = { spawn_aa_helper = { age = 93 } } }
+						92 = { BRA = { spawn_aa_helper = { age = 92 } } }
+						91 = { BRA = { spawn_aa_helper = { age = 91 } } }
+						90 = { BRA = { spawn_aa_helper = { age = 90 } } }
+						89 = { BRA = { spawn_aa_helper = { age = 89 } } }
+						88 = { BRA = { spawn_aa_helper = { age = 88 } } }
+						87 = { BRA = { spawn_aa_helper = { age = 87 } } }
+						86 = { BRA = { spawn_aa_helper = { age = 86 } } }
+						85 = { BRA = { spawn_aa_helper = { age = 85 } } }
+						84 = { BRA = { spawn_aa_helper = { age = 84 } } }
+						83 = { BRA = { spawn_aa_helper = { age = 83 } } }
+						82 = { BRA = { spawn_aa_helper = { age = 82 } } }
+						81 = { BRA = { spawn_aa_helper = { age = 81 } } }
+						80 = { BRA = { spawn_aa_helper = { age = 80 } } }
+						79 = { BRA = { spawn_aa_helper = { age = 79 } } }
+						78 = { BRA = { spawn_aa_helper = { age = 78 } } }
+						77 = { BRA = { spawn_aa_helper = { age = 77 } } }
+						76 = { BRA = { spawn_aa_helper = { age = 76 } } }
+						75 = { BRA = { spawn_aa_helper = { age = 75 } } }
+						74 = { BRA = { spawn_aa_helper = { age = 74 } } }
+						73 = { BRA = { spawn_aa_helper = { age = 73 } } }
+						72 = { BRA = { spawn_aa_helper = { age = 72 } } }
+						71 = { BRA = { spawn_aa_helper = { age = 71 } } }
+						70 = { BRA = { spawn_aa_helper = { age = 70 } } }
+						69 = { BRA = { spawn_aa_helper = { age = 69 } } }
+						68 = { BRA = { spawn_aa_helper = { age = 68 } } }
+						67 = { BRA = { spawn_aa_helper = { age = 67 } } }
+						66 = { BRA = { spawn_aa_helper = { age = 66 } } }
+						65 = { BRA = { spawn_aa_helper = { age = 65 } } }
+						64 = { BRA = { spawn_aa_helper = { age = 64 } } }
+						63 = { BRA = { spawn_aa_helper = { age = 63 } } }
+						62 = { BRA = { spawn_aa_helper = { age = 62 } } }
+						61 = { BRA = { spawn_aa_helper = { age = 61 } } }
+						60 = { BRA = { spawn_aa_helper = { age = 60 } } }
+						59 = { BRA = { spawn_aa_helper = { age = 59 } } }
+						58 = { BRA = { spawn_aa_helper = { age = 58 } } }
+						57 = { BRA = { spawn_aa_helper = { age = 57 } } }
+						56 = { BRA = { spawn_aa_helper = { age = 56 } } }
+						55 = { BRA = { spawn_aa_helper = { age = 55 } } }
+						54 = { BRA = { spawn_aa_helper = { age = 54 } } }
+						53 = { BRA = { spawn_aa_helper = { age = 53 } } }
+						52 = { BRA = { spawn_aa_helper = { age = 52 } } }
+						51 = { BRA = { spawn_aa_helper = { age = 51 } } }
+						50 = { BRA = { spawn_aa_helper = { age = 50 } } }
+						49 = { BRA = { spawn_aa_helper = { age = 49 } } }
+						48 = { BRA = { spawn_aa_helper = { age = 48 } } }
+						47 = { BRA = { spawn_aa_helper = { age = 47 } } }
+						46 = { BRA = { spawn_aa_helper = { age = 46 } } }
+						45 = { BRA = { spawn_aa_helper = { age = 45 } } }
+						44 = { BRA = { spawn_aa_helper = { age = 44 } } }
+						43 = { BRA = { spawn_aa_helper = { age = 43 } } }
+						42 = { BRA = { spawn_aa_helper = { age = 42 } } }
+						41 = { BRA = { spawn_aa_helper = { age = 41 } } }
+						40 = { BRA = { spawn_aa_helper = { age = 40 } } }
+						39 = { BRA = { spawn_aa_helper = { age = 39 } } }
+						38 = { BRA = { spawn_aa_helper = { age = 38 } } }
+						37 = { BRA = { spawn_aa_helper = { age = 37 } } }
+						36 = { BRA = { spawn_aa_helper = { age = 36 } } }
+						35 = { BRA = { spawn_aa_helper = { age = 35 } } }
+						34 = { BRA = { spawn_aa_helper = { age = 34 } } }
+						33 = { BRA = { spawn_aa_helper = { age = 33 } } }
+						32 = { BRA = { spawn_aa_helper = { age = 32 } } }
+						31 = { BRA = { spawn_aa_helper = { age = 31 } } }
+						30 = { BRA = { spawn_aa_helper = { age = 30 } } }
+						29 = { BRA = { spawn_aa_helper = { age = 29 } } }
+						28 = { BRA = { spawn_aa_helper = { age = 28 } } }
+						27 = { BRA = { spawn_aa_helper = { age = 27 } } }
+						26 = { BRA = { spawn_aa_helper = { age = 26 } } }
+						25 = { BRA = { spawn_aa_helper = { age = 25 } } }
+						24 = { BRA = { spawn_aa_helper = { age = 24 } } }
+						23 = { BRA = { spawn_aa_helper = { age = 23 } } }
+						22 = { BRA = { spawn_aa_helper = { age = 22 } } }
+						21 = { BRA = { spawn_aa_helper = { age = 21 } } }
+						20 = { BRA = { spawn_aa_helper = { age = 20 } } }
+						19 = { BRA = { spawn_aa_helper = { age = 19 } } }
+						18 = { BRA = { spawn_aa_helper = { age = 18 } } }
+						17 = { BRA = { spawn_aa_helper = { age = 17 } } }
+						16 = { BRA = { spawn_aa_helper = { age = 16 } } }
+						15 = { BRA = { spawn_aa_helper = { age = 15 } } }
+						14 = { BRA = { spawn_aa_helper = { age = 14 } } }
+						13 = { BRA = { spawn_aa_helper = { age = 13 } } }
+						12 = { BRA = { spawn_aa_helper = { age = 12 } } }
+						11 = { BRA = { spawn_aa_helper = { age = 11 } } }
+						10 = { BRA = { spawn_aa_helper = { age = 10 } } }
+						9 = { BRA = { spawn_aa_helper = { age = 9 } } }
+						8 = { BRA = { spawn_aa_helper = { age = 8 } } }
+						7 = { BRA = { spawn_aa_helper = { age = 7 } } }
+						6 = { BRA = { spawn_aa_helper = { age = 6 } } }
+						5 = { BRA = { spawn_aa_helper = { age = 5 } } }
+						4 = { BRA = { spawn_aa_helper = { age = 4 } } }
+						3 = { BRA = { spawn_aa_helper = { age = 3 } } }
+						2 = { BRA = { spawn_aa_helper = { age = 2 } } }
+						1 = { BRA = { spawn_aa_helper = { age = 1 } } }
+						0 = { BRA = { spawn_aa_helper = { age = 0 } } }
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_flag = albrecht_achilles_flag_ANS_monarch
+					}
+					trigger_switch = {
+						on_trigger = ruler_age 
+						100 = { BRA = { spawn_aa_helper = { age = 100 } } }
+						99 = { BRA = { spawn_aa_helper = { age = 99 } } }
+						98 = { BRA = { spawn_aa_helper = { age = 98 } } }
+						97 = { BRA = { spawn_aa_helper = { age = 97 } } }
+						96 = { BRA = { spawn_aa_helper = { age = 96 } } }
+						95 = { BRA = { spawn_aa_helper = { age = 95 } } }
+						94 = { BRA = { spawn_aa_helper = { age = 94 } } }
+						93 = { BRA = { spawn_aa_helper = { age = 93 } } }
+						92 = { BRA = { spawn_aa_helper = { age = 92 } } }
+						91 = { BRA = { spawn_aa_helper = { age = 91 } } }
+						90 = { BRA = { spawn_aa_helper = { age = 90 } } }
+						89 = { BRA = { spawn_aa_helper = { age = 89 } } }
+						88 = { BRA = { spawn_aa_helper = { age = 88 } } }
+						87 = { BRA = { spawn_aa_helper = { age = 87 } } }
+						86 = { BRA = { spawn_aa_helper = { age = 86 } } }
+						85 = { BRA = { spawn_aa_helper = { age = 85 } } }
+						84 = { BRA = { spawn_aa_helper = { age = 84 } } }
+						83 = { BRA = { spawn_aa_helper = { age = 83 } } }
+						82 = { BRA = { spawn_aa_helper = { age = 82 } } }
+						81 = { BRA = { spawn_aa_helper = { age = 81 } } }
+						80 = { BRA = { spawn_aa_helper = { age = 80 } } }
+						79 = { BRA = { spawn_aa_helper = { age = 79 } } }
+						78 = { BRA = { spawn_aa_helper = { age = 78 } } }
+						77 = { BRA = { spawn_aa_helper = { age = 77 } } }
+						76 = { BRA = { spawn_aa_helper = { age = 76 } } }
+						75 = { BRA = { spawn_aa_helper = { age = 75 } } }
+						74 = { BRA = { spawn_aa_helper = { age = 74 } } }
+						73 = { BRA = { spawn_aa_helper = { age = 73 } } }
+						72 = { BRA = { spawn_aa_helper = { age = 72 } } }
+						71 = { BRA = { spawn_aa_helper = { age = 71 } } }
+						70 = { BRA = { spawn_aa_helper = { age = 70 } } }
+						69 = { BRA = { spawn_aa_helper = { age = 69 } } }
+						68 = { BRA = { spawn_aa_helper = { age = 68 } } }
+						67 = { BRA = { spawn_aa_helper = { age = 67 } } }
+						66 = { BRA = { spawn_aa_helper = { age = 66 } } }
+						65 = { BRA = { spawn_aa_helper = { age = 65 } } }
+						64 = { BRA = { spawn_aa_helper = { age = 64 } } }
+						63 = { BRA = { spawn_aa_helper = { age = 63 } } }
+						62 = { BRA = { spawn_aa_helper = { age = 62 } } }
+						61 = { BRA = { spawn_aa_helper = { age = 61 } } }
+						60 = { BRA = { spawn_aa_helper = { age = 60 } } }
+						59 = { BRA = { spawn_aa_helper = { age = 59 } } }
+						58 = { BRA = { spawn_aa_helper = { age = 58 } } }
+						57 = { BRA = { spawn_aa_helper = { age = 57 } } }
+						56 = { BRA = { spawn_aa_helper = { age = 56 } } }
+						55 = { BRA = { spawn_aa_helper = { age = 55 } } }
+						54 = { BRA = { spawn_aa_helper = { age = 54 } } }
+						53 = { BRA = { spawn_aa_helper = { age = 53 } } }
+						52 = { BRA = { spawn_aa_helper = { age = 52 } } }
+						51 = { BRA = { spawn_aa_helper = { age = 51 } } }
+						50 = { BRA = { spawn_aa_helper = { age = 50 } } }
+						49 = { BRA = { spawn_aa_helper = { age = 49 } } }
+						48 = { BRA = { spawn_aa_helper = { age = 48 } } }
+						47 = { BRA = { spawn_aa_helper = { age = 47 } } }
+						46 = { BRA = { spawn_aa_helper = { age = 46 } } }
+						45 = { BRA = { spawn_aa_helper = { age = 45 } } }
+						44 = { BRA = { spawn_aa_helper = { age = 44 } } }
+						43 = { BRA = { spawn_aa_helper = { age = 43 } } }
+						42 = { BRA = { spawn_aa_helper = { age = 42 } } }
+						41 = { BRA = { spawn_aa_helper = { age = 41 } } }
+						40 = { BRA = { spawn_aa_helper = { age = 40 } } }
+						39 = { BRA = { spawn_aa_helper = { age = 39 } } }
+						38 = { BRA = { spawn_aa_helper = { age = 38 } } }
+						37 = { BRA = { spawn_aa_helper = { age = 37 } } }
+						36 = { BRA = { spawn_aa_helper = { age = 36 } } }
+						35 = { BRA = { spawn_aa_helper = { age = 35 } } }
+						34 = { BRA = { spawn_aa_helper = { age = 34 } } }
+						33 = { BRA = { spawn_aa_helper = { age = 33 } } }
+						32 = { BRA = { spawn_aa_helper = { age = 32 } } }
+						31 = { BRA = { spawn_aa_helper = { age = 31 } } }
+						30 = { BRA = { spawn_aa_helper = { age = 30 } } }
+						29 = { BRA = { spawn_aa_helper = { age = 29 } } }
+						28 = { BRA = { spawn_aa_helper = { age = 28 } } }
+						27 = { BRA = { spawn_aa_helper = { age = 27 } } }
+						26 = { BRA = { spawn_aa_helper = { age = 26 } } }
+						25 = { BRA = { spawn_aa_helper = { age = 25 } } }
+						24 = { BRA = { spawn_aa_helper = { age = 24 } } }
+						23 = { BRA = { spawn_aa_helper = { age = 23 } } }
+						22 = { BRA = { spawn_aa_helper = { age = 22 } } }
+						21 = { BRA = { spawn_aa_helper = { age = 21 } } }
+						20 = { BRA = { spawn_aa_helper = { age = 20 } } }
+						19 = { BRA = { spawn_aa_helper = { age = 19 } } }
+						18 = { BRA = { spawn_aa_helper = { age = 18 } } }
+						17 = { BRA = { spawn_aa_helper = { age = 17 } } }
+						16 = { BRA = { spawn_aa_helper = { age = 16 } } }
+						15 = { BRA = { spawn_aa_helper = { age = 15 } } }
+						14 = { BRA = { spawn_aa_helper = { age = 14 } } }
+						13 = { BRA = { spawn_aa_helper = { age = 13 } } }
+						12 = { BRA = { spawn_aa_helper = { age = 12 } } }
+						11 = { BRA = { spawn_aa_helper = { age = 11 } } }
+						10 = { BRA = { spawn_aa_helper = { age = 10 } } }
+						9 = { BRA = { spawn_aa_helper = { age = 9 } } }
+						8 = { BRA = { spawn_aa_helper = { age = 8 } } }
+						7 = { BRA = { spawn_aa_helper = { age = 7 } } }
+						6 = { BRA = { spawn_aa_helper = { age = 6 } } }
+						5 = { BRA = { spawn_aa_helper = { age = 5 } } }
+						4 = { BRA = { spawn_aa_helper = { age = 4 } } }
+						3 = { BRA = { spawn_aa_helper = { age = 3 } } }
+						2 = { BRA = { spawn_aa_helper = { age = 2 } } }
+						1 = { BRA = { spawn_aa_helper = { age = 1 } } }
+						0 = { BRA = { spawn_aa_helper = { age = 0 } } }
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_brandenburg_polabia.7.a
+		custom_tooltip = et_brandenburg_polabia.7.tooltip
+	}
+}

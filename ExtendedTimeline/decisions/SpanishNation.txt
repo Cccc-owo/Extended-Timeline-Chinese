@@ -101,6 +101,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SPA
+			on_change_tag_effect = yes
 			restore_country_name = yes
 			if = {
 				limit = {
@@ -221,7 +222,11 @@ country_decisions = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			legitimacy = 100
+			OR = {
+				legitimacy = 100
+				devotion = 100 
+				republican_tradition = 90 
+			}
 			iberia_region = {
 				type = all
 				NOT = { owner = { religion_group = muslim } }
@@ -279,6 +284,7 @@ country_decisions = {
 				inherit = CAS
 			}
 			change_tag = SPA
+			on_change_tag_effect = yes
 			restore_country_name = yes
 			if = {
 				limit = {

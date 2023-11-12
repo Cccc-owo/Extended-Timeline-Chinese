@@ -779,57 +779,6 @@ country_decisions = {
 		}
 	}
 
-	congo_nation = {
-		major = yes
-		potential = {
-			NOT = { exists = CNG }
-			NOT = { has_country_flag = changed_from_colonial_nation }
-			OR = {
-				is_former_colonial_nation = yes
-				is_colonial_nation = yes
-			}
-			colonial_central_africa = {
-				owned_by = ROOT
-			}
-			OR = {
-				ai = no
-				AND = {
-					ai = yes
-					num_of_cities = 2	
-				}
-			}
-		}
-		provinces_to_highlight = {
-			OR = {
-				province_id = 1166
-				province_id = 1169
-			}
-			OR = {
-				NOT = { owned_by = ROOT }
-				NOT = { is_core = ROOT }
-			}
-		}
-		allow = {
-			is_former_colonial_nation = yes
-			is_subject = no
-			is_at_war = no
-			owns_core_province = 1166
-			owns_core_province = 1169
-		}
-		effect = {
-			add_prestige = 25
-			change_tag = CNG
-			set_country_flag = changed_from_colonial_nation
-			add_country_modifier = {
-				name = "centralization_modifier"
-				duration = 7300
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	sudan_nation = {
 		major = yes
 		potential = {
@@ -1092,17 +1041,20 @@ country_decisions = {
 			factor = 1
 		}
 	}
-
-	dr_congo_nation = {
+	
+	congo_nation = {
 		major = yes
 		potential = {
-			NOT = { exists = DRC }
+			OR = {
+				NOT = { exists = CNG }
+				NOT = { exists = DRC }
+			}
 			NOT = { has_country_flag = changed_from_colonial_nation }
 			OR = {
 				is_former_colonial_nation = yes
 				is_colonial_nation = yes
 			}
-			colonial_congo = {
+			colonial_central_africa = {
 				owned_by = ROOT
 			}
 			OR = {
@@ -1115,9 +1067,12 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			OR = {
+				province_id = 1166
+				province_id = 1169
 				province_id = 3261
 				province_id = 4081
-				province_id = 1797
+				province_id = 4079
+				province_id = 3064
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -1128,13 +1083,32 @@ country_decisions = {
 			is_former_colonial_nation = yes
 			is_subject = no
 			is_at_war = no
-			owns_core_province = 3261
-			owns_core_province = 4081
-			owns_core_province = 1797
+			OR = {
+				owns_core_province = 1166
+				owns_core_province = 4079
+			}
+			OR = {
+				owns_core_province = 1169
+				owns_core_province = 3261
+			}
+			OR = {
+				owns_core_province = 3064
+				owns_core_province = 4081
+			}
 		}
 		effect = {
 			add_prestige = 25
-			change_tag = DRC
+			if = {
+				limit = { NOT = { exists = CNG } }
+				change_tag = CNG
+				if = {
+					limit = { NOT = { exists = DRC } }
+					override_country_name = CONGO
+				}
+			}
+			else = {
+				change_tag = DRC
+			}
 			set_country_flag = changed_from_colonial_nation
 			add_country_modifier = {
 				name = "centralization_modifier"

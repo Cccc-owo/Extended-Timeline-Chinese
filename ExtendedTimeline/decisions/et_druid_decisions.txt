@@ -1,0 +1,37 @@
+country_decisions = {
+    add_sacred_site = {
+        potential = {
+            religion = druidism
+        }
+        allow = {
+            adm_power = 40
+            stability = 1
+            estate_loyalty = {
+                estate = estate_church
+                loyalty = 40
+            }
+            any_owned_province = { 
+                
+                    religion = druidism
+                    NOT = {has_active_triggered_province_modifier = druid_sacred_site}
+                
+            }
+            is_at_war = no
+        }
+        effect = {
+            add_adm_power = -45
+            add_legitimacy = -5
+            random_owned_province = {
+                limit = {
+                    religion = druidism
+                    NOT = {
+                        has_active_triggered_province_modifier = druid_sacred_site
+                    }
+                }
+                
+                add_province_triggered_modifier = druid_sacred_site
+            }
+        }
+        
+    }
+}
