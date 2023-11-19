@@ -1,16 +1,16 @@
 name="延长时间线汉化计划 - Extended Timeline Chinese Localisation Project"
-version="1.15.4-r7"
+version="1.16.0-r8"
 replace_path="customizable_localization"
 dependencies={
 	"Extended Timeline"
 	"Chinese Language Mod"
 	"Chinese Language Supplementary Mod"
-	"Chinese Language Mod for 1.35"
-	"Chinese Language Supplementary Mod for 1.35"
+	"Chinese Language Mod for 1.36"
+	"Chinese Language Supplementary Mod for 1.36"
 }
 tags={
 	"Translation"
 }
 picture="thumbnail.png"
-supported_version="1.35.*"
+supported_version="1.36.*"
 remote_file_id="2897275182"
