@@ -219,6 +219,7 @@ emp_bra_pru_1 = {
         }
         add_accepted_culture_or_dip_power = {
           culture = prussian
+          dip_reward = yes
         }
         custom_tooltip = pru_spread_dev_tt
         hidden_effect = {
@@ -475,6 +476,12 @@ emp_bra_pru_1_b = {
       if = {
         limit = {
           has_dlc = "Domination"
+          OR = {
+            tag = PRU
+            tag = GER
+            has_country_flag = access_to_prussian_militarization_flag
+          }
+          has_reform = prussian_monarchy
         }
         custom_tooltip = pru_access_normal_militarization_tt
         set_country_flag = enable_second_mil_level_flag
@@ -523,6 +530,12 @@ emp_bra_pru_1_b = {
       if = {
         limit = {
           has_dlc = "Domination"
+          OR = {
+            tag = PRU
+            tag = GER
+            has_country_flag = access_to_prussian_militarization_flag
+          }
+          has_reform = prussian_monarchy
         }
         custom_tooltip = pru_access_advanced_militarization_tt
         clr_country_flag = enable_second_mil_level_flag
@@ -614,11 +627,14 @@ emp_bra_pru_2 = {
           NOT = {
             has_country_flag = declined_ANS_union_flag
           }
+          is_or_was_tag = {
+            tag = BRA
+          }
         }
         custom_tooltip = pru_access_franconian_conquest_success_tt
         tooltip = {
           change_ruler_stat = {
-            stat = mil
+            type = mil
             amount = 1
           }
           add_power_projection = {
@@ -628,6 +644,9 @@ emp_bra_pru_2 = {
         }
         custom_tooltip = zim_amongst_the_great_powers_tt
         custom_tooltip = pru_access_franconian_conquest_failure_tt
+      }
+      else = {
+        add_dip_power = 50
       }
     }
   }
@@ -667,13 +686,14 @@ emp_bra_pru_2 = {
         }
         custom_tooltip = zim_amongst_the_great_powers_tt
         change_ruler_stat = {
-          stat = mil
+          type = mil
           amount = 1
         }
       }
       add_mil_power = 100
       add_accepted_culture_or_dip_power = {
         culture = franconian
+        dip_reward = yes
       }
     }
     ai_weight = {
@@ -1096,7 +1116,7 @@ emp_bra_pru_3 = {
           has_dlc = "Domination"
         }
         change_ruler_stat = {
-          stat = mil
+          type = mil
           amount = 1
         }
       }
@@ -1539,7 +1559,7 @@ emp_bra_pru_4 = {
           has_dlc = "Domination"
         }
         change_ruler_stat = {
-          stat = adm
+          type = adm
           amount = 1
         }
         custom_tooltip = pru_spread_5_dev_tt

@@ -4,6 +4,7 @@ primary_culture = georgian
 religion = orthodox
 technology_group = eastern
 capital = 423
+add_historical_friend = TRE
 1399.1.1 = {
   monarch = {
     name = "TNªl VII"  # Giorgi VII
@@ -25,6 +26,16 @@ capital = 423
     dip = 1
     mil = 1
   }
+  every_province = {
+    limit = {
+      region = persia_region
+    }
+    ROOT = {
+      discover_province = PREV
+    }
+  }
+  discover_province = 4170
+  discover_province = 4172
 }
 1403.1.1 = {
   government_rank = 1
@@ -97,19 +108,6 @@ capital = 423
     adm = 2
     dip = 2
     mil = 1
-  }
-}
-1433.1.1 = {
-  heir = {
-    name = "TNS	T"  # Giorgi
-    monarch_name = "TNS	T VII"  # Giorgi VII
-    dynasty = "ÙT<h…bcRf"  # Bagrationi
-    birth_date = 1417.1.1
-    death_date = 1476.1.1
-    claim = 95
-    adm = 0
-    dip = 0
-    mil = 3
   }
 }
 1446.1.1 = {

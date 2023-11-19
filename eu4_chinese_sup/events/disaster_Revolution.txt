@@ -846,6 +846,7 @@ country_event = {
     days = 1
   }
   immediate = {
+    on_non_estate_disaster_end = yes
     hidden_effect = {
       if = {
         limit = {
@@ -1241,6 +1242,19 @@ country_event = {
   option = {
     name = "EVTOPTA6606"
     enact_revolution_effect = yes
+    if = {
+      limit = {
+        tag = FRA
+        OR = {
+          is_revolution_target = yes
+          is_revolutionary = yes
+        }
+        has_dlc = "Domination"
+      }
+      country_event = {
+        id = ideagroups.1
+      }
+    }
   }
 }
 country_event = {

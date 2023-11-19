@@ -3451,7 +3451,11 @@ country_event = {
   is_triggered_only = yes
   option = {
     name = flavor_jap.66.a
+    trigger = {
+      ai = yes
+    }
     add_army_tradition = 10
+    set_country_flag = jap_mushashi_5_books_flag
     add_country_modifier = {
       name = jap_mushashi_5_books_modifier
       duration = -1
@@ -3460,12 +3464,25 @@ country_event = {
   }
   option = {
     name = flavor_jap.66.b
+    trigger = {
+      ai = yes
+    }
     add_navy_tradition = 20
+    set_country_flag = jap_domineering_naval_focus_flag
     add_country_modifier = {
       name = jap_domineering_naval_focus_modifier
       duration = -1
     }
     swap_non_generic_missions = yes
+  }
+  option = {
+    name = flavor_jap.66.c
+    trigger = {
+      ai = no
+    }
+    enable_branching_mission_review_without_ai = {
+      key = JAP
+    }
   }
 }
 country_event = {
@@ -3703,9 +3720,12 @@ country_event = {
   mean_time_to_happen = {
     months = 120
   }
+  goto = capital
   immediate = {
-    capital_scope = {
-      save_event_target_as = capital_scope_event_target
+    hidden_effect = {
+      capital_scope = {
+        save_event_target_as = capital
+      }
     }
   }
   option = {
@@ -3768,7 +3788,7 @@ country_event = {
     add_devotion = 10
     add_republican_tradition = 5
     change_ruler_stat = {
-      stat = dip
+      type = dip
       amount = 1
     }
   }

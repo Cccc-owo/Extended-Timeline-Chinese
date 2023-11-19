@@ -1151,7 +1151,7 @@ country_event = {
     add_adm_power = 50
     define_advisor = {
       type = statesman
-      name = "ågt Vg0tæt ·V ^Wa"  # Charles Fran?ois de Broglie
+      name = "ågt Vg0tæt ·V ^Wa"  # Charles François de Broglie
       culture = gascon
       discount = yes
       skill = 2
@@ -1879,9 +1879,11 @@ country_event = {
   desc = {
     trigger = {
       NOT = {
-        has_adm_advisor = yes
-        has_dip_advisor = yes
-        has_mil_advisor = yes
+        AND = {
+          has_adm_advisor = yes
+          has_dip_advisor = yes
+          has_mil_advisor = yes
+        }
       }
     }
     desc = emp_mission_events.7.d2
@@ -1917,6 +1919,7 @@ country_event = {
     name = flavor_fra.102.a
     trigger = {
       hre_size = 1
+      ai = yes
     }
     add_country_modifier = {
       name = fra_charlemagne_legacy_modifier
@@ -1950,6 +1953,7 @@ country_event = {
     }
     trigger = {
       is_emperor = no
+      ai = yes
     }
     add_country_modifier = {
       name = fra_war_east_modifier
@@ -1983,6 +1987,16 @@ country_event = {
     add_dip_power = 200
     set_country_flag = fra_fufujoni_flag
     swap_non_generic_missions = yes
+  }
+  option = {
+    name = flavor_fra.102.e
+    trigger = {
+      hre_size = 1
+      ai = no
+    }
+    enable_branching_mission_review_without_ai = {
+      key = FRA_HRE
+    }
   }
 }
 country_event = {
@@ -2100,9 +2114,6 @@ country_event = {
     ai_chance = {
       factor = 10
     }
-    FRA = {
-      create_union = PRO
-    }
     if = {
       limit = {
         LOR = {
@@ -2110,6 +2121,9 @@ country_event = {
         }
       }
       inherit = LOR
+    }
+    FRA = {
+      create_union = PRO
     }
     add_stability_or_adm_power = yes
   }
@@ -3272,7 +3286,7 @@ country_event = {
     name = flavor_fra.205.b
     add_papal_influence = 50
     change_ruler_stat = {
-      stat = mil
+      type = mil
       amount = 2
     }
   }
@@ -3284,6 +3298,13 @@ country_event = {
   picture = wihgfx_FEMALE_GENERAL_eventPicture
   is_triggered_only = yes
   fire_only_once = yes
+  trigger = {
+    has_dlc = "Domination"
+    tag = FRA
+    not = {
+      is_year = 1445
+    }
+  }
   immediate = {
     hidden_effect = {
       if = {

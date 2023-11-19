@@ -1947,7 +1947,7 @@ country_event = {
         factor = 0
         NOT = {
           ruler_total_stats = {
-            stats = 15
+            amount = 15
           }
         }
       }
@@ -1964,7 +1964,7 @@ country_event = {
       modifier = {
         factor = 0
         ruler_total_stats = {
-          stats = 15
+          amount = 15
         }
       }
       modifier = {
@@ -4071,6 +4071,12 @@ country_event = {
       add_estate_loyalty = {
         estate = estate_nobles
         loyalty = 25
+      }
+    }
+    event_target:revolt_province = {
+      spawn_rebels = {
+        type = anti_tax_rebels
+        size = 2
       }
     }
     ai_chance = {

@@ -277,7 +277,7 @@ country_event = {
     name = "flavor_spa.EVTOPTA3150"
     define_advisor = {
       type = inquisitor
-      name = "XblöØe ∑V XbSKQlöæè"  # Tom√°s de Torquemada
+      name = "XblöØe ∑V XbSKQlöæè"  # Tom·s de Torquemada
       location = 215
       discount = yes
       skill = 1
@@ -1571,6 +1571,10 @@ country_event = {
         has_idea_group = religious_ideas
       }
     }
+    add_country_modifier = {
+      name = "valladolid_sepulveda_motherland"
+      duration = 3650
+    }
     if = {
       limit = {
         NOT = {
@@ -1579,19 +1583,33 @@ country_event = {
       }
       add_reform_progress_small_effect = yes
     }
-    add_country_modifier = {
-      name = "valladolid_sepulveda_motherland"
-      duration = 3650
-    }
-    custom_tooltip = flavor_spa.2.a.tt
-    hidden_effect = {
-      every_subject_country = {
-        limit = {
-          is_colonial_nation_of = ROOT
+    if = {
+      limit = {
+        any_subject_country = {
+          is_colonial_nation = yes
         }
-        add_country_modifier = {
-          name = "valladolid_sepulveda"
-          duration = 3650
+      }
+      custom_tooltip = every_colonial_subject_gains_tt
+      tooltip = {
+        random_subject_country = {
+          limit = {
+            is_colonial_nation_of = ROOT
+          }
+          add_country_modifier = {
+            name = "valladolid_sepulveda"
+            duration = 3650
+          }
+        }
+      }
+      hidden_effect = {
+        every_subject_country = {
+          limit = {
+            is_colonial_nation_of = ROOT
+          }
+          add_country_modifier = {
+            name = "valladolid_sepulveda"
+            duration = 3650
+          }
         }
       }
     }
@@ -1620,17 +1638,42 @@ country_event = {
       }
       add_reform_progress_small_effect = yes
     }
-    every_subject_country = {
+    if = {
       limit = {
-        is_colonial_nation_of = ROOT
+        any_subject_country = {
+          is_colonial_nation = yes
+        }
       }
-      add_country_modifier = {
-        name = "valladolid_las_casas"
-        duration = 3650
+      custom_tooltip = every_colonial_subject_gains_tt
+      tooltip = {
+        random_subject_country = {
+          limit = {
+            is_colonial_nation_of = ROOT
+          }
+          add_country_modifier = {
+            name = "valladolid_las_casas"
+            duration = 3650
+          }
+          add_opinion = {
+            who = ROOT
+            modifier = "angered_colonial_land_owners"
+          }
+        }
       }
-      add_opinion = {
-        who = ROOT
-        modifier = "angered_colonial_land_owners"
+      hidden_effect = {
+        every_subject_country = {
+          limit = {
+            is_colonial_nation_of = ROOT
+          }
+          add_country_modifier = {
+            name = "valladolid_las_casas"
+            duration = 3650
+          }
+          add_opinion = {
+            who = ROOT
+            modifier = "angered_colonial_land_owners"
+          }
+        }
       }
     }
   }
@@ -2814,6 +2857,9 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   fire_only_once = yes
   is_triggered_only = yes
+  immediate = {
+    on_non_estate_disaster_end = yes
+  }
   option = {
     name = flavor_spa.20.a
     add_legitimacy = 20
@@ -2852,7 +2898,7 @@ country_event = {
       duration = 7300
     }
     change_ruler_stat = {
-      stat = adm
+      type = adm
       amount = 1
     }
   }

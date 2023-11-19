@@ -7,6 +7,7 @@ technology_group = eastern
 historical_friend = FEO
 capital = 330
 fixed_capital = 330
+add_historical_friend = GEO
 1390.1.1 = {
   monarch = {
     name = "üfªRÃWS III"  # Manuel III
@@ -15,6 +16,16 @@ fixed_capital = 330
     dip = 0
     mil = 2
   }
+  every_province = {
+    limit = {
+      region = persia_region
+    }
+    ROOT = {
+      discover_province = PREV
+    }
+  }
+  discover_province = 4170
+  discover_province = 4172
 }
 1390.1.1 = {
   heir = {
