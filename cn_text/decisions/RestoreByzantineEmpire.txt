@@ -201,6 +201,12 @@ country_decisions = {
         }
       }
       set_country_flag = formed_byzantium_flag
+      if = {
+        limit = {
+          has_country_flag = BYZ_accepted_ottoman_threat
+        }
+        clr_country_flag = BYZ_accepted_ottoman_threat
+      }
     }
     ai_will_do = {
       factor = 1

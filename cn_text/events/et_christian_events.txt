@@ -21,7 +21,7 @@ province_event = {
     }
   }
   mean_time_to_happen = {
-    months = 3600
+    months = 2000
     modifier = {
       factor = 1.5
       owner = {
@@ -33,13 +33,13 @@ province_event = {
       is_religion_enabled = coptic
     }
     modifier = {
-      factor = 3
+      factor = 2
       NOT = {
         is_religion_enabled = arianism
       }
     }
     modifier = {
-      factor = 2
+      factor = 1.5
       NOT = {
         is_religion_enabled = nestorian
       }
@@ -124,12 +124,20 @@ province_event = {
     }
   }
   mean_time_to_happen = {
-    months = 4400
+    months = 2000
     modifier = {
       factor = 1.5
       owner = {
         has_country_modifier = christianity_banned
       }
+    }
+    modifier = {
+      factor = 1.5
+      continent = africa
+    }
+    modifier = {
+      factor = 0.7
+      owner = ROM
     }
     modifier = {
       factor = 0.8
@@ -171,7 +179,7 @@ province_event = {
       }
     }
     modifier = {
-      factor = 0.8
+      factor = 0.7
       OR = {
         religion = hellenism
         religion = shamanism
@@ -201,13 +209,13 @@ province_event = {
       is_religion_enabled = coptic
     }
     modifier = {
-      factor = 3
+      factor = 2
       NOT = {
         is_religion_enabled = arianism
       }
     }
     modifier = {
-      factor = 2
+      factor = 1.5
       NOT = {
         is_religion_enabled = nestorian
       }
@@ -294,7 +302,7 @@ province_event = {
     }
   }
   mean_time_to_happen = {
-    months = 1800
+    months = 2400
     modifier = {
       factor = 0.7
       religion = hellenism

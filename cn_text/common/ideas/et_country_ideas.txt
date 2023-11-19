@@ -466,28 +466,30 @@ CMB_ideas = {
     tag = CMB
   }
   free = yes
-  tribal_values = {
-    land_attrition = -0.10
+  cmb_lbokkatao = {
+    infantry_power = 0.1
+    army_tradition_from_battle = 0.1
   }
-  religious_crossroads = {
-    tolerance_heretic = 2
-    tolerance_heathen = 1
+  cmb_chey_kiri = {
+    tolerance_own = 1
+    religious_unity = 0.15
   }
-  rice_paddies = {
-    global_manpower_modifier = 0.15
+  cmb_robam_apsara = {
+    same_culture_advisor_cost = -0.15
   }
-  mekong_trade = {
-    trade_steering = 0.20
+  cmb_tonle_mekong = {
+    trade_steering = 0.1
   }
-  tonle_sap = {
-    galley_power = 0.20
+  cmb_phnum_kulen = {
+    legitimacy = 1
   }
-  longvek = {
-    global_trade_power = 0.1
+  cmb_vot = {
+    great_project_upgrade_cost = -0.25
+    prestige = 0.5
   }
-  land_of_peace_and_prosperity = {
-    stability_cost_modifier = -0.1
-    diplomatic_reputation = 2
+  cmb_aksar = {
+    institution_spread_from_true_faith = 0.1
+    global_missionary_strength = 0.2
   }
 }
 LAO_ideas = {
@@ -1054,7 +1056,7 @@ SAS_ideas = {
     discipline = 0.05
   }
   trigger = {
-    tag = SAS
+    tag = ERS
   }
   free = yes
   derafs_kavian = {
@@ -3446,7 +3448,8 @@ AYY_ideas = {
     production_efficiency = 0.1
   }
   trigger = {
-    tag = AYY
+    tag = EGY
+    dynasty = "?–2S^"  # Ayyubid
   }
   free = yes
   defence_from_crusades = {

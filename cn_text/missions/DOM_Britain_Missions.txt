@@ -1279,6 +1279,14 @@ ave_row_slot_2_continuation = {
     }
     effect = {
       add_prestige = 10
+      if = {
+        limit = {
+          culture_group = british
+        }
+        country_event = {
+          id = et_gbr.1
+        }
+      }
     }
     ai_weight = {
       factor = 250
@@ -2062,11 +2070,11 @@ ave_row_3 = {
         add_adm_power = 50
       }
       change_ruler_stat = {
-        stat = adm
+        type = adm
         amount = 1
       }
       change_ruler_stat = {
-        stat = dip
+        type = dip
         amount = 1
       }
     }
@@ -2484,8 +2492,8 @@ ave_row_3 = {
         crown_land_share = 75
       }
       check_variable = {
-        which = land_units_killed
-        value = 20000
+        which = total_land_units_killed
+        value = 100000
       }
     }
     effect = {
@@ -2531,7 +2539,6 @@ ave_row_3 = {
         duration = -1
       }
       custom_tooltip = ave_claim_the_empire_title_bt
-      set_country_flag = ave_automatic_renaming_when_government_changes
       country_event_with_insight = {
         id = flavor_gbr.20
         insight_tooltip = ave_claim_the_empire_title_at
@@ -2969,7 +2976,7 @@ gbr_row_4 = {
         west_bengal_area = {
           limit = {
             NOT = {
-              is_claim = ROOT
+              is_permanent_claim = ROOT
             }
             NOT = {
               is_core = ROOT
@@ -3184,15 +3191,39 @@ ave_row_4 = {
     trigger = {
       picardy_area = {
         type = all
-        country_or_non_sovereign_subject_holds = ROOT
+        owner = {
+          OR = {
+            tag = ROOT
+            is_subject_of = ROOT
+            overlord = {
+              is_subject_of = ROOT
+            }
+          }
+        }
       }
       west_burgundy_area = {
         type = all
-        country_or_non_sovereign_subject_holds = ROOT
+        owner = {
+          OR = {
+            tag = ROOT
+            is_subject_of = ROOT
+            overlord = {
+              is_subject_of = ROOT
+            }
+          }
+        }
       }
       bourgogne_area = {
         type = all
-        country_or_non_sovereign_subject_holds = ROOT
+        owner = {
+          OR = {
+            tag = ROOT
+            is_subject_of = ROOT
+            overlord = {
+              is_subject_of = ROOT
+            }
+          }
+        }
       }
     }
     effect = {
@@ -3481,7 +3512,7 @@ gbr_ave_the_royal_court_slot = {
         legitimacy = 95
       }
       ruler_total_stats = {
-        stats = 5
+        amount = 5
       }
       has_adm_advisor = yes
       has_dip_advisor = yes
@@ -3559,16 +3590,19 @@ gbr_row_5 = {
       num_of_allies = 3
       calc_true_if = {
         all_ally = {
-          OR = {
-            tag = POR
-            total_development = 200
-          }
-          capital_scope = {
-            same_continent = ROOT
-          }
-          has_opinion = {
-            who = ROOT
-            value = 150
+          custom_trigger_tooltip = {
+            tooltip = gbr_allies_on_the_mainland_tt
+            capital_scope = {
+              same_continent = ROOT
+            }
+            has_opinion = {
+              who = ROOT
+              value = 150
+            }
+            OR = {
+              tag = POR
+              total_development = 200
+            }
           }
         }
         amount = 3
@@ -4069,20 +4103,6 @@ ave_row_5 = {
       has_discovered = ROOT
     }
     trigger = {
-      custom_trigger_tooltip = {
-        tooltip = miss_discover_canada
-        OR = {
-          north_america = {
-            has_discovered = ROOT
-          }
-          south_america = {
-            has_discovered = ROOT
-          }
-          new_world = {
-            has_discovered = ROOT
-          }
-        }
-      }
       custom_trigger_tooltip = {
         tooltip = ave_colonize_america_tt
         num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {

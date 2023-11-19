@@ -5622,7 +5622,7 @@ set_dynastic_country_name_effect_et = {
   }
   if = {
     limit = {
-      dynasty = "Éb^·V"  # Rassid
+      dynasty = "Éb‰"  # Rassid
     }
     override_country_name = RASSID
     set_country_flag = dyn_name_rassid_flag
@@ -5734,6 +5734,14 @@ set_dynastic_country_name_effect_et = {
   }
   if = {
     limit = {
+      dynasty = "‰ÆYàsS"  # Simjurid
+    }
+    override_country_name = SIMJURID
+    set_country_flag = dyn_name_simjurid_flag
+    set_country_flag = has_dynastic_dynamic_name
+  }
+  if = {
+    limit = {
       dynasty = "Ï‚±ƒk"  # Sulayhid
     }
     override_country_name = SULAYHID
@@ -5750,7 +5758,7 @@ set_dynastic_country_name_effect_et = {
   }
   if = {
     limit = {
-      dynasty = "Ï‚±ƒüf"  # Sulaymid
+      dynasty = "Ï‚±ƒÆY"  # Sulaymid
     }
     override_country_name = SULAYMID
     set_country_flag = dyn_name_sulaymid_flag
@@ -5953,6 +5961,7 @@ clear_dynastic_country_name_effect_et = {
   clr_country_flag = dyn_name_sarbadar_flag
   clr_country_flag = dyn_name_shaddadid_flag
   clr_country_flag = dyn_name_shaybanid_flag
+  clr_country_flag = dyn_name_simjurid_flag
   clr_country_flag = dyn_name_sulayhid_flag
   clr_country_flag = dyn_name_sulaymanid_flag
   clr_country_flag = dyn_name_sulaymid_flag
@@ -5971,4 +5980,20 @@ clear_dynastic_country_name_effect_et = {
   clr_country_flag = dyn_name_ziyadid_flag
   clr_country_flag = dyn_name_ziyarid_flag
   clr_country_flag = dyn_name_zurayid_flag
+}
+spawn_aa_helper = {
+  ANS = {
+    save_event_target_as = "‰R¯eôTk"  # Ansbach
+  }
+  define_heir = {
+    name = "?–S^÷–^yr 0?–U	t¯e0"  # Albrecht Achilles
+    dynasty = event_target:Ansbach
+    culture = event_target:Ansbach
+    claim = 95
+    adm = 3
+    dip = 3
+    mil = 2
+    age = $age$
+  }
+  set_country_flag = albrecht_achilles_flag
 }

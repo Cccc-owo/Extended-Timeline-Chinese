@@ -11,7 +11,6 @@ tur_conquest_of_europe = {
     NOT = {
       map_setup = map_setup_random
     }
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_the_crescent_fleet = {
@@ -842,10 +841,12 @@ tur_conquest_of_europe = {
       }
     }
     effect = {
-      country_event_with_insight = {
-        id = flavor_tur.216
-        insight_tooltip = INSIGHT_JUST_TOOLTIP
-        effect_tooltip = " add_country_modifier = { name = tur_crown_of_rome_modifier duration = -1 }"
+      add_country_modifier = {
+        name = tur_crown_of_rome_modifier
+        duration = -1
+      }
+      country_event = {
+        id = flavor_tur.217
       }
       italy_region = {
         limit = {
@@ -1128,7 +1129,6 @@ tur_african_conquest = {
     NOT = {
       map_setup = map_setup_random
     }
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_establish_the_pashas = {
@@ -1223,6 +1223,7 @@ tur_african_conquest = {
     completed_by = 1455.1.1
     trigger = {
       has_mil_advisor_2 = yes
+      mil_tech = 49
     }
     effect = {
       if = {
@@ -2189,59 +2190,11 @@ tur_egyptian_conquest = {
     NOT = {
       map_setup = map_setup_random
     }
-    started_in = 1444.11.11
   }
   has_country_shield = yes
-  tur_aftermath_of_varna = {
-    icon = mission_battle_of_varna
-    required_missions = {}
-    position = 1
-    provinces_to_highlight = {}
-    trigger = {
-      army_size = 30
-      num_of_generals = 2
-      OR = {
-        custom_trigger_tooltip = {
-          tooltip = tur_aftermath_of_varna_ct
-          has_country_flag = tur_had_varna_event
-        }
-        is_year = 1450
-      }
-    }
-    effect = {
-      add_permanent_claim_province = {
-        province = 151
-      }
-      add_permanent_claim_province = {
-        province = 146
-      }
-      add_permanent_claim_province = {
-        province = 4701
-      }
-      add_permanent_claim_province = {
-        province = 145
-      }
-      add_permanent_claim_province = {
-        province = 1773
-      }
-      add_permanent_claim_province = {
-        province = 4699
-      }
-      add_permanent_claim_province = {
-        province = 4698
-      }
-      add_prestige = 5
-    }
-    ai_weight = {
-      factor = 250
-    }
-  }
   tur_city_of_worlds_desire = {
     icon = mission_fall_of_constantinople
-    required_missions = {
-      tur_guns_of_urban
-      tur_aftermath_of_varna
-    }
+    required_missions = {}
     position = 3
     provinces_to_highlight = {
       province_id = 151
@@ -3249,7 +3202,6 @@ tur_arabian_conquest = {
     NOT = {
       map_setup = map_setup_random
     }
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_train_the_janissary = {
@@ -3994,7 +3946,6 @@ tur_dummy_missions_path = {
     NOT = {
       has_country_flag = tur_non_muslim_path_flag
     }
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_dummy_mission_1 = {
@@ -4301,7 +4252,6 @@ tur_legalism_path = {
       map_setup = map_setup_random
     }
     has_country_flag = tur_chose_legalism
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_embrace_legalism = {
@@ -4461,7 +4411,6 @@ tur_mysticism_path = {
       map_setup = map_setup_random
     }
     has_country_flag = tur_chose_mysticism
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_embrace_mysticism = {
@@ -4632,7 +4581,6 @@ tur_non_muslim_path = {
       map_setup = map_setup_random
     }
     has_country_flag = tur_non_muslim_path_flag
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_one_faith_empire = {
@@ -4732,7 +4680,6 @@ tur_issue_the_kannuname_slot = {
     NOT = {
       map_setup = map_setup_random
     }
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_issue_the_kannuname = {
@@ -4802,7 +4749,6 @@ tur_persian_conquest = {
     NOT = {
       map_setup = map_setup_random
     }
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_refill_the_ortas = {
@@ -4885,7 +4831,6 @@ tur_persian_conquest = {
   tur_unify_anatolia = {
     icon = mission_unify_anatolia
     required_missions = {
-      tur_city_of_worlds_desire
       tur_conquer_anatolian_beyliks
     }
     position = 4
@@ -5416,7 +5361,6 @@ tur_stagnation_slot_1 = {
       map_setup = map_setup_random
     }
     has_country_flag = tur_unlocked_disaster_missions
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_oppose_the_janissaries = {
@@ -5780,7 +5724,6 @@ tur_stagnation_slot_2 = {
       map_setup = map_setup_random
     }
     has_country_flag = tur_unlocked_disaster_missions
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_revoke_the_privileges = {
@@ -5873,7 +5816,6 @@ tur_stagnation_slot_3 = {
       map_setup = map_setup_random
     }
     has_country_flag = tur_unlocked_disaster_missions
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_crush_the_eyalet_rebellion = {
@@ -6082,7 +6024,6 @@ tur_stagnation_slot_4 = {
       map_setup = map_setup_random
     }
     has_country_flag = tur_unlocked_disaster_missions
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_restructure_the_administration = {
@@ -6221,7 +6162,6 @@ tur_stagnation_slot_5 = {
       map_setup = map_setup_random
     }
     has_country_flag = tur_unlocked_disaster_missions
-    started_in = 1444.11.11
   }
   has_country_shield = yes
   tur_regulate_the_harem = {
