@@ -3,6 +3,7 @@ monarchy_mechanic = {
   heir = yes
   queen = yes
   basic_reform = yes
+  is_eligible_for_hre_emperor = yes
   valid_for_nation_designer = no
   custom_attributes = {
     enables_aristocratic_idea_group = yes
@@ -1068,6 +1069,15 @@ byzantine_autocracy_reform = {
     max_absolutism = -25
     prestige = 0.5
   }
+  conditional = {
+    allow = {
+      has_dlc = "King of Kings"
+    }
+    custom_attributes = {
+      civil_war_on_every_new_ruler = yes
+      enables_pronoias = yes
+    }
+  }
 }
 reformed_byzantine_monarchy_reform = {
   icon = "byzantine_rule"
@@ -1085,7 +1095,7 @@ reformed_byzantine_monarchy_reform = {
     global_autonomy = -0.05
     culture_conversion_cost = -0.2
     years_of_nationalism = -5
-    max_possible_parliament_seats = 8
+    yearly_absolutism = 1
   }
   conditional = {
     allow = {
@@ -1093,8 +1103,19 @@ reformed_byzantine_monarchy_reform = {
         has_dlc = "Common Sense"
         has_dlc = "Domination"
       }
+      NOT = {
+        has_dlc = "King of Kings"
+      }
     }
     has_parliament = yes
+  }
+  conditional = {
+    allow = {
+      has_dlc = "King of Kings"
+    }
+    custom_attributes = {
+      enables_pronoias = yes
+    }
   }
 }
 serbian_despotate_reform = {
@@ -1355,6 +1376,7 @@ barbary_sultanate_reform = {
 persian_government_reform = {
   icon = "persian_sultanate"
   allow_normal_conversion = yes
+  lock_level_when_selected = yes
   potential = {
     OR = {
       tag = PER
@@ -1366,12 +1388,21 @@ persian_government_reform = {
         is_playing_custom_nation = yes
       }
     }
+    NOT = {
+      religion_group = zoroastrian_group
+    }
   }
   trigger = {
     primary_culture = persian
+    NOT = {
+      religion_group = zoroastrian_group
+    }
   }
   nation_designer_trigger = {
     primary_culture = persian
+    NOT = {
+      religion_group = zoroastrian_group
+    }
   }
   valid_for_nation_designer = yes
   nation_designer_cost = 40
@@ -1381,18 +1412,69 @@ persian_government_reform = {
     tolerance_own = 2
     development_cost = -0.05
     innovativeness_gain = 0.25
-    manpower_in_accepted_culture_provinces = 0.15
   }
   custom_attributes = {
     enables_divine_idea_group = yes
     enables_aristocratic_idea_group = no
   }
+  maintain_dynasty = yes
   conditional = {
     allow = {
       has_dlc = "Cradle of Civilization"
     }
     government_abilities = {
       feudal_theocracy_mechanic
+    }
+  }
+  ai = {
+    factor = 1
+  }
+}
+zoroastrian_persian_government_reform = {
+  icon = "zoroastrian_persian_government_reform"
+  allow_normal_conversion = yes
+  lock_level_when_selected = yes
+  potential = {
+    OR = {
+      tag = PER
+      tag = ERS
+      AND = {
+        OR = {
+          has_reform = persian_government_reform
+          have_had_reform = persian_government_reform
+        }
+        is_playing_custom_nation = yes
+      }
+    }
+    religion_group = zoroastrian_group
+  }
+  trigger = {
+    primary_culture = persian
+    religion_group = zoroastrian_group
+  }
+  nation_designer_trigger = {
+    primary_culture = persian
+    religion_group = zoroastrian_group
+  }
+  valid_for_nation_designer = yes
+  nation_designer_cost = 40
+  modifiers = {
+    innovativeness_gain = 0.25
+    global_missionary_strength = 0.01
+    tolerance_own = 2
+    development_cost = -0.05
+  }
+  custom_attributes = {
+    enables_divine_idea_group = yes
+    enables_aristocratic_idea_group = no
+  }
+  maintain_dynasty = yes
+  conditional = {
+    allow = {
+      has_dlc = "King of Kings"
+    }
+    government_abilities = {
+      the_three_royal_fires_mechanic
     }
   }
   ai = {
@@ -1552,6 +1634,7 @@ stadthalter_monarchy_reform = {
     heir = no
     duration = 4
     has_term_election = yes
+    is_eligible_for_hre_emperor = no
     states_general_mechanic = {
       statists = {
         naval_forcelimit_modifier = 0.10
@@ -2153,7 +2236,6 @@ prussian_monarchy_base = {
           have_had_reform = prussian_theocratic_reform
         }
       }
-      has_reform = prussian_monarchy_base
       has_unlocked_government_reform = {
         government_reform = prussian_monarchy_base
       }
@@ -2488,10 +2570,7 @@ feudal_theocracy = {
   potential = {
     OR = {
       AND = {
-        OR = {
-          religion_group = muslim
-          religion_group = zoroastrian_group
-        }
+        religion_group = muslim
         OR = {
           has_reform = feudal_theocracy
           have_had_reform = feudal_theocracy
@@ -2501,10 +2580,7 @@ feudal_theocracy = {
     }
   }
   nation_designer_trigger = {
-    OR = {
-      religion_group = muslim
-      religion_group = zoroastrian_group
-    }
+    religion_group = muslim
   }
   legacy_equivalent = feudal_theocracy_legacy
   valid_for_nation_designer = yes
@@ -2534,10 +2610,15 @@ mughal_government = {
   icon = "peacock_throne"
   allow_normal_conversion = yes
   potential = {
-    has_dlc = "Dharma"
-    tag = MUG
-    NOT = {
-      map_setup = map_setup_random
+    OR = {
+      has_dlc = "Dharma"
+      has_dlc = "King of Kings"
+    }
+    AND = {
+      tag = MUG
+      NOT = {
+        map_setup = map_setup_random
+      }
     }
   }
   lock_level_when_selected = yes
@@ -2713,6 +2794,7 @@ revolutionary_empire_reform = {
   valid_for_new_country = no
   uses_revolutionary_zeal = yes
   revolutionary = yes
+  is_eligible_for_hre_emperor = no
   fixed_rank = 3
   modifiers = {
     global_manpower_modifier = 0.25
@@ -2721,6 +2803,7 @@ revolutionary_empire_reform = {
     governing_capacity = 150
     max_revolutionary_zeal = 50
     papal_influence = -100
+    allowed_rev_guard_fraction = 0.2
   }
   custom_attributes = {
     locked_government_type = yes
@@ -2766,6 +2849,16 @@ revolutionary_empire_reform = {
         restore_country_name = yes
         override_country_name = GURKANI_EMPIRE_STRING
         set_country_flag = is_gurkani_flag
+      }
+      if = {
+        limit = {
+          has_country_flag = is_revolutionary_iran_flag
+          is_revolutionary = no
+        }
+        clr_country_flag = is_revolutionary_iran_flag
+        restore_country_name = yes
+        override_country_name = IRAN_STRING
+        set_country_flag = is_iran_flag
       }
     }
   }
@@ -3493,6 +3586,7 @@ livonian_naval_monarchy = {
     heir = no
     duration = 4
     has_term_election = yes
+    is_eligible_for_hre_emperor = no
     states_general_mechanic = {
       statists = {
         global_colonial_growth = 10
@@ -4618,8 +4712,47 @@ separation_of_boyars_from_court_reform = {
   modifiers = {
     yearly_government_power = 1.25
     nobles_influence_modifier = -0.1
+    global_tax_modifier = 0.05
     maratha_exclusive_influence_modifier = -0.1
     rajput_exclusive_influence_modifier = -0.1
+  }
+  ai = {
+    factor = 10
+  }
+}
+reform_the_pronoiars_reform = {
+  icon = "reform_the_pronoiars_reform"
+  allow_normal_conversion = yes
+  potential = {
+    culture_group = byzantine
+  }
+  modifiers = {
+    allow_client_states = yes
+    num_of_pronoiars = 2
+  }
+  ai = {
+    factor = 10
+  }
+}
+pronoiar_monarchy_reform = {
+  icon = "pronoiar_monarchy_reform"
+  allow_normal_conversion = yes
+  potential = {
+    is_playing_custom_nation = yes
+  }
+  valid_for_nation_designer = yes
+  nation_designer_cost = 100
+  modifiers = {
+    allow_client_states = yes
+    num_of_pronoiars = 3
+  }
+  conditional = {
+    allow = {
+      has_dlc = "King of Kings"
+    }
+    custom_attributes = {
+      enables_pronoias = yes
+    }
   }
   ai = {
     factor = 10
@@ -5153,6 +5286,27 @@ ottoman_provincial_government_system_reform = {
     factor = 1
   }
 }
+legacy_of_timur_reform = {
+  icon = "legacy_of_timur_reform"
+  allow_normal_conversion = yes
+  potential = {
+    has_unlocked_government_reform = {
+      government_reform = legacy_of_timur_reform
+    }
+  }
+  modifiers = {
+    global_autonomy = -0.05
+    years_of_nationalism = -10
+    core_creation = -0.05
+  }
+  custom_attributes = {
+    legacy_of_timur_decision = yes
+  }
+  effect = {}
+  ai = {
+    factor = 10
+  }
+}
 restoration_of_clergy_reform = {
   icon = "religious_leader"
   allow_normal_conversion = yes
@@ -5364,7 +5518,10 @@ zabt_reform = {
   icon = "general_eastern_administrative"
   allow_normal_conversion = yes
   potential = {
-    has_dlc = "Dharma"
+    OR = {
+      has_dlc = "Dharma"
+      has_dlc = "King of Kings"
+    }
     tag = MUG
   }
   modifiers = {
@@ -5486,6 +5643,59 @@ administration_of_the_parliament_reform = {
     factor = 2
   }
 }
+legacy_of_eranshahr_reform = {
+  icon = "legacy_of_eranshahr_reform"
+  allow_normal_conversion = yes
+  potential = {
+    has_unlocked_government_reform = {
+      government_reform = legacy_of_eranshahr_reform
+    }
+  }
+  modifiers = {
+    same_religion_advisor_cost = -0.2
+    free_policy = 1
+  }
+  custom_attributes = {
+    reform_progress_from_advisors = yes
+  }
+  ai = {
+    factor = 2
+  }
+}
+court_of_art_and_culture_reform = {
+  icon = "court_of_art_and_culture_reform"
+  allow_normal_conversion = yes
+  potential = {
+    has_dlc = "King of Kings"
+    has_unlocked_government_reform = {
+      government_reform = court_of_art_and_culture_reform
+    }
+  }
+  modifiers = {
+    advisor_pool = 1
+    culture_conversion_cost = -0.1
+    prestige_decay = -0.005
+  }
+  conditional = {
+    allow = {
+      has_dlc = "King of Kings"
+    }
+    government_abilities = {
+      persian_influence_mechanic
+    }
+  }
+  custom_attributes = {
+    can_enforce_primary_culture = yes
+  }
+  removed_effect = {
+    country_event = {
+      id = persian_influence_events.3000
+    }
+  }
+  ai = {
+    factor = 5
+  }
+}
 royal_decree_reform = {
   icon = "king"
   allow_normal_conversion = yes
@@ -5544,6 +5754,7 @@ states_general_reform = {
     heir = no
     duration = 4
     has_term_election = yes
+    is_eligible_for_hre_emperor = no
     states_general_mechanic = {
       statists = {
         diplomatic_reputation = 1
@@ -5935,7 +6146,7 @@ political_absolutism_reform = {
   }
   modifiers = {
     administrative_efficiency = 0.025
-    max_absolutism_effect = 0.15
+    max_absolutism = 10
   }
   ai = {
     factor = 1.5
@@ -6200,6 +6411,7 @@ qng_grand_council_reform = {
 absolute_shogunate_reform = {
   icon = "absolute_shogunate_reform"
   allow_normal_conversion = no
+  lock_level_when_selected = yes
   potential = {
     OR = {
       AND = {
@@ -6229,6 +6441,7 @@ absolute_shogunate_reform = {
 japanese_divine_empire = {
   icon = "japanese_divine_empire"
   allow_normal_conversion = no
+  lock_level_when_selected = yes
   potential = {
     OR = {
       AND = {
@@ -6241,35 +6454,6 @@ japanese_divine_empire = {
     }
     NOT = {
       has_reform = absolute_shogunate_reform
-    }
-  }
-  trigger = {
-    if = {
-      limit = {
-        has_estate = estate_nobles
-      }
-      num_of_estate_privileges = {
-        estate = estate_nobles
-        value = 6
-      }
-    }
-    if = {
-      limit = {
-        has_estate = estate_burghers
-      }
-      num_of_estate_privileges = {
-        estate = estate_burghers
-        value = 6
-      }
-    }
-    if = {
-      limit = {
-        has_estate = estate_church
-      }
-      num_of_estate_privileges = {
-        estate = estate_church
-        value = 6
-      }
     }
   }
   valid_for_nation_designer = yes
@@ -6310,8 +6494,8 @@ land_christian_sun_reform = {
       region = japan_region
     }
   }
+  heir = no
   fixed_rank = 3
-  maintain_dynasty = yes
   modifiers = {
     manpower_recovery_speed = 0.15
     cb_on_religious_enemies = yes
@@ -6397,5 +6581,48 @@ courts_of_navarra = {
       }
     }
     has_parliament = yes
+  }
+}
+cawa_auxiliary_forces = {
+  icon = "cawa_auxiliary_forces"
+  allow_normal_conversion = yes
+  potential = {
+    OR = {
+      have_had_reform = cawa_auxiliary_forces
+      has_country_flag = allow_cawa_auxiliary_forces_flag
+    }
+  }
+  modifiers = {
+    manpower_in_accepted_culture_provinces = 0.10
+    may_return_manpower_on_disband = yes
+  }
+  conditional = {
+    allow = {
+      has_dlc = "Origins"
+    }
+    allow_cawa = yes
+  }
+}
+egyptian_government_reform = {
+  icon = "egyptian_government_reform"
+  allow_normal_conversion = yes
+  potential = {
+    OR = {
+      have_had_reform = egyptian_government_reform
+      has_country_flag = egyptian_government_reform_flag
+    }
+  }
+  lock_level_when_selected = yes
+  valid_for_nation_designer = yes
+  nation_designer_cost = 80
+  nation_designer_trigger = {
+    religion_group = muslim
+  }
+  modifiers = {
+    yearly_innovativeness = 0.1
+    yearly_government_power = 0.5
+  }
+  government_abilities = {
+    egyptian_westernization
   }
 }

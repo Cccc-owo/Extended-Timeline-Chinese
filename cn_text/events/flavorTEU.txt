@@ -526,6 +526,7 @@ country_event = {
     }
   }
   immediate = {
+    on_non_estate_disaster_end = yes
     hidden_effect = {
       set_country_flag = pru_danzig_victory_happend
     }
@@ -2314,7 +2315,10 @@ country_event = {
   goto = 295
   option = {
     name = flavor_teu.37.a
-    add_accepted_culture = russian
+    add_accepted_culture_or_dip_power = {
+      culture = russian
+      dip_reward = yes
+    }
     add_dip_power = 100
     295 = {
       add_base_tax = 3
