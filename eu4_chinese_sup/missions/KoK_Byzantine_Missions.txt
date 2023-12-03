@@ -55,7 +55,7 @@ MEE_BYZ_conquest_1 = {
         first_effect = " add_country_modifier = { name = EPI_epirote_forces duration = 5475 } "
         second_custom_tooltip = BYZ_if_done_via_vassalization
         second_limit = " EPI = { is_subject_of = ROOT } "
-        second_effect = " add_dip_power = 75  custom_tooltip = \" \"   add_core = 4698   custom_tooltip = \" \" "
+        second_effect = " add_dip_power = 75  custom_tooltip = " "   add_core = 4698   custom_tooltip = " " "
       }
       give_claims = {
         area = albania_area
@@ -484,7 +484,7 @@ MEE_BYZ_conquest_2 = {
     effect = {
       country_event_with_effect_insight = {
         id = MEE_Byzantine_Events.4
-        effect = " custom_tooltip = BYZ_unlock_justinians_empire_decision   custom_tooltip = \" \"   add_permanent_power_projection = { type = byz_permanent_power_projection amount = 5 }  if = { limit = { BYZ_has_rights_of_man = yes } custom_tooltip = \" \" custom_tooltip = BYZ_double_conquer_chance } "
+        effect = " custom_tooltip = BYZ_unlock_justinians_empire_decision   custom_tooltip = " "   add_permanent_power_projection = { type = byz_permanent_power_projection amount = 5 }  if = { limit = { BYZ_has_rights_of_man = yes } custom_tooltip = " " custom_tooltip = BYZ_double_conquer_chance } "
       }
     }
   }
@@ -519,7 +519,7 @@ MEE_BYZ_conquest_2 = {
       add_country_modifier_for_age = {
         name = BYZ_roman_vigour
         age = age_of_reformation
-        else = " add_army_tradition_or_mil_power = { amount = 25 }  custom_tooltip = \" \"  add_mil_power = 100 "
+        else = " add_army_tradition_or_mil_power = { amount = 25 }  custom_tooltip = " "  add_mil_power = 100 "
       }
     }
   }
@@ -713,8 +713,8 @@ MEE_BYZ_conquest_3 = {
       custom_tooltip = " "
       country_event_with_option_insight = {
         id = flavor_byz.1
-        option_1 = " 112 = { custom_tooltip = BYZ_this_province_will_lose_development custom_tooltip = \" \" add_permanent_province_modifier = { name = BYZ_chastening_of_venice duration = -1 } } capital_scope = { add_province_modifier = { name = byzantine_treasures_returned duration = 7300 } } "
-        option_2 = " if = { limit = { has_dlc = \"Domination\" } add_country_modifier = {  name = BYZ_may_construct_galleass duration = -1 } custom_tooltip = BYZ_may_only_build_in_112 } else = { 112 = { add_province_modifier = { name = BYZ_arsenal duration = -1 } } } "
+        option_1 = " 112 = { custom_tooltip = BYZ_this_province_will_lose_development custom_tooltip = " " add_permanent_province_modifier = { name = BYZ_chastening_of_venice duration = -1 } } capital_scope = { add_province_modifier = { name = byzantine_treasures_returned duration = 7300 } } "
+        option_2 = " if = { limit = { has_dlc = "Domination" } add_country_modifier = {  name = BYZ_may_construct_galleass duration = -1 } custom_tooltip = BYZ_may_only_build_in_112 } else = { 112 = { add_province_modifier = { name = BYZ_arsenal duration = -1 } } } "
       }
     }
   }
@@ -749,7 +749,7 @@ MEE_BYZ_conquest_3 = {
       add_country_modifier_for_age = {
         name = BYZ_ceasarean_conquests
         age = age_of_reformation
-        else = " add_army_tradition_or_mil_power = { amount = 25 }  custom_tooltip = \" \"  add_mil_power = 100 "
+        else = " add_army_tradition_or_mil_power = { amount = 25 }  custom_tooltip = " "  add_mil_power = 100 "
       }
       custom_tooltip = BYZ_france_ct
       hidden_effect = {
@@ -912,7 +912,7 @@ MEE_BYZ_defense_4 = {
     effect = {
       country_event_with_option_insight = {
         id = MEE_Byzantine_Events.11
-        option_1 = " if = { limit = { 145 = { owned_by = ROOT has_building = fort_15th } } 145 = { remove_building = fort_15th } } if = { limit = { 4701 = { owned_by = ROOT NOT = { has_fort_building_trigger = yes } }      } 4701 = { add_building = fort_15th } } custom_tooltip = \" \" custom_tooltip = BYZ_unlock_decision_to_upgrade_hexamilion_wall "
+        option_1 = " if = { limit = { 145 = { owned_by = ROOT has_building = fort_15th } } 145 = { remove_building = fort_15th } } if = { limit = { 4701 = { owned_by = ROOT NOT = { has_fort_building_trigger = yes } }      } 4701 = { add_building = fort_15th } } custom_tooltip = " " custom_tooltip = BYZ_unlock_decision_to_upgrade_hexamilion_wall "
         option_2 = " custom_tooltip = BYZ_upgrading_theodosian_walls_will_be_25_cheaper "
       }
     }
@@ -1039,7 +1039,7 @@ MEE_BYZ_conquest_4 = {
       }
       country_event_with_option_insight = {
         id = MEE_Byzantine_Events.8
-        option_1 = " add_accepted_culture_or_dip_power = { culture = turkish dip_reward = yes }  custom_tooltip = \" \"  custom_tooltip = BYZ_every_turkish_province tooltip = { add_nationalism = -10 } "
+        option_1 = " add_accepted_culture_or_dip_power = { culture = turkish dip_reward = yes }  custom_tooltip = " "  custom_tooltip = BYZ_every_turkish_province tooltip = { add_nationalism = -10 } "
         option_2 = " custom_tooltip = BYZ_culture_conversion_will_be_faster "
         option_3 = " custom_tooltip = BYZ_every_turkish_province tooltip = { add_province_modifier = { name = BYZ_janissary_recruitment duration = 9125 } }  custom_tooltip = BYZ_unlock_janissary_mercenary_company "
       }
@@ -1449,7 +1449,7 @@ MEE_BYZ_conquest_5 = {
       custom_tooltip = " "
       country_event_with_effect_insight = {
         id = MEE_Byzantine_Events.10
-        effect = " 330 = { set_center_level_2_center_of_trade = yes  } custom_tooltip = \" \" add_country_modifier = { name = BYZ_offshoots_defeated duration = -1 } add_power_projection_mission = { amount = 25 } "
+        effect = " 330 = { set_center_level_2_center_of_trade = yes  } custom_tooltip = " " add_country_modifier = { name = BYZ_offshoots_defeated duration = -1 } add_power_projection_mission = { amount = 25 } "
       }
     }
   }
@@ -1630,8 +1630,8 @@ MEE_BYZ_conquest_5 = {
       custom_tooltip = " "
       country_event_with_option_insight = {
         id = MEE_Byzantine_Events.9
-        option_1 = " add_adm_power = 100 custom_tooltip = \" \" 385 = { if = { limit = { NOT = { has_tax_building_trigger = yes } } add_building = cathedral } else = { add_or_upgrade_tax_building = yes } } if = { limit = { BYZ_has_leviathan = yes } custom_tooltip = \" \" custom_tooltip = BYZ_kaaba_but_only_gives_prestige_and_half_of_religious_unity } "
-        option_2 = " add_dip_power = 100 custom_tooltip = \" \" custom_tooltip = BYZ_relations custom_tooltip = \" \" 385 = { add_province_modifier = { name = BYZ_masjid_local_pilgrimages duration = -1 } } "
+        option_1 = " add_adm_power = 100 custom_tooltip = " " 385 = { if = { limit = { NOT = { has_tax_building_trigger = yes } } add_building = cathedral } else = { add_or_upgrade_tax_building = yes } } if = { limit = { BYZ_has_leviathan = yes } custom_tooltip = " " custom_tooltip = BYZ_kaaba_but_only_gives_prestige_and_half_of_religious_unity } "
+        option_2 = " add_dip_power = 100 custom_tooltip = " " custom_tooltip = BYZ_relations custom_tooltip = " " 385 = { add_province_modifier = { name = BYZ_masjid_local_pilgrimages duration = -1 } } "
       }
     }
   }
@@ -2608,8 +2608,8 @@ MEE_BYZ_economy_5 = {
       }
       country_event_with_option_insight = {
         id = MEE_Byzantine_Events.19
-        option_1 = " define_admiral = { shock = 2 fire = 3 manuever = 2 siege = 0 name = \"Loukas Notaras\" } custom_tooltip = \" \" add_navy_tradition = 20 "
-        option_2 = " add_years_of_trade_income = { years = 2 custom_tooltip = BYZ_add_2_years_of_trade_income } custom_tooltip = \" \" define_advisor = { type = trader name = \"Notaras\" skill = 3 culture = ROOT religion = ROOT cost_multiplier = 0.4  } "
+        option_1 = " define_admiral = { shock = 2 fire = 3 manuever = 2 siege = 0 name = "Loukas Notaras" } custom_tooltip = " " add_navy_tradition = 20 "
+        option_2 = " add_years_of_trade_income = { years = 2 custom_tooltip = BYZ_add_2_years_of_trade_income } custom_tooltip = " " define_advisor = { type = trader name = "Notaras" skill = 3 culture = ROOT religion = ROOT cost_multiplier = 0.4  } "
       }
     }
   }
@@ -2960,7 +2960,7 @@ MEE_BYZ_religion_1 = {
     effect = {
       country_event_with_effect_insight = {
         id = MEE_Byzantine_Events.16
-        effect = " custom_tooltip = BYZ_every_orthodox_country_clerical_buff custom_tooltip = \" \" add_patriarch_authority = 0.25 custom_tooltip = \" \" custom_tooltip = BYZ_countries_will_like_us_more custom_tooltip = \" \" custom_tooltip = BYZ_diplo_annexing_orthodox_countries "
+        effect = " custom_tooltip = BYZ_every_orthodox_country_clerical_buff custom_tooltip = " " add_patriarch_authority = 0.25 custom_tooltip = " " custom_tooltip = BYZ_countries_will_like_us_more custom_tooltip = " " custom_tooltip = BYZ_diplo_annexing_orthodox_countries "
       }
     }
   }
@@ -3008,7 +3008,7 @@ MEE_BYZ_religion_1 = {
     effect = {
       country_event_with_effect_insight = {
         id = MEE_Byzantine_Events.48
-        effect = " if = { limit = { religion = orthodox } add_patriarch_authority = 0.2 custom_tooltip = \" \" } add_country_modifier = { name = conversion_of_rome duration = 7300 } custom_tooltip = \" \" define_advisor = { type = theologian skill = 3 culture = umbrian religion = ROOT cost_multiplier = 0.25 } if = { limit = { religion = orthodox } custom_tooltip = \" \" custom_tooltip = BYZ_every_catholic } "
+        effect = " if = { limit = { religion = orthodox } add_patriarch_authority = 0.2 custom_tooltip = " " } add_country_modifier = { name = conversion_of_rome duration = 7300 } custom_tooltip = " " define_advisor = { type = theologian skill = 3 culture = umbrian religion = ROOT cost_multiplier = 0.25 } if = { limit = { religion = orthodox } custom_tooltip = " " custom_tooltip = BYZ_every_catholic } "
       }
     }
   }
@@ -3185,7 +3185,7 @@ MEE_BYZ_religion_2 = {
     effect = {
       country_event_with_effect_insight = {
         id = MEE_Byzantine_Events.17
-        effect = " tooltip = { 151 = { add_province_triggered_modifier = BYZ_seat_of_a_patriarch } custom_tooltip = BYZ_other_provinces_will_also_receive_this_modifier }  custom_tooltip = \" \"  custom_tooltip = BYZ_enable_the_hold_ecumenical_council_decision "
+        effect = " tooltip = { 151 = { add_province_triggered_modifier = BYZ_seat_of_a_patriarch } custom_tooltip = BYZ_other_provinces_will_also_receive_this_modifier }  custom_tooltip = " "  custom_tooltip = BYZ_enable_the_hold_ecumenical_council_decision "
       }
       country_event_with_effect_insight = {
         id = catholic_flavor.3

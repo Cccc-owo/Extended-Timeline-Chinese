@@ -112,7 +112,7 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
       country_event_with_option_insight = {
         id = flavor_ARB.3
         option_1 = " add_country_modifier = { name = ARB_dhimmi_self_government duration = 9125 } add_dip_power = 50 "
-        option_2 = " if = { limit = { NOT = { 379 = { religion = ROOT } } } 379 = { change_religion = ROOT } custom_tooltip = \" \" } add_years_of_income = 1 "
+        option_2 = " if = { limit = { NOT = { 379 = { religion = ROOT } } } 379 = { change_religion = ROOT } custom_tooltip = " " } add_years_of_income = 1 "
       }
     }
   }
@@ -164,15 +164,15 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
         }
         country_event_with_option_insight = {
           id = flavor_ARB.4
-          option_1 = " add_treasury = -1000 if = { limit = { has_dlc = \"Leviathan\" } 361 = { set_great_project_tier_1 = { type = al_azhar_university } } custom_tooltip = \" \" } else = { 361 = { add_province_modifier = { name = ARB_al_azhar_university duration = -1 } } } 361 = { add_or_upgrade_university_building = yes } "
-          option_2 = " if = { limit = { has_estate = estate_church } add_estate_loyalty = { estate = estate_church loyalty = 25 } custom_tooltip = \" \" }  add_country_modifier = { name = ARB_hanbali_scholars duration = 10950 } "
+          option_1 = " add_treasury = -1000 if = { limit = { has_dlc = "Leviathan" } 361 = { set_great_project_tier_1 = { type = al_azhar_university } } custom_tooltip = " " } else = { 361 = { add_province_modifier = { name = ARB_al_azhar_university duration = -1 } } } 361 = { add_or_upgrade_university_building = yes } "
+          option_2 = " if = { limit = { has_estate = estate_church } add_estate_loyalty = { estate = estate_church loyalty = 25 } custom_tooltip = " " }  add_country_modifier = { name = ARB_hanbali_scholars duration = 10950 } "
           option_3 = " add_prestige_or_monarch_power = { amount = 10 } "
         }
       }
       else = {
         country_event_with_option_insight = {
           id = flavor_ARB.4
-          option_1 = " add_treasury = -1000 if = { limit = { has_dlc = \"Leviathan\" } 361 = { set_great_project_tier_1 = { type = al_azhar_university } } custom_tooltip = \" \" } else = { 361 = { add_province_modifier = { name = ARB_al_azhar_university duration = -1 } } } add_or_upgrade_university_building = yes "
+          option_1 = " add_treasury = -1000 if = { limit = { has_dlc = "Leviathan" } 361 = { set_great_project_tier_1 = { type = al_azhar_university } } custom_tooltip = " " } else = { 361 = { add_province_modifier = { name = ARB_al_azhar_university duration = -1 } } } add_or_upgrade_university_building = yes "
           option_2 = " add_prestige_or_monarch_power = { amount = 10 } "
         }
       }
@@ -510,7 +510,7 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
             first_effect = " set_country_flag = ARB_buff_enforce_religious_unity_flag custom_tooltip = ARB_buff_enforce_religious_unity hidden_effect = { if = { limit = { has_ruler_modifier = muslim_enforced_religion } remove_country_modifier = muslim_enforced_religion add_ruler_modifier = { name = muslim_enforced_religion duration = -1 } } } "
             second_custom_tooltip = ARB_if_mysticism
             second_limit = " NOT = { piety = -0.89 } "
-            second_effect = " if = { limit = { has_dlc = \"Golden Century\" } custom_tooltip = ARB_grant_access_to_muslim_holy_orders set_country_flag = ARB_grant_access_to_muslim_holy_orders_flag } else = { add_country_modifier = { name = ARB_welcoming_the_sufis duration = -1 } } "
+            second_effect = " if = { limit = { has_dlc = "Golden Century" } custom_tooltip = ARB_grant_access_to_muslim_holy_orders set_country_flag = ARB_grant_access_to_muslim_holy_orders_flag } else = { add_country_modifier = { name = ARB_welcoming_the_sufis duration = -1 } } "
           }
         }
       }
@@ -1379,9 +1379,9 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
         }
         country_event_with_option_insight = {
           id = flavor_ARB.1
-          option_1 = " custom_tooltip = ARB_upgrade_enlist_general  custom_tooltip = \" \"  add_adm_power = 50 "
-          option_2 = " custom_tooltip = ARB_upgrade_train_horsemanship  custom_tooltip = \" \"  add_dip_power = 50 "
-          option_3 = " custom_tooltip = ARB_upgrade_conscript_from_the_tribes  custom_tooltip = \" \"  add_mil_power = 50 "
+          option_1 = " custom_tooltip = ARB_upgrade_enlist_general  custom_tooltip = " "  add_adm_power = 50 "
+          option_2 = " custom_tooltip = ARB_upgrade_train_horsemanship  custom_tooltip = " "  add_dip_power = 50 "
+          option_3 = " custom_tooltip = ARB_upgrade_conscript_from_the_tribes  custom_tooltip = " "  add_mil_power = 50 "
         }
       }
       else = {
@@ -1537,9 +1537,9 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
     effect = {
       country_event_with_option_insight = {
         id = flavor_ARB.2
-        option_1 = " define_advisor = { type = natural_scientist skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.5 } custom_tooltip = \" \" if = { limit = { has_dlc = \"Rule Britannia\" } change_innovativeness = 3 } else = { add_adm_power = 25 add_dip_power = 25 add_mil_power = 25 } "
-        option_2 = " define_advisor = { type = theologian skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.5 }  custom_tooltip = \" \"  add_adm_power = 75 "
-        option_3 = " define_advisor = { type = philosopher skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.25 }  custom_tooltip = \" \"  add_dip_power = 75 "
+        option_1 = " define_advisor = { type = natural_scientist skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.5 } custom_tooltip = " " if = { limit = { has_dlc = "Rule Britannia" } change_innovativeness = 3 } else = { add_adm_power = 25 add_dip_power = 25 add_mil_power = 25 } "
+        option_2 = " define_advisor = { type = theologian skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.5 }  custom_tooltip = " "  add_adm_power = 75 "
+        option_3 = " define_advisor = { type = philosopher skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.25 }  custom_tooltip = " "  add_dip_power = 75 "
       }
     }
   }
@@ -1783,7 +1783,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_1 = {
     effect = {
       country_event_with_effect_insight = {
         id = flavor_ARB.7
-        effect = " add_permanent_power_projection = { type = arb_permanent_power_projection amount = 5 } custom_tooltip = \" \" add_country_modifier = { name = ARB_highway_of_the_martyrs duration = -1 } custom_tooltip = ARB_cb_on_france_and_iberia "
+        effect = " add_permanent_power_projection = { type = arb_permanent_power_projection amount = 5 } custom_tooltip = " " add_country_modifier = { name = ARB_highway_of_the_martyrs duration = -1 } custom_tooltip = ARB_cb_on_france_and_iberia "
       }
     }
   }
