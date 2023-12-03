@@ -2,14 +2,19 @@
 
 汉化组成员：见 [ParaTranz](https://paratranz.cn/projects/5342/members)
 
-## v1.16.0-r8
+## v1.16.0-r9
 
-- 🌐更新ET汉化，适配 ET v1.16.0
-- 🌐更新原版汉化，适配 EU4 v1.36.0
+- 🌐更新ET汉化
+- ✍️更新地图字体
 
 ---
 
 <details><summary>历史更新日志</summary>
+
+## v1.16.0-r8
+
+- 🌐更新ET汉化，适配 ET v1.16.0
+- 🌐更新原版汉化，适配 EU4 v1.36.0
 
 ## v1.15.4-r7
 
