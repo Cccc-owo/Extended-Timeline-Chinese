@@ -1,0 +1,320 @@
+et_setup_effect = {
+  if = {
+    limit = {
+      NOT = {
+        has_global_flag = extended_timeline_mod
+      }
+    }
+    set_global_flag = extended_timeline_mod
+    if = {
+      limit = {
+        is_year = 1390
+      }
+      set_global_flag = timurids_exist_at_start
+    }
+    if = {
+      limit = {
+        ROM = {
+          ai = yes
+        }
+        NOT = {
+          is_year = 235
+        }
+      }
+      ROM = {
+        add_stability = 2
+      }
+    }
+    every_country = {
+      set_variable = {
+        which = num_of_nuclear_weapons
+        value = 0
+      }
+      set_variable = {
+        which = num_of_immigrants
+        value = 0
+      }
+    }
+    RSD = {
+      if = {
+        limit = {
+          has_ruler = "FzUØž·V"  # Muhammad
+        }
+        set_country_flag = ruler_muhammmad
+      }
+      if = {
+        limit = {
+          has_ruler = "Œ‚^ =OKQS"  # Abu Bakr
+        }
+        set_country_flag = ruler_abu_bakr
+      }
+      if = {
+        limit = {
+          has_ruler = "'k¦žS"  # 'Umar
+        }
+        set_country_flag = ruler_umar
+      }
+      if = {
+        limit = {
+          has_ruler = "eY¯eüf"  # Uthman
+        }
+        set_country_flag = ruler_uthman
+      }
+      if = {
+        limit = {
+          has_ruler = "?–Ì‘"  # Ali
+        }
+        set_country_flag = ruler_ali
+        country_event = {
+          id = et_islam.8
+          days = 90
+          random = 20
+        }
+      }
+    }
+    every_country = {
+      if = {
+        limit = {
+          is_year = 100
+          NOT = {
+            has_reform = early_gov_reform_1
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_1
+      }
+      if = {
+        limit = {
+          is_year = 230
+          NOT = {
+            has_reform = early_gov_reform_2
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_2
+      }
+      if = {
+        limit = {
+          is_year = 360
+          NOT = {
+            has_reform = early_gov_reform_3
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_3
+      }
+      if = {
+        limit = {
+          is_year = 490
+          NOT = {
+            has_reform = early_gov_reform_4
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_4
+      }
+      if = {
+        limit = {
+          is_year = 620
+          NOT = {
+            has_reform = early_gov_reform_5
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_5
+      }
+      if = {
+        limit = {
+          is_year = 750
+          NOT = {
+            has_reform = early_gov_reform_6
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_6
+      }
+      if = {
+        limit = {
+          is_year = 880
+          NOT = {
+            has_reform = early_gov_reform_7
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_7
+      }
+      if = {
+        limit = {
+          is_year = 1010
+          NOT = {
+            has_reform = early_gov_reform_8
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_8
+      }
+      if = {
+        limit = {
+          is_year = 1140
+          NOT = {
+            has_reform = early_gov_reform_9
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_9
+      }
+      if = {
+        limit = {
+          is_year = 1270
+          NOT = {
+            has_reform = early_gov_reform_10
+          }
+          NOT = {
+            tag = NAT
+          }
+          NOT = {
+            tag = REB
+          }
+          NOT = {
+            tag = PIR
+          }
+        }
+        add_government_reform = early_gov_reform_10
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          is_year = 400
+        }
+      }
+      BBR = {
+        override_country_name = MALAO
+      }
+      BSS = {
+        override_country_name = MOSYLON
+      }
+      HAF = {
+        override_country_name = OPONE
+      }
+      HEI = {
+        override_country_name = MUNDUS
+      }
+      MDI = {
+        override_country_name = SARAPION
+      }
+    }
+    if = {
+      limit = {
+        is_year = 1303
+      }
+      set_global_flag = great_lighthouse_fell
+      358 = {
+        destroy_great_project = {
+          type = lighthouse_of_alexandria
+        }
+      }
+    }
+    if = {
+      limit = {
+        is_year = 800
+      }
+      410 = {
+        destroy_great_project = {
+          type = arch_of_ctesiphon
+        }
+      }
+    }
+    if = {
+      limit = {
+        started_in = 575.12.31
+      }
+      set_global_flag = marib_dam_destroyed
+      2344 = {
+        destroy_great_project = {
+          type = marib_dam
+        }
+      }
+    }
+    if = {
+      limit = {
+        has_dlc = "American Dream"
+      }
+      USA = {
+        add_government_reform = federal_republic
+      }
+    }
+  }
+}
