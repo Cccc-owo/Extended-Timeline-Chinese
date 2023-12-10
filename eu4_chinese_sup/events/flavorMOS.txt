@@ -1,5 +1,10 @@
+########################################
+# Events for Muscovy
+# written by Ogulcan Yildirim
+########################################
 namespace = flavor_mos
 normal_or_historical_nations = yes
+# The Tatar Yoke Tribute Introduction
 country_event = {
   id = flavor_mos.1
   title = flavor_mos.1.t
@@ -30,6 +35,7 @@ country_event = {
     }
   }
 }
+# The end of the Tatar Yoke
 country_event = {
   id = flavor_mos.2
   title = flavor_mos.2.t
@@ -60,6 +66,7 @@ country_event = {
     }
   }
 }
+# The yearly Tatar Yoke Tribute
 country_event = {
   id = flavor_mos.3
   title = flavor_mos.3.t
@@ -96,6 +103,7 @@ country_event = {
       }
     }
   }
+  #Pay the Annual Tribute
   option = {
     name = flavor_mos.3.a
     custom_tooltip = flavor_mos.3.a.tt
@@ -133,6 +141,7 @@ country_event = {
       }
     }
   }
+  #Refuse to pay the Annual Tribute
   option = {
     name = flavor_mos.3.b
     custom_tooltip = flavor_mos.3.b.tt
@@ -161,6 +170,7 @@ country_event = {
     }
   }
 }
+# FROM pays Tribute
 country_event = {
   id = flavor_mos.4
   title = flavor_mos.4.t
@@ -193,12 +203,14 @@ country_event = {
     }
   }
 }
+# FROM refuses to pay Tribute
 country_event = {
   id = flavor_mos.5
   title = flavor_mos.5.t
   desc = flavor_mos.5.desc
   picture = TRIBUTE_TO_TATARS_eventPicture
   is_triggered_only = yes
+  #Retaliate against them!
   option = {
     name = flavor_mos.5.a
     mil_power_cost = 50
@@ -227,6 +239,7 @@ country_event = {
       }
     }
   }
+  #We have to live without it
   option = {
     name = flavor_mos.5.b
     add_prestige = -5
@@ -246,6 +259,7 @@ country_event = {
     }
   }
 }
+# FROM retaliates!
 country_event = {
   id = flavor_mos.6
   title = flavor_mos.6.t
@@ -271,6 +285,7 @@ country_event = {
     }
   }
 }
+# Third Period of the Muscovite Civil War - The blinding of Vasily II
 country_event = {
   id = flavor_mos.7
   title = flavor_mos.7.t
@@ -295,23 +310,23 @@ country_event = {
     hidden_effect = {
       if = {
         limit = {
-          has_leader = "·Vs|yrÌ‘ ‚s|šNaS YuÌ‘KQ"  # Dmitry Shemiaka Rurikovich
+          has_leader = "·Vs|yrÌ‘ ‚s|šNaS YuÌ‘KQ" 	# Dmitry Shemiaka Rurikovich
         }
         define_leader_to_ruler = {
-          name = "·Vs|yrÌ‘ ‚s|šNaS YuÌ‘KQ"  # Dmitry Shemiaka Rurikovich
+          name = "·Vs|yrÌ‘ ‚s|šNaS YuÌ‘KQ" 	# Dmitry Shemiaka Rurikovich
           adm = 2
           dip = 1
           mil = 5
           claim = 40
         }
         kill_leader = {
-          type = "·Vs|yrÌ‘ ‚s|šNaS YuÌ‘KQ"  # Dmitry Shemiaka Rurikovich
+          type = "·Vs|yrÌ‘ ‚s|šNaS YuÌ‘KQ" 	# Dmitry Shemiaka Rurikovich
         }
       }
       else = {
         define_ruler = {
-          name = "·Vs|yrÌ‘ ‚s|šNaS"  # Dmitry Shemiaka
-          dynasty = "YuÌ‘KQ"  # Rurikovich
+          name = "·Vs|yrÌ‘ ‚s|šNaS" 	# Dmitry Shemiaka
+          dynasty = "YuÌ‘KQ" 	# Rurikovich
           min_age = 20
           max_age = 40
           adm = 2
@@ -332,6 +347,7 @@ country_event = {
     }
   }
 }
+#The Rule of Dmitry
 country_event = {
   id = flavor_mos.8
   title = flavor_mos.8.t
@@ -357,6 +373,7 @@ country_event = {
       }
     }
   }
+  #Move against Dmitry!
   option = {
     name = flavor_mos.8.a
     set_ruler = vasily_ii
@@ -365,8 +382,8 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 2
-        leader = "·Vs|yrÌ‘ ‚s|šNaS"  # Dmitry Shemiaka
-        leader_dynasty = "YuÌ‘KQ"  # Rurikovich
+        leader = "·Vs|yrÌ‘ ‚s|šNaS" 	# Dmitry Shemiaka
+        leader_dynasty = "YuÌ‘KQ" 	# Rurikovich
       }
     }
     set_country_flag = dmitry_shemiaka_defeated
@@ -374,6 +391,7 @@ country_event = {
       factor = 1
     }
   }
+  #Abdicate the throne to Dmitry
   option = {
     name = flavor_mos.8.b
     remove_country_modifier = vasily_ii_in_exile
@@ -384,6 +402,7 @@ country_event = {
     }
   }
 }
+#Dmitry defeated
 country_event = {
   id = flavor_mos.9
   title = flavor_mos.9.t
@@ -407,11 +426,12 @@ country_event = {
     months = 2
   }
   option = {
-    name = flavor_mos.9.a
+    name = flavor_mos.9.a 	# Ok
     add_stability_or_adm_power = yes
     set_country_flag = mos_civil_war_ended_flag
   }
 }
+# The end of the Tatar Yoke - Tatar Yoke broke on its own
 country_event = {
   id = flavor_mos.10
   title = flavor_mos.10.t
@@ -453,6 +473,7 @@ country_event = {
     }
   }
 }
+# The end of the Tatar Yoke - Tatar Yoke broke from a mission
 country_event = {
   id = flavor_mos.11
   title = flavor_mos.10.t

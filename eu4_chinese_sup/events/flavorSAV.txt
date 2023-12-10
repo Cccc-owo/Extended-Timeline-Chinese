@@ -1,5 +1,10 @@
+######################################
+## Flavour Events of Savoy-Piedmont ##
+## by Pierre du Plessis             ##
+######################################
 namespace = new_flavour_sav
 normal_or_historical_nations = yes
+#The City of Turin
 country_event = {
   id = new_flavour_sav.1
   title = new_flavour_sav.1.name
@@ -79,6 +84,7 @@ country_event = {
     }
   }
 }
+#The Order of Saints Maurice and Lazarus
 country_event = {
   id = new_flavour_sav.2
   title = new_flavour_sav.2.name
@@ -133,20 +139,21 @@ country_event = {
     }
   }
 }
+#Claim to the Kingdom of Cyprus
 country_event = {
   id = new_flavour_sav.3
   title = new_flavour_sav.3.name
   desc = {
     desc = new_flavour_sav.3.desc.firstruler
     trigger = {
-      has_ruler = "bSYÙu—y I"  # Ludovico I
+      has_ruler = "bSYÙu—y I" 	# Ludovico I
     }
   }
   desc = {
     desc = new_flavour_sav.3.desc.notfirstruler
     trigger = {
       NOT = {
-        has_ruler = "bSYÙu—y I"  # Ludovico I
+        has_ruler = "bSYÙu—y I" 	# Ludovico I
       }
     }
   }
@@ -160,7 +167,7 @@ country_event = {
     NOT = {
       is_year = 1530
     }
-    dynasty = "Íè (ÑOùO"  # di Savoia
+    dynasty = "Íè (ÑOùO" 	# di Savoia
     religion_group = christian
     NOT = {
       exists = CYP
@@ -172,11 +179,11 @@ country_event = {
     }
     if = {
       limit = {
-        has_ruler = "bSYÙu—y I"  # Ludovico I
+        has_ruler = "bSYÙu—y I" 	# Ludovico I
       }
       OR = {
         is_origin_of_consort = CYP
-        has_heir = "?ñÖh„NeY"  # Amedeo
+        has_heir = "?ñÖh„NeY" 	# Amedeo
       }
       has_heir = yes
     }
@@ -195,6 +202,7 @@ country_event = {
     add_permanent_claim = 321
   }
 }
+#Antipope Felix V
 country_event = {
   id = new_flavour_sav.5
   title = new_flavour_sav.5.name
@@ -205,10 +213,10 @@ country_event = {
   }
   trigger = {
     tag = SAV
-    has_ruler = "bSYÙu—y I"  # Ludovico I
+    has_ruler = "bSYÙu—y I" 	# Ludovico I
     exists = PAP
     PAP = {
-      has_ruler = "i`¡N IV"  # Eugenius IV
+      has_ruler = "i`¡N IV" 	# Eugenius IV
     }
     is_papal_controller = no
   }

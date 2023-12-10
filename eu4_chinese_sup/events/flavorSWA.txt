@@ -1,4 +1,5 @@
 namespace = flavour_swa
+#The Founding of Karlsruhe
 country_event = {
   id = flavour_swa.1
   title = flavour_swa.1.name
@@ -6,9 +7,9 @@ country_event = {
   picture = CITY_VIEW_eventPicture
   fire_only_once = yes
   trigger = {
-    owns_core_province = 4714
+    owns_core_province = 4714 	# Durlach
     4714 = {
-      development = 20
+      development = 20 	# starts at 8
     }
     primary_culture = swabian
     government = monarchy
@@ -31,11 +32,12 @@ country_event = {
     }
   }
   option = {
+    #Found Karlsruhe
     name = flavour_swa.1.A
     add_years_of_income = -1
     4714 = {
-      change_province_name = "aSSØeÅúÑS"  # Karlsruhe
-      rename_capital = "aSSØeÅúÑS"  # Karlsruhe
+      change_province_name = "aSSØeÅúÑS" 	# Karlsruhe
+      rename_capital = "aSSØeÅúÑS" 	# Karlsruhe
       add_base_tax = 3
       add_nationalism = 15
     }
@@ -53,6 +55,7 @@ country_event = {
     }
   }
   option = {
+    #don't Found Karlsruhe
     name = flavour_swa.1.B
     add_prestige = -15
     ai_chance = {

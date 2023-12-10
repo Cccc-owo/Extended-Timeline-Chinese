@@ -99,9 +99,7 @@ DOM_japanse_missions_1 = {
   }
   jap_nanban_trade = {
     icon = mission_asian_trader
-    required_missions = {
-      jap_balance_shinokosho
-    }
+    required_missions = { jap_balance_shinokosho }
     position = 3
     provinces_to_highlight = {}
     trigger = {
@@ -243,9 +241,7 @@ DOM_japanse_missions_1 = {
   }
   jap_expand_gokaido = {
     icon = dominant_economy
-    required_missions = {
-      jap_nanban_trade
-    }
+    required_missions = { jap_nanban_trade }
     position = 4
     provinces_to_highlight = {
       AND = {
@@ -413,9 +409,7 @@ DOM_japanse_missions_1 = {
   }
   jap_maraka_kaikyou = {
     icon = mission_sail_to_the_east_indies
-    required_missions = {
-      jap_conquer_south_china
-    }
+    required_missions = { jap_conquer_south_china }
     position = 8
     provinces_to_highlight = {
       province_id = 1361
@@ -544,9 +538,7 @@ japanese_missions_eoc_1 = {
   }
   mng_censorate2 = {
     icon = mission_censorate
-    required_missions = {
-      mng_cornerstone_empire2
-    }
+    required_missions = { mng_cornerstone_empire2 }
     position = 11
     trigger = {
       NOT = {
@@ -573,9 +565,7 @@ japanese_missions_eoc_1 = {
   }
   mng_promote_grand_coordinators2 = {
     icon = mission_kowtow
-    required_missions = {
-      mng_censorate2
-    }
+    required_missions = { mng_censorate2 }
     position = 12
     trigger = {
       if = {
@@ -688,10 +678,7 @@ DOM_japanse_missions_2_a = {
   }
   jap_five_regent_houses = {
     icon = jap_five_regent_houses
-    required_missions = {
-      jap_balance_shinokosho
-      jap_edo_jidai
-    }
+    required_missions = { jap_balance_shinokosho jap_edo_jidai }
     position = 2
     trigger = {
       crown_land_share = 50
@@ -784,9 +771,7 @@ DOM_japanse_missions_2_dejima = {
   has_country_shield = yes
   jap_port_dejima = {
     icon = mission_market_place_with_asian_traders
-    required_missions = {
-      jap_nanban_trade
-    }
+    required_missions = { jap_nanban_trade }
     position = 4
     provinces_to_highlight = {
       province_id = 4182
@@ -897,9 +882,7 @@ DOM_japanse_missions_2_b = {
   }
   jap_fate_mandate = {
     icon = jap_fate_mandate
-    required_missions = {
-      jap_imjin_war
-    }
+    required_missions = { jap_imjin_war }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -1211,10 +1194,7 @@ japanese_missions_eoc_2 = {
   }
   mng_examination_system2 = {
     icon = mission_vedic_education
-    required_missions = {
-      mng_cornerstone_empire2
-      mng_reform_civil_registration2
-    }
+    required_missions = { mng_cornerstone_empire2 mng_reform_civil_registration2 }
     position = 10
     trigger = {
       OR = {
@@ -1235,7 +1215,7 @@ japanese_missions_eoc_2 = {
         }
       }
       custom_tooltip = mng_insight_30_tt
-      custom_tooltip = mng_cmb_reward_tt
+      custom_tooltip = mng_cmb_reward_tt 	# Reduce Malus of the starting negative modifier by -10% 
       if = {
         limit = {
           NOT = {
@@ -1262,7 +1242,7 @@ japanese_missions_eoc_2 = {
           }
         }
       }
-      custom_tooltip = mng_erc_reward_tt
+      custom_tooltip = mng_erc_reward_tt 	# 20 mana per Eunuch privilege 
       custom_tooltip = mng_rf_reward_tt
       custom_tooltip = mng_rc_reward_tt
       custom_tooltip = mng_rotc_reward_tt
@@ -1589,10 +1569,7 @@ japanese_missions_eoc_2 = {
   }
   mng_mutual_trade_system2 = {
     icon = mission_diplomatic_relation
-    required_missions = {
-      mng_censorate2
-      mng_examination_system2
-    }
+    required_missions = { mng_censorate2 mng_examination_system2 }
     position = 12
     trigger = {
       OR = {
@@ -1847,9 +1824,7 @@ DOM_japanse_missions_3_a = {
   }
   jap_permit_ryogaesho = {
     icon = mission_jawal_silver_mine
-    required_missions = {
-      jap_issue_new_coin
-    }
+    required_missions = { jap_issue_new_coin }
     position = 2
     trigger = {
       NOT = {
@@ -1905,10 +1880,7 @@ DOM_japanse_missions_3_a = {
   }
   jap_survey_secret_fields = {
     icon = mission_rice_field
-    required_missions = {
-      jap_five_regent_houses
-      jap_permit_ryogaesho
-    }
+    required_missions = { jap_five_regent_houses jap_permit_ryogaesho }
     position = 3
     provinces_to_highlight = {
       owned_by = ROOT
@@ -1944,9 +1916,7 @@ DOM_japanse_missions_3_a = {
   }
   jap_encourage_fudasashi = {
     icon = jap_encourage_fudasashi
-    required_missions = {
-      jap_survey_secret_fields
-    }
+    required_missions = { jap_survey_secret_fields }
     position = 4
     trigger = {
       OR = {
@@ -2164,9 +2134,7 @@ DOM_japanse_missions_3_aa = {
   has_country_shield = yes
   jap_shinto_or_christian = {
     icon = mission_locked_mission
-    required_missions = {
-      jap_new_buddha
-    }
+    required_missions = { jap_new_buddha }
     position = 8
     provinces_to_highlight = {}
     trigger = {
@@ -2245,9 +2213,7 @@ DOM_japanse_missions_3_b = {
   has_country_shield = yes
   jap_restoration = {
     icon = jap_restoration
-    required_missions = {
-      jap_new_buddha
-    }
+    required_missions = { jap_new_buddha }
     position = 8
     trigger = {
       not_in_mission_preview_mode = {
@@ -2386,9 +2352,7 @@ DOM_japanse_missions_3_c = {
   has_country_shield = yes
   jap_spread_the_christian_faith = {
     icon = jap_kirishtan_realm
-    required_missions = {
-      jap_new_buddha
-    }
+    required_missions = { jap_new_buddha }
     position = 8
     provinces_to_highlight = {}
     trigger = {
@@ -2524,9 +2488,7 @@ japanese_missions_eoc_3 = {
   }
   mng_single_whip_law2 = {
     icon = mission_african_gold
-    required_missions = {
-      mng_examination_system2
-    }
+    required_missions = { mng_examination_system2 }
     position = 11
     provinces_to_highlight = {
       OR = {
@@ -2797,9 +2759,7 @@ DOM_japanse_missions_4_a = {
   has_country_shield = yes
   jap_bugeijuuhappan_or_naval_academy_of_japan = {
     icon = mission_locked_mission
-    required_missions = {
-      jap_bushido_code
-    }
+    required_missions = { jap_bushido_code }
     position = 2
     trigger = {
       custom_trigger_tooltip = {
@@ -2823,6 +2783,7 @@ DOM_japanse_missions_4_a = {
       num_of_infantry = 100
       has_commanding_three_star = yes
       army_reformer = 3
+      ###############################
       custom_trigger_tooltip = {
         tooltip = jap_naval_academy_japan_requirements_tt
         always = no
@@ -2887,9 +2848,7 @@ DOM_japanse_missions_4_b = {
   has_country_shield = yes
   jap_bugeijuuhappan = {
     icon = jap_bugeijuuhappan
-    required_missions = {
-      jap_bushido_code
-    }
+    required_missions = { jap_bushido_code }
     position = 2
     trigger = {
       not_in_mission_preview_mode = {
@@ -2943,9 +2902,7 @@ DOM_japanse_missions_4_c = {
   has_country_shield = yes
   jap_naval_academy_of_japan = {
     icon = mission_establish_high_seas_navy
-    required_missions = {
-      jap_bushido_code
-    }
+    required_missions = { jap_bushido_code }
     position = 2
     trigger = {
       not_in_mission_preview_mode = {
@@ -2996,10 +2953,7 @@ DOM_japanse_missions_4_d = {
   has_country_shield = yes
   jap_strengthen_bakuhan_system = {
     icon = jap_strengthen_bakuhan_system
-    required_missions = {
-      jap_survey_secret_fields
-      jap_proliferation_firearms
-    }
+    required_missions = { jap_survey_secret_fields jap_proliferation_firearms }
     position = 4
     provinces_to_highlight = {
       province_id = 1028
@@ -3066,7 +3020,7 @@ DOM_japanse_missions_4_d = {
             has_port = yes
           }
           create_flagship = {
-            name = "'Y‰R…R9‚"  # O-Atakebune
+            name = "'Y‰R…R9‚" 	# O-Atakebune
             type = heavy_ship
           }
         }
@@ -3081,10 +3035,7 @@ DOM_japanse_missions_4_d = {
   }
   jap_surpass_the_west = {
     icon = mission_raid_christian_trade
-    required_missions = {
-      jap_deploy_atakebune
-      jap_conquer_north_china
-    }
+    required_missions = { jap_deploy_atakebune jap_conquer_north_china }
     position = 7
     provinces_to_highlight = {}
     trigger = {
@@ -3193,10 +3144,7 @@ japanese_missions_eoc_4 = {
   }
   mng_jing_hang_grand_canal2 = {
     icon = mng_jing_hang_grand_canal
-    required_missions = {
-      mng_tame_china_sorrow2
-      mng_expand_bogue2
-    }
+    required_missions = { mng_tame_china_sorrow2 mng_expand_bogue2 }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -3386,10 +3334,7 @@ japanese_missions_eoc_4 = {
   }
   mng_expand_yongle_dadian2 = {
     icon = mng_expand_yongle_dadian
-    required_missions = {
-      mng_single_whip_law2
-      mng_fortify_coast2
-    }
+    required_missions = { mng_single_whip_law2 mng_fortify_coast2 }
     position = 12
     provinces_to_highlight = {
       owned_by = ROOT
@@ -3563,15 +3508,13 @@ DOM_japanse_missions_5 = {
     effect = {
       country_event = {
         id = flavor_jap.66
-      }
+      } 	# Execute Order 66!
       custom_tooltip = jap_event_insight_66_tt
     }
   }
   jap_train_samurai = {
     icon = jap_train_samurai
-    required_missions = {
-      jap_bushido_code
-    }
+    required_missions = { jap_bushido_code }
     position = 2
     trigger = {
       if = {
@@ -3666,9 +3609,7 @@ DOM_japanse_missions_5 = {
   }
   jap_proliferation_firearms = {
     icon = mission_iron_and_copper
-    required_missions = {
-      jap_train_samurai
-    }
+    required_missions = { jap_train_samurai }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -3860,9 +3801,7 @@ DOM_japanse_missions_5 = {
   }
   jap_tanegashima_teppo = {
     icon = mission_pol_develop_countryside
-    required_missions = {
-      jap_proliferation_firearms
-    }
+    required_missions = { jap_proliferation_firearms }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -3993,9 +3932,7 @@ DOM_japanse_missions_5 = {
   }
   jap_financial_cliques = {
     icon = jap_financial_cliques
-    required_missions = {
-      jap_miyadaiku_method
-    }
+    required_missions = { jap_miyadaiku_method }
     position = 6
     provinces_to_highlight = {
       region = japan_region
@@ -4086,9 +4023,7 @@ DOM_japanse_missions_5 = {
   }
   jap_japanese_economic_miracle = {
     icon = mission_war_chest
-    required_missions = {
-      jap_financial_cliques
-    }
+    required_missions = { jap_financial_cliques }
     position = 8
     trigger = {
       OR = {
@@ -4232,9 +4167,7 @@ japanese_missions_eoc_5 = {
   }
   mng_outer_city_beijing2 = {
     icon = mng_outer_city_beijing
-    required_missions = {
-      mng_form_depots2
-    }
+    required_missions = { mng_form_depots2 }
     position = 10
     provinces_to_highlight = {
       province_id = 1816
@@ -4303,10 +4236,7 @@ japanese_missions_eoc_5 = {
   }
   mng_fortify_coast2 = {
     icon = mission_portuguese_malacca
-    required_missions = {
-      mng_outer_city_beijing2
-      mng_jing_hang_grand_canal2
-    }
+    required_missions = { mng_outer_city_beijing2 mng_jing_hang_grand_canal2 }
     position = 11
     provinces_to_highlight = {
       owned_by = ROOT

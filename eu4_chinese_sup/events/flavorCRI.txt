@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Crimea
+# Scripted by Henrik Lohmander
+########################################
 namespace = flavor_cri
 normal_or_historical_nations = yes
+# Death of Haji I Giray
 country_event = {
   id = flavor_cri.1
   title = "flavor_cri.1.t"
@@ -20,18 +25,18 @@ country_event = {
     }
     NOT = {
       has_global_flag = death_of_haji_giray
-    }
+    } 	# Also set in history.
   }
   immediate = {
     set_global_flag = death_of_haji_giray
   }
   option = {
-    name = "flavor_cri.1.a"
+    name = "flavor_cri.1.a" 	# We must seek Ottoman Protection!
     trigger = {
       NOT = {
         war_with = TUR
       }
-    }
+    } 	# Will never be an option if you're at war with TUR.
     ai_chance = {
       factor = 35
       modifier = {
@@ -42,11 +47,11 @@ country_event = {
       }
       modifier = {
         factor = 0.8
-        num_of_cities = 12
+        num_of_cities = 12 	# 5 extra
       }
       modifier = {
         factor = 0.8
-        num_of_cities = 15
+        num_of_cities = 15 	# 7 extra
       }
       modifier = {
         factor = 0.25
@@ -89,8 +94,8 @@ country_event = {
         has_heir = no
       }
       define_ruler = {
-        name = "fÌ‘"  # Mengli
-        dynasty = "<heg"  # Giray
+        name = "fÌ‘" 	# Mengli
+        dynasty = "<heg" 	# Giray
         age = 33
         claim = 75
       }
@@ -120,8 +125,8 @@ country_event = {
         allow_new_heir = no
       }
       define_ruler = {
-        name = "fÌ‘"  # Mengli
-        dynasty = "<heg"  # Giray
+        name = "fÌ‘" 	# Mengli
+        dynasty = "<heg" 	# Giray
         age = 33
         claim = 75
       }
@@ -160,7 +165,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_cri.1.b"
+    name = "flavor_cri.1.b" 	# We will be better of without Ottoman involvement.
     ai_chance = {
       factor = 65
       modifier = {
@@ -206,8 +211,8 @@ country_event = {
         has_heir = no
       }
       define_ruler = {
-        name = "ªR?Q SLRyr"  # Nur Devlet
-        dynasty = "<heg"  # Giray
+        name = "ªR?Q SLRyr" 	# Nur Devlet
+        dynasty = "<heg" 	# Giray
         age = 33
       }
       if = {
@@ -236,8 +241,8 @@ country_event = {
         allow_new_heir = no
       }
       define_ruler = {
-        name = "ªR?Q SLRyr"  # Nur Devlet
-        dynasty = "<heg"  # Giray
+        name = "ªR?Q SLRyr" 	# Nur Devlet
+        dynasty = "<heg" 	# Giray
         age = 33
         claim = 75
       }
@@ -276,6 +281,7 @@ country_event = {
     }
   }
 }
+# Crimean Ruler asks for Ottoman Support
 country_event = {
   id = flavor_cri.2
   title = "flavor_cri.2.t"
@@ -284,7 +290,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
-    name = "flavor_cri.2.a"
+    name = "flavor_cri.2.a" 	# Let us help this new found friend!
     ai_chance = {
       factor = 100
     }
@@ -299,9 +305,9 @@ country_event = {
         id = flavor_cri.4
       }
     }
-    add_dip_power = -50
-    add_mil_power = -50
-    add_adm_power = -50
+    add_dip_power = -50 	# Propping Up Weak Ruler
+    add_mil_power = -50 	# Propping Up Weak Ruler
+    add_adm_power = -50 	# Propping Up Weak Ruler
     if = {
       limit = {
         285 = {
@@ -412,7 +418,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_cri.2.b"
+    name = "flavor_cri.2.b" 	# Let us not risk upsetting the balance of power in the area.
     ai_chance = {
       factor = 0
     }
@@ -436,6 +442,7 @@ country_event = {
     }
   }
 }
+#Crimean Pretender Asks for Ottoman Support
 country_event = {
   id = flavor_cri.3
   title = "flavor_cri.3.t"
@@ -444,10 +451,15 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
-    name = "flavor_cri.3.a"
+    name = "flavor_cri.3.a" 	# Let us help this new found friend!
     ai_chance = {
       factor = 90
     }
+    #add_casus_belli = {
+    #	target = CRI
+    #	type = cb_vassalize_mission
+    #	months = 120
+    #}
     set_country_flag = ottoman_promise_to_crimea
     if = {
       limit = {
@@ -511,7 +523,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_cri.3.b"
+    name = "flavor_cri.3.b" 	# Let us not risk upsetting the balance of power in the area.
     ai_chance = {
       factor = 10
       modifier = {
@@ -541,6 +553,7 @@ country_event = {
     }
   }
 }
+#The Ottoman Sultan sends support
 country_event = {
   id = flavor_cri.4
   title = "flavor_cri.4.t"
@@ -583,7 +596,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_cri.4.a"
+    name = "flavor_cri.4.a" 	# We have now tied our fate to theirs.
     add_legitimacy = 30
     add_horde_unity = 30
     add_years_of_income = 0.5
@@ -597,6 +610,7 @@ country_event = {
     }
   }
 }
+#The Ottomans Refuse to Help
 country_event = {
   id = flavor_cri.5
   title = "flavor_cri.5.t"
@@ -605,7 +619,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = "flavor_cri.5.a"
+    name = "flavor_cri.5.a" 	# And so we stand alone.
     random_owned_province = {
       limit = {
         is_capital = no
@@ -617,6 +631,7 @@ country_event = {
     }
   }
 }
+#The Ottomans have installed Mengli Giray
 country_event = {
   id = flavor_cri.6
   title = "flavor_cri.6.t"
@@ -632,7 +647,7 @@ country_event = {
           flag = ottoman_promise_to_crimea
           days = 23725
         }
-      }
+      } 	# Mengli was supposedly 30 when he fled to the Ottomans and 95 when he died.
     }
     tag = CRI
     is_subject_of = TUR
@@ -643,8 +658,8 @@ country_event = {
       factor = 100
     }
     define_ruler = {
-      name = "fÌ‘"  # Mengli
-      dynasty = "<heg"  # Giray
+      name = "fÌ‘" 	# Mengli
+      dynasty = "<heg" 	# Giray
       age = 33
       claim = 75
     }
@@ -729,6 +744,7 @@ country_event = {
     }
   }
 }
+#Mengli Giray Installed in the Crimean Khanate
 country_event = {
   id = flavor_cri.7
   title = "flavor_cri.7.t"
@@ -741,6 +757,8 @@ country_event = {
     custom_tooltip = flavor_cri.7.a.tt
   }
 }
+# Restoration of the Ilkhanate (alt history)
+# by Daniel Tolman
 country_event = {
   id = flavor_cri.8
   title = "flavor_cri.8.t"
@@ -767,6 +785,7 @@ country_event = {
     create_march = ILK
     ILK = {
       change_government = monarchy
+      #set_legacy_government = despotic_monarchy
       change_primary_culture = ROOT
       change_religion = ROOT
       define_ruler = {

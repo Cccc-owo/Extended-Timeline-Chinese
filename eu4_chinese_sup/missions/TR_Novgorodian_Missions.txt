@@ -159,9 +159,7 @@ tr_novgorod_1 = {
   }
   nov_defeat_mos = {
     icon = mission_defeat_muscovy
-    required_missions = {
-      nov_recover_cores
-    }
+    required_missions = { nov_recover_cores }
     provinces_to_highlight = {
       OR = {
         area = vologda_area
@@ -268,9 +266,7 @@ tr_novgorod_2 = {
   has_country_shield = yes
   nov_conquer_tver = {
     icon = mission_conquer_tver
-    required_missions = {
-      nov_recover_cores
-    }
+    required_missions = { nov_recover_cores }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -329,10 +325,7 @@ tr_novgorod_2 = {
   }
   nov_conquer_princes = {
     icon = mission_dethrone_the_rurikovichs
-    required_missions = {
-      nov_conquer_tver
-      nov_defeat_mos
-    }
+    required_missions = { nov_conquer_tver nov_defeat_mos }
     provinces_to_highlight = {
       OR = {
         area = oka_area
@@ -342,7 +335,7 @@ tr_novgorod_2 = {
         province_id = 1960
         owner = {
           AND = {
-            dynasty = "YuÌ‘KQ"  # Rurikovich
+            dynasty = "YuÌ‘KQ" 	# Rurikovich
             OR = {
               culture_group = east_slavic
               culture_group = slavic
@@ -358,7 +351,7 @@ tr_novgorod_2 = {
       NOT = {
         any_country = {
           AND = {
-            dynasty = "YuÌ‘KQ"  # Rurikovich
+            dynasty = "YuÌ‘KQ" 	# Rurikovich
             OR = {
               culture_group = east_slavic
               culture_group = slavic
@@ -447,9 +440,7 @@ tr_novgorod_3 = {
   }
   nov_conquer_riga = {
     icon = mission_conquer_riga
-    required_missions = {
-      nov_build_navy
-    }
+    required_missions = { nov_build_navy }
     provinces_to_highlight = {
       province_id = 38
       NOT = {
@@ -489,9 +480,7 @@ tr_novgorod_3 = {
   }
   nov_conquer_danzig = {
     icon = mission_danzig_or_war
-    required_missions = {
-      nov_conquer_riga
-    }
+    required_missions = { nov_conquer_riga }
     provinces_to_highlight = {
       OR = {
         province_id = 40
@@ -555,9 +544,7 @@ tr_novgorod_3 = {
   }
   nov_conquer_lubeck = {
     icon = mission_heart_of_the_hansa
-    required_missions = {
-      nov_conquer_danzig
-    }
+    required_missions = { nov_conquer_danzig }
     provinces_to_highlight = {
       OR = {
         province_id = 45
@@ -600,10 +587,7 @@ tr_novgorod_3 = {
   }
   nov_best_node = {
     icon = mission_novgorod_the_great
-    required_missions = {
-      nov_conquer_lubeck
-      nov_scandinavian_ports
-    }
+    required_missions = { nov_conquer_lubeck nov_scandinavian_ports }
     provinces_to_highlight = {
       OR = {
         province_id = 33
@@ -665,8 +649,8 @@ tr_novgorod_4 = {
     }
     effect = {
       1955 = {
-        change_province_name = "?–SIl<hS¯eKQ"  # Arkhangelsk
-        rename_capital = "?–SIl<hS¯eKQ"  # Arkhangelsk
+        change_province_name = "?–SIl<hS¯eKQ" 	# Arkhangelsk
+        rename_capital = "?–SIl<hS¯eKQ" 	# Arkhangelsk
         add_base_tax = 2
         add_base_production = 2
         add_base_manpower = 2
@@ -701,9 +685,7 @@ tr_novgorod_4 = {
   }
   nov_white_sea = {
     icon = mission_protect_white_sea_trade
-    required_missions = {
-      nov_arkhangelsk
-    }
+    required_missions = { nov_arkhangelsk }
     provinces_to_highlight = {
       OR = {
         area = perm_area
@@ -791,9 +773,7 @@ tr_novgorod_4 = {
   }
   nov_conquer_finland = {
     icon = mission_conquer_finland
-    required_missions = {
-      nov_white_sea
-    }
+    required_missions = { nov_white_sea }
     provinces_to_highlight = {
       OR = {
         province_id = 30
@@ -870,9 +850,7 @@ tr_novgorod_4 = {
   }
   nov_scandinavian_ports = {
     icon = mission_scandinavian_port_authority
-    required_missions = {
-      nov_conquer_finland
-    }
+    required_missions = { nov_conquer_finland }
     provinces_to_highlight = {
       OR = {
         province_id = 1
@@ -960,9 +938,7 @@ tr_novgorod_5 = {
   }
   nov_cathedrals = {
     icon = mission_cathedral_cities
-    required_missions = {
-      nov_archbishopric
-    }
+    required_missions = { nov_archbishopric }
     provinces_to_highlight = {}
     trigger = {
       cathedral = 10
@@ -978,9 +954,7 @@ tr_novgorod_5 = {
   }
   nov_north_sea = {
     icon = mission_seize_north_sea_trade
-    required_missions = {
-      nov_white_sea
-    }
+    required_missions = { nov_white_sea }
     provinces_to_highlight = {
       OR = {
         AND = {

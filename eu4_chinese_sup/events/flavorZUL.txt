@@ -1,5 +1,11 @@
+##############################
+# Zulu Flavor Events
+#                            
+# Written by Ogulcan Yildirim
+##############################
 namespace = flavor_zul
 normal_or_historical_nations = yes
+# The appearance of the Zulu
 country_event = {
   id = flavor_zul.1
   title = flavor_zul.1.t
@@ -25,19 +31,19 @@ country_event = {
       owned_by = ROOT
       NOT = {
         is_capital_of = ROOT
-      }
+      } 	# The country should not get instantly killed when they are an OPM
       culture = nguni
     }
     OR = {
       is_year = 1750
-      has_country_flag = zulu_attracted_flag
+      has_country_flag = zulu_attracted_flag 	# Mission / Decision "reward" to get the Zulu much faster at the expense of historical inaccuracy
     }
     NOT = {
       exists = ZUL
     }
     NOT = {
       tag = ZIM
-    }
+    } 	# Has Decision / Mission instead to trigger the Zulu
     NOT = {
       tag = GZI
     }
@@ -50,11 +56,11 @@ country_event = {
     }
     modifier = {
       factor = 0.01
-      is_year = 1816
+      is_year = 1816 	# Actual date of their appearance
     }
     modifier = {
       factor = 0.01
-      has_country_flag = zulu_attracted_flag
+      has_country_flag = zulu_attracted_flag 	# Mission "reward" to get the Zulu much faster
     }
   }
   immediate = {
@@ -88,8 +94,8 @@ country_event = {
             is_year = 1800
           }
           define_ruler = {
-            name = "ôlaS"  # Shaka
-            dynasty = "VyÅú"  # Zulu
+            name = "ôlaS" 	# Shaka
+            dynasty = "VyÅú" 	# Zulu
             adm = 5
             dip = 3
             mil = 6
@@ -126,8 +132,8 @@ country_event = {
         add_government_reform = shaka_regime
         set_capital = 789
         capital_scope = {
-          change_province_name = "^…bÊt¶u"  # Bulawayo
-          rename_capital = "^…bÊt¶u"  # Bulawayo
+          change_province_name = "^…bÊt¶u" 	# Bulawayo
+          rename_capital = "^…bÊt¶u" 	# Bulawayo
           add_base_tax = 3
           add_base_production = 3
           add_base_manpower = 2
@@ -155,6 +161,7 @@ country_event = {
     }
   }
   option = {
+    #How dare taking our land!
     name = flavor_zul.1.a
     tooltip = {
       789 = {
@@ -173,10 +180,12 @@ country_event = {
     ai_chance = {
       factor = 1
       modifier = {
+        #Is currently busy with another war
         factor = 0
         is_at_war = yes
       }
       modifier = {
+        #Doesn't really care
         factor = 0
         num_of_owned_provinces_with = {
           region = south_africa_region
@@ -186,6 +195,7 @@ country_event = {
     }
   }
   option = {
+    #Ehh ... whatever
     name = flavor_zul.1.b
     tooltip = {
       789 = {
@@ -219,6 +229,7 @@ country_event = {
     }
   }
   option = {
+    #Screw my throne, I am a Zulu now!
     name = flavor_zul.1.c
     tooltip = {
       789 = {

@@ -1,4 +1,6 @@
+# Pirate events by Daniel Tolman
 namespace = pirates
+# Pirate elections
 country_event = {
   id = pirates.1
   title = "pirates.1.t"
@@ -37,6 +39,7 @@ country_event = {
     }
   }
   option = {
+    # Current ruler
     name = "pirates.1.keep"
     trigger = {
       has_regency = no
@@ -90,7 +93,9 @@ country_event = {
       hidden_effect = {
         for_variable_amount = {
           variable = election_term
-          effect = " add_absolutism = 10 "
+          effect = "
+            add_absolutism = 10
+          "
         }
       }
       hidden_effect = {
@@ -146,6 +151,7 @@ country_event = {
     add_karma = -5
   }
   option = {
+    # Buccaneer candidate
     name = "pirates.1.a"
     ai_chance = {
       factor = 20
@@ -158,7 +164,7 @@ country_event = {
         mil = 1
         adm = 4
         dip = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -179,6 +185,7 @@ country_event = {
     add_karma = 10
   }
   option = {
+    # Smugglers candidate
     name = "pirates.1.b"
     ai_chance = {
       factor = 20
@@ -191,7 +198,7 @@ country_event = {
         dip = 4
         adm = 1
         mil = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -212,6 +219,7 @@ country_event = {
     add_karma = 10
   }
   option = {
+    # Captains candidate
     name = "pirates.1.c"
     ai_chance = {
       factor = 20
@@ -224,7 +232,7 @@ country_event = {
         mil = 4
         adm = 1
         dip = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -245,6 +253,7 @@ country_event = {
     add_karma = 10
   }
   option = {
+    # Blackbeard!
     name = "pirates.1.d"
     ai_chance = {
       factor = 1000
@@ -262,7 +271,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "1r·VNS 0ÑžáwPR0 ‚„GY"  # Edward 'Blackbeard' Teach
+      name = "1r·VNS 0ÑžáwPR0 ‚„GY" 	# Edward 'Blackbeard' Teach
       adm = 3
       dip = 3
       mil = 6
@@ -277,7 +286,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "‰R®YsY‹s„vYÇN"  # Queen Anne's Revenge
+          name = "‰R®YsY‹s„vYÇN" 	# Queen Anne's Revenge
           type = heavy_ship
         }
       }
@@ -290,7 +299,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "‰R®YsY‹s„vYÇN"  # Queen Anne's Revenge
+          name = "‰R®YsY‹s„vYÇN" 	# Queen Anne's Revenge
           type = heavy_ship
         }
       }
@@ -301,6 +310,7 @@ country_event = {
     set_global_flag = blackbeard_flag
   }
   option = {
+    # Calico Jack
     name = "pirates.1.e"
     ai_chance = {
       factor = 500
@@ -318,7 +328,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "0‹vÉh^0 pgKQ ÉbKQÆY"  # 'Calico' Jack Rackham
+      name = "0‹vÉh^0 pgKQ ÉbKQÆY" 	# 'Calico' Jack Rackham
       adm = 2
       dip = 4
       mil = 4
@@ -333,7 +343,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "Ñ‘¯e˜"  # Kingston
+          name = "Ñ‘¯e˜" 	# Kingston
           type = heavy_ship
         }
       }
@@ -346,7 +356,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "Ñ‘¯e˜"  # Kingston
+          name = "Ñ‘¯e˜" 	# Kingston
           type = heavy_ship
         }
       }
@@ -357,6 +367,7 @@ country_event = {
     set_global_flag = calico_jack
   }
   option = {
+    # Anne Bonny
     name = "pirates.1.f"
     ai_chance = {
       factor = 500
@@ -374,7 +385,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "‰R®Y ZS<S"  # Anne Bonny
+      name = "‰R®Y ZS<S" 	# Anne Bonny
       adm = 4
       dip = 2
       mil = 5
@@ -390,7 +401,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "ZÉ^"  # William
+          name = "ZÉ^" 	# William
           type = heavy_ship
         }
       }
@@ -403,7 +414,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "ZÉ^"  # William
+          name = "ZÉ^" 	# William
           type = heavy_ship
         }
       }
@@ -414,6 +425,7 @@ country_event = {
     set_global_flag = anne_bonny
   }
   option = {
+    # Mary Read
     name = "pirates.1.g"
     ai_chance = {
       factor = 500
@@ -431,7 +443,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "›sKN ^t·V"  # Mary Read
+      name = "›sKN ^t·V" 	# Mary Read
       adm = 3
       dip = 3
       mil = 5
@@ -444,6 +456,7 @@ country_event = {
     set_global_flag = mary_read
   }
   option = {
+    # Charles Vane
     name = "pirates.1.h"
     ai_chance = {
       factor = 500
@@ -461,7 +474,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "ågS¯e ƒi`"  # Charles Vane
+      name = "ågS¯e ƒi`" 	# Charles Vane
       adm = 2
       dip = 3
       mil = 5
@@ -476,7 +489,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "8n O"  # Ranger
+          name = "8n O" 	# Ranger
           type = heavy_ship
         }
       }
@@ -489,7 +502,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "8n O"  # Ranger
+          name = "8n O" 	# Ranger
           type = heavy_ship
         }
       }
@@ -500,6 +513,7 @@ country_event = {
     set_global_flag = charles_vane
   }
   option = {
+    # Black Caesar
     name = "pirates.1.i"
     ai_chance = {
       factor = 500
@@ -517,7 +531,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "ÑžïQ’d"  # Black Caesar
+      name = "ÑžïQ’d" 	# Black Caesar
       adm = 4
       dip = 3
       mil = 5
@@ -529,6 +543,7 @@ country_event = {
     set_global_flag = black_caesar
   }
   option = {
+    # Ching Shih
     name = "pirates.1.j"
     ai_chance = {
       factor = 500
@@ -547,7 +562,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "Ñl"  # Ching Shih
+      name = "Ñl" 	# Ching Shih
       adm = 5
       dip = 5
       mil = 6
@@ -563,7 +578,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "¢u×e"  # Red Flag
+          name = "¢u×e" 	# Red Flag
           type = heavy_ship
         }
       }
@@ -576,7 +591,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "¢u×e"  # Red Flag
+          name = "¢u×e" 	# Red Flag
           type = heavy_ship
         }
       }
@@ -587,6 +602,7 @@ country_event = {
     set_global_flag = ching_shih
   }
   option = {
+    # Jack Ward
     name = "pirates.1.k"
     ai_chance = {
       factor = 500
@@ -604,7 +620,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "pgKQ ƒl·V"  # Jack Ward
+      name = "pgKQ ƒl·V" 	# Jack Ward
       adm = 3
       dip = 3
       mil = 5
@@ -619,7 +635,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "<yir"  # Gift
+          name = "<yir" 	# Gift
           type = heavy_ship
         }
       }
@@ -632,7 +648,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "<yir"  # Gift
+          name = "<yir" 	# Gift
           type = heavy_ship
         }
       }
@@ -643,6 +659,7 @@ country_event = {
     set_global_flag = jack_ward
   }
   option = {
+    # Laurens de Graaf
     name = "pirates.1.l"
     ai_chance = {
       factor = 500
@@ -660,7 +677,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "³R&O¯e ·V kÉb+Y"  # Laurens de Graaf
+      name = "³R&O¯e ·V kÉb+Y" 	# Laurens de Graaf
       adm = 2
       dip = 4
       mil = 5
@@ -675,7 +692,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "N†"  # Tigre
+          name = "N†" 	# Tigre
           type = heavy_ship
         }
       }
@@ -688,7 +705,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "N†"  # Tigre
+          name = "N†" 	# Tigre
           type = heavy_ship
         }
       }
@@ -699,6 +716,7 @@ country_event = {
     set_global_flag = laurens_de_graaf
   }
   option = {
+    # Michel de Grammont
     name = "pirates.1.m"
     ai_chance = {
       factor = 500
@@ -716,7 +734,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "s|GkS ·V <hÉb™„yr"  # Michel de Grammont
+      name = "s|GkS ·V <hÉb™„yr" 	# Michel de Grammont
       adm = 3
       dip = 3
       mil = 5
@@ -731,7 +749,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "ÈTSê"  # Hardi
+          name = "ÈTSê" 	# Hardi
           type = heavy_ship
         }
       }
@@ -744,7 +762,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "ÈTSê"  # Hardi
+          name = "ÈTSê" 	# Hardi
           type = heavy_ship
         }
       }
@@ -755,6 +773,7 @@ country_event = {
     set_global_flag = michel_de_gramont
   }
   option = {
+    # Pieter Pietersen Heyn
     name = "pirates.1.n"
     ai_chance = {
       factor = 500
@@ -770,7 +789,7 @@ country_event = {
       primary_culture = dutch
     }
     define_ruler = {
-      name = "®vyr wmi`"  # Piet Heyn
+      name = "®vyr wmi`" 	# Piet Heyn
       adm = 3
       dip = 4
       mil = 5
@@ -785,7 +804,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "wƒpQêšN"  # Hollandia
+          name = "wƒpQêšN" 	# Hollandia
           type = heavy_ship
         }
       }
@@ -798,7 +817,7 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "wƒpQêšN"  # Hollandia
+          name = "wƒpQêšN" 	# Hollandia
           type = heavy_ship
         }
       }
@@ -809,6 +828,7 @@ country_event = {
     set_global_flag = piet_hein
   }
   option = {
+    # Grace O'Malley
     name = "pirates.1.o"
     ai_chance = {
       factor = 500
@@ -835,6 +855,7 @@ country_event = {
     }
   }
   option = {
+    # François l'Olonnais
     name = "pirates.1.p"
     ai_chance = {
       factor = 500
@@ -852,7 +873,7 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "Vg0tæt WW…Q"  # François l'Olonnais
+      name = "Vg0tæt WW…Q" 	# François l'Olonnais
       adm = 3
       dip = 1
       mil = 5
@@ -868,6 +889,8 @@ country_event = {
     clr_country_flag = pirate_mutineer_council
   }
 }
+###### Faction events ######
+# Sunken Treasure
 country_event = {
   id = pirates.10
   title = "pirates.10.t"
@@ -896,6 +919,7 @@ country_event = {
         continent = europe
       }
       any_subject_country = {
+        # potosi or mexico
         OR = {
           owns_core_province = 852
           owns_core_province = 795
@@ -911,6 +935,7 @@ country_event = {
             continent = europe
           }
           any_subject_country = {
+            # potosi or mexico
             OR = {
               owns_core_province = 852
               owns_core_province = 795
@@ -939,10 +964,13 @@ country_event = {
       10 = {
         add_years_of_income = 2
       }
-      90 = {}
+      90 = {
+        # nothing happens
+      }
     }
   }
 }
+# Tyrant Captain
 country_event = {
   id = pirates.11
   title = "pirates.11.t"
@@ -966,12 +994,13 @@ country_event = {
     }
   }
   option = {
+    # mutiny!
     name = "pirates.11.a"
     add_stability = -1
     add_faction_influence = {
       faction = pr_buccaneers
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_captains
@@ -980,12 +1009,13 @@ country_event = {
     }
   }
   option = {
+    # the captain's word is law
     name = "pirates.11.b"
     add_scaled_republican_tradition = -10
     add_faction_influence = {
       faction = pr_captains
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_buccaneers
@@ -994,6 +1024,7 @@ country_event = {
     }
   }
 }
+# Division of Plunder
 country_event = {
   id = pirates.12
   title = "pirates.12.t"
@@ -1022,7 +1053,7 @@ country_event = {
     add_faction_influence = {
       faction = pr_smugglers
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_buccaneers
@@ -1035,7 +1066,7 @@ country_event = {
     add_faction_influence = {
       faction = pr_captains
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_buccaneers
@@ -1043,6 +1074,7 @@ country_event = {
     }
   }
 }
+# Smuggler acquires forged licenses
 country_event = {
   id = pirates.13
   title = "pirates.13.t"
@@ -1082,6 +1114,7 @@ country_event = {
     }
   }
 }
+# Privateer turns pirate
 country_event = {
   id = pirates.14
   title = "pirates.14.t"
@@ -1168,6 +1201,7 @@ country_event = {
     }
   }
 }
+# Capture of a slaver ship
 country_event = {
   id = pirates.15
   title = "pirates.15.t"
@@ -1213,7 +1247,7 @@ country_event = {
     add_faction_influence = {
       faction = pr_smugglers
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_buccaneers
@@ -1222,6 +1256,7 @@ country_event = {
     }
   }
 }
+# Careening
 country_event = {
   id = pirates.16
   title = "pirates.16.t"
@@ -1249,6 +1284,7 @@ country_event = {
       influence = 10
     }
     add_country_modifier = {
+      # ship durability
       name = "thorough_careening"
       duration = 3650
     }
@@ -1260,11 +1296,13 @@ country_event = {
       influence = 10
     }
     add_country_modifier = {
+      # naval morale
       name = "relaxed_careening"
       duration = 3650
     }
   }
 }
+# Fences Struggling
 country_event = {
   id = pirates.17
   title = "pirates.17.t"
@@ -1293,6 +1331,7 @@ country_event = {
     }
   }
 }
+# Electing a new quartermaster
 country_event = {
   id = pirates.18
   title = "pirates.18.t"
@@ -1322,6 +1361,7 @@ country_event = {
     }
   }
   option = {
+    # A spokesman for the crew
     name = "pirates.18.a"
     define_advisor = {
       type = quartermaster
@@ -1332,7 +1372,7 @@ country_event = {
     add_faction_influence = {
       faction = pr_buccaneers
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_captains
@@ -1341,6 +1381,7 @@ country_event = {
     }
   }
   option = {
+    # The captain's puppet
     name = "pirates.18.b"
     define_advisor = {
       type = naval_reformer
@@ -1351,7 +1392,7 @@ country_event = {
     add_faction_influence = {
       faction = pr_captains
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_buccaneers
@@ -1360,6 +1401,7 @@ country_event = {
     }
   }
 }
+# Crew Blacklisted
 country_event = {
   id = pirates.19
   title = "pirates.19.t"
@@ -1382,7 +1424,7 @@ country_event = {
     add_faction_influence = {
       faction = pr_smugglers
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_buccaneers
@@ -1396,7 +1438,7 @@ country_event = {
     add_faction_influence = {
       faction = pr_buccaneers
       influence = 10
-      perform_readjustment = no
+      perform_readjustment = no 	# will be balanced by the below line
     }
     add_faction_influence = {
       faction = pr_smugglers

@@ -40,14 +40,14 @@ country_decisions = {
     }
     provinces_to_highlight = {
       OR = {
-        province_id = 551
-        province_id = 546
-        province_id = 2082
-        province_id = 547
-        province_id = 2050
-        province_id = 560
-        province_id = 552
-        province_id = 548
+        province_id = 551 	# Mandla
+        province_id = 546 	# Nagpur
+        province_id = 2082 	# Raipur
+        province_id = 547 	# Bastar
+        province_id = 2050 	# Chanda
+        province_id = 560 	# Jharkhand
+        province_id = 552 	# Cuttack
+        province_id = 548 	# Illichpur
       }
       OR = {
         NOT = {
@@ -65,18 +65,19 @@ country_decisions = {
       adm_tech = 10
       is_at_war = no
       is_free_or_tributary_trigger = yes
-      owns_core_province = 551
-      owns_core_province = 2082
-      owns_core_province = 547
-      owns_core_province = 2050
-      owns_core_province = 560
-      owns_core_province = 546
+      owns_core_province = 551 	# Mandla
+      owns_core_province = 2082 	# Raipur
+      owns_core_province = 547 	# Bastar
+      owns_core_province = 2050 	# Chanda
+      owns_core_province = 560 	# Jharkhand
+      owns_core_province = 546 	# Nagpur
       546 = {
+        #Nagpur
         is_state = yes
       }
       OR = {
-        owns_core_province = 552
-        owns_core_province = 548
+        owns_core_province = 552 	# Cuttack
+        owns_core_province = 548 	# Illichpur
       }
     }
     effect = {
@@ -86,8 +87,8 @@ country_decisions = {
       change_tag = NAG
       on_change_tag_effect = yes
       546 = {
-        change_province_name = "±ê<hfmS"  # Nagpur
-        rename_capital = "±ê<hfmS"  # Nagpur
+        change_province_name = "±ê<hfmS" 	# Nagpur
+        rename_capital = "±ê<hfmS" 	# Nagpur
         add_base_tax = 1
         add_base_production = 1
         add_base_manpower = 1
@@ -163,7 +164,7 @@ country_decisions = {
         }
         country_event = {
           id = ideagroups.1
-        }
+        } 	# Swap Ideas
       }
       set_country_flag = formed_nagpur_flag
     }
@@ -173,12 +174,12 @@ country_decisions = {
         factor = 0
         NOT = {
           calc_true_if = {
-            owns_core_province = 551
-            owns_core_province = 2082
-            owns_core_province = 547
-            owns_core_province = 2050
-            owns_core_province = 560
-            owns_core_province = 546
+            owns_core_province = 551 	# Mandla
+            owns_core_province = 2082 	# Raipur
+            owns_core_province = 547 	# Bastar
+            owns_core_province = 2050 	# Chanda
+            owns_core_province = 560 	# Jharkhand
+            owns_core_province = 546 	# Nagpur
             amount = 3
           }
         }

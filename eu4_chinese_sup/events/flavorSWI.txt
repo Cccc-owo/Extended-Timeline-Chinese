@@ -1,4 +1,9 @@
+########################################
+# Event for Switzerland
+# written by Katya Magnusson
+########################################
 namespace = flavor_swi
+#Paracelsus
 country_event = {
   id = flavor_swi.1
   title = flavor_swi.1.t
@@ -30,11 +35,11 @@ country_event = {
     }
     modifier = {
       factor = 0.8
-      owns = 1869
+      owns = 1869 	# Zürich
     }
     modifier = {
       factor = 0.8
-      owns = 134
+      owns = 134 	# Vienna
     }
     modifier = {
       factor = 0.8
@@ -45,13 +50,17 @@ country_event = {
     name = "flavor_swi.1.a"
     define_advisor = {
       type = natural_scientist
-      name = "^Éb^XSÏ‚¯e"  # Paracelsus
+      name = "^Éb^XSÏ‚¯e" 	# Paracelsus
       culture = swiss
       discount = yes
       skill = 2
     }
   }
 }
+##########################################################
+# Dynamic Events for the Swiss (written by James Beaumont)
+##########################################################
+#Genevan independence events
 country_event = {
   id = flavor_swi.2
   title = flavor_swi.2.t
@@ -89,6 +98,7 @@ country_event = {
     }
   }
 }
+# Geneva asks for Swiss provinces (Savoy)
 country_event = {
   id = flavor_swi.201
   title = flavor_swi.201.t
@@ -143,6 +153,7 @@ country_event = {
     }
   }
 }
+# Geneva is denied
 country_event = {
   id = flavor_swi.202
   title = flavor_swi.202.t
@@ -167,6 +178,7 @@ country_event = {
     }
   }
 }
+#Geneva asks to join Switzerland
 country_event = {
   id = flavor_swi.203
   title = flavor_swi.203.t
@@ -194,6 +206,7 @@ country_event = {
     }
   }
   option = {
+    #geneva approaches Switzerland
     name = flavor_swi.203.a
     ai_chance = {
       factor = 100
@@ -220,9 +233,11 @@ country_event = {
     }
   }
   option = {
+    #don't upset Savoy
     name = flavor_swi.203.c
   }
 }
+#Swiss Response
 country_event = {
   id = flavor_swi.204
   title = flavor_swi.203.t
@@ -231,6 +246,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
+    #Switzerland accepts?
     name = flavor_swi.204.a
     ai_chance = {
       factor = 100
@@ -243,9 +259,11 @@ country_event = {
     vassalize = GNV
   }
   option = {
+    #don't upset Savoy
     name = flavor_swi.203.c
   }
 }
+# Independent Geneva (written by Hubert Leung)
 country_event = {
   id = flavor_swi.3
   title = flavor_swi.3.t
@@ -269,6 +287,10 @@ country_event = {
     }
   }
 }
+########################################
+# Swiss Flavor Events                  #
+########################################
+# Three Leagues Join Switzerland Event
 country_event = {
   id = flavor_swi.4
   title = "flavor_swi.EVTNAME4"
@@ -316,6 +338,7 @@ country_event = {
     months = 120
   }
   option = {
+    # Expand the confederation
     name = "flavor_swi.EVTOPTA4"
     ai_chance = {
       factor = 100
@@ -332,6 +355,7 @@ country_event = {
     }
   }
   option = {
+    # Focus on the Cantons
     name = "flavor_swi.EVTOPTB4"
     ai_chance = {
       factor = 0
@@ -347,6 +371,7 @@ country_event = {
     }
   }
 }
+# John Calvin arrives in Geneva
 country_event = {
   id = flavor_swi.5
   title = "flavor_swi.EVTNAME5"
@@ -377,6 +402,7 @@ country_event = {
     months = 120
   }
   option = {
+    # Allow Calvin to stay
     name = "flavor_swi.EVTOPTA5"
     ai_chance = {
       factor = 50
@@ -416,6 +442,7 @@ country_event = {
     }
   }
   option = {
+    # Expel Calvin
     name = "flavor_swi.EVTOPTB5"
     ai_chance = {
       factor = 50
@@ -458,6 +485,7 @@ country_event = {
     }
   }
 }
+#John Calvin returns to Geneva
 country_event = {
   id = flavor_swi.6
   title = "flavor_swi.EVTNAME6"
@@ -482,6 +510,7 @@ country_event = {
     months = 48
   }
   option = {
+    # Allow Calvin to stay
     name = "flavor_swi.EVTOPTA6"
     ai_chance = {
       factor = 50
@@ -521,6 +550,7 @@ country_event = {
     }
   }
   option = {
+    # Expel Calvin again
     name = "flavor_swi.EVTOPTB6"
     ai_chance = {
       factor = 10
@@ -561,6 +591,7 @@ country_event = {
     }
   }
 }
+#John Calvin becomes Spiritual Leader of Geneva
 country_event = {
   id = flavor_swi.7
   title = "flavor_swi.EVTNAME7"
@@ -583,9 +614,10 @@ country_event = {
             }
           }
         }
-        tag = GNV
+        tag = GNV 	# This event ALWAYS happens for Geneva first if it is player controlled or free
       }
       else = {
+        #Just any of your subjects needs to be Geneva
         any_subject_country = {
           tag = GNV
         }
@@ -634,6 +666,7 @@ country_event = {
     }
   }
   option = {
+    # Invite Calvin to be our Spiritual Leader instead
     name = "flavor_swi.EVTOPTA7"
     ai_chance = {
       factor = 50
@@ -659,6 +692,7 @@ country_event = {
     }
   }
   option = {
+    # Let him do his thing
     name = "flavor_swi.EVTOPTB7"
     ai_chance = {
       factor = 50
@@ -689,10 +723,11 @@ country_event = {
     GNV = {
       change_government = theocracy
       add_government_reform = united_cantons_reform
+      #set_legacy_government = theocratic_government
       change_religion = reformed
       define_ruler = {
-        name = "¦uð"  # John
-        dynasty = "aSS‡e"  # Calvin
+        name = "¦uð" 	# John
+        dynasty = "aSS‡e" 	# Calvin
         culture = normand
         religion = reformed
         adm = 4
@@ -704,6 +739,7 @@ country_event = {
     }
   }
   option = {
+    # Kick him out for real this time
     name = "flavor_swi.EVTOPTC7"
     ai_chance = {
       factor = 50
@@ -743,6 +779,7 @@ country_event = {
     }
   }
 }
+#Spiritual Leader supercedes secular leader
 country_event = {
   id = flavor_swi.8
   title = "flavor_swi.EVTNAME8"
@@ -758,6 +795,7 @@ country_event = {
     months = 30
   }
   option = {
+    # Calvin becomes leader
     name = "flavor_swi.EVTOPTA8"
     ai_chance = {
       factor = 50
@@ -775,9 +813,10 @@ country_event = {
     }
     change_government = theocracy
     add_government_reform = united_cantons_reform
+    #set_legacy_government = theocratic_government
     define_ruler = {
-      name = "©‹"  # Jean
-      dynasty = "aSS‡e"  # Calvin
+      name = "©‹" 	# Jean
+      dynasty = "aSS‡e" 	# Calvin
       culture = cosmopolitan_french
       religion = reformed
       adm = 4
@@ -788,6 +827,7 @@ country_event = {
     }
   }
   option = {
+    # Kick him out for real for real this time
     name = "flavor_swi.EVTOPTB8"
     ai_chance = {
       factor = 50
@@ -796,6 +836,7 @@ country_event = {
     remove_country_modifier = john_calvin_modifier
   }
 }
+#Hundred Years War mercenaries
 country_event = {
   id = flavor_swi.9
   title = "flavor_swi.EVTNAME9"
@@ -811,6 +852,7 @@ country_event = {
       war_with = FRA
     }
     OR = {
+      #Switzerland is renting condottiere to the winning side
       AND = {
         is_renting_condottieri_to = ENG
         ENG = {
@@ -837,6 +879,7 @@ country_event = {
     add_army_tradition = 10
   }
 }
+#Mercenary Monopoly
 country_event = {
   id = flavor_swi.10
   title = "flavor_swi.EVTNAME10"
@@ -870,6 +913,7 @@ country_event = {
     }
   }
 }
+#Helvetic Republic
 country_event = {
   id = flavor_swi.11
   title = "flavor_swi.EVTNAME11"
@@ -914,6 +958,7 @@ country_event = {
     }
   }
 }
+#Helvetic Republic (Switzerland)
 country_event = {
   id = flavor_swi.1101
   title = "flavor_swi.EVTNAME11"
@@ -947,6 +992,7 @@ country_event = {
     SWI = {
       change_government = republic
       add_government_reform = military_dictatorship_reform
+      #set_legacy_government = republican_dictatorship
     }
     random_known_country = {
       limit = {

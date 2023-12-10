@@ -18,7 +18,7 @@ mer_western_expansion = {
   has_country_shield = yes
   mer_marwar_rivalry = {
     icon = mission_order_in_the_domain
-    required_missions = {}
+    required_missions = {} 	# None
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -53,8 +53,8 @@ mer_western_expansion = {
         }
         legitimacy = 90
       }
-      owns = 528
-      owns = 4464
+      owns = 528 	# Hadoti
+      owns = 4464 	# Bundi
     }
     effect = {
       patan_area = {
@@ -103,15 +103,13 @@ mer_western_expansion = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Vassal integration
     }
   }
   mer_conquer_kathiawar = {
     icon = mission_conquer_kathiawar
     position = 2
-    required_missions = {
-      mer_marwar_rivalry
-    }
+    required_missions = { mer_marwar_rivalry }
     provinces_to_highlight = {
       OR = {
         area = patan_area
@@ -144,7 +142,7 @@ mer_western_expansion = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -169,9 +167,7 @@ mer_ujjain = {
   capital_for_rajputana = {
     icon = mission_city_of_gondwana
     position = 3
-    required_missions = {
-      mer_avanti
-    }
+    required_missions = { mer_avanti }
     provinces_to_highlight = {
       province_id = 4461
     }
@@ -202,7 +198,7 @@ mer_ujjain = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -227,9 +223,7 @@ mer_delhi = {
   mer_avanti = {
     icon = mission_conquer_malwa_mer
     position = 2
-    required_missions = {
-      mer_marwar_rivalry
-    }
+    required_missions = { mer_marwar_rivalry }
     provinces_to_highlight = {
       area = malwa_area
       NOT = {
@@ -293,14 +287,12 @@ mer_delhi = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mer_unite_rajputana = {
     icon = mission_unite_rajputana
-    required_missions = {
-      mer_avanti
-    }
+    required_missions = { mer_avanti }
     provinces_to_highlight = {
       OR = {
         area = gird_area
@@ -439,14 +431,12 @@ mer_delhi = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mer_reclaim_delhi = {
     icon = mission_reclaim_dehli
-    required_missions = {
-      mer_unite_rajputana
-    }
+    required_missions = { mer_unite_rajputana }
     provinces_to_highlight = {
       OR = {
         area = sirhind_area
@@ -525,14 +515,12 @@ mer_delhi = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mer_restore_kanyakubja = {
     icon = mission_conquer_kannauj
-    required_missions = {
-      mer_reclaim_delhi
-    }
+    required_missions = { mer_reclaim_delhi }
     provinces_to_highlight = {
       OR = {
         area = katehar_area
@@ -626,14 +614,12 @@ mer_delhi = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mer_magadha = {
     icon = mission_magadna_and_varanasi
-    required_missions = {
-      mer_restore_kanyakubja
-    }
+    required_missions = { mer_restore_kanyakubja }
     provinces_to_highlight = {
       OR = {
         area = north_bengal_area
@@ -702,7 +688,7 @@ mer_delhi = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -783,14 +769,12 @@ mer_fortify_rajputana_tree = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   mer_jawar_silver_mine = {
     icon = mission_jawal_silver_mine
-    required_missions = {
-      mer_fortify_rajputana
-    }
+    required_missions = { mer_fortify_rajputana }
     provinces_to_highlight = {
       province_id = 2058
       NOT = {
@@ -813,7 +797,7 @@ mer_fortify_rajputana_tree = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
 }
@@ -838,9 +822,7 @@ mer_gurjaratra = {
   mer_conquer_punjab = {
     icon = mission_conquer_punjab
     position = 4
-    required_missions = {
-      mer_unite_rajputana
-    }
+    required_missions = { mer_unite_rajputana }
     provinces_to_highlight = {
       OR = {
         area = lahore_area
@@ -867,7 +849,7 @@ mer_gurjaratra = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -892,9 +874,7 @@ mer_city_of_lakes = {
   mer_udaipur = {
     icon = mission_found_udaipur
     position = 2
-    required_missions = {
-      mer_fortify_rajputana
-    }
+    required_missions = { mer_fortify_rajputana }
     provinces_to_highlight = {
       province_id = 2058
     }
@@ -935,12 +915,12 @@ mer_city_of_lakes = {
           name = "city_of_lakes"
           duration = -1
         }
-        change_province_name = "LN„N^S"  # Udaipur
-        rename_capital = "LN„N^S"  # Udaipur
+        change_province_name = "LN„N^S" 	# Udaipur
+        rename_capital = "LN„N^S" 	# Udaipur
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -965,9 +945,7 @@ mer_indus = {
   mer_conquer_sindh = {
     position = 4
     icon = mission_conquer_sindh_mer
-    required_missions = {
-      mer_unite_rajputana
-    }
+    required_missions = { mer_unite_rajputana }
     provinces_to_highlight = {
       OR = {
         area = sindh_area
@@ -999,7 +977,7 @@ mer_indus = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -1024,9 +1002,7 @@ mer_restore_kannauj_empire = {
   mer_renovate_kannauj = {
     icon = mission_renovate_kannauj
     position = 6
-    required_missions = {
-      mer_restore_kanyakubja
-    }
+    required_missions = { mer_restore_kanyakubja }
     provinces_to_highlight = {
       province_id = 4497
     }
@@ -1063,7 +1039,7 @@ mer_restore_kannauj_empire = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -1088,9 +1064,7 @@ mer_gondwana = {
   mer_hills_of_gondwana = {
     icon = mission_hills_of_gondwana
     position = 4
-    required_missions = {
-      mer_unite_rajputana
-    }
+    required_missions = { mer_unite_rajputana }
     provinces_to_highlight = {
       OR = {
         area = gondwana_area
@@ -1144,7 +1118,7 @@ mer_gondwana = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
 }
@@ -1169,9 +1143,7 @@ mer_trade = {
   mer_rajput_trade_guilds = {
     icon = mission_rajput_trade_guilds
     position = 6
-    required_missions = {
-      mer_restore_kanyakubja
-    }
+    required_missions = { mer_restore_kanyakubja }
     trigger = {
       if = {
         limit = {
@@ -1208,7 +1180,7 @@ mer_trade = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
 }
@@ -1255,15 +1227,12 @@ mer_army_tree = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   mer_integrate_purbias = {
     icon = mission_integrate_the_purbias
-    required_missions = {
-      mer_marwari_horses
-      mer_unite_rajputana
-    }
+    required_missions = { mer_marwari_horses mer_unite_rajputana }
     position = 4
     trigger = {
       estate_influence = {
@@ -1290,15 +1259,12 @@ mer_army_tree = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   mer_new_rajput_army = {
     icon = mission_new_army
-    required_missions = {
-      mer_integrate_purbias
-      mer_restore_kanyakubja
-    }
+    required_missions = { mer_integrate_purbias mer_restore_kanyakubja }
     position = 6
     trigger = {
       estate_influence = {
@@ -1325,7 +1291,7 @@ mer_army_tree = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
 }

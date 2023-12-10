@@ -138,14 +138,12 @@ mug_timurid_resurgence = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Mughals are a conquest monster, so they should focus on that mission
     }
   }
   mug_afghan_frontier = {
     icon = mission_afghan_frontier
-    required_missions = {
-      mug_pacify_punjab
-    }
+    required_missions = { mug_pacify_punjab }
     provinces_to_highlight = {
       OR = {
         area = ghor_area
@@ -202,14 +200,12 @@ mug_timurid_resurgence = {
       add_permanent_claim = 2221
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Mughals are a conquest monster, so they should focus on that mission
     }
   }
   mug_abu_saids_dream = {
     icon = mission_abu_saids_dream
-    required_missions = {
-      mug_afghan_frontier
-    }
+    required_missions = { mug_afghan_frontier }
     provinces_to_highlight = {
       OR = {
         province_id = 416
@@ -324,7 +320,7 @@ mug_timurid_resurgence = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Persia, however, is a little bit too far fetched
     }
   }
 }
@@ -351,9 +347,7 @@ mug_towards_china = {
   has_country_shield = yes
   mug_follow_the_brahmaputra = {
     icon = mission_follow_the_brahmaputra
-    required_missions = {
-      mug_ganges_delta
-    }
+    required_missions = { mug_ganges_delta }
     position = 4
     provinces_to_highlight = {
       area = assam_area
@@ -415,14 +409,12 @@ mug_towards_china = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# China, too, is a little bit too far fetched
     }
   }
   mug_upper_burma_campaign = {
     icon = mission_upper_burma_campaign
-    required_missions = {
-      mug_follow_the_brahmaputra
-    }
+    required_missions = { mug_follow_the_brahmaputra }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -484,15 +476,12 @@ mug_towards_china = {
       }
     }
     ai_weight = {
-      factor = 50
+      factor = 50 	# China, too, is a little bit too far fetched
     }
   }
   mug_open_up_china = {
     icon = mission_open_up_china
-    required_missions = {
-      mug_upper_burma_campaign
-      mug_subah_of_ayuddhya
-    }
+    required_missions = { mug_upper_burma_campaign mug_subah_of_ayuddhya }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -545,7 +534,7 @@ mug_towards_china = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# China, too, is a little bit too far fetched
     }
   }
 }
@@ -589,7 +578,7 @@ mug_land_assesement = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
 }
@@ -617,9 +606,7 @@ mug_indus_branch = {
   mug_sind_campaign = {
     icon = mission_sindh_campaign
     position = 2
-    required_missions = {
-      mug_pacify_punjab
-    }
+    required_missions = { mug_pacify_punjab }
     provinces_to_highlight = {
       OR = {
         area = sindh_area
@@ -651,7 +638,7 @@ mug_indus_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -679,9 +666,7 @@ mug_ganges_branch = {
   mug_ganges_delta = {
     icon = mission_control_the_ganges_delta
     position = 3
-    required_missions = {
-      mug_bengal_campaign
-    }
+    required_missions = { mug_bengal_campaign }
     provinces_to_highlight = {
       OR = {
         area = west_bengal_area
@@ -726,14 +711,12 @@ mug_ganges_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_conquer_orissa = {
     icon = mission_conquer_orissa_mug
-    required_missions = {
-      mug_ganges_delta
-    }
+    required_missions = { mug_ganges_delta }
     provinces_to_highlight = {
       area = orissa_area
       NOT = {
@@ -753,14 +736,12 @@ mug_ganges_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_bengal_entrepot = {
     icon = mission_bengal_entrepot
-    required_missions = {
-      mug_grand_trunk_road
-    }
+    required_missions = { mug_grand_trunk_road }
     provinces_to_highlight = {
       province_id = 561
     }
@@ -801,14 +782,12 @@ mug_ganges_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   mug_lower_burma_campaign = {
     icon = mission_lower_burma_campaign
-    required_missions = {
-      mug_bengal_entrepot
-    }
+    required_missions = { mug_bengal_entrepot }
     provinces_to_highlight = {
       OR = {
         area = arakan_area
@@ -925,14 +904,12 @@ mug_ganges_branch = {
       }
     }
     ai_weight = {
-      factor = 50
+      factor = 50 	# Too far away
     }
   }
   mug_subah_of_ayuddhya = {
     icon = mission_subah_of_ayuddhya
-    required_missions = {
-      mug_lower_burma_campaign
-    }
+    required_missions = { mug_lower_burma_campaign }
     provinces_to_highlight = {
       OR = {
         area = tenasserim_area
@@ -1077,14 +1054,12 @@ mug_ganges_branch = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Too far away
     }
   }
   mug_malaccan_viceroyalty = {
     icon = mission_malayan_viceroyalty
-    required_missions = {
-      mug_subah_of_ayuddhya
-    }
+    required_missions = { mug_subah_of_ayuddhya }
     provinces_to_highlight = {
       OR = {
         area = malaya_area
@@ -1130,7 +1105,7 @@ mug_ganges_branch = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Too far away
     }
   }
 }
@@ -1218,14 +1193,12 @@ mug_hindustan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_bengal_campaign = {
     icon = mission_bengal_campaign
-    required_missions = {
-      mug_emperor_of_hindustan
-    }
+    required_missions = { mug_emperor_of_hindustan }
     provinces_to_highlight = {
       OR = {
         area = mithila_area
@@ -1280,14 +1253,12 @@ mug_hindustan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_fortify_the_plains = {
     icon = mission_fortifying_the_plain
-    required_missions = {
-      mug_bengal_campaign
-    }
+    required_missions = { mug_bengal_campaign }
     provinces_to_highlight = {
       OR = {
         area = upper_doab_area
@@ -1347,15 +1318,12 @@ mug_hindustan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   mug_grand_trunk_road = {
     icon = mission_grand_trunk_road_mug
-    required_missions = {
-      mug_fortify_the_plains
-      mug_ganges_delta
-    }
+    required_missions = { mug_fortify_the_plains mug_ganges_delta }
     provinces_to_highlight = {
       OR = {
         area = lahore_area
@@ -1436,6 +1404,7 @@ mug_hindustan_branch = {
       }
     }
     effect = {
+      # 20 years of Trade Dominance along the Grand Trunk Road.
       add_mercantilism = 5
       524 = {
         add_trade_modifier = {
@@ -1463,14 +1432,12 @@ mug_hindustan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_embassy_to_the_west = {
     icon = mission_embassy_to_the_west
-    required_missions = {
-      mug_fatehpur_sikri
-    }
+    required_missions = { mug_fatehpur_sikri }
     position = 6
     trigger = {
       custom_trigger_tooltip = {
@@ -1490,7 +1457,7 @@ mug_hindustan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
 }
@@ -1517,9 +1484,7 @@ mug_desh = {
   has_country_shield = yes
   mug_control_the_desh = {
     icon = mission_control_the_desh
-    required_missions = {
-      mug_across_vindhyas
-    }
+    required_missions = { mug_across_vindhyas }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1547,7 +1512,7 @@ mug_desh = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -1577,19 +1542,19 @@ mug_sufis = {
     required_missions = {}
     provinces_to_highlight = {
       OR = {
-        province_id = 2035
-        province_id = 2054
-        province_id = 2059
-        province_id = 2066
-        province_id = 2076
-        province_id = 2087
-        province_id = 4494
-        province_id = 506
-        province_id = 507
-        province_id = 510
-        province_id = 545
-        province_id = 555
-        province_id = 563
+        province_id = 2035 	# Gulbarga
+        province_id = 2054 	# Batwa
+        province_id = 2059 	# Kalpi
+        province_id = 2066 	# Nagaur
+        province_id = 2076 	# Gujrat
+        province_id = 2087 	# Ajmer
+        province_id = 4494 	# Khairabad
+        province_id = 506 	# Multan
+        province_id = 507 	# Lahore
+        province_id = 510 	# Sirhind
+        province_id = 545 	# Daulatabad
+        province_id = 555 	# Jaunpur & Zafarabad
+        province_id = 563 	# Gaur & Pandua
       }
       NOT = {
         owned_by = ROOT
@@ -1613,19 +1578,19 @@ mug_sufis = {
       else = {
         legitimacy = 100
       }
-      owns_core_province = 2035
-      owns_core_province = 2054
-      owns_core_province = 2059
-      owns_core_province = 2066
-      owns_core_province = 2076
-      owns_core_province = 2087
-      owns_core_province = 4494
-      owns_core_province = 506
-      owns_core_province = 507
-      owns_core_province = 510
-      owns_core_province = 545
-      owns_core_province = 555
-      owns_core_province = 563
+      owns_core_province = 2035 	# Gulbarga
+      owns_core_province = 2054 	# Batwa
+      owns_core_province = 2059 	# Kalpi
+      owns_core_province = 2066 	# Nagaur
+      owns_core_province = 2076 	# Gujrat
+      owns_core_province = 2087 	# Ajmer
+      owns_core_province = 4494 	# Khairabad
+      owns_core_province = 506 	# Multan
+      owns_core_province = 507 	# Lahore
+      owns_core_province = 510 	# Sirhind
+      owns_core_province = 545 	# Daulatabad
+      owns_core_province = 555 	# Jaunpur & Zafarabad
+      owns_core_province = 563 	# Gaur & Pandua
     }
     effect = {
       if = {
@@ -1648,7 +1613,7 @@ mug_sufis = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -1675,9 +1640,7 @@ mug_rajput_branch = {
   has_country_shield = yes
   mug_subdue_rajputana = {
     icon = mission_subdue_rajputana
-    required_missions = {
-      mug_gwalior_and_ranthambore
-    }
+    required_missions = { mug_gwalior_and_ranthambore }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -1710,8 +1673,8 @@ mug_rajput_branch = {
       }
     }
     trigger = {
-      owns_core_province = 518
-      owns_core_province = 2087
+      owns_core_province = 518 	# Chittor
+      owns_core_province = 2087 	# Ajmer
       2087 = {
         fort_level = 2
       }
@@ -1749,14 +1712,12 @@ mug_rajput_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_rajput_mansabdars = {
     icon = mission_rajput_mansabdars
-    required_missions = {
-      mug_subdue_rajputana
-    }
+    required_missions = { mug_subdue_rajputana }
     trigger = {
       estate_influence = {
         estate = estate_rajput
@@ -1769,7 +1730,7 @@ mug_rajput_branch = {
     }
     effect = {
       define_general = {
-        name = "¸f õè<h"  # Man Singh
+        name = "¸f õè<h" 	# Man Singh
         shock = 5
         fire = 4
         manuever = 3
@@ -1781,7 +1742,7 @@ mug_rajput_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   mug_fatehpur_sikri = {
@@ -1844,7 +1805,7 @@ mug_rajput_branch = {
     effect = {
       524 = {
         move_capital_effect = yes
-        rename_capital = "’lTXkç^S â<hÃë"  # Fatehpur Sikri
+        rename_capital = "’lTXkç^S â<hÃë" 	# Fatehpur Sikri
         add_base_tax = 2
         add_base_production = 2
         add_province_modifier = {
@@ -1854,14 +1815,12 @@ mug_rajput_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_din_i_illah = {
     icon = mission_din_i_llahi
-    required_missions = {
-      mug_fatehpur_sikri
-    }
+    required_missions = { mug_fatehpur_sikri }
     trigger = {
       stability = 3
       government_rank = 3
@@ -1918,7 +1877,7 @@ mug_rajput_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -1945,9 +1904,7 @@ mug_hyderabad_branch = {
   has_country_shield = yes
   mug_conquer_central_deccan = {
     icon = mission_conquer_central_deccan
-    required_missions = {
-      mug_across_vindhyas
-    }
+    required_missions = { mug_across_vindhyas }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1988,7 +1945,7 @@ mug_hyderabad_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_viceroyalty_of_the_deccan = {
@@ -2014,17 +1971,37 @@ mug_hyderabad_branch = {
     }
     trigger = {
       has_reform = zabt_reform
-      owns_core_province = 542
-      owns_core_province = 545
+      owns_core_province = 542 	# Daulatabad
+      owns_core_province = 545 	# Golconda
     }
     effect = {
       country_event = {
         id = mug_mission_events.1
       }
       custom_tooltip = mug_viceroyalty_of_the_deccan.tt
+      # tooltip = {
+      # 545 = {
+      # change_province_name = "Aurangabad"
+      # rename_capital = "Aurangabad"
+      # add_base_tax = 2
+      # add_base_manpower = 2
+      # add_base_production = 2
+      # add_province_modifier = {
+      # name = "city_of_aurangabad"
+      # duration = -1
+      # }
+      # }
+      # 542 = {
+      # change_province_name = "Hyderabad"
+      # rename_capital = "Hyderabad"
+      # add_base_tax = 2
+      # add_base_manpower = 2
+      # add_base_production = 2
+      # }
+      # }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }
@@ -2156,14 +2133,12 @@ mug_deccan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_conquer_malwa = {
     icon = mission_conquer_malwa_mug
-    required_missions = {
-      mug_gwalior_and_ranthambore
-    }
+    required_missions = { mug_gwalior_and_ranthambore }
     provinces_to_highlight = {
       OR = {
         area = malwa_area
@@ -2226,14 +2201,12 @@ mug_deccan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_secure_hajj_ports = {
     icon = mission_secure_hajj_ports
-    required_missions = {
-      mug_conquer_malwa
-    }
+    required_missions = { mug_conquer_malwa }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -2302,14 +2275,12 @@ mug_deccan_branch = {
       add_claim = 387
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_across_vindhyas = {
     icon = mission_across_the_vindhyas
-    required_missions = {
-      mug_secure_hajj_ports
-    }
+    required_missions = { mug_secure_hajj_ports }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -2419,14 +2390,12 @@ mug_deccan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_riches_of_golconda = {
     icon = mission_riches_of_golconda
-    required_missions = {
-      mug_across_vindhyas
-    }
+    required_missions = { mug_across_vindhyas }
     provinces_to_highlight = {
       OR = {
         area = golconda_area
@@ -2510,14 +2479,12 @@ mug_deccan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   mug_coromandel_coast = {
     icon = mission_cromandel_coast
-    required_missions = {
-      mug_riches_of_golconda
-    }
+    required_missions = { mug_riches_of_golconda }
     provinces_to_highlight = {
       OR = {
         area = north_carnatic_area
@@ -2567,7 +2534,7 @@ mug_deccan_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }

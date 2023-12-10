@@ -1,4 +1,8 @@
+########################################
+# Time of Troubles
+########################################
 namespace = time_of_troubles
+# Time of Troubles
 country_event = {
   id = time_of_troubles.1
   title = "flavor_rus.EVTNAME1101"
@@ -12,10 +16,12 @@ country_event = {
     set_country_flag = time_of_troubles
   }
   option = {
+    # Hard times are ahead of us
     name = "flavor_rus.EVTOPTA1101"
     add_stability = -1
   }
 }
+# The Insanity of MONARCH
 country_event = {
   id = time_of_troubles.2
   title = "flavor_rus.EVTNAME1102"
@@ -37,6 +43,7 @@ country_event = {
     set_country_flag = RUS_had_event_1102
   }
   option = {
+    # MONARCH will rule until his death!
     name = "flavor_rus.EVTOPTA1102"
     ai_chance = {
       factor = 25
@@ -48,13 +55,14 @@ country_event = {
     }
   }
   option = {
+    # Let his trusted advisor take over
     name = "flavor_rus.EVTOPTB1102"
     ai_chance = {
       factor = 75
     }
     define_ruler = {
-      name = "çúÃëØe"  # Boris
-      dynasty = "bN˙ã+Y"  # Godunov
+      name = "çúÃëØe" 	# Boris
+      dynasty = "bN˙ã+Y" 	# Godunov
     }
     if = {
       limit = {
@@ -64,6 +72,7 @@ country_event = {
     }
   }
 }
+# Famine Strikes
 country_event = {
   id = time_of_troubles.3
   title = "flavor_rus.EVTNAME1103"
@@ -82,6 +91,7 @@ country_event = {
     set_country_flag = RUS_had_event_1103
   }
   option = {
+    # There is nothing we can do
     name = "flavor_rus.EVTOPTA1103"
     ai_chance = {
       factor = 25
@@ -92,17 +102,19 @@ country_event = {
     }
   }
   option = {
+    # Try to ease the suffering
     name = "flavor_rus.EVTOPTB1103"
     ai_chance = {
       factor = 50
     }
     add_years_of_income = -0.25
     add_country_modifier = {
-      name = "famine"
+      name = famine
       duration = 3650
     }
   }
   option = {
+    # Use all our resources to aim those in need
     name = "flavor_rus.EVTOPTC1103"
     ai_chance = {
       factor = 25
@@ -114,6 +126,7 @@ country_event = {
     }
   }
 }
+# Plague
 country_event = {
   id = time_of_troubles.4
   title = "flavor_rus.EVTNAME1104"
@@ -133,6 +146,7 @@ country_event = {
     set_country_flag = RUS_had_event_1104
   }
   option = {
+    # There is nothing we can do
     name = "flavor_rus.EVTOPTA1104"
     ai_chance = {
       factor = 50
@@ -143,6 +157,7 @@ country_event = {
     }
   }
   option = {
+    # Try to contain it
     name = "flavor_rus.EVTOPTB1104"
     ai_chance = {
       factor = 50
@@ -154,6 +169,7 @@ country_event = {
     }
   }
 }
+# Brigands in PROVINCE
 country_event = {
   id = time_of_troubles.5
   title = "flavor_rus.EVTNAME1105"
@@ -185,6 +201,7 @@ country_event = {
     }
   }
   option = {
+    # Restore authority
     name = "flavor_rus.EVTOPTA1105"
     ai_chance = {
       factor = 75
@@ -193,6 +210,7 @@ country_event = {
     add_years_of_income = -0.1
   }
   option = {
+    # Leave it be
     name = "flavor_rus.EVTOPTB1105"
     ai_chance = {
       factor = 25
@@ -208,6 +226,7 @@ country_event = {
     }
   }
 }
+# First Dimitri
 country_event = {
   id = time_of_troubles.6
   title = "flavor_rus.EVTNAME1106"
@@ -246,6 +265,7 @@ country_event = {
     set_country_flag = RUS_had_event_1106
   }
   option = {
+    # Recognize him as the legitimate ruler
     name = "flavor_rus.EVTOPTA1106"
     ai_chance = {
       factor = 10
@@ -267,8 +287,8 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "cRs|yrÃë I"  # Dimitri I
-      dynasty = "YuÃëKQ"  # Rurikovich
+      name = "cRs|yrÃë I" 	# Dimitri I
+      dynasty = "YuÃëKQ" 	# Rurikovich
     }
     if = {
       limit = {
@@ -282,6 +302,7 @@ country_event = {
     add_legitimacy = -50
   }
   option = {
+    # Expel him
     name = "flavor_rus.EVTOPTB1106"
     ai_chance = {
       factor = 90
@@ -333,6 +354,7 @@ country_event = {
     clr_country_flag = dimitri_supporter_found
   }
 }
+# False Dimitri (Muskowy)
 country_event = {
   id = time_of_troubles.7
   title = "flavor_rus.EVTNAME1107"
@@ -340,6 +362,7 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
+    # Support him with troops
     name = "flavor_rus.EVTOPTA1107"
     ai_chance = {
       factor = 75
@@ -399,6 +422,7 @@ country_event = {
     clr_country_flag = support_dimitri
   }
   option = {
+    # Expel him from COUNTRY
     name = "flavor_rus.EVTOPTB1107"
     ai_chance = {
       factor = 25
@@ -513,6 +537,7 @@ country_event = {
     }
   }
 }
+# False Dimitri (Russia)
 country_event = {
   id = time_of_troubles.11
   title = "flavor_rus.EVTNAME1107"
@@ -520,6 +545,7 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
+    # Support him with troops
     name = "flavor_rus.EVTOPTA1107"
     ai_chance = {
       factor = 75
@@ -579,6 +605,7 @@ country_event = {
     clr_country_flag = support_dimitri
   }
   option = {
+    # Expel him from COUNTRY
     name = "flavor_rus.EVTOPTB1107"
     ai_chance = {
       factor = 25
@@ -693,6 +720,7 @@ country_event = {
     }
   }
 }
+# Dimitri Returns
 country_event = {
   id = time_of_troubles.8
   title = "flavor_rus.EVTNAME1108"
@@ -700,6 +728,7 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
+    # In time we will crush them both!
     name = "flavor_rus.EVTOPTA1108"
     if = {
       limit = {
@@ -716,8 +745,8 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "cRs|yrÃë"  # Dimitri
-          leader_dynasty = "YuÃëKQ"  # Rurikovich
+          leader = "cRs|yrÃë" 	# Dimitri
+          leader_dynasty = "YuÃëKQ" 	# Rurikovich
           friend = FROM
         }
       }
@@ -737,8 +766,8 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 2
-          leader = "cRs|yrÃë"  # Dimitri
-          leader_dynasty = "YuÃëKQ"  # Rurikovich
+          leader = "cRs|yrÃë" 	# Dimitri
+          leader_dynasty = "YuÃëKQ" 	# Rurikovich
           friend = FROM
         }
       }
@@ -758,14 +787,15 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 1
-          leader = "cRs|yrÃë"  # Dimitri
-          leader_dynasty = "YuÃëKQ"  # Rurikovich
+          leader = "cRs|yrÃë" 	# Dimitri
+          leader_dynasty = "YuÃëKQ" 	# Rurikovich
           friend = FROM
         }
       }
     }
   }
 }
+# False Dimitri Overthrown
 country_event = {
   id = time_of_troubles.9
   title = "flavor_rus.EVTNAME1109"
@@ -784,6 +814,7 @@ country_event = {
     set_country_flag = RUS_had_event_1109
   }
   option = {
+    # Resist these usurpers!
     name = "flavor_rus.EVTOPTA1109"
     ai_chance = {
       factor = 10
@@ -793,12 +824,13 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 3
-        leader = "ÊtâÃë"  # Vasily
-        leader_dynasty = "ÇOØe˙W"  # Shuisky
+        leader = "ÊtâÃë" 	# Vasily
+        leader_dynasty = "ÇOØe˙W" 	# Shuisky
       }
     }
   }
   option = {
+    # Let the rebels seize power
     name = "flavor_rus.EVTOPTB1109"
     ai_chance = {
       factor = 90
@@ -820,8 +852,8 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "ÊtâÃë"  # Vasily
-      dynasty = "ÇOØe˙W"  # Shuisky
+      name = "ÊtâÃë" 	# Vasily
+      dynasty = "ÇOØe˙W" 	# Shuisky
     }
     if = {
       limit = {
@@ -845,6 +877,7 @@ country_event = {
     }
   }
 }
+# End of the Time of Troubles
 country_event = {
   id = time_of_troubles.10
   title = "flavor_rus.EVTNAME1110"
@@ -859,10 +892,12 @@ country_event = {
     set_country_flag = rus_had_time_of_troubles
   }
   option = {
+    # A stronger COUNTRY will emerge!
     name = "flavor_rus.EVTOPTA1110"
     add_adm_power = 100
   }
   option = {
+    # COUNTRY needs a new dynasty!
     name = "flavor_rus.EVTOPTB1110"
     add_adm_power = 50
     if = {
@@ -882,8 +917,8 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "s|»TOS I"  # Mikhail I
-      dynasty = "W¸f˙ã+Y"  # Romanov
+      name = "s|»TOS I" 	# Mikhail I
+      dynasty = "W¸f˙ã+Y" 	# Romanov
       adm = 4
       dip = 2
       mil = 3

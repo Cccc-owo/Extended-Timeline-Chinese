@@ -1,5 +1,10 @@
+########################################
+# Events for Northumberland
+# written by James Beaumont
+########################################
 namespace = flavor_nol
 normal_or_historical_nations = yes
+#The King of the North
 country_event = {
   id = flavor_nol.1
   title = flavor_nol.1.t
@@ -25,6 +30,7 @@ country_event = {
     add_prestige = 20
   }
 }
+#Deciding our Dynasty
 country_event = {
   id = flavor_nol.2
   title = flavor_nol.2.t
@@ -46,7 +52,7 @@ country_event = {
       factor = 1
     }
     define_ruler = {
-      dynasty = "¿sâ"  # Percy
+      dynasty = "¿sâ" 	# Percy
       culture = ROOT
       religion = ROOT
       claim = 95
@@ -65,13 +71,13 @@ country_event = {
         }
         NOT = {
           ENG = {
-            dynasty = "¶uKQ"  # York
+            dynasty = "¶uKQ" 	# York
           }
         }
       }
     }
     define_ruler = {
-      dynasty = "¶uKQ"  # York
+      dynasty = "¶uKQ" 	# York
       culture = ROOT
       religion = ROOT
       claim = 95
@@ -90,7 +96,7 @@ country_event = {
         }
         NOT = {
           ENG = {
-            dynasty = "pQVØeyr"  # Lancaster
+            dynasty = "pQVØeyr" 	# Lancaster
           }
         }
       }
@@ -110,7 +116,7 @@ country_event = {
       }
     }
     define_ruler = {
-      dynasty = "pQVØeyr"  # Lancaster
+      dynasty = "pQVØeyr" 	# Lancaster
       culture = ROOT
       religion = ROOT
       claim = 95
@@ -123,7 +129,7 @@ country_event = {
       factor = 1
     }
     define_ruler = {
-      dynasty = "kçÙuyriçKQS"  # Hvitserk
+      dynasty = "kçÙuyriçKQS" 	# Hvitserk
       culture = norwegian
       religion = ROOT
       claim = 25
@@ -137,6 +143,7 @@ country_event = {
     }
   }
 }
+#Claiming Norway
 country_event = {
   id = flavor_nol.3
   title = flavor_nol.3.t
@@ -145,7 +152,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = NOL
-    dynasty = "kçÙuyriçKQS"  # Hvitserk
+    dynasty = "kçÙuyriçKQS" 	# Hvitserk
     government = monarchy
     NOT = {
       legitimacy = 50

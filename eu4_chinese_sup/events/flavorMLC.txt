@@ -1,5 +1,10 @@
+########################################
+# Events for Malacca
+# written by Henrik Lohmander
+########################################
 namespace = flavor_mlc
 normal_or_historical_nations = yes
+# The Plot against Raja Ibrahim
 country_event = {
   id = flavor_mlc.1
   title = flavor_mlc.1.t
@@ -8,8 +13,8 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = MLC
-    has_ruler = "fjS…b1k"  # Ibrahim
-    has_heir = yes
+    has_ruler = "fjS…b1k" 	# Ibrahim
+    has_heir = yes 	# The Bendahara won't initiate this plot unless the succession is secure.
     NOT = {
       is_year = 1450
     }
@@ -18,11 +23,12 @@ country_event = {
     months = 18
   }
   option = {
-    name = flavor_mlc.1.a
+    name = flavor_mlc.1.a 	# Raja Ibrahim will not be forgotten.
     kill_ruler = yes
     set_ruler_flag = mlc_death_or_raja_ibrahim
   }
 }
+# Bendahara Tun Perak
 country_event = {
   id = flavor_mlc.2
   title = flavor_mlc.2.t
@@ -37,7 +43,7 @@ country_event = {
     months = 45
   }
   option = {
-    name = flavor_mlc.2.a
+    name = flavor_mlc.2.a 	# Appoint Tun Perak
     ai_chance = {
       factor = 90
     }
@@ -55,7 +61,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mlc.2.b
+    name = flavor_mlc.2.b 	# Appoint a puppet and marginalize the Bendahara. 
     ai_chance = {
       factor = 10
     }
@@ -63,6 +69,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Piracy in the Malayan Sea (Repeating)
 country_event = {
   id = flavor_mlc.3
   title = flavor_mlc.3.t
@@ -75,7 +82,7 @@ country_event = {
     }
     NOT = {
       dip_tech = 10
-    }
+    } 	# Pirates less of a problem at this point.
   }
   mean_time_to_happen = {
     months = 180
@@ -91,7 +98,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mlc.3.a
+    name = flavor_mlc.3.a 	# Assign the task to one of the trader communities.
     add_stability = -1
     add_country_modifier = {
       name = mlc_piracy_controlled
@@ -99,7 +106,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mlc.3.b
+    name = flavor_mlc.3.b 	# We will use our own resources to sort this out.
     add_years_of_income = -0.15
     add_country_modifier = {
       name = mlc_piracy_controlled
@@ -107,6 +114,7 @@ country_event = {
     }
   }
 }
+# Islam and the Malaccan state
 country_event = {
   id = flavor_mlc.4
   title = flavor_mlc.4.t
@@ -125,7 +133,7 @@ country_event = {
     months = 120
   }
   option = {
-    name = flavor_mlc.4.a
+    name = flavor_mlc.4.a 	# Yes, in the name of Allah.
     add_piety = 0.1
     add_country_modifier = {
       name = mlc_islamic_laws_enforced
@@ -133,11 +141,12 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mlc.4.b
+    name = flavor_mlc.4.b 	# No, let us keep with our old traditions.
     add_piety = -0.1
     add_stability_or_adm_power = yes
   }
 }
+# Customs and Duties
 country_event = {
   id = flavor_mlc.5
   title = flavor_mlc.5.t
@@ -159,7 +168,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mlc.5.a
+    name = flavor_mlc.5.a 	# Malacca has nothing of its own, and has everything of the world.
     add_years_of_income = -0.1
     add_country_modifier = {
       name = mlc_economic_boom
@@ -167,10 +176,11 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mlc.5.b
+    name = flavor_mlc.5.b 	# We cannot afford to lower these fees.
     add_years_of_income = 0.1
   }
 }
+# Hang Tuah
 country_event = {
   id = flavor_mlc.6
   title = flavor_mlc.6.t
@@ -188,15 +198,16 @@ country_event = {
     months = 60
   }
   option = {
-    name = flavor_mlc.6.a
+    name = flavor_mlc.6.a 	# May our people never vanish from this earth.
     define_admiral = {
-      name = "Il˝êöN"  # Hang Tuah
+      name = "Il˝êöN" 	# Hang Tuah
       shock = 5
       fire = 3
       manuever = 3
     }
   }
 }
+# Arrival of the Portuguese
 country_event = {
   id = flavor_mlc.7
   title = flavor_mlc.7.t
@@ -218,7 +229,7 @@ country_event = {
     months = 12
   }
   option = {
-    name = flavor_mlc.7.a
+    name = flavor_mlc.7.a 	# Lambaste the Gujaratis and attempt to save the situation.
     ai_chance = {
       factor = 0
     }
@@ -236,7 +247,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mlc.7.b
+    name = flavor_mlc.7.b 	# We must not allow the Portuguese to gain a hold in this part of the world.
     ai_chance = {
       factor = 1
     }
@@ -260,7 +271,7 @@ country_event = {
   picture = ANGRY_MOB_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_mlc.8.a
+    name = flavor_mlc.8.a 	# Ok.
     ai_chance = {
       factor = 10
     }
@@ -268,11 +279,12 @@ country_event = {
       add_casus_belli = {
         target = MLC
         type = cb_trade_war_triggered
-        months = 24
+        months = 24 	# Not displayed in tooltip.
       }
     }
   }
 }
+# Pick a name and capital for Malaya
 country_event = {
   id = flavor_mlc.9
   title = flavor_mlc.9.t
@@ -282,7 +294,7 @@ country_event = {
   option = {
     name = flavor_mlc.9.a
     trigger = {
-      dynasty = "≤R)RiOê"  # Srivijaya
+      dynasty = "≤R)RiOê" 	# Srivijaya
     }
     override_country_name = SRIVIJAYA
     set_country_flag = is_srijivaya_flag

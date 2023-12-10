@@ -1,4 +1,10 @@
+########################################
+# Events concerning Revolution Spread
+# written by Pierre du Plessis
+########################################
 namespace = center_of_revolution
+###Mechanical Events
+#Spawning the Center
 province_event = {
   id = center_of_revolution.1000
   title = center_of_revolution.1000.name
@@ -18,6 +24,7 @@ province_event = {
       NOT = {
         tag = PAP
       }
+      #NOT = { has_reform = celestial_empire }
     }
     NOT = {
       has_province_modifier = religious_center
@@ -82,6 +89,7 @@ province_event = {
         }
       }
     }
+    #target absolutist states more
     modifier = {
       factor = 10
       NOT = {
@@ -154,6 +162,7 @@ province_event = {
         absolutism = 100
       }
     }
+    #cities are breeding grounds for revolution
     modifier = {
       factor = 0.95
       development = 35
@@ -170,6 +179,7 @@ province_event = {
       factor = 0.9
       development = 50
     }
+    #Production-based checks
     modifier = {
       factor = 0.8
       OR = {
@@ -230,6 +240,7 @@ province_event = {
       factor = 0.8
       owner = {
         variable_arithmetic_trigger = {
+          #trade and production is 75% of national income
           export_to_variable = {
             value = trigger_value:production_income_percentage
             which = burgher_income_proportion
@@ -296,6 +307,7 @@ province_event = {
         }
       }
     }
+    #National Vulnerability factors
     modifier = {
       factor = 0.8
       owner = {
@@ -352,6 +364,7 @@ province_event = {
         }
       }
     }
+    #Special flavour modifiers
     modifier = {
       factor = 0.75
       owner = {
@@ -376,6 +389,7 @@ province_event = {
         has_country_flag = revolutionary_sentiment_3rd_estate_demands
       }
     }
+    #Time-based checks
     modifier = {
       factor = 0.8
       is_year = 1750
@@ -397,6 +411,7 @@ province_event = {
   immediate = {
     hidden_effect = {
       set_saved_name = {
+        #deliberately never cleared
         key = first_center_revolutionary_philosopher
         type = advisor
       }
@@ -408,10 +423,11 @@ province_event = {
     name = center_of_revolution.1000.A
     spawn_center_of_revolution = root
     set_province_flag = first_revolution_center
-    set_global_flag = first_revolution_center_spawned
+    set_global_flag = first_revolution_center_spawned 	# to check time since spawn for backup center
     log = "Center of Revolution spawned in [Root.GetName] (owner: [Root.Owner.GetName]) in [GetYear]"
   }
 }
+#Spawning the Center - backup event
 province_event = {
   id = center_of_revolution.1001
   title = center_of_revolution.1001.name
@@ -424,6 +440,7 @@ province_event = {
     has_dlc = "Emperor"
     has_revolution_in_province = yes
     has_global_flag = first_revolutionary_center_snuffed_out
+    #		has_global_flag = first_revolution_center_spawned #not needed
     OR = {
       NOT = {
         had_global_flag = {
@@ -455,6 +472,7 @@ province_event = {
       NOT = {
         tag = PAP
       }
+      #NOT = { has_reform = celestial_empire }
     }
     NOT = {
       has_province_modifier = religious_center
@@ -464,6 +482,7 @@ province_event = {
     }
   }
   mean_time_to_happen = {
+    #slightly simplified version of .1000's weights
     years = 15
     modifier = {
       factor = 0.75
@@ -536,6 +555,7 @@ province_event = {
         }
       }
     }
+    #target absolutist states more
     modifier = {
       factor = 1.5
       NOT = {
@@ -570,6 +590,7 @@ province_event = {
         absolutism = 100
       }
     }
+    #cities are breeding grounds for revolution
     modifier = {
       factor = 0.9
       development = 40
@@ -578,6 +599,7 @@ province_event = {
       factor = 0.8
       development = 50
     }
+    #Production-based checks
     modifier = {
       factor = 0.8
       OR = {
@@ -638,6 +660,7 @@ province_event = {
       factor = 0.8
       owner = {
         variable_arithmetic_trigger = {
+          #trade and production is 75% of national income
           export_to_variable = {
             value = trigger_value:production_income_percentage
             which = burgher_income_proportion
@@ -704,6 +727,7 @@ province_event = {
         }
       }
     }
+    #National Vulnerability factors
     modifier = {
       factor = 0.8
       owner = {
@@ -738,6 +762,7 @@ province_event = {
         }
       }
     }
+    #Special flavour modifiers
     modifier = {
       factor = 0.75
       owner = {
@@ -789,6 +814,7 @@ province_event = {
     spawn_center_of_revolution = root
   }
 }
+#on_dismantle_revolution event
 country_event = {
   id = center_of_revolution.1500
   title = center_of_revolution.1500.name
@@ -858,10 +884,11 @@ country_event = {
     }
     if = {
       limit = {
+        #you can't get rid of them that easily...
         has_country_flag = habsburgs_exiled_flag
       }
       define_ruler = {
-        dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+        dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       }
     }
     if = {
@@ -873,6 +900,7 @@ country_event = {
     set_country_flag = last_revolutionary_country
   }
 }
+#Remove Revolutionary Sentiment from provinces in the same region as you just defeated them in
 country_event = {
   id = center_of_revolution.1600
   title = center_of_revolution.1600.name
@@ -893,6 +921,8 @@ country_event = {
     }
   }
 }
+###Events pre-spawning of the first Center
+#Laissez-faire grain supply is totally a great idea!
 country_event = {
   id = center_of_revolution.2000
   title = center_of_revolution.2000.name
@@ -971,6 +1001,7 @@ country_event = {
     }
   }
 }
+#Maybe it isn't after all: The Flour Wars
 country_event = {
   id = center_of_revolution.2001
   title = center_of_revolution.2001.name
@@ -1036,6 +1067,7 @@ country_event = {
     }
   }
 }
+#High National Debt
 country_event = {
   id = center_of_revolution.2002
   title = center_of_revolution.2002.name
@@ -1061,6 +1093,7 @@ country_event = {
     NOT = {
       1 = {
         check_variable = {
+          #it can only happen to 2 countries
           which = revolutionary_sentiment_many_loans_happened
           value = 2
         }
@@ -1087,6 +1120,7 @@ country_event = {
     hidden_effect = {
       1 = {
         change_variable = {
+          #it can only happen to 2 countries
           which = revolutionary_sentiment_many_loans_happened
           value = 1
         }
@@ -1094,6 +1128,7 @@ country_event = {
     }
   }
   option = {
+    #give in to their demands
     name = center_of_revolution.2002.A
     custom_tooltip = revolutionary_sentiment_warning
     set_country_flag = revolutionary_sentiment_many_loans
@@ -1106,6 +1141,7 @@ country_event = {
     }
   }
   option = {
+    #decline
     name = center_of_revolution.2002.B
     add_country_modifier = {
       name = revolution_administrative_reforms
@@ -1118,6 +1154,7 @@ country_event = {
     }
   }
 }
+#The Reforms of Necker
 country_event = {
   id = center_of_revolution.2003
   title = center_of_revolution.2003.name
@@ -1161,6 +1198,7 @@ country_event = {
     set_global_flag = necker_reforms_happened
   }
   option = {
+    #agree
     name = center_of_revolution.2003.A
     add_adm_power = -100
     add_dip_power = -100
@@ -1180,6 +1218,7 @@ country_event = {
     }
   }
   option = {
+    #decline
     name = center_of_revolution.2003.B
     custom_tooltip = revolutionary_sentiment_warning
     set_country_flag = revolutionary_sentiment_necker_reforms
@@ -1189,6 +1228,7 @@ country_event = {
     }
   }
 }
+#Demand for Reforms by the 3rd estate (if you have more than 75% income from them)
 country_event = {
   id = center_of_revolution.2010
   title = center_of_revolution.2010.name
@@ -1214,6 +1254,7 @@ country_event = {
     NOT = {
       1 = {
         check_variable = {
+          #it can only happen to 2 countries
           which = demands_of_the_3rd_estate_happened
           value = 2
         }
@@ -1235,6 +1276,7 @@ country_event = {
       }
     }
     variable_arithmetic_trigger = {
+      #trade and production is 75% of national income
       export_to_variable = {
         value = trigger_value:production_income_percentage
         which = burgher_income_proportion
@@ -1270,6 +1312,7 @@ country_event = {
     hidden_effect = {
       1 = {
         change_variable = {
+          #it can only happen to 2 countries
           which = demands_of_the_3rd_estate_happened
           value = 1
         }
@@ -1277,6 +1320,7 @@ country_event = {
     }
   }
   option = {
+    #give in to their demands
     name = center_of_revolution.2010.A
     add_estate_loyalty = {
       estate = estate_burghers
@@ -1293,6 +1337,7 @@ country_event = {
     }
   }
   option = {
+    #decline
     name = center_of_revolution.2010.B
     custom_tooltip = revolutionary_sentiment_warning
     set_country_flag = revolutionary_sentiment_3rd_estate_demands
@@ -1328,6 +1373,7 @@ country_event = {
     }
   }
 }
+#Warning for Revolutionaries: 
 country_event = {
   id = center_of_revolution.2950
   title = center_of_revolution.2950.name
@@ -1349,6 +1395,7 @@ country_event = {
     custom_tooltip = center_of_revolution.2950.A.tt
   }
 }
+#Fully dismantle all Revolution stuff 20 years after the Revolution has failed
 country_event = {
   id = center_of_revolution.3000
   title = center_of_revolution.3000.name
@@ -1412,6 +1459,7 @@ country_event = {
     OR = {
       years_since_dismantle_revolution = 20
       AND = {
+        #No one ever became RT
         had_global_flag = {
           flag = first_revolution_center_spawned
           days = 10950
@@ -1571,6 +1619,7 @@ country_event = {
   }
   picture = FAILED_REVOLUTION_eventPicture
   is_triggered_only = yes
+  #major = yes
   option = {
     name = center_of_revolution.3000.A
     trigger = {
@@ -1602,6 +1651,8 @@ country_event = {
     }
   }
 }
+###Flavour Events relating to spread of Revolution
+# A Philosopher publishes a work
 country_event = {
   id = center_of_revolution.1
   title = revolution.30.name
@@ -1707,7 +1758,7 @@ country_event = {
     }
   }
   option = {
-    name = revolution.30.A
+    name = revolution.30.A 	#  Tolerate him
     ai_chance = {
       factor = 60
     }
@@ -1750,7 +1801,7 @@ country_event = {
     }
   }
   option = {
-    name = revolution.30.B
+    name = revolution.30.B 	# Suppress him
     ai_chance = {
       factor = 40
     }
@@ -1765,6 +1816,7 @@ country_event = {
     clear_saved_name = philosopher_dude
   }
 }
+# William Jones (the poet) event
 country_event = {
   id = center_of_revolution.2
   title = center_of_revolution.2.name
@@ -2007,7 +2059,7 @@ country_event = {
     }
   }
   option = {
-    name = center_of_revolution.2.A
+    name = center_of_revolution.2.A 	#  Let them go
     ai_chance = {
       factor = 60
     }
@@ -2037,7 +2089,7 @@ country_event = {
     }
   }
   option = {
-    name = center_of_revolution.2.B
+    name = center_of_revolution.2.B 	#  Suppress him
     ai_chance = {
       factor = 40
     }
@@ -2089,6 +2141,7 @@ country_event = {
     clear_saved_name = william_jones
   }
 }
+# Revolution spreading to colonies
 country_event = {
   id = center_of_revolution.3
   title = center_of_revolution.3.name
@@ -2184,12 +2237,13 @@ country_event = {
     }
   }
   option = {
-    name = center_of_revolution.3.A
+    name = center_of_revolution.3.A 	#  This could be trouble
     event_target:colonial_country = {
       add_liberty_desire = 20
     }
   }
 }
+# Revolution spreading to colonies as RT
 country_event = {
   id = center_of_revolution.4
   title = center_of_revolution.4.name
@@ -2329,7 +2383,7 @@ country_event = {
     }
   }
   option = {
-    name = center_of_revolution.4.A
+    name = center_of_revolution.4.A 	#  Send them monetary aid
     add_treasury = -500
     event_target:colonial_country = {
       set_country_flag = financial_aid
@@ -2376,7 +2430,7 @@ country_event = {
     }
   }
   option = {
-    name = center_of_revolution.4.B
+    name = center_of_revolution.4.B 	#  Send them other aid
     add_adm_power = -100
     add_dip_power = -100
     add_mil_power = -100
@@ -2435,7 +2489,7 @@ country_event = {
     }
   }
   option = {
-    name = center_of_revolution.4.C
+    name = center_of_revolution.4.C 	# We are better off focusing our energies elsewhere
     add_adm_power = 35
     add_dip_power = 35
     add_mil_power = 35
@@ -2450,6 +2504,7 @@ country_event = {
     }
   }
 }
+# Revolution spreading to colonies as RT - notification for colony
 country_event = {
   id = center_of_revolution.5
   title = center_of_revolution.5.name
@@ -2474,6 +2529,7 @@ country_event = {
     }
   }
 }
+# Revolution spreading to colonies as RT - notification for colony's overlord
 country_event = {
   id = center_of_revolution.6
   title = center_of_revolution.6.name
@@ -2508,6 +2564,7 @@ country_event = {
     }
   }
 }
+#Revolution fades from province with no revolutionary target
 country_event = {
   id = center_of_revolution.7
   title = center_of_revolution.7.name
@@ -2538,7 +2595,7 @@ country_event = {
     }
     desc = center_of_revolution.7.desc.no_former_target
   }
-  picture = DEBATE_REPUBLICAN_eventPicture
+  picture = DEBATE_REPUBLICAN_eventPicture 	# FAILED_REVOLUTION_eventPicture
   goto = revolutionary_province
   trigger = {
     has_dlc = "Emperor"
@@ -2611,6 +2668,7 @@ country_event = {
     }
   }
 }
+#Reactionary Coup in <province>
 country_event = {
   id = center_of_revolution.8
   title = center_of_revolution.8.name
@@ -2675,6 +2733,7 @@ country_event = {
     }
   }
 }
+#Reactionaries in <province> discovered
 country_event = {
   id = center_of_revolution.9
   title = center_of_revolution.9.name
@@ -2750,6 +2809,7 @@ country_event = {
     }
   }
 }
+#Spread the Revolution to someone else's provinces with a coup
 country_event = {
   id = center_of_revolution.10
   title = center_of_revolution.10.name
@@ -2854,6 +2914,7 @@ country_event = {
     }
   }
 }
+#Spread the Revolution to someone else's provinces with a coup (notification for them)
 country_event = {
   id = center_of_revolution.11
   title = center_of_revolution.11.name
@@ -2872,6 +2933,7 @@ country_event = {
     }
   }
 }
+#Reactionaries from the RT come to you
 country_event = {
   id = center_of_revolution.12
   title = center_of_revolution.12.name
@@ -2928,7 +2990,7 @@ country_event = {
             alliance_with = root
           }
         }
-        save_event_target_as = revolution_target
+        save_event_target_as = revolution_target 	# not really
       }
       random_owned_province = {
         limit = {
@@ -2958,6 +3020,7 @@ country_event = {
     }
   }
 }
+# Colonial nations inspired by revolution
 country_event = {
   id = center_of_revolution.13
   title = center_of_revolution.13.t
@@ -2993,12 +3056,14 @@ country_event = {
         }
       }
       add_country_modifier = {
+        # add 30 liberty desire
         name = "colony_inspired_by_revolution"
         duration = -1
       }
     }
   }
 }
+# The revolution is defeated, colonial movements die down
 country_event = {
   id = center_of_revolution.14
   title = center_of_revolution.14.t

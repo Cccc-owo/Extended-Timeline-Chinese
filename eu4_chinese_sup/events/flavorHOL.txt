@@ -1,5 +1,10 @@
+########################################
+# Flavor events for Holland/The Netherlands
+# written by Sara Wendel-Örtqvist & Johan Andersson
+########################################
 namespace = flavor_hol
 normal_or_historical_nations = yes
+#Erasmus
 country_event = {
   id = flavor_hol.5120
   title = "flavor_hol.EVTNAME5120"
@@ -30,7 +35,7 @@ country_event = {
       }
       define_advisor = {
         type = philosopher
-        name = "OÉb¯eŒ"  # Erasmus
+        name = "OÉb¯eŒ" 	# Erasmus
         culture = dutch
         religion = catholic
         discount = yes
@@ -39,6 +44,7 @@ country_event = {
     }
   }
 }
+#Hugo Grotius
 country_event = {
   id = flavor_hol.5121
   title = "flavor_hol.EVTNAME5121"
@@ -75,16 +81,17 @@ country_event = {
       }
       define_advisor = {
         type = statesman
-        name = "áwb·<h³RÀy¯e"  # Hugo Grotius
+        name = "áwb·<h³RÀy¯e" 	# Hugo Grotius
         culture = dutch
         discount = yes
         skill = 3
-        location = 97
+        location = 97 	# Holland
       }
       add_innovativeness_small_effect = yes
     }
   }
 }
+#Christiaan Huygens
 country_event = {
   id = flavor_hol.5122
   title = "flavor_hol.EVTNAME5122"
@@ -114,7 +121,7 @@ country_event = {
       }
       define_advisor = {
         type = natural_scientist
-        name = "KQÌ‘¯e‚„‰R à`ôf¯e"  # Christiaan Huygens
+        name = "KQÌ‘¯e‚„‰R à`ôf¯e" 	# Christiaan Huygens
         culture = dutch
         discount = yes
         skill = 2
@@ -124,6 +131,7 @@ country_event = {
     }
   }
 }
+#  Mercator
 country_event = {
   id = flavor_hol.1506
   title = "flavor_hol.EVTNAME1506"
@@ -152,16 +160,17 @@ country_event = {
       }
       define_advisor = {
         type = navigator
-        name = "¨XaSXb"  # Mercator
+        name = "¨XaSXb" 	# Mercator
         culture = flemish
         discount = yes
         skill = 2
-        location = 92
+        location = 92 	# Brabant
       }
       add_innovativeness_small_effect = yes
     }
   }
 }
+#Constitutionalism and the General Estates
 country_event = {
   id = flavor_hol.3502
   title = "flavor_hol.EVTNAME3502"
@@ -183,7 +192,7 @@ country_event = {
     months = 96
   }
   option = {
-    name = "flavor_hol.EVTOPTB3502"
+    name = "flavor_hol.EVTOPTB3502" 	# Confederacy on Republican Model
     ai_chance = {
       factor = 100
     }
@@ -204,7 +213,7 @@ country_event = {
     add_government_reform = dutch_republic
   }
   option = {
-    name = "flavor_hol.EVTOPTA3502"
+    name = "flavor_hol.EVTOPTA3502" 	# Confederacy with traces of Monarchism
     ai_chance = {
       factor = 0
     }
@@ -225,7 +234,7 @@ country_event = {
     add_government_reform = stadthalter_monarchy_reform
   }
   option = {
-    name = "flavor_hol.EVTOPTC3502"
+    name = "flavor_hol.EVTOPTC3502" 	# Centralized Monarchy
     ai_chance = {
       factor = 0
     }
@@ -249,14 +258,16 @@ country_event = {
       }
       change_government = monarchy
     }
+    #set_legacy_government = administrative_monarchy
   }
   option = {
-    name = "flavor_hol.EVTOPTD3502"
+    name = "flavor_hol.EVTOPTD3502" 	# Keep current government
     ai_chance = {
       factor = 0
     }
   }
 }
+#Creation of the Amsterdam Stock Exchange
 country_event = {
   id = flavor_hol.3504
   title = "flavor_hol.EVTNAME3504"
@@ -271,7 +282,7 @@ country_event = {
     months = 100
   }
   option = {
-    name = "flavor_hol.EVTOPTA3504"
+    name = "flavor_hol.EVTOPTA3504" 	# Expand Loan Market
     add_country_modifier = {
       name = hol_expand_loan_market
       duration = -1
@@ -279,7 +290,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
   option = {
-    name = "flavor_hol.EVTOPTB3504"
+    name = "flavor_hol.EVTOPTB3504" 	# Issue Strict Control
     add_country_modifier = {
       name = hol_strict_control
       duration = -1
@@ -287,6 +298,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+#Veerinigte Westindische Companie
 country_event = {
   id = flavor_hol.3506
   title = "flavor_hol.EVTNAME3506"
@@ -298,14 +310,14 @@ country_event = {
     is_year = 1610
     any_active_trade_node = {
       has_merchant = prev
-      province_id = 1516
+      province_id = 1516 	# Carribean tradenode
     }
   }
   mean_time_to_happen = {
     months = 100
   }
   option = {
-    name = "flavor_hol.EVTOPTA3506"
+    name = "flavor_hol.EVTOPTA3506" 	# We will exploit this!
     491 = {
       add_trade_modifier = {
         who = root
@@ -316,6 +328,7 @@ country_event = {
     }
   }
 }
+# Dutch Military Reforms
 country_event = {
   id = flavor_hol.3507
   title = "flavor_hol.EVTNAME3507"
@@ -333,23 +346,24 @@ country_event = {
     months = 50
   }
   option = {
-    name = "flavor_hol.EVTOPTA3507"
+    name = "flavor_hol.EVTOPTA3507" 	#  Reform Army and Navy
     add_dip_power = 100
     add_mil_power = 100
     add_navy_tradition = 10
     add_army_tradition = 10
   }
   option = {
-    name = "flavor_hol.EVTOPTB3507"
+    name = "flavor_hol.EVTOPTB3507" 	#  Reform Army
     add_mil_power = 200
     add_army_tradition = 20
   }
   option = {
-    name = "flavor_hol.EVTOPTC3507"
+    name = "flavor_hol.EVTOPTC3507" 	#  Reform Navy
     add_dip_power = 200
     add_navy_tradition = 20
   }
 }
+# Calvinism in the Netherlands
 country_event = {
   id = flavor_hol.3508
   title = "flavor_hol.EVTNAME3508"
@@ -365,20 +379,21 @@ country_event = {
     months = 120
   }
   option = {
-    name = "flavor_hol.EVTOPTA3508"
+    name = "flavor_hol.EVTOPTA3508" 	# Gomarism
     add_country_modifier = {
       name = hol_gomarism
       duration = -1
     }
   }
   option = {
-    name = "flavor_hol.EVTOPTB3508"
+    name = "flavor_hol.EVTOPTB3508" 	# Arminianism
     add_country_modifier = {
       name = hol_arminianism
       duration = -1
     }
   }
 }
+#Statholder office is made Hereditary in Oranien Dynasty
 country_event = {
   id = flavor_hol.3513
   title = "flavor_hol.EVTNAME3513"
@@ -397,16 +412,17 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_hol.EVTOPTA3513"
+    name = "flavor_hol.EVTOPTA3513" 	# Yes, we need Order!
     add_republican_tradition = -20
     add_stability_or_adm_power = yes
     set_country_flag = ned_hereditary_stadtholder
   }
   option = {
-    name = "flavor_hol.EVTOPTB3513"
+    name = "flavor_hol.EVTOPTB3513" 	# No, we need Freedom!
     add_republican_tradition = 10
   }
 }
+#The Revolution in Holland
 country_event = {
   id = flavor_hol.3515
   title = "flavor_hol.EVTNAME3515"
@@ -431,13 +447,14 @@ country_event = {
     months = 32
   }
   option = {
-    name = "flavor_hol.EVTOPTA3515"
+    name = "flavor_hol.EVTOPTA3515" 	# React against Revolutionary Tendencies!
     add_stability = -1
     random_owned_province = {
       revolutionary_rebels = 3
     }
   }
 }
+#Jan de Witt
 country_event = {
   id = flavor_hol.3713
   title = "flavor_hol.EVTNAME3713"
@@ -463,6 +480,7 @@ country_event = {
     }
   }
 }
+# Anthony Heinsius
 country_event = {
   id = flavor_hol.3714
   title = "flavor_hol.EVTNAME3714"
@@ -487,6 +505,7 @@ country_event = {
     }
   }
 }
+# Leiden University
 country_event = {
   id = flavor_hol.1
   title = "flavor_hol.EVTNAME1"
@@ -505,17 +524,18 @@ country_event = {
     months = 100
   }
   option = {
-    name = "flavor_hol.EVTOPTA1"
+    name = "flavor_hol.EVTOPTA1" 	# Sponsor the university
     add_years_of_income = -0.25
     add_prestige = 5
     add_adm_power = 100
     add_innovativeness_small_effect = yes
   }
   option = {
-    name = "flavor_hol.EVTOPTB1"
+    name = "flavor_hol.EVTOPTB1" 	# Do nothing
     add_prestige = -1
   }
 }
+#Synod of Dort
 country_event = {
   id = flavor_hol.2
   title = "flavor_hol.EVTNAME2"
@@ -534,24 +554,25 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_hol.EVTOPTA2"
+    name = "flavor_hol.EVTOPTA2" 	# Gomarism is frowned upon 
     trigger = {
       has_country_modifier = hol_gomarism
     }
     remove_country_modifier = hol_gomarism
   }
   option = {
-    name = "flavor_hol.EVTOPTB2"
+    name = "flavor_hol.EVTOPTB2" 	# Arminianism is condemned
     trigger = {
       has_country_modifier = hol_arminianism
     }
     remove_country_modifier = hol_arminianism
   }
   option = {
-    name = "flavor_hol.EVTOPTC2"
+    name = "flavor_hol.EVTOPTC2" 	# Ignore it
     add_stability_or_adm_power = yes
   }
 }
+# Statenvertaling
 country_event = {
   id = flavor_hol.3
   title = "flavor_hol.EVTNAME3"
@@ -569,7 +590,7 @@ country_event = {
     months = 100
   }
   option = {
-    name = "flavor_hol.EVTOPTA3"
+    name = "flavor_hol.EVTOPTA3" 	# Found the Statenbijbel
     add_years_of_income = -0.5
     add_reform_progress_small_effect = yes
     add_country_modifier = {
@@ -582,6 +603,7 @@ country_event = {
     add_prestige = -1
   }
 }
+# Simon Stevin
 country_event = {
   id = flavor_hol.4
   title = "flavor_hol.EVTNAME4"
@@ -606,11 +628,11 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_hol.EVTOPTA4"
+    name = "flavor_hol.EVTOPTA4" 	# Employ him
     add_dip_power = 100
     define_advisor = {
       type = natural_scientist
-      name = "‰™„·¯eyr¬‚"  # Simon Stevin
+      name = "‰™„·¯eyr¬‚" 	# Simon Stevin
       culture = flemish
       discount = yes
       skill = 3
@@ -619,6 +641,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# Wilhelmus 
 country_event = {
   id = flavor_hol.5
   title = "flavor_hol.EVTNAME5"
@@ -644,6 +667,10 @@ country_event = {
     }
   }
 }
+################################################
+# Additional Flavor Events by Henrik Lohmander
+################################################
+# Tulip Crash
 country_event = {
   id = flavor_hol.6
   title = flavor_hol.6.t
@@ -655,6 +682,7 @@ country_event = {
     is_year = 1550
     monthly_income = 150
     1269 = {
+      #Antwerpen
       trade_share = {
         country = NED
         share = 25
@@ -677,6 +705,7 @@ country_event = {
     add_inflation = 10
   }
 }
+# House of Elzevir
 country_event = {
   id = flavor_hol.7
   title = flavor_hol.7.t
@@ -685,6 +714,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = NED
+    #is_year = 1580
     has_institution = printing_press
     NOT = {
       is_year = 1595
@@ -707,6 +737,7 @@ country_event = {
     }
   }
 }
+# Groot Desseyn, The Grand Design
 country_event = {
   id = flavor_hol.8
   title = flavor_hol.8.t
@@ -738,7 +769,7 @@ country_event = {
     months = 150
   }
   option = {
-    name = flavor_hol.8.a
+    name = flavor_hol.8.a 	# Sounds like a grand plan!
     every_province = {
       limit = {
         OR = {
@@ -768,10 +799,11 @@ country_event = {
     }
   }
   option = {
-    name = flavor_hol.8.b
+    name = flavor_hol.8.b 	# No, the international community would hate us.
     add_prestige = 5
   }
 }
+# The Fluyte
 country_event = {
   id = flavor_hol.9
   title = flavor_hol.9.t
@@ -780,7 +812,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = NED
-    dip_tech = 10
+    dip_tech = 10 	# Flutes
     NOT = {
       is_year = 1610
     }
@@ -790,7 +822,7 @@ country_event = {
     months = 45
   }
   option = {
-    name = flavor_hol.9.a
+    name = flavor_hol.9.a 	# Ok.
     add_prestige = 5
     97 = {
       add_province_modifier = {
@@ -801,6 +833,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# Hardships of the VoC
 country_event = {
   id = flavor_hol.10
   title = flavor_hol.10.t
@@ -832,22 +865,23 @@ country_event = {
     months = 300
   }
   option = {
-    name = flavor_hol.10.a
+    name = flavor_hol.10.a 	# Reorient to a more generalist approach
     add_dip_power = -50
     set_country_flag = ned_voc_hardships
   }
   option = {
-    name = flavor_hol.10.b
+    name = flavor_hol.10.b 	# Provide Generous loans to help the VoC get back on its feet
     add_years_of_income = -0.25
     set_country_flag = ned_voc_big_debt
   }
   option = {
-    name = flavor_hol.10.c
+    name = flavor_hol.10.c 	# Dissolve the VoC (this is not a very attractive option at this point)
     add_stability = -3
     add_inflation = 5
     remove_country_modifier = dutch_india_trade_co
   }
 }
+#VoC in financial peril
 country_event = {
   id = flavor_hol.11
   title = flavor_hol.11.t
@@ -886,24 +920,25 @@ country_event = {
     }
   }
   option = {
-    name = flavor_hol.11.a
+    name = flavor_hol.11.a 	# They need more loans!
     add_years_of_income = -0.5
     set_country_flag = ned_voc_in_peril
   }
   option = {
-    name = flavor_hol.11.b
+    name = flavor_hol.11.b 	# Dissolve the VoC
     set_country_flag = VoC_nationalized
     add_stability = -2
     add_inflation = 8
     remove_country_modifier = dutch_india_trade_co
   }
 }
+#Nationalization of the VoC?
 country_event = {
   id = flavor_hol.12
   title = flavor_hol.12.t
   desc = flavor_hol.12.d
   picture = NAVAL_MILITARY_eventPicture
-  fire_only_once = yes
+  fire_only_once = yes 	# Unlike the others this one also triggers if you have provinces in the east and the VoC modifier but have removed (or never added) the provinces to a trade company
   trigger = {
     tag = NED
     has_country_flag = ned_voc_in_peril
@@ -932,13 +967,13 @@ country_event = {
     }
   }
   option = {
-    name = flavor_hol.12.a
+    name = flavor_hol.12.a 	# They need even more loans!
     custom_tooltip = flavor_hol.12.a.tt
     set_country_flag = VoC_huge_debts
     add_years_of_income = -1
   }
   option = {
-    name = flavor_hol.12.b
+    name = flavor_hol.12.b 	# Dissolve the VoC
     set_country_flag = VoC_nationalized
     add_stability = -1
     add_dip_power = -50
@@ -946,6 +981,7 @@ country_event = {
     remove_country_modifier = dutch_india_trade_co
   }
 }
+#The Bank of Amsterdam & The International Capital Market
 country_event = {
   id = flavor_hol.13
   title = flavor_hol.13.t
@@ -989,6 +1025,7 @@ country_event = {
     }
   }
 }
+#The Immortal Seven
 country_event = {
   id = flavor_hol.14
   title = flavor_hol.14.t
@@ -1025,7 +1062,7 @@ country_event = {
     NED = {
       is_subject = no
       has_government_attribute = has_dutch_election
-      num_of_cities = 6
+      num_of_cities = 6 	# If too small this won't make much sense.
       OR = {
         religion = protestant
         religion = reformed
@@ -1061,7 +1098,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_hol.14.a
+    name = flavor_hol.14.a 	# Ok.
     NED = {
       country_event = {
         id = flavor_hol.15
@@ -1069,6 +1106,7 @@ country_event = {
     }
   }
 }
+#Invitation to William
 country_event = {
   id = flavor_hol.15
   title = flavor_hol.15.t
@@ -1077,7 +1115,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = flavor_hol.15.a
+    name = flavor_hol.15.a 	# Accept
     ai_chance = {
       factor = 1
     }
@@ -1101,7 +1139,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_hol.15.b
+    name = flavor_hol.15.b 	# Refuse
     ai_chance = {
       factor = 0
     }
@@ -1120,6 +1158,7 @@ country_event = {
     }
   }
 }
+# The Meddlesome Dutch
 country_event = {
   id = flavor_hol.16
   title = flavor_hol.16.t
@@ -1128,7 +1167,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = flavor_hol.16.a
+    name = flavor_hol.16.a 	# Ok.
     custom_tooltip = flavor_hol.16.a.tt
     add_opinion = {
       who = NED
@@ -1136,6 +1175,7 @@ country_event = {
     }
   }
 }
+# Conspirators in the cold
 country_event = {
   id = flavor_hol.17
   title = flavor_hol.17.t
@@ -1144,13 +1184,14 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = flavor_hol.17.a
+    name = flavor_hol.17.a 	# Great!
     add_opinion = {
       who = NED
       modifier = ned_refused_glorious_revolution
     }
   }
 }
+#Franco-Dutch tensions
 country_event = {
   id = flavor_hol.18
   title = flavor_hol.18.t
@@ -1179,7 +1220,7 @@ country_event = {
     months = 450
   }
   option = {
-    name = flavor_hol.18.a
+    name = flavor_hol.18.a 	# Our policy must be to contain the French
     FRA = {
       country_event = {
         id = flavor_hol.19
@@ -1203,7 +1244,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_hol.18.b
+    name = flavor_hol.18.b 	# Pursue a friendly policy towards the French
     FRA = {
       add_opinion = {
         who = NED
@@ -1218,6 +1259,7 @@ country_event = {
     }
   }
 }
+#Le Prisonnier de Hollande / Franco-Dutch Relations
 country_event = {
   id = flavor_hol.19
   title = flavor_hol.19.t
@@ -1226,10 +1268,11 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = flavor_hol.19.a
+    name = flavor_hol.19.a 	# Ok.
     custom_tooltip = flavor_hol.19.a.tt
   }
 }
+#Dejima - Japan
 country_event = {
   id = flavor_hol.20
   title = flavor_hol.20.t
@@ -1253,7 +1296,7 @@ country_event = {
     months = 10
   }
   option = {
-    name = flavor_hol.20.a
+    name = flavor_hol.20.a 	# Allow the Dutch to stay.
     set_country_flag = ned_dejima_allowed
     NED = {
       country_event = {
@@ -1267,10 +1310,11 @@ country_event = {
     custom_tooltip = flavor_hol.20.a.tt
   }
   option = {
-    name = flavor_hol.20.b
+    name = flavor_hol.20.b 	# All Westerners must go.
     add_prestige = 5
   }
 }
+#Dejima - Netherlands
 country_event = {
   id = flavor_hol.21
   title = flavor_hol.21.t
@@ -1279,7 +1323,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = flavor_hol.21.a
+    name = flavor_hol.21.a 	# Great!
     1376 = {
       add_trade_modifier = {
         who = NED
@@ -1290,6 +1334,7 @@ country_event = {
     }
   }
 }
+#Arumer Zwarte Hoop
 country_event = {
   id = flavor_hol.22
   title = flavor_hol.22.t
@@ -1319,12 +1364,12 @@ country_event = {
     months = 75
   }
   option = {
-    name = flavor_hol.22.a
+    name = flavor_hol.22.a 	# Crush the Traitors.
     99 = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 1
-        leader = "®v6wS <hmV¯e Y<SšN"  # Pier Gerlofs Donia
+        leader = "®v6wS <hmV¯e Y<SšN" 	# Pier Gerlofs Donia
       }
     }
     100 = {
@@ -1335,6 +1380,7 @@ country_event = {
     }
   }
 }
+#Pruikentijd - The Age of the Wigwearers
 country_event = {
   id = flavor_hol.23
   title = flavor_hol.23.t
@@ -1350,7 +1396,7 @@ country_event = {
     months = 360
   }
   option = {
-    name = flavor_hol.23.a
+    name = flavor_hol.23.a 	# Complacency? Pfah!
     add_country_modifier = {
       name = "ned_pruikentijd"
       duration = 5475
@@ -1358,6 +1404,7 @@ country_event = {
     add_prestige = -10
   }
 }
+#Baruch Spinoza
 country_event = {
   id = flavor_hol.24
   title = flavor_hol.24.t
@@ -1375,7 +1422,7 @@ country_event = {
     months = 66
   }
   option = {
-    name = flavor_hol.24.a
+    name = flavor_hol.24.a 	# Ok.
     add_adm_power = 100
     add_prestige = 5
     if = {
@@ -1386,9 +1433,9 @@ country_event = {
       }
       define_advisor = {
         type = philosopher
-        name = "ôTœk ¯e¾Rú‹Žƒ"  # Baruch Spinoza
+        name = "ôTœk ¯e¾Rú‹Žƒ" 	# Baruch Spinoza
         religion = jewish
-        culture = portugese
+        culture = portugese 	# Or Dutch
         discount = yes
         skill = 3
         location = 97
@@ -1396,3 +1443,4 @@ country_event = {
     }
   }
 }
+### Dutch Dejima chain

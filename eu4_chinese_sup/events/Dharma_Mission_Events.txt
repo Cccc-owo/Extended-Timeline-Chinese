@@ -1,7 +1,12 @@
+###########################################
+# Mission Events for the Bahmani Sultanate
+# Scripted by Henrik Lohmander
+###########################################
 namespace = bah_mission_events
 namespace = mer_mission_events
 namespace = mug_mission_events
 normal_or_historical_nations = yes
+#Fall of the City of Victory
 country_event = {
   id = bah_mission_events.1
   title = bah_mission_events.1.t
@@ -28,8 +33,8 @@ country_event = {
       add_base_tax = -2
       add_base_production = -2
       add_base_manpower = -2
-      change_province_name = "ç…bÃë"  # Bellary
-      rename_capital = "ç…bÃë"  # Bellary
+      change_province_name = "ç…bÃë" 	# Bellary
+      rename_capital = "ç…bÃë" 	# Bellary
     }
     capital_scope = {
       add_base_tax = 2
@@ -48,6 +53,7 @@ country_event = {
     }
   }
 }
+#Fall of the City of Victory
 country_event = {
   id = bah_mission_events.2
   title = bah_mission_events.2.t
@@ -74,6 +80,7 @@ country_event = {
     }
   }
 }
+#Fall of Delhi
 country_event = {
   id = bah_mission_events.3
   title = bah_mission_events.3.t
@@ -86,6 +93,7 @@ country_event = {
     add_prestige = 20
   }
 }
+#Fall of Delhi
 country_event = {
   id = mer_mission_events.1
   title = mer_mission_events.1.t
@@ -98,6 +106,7 @@ country_event = {
     add_prestige = 20
   }
 }
+#Viceroyalty of the Deccan
 country_event = {
   id = mug_mission_events.1
   title = mug_mission_events.1.t
@@ -109,8 +118,8 @@ country_event = {
     name = mug_mission_events.1.a
     545 = {
       move_capital_effect = yes
-      change_province_name = "eYg†RÙT∑V"  # Aurangabad
-      rename_capital = "eYg†RÙT∑V"  # Aurangabad
+      change_province_name = "eYg†RÙT∑V" 	# Aurangabad
+      rename_capital = "eYg†RÙT∑V" 	# Aurangabad
       add_base_tax = 2
       add_base_manpower = 2
       add_base_production = 2
@@ -120,8 +129,8 @@ country_event = {
       }
     }
     542 = {
-      change_province_name = "wmóV…bÙT"  # Hyderabad
-      rename_capital = "wmóV…bÙT"  # Hyderabad
+      change_province_name = "wmóV…bÙT" 	# Hyderabad
+      rename_capital = "wmóV…bÙT" 	# Hyderabad
       add_base_tax = 2
       add_base_manpower = 2
       add_base_production = 2
@@ -170,6 +179,7 @@ country_event = {
     vassalize = DEC
     DEC = {
       change_government = monarchy
+      #set_legacy_government = indian_sultanate_legacy
       add_opinion = {
         who = ROOT
         modifier = opinion_viceroyalty_of_deccan
@@ -180,8 +190,8 @@ country_event = {
       }
       set_capital = 545
       define_ruler = {
-        name = "?ñ(Ñ+Y >ç I"  # Asaf Jah I
-        dynasty = "?ñ(Ñ+Y >ç^"  # Asaf Jahi
+        name = "?ñ(Ñ+Y >ç I" 	# Asaf Jah I 	# Qamar-ud-din Khan
+        dynasty = "?ñ(Ñ+Y >ç^" 	# Asaf Jahi
         DIP = 4
         ADM = 3
         MIL = 5
@@ -198,8 +208,8 @@ country_event = {
       }
     }
     545 = {
-      change_province_name = "eYg†RÙT∑V"  # Aurangabad
-      rename_capital = "eYg†RÙT∑V"  # Aurangabad
+      change_province_name = "eYg†RÙT∑V" 	# Aurangabad
+      rename_capital = "eYg†RÙT∑V" 	# Aurangabad
       add_base_tax = 2
       add_base_manpower = 2
       add_base_production = 2
@@ -209,14 +219,15 @@ country_event = {
       }
     }
     542 = {
-      change_province_name = "wmóV…bÙT"  # Hyderabad
-      rename_capital = "wmóV…bÙT"  # Hyderabad
+      change_province_name = "wmóV…bÙT" 	# Hyderabad
+      rename_capital = "wmóV…bÙT" 	# Hyderabad
       add_base_tax = 2
       add_base_manpower = 2
       add_base_production = 2
     }
   }
 }
+#Fall of Golconda
 country_event = {
   id = mug_mission_events.2
   title = mug_mission_events.2.t

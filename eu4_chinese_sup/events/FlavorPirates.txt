@@ -1,5 +1,8 @@
+###### DHE's to spawn pirate republics ######
+###### by Daniel Tolman ######
 namespace = pirates
 normal_or_historical_nations = yes
+# The Pirates of New Providence
 country_event = {
   id = pirates.2
   title = "pirates.2.t"
@@ -55,7 +58,9 @@ country_event = {
     months = 12
   }
   option = {
+    # play as the pirates
     name = "pirates.2.a"
+    # play as NSS
     trigger = {
       ai = no
     }
@@ -82,8 +87,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = ",gpgf"  # Benjamin
-        dynasty = "—<SbS·V"  # Hornigold
+        name = ",gpgf" 	# Benjamin
+        dynasty = "—<SbS·V" 	# Hornigold
         adm = 3
         dip = 3
         mil = 5
@@ -103,6 +108,7 @@ country_event = {
     switch_tag = NSS
   }
   option = {
+    # pirates get released
     name = "pirates.2.b"
     482 = {
       owner = {
@@ -126,8 +132,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = ",gpgf"  # Benjamin
-        dynasty = "—<SbS·V"  # Hornigold
+        name = ",gpgf" 	# Benjamin
+        dynasty = "—<SbS·V" 	# Hornigold
         adm = 3
         dip = 3
         mil = 5
@@ -146,6 +152,7 @@ country_event = {
     }
   }
 }
+# Libertatia
 country_event = {
   id = pirates.3
   title = "pirates.3.t"
@@ -212,6 +219,7 @@ country_event = {
     months = 12
   }
   option = {
+    # play as the pirates
     name = "pirates.3.a"
     trigger = {
       ai = no
@@ -235,8 +243,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "yŠÆY¯e"  # James
-        dynasty = "s|Œg"  # Mission
+        name = "yŠÆY¯e" 	# James
+        dynasty = "s|Œg" 	# Mission
         adm = 4
         dip = 2
         mil = 3
@@ -244,7 +252,7 @@ country_event = {
       define_advisor = {
         type = theologian
         skill = 3
-        name = "aSÉbTNÌ‘HQu"  # Signor Caraccioli
+        name = "aSÉbTNÌ‘HQu" 	# Signor Caraccioli
         cost_multiplier = 0.25
       }
       if = {
@@ -262,6 +270,7 @@ country_event = {
     switch_tag = LIB
   }
   option = {
+    # pirates get released
     name = "pirates.3.b"
     release = LIB
     LIB = {
@@ -281,8 +290,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "yŠÆY¯e"  # James
-        dynasty = "s|Œg"  # Mission
+        name = "yŠÆY¯e" 	# James
+        dynasty = "s|Œg" 	# Mission
         adm = 4
         dip = 2
         mil = 3
@@ -290,7 +299,7 @@ country_event = {
       define_advisor = {
         type = theologian
         skill = 3
-        name = "aSÉbTNÌ‘HQu"  # Signor Caraccioli
+        name = "aSÉbTNÌ‘HQu" 	# Signor Caraccioli
         cost_multiplier = 0.25
       }
       if = {
@@ -308,6 +317,7 @@ country_event = {
     create_march = LIB
   }
 }
+# Sale
 country_event = {
   id = pirates.4
   title = "pirates.4.t"
@@ -359,12 +369,15 @@ country_event = {
   }
   mean_time_to_happen = {
     months = 12
+    # modifiers
   }
   option = {
+    # play as the pirates
     name = "pirates.4.a"
     trigger = {
       ai = no
     }
+    # play as SLE
     4563 = {
       add_base_tax = 2
       add_base_manpower = 2
@@ -389,8 +402,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "*Éb"  # Murat
-        dynasty = "÷–¯e"  # Reis
+        name = "*Éb" 	# Murat 	#  Jan Janszoon
+        dynasty = "÷–¯e" 	# Reis
         adm = 3
         dip = 3
         mil = 4
@@ -410,6 +423,7 @@ country_event = {
     switch_tag = SLE
   }
   option = {
+    # pirates get released as a march
     name = "pirates.4.b"
     4563 = {
       add_base_tax = 2
@@ -434,8 +448,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "*Éb"  # Murat
-        dynasty = "÷–¯e"  # Reis
+        name = "*Éb" 	# Murat 	#  Jan Janszoon
+        dynasty = "÷–¯e" 	# Reis
         adm = 3
         dip = 3
         mil = 4
@@ -454,6 +468,7 @@ country_event = {
     }
   }
   option = {
+    # No, go away
     name = "pirates.4.c"
     4563 = {
       add_base_tax = 2
@@ -464,6 +479,7 @@ country_event = {
     }
   }
 }
+# Tetouan
 country_event = {
   id = pirates.5
   title = "pirates.5.t"
@@ -514,8 +530,10 @@ country_event = {
   }
   mean_time_to_happen = {
     months = 12
+    # modifiers
   }
   option = {
+    # play as the pirates
     name = "pirates.5.a"
     trigger = {
       ai = no
@@ -544,8 +562,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "iIN·V"  # Sayyida
-        dynasty = "áwÉb"  # al Hurra
+        name = "iIN·V" 	# Sayyida
+        dynasty = "áwÉb" 	# al Hurra
         culture = andalucian
         adm = 4
         dip = 4
@@ -567,6 +585,7 @@ country_event = {
     switch_tag = TET
   }
   option = {
+    # pirates get released as a march
     name = "pirates.5.b"
     4561 = {
       add_base_tax = 2
@@ -591,8 +610,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "iIN·V"  # Sayyida
-        dynasty = "áwÉb"  # al Hurra
+        name = "iIN·V" 	# Sayyida
+        dynasty = "áwÉb" 	# al Hurra
         culture = andalucian
         adm = 4
         dip = 4
@@ -613,6 +632,7 @@ country_event = {
     }
   }
   option = {
+    # Go away
     name = "pirates.4.c"
     4561 = {
       add_base_tax = 2
@@ -623,6 +643,7 @@ country_event = {
     }
   }
 }
+# Port Royal
 country_event = {
   id = pirates.6
   title = "pirates.6.t"
@@ -650,6 +671,7 @@ country_event = {
       }
     }
     487 = {
+      # must be privateering in node
       privateer_power = {
         country = ROOT
         share = 5
@@ -697,8 +719,10 @@ country_event = {
   }
   mean_time_to_happen = {
     months = 12
+    # modifiers
   }
   option = {
+    # play as the pirates
     name = "pirates.6.a"
     trigger = {
       ai = no
@@ -726,7 +750,7 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "¦uð 4bôu¯e"  # John Davis
+        name = "¦uð 4bôu¯e" 	# John Davis
         adm = 2
         dip = 2
         mil = 5
@@ -746,6 +770,7 @@ country_event = {
     switch_tag = PRY
   }
   option = {
+    # pirates get released
     name = "pirates.6.b"
     487 = {
       owner = {
@@ -769,7 +794,7 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "¦uð 4bôu¯e"  # John Davis
+        name = "¦uð 4bôu¯e" 	# John Davis
         adm = 2
         dip = 2
         mil = 5
@@ -788,6 +813,7 @@ country_event = {
     }
   }
 }
+# Tortuga - Brethren of the Coast
 country_event = {
   id = pirates.7
   title = "pirates.7.t"
@@ -851,7 +877,9 @@ country_event = {
     months = 12
   }
   option = {
+    # play as the pirates
     name = "pirates.7.a"
+    # play as TOR
     trigger = {
       ai = no
     }
@@ -878,7 +906,7 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "¨N)R id9h"  # Henry Morgan
+        name = "¨N)R id9h" 	# Henry Morgan
         adm = 3
         dip = 5
         mil = 4
@@ -898,6 +926,7 @@ country_event = {
     switch_tag = TOR
   }
   option = {
+    # pirates get released
     name = "pirates.7.b"
     489 = {
       owner = {
@@ -921,7 +950,7 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "¨N)R id9h"  # Henry Morgan
+        name = "¨N)R id9h" 	# Henry Morgan
         adm = 3
         dip = 5
         mil = 4
@@ -940,6 +969,7 @@ country_event = {
     }
   }
 }
+# Palembang - Return of Piracy
 country_event = {
   id = pirates.8
   title = "pirates.8.t"
@@ -1001,6 +1031,7 @@ country_event = {
     add_stability = 1
   }
 }
+# Pattani - The Lin Daoqian Band
 country_event = {
   id = pirates.9
   title = "pirates.9.t"
@@ -1039,7 +1070,7 @@ country_event = {
     change_government = republic
     add_government_reform = pirate_republic_reform
     define_ruler = {
-      name = "—gSŒN"  # Lin Daoqian
+      name = "—gSŒN" 	# Lin Daoqian
       culture = wu
       adm = 2
       dip = 2
@@ -1055,6 +1086,7 @@ country_event = {
     add_stability = -1
   }
 }
+# The Golden Age of Piracy
 country_event = {
   id = pirates.20
   title = "pirates.20.t"
@@ -1095,6 +1127,7 @@ country_event = {
         }
       }
       1516 = {
+        # or just have a whole lot of privateers
         privateer_power = {
           country = ROOT
           share = 25
@@ -1112,6 +1145,7 @@ country_event = {
     custom_tooltip = golden_age_of_piracy_tooltip
   }
 }
+# Wokou Pirates in So
 country_event = {
   id = pirates.21
   title = "pirates.21.t"
@@ -1141,7 +1175,7 @@ country_event = {
     change_government = republic
     add_government_reform = pirate_republic_reform
     define_ruler = {
-      name = "?–êSÔbý Œgfm"  # Akibatsu Matsura
+      name = "?–êSÔbý Œgfm" 	# Akibatsu Matsura
       culture = kyushuan
       adm = 2
       dip = 2
@@ -1157,6 +1191,7 @@ country_event = {
     add_stability = -1
   }
 }
+# Pirates of Rugen
 country_event = {
   id = pirates.22
   title = "pirates.22.name"
@@ -1167,12 +1202,12 @@ country_event = {
     tag = RUG
     OR = {
       has_dlc = "Golden Century"
-      has_dlc = "Lions of the North"
+      has_dlc = "Lions of the North" 	# Rügen is a special case as it is in the Baltic Sea too
     }
     owns_core_province = 4745
     NOT = {
       num_of_cities = 2
-    }
+    } 	# must be an OPM
     OR = {
       ai = no
       is_subject = no
@@ -1190,7 +1225,7 @@ country_event = {
     add_government_reform = pirate_republic_reform
     define_ruler = {
       force_republican_names = yes
-      dynasty = "¯eyrSyrKQ"  # Störtebeker
+      dynasty = "¯eyrSyrKQ" 	# Störtebeker
       culture = pommeranian
     }
     add_republican_tradition = 50
@@ -1212,6 +1247,7 @@ country_event = {
     }
   }
 }
+# Pirates of Penzance (by James Beaumont)
 country_event = {
   id = pirates.23
   title = "pirates.23.t"
@@ -1238,10 +1274,10 @@ country_event = {
     add_government_reform = pirate_republic_reform
     define_ruler = {
       force_republican_names = yes
-      dynasty = "aSyr"  # Carter
+      dynasty = "aSyr" 	# Carter
     }
     233 = {
-      rename_capital = "mV^¯e"  # Penzance
+      rename_capital = "mV^¯e" 	# Penzance
     }
     add_republican_tradition = 50
     set_ruler_flag = historical_pirate
@@ -1261,6 +1297,7 @@ country_event = {
     }
   }
 }
+# Gilbert and Sulivan references to appease Daniel (by James Beaumont)
 country_event = {
   id = pirates.24
   title = "pirates.24.t"
@@ -1287,7 +1324,7 @@ country_event = {
     define_advisor = {
       type = naval_reformer
       skill = 3
-      name = "	TS=Oyr ^yr"  # Gilbert Patter
+      name = "	TS=Oyr ^yr" 	# Gilbert Patter
       cost_multiplier = 0.25
     }
   }
@@ -1297,14 +1334,15 @@ country_event = {
       factor = 1
     }
     define_ruler = {
-      name = "	TS=Oyr"  # Gilbert
-      dynasty = "^yr"  # Patter
+      name = "	TS=Oyr" 	# Gilbert
+      dynasty = "^yr" 	# Patter
       adm = 2
       dip = 2
       mil = 2
     }
   }
 }
+# [Root.Monarch.GetName] is now a legendary pirate!
 country_event = {
   id = pirates.25
   title = pirates.25.t

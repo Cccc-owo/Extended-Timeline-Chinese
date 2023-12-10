@@ -1,5 +1,11 @@
+##############################
+# Gotland Flavor Events
+#                            
+# Written by Ogulcan Yildirim
+##############################
 namespace = flavor_got
 normal_or_historical_nations = yes
+# Chose between Monarchy missions and Republican missions for Gotland
 country_event = {
   id = flavor_got.1
   title = flavor_got.1.t
@@ -28,6 +34,7 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
+    #We must get Eric back to the throne!
     name = flavor_got.1.a
     set_country_flag = got_monarchy_missions
     clr_country_flag = got_pirate_missions
@@ -56,6 +63,7 @@ country_event = {
     }
   }
   option = {
+    #No! Banish Eric from our island!
     name = flavor_got.1.b
     clr_country_flag = got_monarchy_missions
     clr_country_flag = got_pirate_missions
@@ -86,6 +94,8 @@ country_event = {
     }
   }
 }
+# Monarchy Events
+# Ask Emperor for help
 country_event = {
   id = flavor_got.2
   title = flavor_got.2.t
@@ -93,6 +103,7 @@ country_event = {
   picture = HRE_eventPicture
   is_triggered_only = yes
   option = {
+    #We need the support of the Emperor
     name = flavor_got.2.a
     custom_tooltip = flavor_got.2.a.tt
     hidden_effect = {
@@ -107,6 +118,7 @@ country_event = {
     }
   }
   option = {
+    #Bah. We will manage to do that on our own.
     name = flavor_got.2.b
     add_prestige = 20
     ai_chance = {
@@ -114,6 +126,7 @@ country_event = {
     }
   }
 }
+# Emperor gets asked to help Gotland in their aspiration
 country_event = {
   id = flavor_got.3
   title = flavor_got.3.t
@@ -121,6 +134,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
+    #Accept under the condition that Holstein gets returned
     name = flavor_got.3.a
     custom_tooltip = flavor_got.3.a.tt
     FROM = {
@@ -142,6 +156,7 @@ country_event = {
     }
   }
   option = {
+    #No.
     name = flavor_got.3.b
     add_imperial_influence = -1
     hidden_effect = {
@@ -156,6 +171,7 @@ country_event = {
     }
   }
 }
+# Emperor will help us under the condition that we return Holstein eventually
 country_event = {
   id = flavor_got.4
   title = flavor_got.4.t
@@ -163,6 +179,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
+    #Yes yes, sure.
     name = flavor_got.4.a
     custom_tooltip = flavor_got.4.a.tt
     set_country_flag = got_promised_holstein_to_the_empire
@@ -183,6 +200,7 @@ country_event = {
     }
   }
   option = {
+    #No.
     name = flavor_got.4.b
     custom_tooltip = flavor_got.4.b.tt
     hidden_effect = {
@@ -197,6 +215,7 @@ country_event = {
     }
   }
 }
+# Emperor won't help us at all.
 country_event = {
   id = flavor_got.5
   title = flavor_got.5.t
@@ -204,6 +223,7 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
+    #Thanks. Thanks for nothing.
     name = flavor_got.5.a
     add_dip_power = 50
     ai_chance = {
@@ -211,6 +231,7 @@ country_event = {
     }
   }
 }
+# Gotland accepts the condition
 country_event = {
   id = flavor_got.6
   title = flavor_got.6.t
@@ -218,6 +239,7 @@ country_event = {
   picture = DIPLOMACY_SIGNING_eventPicture
   is_triggered_only = yes
   option = {
+    #Hopefully they will keep their part of the bargain
     name = flavor_got.6.a
     add_imperial_influence = 1
     ai_chance = {
@@ -225,6 +247,7 @@ country_event = {
     }
   }
 }
+# Gotland doesn't want to accept
 country_event = {
   id = flavor_got.7
   title = flavor_got.7.t
@@ -232,12 +255,14 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
+    #Your loss.
     name = flavor_got.7.a
     ai_chance = {
       factor = 1
     }
   }
 }
+# The Holstein Promise
 country_event = {
   id = flavor_got.8
   title = flavor_got.8.t
@@ -337,6 +362,7 @@ country_event = {
     }
   }
 }
+# Emperor remembers Schleswig-Holstein promise
 country_event = {
   id = flavor_got.9
   title = flavor_got.9.t
@@ -344,6 +370,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
+    #Schleswig-Holstein must return to the Empire!
     name = flavor_got.9.a
     custom_tooltip = flavor_got.9.a.tt
     reverse_add_opinion = {
@@ -362,6 +389,7 @@ country_event = {
     }
   }
   option = {
+    #Nah, not worth the effort to worry about it.
     name = flavor_got.9.b
     custom_tooltip = flavor_got.9.b.tt
     add_imperial_influence = -5
@@ -381,6 +409,7 @@ country_event = {
     }
   }
 }
+# Hostein or War!
 country_event = {
   id = flavor_got.10
   title = flavor_got.10.t
@@ -388,6 +417,7 @@ country_event = {
   picture = DIPLOMAT_INTERROGATION_eventPicture
   is_triggered_only = yes
   option = {
+    #You can have it
     name = flavor_got.10.a
     add_stability = -1
     if = {
@@ -451,6 +481,7 @@ country_event = {
     }
   }
   option = {
+    #I think I prefer to keep it
     name = flavor_got.10.b
     custom_tooltip = flavor_got.10.b.tt
     reverse_add_opinion = {
@@ -469,6 +500,7 @@ country_event = {
     }
   }
 }
+# Emperor grants us the duchy
 country_event = {
   id = flavor_got.11
   title = flavor_got.11.t
@@ -476,6 +508,7 @@ country_event = {
   picture = DIPLOMACY_SIGNING_eventPicture
   is_triggered_only = yes
   option = {
+    #Neat
     name = flavor_got.11.a
     add_opinion = {
       who = FROM
@@ -486,6 +519,7 @@ country_event = {
     }
   }
 }
+# They return Holstein to the Empire
 country_event = {
   id = flavor_got.12
   title = flavor_got.12.t
@@ -493,6 +527,7 @@ country_event = {
   picture = DIPLOMACY_SIGNING_eventPicture
   is_triggered_only = yes
   option = {
+    #A wise choice
     name = flavor_got.12.a
     add_imperial_influence = 5
     ai_chance = {
@@ -500,6 +535,7 @@ country_event = {
     }
   }
 }
+# They refurse to return Holstein!
 country_event = {
   id = flavor_got.13
   title = flavor_got.13.t
@@ -507,6 +543,7 @@ country_event = {
   picture = BATTLE_eventPicture
   is_triggered_only = yes
   option = {
+    #War it is!
     name = flavor_got.13.a
     FROM = {
       declare_war = ROOT
@@ -516,6 +553,7 @@ country_event = {
     }
   }
 }
+# Execute the false King!
 country_event = {
   id = flavor_got.14
   title = flavor_got.14.t
@@ -532,6 +570,7 @@ country_event = {
     }
   }
   option = {
+    #Down with his head!
     name = flavor_got.14.a
     if = {
       limit = {
@@ -602,6 +641,7 @@ country_event = {
     }
   }
 }
+# A new Denmark rises
 country_event = {
   id = flavor_got.15
   title = flavor_got.15.t
@@ -609,6 +649,7 @@ country_event = {
   picture = COURT_eventPicture
   is_triggered_only = yes
   option = {
+    #The nobles of Denmark shall never again threaten our authority.
     name = flavor_got.15.a
     inherit = DAN
     change_primary_culture = danish
@@ -710,6 +751,7 @@ country_event = {
     }
   }
 }
+# We have Norway's Support
 country_event = {
   id = flavor_got.16
   title = flavor_got.16.t
@@ -724,6 +766,7 @@ country_event = {
     }
   }
   option = {
+    #Good that we can count on them at least
     name = flavor_got.16.a
     add_sailors = 2000
     NOR = {
@@ -736,6 +779,7 @@ country_event = {
     }
   }
 }
+# We have Sweden's Loyalty
 country_event = {
   id = flavor_got.17
   title = flavor_got.17.t
@@ -750,6 +794,7 @@ country_event = {
     }
   }
   option = {
+    #Good that we can count on them at least
     name = flavor_got.17.a
     SWE = {
       add_liberty_desire = 150
@@ -763,6 +808,7 @@ country_event = {
     }
   }
 }
+# A plea for an alliance
 country_event = {
   id = flavor_got.18
   title = flavor_got.18.t
@@ -774,6 +820,7 @@ country_event = {
     tag = FROM
   }
   option = {
+    #We should ally Gotland
     name = flavor_got.18.a
     create_alliance = FROM
     ai_chance = {
@@ -781,6 +828,7 @@ country_event = {
     }
   }
   option = {
+    #Not worth our time
     name = flavor_got.18.b
     add_dip_power = 25
     ai_chance = {
@@ -788,6 +836,7 @@ country_event = {
     }
   }
 }
+# Occupation of [DAN.Capital.GetName]
 country_event = {
   id = flavor_got.34
   title = flavor_got.34.t
@@ -802,6 +851,7 @@ country_event = {
     }
   }
   option = {
+    #We shall be victorious!
     name = flavor_got.34.a
     add_war_exhaustion = -10
     add_stability = 2
@@ -815,6 +865,7 @@ country_event = {
     }
   }
 }
+# Eric has died! Our claim on the Danish throne is endangered
 country_event = {
   id = flavor_got.37
   title = flavor_got.37.t
@@ -843,6 +894,7 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
+    #I shall take over his aspiration to usurp the Kalmar Union!
     name = flavor_got.37.a
     add_prestige = 20
     ai_chance = {
@@ -850,6 +902,7 @@ country_event = {
     }
   }
   option = {
+    #No! Banish Eric from our island!
     name = flavor_got.37.b
     clr_country_flag = got_monarchy_missions
     custom_tooltip = flavor_got.37.b.tt
@@ -877,6 +930,7 @@ country_event = {
     }
   }
 }
+#What is the difference between a merchant and a pirate? - Choose between Pirate missions and Merchant missions
 country_event = {
   id = flavor_got.38
   title = flavor_got.38.t
@@ -884,6 +938,7 @@ country_event = {
   picture = SMUGGLERS_eventPicture
   is_triggered_only = yes
   option = {
+    #We trade for the goods.
     name = flavor_got.38.a
     set_country_flag = got_republican_missions
     swap_non_generic_missions = yes
@@ -911,6 +966,7 @@ country_event = {
     }
   }
   option = {
+    #We TAKE the goods!
     name = flavor_got.38.b
     set_country_flag = got_pirate_missions
     swap_non_generic_missions = yes
@@ -939,6 +995,7 @@ country_event = {
     }
   }
 }
+#Move capital to the new world? (integrate subject)
 country_event = {
   id = flavor_got.39
   title = flavor_got.39.t
@@ -966,6 +1023,7 @@ country_event = {
     }
   }
   option = {
+    #A place in the sun is more than welcome!
     name = flavor_got.39.a
     goto = got_colony_capital
     every_subject_country = {
@@ -997,6 +1055,7 @@ country_event = {
     }
   }
   option = {
+    #A colonial state is much more to our advantage though
     name = flavor_got.39.b
     add_stability_or_adm_power = yes
     ai_chance = {
@@ -1004,6 +1063,7 @@ country_event = {
     }
   }
 }
+#Move capital to the new world?
 country_event = {
   id = flavor_got.40
   title = flavor_got.39.t
@@ -1011,6 +1071,7 @@ country_event = {
   picture = CARIBBEAN_PIRATE_FORT_eventPicture
   is_triggered_only = yes
   option = {
+    #A place in the sun is more than welcome!
     name = flavor_got.39.a
     goto = 481
     set_capital = 481
@@ -1038,6 +1099,7 @@ country_event = {
     }
   }
   option = {
+    #A colonial state is much more to our advantage though
     name = flavor_got.39.b
     add_stability_or_adm_power = yes
     ai_chance = {
@@ -1045,6 +1107,7 @@ country_event = {
     }
   }
 }
+#Steal the Tunisian Flag Ship
 country_event = {
   id = flavor_got.41
   title = flavor_got.41.t
@@ -1067,7 +1130,7 @@ country_event = {
     make_ruler_to_legendary_pirate = yes
     event_target:got_pirate_province = {
       create_flagship = {
-        name = "wm÷–N·ôTôTW(„"  # Hayrettin Barbarossa
+        name = "wm÷–N·ôTôTW(„" 	# Hayrettin Barbarossa
         type = heavy_ship
       }
     }
@@ -1076,6 +1139,7 @@ country_event = {
     }
   }
 }
+#Steal the Curia Coffers
 country_event = {
   id = flavor_got.42
   title = flavor_got.42.t
@@ -1108,6 +1172,7 @@ country_event = {
     }
   }
 }
+#Sack Venice
 country_event = {
   id = flavor_got.43
   title = flavor_got.43.t

@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Lithuania
+# Scripted by Sara Wendel-Örtqvist
+########################################
 namespace = flavor_lit
 normal_or_historical_nations = yes
+# Wave of Protestantism
 country_event = {
   id = flavor_lit.1
   title = "flavor_lit.EVTNAME1"
@@ -97,6 +102,7 @@ country_event = {
     }
   }
 }
+# Wave of Calvinism
 country_event = {
   id = flavor_lit.2
   title = "flavor_lit.EVTNAME2"
@@ -195,6 +201,7 @@ country_event = {
     }
   }
 }
+# Strategic Axis with Sweden
 country_event = {
   id = flavor_lit.3
   title = "flavor_lit.EVTNAME3"
@@ -283,6 +290,7 @@ country_event = {
     }
   }
 }
+# Strategic Axis with Prussia
 country_event = {
   id = flavor_lit.4
   title = "flavor_lit.EVTNAME4"
@@ -362,6 +370,7 @@ country_event = {
     }
   }
 }
+# Strategic Axis with Austria
 country_event = {
   id = flavor_lit.5
   title = "flavor_lit.EVTNAME5"
@@ -441,6 +450,7 @@ country_event = {
     }
   }
 }
+# Strategic Axis with Austria
 country_event = {
   id = flavor_lit.6
   title = "flavor_lit.EVTNAME6"
@@ -520,6 +530,7 @@ country_event = {
     }
   }
 }
+# Magnates crave 'Polish Rights'
 country_event = {
   id = flavor_lit.7
   title = "flavor_lit.EVTNAME7"
@@ -578,6 +589,7 @@ country_event = {
     }
   }
 }
+# Magnates crave 'Polish Rights'
 country_event = {
   id = flavor_lit.8
   title = "flavor_lit.EVTNAME7"
@@ -633,6 +645,7 @@ country_event = {
     }
   }
 }
+# Magnates crave 'Polish Rights'
 country_event = {
   id = flavor_lit.9
   title = "flavor_lit.EVTNAME7"
@@ -688,6 +701,7 @@ country_event = {
     }
   }
 }
+# Royal Reaction on the Polish Liberum Veto
 country_event = {
   id = flavor_lit.10
   title = "flavor_lit.EVTNAME10"
@@ -734,6 +748,7 @@ country_event = {
     }
   }
 }
+# Civil War in Lithuania
 country_event = {
   id = flavor_lit.11
   title = "flavor_lit.EVTNAME11"
@@ -763,6 +778,7 @@ country_event = {
     }
   }
 }
+# The Horrible Plague in Lithuania
 country_event = {
   id = flavor_lit.12
   title = "flavor_lit.EVTNAME12"
@@ -801,6 +817,7 @@ country_event = {
     }
   }
 }
+# Pietism
 country_event = {
   id = flavor_lit.13
   title = "flavor_lit.EVTNAME13"
@@ -828,7 +845,7 @@ country_event = {
     name = "flavor_lit.EVTOPTA13"
     add_stability = -2
     add_country_modifier = {
-      name = "pietism"
+      name = pietism
       duration = 18250
     }
   }
@@ -840,6 +857,7 @@ country_event = {
     }
   }
 }
+### Scandinavian DLC Lithuania Events scripted by Big Boss
 country_event = {
   id = flavor_lit.14
   title = flavor_lit.14.t
@@ -945,6 +963,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Crimean Steppes
   id = flavor_lit.17
   title = flavor_lit.17.t
   desc = flavor_lit.17.d
@@ -1016,6 +1035,7 @@ country_event = {
   }
 }
 country_event = {
+  #Francysk Skaryna and the Wonders of Printing
   id = flavor_lit.18
   title = flavor_lit.18.t
   desc = flavor_lit.18.d
@@ -1039,7 +1059,7 @@ country_event = {
   option = {
     name = flavor_lit.18.a
     define_advisor = {
-      name = "Vg‰¯eKQ·¯eaS)R³u"  # Francysk Skaryna
+      name = "Vg‰¯eKQ·¯eaS)R³u" 	# Francysk Skaryna
       type = natural_scientist
       cost_multiplier = 0.5
       culture = byelorussian
@@ -1058,6 +1078,7 @@ country_event = {
   }
 }
 country_event = {
+  #Khmelnytsky Uprising
   id = flavor_lit.19
   title = flavor_lit.19.t
   desc = flavor_lit.19.d
@@ -1125,4 +1146,18 @@ country_event = {
     }
     add_stability = -3
   }
+  #option = { 
+  #name = flavor_lit.19.c 
+  #trigger = { 
+  #ai = no 
+  #ZAZ = { exists = no }
+  #}
+  #highlight = yes 
+  #create_independent_estate = {
+  #	estate = estate_cossacks
+  #	play_as = yes 
+  #tag = ZAZ
+  #}
+  #add_prestige = -25 
+  #}
 }

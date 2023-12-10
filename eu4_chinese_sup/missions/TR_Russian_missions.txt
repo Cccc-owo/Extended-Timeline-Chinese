@@ -75,9 +75,7 @@ tr_russia_exclusive_church = {
   has_country_shield = yes
   rus_patriarchate_mission = {
     icon = mission_russian_patriarchatee
-    required_missions = {
-      rus_churches_mission
-    }
+    required_missions = { rus_churches_mission }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -140,9 +138,7 @@ tr_muscovy_conquest = {
   has_country_shield = yes
   tr_access_to_the_baltic_sea = {
     icon = mission_galleys_in_port
-    required_missions = {
-      tr_consolidate_russia_mission
-    }
+    required_missions = { tr_consolidate_russia_mission }
     completed_by = 1776.1.1
     position = 4
     provinces_to_highlight = {
@@ -178,9 +174,7 @@ tr_muscovy_conquest = {
   }
   rus_partition_poland_mission = {
     icon = mission_partition_poland
-    required_missions = {
-      tr_russia_partitions_poland_new
-    }
+    required_missions = { tr_russia_partitions_poland_new }
     provinces_to_highlight = {
       OR = {
         area = malopolska_area
@@ -370,9 +364,7 @@ tr_russia_conquest_1 = {
   }
   tr_subjugate_novgorod = {
     icon = mission_have_two_subjects
-    required_missions = {
-      tr_invade_novgorod_mission
-    }
+    required_missions = { tr_invade_novgorod_mission }
     completed_by = 1478.1.15
     provinces_to_highlight = {
       OR = {
@@ -449,9 +441,7 @@ tr_russia_conquest_1 = {
   }
   tr_consolidate_russia_mission = {
     icon = mission_unite_home_region
-    required_missions = {
-      tr_subjugate_novgorod
-    }
+    required_missions = { tr_subjugate_novgorod }
     completed_by = 1776.1.1
     provinces_to_highlight = {
       OR = {
@@ -470,6 +460,7 @@ tr_russia_conquest_1 = {
       }
     }
     trigger = {
+      # integrate minors
       294 = {
         owned_by = ROOT
       }
@@ -602,11 +593,10 @@ tr_russia_conquest_1 = {
       }
     }
   }
+  # liberate ruthenia
   tr_russia_partitions_poland_new = {
     icon = mission_conquer_5_states
-    required_missions = {
-      tr_consolidate_russia_mission
-    }
+    required_missions = { tr_consolidate_russia_mission }
     provinces_to_highlight = {
       region = ruthenia_region
       NOT = {
@@ -721,9 +711,7 @@ tr_russia_exclusive_1 = {
   has_country_shield = yes
   rus_romania_conquest = {
     icon = mission_conquer_romania
-    required_missions = {
-      tr_russia_partitions_poland_new
-    }
+    required_missions = { tr_russia_partitions_poland_new }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -782,9 +770,7 @@ tr_russia_exclusive_1 = {
   }
   rus_third_rome_mission = {
     icon = mission_the_third_rome
-    required_missions = {
-      rus_romania_conquest
-    }
+    required_missions = { rus_romania_conquest }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -828,9 +814,7 @@ tr_russia_exclusive_1 = {
   }
   rus_streltsy_mission = {
     icon = mission_recruit_streltsy
-    required_missions = {
-      time_of_troubles_mission
-    }
+    required_missions = { time_of_troubles_mission }
     position = 9
     trigger = {
       num_of_streltsy = 30
@@ -846,9 +830,7 @@ tr_russia_exclusive_1 = {
   }
   russian_abolutism_mission = {
     icon = mission_autocratic_rule
-    required_missions = {
-      rus_streltsy_mission
-    }
+    required_missions = { rus_streltsy_mission }
     trigger = {
       if = {
         limit = {
@@ -911,9 +893,7 @@ tr_russia_conquest_2 = {
   has_country_shield = yes
   tr_conquer_finland = {
     icon = mission_assemble_an_army
-    required_missions = {
-      tr_consolidate_russia_mission
-    }
+    required_missions = { tr_consolidate_russia_mission }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -970,9 +950,7 @@ tr_russia_exclusive_2 = {
   has_country_shield = yes
   rus_manchuria_coast = {
     icon = mission_amur_acquisition
-    required_missions = {
-      tr_russian_colony_in_east_siberia
-    }
+    required_missions = { tr_russian_colony_in_east_siberia }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1010,7 +988,7 @@ tr_russia_exclusive_2 = {
     }
     effect = {
       2106 = {
-        rename_capital = "&r…bÍèÉlØeXbKQ"  # Vladivostok
+        rename_capital = "&r…bÍèÉlØeXbKQ" 	# Vladivostok
         change_religion = ROOT
         change_culture = ROOT
         add_base_tax = 1
@@ -1051,10 +1029,7 @@ tr_russia_exclusive_2 = {
   }
   tr_revolution_mission = {
     icon = mission_russian_revolution
-    required_missions = {
-      russian_abolutism_mission
-      tr_state_manufactories
-    }
+    required_missions = { russian_abolutism_mission tr_state_manufactories }
     position = 11
     provinces_to_highlight = {}
     trigger = {
@@ -1121,6 +1096,7 @@ tr_russia_conquest_3 = {
     }
   }
   has_country_shield = yes
+  # Tame the Steppes
   tr_conquer_steppes_russia_mission = {
     icon = mission_non-western_cavalry_raid
     required_missions = {}
@@ -1237,9 +1213,7 @@ tr_russia_conquest_3 = {
   }
   tr_cross_the_mongol_border = {
     icon = mission_cossack_cavalry
-    required_missions = {
-      tr_conquer_steppes_russia_mission
-    }
+    required_missions = { tr_conquer_steppes_russia_mission }
     completed_by = 1556.6.2
     provinces_to_highlight = {
       OR = {
@@ -1344,9 +1318,7 @@ tr_russia_conquest_3 = {
   }
   tr_subjugate_crimea = {
     icon = mission_non-western_soldiers
-    required_missions = {
-      tr_cross_the_mongol_border
-    }
+    required_missions = { tr_cross_the_mongol_border }
     completed_by = 1792.1.1
     provinces_to_highlight = {
       region = crimea_region
@@ -1378,9 +1350,7 @@ tr_russia_conquest_3 = {
   }
   rus_complete_west_siberia = {
     icon = mission_collect_yasak
-    required_missions = {
-      tr_russian_colony_in_west_siberia_new
-    }
+    required_missions = { tr_russian_colony_in_west_siberia_new }
     position = 6
     completed_by = 1618.1.1
     provinces_to_highlight = {
@@ -1427,9 +1397,7 @@ tr_russia_conquest_3 = {
   }
   rus_complete_east_siberia = {
     icon = mission_extent_yasak_to_the_east
-    required_missions = {
-      tr_russian_colony_in_east_siberia
-    }
+    required_missions = { tr_russian_colony_in_east_siberia }
     completed_by = 1792.1.1
     provinces_to_highlight = {
       region = east_siberia_region
@@ -1481,9 +1449,7 @@ tr_russia_exclusive_3 = {
   has_country_shield = yes
   tr_prikazy_mission = {
     icon = mission_establish_the_prikazy
-    required_missions = {
-      time_of_troubles_mission
-    }
+    required_missions = { time_of_troubles_mission }
     position = 9
     trigger = {
       custom_trigger_tooltip = {
@@ -1536,9 +1502,7 @@ tr_russia_exclusive_3 = {
   }
   tr_state_manufactories = {
     icon = mission_state_manufactories
-    required_missions = {
-      tr_prikazy_mission
-    }
+    required_missions = { tr_prikazy_mission }
     trigger = {
       calc_true_if = {
         all_owned_province = {
@@ -1591,9 +1555,7 @@ tr_siberia_missions = {
   has_country_shield = yes
   tr_subjugate_kazan = {
     icon = mission_conquer_50_development
-    required_missions = {
-      tr_conquer_steppes_russia_mission
-    }
+    required_missions = { tr_conquer_steppes_russia_mission }
     position = 2
     completed_by = 1552.10.2
     provinces_to_highlight = {
@@ -1689,10 +1651,7 @@ tr_siberia_missions = {
   }
   tr_conquer_remaining_steppes_mission = {
     icon = mission_non-western_cavalry_raid
-    required_missions = {
-      tr_cross_the_mongol_border
-      tr_subjugate_kazan
-    }
+    required_missions = { tr_cross_the_mongol_border tr_subjugate_kazan }
     completed_by = 1792.1.1
     provinces_to_highlight = {
       OR = {
@@ -1808,9 +1767,7 @@ tr_siberia_missions = {
   }
   tr_russian_colony_in_west_siberia_new = {
     icon = mission_colonial
-    required_missions = {
-      rus_integrate_perm
-    }
+    required_missions = { rus_integrate_perm }
     completed_by = 1618.1.1
     provinces_to_highlight = {
       region = west_siberia_region
@@ -1828,7 +1785,7 @@ tr_siberia_missions = {
     effect = {
       add_dip_power = 100
       define_conquistador = {
-        name = "ˆSSlöKQ Pü´ÉÚÉˆSÙuGY"  # Yermak Timofeyevich
+        name = "ˆSSlöKQ Pü´ÉÚÉˆSÙuGY" 	# Yermak Timofeyevich
         shock = 6
         fire = 6
         manuever = 5
@@ -1838,9 +1795,7 @@ tr_siberia_missions = {
   }
   tr_russian_colony_in_east_siberia = {
     icon = mission_trade_company_region_abroad
-    required_missions = {
-      tr_russian_colony_in_west_siberia_new
-    }
+    required_missions = { tr_russian_colony_in_west_siberia_new }
     completed_by = 1701.1.1
     provinces_to_highlight = {
       region = east_siberia_region
@@ -1858,7 +1813,7 @@ tr_siberia_missions = {
     }
     effect = {
       define_explorer = {
-        name = "Ùu÷NØe ãv‰N"  # Vitus Bering
+        name = "Ùu÷NØe ãv‰N" 	# Vitus Bering
         fire = 4
         shock = 2
         manuever = 5
@@ -1932,9 +1887,7 @@ tr_siberia_missions = {
   }
   rus_alaskan_colony = {
     icon = mission_colonize_alaska
-    required_missions = {
-      tr_russian_colony_in_east_siberia
-    }
+    required_missions = { tr_russian_colony_in_east_siberia }
     provinces_to_highlight = {
       colonial_region = colonial_alaska
       NOT = {
@@ -1954,8 +1907,8 @@ tr_siberia_missions = {
         duration = 7300
       }
       2613 = {
-        change_province_name = "∞e?ñSIl<hSØeKQ"  # Novo-Arkhangelsk
-        rename_capital = "∞e?ñSIl<hSØeKQ"  # Novo-Arkhangelsk
+        change_province_name = "∞e?ñSIl<hSØeKQ" 	# Novo-Arkhangelsk
+        rename_capital = "∞e?ñSIl<hSØeKQ" 	# Novo-Arkhangelsk
         add_base_tax = 1
         add_base_production = 1
         add_base_manpower = 1

@@ -1,5 +1,9 @@
+########################################
+# Major Flavor Events                  #
+########################################
 namespace = flavor_swe
 normal_or_historical_nations = yes
+# The Centralization Reforms of Gustav Vasa
 country_event = {
   id = flavor_swe.1
   title = flavor_swe.1.t
@@ -40,6 +44,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Reform and claim
     name = flavor_swe.1.a
     ai_chance = {
       factor = 100
@@ -52,6 +57,7 @@ country_event = {
       }
       add_reform_progress_small_effect = yes
     }
+    # Claim SkÂne
     if = {
       limit = {
         NOT = {
@@ -75,6 +81,7 @@ country_event = {
         }
       }
     }
+    # Claim Gotland
     if = {
       limit = {
         NOT = {
@@ -99,21 +106,27 @@ country_event = {
       }
     }
     1 = {
+      # Stockholm
       add_base_tax = 2
     }
     2 = {
+      #÷stergˆtland
       add_base_tax = 1
     }
     7 = {
+      #V‰stergˆtland
       add_base_tax = 1
     }
     27 = {
+      #Finland
       add_base_tax = 1
     }
     1 = {
+      # Stockholm
       add_base_manpower = 2
     }
     27 = {
+      #Finland
       add_base_manpower = 1
     }
     add_adm_power = -50
@@ -125,6 +138,7 @@ country_event = {
     }
   }
   option = {
+    # Let things be as they are
     name = flavor_swe.1.b
     ai_chance = {
       factor = 0
@@ -132,6 +146,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# The Engelbrekt Rebellion
 country_event = {
   id = flavor_swe.3217
   title = "flavor_swe.EVTNAME3217"
@@ -149,6 +164,7 @@ country_event = {
     months = 120
   }
   option = {
+    # Have Engelbrekt murdered
     name = "flavor_swe.EVTOPTA3217"
     ai_chance = {
       factor = 20
@@ -157,6 +173,7 @@ country_event = {
     add_liberty_desire = -10
   }
   option = {
+    # Stand by the union
     name = "flavor_swe.EVTOPTB3217"
     ai_chance = {
       factor = 20
@@ -170,6 +187,7 @@ country_event = {
     add_liberty_desire = -25
   }
   option = {
+    # Pick up the torch of freedom!
     name = "flavor_swe.EVTOPTC3217"
     ai_chance = {
       factor = 60
@@ -184,6 +202,7 @@ country_event = {
     }
   }
 }
+# The Kalmar Recess
 country_event = {
   id = flavor_swe.3218
   title = "flavor_swe.EVTNAME3218"
@@ -202,6 +221,7 @@ country_event = {
     months = 120
   }
   option = {
+    # Reject the Kalmar Recess
     name = "flavor_swe.EVTOPTA3218"
     add_liberty_desire = 25
     DAN = {
@@ -212,6 +232,7 @@ country_event = {
     }
   }
   option = {
+    # Honor the agreement
     name = "flavor_swe.EVTOPTB3218"
     add_stability_or_adm_power = yes
     DAN = {
@@ -222,6 +243,7 @@ country_event = {
     }
   }
 }
+# End of the Kalmar Union
 country_event = {
   id = flavor_swe.3219
   title = "flavor_swe.EVTNAME3219"
@@ -240,6 +262,7 @@ country_event = {
     months = 12
   }
   option = {
+    # Freedom!
     name = "flavor_swe.EVTOPTA3219"
     custom_tooltip = swe_vasa_leads_the_rebellion_tt
     add_country_modifier = {
@@ -255,6 +278,7 @@ country_event = {
         modifier = swe_renounced_the_union
       }
     }
+    # Danish notification event
     hidden_effect = {
       country_event = {
         id = flavor_swe.3220
@@ -263,6 +287,7 @@ country_event = {
     }
   }
   option = {
+    # Stay in the Union
     name = "flavor_swe.EVTOPTB3219"
     ai_chance = {
       factor = 0
@@ -276,6 +301,7 @@ country_event = {
     }
   }
 }
+# Union in Danger
 country_event = {
   id = flavor_swe.3220
   title = "flavor_swe.EVTNAME3220"
@@ -287,6 +313,7 @@ country_event = {
     add_legitimacy = -5
   }
 }
+# The Parliament of V‰sterÂs
 country_event = {
   id = flavor_swe.2
   title = flavor_swe.2.t
@@ -314,6 +341,7 @@ country_event = {
     months = 64
   }
   option = {
+    # This is the One True Faith!
     name = flavor_swe.2.a
     add_years_of_income = 1
     add_country_modifier = {
@@ -322,6 +350,7 @@ country_event = {
     }
   }
 }
+# Jˆran Persson
 country_event = {
   id = flavor_swe.3281
   title = "flavor_swe.EVTNAME3281"
@@ -343,12 +372,13 @@ country_event = {
     NOT = {
       is_year = 1568
     }
-    owns = 4
+    owns = 4 	#  Bergslagen
   }
   mean_time_to_happen = {
     months = 60
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 50
     if = {
@@ -361,7 +391,7 @@ country_event = {
     }
     define_advisor = {
       type = spymaster
-      name = "¶upQ iOSåg"  # Jˆran Persson
+      name = "¶upQ iOSåg" 	# Jˆran Persson
       culture = swedish
       location = 4
       discount = yes
@@ -369,6 +399,7 @@ country_event = {
     }
   }
 }
+# Per Brahe the Elder
 country_event = {
   id = flavor_swe.3280
   title = "flavor_swe.EVTNAME3280"
@@ -390,12 +421,13 @@ country_event = {
     NOT = {
       is_year = 1590
     }
-    owns = 1
+    owns = 1 	#  Uppland
   }
   mean_time_to_happen = {
     months = 240
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 33
     add_dip_power = 33
@@ -410,7 +442,7 @@ country_event = {
     }
     define_advisor = {
       type = statesman
-      name = "wiO ^…bkç"  # Per Brahe den ‰ldre
+      name = "wiO ^…bkç" 	# Per Brahe den ‰ldre
       culture = swedish
       discount = yes
       location = 1
@@ -418,6 +450,7 @@ country_event = {
     }
   }
 }
+# The Walloons in Sweden
 country_event = {
   id = flavor_swe.3227
   title = "flavor_swe.EVTNAME3227"
@@ -446,6 +479,7 @@ country_event = {
     months = 240
   }
   option = {
+    # Encourage Walloon immigration
     name = "flavor_swe.EVTOPTA3227"
     ai_chance = {
       factor = 90
@@ -466,6 +500,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
   option = {
+    # We are not interested
     name = "flavor_swe.EVTOPTB3227"
     ai_chance = {
       factor = 10
@@ -473,6 +508,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The Military Reforms of Gustavus Adolphus
 country_event = {
   id = flavor_swe.3228
   title = "flavor_swe.EVTNAME3228"
@@ -497,6 +533,7 @@ country_event = {
     months = 64
   }
   option = {
+    # Regional Conscription
     name = "flavor_swe.EVTOPTA3228"
     ai_chance = {
       factor = 80
@@ -509,6 +546,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
   option = {
+    # Mercenary Core		TODO
     name = "flavor_swe.EVTOPTB3228"
     ai_chance = {
       factor = 5
@@ -522,6 +560,7 @@ country_event = {
     custom_tooltip = generic_more_mercs_available_indefinite_tt
   }
   option = {
+    # Naval Expansion
     name = "flavor_swe.EVTOPTC3228"
     ai_chance = {
       factor = 15
@@ -534,6 +573,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# The Sinking of Vasa
 country_event = {
   id = flavor_swe.1628
   title = "flavor_swe.EVTNAME1628"
@@ -593,6 +633,7 @@ country_event = {
     }
   }
   option = {
+    # Our reputation is ruined!
     name = "flavor_swe.EVTOPTA1628"
     add_prestige = -25
     event_target:sink_sink_province = {
@@ -601,6 +642,7 @@ country_event = {
     set_country_flag = lost_first_vasa_ship
   }
 }
+# Per Brahe the Younger
 country_event = {
   id = flavor_swe.3282
   title = "flavor_swe.EVTNAME3282"
@@ -622,7 +664,7 @@ country_event = {
     NOT = {
       is_year = 1680
     }
-    owns = 1
+    owns = 1 	#  Uppland
   }
   mean_time_to_happen = {
     months = 120
@@ -631,13 +673,14 @@ country_event = {
     set_country_flag = SWE_had_event_3282
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 40
     add_dip_power = 40
     add_mil_power = 40
     define_advisor = {
       type = statesman
-      name = "SiO ^…bkç"  # Per Brahe den yngre
+      name = "SiO ^…bkç" 	# Per Brahe den yngre
       culture = swedish
       location = 1
       discount = yes
@@ -645,6 +688,7 @@ country_event = {
     }
   }
 }
+# Magnus Gabriel De la Gardie
 country_event = {
   id = flavor_swe.3283
   title = "flavor_swe.EVTNAME3283"
@@ -666,19 +710,20 @@ country_event = {
     NOT = {
       is_year = 1686
     }
-    owns = 36
+    owns = 36 	#  Estland
   }
   mean_time_to_happen = {
     months = 80
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 25
     add_dip_power = 25
     add_mil_power = 25
     define_advisor = {
       type = statesman
-      name = "lö<h™RØe∑†R^Ãë√WS∑∑V∑…b∑†RÍè"  # Magnus Gabriel De la Gardie
+      name = "lö<h™RØe∑†R^Ãë√WS∑∑V∑…b∑†RÍè" 	# Magnus Gabriel De la Gardie
       culture = swedish
       discount = yes
       location = 36
@@ -686,6 +731,7 @@ country_event = {
     }
   }
 }
+# The Mercantile Reforms
 country_event = {
   id = flavor_swe.3231
   title = "flavor_swe.EVTNAME3231"
@@ -710,6 +756,7 @@ country_event = {
     months = 120
   }
   option = {
+    # Mercantilist Policy
     name = "flavor_swe.EVTOPTA3231"
     ai_chance = {
       factor = 50
@@ -720,6 +767,7 @@ country_event = {
     }
   }
   option = {
+    # Free Trade Policy
     name = "flavor_swe.EVTOPTB3231"
     ai_chance = {
       factor = 25
@@ -730,6 +778,7 @@ country_event = {
     }
   }
   option = {
+    # Colonial Policy
     name = "flavor_swe.EVTOPTC3231"
     ai_chance = {
       factor = 25
@@ -740,6 +789,7 @@ country_event = {
     }
   }
 }
+# The Absolutism
 country_event = {
   id = flavor_swe.3232
   title = "flavor_swe.EVTNAME3232"
@@ -765,6 +815,7 @@ country_event = {
     months = 200
   }
   option = {
+    # The King shall rule supreme
     name = "flavor_swe.EVTOPTA3232"
     ai_chance = {
       factor = 90
@@ -777,6 +828,7 @@ country_event = {
     }
   }
   option = {
+    # The King must heed the Council
     name = "flavor_swe.EVTOPTB3232"
     ai_chance = {
       factor = 10
@@ -784,6 +836,7 @@ country_event = {
     add_stability = 3
   }
 }
+# Axel Oxenstierna
 country_event = {
   id = flavor_swe.3233
   title = "flavor_swe.EVTNAME3233"
@@ -805,12 +858,13 @@ country_event = {
     NOT = {
       is_year = 1654
     }
-    owns = 1
+    owns = 1 	#  Uppland
   }
   mean_time_to_happen = {
     months = 200
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 100
     add_dip_power = 100
@@ -819,6 +873,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# The Court of Appeals
 country_event = {
   id = flavor_swe.3235
   title = "flavor_swe.EVTNAME3235"
@@ -845,6 +900,7 @@ country_event = {
     months = 2000
   }
   option = {
+    # Ok
     name = "flavor_swe.EVTOPTA3235"
     add_stability_or_adm_power = yes
     add_country_modifier = {
@@ -853,6 +909,7 @@ country_event = {
     }
   }
 }
+# Oxenstierna's Regency
 country_event = {
   id = flavor_swe.3236
   title = "flavor_swe.EVTNAME3236"
@@ -882,6 +939,7 @@ country_event = {
     months = 4
   }
   option = {
+    # Grant the aristocracy new privileges
     name = "flavor_swe.EVTOPTA3236"
     ai_chance = {
       factor = 75
@@ -893,6 +951,7 @@ country_event = {
     }
   }
   option = {
+    # Resist these tendencies
     name = "flavor_swe.EVTOPTB3236"
     ai_chance = {
       factor = 25
@@ -903,6 +962,7 @@ country_event = {
     change_mil = 1
   }
 }
+# The Quarter Reduction of Charles X
 country_event = {
   id = flavor_swe.3237
   title = "flavor_swe.EVTNAME3237"
@@ -927,6 +987,7 @@ country_event = {
     months = 120
   }
   option = {
+    # More land to the Crown
     name = "flavor_swe.EVTOPTA3237"
     ai_chance = {
       factor = 60
@@ -936,6 +997,7 @@ country_event = {
     }
   }
   option = {
+    # Increased Contributions
     name = "flavor_swe.EVTOPTB3237"
     ai_chance = {
       factor = 20
@@ -943,6 +1005,7 @@ country_event = {
     add_years_of_income = 0.25
   }
   option = {
+    # Align with the Lords
     name = "flavor_swe.EVTOPTC3237"
     ai_chance = {
       factor = 20
@@ -950,6 +1013,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The Quarter Reduction of Christina
 country_event = {
   id = flavor_swe.3238
   title = "flavor_swe.EVTNAME3238"
@@ -974,6 +1038,7 @@ country_event = {
     months = 120
   }
   option = {
+    # More land to the Crown
     name = "flavor_swe.EVTOPTC3238"
     ai_chance = {
       factor = 60
@@ -987,6 +1052,7 @@ country_event = {
     }
   }
   option = {
+    # Align with the Lords
     name = "flavor_swe.EVTOPTA3238"
     ai_chance = {
       factor = 20
@@ -1000,6 +1066,7 @@ country_event = {
     }
   }
 }
+# Queen Christina - The Catholic Maiden
 country_event = {
   id = 3239
   title = "flavor_swe.EVTNAME3239"
@@ -1029,6 +1096,7 @@ country_event = {
     months = 64
   }
   option = {
+    # Abdicate
     name = "flavor_swe.EVTOPTA3239"
     ai_chance = {
       factor = 75
@@ -1037,6 +1105,7 @@ country_event = {
     kill_ruler = yes
   }
   option = {
+    # Stay and convert
     name = "flavor_swe.EVTOPTB3239"
     ai_chance = {
       factor = 0
@@ -1050,6 +1119,7 @@ country_event = {
     }
   }
 }
+# Magnus Gabriel de la Gardie's Regency
 country_event = {
   id = flavor_swe.3240
   title = "flavor_swe.EVTNAME3240"
@@ -1078,6 +1148,7 @@ country_event = {
     set_country_flag = SWE_had_event_3240
   }
   option = {
+    # Replace the King's Men
     name = "flavor_swe.EVTOPTA3240"
     ai_chance = {
       factor = 75
@@ -1088,6 +1159,7 @@ country_event = {
     }
   }
   option = {
+    # Comply with the King's Will
     name = "flavor_swe.EVTOPTB3240"
     ai_chance = {
       factor = 25
@@ -1095,6 +1167,7 @@ country_event = {
     add_stability = -2
   }
 }
+# The Great Reduction of Charles XI
 country_event = {
   id = flavor_swe.3243
   title = "flavor_swe.EVTNAME3243"
@@ -1119,6 +1192,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Time of reckoning for the nobles
     name = "flavor_swe.EVTOPTA3243"
     ai_chance = {
       factor = 90
@@ -1159,6 +1233,7 @@ country_event = {
       }
       add_base_tax = 1
     }
+    # Clear flags
     hidden_effect = {
       every_owned_province = {
         limit = {
@@ -1169,6 +1244,7 @@ country_event = {
     }
   }
   option = {
+    # Bargain with the nobles
     name = "flavor_swe.EVTOPTB3243"
     ai_chance = {
       factor = 10
@@ -1179,6 +1255,7 @@ country_event = {
     }
   }
   option = {
+    # Leave it be
     name = "flavor_swe.EVTOPTC3243"
     ai_chance = {
       factor = 0
@@ -1188,6 +1265,7 @@ country_event = {
     }
   }
 }
+# The Great Army Reorganization
 country_event = {
   id = flavor_swe.3244
   title = "flavor_swe.EVTNAME3244"
@@ -1214,6 +1292,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Reform the army.
     name = "flavor_swe.EVTOPTA3244"
     ai_chance = {
       factor = 90
@@ -1225,6 +1304,7 @@ country_event = {
     }
   }
   option = {
+    # Maintain present system
     name = "flavor_swe.EVTOPTB3244"
     ai_chance = {
       factor = 10
@@ -1233,6 +1313,7 @@ country_event = {
     add_army_tradition = 10
   }
 }
+# The Product Act
 country_event = {
   id = flavor_swe.3247
   title = "flavor_swe.EVTNAME3247"
@@ -1259,6 +1340,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Enact
     name = "flavor_swe.EVTOPTA3247"
     ai_chance = {
       factor = 75
@@ -1270,6 +1352,7 @@ country_event = {
     }
   }
   option = {
+    # The present policy is perfect
     name = "flavor_swe.EVTOPTB3247"
     ai_chance = {
       factor = 25
@@ -1277,6 +1360,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Pietism and the Conventicle Edict
 country_event = {
   id = flavor_swe.3248
   title = "flavor_swe.EVTNAME3248"
@@ -1304,6 +1388,7 @@ country_event = {
     months = 240
   }
   option = {
+    # Sign the Edict
     name = "flavor_swe.EVTOPTA3248"
     ai_chance = {
       factor = 75
@@ -1314,16 +1399,18 @@ country_event = {
     }
   }
   option = {
+    # Allow Pietism
     name = "flavor_swe.EVTOPTB3248"
     ai_chance = {
       factor = 25
     }
     add_country_modifier = {
-      name = "pietism"
+      name = pietism
       duration = 9125
     }
   }
 }
+# The Anjala League
 country_event = {
   id = flavor_swe.3259
   title = "flavor_swe.EVTNAME3259"
@@ -1363,6 +1450,7 @@ country_event = {
     months = 12
   }
   option = {
+    # Negotiate with the Traitors
     name = "flavor_swe.EVTOPTA3259"
     ai_chance = {
       factor = 25
@@ -1386,6 +1474,7 @@ country_event = {
     }
   }
   option = {
+    # Assasinate the Leaders
     name = "flavor_swe.EVTOPTB3259"
     ai_chance = {
       factor = 75
@@ -1400,6 +1489,7 @@ country_event = {
     }
   }
 }
+# The Dethronement of Gustav IV Adolf
 country_event = {
   id = flavor_swe.3260
   title = "flavor_swe.EVTNAME3260"
@@ -1434,14 +1524,17 @@ country_event = {
     months = 32
   }
   option = {
+    # Dethrone him
     name = "flavor_swe.EVTOPTA3260"
     kill_ruler = yes
   }
   option = {
+    # Let him rule
     name = "flavor_swe.EVTOPTB3260"
     add_stability_or_adm_power = yes
   }
 }
+# The Reforms of Gustav IV Adolf
 country_event = {
   id = flavor_swe.3261
   title = "flavor_swe.EVTNAME3261"
@@ -1465,6 +1558,7 @@ country_event = {
     months = 120
   }
   option = {
+    # Reform the economy
     name = "flavor_swe.EVTOPTA3261"
     ai_chance = {
       factor = 90
@@ -1487,6 +1581,7 @@ country_event = {
     }
   }
   option = {
+    # Go on as before
     name = "flavor_swe.EVTOPTB3261"
     ai_chance = {
       factor = 10
@@ -1495,6 +1590,7 @@ country_event = {
     add_legitimacy = 10
   }
 }
+# The Act of Union and Security
 country_event = {
   id = flavor_swe.3263
   title = "flavor_swe.EVTNAME3263"
@@ -1518,6 +1614,7 @@ country_event = {
     months = 1200
   }
   option = {
+    # Pass the Act
     name = "flavor_swe.EVTOPTA3263"
     ai_chance = {
       factor = 90
@@ -1529,6 +1626,7 @@ country_event = {
     }
   }
   option = {
+    # Refuse the Act
     name = "flavor_swe.EVTOPTB3263"
     ai_chance = {
       factor = 10
@@ -1536,6 +1634,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The Great Agricultural Reform
 country_event = {
   id = flavor_swe.3264
   title = "flavor_swe.EVTNAME3264"
@@ -1559,6 +1658,7 @@ country_event = {
     months = 400
   }
   option = {
+    # Initiate the reform
     name = "flavor_swe.EVTOPTA3264"
     add_country_modifier = {
       name = the_great_agricultural_reform
@@ -1595,6 +1695,7 @@ country_event = {
     }
   }
   option = {
+    # Carry on as before
     name = "flavor_swe.EVTOPTB3264"
     ai_chance = {
       factor = 10
@@ -1602,6 +1703,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The Great Dalecarlian Dance
 country_event = {
   id = flavor_swe.1743
   title = "flavor_swe.EVTNAME1743"
@@ -1619,7 +1721,7 @@ country_event = {
       }
     }
     is_year = 1700
-    owns = 8
+    owns = 8 	#  Dalaskogen
     NOT = {
       stability = 0
     }
@@ -1628,6 +1730,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Restrict their trade
     name = "flavor_swe.EVTOPTA1743"
     8 = {
       spawn_rebels = {
@@ -1637,6 +1740,7 @@ country_event = {
     }
   }
   option = {
+    # Confirm their trade rights
     name = "flavor_swe.EVTOPTB1743"
     ai_chance = {
       factor = 10
@@ -1649,6 +1753,7 @@ country_event = {
     }
   }
 }
+# A Swedish City!
 country_event = {
   id = flavor_swe.1974
   title = flavor_swe.1974.t
@@ -1686,6 +1791,10 @@ country_event = {
     }
   }
 }
+########################################
+# Minor Flavor Events                  #
+########################################
+# Erik Dahlberg
 country_event = {
   id = flavor_swe.5030
   title = "flavor_swe.EVTNAME5030"
@@ -1712,10 +1821,12 @@ country_event = {
     months = 100
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_mil_power = 75
   }
 }
+# Olof Rudbeck publishes 'Atlantica'
 country_event = {
   id = flavor_swe.5031
   title = "flavor_swe.EVTNAME5031"
@@ -1742,10 +1853,12 @@ country_event = {
     months = 100
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_legitimacy = 25
   }
 }
+# Emanuel Swedenborg
 country_event = {
   id = flavor_swe.5032
   title = "flavor_swe.EVTNAME5032"
@@ -1772,11 +1885,13 @@ country_event = {
     months = 100
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_dip_power = 75
     add_innovativeness_small_effect = yes
   }
 }
+# Carl von LinnÈ
 country_event = {
   id = flavor_swe.5033
   title = "flavor_swe.EVTNAME5033"
@@ -1803,11 +1918,16 @@ country_event = {
     months = 100
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_prestige = 25
     add_innovativeness_big_effect = yes
   }
 }
+########################################
+# Age of Freedom
+########################################
+# Arvid Horn and the Age of Freedom
 country_event = {
   id = flavor_swe.3246
   title = "flavor_swe.EVTNAME3246"
@@ -1841,6 +1961,7 @@ country_event = {
     months = 12
   }
   option = {
+    # Abandon absolutism
     name = "flavor_swe.EVTOPTA3246"
     ai_chance = {
       factor = 75
@@ -1863,6 +1984,7 @@ country_event = {
     add_absolutism = -25
   }
   option = {
+    # Hold on to the reins
     name = "flavor_swe.EVTOPTB3246"
     ai_chance = {
       factor = 25
@@ -1876,6 +1998,7 @@ country_event = {
     add_stability = -5
   }
 }
+# The Mercantile Reforms of the Hats
 country_event = {
   id = flavor_swe.3253
   title = "flavor_swe.EVTNAME3253"
@@ -1899,6 +2022,7 @@ country_event = {
     months = 120
   }
   option = {
+    # Time to experiment
     name = "flavor_swe.EVTOPTA3253"
     ai_chance = {
       factor = 90
@@ -1907,6 +2031,7 @@ country_event = {
     add_mercantilism = 20
   }
   option = {
+    # Mercantilism is Dead
     name = "flavor_swe.EVTOPTB3253"
     ai_chance = {
       factor = 10
@@ -1914,6 +2039,7 @@ country_event = {
     add_mercantilism = -10
   }
 }
+# Swedish Parliament of 1738
 country_event = {
   id = flavor_swe.3254
   title = "flavor_swe.EVTNAME3254"
@@ -1943,6 +2069,7 @@ country_event = {
     months = 1
   }
   option = {
+    # Hats
     name = "flavor_swe.EVTOPTA3254"
     clr_country_flag = swedish_caps
     set_country_flag = swedish_hats
@@ -1962,6 +2089,7 @@ country_event = {
     add_dip_power = 100
   }
   option = {
+    # Caps
     name = "flavor_swe.EVTOPTB3254"
     clr_country_flag = swedish_hats
     set_country_flag = swedish_caps
@@ -1981,6 +2109,7 @@ country_event = {
     add_mil_power = 100
   }
 }
+# Swedish Parliament of 1746
 country_event = {
   id = flavor_swe.3255
   title = "flavor_swe.EVTNAME3255"
@@ -2010,6 +2139,7 @@ country_event = {
     months = 1
   }
   option = {
+    # Hats
     name = "flavor_swe.EVTOPTA3255"
     clr_country_flag = swedish_caps
     set_country_flag = swedish_hats
@@ -2029,6 +2159,7 @@ country_event = {
     add_dip_power = 100
   }
   option = {
+    # Caps
     name = "flavor_swe.EVTOPTB3255"
     clr_country_flag = swedish_hats
     set_country_flag = swedish_caps
@@ -2048,6 +2179,7 @@ country_event = {
     add_mil_power = 100
   }
 }
+# The Coup of 1756
 country_event = {
   id = flavor_swe.3256
   title = "flavor_swe.EVTNAME3256"
@@ -2075,6 +2207,7 @@ country_event = {
     months = 6
   }
   option = {
+    # Confirm Current Constitution
     name = "flavor_swe.EVTOPTA3256"
     ai_chance = {
       factor = 50
@@ -2082,10 +2215,12 @@ country_event = {
     add_stability_or_adm_power = yes
   }
   option = {
+    # Agree to more Royal Power
     name = "flavor_swe.EVTOPTB3256"
     add_legitimacy = 20
   }
 }
+# Swedish Parliament of 1760
 country_event = {
   id = 3257
   title = "flavor_swe.EVTNAME3257"
@@ -2106,6 +2241,7 @@ country_event = {
     months = 1
   }
   option = {
+    # Hats
     name = "flavor_swe.EVTOPTA3257"
     clr_country_flag = swedish_caps
     set_country_flag = swedish_hats
@@ -2125,6 +2261,7 @@ country_event = {
     add_dip_power = 100
   }
   option = {
+    # Caps
     name = "flavor_swe.EVTOPTB3257"
     clr_country_flag = swedish_hats
     set_country_flag = swedish_caps
@@ -2144,6 +2281,7 @@ country_event = {
     add_mil_power = 100
   }
 }
+# Swedish Parliament of 1765
 country_event = {
   id = flavor_swe.3258
   title = "flavor_swe.EVTNAME3258"
@@ -2173,6 +2311,7 @@ country_event = {
     months = 1
   }
   option = {
+    # Hats
     name = "flavor_swe.EVTOPTB3258"
     clr_country_flag = swedish_caps
     set_country_flag = swedish_hats
@@ -2192,6 +2331,7 @@ country_event = {
     add_dip_power = 100
   }
   option = {
+    # Caps
     name = "flavor_swe.EVTOPTA3258"
     clr_country_flag = swedish_hats
     set_country_flag = swedish_caps
@@ -2211,6 +2351,7 @@ country_event = {
     add_mil_power = 100
   }
 }
+# The Coup d'Etat and the Enlightened Despot
 country_event = {
   id = flavor_swe.3262
   title = "flavor_swe.EVTNAME3262"
@@ -2243,16 +2384,24 @@ country_event = {
     months = 32
   }
   option = {
+    # The King shall rule!
     name = "flavor_swe.EVTOPTA3262"
     remove_country_modifier = age_of_fredom
     add_government_reform = political_absolutism_reform
+    #set_legacy_government = enlightened_despotism
   }
   option = {
+    # No more tyrants!
     name = "flavor_swe.EVTOPTB3262"
     add_stability_or_adm_power = yes
     remove_country_modifier = age_of_fredom
   }
 }
+########################################
+# DLC Events for Sweden
+# written by Ogulcan Yildirim
+########################################
+# The League War - Swedish Contribution
 country_event = {
   id = flavor_swe.101
   title = "flavor_swe.101.t"
@@ -2283,6 +2432,7 @@ country_event = {
     months = 1
   }
   option = {
+    # Let us show these infidels what Swedish soldiers are made of!
     name = "flavor_swe.101.a"
     if = {
       limit = {
@@ -2309,6 +2459,7 @@ country_event = {
     }
   }
 }
+# The League War - End of Swedish Contribution
 country_event = {
   id = flavor_swe.1010
   title = "flavor_swe.1010.t"
@@ -2326,6 +2477,7 @@ country_event = {
     months = 1
   }
   option = {
+    # It was a good run
     name = "flavor_swe.1010.a"
     remove_country_modifier = swe_fight_for_the_catholic_league
     remove_country_modifier = swe_fight_for_the_protestant_league
@@ -2334,6 +2486,7 @@ country_event = {
     }
   }
 }
+# The Engelbrekt Rebellion - Mission Reward
 country_event = {
   id = flavor_swe.102
   title = "flavor_swe.EVTNAME3217"
@@ -2348,6 +2501,7 @@ country_event = {
     }
   }
   option = {
+    # The time has not come yet
     name = "flavor_swe.102.a"
     ai_chance = {
       factor = 20
@@ -2361,6 +2515,7 @@ country_event = {
     add_liberty_desire = -25
   }
   option = {
+    # Pick up the torch of freedom!
     name = "flavor_swe.102.b"
     ai_chance = {
       factor = 60
@@ -2375,6 +2530,7 @@ country_event = {
     }
   }
 }
+# The Allotment System of Sweden
 country_event = {
   id = flavor_swe.103
   title = "flavor_swe.103.t"
@@ -2382,6 +2538,7 @@ country_event = {
   picture = CAROLEANS_eventPicture
   is_triggered_only = yes
   option = {
+    # The time has not come yet
     name = "flavor_swe.103.a"
     unlock_government_reform = {
       government_reform = allotment_system
@@ -2398,6 +2555,7 @@ country_event = {
     }
   }
 }
+# A new rebellion leader rises!
 country_event = {
   id = flavor_swe.104
   title = flavor_swe.104.t
@@ -2417,6 +2575,7 @@ country_event = {
     }
   }
   option = {
+    # A vasa will lead our armies!
     name = "flavor_swe.104.a"
     if = {
       limit = {
@@ -2425,7 +2584,7 @@ country_event = {
         }
       }
       define_general = {
-        name = "¶u Êt(Ñ"  # Johan Vasa
+        name = "¶u Êt(Ñ" 	# Johan Vasa
         shock = 4
         fire = 1
         manuever = 4
@@ -2442,7 +2601,7 @@ country_event = {
         }
       }
       define_general = {
-        name = "√WÃëKQ Êt(Ñ"  # Erik Vasa
+        name = "√WÃëKQ Êt(Ñ" 	# Erik Vasa
         shock = 4
         fire = 1
         manuever = 4
@@ -2454,7 +2613,7 @@ country_event = {
     }
     else = {
       define_general = {
-        name = "‰SØeTX+Y Êt(Ñ"  # Gustav Vasa
+        name = "‰SØeTX+Y Êt(Ñ" 	# Gustav Vasa
         shock = 4
         fire = 1
         manuever = 4
@@ -2474,6 +2633,7 @@ country_event = {
     }
   }
 }
+# Vasa's Victory
 country_event = {
   id = flavor_swe.105
   title = flavor_swe.105.t
@@ -2481,14 +2641,15 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
+    # VICTORY OVER THE DANES
     name = "flavor_swe.105.a"
     remove_country_modifier = swe_any_vasa_leads_the_rebellion
     if = {
       limit = {
-        has_leader = "¶u Êt(Ñ"  # Johan Vasa
+        has_leader = "¶u Êt(Ñ" 	# Johan Vasa
       }
       define_leader_to_ruler = {
-        name = "¶u Êt(Ñ"  # Johan Vasa
+        name = "¶u Êt(Ñ" 	# Johan Vasa
         adm = 6
         dip = 4
         mil = 4
@@ -2498,10 +2659,10 @@ country_event = {
     }
     else_if = {
       limit = {
-        has_leader = "√WÃëKQ Êt(Ñ"  # Erik Vasa
+        has_leader = "√WÃëKQ Êt(Ñ" 	# Erik Vasa
       }
       define_leader_to_ruler = {
-        name = "√WÃëKQ Êt(Ñ"  # Erik Vasa
+        name = "√WÃëKQ Êt(Ñ" 	# Erik Vasa
         adm = 6
         dip = 4
         mil = 4
@@ -2511,10 +2672,10 @@ country_event = {
     }
     else_if = {
       limit = {
-        has_leader = "‰SØeTX+Y Êt(Ñ"  # Gustav Vasa
+        has_leader = "‰SØeTX+Y Êt(Ñ" 	# Gustav Vasa
       }
       define_leader_to_ruler = {
-        name = "‰SØeTX+Y Êt(Ñ"  # Gustav Vasa
+        name = "‰SØeTX+Y Êt(Ñ" 	# Gustav Vasa
         adm = 6
         dip = 4
         mil = 4
@@ -2529,8 +2690,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "¶u I"  # Johan I
-        dynasty = "Êt(Ñ"  # Vasa
+        name = "¶u I" 	# Johan I
+        dynasty = "Êt(Ñ" 	# Vasa
         age = 25
         adm = 6
         dip = 4
@@ -2544,8 +2705,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "√WÃëKQ I"  # Erik I
-        dynasty = "Êt(Ñ"  # Vasa
+        name = "√WÃëKQ I" 	# Erik I
+        dynasty = "Êt(Ñ" 	# Vasa
         age = 25
         adm = 6
         dip = 4
@@ -2554,8 +2715,8 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = "‰SØeTX+Y I"  # Gustav I
-        dynasty = "Êt(Ñ"  # Vasa
+        name = "‰SØeTX+Y I" 	# Gustav I
+        dynasty = "Êt(Ñ" 	# Vasa
         age = 25
         adm = 6
         dip = 4
@@ -2601,6 +2762,7 @@ country_event = {
     }
   }
   option = {
+    #I want to keep the current king though
     name = "flavor_swe.105.b"
     remove_country_modifier = swe_any_vasa_leads_the_rebellion
     add_legitimacy = 30
@@ -2645,6 +2807,7 @@ country_event = {
     clr_country_flag = swe_support_from_Gustav_vasa
   }
 }
+# Foreign Supporters
 country_event = {
   id = flavor_swe.106
   title = flavor_swe.106.t
@@ -2678,6 +2841,7 @@ country_event = {
     }
   }
   option = {
+    #Accept foreign alliances
     name = flavor_swe.106.a
     trigger = {
       hidden_trigger = {
@@ -2718,6 +2882,7 @@ country_event = {
     }
   }
   option = {
+    #We will defeat the Danes on our own
     name = flavor_swe.106.b
     add_country_modifier = {
       name = swe_fight_for_independence
@@ -2739,6 +2904,7 @@ country_event = {
     }
   }
   option = {
+    #The Kalmar Union is our future, actually
     name = flavor_swe.106.c
     add_liberty_desire = -50
     ai_chance = {
@@ -2757,6 +2923,7 @@ country_event = {
     }
   }
 }
+# End of the Fighting of our own
 country_event = {
   id = flavor_swe.1060
   title = flavor_swe.1060.t
@@ -2825,6 +2992,7 @@ country_event = {
     days = 1
   }
   option = {
+    #We have won our independence!
     name = flavor_swe.1060.a
     trigger = {
       is_at_war = no
@@ -2869,6 +3037,7 @@ country_event = {
     }
   }
   option = {
+    #We had to rely on allies after all...
     name = flavor_swe.1060.b
     trigger = {
       is_in_war = {
@@ -2885,6 +3054,7 @@ country_event = {
     }
   }
   option = {
+    #Huh... that was easier than expected
     name = flavor_swe.1060.c
     trigger = {
       is_at_war = no
@@ -2898,6 +3068,7 @@ country_event = {
     }
   }
 }
+# Choice of supporting Sweden's independence
 country_event = {
   id = flavor_swe.107
   title = flavor_swe.107.t
@@ -2918,6 +3089,7 @@ country_event = {
     }
   }
   option = {
+    #We will help the Swedes!
     name = flavor_swe.107.a
     support_independence_of = FROM
     ai_chance = {
@@ -2936,6 +3108,7 @@ country_event = {
     }
   }
   option = {
+    #Nah, not feeling it
     name = flavor_swe.107.b
     FROM = {
       add_opinion = {
@@ -2958,6 +3131,7 @@ country_event = {
     }
   }
 }
+# Support from the Estates
 country_event = {
   id = flavor_swe.108
   title = flavor_swe.108.t
@@ -2975,6 +3149,7 @@ country_event = {
     }
   }
   option = {
+    #We take the Support from the Nobles
     name = flavor_swe.108.a
     trigger = {
       num_of_estate_privileges = {
@@ -2997,6 +3172,7 @@ country_event = {
     }
   }
   option = {
+    #We take the Support from the Burghers
     name = flavor_swe.108.b
     trigger = {
       num_of_estate_privileges = {
@@ -3028,6 +3204,7 @@ country_event = {
     }
   }
   option = {
+    #We take the Support from the Clergy
     name = flavor_swe.108.c
     trigger = {
       num_of_estate_privileges = {
@@ -3078,6 +3255,7 @@ country_event = {
     }
   }
   option = {
+    #We need nobody but ourselves
     name = flavor_swe.108.d
     add_prestige = 20
     ai_chance = {
@@ -3085,6 +3263,7 @@ country_event = {
     }
   }
 }
+# Free Support from the Estates
 country_event = {
   id = flavor_swe.1080
   title = flavor_swe.1080.t
@@ -3102,6 +3281,7 @@ country_event = {
     }
   }
   option = {
+    #We take the Support from the Nobles
     name = flavor_swe.108.a
     define_advisor = {
       type = commandant
@@ -3113,6 +3293,7 @@ country_event = {
     }
   }
   option = {
+    #We take the Support from the Burghers
     name = flavor_swe.108.b
     trigger = {
       any_owned_province = {
@@ -3135,6 +3316,7 @@ country_event = {
     }
   }
   option = {
+    #We take the Support from the Clergy
     name = flavor_swe.108.c
     if = {
       limit = {
@@ -3174,6 +3356,7 @@ country_event = {
     }
   }
 }
+# Formation of the Sweden Empire
 country_event = {
   id = flavor_swe.109
   title = flavor_swe.109.t
@@ -3203,6 +3386,7 @@ country_event = {
     }
   }
 }
+# Pillage of L¸beck
 country_event = {
   id = flavor_swe.110
   title = flavor_swe.110.t
@@ -3210,6 +3394,7 @@ country_event = {
   picture = SIEGE_eventPicture
   is_triggered_only = yes
   option = {
+    #Barbarians...
     name = flavor_swe.110.a
     tooltip = {
       45 = {
@@ -3223,6 +3408,7 @@ country_event = {
     }
   }
 }
+# Gustav I Vasa's Victory
 country_event = {
   id = flavor_swe.111
   title = flavor_swe.105.t
@@ -3230,11 +3416,12 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
+    # Gustav I Vasa will lead us to victory!
     name = "flavor_swe.105.a"
     remove_country_modifier = swe_vasa_leads_the_rebellion
     define_ruler = {
-      name = "‰SØeTX+Y I"  # Gustav I
-      dynasty = "Êt(Ñ"  # Vasa
+      name = "‰SØeTX+Y I" 	# Gustav I
+      dynasty = "Êt(Ñ" 	# Vasa
       age = 27
       adm = 6
       dip = 4
@@ -3256,6 +3443,7 @@ country_event = {
     }
   }
   option = {
+    #I want to keep the current king though
     name = "flavor_swe.105.b"
     remove_country_modifier = swe_any_vasa_leads_the_rebellion
     add_legitimacy = 30
@@ -3270,6 +3458,7 @@ country_event = {
     clr_country_flag = swe_support_from_Gustav_vasa
   }
 }
+# Investment of Dalaskogen
 country_event = {
   id = flavor_swe.112
   title = flavor_swe.112.t
@@ -3277,6 +3466,7 @@ country_event = {
   picture = FALUN_COPPER_MINE_eventPicture
   is_triggered_only = yes
   option = {
+    #Invest into the Copper mine itself
     name = flavor_swe.112.a
     trigger = {
       has_dlc = "Leviathan"
@@ -3306,12 +3496,13 @@ country_event = {
     }
   }
   option = {
+    #Expand into the infrastructure around the Mine
     name = flavor_swe.112.b
     trigger = {
       8 = {
         NOT = {
           trade_goods = gold
-        }
+        } 	# Will never be true, but better safe tahn 
       }
     }
     8 = {
@@ -3340,6 +3531,7 @@ country_event = {
     }
   }
   option = {
+    #We don't have to do anything
     name = flavor_swe.112.c
     8 = {
       add_base_production = 4
@@ -3349,6 +3541,7 @@ country_event = {
     }
   }
 }
+#Construction of the Vasa (II)
 country_event = {
   id = flavor_swe.113
   title = flavor_swe.113.t
@@ -3381,6 +3574,7 @@ country_event = {
     }
   }
   option = {
+    #This will make a fine flagship!
     name = flavor_swe.113.a
     trigger = {
       NOT = {
@@ -3390,7 +3584,7 @@ country_event = {
     add_navy_tradition = 20
     event_target:vasa_ii_province = {
       create_flagship = {
-        name = "Êt(Ñ"  # Vasa
+        name = "Êt(Ñ" 	# Vasa
         type = heavy_ship
       }
     }
@@ -3399,6 +3593,7 @@ country_event = {
     }
   }
   option = {
+    #And this time it will NOT sink!
     name = flavor_swe.113.b
     trigger = {
       has_country_flag = lost_first_vasa_ship
@@ -3407,7 +3602,7 @@ country_event = {
     add_prestige = 10
     event_target:vasa_ii_province = {
       create_flagship = {
-        name = "NâlKN0ÇÊt(ÑåN˜S"  # Vasa II, the Unsinkable
+        name = "NâlKN0ÇÊt(ÑåN˜S" 	# Vasa II, the Unsinkable
         type = heavy_ship
       }
     }
@@ -3416,6 +3611,7 @@ country_event = {
     }
   }
 }
+# Monopolization of Copper
 country_event = {
   id = flavor_swe.114
   title = flavor_swe.114.t
@@ -3424,6 +3620,7 @@ country_event = {
   is_triggered_only = yes
   major = yes
   option = {
+    #Monopolize the Copper Market
     name = "flavor_swe.114.a"
     add_mercantilism = 5
     change_price = {
@@ -3443,6 +3640,7 @@ country_event = {
     }
   }
   option = {
+    #Flood the Copper Market
     name = "flavor_swe.114.b"
     add_years_of_owned_provinces_production_income = {
       years = 10
@@ -3473,6 +3671,7 @@ country_event = {
     }
   }
   option = {
+    #Keep it moderate
     name = "flavor_swe.114.c"
     add_years_of_owned_provinces_production_income = {
       years = 5
@@ -3504,6 +3703,7 @@ country_event = {
     }
   }
 }
+# The universities of Lund and Uppsala
 country_event = {
   id = flavor_swe.119
   title = flavor_swe.119.t
@@ -3522,6 +3722,7 @@ country_event = {
     }
   }
 }
+# Fate of Scania
 country_event = {
   id = flavor_swe.120
   title = flavor_swe.120.t
@@ -3529,6 +3730,7 @@ country_event = {
   picture = CONQUEST_eventPicture
   is_triggered_only = yes
   option = {
+    #Assimilate the Danes
     name = "flavor_swe.120.a"
     add_stability = -1
     skaneland_area = {
@@ -3558,6 +3760,7 @@ country_event = {
     }
   }
   option = {
+    #With time they will learn to accept us
     name = "flavor_swe.120.b"
     add_stability_or_adm_power = yes
     skaneland_area = {
@@ -3574,6 +3777,7 @@ country_event = {
     }
   }
 }
+# Fate of an independent Sweden
 country_event = {
   id = flavor_swe.121
   title = flavor_swe.121.t
@@ -3587,6 +3791,7 @@ country_event = {
     }
   }
   option = {
+    #The World stands at our feet!
     name = "flavor_swe.121.a"
     if = {
       limit = {
@@ -3724,6 +3929,7 @@ country_event = {
     }
   }
 }
+# Lord of Eastern Europe
 country_event = {
   id = flavor_swe.123
   title = flavor_swe.123.t
@@ -3779,6 +3985,7 @@ country_event = {
     }
   }
 }
+# The Poland Question
 country_event = {
   id = flavor_swe.124
   title = flavor_swe.124.t
@@ -3796,6 +4003,7 @@ country_event = {
     }
   }
   option = {
+    #Try to get our dynasty on their throne
     name = "flavor_swe.124.a"
     trigger = {
       religion_group = christian
@@ -3811,6 +4019,7 @@ country_event = {
     }
   }
   option = {
+    #Poland is our claim!
     name = "flavor_swe.124.b"
     custom_tooltip = flavor_swe.124.b.tt
     hidden_effect = {
@@ -3823,6 +4032,7 @@ country_event = {
     }
   }
   option = {
+    #We have no business with the Poles
     name = "flavor_swe.124.c"
     custom_tooltip = flavor_swe.124.c.tt
     hidden_effect = {
@@ -3835,6 +4045,7 @@ country_event = {
     }
   }
 }
+# Purchase of Memel
 country_event = {
   id = flavor_swe.125
   title = flavor_swe.125.t
@@ -3863,6 +4074,7 @@ country_event = {
     }
   }
   option = {
+    #Buy Memel from Poland
     name = "flavor_swe.125.a"
     trigger = {
       has_saved_event_target = swe_polish_ally
@@ -3877,12 +4089,14 @@ country_event = {
     }
   }
   option = {
+    #Not worth it
     name = "flavor_swe.125.b"
     ai_chance = {
       factor = 0
     }
   }
 }
+# Purchase of Memel - Sweden asks
 country_event = {
   id = flavor_swe.126
   title = flavor_swe.126.t
@@ -3891,6 +4105,7 @@ country_event = {
   is_triggered_only = yes
   goto = 40
   option = {
+    #Accepts
     name = "flavor_swe.126.a"
     40 = {
       tooltip = {
@@ -3923,6 +4138,7 @@ country_event = {
     }
   }
   option = {
+    #Nah
     name = "flavor_swe.126.b"
     FROM = {
       country_event = {
@@ -3934,6 +4150,7 @@ country_event = {
     }
   }
 }
+# Purchase of Memel - Poland sells Memel
 country_event = {
   id = flavor_swe.127
   title = flavor_swe.127.t
@@ -3942,6 +4159,7 @@ country_event = {
   is_triggered_only = yes
   goto = 40
   option = {
+    #Accepts
     name = "flavor_swe.127.a"
     add_treasury = -500
     40 = {
@@ -3967,6 +4185,7 @@ country_event = {
     }
   }
 }
+# Purchase of Memel - Poland refuses to sell Memel
 country_event = {
   id = flavor_swe.128
   title = flavor_swe.128.t
@@ -3975,6 +4194,7 @@ country_event = {
   is_triggered_only = yes
   goto = 40
   option = {
+    #Accepts
     name = "flavor_swe.128.a"
     add_prestige = -5
     ai_chance = {
@@ -3982,6 +4202,7 @@ country_event = {
     }
   }
 }
+# Purchase of Riga
 country_event = {
   id = flavor_swe.129
   title = flavor_swe.129.t
@@ -4010,6 +4231,7 @@ country_event = {
     }
   }
   option = {
+    #Buy Riga from Poland
     name = "flavor_swe.129.a"
     trigger = {
       has_saved_event_target = swe_polish_ally
@@ -4024,12 +4246,14 @@ country_event = {
     }
   }
   option = {
+    #Not worth it
     name = "flavor_swe.129.b"
     ai_chance = {
       factor = 1
     }
   }
 }
+# Purchase of Riga - Sweden asks
 country_event = {
   id = flavor_swe.130
   title = flavor_swe.130.t
@@ -4038,6 +4262,7 @@ country_event = {
   is_triggered_only = yes
   goto = 38
   option = {
+    #Accepts
     name = "flavor_swe.130.a"
     38 = {
       tooltip = {
@@ -4070,6 +4295,7 @@ country_event = {
     }
   }
   option = {
+    #Nah
     name = "flavor_swe.130.b"
     FROM = {
       country_event = {
@@ -4081,6 +4307,7 @@ country_event = {
     }
   }
 }
+# Purchase of Riga - Poland sells Riga
 country_event = {
   id = flavor_swe.131
   title = flavor_swe.131.t
@@ -4089,6 +4316,7 @@ country_event = {
   is_triggered_only = yes
   goto = 38
   option = {
+    #Accepts
     name = "flavor_swe.131.a"
     add_treasury = -1000
     38 = {
@@ -4114,6 +4342,7 @@ country_event = {
     }
   }
 }
+# Purchase of Riga - Poland refuses to sell Riga
 country_event = {
   id = flavor_swe.132
   title = flavor_swe.132.t
@@ -4122,12 +4351,14 @@ country_event = {
   is_triggered_only = yes
   goto = 38
   option = {
+    #Accepts
     name = "flavor_swe.132.a"
     ai_chance = {
       factor = 1
     }
   }
 }
+# The Centralization Reforms of Gustav Vasa
 country_event = {
   id = flavor_swe.133
   title = flavor_swe.1.t
@@ -4135,6 +4366,7 @@ country_event = {
   picture = VASA_REFORMS_eventPicture
   is_triggered_only = yes
   option = {
+    # Reform and claim
     name = flavor_swe.1.a
     ai_chance = {
       factor = 100
@@ -4148,21 +4380,27 @@ country_event = {
       add_reform_progress_small_effect = yes
     }
     1 = {
+      # Stockholm
       add_base_tax = 2
     }
     2 = {
+      #÷stergˆtland
       add_base_tax = 1
     }
     7 = {
+      #V‰stergˆtland
       add_base_tax = 1
     }
     27 = {
+      #Finland
       add_base_tax = 1
     }
     1 = {
+      # Stockholm
       add_base_manpower = 2
     }
     27 = {
+      #Finland
       add_base_manpower = 1
     }
     add_adm_power = -50
@@ -4174,6 +4412,7 @@ country_event = {
     }
   }
 }
+# Sweden proclaims Protection for the Protestants
 country_event = {
   id = flavor_swe.134
   title = flavor_swe.134.t
@@ -4182,6 +4421,7 @@ country_event = {
   is_triggered_only = yes
   major = yes
   option = {
+    #I will lead you to victory!
     name = "flavor_swe.134.a"
     enable_hre_leagues = yes
     join_league = protestant
@@ -4191,6 +4431,7 @@ country_event = {
     }
   }
 }
+# Sweden provokes the creation of the Evangelical Union
 country_event = {
   id = flavor_swe.135
   title = flavor_swe.135.t
@@ -4199,6 +4440,7 @@ country_event = {
   is_triggered_only = yes
   major = yes
   option = {
+    #Sweden will lead us to victory!
     name = "flavor_swe.135.a"
     enable_hre_leagues = yes
     join_league = protestant

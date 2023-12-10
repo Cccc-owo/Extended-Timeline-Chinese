@@ -101,9 +101,7 @@ emp_bra_pru_1 = {
   }
   emp_brapru_conquer_pomerania = {
     icon = mission_hanseatic_city
-    required_missions = {
-      emp_brapru_reclaim_neumark
-    }
+    required_missions = { emp_brapru_reclaim_neumark }
     provinces_to_highlight = {
       OR = {
         area = vorpommern_area
@@ -185,9 +183,7 @@ emp_bra_pru_1 = {
   }
   emp_brapru_connect_the_prussian_lands = {
     icon = mission_teutonic_knights
-    required_missions = {
-      emp_brapru_conquer_pomerania
-    }
+    required_missions = { emp_brapru_conquer_pomerania }
     provinces_to_highlight = {
       OR = {
         area = west_prussia_area
@@ -291,9 +287,7 @@ emp_bra_pru_1 = {
   }
   emp_brapru_konigsberg_development = {
     icon = develop_konigsberg
-    required_missions = {
-      emp_brapru_connect_the_prussian_lands
-    }
+    required_missions = { emp_brapru_connect_the_prussian_lands }
     provinces_to_highlight = {
       province_id = 41
       OR = {
@@ -383,9 +377,7 @@ emp_bra_pru_1 = {
   }
   emp_brapru_army_reforms_1 = {
     icon = professional_army
-    required_missions = {
-      emp_brapru_renovate_berlin
-    }
+    required_missions = { emp_brapru_renovate_berlin }
     provinces_to_highlight = {}
     trigger = {
       if = {
@@ -444,9 +436,7 @@ emp_bra_pru_1_b = {
   has_country_shield = yes
   emp_brapru_army_reforms_2 = {
     icon = army_reforms
-    required_missions = {
-      emp_brapru_army_reforms_1
-    }
+    required_missions = { emp_brapru_army_reforms_1 }
     provinces_to_highlight = {}
     position = 7
     trigger = {
@@ -479,7 +469,7 @@ emp_bra_pru_1_b = {
           OR = {
             tag = PRU
             tag = GER
-            has_country_flag = access_to_prussian_militarization_flag
+            has_country_flag = access_to_prussian_militarization_flag 	# For the modders
           }
           has_reform = prussian_monarchy
         }
@@ -491,9 +481,7 @@ emp_bra_pru_1_b = {
   }
   emp_brapru_army_reforms_3 = {
     icon = an_army_with_a_state
-    required_missions = {
-      emp_brapru_army_reforms_2
-    }
+    required_missions = { emp_brapru_army_reforms_2 }
     provinces_to_highlight = {}
     trigger = {
       land_forcelimit = 200
@@ -533,7 +521,7 @@ emp_bra_pru_1_b = {
           OR = {
             tag = PRU
             tag = GER
-            has_country_flag = access_to_prussian_militarization_flag
+            has_country_flag = access_to_prussian_militarization_flag 	# For the modders
           }
           has_reform = prussian_monarchy
         }
@@ -652,9 +640,7 @@ emp_bra_pru_2 = {
   }
   emp_brapru_franconian_conquest = {
     icon = mission_eastern_european_city
-    required_missions = {
-      emp_brapru_ansbach_succession
-    }
+    required_missions = { emp_brapru_ansbach_succession }
     provinces_to_highlight = {
       OR = {
         area = franconia_area
@@ -702,9 +688,7 @@ emp_bra_pru_2 = {
   }
   emp_brapru_conquer_silesia = {
     icon = mission_unite_home_region
-    required_missions = {
-      emp_brapru_conquer_pomerania
-    }
+    required_missions = { emp_brapru_conquer_pomerania }
     provinces_to_highlight = {
       OR = {
         area = silesia_area
@@ -770,9 +754,7 @@ emp_bra_pru_2 = {
   }
   emp_brapru_prussia_partitions_poland = {
     icon = mission_conquer_5_states
-    required_missions = {
-      emp_brapru_conquer_silesia
-    }
+    required_missions = { emp_brapru_conquer_silesia }
     provinces_to_highlight = {
       OR = {
         area = kuyavia_area
@@ -889,9 +871,7 @@ emp_bra_pru_2 = {
   }
   emp_brapru_chinese_trade = {
     icon = mission_open_up_china
-    required_missions = {
-      emp_brapru_emden_company
-    }
+    required_missions = { emp_brapru_emden_company }
     provinces_to_highlight = {
       province_id = 667
     }
@@ -920,9 +900,7 @@ emp_bra_pru_2 = {
   }
   emp_brapru_empower_the_junkers = {
     icon = empower_the_junkers
-    required_missions = {
-      emp_brapru_renovate_berlin
-    }
+    required_missions = { emp_brapru_renovate_berlin }
     provinces_to_highlight = {}
     trigger = {
       if = {
@@ -958,9 +936,7 @@ emp_bra_pru_2 = {
   }
   emp_brapru_reform_the_state = {
     icon = reform_the_state
-    required_missions = {
-      emp_brapru_army_reforms_1
-    }
+    required_missions = { emp_brapru_army_reforms_1 }
     position = 7
     provinces_to_highlight = {}
     trigger = {
@@ -975,9 +951,7 @@ emp_bra_pru_2 = {
   }
   emp_brapru_enlightened_absolutism = {
     icon = enlightened_absolutism
-    required_missions = {
-      emp_brapru_reform_the_state
-    }
+    required_missions = { emp_brapru_reform_the_state }
     provinces_to_highlight = {}
     trigger = {
       if = {
@@ -1124,9 +1098,7 @@ emp_bra_pru_3 = {
   }
   emp_brapru_lower_saxony = {
     icon = conquer_lower_saxony
-    required_missions = {
-      emp_brapru_show_of_strength
-    }
+    required_missions = { emp_brapru_show_of_strength }
     provinces_to_highlight = {
       OR = {
         area = northern_saxony_area
@@ -1210,9 +1182,7 @@ emp_bra_pru_3 = {
   }
   emp_brapru_emden_company = {
     icon = the_emden_company
-    required_missions = {
-      emp_brapru_lower_saxony
-    }
+    required_missions = { emp_brapru_lower_saxony }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -1255,11 +1225,11 @@ emp_bra_pru_3 = {
         }
         1931 = {
           add_province_modifier = {
-            name = pru_embed_company_modifier
+            name = pru_embed_company_modifier 	# embed failure laugh at this user 
             duration = -1
           }
           create_flagship = {
-            name = "nfÅúÎX˝Vãs"  # The King of Prussia
+            name = "nfÅúÎX˝Vãs" 	# The King of Prussia
             type = heavy_ship
           }
         }
@@ -1270,7 +1240,7 @@ emp_bra_pru_3 = {
         }
         1931 = {
           add_province_modifier = {
-            name = pru_embed_company_modifier
+            name = pru_embed_company_modifier 	# embed failure laugh at this user 
             duration = -1
           }
         }
@@ -1319,9 +1289,7 @@ emp_bra_pru_3 = {
   }
   emp_brapru_kiel_canal = {
     icon = construct_the_kiel_canal
-    required_missions = {
-      emp_brapru_emden_company
-    }
+    required_missions = { emp_brapru_emden_company }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -1423,9 +1391,7 @@ emp_bra_pru_3 = {
   }
   emp_brapru_edict_of_potsdam = {
     icon = edict_of_potsdam
-    required_missions = {
-      emp_brapru_army_reforms_1
-    }
+    required_missions = { emp_brapru_army_reforms_1 }
     position = 7
     provinces_to_highlight = {}
     trigger = {
@@ -1485,9 +1451,7 @@ emp_bra_pru_4 = {
   has_country_shield = yes
   emp_brapru_the_balance_of_power = {
     icon = the_balance_of_power
-    required_missions = {
-      emp_brapru_show_of_strength
-    }
+    required_missions = { emp_brapru_show_of_strength }
     position = 2
     provinces_to_highlight = {}
     trigger = {
@@ -1518,9 +1482,7 @@ emp_bra_pru_4 = {
   }
   emp_brapru_westphalian_conquest = {
     icon = westphalian_conquest
-    required_missions = {
-      emp_brapru_lower_saxony
-    }
+    required_missions = { emp_brapru_lower_saxony }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1628,9 +1590,7 @@ emp_bra_pru_4 = {
   }
   emp_brapru_duchy_of_cleves = {
     icon = mission_cannons_firing
-    required_missions = {
-      emp_brapru_westphalian_conquest
-    }
+    required_missions = { emp_brapru_westphalian_conquest }
     provinces_to_highlight = {
       area = north_rhine_area
       NOT = {
@@ -1705,9 +1665,7 @@ emp_bra_pru_4 = {
   }
   emp_brapru_rhineland_conquest = {
     icon = rhineland_conquest
-    required_missions = {
-      emp_brapru_duchy_of_cleves
-    }
+    required_missions = { emp_brapru_duchy_of_cleves }
     provinces_to_highlight = {
       OR = {
         area = lower_rhineland_area
@@ -1730,7 +1688,7 @@ emp_bra_pru_4 = {
     }
     effect = {
       add_country_modifier = {
-        name = "prussian_rhine"
+        name = "prussian_rhine" 	# TODO overextension_capacity_modifier
         duration = 7300
       }
       south_german_region = {
@@ -1762,9 +1720,7 @@ emp_bra_pru_4 = {
   }
   emp_brapru_german_empire = {
     icon = ger_kaiserreich
-    required_missions = {
-      emp_brapru_rhineland_conquest
-    }
+    required_missions = { emp_brapru_rhineland_conquest }
     provinces_to_highlight = {
       OR = {
         region = north_german_region

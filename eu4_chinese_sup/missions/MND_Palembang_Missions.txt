@@ -27,7 +27,7 @@ mnd_plb_1 = {
     }
     effect = {
       add_country_modifier = {
-        name = plb_gold
+        name = plb_gold 	# Gold
         duration = 7300
       }
       1361 = {
@@ -35,7 +35,7 @@ mnd_plb_1 = {
           who = ROOT
           duration = 5475
           power = 50
-          key = plb_and_diamonds
+          key = plb_and_diamonds 	# And Diamonds
         }
       }
     }
@@ -119,9 +119,7 @@ mnd_plb_1 = {
   plb_orang_laut = {
     icon = mission_look_west
     position = 3
-    required_missions = {
-      plb_a_place_where_the_water_leaks
-    }
+    required_missions = { plb_a_place_where_the_water_leaks }
     provinces_to_highlight = {
       OR = {
         province_id = 2677
@@ -199,9 +197,7 @@ mnd_plb_1 = {
   plb_arrival_of_dragonships = {
     icon = mission_to_the_south_china_sea
     position = 4
-    required_missions = {
-      plb_orang_laut
-    }
+    required_missions = { plb_orang_laut }
     provinces_to_highlight = {
       OR = {
         province_id = 2675
@@ -283,9 +279,7 @@ mnd_plb_1 = {
   plb_pirate_kings = {
     icon = mission_pirate_havens
     position = 5
-    required_missions = {
-      plb_arrival_of_dragonships
-    }
+    required_missions = { plb_arrival_of_dragonships }
     provinces_to_highlight = {
       OR = {
         province_id = 619
@@ -315,7 +309,7 @@ mnd_plb_1 = {
         fire = 3
         manuever = 4
         siege = 3
-        name = "H–"  # Chen
+        name = "H–" 	# Chen
       }
       minangkabau_area = {
         limit = {
@@ -489,9 +483,7 @@ mnd_plb_2 = {
   plb_kings_court = {
     icon = mission_rajput_mansabdars
     position = 4
-    required_missions = {
-      plb_king_under_the_mountain
-    }
+    required_missions = { plb_king_under_the_mountain }
     provinces_to_highlight = {
       OR = {
         region = malaya_region
@@ -542,10 +534,7 @@ mnd_plb_2 = {
   plb_restore_srivijaya = {
     icon = mission_seize_the_dragon_throne
     position = 6
-    required_missions = {
-      plb_kings_court
-      plb_pirate_kings
-    }
+    required_missions = { plb_kings_court plb_pirate_kings }
     provinces_to_highlight = {
       OR = {
         area = central_java_area

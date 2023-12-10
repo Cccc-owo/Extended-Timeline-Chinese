@@ -1,3 +1,7 @@
+########################################
+# Hindu Deity Events
+# written by Rufus Tronde
+########################################
 namespace = hindu_events
 country_event = {
   id = hindu_events.1
@@ -38,30 +42,37 @@ country_event = {
   mean_time_to_happen = {
     months = 60
   }
+  # Shaivism
   option = {
     name = "hindu_events.1.a"
     change_personal_deity = shiva
   }
+  # Skaktism
   option = {
     name = "hindu_events.1.b"
     change_personal_deity = shakti
   }
+  # Vaishnavism
   option = {
     name = "hindu_events.1.c"
     change_personal_deity = vishnu
   }
+  # Ganga
   option = {
     name = "hindu_events.1.e"
     change_personal_deity = ganga
   }
+  # Ganesha
   option = {
     name = "hindu_events.1.f"
     change_personal_deity = ganesha
   }
+  # Surya
   option = {
     name = "hindu_events.1.g"
     change_personal_deity = surya
   }
+  # Buddha
   option = {
     name = "hindu_events.1.h"
     trigger = {
@@ -73,6 +84,7 @@ country_event = {
     }
     change_personal_deity = buddha
   }
+  # Not ready
   option = {
     trigger = {
       NOT = {
@@ -85,6 +97,10 @@ country_event = {
     clr_country_flag = brahmin_deity_interaction
   }
 }
+##################################################
+# Shaiva paths: Faces of Shiva
+##################################################
+# Sadyojata (Shiva the Creator)
 country_event = {
   id = hindu_events.2
   title = "hindu_events.2.t"
@@ -115,6 +131,7 @@ country_event = {
       stability = 3
     }
   }
+  # Contemplate creative aspect of Shiva
   option = {
     name = "hindu_events.2.a"
     add_ruler_modifier = {
@@ -132,11 +149,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.2.b"
     add_prestige = 2
   }
 }
+# Sadyojata Jnana (Srishti)
 country_event = {
   id = hindu_events.3
   title = "hindu_events.3.t"
@@ -169,10 +188,11 @@ country_event = {
       name = shiva_srishti
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Vamadeva (Shiva the Preserver)
 country_event = {
   id = hindu_events.4
   title = "hindu_events.4.t"
@@ -205,6 +225,7 @@ country_event = {
       stability = 3
     }
   }
+  # Contemplate preservative aspect of Shiva
   option = {
     name = "hindu_events.4.a"
     add_ruler_modifier = {
@@ -222,11 +243,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.4.b"
     add_prestige = 2
   }
 }
+# Vamadeva Jnana (Sthiti)
 country_event = {
   id = hindu_events.5
   title = "hindu_events.5.t"
@@ -267,10 +290,11 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Aghora (Shiva the Destroyer)
 country_event = {
   id = hindu_events.6
   title = "hindu_events.6.t"
@@ -302,6 +326,7 @@ country_event = {
       war_score = 50
     }
   }
+  # Contemplate the destructive aspect of Shiva
   option = {
     name = "hindu_events.6.a"
     add_ruler_modifier = {
@@ -319,11 +344,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.6.b"
     add_prestige = 2
   }
 }
+# Aghora Jnana (Samhara)
 country_event = {
   id = hindu_events.7
   title = "hindu_events.7.t"
@@ -364,10 +391,11 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Tatpuru?a (Shiva Concealed)
 country_event = {
   id = hindu_events.8
   title = "hindu_events.8.t"
@@ -398,6 +426,7 @@ country_event = {
       stability = 3
     }
   }
+  # Contemplate how Shiva is concealed, but present in all things
   option = {
     name = "hindu_events.8.a"
     add_ruler_modifier = {
@@ -415,11 +444,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.8.b"
     add_prestige = 2
   }
 }
+# Tatpuru?a Jnana (Tirodhana)
 country_event = {
   id = hindu_events.9
   title = "hindu_events.9.t"
@@ -452,10 +483,11 @@ country_event = {
       name = shiva_tirodhana
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Isana (Shiva Releaved)
 country_event = {
   id = hindu_events.10
   title = "hindu_events.10.t"
@@ -512,6 +544,7 @@ country_event = {
       }
     }
   }
+  # Contemplate how Shiva is revealed, and that you may be a guru
   option = {
     name = "hindu_events.10.a"
     add_ruler_modifier = {
@@ -529,11 +562,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.10.b"
     add_prestige = 2
   }
 }
+# Isana Jnana (Anugraha)
 country_event = {
   id = hindu_events.11
   title = "hindu_events.11.t"
@@ -566,10 +601,14 @@ country_event = {
       name = shiva_anugraha
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+##################################################
+# Shakta paths: Aspects of Shakti
+##################################################
+# Discuss Lakshmi with Vaishnavist ruler, triggering Lakshmi-sampradaya
 country_event = {
   id = hindu_events.12
   title = "hindu_events.12.t"
@@ -635,6 +674,7 @@ country_event = {
     }
   }
 }
+# Srikula - Father
 country_event = {
   id = hindu_events.13
   title = "hindu_events.13.t"
@@ -669,6 +709,7 @@ country_event = {
       stability = 3
     }
   }
+  # Contemplate the benevolent and beautiful aspect of Shakti
   option = {
     name = "hindu_events.13.a"
     add_ruler_modifier = {
@@ -686,6 +727,7 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.13.b"
     add_prestige = 2
@@ -696,6 +738,7 @@ country_event = {
     }
   }
 }
+# Srikula - Mother
 country_event = {
   id = hindu_events.14
   title = "hindu_events.14.t"
@@ -730,6 +773,7 @@ country_event = {
       stability = 3
     }
   }
+  # Contemplate the benevolent and beautiful aspect of Shakti
   option = {
     name = "hindu_events.14.a"
     add_ruler_modifier = {
@@ -747,6 +791,7 @@ country_event = {
       }
     }
   }
+  # Continue search hindu_shakta_1_rejected
   option = {
     name = "hindu_events.14.b"
     add_prestige = 2
@@ -757,6 +802,7 @@ country_event = {
     }
   }
 }
+# Srikula Jnana
 country_event = {
   id = hindu_events.15
   title = "hindu_events.15.t"
@@ -797,10 +843,11 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Srikula - Further insights
 country_event = {
   id = hindu_events.16
   title = "hindu_events.16.t"
@@ -833,6 +880,7 @@ country_event = {
       num_of_royal_marriages = 4
     }
   }
+  # Meditate on interdependence between wife and husband (Parvati)
   option = {
     name = "hindu_events.16.a"
     add_ruler_modifier = {
@@ -850,6 +898,7 @@ country_event = {
       }
     }
   }
+  # Meditate on unity (Prakrti)
   option = {
     name = "hindu_events.16.b"
     add_ruler_modifier = {
@@ -867,11 +916,13 @@ country_event = {
       }
     }
   }
+  # Eschew meditation
   option = {
     name = "hindu_events.16.c"
     add_prestige = 2
   }
 }
+# Parvati
 country_event = {
   id = hindu_events.17
   title = "hindu_events.17.t"
@@ -894,6 +945,7 @@ country_event = {
     }
   }
 }
+# Prakrti
 country_event = {
   id = hindu_events.18
   title = "hindu_events.18.t"
@@ -916,6 +968,7 @@ country_event = {
     }
   }
 }
+# Kalikula
 country_event = {
   id = hindu_events.19
   title = "hindu_events.19.t"
@@ -953,6 +1006,7 @@ country_event = {
       }
     }
   }
+  # Contemplate the destructive and fearsome aspect of Shakti
   option = {
     name = "hindu_events.19.a"
     add_ruler_modifier = {
@@ -970,11 +1024,13 @@ country_event = {
       }
     }
   }
+  # Continue search hindu_shakta_1_rejected
   option = {
     name = "hindu_events.19.b"
     add_prestige = 2
   }
 }
+# Kalikula Jnana
 country_event = {
   id = hindu_events.20
   title = "hindu_events.20.t"
@@ -1015,10 +1071,11 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Kalikula - Further tantric insights
 country_event = {
   id = hindu_events.21
   title = "hindu_events.21.t"
@@ -1046,6 +1103,7 @@ country_event = {
   mean_time_to_happen = {
     months = 300
   }
+  # Meditate on destruction (Kali)
   option = {
     name = "hindu_events.21.a"
     add_ruler_modifier = {
@@ -1063,6 +1121,7 @@ country_event = {
       }
     }
   }
+  # Meditate on liberation (Tara)
   option = {
     name = "hindu_events.21.b"
     add_ruler_modifier = {
@@ -1080,11 +1139,13 @@ country_event = {
       }
     }
   }
+  # Eschew meditation
   option = {
     name = "hindu_events.21.c"
     add_prestige = 2
   }
 }
+# Kali
 country_event = {
   id = hindu_events.22
   title = "hindu_events.22.t"
@@ -1107,6 +1168,7 @@ country_event = {
     }
   }
 }
+# Tara
 country_event = {
   id = hindu_events.23
   title = "hindu_events.23.t"
@@ -1129,6 +1191,10 @@ country_event = {
     }
   }
 }
+##################################################
+# Vaishnava paths: Sampradayas of Vishnu
+##################################################
+# Lakshmi-sampradaya
 country_event = {
   id = hindu_events.24
   title = "hindu_events.24.t"
@@ -1137,6 +1203,7 @@ country_event = {
   is_triggered_only = yes
   trigger = {
     if = {
+      #otherwise the flavour is wrong
       limit = {
         has_dlc = "Rights of Man"
       }
@@ -1144,6 +1211,7 @@ country_event = {
       is_origin_of_consort = from
     }
   }
+  # Contemplate Lakshmi as a medium to Vishnu
   option = {
     name = "hindu_events.24.a"
     add_ruler_modifier = {
@@ -1161,6 +1229,7 @@ country_event = {
       }
     }
   }
+  # Contemplate Lakshmi as peer or superior to Vishnu
   option = {
     name = "hindu_events.24.b"
     add_ruler_modifier = {
@@ -1178,11 +1247,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.24.c"
     add_prestige = 2
   }
 }
+# Lakshmi-sampradaya Jnana
 country_event = {
   id = hindu_events.25
   title = "hindu_events.25.t"
@@ -1226,10 +1297,11 @@ country_event = {
       name = vishnu_lakshmi
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Lakshmi-sampradaya Jnana - Shaktist option
 country_event = {
   id = hindu_events.26
   title = "hindu_events.26.t"
@@ -1245,6 +1317,7 @@ country_event = {
     }
   }
   is_triggered_only = yes
+  # Lakshmi is the force behind Vishnu, but Vishnu is still the surpeme god
   option = {
     name = "hindu_events.26.a"
     if = {
@@ -1270,9 +1343,10 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
+  # Lakshmi is the supreme divine
   option = {
     name = "hindu_events.26.b"
     if = {
@@ -1292,6 +1366,7 @@ country_event = {
       remove_country_modifier = hindu_vaishnava_1b
     }
   }
+  # Shakti is the supreme divine
   option = {
     name = "hindu_events.26.c"
     if = {
@@ -1312,6 +1387,7 @@ country_event = {
     }
   }
 }
+# Brahma sampradaya
 country_event = {
   id = hindu_events.27
   title = "hindu_events.27.t"
@@ -1342,6 +1418,7 @@ country_event = {
       stability = 3
     }
   }
+  # Accept theologian's tutorage
   option = {
     name = "hindu_events.27.a"
     add_ruler_modifier = {
@@ -1359,6 +1436,7 @@ country_event = {
       }
     }
   }
+  # Accept advice, seek other teacher
   option = {
     name = "hindu_events.27.b"
     add_ruler_modifier = {
@@ -1379,11 +1457,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.27.c"
     add_prestige = 2
   }
 }
+# Brahma sampradaya Jnana - Theologian tutor
 country_event = {
   id = hindu_events.28
   title = "hindu_events.28.t"
@@ -1424,10 +1504,11 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Brahma sampradaya Jnana - Other tutors
 country_event = {
   id = hindu_events.29
   title = "hindu_events.29.t"
@@ -1457,16 +1538,18 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Rudra sampradaya
 country_event = {
   id = hindu_events.30
   title = "hindu_events.30.t"
   desc = "hindu_events.30.d"
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
+  # Contemplate Shiva as Vishnu's closest pupil
   option = {
     name = "hindu_events.30.a"
     add_ruler_modifier = {
@@ -1484,6 +1567,7 @@ country_event = {
       }
     }
   }
+  # Contemplate Shiva as peer or superior to Vishnu
   option = {
     name = "hindu_events.30.b"
     add_ruler_modifier = {
@@ -1501,11 +1585,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.30.c"
     add_prestige = 2
   }
 }
+# Rudra sampradaya Jnana
 country_event = {
   id = hindu_events.31
   title = "hindu_events.31.t"
@@ -1547,10 +1633,11 @@ country_event = {
     }
     add_prestige = 10
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Rudra sampradaya Jnana - Shaivist option
 country_event = {
   id = hindu_events.32
   title = "hindu_events.32.t"
@@ -1566,6 +1653,7 @@ country_event = {
     }
   }
   is_triggered_only = yes
+  # Shiva is Vishnu's most respected follower, but Vishnu is still the surpeme god
   option = {
     name = "hindu_events.32.a"
     if = {
@@ -1591,9 +1679,10 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
+  # Shiva is the supreme divine, similar to Vishnu
   option = {
     name = "hindu_events.32.b"
     if = {
@@ -1613,6 +1702,7 @@ country_event = {
       remove_country_modifier = hindu_vaishnava_3b
     }
   }
+  # Shiva is the supreme divine, more destructive than Vishnu
   option = {
     name = "hindu_events.32.c"
     if = {
@@ -1633,6 +1723,7 @@ country_event = {
     }
   }
 }
+# Kumara-sampradaya
 country_event = {
   id = hindu_events.33
   title = "hindu_events.33.t"
@@ -1662,6 +1753,7 @@ country_event = {
       stability = 3
     }
   }
+  # FULL CELIBATE
   option = {
     name = "hindu_events.33.a"
     add_ruler_modifier = {
@@ -1682,6 +1774,7 @@ country_event = {
       }
     }
   }
+  # Maybe a little bit celibate
   option = {
     name = "hindu_events.33.b"
     add_ruler_modifier = {
@@ -1703,11 +1796,13 @@ country_event = {
       }
     }
   }
+  # Continue search/orgies
   option = {
     name = "hindu_events.33.c"
     add_prestige = 2
   }
 }
+# Kumara-sampradaya Jnana - Monastic life
 country_event = {
   id = hindu_events.34
   title = "hindu_events.34.t"
@@ -1770,10 +1865,11 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Kumara-sampradaya Jnana - Educational period
 country_event = {
   id = hindu_events.35
   title = "hindu_events.35.t"
@@ -1814,10 +1910,14 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+##################################################
+# Ganesha
+##################################################
+# The Obstacles in our Path
 country_event = {
   id = hindu_events.36
   title = "hindu_events.36.t"
@@ -1857,6 +1957,7 @@ country_event = {
       stability = 3
     }
   }
+  # Contemplate Ganesha
   option = {
     name = "hindu_events.36.a"
     add_ruler_modifier = {
@@ -1874,11 +1975,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.36.b"
     add_prestige = 2
   }
 }
+# Ganesha Jnana
 country_event = {
   id = hindu_events.37
   title = "hindu_events.37.t"
@@ -1920,10 +2023,11 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Ganesha Chaturthi - preparations
 country_event = {
   id = hindu_events.38
   title = "hindu_events.38.t"
@@ -1954,6 +2058,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Ganesh Chaturthi
 country_event = {
   id = hindu_events.39
   title = "hindu_events.39.t"
@@ -1965,6 +2070,10 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+##################################################
+# Ganga
+##################################################
+# Planning for the End
 country_event = {
   id = hindu_events.40
   title = "hindu_events.40.t"
@@ -1988,6 +2097,7 @@ country_event = {
       stability = 3
     }
   }
+  # Make plans for your funeral
   option = {
     name = "hindu_events.40.a"
     set_country_flag = ganga_funeral
@@ -2000,11 +2110,13 @@ country_event = {
       duration = 1825
     }
   }
+  # I have many years left!
   option = {
     name = "hindu_events.40.b"
     add_prestige = 5
   }
 }
+# Funeral at Ganges - pilgrimage
 country_event = {
   id = hindu_events.41
   title = "hindu_events.41.t"
@@ -2017,6 +2129,7 @@ country_event = {
     NOT = {
       has_ruler_modifier = hindu_ganga
     }
+    # Does not own a province containing Ganges
     NOT = {
       owns = 511
       owns = 522
@@ -2039,6 +2152,7 @@ country_event = {
   mean_time_to_happen = {
     months = 1
   }
+  # Travel to Ganges for the funeral
   option = {
     name = "hindu_events.41.a"
     clr_country_flag = ganga_funeral
@@ -2056,12 +2170,14 @@ country_event = {
       tooltip = "hindu_events.41.a.tt"
     }
   }
+  # Ignore wishes
   option = {
     name = "hindu_events.41.b"
     add_prestige = -10
     clr_country_flag = ganga_funeral
   }
 }
+# Funeral at Ganges - province owner
 country_event = {
   id = hindu_events.42
   title = "hindu_events.42.t"
@@ -2074,6 +2190,7 @@ country_event = {
     NOT = {
       has_ruler_modifier = hindu_ganga
     }
+    # Owns a province containing Ganges
     OR = {
       owns = 511
       owns = 522
@@ -2096,6 +2213,7 @@ country_event = {
   mean_time_to_happen = {
     months = 1
   }
+  # Travel to Ganges for the funeral
   option = {
     name = "hindu_events.42.a"
     clr_country_flag = ganga_funeral
@@ -2109,12 +2227,14 @@ country_event = {
       tooltip = "hindu_events.42.a.tt"
     }
   }
+  # Ignore wishes
   option = {
     name = "hindu_events.42.b"
     add_prestige = -10
     clr_country_flag = ganga_funeral
   }
 }
+# Ganga Jnana
 country_event = {
   id = hindu_events.43
   title = "hindu_events.43.t"
@@ -2146,10 +2266,14 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+##################################################
+# Surya
+##################################################
+# Temples of the Sun
 country_event = {
   id = hindu_events.44
   title = "hindu_events.44.t"
@@ -2181,6 +2305,7 @@ country_event = {
       }
     }
   }
+  # Contemplate Surya
   option = {
     name = "hindu_events.44.a"
     add_ruler_modifier = {
@@ -2199,11 +2324,13 @@ country_event = {
       }
     }
   }
+  # Continue search
   option = {
     name = "hindu_events.44.b"
     add_prestige = -2
   }
 }
+# Surya Jnana
 country_event = {
   id = hindu_events.45
   title = "hindu_events.45.t"
@@ -2244,10 +2371,11 @@ country_event = {
       }
     }
     add_ruler_modifier = {
-      name = "jnana"
+      name = jnana
     }
   }
 }
+# Ratha Saptami - preparations
 country_event = {
   id = hindu_events.46
   title = "hindu_events.46.t"
@@ -2278,17 +2406,20 @@ country_event = {
     add_prestige = -5
   }
 }
+# Ratha Saptami
 country_event = {
   id = hindu_events.47
   title = "hindu_events.47.t"
   desc = "hindu_events.47.d"
   picture = ADVISOR_eventPicture
   is_triggered_only = yes
+  # Praise the Sun! \[T]/
   option = {
     name = "hindu_events.47.a"
     add_stability_or_adm_power = yes
   }
 }
+# Child of Surya
 country_event = {
   id = hindu_events.48
   title = "hindu_events.48.t"
@@ -2319,7 +2450,7 @@ country_event = {
   option = {
     name = "hindu_events.48.a"
     define_heir = {
-      dynasty = "Ï‚¨h6wSh‚"  # Suryavansha
+      dynasty = "Ï‚¨h6wSh‚" 	# Suryavansha
       change_adm = 4
       change_dip = 4
       change_mil = 4
@@ -2332,6 +2463,8 @@ country_event = {
     add_prestige = -10
   }
 }
+# Other Hindu events
+# Bala Tripurasundari - Young daughter wants to go to war
 country_event = {
   id = hindu_events.49
   title = "hindu_events.49.t"
@@ -2363,6 +2496,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Guru Meditation
 country_event = {
   id = hindu_events.50
   title = "hindu_events.50.t"
@@ -2379,7 +2513,7 @@ country_event = {
   }
   option = {
     name = "hindu_events.50.a"
-    custom_tooltip = "hindu_events.50.a.tt"
+    custom_tooltip = "hindu_events.50.a.tt" 	# A reference to the Guru Meditation error on old Amiga computers.
     add_stability = -1
   }
 }

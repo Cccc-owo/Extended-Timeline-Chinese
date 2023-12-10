@@ -1,5 +1,7 @@
+# Pueblo events by Veronica Pazos
 namespace = flavor_pue
 normal_or_historical_nations = yes
+# The Ancient Ones (mission event)
 country_event = {
   id = flavor_pue.1
   title = flavor_pue.1.t
@@ -7,16 +9,19 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
+    # change to Pueblo
     name = flavor_pue.1.a
     override_country_name = PUE
     set_country_flag = is_pue_flag
     add_prestige = 50
   }
   option = {
+    # keep old name
     name = flavor_pue.1.b
     add_prestige = 50
   }
 }
+# Start of the Pueblo Revolt
 country_event = {
   id = flavor_pue.2
   title = flavor_pue.2.t
@@ -24,7 +29,7 @@ country_event = {
   picture = REVOLUTION_eventPicture
   fire_only_once = yes
   trigger = {
-    primary_culture = pueblo
+    primary_culture = pueblo 	# PUE, OHK, ISL, ACO, KER, ZNI
     has_dlc = "Leviathan"
     is_year = 1680
     NOT = {
@@ -72,7 +77,7 @@ country_event = {
     }
     set_country_flag = pue_pueblo_revolt
     define_general = {
-      name = "nfiO"  # Po'pay
+      name = "nfiO" 	# Po'pay
       shock = 4
       fire = 2
       manuever = 4
@@ -80,6 +85,7 @@ country_event = {
     }
   }
 }
+# End of the Pueblo Revolt 
 country_event = {
   id = flavor_pue.3
   title = flavor_pue.3.t
@@ -134,6 +140,7 @@ country_event = {
     add_stability = 1
   }
 }
+# Murals
 country_event = {
   id = flavor_pue.4
   title = flavor_pue.4.t
@@ -157,6 +164,7 @@ country_event = {
     months = 240
   }
   option = {
+    #restore the murals
     name = flavor_pue.4.a
     trigger = {
       NOT = {
@@ -172,6 +180,7 @@ country_event = {
     set_country_flag = pue_restored_murals
   }
   option = {
+    #keep restoring them
     name = flavor_pue.4.b
     trigger = {
       has_country_flag = pue_restored_murals
@@ -184,10 +193,12 @@ country_event = {
     }
   }
   option = {
+    #ignore them
     name = flavor_pue.4.c
     add_adm_power = 25
   }
 }
+# Ceremonial Dancers
 country_event = {
   id = flavor_pue.5
   title = flavor_pue.5.t

@@ -1,5 +1,10 @@
+########################################
+# Events for Kilwa
+# written by Henrik Lohmander
+########################################
 namespace = flavor_zan
 normal_or_historical_nations = yes
+# Shirazi Islam and the Patricians of Kilwa
 country_event = {
   id = flavor_zan.1
   title = flavor_zan.1.t
@@ -20,7 +25,7 @@ country_event = {
     months = 108
   }
   option = {
-    name = flavor_zan.1.a
+    name = flavor_zan.1.a 	# We must follow the ways of our ancestors.
     ai_chance = {
       factor = 1
     }
@@ -60,7 +65,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_zan.1.b
+    name = flavor_zan.1.b 	# Let us purge our kingdom of pagan beliefs and magical ceremonies.
     ai_chance = {
       factor = 0
     }
@@ -104,6 +109,7 @@ country_event = {
     set_country_flag = zan_moving_away_from_shirazi_islam
   }
 }
+# The Kilwa Chronicle
 country_event = {
   id = flavor_zan.2
   title = flavor_zan.2.t
@@ -123,7 +129,7 @@ country_event = {
     months = 60
   }
   option = {
-    name = flavor_zan.2.a
+    name = flavor_zan.2.a 	# Let us create such a Chronicle.
     ai_chance = {
       factor = 1
     }
@@ -144,12 +150,14 @@ country_event = {
     }
   }
   option = {
-    name = flavor_zan.2.b
+    name = flavor_zan.2.b 	# We have more important matters to attend.
     ai_chance = {
       factor = 0
     }
   }
 }
+# Abandoning Shirazi traditions.
+# Never really done in Kilwa but did happen to some extent in other Swahili states and would be a possible result of changing policies.
 country_event = {
   id = flavor_zan.3
   title = flavor_zan.3.t
@@ -169,14 +177,14 @@ country_event = {
     months = 60
   }
   option = {
-    name = flavor_zan.3.a
+    name = flavor_zan.3.a 	# Let's not go overboard.
     ai_chance = {
       factor = 1
     }
     add_stability_or_adm_power = yes
   }
   option = {
-    name = flavor_zan.3.b
+    name = flavor_zan.3.b 	# Let us embrace twelver Shiism.
     ai_chance = {
       factor = 0
     }
@@ -199,7 +207,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_zan.3.c
+    name = flavor_zan.3.c 	# Let us align with the Ibadis of Oman.
     ai_chance = {
       factor = 0
     }
@@ -222,7 +230,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_zan.3.od
+    name = flavor_zan.3.od 	# We should invite Sunni scholars to help reform our kingdom.
     ai_chance = {
       factor = 0
     }
@@ -266,6 +274,7 @@ country_event = {
     add_stability = -1
   }
 }
+#Arrival of the Zimba
 country_event = {
   id = flavor_zan.4
   title = flavor_zan.4.t
@@ -278,13 +287,13 @@ country_event = {
     NOT = {
       is_year = 1610
     }
-    owns = 1196
+    owns = 1196 	# Kilwa
   }
   mean_time_to_happen = {
     months = 75
   }
   option = {
-    name = flavor_zan.4.a
+    name = flavor_zan.4.a 	# A day of sorrow.
     1196 = {
       add_province_modifier = {
         name = zan_sacked_by_the_zimba
@@ -293,7 +302,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_zan.4.b
+    name = flavor_zan.4.b 	# Use all resources to rebuild and restore Kilwa
     trigger = {
       years_of_income = 0.3
     }
@@ -306,6 +315,8 @@ country_event = {
     }
   }
 }
+#Events relating to the political instability of Kilwa in the 15th century.
+#Coup of Suleiman and Muhammad al-Mazlum.
 country_event = {
   id = flavor_zan.5
   title = flavor_zan.5.t
@@ -314,7 +325,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   trigger = {
-    tag = ZAN
+    tag = ZAN 	# Will trigger upon first ruler change.
     OR = {
       government = monarchy
       government = tribal
@@ -322,15 +333,15 @@ country_event = {
     has_government_attribute = heir
   }
   option = {
-    name = flavor_zan.5.a
+    name = flavor_zan.5.a 	# Suleiman takes the throne.
     ai_chance = {
       factor = 1
     }
     set_country_flag = zan_plotting_viziers
     add_stability = -2
     define_ruler = {
-      name = "Ï‚±ƒüf"  # Suleiman
-      dynasty = "lšæt^jS"  # al-Mawahib
+      name = "Ï‚±ƒüf" 	# Suleiman
+      dynasty = "lšæt^jS" 	# al-Mawahib
       claim = 80
     }
     if = {
@@ -339,26 +350,27 @@ country_event = {
       }
       change_statists_vs_orangists = 1
     }
+    #add_legitimacy = -20
     set_ruler_flag = zan_muhammad_and_suleiman
     hidden_effect = {
       define_heir = {
         claim = 75
-        dynasty = "›syQbSÆY"  # al-Mazlum
-        name = "FzUØž·V"  # Muhammad
+        dynasty = "›syQbSÆY" 	# al-Mazlum
+        name = "FzUØž·V" 	# Muhammad
         age = 45
       }
     }
   }
   option = {
-    name = flavor_zan.5.b
+    name = flavor_zan.5.b 	# Muhammad al-Muzlum takes the throne.
     ai_chance = {
       factor = 0
     }
     set_country_flag = zan_plotting_viziers
     add_stability = -2
     define_ruler = {
-      name = "FzUØž·V"  # Muhammad
-      dynasty = "›syQbSÆY"  # al-Mazlum
+      name = "FzUØž·V" 	# Muhammad
+      dynasty = "›syQbSÆY" 	# al-Mazlum
       claim = 80
     }
     if = {
@@ -367,18 +379,19 @@ country_event = {
       }
       change_statists_vs_orangists = 1
     }
+    #add_legitimacy = -20
     set_ruler_flag = zan_muhammad_and_suleiman
     hidden_effect = {
       define_heir = {
         claim = 75
-        dynasty = "lšæt^jS"  # al-Mawahib
-        name = "Ï‚±ƒüf"  # Suleiman
+        dynasty = "lšæt^jS" 	# al-Mawahib
+        name = "Ï‚±ƒüf" 	# Suleiman
         age = 50
       }
     }
   }
   option = {
-    name = flavor_zan.5.c
+    name = flavor_zan.5.c 	# XXXX is our rightful ruler!
     ai_chance = {
       factor = 0
     }
@@ -387,13 +400,14 @@ country_event = {
     capital_scope = {
       spawn_rebels = {
         type = pretender_rebels
-        leader = "FzUØž·V"  # Muhammad
-        leader_dynasty = "›syQbSÆY"  # al-Mazlum
+        leader = "FzUØž·V" 	# Muhammad
+        leader_dynasty = "›syQbSÆY" 	# al-Mazlum
         size = 2
       }
     }
   }
 }
+#Unpopular coupmaker
 country_event = {
   id = flavor_zan.6
   title = flavor_zan.6.t
@@ -413,14 +427,16 @@ country_event = {
     trigger = {
       has_heir = yes
     }
-    name = flavor_zan.6.a
+    name = flavor_zan.6.a 	# Abdicate in favor of heir
     kill_ruler = yes
   }
   option = {
-    name = flavor_zan.6.b
+    name = flavor_zan.6.b 	# Our ruler has won the right to this throne.
     add_stability = -1
   }
 }
+#Plotting Viziers
+#A general event relating to the great number of coups in the politically unstable period between 1442 and the end of the 15th century.
 country_event = {
   id = flavor_zan.7
   title = flavor_zan.7.t
@@ -430,10 +446,10 @@ country_event = {
     tag = ZAN
     has_country_flag = zan_plotting_viziers
     government = monarchy
-    is_tribal = yes
+    is_tribal = yes 	# Goes away when you manage to reform.
     NOT = {
       is_year = 1510
-    }
+    } 	# Or if you manage to ride out the period of instability.
     NOT = {
       legitimacy = 70
     }
@@ -451,7 +467,7 @@ country_event = {
     months = 75
   }
   option = {
-    name = flavor_zan.7.a
+    name = flavor_zan.7.a 	# Ok.
     set_ruler_flag = vizier_plotted
     random_owned_province = {
       spawn_rebels = {
@@ -461,6 +477,13 @@ country_event = {
     }
   }
 }
+########################################
+# More events for Kilwa
+# scripted by Ogulcan Yildirim
+# Localization written by Álvaro Sanz
+########################################
+#Embassy Events
+#Meet Persian origin
 country_event = {
   id = flavor_zan.8
   title = flavor_zan.8.t
@@ -468,6 +491,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
+    #Send an ambassador to Persia
     name = flavor_zan.8.a
     custom_tooltip = flavor_zan.8.a.tt
     hidden_effect = {
@@ -500,6 +524,7 @@ country_event = {
     }
   }
   option = {
+    #It's not really worth it
     name = flavor_zan.8.b
     add_prestige = 20
     add_legitimacy = 20
@@ -520,6 +545,7 @@ country_event = {
     }
   }
 }
+#A [From.GetAdjective] ambassador meets us
 country_event = {
   id = flavor_zan.9
   title = flavor_zan.9.t
@@ -527,6 +553,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
+    #Welcome him!
     name = flavor_zan.9.a
     FROM = {
       country_event = {
@@ -564,6 +591,7 @@ country_event = {
     }
   }
   option = {
+    #We have no need for diplomacy with Kilwa
     name = flavor_zan.9.b
     FROM = {
       country_event = {
@@ -583,6 +611,7 @@ country_event = {
     }
   }
 }
+#Persia welcomes our ambassador + embassy
 country_event = {
   id = flavor_zan.10
   title = flavor_zan.10.t
@@ -611,6 +640,7 @@ country_event = {
     }
   }
 }
+#Persia expelled the ambassador
 country_event = {
   id = flavor_zan.11
   title = flavor_zan.11.t
@@ -628,6 +658,7 @@ country_event = {
     }
   }
 }
+#Embassy gets destroyed
 country_event = {
   id = flavor_zan.12
   title = flavor_zan.12.t
@@ -748,6 +779,7 @@ country_event = {
     }
   }
 }
+#Kilwa lost the Persian embassy!
 country_event = {
   id = flavor_zan.13
   title = flavor_zan.13.t
@@ -770,6 +802,7 @@ country_event = {
     }
   }
 }
+#Kilwa disbanded the Persian embassy!
 country_event = {
   id = flavor_zan.14
   title = flavor_zan.14.t
@@ -791,6 +824,7 @@ country_event = {
     }
   }
 }
+#Merchants visit the other country
 country_event = {
   id = flavor_zan.15
   title = flavor_zan.15.t
@@ -831,6 +865,7 @@ country_event = {
     }
   }
 }
+#Knowledge sharing
 country_event = {
   id = flavor_zan.16
   title = flavor_zan.16.t
@@ -886,6 +921,7 @@ country_event = {
     }
   }
 }
+#Religious Interactions
 country_event = {
   id = flavor_zan.17
   title = flavor_zan.17.t
@@ -926,6 +962,7 @@ country_event = {
     }
   }
 }
+#Kilwa can convert to Persia's religion
 country_event = {
   id = flavor_zan.18
   title = flavor_zan.18.t
@@ -969,6 +1006,7 @@ country_event = {
     }
   }
   option = {
+    #Change religion to Persia
     name = flavor_zan.18.a
     change_religion = event_target:zan_persia
     ai_chance = {
@@ -976,6 +1014,7 @@ country_event = {
     }
   }
   option = {
+    #Not really worth it
     name = flavor_zan.18.b
     add_piety = 0.05
     ai_chance = {
@@ -983,6 +1022,7 @@ country_event = {
     }
   }
 }
+#Kilwa gets claims on Persia due to Shirazi's connection
 country_event = {
   id = flavor_zan.19
   title = flavor_zan.19.t
@@ -1021,6 +1061,7 @@ country_event = {
     }
   }
   option = {
+    #We must pressure the claims of our origins!
     name = flavor_zan.19.a
     random_owned_province = {
       limit = {
@@ -1036,6 +1077,7 @@ country_event = {
     }
   }
   option = {
+    #Not really worth it
     name = flavor_zan.19.b
     add_prestige = 25
     ai_chance = {
@@ -1043,6 +1085,8 @@ country_event = {
     }
   }
 }
+###
+#Mogadishu admits defeat
 country_event = {
   id = flavor_zan.20
   title = flavor_zan.20.t
@@ -1082,6 +1126,7 @@ country_event = {
     }
   }
 }
+#New maps
 country_event = {
   id = flavor_zan.21
   title = flavor_zan.21.t

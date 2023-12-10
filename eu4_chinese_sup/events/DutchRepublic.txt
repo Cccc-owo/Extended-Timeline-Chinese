@@ -1,4 +1,12 @@
 namespace = dutch_republic
+########################################
+# Dutch Republic Events
+# written by Rufus Tronde
+########################################
+########################################
+# When Orangists are in power
+########################################
+# Absolute Power
 country_event = {
   id = dutch_republic.1
   title = "dutch_republic.1.t"
@@ -35,6 +43,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Approve of absolutism
   option = {
     name = "dutch_republic.1.a"
     change_statists_vs_orangists = 0.25
@@ -54,6 +63,7 @@ country_event = {
       factor = 3
     }
   }
+  # Reject absolutism
   option = {
     name = "dutch_republic.1.b"
     change_statists_vs_orangists = -0.25
@@ -81,6 +91,7 @@ country_event = {
     }
   }
 }
+# Political Maxims of the Republc
 country_event = {
   id = dutch_republic.2
   title = "dutch_republic.2.t"
@@ -115,6 +126,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Fire the author
   option = {
     name = "dutch_republic.2.a"
     change_statists_vs_orangists = 0.25
@@ -125,6 +137,7 @@ country_event = {
     remove_advisor = trader
     remove_advisor = colonial_governor
   }
+  # Give him credit for his work
   option = {
     name = "dutch_republic.2.b"
     change_statists_vs_orangists = -0.25
@@ -133,6 +146,7 @@ country_event = {
     add_dip_power = -50
   }
 }
+# Sermons for Princes
 country_event = {
   id = dutch_republic.3
   title = "dutch_republic.3.t"
@@ -168,6 +182,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Strengthen pulpit propaganda
   option = {
     name = "dutch_republic.3.a"
     change_statists_vs_orangists = 0.25
@@ -189,6 +204,7 @@ country_event = {
       }
     }
   }
+  # Tone down pulpit propaganda
   option = {
     name = "dutch_republic.3.b"
     change_statists_vs_orangists = -0.25
@@ -200,6 +216,7 @@ country_event = {
     }
   }
 }
+# The Republic and Free Trade
 country_event = {
   id = dutch_republic.4
   title = "dutch_republic.4.t"
@@ -215,6 +232,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Tell traders to comply with the ruler
   option = {
     name = "dutch_republic.4.a"
     change_statists_vs_orangists = 0.25
@@ -225,6 +243,7 @@ country_event = {
       duration = 1825
     }
   }
+  # Concede some of their points and reform accordingly
   option = {
     name = "dutch_republic.4.b"
     change_statists_vs_orangists = -0.25
@@ -234,6 +253,7 @@ country_event = {
     add_dip_power = -25
   }
 }
+# The King in Orange
 country_event = {
   id = dutch_republic.5
   title = "dutch_republic.5.t"
@@ -263,6 +283,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Make sure people know who saved them
   option = {
     name = "dutch_republic.5.a"
     clr_country_flag = supported_orangists
@@ -271,6 +292,7 @@ country_event = {
     add_republican_tradition = -5
     add_legitimacy = -10
   }
+  # Retain modesty
   option = {
     name = "dutch_republic.5.b"
     clr_country_flag = supported_orangists
@@ -278,6 +300,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Nobles Look to Other Houses
 country_event = {
   id = dutch_republic.6
   title = "dutch_republic.6.t"
@@ -307,17 +330,20 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Let them leave
   option = {
     name = "dutch_republic.6.a"
     clr_country_flag = supported_statists
     add_army_tradition = -10
   }
+  # Try to appease them
   option = {
     name = "dutch_republic.6.b"
     clr_country_flag = supported_statists
     add_mil_power = -50
   }
 }
+# True Freedom
 country_event = {
   id = dutch_republic.7
   title = "dutch_republic.7.t"
@@ -347,6 +373,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Perhaps one day...
   option = {
     name = "dutch_republic.7.a"
     clr_country_flag = supported_statists
@@ -355,6 +382,7 @@ country_event = {
     add_legitimacy = 10
   }
 }
+# No Taxes for Tyrants
 country_event = {
   id = dutch_republic.8
   title = "dutch_republic.8.t"
@@ -393,6 +421,7 @@ country_event = {
     }
   }
 }
+# Sic Semper Tyrannis
 country_event = {
   id = dutch_republic.9
   title = "dutch_republic.9.t"
@@ -422,6 +451,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # For the Republican cause...
   option = {
     name = "dutch_republic.9.a"
     ai_chance = {
@@ -432,6 +462,7 @@ country_event = {
     add_republican_tradition = -10
     add_legitimacy = -20
   }
+  # High treason must be punished
   option = {
     name = "dutch_republic.9.b"
     ai_chance = {
@@ -443,6 +474,7 @@ country_event = {
     add_legitimacy = 5
   }
 }
+# Republican Ideals Betrayed
 country_event = {
   id = dutch_republic.10
   title = "dutch_republic.10.t"
@@ -477,6 +509,10 @@ country_event = {
     add_legitimacy = -10
   }
 }
+########################################
+# When Statists are in power
+########################################
+# Suggest Act of Seclusion
 country_event = {
   id = dutch_republic.11
   title = "dutch_republic.11.t"
@@ -540,6 +576,7 @@ country_event = {
     add_prestige = 5
   }
 }
+# Act of Seclusion
 country_event = {
   id = dutch_republic.12
   title = "dutch_republic.12.t"
@@ -589,6 +626,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Unbreakable Bonds
 country_event = {
   id = dutch_republic.13
   title = "dutch_republic.13.t"
@@ -649,6 +687,7 @@ country_event = {
     }
   }
 }
+# Orangist Ties in the Army
 country_event = {
   id = dutch_republic.14
   title = "dutch_republic.14.t"
@@ -703,6 +742,7 @@ country_event = {
     create_advisor = commandant
   }
 }
+# Nobles Look to the House of Orange
 country_event = {
   id = dutch_republic.15
   title = "dutch_republic.15.t"
@@ -754,6 +794,7 @@ country_event = {
     }
   }
 }
+# Successes of the Republic
 country_event = {
   id = dutch_republic.16
   title = "dutch_republic.16.t"
@@ -770,6 +811,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Let it go
   option = {
     name = "dutch_republic.16.a"
     add_prestige = 20
@@ -777,6 +819,7 @@ country_event = {
     add_dip_power = -25
     clr_country_flag = supported_statists
   }
+  # Let it goooo
   option = {
     name = "dutch_republic.16.b"
     add_republican_tradition = 5
@@ -786,6 +829,7 @@ country_event = {
     clr_country_flag = supported_statists
   }
 }
+# A Country Without a King
 country_event = {
   id = dutch_republic.17
   title = "dutch_republic.17.t"
@@ -828,6 +872,7 @@ country_event = {
     clr_country_flag = supported_orangists
   }
 }
+# The Orange Road to Glory
 country_event = {
   id = dutch_republic.18
   title = "dutch_republic.18.t"
@@ -870,6 +915,7 @@ country_event = {
     clr_country_flag = supported_orangists
   }
 }
+# Generals Doubt the Administration
 country_event = {
   id = dutch_republic.19
   title = "dutch_republic.19.t"
@@ -919,6 +965,7 @@ country_event = {
     clr_country_flag = supported_orangists
   }
 }
+# The Coup
 country_event = {
   id = dutch_republic.20
   title = "dutch_republic.20.t"
@@ -956,6 +1003,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # For the House of Orange!
   option = {
     trigger = {
       has_government_attribute = has_dutch_election
@@ -969,6 +1017,7 @@ country_event = {
     add_republican_tradition = -15
     add_legitimacy = -30
   }
+  # For the Republic!
   option = {
     trigger = {
       has_government_attribute = has_dutch_election
@@ -1016,6 +1065,7 @@ country_event = {
     add_republican_tradition = 5
     add_legitimacy = 10
   }
+  # For the Kingdom!
   option = {
     trigger = {
       NOT = {
@@ -1031,6 +1081,7 @@ country_event = {
     add_republican_tradition = -15
     add_legitimacy = -30
   }
+  # For the Union!
   option = {
     trigger = {
       NOT = {
@@ -1081,6 +1132,7 @@ country_event = {
     add_legitimacy = 10
   }
 }
+# No Consensus
 country_event = {
   id = dutch_republic.21
   title = "dutch_republic.21.t"
@@ -1098,6 +1150,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Is the republic descending into anarchy?
   option = {
     name = "dutch_republic.21.a"
     add_adm_power = -25
@@ -1105,6 +1158,7 @@ country_event = {
     add_mil_power = -25
   }
 }
+# General Demands Control
 country_event = {
   id = dutch_republic.22
   title = "dutch_republic.22.t"
@@ -1124,6 +1178,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Comply as necessary to secure victory
   option = {
     name = "dutch_republic.22.a"
     add_country_modifier = {
@@ -1135,6 +1190,7 @@ country_event = {
     add_army_tradition = 10
     add_mil_power = 100
   }
+  # We will hold on to our ideals in the face of terror
   option = {
     name = "dutch_republic.22.b"
     change_statists_vs_orangists = -0.1
@@ -1143,6 +1199,7 @@ country_event = {
     add_legitimacy = 5
   }
 }
+# Orangists Rally Nobles To War
 country_event = {
   id = dutch_republic.23
   title = "dutch_republic.23.t"
@@ -1174,6 +1231,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Let them lead us to glory!
   option = {
     trigger = {
       has_government_attribute = has_dutch_election
@@ -1201,6 +1259,7 @@ country_event = {
       }
     }
   }
+  # Let them lead us to glory! (Non dutch)
   option = {
     trigger = {
       NOT = {
@@ -1219,12 +1278,14 @@ country_event = {
       duration = 1825
     }
   }
+  # We will hold on to our ideals in the face of terror
   option = {
     name = "dutch_republic.23.b"
     change_statists_vs_orangists = -0.1
     add_war_exhaustion = -2.5
   }
 }
+# Statists Demand Return to Status Quo
 country_event = {
   id = dutch_republic.24
   title = "dutch_republic.24.t"
@@ -1254,17 +1315,20 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Things must return to how they were
   option = {
     name = "dutch_republic.24.a"
     change_statists_vs_orangists = -0.25
     add_mil_power = -100
   }
+  # They faught our war, let them keep their power
   option = {
     name = "dutch_republic.24.b"
     add_republican_tradition = -5
     add_legitimacy = -10
   }
 }
+# Rebuilding the Republic
 country_event = {
   id = dutch_republic.25
   title = "dutch_republic.25.t"
@@ -1281,11 +1345,13 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Let us rebuild these ideals, for the people of [Country].
   option = {
     name = "dutch_republic.25.a"
     change_statists_vs_orangists = -0.25
     add_war_exhaustion = -5
   }
+  # The Prince of Orange could lead us to victory in the future.
   option = {
     trigger = {
       has_government_attribute = has_dutch_election
@@ -1293,6 +1359,7 @@ country_event = {
     name = "dutch_republic.25.b"
     change_statists_vs_orangists = -0.1
   }
+  # The Prince of [Root.GetName] could lead us to victory in the future. (Non dutch)
   option = {
     trigger = {
       NOT = {
@@ -1303,6 +1370,7 @@ country_event = {
     change_statists_vs_orangists = -0.1
   }
 }
+# Interest van [Province]
 province_event = {
   id = dutch_republic.26
   title = "dutch_republic.26.t"
@@ -1323,12 +1391,14 @@ province_event = {
   mean_time_to_happen = {
     months = 1000
   }
+  # Listen to the locals
   option = {
     name = "dutch_republic.26.a"
     owner = {
       change_statists_vs_orangists = -0.15
     }
   }
+  # Ignore the locals
   option = {
     name = "dutch_republic.26.b"
     add_province_modifier = {
@@ -1337,6 +1407,7 @@ province_event = {
     }
   }
 }
+# Concerns from our Border
 country_event = {
   id = dutch_republic.27
   title = "dutch_republic.27.t"
@@ -1362,10 +1433,12 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  # Listen to the locals
   option = {
     name = "dutch_republic.27.a"
     change_statists_vs_orangists = -0.15
   }
+  # Ignore the locals
   option = {
     name = "dutch_republic.27.b"
     random_owned_province = {
@@ -1391,6 +1464,7 @@ country_event = {
     }
   }
 }
+# The Ambitions of [Province]
 province_event = {
   id = dutch_republic.28
   title = "dutch_republic.28.t"
@@ -1435,12 +1509,14 @@ province_event = {
   mean_time_to_happen = {
     months = 1000
   }
+  # Listen to the locals
   option = {
     name = "dutch_republic.28.a"
     owner = {
       change_statists_vs_orangists = 0.15
     }
   }
+  # Ignore the locals
   option = {
     name = "dutch_republic.28.b"
     add_province_modifier = {
@@ -1449,6 +1525,7 @@ province_event = {
     }
   }
 }
+# The Plans of [Province]
 province_event = {
   id = dutch_republic.29
   title = "dutch_republic.29.t"
@@ -1476,12 +1553,14 @@ province_event = {
   mean_time_to_happen = {
     months = 1000
   }
+  # Listen to the locals
   option = {
     name = "dutch_republic.29.a"
     owner = {
       change_statists_vs_orangists = 0.15
     }
   }
+  # Ignore the locals
   option = {
     name = "dutch_republic.29.b"
     add_province_modifier = {
@@ -1490,6 +1569,7 @@ province_event = {
     }
   }
 }
+# Debate in [Province]
 province_event = {
   id = dutch_republic.30
   title = "dutch_republic.30.t"
@@ -1539,6 +1619,7 @@ province_event = {
   mean_time_to_happen = {
     months = 1000
   }
+  # Send someone to argue in favor of Orangists
   option = {
     trigger = {
       owner = {
@@ -1561,6 +1642,7 @@ province_event = {
       }
     }
   }
+  # Send someone to argue in favor of Monarchists
   option = {
     trigger = {
       NOT = {
@@ -1585,6 +1667,7 @@ province_event = {
       }
     }
   }
+  # Send someone to argue in favor of Statists
   option = {
     name = "dutch_republic.30.b"
     owner = {
@@ -1603,6 +1686,10 @@ province_event = {
     }
   }
 }
+########################################
+# When States General Falls under PU
+########################################
+# Hidden Bounce Event
 country_event = {
   id = dutch_republic.31
   title = dutch_republic.31.t
@@ -1618,9 +1705,10 @@ country_event = {
     }
   }
   option = {
-    name = "EXCELLENT"
+    name = EXCELLENT
   }
 }
+# Real Event
 country_event = {
   id = dutch_republic.32
   title = dutch_republic.32.t
@@ -1639,6 +1727,9 @@ country_event = {
     custom_tooltip = STATES_GENERAL_PU_ELECTION_DISABLED
   }
 }
+########################################
+# When States General is abolished
+########################################
 country_event = {
   id = dutch_republic.33
   title = dutch_republic.33.t
@@ -1673,7 +1764,7 @@ country_event = {
       }
       else = {
         define_exiled_ruler = {
-          dynasty = "ƒ eYpQ»l"  # van Oranje
+          dynasty = "ƒ eYpQ»l" 	# van Oranje
           exiled_as = "states_general_abolished_@ROOT"
         }
       }

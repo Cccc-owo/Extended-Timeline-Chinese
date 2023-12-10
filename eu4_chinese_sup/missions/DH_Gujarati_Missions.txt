@@ -91,14 +91,12 @@ guj_maritime_conquest = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Should be an auto-complete anyway due to 1.33 Europa Fortalis :p
     }
   }
   guj_subjugate_saurashtra = {
     icon = mission_subjugate_saurashtra
-    required_missions = {
-      guj_walls_of_ahmadabad_mission
-    }
+    required_missions = { guj_walls_of_ahmadabad_mission }
     completed_by = 1470.1.1
     provinces_to_highlight = {
       OR = {
@@ -112,7 +110,7 @@ guj_maritime_conquest = {
       }
     }
     trigger = {
-      owns_core_province = 515
+      owns_core_province = 515 	# Girnar / Junnagadh Fort
       saurashtra_area = {
         type = all
         country_or_non_sovereign_subject_holds = ROOT
@@ -141,14 +139,12 @@ guj_maritime_conquest = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical conquest
     }
   }
   guj_junnagadh_fort = {
     icon = mission_junnagadh_fort
-    required_missions = {
-      guj_subjugate_saurashtra
-    }
+    required_missions = { guj_subjugate_saurashtra }
     completed_by = 1470.1.1
     provinces_to_highlight = {
       province_id = 515
@@ -178,15 +174,12 @@ guj_maritime_conquest = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# More forts
     }
   }
   guj_naval_dominance = {
     icon = mission_naval_dominance
-    required_missions = {
-      guj_junnagadh_fort
-      guj_mahmudabad
-    }
+    required_missions = { guj_junnagadh_fort guj_mahmudabad }
     completed_by = 1470.1.1
     provinces_to_highlight = {
       OR = {
@@ -233,7 +226,7 @@ guj_maritime_conquest = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Shouldn't leave India
     }
   }
 }
@@ -294,7 +287,7 @@ guj_rajputana_frontier_series = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical conquest
     }
   }
 }
@@ -314,11 +307,10 @@ guj_malwa_focus = {
   }
   has_country_shield = yes
   dh_conquest_of_champaner = {
+    #Vanilla Mission - Changed Context
     icon = mission_reduce_champaner
     position = 2
-    required_missions = {
-      guj_walls_of_ahmadabad_mission
-    }
+    required_missions = { guj_walls_of_ahmadabad_mission }
     completed_by = 1486.1.1
     provinces_to_highlight = {
       province_id = 2056
@@ -348,14 +340,12 @@ guj_malwa_focus = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical conquest
     }
   }
   guj_mahmudabad = {
     icon = mission_mahmudabad
-    required_missions = {
-      dh_conquest_of_champaner
-    }
+    required_missions = { dh_conquest_of_champaner }
     position = 3
     completed_by = 1486.1.1
     provinces_to_highlight = {
@@ -390,8 +380,8 @@ guj_malwa_focus = {
       2056 = {
         add_base_manpower = 1
         add_base_tax = 1
-        change_province_name = "lö»TÉæèÙT∑V"  # Mahmudabad
-        rename_capital = "lö»TÉæèÙT∑V"  # Mahmudabad
+        change_province_name = "lö»TÉæèÙT∑V" 	# Mahmudabad
+        rename_capital = "lö»TÉæèÙT∑V" 	# Mahmudabad
       }
       malwa_area = {
         limit = {
@@ -413,14 +403,12 @@ guj_malwa_focus = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical conquest
     }
   }
   guj_conquer_malwa = {
     icon = mission_conquer_malwa_guj
-    required_missions = {
-      guj_mahmudabad
-    }
+    required_missions = { guj_mahmudabad }
     position = 3
     completed_by = 1486.1.1
     provinces_to_highlight = {
@@ -468,7 +456,7 @@ guj_malwa_focus = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical conquest
     }
   }
 }
@@ -522,7 +510,7 @@ guj_minor_industry = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
 }
@@ -544,9 +532,7 @@ guj_rajputana_conquest = {
   guj_break_mewar = {
     icon = mission_conquer_mewar
     position = 2
-    required_missions = {
-      guj_rajputana_frontier
-    }
+    required_missions = { guj_rajputana_frontier }
     completed_by = 1486.1.1
     provinces_to_highlight = {
       OR = {
@@ -621,16 +607,13 @@ guj_rajputana_conquest = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical conquest
     }
   }
   guj_subjugate_rajputana = {
     icon = mission_subjugate_rajputana
     position = 4
-    required_missions = {
-      guj_break_mewar
-      guj_mahmudabad
-    }
+    required_missions = { guj_break_mewar guj_mahmudabad }
     completed_by = 1486.1.1
     provinces_to_highlight = {
       OR = {
@@ -697,7 +680,7 @@ guj_rajputana_conquest = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical conquest
     }
   }
 }
@@ -736,7 +719,7 @@ guj_mercantile = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   guj_bankers_of_cambay = {
@@ -777,14 +760,12 @@ guj_mercantile = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   guj_shipyards_of_gujarat = {
     icon = mission_shipyards_of_gujarat
-    required_missions = {
-      guj_bankers_of_cambay
-    }
+    required_missions = { guj_bankers_of_cambay }
     provinces_to_highlight = {
       owned_by = ROOT
       has_wharf_trade_goods = yes
@@ -806,15 +787,12 @@ guj_mercantile = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   guj_gujarati_diaspora = {
     icon = mission_gujarati_diaspora
-    required_missions = {
-      guj_shipyards_of_gujarat
-      guj_growth_of_surat
-    }
+    required_missions = { guj_shipyards_of_gujarat guj_growth_of_surat }
     provinces_to_highlight = {
       OR = {
         province_id = 1099
@@ -889,14 +867,12 @@ guj_mercantile = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Gujurat should probably stay in India
     }
   }
   guj_south_africa = {
     icon = mission_south_african_bases
-    required_missions = {
-      guj_gujarati_diaspora
-    }
+    required_missions = { guj_gujarati_diaspora }
     provinces_to_highlight = {
       OR = {
         province_id = 833
@@ -914,8 +890,8 @@ guj_mercantile = {
     }
     effect = {
       1177 = {
-        change_province_name = "∞eNWç"  # New Cambay
-        rename_capital = "∞eNWç"  # New Cambay
+        change_province_name = "∞eNWç" 	# New Cambay
+        rename_capital = "∞eNWç" 	# New Cambay
         add_province_modifier = {
           name = "new_cambay"
           duration = -1
@@ -927,7 +903,7 @@ guj_mercantile = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Gujurat should probably stay in India
     }
   }
 }
@@ -982,14 +958,12 @@ guj_mercantile_and_industry = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   guj_clear_konkani_coast = {
     icon = mission_konkani_pirates
-    required_missions = {
-      guj_merchant_of_gujarat
-    }
+    required_missions = { guj_merchant_of_gujarat }
     provinces_to_highlight = {
       area = konkan_area
       NOT = {
@@ -1032,14 +1006,12 @@ guj_mercantile_and_industry = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   guj_growth_of_surat = {
     icon = mission_growth_of_surat
-    required_missions = {
-      guj_clear_konkani_coast
-    }
+    required_missions = { guj_clear_konkani_coast }
     provinces_to_highlight = {
       province_id = 517
     }
@@ -1063,14 +1035,12 @@ guj_mercantile_and_industry = {
       add_permanent_claim = 1248
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   guj_arabian_ports = {
     icon = mission_arabian_ports
-    required_missions = {
-      guj_growth_of_surat
-    }
+    required_missions = { guj_growth_of_surat }
     provinces_to_highlight = {
       OR = {
         province_id = 387
@@ -1160,7 +1130,7 @@ guj_mercantile_and_industry = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Gujurat should probably stay in India
     }
   }
 }
@@ -1182,9 +1152,7 @@ guj_into_africa = {
   guj_zambezi_gold_mines = {
     icon = mission_zambezi_gold
     position = 5
-    required_missions = {
-      guj_gujarati_diaspora
-    }
+    required_missions = { guj_gujarati_diaspora }
     provinces_to_highlight = {
       OR = {
         area = lower_zambezi_area
@@ -1209,7 +1177,7 @@ guj_into_africa = {
       add_prestige = 15
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Gujurat should probably stay in India
     }
   }
 }

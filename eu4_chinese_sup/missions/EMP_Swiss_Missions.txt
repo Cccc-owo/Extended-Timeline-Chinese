@@ -15,9 +15,7 @@ swiss_missions_1 = {
   has_country_shield = yes
   emp_swi_vaud_wallis = {
     icon = vaud_and_wallis
-    required_missions = {
-      emp_swi_start
-    }
+    required_missions = { emp_swi_start }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -51,9 +49,7 @@ swiss_missions_1 = {
   }
   emp_swi_geneva = {
     icon = sway_geneva
-    required_missions = {
-      emp_swi_vaud_wallis
-    }
+    required_missions = { emp_swi_vaud_wallis }
     position = 2
     provinces_to_highlight = {
       province_id = 4720
@@ -198,9 +194,7 @@ swiss_missions_2 = {
   }
   emp_swi_three_leagues = {
     icon = integrate_the_three_leagues
-    required_missions = {
-      emp_swi_start
-    }
+    required_missions = { emp_swi_start }
     provinces_to_highlight = {
       area = switzerland_area
       NOT = {
@@ -232,10 +226,7 @@ swiss_missions_2 = {
   }
   emp_swi_confederacy = {
     icon = reorganize_the_confederacy
-    required_missions = {
-      emp_swi_three_leagues
-      emp_swi_geneva
-    }
+    required_missions = { emp_swi_three_leagues emp_swi_geneva }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -327,9 +318,7 @@ swiss_missions_2 = {
   }
   emp_swi_imperial_status = {
     icon = switzerland_and_the_empire
-    required_missions = {
-      emp_swi_confederacy
-    }
+    required_missions = { emp_swi_confederacy }
     provinces_to_highlight = {}
     trigger = {
       OR = {
@@ -394,6 +383,7 @@ swiss_missions_3 = {
             attackers = ROOT
           }
           custom_trigger_tooltip = {
+            # see on_war_won on_action
             tooltip = hirde_to_pope_tt
             has_country_flag = hired_to_pope
           }
@@ -418,9 +408,7 @@ swiss_missions_3 = {
   }
   emp_swi_mercenaries = {
     icon = mercenary_companies
-    required_missions = {
-      emp_swi_swiss_guard
-    }
+    required_missions = { emp_swi_swiss_guard }
     provinces_to_highlight = {}
     position = 3
     trigger = {
@@ -436,7 +424,7 @@ swiss_missions_3 = {
           }
           custom_trigger_tooltip = {
             tooltip = swi_won_condottiere_war_tt
-            has_country_flag = won_condottiere_war
+            has_country_flag = won_condottiere_war 	#  see on_war_won on_action
           }
         }
       }
@@ -452,9 +440,7 @@ swiss_missions_3 = {
   }
   emp_swi_swabia = {
     icon = expand_the_confederacy
-    required_missions = {
-      emp_swi_confederacy
-    }
+    required_missions = { emp_swi_confederacy }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -529,9 +515,7 @@ swiss_missions_4 = {
   }
   emp_swi_protect_against_austria = {
     icon = protect_against_austria
-    required_missions = {
-      emp_swi_mountain_forts
-    }
+    required_missions = { emp_swi_mountain_forts }
     provinces_to_highlight = {
       owner = {
         tag = HAB
@@ -573,12 +557,10 @@ swiss_missions_4 = {
   }
   emp_swi_end_the_habsburgs = {
     icon = end_the_habsburgs
-    required_missions = {
-      emp_swi_protect_against_austria
-    }
+    required_missions = { emp_swi_protect_against_austria }
     provinces_to_highlight = {
       owner = {
-        dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+        dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       }
     }
     position = 5
@@ -588,7 +570,7 @@ swiss_missions_4 = {
       }
       NOT = {
         any_country = {
-          dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+          dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
         }
       }
     }
@@ -636,7 +618,7 @@ swiss_missions_5 = {
         }
         define_advisor = {
           type = theologian
-          name = "LN)R^ (ƒ)n)R"  # Huldrych Zwingli
+          name = "LN)R^ (ƒ)n)R" 	# Huldrych Zwingli
           skill = 3
           religion = reformed
           culture = swiss
@@ -674,9 +656,7 @@ swiss_missions_5 = {
   }
   emp_swi_convert = {
     icon = religious_resolution
-    required_missions = {
-      emp_swi_reformation
-    }
+    required_missions = { emp_swi_reformation }
     provinces_to_highlight = {}
     position = 3
     trigger = {
@@ -709,10 +689,9 @@ swiss_missions_5 = {
     }
   }
   emp_swi_evangelize = {
+    # Geneva Conventions
     icon = evengelize_the_faith
-    required_missions = {
-      emp_swi_convert
-    }
+    required_missions = { emp_swi_convert }
     provinces_to_highlight = {}
     position = 5
     trigger = {

@@ -1,5 +1,11 @@
+#################################################
+# Flavor Events for Korea
+# written by Sara Wendel-÷rtqvist
+# edits to Literati Purges by Pierre du Plessis
+#################################################
 namespace = flavor_kor
 normal_or_historical_nations = yes
+# Hyo-jong's northern expedition
 country_event = {
   id = flavor_kor.1
   title = "flavor_kor.EVTNAME1"
@@ -74,6 +80,7 @@ country_event = {
     }
   }
 }
+# First Literati Purge
 country_event = {
   id = flavor_kor.2
   title = "flavor_kor.EVTNAME2"
@@ -161,6 +168,7 @@ country_event = {
     }
   }
 }
+# Second Literati Purge
 country_event = {
   id = flavor_kor.3
   title = "flavor_kor.EVTNAME3"
@@ -181,6 +189,7 @@ country_event = {
     }
   }
   option = {
+    #purge all those who oppose us
     name = "flavor_kor.3.A"
     add_adm_power = -30
     add_mil_power = -30
@@ -208,11 +217,13 @@ country_event = {
     }
   }
   option = {
+    #we must maintain the political balance.
     name = "flavor_kor.3.B"
     add_stability = -1
     add_prestige = -20
   }
 }
+# Third Literati Purge
 country_event = {
   id = flavor_kor.4
   title = "flavor_kor.EVTNAME4"
@@ -312,6 +323,7 @@ country_event = {
     }
   }
 }
+# Introduction of Uniform Land Tax Law
 country_event = {
   id = flavor_kor.5
   title = "flavor_kor.EVTNAME5"
@@ -333,13 +345,16 @@ country_event = {
   option = {
     name = "flavor_kor.EVTOPTOK"
     736 = {
+      #Gyeongsang
       add_base_tax = 1
     }
     1845 = {
+      #Pyongan
       add_base_tax = 1
     }
   }
 }
+# State Council (of Joseon)
 country_event = {
   id = 10500
   title = "EVTNAME10500"
@@ -388,6 +403,7 @@ country_event = {
     }
   }
 }
+# The King's Approval
 country_event = {
   id = 10501
   title = "EVTNAME10501"
@@ -439,6 +455,55 @@ country_event = {
     add_prestige = -5
   }
 }
+# Sinmun Office - is now a decision
+#country_event = {
+#	id = 10502
+#	title = "EVTNAME10502"
+#	desc = "EVTDESC10502"
+#	picture = COURT_eventPicture
+#	
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		tag = KOR
+#		OR = {
+#			dip = 4
+#			adm = 4
+#		}
+#	}
+#	
+#	mean_time_to_happen = {
+#		months = 2000
+#		
+#		modifier = {
+#			factor = 2.0
+#			stability = 3
+#		}
+#		modifier = {
+#			factor = 0.8
+#			NOT = { stability = 0 }
+#		}
+#	}
+#	
+#	option = {
+#		name = "EVTOPTA10502"
+#		ai_chance = { factor = 70 }
+#		add_years_of_income = -0.5
+#		add_country_modifier = { 
+#			name = "sinmun_office" 
+#			duration = -1 
+#		}
+#	}
+#	option = {
+#		name = "EVTOPTB10502"
+#		ai_chance = { factor = 30 }
+#		add_country_modifier = { 
+#			name = "sinmun_office_rejected" 
+#			duration = 365 
+#		}
+#	}
+#}
+# Yi Sun-sin
 country_event = {
   id = flavor_kor.6
   title = flavor_kor.6.t
@@ -473,6 +538,7 @@ country_event = {
     }
   }
   option = {
+    # Hire him as an advisor!
     name = flavor_kor.6.a
     trigger = {
       num_of_ports = 1
@@ -486,7 +552,7 @@ country_event = {
       }
       define_advisor = {
         type = naval_reformer
-        name = "NgÇ„Å"  # Yi Sun-sin
+        name = "NgÇ„Å" 	# Yi Sun-sin
         culture = korean_new
         skill = 2
         discount = yes
@@ -495,7 +561,7 @@ country_event = {
     else = {
       define_advisor = {
         type = naval_reformer
-        name = "NgÇ„Å"  # Yi Sun-sin
+        name = "NgÇ„Å" 	# Yi Sun-sin
         culture = korean
         skill = 2
         discount = yes
@@ -503,12 +569,13 @@ country_event = {
     }
   }
   option = {
+    # Have him lead our army!
     name = flavor_kor.6.b
     ai_chance = {
       factor = 20
     }
     define_general = {
-      name = "NgÇ„Å"  # Yi Sun-sin
+      name = "NgÇ„Å" 	# Yi Sun-sin
       shock = 4
       fire = 4
       manuever = 4
@@ -517,6 +584,7 @@ country_event = {
     }
   }
   option = {
+    # Have him lead our navy!
     name = flavor_kor.6.c
     trigger = {
       num_of_ports = 1
@@ -525,7 +593,7 @@ country_event = {
       factor = 50
     }
     define_admiral = {
-      name = "NgÇ„Å"  # Yi Sun-sin
+      name = "NgÇ„Å" 	# Yi Sun-sin
       shock = 6
       fire = 6
       manuever = 6
@@ -534,6 +602,7 @@ country_event = {
     }
   }
   option = {
+    # Don't intervene in the trial
     name = flavor_kor.6.d
     ai_chance = {
       factor = 10
@@ -541,6 +610,11 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+########################################
+# New Flavor Events for Korea
+# written by Pierre du Plessis
+########################################
+#Chrysanthemum Throne taken to Korea
 country_event = {
   id = flavor_kor.7
   title = flavor_kor.7.t
@@ -559,6 +633,7 @@ country_event = {
     }
   }
 }
+#Peasant Upheavals in Korea
 country_event = {
   id = flavor_kor.8
   title = flavor_kor.8.t
@@ -583,7 +658,9 @@ country_event = {
       set_country_flag = kor_peasant_struggles
     }
   }
+  #the two options are just for flavour
   option = {
+    #We must put them in their place.
     name = flavor_kor.8.A
     add_country_modifier = {
       name = kor_peasant_struggles
@@ -592,6 +669,7 @@ country_event = {
     custom_tooltip = flavor_kor.8.tt
   }
   option = {
+    #We must improve their lot.
     name = flavor_kor.8.B
     add_country_modifier = {
       name = kor_peasant_struggles
@@ -600,6 +678,7 @@ country_event = {
     custom_tooltip = flavor_kor.8.tt
   }
 }
+#Im Kkeokjeong's Rebellion
 country_event = {
   id = flavor_kor.9
   title = flavor_kor.9.t
@@ -700,12 +779,13 @@ country_event = {
       spawn_rebels = {
         size = 3
         type = leadered_peasant_rebels
-        leader = "ógËTck"  # Im Kkeokjeong
+        leader = "ógËTck" 	# Im Kkeokjeong
         win = yes
       }
     }
   }
 }
+#Rise of the Neo-Confucian Literati
 country_event = {
   id = flavor_kor.10
   title = flavor_kor.10.t
@@ -749,6 +829,7 @@ country_event = {
     }
   }
 }
+#Repeating Event: Factionalism Boils Over
 country_event = {
   id = flavor_kor.11
   title = flavor_kor.11.t
@@ -800,6 +881,7 @@ country_event = {
       }
       if = {
         limit = {
+          #why can Korea have a parliament anyway???
           has_parliament = yes
         }
         random_list = {
@@ -865,6 +947,7 @@ country_event = {
     }
   }
   option = {
+    #support 1
     name = flavor_kor.11.A
     if = {
       limit = {
@@ -1192,6 +1275,7 @@ country_event = {
     custom_tooltip = flavor_kor.11.tt
   }
   option = {
+    #support 2
     name = flavor_kor.11.B
     if = {
       limit = {
@@ -1553,6 +1637,7 @@ country_event = {
     }
   }
 }
+#Warning Event for Peasant Upheavals in Korea
 country_event = {
   id = flavor_kor.12
   title = flavor_kor.12.t
@@ -1579,6 +1664,11 @@ country_event = {
     custom_tooltip = flavor_kor.12.tt
   }
 }
+########################################
+# More Flavor Events for Korea
+# written by Ogulcan Yildirim
+########################################
+#Rise of the Manchu
 country_event = {
   id = flavor_kor.13
   title = flavor_kor.13.t
@@ -1594,6 +1684,7 @@ country_event = {
     }
   }
   option = {
+    #Our current overlord will protect us!
     name = flavor_kor.13.a
     overlord = {
       add_trust = {
@@ -1606,6 +1697,7 @@ country_event = {
     }
   }
   option = {
+    #Side with the new Manchu Overlord
     name = flavor_kor.13.b
     if = {
       limit = {
@@ -1673,6 +1765,7 @@ country_event = {
     }
   }
   option = {
+    #We are on our own!
     name = flavor_kor.13.c
     grant_independence = yes
     ai_chance = {
@@ -1687,6 +1780,7 @@ country_event = {
     }
   }
 }
+#Korea wants to become our tributary
 country_event = {
   id = flavor_kor.14
   title = flavor_kor.14.t
@@ -1695,6 +1789,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
+    #They shall be our subject
     name = flavor_kor.14.a
     hidden_effect = {
       FROM = {
@@ -1734,6 +1829,7 @@ country_event = {
     }
   }
   option = {
+    #We don't need a tributary in our next expansion direction
     name = flavor_kor.14.b
     add_prestige = 5
     ai_chance = {
@@ -1741,6 +1837,7 @@ country_event = {
     }
   }
 }
+#End of the Righteous Army
 country_event = {
   id = flavor_kor.15
   title = flavor_kor.15.t
@@ -1778,6 +1875,7 @@ country_event = {
     }
   }
 }
+#The Tripitaka Koreana
 country_event = {
   id = flavor_kor.16
   title = flavor_kor.16.t
@@ -1823,6 +1921,7 @@ country_event = {
       }
     }
   }
+  #Steal it
   option = {
     name = flavor_kor.16.a
     trigger = {
@@ -1860,6 +1959,7 @@ country_event = {
       factor = 1
     }
   }
+  #Burn it down!
   option = {
     name = flavor_kor.16.b
     add_mil_power = 200
@@ -1879,6 +1979,7 @@ country_event = {
       factor = 0
     }
   }
+  #Spare it down!
   option = {
     name = flavor_kor.16.c
     add_prestige = 10
@@ -1893,6 +1994,7 @@ country_event = {
     }
   }
 }
+#Tripitaka Koreana lost
 country_event = {
   id = flavor_kor.17
   title = flavor_kor.17.t

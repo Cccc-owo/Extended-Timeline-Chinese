@@ -1,4 +1,5 @@
 namespace = revolution
+# Revolution
 country_event = {
   id = revolution.1
   title = "EVTNAME3011"
@@ -99,7 +100,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA3011"
+    name = "EVTOPTA3011" 	#  Dire times are ahead of us
     trigger = {
       NOT = {
         has_dlc = "Emperor"
@@ -108,7 +109,7 @@ country_event = {
     add_prestige = -10
   }
   option = {
-    name = revolution.1.A
+    name = revolution.1.A 	#  Crush them
     trigger = {
       has_dlc = "Emperor"
     }
@@ -161,7 +162,7 @@ country_event = {
     }
   }
   option = {
-    name = revolution.1.B
+    name = revolution.1.B 	#  Vive la Revolution!
     trigger = {
       has_dlc = "Emperor"
     }
@@ -199,42 +200,43 @@ country_event = {
     set_country_flag = revolution_disaster_revolutionary
     set_country_flag = revolution_disaster_immediate_revolution
     hidden_effect = {
+      #The triggers for them mean only one will happen
       country_event = {
         id = revolution.10
-      }
+      } 	# Generic
       country_event = {
         id = revolution.15
-      }
+      } 	# France (non-monarchy)
       country_event = {
         id = flavor_rus.2000
-      }
+      } 	# Russia
       country_event = {
         id = revolution.31
-      }
+      } 	# Spain
       country_event = {
         id = revolution.32
-      }
+      } 	# Scandinavia
       country_event = {
         id = revolution.33
-      }
+      } 	# UK
       country_event = {
         id = revolution.34
-      }
+      } 	# Ottomans
       country_event = {
         id = revolution.37
-      }
+      } 	# Germans
       country_event = {
         id = revolution.38
-      }
+      } 	# Austria and HRE
       country_event = {
         id = revolution.39
-      }
+      } 	# Netherlands
       country_event = {
         id = revolution.40
-      }
+      } 	# China
       country_event = {
         id = revolution.41
-      }
+      } 	# Indians
     }
     ai_chance = {
       factor = 2
@@ -249,6 +251,7 @@ country_event = {
     }
   }
 }
+# Religious intolerance
 country_event = {
   id = revolution.2
   title = "EVTNAME3012"
@@ -264,7 +267,7 @@ country_event = {
     any_owned_province = {
       NOT = {
         religion = root
-      }
+      } 	# should be the case by default, but just in case there's funky modifiers
     }
     NOT = {
       is_revolutionary_republic_trigger = yes
@@ -291,7 +294,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA3012"
+    name = "EVTOPTA3012" 	#  One nation, one belief
     ai_chance = {
       factor = 75
     }
@@ -311,7 +314,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB3012"
+    name = "EVTOPTB3012" 	#  Tolerate all beliefs
     ai_chance = {
       factor = 25
     }
@@ -340,6 +343,7 @@ country_event = {
     }
   }
 }
+# Serfdom
 country_event = {
   id = revolution.3
   title = "EVTNAME3013"
@@ -372,7 +376,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA3013"
+    name = "EVTOPTA3013" 	#  Restrict serfdom
     ai_chance = {
       factor = 30
     }
@@ -391,7 +395,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB3013"
+    name = "EVTOPTB3013" 	#  Keep the masses in chains
     ai_chance = {
       factor = 70
     }
@@ -415,6 +419,7 @@ country_event = {
     }
   }
 }
+# Social reform
 country_event = {
   id = revolution.4
   title = "EVTNAME3014"
@@ -457,7 +462,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA3014"
+    name = "EVTOPTA3014" 	#  Suppress the free thinkers
     ai_chance = {
       factor = 60
     }
@@ -482,7 +487,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB3014"
+    name = "EVTOPTB3014" 	#  They hardly pose a threat
     ai_chance = {
       factor = 40
     }
@@ -495,6 +500,7 @@ country_event = {
     }
   }
 }
+# Royal Bureaucracy
 country_event = {
   id = revolution.5
   title = "EVTNAME3015"
@@ -519,7 +525,7 @@ country_event = {
     set_country_flag = royal_bureaucracy
   }
   option = {
-    name = "EVTOPTA3015"
+    name = "EVTOPTA3015" 	#  Reduce the royal bureaucracy
     ai_chance = {
       factor = 65
     }
@@ -538,7 +544,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB3015"
+    name = "EVTOPTB3015" 	#  Expand the royal bureaucracy
     ai_chance = {
       factor = 35
     }
@@ -558,6 +564,7 @@ country_event = {
     add_corruption = 0.5
   }
 }
+# Deplorable reign
 country_event = {
   id = revolution.6
   title = "EVTNAME3016"
@@ -598,7 +605,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA3016"
+    name = "EVTOPTA3016" 	#  Support
     ai_chance = {
       factor = 60
     }
@@ -620,7 +627,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB3016"
+    name = "EVTOPTB3016" 	#  Oppose
     ai_chance = {
       factor = 40
     }
@@ -643,6 +650,7 @@ country_event = {
     }
   }
 }
+# The road to bankruptcy
 country_event = {
   id = revolution.7
   title = "EVTNAME3017"
@@ -669,7 +677,7 @@ country_event = {
     set_country_flag = road_to_bankruptcy
   }
   option = {
-    name = "EVTOPTA3017"
+    name = "EVTOPTA3017" 	#  Mint more money
     ai_chance = {
       factor = 30
     }
@@ -689,7 +697,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB3017"
+    name = "EVTOPTB3017" 	#  We must strengthen our currency
     ai_chance = {
       factor = 70
     }
@@ -708,6 +716,7 @@ country_event = {
     }
   }
 }
+# Financial Crisis
 country_event = {
   id = revolution.8
   title = "EVTNAME3018"
@@ -736,7 +745,7 @@ country_event = {
     set_country_flag = financial_crisis
   }
   option = {
-    name = "EVTOPTA3018"
+    name = "EVTOPTA3018" 	#  Cut back on war expenditures
     ai_chance = {
       factor = 70
     }
@@ -755,7 +764,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB3018"
+    name = "EVTOPTB3018" 	#  The war has its purpose
     ai_chance = {
       factor = 30
     }
@@ -774,6 +783,7 @@ country_event = {
     }
   }
 }
+# Stability returns
 country_event = {
   id = revolution.9
   title = "EVTNAME3019"
@@ -884,7 +894,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA3019"
+    name = "EVTOPTA3019" 	#  Restore order
     trigger = {
       NOT = {
         has_dlc = "Emperor"
@@ -895,7 +905,7 @@ country_event = {
     clear_standard_revolution_elements_effect = yes
   }
   option = {
-    name = revolution.9.B
+    name = revolution.9.B 	#  Ah well
     trigger = {
       has_dlc = "Emperor"
       OR = {
@@ -936,7 +946,7 @@ country_event = {
     clear_standard_revolution_elements_effect = yes
   }
   option = {
-    name = revolution.9.A
+    name = revolution.9.A 	#  We won
     trigger = {
       has_dlc = "Emperor"
       OR = {
@@ -998,6 +1008,7 @@ country_event = {
     clear_standard_revolution_elements_effect = yes
   }
 }
+#####Revolution Events######
 country_event = {
   id = revolution.10
   title = "EVTNAME6601"
@@ -1019,24 +1030,30 @@ country_event = {
   major = yes
   trigger = {
     revolution_event_can_happen_trigger = yes
+    #Alternative DLC versions
     NOT = {
-      tag = RUS
-      tag = FRA
+      tag = RUS 	# flavor_rus.2000
+      tag = FRA 	# revolution.15
+      #revolution.31
       tag = CAS
       tag = ARA
       tag = SPA
+      #revolution.32
       tag = SWE
       tag = DAN
       tag = NOR
       tag = SCA
+      #revolution.33
       AND = {
-        owns_core_province = 236
+        owns_core_province = 236 	# London
         OR = {
           tag = ENG
           tag = GBR
         }
       }
+      #revolution.34
       tag = TUR
+      #revolution.37
       tag = GER
       tag = PRU
       tag = BAV
@@ -1046,9 +1063,12 @@ country_event = {
       tag = WES
       tag = SAX
       tag = POM
+      #revolution.38
       tag = HAB
       tag = HLR
+      #revolution.39
       tag = NED
+      #revolution.41
       tag = MUG
       tag = HIN
       tag = BHA
@@ -1081,7 +1101,7 @@ country_event = {
           id = revolution.35
           days = 365
           random = 365
-        }
+        } 	# Napoleone di Buonaparte
       }
     }
   }
@@ -1100,7 +1120,7 @@ country_event = {
           id = revolution.35
           days = 365
           random = 365
-        }
+        } 	# Napoleone di Buonaparte
       }
     }
   }
@@ -1139,6 +1159,7 @@ country_event = {
         }
       }
       change_government_to_monarchy = yes
+      #set_legacy_government = constitutional_monarchy
     }
     kill_ruler = yes
     if = {
@@ -1167,10 +1188,11 @@ country_event = {
     }
     if = {
       limit = {
+        #you can't get rid of them that easily...
         has_country_flag = habsburgs_exiled_flag
       }
       define_ruler = {
-        dynasty = "ØQ »T^Øe!X"  # von Habsburg
+        dynasty = "ØQ »T^Øe!X" 	# von Habsburg
       }
     }
     if = {
@@ -1208,6 +1230,7 @@ country_event = {
     add_prestige = 200
   }
 }
+#French version if France does not have a monarchy
 country_event = {
   id = revolution.15
   title = "EVTNAME6606"
@@ -1221,6 +1244,7 @@ country_event = {
     }
     OR = {
       capital_scope = {
+        #				continent = europe 
         controlled_by = REB
       }
       has_country_modifier = just_lost_to_revolutionary_rebels
@@ -1263,7 +1287,7 @@ country_event = {
   desc = "EVTDESC6607"
   picture = REVOLUTION_eventPicture
   trigger = {
-    always = no
+    always = no 	# covered by revolution.13
     tag = FRA
     is_revolution_target = yes
     NOT = {
@@ -1293,6 +1317,7 @@ country_event = {
         }
       }
       change_government_to_monarchy = yes
+      #set_legacy_government = constitutional_monarchy
     }
     add_government_reform = parliamentary_reform
     if = {
@@ -1318,6 +1343,7 @@ country_event = {
     }
   }
 }
+#Unused since there is the French Revolution disaster
 country_event = {
   id = revolution.17
   title = "EVTNAME6608"
@@ -1340,6 +1366,7 @@ country_event = {
     kill_ruler = yes
   }
 }
+#I don't think this is used
 country_event = {
   id = revolution.19
   title = "EVTNAME6610"
@@ -1385,6 +1412,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+#Unused now
 country_event = {
   id = revolution.20
   title = revolution.20.t
@@ -1396,6 +1424,11 @@ country_event = {
     clear_standard_revolution_elements_effect = yes
   }
 }
+########################################
+# Additions for 1.30
+# written by Pierre du Plessis
+########################################
+#Spanish version of the Revolution
 country_event = {
   id = revolution.31
   title = revolution.31.name
@@ -1425,13 +1458,14 @@ country_event = {
     }
     enact_revolution_effect = yes
     define_ruler = {
-      name = "†RØe^S ÖhSTN ∑V óÊóöN˙ãØe"  # Gaspar Melchor de Jovellanos
+      name = "†RØe^S ÖhSTN ∑V óÊóöN˙ãØe" 	# Gaspar Melchor de Jovellanos
       adm = 5
       dip = 2
       mil = 2
     }
   }
 }
+#Swedish version of the Revolution
 country_event = {
   id = revolution.32
   title = revolution.32.name
@@ -1516,7 +1550,7 @@ country_event = {
     }
     enact_revolution_effect = yes
     define_ruler = {
-      name = "…bSØe ¶u 6wTX"  # Lars Johan Hierta
+      name = "…bSØe ¶u 6wTX" 	# Lars Johan Hierta
       adm = 5
       dip = 3
       mil = 0
@@ -1549,6 +1583,7 @@ country_event = {
     enact_revolution_effect = yes
   }
 }
+#British version of the Revolution
 country_event = {
   id = revolution.33
   title = revolution.33.name
@@ -1559,7 +1594,7 @@ country_event = {
       tag = ENG
       tag = GBR
     }
-    owns_core_province = 236
+    owns_core_province = 236 	# London
     revolution_event_can_happen_trigger = yes
   }
   is_triggered_only = yes
@@ -1578,13 +1613,14 @@ country_event = {
     }
     enact_revolution_effect = yes
     define_ruler = {
-      name = "¶u ZSKQØe"  # John Wilkes
+      name = "¶u ZSKQØe" 	# John Wilkes
       adm = 5
       dip = 3
       mil = 1
     }
   }
 }
+#Ottoman version of the Revolution
 country_event = {
   id = revolution.34
   title = revolution.34.name
@@ -1654,6 +1690,7 @@ country_event = {
     }
     enact_revolution_effect = yes
     define_ruler = {
+      #Get a random ruler with +1 in each stat
       name = new_supreme_vizier
       change_adm = 1
       change_dip = 1
@@ -1666,6 +1703,7 @@ country_event = {
     clear_saved_name = new_supreme_vizier
   }
 }
+#Italian Revolution: Another Napoleon
 country_event = {
   id = revolution.35
   title = revolution.35.name
@@ -1687,8 +1725,8 @@ country_event = {
     name = flavor_fra.EVTOPTA3148
     add_stability = -1
     define_ruler = {
-      name = "ˇb4x—N I"  # Napoleone I
-      dynasty = "Íè ‚lˇbÙT"  # di Buonaparte
+      name = "ˇb4x—N I" 	# Napoleone I
+      dynasty = "Íè ‚lˇbÙT" 	# di Buonaparte
       adm = 6
       dip = 5
       mil = 6
@@ -1739,8 +1777,8 @@ country_event = {
           spawn_rebels = {
             size = 3
             type = pretender_rebels
-            leader = "ˇb4x—N"  # Napoleone
-            leader_dynasty = "Íè ‚lˇbÙT"  # di Buonaparte
+            leader = "ˇb4x—N" 	# Napoleone
+            leader_dynasty = "Íè ‚lˇbÙT" 	# di Buonaparte
           }
         }
       }
@@ -1753,8 +1791,8 @@ country_event = {
           spawn_rebels = {
             size = 3
             type = pretender_rebels
-            leader = "ˇb4x—N"  # Napoleone
-            leader_dynasty = "Íè ‚lˇbÙT"  # di Buonaparte
+            leader = "ˇb4x—N" 	# Napoleone
+            leader_dynasty = "Íè ‚lˇbÙT" 	# di Buonaparte
             win = yes
           }
         }
@@ -1770,14 +1808,15 @@ country_event = {
         spawn_rebels = {
           size = 3
           type = pretender_rebels
-          leader = "ˇb4x—N"  # Napoleone
-          leader_dynasty = "Íè ‚lˇbÙT"  # di Buonaparte
+          leader = "ˇb4x—N" 	# Napoleone
+          leader_dynasty = "Íè ‚lˇbÙT" 	# di Buonaparte
           win = yes
         }
       }
     }
   }
 }
+# Aspirations of an Empire
 country_event = {
   id = revolution.36
   title = "flavor_fra.EVTNAME101"
@@ -1789,6 +1828,7 @@ country_event = {
     has_ruler_flag = bonaparte_flag
   }
   option = {
+    # Italy will be an empire!
     name = revolution.36.A
     add_stability = -2
     if = {
@@ -1814,10 +1854,12 @@ country_event = {
     }
   }
   option = {
+    # The revolution must continue!
     name = "flavor_fra.EVTOPTB101"
     add_republican_tradition = 10
   }
 }
+#German version of the Revolution
 country_event = {
   id = revolution.37
   title = revolution.37.name
@@ -1862,6 +1904,7 @@ country_event = {
     }
     enact_revolution_effect = yes
     define_ruler = {
+      #Random ruler with +1 in each category
       name = new_ruler
       change_adm = 1
       change_dip = 1
@@ -1873,6 +1916,7 @@ country_event = {
     clr_country_flag = use_french_disaster_exile_effect
   }
 }
+#Austrian version of the Revolution
 country_event = {
   id = revolution.38
   title = revolution.38.name
@@ -1894,7 +1938,7 @@ country_event = {
     hidden_effect = {
       if = {
         limit = {
-          dynasty = "ØQ »T^Øe!X"  # von Habsburg
+          dynasty = "ØQ »T^Øe!X" 	# von Habsburg
         }
         set_country_flag = habsburgs_exiled_flag
       }
@@ -1905,6 +1949,7 @@ country_event = {
     enact_revolution_effect = yes
   }
 }
+#Dutch version of the Revolution
 country_event = {
   id = revolution.39
   title = revolution.39.name
@@ -1923,7 +1968,7 @@ country_event = {
     hidden_effect = {
       if = {
         limit = {
-          dynasty = "ØQ »T^Øe!X"  # von Habsburg
+          dynasty = "ØQ »T^Øe!X" 	# von Habsburg
         }
         set_country_flag = habsburgs_exiled_flag
       }
@@ -1934,10 +1979,11 @@ country_event = {
     enact_revolution_effect = yes
     create_general = {
       tradition = 70
-      name = "kçS¸f Z…^ 9N∑VSØe"  # Herman Willem Daendels
+      name = "kçS¸f Z…^ 9N∑VSØe" 	# Herman Willem Daendels
     }
   }
 }
+#Chinese Revolution
 country_event = {
   id = revolution.40
   title = revolution.40.name
@@ -1947,24 +1993,30 @@ country_event = {
     culture_group = east_asian
     is_emperor_of_china = yes
     revolution_event_can_happen_trigger = yes
+    #Alternative DLC versions
     NOT = {
-      tag = RUS
-      tag = FRA
+      tag = RUS 	# flavor_rus.2000
+      tag = FRA 	# revolution.15
+      #revolution.31
       tag = CAS
       tag = ARA
       tag = SPA
+      #revolution.32
       tag = SWE
       tag = DAN
       tag = NOR
       tag = SCA
+      #revolution.33
       AND = {
-        owns_core_province = 236
+        owns_core_province = 236 	# London
         OR = {
           tag = ENG
           tag = GBR
         }
       }
+      #revolution.34
       tag = TUR
+      #revolution.37
       tag = GER
       tag = PRU
       tag = BAV
@@ -1974,9 +2026,12 @@ country_event = {
       tag = WES
       tag = SAX
       tag = POM
+      #revolution.38
       tag = HAB
       tag = HLR
+      #revolution.39
       tag = NED
+      #revolution.41
       tag = MUG
       tag = HIN
       tag = BHA
@@ -2006,6 +2061,7 @@ country_event = {
     }
     enact_revolution_effect = yes
     define_ruler = {
+      #Random ruler with +1 in each category
       name = new_ruler
       change_adm = 1
       change_dip = 1
@@ -2018,6 +2074,7 @@ country_event = {
     clear_saved_name = new_ruler
   }
 }
+#Indian Revolution
 country_event = {
   id = revolution.41
   title = revolution.41.name
@@ -2069,6 +2126,7 @@ country_event = {
     }
     enact_revolution_effect = yes
     define_ruler = {
+      #Random ruler with +1 in each category
       name = new_ruler
       change_adm = 1
       change_dip = 1

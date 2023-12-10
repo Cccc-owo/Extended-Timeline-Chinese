@@ -1,3 +1,4 @@
+# Carnal sins
 country_event = {
   id = 9450
   title = "EVTNAME9450"
@@ -38,6 +39,7 @@ country_event = {
     add_papal_influence = 2
   }
 }
+# A beloved heir dies
 country_event = {
   id = 9451
   title = "EVTNAME9451"
@@ -103,6 +105,7 @@ country_event = {
     }
   }
 }
+# Palace Coup
 country_event = {
   id = 9452
   title = "EVTNAME9452"
@@ -151,6 +154,7 @@ country_event = {
     kill_heir = {}
   }
 }
+# The Weeping Song
 country_event = {
   id = 9453
   title = "EVTNAME9453"
@@ -194,6 +198,7 @@ country_event = {
     add_manpower = 1
   }
 }
+# Springtime
 country_event = {
   id = 9454
   title = "EVTNAME9454"
@@ -287,6 +292,7 @@ country_event = {
     }
   }
 }
+# Soir˝ˇe
 country_event = {
   id = 9455
   title = "EVTNAME9455"
@@ -310,7 +316,8 @@ country_event = {
   }
   immediate = {
     check_if_non_state_advisor_effect = {
-      chance_of_primary = 85
+      #Hidden scripted effect, is used by scripted effect and must always be cleared in after = { } using erase_advisor_flags_effect.
+      chance_of_primary = 85 	# Not percentages!
       chance_of_tertiary = 5
       chance_of_secondary = 15
     }
@@ -397,6 +404,7 @@ country_event = {
     }
   }
 }
+# Heir Falls ill
 country_event = {
   id = 9456
   title = "EVTNAME9456"
@@ -446,6 +454,7 @@ country_event = {
     }
   }
 }
+# Child in the Reeds
 country_event = {
   id = 9457
   title = "EVTNAME9457"
@@ -500,6 +509,7 @@ country_event = {
     add_treasury = 5
   }
 }
+# Tournament
 country_event = {
   id = 9458
   title = "EVTNAME9458"
@@ -560,6 +570,7 @@ country_event = {
     add_prestige = 5
   }
 }
+# Hunting accident
 country_event = {
   id = 9459
   title = "EVTNAME9459"
@@ -608,6 +619,7 @@ country_event = {
     add_prestige = -10
   }
 }
+# Heir goes out at night
 country_event = {
   id = 9460
   title = "EVTNAME9460"
@@ -644,6 +656,7 @@ country_event = {
     add_heir_claim = -10
   }
 }
+# Scheming Bureaucracy
 country_event = {
   id = 9462
   title = "EVTNAME9462"
@@ -688,10 +701,12 @@ country_event = {
     ai_chance = {
       factor = 0
     }
+    #set_legacy_government = bureaucratic_despotism
     kill_ruler = yes
     add_stability = -6
   }
 }
+# The Family
 country_event = {
   id = 9463
   title = "EVTNAME9463"
@@ -775,6 +790,7 @@ country_event = {
     }
   }
 }
+# Regent usurps throne
 country_event = {
   id = 9468
   title = "EVTNAME9468"
@@ -825,6 +841,7 @@ country_event = {
     add_heir_claim = 30
   }
 }
+# Born under a star
 country_event = {
   id = 9469
   title = "EVTNAME9469"
@@ -883,7 +900,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "öNÜSqS'Y"  # Alexander
+      name = "öNÜSqS'Y" 	# Alexander
       claim = 100
       mil = 6
     }
@@ -913,7 +930,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "OØeNWæèS"  # Iskandar
+      name = "OØeNWæèS" 	# Iskandar
       claim = 100
       mil = 6
     }
@@ -943,7 +960,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "!ïNWæèS"  # Sikandar
+      name = "!ïNWæèS" 	# Sikandar
       claim = 100
       mil = 6
     }
@@ -956,7 +973,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "b	T`"  # Genghis
+      name = "b	T`" 	# Genghis
       claim = 100
       mil = 6
     }
@@ -969,7 +986,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "!ç≥uS"  # Gunnarr
+      name = "!ç≥uS" 	# Gunnarr
       claim = 100
       mil = 6
     }
@@ -985,7 +1002,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "eYOPOyr"  # Ahuizotl
+      name = "eYOPOyr" 	# Ahuizotl
       claim = 100
       mil = 6
     }
@@ -998,7 +1015,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "^Âgyrì^KQ"  # Pachakutiq
+      name = "^Âgyrì^KQ" 	# Pachakutiq
       claim = 100
       mil = 6
     }
@@ -1011,7 +1028,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "∑VNW≥uÙuæè"  # Deganawida
+      name = "∑VNW≥uÙuæè" 	# Deganawida
       claim = 100
       mil = 6
     }
@@ -1019,12 +1036,12 @@ country_event = {
   option = {
     name = "EVTOPTAi9469"
     trigger = {
-      religion = shamanism
+      religion = shamanism 	# Fetishism
     }
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "bSõèæè"  # Ruhinda
+      name = "bSõèæè" 	# Ruhinda
       claim = 100
       mil = 6
     }
@@ -1037,7 +1054,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "aSâÔQ"  # Cacique
+      name = "aSâÔQ" 	# Cacique
       claim = 100
       mil = 6
     }
@@ -1067,7 +1084,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "!ïNWæèS"  # Sikandar
+      name = "!ïNWæèS" 	# Sikandar
       claim = 100
       mil = 6
     }
@@ -1097,7 +1114,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "ÅúØeTX∆Y"  # Rustam
+      name = "ÅúØeTX∆Y" 	# Rustam
       claim = 100
       mil = 6
     }
@@ -1127,7 +1144,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "'YkS"  # David
+      name = "'YkS" 	# David
       claim = 100
       mil = 6
     }
@@ -1157,7 +1174,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "z`íd"  # Caesar
+      name = "z`íd" 	# Caesar
       claim = 100
       adm = 6
     }
@@ -1187,7 +1204,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "¸fœÇS"  # Mansur
+      name = "¸fœÇS" 	# Mansur
       claim = 100
       adm = 6
     }
@@ -1217,7 +1234,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "KQÃë^≥u"  # Krishna
+      name = "KQÃë^≥u" 	# Krishna
       claim = 100
       adm = 6
     }
@@ -1230,7 +1247,7 @@ country_event = {
     define_heir = {
       dynasty = ROOT
       male = yes
-      name = "˝V≈V»p"  # Kubilai
+      name = "˝V≈V»p" 	# Kubilai
       claim = 100
       adm = 6
     }
@@ -1243,7 +1260,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "√WÃëKQ"  # Erik
+      name = "√WÃëKQ" 	# Erik
       claim = 100
       adm = 6
     }
@@ -1259,7 +1276,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "OyQÔg?ñyrS"  # Itzcoatl
+      name = "OyQÔg?ñyrS" 	# Itzcoatl
       claim = 100
       adm = 6
     }
@@ -1272,7 +1289,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "Ùu…b—yÂg"  # Viracocha
+      name = "Ùu…b—yÂg" 	# Viracocha
       claim = 100
       adm = 6
     }
@@ -1285,7 +1302,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "wmNSôl"  # Hiawatha
+      name = "wmNSôl" 	# Hiawatha
       claim = 100
       adm = 6
     }
@@ -1293,12 +1310,12 @@ country_event = {
   option = {
     name = "EVTOPTBi9469"
     trigger = {
-      religion = shamanism
+      religion = shamanism 	# Fetishism
     }
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "bSfsO"  # Ruhanga
+      name = "bSfsO" 	# Ruhanga
       claim = 100
       adm = 6
     }
@@ -1311,7 +1328,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "‚lGYaS"  # Bochica
+      name = "‚lGYaS" 	# Bochica
       claim = 100
       adm = 6
     }
@@ -1341,7 +1358,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "?ñìèÊè"  # Ashoka
+      name = "?ñìèÊè" 	# Ashoka
       claim = 100
       adm = 6
     }
@@ -1371,7 +1388,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "NbÃë"  # Zal
+      name = "NbÃë" 	# Zal
       claim = 100
       adm = 6
     }
@@ -1401,7 +1418,7 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "NbWËï"  # Solomon
+      name = "NbWËï" 	# Solomon
       claim = 100
       adm = 6
     }
@@ -1411,12 +1428,13 @@ country_event = {
     define_heir = {
       male = yes
       dynasty = ROOT
-      name = "¶u"  # Johan
+      name = "¶u" 	# Johan
       claim = 100
       dip = 6
     }
   }
 }
+# Heir is of our Dynasty
 country_event = {
   id = 9470
   title = "EVTNAME9470"
@@ -1496,11 +1514,12 @@ country_event = {
     name = "EVTOPTA9470"
     trigger = {
       NOT = {
-        dynasty = "ØQ »T^Øe!X"  # von Habsburg
+        dynasty = "ØQ »T^Øe!X" 	# von Habsburg
       }
     }
     event_target:marriage_policy_paid_off_here = {
       define_heir = {
+        #Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
         dynasty = ROOT
         age = 14
       }
@@ -1516,10 +1535,11 @@ country_event = {
   option = {
     name = "EVTOPTB9470"
     trigger = {
-      dynasty = "ØQ »T^Øe!X"  # von Habsburg
+      dynasty = "ØQ »T^Øe!X" 	# von Habsburg
     }
     event_target:marriage_policy_paid_off_here = {
       define_heir = {
+        #Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
         dynasty = ROOT
         age = 14
       }
@@ -1533,6 +1553,7 @@ country_event = {
     }
   }
 }
+# The Family Opt 1
 country_event = {
   id = 9476
   title = "EVTNAME9476"
@@ -1568,6 +1589,7 @@ country_event = {
     }
   }
 }
+# The Family Opt 2
 country_event = {
   id = 9477
   title = "EVTNAME9477"
@@ -1589,6 +1611,7 @@ country_event = {
     }
   }
 }
+# Fear and Loathing 1/3
 province_event = {
   id = 9481
   title = "EVTNAME9481"
@@ -1646,6 +1669,7 @@ province_event = {
     }
   }
 }
+# Fear and Loathing 2/3
 country_event = {
   id = 9482
   title = "EVTNAME9482"
@@ -1674,6 +1698,7 @@ country_event = {
     set_country_flag = contained_insanity
   }
 }
+# Fear and Loathing 3/3
 country_event = {
   id = 9483
   title = "EVTNAME9483"
@@ -1703,6 +1728,7 @@ country_event = {
     clr_country_flag = contained_insanity
   }
 }
+# Fear and Loathing removal on ruler death, ontriggered
 country_event = {
   id = 9492
   title = "EVTNAME9492"
@@ -1725,6 +1751,7 @@ country_event = {
     clr_country_flag = murdering_bastard
   }
 }
+# Wedding bells
 country_event = {
   id = 9484
   title = "EVTNAME9484"
@@ -1767,7 +1794,7 @@ country_event = {
     months = 500
   }
   option = {
-    name = "EVTOPTA9484"
+    name = "EVTOPTA9484" 	# Time to settle down
     random_country = {
       limit = {
         religion = ROOT
@@ -1783,7 +1810,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9484"
+    name = "EVTOPTB9484" 	# No
     add_prestige = 5
     add_country_modifier = {
       name = "sought_after_bachelor"
@@ -1791,6 +1818,7 @@ country_event = {
     }
   }
 }
+# A modest proposal
 country_event = {
   id = 9485
   title = "EVTNAME9485"
@@ -1844,6 +1872,7 @@ country_event = {
     add_adm_power = 10
   }
 }
+# Wedding bells
 country_event = {
   id = 9486
   title = "EVTNAME9486"
@@ -1877,6 +1906,7 @@ country_event = {
     }
   }
 }
+# Wedding bells
 country_event = {
   id = 9487
   title = "EVTNAME9487"
@@ -1910,6 +1940,7 @@ country_event = {
     }
   }
 }
+#Last war was a failure
 country_event = {
   id = 9488
   title = "EVTNAME9488"
@@ -1967,6 +1998,7 @@ country_event = {
     add_war_exhaustion = -2
   }
 }
+# The Moon
 country_event = {
   id = 9489
   title = "EVTNAME9489"
@@ -1988,6 +2020,7 @@ country_event = {
     add_mil_power = 25
   }
 }
+# Seeing the real you
 country_event = {
   id = 9490
   title = "EVTNAME9490"
@@ -2041,7 +2074,9 @@ country_event = {
     }
   }
 }
+### Suggestions by Ex Mudder, scripted by Sara Wendel-˝ˇrtqvist
 namespace = dynastic_events
+# Starlight
 country_event = {
   id = dynastic_events.1
   title = dynastic_events.1.t
@@ -2093,7 +2128,7 @@ country_event = {
   option = {
     name = dynastic_events.1.a
     define_heir = {
-      name = "OKNéÉãv"  # Elisabeth
+      name = "OKNéÉãv" 	# Elisabeth
       dynasty = ROOT
       claim = 50
       female = yes
@@ -2106,7 +2141,7 @@ country_event = {
     name = dynastic_events.1.b
     define_heir = {
       dynasty = ROOT
-      name = "aSyr3t"  # Caterine
+      name = "aSyr3t" 	# Caterine
       claim = 50
       adm = 3
       dip = 3
@@ -2129,7 +2164,7 @@ country_event = {
     name = dynastic_events.1.e
     define_heir = {
       dynasty = ROOT
-      name = "éÉ…b"  # Sara
+      name = "éÉ…b" 	# Sara
       claim = 50
       adm = 3
       dip = 3
@@ -2138,6 +2173,7 @@ country_event = {
     }
   }
 }
+# Newborn Daughter
 country_event = {
   id = dynastic_events.2
   title = dynastic_events.2.t
@@ -2208,6 +2244,7 @@ country_event = {
     }
   }
 }
+# Talented and Ambitious Daughter
 country_event = {
   id = dynastic_events.3
   title = dynastic_events.3.t
@@ -2307,6 +2344,7 @@ country_event = {
     }
   }
 }
+# The Ruler's Daughter
 country_event = {
   id = dynastic_events.4
   title = dynastic_events.4.t
@@ -2470,6 +2508,7 @@ country_event = {
     }
   }
 }
+# Offer Personal Union
 country_event = {
   id = dynastic_events.5
   title = dynastic_events.5.t
@@ -2634,6 +2673,7 @@ country_event = {
     add_legitimacy = 10
   }
 }
+# Personal Union Offered
 country_event = {
   id = dynastic_events.6
   title = dynastic_events.6.t
@@ -2690,6 +2730,7 @@ country_event = {
     }
   }
 }
+# A Political Marriage - Accepted or Not?
 country_event = {
   id = dynastic_events.7
   title = dynastic_events.7.t
@@ -2734,6 +2775,7 @@ country_event = {
     }
   }
 }
+# Marriage Policies paid off
 country_event = {
   id = dynastic_events.8
   title = dynastic_events.8.t
@@ -2749,7 +2791,7 @@ country_event = {
     trigger = {
       FROM = {
         NOT = {
-          dynasty = "ØQ »T^Øe!X"  # von Habsburg
+          dynasty = "ØQ »T^Øe!X" 	# von Habsburg
         }
       }
     }
@@ -2759,7 +2801,7 @@ country_event = {
     name = dynastic_events.8.b
     trigger = {
       FROM = {
-        dynasty = "ØQ »T^Øe!X"  # von Habsburg
+        dynasty = "ØQ »T^Øe!X" 	# von Habsburg
       }
     }
     custom_tooltip = dynastic_events.8.a.tt

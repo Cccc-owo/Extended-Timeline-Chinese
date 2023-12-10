@@ -1,5 +1,10 @@
+########################################
+# Events for Songhai
+# written by Johan Andersson
+########################################
 namespace = flavor_son
 normal_or_historical_nations = yes
+# The Clergy of Timbuktu
 country_event = {
   id = flavor_son.1
   title = flavor_son.1.t
@@ -34,6 +39,7 @@ country_event = {
     add_piety = 0.50
   }
 }
+# Golden age in Timbuktu
 country_event = {
   id = flavor_son.2
   title = flavor_son.2.t
@@ -70,6 +76,7 @@ country_event = {
     add_innovativeness_big_effect = yes
   }
 }
+# Tarikh al-Sudan
 country_event = {
   id = flavor_son.3
   title = flavor_son.3.t
@@ -94,6 +101,11 @@ country_event = {
     add_legitimacy = 25
   }
 }
+########################################
+# More events for Songhai
+# written by Ogulcan Yildirim
+########################################
+# Rise of Askia Muhammed
 country_event = {
   id = flavor_son.4
   title = flavor_son.4.t
@@ -118,7 +130,7 @@ country_event = {
           mil = 3
         }
       }
-      dynasty = "Qh<S"  # Sonni
+      dynasty = "Qh<S" 	# Sonni
       NOT = {
         legitimacy = 50
       }
@@ -134,9 +146,10 @@ country_event = {
   option = {
     name = flavor_son.4.a
     add_stability = -1
+    #kill_heir = yes
     define_ruler = {
-      name = "FzUØž·V"  # Muhammad
-      dynasty = "?–¯eúWšN"  # Askia
+      name = "FzUØž·V" 	# Muhammad
+      dynasty = "?–¯eúWšN" 	# Askia
       min_age = 25
       max_age = 40
       claim = 75
@@ -174,8 +187,8 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 3
-        leader = "FzUØž·V"  # Muhammad
-        leader_dynasty = "?–¯eúWšN"  # Askia
+        leader = "FzUØž·V" 	# Muhammad
+        leader_dynasty = "?–¯eúWšN" 	# Askia
         culture = soninke
         religion = sunni
       }
@@ -197,6 +210,7 @@ country_event = {
     }
   }
 }
+# The direction of Songhai
 country_event = {
   id = flavor_son.5
   title = flavor_son.5.t
@@ -209,6 +223,7 @@ country_event = {
     }
   }
   option = {
+    #Modern Islam focus
     name = flavor_son.5.a
     custom_tooltip = flavor_son.5.a.tt
     hidden_effect = {
@@ -244,6 +259,7 @@ country_event = {
     }
   }
   option = {
+    #Traditional Fetishist focus
     name = flavor_son.5.b
     custom_tooltip = flavor_son.5.b.tt
     hidden_effect = {
@@ -282,6 +298,7 @@ country_event = {
     swap_non_generic_missions = yes
   }
 }
+# Ali Ber becomes heir
 country_event = {
   id = flavor_son.6
   title = flavor_son.6.t
@@ -306,10 +323,11 @@ country_event = {
     months = 120
   }
   option = {
+    #Let Ali on the throne
     name = flavor_son.6.a
     define_ruler = {
-      name = "?–Ì‘ S"  # Alî Ber
-      dynasty = "Qh<S"  # Sonni
+      name = "?–Ì‘ S" 	# Alî Ber
+      dynasty = "Qh<S" 	# Sonni
       claim = 80
       adm = 4
       dip = 2
@@ -330,6 +348,7 @@ country_event = {
     }
   }
   option = {
+    #Naaah
     name = flavor_son.6.b
     add_prestige = 20
     ai_chance = {
@@ -337,6 +356,7 @@ country_event = {
     }
   }
 }
+# Songhai becomes massive threat to Mali
 country_event = {
   id = flavor_son.7
   title = flavor_son.7.t
@@ -358,6 +378,7 @@ country_event = {
     }
   }
 }
+# Askia's army reformation
 country_event = {
   id = flavor_son.8
   title = flavor_son.8.t
@@ -382,6 +403,7 @@ country_event = {
     }
   }
 }
+# The surrender of Djenne
 country_event = {
   id = flavor_son.10
   title = flavor_son.10.t
@@ -421,6 +443,7 @@ country_event = {
     }
   }
 }
+# Glory of the Great Mosque of Djenne
 country_event = {
   id = flavor_son.11
   title = flavor_son.11.t
@@ -451,6 +474,7 @@ country_event = {
     }
   }
 }
+# Return to the Roots?
 country_event = {
   id = flavor_son.12
   title = flavor_son.12.t
@@ -500,6 +524,7 @@ country_event = {
     }
   }
 }
+# The surrender of Djenne - Ruler dies!
 country_event = {
   id = flavor_son.13
   title = flavor_son.13.t
@@ -511,6 +536,7 @@ country_event = {
     kill_ruler = yes
   }
   option = {
+    #Offer the Songhain a marriage!
     name = flavor_son.13.a
     tooltip = {
       white_peace = SON
@@ -538,6 +564,7 @@ country_event = {
     }
   }
   option = {
+    #We will never submit!
     name = flavor_son.13.b
     add_prestige = 15
     add_war_exhaustion = 1
@@ -555,6 +582,7 @@ country_event = {
     }
   }
 }
+# The surrender of Djenne - Hidden event
 country_event = {
   id = flavor_son.14
   title = none
@@ -589,6 +617,7 @@ country_event = {
     }
   }
 }
+# Increase goods of all salt and cloth provinces
 country_event = {
   id = flavor_son.100
   title = none
@@ -624,7 +653,7 @@ country_event = {
       add_province_modifier = {
         name = son_salt_cloth_production
         duration = -1
-        desc = son_salt_cloth_production_tt
+        desc = son_salt_cloth_production_tt 	# Remains until son_salt_cloth_trader expired
       }
     }
     ai_chance = {
@@ -632,6 +661,7 @@ country_event = {
     }
   }
 }
+# Remove all the province modifeirs when invalid
 country_event = {
   id = flavor_son.101
   title = none

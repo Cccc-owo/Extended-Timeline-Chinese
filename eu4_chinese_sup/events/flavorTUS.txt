@@ -1,5 +1,11 @@
+########################################
+# Flavor Events for Tuscany
+# Scripted and written by Sara Wendel-Örtqvist
+# and Petter Vilberg
+########################################
 namespace = flavor_tus
 normal_or_historical_nations = yes
+# Michelangelo
 country_event = {
   id = flavor_tus.1
   title = "flavor_tus.EVTNAME1"
@@ -9,7 +15,7 @@ country_event = {
   trigger = {
     OR = {
       tag = TUS
-      tag = LAN
+      tag = LAN 	#  florence
     }
     is_year = 1500
     NOT = {
@@ -25,10 +31,11 @@ country_event = {
       type = artist
       skill = 3
       cost_multiplier = 0.25
-      name = "s|VgúWW"  # Michelangelo
+      name = "s|VgúWW" 	# Michelangelo
     }
   }
 }
+#The emperor condemns the Duchy's elevation
 country_event = {
   id = flavor_tus.2
   title = flavor_tus.2.t
@@ -82,7 +89,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_tus.2.b
+    name = flavor_tus.2.b 	# We yield to the emperor
     add_prestige = -15
     emperor = {
       add_opinion = {
@@ -98,6 +105,7 @@ country_event = {
     }
   }
 }
+#Emperor Confirms The Grand Duchy's Elevation
 country_event = {
   id = flavor_tus.3
   title = flavor_tus.3.t
@@ -127,6 +135,7 @@ country_event = {
     remove_country_modifier = emperor_condemns_tuscany
   }
 }
+#Fernandino's Construction Projects
 country_event = {
   id = flavor_tus.4
   title = flavor_tus.4.t
@@ -146,7 +155,7 @@ country_event = {
     is_at_war = no
   }
   mean_time_to_happen = {
-    months = 600
+    months = 600 	#  previous mtth was extreme
     modifier = {
       factor = 0.8
       has_idea_group = economic_ideas
@@ -167,6 +176,7 @@ country_event = {
     }
   }
 }
+#The $MONARCHTITLE$'s treasury
 country_event = {
   id = flavor_tus.5
   title = flavor_tus.5.t
@@ -179,7 +189,7 @@ country_event = {
       tag = LAN
     }
     government = monarchy
-    dynasty = "·V Ž,rGY"  # de' Medici
+    dynasty = "·V Ž,rGY" 	# de' Medici
   }
   mean_time_to_happen = {
     months = 240
@@ -201,6 +211,7 @@ country_event = {
     }
   }
 }
+#Reforms of Peter Leopold
 country_event = {
   id = flavor_tus.6
   title = flavor_tus.6.t
@@ -246,6 +257,7 @@ country_event = {
     add_legitimacy = 10
   }
 }
+#Accademia del Cimento
 country_event = {
   id = flavor_tus.7
   title = flavor_tus.7.t
@@ -290,6 +302,7 @@ country_event = {
     }
   }
 }
+#Medici Oriental Press
 country_event = {
   id = flavor_tus.8
   title = flavor_tus.8.t
@@ -319,6 +332,8 @@ country_event = {
     }
   }
 }
+################ Bonfire of the Vanities Disaster ################
+#Savonarola Rises
 country_event = {
   id = flavor_tus.9
   title = flavor_tus.9.t
@@ -353,6 +368,7 @@ country_event = {
       set_country_flag = bonfire_of_the_vanities_disaster_flag
     }
   }
+  #Ruling Family Flees!
   option = {
     name = flavor_tus.9.a
     ai_chance = {
@@ -375,8 +391,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "	TWÉb«ƒ"  # Girolamo
-        dynasty = "(„iO³uWÉb"  # Savonarola
+        name = "	TWÉb«ƒ" 	# Girolamo
+        dynasty = "(„iO³uWÉb" 	# Savonarola
         age = 40
         ADM = 5
         DIP = 5
@@ -395,7 +411,7 @@ country_event = {
         name = flo_exiled_ruler
       }
       define_ruler = {
-        name = "	TWÉb«ƒ („iO³uWÉb"  # Girolamo Savonarola
+        name = "	TWÉb«ƒ („iO³uWÉb" 	# Girolamo Savonarola
         age = 40
         ADM = 5
         DIP = 5
@@ -412,6 +428,7 @@ country_event = {
     add_republican_tradition = 20
   }
 }
+#Bonfire of the Vanities
 country_event = {
   id = flavor_tus.10
   title = flavor_tus.10.t
@@ -439,6 +456,7 @@ country_event = {
       }
     }
   }
+  #We Will Convince the People to Burn Their Sin
   option = {
     name = flavor_tus.10.a
     add_adm_power = -20
@@ -450,6 +468,7 @@ country_event = {
       }
     }
   }
+  #Seize Their Vanities!
   option = {
     name = flavor_tus.10.b
     ai_chance = {
@@ -466,6 +485,7 @@ country_event = {
     }
   }
 }
+#Medici Agents
 country_event = {
   id = flavor_tus.11
   title = flavor_tus.11.t
@@ -493,6 +513,7 @@ country_event = {
       }
     }
   }
+  #Whatever it Takes to Root Them Out
   option = {
     name = flavor_tus.11.a
     add_dip_power = -20
@@ -504,6 +525,7 @@ country_event = {
       }
     }
   }
+  #Expel anyone who might have loyalties to the Medicis!
   option = {
     name = flavor_tus.11.b
     ai_chance = {
@@ -520,6 +542,7 @@ country_event = {
     }
   }
 }
+#The People Expect Revelations
 country_event = {
   id = flavor_tus.12
   title = flavor_tus.12.t
@@ -547,6 +570,7 @@ country_event = {
       }
     }
   }
+  #Fire and brimstone will rain from the sky!
   option = {
     name = flavor_tus.12.a
     add_stability = -1
@@ -558,6 +582,7 @@ country_event = {
       }
     }
   }
+  #Invent something a little calmer
   option = {
     name = flavor_tus.12.b
     ai_chance = {
@@ -574,6 +599,7 @@ country_event = {
     }
   }
 }
+#The People Follow God!
 country_event = {
   id = flavor_tus.13
   title = flavor_tus.13.t
@@ -601,6 +627,7 @@ country_event = {
       }
     }
   }
+  #God cares for his flock!
   option = {
     name = flavor_tus.13.a
     add_stability_or_adm_power = yes
@@ -613,6 +640,7 @@ country_event = {
     }
   }
 }
+#Reforming the Republic
 country_event = {
   id = flavor_tus.14
   title = flavor_tus.14.t
@@ -645,6 +673,7 @@ country_event = {
       }
     }
   }
+  #We govern for the people of Florence
   option = {
     name = flavor_tus.14.a
     add_adm_power = -25
@@ -657,6 +686,7 @@ country_event = {
       }
     }
   }
+  #The people need strict guidance
   option = {
     name = flavor_tus.14.b
     ai_chance = {
@@ -673,6 +703,7 @@ country_event = {
     }
   }
 }
+#The People Turn Against Savonarola
 country_event = {
   id = flavor_tus.15
   title = flavor_tus.15.t
@@ -707,6 +738,7 @@ country_event = {
       }
     }
   }
+  #Let him walk the Trial by Fire
   option = {
     name = flavor_tus.15.a
     random_list = {
@@ -722,11 +754,13 @@ country_event = {
       }
       2 = {
         change_government = theocracy
+        #set_legacy_government = theocratic_government
         add_government_reform = leading_clergy_reform
       }
     }
   }
 }
+#Savonarola Leaves This World
 country_event = {
   id = flavor_tus.16
   title = flavor_tus.16.t
@@ -781,6 +815,7 @@ country_event = {
     remove_government_reform = millenarian_theocracy_reform
   }
 }
+# End of disaster
 country_event = {
   id = flavor_tus.17
   title = flavor_tus.17.t
@@ -822,6 +857,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Fanatic Support for Savanarola
 country_event = {
   id = flavor_tus.18
   title = flavor_tus.18.t
@@ -854,6 +890,7 @@ country_event = {
     add_government_reform = leading_clergy_reform
   }
 }
+# Event about Papal disapproval
 country_event = {
   id = flavor_tus.19
   title = flavor_tus.19.t
@@ -882,6 +919,7 @@ country_event = {
     }
   }
   option = {
+    # Declare the Pope a heretic
     name = flavor_tus.19.a
     ai_chance = {
       factor = 100
@@ -907,6 +945,7 @@ country_event = {
     }
   }
   option = {
+    # Assure the people that the Pope is simply misguided
     name = flavor_tus.19.b
     excommunicate = ROOT
     add_papal_influence = -200
@@ -919,6 +958,7 @@ country_event = {
     }
   }
 }
+### The Pazzi Conspiracy ###
 country_event = {
   id = flavor_tus.20
   title = flavor_tus.20.t
@@ -936,13 +976,14 @@ country_event = {
       is_year = 1480
     }
     NOT = {
-      dynasty = "·V ^PŸ"  # de' Pazzi
+      dynasty = "·V ^PŸ" 	# de' Pazzi
     }
   }
   mean_time_to_happen = {
     months = 36
   }
   option = {
+    # Signoria is strengthened
     name = flavor_tus.20.a
     add_stability = -1
     give_estate_land_share_massive = {
@@ -952,11 +993,12 @@ country_event = {
     custom_tooltip = strengthened_signoria_tt
   }
   option = {
+    # Pazzi take over the Signoria
     name = flavor_tus.20.b
     add_stability = -2
     custom_tooltip = signoria_leader_dies_tt
     define_ruler = {
-      name = "Å–Ñyâl ·V ^PŸ"  # Jacopo de' Pazzi
+      name = "Å–Ñyâl ·V ^PŸ" 	# Jacopo de' Pazzi
     }
   }
 }
@@ -967,7 +1009,7 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
-    name = "flavor_tus.EVTOPTA21"
+    name = "flavor_tus.EVTOPTA21" 	#  Our government is magnificent as it is!
     if = {
       limit = {
         stability = 2
@@ -999,7 +1041,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_tus.EVTOPTB21"
+    name = "flavor_tus.EVTOPTB21" 	#  Our crowning glory shall be a crown!
     trigger = {
       NOT = {
         government = monarchy
@@ -1009,7 +1051,7 @@ country_event = {
     add_government_reform = autocracy_reform
   }
   option = {
-    name = "flavor_tus.EVTOPTC21"
+    name = "flavor_tus.EVTOPTC21" 	#  It is time for the People to be heard!
     trigger = {
       OR = {
         AND = {
@@ -1045,6 +1087,7 @@ country_event = {
     }
   }
 }
+# Medici Pope
 country_event = {
   id = flavor_tus.22
   title = "flavor_tus.EVTNAME22"
@@ -1063,7 +1106,7 @@ country_event = {
     }
     picture = POPE_PREACHING_eventPicture
   }
-  is_triggered_only = yes
+  is_triggered_only = yes 	#  on monarch death
   fire_only_once = yes
   trigger = {
     tag = PAP
@@ -1126,6 +1169,7 @@ country_event = {
     }
   }
 }
+# Florence/Tuscany alert when Medici Pope actually takes the throne
 country_event = {
   id = flavor_tus.23
   title = "flavor_tus.EVTNAME23"
@@ -1164,6 +1208,7 @@ country_event = {
     }
   }
 }
+# Death of the Medici Pope
 country_event = {
   id = flavor_tus.24
   title = "flavor_tus.EVTNAME24"
@@ -1182,7 +1227,7 @@ country_event = {
     }
     picture = DEATH_OF_HEIR_eventPicture
   }
-  is_triggered_only = yes
+  is_triggered_only = yes 	#  on monarch death
   fire_only_once = yes
   trigger = {
     tag = PAP

@@ -6,7 +6,7 @@ primary_culture = english
 add_accepted_culture = gascon
 add_accepted_culture = normand
 religion = catholic
-capital = 236
+capital = 236 	#  London
 national_focus = DIP
 change_estate_land_share = {
   estate = estate_church
@@ -16,14 +16,17 @@ change_estate_land_share = {
   estate = estate_burghers
   share = -10
 }
+#1422.8.31 = { #Succession
 change_estate_land_share = {
+  #compensates for lack of nobles, distributes 20 between the remaining estates
   estate = all
   share = 20
 }
 1429.11.6 = {
+  #Coronation
   monarch = {
-    name = "¨N)R VI"  # Henry VI
-    dynasty = "pQV¯eyr"  # Lancaster
+    name = "¨N)R VI" 	# Henry VI
+    dynasty = "pQV¯eyr" 	# Lancaster
     birth_date = 1421.12.6
     adm = 0
     dip = 0
@@ -33,9 +36,10 @@ change_estate_land_share = {
   add_ruler_personality = infertile_personality
   set_ruler_flag = henry_vi_lancaster
 }
+#1434.1.1 = { leader = {	name = "Richard Neville"	type = general	fire = 3	shock = 3	manuever = 3	siege = 0	death_date = 1460.12.31 } }
 1444.1.1 = {
   leader = {
-    name = "¦uğ TXSZSyr"  # John Talbot
+    name = "¦uğ TXSZSyr" 	# John Talbot
     type = general
     fire = 2
     shock = 4
@@ -48,8 +52,8 @@ change_estate_land_share = {
 1445.4.23 = {
   queen = {
     country_of_origin = PRO
-    name = "›s<hKNyr"  # Margaret
-    dynasty = "·V ‰R9ƒ"  # d'Anjou
+    name = "›s<hKNyr" 	# Margaret
+    dynasty = "·V ‰R9ƒ" 	# d'Anjou
     birth_date = 1430.3.23
     death_date = 1471.4.11
     female = yes
@@ -60,7 +64,7 @@ change_estate_land_share = {
 }
 1450.1.1 = {
   leader = {
-    name = "¦uğ «ƒ^÷–"  # John Mowbray
+    name = "¦uğ «ƒ^÷–" 	# John Mowbray
     type = general
     fire = 2
     shock = 3
@@ -70,10 +74,11 @@ change_estate_land_share = {
   }
 }
 1453.10.13 = {
+  # Edward of Westminster
   heir = {
-    name = "1r·VNS"  # Edward
-    monarch_name = "1r·VNS IV"  # Edward IV
-    dynasty = "pQV¯eyr"  # Lancaster
+    name = "1r·VNS" 	# Edward
+    monarch_name = "1r·VNS IV" 	# Edward IV
+    dynasty = "pQV¯eyr" 	# Lancaster
     birth_date = 1453.10.13
     death_date = 1471.5.4
     claim = 95
@@ -85,7 +90,7 @@ change_estate_land_share = {
 }
 1455.1.1 = {
   leader = {
-    name = "ÃW·V™„ ZSyyr"  # Edmund Beaufort
+    name = "ÃW·V™„ ZSyyr" 	# Edmund Beaufort
     type = general
     fire = 3
     shock = 2
@@ -96,7 +101,7 @@ change_estate_land_share = {
 }
 1455.1.1 = {
   leader = {
-    name = "¦uğ KQ)Ry·V"  # John Clifford
+    name = "¦uğ KQ)Ry·V" 	# John Clifford
     type = general
     fire = 3
     shock = 3
@@ -107,14 +112,14 @@ change_estate_land_share = {
 }
 1461.3.4 = {
   monarch = {
-    name = "1r·VNS IV"  # Edward IV
-    dynasty = "¦uKQ"  # York
+    name = "1r·VNS IV" 	# Edward IV
+    dynasty = "¦uKQ" 	# York
     birth_date = 1442.4.28
     adm = 3
     dip = 2
     mil = 4
     leader = {
-      name = "1r·VNS IV"  # Edward IV
+      name = "1r·VNS IV" 	# Edward IV
       type = general
       fire = 2
       shock = 4
@@ -124,10 +129,11 @@ change_estate_land_share = {
   }
 }
 1461.3.4 = {
+  # George of Clarence
   heir = {
-    name = "TN»l"  # George
-    monarch_name = "TN»l I"  # George I
-    dynasty = "¦uKQ"  # York
+    name = "TN»l" 	# George
+    monarch_name = "TN»l I" 	# George I
+    dynasty = "¦uKQ" 	# York
     birth_date = 1449.10.21
     death_date = 1478.2.18
     claim = 95
@@ -138,7 +144,7 @@ change_estate_land_share = {
 }
 1461.3.4 = {
   leader = {
-    name = "tåg·V …QôuS"  # Richard Neville
+    name = "tåg·V …QôuS" 	# Richard Neville
     type = general
     fire = 2
     shock = 3
@@ -149,7 +155,7 @@ change_estate_land_share = {
 }
 1461.3.4 = {
   leader = {
-    name = "ZÉ^ Ñ¯e÷^¯e"  # William Hastings
+    name = "ZÉ^ Ñ¯e÷^¯e" 	# William Hastings
     type = general
     fire = 3
     shock = 3
@@ -161,8 +167,8 @@ change_estate_land_share = {
 1465.5.1 = {
   queen = {
     country_of_origin = ENG
-    name = "OKNƒ‹v"  # Elisabeth
-    dynasty = "O·VôuS"  # Woodville
+    name = "OKNƒ‹v" 	# Elisabeth
+    dynasty = "O·VôuS" 	# Woodville
     birth_date = 1437.1.1
     death_date = 1492.6.8
     female = yes
@@ -173,8 +179,8 @@ change_estate_land_share = {
 }
 1470.10.30 = {
   monarch = {
-    name = "¨N)R VI"  # Henry VI
-    dynasty = "pQV¯eyr"  # Lancaster
+    name = "¨N)R VI" 	# Henry VI
+    dynasty = "pQV¯eyr" 	# Lancaster
     birth_date = 1421.12.6
     adm = 0
     dip = 0
@@ -182,10 +188,11 @@ change_estate_land_share = {
   }
 }
 1470.10.30 = {
+  # Edward of Westminster
   heir = {
-    name = "1r·VNS"  # Edward
-    monarch_name = "1r·VNS V"  # Edward V
-    dynasty = "pQV¯eyr"  # Lancaster
+    name = "1r·VNS" 	# Edward
+    monarch_name = "1r·VNS V" 	# Edward V
+    dynasty = "pQV¯eyr" 	# Lancaster
     birth_date = 1453.10.13
     death_date = 1471.5.4
     claim = 95
@@ -196,14 +203,14 @@ change_estate_land_share = {
 }
 1471.4.11 = {
   monarch = {
-    name = "1r·VNS IV"  # Edward IV
-    dynasty = "¦uKQ"  # York
+    name = "1r·VNS IV" 	# Edward IV
+    dynasty = "¦uKQ" 	# York
     birth_date = 1442.4.28
     adm = 4
     dip = 3
     mil = 4
     leader = {
-      name = "1r·VNS IV"  # Edward IV
+      name = "1r·VNS IV" 	# Edward IV
       type = general
       fire = 2
       shock = 4
@@ -213,10 +220,11 @@ change_estate_land_share = {
   }
 }
 1471.4.11 = {
+  # Edward V
   heir = {
-    name = "1r·VNS"  # Edward
-    monarch_name = "1r·VNS V"  # Edward V
-    dynasty = "¦uKQ"  # York
+    name = "1r·VNS" 	# Edward
+    monarch_name = "1r·VNS V" 	# Edward V
+    dynasty = "¦uKQ" 	# York
     birth_date = 1470.11.2
     death_date = 1483.6.26
     claim = 95
@@ -227,7 +235,7 @@ change_estate_land_share = {
 }
 1471.4.11 = {
   leader = {
-    name = "tåg·V Ñ‘À–±‚"  # Richard Plantagenet
+    name = "tåg·V Ñ‘À–±‚" 	# Richard Plantagenet
     type = general
     fire = 2
     shock = 4
@@ -240,10 +248,10 @@ change_estate_land_share = {
   remove_accepted_culture = gascon
   remove_accepted_culture = normand
   set_global_flag = eng_had_end_of_hundred_years_war
-}
+} 	#  Treaty of Picuigny
 1478.1.18 = {
   leader = {
-    name = "Xblš¯e —NS·V"  # Thomas Howard
+    name = "Xblš¯e —NS·V" 	# Thomas Howard
     type = general
     fire = 3
     shock = 3
@@ -254,8 +262,8 @@ change_estate_land_share = {
 }
 1483.4.9 = {
   monarch = {
-    name = "1r·VNS V"  # Edward V
-    dynasty = "¦uKQ"  # York
+    name = "1r·VNS V" 	# Edward V
+    dynasty = "¦uKQ" 	# York
     birth_date = 1470.11.1
     adm = 0
     dip = 0
@@ -264,9 +272,9 @@ change_estate_land_share = {
 }
 1483.4.9 = {
   heir = {
-    name = "tåg·V"  # Richard
-    monarch_name = "tåg·V III"  # Richard III
-    dynasty = "¦uKQ"  # York
+    name = "tåg·V" 	# Richard
+    monarch_name = "tåg·V III" 	# Richard III
+    dynasty = "¦uKQ" 	# York
     birth_date = 1473.8.17
     death_date = 1483.6.26
     claim = 95
@@ -277,13 +285,13 @@ change_estate_land_share = {
 }
 1483.6.26 = {
   monarch = {
-    name = "tåg·V III"  # Richard III
-    dynasty = "¦uKQ"  # York
+    name = "tåg·V III" 	# Richard III
+    dynasty = "¦uKQ" 	# York
     adm = 3
     dip = 2
     mil = 4
     leader = {
-      name = "tåg·V III"  # Richard III
+      name = "tåg·V III" 	# Richard III
       type = general
       fire = 2
       shock = 4
@@ -293,8 +301,8 @@ change_estate_land_share = {
   }
   queen = {
     country_of_origin = ENG
-    name = "‰R®Y"  # Anne
-    dynasty = "…QôuS"  # Neville
+    name = "‰R®Y" 	# Anne
+    dynasty = "…QôuS" 	# Neville
     birth_date = 1465.6.11
     death_date = 1485.3.16
     female = yes
@@ -304,10 +312,11 @@ change_estate_land_share = {
   }
 }
 1483.6.26 = {
+  # Edward of Middleham
   heir = {
-    name = "1r·VNS"  # Edward
-    monarch_name = "1r·VNS VI"  # Edward VI
-    dynasty = "¦uKQ"  # York
+    name = "1r·VNS" 	# Edward
+    monarch_name = "1r·VNS VI" 	# Edward VI
+    dynasty = "¦uKQ" 	# York
     birth_date = 1473.12.8
     death_date = 1484.3.31
     claim = 95
@@ -318,8 +327,8 @@ change_estate_land_share = {
 }
 1485.8.23 = {
   monarch = {
-    name = "¨N)R VII"  # Henry VII
-    dynasty = "ıÎ”"  # Tudor
+    name = "¨N)R VII" 	# Henry VII
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1457.1.28
     adm = 3
     dip = 4
@@ -328,7 +337,7 @@ change_estate_land_share = {
 }
 1485.8.23 = {
   leader = {
-    name = ">¯eÀs ıÎ”"  # Jasper Tudor
+    name = ">¯eÀs ıÎ”" 	# Jasper Tudor
     type = general
     fire = 2
     shock = 3
@@ -340,8 +349,8 @@ change_estate_land_share = {
 1486.1.18 = {
   queen = {
     country_of_origin = ENG
-    name = "OKNƒ‹v"  # Elisabeth
-    dynasty = "¦uKQ"  # York
+    name = "OKNƒ‹v" 	# Elisabeth
+    dynasty = "¦uKQ" 	# York
     birth_date = 1466.2.11
     death_date = 1503.2.11
     female = yes
@@ -352,9 +361,9 @@ change_estate_land_share = {
 }
 1486.9.20 = {
   heir = {
-    name = "?–mt"  # Arthur
-    monarch_name = "?–mt I"  # Arthur I
-    dynasty = "ıÎ”"  # Tudor
+    name = "?–mt" 	# Arthur
+    monarch_name = "?–mt I" 	# Arthur I
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1486.9.20
     death_date = 1502.4.2
     claim = 95
@@ -365,7 +374,7 @@ change_estate_land_share = {
 }
 1497.1.1 = {
   leader = {
-    name = "¦uğ aS=Oyr"  # John Cabot
+    name = "¦uğ aS=Oyr" 	# John Cabot
     type = explorer
     fire = 2
     shock = 4
@@ -376,9 +385,9 @@ change_estate_land_share = {
 }
 1502.4.2 = {
   heir = {
-    name = "¨N)R"  # Henry
-    monarch_name = "¨N)R VIII"  # Henry VIII
-    dynasty = "ıÎ”"  # Tudor
+    name = "¨N)R" 	# Henry
+    monarch_name = "¨N)R VIII" 	# Henry VIII
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1491.6.28
     death_date = 1547.1.28
     claim = 95
@@ -389,7 +398,7 @@ change_estate_land_share = {
 }
 1508.1.1 = {
   leader = {
-    name = "^XôT¯e‚„‰R aS=Oyr"  # Sebastian Cabot
+    name = "^XôT¯e‚„‰R aS=Oyr" 	# Sebastian Cabot
     type = explorer
     fire = 5
     shock = 2
@@ -400,8 +409,8 @@ change_estate_land_share = {
 }
 1509.4.22 = {
   monarch = {
-    name = "¨N)R VIII"  # Henry VIII
-    dynasty = "ıÎ”"  # Tudor
+    name = "¨N)R VIII" 	# Henry VIII
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1491.6.28
     adm = 4
     dip = 4
@@ -411,8 +420,8 @@ change_estate_land_share = {
 1509.6.24 = {
   queen = {
     country_of_origin = ARA
-    name = "ïQmt3t"  # Catherine
-    dynasty = "·V yrÉb¯eTXlšÉb"  # de Trastámara
+    name = "ïQmt3t" 	# Catherine
+    dynasty = "·V yrÉb¯eTXlšÉb" 	# de Trastámara
     birth_date = 1485.12.16
     death_date = 1536.1.7
     female = yes
@@ -423,7 +432,7 @@ change_estate_land_share = {
 }
 1512.1.1 = {
   leader = {
-    name = "ågS¯e ^pQ‰v"  # Charles Brandon
+    name = "ågS¯e ^pQ‰v" 	# Charles Brandon
     type = general
     fire = 3
     shock = 2
@@ -434,7 +443,7 @@ change_estate_land_share = {
 }
 1513.1.1 = {
   leader = {
-    name = "1r·VNS —NS·V"  # Edward Howard
+    name = "1r·VNS —NS·V" 	# Edward Howard
     type = admiral
     fire = 2
     shock = 3
@@ -445,9 +454,9 @@ change_estate_land_share = {
 }
 1516.2.18 = {
   heir = {
-    name = "›sKN"  # Mary
-    monarch_name = "›sKN I"  # Mary I
-    dynasty = "ıÎ”"  # Tudor
+    name = "›sKN" 	# Mary
+    monarch_name = "›sKN I" 	# Mary I
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1516.2.18
     death_date = 1558.11.17
     claim = 95
@@ -457,11 +466,12 @@ change_estate_land_share = {
     female = yes
   }
 }
+#1525.1.1 = { decision = judiciary_act }
 1533.5.28 = {
   queen = {
     country_of_origin = ENG
-    name = "‰R®Y"  # Anne
-    dynasty = "ZS—g"  # Boleyn
+    name = "‰R®Y" 	# Anne
+    dynasty = "ZS—g" 	# Boleyn
     birth_date = 1501.1.1
     death_date = 1536.5.17
     female = yes
@@ -471,14 +481,16 @@ change_estate_land_share = {
   }
 }
 1534.1.1 = {
+  # Act of Supremacy
   religion = protestant
+  #decision = suffragan_bishop_act
 }
 1536.1.1 = {
   decision = dissolution_of_the_monasteries
   queen = {
     country_of_origin = ENG
-    name = "r"  # Jane
-    dynasty = "‰id"  # Seymour
+    name = "r" 	# Jane
+    dynasty = "‰id" 	# Seymour
     birth_date = 1508.1.1
     death_date = 1537.11.12
     female = yes
@@ -489,9 +501,9 @@ change_estate_land_share = {
 }
 1537.10.12 = {
   heir = {
-    name = "1r·VNS"  # Edward
-    monarch_name = "1r·VNS VI"  # Edward VI
-    dynasty = "ıÎ”"  # Tudor
+    name = "1r·VNS" 	# Edward
+    monarch_name = "1r·VNS VI" 	# Edward VI
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1537.10.12
     death_date = 1553.7.6
     claim = 95
@@ -503,8 +515,8 @@ change_estate_land_share = {
 1540.1.6 = {
   queen = {
     country_of_origin = KLE
-    name = "‰R®Y"  # Anne
-    dynasty = "¯Q ·V lšKQ"  # von der Mark
+    name = "‰R®Y" 	# Anne
+    dynasty = "¯Q ·V lšKQ" 	# von der Mark
     birth_date = 1515.9.22
     death_date = 1557.7.16
     female = yes
@@ -516,8 +528,8 @@ change_estate_land_share = {
 1540.7.28 = {
   queen = {
     country_of_origin = ENG
-    name = "ïQmt3t"  # Catherine
-    dynasty = "—NS·V"  # Howard
+    name = "ïQmt3t" 	# Catherine
+    dynasty = "—NS·V" 	# Howard
     birth_date = 1523.1.1
     death_date = 1541.11.23
     female = yes
@@ -529,8 +541,8 @@ change_estate_land_share = {
 1543.7.12 = {
   queen = {
     country_of_origin = ENG
-    name = "ïQmt3t"  # Catherine
-    dynasty = "^S"  # Parr
+    name = "ïQmt3t" 	# Catherine
+    dynasty = "^S" 	# Parr
     birth_date = 1512.1.1
     death_date = 1548.9.5
     female = yes
@@ -541,8 +553,8 @@ change_estate_land_share = {
 }
 1547.1.28 = {
   monarch = {
-    name = "1r·VNS VI"  # Edward VI
-    dynasty = "ıÎ”"  # Tudor
+    name = "1r·VNS VI" 	# Edward VI
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1537.10.12
     adm = 3
     dip = 3
@@ -551,9 +563,9 @@ change_estate_land_share = {
 }
 1547.1.28 = {
   heir = {
-    name = "›sKN"  # Mary
-    monarch_name = "›sKN I"  # Mary I
-    dynasty = "ıÎ”"  # Tudor
+    name = "›sKN" 	# Mary
+    monarch_name = "›sKN I" 	# Mary I
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1516.2.18
     death_date = 1558.11.17
     claim = 95
@@ -566,9 +578,10 @@ change_estate_land_share = {
 1549.1.1 = {
   decision = act_of_uniformity
 }
+#1550.1.1 = { decision = agricultural_cultivation }
 1552.1.1 = {
   leader = {
-    name = "O ZmÔk"  # Hugh Willoughby
+    name = "O ZmÔk" 	# Hugh Willoughby
     type = explorer
     fire = 1
     shock = 1
@@ -579,7 +592,7 @@ change_estate_land_share = {
 }
 1552.1.1 = {
   leader = {
-    name = "tåg·V ±”^XÒR"  # Richard Chancellor
+    name = "tåg·V ±”^XÒR" 	# Richard Chancellor
     type = explorer
     fire = 1
     shock = 1
@@ -590,7 +603,7 @@ change_estate_land_share = {
 }
 1553.1.1 = {
   leader = {
-    name = "lšN VWÔkGk"  # Martin Frobisher
+    name = "lšN VWÔkGk" 	# Martin Frobisher
     type = explorer
     fire = 5
     shock = 2
@@ -601,8 +614,8 @@ change_estate_land_share = {
 }
 1553.7.6 = {
   monarch = {
-    name = "r I"  # Jane I
-    dynasty = "<h÷–"  # Grey
+    name = "r I" 	# Jane I
+    dynasty = "<h÷–" 	# Grey
     birth_date = 1536.1.1
     adm = 3
     dip = 2
@@ -610,9 +623,10 @@ change_estate_land_share = {
     female = yes
   }
   queen = {
+    #Prince-Consort
     country_of_origin = ENG
-    name = "	TSy·V"  # Guildford
-    dynasty = "¾·V)R"  # Dudley
+    name = "	TSy·V" 	# Guildford
+    dynasty = "¾·V)R" 	# Dudley
     birth_date = 1535.1.1
     death_date = 1554.2.12
     adm = 1
@@ -621,10 +635,11 @@ change_estate_land_share = {
   }
 }
 1553.7.6 = {
+  # Catherine Grey, Jane's sister and heir
   heir = {
-    name = "ïQmt3t"  # Catherine
-    monarch_name = "ïQmt3t I"  # Catherine I
-    dynasty = "<h÷–"  # Grey
+    name = "ïQmt3t" 	# Catherine
+    monarch_name = "ïQmt3t I" 	# Catherine I
+    dynasty = "<h÷–" 	# Grey
     birth_date = 1540.8.25
     death_date = 1568.1.26
     claim = 95
@@ -636,8 +651,8 @@ change_estate_land_share = {
 }
 1553.7.19 = {
   monarch = {
-    name = "›sKN I"  # Mary I
-    dynasty = "ıÎ”"  # Tudor
+    name = "›sKN I" 	# Mary I
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1516.2.18
     adm = 1
     dip = 1
@@ -647,9 +662,9 @@ change_estate_land_share = {
 }
 1553.7.19 = {
   heir = {
-    name = "OKNƒ‹v"  # Elizabeth
-    monarch_name = "OKNƒ‹v I"  # Elizabeth I
-    dynasty = "ıÎ”"  # Tudor
+    name = "OKNƒ‹v" 	# Elizabeth
+    monarch_name = "OKNƒ‹v I" 	# Elizabeth I
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1533.9.7
     death_date = 1603.3.24
     claim = 95
@@ -661,10 +676,10 @@ change_estate_land_share = {
 }
 1553.7.19 = {
   religion = catholic
-}
+} 	#  Reinstate Papal power over Church of England
 1556.1.1 = {
   leader = {
-    name = "ZÉ^ òƒyQZÉ^"  # William Fitzwilliam
+    name = "ZÉ^ òƒyQZÉ^" 	# William Fitzwilliam
     type = admiral
     fire = 2
     shock = 3
@@ -675,7 +690,7 @@ change_estate_land_share = {
 }
 1558.1.1 = {
   leader = {
-    name = "1r·VNS KQ—g˜"  # Edward Clinton
+    name = "1r·VNS KQ—g˜" 	# Edward Clinton
     type = admiral
     fire = 2
     shock = 3
@@ -686,8 +701,8 @@ change_estate_land_share = {
 }
 1558.11.17 = {
   monarch = {
-    name = "OKNƒ‹v I"  # Elizabeth I
-    dynasty = "ıÎ”"  # Tudor
+    name = "OKNƒ‹v I" 	# Elizabeth I
+    dynasty = "ıÎ”" 	# Tudor
     birth_date = 1533.9.7
     adm = 6
     dip = 6
@@ -700,10 +715,10 @@ change_estate_land_share = {
 }
 1566.6.19 = {
   heir = {
-    name = "yŠÆY¯e"  # James
+    name = "yŠÆY¯e" 	# James
     culture = scottish
-    monarch_name = "yŠÆYëX I"  # James I
-    dynasty = "¯eşVšNyr"  # Stuart
+    monarch_name = "yŠÆYëX I" 	# James I
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1566.6.19
     death_date = 1625.3.27
     claim = 95
@@ -712,9 +727,10 @@ change_estate_land_share = {
     mil = 1
   }
 }
+#1577.1.1 = { leader = {	name = "Humphrey Gilbert"	type = explorer	fire = 2	shock = 1	manuever = 1	siege = 0	death_date = 1583.9.9 } } # Removed /SWÖ
 1577.1.1 = {
   leader = {
-    name = "Vg‰¯e ·V÷–KQ"  # Francis Drake
+    name = "Vg‰¯e ·V÷–KQ" 	# Francis Drake
     type = explorer
     fire = 5
     shock = 5
@@ -728,7 +744,7 @@ change_estate_land_share = {
 }
 1580.1.1 = {
   leader = {
-    name = "ƒlSyr W)R"  # Walter Raleigh
+    name = "ƒlSyr W)R" 	# Walter Raleigh
     type = conquistador
     fire = 4
     shock = 4
@@ -739,7 +755,7 @@ change_estate_land_share = {
 }
 1584.1.1 = {
   leader = {
-    name = "W=Oyr ·VVW"  # Robert Devereux
+    name = "W=Oyr ·VVW" 	# Robert Devereux
     type = conquistador
     fire = 4
     shock = 4
@@ -750,7 +766,7 @@ change_estate_land_share = {
 }
 1584.1.1 = {
   leader = {
-    name = "ZÉ^ aS‡eêÀN"  # William Cavendish
+    name = "ZÉ^ aS‡eêÀN" 	# William Cavendish
     type = explorer
     fire = 4
     shock = 4
@@ -761,7 +777,7 @@ change_estate_land_share = {
 }
 1585.1.1 = {
   leader = {
-    name = "ågS¯e —NS·V"  # Charles Howard
+    name = "ågS¯e —NS·V" 	# Charles Howard
     type = admiral
     fire = 3
     shock = 3
@@ -772,7 +788,7 @@ change_estate_land_share = {
 }
 1585.1.1 = {
   leader = {
-    name = "¦uğ 4bôu¯e"  # John Davis
+    name = "¦uğ 4bôu¯e" 	# John Davis
     type = explorer
     fire = 1
     shock = 1
@@ -783,7 +799,7 @@ change_estate_land_share = {
 }
 1597.1.1 = {
   leader = {
-    name = "¨N)R ÈT—VYR"  # Henry Hudson
+    name = "¨N)R ÈT—VYR" 	# Henry Hudson
     type = explorer
     fire = 3
     shock = 2
@@ -794,10 +810,10 @@ change_estate_land_share = {
 }
 1598.1.1 = {
   mercantilism = 10
-}
+} 	#  The Canceling of Royal Monopolies
 1600.1.1 = {
   leader = {
-    name = "¦uğ òSÆR¯e"  # John Smith
+    name = "¦uğ òSÆR¯e" 	# John Smith
     type = conquistador
     fire = 2
     shock = 2
@@ -808,9 +824,9 @@ change_estate_land_share = {
 }
 1603.3.24 = {
   monarch = {
-    name = "yŠÆY¯e I"  # James I
+    name = "yŠÆY¯e I" 	# James I
     culture = scottish
-    dynasty = "¯eşVšNyr"  # Stuart
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1566.6.19
     adm = 2
     dip = 3
@@ -818,8 +834,8 @@ change_estate_land_share = {
   }
   queen = {
     country_of_origin = DAN
-    name = "‰R®Y"  # Anne
-    dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+    name = "‰R®Y" 	# Anne
+    dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
     birth_date = 1574.12.12
     death_date = 1619.3.2
     female = yes
@@ -830,9 +846,9 @@ change_estate_land_share = {
 }
 1603.3.24 = {
   heir = {
-    name = "¨N)R V÷–·VÌ‘KQ"  # Henry Frederick
-    monarch_name = "¨N)R IX"  # Henry IX
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "¨N)R V÷–·VÌ‘KQ" 	# Henry Frederick
+    monarch_name = "¨N)R IX" 	# Henry IX
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1594.2.19
     death_date = 1612.11.6
     claim = 95
@@ -843,7 +859,7 @@ change_estate_land_share = {
 }
 1610.1.1 = {
   leader = {
-    name = "¾·V ¾·V)R"  # Dudd Dudley
+    name = "¾·V ¾·V)R" 	# Dudd Dudley
     type = general
     fire = 3
     shock = 2
@@ -854,7 +870,7 @@ change_estate_land_share = {
 }
 1612.1.1 = {
   leader = {
-    name = "ZÉ^ ôT¬‚"  # William Baffin
+    name = "ZÉ^ ôT¬‚" 	# William Baffin
     type = explorer
     fire = 1
     shock = 1
@@ -865,7 +881,7 @@ change_estate_land_share = {
 }
 1612.1.1 = {
   leader = {
-    name = "Xblš¯e ôT˜"  # Thomas Button
+    name = "Xblš¯e ôT˜" 	# Thomas Button
     type = explorer
     fire = 3
     shock = 2
@@ -876,9 +892,9 @@ change_estate_land_share = {
 }
 1612.11.6 = {
   heir = {
-    name = "ågS¯e"  # Charles
-    monarch_name = "ågS¯e I"  # Charles I
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "ågS¯e" 	# Charles
+    monarch_name = "ågS¯e I" 	# Charles I
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1600.11.19
     death_date = 1649.1.30
     claim = 95
@@ -889,7 +905,7 @@ change_estate_land_share = {
 }
 1623.1.1 = {
   leader = {
-    name = "TN»l ôu)RS¯e"  # George Villiers
+    name = "TN»l ôu)RS¯e" 	# George Villiers
     type = general
     fire = 3
     shock = 1
@@ -900,8 +916,8 @@ change_estate_land_share = {
 }
 1625.3.27 = {
   monarch = {
-    name = "ågS¯e I"  # Charles I
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "ågS¯e I" 	# Charles I
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1600.11.19
     adm = 2
     dip = 3
@@ -911,8 +927,8 @@ change_estate_land_share = {
 1625.6.13 = {
   queen = {
     country_of_origin = FRA
-    name = "¨N)RÃWTX ›sKNšN"  # Henrietta Maria
-    dynasty = "·V âlÁe"  # de Bourbon
+    name = "¨N)RÃWTX ›sKNšN" 	# Henrietta Maria
+    dynasty = "·V âlÁe" 	# de Bourbon
     birth_date = 1609.11.25
     death_date = 1669.9.10
     female = yes
@@ -923,9 +939,9 @@ change_estate_land_share = {
 }
 1630.5.29 = {
   heir = {
-    name = "ågS¯e"  # Charles
-    monarch_name = "ågS¯e II"  # Charles II
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "ågS¯e" 	# Charles
+    monarch_name = "ågS¯e II" 	# Charles II
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1630.5.29
     death_date = 1685.2.6
     claim = 95
@@ -936,7 +952,7 @@ change_estate_land_share = {
 }
 1642.1.1 = {
   leader = {
-    name = "œÀsyr²N‹s"  # Prince Rupert
+    name = "œÀsyr²N‹s" 	# Prince Rupert
     type = general
     fire = 3
     shock = 4
@@ -947,14 +963,14 @@ change_estate_land_share = {
 }
 1646.5.5 = {
   monarch = {
-    name = "eY)RV"  # Oliver
-    dynasty = "KQ&OZS"  # Cromwell
+    name = "eY)RV" 	# Oliver
+    dynasty = "KQ&OZS" 	# Cromwell
     birth_date = 1599.4.25
     adm = 4
     dip = 4
     mil = 5
     leader = {
-      name = "eY)RV KQ&OZS"  # Oliver Cromwell
+      name = "eY)RV KQ&OZS" 	# Oliver Cromwell
       type = general
       fire = 5
       shock = 5
@@ -962,13 +978,14 @@ change_estate_land_share = {
       siege = 1
     }
   }
+  # Cromwell and the Republic
   religion = reformed
   add_government_reform = presidential_despot_reform
   set_legacy_government = republican_dictatorship
 }
 1649.1.29 = {
   leader = {
-    name = "W=Oyr ^±ƒKQ"  # Robert Blake
+    name = "W=Oyr ^±ƒKQ" 	# Robert Blake
     type = admiral
     fire = 4
     shock = 4
@@ -979,7 +996,7 @@ change_estate_land_share = {
 }
 1649.1.29 = {
   leader = {
-    name = "TN»l ™„KQ"  # George Monck
+    name = "TN»l ™„KQ" 	# George Monck
     type = general
     fire = 3
     shock = 3
@@ -990,7 +1007,7 @@ change_estate_land_share = {
 }
 1649.1.29 = {
   leader = {
-    name = "Xblš¯e 9SÕlKQ¯e"  # Thomas Fairfax
+    name = "Xblš¯e 9SÕlKQ¯e" 	# Thomas Fairfax
     type = general
     fire = 4
     shock = 4
@@ -1001,7 +1018,7 @@ change_estate_land_share = {
 }
 1650.1.1 = {
   leader = {
-    name = "TN»l Œ‚¯eN"  # George Ayscue
+    name = "TN»l Œ‚¯eN" 	# George Ayscue
     type = admiral
     fire = 3
     shock = 3
@@ -1012,11 +1029,11 @@ change_estate_land_share = {
 }
 1651.12.30 = {
   mercantilism = 25
-}
+} 	#  The Act of Navigation
 1658.9.3 = {
   monarch = {
-    name = "tåg·V"  # Richard
-    dynasty = "KQ&OZS"  # Cromwell
+    name = "tåg·V" 	# Richard
+    dynasty = "KQ&OZS" 	# Cromwell
     birth_date = 1626.10.4
     adm = 0
     dip = 0
@@ -1025,7 +1042,7 @@ change_estate_land_share = {
 }
 1659.5.25 = {
   monarch = {
-    name = "®‹O"  # Convention Parliament
+    name = "®‹O" 	# Convention Parliament
     adm = 2
     dip = 2
     mil = 2
@@ -1035,23 +1052,24 @@ change_estate_land_share = {
   government = republic
   add_government_reform = noble_elite_reform
   set_legacy_government = noble_republic
-}
+} 	#  The protectorate is Abolished
 1660.5.29 = {
   monarch = {
-    name = "ågS¯e II"  # Charles II
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "ågS¯e II" 	# Charles II
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1630.5.29
     adm = 3
     dip = 2
     mil = 0
   }
+  # The Restoration of the Stuarts
   set_legacy_government = administrative_monarchy
 }
 1660.5.29 = {
   heir = {
-    name = "yŠÆY¯e"  # James
-    monarch_name = "yŠÆY¯e II"  # James II
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "yŠÆY¯e" 	# James
+    monarch_name = "yŠÆY¯e II" 	# James II
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1633.10.14
     death_date = 1701.9.16
     claim = 95
@@ -1059,7 +1077,7 @@ change_estate_land_share = {
     dip = 2
     mil = 3
     leader = {
-      name = "yŠÆY¯e ¯eşVšNyr"  # James Stuart
+      name = "yŠÆY¯e ¯eşVšNyr" 	# James Stuart
       type = general
       fire = 3
       shock = 2
@@ -1071,8 +1089,8 @@ change_estate_land_share = {
 1662.4.23 = {
   queen = {
     country_of_origin = POR
-    name = "ïQmt3t"  # Catherine
-    dynasty = "·V ^Ébr^(„"  # de Bragança
+    name = "ïQmt3t" 	# Catherine
+    dynasty = "·V ^Ébr^(„" 	# de Bragança
     birth_date = 1638.11.25
     death_date = 1705.12.31
     female = yes
@@ -1083,7 +1101,7 @@ change_estate_land_share = {
 }
 1660.5.29 = {
   leader = {
-    name = "œÀsyr²N‹s"  # Prince Rupert
+    name = "œÀsyr²N‹s" 	# Prince Rupert
     type = admiral
     fire = 4
     shock = 4
@@ -1092,9 +1110,10 @@ change_estate_land_share = {
     death_date = 1682.11.19
   }
 }
+#1660.5.29 = { decision = tenures_abolition_act }
 1668.1.1 = {
   leader = {
-    name = "®vÃWS Œ‚¯enf^t ÉbêŒg"  # Pierre-Esprit Radisson
+    name = "®vÃWS Œ‚¯enf^t ÉbêŒg" 	# Pierre-Esprit Radisson
     type = conquistador
     fire = 1
     shock = 1
@@ -1104,11 +1123,12 @@ change_estate_land_share = {
   }
 }
 1672.1.1 = {
+  # The Decree of Indulgence and the Bill of Test
   religion = protestant
 }
 1672.1.1 = {
   leader = {
-    name = "¦uğ eYS‰v"  # John Alden
+    name = "¦uğ eYS‰v" 	# John Alden
     type = general
     fire = 3
     shock = 3
@@ -1122,7 +1142,7 @@ change_estate_land_share = {
 }
 1678.1.1 = {
   leader = {
-    name = "?–mt k=Oyr"  # Arthur Herbert
+    name = "?–mt k=Oyr" 	# Arthur Herbert
     type = admiral
     fire = 2
     shock = 3
@@ -1131,9 +1151,10 @@ change_estate_land_share = {
     death_date = 1688.3.11
   }
 }
+#1679.1.1 = { leader = {	name = "William Dampier"	type = explorer	fire = 2	shock = 3	manuever = 3	siege = 0	death_date = 1715.3.15 } } # Removed /SWÖ
 1685.1.1 = {
   leader = {
-    name = "¦uğ N	TS"  # John Churchill
+    name = "¦uğ N	TS" 	# John Churchill
     type = general
     fire = 6
     shock = 6
@@ -1144,14 +1165,14 @@ change_estate_land_share = {
 }
 1685.2.6 = {
   monarch = {
-    name = "yŠÆY¯e II"  # James II
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "yŠÆY¯e II" 	# James II
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1633.10.14
     adm = 2
     dip = 2
     mil = 3
     leader = {
-      name = "yŠÆY¯e II"  # James II
+      name = "yŠÆY¯e II" 	# James II
       type = general
       fire = 3
       shock = 2
@@ -1161,8 +1182,8 @@ change_estate_land_share = {
   }
   queen = {
     country_of_origin = MOD
-    name = "›sKN"  # Mary
-    dynasty = "·V ÃW¯eyr"  # d'Este
+    name = "›sKN" 	# Mary
+    dynasty = "·V ÃW¯eyr" 	# d'Este
     birth_date = 1658.10.5
     death_date = 1718.5.7
     female = yes
@@ -1173,9 +1194,9 @@ change_estate_land_share = {
 }
 1685.2.6 = {
   heir = {
-    name = "›sKN"  # Mary
-    monarch_name = "›sKN II"  # Mary II
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "›sKN" 	# Mary
+    monarch_name = "›sKN II" 	# Mary II
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1662.4.30
     death_date = 1694.12.28
     claim = 95
@@ -1190,7 +1211,7 @@ change_estate_land_share = {
 }
 1686.1.1 = {
   leader = {
-    name = "yŠÆY¯e òƒ(ƒyŠÆY¯e"  # James FitzJames
+    name = "yŠÆY¯e òƒ(ƒyŠÆY¯e" 	# James FitzJames
     type = general
     fire = 3
     shock = 3
@@ -1200,10 +1221,11 @@ change_estate_land_share = {
   }
 }
 1688.6.10 = {
+  # 'The Old Chevalier'
   heir = {
-    name = "yŠÆY¯e"  # James
-    monarch_name = "yŠÆY¯e III"  # James III
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "yŠÆY¯e" 	# James
+    monarch_name = "yŠÆY¯e III" 	# James III
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1688.6.10
     death_date = 1766.1.1
     claim = 95
@@ -1217,7 +1239,7 @@ change_estate_land_share = {
 }
 1688.12.11 = {
   monarch = {
-    name = "®‹O"  # Convention Parliament
+    name = "®‹O" 	# Convention Parliament
     adm = 2
     dip = 2
     mil = 2
@@ -1225,15 +1247,15 @@ change_estate_land_share = {
 }
 1689.2.15 = {
   monarch = {
-    name = "ZÉ^ III"  # William III
+    name = "ZÉ^ III" 	# William III
     culture = dutch
-    dynasty = "ƒ eYpQ»l"  # van Oranje
+    dynasty = "ƒ eYpQ»l" 	# van Oranje
     birth_date = 1650.11.4
     adm = 3
     dip = 5
     mil = 5
     leader = {
-      name = "ZÉ^ III"  # William III
+      name = "ZÉ^ III" 	# William III
       type = general
       fire = 4
       shock = 4
@@ -1243,8 +1265,8 @@ change_estate_land_share = {
   }
   queen = {
     country_of_origin = MOD
-    name = "›sKN"  # Mary
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "›sKN" 	# Mary
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1662.4.30
     death_date = 1694.12.28
     female = yes
@@ -1252,13 +1274,14 @@ change_estate_land_share = {
     dip = 4
     mil = 3
   }
+  # The Glorious Revolution
   set_legacy_government = constitutional_monarchy
 }
 1689.2.15 = {
   heir = {
-    name = "‰R®Y"  # Anne
-    monarch_name = "‰R®Y I"  # Anne I
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "‰R®Y" 	# Anne
+    monarch_name = "‰R®Y I" 	# Anne I
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1665.2.6
     death_date = 1714.8.1
     claim = 95
@@ -1270,7 +1293,7 @@ change_estate_land_share = {
 }
 1690.1.1 = {
   leader = {
-    name = "¦uğ ,gZS"  # John Benbow
+    name = "¦uğ ,gZS" 	# John Benbow
     type = admiral
     fire = 2
     shock = 4
@@ -1279,9 +1302,10 @@ change_estate_land_share = {
     death_date = 1702.11.4
   }
 }
+#1690.1.1 = { leader = {	name = "Edward Russell"		type = admiral	fire = 2	shock = 3	manuever = 3	siege = 0	death_date = 1727.3.7 } } # Removed /SWÖ
 1694.1.1 = {
   leader = {
-    name = "Xblš¯e lšîO¯e"  # Thomas Mathews
+    name = "Xblš¯e lšîO¯e" 	# Thomas Mathews
     type = general
     fire = 3
     shock = 3
@@ -1292,7 +1316,7 @@ change_estate_land_share = {
 }
 1700.1.1 = {
   leader = {
-    name = "TN»l œKQ"  # George Rooke
+    name = "TN»l œKQ" 	# George Rooke
     type = admiral
     fire = 4
     shock = 3
@@ -1301,10 +1325,11 @@ change_estate_land_share = {
     death_date = 1709.1.24
   }
 }
+#1702.3.8 = { decision = establish_the_wooden_wall }
 1702.3.8 = {
   monarch = {
-    name = "‰R®Y I"  # Anne I
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "‰R®Y I" 	# Anne I
+    dynasty = "¯eşVšNyr" 	# Stuart
     birth_date = 1665.2.6
     adm = 3
     dip = 5
@@ -1313,8 +1338,8 @@ change_estate_land_share = {
   }
   queen = {
     country_of_origin = DAN
-    name = "TN»l"  # George
-    dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+    name = "TN»l" 	# George
+    dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
     birth_date = 1653.4.2
     death_date = 1708.10.28
     adm = 1
@@ -1324,9 +1349,9 @@ change_estate_land_share = {
 }
 1702.3.8 = {
   heir = {
-    name = "0tòƒZ"  # Sophia
-    monarch_name = "0tòƒZ I"  # Sophia I
-    dynasty = "¯Q ôuyrS¯eôTk"  # von Wittelsbach
+    name = "0tòƒZ" 	# Sophia
+    monarch_name = "0tòƒZ I" 	# Sophia I
+    dynasty = "¯Q ôuyrS¯eôTk" 	# von Wittelsbach
     birth_date = 1630.10.14
     death_date = 1714.6.8
     claim = 95
@@ -1338,9 +1363,9 @@ change_estate_land_share = {
 }
 1714.6.8 = {
   heir = {
-    name = "TN»l ïf¯e"  # George Louis
-    monarch_name = "TN»l I"  # George I
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "TN»l ïf¯e" 	# George Louis
+    monarch_name = "TN»l I" 	# George I
+    dynasty = "¯Q Ilú‹Z" 	# von Hannover
     birth_date = 1660.5.28
     death_date = 1727.6.11
     claim = 95

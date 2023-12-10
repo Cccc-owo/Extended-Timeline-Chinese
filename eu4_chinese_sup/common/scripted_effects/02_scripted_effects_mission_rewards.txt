@@ -697,7 +697,23 @@ tur_address_firman_effect_b = {
   country_event_with_insight = {
     id = flavor_tur.219
     insight_tooltip = INSIGHT_JUST_TOOLTIP
-    effect_tooltip = "   thrace_area = {    limit = {     country_or_non_sovereign_subject_holds = ROOT    }    add_province_modifier = {     name = tur_morisco_refugees_modifier     duration = 7300    }   }   define_advisor = {     type = artist     cost_multiplier = 0.5    culture = andalucian     religion = sunni    }   "
+    effect_tooltip = "
+    thrace_area = {
+      limit = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      add_province_modifier = {
+        name = tur_morisco_refugees_modifier
+        duration = 7300
+      }
+    }
+    define_advisor = { 
+      type = artist 
+      cost_multiplier = 0.5
+      culture = andalucian 
+      religion = sunni 
+    }
+    "
   }
 }
 tur_al_andalus_eyalet_effect_a = {
@@ -829,12 +845,12 @@ per_claim_constantinople_effect = {
           has_country_flag = per_zoroastrian_missions
         }
       }
-      change_province_name = "“^¯efWN<SšN" #Kustantiniya
-      rename_capital = "“^¯efWN<SšN" #Kustantiniya
+      change_province_name = "“^¯efWN<SšN" 	# Kustantiniya
+      rename_capital = "“^¯efWN<SšN" 	# Kustantiniya
     }
     else = {
-      change_province_name = "TëXfWN<S6w" #Konstantiniyyeh
-      rename_capital = "TëXfWN<S6w" #Konstantiniyyeh
+      change_province_name = "TëXfWN<S6w" 	# Konstantiniyyeh
+      rename_capital = "TëXfWN<S6w" 	# Konstantiniyyeh
     }
     add_base_tax = 2
     add_base_production = 2
@@ -1086,12 +1102,12 @@ pick_best_provinces = {
       10 = "$10$"
     }
     set_global_flag = PICK_BEST_PROVINCES_FLAG
-  ] #curses for not having an [ELSE ] or something.
+  ] 	# curses for not having an [ELSE ] or something.
   if = {
     limit = {
       NOT = {
         has_global_flag = PICK_BEST_PROVINCES_FLAG
-      } #This check is here to prevent the algorithm from being run again after the scoped version was executed
+      } 	# This check is here to prevent the algorithm from being run again after the scoped version was executed
     }
     pick_best_provinces_2 = {
       scope = " every_province "
@@ -1567,7 +1583,7 @@ enable_branching_mission_review_without_ai = {
     }
   }
 }
-select_current_missions_MAL = {} #Empty on purpose, preview system only implemented for the sake of completion
+select_current_missions_MAL = {} 	# Empty on purpose, preview system only implemented for the sake of completion
 select_current_missions_SON = {
   if = {
     limit = {
@@ -1610,7 +1626,7 @@ select_current_missions_SON = {
     }
   }
 }
-select_current_missions_KON = {} #Empty on purpose, preview system only implemented for the sake of completion
+select_current_missions_KON = {} 	# Empty on purpose, preview system only implemented for the sake of completion
 select_scandinavian_religion_mission_effect = {
   if = {
     limit = {
@@ -2172,7 +2188,7 @@ select_current_missions_LIV = {
     }
   }
 }
-select_current_missions_POL = {} #Empty on purpose, preview system only implemented for the sake of completion
+select_current_missions_POL = {} 	# Empty on purpose, preview system only implemented for the sake of completion
 select_current_missions_TUR = {
   if = {
     limit = {
@@ -2513,7 +2529,7 @@ select_current_missions_FRA_HRE = {
         }
         set_country_flag = fra_shed_the_blood_of_the_saxon_man_flag
         custom_tooltip = fra_charlemagne_legacy_tt
-        swap_non_generic_missions = yes #Another special for the moment France becomes Emperor before selecing any of the branching missions
+        swap_non_generic_missions = yes 	# Another special for the moment France becomes Emperor before selecing any of the branching missions
       }
     }
   }
@@ -2575,7 +2591,7 @@ select_current_missions_JAP_RELI = {
     }
   }
 }
-select_current_missions_BYZ = {} #Empty, nothing should happen
+select_current_missions_BYZ = {} 	# Empty, nothing should happen
 select_current_missions_PER = {
   if = {
     limit = {

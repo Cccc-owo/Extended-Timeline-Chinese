@@ -1,5 +1,8 @@
+#### The Burgundian Inheritance ###
+### By James Beaumont ###
 namespace = incidents_bur_inheritance
 normal_or_historical_nations = yes
+# Mary is appointed regent
 country_event = {
   id = incidents_bur_inheritance.0
   title = "incidents_bur_inheritance.0.t"
@@ -24,8 +27,8 @@ country_event = {
         is_year = 1457
       }
       AND = {
-        has_ruler = "ågt"  # Charles
-        dynasty = "·V ÃRn‚,r"  # de Bourgogne
+        has_ruler = "ågt" 	# Charles
+        dynasty = "·V ÃRn‚,r" 	# de Bourgogne
         ruler_age = 43
         NOT = {
           heir_age = 15
@@ -50,7 +53,7 @@ country_event = {
         is_year = 1473
       }
       define_heir = {
-        name = "›sKN"  # Marie
+        name = "›sKN" 	# Marie
         dynasty = ROOT
         birth_date = 1457.02.13
         adm = 4
@@ -63,7 +66,7 @@ country_event = {
     }
     else = {
       define_heir = {
-        name = "›sKN"  # Marie
+        name = "›sKN" 	# Marie
         dynasty = ROOT
         age = 16
         adm = 4
@@ -84,6 +87,7 @@ country_event = {
     add_legitimacy = 20
   }
 }
+# Ruler of Burgundy Dies
 country_event = {
   id = incidents_bur_inheritance.1
   title = "incidents_bur_inheritance.1.t"
@@ -101,6 +105,7 @@ country_event = {
         hidden = yes
       }
       random_country = {
+        #largest Nation with a marriage with Burgundy
         limit = {
           is_emperor = no
           marriage_with = ROOT
@@ -125,6 +130,7 @@ country_event = {
     }
   }
   option = {
+    #stand alone
     name = "incidents_bur_inheritance.1.a"
     ai_chance = {
       factor = 1
@@ -246,6 +252,7 @@ country_event = {
     }
   }
   option = {
+    #Stand alone, but France doesn't exist, France is subject itself or France IS the Emperor
     name = "incidents_bur_inheritance.1.b"
     ai_chance = {
       factor = 1
@@ -303,6 +310,7 @@ country_event = {
       }
     }
   }
+  #Get support from the Emperor
   option = {
     name = "incidents_bur_inheritance.1.c"
     trigger = {
@@ -342,6 +350,7 @@ country_event = {
       }
     }
     custom_tooltip = marry_the_emperor_tt
+    #Absorb subjects
     if = {
       limit = {
         NEV = {
@@ -380,6 +389,7 @@ country_event = {
         limit = {
           has_dlc = "Emperor"
         }
+        #Prevents Burgundy to declare independency until incident is over
         set_country_flag = burgundy_during_imperial_incident
       }
     }
@@ -408,6 +418,7 @@ country_event = {
     }
   }
   option = {
+    #strong ally
     name = "incidents_bur_inheritance.1.d"
     trigger = {
       any_country = {
@@ -460,6 +471,7 @@ country_event = {
       }
     }
     custom_tooltip = marry_strong_ally_tt
+    #Absorb subjects
     if = {
       limit = {
         NEV = {
@@ -507,6 +519,7 @@ country_event = {
         limit = {
           has_dlc = "Emperor"
         }
+        #Prevents Burgundy to declare independency until incident is over
         set_country_flag = burgundy_during_imperial_incident
       }
       emperor = {
@@ -526,6 +539,7 @@ country_event = {
     }
   }
   option = {
+    #side with the French
     name = "incidents_bur_inheritance.1.e"
     trigger = {
       FRA = {
@@ -549,7 +563,7 @@ country_event = {
         }
       }
       modifier = {
-        factor = 0.5
+        factor = 0.5 	#  Burgundy and France just simply don't get along 
         always = yes
       }
       modifier = {
@@ -583,6 +597,7 @@ country_event = {
       }
     }
     custom_tooltip = marry_french_tt
+    #Absorb subjects
     every_subject_country = {
       limit = {
         ai = yes
@@ -626,6 +641,7 @@ country_event = {
         limit = {
           has_dlc = "Emperor"
         }
+        #Prevents Burgundy to declare independency until incident is over
         set_country_flag = burgundy_during_imperial_incident
       }
       emperor = {
@@ -651,6 +667,7 @@ country_event = {
     }
   }
 }
+# France can DoW Burgundy
 country_event = {
   id = incidents_bur_inheritance.101
   title = "incidents_bur_inheritance.101.t"
@@ -695,6 +712,7 @@ country_event = {
         }
       }
       modifier = {
+        #Is already at war with the overlord of BUR
         factor = 0
         BUR = {
           is_subject = yes
@@ -756,6 +774,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Emperor demands the Lowlands
 country_event = {
   id = incidents_bur_inheritance.102
   title = "incidents_bur_inheritance.102.t"
@@ -764,6 +783,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
+    #Let them come
     name = "incidents_bur_inheritance.102.a"
     ai_chance = {
       factor = 1
@@ -807,6 +827,7 @@ country_event = {
     }
   }
   option = {
+    #Grant great privilege
     name = "incidents_bur_inheritance.102.b"
     ai_chance = {
       factor = 5
@@ -847,6 +868,7 @@ country_event = {
     }
   }
   option = {
+    #Let the people go
     name = "incidents_bur_inheritance.102.c"
     ai_chance = {
       factor = 10
@@ -881,7 +903,7 @@ country_event = {
           }
           is_subject_of = BUR
         }
-        grant_independence = yes
+        grant_independence = yes 	# vassals gain independence
         if = {
           limit = {
             is_part_of_hre = no
@@ -897,6 +919,7 @@ country_event = {
     }
   }
 }
+# Country is notified they inherited Burgundy
 country_event = {
   id = incidents_bur_inheritance.103
   title = "incidents_bur_inheritance.103.t"
@@ -931,6 +954,7 @@ country_event = {
     }
   }
   option = {
+    #Huzzah
     name = "incidents_bur_inheritance.103.a"
     tooltip = {
       create_union = FROM
@@ -938,6 +962,7 @@ country_event = {
   }
 }
 country_event = {
+  #Great Privelege event (emperor)
   id = incidents_bur_inheritance.104
   title = "incidents_bur_inheritance.104.t"
   desc = "incidents_bur_inheritance.104.d"
@@ -945,6 +970,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
+    # Do nothing
     name = "incidents_bur_inheritance.104.a"
     ai_chance = {
       factor = 10
@@ -966,6 +992,7 @@ country_event = {
     }
   }
   option = {
+    # Declare war for the lowlands
     name = "incidents_bur_inheritance.104.b"
     ai_chance = {
       factor = 10
@@ -1031,6 +1058,7 @@ country_event = {
     }
   }
 }
+# Burgundy with the Emperor incident
 country_event = {
   id = incidents_bur_inheritance.2
   title = "incidents_bur_inheritance.2.t"
@@ -1049,6 +1077,7 @@ country_event = {
     }
   }
   option = {
+    #Keep the Union
     name = "incidents_bur_inheritance.2.a"
     ai_chance = {
       factor = 10
@@ -1113,6 +1142,7 @@ country_event = {
     }
   }
   option = {
+    #Concessions to France
     name = "incidents_bur_inheritance.2.b"
     trigger = {
       FRA = {
@@ -1183,6 +1213,7 @@ country_event = {
     }
   }
   option = {
+    #Create potentially horrifying bordergore
     name = "incidents_bur_inheritance.2.c"
     ai_chance = {
       factor = 10
@@ -1248,6 +1279,7 @@ country_event = {
             culture = emperor
           }
           add_government_reform = feudalism_reform
+          #set_legacy_government = feudal_monarchy
         }
         clr_province_flag = bur_releasable_country
       }
@@ -1261,6 +1293,7 @@ country_event = {
     }
   }
 }
+# Burgundy with Strong Ally OR France
 country_event = {
   id = incidents_bur_inheritance.3
   title = "incidents_bur_inheritance.3.t"
@@ -1285,6 +1318,7 @@ country_event = {
     }
   }
   option = {
+    #Demand the lowlands
     name = "incidents_bur_inheritance.3.a"
     custom_tooltip = demand_lowlands_tt
     ai_chance = {
@@ -1302,6 +1336,7 @@ country_event = {
     }
   }
   option = {
+    #Fight for the Union
     name = "incidents_bur_inheritance.3.b"
     ai_chance = {
       factor = 0
@@ -1324,6 +1359,7 @@ country_event = {
     }
   }
   option = {
+    #Let it go
     name = "incidents_bur_inheritance.3.c"
     ai_chance = {
       factor = 1
@@ -1346,6 +1382,7 @@ country_event = {
     }
   }
 }
+# demanding the lowlands
 country_event = {
   id = incidents_bur_inheritance.301
   title = "incidents_bur_inheritance.301.t"
@@ -1373,6 +1410,7 @@ country_event = {
     }
   }
   option = {
+    #Cede the lowlands
     name = "incidents_bur_inheritance.301.b"
     ai_chance = {
       factor = 10
@@ -1418,6 +1456,7 @@ country_event = {
               culture = emperor
             }
             add_government_reform = feudalism_reform
+            #set_legacy_government = feudal_monarchy
           }
         }
         else_if = {
@@ -1440,6 +1479,7 @@ country_event = {
     }
   }
   option = {
+    #Fight for the Lowlands
     name = "incidents_bur_inheritance.301.a"
     ai_chance = {
       factor = 10
@@ -1480,6 +1520,7 @@ country_event = {
     }
   }
 }
+# DoW notification
 country_event = {
   id = incidents_bur_inheritance.302
   title = "incidents_bur_inheritance.302.t"
@@ -1497,6 +1538,7 @@ country_event = {
     }
   }
   option = {
+    #Start the war
     name = "incidents_bur_inheritance.302.a"
     ai_chance = {
       factor = 100
@@ -1515,6 +1557,7 @@ country_event = {
     }
   }
   option = {
+    #Give up
     name = "incidents_bur_inheritance.302.b"
     ai_chance = {
       factor = 0
@@ -1531,6 +1574,7 @@ country_event = {
     }
   }
 }
+# Burgundy stands alone
 country_event = {
   id = incidents_bur_inheritance.4
   title = "incidents_bur_inheritance.4.t"
@@ -1549,6 +1593,7 @@ country_event = {
     }
   }
   option = {
+    #Demand the lowlands
     name = "incidents_bur_inheritance.4.a"
     ai_chance = {
       factor = 100
@@ -1585,6 +1630,7 @@ country_event = {
     }
   }
   option = {
+    #Let it go
     name = "incidents_bur_inheritance.101.b"
     ai_chance = {
       factor = 100
@@ -1606,6 +1652,7 @@ country_event = {
     add_prestige = -10
   }
   option = {
+    #Force the union (France Emperor only)
     name = "incidents_bur_inheritance.302.a"
     ai_chance = {
       factor = 100
@@ -1635,6 +1682,7 @@ country_event = {
     }
   }
 }
+# Mary dies
 country_event = {
   id = incidents_bur_inheritance.5
   title = "incidents_bur_inheritance.5.t"
@@ -1659,6 +1707,7 @@ country_event = {
     months = 180
   }
   option = {
+    #Be integrated
     name = "incidents_bur_inheritance.5.a"
     ai_chance = {
       factor = 100
@@ -1681,6 +1730,7 @@ country_event = {
     }
   }
   option = {
+    #Fight for independence, players only
     name = "incidents_bur_inheritance.5.b"
     ai_chance = {
       factor = 0
@@ -1700,6 +1750,7 @@ country_event = {
     }
   }
 }
+# Overlord accepts integration
 country_event = {
   id = incidents_bur_inheritance.501
   title = "incidents_bur_inheritance.5.t"
@@ -1707,6 +1758,7 @@ country_event = {
   picture = DEATH_OF_HEIR_eventPicture
   is_triggered_only = yes
   option = {
+    #integrate Burgundy
     name = "incidents_bur_inheritance.501.a"
     ai_chance = {
       factor = 100
@@ -1714,6 +1766,7 @@ country_event = {
     inherit = BUR
   }
 }
+# Overlord fights Burgundy
 country_event = {
   id = incidents_bur_inheritance.502
   title = "incidents_bur_inheritance.5.t"
@@ -1721,6 +1774,7 @@ country_event = {
   picture = DEATH_OF_HEIR_eventPicture
   is_triggered_only = yes
   option = {
+    #Let them go
     name = "incidents_bur_inheritance.502.a"
     ai_chance = {
       factor = 0
@@ -1728,12 +1782,13 @@ country_event = {
     hidden_effect = {
       BUR = {
         define_ruler = {
-          dynasty = "·V ÃRn‚,r"  # de Bourgogne
+          dynasty = "·V ÃRn‚,r" 	# de Bourgogne
         }
       }
     }
   }
   option = {
+    #Fight
     name = "incidents_bur_inheritance.502.b"
     ai_chance = {
       factor = 100
@@ -1747,12 +1802,13 @@ country_event = {
     hidden_effect = {
       BUR = {
         define_ruler = {
-          dynasty = "·V ÃRn‚,r"  # de Bourgogne
+          dynasty = "·V ÃRn‚,r" 	# de Bourgogne
         }
       }
     }
   }
 }
+# Mary is successful and changes inheritance laws
 country_event = {
   id = incidents_bur_inheritance.6
   title = "incidents_bur_inheritance.6.t"
@@ -1761,6 +1817,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
+    # Mary changes the inheritance laws
     name = "incidents_bur_inheritance.6.a"
     add_country_modifier = {
       name = mary_inheritance_reforms
@@ -1768,6 +1825,7 @@ country_event = {
     }
   }
   option = {
+    #Mary is a stable ruler to trust in
     name = "incidents_bur_inheritance.6.b"
     add_stability_or_adm_power = yes
     add_ruler_modifier = {

@@ -30,8 +30,8 @@ cha_1 = {
       2373 = {
         change_culture = cham
         change_religion = ROOT
-        change_province_name = "çrNñWeàW"  # Kandarapura
-        rename_capital = "çrNñWeàW"  # Kandarapura
+        change_province_name = "çrNñWeàW" 	# Kandarapura
+        rename_capital = "çrNñWeàW" 	# Kandarapura
       }
       vietnam_area = {
         limit = {
@@ -57,14 +57,12 @@ cha_1 = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   cha_conquer_vietnam = {
     icon = mission_indian_soldier_elephant
-    required_missions = {
-      cha_reconquer_indrapura
-    }
+    required_missions = { cha_reconquer_indrapura }
     provinces_to_highlight = {
       OR = {
         area = vietnam_area
@@ -92,7 +90,7 @@ cha_1 = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   cha_subjugate_highlands = {
@@ -125,14 +123,12 @@ cha_1 = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   cha_prey_on_khmer = {
     icon = mission_se_along_the_river
-    required_missions = {
-      cha_subjugate_highlands
-    }
+    required_missions = { cha_subjugate_highlands }
     provinces_to_highlight = {
       area = mekong_area
       NOT = {
@@ -203,7 +199,7 @@ cha_1 = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }
@@ -272,33 +268,30 @@ cha_2 = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   cha_navy = {
     icon = mission_junk_boat
-    required_missions = {
-      cha_malay_connections
-    }
+    required_missions = { cha_malay_connections }
     provinces_to_highlight = {}
     trigger = {
       num_of_light_ship = 15
     }
     effect = {
       add_country_modifier = {
+        # trade efficiency and dip rep
         name = cham_maritime_state
         duration = 7300
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   cha_tondo_expedition = {
     icon = mission_unite_home_region
-    required_missions = {
-      cha_navy
-    }
+    required_missions = { cha_navy }
     provinces_to_highlight = {
       area = southern_luzon_area
       NOT = {
@@ -319,14 +312,12 @@ cha_2 = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Should not colonize
     }
   }
   cha_expedition_to_the_east = {
     icon = mission_ne_great_lakes_conquest
-    required_missions = {
-      cha_tondo_expedition
-    }
+    required_missions = { cha_tondo_expedition }
     provinces_to_highlight = {}
     trigger = {
       any_subject_country = {
@@ -337,7 +328,7 @@ cha_2 = {
       add_dip_power = 200
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Should not colonize
     }
   }
 }

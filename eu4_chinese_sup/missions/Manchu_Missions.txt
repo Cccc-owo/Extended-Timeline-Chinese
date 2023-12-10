@@ -27,9 +27,7 @@ manchu_missions_1 = {
   has_country_shield = yes
   mch_mountain = {
     icon = mission_buddhist_monk_praying
-    required_missions = {
-      dominate_jurchens_mission
-    }
+    required_missions = { dominate_jurchens_mission }
     position = 2
     provinces_to_highlight = {
       province_id = 4201
@@ -61,9 +59,7 @@ manchu_missions_1 = {
   }
   mch_great_wall = {
     icon = mission_great_wall
-    required_missions = {
-      unite_manchu
-    }
+    required_missions = { unite_manchu }
     position = 4
     completed_by = 1644.4.22
     ai_weight = {
@@ -138,9 +134,7 @@ manchu_missions_1 = {
   }
   start_the_conquest_of_ming_china = {
     icon = mission_chinese_general_riding
-    required_missions = {
-      mch_great_wall
-    }
+    required_missions = { mch_great_wall }
     ai_weight = {
       factor = 3
     }
@@ -173,9 +167,7 @@ manchu_missions_1 = {
   }
   mch_mandate_of_heaven = {
     icon = mission_scholar_officials
-    required_missions = {
-      start_the_conquest_of_ming_china
-    }
+    required_missions = { start_the_conquest_of_ming_china }
     position = 6
     provinces_to_highlight = {
       owner = {
@@ -245,9 +237,7 @@ manchu_missions_1_b = {
   has_country_shield = yes
   mch_green_standard_army = {
     icon = mission_asian_cannon
-    required_missions = {
-      mch_mandate_of_heaven
-    }
+    required_missions = { mch_mandate_of_heaven }
     completed_by = 1644.4.22
     position = 7
     provinces_to_highlight = {
@@ -273,9 +263,7 @@ manchu_missions_1_b = {
   }
   mch_devastate_china = {
     icon = mission_steppe_warriors
-    required_missions = {
-      mch_green_standard_army
-    }
+    required_missions = { mch_green_standard_army }
     completed_by = 1644.4.22
     provinces_to_highlight = {
       OR = {
@@ -365,9 +353,7 @@ manchu_missions_1_b = {
   }
   mch_extinguish_ming = {
     icon = mission_asian_cannon
-    required_missions = {
-      mch_devastate_china
-    }
+    required_missions = { mch_devastate_china }
     completed_by = 1684.1.1
     provinces_to_highlight = {
       owned_by = MNG
@@ -406,9 +392,7 @@ manchu_missions_1_b = {
   }
   mch_ten_great_campaigns = {
     icon = mission_chinese_general_riding
-    required_missions = {
-      mch_extinguish_ming
-    }
+    required_missions = { mch_extinguish_ming }
     trigger = {
       army_size = 100
       manpower_percentage = 0.8
@@ -523,9 +507,7 @@ manchu_missions_1_b = {
   }
   mch_subjugate_dai_viet = {
     icon = mission_kowtow
-    required_missions = {
-      mch_ten_great_campaigns
-    }
+    required_missions = { mch_ten_great_campaigns }
     provinces_to_highlight = {
       OR = {
         area = vietnam_area
@@ -584,9 +566,7 @@ manchu_missions_1_b = {
   }
   mch_burma_campaign = {
     icon = mission_indian_soldier_elephant
-    required_missions = {
-      mch_subjugate_dai_viet
-    }
+    required_missions = { mch_subjugate_dai_viet }
     provinces_to_highlight = {
       OR = {
         area = karenni_area
@@ -693,9 +673,7 @@ manchu_missions_2 = {
   }
   unite_manchu = {
     icon = mission_chinese_general_riding
-    required_missions = {
-      dominate_jurchens_mission
-    }
+    required_missions = { dominate_jurchens_mission }
     completed_by = 1616.1.1
     position = 3
     ai_weight = {
@@ -725,7 +703,7 @@ manchu_missions_2 = {
           }
         }
         define_general = {
-          name = "YSnˆ"  # Dorgon
+          name = "YSnˆ" 	# Dorgon
           fire = 4
           shock = 4
           manuever = 5
@@ -781,9 +759,7 @@ manchu_missions_2 = {
   }
   mch_eight_banners = {
     icon = mission_manchu_warrior
-    required_missions = {
-      unite_manchu
-    }
+    required_missions = { unite_manchu }
     provinces_to_highlight = {}
     position = 5
     completed_by = 1616.1.1
@@ -892,9 +868,7 @@ manchu_missions_2 = {
   }
   mch_khan_of_the_mongols = {
     icon = mission_non-western_cavalry_raid
-    required_missions = {
-      mch_eight_banners
-    }
+    required_missions = { mch_eight_banners }
     provinces_to_highlight = {
       OR = {
         area = eastern_mongolia
@@ -983,9 +957,7 @@ manchu_missions_2_b = {
   has_country_shield = yes
   mch_establish_tributaries = {
     icon = mission_kowtow
-    required_missions = {
-      mch_mandate_of_heaven
-    }
+    required_missions = { mch_mandate_of_heaven }
     position = 7
     trigger = {
       if = {
@@ -1025,9 +997,7 @@ manchu_missions_2_b = {
   }
   mch_three_feudatories = {
     icon = mission_asian_city
-    required_missions = {
-      mch_green_standard_army
-    }
+    required_missions = { mch_green_standard_army }
     completed_by = 1670.1.1
     provinces_to_highlight = {
       OR = {
@@ -1180,12 +1150,12 @@ manchu_missions_2_b = {
         }
         if = {
           limit = {
-            has_leader = "4T	NBh"  # Wu Sangui
+            has_leader = "4T	NBh" 	# Wu Sangui
           }
           CDL = {
             define_ruler = {
-              name = "	NBh"  # Sangui
-              dynasty = "4T"  # Wu
+              name = "	NBh" 	# Sangui
+              dynasty = "4T" 	# Wu
               adm = 3
               dip = 3
               mil = 4
@@ -1194,7 +1164,7 @@ manchu_missions_2_b = {
             on_change_tag_effect = yes
           }
           kill_leader = {
-            type = "4T	NBh"  # Wu Sangui
+            type = "4T	NBh" 	# Wu Sangui
           }
         }
       }
@@ -1202,9 +1172,7 @@ manchu_missions_2_b = {
   }
   mch_revoke_the_feudatories = {
     icon = mission_chinese_general_riding
-    required_missions = {
-      mch_three_feudatories
-    }
+    required_missions = { mch_three_feudatories }
     completed_by = 1684.1.1
     provinces_to_highlight = {
       OR = {
@@ -1236,10 +1204,7 @@ manchu_missions_2_b = {
   }
   mch_harmonious_empire = {
     icon = mission_rice_field
-    required_missions = {
-      mch_extinguish_ming
-      mch_revoke_the_feudatories
-    }
+    required_missions = { mch_extinguish_ming mch_revoke_the_feudatories }
     position = 10
     provinces_to_highlight = {
       superregion = china_superregion
@@ -1276,9 +1241,7 @@ manchu_missions_2_b = {
   }
   mch_integrate_taiwan = {
     icon = mission_junk_boat
-    required_missions = {
-      mch_ten_great_campaigns
-    }
+    required_missions = { mch_ten_great_campaigns }
     provinces_to_highlight = {
       area = taiwan_area
       NOT = {
@@ -1325,9 +1288,7 @@ manchu_missions_3 = {
   has_country_shield = yes
   mch_invade_joseon = {
     icon = mission_asian_cannon
-    required_missions = {
-      mch_eight_banners
-    }
+    required_missions = { mch_eight_banners }
     position = 6
     provinces_to_highlight = {
       region = korea_region
@@ -1371,9 +1332,7 @@ manchu_missions_3_b = {
   has_country_shield = yes
   mch_confucian_administration = {
     icon = mission_scholar_officials
-    required_missions = {
-      mch_mandate_of_heaven
-    }
+    required_missions = { mch_mandate_of_heaven }
     position = 7
     trigger = {
       stability = 2
@@ -1402,9 +1361,7 @@ manchu_missions_3_b = {
   }
   mch_reform_the_censorate = {
     icon = mission_asian_trader
-    required_missions = {
-      mch_confucian_administration
-    }
+    required_missions = { mch_confucian_administration }
     trigger = {
       NOT = {
         corruption = 1
@@ -1420,9 +1377,7 @@ manchu_missions_3_b = {
   }
   mch_library_of_the_four_treasuries = {
     icon = mission_scholar_officials
-    required_missions = {
-      mch_reform_the_censorate
-    }
+    required_missions = { mch_reform_the_censorate }
     trigger = {
       if = {
         limit = {
@@ -1441,9 +1396,7 @@ manchu_missions_3_b = {
   }
   mch_secure_inner_asia = {
     icon = mission_central_asian_city
-    required_missions = {
-      mch_ten_great_campaigns
-    }
+    required_missions = { mch_ten_great_campaigns }
     provinces_to_highlight = {
       OR = {
         region = mongolia_region
@@ -1578,9 +1531,7 @@ manchu_missions_4 = {
   has_country_shield = yes
   mch_annex_tibet = {
     icon = mission_buddhist_monk_praying
-    required_missions = {
-      mch_ten_great_campaigns
-    }
+    required_missions = { mch_ten_great_campaigns }
     provinces_to_highlight = {
       region = tibet_region
       NOT = {

@@ -1,3 +1,4 @@
+#First slot
 ajuuran_asian_trade_slot = {
   slot = 1
   generic = no
@@ -13,6 +14,7 @@ ajuuran_asian_trade_slot = {
     tag = AJU
   }
   has_country_shield = yes
+  #Annex Mogadishu
   aju_annex_mogadishu = {
     icon = mission_shipyards_of_gujarat
     required_missions = {}
@@ -42,14 +44,13 @@ ajuuran_asian_trade_slot = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Always annex your vassal
     }
   }
+  #Get gold production going
   aju_gold_minting = {
     icon = mission_entrepot_of_india
-    required_missions = {
-      aju_annex_mogadishu
-    }
+    required_missions = { aju_annex_mogadishu }
     position = 3
     provinces_to_highlight = {
       trade_goods = gold
@@ -79,6 +80,7 @@ ajuuran_asian_trade_slot = {
     effect = {
       custom_tooltip = aju_gold_minting_ct
       if = {
+        #Cash
         limit = {
           OR = {
             gold = 1
@@ -92,6 +94,7 @@ ajuuran_asian_trade_slot = {
         }
       }
       else_if = {
+        #Deal with the other owner
         limit = {
           any_known_country = {
             gold = 1
@@ -120,14 +123,13 @@ ajuuran_asian_trade_slot = {
       }
     }
     ai_weight = {
-      factor = 25
+      factor = 25 	# Really far-fetched for Ajuuraan, so not a really high priority
     }
   }
+  #Trade in India
   aju_indian_trade = {
     icon = mission_dominate_trade_in_bengal
-    required_missions = {
-      aju_gold_minting
-    }
+    required_missions = { aju_gold_minting }
     position = 4
     provinces_to_highlight = {
       is_indian_trade_node_province = yes
@@ -278,14 +280,13 @@ ajuuran_asian_trade_slot = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
+  #Get a trade company in China
   aju_chinese_trade_company = {
     icon = mission_trade_company_region_abroad
-    required_missions = {
-      aju_indian_trade
-    }
+    required_missions = { aju_indian_trade }
     position = 5
     provinces_to_highlight = {
       province_id = 4233
@@ -309,6 +310,7 @@ ajuuran_asian_trade_slot = {
         }
       }
       else_if = {
+        #Fringe case of no emperor existing
         limit = {
           NOT = {
             owns_or_non_sovereign_subject_of = 1816
@@ -333,10 +335,11 @@ ajuuran_asian_trade_slot = {
       add_mercantilism = 5
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }
+#Second slot
 ajuuran_internal_slot = {
   slot = 2
   generic = no
@@ -352,6 +355,7 @@ ajuuran_internal_slot = {
     tag = AJU
   }
   has_country_shield = yes
+  #Build forts
   aju_castle_builders = {
     icon = mission_portuguese_oman
     required_missions = {}
@@ -374,15 +378,13 @@ ajuuran_internal_slot = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# People seemed to love 1.33 fort AI, so of course they should be happy to do this mission
     }
   }
+  #Unlock the Hydraulic idea
   aju_hydraulic_expertise = {
     icon = mission_se_along_the_river
-    required_missions = {
-      aju_castle_builders
-      aju_markets_of_ajuuran
-    }
+    required_missions = { aju_castle_builders aju_markets_of_ajuuran }
     position = 2
     provinces_to_highlight = {
       owned_by = ROOT
@@ -408,14 +410,13 @@ ajuuran_internal_slot = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# That's their special gimmick, they should get this as good as they can
     }
   }
+  #Take over the Maldives
   aju_maldives_dynasty = {
     icon = mission_raid_christian_trade
-    required_missions = {
-      aju_expand_navy
-    }
+    required_missions = { aju_expand_navy }
     position = 3
     provinces_to_highlight = {
       province_id = 1248
@@ -451,9 +452,10 @@ ajuuran_internal_slot = {
       add_mil_power = 50
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
+  #Develop Istunka
   aju_invent_istunka = {
     icon = mission_son_back_to_the_roots
     required_missions = {}
@@ -498,14 +500,13 @@ ajuuran_internal_slot = {
       custom_tooltip = aju_invent_istunka_ct
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# To be frank, this mission will be mostly done by the AI by pure chance, not deliberately
     }
   }
+  #Trade in Vietnam
   aju_merchants_in_dai_viet = {
     icon = mission_asian_trader
-    required_missions = {
-      aju_indian_trade
-    }
+    required_missions = { aju_indian_trade }
     position = 5
     provinces_to_highlight = {
       province_id = 613
@@ -549,10 +550,11 @@ ajuuran_internal_slot = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }
+#Third slot
 ajuuran_own_trade_slot = {
   slot = 3
   generic = no
@@ -568,6 +570,7 @@ ajuuran_own_trade_slot = {
     tag = AJU
   }
   has_country_shield = yes
+  #Build markets
   aju_markets_of_ajuuran = {
     icon = mission_restore_trade_superiority
     required_missions = {}
@@ -602,14 +605,13 @@ ajuuran_own_trade_slot = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Trade = good
     }
   }
+  #Build markets
   aju_sofaala_claims = {
     icon = mission_arabian_fort
-    required_missions = {
-      aju_expand_navy
-    }
+    required_missions = { aju_expand_navy }
     position = 3
     provinces_to_highlight = {
       province_id = 1186
@@ -633,14 +635,13 @@ ajuuran_own_trade_slot = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
+  #Have trade presence the Moluccas
   aju_trade_on_java = {
     icon = mission_mnd_maj_candi_shrines
-    required_missions = {
-      aju_indian_trade
-    }
+    required_missions = { aju_indian_trade }
     position = 5
     provinces_to_highlight = {
       province_id = 1357
@@ -682,10 +683,11 @@ ajuuran_own_trade_slot = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }
+#Fourth slot
 ajuuran_defense_slot = {
   slot = 4
   generic = no
@@ -701,6 +703,7 @@ ajuuran_defense_slot = {
     tag = AJU
   }
   has_country_shield = yes
+  #Send ships to Aden
   aju_protect_trade_aden = {
     icon = mission_market_place_with_asian_traders
     required_missions = {}
@@ -726,14 +729,13 @@ ajuuran_defense_slot = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
+  #More Ships please
   aju_expand_navy = {
     icon = mission_establish_high_seas_navy
-    required_missions = {
-      aju_protect_trade_aden
-    }
+    required_missions = { aju_protect_trade_aden }
     position = 2
     trigger = {
       naval_forcelimit = 25
@@ -815,9 +817,10 @@ ajuuran_defense_slot = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
+  #Convenient alliance
   aju_ally_the_ottomans = {
     icon = mission_ottoman_diplomacy
     required_missions = {}
@@ -897,14 +900,13 @@ ajuuran_defense_slot = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
+  #Convenient alliance
   aju_buy_modernization = {
     icon = mission_assemble_an_army
-    required_missions = {
-      aju_ally_the_ottomans
-    }
+    required_missions = { aju_ally_the_ottomans }
     position = 4
     trigger = {
       treasury = 3000
@@ -927,9 +929,10 @@ ajuuran_defense_slot = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
+  #Deal with the migrations
   aju_oromo_invasion = {
     icon = mission_african_soldier
     required_missions = {}
@@ -956,10 +959,11 @@ ajuuran_defense_slot = {
       add_stability = 2
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }
+#Fith slot
 ajuuran_offense_slot = {
   slot = 5
   generic = no
@@ -975,6 +979,7 @@ ajuuran_offense_slot = {
     tag = AJU
   }
   has_country_shield = yes
+  #Hire Mamluk merc company
   aju_the_mamluk_soldiers = {
     icon = mission_egyptian_mamluk_soldier
     required_missions = {}
@@ -1014,14 +1019,13 @@ ajuuran_offense_slot = {
       add_permanent_claim = 2778
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Mercs go brrrr
     }
   }
+  #Conquer Hafun
   aju_the_tip_of_the_horn = {
     icon = mission_envoy_to_ethiopia
-    required_missions = {
-      aju_the_mamluk_soldiers
-    }
+    required_missions = { aju_the_mamluk_soldiers }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -1079,14 +1083,13 @@ ajuuran_offense_slot = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Ajuuraan should at least try to become the counter balance to Ethiopia. So it should conquer the horn
     }
   }
+  #Conquer Adal
   aju_unite_the_clans = {
     icon = mission_build_up_to_force_limit
-    required_missions = {
-      aju_the_tip_of_the_horn
-    }
+    required_missions = { aju_the_tip_of_the_horn }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1156,14 +1159,13 @@ ajuuran_offense_slot = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Ajuuraan should at least try to become the counter balance to Ethiopia. So it should conquer the horn
     }
   }
+  #Conquer Ethiopia
   aju_liberate_sheik_hussein = {
     icon = mission_end_tamil_insurgency
-    required_missions = {
-      aju_unite_the_clans
-    }
+    required_missions = { aju_unite_the_clans }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -1188,8 +1190,8 @@ ajuuran_offense_slot = {
     }
     effect = {
       2761 = {
-        change_province_name = "0åkç∑ØOiç‡V"  # Sheik Hussein
-        rename_capital = "0åkç∑ØOiç‡V"  # Sheik Hussein
+        change_province_name = "0åkç∑ØOiç‡V" 	# Sheik Hussein
+        rename_capital = "0åkç∑ØOiç‡V" 	# Sheik Hussein
         add_base_tax = 4
         add_base_production = 4
         add_base_manpower = 3
@@ -1211,14 +1213,13 @@ ajuuran_offense_slot = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Ajuuraan should at least try to become the counter balance to Ethiopia. So it should conquer the horn
     }
   }
+  #Clean up the rest
   aju_consolidate_the_horn = {
     icon = mission_empire
-    required_missions = {
-      aju_liberate_sheik_hussein
-    }
+    required_missions = { aju_liberate_sheik_hussein }
     position = 5
     provinces_to_highlight = {
       region = horn_of_africa_region
@@ -1238,7 +1239,7 @@ ajuuran_offense_slot = {
       add_mil_power = 100
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }

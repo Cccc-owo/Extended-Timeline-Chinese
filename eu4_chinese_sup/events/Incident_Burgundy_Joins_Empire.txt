@@ -1,5 +1,8 @@
+#### Burgundy joins the Empire ###
+### By James Beaumont ###
 namespace = incidents_bur_join_empire
 normal_or_historical_nations = yes
+# Burgundy considers entry
 country_event = {
   id = incidents_bur_join_empire.1
   title = "incidents_bur_join_empire.1.t"
@@ -28,7 +31,7 @@ country_event = {
       }
       AND = {
         NOT = {
-          has_ruler = "SÅõR III"  # Philippe III
+          has_ruler = "SÅõR III" 	# Philippe III
         }
         has_heir = yes
       }
@@ -92,6 +95,7 @@ country_event = {
     set_country_flag = burgundy_refused_empire
   }
 }
+# Emperor considers Burgundy's offer
 country_event = {
   id = incidents_bur_join_empire.2
   title = "incidents_bur_join_empire.2.t"
@@ -210,6 +214,7 @@ country_event = {
     }
   }
 }
+# Burgundy is refused Imperial membership
 country_event = {
   id = incidents_bur_join_empire.4
   title = "incidents_bur_join_empire.4.t"

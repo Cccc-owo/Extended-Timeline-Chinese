@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Bengal
+# Scripted by Henrik Lohmander
+########################################
 namespace = flavor_bng
 normal_or_historical_nations = yes
+#The Chishti Order and the Sultans of Bengal.
 country_event = {
   id = flavor_bng.1
   title = flavor_bng.1.t
@@ -17,7 +22,7 @@ country_event = {
     months = 48
   }
   option = {
-    name = flavor_bng.1.a
+    name = flavor_bng.1.a 	# Continue to patronize the Chishti Order
     ai_chance = {
       factor = 50
     }
@@ -25,7 +30,7 @@ country_event = {
     add_piety = -0.15
   }
   option = {
-    name = flavor_bng.1.b
+    name = flavor_bng.1.b 	# We must start to distance ourselves from the Chishti Order
     ai_chance = {
       factor = 50
     }
@@ -33,6 +38,7 @@ country_event = {
     add_piety = 0.15
   }
 }
+#Sayid Sultan Publishes the Nabibangsha
 country_event = {
   id = flavor_bng.2
   title = flavor_bng.2.t
@@ -66,10 +72,11 @@ country_event = {
     ai_chance = {
       factor = 25
     }
-    add_stability_or_adm_power = yes
+    add_stability_or_adm_power = yes 	# Pleases the more Orthodox religious establishment.
     add_piety = 0.15
   }
 }
+#The Mosque city of Bagerhat
 country_event = {
   id = flavor_bng.3
   title = flavor_bng.3.t
@@ -83,7 +90,7 @@ country_event = {
     }
     religion_group = muslim
     is_year = 1450
-    owns_core_province = 2039
+    owns_core_province = 2039 	# Sunderbans
   }
   mean_time_to_happen = {
     months = 45
@@ -92,7 +99,7 @@ country_event = {
     name = flavor_bng.3.a
     random_owned_province = {
       limit = {
-        province_id = 2039
+        province_id = 2039 	# Sunderbans
       }
       add_province_modifier = {
         name = "bng_mosque_city_of_bagerhat"
@@ -101,6 +108,7 @@ country_event = {
     }
   }
 }
+#Reclamation of the Delta
 country_event = {
   id = flavor_bng.4
   title = flavor_bng.4.t
@@ -119,11 +127,11 @@ country_event = {
         is_year = 1500
         any_owned_province = {
           OR = {
-            province_id = 2039
-            province_id = 561
-            province_id = 564
-            province_id = 568
-            province_id = 2046
+            province_id = 2039 	# Sunderbans
+            province_id = 561 	# Bengal Delta
+            province_id = 564 	# Dakka
+            province_id = 568 	# Chittagong
+            province_id = 2046 	# Nasirabad
             province_id = 4475
             province_id = 4474
           }
@@ -139,11 +147,11 @@ country_event = {
     every_owned_province = {
       limit = {
         OR = {
-          province_id = 2039
-          province_id = 561
-          province_id = 564
-          province_id = 568
-          province_id = 2046
+          province_id = 2039 	# Sunderbans
+          province_id = 561 	# Bengal Delta
+          province_id = 564 	# Dakka
+          province_id = 568 	# Chittagong
+          province_id = 2046 	# Nasirabad
           province_id = 4474
           province_id = 4475
         }
@@ -156,6 +164,7 @@ country_event = {
     }
   }
 }
+# Aristocrats on the Run
 country_event = {
   id = flavor_bng.5
   title = flavor_bng.5.t
@@ -176,24 +185,25 @@ country_event = {
     months = 6
   }
   option = {
-    name = flavor_bng.5.a
+    name = flavor_bng.5.a 	# We must encourage these men of quality to serve us!
     ai_chance = {
       factor = 75
     }
     add_country_modifier = {
       name = "bng_delhian_refugees"
-      duration = 3650
+      duration = 3650 	# By then these nobles will have gained new lands or moved on.
     }
     set_country_flag = sher_shah_admitted
   }
   option = {
-    name = flavor_bng.5.b
+    name = flavor_bng.5.b 	# Try to discourage them from staying in our lands.
     ai_chance = {
       factor = 25
     }
     add_prestige = -10
   }
 }
+# Rise of the Tiger (Sher Shah Sur)
 country_event = {
   id = flavor_bng.6
   title = flavor_bng.6.t
@@ -211,7 +221,7 @@ country_event = {
     months = 24
   }
   option = {
-    name = flavor_bng.6.a
+    name = flavor_bng.6.a 	# If you want my throne you'll have to fight for it.
     ai_chance = {
       factor = 25
     }
@@ -224,19 +234,19 @@ country_event = {
         size = 3
         religion = sunni
         culture = afghani
-        leader = "‚S™l"  # Sher Shah
-        leader_dynasty = "Ï‚S"  # Suri
+        leader = "‚S™l" 	# Sher Shah
+        leader_dynasty = "Ï‚S" 	# Suri
       }
     }
   }
   option = {
-    name = flavor_bng.6.b
+    name = flavor_bng.6.b 	# Surrender
     ai_chance = {
       factor = 75
     }
     define_ruler = {
-      name = "‚S™l"  # Sher Shah
-      dynasty = "Ï‚S"  # Suri
+      name = "‚S™l" 	# Sher Shah
+      dynasty = "Ï‚S" 	# Suri 	# Dynasty change gives new ruler with low legitimacy
       culture = afghani
       religion = sunni
       DIP = 3
@@ -261,8 +271,11 @@ country_event = {
       }
     }
     add_stability = -2
+    #custom_tooltip = flavor_bng.6.b.tt
+    #add_legitimacy = -35
   }
 }
+#Kingdom of Bhurshut
 country_event = {
   id = flavor_bng.7
   title = flavor_bng.7.t
@@ -290,6 +303,7 @@ country_event = {
     }
   }
 }
+# The Grant of Calcutta
 country_event = {
   id = flavor_bng.8
   title = flavor_bng.8.t
@@ -302,7 +316,7 @@ country_event = {
       exists = GBR
       exists = ENG
     }
-    is_year = 1640
+    is_year = 1640 	# Around the time the English started to try to get an Imperial Farman to establish themselves in Bengal.
     owns_core_province = 561
     any_owned_province = {
       region = bengal_region
@@ -316,18 +330,18 @@ country_event = {
     months = 300
   }
   option = {
-    name = flavor_bng.8.a
+    name = flavor_bng.8.a 	# Allow it
     561 = {
       add_province_modifier = {
         name = "bng_port_of_calcutta"
         duration = -1
       }
-      rename_capital = " RSTTr"  # Calcutta
+      rename_capital = " RSTTr" 	# Calcutta
     }
     add_treasury = 100
   }
   option = {
-    name = flavor_bng.8.b
+    name = flavor_bng.8.b 	# Turn the envoy away
     every_country = {
       limit = {
         OR = {
@@ -342,6 +356,7 @@ country_event = {
     }
   }
 }
+# Growth of Calcutta
 country_event = {
   id = flavor_bng.9
   title = flavor_bng.9.t
@@ -359,7 +374,7 @@ country_event = {
     months = 300
   }
   option = {
-    name = flavor_bng.9.a
+    name = flavor_bng.9.a 	# Tear down those Forts
     561 = {
       add_local_autonomy = -50
     }
@@ -369,7 +384,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_bng.9.b
+    name = flavor_bng.9.b 	# Ignore this.
     561 = {
       add_local_autonomy = 50
     }
@@ -385,6 +400,7 @@ country_event = {
     }
   }
 }
+# The Black Hole of Calcutta
 country_event = {
   id = flavor_bng.10
   title = flavor_bng.10.t
@@ -412,6 +428,7 @@ country_event = {
     }
   }
 }
+#The Black hole of Calcutta
 country_event = {
   id = flavor_bng.11
   title = flavor_bng.11.t
@@ -429,6 +446,8 @@ country_event = {
     }
   }
 }
+# The Tiger Triumphant
+# By Daniel Tolman
 country_event = {
   id = flavor_bng.12
   title = flavor_bng.12.t

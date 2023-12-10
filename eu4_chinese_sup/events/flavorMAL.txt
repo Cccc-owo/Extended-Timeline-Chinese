@@ -1,5 +1,10 @@
+########################################
+# Events for Mali
+# written by Johan Andersson
+########################################
 namespace = flavor_mal
 normal_or_historical_nations = yes
+# Malian Authority Under Threat
 country_event = {
   id = flavor_mal.1
   title = flavor_mal.1.t
@@ -23,7 +28,7 @@ country_event = {
     }
     NOT = {
       has_dlc = "Origins"
-    }
+    } 	# Mali gets a whole disaster instead for its authority question
   }
   mean_time_to_happen = {
     months = 36
@@ -54,6 +59,11 @@ country_event = {
     release = JOL
   }
 }
+########################################
+# Events for Mali
+# written by Henrik Lohmander
+########################################
+# Rise of Fulo
 province_event = {
   id = flavor_mal.2
   title = flavor_mal.2.t
@@ -79,12 +89,12 @@ province_event = {
         limit = {
           OR = {
             area = tekrur_area
-            province_id = 1112
-            province_id = 1120
-            province_id = 2238
-            province_id = 2243
-            province_id = 2245
-            province_id = 2246
+            province_id = 1112 	# Trarza
+            province_id = 1120 	# Bambuk
+            province_id = 2238 	# Kantor
+            province_id = 2243 	# Termes
+            province_id = 2245 	# Wagadu
+            province_id = 2246 	# Bagena
           }
         }
         add_core = FUL
@@ -107,12 +117,12 @@ province_event = {
           limit = {
             OR = {
               area = tekrur_area
-              province_id = 1112
-              province_id = 1120
-              province_id = 2238
-              province_id = 2243
-              province_id = 2245
-              province_id = 2246
+              province_id = 1112 	# Trarza
+              province_id = 1120 	# Bambuk
+              province_id = 2238 	# Kantor
+              province_id = 2243 	# Termes
+              province_id = 2245 	# Wagadu
+              province_id = 2246 	# Bagena
             }
             is_empty = no
           }
@@ -146,12 +156,12 @@ province_event = {
       limit = {
         OR = {
           area = tekrur_area
-          province_id = 1112
-          province_id = 1120
-          province_id = 2238
-          province_id = 2243
-          province_id = 2245
-          province_id = 2246
+          province_id = 1112 	# Trarza
+          province_id = 1120 	# Bambuk
+          province_id = 2238 	# Kantor
+          province_id = 2243 	# Termes
+          province_id = 2245 	# Wagadu
+          province_id = 2246 	# Bagena
         }
         is_empty = yes
       }
@@ -160,8 +170,8 @@ province_event = {
     hidden_effect = {
       FUL = {
         define_ruler = {
-          name = "ÔSõR ìêÚT…b"  # Koli Tengella
-          dynasty = "∑V<S—y"  # Denianke
+          name = "ÔSõR ìêÚT…b" 	# Koli Tengella
+          dynasty = "∑V<S—y" 	# Denianke
           change_mil = 4
           claim = 100
         }
@@ -189,6 +199,7 @@ province_event = {
     }
   }
   option = {
+    #Switch tag to Fulo
     name = flavor_mal.2.b
     trigger = {
       owner = {
@@ -199,12 +210,12 @@ province_event = {
       limit = {
         OR = {
           area = tekrur_area
-          province_id = 1112
-          province_id = 1120
-          province_id = 2238
-          province_id = 2243
-          province_id = 2245
-          province_id = 2246
+          province_id = 1112 	# Trarza
+          province_id = 1120 	# Bambuk
+          province_id = 2238 	# Kantor
+          province_id = 2243 	# Termes
+          province_id = 2245 	# Wagadu
+          province_id = 2246 	# Bagena
         }
         is_empty = yes
       }
@@ -213,8 +224,8 @@ province_event = {
     hidden_effect = {
       FUL = {
         define_ruler = {
-          name = "ÔSõR ìêÚT…b"  # Koli Tengella
-          dynasty = "∑V<S—y"  # Denianke
+          name = "ÔSõR ìêÚT…b" 	# Koli Tengella
+          dynasty = "∑V<S—y" 	# Denianke
           change_mil = 4
           claim = 100
         }
@@ -245,6 +256,7 @@ province_event = {
     }
   }
 }
+# Event to send to other province owners of the area when Fulo is formed.
 country_event = {
   id = flavor_mal.3
   title = flavor_mal.2.t
@@ -263,12 +275,12 @@ country_event = {
         limit = {
           OR = {
             area = tekrur_area
-            province_id = 1112
-            province_id = 1120
-            province_id = 2238
-            province_id = 2243
-            province_id = 2245
-            province_id = 2246
+            province_id = 1112 	# Trarza
+            province_id = 1120 	# Bambuk
+            province_id = 2238 	# Kantor
+            province_id = 2243 	# Termes
+            province_id = 2245 	# Wagadu
+            province_id = 2246 	# Bagena
           }
         }
         add_core = FUL
@@ -276,6 +288,7 @@ country_event = {
     }
   }
 }
+# The Wangara and the Portuguese
 country_event = {
   id = flavor_mal.4
   title = flavor_mal.4.t
@@ -285,7 +298,7 @@ country_event = {
   trigger = {
     tag = MAL
     exists = POR
-    is_year = 1455
+    is_year = 1455 	# ie after the initial, more violent encounters.
     any_owned_province = {
       has_port = yes
       has_discovered = POR
@@ -302,6 +315,7 @@ country_event = {
     }
   }
 }
+#Portuguese Traders Meddle in Local Politics.
 country_event = {
   id = flavor_mal.5
   title = flavor_mal.5.t
@@ -321,7 +335,7 @@ country_event = {
     months = 300
   }
   option = {
-    name = flavor_mal.5.a
+    name = flavor_mal.5.a 	# Act decisively to limit Portuguese influence
     add_country_modifier = {
       name = mal_wangaras_upset
       duration = -1
@@ -335,7 +349,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mal.5.b
+    name = flavor_mal.5.b 	# The problem lies with the disloyal chiefs
     add_stability_or_adm_power = yes
     every_owned_province = {
       limit = {
@@ -354,6 +368,7 @@ country_event = {
     }
   }
 }
+#Increasing Islamisation of the Aristocracy
 country_event = {
   id = flavor_mal.6
   title = flavor_mal.6.t
@@ -368,7 +383,7 @@ country_event = {
     months = 12
   }
   option = {
-    name = flavor_mal.6.a
+    name = flavor_mal.6.a 	# Convert our people!
     add_piety = 0.15
     if = {
       limit = {
@@ -393,7 +408,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mal.6.b
+    name = flavor_mal.6.b 	# Let us not rock the boat.
     add_stability_or_adm_power = yes
     add_piety = -0.15
     if = {
@@ -407,6 +422,7 @@ country_event = {
     }
   }
 }
+#Unsafe Roads
 country_event = {
   id = flavor_mal.7
   title = flavor_mal.7.t
@@ -541,6 +557,7 @@ country_event = {
     }
   }
 }
+#Rise of Kaabu
 country_event = {
   id = flavor_mal.8
   title = flavor_mal.8.t
@@ -628,7 +645,7 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        leader = "(Ñlö ÔSõR pg±ê"  # Sami Koli Jeenung
+        leader = "(Ñlö ÔSõR pg±ê" 	# Sami Koli Jeenung
       }
       clr_province_flag = centre_of_kaabu_rebelion
     }
@@ -641,13 +658,19 @@ country_event = {
     release = KBU
     KBU = {
       define_ruler = {
-        name = "(Ñlö ÔSõR"  # Sama Koli
-        dynasty = "pg±ê"  # Jeenung
+        name = "(Ñlö ÔSõR" 	# Sama Koli
+        dynasty = "pg±ê" 	# Jeenung
         claim = 100
       }
     }
   }
 }
+########################################
+# Events for Mali
+# written by Ogulcan Yildirim
+########################################
+# Decline of Mali Disaster
+# Disaster start
 country_event = {
   id = flavor_mal.9
   title = flavor_mal.9.t
@@ -671,6 +694,7 @@ country_event = {
     }
   }
 }
+# Disaster ends
 country_event = {
   id = flavor_mal.10
   title = flavor_mal.10.t
@@ -713,6 +737,7 @@ country_event = {
     }
   }
 }
+# Pretender to Mali
 country_event = {
   id = flavor_mal.11
   title = flavor_mal.11.t
@@ -778,6 +803,7 @@ country_event = {
     }
   }
 }
+# Nobles Estate revolt in [area]
 country_event = {
   id = flavor_mal.12
   title = flavor_mal.12.t
@@ -863,6 +889,7 @@ country_event = {
     }
   }
 }
+# Clergy Estate revolt in [area]
 country_event = {
   id = flavor_mal.13
   title = flavor_mal.13.t
@@ -957,6 +984,7 @@ country_event = {
     }
   }
 }
+# Dhimmi Estate revolt in [area]
 country_event = {
   id = flavor_mal.14
   title = flavor_mal.14.t
@@ -1063,6 +1091,7 @@ country_event = {
     }
   }
 }
+# Burgher Estate revolt in [area]
 country_event = {
   id = flavor_mal.15
   title = flavor_mal.15.t
@@ -1148,6 +1177,7 @@ country_event = {
     }
   }
 }
+# Province declares independence
 country_event = {
   id = flavor_mal.16
   title = flavor_mal.16.t
@@ -1223,6 +1253,7 @@ country_event = {
     add_prestige = -10
   }
 }
+# Kaabu declares independence
 country_event = {
   id = flavor_mal.17
   title = flavor_mal.17.t
@@ -1288,6 +1319,7 @@ country_event = {
     release = KBU
   }
 }
+# Jolof declares independence
 country_event = {
   id = flavor_mal.18
   title = flavor_mal.18.t
@@ -1349,6 +1381,7 @@ country_event = {
     release = JOL
   }
 }
+# Jenne fights against Mali occupation
 country_event = {
   id = flavor_mal.19
   title = flavor_mal.19.t
@@ -1410,6 +1443,7 @@ country_event = {
     release = JNN
   }
 }
+# Kongs fights against Mali occupation
 country_event = {
   id = flavor_mal.20
   title = flavor_mal.20.t
@@ -1470,6 +1504,7 @@ country_event = {
     release = KNG
   }
 }
+# Subjects don't recognize Mali
 country_event = {
   id = flavor_mal.21
   title = flavor_mal.21.t
@@ -1508,6 +1543,7 @@ country_event = {
     }
   }
 }
+# Peasants revolt in [area]
 country_event = {
   id = flavor_mal.22
   title = flavor_mal.22.t
@@ -1570,6 +1606,7 @@ country_event = {
     }
   }
 }
+# Scandal in [Root.GetName]
 country_event = {
   id = flavor_mal.23
   title = flavor_mal.23.t
@@ -1605,6 +1642,7 @@ country_event = {
     }
   }
 }
+#The quest for Muhammad ibn Qu's lost fleet
 country_event = {
   id = flavor_mal.24
   title = flavor_mal.24.t
@@ -1622,6 +1660,7 @@ country_event = {
     }
   }
 }
+#NEW LAND!
 country_event = {
   id = flavor_mal.25
   title = flavor_mal.25.t
@@ -1635,6 +1674,7 @@ country_event = {
         755 = {
           OR = {
             owner = {
+              #Mission reward should be not ruined by some native OPM
               was_player = no
               ai = yes
               NOT = {
@@ -1645,13 +1685,14 @@ country_event = {
           }
         }
       }
-      add_sailors = -1000
+      add_sailors = -1000 	# They are now settling the province
     }
     755 = {
       if = {
         limit = {
           OR = {
             owner = {
+              #Mission reward should be not ruined by some native OPM
               was_player = no
               ai = yes
               NOT = {
@@ -1681,6 +1722,7 @@ country_event = {
     }
   }
 }
+#Mali goes full out on ivory trade
 country_event = {
   id = flavor_mal.26
   title = flavor_mal.26.t
@@ -1688,6 +1730,7 @@ country_event = {
   picture = AFRICAN_EUROPEAN_PURCHASE_eventPicture
   is_triggered_only = yes
   option = {
+    #Ivory trade!
     name = flavor_mal.26.a
     add_years_of_owned_provinces_production_income = {
       years = 3
@@ -1717,6 +1760,7 @@ country_event = {
     }
   }
 }
+#Info for other players that Ivory has increased price
 country_event = {
   id = flavor_mal.27
   title = flavor_mal.27.t
@@ -1724,6 +1768,7 @@ country_event = {
   picture = TRADEGOODS_eventPicture
   is_triggered_only = yes
   option = {
+    #Ivory trade!
     name = flavor_mal.27.a
     tooltip = {
       change_price = {
@@ -1738,6 +1783,7 @@ country_event = {
     }
   }
 }
+#Reconquest of the city of Timbuktu
 country_event = {
   id = flavor_mal.28
   title = flavor_mal.28.t
@@ -1745,6 +1791,7 @@ country_event = {
   picture = AFRICAN_FIGHT_EUROPEANS_eventPicture
   is_triggered_only = yes
   option = {
+    #Move capital to Timbuktu
     name = flavor_mal.28.a
     set_capital = 1132
     1132 = {
@@ -1768,6 +1815,7 @@ country_event = {
     }
   }
   option = {
+    #Develop own capital instead
     name = flavor_mal.28.b
     capital_scope = {
       add_base_tax = 2
@@ -1790,6 +1838,7 @@ country_event = {
     }
   }
 }
+#The Great Mosque of DjennÈ
 country_event = {
   id = flavor_mal.29
   title = flavor_mal.29.t
@@ -1820,6 +1869,7 @@ country_event = {
     }
   }
 }
+#Reintegrate of Songhai
 country_event = {
   id = flavor_mal.30
   title = flavor_mal.30.t
@@ -1843,6 +1893,7 @@ country_event = {
     }
   }
 }
+#Invest money into Maghreb to gain favorable allies
 country_event = {
   id = flavor_mal.31
   title = flavor_mal.31.t
@@ -1850,6 +1901,7 @@ country_event = {
   picture = SAHARA_eventPicture
   is_triggered_only = yes
   option = {
+    #Send a gold gift to the Maghreb people
     name = flavor_mal.31.a
     add_treasury = -400
     every_country = {
@@ -1889,6 +1941,7 @@ country_event = {
     }
   }
   option = {
+    #Send an ivory gift to the Maghreb people
     name = flavor_mal.31.b
     add_treasury = -200
     every_country = {
@@ -1928,6 +1981,7 @@ country_event = {
     }
   }
   option = {
+    #Send no gold whatsoever
     name = flavor_mal.31.c
     add_prestige = 10
     ai_chance = {
@@ -1948,6 +2002,7 @@ country_event = {
     }
   }
 }
+#Choose trade colony to purchase
 country_event = {
   id = flavor_mal.32
   title = flavor_mal.32.t
@@ -1960,6 +2015,7 @@ country_event = {
     }
   }
   option = {
+    #Try to buy Gibraltar
     name = flavor_mal.32.a
     goto = 226
     trigger = {
@@ -1994,6 +2050,7 @@ country_event = {
     }
   }
   option = {
+    #Try to buy Corsica
     name = flavor_mal.32.b
     goto = 1247
     trigger = {
@@ -2028,6 +2085,7 @@ country_event = {
     }
   }
   option = {
+    #Try to buy Malta
     name = flavor_mal.32.c
     goto = 126
     trigger = {
@@ -2062,6 +2120,7 @@ country_event = {
     }
   }
   option = {
+    #Try to buy Minorca
     name = flavor_mal.32.d
     goto = 4559
     trigger = {
@@ -2096,6 +2155,7 @@ country_event = {
     }
   }
   option = {
+    #Try to buy Nice
     name = flavor_mal.32.e
     goto = 102
     trigger = {
@@ -2130,6 +2190,7 @@ country_event = {
     }
   }
   option = {
+    #I need more time to think about it
     name = flavor_mal.32.f
     custom_tooltip = flavor_mal.32.f.tt
     hidden_effect = {
@@ -2140,6 +2201,7 @@ country_event = {
     }
   }
   option = {
+    #I already have them all though
     name = flavor_mal.32.g
     trigger = {
       owns_or_non_sovereign_subject_of = 226
@@ -2155,6 +2217,7 @@ country_event = {
     }
   }
 }
+#The gold offer from Mali
 country_event = {
   id = flavor_mal.33
   title = flavor_mal.33.t
@@ -2163,6 +2226,7 @@ country_event = {
   goto = mal_colony_to_buy
   is_triggered_only = yes
   option = {
+    #Thanks for the money
     name = flavor_mal.33.a
     event_target:mal_colony_to_buy = {
       remove_core = ROOT
@@ -2250,6 +2314,7 @@ country_event = {
     }
   }
   option = {
+    #Nah
     name = flavor_mal.33.b
     event_target:mal_colony_to_buy = {
       add_core = FROM
@@ -2294,6 +2359,7 @@ country_event = {
     }
   }
 }
+#Mali gets the European colony
 country_event = {
   id = flavor_mal.34
   title = flavor_mal.34.t
@@ -2302,6 +2368,7 @@ country_event = {
   goto = mal_colony_to_buy
   is_triggered_only = yes
   option = {
+    #Lovely
     name = flavor_mal.34.a
     add_treasury = -2000
     tooltip = {
@@ -2321,6 +2388,7 @@ country_event = {
     }
   }
 }
+#Mali gets refused
 country_event = {
   id = flavor_mal.35
   title = flavor_mal.35.t
@@ -2329,6 +2397,7 @@ country_event = {
   goto = mal_colony_to_buy
   is_triggered_only = yes
   option = {
+    #Aww... then I must take it by force then
     name = flavor_mal.35.a
     tooltip = {
       event_target:mal_colony_to_buy = {
@@ -2345,6 +2414,7 @@ country_event = {
     }
   }
 }
+#Mali inflates the market of Europe with GOLD - Deprecated
 country_event = {
   id = flavor_mal.36
   title = flavor_mal.36.t
@@ -2353,6 +2423,7 @@ country_event = {
   is_triggered_only = yes
   major = yes
   option = {
+    #Gold for the entire market!
     name = flavor_mal.36.a
     add_treasury = -15000
     custom_tooltip = flavor_mal.36.a.tt
@@ -2455,6 +2526,7 @@ country_event = {
     }
   }
 }
+#Donation to Mecca and the brethren in faith
 country_event = {
   id = flavor_mal.37
   title = flavor_mal.37.t
@@ -2538,6 +2610,7 @@ country_event = {
     }
   }
 }
+#Mecca gains a Great Mosque
 country_event = {
   id = flavor_mal.38
   title = flavor_mal.38.t
@@ -2562,6 +2635,7 @@ country_event = {
     }
   }
 }
+#Mecca gains a Counting House
 country_event = {
   id = flavor_mal.39
   title = flavor_mal.39.t
@@ -2586,6 +2660,8 @@ country_event = {
     }
   }
 }
+#Mansa's Journey
+#The pilgrimage goes in this order: Maghreb -> Iberia -> France -> Italy -> South Germany -> Balkans -> Anatolia -> Mashriq -> Arabia -> Horn of Africa -> Home
 country_event = {
   id = flavor_mal.40
   title = flavor_mal.40.t
@@ -2593,6 +2669,7 @@ country_event = {
   picture = AFRICAN_CARAVAN_eventPicture
   is_triggered_only = yes
   option = {
+    #Let the Mansa go onto the pilgrimage
     name = flavor_mal.40.a
     custom_tooltip = flavor_mal.40.a.tt
     add_country_modifier = {
@@ -2614,6 +2691,7 @@ country_event = {
     }
   }
   option = {
+    #Let the advisors go onto the pilgrimage
     name = flavor_mal.40.b
     custom_tooltip = flavor_mal.40.b.tt
     remove_advisor_by_category = ADM
@@ -2636,6 +2714,7 @@ country_event = {
     }
   }
   option = {
+    #We just take the classical route instead
     name = flavor_mal.40.c
     custom_tooltip = flavor_mal.40.c.tt
     add_country_modifier = {
@@ -2673,6 +2752,7 @@ country_event = {
     }
   }
 }
+#Arriving in a new area
 country_event = {
   id = flavor_mal.41
   title = flavor_mal.41.t
@@ -2980,6 +3060,7 @@ country_event = {
           which = trade_income_variable_tt
           value = 100
         }
+        #Inflation for target
         multiply_variable = {
           which = trade_income_variable_tt
           value = 0.25
@@ -2997,6 +3078,7 @@ country_event = {
     }
   }
   option = {
+    #Be generos
     name = flavor_mal.41.a
     trigger = {
       NOT = {
@@ -3015,6 +3097,7 @@ country_event = {
       }
       mal_mansa_musa_visit_effect = yes
     }
+    #Special case:
     if = {
       limit = {
         has_country_flag = mal_journey_to_arabia
@@ -3055,6 +3138,7 @@ country_event = {
     }
   }
   option = {
+    #Be moderate
     name = flavor_mal.41.b
     trigger = {
       NOT = {
@@ -3068,6 +3152,7 @@ country_event = {
       mal_mansa_musa_visit_effect = yes
     }
     add_piety = 0.05
+    #Special case:
     if = {
       limit = {
         has_country_flag = mal_journey_to_arabia
@@ -3107,6 +3192,7 @@ country_event = {
     }
   }
   option = {
+    #Try to not draw attention
     name = flavor_mal.41.c
     trigger = {
       NOT = {
@@ -3125,6 +3211,7 @@ country_event = {
     }
   }
   option = {
+    #Glad to be back home
     name = flavor_mal.41.d
     trigger = {
       has_country_flag = mal_journey_to_home
@@ -3143,6 +3230,7 @@ country_event = {
     }
   }
   option = {
+    #Quite nice here (fringe case - nobody has a capital in this region)
     name = flavor_mal.41.e
     trigger = {
       NOT = {
@@ -3157,6 +3245,7 @@ country_event = {
     }
   }
   option = {
+    #Quite nice here (fringe case - Mali is the only worthy power here)
     name = flavor_mal.41.f
     trigger = {
       NOT = {
@@ -3174,6 +3263,7 @@ country_event = {
     mal_travel_to_next_area = yes
   }
 }
+#Travelling - Hidden
 country_event = {
   id = flavor_mal.42
   title = none
@@ -3186,6 +3276,8 @@ country_event = {
       has_country_modifier = mal_advisors_journey
     }
     OR = {
+      #The times are estimated under the condition that your capital is in West Africa
+      #A Mali which has its capital God knows where breaks its own immersion - fair trade off for moving your capital away imo
       had_country_flag = {
         flag = mal_journey_to_iberia
         days = 120
@@ -3256,6 +3348,7 @@ country_event = {
     }
   }
 }
+#The Mansa is visiting - and he is generous!
 country_event = {
   id = flavor_mal.43
   title = flavor_mal.43.t
@@ -3302,6 +3395,7 @@ country_event = {
         which = trade_income_variable_tt
         value = 100
       }
+      #Inflation for target
       multiply_variable = {
         which = trade_income_variable_tt
         value = 0.25
@@ -3309,6 +3403,7 @@ country_event = {
     }
   }
   option = {
+    #Accept gift
     name = flavor_mal.43.a
     custom_tooltip = flavor_mal.43.a.tt
     add_inflation_scaled_to_trade = {
@@ -3339,6 +3434,7 @@ country_event = {
     }
   }
   option = {
+    #Decline
     name = flavor_mal.43.b
     custom_tooltip = flavor_mal.43.b.tt
     add_country_modifier = {
@@ -3361,6 +3457,7 @@ country_event = {
     }
   }
 }
+#They accepted our gift!
 country_event = {
   id = flavor_mal.44
   title = flavor_mal.44.t
@@ -3402,6 +3499,7 @@ country_event = {
     }
   }
   option = {
+    #Yay!
     name = flavor_mal.44.a
     reverse_add_opinion = {
       who = FROM
@@ -3418,6 +3516,7 @@ country_event = {
     }
   }
 }
+#They declined our gift!
 country_event = {
   id = flavor_mal.45
   title = flavor_mal.45.t
@@ -3464,12 +3563,14 @@ country_event = {
     }
   }
   option = {
+    #Welp... their misfortune
     name = flavor_mal.45.a
     ai_chance = {
       factor = 1
     }
   }
   option = {
+    #Maybe somebody else wants it instead
     name = flavor_mal.45.b
     trigger = {
       FROM = {
@@ -3504,6 +3605,7 @@ country_event = {
     }
   }
 }
+#The Mansa is visiting!
 country_event = {
   id = flavor_mal.46
   title = flavor_mal.46.t
@@ -3524,6 +3626,7 @@ country_event = {
     }
   }
   option = {
+    #Oof
     name = flavor_mal.46.a
     tooltip = {
       add_country_modifier = {
@@ -3533,6 +3636,7 @@ country_event = {
     }
   }
 }
+#End of journey - Mansa is dead
 country_event = {
   id = flavor_mal.47
   title = flavor_mal.47.t
@@ -3543,6 +3647,7 @@ country_event = {
     has_country_modifier = mal_mansas_journey
   }
   option = {
+    #Oh...
     name = flavor_mal.47.a
     custom_tooltip = flavor_mal.47.a.tt
     add_piety = 0.25
@@ -3553,6 +3658,7 @@ country_event = {
     remove_country_modifier = mal_mansas_journey
   }
 }
+#Mansa visits Mecca ... again!
 country_event = {
   id = flavor_mal.48
   title = flavor_mal.48.t
@@ -3560,6 +3666,7 @@ country_event = {
   picture = MALI_RULER_eventPicture
   is_triggered_only = yes
   option = {
+    #Lovely
     name = flavor_mal.48.a
     385 = {
       add_base_tax = 2

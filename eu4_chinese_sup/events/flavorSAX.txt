@@ -1,5 +1,11 @@
+#################################################
+# Flavor Events for Saxony
+# Scripted by Sara Wendel-Örtqvist (flavor_sax.1)
+# And Pierre du Plessis (the rest)
+#################################################
 namespace = flavor_sax
 normal_or_historical_nations = yes
+# Johann Sebastian Bach
 country_event = {
   id = flavor_sax.1
   title = "flavor_sax.EVTNAME1"
@@ -23,6 +29,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+#Leipzig Prospers
 province_event = {
   id = flavor_sax.3
   title = flavor_sax.3.name
@@ -44,6 +51,7 @@ province_event = {
     add_base_production = 3
   }
 }
+#The Saxon Fratricidal War
 country_event = {
   id = flavor_sax.4
   title = flavor_sax.4.name
@@ -56,11 +64,11 @@ country_event = {
   trigger = {
     tag = SAX
     senior_union_with = THU
-    owns_core_province = 59
+    owns_core_province = 59 	# Wittenberg
     is_at_war = no
     is_year = 1445
-    has_ruler = "SyrÈp II"  # Friedrich II
-    dynasty = "¯Q æ—÷^"  # von Wettin
+    has_ruler = "SyrÈp II" 	# Friedrich II
+    dynasty = "¯Q æ—÷^" 	# von Wettin
   }
   immediate = {
     hidden_effect = {
@@ -95,8 +103,8 @@ country_event = {
           spawn_rebels = {
             size = 2
             type = pretender_rebels
-            leader = "ZÉ^"  # Wilhelm
-            leader_dynasty = "¯Q æ—÷^"  # von Wettin
+            leader = "ZÉ^" 	# Wilhelm
+            leader_dynasty = "¯Q æ—÷^" 	# von Wettin
           }
         }
         add_claim = 59
@@ -120,10 +128,12 @@ country_event = {
       }
     }
     ai_chance = {
+      #less bad option
       factor = 2
     }
   }
 }
+#The Saxon Fratricidal War - gave us Wittenberg
 country_event = {
   id = flavor_sax.5
   title = flavor_sax.5.name
@@ -131,7 +141,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
-    name = "EXCELLENT"
+    name = EXCELLENT
     from = {
       59 = {
         remove_core = from
@@ -141,6 +151,7 @@ country_event = {
     }
   }
 }
+#The Saxon Fratricidal War - didn't give us Wittenberg
 country_event = {
   id = flavor_sax.51
   title = flavor_sax.51.name
@@ -153,13 +164,14 @@ country_event = {
       spawn_rebels = {
         size = 2
         type = pretender_rebels
-        leader = "ZÉ^"  # Wilhelm
-        leader_dynasty = "¯Q æ—÷^"  # von Wettin
+        leader = "ZÉ^" 	# Wilhelm
+        leader_dynasty = "¯Q æ—÷^" 	# von Wettin
       }
     }
     add_claim = 59
   }
 }
+#Altenburger Prinzenraub - Plot Fails
 country_event = {
   id = flavor_sax.6
   title = flavor_sax.6.name
@@ -181,7 +193,7 @@ country_event = {
       }
     }
     is_at_war = no
-    dynasty = "¯Q æ—÷^"  # von Wettin
+    dynasty = "¯Q æ—÷^" 	# von Wettin
     has_country_flag = sax_provoked_wilhelm_bad
     NOT = {
       had_country_flag = {
@@ -237,6 +249,7 @@ country_event = {
     }
   }
 }
+#Altenburger Prinzenraub - Plot Succeeds
 country_event = {
   id = flavor_sax.7
   title = flavor_sax.7.name
@@ -258,7 +271,7 @@ country_event = {
       }
     }
     is_at_war = no
-    dynasty = "¯Q æ—÷^"  # von Wettin
+    dynasty = "¯Q æ—÷^" 	# von Wettin
     has_country_flag = sax_provoked_wilhelm_worse
     NOT = {
       had_country_flag = {
@@ -341,6 +354,7 @@ country_event = {
     }
   }
 }
+#The Treaty of Leipzig
 country_event = {
   id = flavor_sax.8
   title = flavor_sax.8.name
@@ -349,7 +363,7 @@ country_event = {
   is_triggered_only = yes
   trigger = {
     tag = SAX
-    dynasty = "¯Q æ—÷^"  # von Wettin
+    dynasty = "¯Q æ—÷^" 	# von Wettin
     has_country_flag = sax_thuringen_split_to_happen
     senior_union_with = THU
     has_regency = no
@@ -365,8 +379,8 @@ country_event = {
       THU = {
         break_union = root
         define_ruler = {
-          name = "i`¯eyr"  # Ernst
-          dynasty = "¯Q æ—÷^"  # von Wettin
+          name = "i`¯eyr" 	# Ernst
+          dynasty = "¯Q æ—÷^" 	# von Wettin
           age = 30
           dip = 2
           adm = 2
@@ -410,6 +424,7 @@ country_event = {
     }
   }
 }
+#Treaty of Leipzig - Let Ernst go
 country_event = {
   id = flavor_sax.81
   title = flavor_sax.81.name
@@ -420,8 +435,8 @@ country_event = {
     name = flavor_sax.81.opt
     break_union = SAX
     define_ruler = {
-      name = "i`¯eyr"  # Ernst
-      dynasty = "¯Q æ—÷^"  # von Wettin
+      name = "i`¯eyr" 	# Ernst
+      dynasty = "¯Q æ—÷^" 	# von Wettin
       age = 30
       dip = 2
       adm = 2
@@ -438,6 +453,7 @@ country_event = {
     }
   }
 }
+#Treaty of Leipzig - Broke the deal
 country_event = {
   id = flavor_sax.82
   title = flavor_sax.82.name
@@ -458,6 +474,7 @@ country_event = {
     add_liberty_desire = 50
   }
 }
+#Get the Saxon Electorate
 country_event = {
   id = flavor_sax.9
   title = flavor_sax.9.name
@@ -481,7 +498,7 @@ country_event = {
   trigger = {
     tag = THU
     is_elector = no
-    dynasty = "¯Q æ—÷^"  # von Wettin
+    dynasty = "¯Q æ—÷^" 	# von Wettin
     SAX = {
       is_subject_of = THU
       is_elector = yes
@@ -536,6 +553,8 @@ country_event = {
     }
   }
 }
+#on_siege_won_country
+#Get the Saxon Electorate (version 2)
 country_event = {
   id = flavor_sax.10
   title = flavor_sax.9.name
@@ -562,6 +581,7 @@ country_event = {
     }
   }
 }
+#Transfer the Saxon Electorate to Thuringia
 country_event = {
   id = flavor_sax.11
   title = flavor_sax.11.name
@@ -570,6 +590,7 @@ country_event = {
   major = yes
   is_triggered_only = yes
   option = {
+    #transfer the electorate
     name = flavor_sax.11.A
     SAX = {
       elector = no
@@ -590,6 +611,7 @@ country_event = {
     }
   }
   option = {
+    #don't transfer the electorate
     name = flavor_sax.11.B
     THU = {
       add_opinion = {

@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Mewar
+# Scripted by Henrik Lohmander
+########################################
 namespace = flavor_mer
 normal_or_historical_nations = yes
+#Vijaya Sthambha
 country_event = {
   id = flavor_mer.1
   title = "flavor_mer.1.t"
@@ -17,13 +22,14 @@ country_event = {
     months = 18
   }
   option = {
-    name = "flavor_mer.1.a"
+    name = "flavor_mer.1.a" 	# Perfection!
     add_country_modifier = {
       name = "mer_vijaya_sthambha"
       duration = 3650
     }
   }
 }
+#The return of Rana Jodha Rathore
 country_event = {
   id = flavor_mer.2
   title = "flavor_mer.2.t"
@@ -53,8 +59,8 @@ country_event = {
           add_core = MAW
         }
         define_ruler = {
-          name = "EN∑V»T"  # Jodha
-          dynasty = "…b0tS"  # Rathore
+          name = "EN∑V»T" 	# Jodha
+          dynasty = "…b0tS" 	# Rathore
           culture = rajput
           religion = hinduism
           claim = 100
@@ -67,7 +73,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_mer.2.a"
+    name = "flavor_mer.2.a" 	# This means war.
     ai_chance = {
       factor = 1
     }
@@ -80,13 +86,14 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_mer.2.b"
+    name = "flavor_mer.2.b" 	# Let bygones be bygones.
     ai_chance = {
       factor = 0
     }
     custom_tooltip = flavor_mer.2.a.tt
   }
 }
+#Kumbalgarh
 country_event = {
   id = flavor_mer.3
   title = "flavor_mer.3.t"
@@ -104,7 +111,7 @@ country_event = {
     months = 48
   }
   option = {
-    name = "flavor_mer.3.a"
+    name = "flavor_mer.3.a" 	# Build Kumbalgarh
     ai_chance = {
       factor = 1
     }
@@ -117,7 +124,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_mer.3.b"
+    name = "flavor_mer.3.b" 	# Fortify the countryside instead.
     ai_chance = {
       factor = 0
     }
@@ -127,6 +134,7 @@ country_event = {
     }
   }
 }
+#Mira Bai
 country_event = {
   id = flavor_mer.4
   title = "flavor_mer.4.t"
@@ -144,10 +152,11 @@ country_event = {
     months = 210
   }
   option = {
-    name = "flavor_mer.4.a"
+    name = "flavor_mer.4.a" 	# Ok.
     add_prestige = 20
   }
 }
+#The Plot against Rana Kumbha
 country_event = {
   id = flavor_mer.5
   title = "flavor_mer.5.t"
@@ -156,7 +165,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = MER
-    has_ruler = "ÒOidFZKOW±ê õè<h"  # Kumbhakarna Singh
+    has_ruler = "ÒOidFZKOW±ê õè<h" 	# Kumbhakarna Singh
     is_year = 1460
     NOT = {
       is_year = 1470
@@ -166,11 +175,11 @@ country_event = {
     months = 30
   }
   option = {
-    name = "flavor_mer.5.a"
+    name = "flavor_mer.5.a" 	# Support Udai
     add_stability = -1
     define_ruler = {
-      name = "LN„N ÁP√ã"  # Udai Singh
-      dynasty = "â0tÍèöN"  # Sisodiya
+      name = "LN„N ÁP√ã" 	# Udai Singh
+      dynasty = "â0tÍèöN" 	# Sisodiya
       religion = hinduism
       culture = rajput
     }
@@ -187,17 +196,17 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 2
-        leader = "WO„y"  # Raimal
-        leader_dynasty = "â0tÍèöN"  # Sisodiya
+        leader = "WO„y" 	# Raimal
+        leader_dynasty = "â0tÍèöN" 	# Sisodiya
       }
     }
   }
   option = {
-    name = "flavor_mer.5.b"
+    name = "flavor_mer.5.b" 	# Support Raimal
     add_stability = -1
     define_ruler = {
-      name = "WO„y"  # Raimal
-      dynasty = "â0tÍèöN"  # Sisodiya
+      name = "WO„y" 	# Raimal
+      dynasty = "â0tÍèöN" 	# Sisodiya
       culture = rajput
       religion = hinduism
     }
@@ -214,8 +223,8 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 2
-        leader = "LN„N"  # Udai
-        leader_dynasty = "â0tÍèöN"  # Sisodiya
+        leader = "LN„N" 	# Udai
+        leader_dynasty = "â0tÍèöN" 	# Sisodiya
       }
     }
   }

@@ -1,5 +1,10 @@
+########################################
+# Events for Naples
+# written by Johan Andersson
+########################################
 namespace = flavor_nap
 normal_or_historical_nations = yes
+# The Baronial Revolt
 country_event = {
   id = flavor_nap.1
   title = flavor_nap.1.t
@@ -24,7 +29,7 @@ country_event = {
       has_country_flag = naples_submits_to_the_pope
     }
     NOT = {
-      dynasty = "·V ætbSæt"  # de Valois
+      dynasty = "·V ætbSæt" 	# de Valois
     }
     exists = FRA
     FRA = {
@@ -63,6 +68,7 @@ country_event = {
     }
   }
 }
+# France gets happy
 country_event = {
   id = flavor_nap.2
   title = flavor_nap.2.t
@@ -76,6 +82,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Renaissance Centre
 country_event = {
   id = flavor_nap.3
   title = flavor_nap.3.t
@@ -138,6 +145,7 @@ country_event = {
     }
   }
 }
+#Baroque Era
 country_event = {
   id = flavor_nap.4
   title = flavor_nap.4.t
@@ -168,6 +176,7 @@ country_event = {
     }
   }
 }
+# Masaniello's Revolt
 country_event = {
   id = flavor_nap.5
   title = flavor_nap.5.t
@@ -241,7 +250,7 @@ country_event = {
       spawn_rebels = {
         type = particularist_rebels
         size = 2
-        leader = "lš(„…mm"  # Masaniello
+        leader = "lš(„…mm" 	# Masaniello
       }
     }
     every_owned_province = {
@@ -306,6 +315,7 @@ country_event = {
     }
   }
 }
+# Plague in Naples
 country_event = {
   id = flavor_nap.6
   title = flavor_nap.6.t
@@ -336,7 +346,12 @@ country_event = {
     }
   }
 }
+########################################
+# More Events for Naples
+# written by Pierre du Plessis
+########################################
 namespace = new_flavour_nap
+# Senatus Populusque Neapolitanus (version where NAP is not in a PU)
 country_event = {
   id = new_flavour_nap.1
   title = new_flavour_nap.1.name
@@ -386,7 +401,7 @@ country_event = {
       spawn_rebels = {
         type = nap_republican_rebels
         size = 3
-        leader = "w³uW ‰R…Q^X"  # Gennaro Annese
+        leader = "w³uW ‰R…Q^X" 	# Gennaro Annese
         win = yes
       }
     }
@@ -423,6 +438,7 @@ country_event = {
     }
   }
 }
+# Senatus Populusque Neapolitanus (version where NAP is in a PU)
 country_event = {
   id = new_flavour_nap.2
   title = new_flavour_nap.2.name
@@ -528,7 +544,7 @@ country_event = {
       spawn_rebels = {
         type = nap_republican_rebels
         size = 3
-        leader = "lš(„…mm"  # Masaniello
+        leader = "lš(„…mm" 	# Masaniello
         win = yes
       }
     }
@@ -541,6 +557,7 @@ country_event = {
     }
   }
 }
+# Senatus Populusque Neapolitanus (senior PU partner)
 country_event = {
   id = new_flavour_nap.3
   title = new_flavour_nap.2.name
@@ -554,7 +571,7 @@ country_event = {
         spawn_rebels = {
           type = nap_republican_rebels
           size = 3
-          leader = "lš(„…mm"  # Masaniello
+          leader = "lš(„…mm" 	# Masaniello
           win = yes
         }
       }
@@ -570,6 +587,7 @@ country_event = {
     }
   }
 }
+# Neapolitan Republican Emissaries to overlord's rival
 country_event = {
   id = new_flavour_nap.4
   title = new_flavour_nap.4.name
@@ -710,6 +728,7 @@ country_event = {
     }
   }
 }
+# Naples: Embassy successful
 country_event = {
   id = new_flavour_nap.5
   title = new_flavour_nap.5.name
@@ -750,6 +769,7 @@ country_event = {
     }
   }
 }
+# Naples: Embassy unsuccessful
 country_event = {
   id = new_flavour_nap.6
   title = new_flavour_nap.6.name
@@ -760,6 +780,7 @@ country_event = {
     name = new_flavour_nap.6.A
   }
 }
+# Overlord: Rival supporting rebellion
 country_event = {
   id = new_flavour_nap.7
   title = new_flavour_nap.7.name
@@ -776,6 +797,7 @@ country_event = {
     }
   }
 }
+# Sponsor country: Success notification
 country_event = {
   id = new_flavour_nap.8
   title = new_flavour_nap.8.name

@@ -27,7 +27,7 @@ granada_development_missions = {
         }
         estate_influence = {
           estate = estate_church
-          influence = 65
+          influence = 65 	# starting: 48 
         }
         NOT = {
           estate_influence = {
@@ -50,9 +50,7 @@ granada_development_missions = {
   }
   gra_palace_of_alhambra = {
     icon = mission_develop_alhambra
-    required_missions = {
-      gra_refugees_flock_to_us
-    }
+    required_missions = { gra_refugees_flock_to_us }
     position = 3
     provinces_to_highlight = {
       province_id = 223
@@ -91,9 +89,7 @@ andalusia_slot_1_missions = {
   has_country_shield = yes
   adu_develop_cordoba = {
     icon = mission_develop_cordoba
-    required_missions = {
-      gra_palace_of_alhambra
-    }
+    required_missions = { gra_palace_of_alhambra }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -141,10 +137,9 @@ andalusia_slot_1_missions = {
     }
   }
   adu_monopolize_africa = {
+    #art
     icon = mission_trade_in_gold_coast
-    required_missions = {
-      adu_explore_further
-    }
+    required_missions = { adu_explore_further }
     position = 8
     provinces_to_highlight = {
       province_id = 1466
@@ -283,9 +278,7 @@ granada_slot_2_missions = {
   }
   gra_war_footing_with_castile = {
     icon = mission_castillian_aggression
-    required_missions = {
-      gra_friends_in_high_places
-    }
+    required_missions = { gra_friends_in_high_places }
     position = 2
     trigger = {
       if = {
@@ -420,10 +413,9 @@ granada_slot_2_missions = {
     }
   }
   gra_reconquer_valencia = {
+    #art
     icon = mission_al-wadi_al-kabir
-    required_missions = {
-      gra_war_footing_with_castile
-    }
+    required_missions = { gra_war_footing_with_castile }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -472,10 +464,9 @@ granada_slot_2_missions = {
     }
   }
   gra_restore_the_andalusian_caliphate = {
+    #art
     icon = mission_al_andalus
-    required_missions = {
-      gra_reconquer_sevilla
-    }
+    required_missions = { gra_reconquer_sevilla }
     position = 4
     provinces_to_highlight = {
       area = lower_andalucia_area
@@ -576,9 +567,7 @@ adu_slot_2_missions = {
   has_country_shield = yes
   gra_restore_caliphate_cordoba = {
     icon = mission_restore_caliphate_of_cordoba
-    required_missions = {
-      gra_restore_the_andalusian_caliphate
-    }
+    required_missions = { gra_restore_the_andalusian_caliphate }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -688,10 +677,7 @@ adu_slot_2_missions = {
   }
   gra_own_iberia = {
     icon = mission_tear_down_spanish_strongholds
-    required_missions = {
-      gra_restore_caliphate_cordoba
-      adu_conquer_portugal
-    }
+    required_missions = { gra_restore_caliphate_cordoba adu_conquer_portugal }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -781,9 +767,7 @@ adu_slot_2_missions = {
   }
   gra_into_france = {
     icon = mission_the_french_menace
-    required_missions = {
-      gra_own_iberia
-    }
+    required_missions = { gra_own_iberia }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -833,9 +817,7 @@ adu_slot_2_missions = {
   }
   adu_buy_africa = {
     icon = mission_african_trade_post
-    required_missions = {
-      adu_explore_further
-    }
+    required_missions = { adu_explore_further }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -899,9 +881,7 @@ granada_slot_3_missions = {
   has_country_shield = yes
   gra_retake_ceuta = {
     icon = mission_retake_ceuta
-    required_missions = {
-      gra_friends_in_high_places
-    }
+    required_missions = { gra_friends_in_high_places }
     position = 2
     provinces_to_highlight = {
       province_id = 1751
@@ -969,10 +949,9 @@ granada_slot_3_missions = {
     }
   }
   gra_reconquer_sevilla = {
+    # art
     icon = mission_turning_the_tables
-    required_missions = {
-      gra_war_footing_with_castile
-    }
+    required_missions = { gra_war_footing_with_castile }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1043,9 +1022,7 @@ andalusia_slot_3_missions = {
   has_country_shield = yes
   adu_conquer_portugal = {
     icon = mission_portuguese_interference
-    required_missions = {
-      gra_reconquer_sevilla
-    }
+    required_missions = { gra_reconquer_sevilla }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1106,9 +1083,7 @@ andalusia_slot_3_missions_b = {
   has_country_shield = yes
   adu_explore_further = {
     icon = mission_look_west
-    required_missions = {
-      adu_conquer_portugal
-    }
+    required_missions = { adu_conquer_portugal }
     position = 7
     trigger = {
       if = {
@@ -1135,7 +1110,7 @@ andalusia_slot_3_missions_b = {
         fire = 5
         manuever = 6
         siege = 1
-        name = "Œ‚°RFzS„vFz¯eTXÕl"  # Mustafa Azemmouri
+        name = "Œ‚°RFzS„vFz¯eTXÕl" 	# Mustafa Azemmouri
       }
     }
   }
@@ -1158,9 +1133,7 @@ andalusia_slot_3_missions_c = {
   has_country_shield = yes
   adu_caribbean_cn = {
     icon = mission_caribbean_cn
-    required_missions = {
-      adu_explore_further
-    }
+    required_missions = { adu_explore_further }
     position = 8
     provinces_to_highlight = {
       colonial_region = colonial_the_carribean
@@ -1218,10 +1191,9 @@ granada_slot_4_missions = {
     }
   }
   gra_restore_trade_superiority = {
+    #art
     icon = mission_restore_trade_superiority
-    required_missions = {
-      gra_rival_portuguese_fleet
-    }
+    required_missions = { gra_rival_portuguese_fleet }
     position = 2
     provinces_to_highlight = {
       province_id = 1293
@@ -1288,9 +1260,7 @@ andalusia_slot_4_missions = {
   has_country_shield = yes
   adu_conquer_med_islands = {
     icon = mission_mediterranean_islands
-    required_missions = {
-      gra_restore_trade_superiority
-    }
+    required_missions = { gra_restore_trade_superiority }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1348,9 +1318,7 @@ andalusia_slot_4_missions = {
   }
   adu_retake_sicily = {
     icon = mission_break_sicily
-    required_missions = {
-      adu_conquer_med_islands
-    }
+    required_missions = { adu_conquer_med_islands }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -1423,9 +1391,7 @@ andalusia_slot_4_missions = {
   }
   adu_moroccan_conquest = {
     icon = mission_reclaim_morocco
-    required_missions = {
-      gra_restore_faith_in_the_throne
-    }
+    required_missions = { gra_restore_faith_in_the_throne }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1504,9 +1470,7 @@ andalusia_slot_4_missions_b = {
   has_country_shield = yes
   adu_brazilian_cn = {
     icon = mission_colonise_brazil
-    required_missions = {
-      adu_conquer_portugal
-    }
+    required_missions = { adu_conquer_portugal }
     position = 6
     provinces_to_highlight = {
       colonial_region = colonial_brazil
@@ -1547,9 +1511,7 @@ andalusia_slot_4_missions_c = {
   has_country_shield = yes
   adu_reclaim_mecca = {
     icon = mission_into_arabia
-    required_missions = {
-      adu_fatimid_lands
-    }
+    required_missions = { adu_fatimid_lands }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1593,9 +1555,7 @@ andalusia_slot_4_missions_c = {
   }
   adu_down_tigris = {
     icon = mission_into_persia_1
-    required_missions = {
-      adu_levantine_restoration
-    }
+    required_missions = { adu_levantine_restoration }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -1718,9 +1678,7 @@ granada_slot_5_missions = {
   }
   gra_restore_faith_in_the_throne = {
     icon = mission_restore_faith_in_the_throne
-    required_missions = {
-      gra_overcome_internal_strife
-    }
+    required_missions = { gra_overcome_internal_strife }
     position = 4
     trigger = {
       if = {
@@ -1891,9 +1849,7 @@ andalusia_slot_5_missions = {
   has_country_shield = yes
   adu_own_tunisia_1 = {
     icon = mission_conquer_tunisia
-    required_missions = {
-      gra_restore_faith_in_the_throne
-    }
+    required_missions = { gra_restore_faith_in_the_throne }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -2024,9 +1980,7 @@ andalusia_slot_5_missions = {
   }
   adu_fatimid_lands = {
     icon = mission_fatimid_caliphate
-    required_missions = {
-      adu_own_tunisia_1
-    }
+    required_missions = { adu_own_tunisia_1 }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -2164,9 +2118,7 @@ andalusia_slot_5_missions = {
   }
   adu_levantine_restoration = {
     icon = mission_levantine_restoration
-    required_missions = {
-      adu_fatimid_lands
-    }
+    required_missions = { adu_fatimid_lands }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -2325,9 +2277,7 @@ andalusia_slot_5_missions = {
   }
   adu_persian_conquest = {
     icon = mission_into_persia_2
-    required_missions = {
-      adu_levantine_restoration
-    }
+    required_missions = { adu_levantine_restoration }
     position = 8
     provinces_to_highlight = {
       OR = {

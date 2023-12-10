@@ -102,10 +102,7 @@ ming_missions_1 = {
   }
   mng_restore_royal_road = {
     icon = mission_the_grand_trunk_road_dlh
-    required_missions = {
-      mng_tumu_crisis
-      mng_expand_great_wall
-    }
+    required_missions = { mng_tumu_crisis mng_expand_great_wall }
     position = 2
     provinces_to_highlight = {
       AND = {
@@ -329,12 +326,14 @@ DOM_Qing_Related_Missions_1 = {
   slot = 1
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     OR = {
       tag = MJZ
       tag = MCH
       tag = QNG
+      #tag = KRC
       tag = MYR
       tag = EJZ
       tag = NHX
@@ -415,10 +414,7 @@ DOM_Qing_Related_Missions_1 = {
   }
   qng_end_yuan = {
     icon = qng_end_yuan
-    required_missions = {
-      qng_eight_banners
-      mjz_dominate_rival_jurchens
-    }
+    required_missions = { qng_eight_banners mjz_dominate_rival_jurchens }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -526,9 +522,7 @@ chinese_kingdoms_1 = {
   }
   mandate_cities = {
     icon = mission_tumu_crisis
-    required_missions = {
-      solidify_our_borders
-    }
+    required_missions = { solidify_our_borders }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -654,9 +648,7 @@ chinese_kingdoms_1 = {
   }
   fate_of_the_mandate = {
     icon = mission_great_wall
-    required_missions = {
-      mandate_cities
-    }
+    required_missions = { mandate_cities }
     position = 3
     trigger = {
       OR = {
@@ -744,6 +736,10 @@ ming_missions_1_b = {
   potential = {
     has_dlc = "Domination"
     is_emperor_of_china = yes
+    #OR = { 
+    #	culture_group = east_asian
+    #	has_country_flag = enable_emperor_of_china_missions_flag
+    #}
     capital_scope = {
       continent = asia
     }
@@ -872,9 +868,7 @@ ming_missions_1_b = {
   }
   mng_censorate = {
     icon = mission_censorate
-    required_missions = {
-      mng_cornerstone_empire
-    }
+    required_missions = { mng_cornerstone_empire }
     position = 7
     trigger = {
       NOT = {
@@ -901,9 +895,7 @@ ming_missions_1_b = {
   }
   mng_promote_grand_coordinators = {
     icon = mission_kowtow
-    required_missions = {
-      mng_censorate
-    }
+    required_missions = { mng_censorate }
     position = 8
     trigger = {
       if = {
@@ -966,9 +958,7 @@ ming_missions_1_c = {
   has_country_shield = yes
   mng_crisis_ming_dynasty = {
     icon = mission_crisis_ming_dynasty
-    required_missions = {
-      mng_promote_grand_coordinators
-    }
+    required_missions = { mng_promote_grand_coordinators }
     position = 9
     trigger = {
       reform_level = 10
@@ -1024,6 +1014,7 @@ DOM_Qing_Missions_1_b_formable = {
   slot = 1
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     tag = QNG
@@ -1088,10 +1079,7 @@ DOM_Qing_Missions_1_b_formable = {
   }
   qng_green_standard_army = {
     icon = mission_asian_cannon
-    required_missions = {
-      qng_north_china
-      qng_incorporate_han
-    }
+    required_missions = { qng_north_china qng_incorporate_han }
     position = 11
     trigger = {
       if = {
@@ -1116,9 +1104,7 @@ DOM_Qing_Missions_1_b_formable = {
   }
   qng_modernize_the_banners = {
     icon = qng_modernize_the_banners
-    required_missions = {
-      qng_green_standard_army
-    }
+    required_missions = { qng_green_standard_army }
     position = 12
     trigger = {
       if = {
@@ -1162,9 +1148,7 @@ DOM_Qing_Missions_1_b_formable = {
   }
   qng_annex_tibet = {
     icon = mission_buddhist_monk_praying
-    required_missions = {
-      qng_ten_grand_campaigns
-    }
+    required_missions = { qng_ten_grand_campaigns }
     provinces_to_highlight = {
       region = tibet_region
       NOT = {
@@ -1204,6 +1188,12 @@ ming_missions_2 = {
   generic = no
   ai = yes
   potential = {
+    # culture_group = east_asian
+    # NOT = { primary_culture = manchu_new }
+    # NOT = { primary_culture = tibetan_new }
+    # NOT = { primary_culture = altaic_new }
+    # NOT = { primary_culture = vietnamese_new }
+    # NOT = { primary_culture = korean_new }
     has_dlc = "Domination"
     NOT = {
       map_setup = map_setup_random
@@ -1427,9 +1417,7 @@ ming_missions_2 = {
   }
   mng_sail_east = {
     icon = mission_look_west
-    required_missions = {
-      mng_inward_perfection
-    }
+    required_missions = { mng_inward_perfection }
     position = 4
     trigger = {
       OR = {
@@ -1521,12 +1509,14 @@ DOM_Qing_Missions_2 = {
   slot = 2
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     OR = {
       tag = MJZ
       tag = MCH
       tag = QNG
+      #tag = KRC
       tag = MYR
       tag = EJZ
       tag = NHX
@@ -1671,10 +1661,7 @@ DOM_Qing_Missions_2 = {
   }
   mjz_dominate_rival_jurchens = {
     icon = mission_manchu_warrior
-    required_missions = {
-      mjz_unite_home_provinces
-      mjz_unite_jurchen_tribes
-    }
+    required_missions = { mjz_unite_home_provinces mjz_unite_jurchen_tribes }
     position = 2
     provinces_to_highlight = {
       region = manchuria_region
@@ -1718,9 +1705,7 @@ DOM_Qing_Missions_2 = {
   }
   mch_issue_seven_grievances = {
     icon = mission_non-western_cavalry_raid
-    required_missions = {
-      mjz_dominate_rival_jurchens
-    }
+    required_missions = { mjz_dominate_rival_jurchens }
     position = 3
     provinces_to_highlight = {
       is_capital = yes
@@ -1787,9 +1772,7 @@ DOM_Qing_Missions_2 = {
   }
   mch_proclaim_later_jin = {
     icon = mch_proclaim_later_jin
-    required_missions = {
-      mch_issue_seven_grievances
-    }
+    required_missions = { mch_issue_seven_grievances }
     position = 4
     provinces_to_highlight = {
       region = manchuria_region
@@ -1913,9 +1896,7 @@ chinese_kingdoms_2 = {
   }
   conquer_xinan = {
     icon = mission_unite_home_region
-    required_missions = {
-      chi_independence
-    }
+    required_missions = { chi_independence }
     position = 2
     provinces_to_highlight = {
       region = xinan_region
@@ -1977,10 +1958,7 @@ chinese_kingdoms_2 = {
   }
   tributaries_or_conquest = {
     icon = mission_war_chest
-    required_missions = {
-      fate_of_the_mandate
-      chi_unify_china
-    }
+    required_missions = { fate_of_the_mandate chi_unify_china }
     position = 4
     trigger = {
       OR = {
@@ -2121,6 +2099,10 @@ ming_missions_2_b = {
   potential = {
     has_dlc = "Domination"
     is_emperor_of_china = yes
+    #OR = {
+    #	culture_group = east_asian
+    #	has_country_flag = enable_emperor_of_china_missions_flag
+    #}
     capital_scope = {
       continent = asia
     }
@@ -2321,10 +2303,7 @@ ming_missions_2_b = {
   }
   mng_examination_system = {
     icon = mission_vedic_education
-    required_missions = {
-      mng_cornerstone_empire
-      mng_reform_civil_registration
-    }
+    required_missions = { mng_cornerstone_empire mng_reform_civil_registration }
     position = 6
     trigger = {
       OR = {
@@ -2351,7 +2330,7 @@ ming_missions_2_b = {
         }
       }
       custom_tooltip = mng_insight_30_tt
-      custom_tooltip = mng_cmb_reward_tt
+      custom_tooltip = mng_cmb_reward_tt 	# Reduce Malus of the starting negative modifier by -10% 
       if = {
         limit = {
           NOT = {
@@ -2378,7 +2357,7 @@ ming_missions_2_b = {
           }
         }
       }
-      custom_tooltip = mng_erc_reward_tt
+      custom_tooltip = mng_erc_reward_tt 	# 20 mana per Eunuch privilege 
       custom_tooltip = mng_rf_reward_tt
       custom_tooltip = mng_rc_reward_tt
       custom_tooltip = mng_rotc_reward_tt
@@ -2614,19 +2593,19 @@ ming_missions_2_b = {
             has_reform = limit_imperial_court_reform
           }
           define_advisor = {
-            name = "uçNÊó"  # Buwei Zhao
+            name = "uçNÊó" 	# Buwei Zhao
             type = natural_scientist
             cost_multiplier = 0.5
             skill = 2
           }
           define_advisor = {
-            name = "löNôü"  # Yilong Ma
+            name = "löNôü" 	# Yilong Ma
             type = trader
             cost_multiplier = 0.5
             skill = 2
           }
           define_advisor = {
-            name = "mRÖç"  # Chao Meng
+            name = "mRÖç" 	# Chao Meng
             type = quartermaster
             cost_multiplier = 0.5
             skill = 2
@@ -2702,10 +2681,7 @@ ming_missions_2_b = {
   }
   mng_mutual_trade_system = {
     icon = mission_diplomatic_relation
-    required_missions = {
-      mng_censorate
-      mng_examination_system
-    }
+    required_missions = { mng_censorate mng_examination_system }
     position = 8
     trigger = {
       OR = {
@@ -2890,6 +2866,7 @@ DOM_Qing_Missions_2_b = {
   slot = 2
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     tag = QNG
@@ -2941,10 +2918,7 @@ DOM_Qing_Missions_2_b = {
   }
   qng_extinguish_ming = {
     icon = mission_crisis_ming_dynasty
-    required_missions = {
-      qng_green_standard_army
-      qng_conquer_south_china
-    }
+    required_missions = { qng_green_standard_army qng_conquer_south_china }
     position = 12
     provinces_to_highlight = {
       owned_by = MNG
@@ -2995,9 +2969,7 @@ DOM_Qing_Missions_2_b = {
   }
   qng_ten_grand_campaigns = {
     icon = qng_ten_grand_campaigns
-    required_missions = {
-      qng_extinguish_ming
-    }
+    required_missions = { qng_extinguish_ming }
     position = 13
     trigger = {
       army_size_percentage = 0.9
@@ -3128,9 +3100,7 @@ DOM_Qing_Missions_2_b = {
   }
   qng_campaign_in_burma = {
     icon = mission_indian_soldier_elephant
-    required_missions = {
-      qng_ten_grand_campaigns
-    }
+    required_missions = { qng_ten_grand_campaigns }
     position = 14
     provinces_to_highlight = {
       region = burma_region
@@ -3254,9 +3224,7 @@ chinese_kingdoms_3 = {
   }
   conquer_north_china = {
     icon = jap_conquer_north_china
-    required_missions = {
-      chi_independence
-    }
+    required_missions = { chi_independence }
     position = 2
     provinces_to_highlight = {
       region = north_china_region
@@ -3381,9 +3349,7 @@ chinese_kingdoms_3 = {
   }
   chi_project_strength = {
     icon = mission_invade_the_deccan_ori
-    required_missions = {
-      chi_unify_china
-    }
+    required_missions = { chi_unify_china }
     position = 4
     trigger = {
       OR = {
@@ -3805,9 +3771,7 @@ ming_missions_3 = {
   }
   mng_deal_kama_kagyu = {
     icon = mng_deal_kama_kagyu
-    required_missions = {
-      mng_nomadic_frontier
-    }
+    required_missions = { mng_nomadic_frontier }
     position = 2
     provinces_to_highlight = {
       province_id = 677
@@ -4035,9 +3999,7 @@ ming_missions_3 = {
   }
   mng_survey_ocean_shores = {
     icon = mng_survey_ocean_shores
-    required_missions = {
-      mng_inward_perfection
-    }
+    required_missions = { mng_inward_perfection }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -4228,12 +4190,14 @@ DOM_Qing_Missions_3 = {
   slot = 3
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     OR = {
       tag = MJZ
       tag = MCH
       tag = QNG
+      #tag = KRC
       tag = MYR
       tag = EJZ
       tag = NHX
@@ -4311,9 +4275,7 @@ DOM_Qing_Missions_3 = {
   }
   mjz_for_the_horde = {
     icon = mjz_for_the_horde
-    required_missions = {
-      mjz_unite_jurchen_tribes
-    }
+    required_missions = { mjz_unite_jurchen_tribes }
     position = 2
     provinces_to_highlight = {
       owner = {
@@ -4472,10 +4434,7 @@ DOM_Qing_Missions_3 = {
   }
   mch_adopt_alphabet = {
     icon = mch_adopt_alphabet
-    required_missions = {
-      mjz_for_the_horde
-      mjz_dominate_rival_jurchens
-    }
+    required_missions = { mjz_for_the_horde mjz_dominate_rival_jurchens }
     position = 3
     trigger = {
       is_lacking_institutions = no
@@ -4536,9 +4495,7 @@ DOM_Qing_Missions_3 = {
   }
   mch_bypass_great_wall = {
     icon = mch_bypass_great_wall
-    required_missions = {
-      mch_issue_seven_grievances
-    }
+    required_missions = { mch_issue_seven_grievances }
     position = 4
     provinces_to_highlight = {
       area = liaoning_area
@@ -4640,6 +4597,10 @@ ming_missions_3_b = {
   potential = {
     has_dlc = "Domination"
     is_emperor_of_china = yes
+    #OR = {
+    #	culture_group = east_asian
+    #	has_country_flag = enable_emperor_of_china_missions_flag
+    #}
     capital_scope = {
       continent = asia
     }
@@ -4768,9 +4729,7 @@ ming_missions_3_b = {
   }
   mng_single_whip_law = {
     icon = mission_african_gold
-    required_missions = {
-      mng_examination_system
-    }
+    required_missions = { mng_examination_system }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -5022,6 +4981,7 @@ DOM_Qing_Missions_3_b = {
   slot = 3
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     tag = QNG
@@ -5194,15 +5154,15 @@ DOM_Qing_Missions_3_b = {
         }
         if = {
           limit = {
-            has_leader = "4T	NBh"  # Wu Sangui
+            has_leader = "4T	NBh" 	# Wu Sangui
             CDL = {
               is_subject_of = ROOT
             }
           }
           CDL = {
             define_ruler = {
-              name = "	NBh"  # Sangui
-              dynasty = "4T"  # Wu
+              name = "	NBh" 	# Sangui
+              dynasty = "4T" 	# Wu
               adm = 3
               dip = 3
               mil = 4
@@ -5211,7 +5171,7 @@ DOM_Qing_Missions_3_b = {
             on_change_tag_effect = yes
           }
           kill_leader = {
-            type = "4T	NBh"  # Wu Sangui
+            type = "4T	NBh" 	# Wu Sangui
           }
         }
       }
@@ -5234,9 +5194,7 @@ DOM_Qing_Missions_3_b = {
   }
   qng_conquer_south_china = {
     icon = qng_conquer_south_china
-    required_missions = {
-      qng_three_feudatories
-    }
+    required_missions = { qng_three_feudatories }
     position = 11
     provinces_to_highlight = {
       OR = {
@@ -5270,10 +5228,7 @@ DOM_Qing_Missions_3_b = {
   }
   qng_junji_chu = {
     icon = qng_junji_chu
-    required_missions = {
-      qng_extinguish_ming
-      qng_high_qing_era
-    }
+    required_missions = { qng_extinguish_ming qng_high_qing_era }
     position = 13
     trigger = {
       has_final_tier_reforms_trigger = yes
@@ -5295,9 +5250,7 @@ DOM_Qing_Missions_3_b = {
   }
   qng_integrate_taiwan = {
     icon = mission_junk_boat
-    required_missions = {
-      qng_ten_grand_campaigns
-    }
+    required_missions = { qng_ten_grand_campaigns }
     provinces_to_highlight = {
       area = taiwan_area
       NOT = {
@@ -5384,9 +5337,7 @@ chinese_kingdoms_4 = {
   }
   conquer_south_china = {
     icon = qng_conquer_south_china
-    required_missions = {
-      chi_independence
-    }
+    required_missions = { chi_independence }
     position = 2
     provinces_to_highlight = {
       region = south_china_region
@@ -5449,10 +5400,7 @@ chinese_kingdoms_4 = {
   }
   issue_trade_policy = {
     icon = dominant_economy
-    required_missions = {
-      conquer_south_china
-      renovate_capital
-    }
+    required_missions = { conquer_south_china renovate_capital }
     position = 3
     trigger = {
       home_trade_node = {
@@ -5520,9 +5468,7 @@ ming_missions_4 = {
   has_country_shield = yes
   mng_kingdom_joseon = {
     icon = mng_kingdom_joseon
-    required_missions = {
-      mng_nomadic_frontier
-    }
+    required_missions = { mng_nomadic_frontier }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -5664,10 +5610,7 @@ ming_missions_4_generic = {
   has_country_shield = yes
   mng_repeal_or_improve_haijin = {
     icon = mission_unknown_mission
-    required_missions = {
-      mng_inward_perfection
-      mng_end_sengoku_jidai
-    }
+    required_missions = { mng_inward_perfection mng_end_sengoku_jidai }
     position = 4
     provinces_to_highlight = {}
     trigger = {
@@ -5802,10 +5745,7 @@ ming_missions_4_dynamic_1 = {
   has_country_shield = yes
   mng_improve_haijin_policy = {
     icon = mission_asian_trader
-    required_missions = {
-      mng_inward_perfection
-      mng_end_sengoku_jidai
-    }
+    required_missions = { mng_inward_perfection mng_end_sengoku_jidai }
     position = 4
     provinces_to_highlight = {
       owned_by = ROOT
@@ -5908,10 +5848,7 @@ ming_missions_4_dynamic_2 = {
   has_country_shield = yes
   mng_repeal_haijin_policy = {
     icon = mission_dominate_persian_gulf
-    required_missions = {
-      mng_inward_perfection
-      mng_end_sengoku_jidai
-    }
+    required_missions = { mng_inward_perfection mng_end_sengoku_jidai }
     position = 4
     provinces_to_highlight = {
       owned_by = ROOT
@@ -5988,12 +5925,14 @@ DOM_Qing_Missions_4 = {
   slot = 4
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     OR = {
       tag = MJZ
       tag = MCH
       tag = QNG
+      #tag = KRC
       tag = MYR
       tag = EJZ
       tag = NHX
@@ -6006,9 +5945,7 @@ DOM_Qing_Missions_4 = {
   has_country_shield = yes
   mjz_into_korea = {
     icon = mjz_into_korea
-    required_missions = {
-      mjz_break_through_korea
-    }
+    required_missions = { mjz_break_through_korea }
     position = 2
     provinces_to_highlight = {
       region = korea_region
@@ -6047,10 +5984,7 @@ DOM_Qing_Missions_4 = {
   }
   mch_ensure_internal_stability = {
     icon = balance_the_estates
-    required_missions = {
-      mch_issue_seven_grievances
-      qng_formalize_ritual_practices
-    }
+    required_missions = { mch_issue_seven_grievances qng_formalize_ritual_practices }
     position = 4
     trigger = {
       has_adm_advisor_3 = yes
@@ -6098,6 +6032,10 @@ ming_missions_4_b = {
   potential = {
     has_dlc = "Domination"
     is_emperor_of_china = yes
+    #OR = {
+    #	culture_group = east_asian
+    #	has_country_flag = enable_emperor_of_china_missions_flag
+    #}
     capital_scope = {
       continent = asia
     }
@@ -6190,10 +6128,7 @@ ming_missions_4_b = {
   }
   mng_jing_hang_grand_canal = {
     icon = mng_jing_hang_grand_canal
-    required_missions = {
-      mng_tame_china_sorrow
-      mng_expand_bogue
-    }
+    required_missions = { mng_tame_china_sorrow mng_expand_bogue }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -6383,10 +6318,7 @@ ming_missions_4_b = {
   }
   mng_expand_yongle_dadian = {
     icon = mng_expand_yongle_dadian
-    required_missions = {
-      mng_single_whip_law
-      mng_fortify_coast
-    }
+    required_missions = { mng_single_whip_law mng_fortify_coast }
     position = 8
     provinces_to_highlight = {
       owned_by = ROOT
@@ -6486,6 +6418,10 @@ ming_missions_4_moh = {
     has_dlc = "Domination"
     has_dlc = "Mandate of Heaven"
     is_emperor_of_china = yes
+    #OR = {
+    #	culture_group = east_asian
+    #	has_country_flag = enable_emperor_of_china_missions_flag
+    #}
     capital_scope = {
       continent = asia
     }
@@ -6523,9 +6459,7 @@ ming_missions_4_moh = {
   has_country_shield = yes
   mng_heavens_will = {
     icon = mng_heavens_will
-    required_missions = {
-      mng_expand_yongle_dadian
-    }
+    required_missions = { mng_expand_yongle_dadian }
     position = 9
     trigger = {
       empire_of_china_num_reforms_passed = 15
@@ -6555,6 +6489,7 @@ DOM_Qing_Missions_4_b = {
   slot = 4
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     tag = QNG
     NOT = {
@@ -6612,9 +6547,7 @@ DOM_Qing_Missions_4_b = {
   }
   qng_high_qing_era = {
     icon = qng_high_qing_era
-    required_missions = {
-      qng_balance_mandate
-    }
+    required_missions = { qng_balance_mandate }
     position = 12
     trigger = {
       OR = {
@@ -6652,9 +6585,7 @@ DOM_Qing_Missions_4_b = {
   }
   qng_library_four_treasuries = {
     icon = mission_scholar_officials
-    required_missions = {
-      qng_high_qing_era
-    }
+    required_missions = { qng_high_qing_era }
     trigger = {
       if = {
         limit = {
@@ -6768,9 +6699,7 @@ chinese_kingdoms_5 = {
   }
   renovate_capital = {
     icon = mission_pol_develop_countryside
-    required_missions = {
-      settle_internal_affairs
-    }
+    required_missions = { settle_internal_affairs }
     position = 2
     provinces_to_highlight = {
       is_capital_of = ROOT
@@ -6815,9 +6744,7 @@ chinese_kingdoms_5 = {
   }
   china_prime_entrepot = {
     icon = mission_growth_of_surat
-    required_missions = {
-      renovate_capital
-    }
+    required_missions = { renovate_capital }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -7070,10 +6997,7 @@ ming_missions_5 = {
   }
   mng_end_sengoku_jidai = {
     icon = mng_end_sengoku_jidai
-    required_missions = {
-      mng_kingdom_joseon
-      mng_thirteen_provinces
-    }
+    required_missions = { mng_kingdom_joseon mng_thirteen_provinces }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -7325,12 +7249,14 @@ DOM_Qing_Missions_5 = {
   slot = 5
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     OR = {
       tag = MJZ
       tag = MCH
       tag = QNG
+      #tag = KRC
       tag = MYR
       tag = EJZ
       tag = NHX
@@ -7385,9 +7311,7 @@ DOM_Qing_Missions_5 = {
   }
   mjz_mount_paektu = {
     icon = mission_buddhist_monk_praying
-    required_missions = {
-      mjz_break_through_korea
-    }
+    required_missions = { mjz_break_through_korea }
     position = 2
     provinces_to_highlight = {
       province_id = 4201
@@ -7432,9 +7356,7 @@ DOM_Qing_Missions_5 = {
   }
   qng_formalize_ritual_practices = {
     icon = mission_hands_praying
-    required_missions = {
-      mjz_mount_paektu
-    }
+    required_missions = { mjz_mount_paektu }
     position = 3
     trigger = {
       OR = {
@@ -7516,6 +7438,10 @@ ming_missions_5_b = {
   potential = {
     has_dlc = "Domination"
     is_emperor_of_china = yes
+    #OR = {  
+    #	culture_group = east_asian
+    #	has_country_flag = enable_emperor_of_china_missions_flag
+    #}
     capital_scope = {
       continent = asia
     }
@@ -7598,9 +7524,7 @@ ming_missions_5_b = {
   }
   mng_outer_city_beijing = {
     icon = mng_outer_city_beijing
-    required_missions = {
-      mng_form_depots
-    }
+    required_missions = { mng_form_depots }
     position = 6
     provinces_to_highlight = {
       province_id = 1816
@@ -7669,10 +7593,7 @@ ming_missions_5_b = {
   }
   mng_fortify_coast = {
     icon = mission_portuguese_malacca
-    required_missions = {
-      mng_outer_city_beijing
-      mng_jing_hang_grand_canal
-    }
+    required_missions = { mng_outer_city_beijing mng_jing_hang_grand_canal }
     position = 7
     provinces_to_highlight = {
       owned_by = ROOT
@@ -7836,6 +7757,7 @@ DOM_Qing_Missions_5_dynamic_b = {
   slot = 5
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     tag = QNG
@@ -7946,6 +7868,7 @@ DOM_Qing_Missions_5_intial = {
   slot = 5
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     tag = QNG
@@ -7962,9 +7885,7 @@ DOM_Qing_Missions_5_intial = {
   has_country_shield = yes
   qng_branching_mission_trade_1 = {
     icon = mission_unknown_mission
-    required_missions = {
-      qng_regulate_trade
-    }
+    required_missions = { qng_regulate_trade }
     position = 11
     trigger = {
       custom_trigger_tooltip = {
@@ -8001,10 +7922,7 @@ DOM_Qing_Missions_5_intial = {
   }
   qng_branching_mission_trade_2 = {
     icon = mission_unknown_mission
-    required_missions = {
-      qng_branching_mission_trade_1
-      qng_high_qing_era
-    }
+    required_missions = { qng_branching_mission_trade_1 qng_high_qing_era }
     position = 13
     trigger = {
       custom_trigger_tooltip = {
@@ -8074,6 +7992,7 @@ DOM_Qing_Missions_5_a = {
   slot = 5
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     tag = QNG
@@ -8088,9 +8007,7 @@ DOM_Qing_Missions_5_a = {
   has_country_shield = yes
   qng_allow_foreign_exchanges = {
     icon = mission_rb_scottish_the_darien_scheme
-    required_missions = {
-      qng_regulate_trade
-    }
+    required_missions = { qng_regulate_trade }
     position = 11
     trigger = {
       not_in_mission_preview_mode = {
@@ -8120,10 +8037,7 @@ DOM_Qing_Missions_5_a = {
   }
   qng_chinese_industrial_revolution = {
     icon = mission_state_manufactories
-    required_missions = {
-      qng_allow_foreign_exchanges
-      qng_high_qing_era
-    }
+    required_missions = { qng_allow_foreign_exchanges qng_high_qing_era }
     position = 13
     trigger = {
       not_in_mission_preview_mode = {
@@ -8174,6 +8088,7 @@ DOM_Qing_Missions_5_b = {
   slot = 5
   generic = no
   ai = yes
+  #potential_on_load = { has_dlc = "Mandate of Heaven" }
   potential = {
     has_dlc = "Domination"
     tag = QNG
@@ -8188,9 +8103,7 @@ DOM_Qing_Missions_5_b = {
   has_country_shield = yes
   qng_promote_local_industry = {
     icon = mission_have_manufactories
-    required_missions = {
-      qng_regulate_trade
-    }
+    required_missions = { qng_regulate_trade }
     position = 11
     provinces_to_highlight = {
       owned_by = ROOT
@@ -8232,10 +8145,7 @@ DOM_Qing_Missions_5_b = {
   }
   qng_expel_foreign_merchants = {
     icon = mission_raid_the_berbers
-    required_missions = {
-      qng_promote_local_industry
-      qng_high_qing_era
-    }
+    required_missions = { qng_promote_local_industry qng_high_qing_era }
     position = 13
     trigger = {
       not_in_mission_preview_mode = {

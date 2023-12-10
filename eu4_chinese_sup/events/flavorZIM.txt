@@ -1,5 +1,10 @@
+########################################
+# Events for Mutapa
+# written by Ogulcan Yildirim
+########################################
 namespace = flavor_zim
 normal_or_historical_nations = yes
+#Resource exhaustion in Zimbabwe
 country_event = {
   id = flavor_zim.1
   title = flavor_zim.1.t
@@ -129,6 +134,7 @@ country_event = {
     }
   }
 }
+#Great Zimbabwe Empire
 country_event = {
   id = flavor_zim.2
   title = flavor_zim.2.t
@@ -153,7 +159,7 @@ country_event = {
       }
       country_event = {
         id = ideagroups.1
-      }
+      } 	# Swap Ideas
     }
     set_country_flag = formed_zimbabwe_flag
     ai_chance = {
@@ -171,6 +177,7 @@ country_event = {
     }
   }
 }
+#The Nguni Militarization
 country_event = {
   id = flavor_zim.3
   title = flavor_zim.3.t
@@ -178,6 +185,7 @@ country_event = {
   picture = AFRICAN_DISCIPLINE_eventPicture
   is_triggered_only = yes
   option = {
+    #Neat
     name = flavor_zim.3.a
     add_mil_power = 100
     add_country_modifier = {
@@ -193,6 +201,7 @@ country_event = {
     }
   }
   option = {
+    #Make them to our march!
     name = flavor_zim.3.b
     789 = {
       add_core = ZUL
@@ -209,8 +218,8 @@ country_event = {
             is_year = 1810
           }
           define_ruler = {
-            name = "ôlaS"  # Shaka
-            dynasty = "VyÅú"  # Zulu
+            name = "ôlaS" 	# Shaka
+            dynasty = "VyÅú" 	# Zulu
             adm = 5
             dip = 3
             mil = 6
@@ -247,8 +256,8 @@ country_event = {
         add_government_reform = shaka_regime
         set_capital = 789
         capital_scope = {
-          change_province_name = "^…bÊt¶u"  # Bulawayo
-          rename_capital = "^…bÊt¶u"  # Bulawayo
+          change_province_name = "^…bÊt¶u" 	# Bulawayo
+          rename_capital = "^…bÊt¶u" 	# Bulawayo
           add_base_tax = 3
           add_base_production = 3
           add_base_manpower = 2
@@ -269,6 +278,7 @@ country_event = {
     }
   }
   option = {
+    #Play as the Zulu
     name = flavor_zim.3.c
     789 = {
       add_core = ZUL
@@ -285,8 +295,8 @@ country_event = {
             is_year = 1810
           }
           define_ruler = {
-            name = "ôlaS"  # Shaka
-            dynasty = "VyÅú"  # Zulu
+            name = "ôlaS" 	# Shaka
+            dynasty = "VyÅú" 	# Zulu
             adm = 5
             dip = 3
             mil = 6
@@ -323,8 +333,8 @@ country_event = {
         add_government_reform = shaka_regime
         set_capital = 789
         capital_scope = {
-          change_province_name = "^…bÊt¶u"  # Bulawayo
-          rename_capital = "^…bÊt¶u"  # Bulawayo
+          change_province_name = "^…bÊt¶u" 	# Bulawayo
+          rename_capital = "^…bÊt¶u" 	# Bulawayo
           add_base_tax = 3
           add_base_production = 3
           add_base_manpower = 2
@@ -345,6 +355,7 @@ country_event = {
     }
   }
 }
+#Remove abandon ruins modifier if Mutapa does not exist
 country_event = {
   id = flavor_zim.4
   title = none
@@ -380,6 +391,7 @@ country_event = {
     }
   }
 }
+#Decide between Muslim and Christian merchants
 country_event = {
   id = flavor_zim.5
   title = flavor_zim.5.t
@@ -420,6 +432,7 @@ country_event = {
     }
   }
   option = {
+    #Christian traders
     name = flavor_zim.5.a
     custom_tooltip = flavor_zim.5.a.tt
     hidden_effect = {
@@ -443,6 +456,7 @@ country_event = {
     }
   }
   option = {
+    #Muslim traders
     name = flavor_zim.5.b
     custom_tooltip = flavor_zim.5.b.tt
     hidden_effect = {
@@ -466,6 +480,7 @@ country_event = {
     }
   }
   option = {
+    #Balanced
     name = flavor_zim.5.c
     add_years_of_trade_income = {
       years = 2
@@ -484,6 +499,7 @@ country_event = {
     }
   }
   option = {
+    #Do I look like I care?
     name = flavor_zim.5.d
     add_mercantilism = 5
     add_stability = -1
@@ -492,6 +508,7 @@ country_event = {
     }
   }
 }
+#Accidental crusade / jihad
 country_event = {
   id = flavor_zim.6
   title = flavor_zim.6.t
@@ -524,6 +541,7 @@ country_event = {
     }
   }
   option = {
+    #We shall be Christians!
     name = flavor_zim.6.a
     trigger = {
       has_country_flag = zim_sided_with_christian_traders
@@ -535,6 +553,7 @@ country_event = {
     }
   }
   option = {
+    #We shall be Muslims!
     name = flavor_zim.6.b
     trigger = {
       has_country_flag = zim_sided_with_muslim_traders
@@ -546,6 +565,7 @@ country_event = {
     }
   }
   option = {
+    #Kill the ruler!
     name = flavor_zim.6.c
     kill_ruler = yes
     add_stability = 3
@@ -554,6 +574,7 @@ country_event = {
     }
   }
   option = {
+    #Eh whatever
     name = flavor_zim.6.d
     add_legitimacy = -20
     ai_chance = {
@@ -576,10 +597,11 @@ country_event = {
           religion = hussite
         }
       }
-      add_prestige = 100
+      add_prestige = 100 	# You always lose 100 prestige when converting...
     }
   }
 }
+#Maps of Middle East Trade routes
 country_event = {
   id = flavor_zim.7
   title = flavor_zim.7.t
@@ -636,6 +658,7 @@ country_event = {
     }
   }
 }
+#Maps of Asian trade nodes
 country_event = {
   id = flavor_zim.8
   title = flavor_zim.8.t
@@ -667,6 +690,7 @@ country_event = {
     }
   }
 }
+#Zimbabwe is not under our control!
 country_event = {
   id = flavor_zim.9
   title = flavor_zim.9.t
@@ -699,6 +723,7 @@ country_event = {
     }
   }
 }
+#Zimbabwe is ours again!
 country_event = {
   id = flavor_zim.10
   title = flavor_zim.10.t

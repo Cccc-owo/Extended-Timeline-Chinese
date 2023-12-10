@@ -47,9 +47,7 @@ lithuanian_missions_1 = {
   }
   lit_religious_unity = {
     icon = mission_luther_theses
-    required_missions = {
-      develop_ukraine_1
-    }
+    required_missions = { develop_ukraine_1 }
     trigger = {
       NOT = {
         current_age = age_of_discovery
@@ -97,9 +95,7 @@ lithuanian_missions_1 = {
   }
   lit_ukraine_2 = {
     icon = mission_eastern_european_city
-    required_missions = {
-      lit_religious_unity
-    }
+    required_missions = { lit_religious_unity }
     provinces_to_highlight = {
       province_id = 280
     }
@@ -135,9 +131,7 @@ lithuanian_missions_1 = {
   }
   lit_develop_sluck = {
     icon = mission_noble_council
-    required_missions = {
-      lit_ukraine_2
-    }
+    required_missions = { lit_ukraine_2 }
     provinces_to_highlight = {
       province_id = 4545
       NOT = {
@@ -198,9 +192,7 @@ lithuanian_missions_2 = {
   has_country_shield = yes
   mission_lit_polish_union = {
     icon = mission_monarch_in_throne_room
-    required_missions = {
-      defeat_the_livonian_order
-    }
+    required_missions = { defeat_the_livonian_order }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -243,9 +235,7 @@ lithuanian_missions_2 = {
   }
   lit_jag_university = {
     icon = mission_early_modern_university
-    required_missions = {
-      mission_lit_polish_union
-    }
+    required_missions = { mission_lit_polish_union }
     provinces_to_highlight = {
       province_id = 262
       NOT = {
@@ -275,7 +265,7 @@ lithuanian_missions_2 = {
 lithuanian_missions_slot = {
   slot = 5
   generic = no
-  ai = no
+  ai = no 	#  independent lithuania path not for ai
   potential_on_load = {
     NOT = {
       has_dlc = "Lions of the North"
@@ -402,9 +392,7 @@ lithuanian_missions_slot = {
   }
   lit_conquer_crimea = {
     icon = mission_crusade_for_varna
-    required_missions = {
-      mission_lit_cossacks
-    }
+    required_missions = { mission_lit_cossacks }
     provinces_to_highlight = {
       OR = {
         area = zaporizhia_area
@@ -523,9 +511,7 @@ lithuanian_missions_slot = {
   }
   defeat_the_livonian_order = {
     icon = mission_teutonic_knights
-    required_missions = {
-      polish_alliance_lit
-    }
+    required_missions = { polish_alliance_lit }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -633,9 +619,7 @@ lithuanian_missions_slot = {
   }
   lit_conquer_novgorod = {
     icon = mission_assemble_an_army
-    required_missions = {
-      defeat_the_livonian_order
-    }
+    required_missions = { defeat_the_livonian_order }
     provinces_to_highlight = {
       area = novgorod_area
       NOT = {
@@ -747,9 +731,7 @@ lithuanian_missions_slot = {
   }
   lit_conquer_muscovy = {
     icon = mission_conquer_5_states
-    required_missions = {
-      lit_conquer_novgorod
-    }
+    required_missions = { lit_conquer_novgorod }
     provinces_to_highlight = {
       OR = {
         area = moscow_area
@@ -795,7 +777,7 @@ lithuanian_missions_slot = {
         }
         RUS = {
           define_ruler = {
-            name = "·Vs|yrÌ‘"  # Dmitry
+            name = "·Vs|yrÌ‘" 	# Dmitry
           }
         }
       }
@@ -808,7 +790,7 @@ lithuanian_missions_slot = {
         }
         MOS = {
           define_ruler = {
-            name = "·Vs|yrÌ‘"  # Dmitry
+            name = "·Vs|yrÌ‘" 	# Dmitry
           }
         }
       }

@@ -1,5 +1,9 @@
+########################################
+# Major Flavor Events                  #
+########################################
 namespace = flavor_rus
 normal_or_historical_nations = yes
+# The Pomjestija Reform
 country_event = {
   id = flavor_rus.1
   title = "flavor_rus.EVTNAME3401"
@@ -26,6 +30,7 @@ country_event = {
     months = 300
   }
   option = {
+    # Let us reform
     name = "flavor_rus.EVTOPTA3401"
     ai_chance = {
       factor = 95
@@ -44,6 +49,7 @@ country_event = {
     }
   }
   option = {
+    # Let us become like Novgorod
     name = "flavor_rus.EVTOPTB3401"
     ai_chance = {
       factor = 5
@@ -62,6 +68,7 @@ country_event = {
     }
   }
 }
+# Malyuta Skuratov
 country_event = {
   id = flavor_rus.2
   title = "flavor_rus.EVTNAME3202"
@@ -82,12 +89,13 @@ country_event = {
       }
       tag = RUS
     }
-    owns = 295
+    owns = 295 	#  Moskva
   }
   mean_time_to_happen = {
     months = 38
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 40
     add_dip_power = 40
@@ -100,7 +108,7 @@ country_event = {
       }
       define_advisor = {
         type = spymaster
-        name = "löÛgTX Øeì^…bXb+Y"  # Malyuta Skuratov
+        name = "löÛgTX Øeì^…bXb+Y" 	# Malyuta Skuratov
         discount = yes
         location = 295
         skill = 3
@@ -108,6 +116,7 @@ country_event = {
     }
   }
 }
+# Russian claims in the East
 country_event = {
   id = flavor_rus.3
   title = "flavor_rus.EVTNAME3404"
@@ -116,16 +125,17 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = RUS
-    owns = 303
-    owns = 473
-    owns = 1971
-    owns = 1082
-    owns = 464
+    owns = 303 	# Saratov
+    owns = 473 	# Samara
+    owns = 1971 	# Tsaritsyn
+    owns = 1082 	# Kazan
+    owns = 464 	# Astrakhan
   }
   mean_time_to_happen = {
     months = 60
   }
   option = {
+    # It all belongs to Mother Russia
     name = "flavor_rus.EVTOPTA3404"
     ai_chance = {
       factor = 100
@@ -152,6 +162,7 @@ country_event = {
     }
   }
 }
+# Russian claims on Poland-Lithuania
 country_event = {
   id = flavor_rus.4
   title = "flavor_rus.EVTNAME3405"
@@ -177,6 +188,7 @@ country_event = {
     months = 32
   }
   option = {
+    # It all belongs to Mother Russia
     name = "flavor_rus.EVTOPTA3405"
     ai_chance = {
       factor = 100
@@ -239,6 +251,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Russian claims on the Steppes
 country_event = {
   id = flavor_rus.5
   title = "flavor_rus.EVTNAME3406"
@@ -272,6 +285,7 @@ country_event = {
     months = 32
   }
   option = {
+    # It all belongs to Mother Russia
     name = "flavor_rus.EVTOPTA3406"
     ai_chance = {
       factor = 100
@@ -282,6 +296,7 @@ country_event = {
     }
   }
 }
+# The Chosen Council
 country_event = {
   id = flavor_rus.6
   title = "flavor_rus.EVTNAME3410"
@@ -312,24 +327,26 @@ country_event = {
     }
   }
   option = {
+    # Excellent Ministers!
     name = "flavor_rus.EVTOPTA3410"
     add_adm_power = 25
     define_advisor = {
       type = statesman
-      name = "?ñRKQ0å ?ñæèÇ+Y"  # Alexi Adashev
+      name = "?ñRKQ0å ?ñæèÇ+Y" 	# Alexi Adashev
       discount = yes
       location = 295
       skill = 2
     }
     define_advisor = {
       type = theologian
-      name = "âSÙuØeyr"  # Sylvestr
+      name = "âSÙuØeyr" 	# Sylvestr
       discount = yes
       location = 295
       skill = 3
     }
   }
 }
+# The Sacking of Moscow
 country_event = {
   id = flavor_rus.7
   title = "flavor_rus.EVTNAME3411"
@@ -349,6 +366,7 @@ country_event = {
     months = 1
   }
   option = {
+    # Revenge this horrible insult
     name = "flavor_rus.EVTOPTA3411"
     ai_chance = {
       factor = 50
@@ -366,6 +384,7 @@ country_event = {
     }
   }
   option = {
+    # Use it to crush the opposition
     name = "flavor_rus.EVTOPTB3411"
     ai_chance = {
       factor = 50
@@ -376,6 +395,7 @@ country_event = {
     }
   }
 }
+# The Treasury Reform and the Abolishing of the Kormlenije System
 country_event = {
   id = flavor_rus.8
   title = "flavor_rus.EVTNAME3413"
@@ -393,6 +413,7 @@ country_event = {
     months = 300
   }
   option = {
+    # Reform Treasury and Abolish Kormlenije
     name = "flavor_rus.EVTOPTA3413"
     ai_chance = {
       factor = 50
@@ -408,6 +429,7 @@ country_event = {
     }
   }
   option = {
+    # Only Reform Treasury
     name = "flavor_rus.EVTOPTB3413"
     ai_chance = {
       factor = 25
@@ -418,6 +440,7 @@ country_event = {
     }
   }
   option = {
+    # Only Abolish Kormlenije
     name = "flavor_rus.EVTOPTC3413"
     ai_chance = {
       factor = 25
@@ -428,6 +451,7 @@ country_event = {
     }
   }
 }
+# The Russian Orthodox Church declared independent of Constantinople
 country_event = {
   id = flavor_rus.9
   title = "flavor_rus.EVTNAME3415"
@@ -453,6 +477,7 @@ country_event = {
     months = 120
   }
   option = {
+    # Let us lead the True Faith from Moscow
     name = "flavor_rus.EVTOPTA3415"
     ai_chance = {
       factor = 100
@@ -470,6 +495,7 @@ country_event = {
     }
   }
   option = {
+    # No we need Constantinople to lead the True Faith
     name = "flavor_rus.EVTOPTB3415"
     ai_chance = {
       factor = 0
@@ -479,14 +505,15 @@ country_event = {
       limit = {
         OR = {
           is_core = BYZ
-          province_id = 148
-          province_id = 151
+          province_id = 148 	# Salonica (Mount Athos)
+          province_id = 151 	# Constantinople
         }
       }
       add_claim = ROOT
     }
   }
   option = {
+    # No we need Constantinople to lead the True Faith
     name = "flavor_rus.EVTOPTC3415"
     ai_chance = {
       factor = 0
@@ -496,14 +523,15 @@ country_event = {
       limit = {
         OR = {
           is_core = BYZ
-          province_id = 148
-          province_id = 151
+          province_id = 148 	# Salonica (Mount Athos)
+          province_id = 151 	# Constantinople
         }
       }
       add_permanent_claim = ROOT
     }
   }
 }
+# The Peasantry is brought into Serfdom
 country_event = {
   id = flavor_rus.10
   title = "flavor_rus.EVTNAME3416"
@@ -524,6 +552,7 @@ country_event = {
     months = 300
   }
   option = {
+    # Enserf the peasants
     name = "flavor_rus.EVTOPTA3416"
     ai_chance = {
       factor = 75
@@ -534,6 +563,7 @@ country_event = {
     }
   }
   option = {
+    # Do not enserf them
     name = "flavor_rus.EVTOPTB3416"
     ai_chance = {
       factor = 25
@@ -541,6 +571,7 @@ country_event = {
     add_legitimacy = -10
   }
 }
+# Hundred Chapter Synod
 country_event = {
   id = flavor_rus.11
   title = "flavor_rus.EVTNAME1005"
@@ -559,6 +590,7 @@ country_event = {
     months = 100
   }
   option = {
+    # Affirm these changes
     name = "flavor_rus.EVTOPTA1005"
     ai_chance = {
       factor = 75
@@ -566,6 +598,7 @@ country_event = {
     add_patriarch_authority = 0.10
   }
   option = {
+    # Prohibit these ideas
     name = "flavor_rus.EVTOPTB1005"
     ai_chance = {
       factor = 25
@@ -574,6 +607,7 @@ country_event = {
     add_patriarch_authority = -0.10
   }
 }
+# Boris Morozov
 country_event = {
   id = flavor_rus.12
   title = "flavor_rus.EVTNAME3203"
@@ -586,7 +620,7 @@ country_event = {
     NOT = {
       is_year = 1660
     }
-    owns = 295
+    owns = 295 	#  Moskva
   }
   mean_time_to_happen = {
     months = 120
@@ -596,6 +630,7 @@ country_event = {
     }
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 50
     if = {
@@ -606,7 +641,7 @@ country_event = {
       }
       define_advisor = {
         type = treasurer
-        name = "çúÃëØe ´ÉmPO+Y"  # Boris Morozov
+        name = "çúÃëØe ´ÉmPO+Y" 	# Boris Morozov
         discount = yes
         location = 295
         skill = 2
@@ -614,6 +649,7 @@ country_event = {
     }
   }
 }
+# Full Serfdom enforced by Sobornoj Ulozjenije
 country_event = {
   id = flavor_rus.13
   title = "flavor_rus.EVTNAME3417"
@@ -635,6 +671,7 @@ country_event = {
     months = 300
   }
   option = {
+    # Enforce
     name = "flavor_rus.EVTOPTA3417"
     ai_chance = {
       factor = 90
@@ -651,6 +688,7 @@ country_event = {
     }
   }
   option = {
+    # Accept deteriorating Economy and Burgher Uprisings
     name = "flavor_rus.EVTOPTB3417"
     ai_chance = {
       factor = 10
@@ -676,6 +714,7 @@ country_event = {
     }
   }
 }
+# Nikons Reform and the Raskolniks
 country_event = {
   id = flavor_rus.14
   title = "flavor_rus.EVTNAME3418"
@@ -700,6 +739,7 @@ country_event = {
     set_country_flag = RUS_raskol_flag
   }
   option = {
+    # Let us Modernize the Church
     name = "flavor_rus.EVTOPTA3418"
     ai_chance = {
       factor = 75
@@ -707,6 +747,7 @@ country_event = {
     add_patriarch_authority = 0.10
   }
   option = {
+    # Follow the heed of the Raskolniks
     name = "flavor_rus.EVTOPTB3418"
     ai_chance = {
       factor = 25
@@ -715,6 +756,7 @@ country_event = {
     add_patriarch_authority = -0.10
   }
 }
+# Raskol
 country_event = {
   id = flavor_rus.15
   title = "flavor_rus.EVTNAME1006"
@@ -755,6 +797,7 @@ country_event = {
     }
   }
   option = {
+    # These reforms are necessary
     name = "flavor_rus.EVTOPTA1006"
     ai_chance = {
       factor = 75
@@ -782,6 +825,7 @@ country_event = {
     }
   }
   option = {
+    # Support the Old traditions
     name = "flavor_rus.EVTOPTB1006"
     ai_chance = {
       factor = 25
@@ -789,6 +833,7 @@ country_event = {
     add_patriarch_authority = -0.1
   }
 }
+# The Reforms of Peter the Great
 country_event = {
   id = flavor_rus.16
   title = "flavor_rus.EVTNAME1007"
@@ -813,6 +858,7 @@ country_event = {
     months = 10
   }
   option = {
+    # The reforms are necessary
     name = "flavor_rus.EVTOPTA1007"
     ai_chance = {
       factor = 100
@@ -832,6 +878,7 @@ country_event = {
     }
   }
   option = {
+    # Avoid outside influence
     name = "flavor_rus.EVTOPTB1007"
     ai_chance = {
       factor = 0
@@ -847,6 +894,7 @@ country_event = {
     }
   }
 }
+# The Bulavin Rebellion
 country_event = {
   id = flavor_rus.17
   title = "flavor_rus.EVTNAME1008"
@@ -883,6 +931,7 @@ country_event = {
     }
   }
   option = {
+    # Crush the rebellion
     name = "flavor_rus.EVTOPTA1008"
     ai_chance = {
       factor = 100
@@ -910,6 +959,7 @@ country_event = {
     }
   }
   option = {
+    # Revert some reforms
     name = "flavor_rus.EVTOPTB1008"
     ai_chance = {
       factor = 0
@@ -927,6 +977,7 @@ country_event = {
     }
   }
 }
+# Fjodor Baikov's Diplomatic Incident
 country_event = {
   id = flavor_rus.18
   title = "flavor_rus.EVTNAME3419"
@@ -944,6 +995,7 @@ country_event = {
     months = 240
   }
   option = {
+    # Ignore the demands
     name = "flavor_rus.EVTOPTA3419"
     ai_chance = {
       factor = 75
@@ -956,6 +1008,7 @@ country_event = {
     }
   }
   option = {
+    # Pretend to be a Chinese Vassal
     name = "flavor_rus.EVTOPTB3419"
     ai_chance = {
       factor = 20
@@ -969,6 +1022,7 @@ country_event = {
     }
   }
   option = {
+    # Pretend to be a Chinese Vassal and pay Tribute
     name = "flavor_rus.EVTOPTC3419"
     ai_chance = {
       factor = 5
@@ -983,6 +1037,7 @@ country_event = {
     }
   }
 }
+# Stepan Rasin's Cossack Uprising
 country_event = {
   id = flavor_rus.19
   title = "flavor_rus.EVTNAME3420"
@@ -1022,6 +1077,7 @@ country_event = {
     }
   }
   option = {
+    # Quell all separatist movements
     name = "flavor_rus.EVTOPTA3420"
     ai_chance = {
       factor = 90
@@ -1057,6 +1113,7 @@ country_event = {
     }
   }
   option = {
+    # Give more autonomy to provinces
     name = "flavor_rus.EVTOPTB3420"
     ai_chance = {
       factor = 10
@@ -1075,6 +1132,7 @@ country_event = {
     }
   }
 }
+# The Treaty of Nerchiinsk
 country_event = {
   id = flavor_rus.20
   title = "flavor_rus.EVTNAME3421"
@@ -1170,6 +1228,7 @@ country_event = {
     }
   }
   option = {
+    # Accept the Treaty
     name = "flavor_rus.EVTOPTA3421"
     ai_chance = {
       factor = 0
@@ -1214,6 +1273,7 @@ country_event = {
     }
   }
   option = {
+    # Reject the Treaty as Preposterous
     name = "flavor_rus.EVTOPTB3421"
     ai_chance = {
       factor = 10
@@ -1250,6 +1310,7 @@ country_event = {
     }
   }
 }
+# The Great Northern Conflict
 country_event = {
   id = flavor_rus.21
   title = "flavor_rus.EVTNAME3422"
@@ -1283,6 +1344,7 @@ country_event = {
     months = 100
   }
   option = {
+    # Seek closer ties with their enemies
     name = "flavor_rus.EVTOPTA3422"
     ai_chance = {
       factor = 75
@@ -1315,6 +1377,7 @@ country_event = {
     }
   }
   option = {
+    # Let others move first
     name = "flavor_rus.EVTOPTB3422"
     ai_chance = {
       factor = 25
@@ -1322,6 +1385,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Governmental Reforms and the Absolutism
 country_event = {
   id = flavor_rus.22
   title = "flavor_rus.EVTNAME3426"
@@ -1340,6 +1404,7 @@ country_event = {
     months = 60
   }
   option = {
+    # Institute the Reforms
     name = "flavor_rus.EVTOPTA3426"
     ai_chance = {
       factor = 100
@@ -1358,6 +1423,7 @@ country_event = {
     }
   }
   option = {
+    # The Old Way is better!
     name = "flavor_rus.EVTOPTB3426"
     ai_chance = {
       factor = 0
@@ -1365,6 +1431,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The State take control of the Russian Church
 country_event = {
   id = flavor_rus.23
   title = "flavor_rus.EVTNAME3427"
@@ -1386,6 +1453,7 @@ country_event = {
     months = 60
   }
   option = {
+    # Abolish the Patriarchate
     name = "flavor_rus.EVTOPTA3427"
     ai_chance = {
       factor = 75
@@ -1406,6 +1474,7 @@ country_event = {
     }
   }
   option = {
+    # Leave the Patriarchate alone
     name = "flavor_rus.EVTOPTB3427"
     ai_chance = {
       factor = 25
@@ -1413,6 +1482,7 @@ country_event = {
     add_patriarch_authority = 0.25
   }
 }
+# The Courland Succession of 1726
 country_event = {
   id = flavor_rus.24
   title = "flavor_rus.EVTNAME3430"
@@ -1450,6 +1520,7 @@ country_event = {
     }
   }
   option = {
+    # Prepare to grab Kurland
     name = "flavor_rus.EVTOPTA3430"
     ai_chance = {
       factor = 90
@@ -1476,6 +1547,7 @@ country_event = {
     }
   }
   option = {
+    # Ignore this petty matter
     name = "flavor_rus.EVTOPTB3430"
     ai_chance = {
       factor = 10
@@ -1492,6 +1564,7 @@ country_event = {
     }
   }
 }
+# The Duma and the Legislative Reform
 country_event = {
   id = flavor_rus.25
   title = "flavor_rus.EVTNAME3432"
@@ -1510,6 +1583,7 @@ country_event = {
     months = 60
   }
   option = {
+    # Ignore the Injustice in Society
     name = "flavor_rus.EVTOPTA3432"
     ai_chance = {
       factor = 75
@@ -1522,6 +1596,7 @@ country_event = {
     }
   }
   option = {
+    # Do something about the Injustice in Society
     name = "flavor_rus.EVTOPTB3432"
     ai_chance = {
       factor = 25
@@ -1534,6 +1609,7 @@ country_event = {
     add_absolutism = -25
   }
 }
+# The Mercantilistic Reforms
 country_event = {
   id = flavor_rus.26
   title = "flavor_rus.EVTNAME3434"
@@ -1551,6 +1627,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Yes, we need to reform
     name = "flavor_rus.EVTOPTA3434"
     ai_chance = {
       factor = 50
@@ -1561,6 +1638,7 @@ country_event = {
     }
   }
   option = {
+    # No, we shall opt for Free Trade
     name = "flavor_rus.EVTOPTC3434"
     ai_chance = {
       factor = 25
@@ -1571,6 +1649,7 @@ country_event = {
     }
   }
 }
+# The Pugatchev Uprising
 country_event = {
   id = flavor_rus.27
   title = "flavor_rus.EVTNAME3435"
@@ -1594,6 +1673,7 @@ country_event = {
     months = 32
   }
   option = {
+    # The Masses are moving...
     name = "flavor_rus.EVTOPTA3435"
     set_country_flag = rus_pugachev_uprising
     ural_region = {
@@ -1613,6 +1693,7 @@ country_event = {
     }
   }
 }
+# The Reactionary Policy
 country_event = {
   id = flavor_rus.28
   title = "flavor_rus.EVTNAME3436"
@@ -1634,6 +1715,7 @@ country_event = {
     months = 64
   }
   option = {
+    # Keep the Masses in Chains
     name = "flavor_rus.EVTOPTA3436"
     ai_chance = {
       factor = 70
@@ -1646,6 +1728,7 @@ country_event = {
     }
   }
   option = {
+    # Let introduce the idea of 'Freedom'
     name = "flavor_rus.EVTOPTB3436"
     ai_chance = {
       factor = 20
@@ -1667,6 +1750,7 @@ country_event = {
     }
   }
 }
+# Tsar Paul I:s Liberal Legislation
 country_event = {
   id = flavor_rus.29
   title = "flavor_rus.EVTNAME3437"
@@ -1686,6 +1770,7 @@ country_event = {
     months = 60
   }
   option = {
+    # Restrict Serfdom
     name = "flavor_rus.EVTOPTA3437"
     ai_chance = {
       factor = 75
@@ -1716,6 +1801,7 @@ country_event = {
     }
   }
   option = {
+    # It is perfect as it is
     name = "flavor_rus.EVTOPTB3437"
     ai_chance = {
       factor = 25
@@ -1723,6 +1809,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Tsar Alexander I:s Liberal Legislation
 country_event = {
   id = flavor_rus.30
   title = "flavor_rus.EVTNAME3438"
@@ -1743,6 +1830,7 @@ country_event = {
     months = 100
   }
   option = {
+    # Abolish serfdom
     name = "flavor_rus.EVTOPTA3438"
     ai_chance = {
       factor = 75
@@ -1770,6 +1858,7 @@ country_event = {
     }
   }
   option = {
+    # Leave it be
     name = "flavor_rus.EVTOPTB3438"
     ai_chance = {
       factor = 25
@@ -1777,13 +1866,15 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The Anjala League
 country_event = {
   id = flavor_rus.31
   title = "flavor_rus.EVTNAME3439"
   desc = "flavor_rus.EVTDESC3439"
   picture = DIPLOMACY_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# From flavor_swe.3259
   option = {
+    # Give them our support
     name = "flavor_rus.EVTOPTA3439"
     ai_chance = {
       factor = 90
@@ -1803,6 +1894,7 @@ country_event = {
     }
   }
   option = {
+    # Reject their pleas
     name = "flavor_rus.EVTOPTB3439"
     ai_chance = {
       factor = 10
@@ -1815,6 +1907,7 @@ country_event = {
     }
   }
 }
+# Mikhailo Shcherbatov
 country_event = {
   id = flavor_rus.32
   title = "flavor_rus.EVTNAME1000"
@@ -1832,17 +1925,19 @@ country_event = {
     months = 60
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_adm_power = 10
     add_prestige = 10
     define_advisor = {
-      name = "s|»TOm 0åSÙTXb+Y"  # Mikhailo Shcherbatov
+      name = "s|»TOm 0åSÙTXb+Y" 	# Mikhailo Shcherbatov
       type = philosopher
       skill = 3
       discount = yes
     }
   }
 }
+# Vasily Tatishchev
 country_event = {
   id = flavor_rus.33
   title = "flavor_rus.EVTNAME1001"
@@ -1860,9 +1955,10 @@ country_event = {
     months = 90
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     define_advisor = {
-      name = "ÊtâÃë TXcR0å+Y"  # Vasily Tatishchev
+      name = "ÊtâÃë TXcR0å+Y" 	# Vasily Tatishchev
       type = statesman
       skill = 3
       discount = yes
@@ -1871,6 +1967,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Mikhail Lomonosov
 country_event = {
   id = flavor_rus.34
   title = "flavor_rus.EVTNAME1002"
@@ -1888,9 +1985,10 @@ country_event = {
     months = 75
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     define_advisor = {
-      name = "s|»TOS WôÑ˙ã0t+Y"  # Mikhail Lomonosov
+      name = "s|»TOS WôÑ˙ã0t+Y" 	# Mikhail Lomonosov
       type = natural_scientist
       skill = 3
       discount = yes
@@ -1899,6 +1997,11 @@ country_event = {
     add_prestige = 10
   }
 }
+########################################
+# 1.35 Events for the Russia
+# written by Ogulcan Yildirim
+########################################
+# Ivan the Terrible
 country_event = {
   id = flavor_rus.35
   title = flavor_rus.35.t
@@ -1916,7 +2019,7 @@ country_event = {
       }
     }
     government = monarchy
-    dynasty = "YuÃëKQ"  # Rurikovich
+    dynasty = "YuÃëKQ" 	# Rurikovich
     is_lesser_in_union = no
     is_year = 1500
     NOT = {
@@ -1933,7 +2036,7 @@ country_event = {
   option = {
     name = flavor_rus.35.a
     define_ruler = {
-      name = "O·Q IV 0˜ñ^0"  # Ivan IV Grozny
+      name = "O·Q IV 0˜ñ^0" 	# Ivan IV Grozny
       dynasty = ROOT
       adm = 6
       dip = 5
@@ -1974,6 +2077,7 @@ country_event = {
     }
   }
 }
+# The Russian Navy
 country_event = {
   id = flavor_rus.36
   title = flavor_rus.36.t
@@ -1993,6 +2097,7 @@ country_event = {
   }
   picture = NAVAL_MILITARY_eventPicture
   is_triggered_only = yes
+  #Focus on a Trade orientated navy
   option = {
     name = flavor_rus.36.a
     add_country_modifier = {
@@ -2004,6 +2109,7 @@ country_event = {
       factor = 1
     }
   }
+  #Focus on a Military orientated navy
   option = {
     name = flavor_rus.36.b
     add_country_modifier = {
@@ -2016,12 +2122,14 @@ country_event = {
     }
   }
 }
+# Formation of the Governing Senate
 country_event = {
   id = flavor_rus.37
   title = flavor_rus.37.t
   desc = flavor_rus.37.desc
   picture = REFORM_eventPicture
   is_triggered_only = yes
+  #Create the Governing Senate
   option = {
     name = flavor_rus.37.a
     unlock_government_reform = {
@@ -2032,6 +2140,7 @@ country_event = {
       factor = 1
     }
   }
+  #Focus all power on the Emperor
   option = {
     name = flavor_rus.37.b
     unlock_government_reform = {
@@ -2043,12 +2152,14 @@ country_event = {
     }
   }
 }
+# The Holy Synod
 country_event = {
   id = flavor_rus.38
   title = flavor_rus.38.t
   desc = flavor_rus.38.desc
   picture = ORTHODOX_eventPicture
   is_triggered_only = yes
+  #Create the Holy Synod
   option = {
     name = flavor_rus.38.a
     unlock_government_reform = {
@@ -2059,6 +2170,7 @@ country_event = {
       factor = 1
     }
   }
+  #This can wait for later
   option = {
     name = flavor_rus.38.b
     unlock_government_reform = {
@@ -2070,12 +2182,14 @@ country_event = {
     }
   }
 }
+# Strengthened the Patriarchy
 country_event = {
   id = flavor_rus.39
   title = flavor_rus.39.t
   desc = flavor_rus.39.desc
   picture = ORTHODOX_eventPicture
   is_triggered_only = yes
+  #Create the Holy Synod
   option = {
     name = flavor_rus.39.a
     unlock_government_reform = {
@@ -2086,6 +2200,7 @@ country_event = {
       factor = 1
     }
   }
+  #This can wait for later
   option = {
     name = flavor_rus.39.b
     unlock_government_reform = {
@@ -2097,12 +2212,14 @@ country_event = {
     }
   }
 }
+# Head of the Patriarchy
 country_event = {
   id = flavor_rus.40
   title = flavor_rus.40.t
   desc = flavor_rus.40.desc
   picture = ORTHODOX_eventPicture
   is_triggered_only = yes
+  #Create the Holy Synod
   option = {
     name = flavor_rus.40.a
     unlock_government_reform = {
@@ -2113,6 +2230,7 @@ country_event = {
       factor = 1
     }
   }
+  #This can wait for later
   option = {
     name = flavor_rus.40.b
     unlock_government_reform = {
@@ -2124,6 +2242,7 @@ country_event = {
     }
   }
 }
+# The Age or Revolutions
 country_event = {
   id = flavor_rus.44
   title = flavor_rus.44.t
@@ -2149,6 +2268,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  #A new age for Russia
   option = {
     name = flavor_rus.44.a
     custom_tooltip = rus_the_age_of_revolution_bt
@@ -2159,12 +2279,14 @@ country_event = {
     }
   }
 }
+# Modernization of the Army
 country_event = {
   id = flavor_rus.45
   title = flavor_rus.45.t
   desc = flavor_rus.45.desc
   picture = STRELTSY_MARCHING_eventPicture
   is_triggered_only = yes
+  #A new age for Russia
   option = {
     name = flavor_rus.45.a
     change_unit_type = western
@@ -2177,12 +2299,14 @@ country_event = {
     }
   }
 }
+# Technological jump
 country_event = {
   id = flavor_rus.47
   title = flavor_rus.47.t
   desc = flavor_rus.47.desc
   picture = INVENTION_eventPicture
   is_triggered_only = yes
+  #We shall push for more innovation for our administration
   option = {
     name = flavor_rus.47.a
     add_adm_power = 50
@@ -2199,6 +2323,7 @@ country_event = {
       factor = 1
     }
   }
+  #We shall push for more innovation for our navy
   option = {
     name = flavor_rus.47.b
     add_dip_power = 50
@@ -2215,6 +2340,7 @@ country_event = {
       factor = 0
     }
   }
+  #We shall push for more innovation for our military
   option = {
     name = flavor_rus.47.c
     add_mil_power = 50
@@ -2232,12 +2358,14 @@ country_event = {
     }
   }
 }
+# The new Administration of the [GovernmentName]
 country_event = {
   id = flavor_rus.100
   title = flavor_rus.100.t
   desc = flavor_rus.100.desc
   picture = REFORM_eventPicture
   is_triggered_only = yes
+  # Have normal Claims in the Mission tree
   option = {
     name = flavor_rus.100.a
     custom_tooltip = flavor_rus.100.a.tt
@@ -2359,6 +2487,8 @@ country_event = {
       factor = 1
     }
   }
+  # Missions no longer give perma claims
+  # Get a perma buff to fabrication cost, diplomat and the state claiming ability
   option = {
     name = flavor_rus.100.b
     custom_tooltip = flavor_rus.100.b.tt
@@ -2485,12 +2615,14 @@ country_event = {
     }
   }
 }
+# Trade Development
 country_event = {
   id = flavor_rus.101
   title = flavor_rus.101.t
   desc = flavor_rus.101.desc
   picture = TRADE_GOODS_eventPicture
   is_triggered_only = yes
+  # Develop Novgorod
   option = {
     name = flavor_rus.101.a
     goto = 310
@@ -2508,6 +2640,7 @@ country_event = {
     }
   }
 }
+# Founding of Arkhangelsk
 country_event = {
   id = flavor_rus.102
   title = flavor_rus.102.t
@@ -2534,11 +2667,12 @@ country_event = {
     months = 30
   }
   goto = 1955
+  # Ok
   option = {
     name = flavor_rus.102.a
     1955 = {
-      rename_capital = "?ñSIl<hSØeKQ"  # Arkhangelsk
-      change_province_name = "?ñSIl<hSØeKQ"  # Arkhangelsk
+      rename_capital = "?ñSIl<hSØeKQ" 	# Arkhangelsk
+      change_province_name = "?ñSIl<hSØeKQ" 	# Arkhangelsk
       add_base_tax = 2
       add_base_production = 2
       add_base_manpower = 2
@@ -2552,12 +2686,14 @@ country_event = {
     }
   }
 }
+# The Grand Duchy of Finland
 country_event = {
   id = flavor_rus.105
   title = flavor_rus.105.t
   desc = flavor_rus.105.desc
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
+  # Establish the autonomous Grand Duchy of Finland
   option = {
     name = flavor_rus.105.a
     hidden_effect = {
@@ -2715,6 +2851,7 @@ country_event = {
       factor = 0
     }
   }
+  # We will govern Finland ourselves with all means necessary
   option = {
     name = flavor_rus.105.b
     add_adm_power = 75
@@ -2723,6 +2860,7 @@ country_event = {
     }
   }
 }
+# Kiev under Russian rule
 country_event = {
   id = flavor_rus.106
   title = flavor_rus.106.t
@@ -2795,6 +2933,7 @@ country_event = {
     }
   }
 }
+# Establishment of Rostov-on-Don
 country_event = {
   id = flavor_rus.114
   title = flavor_rus.114.t
@@ -2814,8 +2953,8 @@ country_event = {
     name = flavor_rus.114.a
     add_years_of_income = -0.2
     286 = {
-      change_province_name = "ò≥lTuWØeXb+Y"  # Rostov-on-Don
-      rename_capital = "ò≥lTuWØeXb+Y"  # Rostov-on-Don
+      change_province_name = "ò≥lTuWØeXb+Y" 	# Rostov-on-Don
+      rename_capital = "ò≥lTuWØeXb+Y" 	# Rostov-on-Don
       if = {
         limit = {
           NOT = {
@@ -2834,6 +2973,7 @@ country_event = {
     }
   }
 }
+# The Christian border of Persia
 country_event = {
   id = flavor_rus.116
   title = flavor_rus.116.t
@@ -2857,6 +2997,7 @@ country_event = {
       }
     }
   }
+  #Ask our esteemed ally to kneel before the Russian throne
   option = {
     name = flavor_rus.116.a
     event_target:rus_persian_ally = {
@@ -2869,6 +3010,7 @@ country_event = {
       factor = 0
     }
   }
+  #We see them as equals
   option = {
     name = flavor_rus.116.b
     event_target:rus_persian_ally = {
@@ -2891,12 +3033,14 @@ country_event = {
     }
   }
 }
+# The Christian border of Persia - Asked for subjugation
 country_event = {
   id = flavor_rus.117
   title = flavor_rus.117.t
   desc = flavor_rus.117.desc
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
+  #Kneel before the Russian Tsardom
   option = {
     name = flavor_rus.117.a
     tooltip = {
@@ -2922,6 +3066,7 @@ country_event = {
       }
     }
   }
+  #Refuse
   option = {
     name = flavor_rus.117.b
     FROM = {
@@ -2940,12 +3085,14 @@ country_event = {
     }
   }
 }
+# The Christian border of Persia - Accepted
 country_event = {
   id = flavor_rus.118
   title = flavor_rus.118.t
   desc = flavor_rus.118.desc
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
+  #Nice
   option = {
     name = flavor_rus.118.a
     create_subject = {
@@ -2965,12 +3112,14 @@ country_event = {
     }
   }
 }
+# The Christian border of Persia - Rejected
 country_event = {
   id = flavor_rus.119
   title = flavor_rus.119.t
   desc = flavor_rus.119.desc
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
+  #oof
   option = {
     name = flavor_rus.119.a
     persia_region = {
@@ -2997,6 +3146,7 @@ country_event = {
     }
   }
 }
+# The Blessing of the Patriarchy
 country_event = {
   id = flavor_rus.120
   title = "flavor_rus.EVTNAME3415"
@@ -3004,6 +3154,7 @@ country_event = {
   picture = ORTHODOX_eventPicture
   is_triggered_only = yes
   option = {
+    # Let us lead the True Faith from Moscow
     name = "flavor_rus.EVTOPTA3415"
     ai_chance = {
       factor = 100
@@ -3024,6 +3175,7 @@ country_event = {
     }
   }
 }
+# The end of the Hordes
 country_event = {
   id = flavor_rus.122
   title = flavor_rus.122.t
@@ -3045,6 +3197,7 @@ country_event = {
     }
   }
 }
+# Development of the Russian Bureaucracy
 country_event = {
   id = flavor_rus.123
   title = flavor_rus.123.t
@@ -3088,6 +3241,7 @@ country_event = {
     }
   }
 }
+# The tysyatsky
 country_event = {
   id = flavor_rus.124
   title = flavor_rus.124.t
@@ -3098,7 +3252,7 @@ country_event = {
     tag = RUS
     NOT = {
       primary_culture = ruthenian
-    }
+    } 	# Ruthenian gets it for free
     NOT = {
       primary_culture = ruthenian_new
     }
@@ -3116,6 +3270,7 @@ country_event = {
       set_country_flag = rus_had_tysyatsky_event
     }
   }
+  #Renew the tysyatsky
   option = {
     name = flavor_rus.124.a
     trigger = {
@@ -3155,6 +3310,7 @@ country_event = {
       factor = 0
     }
   }
+  #Abolish them and introduce the Namestnik
   option = {
     name = flavor_rus.124.b
     add_adm_power = 75
@@ -3190,6 +3346,7 @@ country_event = {
     }
   }
 }
+# Establishment of the Oprichnina
 country_event = {
   id = flavor_rus.125
   title = flavor_rus.125.t
@@ -3260,12 +3417,14 @@ country_event = {
     }
   }
 }
+# Abolishment of the Mestnichestvo
 country_event = {
   id = flavor_rus.126
   title = flavor_rus.126.t
   desc = flavor_rus.126.desc
   picture = PRINCE_AND_BOYARS_eventPicture
   is_triggered_only = yes
+  #Good riddance!
   option = {
     name = flavor_rus.126.a
     change_government_reform_progress = 50
@@ -3287,6 +3446,7 @@ country_event = {
     }
   }
 }
+# Peter the Great
 country_event = {
   id = flavor_rus.127
   title = flavor_rus.127.t
@@ -3323,7 +3483,7 @@ country_event = {
   option = {
     name = flavor_rus.127.a
     define_heir = {
-      name = "|VóV"  # Pyotr
+      name = "|VóV" 	# Pyotr
       dynasty = ROOT
       adm = 6
       dip = 6
@@ -3360,6 +3520,7 @@ country_event = {
     }
   }
 }
+# Peter the Great's Sweeping Reforms
 country_event = {
   id = flavor_rus.128
   title = flavor_rus.128.t
@@ -3394,6 +3555,7 @@ country_event = {
     }
   }
 }
+# Catherine the Great
 country_event = {
   id = flavor_rus.129
   title = flavor_rus.129.t
@@ -3434,7 +3596,7 @@ country_event = {
     name = flavor_rus.129.a
     add_stability = -1
     define_ruler = {
-      name = "ˆSaSwc3tZ0'Y^0"  # Yekaterina Velikaya
+      name = "ˆSaSwc3tZ0'Y^0" 	# Yekaterina Velikaya
       dynasty = ROOT
       adm = 6
       dip = 6
@@ -3456,7 +3618,7 @@ country_event = {
       has_dlc = "Rights of Man"
     }
     define_consort = {
-      name = "ˆSaSwc3tZ0'Y^0"  # Yekaterina Velikaya
+      name = "ˆSaSwc3tZ0'Y^0" 	# Yekaterina Velikaya
       dynasty = ROOT
       adm = 6
       dip = 6
@@ -3475,7 +3637,7 @@ country_event = {
   option = {
     name = flavor_rus.129.c
     define_advisor = {
-      name = "ˆSaSwc3tZ"  # Yekaterina
+      name = "ˆSaSwc3tZ" 	# Yekaterina
       type = statesman
       female = yes
       cost_multiplier = 0.1
@@ -3486,12 +3648,14 @@ country_event = {
     }
   }
 }
+# Role of the Streltsy
 country_event = {
   id = flavor_rus.130
   title = flavor_rus.130.t
   desc = flavor_rus.130.desc
   picture = STRELTSY_MARCHING_eventPicture
   is_triggered_only = yes
+  #Ensure regular Payment of the Streltsy
   option = {
     name = flavor_rus.130.a
     custom_tooltip = flavor_rus.130.a.tt
@@ -3503,6 +3667,7 @@ country_event = {
       factor = 1
     }
   }
+  #Keep them as they are
   option = {
     name = flavor_rus.130.b
     add_mil_power = 100
@@ -3511,6 +3676,7 @@ country_event = {
     }
   }
 }
+# Streltsy demand payment - on every new ruler
 country_event = {
   id = flavor_rus.131
   title = flavor_rus.131.t
@@ -3536,6 +3702,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  #Pay them extra
   option = {
     name = flavor_rus.131.a
     if = {
@@ -3561,6 +3728,7 @@ country_event = {
       }
     }
   }
+  #Ensure regular Payment of the Streltsy
   option = {
     name = flavor_rus.131.b
     if = {
@@ -3589,6 +3757,7 @@ country_event = {
       }
     }
   }
+  #Keep them as they are
   option = {
     name = flavor_rus.131.c
     if = {
@@ -3608,6 +3777,7 @@ country_event = {
       }
     }
   }
+  #Do not pay them
   option = {
     name = flavor_rus.131.d
     add_ruler_modifier = {
@@ -3632,6 +3802,7 @@ country_event = {
     }
   }
 }
+# Streltsy revolt
 country_event = {
   id = flavor_rus.132
   title = flavor_rus.132.t
@@ -3650,6 +3821,7 @@ country_event = {
       }
     }
   }
+  #Oh no
   option = {
     name = flavor_rus.132.a
     event_target:revolt_province = {
@@ -3663,14 +3835,17 @@ country_event = {
     }
   }
 }
+# The "Westernized" Empire of Russia
 country_event = {
   id = flavor_rus.134
   title = flavor_rus.134.t
   desc = flavor_rus.134.desc
   picture = REFORM_eventPicture
   is_triggered_only = yes
+  #Make a new flag for the Emperor!
   option = {
     name = flavor_rus.134.a
+    #change_country_flag = RU2
     set_country_flag = rus_westernized_in_court
     if = {
       limit = {
@@ -3700,7 +3875,30 @@ country_event = {
       factor = 1
     }
   }
+  ##We should keep the old flag
+  #option = {
+  #	name = flavor_rus.134.b
+  #	set_country_flag = rus_westernized_in_court
+  #	if = {
+  #		limit = { technology_group = eastern }
+  #		unlock_estate = {
+  #			estate = estate_cossacks
+  #			show_conditions = yes
+  #		}
+  #	}
+  #	change_technology_group = western
+  #	add_prestige_or_monarch_power = {
+  #		amount = 50
+  #	}
+  #	ai_chance = {
+  #		factor = 1
+  #	}
+  #}
 }
+########################################
+# Modernization of Russia events
+########################################
+# Formation of the Russian Empire
 country_event = {
   id = flavor_rus.200
   title = flavor_rus.200.t
@@ -3720,6 +3918,7 @@ country_event = {
   }
   picture = REFORM_eventPicture
   is_triggered_only = yes
+  # All hail the Emperor!
   option = {
     name = flavor_rus.200.a
     trigger = {
@@ -3740,6 +3939,7 @@ country_event = {
       factor = 1
     }
   }
+  # I love democracy
   option = {
     name = flavor_rus.200.b
     trigger = {
@@ -3751,6 +3951,7 @@ country_event = {
     }
   }
 }
+# Purchase of Ideas - Trigger
 country_event = {
   id = flavor_rus.294
   title = none
@@ -3769,6 +3970,7 @@ country_event = {
     }
   }
 }
+# Purchase of Ideas - Russia pays
 country_event = {
   id = flavor_rus.295
   title = flavor_rus.295.t
@@ -3812,6 +4014,7 @@ country_event = {
     }
   }
 }
+# Purchase of Ideas - FROM receives payment
 country_event = {
   id = flavor_rus.296
   title = flavor_rus.296.t
@@ -3826,6 +4029,7 @@ country_event = {
     }
   }
 }
+# Sale of Ideas - Trigger
 country_event = {
   id = flavor_rus.297
   title = none
@@ -3844,6 +4048,11 @@ country_event = {
     }
   }
 }
+########################################
+# Serfdom in Russia and a what-if 
+# Peasants become the new middle class
+########################################
+# The Peasantry is brought into Serfdom
 country_event = {
   id = flavor_rus.300
   title = flavor_rus.300.t
@@ -3851,6 +4060,7 @@ country_event = {
   picture = PEASANTS_ON_STEPPES_eventPicture
   is_triggered_only = yes
   option = {
+    # Enserf the peasants
     name = flavor_rus.300.a
     country_event = {
       id = flavor_rus.301
@@ -3863,6 +4073,7 @@ country_event = {
     }
   }
 }
+# The Peasantry revolts!
 country_event = {
   id = flavor_rus.301
   title = flavor_rus.301.t
@@ -3881,6 +4092,7 @@ country_event = {
     }
   }
   option = {
+    # Crush the peasants
     name = flavor_rus.301.a
     goto = rus_peasant_revolt_province
     set_country_flag = rus_crushed_peasant_revolt
@@ -3900,6 +4112,7 @@ country_event = {
     }
   }
 }
+# Early idea of Freedom
 country_event = {
   id = flavor_rus.303
   title = flavor_rus.303.t
@@ -3919,6 +4132,7 @@ country_event = {
     }
   }
 }
+# The Boyars revolt!
 country_event = {
   id = flavor_rus.304
   title = flavor_rus.304.t
@@ -3937,6 +4151,7 @@ country_event = {
     }
   }
   option = {
+    # Crush the boyars
     name = flavor_rus.304.a
     goto = rus_boyars_revolt_province
     set_country_flag = rus_crushed_boyars_revolt
@@ -3953,6 +4168,7 @@ country_event = {
     }
   }
 }
+# Legalize Serfdom
 country_event = {
   id = flavor_rus.306
   title = flavor_rus.306.t
@@ -3981,6 +4197,7 @@ country_event = {
     set_country_flag = level_two_serfdom_privileges
   }
   option = {
+    # Legalize the Serfdom
     name = flavor_rus.306.a
     remove_estate_privilege = estate_nobles_early_serfdom
     set_estate_privilege = estate_nobles_legalized_serfdom
@@ -3996,6 +4213,7 @@ country_event = {
     }
   }
   option = {
+    # Accept deteriorating Economy and Burgher Uprisings
     name = flavor_rus.306.b
     goto = revolt_province
     remove_estate_privilege = estate_nobles_early_serfdom
@@ -4020,6 +4238,7 @@ country_event = {
     }
   }
 }
+# Rise of the Peasantry
 country_event = {
   id = flavor_rus.307
   title = flavor_rus.307.t
@@ -4048,6 +4267,7 @@ country_event = {
     set_country_flag = level_two_serfdom_privileges
   }
   option = {
+    # Encourage the freedom of thought of the Peasantry
     name = flavor_rus.307.a
     remove_estate_privilege = estate_nobles_increased_peasant_freedom
     set_estate_privilege = estate_nobles_peasant_liberation
@@ -4058,6 +4278,7 @@ country_event = {
     }
   }
   option = {
+    # Such thoughts are dangerous for the state.
     name = flavor_rus.307.b
     goto = revolt_province
     remove_estate_privilege = estate_nobles_increased_peasant_freedom
@@ -4084,6 +4305,7 @@ country_event = {
     }
   }
 }
+# The Peasantry revolts against the Serfdom!
 country_event = {
   id = flavor_rus.308
   title = flavor_rus.308.t
@@ -4114,6 +4336,7 @@ country_event = {
     }
   }
   option = {
+    # The Masses are moving...
     name = flavor_rus.308.a
     event_target:revolt_province = {
       spawn_rebels = {
@@ -4151,6 +4374,7 @@ country_event = {
     }
   }
 }
+# The peasantry joins the Burghers
 country_event = {
   id = flavor_rus.309
   title = flavor_rus.309.t
@@ -4187,6 +4411,7 @@ country_event = {
     }
   }
   option = {
+    # We lose the grip over our own cities...
     name = flavor_rus.309.a
     trigger = {
       NOT = {
@@ -4199,6 +4424,7 @@ country_event = {
     }
   }
   option = {
+    # Integrate these new burghers into the Republic
     name = flavor_rus.309.b
     trigger = {
       government = republic
@@ -4212,6 +4438,7 @@ country_event = {
     }
   }
 }
+# The Reactionary Policy
 country_event = {
   id = flavor_rus.310
   title = flavor_rus.310.t
@@ -4247,6 +4474,7 @@ country_event = {
     set_country_flag = level_three_serfdom_privileges
   }
   option = {
+    # Keep the Masses in Chains
     name = flavor_rus.310.a
     remove_estate_privilege = estate_nobles_legalized_serfdom
     set_estate_privilege = estate_nobles_total_serfdom
@@ -4262,6 +4490,7 @@ country_event = {
     }
   }
   option = {
+    # Let introduce the idea of 'Freedom'
     name = flavor_rus.310.b
     remove_estate_privilege = estate_nobles_legalized_serfdom
     set_estate_privilege = estate_burghers_the_new_middle_class
@@ -4286,6 +4515,7 @@ country_event = {
     }
   }
 }
+# Ascension of the Russian Middle Class
 country_event = {
   id = flavor_rus.311
   title = flavor_rus.311.t
@@ -4333,6 +4563,7 @@ country_event = {
     set_country_flag = level_three_serfdom_privileges
   }
   option = {
+    # Encourage this development
     name = flavor_rus.311.a
     event_target:revolt_province = {
       spawn_rebels = {
@@ -4356,6 +4587,7 @@ country_event = {
     }
   }
   option = {
+    # Our own subjects are becoming a threat to us!
     name = flavor_rus.311.b
     add_stability = -2
     event_target:revolt_province = {
@@ -4380,6 +4612,7 @@ country_event = {
     }
   }
 }
+# Serfdom in the Age of the Enlightenment
 country_event = {
   id = flavor_rus.312
   title = flavor_rus.312.t
@@ -4401,6 +4634,7 @@ country_event = {
     set_country_flag = final_serfdom_privileges
   }
   option = {
+    # Restrict Serfdom
     name = flavor_rus.312.a
     if = {
       limit = {
@@ -4427,6 +4661,7 @@ country_event = {
     }
   }
   option = {
+    # It is perfect as it is
     name = flavor_rus.312.b
     remove_estate_privilege = estate_nobles_total_serfdom
     set_estate_privilege = estate_nobles_devastating_serfdom
@@ -4436,6 +4671,7 @@ country_event = {
     }
   }
 }
+# Autocrat vs Burgher class
 country_event = {
   id = flavor_rus.313
   title = flavor_rus.313.t
@@ -4462,6 +4698,7 @@ country_event = {
     }
   }
   option = {
+    # End the Challenge of the Burghers
     name = flavor_rus.313.a
     remove_estate_privilege = estate_burghers_the_new_middle_class
     remove_estate_privilege = estate_burghers_rise_of_the_burghers
@@ -4481,6 +4718,7 @@ country_event = {
     }
   }
   option = {
+    # Declare the Republic!
     name = flavor_rus.313.b
     change_government = republic
     add_stability = -1
@@ -4489,6 +4727,7 @@ country_event = {
     }
   }
 }
+# The Russian Serfdom
 country_event = {
   id = flavor_rus.350
   title = flavor_rus.350.t
@@ -4506,6 +4745,7 @@ country_event = {
     months = 12
   }
   option = {
+    # Enserf the peasants
     name = "flavor_rus.EVTOPTA3416"
     ai_chance = {
       factor = 75
@@ -4524,6 +4764,7 @@ country_event = {
     }
   }
   option = {
+    # Do not enserf them
     name = "flavor_rus.EVTOPTB3416"
     ai_chance = {
       factor = 25
@@ -4542,6 +4783,7 @@ country_event = {
     }
   }
 }
+# End of the Serfdom - REVOLUTION!
 country_event = {
   id = flavor_rus.398
   title = flavor_rus.398.t
@@ -4549,6 +4791,7 @@ country_event = {
   picture = REVOLUTION_eventPicture
   is_triggered_only = yes
   option = {
+    # Death to the oppressors of the worker class!
     name = flavor_rus.398.a
     add_yearly_manpower = 2
     remove_estate_privilege = estate_nobles_early_serfdom
@@ -4561,6 +4804,7 @@ country_event = {
     }
   }
 }
+# Red Terror for the Peasantry
 country_event = {
   id = flavor_rus.399
   title = flavor_rus.399.t
@@ -4568,6 +4812,7 @@ country_event = {
   picture = REVOLUTION_eventPicture
   is_triggered_only = yes
   option = {
+    # They are just another enemies of the revolution!
     name = flavor_rus.399.a
     add_yearly_manpower = 2
     remove_estate_privilege = estate_nobles_early_serfdom
@@ -4580,6 +4825,10 @@ country_event = {
     }
   }
 }
+########################################
+# Grand Embassy
+########################################
+# Grand Embassy
 country_event = {
   id = flavor_rus.1010
   title = "flavor_rus.EVTNAME1010"
@@ -4624,6 +4873,7 @@ country_event = {
     set_country_flag = RUS_had_event_1010
   }
   option = {
+    # Embark on a journey through Europe
     name = "flavor_rus.EVTOPTA1010"
     ai_chance = {
       factor = 100
@@ -4655,6 +4905,7 @@ country_event = {
     }
   }
   option = {
+    # Our country holds the knowledge we need
     name = "flavor_rus.EVTOPTB1010"
     ai_chance = {
       factor = 0
@@ -4662,6 +4913,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Grand Embassy Arrives in CAPITAL
 country_event = {
   id = flavor_rus.1011
   title = "flavor_rus.EVTNAME1011"
@@ -4672,6 +4924,7 @@ country_event = {
     set_country_flag = grand_embassy
   }
   option = {
+    # Invite him to stay
     name = "flavor_rus.EVTOPTA1011"
     ai_chance = {
       factor = 100
@@ -4690,6 +4943,7 @@ country_event = {
     }
   }
   option = {
+    # Politely turn him away
     name = "flavor_rus.EVTOPTB1011"
     ai_chance = {
       factor = 0
@@ -4704,6 +4958,7 @@ country_event = {
     }
   }
   option = {
+    # Send him packing!
     name = "flavor_rus.EVTOPTC1011"
     ai_chance = {
       factor = 0
@@ -4721,6 +4976,7 @@ country_event = {
     }
   }
 }
+# Grand Embassy in CAPITALNAME
 country_event = {
   id = flavor_rus.1012
   title = "flavor_rus.EVTNAME1012"
@@ -4728,11 +4984,12 @@ country_event = {
   picture = REFORM_eventPicture
   is_triggered_only = yes
   option = {
+    # Invite him to stay and study our governmental institutions
     name = "flavor_rus.EVTOPTA1012"
     ai_chance = {
       factor = 25
     }
-    custom_tooltip = flavor_rus.1012.a.tt
+    custom_tooltip = flavor_rus.1012.a.tt 	# [FromFrom.Monarch.GetName] will learn about our government institutions
     random_country = {
       limit = {
         has_country_flag = RUS_had_event_1010
@@ -4751,11 +5008,12 @@ country_event = {
     }
   }
   option = {
+    # Invite him to stay and study our army
     name = "flavor_rus.EVTOPTB1012"
     ai_chance = {
       factor = 25
     }
-    custom_tooltip = flavor_rus.1012.b.tt
+    custom_tooltip = flavor_rus.1012.b.tt 	# [FromFrom.Monarch.GetName] will learn about our army organization.
     random_country = {
       limit = {
         has_country_flag = RUS_had_event_1010
@@ -4774,11 +5032,12 @@ country_event = {
     }
   }
   option = {
+    # Invite him to stay and study our navy
     name = "flavor_rus.EVTOPTC1012"
     ai_chance = {
       factor = 25
     }
-    custom_tooltip = flavor_rus.1012.c.tt
+    custom_tooltip = flavor_rus.1012.c.tt 	# [FromFrom.Monarch.GetName] will learn about our naval organization.
     random_country = {
       limit = {
         has_country_flag = RUS_had_event_1010
@@ -4797,6 +5056,7 @@ country_event = {
     }
   }
   option = {
+    # He has overstayed his welcome...
     name = "flavor_rus.EVTOPTD1012"
     ai_chance = {
       factor = 25
@@ -4818,6 +5078,7 @@ country_event = {
     }
   }
 }
+# Generous Offer to Stay
 country_event = {
   id = flavor_rus.1013
   title = "flavor_rus.EVTNAME1013"
@@ -4825,6 +5086,7 @@ country_event = {
   picture = REFORM_eventPicture
   is_triggered_only = yes
   option = {
+    # Let us stay and study their governmental institutions
     name = "flavor_rus.EVTOPTA1013"
     trigger = {
       has_country_flag = grand_embassy_government
@@ -4844,6 +5106,7 @@ country_event = {
     }
   }
   option = {
+    # Let us stay and study their army
     name = "flavor_rus.EVTOPTB1013"
     trigger = {
       has_country_flag = grand_embassy_army
@@ -4863,6 +5126,7 @@ country_event = {
     }
   }
   option = {
+    # Let us stay and study their navy
     name = "flavor_rus.EVTOPTC1013"
     trigger = {
       has_country_flag = grand_embassy_navy
@@ -4882,6 +5146,7 @@ country_event = {
     }
   }
   option = {
+    # No, we have other countries to visit
     name = "flavor_rus.EVTOPTD1013"
     ai_chance = {
       factor = 25
@@ -4945,6 +5210,7 @@ country_event = {
     }
   }
   option = {
+    # The time has come to return home
     name = "flavor_rus.EVTOPTE1013"
     ai_chance = {
       factor = 25
@@ -4955,6 +5221,7 @@ country_event = {
     clr_country_flag = grand_embassy
   }
 }
+# Request to Stay Turned Down
 country_event = {
   id = flavor_rus.1014
   title = "flavor_rus.EVTNAME1014"
@@ -4962,6 +5229,7 @@ country_event = {
   picture = REFORM_eventPicture
   is_triggered_only = yes
   option = {
+    # Very well, we have other countries to visit
     name = "flavor_rus.EVTOPTA1014"
     trigger = {
       NOT = {
@@ -5028,6 +5296,7 @@ country_event = {
     }
   }
   option = {
+    # The time has come to return home
     name = "flavor_rus.EVTOPTB1014"
     ai_chance = {
       factor = 25
@@ -5038,6 +5307,7 @@ country_event = {
     clr_country_flag = grand_embassy
   }
 }
+# Extended Visit Pays Off
 country_event = {
   id = flavor_rus.1015
   title = "flavor_rus.EVTNAME1015"
@@ -5060,6 +5330,7 @@ country_event = {
     }
   }
   option = {
+    # Our governmental institutions will benefit from this!
     name = "flavor_rus.EVTOPTA1015"
     trigger = {
       has_country_flag = grand_embassy_government
@@ -5098,6 +5369,7 @@ country_event = {
     }
   }
   option = {
+    # Our armed forces will benefit from this!
     name = "flavor_rus.EVTOPTB1015"
     trigger = {
       has_country_flag = grand_embassy_army
@@ -5136,6 +5408,7 @@ country_event = {
     }
   }
   option = {
+    # Our navy will benefit from this!
     name = "flavor_rus.EVTOPTC1015"
     trigger = {
       has_country_flag = grand_embassy_navy
@@ -5174,6 +5447,7 @@ country_event = {
     }
   }
 }
+# Grand Embassy Successful
 country_event = {
   id = flavor_rus.1016
   title = "flavor_rus.EVTNAME1016"
@@ -5181,6 +5455,7 @@ country_event = {
   picture = REFORM_eventPicture
   is_triggered_only = yes
   option = {
+    # We still have other countries to visit
     name = "flavor_rus.EVTOPTA1016"
     trigger = {
       NOT = {
@@ -5244,6 +5519,7 @@ country_event = {
     }
   }
   option = {
+    # The time has come to return home
     name = "flavor_rus.EVTOPTB1016"
     ai_chance = {
       factor = 25
@@ -5251,6 +5527,10 @@ country_event = {
     clr_country_flag = grand_embassy_government
   }
 }
+########################################
+# Third Rome events by Daniel Tolman
+########################################
+# Decembrist Revolution - alt history
 country_event = {
   id = flavor_rus.2000
   title = "flavor_rus.EVTNAME2000"
@@ -5279,7 +5559,7 @@ country_event = {
     random_list = {
       25 = {
         define_ruler = {
-          name = "s|»TOS 0åS÷v6wÙuGY bSÅR"  # Mikhail Sergeyevich Lunin
+          name = "s|»TOS 0åS÷v6wÙuGY bSÅR" 	# Mikhail Sergeyevich Lunin
           change_adm = 3
           change_dip = 3
           change_mil = 3
@@ -5287,7 +5567,7 @@ country_event = {
       }
       25 = {
         define_ruler = {
-          name = "^ÙuS |VØewcS"  # Pavel Pestel
+          name = "^ÙuS |VØewcS" 	# Pavel Pestel
           change_adm = 3
           change_dip = 3
           change_mil = 3
@@ -5295,7 +5575,7 @@ country_event = {
       }
       25 = {
         define_ruler = {
-          name = "<S˙WTX Fz…bÙu¶u+Y"  # Nikita Muraynov
+          name = "<S˙WTX Fz…bÙu¶u+Y" 	# Nikita Muraynov
           change_adm = 3
           change_dip = 3
           change_mil = 3
@@ -5303,7 +5583,7 @@ country_event = {
       }
       25 = {
         define_ruler = {
-          name = "0åS÷v |VóVWÙuGY yrÅú+R(ÉÔgO"  # Sergei Petrovich Trubetskoy
+          name = "0åS÷v |VóVWÙuGY yrÅú+R(ÉÔgO" 	# Sergei Petrovich Trubetskoy
           change_adm = 3
           change_dip = 3
           change_mil = 3
@@ -5312,6 +5592,7 @@ country_event = {
     }
   }
 }
+# Third Rome - alt history
 country_event = {
   id = flavor_rus.2001
   title = "flavor_rus.EVTNAME2001"
@@ -5339,7 +5620,7 @@ country_event = {
       move_capital_effect = yes
       change_religion = ROOT
       change_culture = ROOT
-      rename_capital = "ôláv<h“R"  # Tsargrad
+      rename_capital = "ôláv<h“R" 	# Tsargrad
       add_province_modifier = {
         name = "third_rome_modifier"
         duration = -1
@@ -5359,6 +5640,7 @@ country_event = {
     }
   }
 }
+# The Restoration of Kiev - alt history
 country_event = {
   id = flavor_rus.2002
   title = "flavor_rus.EVTNAME2002"

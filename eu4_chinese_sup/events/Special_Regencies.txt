@@ -1,5 +1,10 @@
+###########################################################
+# Events for Special Regencies
+# written by VerÛnica Pazos
+###########################################################
 namespace = special_regency_events
 normal_or_historical_nations = yes
+#Joao Takes the Crown
 country_event = {
   id = special_regency_events.1
   title = special_regency_events.1.t
@@ -23,12 +28,12 @@ country_event = {
     tag = POR
     has_regency = no
     is_lesser_in_union = no
-    has_ruler = "õsKNöN I"  # Maria I
+    has_ruler = "õsKNöN I" 	# Maria I
     is_year = 1792
     NOT = {
       is_year = 1816
     }
-    has_heir = "ÂÇf"  # Joao
+    has_heir = "ÂÇf" 	# Joao
     heir_age = 15
     NOT = {
       has_country_flag = queen_maria_illness
@@ -50,6 +55,7 @@ country_event = {
     }
   }
   option = {
+    #push him to take the throne
     name = special_regency_events.1.a
     custom_tooltip = special_regency_events.1.tt
     hidden_effect = {
@@ -67,6 +73,7 @@ country_event = {
     }
   }
   option = {
+    #she can still rule
     name = special_regency_events.1.b
     add_estate_loyalty = {
       estate = estate_nobles
@@ -78,6 +85,7 @@ country_event = {
     }
   }
 }
+# Recovering the Ch‚teau de Chenonceau
 country_event = {
   id = special_regency_events.2
   title = special_regency_events.2.t
@@ -91,7 +99,7 @@ country_event = {
       is_year = 1589
     }
     OR = {
-      has_ruler = "ÔQmt3t"  # Catherine
+      has_ruler = "ÔQmt3t" 	# Catherine
       has_global_flag = wih_catherine_demedici_flag
     }
     NOT = {
@@ -108,6 +116,7 @@ country_event = {
     }
   }
   option = {
+    #we need to end this depravation
     name = special_regency_events.2.a
     if = {
       limit = {
@@ -147,6 +156,7 @@ country_event = {
     add_treasury = 50
   }
 }
+# Sten Sture the Elder
 country_event = {
   id = special_regency_events.3
   title = special_regency_events.3.t
@@ -164,11 +174,11 @@ country_event = {
       has_country_flag = sten_sture_regency
     }
     NOT = {
-      has_ruler = "Øe’n ‰SØeTX+YÓh"  # Sten Gustavsson
+      has_ruler = "Øe’n ‰SØeTX+YÓh" 	# Sten Gustavsson
     }
     government = monarchy
     OR = {
-      has_ruler = "aSS VIII"  # Karl VIII
+      has_ruler = "aSS VIII" 	# Karl VIII
       NOT = {
         heir_age = 15
       }
@@ -176,7 +186,7 @@ country_event = {
     }
     is_lesser_in_union = no
     NOT = {
-      dynasty = "Êt(Ñ"  # Vasa
+      dynasty = "Êt(Ñ" 	# Vasa
     }
     NOT = {
       has_ruler_modifier = swe_rise_of_a_new_dynasty
@@ -191,6 +201,7 @@ country_event = {
     }
   }
   option = {
+    #he should take care of the country
     name = special_regency_events.3.a
     hidden_effect = {
       exile_ruler_as = {
@@ -201,7 +212,7 @@ country_event = {
     if = {
       limit = {
         NOT = {
-          has_ruler = "Øe’n ‰SØeTX+YÓh"  # Sten Gustavsson
+          has_ruler = "Øe’n ‰SØeTX+YÓh" 	# Sten Gustavsson
         }
       }
       if = {
@@ -212,8 +223,8 @@ country_event = {
           }
         }
         define_ruler = {
-          name = "Øe’n ‰SØeTX+YÓh"  # Sten Gustavsson
-          dynasty = "Øe˛V˜ñ"  # Sture
+          name = "Øe’n ‰SØeTX+YÓh" 	# Sten Gustavsson
+          dynasty = "Øe˛V˜ñ" 	# Sture
           regency = yes
           age = 30
           claim = 75
@@ -224,8 +235,8 @@ country_event = {
       }
       else = {
         define_ruler = {
-          name = "Øe’n ‰SØeTX+YÓh"  # Sten Gustavsson
-          dynasty = "Øe˛V˜ñ"  # Sture
+          name = "Øe’n ‰SØeTX+YÓh" 	# Sten Gustavsson
+          dynasty = "Øe˛V˜ñ" 	# Sture
           age = 30
           claim = 75
           change_adm = 1
@@ -267,6 +278,7 @@ country_event = {
     }
   }
   option = {
+    #no
     name = special_regency_events.3.b
     add_estate_loyalty = {
       estate = estate_nobles
@@ -284,6 +296,7 @@ country_event = {
     }
   }
 }
+# Nguy·ª&n Th·ª9 Anh Is Doing Great
 country_event = {
   id = special_regency_events.4
   title = special_regency_events.4.t
@@ -316,7 +329,7 @@ country_event = {
     NOT = {
       has_global_flag = nguyen_thi_anh
     }
-    has_ruler = ".ñlÒÇ"  # Nguyen Thi Anh
+    has_ruler = ".ñlÒÇ" 	# Nguyen Thi Anh
     has_regency = yes
     stability = 1
     is_at_war = no
@@ -330,6 +343,7 @@ country_event = {
     }
   }
   option = {
+    #have her as advisor
     name = special_regency_events.4.a
     trigger = {
       heir_age = 15
@@ -345,7 +359,7 @@ country_event = {
         }
       }
       define_advisor = {
-        name = ".ñlÒÇ"  # Nguyen Thi Anh
+        name = ".ñlÒÇ" 	# Nguyen Thi Anh
         culture = vietnamese_new
         type = diplomat
         discount = yes
@@ -355,7 +369,7 @@ country_event = {
     }
     else = {
       define_advisor = {
-        name = ".ñlÒÇ"  # Nguyen Thi Anh
+        name = ".ñlÒÇ" 	# Nguyen Thi Anh
         culture = vietnamese
         type = diplomat
         discount = yes
@@ -365,6 +379,7 @@ country_event = {
     }
   }
   option = {
+    #give her the rule
     name = special_regency_events.4.b
     if = {
       limit = {
@@ -373,7 +388,7 @@ country_event = {
         }
       }
       define_ruler = {
-        name = ".ñlÒÇ"  # Nguyen Thi Anh
+        name = ".ñlÒÇ" 	# Nguyen Thi Anh
         culture = vietnamese_new
         age = 22
         claim = 65
@@ -385,7 +400,7 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = ".ñlÒÇ"  # Nguyen Thi Anh
+        name = ".ñlÒÇ" 	# Nguyen Thi Anh
         culture = vietnamese
         age = 22
         claim = 65
@@ -397,10 +412,12 @@ country_event = {
     }
   }
   option = {
+    #do nothing
     name = special_regency_events.4.c
     add_prestige = -10
   }
 }
+# The Education of the Heir
 country_event = {
   id = special_regency_events.5
   title = special_regency_events.5.t
@@ -430,7 +447,7 @@ country_event = {
       primary_culture = vietnamese
       primary_culture = vietnamese_new
     }
-    has_ruler = ".ñlÒÇ"  # Nguyen Thi Anh
+    has_ruler = ".ñlÒÇ" 	# Nguyen Thi Anh
     has_global_flag = nguyen_thi_anh
     has_heir = yes
     NOT = {
@@ -460,6 +477,7 @@ country_event = {
     add_treasury = -10
   }
 }
+# Jung Soon > Queen Dowager Yesun
 country_event = {
   id = special_regency_events.6
   title = special_regency_events.6.t
@@ -494,7 +512,7 @@ country_event = {
       stability = 1
     }
     NOT = {
-      has_ruler = "çØu"  # Jung Soon
+      has_ruler = "çØu" 	# Jung Soon
     }
     NOT = {
       has_country_flag = queen_jung_soon
@@ -523,6 +541,7 @@ country_event = {
     }
   }
   option = {
+    #make her regent
     name = special_regency_events.6.a
     trigger = {
       has_heir = yes
@@ -539,8 +558,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "çØu"  # Jung Soon
-        dynasty = "—ë"  # Gyeongju Kim
+        name = "çØu" 	# Jung Soon
+        dynasty = "—ë" 	# Gyeongju Kim
         culture = korean_new
         regency = yes
         claim = 65
@@ -552,8 +571,8 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = "çØu"  # Jung Soon
-        dynasty = "—ë"  # Gyeongju Kim
+        name = "çØu" 	# Jung Soon
+        dynasty = "—ë" 	# Gyeongju Kim
         culture = korean
         regency = yes
         claim = 65
@@ -566,6 +585,7 @@ country_event = {
     custom_tooltip = special_regency_events.6.tt
   }
   option = {
+    #give her the country
     name = special_regency_events.6.b
     hidden_effect = {
       exile_ruler_as = {
@@ -579,8 +599,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "çØu"  # Jung Soon
-        dynasty = "—ë"  # Gyeongju Kim
+        name = "çØu" 	# Jung Soon
+        dynasty = "—ë" 	# Gyeongju Kim
         culture = korean_new
         claim = 65
         change_adm = 3
@@ -591,8 +611,8 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = "çØu"  # Jung Soon
-        dynasty = "—ë"  # Gyeongju Kim
+        name = "çØu" 	# Jung Soon
+        dynasty = "—ë" 	# Gyeongju Kim
         culture = korean
         claim = 65
         change_adm = 3
@@ -605,6 +625,7 @@ country_event = {
     custom_tooltip = special_regency_events.6.tt2
   }
   option = {
+    #let the heir rule
     name = special_regency_events.6.c
     hidden_effect = {
       exile_ruler_as = {
@@ -616,6 +637,7 @@ country_event = {
     }
   }
 }
+# Queen Dowager Yesun Sinyu Persecution
 country_event = {
   id = special_regency_events.7
   title = special_regency_events.7.t
@@ -644,6 +666,7 @@ country_event = {
     }
   }
   option = {
+    #execute the Catholics
     name = special_regency_events.7.a
     every_owned_province = {
       limit = {
@@ -654,6 +677,7 @@ country_event = {
     }
   }
   option = {
+    #this won't look good on us
     name = special_regency_events.7.b
     every_owned_province = {
       limit = {

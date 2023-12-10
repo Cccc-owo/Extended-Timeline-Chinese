@@ -1,6 +1,16 @@
+#1559.5.12 - New bishoprics in the Lowlands create an outrage
+#1565.1.1 - Letters of Segovia, Philip I orders the harsh persecution of Calvinists
+#1566.4.5 - 'Eedverbond der Edelen', Margaretha of Parma promises leniency
+#1567.9.10 - Counts of Egmont & Hoorne arrested
+#1569.1.1 - The Duke of Alba reforms the taxation system ('tiende penning')
+#1570.1.1 - The Duke of Alba reforms the penal system, 'Blood Council' (Bloedraad) established
 namespace = flavor_bur
 normal_or_historical_nations = yes
+### Dutch Revolt ###
+# This is now the on_start event for dutch revolt disaster
+# PROVINCENAME Revolts!
 country_event = {
+  # changed from province to country event
   id = flavor_bur.8
   title = "flavor_bur.EVTNAME8"
   desc = "flavor_bur.EVTDESC8"
@@ -8,7 +18,7 @@ country_event = {
   is_triggered_only = yes
   immediate = {
     set_global_flag = dutch_revolt
-    set_country_flag = dutch_revolt_target
+    set_country_flag = dutch_revolt_target 	#  used in incident
   }
   option = {
     name = "flavor_bur.EVTOPTA8"
@@ -65,12 +75,14 @@ country_event = {
         }
         add_province_modifier = {
           name = "dutch_revolt_modifier"
-          duration = -1
+          duration = -1 	#  removed via the on_end event
         }
       }
     }
   }
 }
+# Random rebels event for disaster
+# PROVINCENAME Revolts!
 country_event = {
   id = flavor_bur.9
   title = "flavor_bur.EVTNAME9"
@@ -145,6 +157,8 @@ country_event = {
     }
   }
 }
+# Netherlands Declare Independence!
+# ends the disaster by virtue of NED existing
 country_event = {
   id = flavor_bur.10
   title = "flavor_bur.EVTNAME10"
@@ -233,6 +247,7 @@ country_event = {
           days = 10
         }
       }
+      # Send messages to rivals allowing them to join
       if = {
         limit = {
           NED = {
@@ -258,6 +273,7 @@ country_event = {
           }
         }
       }
+      # Begin incident
       if = {
         limit = {
           is_emperor = no
@@ -306,6 +322,7 @@ country_event = {
           days = 10
         }
       }
+      # Send messages to rivals allowing them to join
       if = {
         limit = {
           NED = {
@@ -331,6 +348,7 @@ country_event = {
           }
         }
       }
+      # Begin incident
       if = {
         limit = {
           is_emperor = no
@@ -345,6 +363,7 @@ country_event = {
     switch_tag = NED
   }
 }
+# Dutch Mobilization
 country_event = {
   id = flavor_bur.11
   title = "flavor_bur.EVTNAME11"
@@ -378,6 +397,7 @@ country_event = {
     }
   }
 }
+# Dutch Claims
 country_event = {
   id = flavor_bur.12
   title = "flavor_bur.EVTNAME12"
@@ -394,6 +414,7 @@ country_event = {
     }
   }
 }
+# Dutch state joins the Netherlands
 country_event = {
   id = flavor_bur.16
   title = "flavor_bur.EVTNAME16"
@@ -451,6 +472,7 @@ country_event = {
     set_country_flag = state_joined_netherlands
   }
 }
+# Incorporated into the Netherlands
 country_event = {
   id = flavor_bur.17
   title = "flavor_bur.EVTNAME17"
@@ -470,6 +492,8 @@ country_event = {
     add_yearly_sailors = 3
   }
 }
+# Dutch Nobility demands General Estates
+# This event will stop Burgundy from getting the disaster dependin on its choice
 country_event = {
   id = flavor_bur.13
   title = "flavor_bur.EVTNAME13"
@@ -554,6 +578,7 @@ country_event = {
     }
   }
   option = {
+    # No Concessions
     name = "flavor_bur.EVTOPTA13"
     ai_chance = {
       factor = 25
@@ -578,6 +603,7 @@ country_event = {
     set_country_flag = harsh_dutch
   }
   option = {
+    # Allow them to consolidate
     name = "flavor_bur.EVTOPTB13"
     ai_chance = {
       factor = 75
@@ -614,12 +640,13 @@ country_event = {
           }
           country_event = {
             id = ideagroups.1
-          }
+          } 	# Swap Ideas
         }
       }
     }
   }
 }
+# The Count of Charolais and the Edict of Blood
 country_event = {
   id = flavor_bur.14
   title = "flavor_bur.EVTNAME14"
@@ -639,6 +666,7 @@ country_event = {
     months = 60
   }
   option = {
+    # No Concessions
     name = "flavor_bur.EVTOPTA14"
     low_countries_region = {
       limit = {
@@ -648,11 +676,13 @@ country_event = {
     }
   }
   option = {
+    # Don't introduce that Consumption Tax
     name = "flavor_bur.EVTOPTB14"
     add_legitimacy = -50
     add_prestige = -100
   }
 }
+# The Count of Maçon and the Union of Arras
 country_event = {
   id = flavor_bur.15
   title = "flavor_bur.EVTNAME15"
@@ -668,6 +698,7 @@ country_event = {
     months = 60
   }
   option = {
+    # Sign the Union of Arras
     name = "flavor_bur.EVTOPTA15"
     low_countries_region = {
       limit = {
@@ -683,6 +714,7 @@ country_event = {
     add_prestige = -50
   }
   option = {
+    # No Concessions
     name = "flavor_bur.EVTOPTB15"
     low_countries_region = {
       limit = {
@@ -695,6 +727,7 @@ country_event = {
     }
   }
 }
+# Netherland revolters call on the rivals of their enemy
 country_event = {
   id = flavor_bur.20
   title = "flavor_bur.EVTNAME20"
@@ -721,6 +754,7 @@ country_event = {
     add_prestige = -10
   }
 }
+#BUR retains independence 
 country_event = {
   id = flavor_bur.21
   title = flavor_bur.21.t
@@ -737,8 +771,8 @@ country_event = {
           }
         }
         define_ruler = {
-          name = "›sKN"  # Marie
-          dynasty = "·V ÃRn‚,r"  # de Bourgogne
+          name = "›sKN" 	# Marie
+          dynasty = "·V ÃRn‚,r" 	# de Bourgogne
           culture = burgundian
           age = 20
           claim = 95
@@ -827,12 +861,18 @@ country_event = {
         random = {
           chance = 20
           change_government = republic
+          #set_legacy_government = administrative_republic
         }
       }
     }
   }
 }
+#################################################################
+### New Burgundy events by Pierre du Plessis                  ###
+#################################################################
+#new start in a more civilised tongue
 namespace = new_flavour_bur
+#The Feast of the Pheasant
 country_event = {
   id = new_flavour_bur.1
   title = new_flavour_bur.1.name
@@ -858,6 +898,7 @@ country_event = {
     }
   }
 }
+#The Feast of the Pheasant (Burgundy version)
 country_event = {
   id = new_flavour_bur.2
   title = new_flavour_bur.1.name
@@ -884,6 +925,7 @@ country_event = {
     }
   }
 }
+#The Feast of the Pheasant (Ottoman version)
 country_event = {
   id = new_flavour_bur.3
   title = new_flavour_bur.3.name
@@ -895,6 +937,7 @@ country_event = {
     custom_tooltip = emp_bur_feast_of_pheasants_event_effect_tooltip
   }
 }
+#Lothair's Legacy
 country_event = {
   id = new_flavour_bur.4
   title = new_flavour_bur.4.name
@@ -985,7 +1028,7 @@ country_event = {
       }
       country_event = {
         id = ideagroups.1
-      }
+      } 	# Swap Ideas
     }
     swap_non_generic_missions = yes
     ai_chance = {
@@ -993,6 +1036,7 @@ country_event = {
     }
   }
   option = {
+    #nah
     name = new_flavour_bur.4.B
     add_prestige = 20
     ai_chance = {
@@ -1005,6 +1049,7 @@ country_event = {
     }
   }
 }
+#The Court of [Ruler Name]
 country_event = {
   id = new_flavour_bur.5
   title = new_flavour_bur.5.name
@@ -1030,6 +1075,7 @@ country_event = {
     }
   }
 }
+#The League of the Public Weal
 country_event = {
   id = new_flavour_bur.6
   title = new_flavour_bur.6.name
@@ -1087,6 +1133,7 @@ country_event = {
     }
   }
 }
+#Burgundy is King of the Franks (tell France and the world)
 country_event = {
   id = new_flavour_bur.7
   title = new_flavour_bur.7.name

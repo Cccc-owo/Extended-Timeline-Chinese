@@ -76,9 +76,7 @@ atj_1 = {
   }
   atj_sumatra_islam = {
     icon = mission_indian_stateman
-    required_missions = {
-      atj_porch_of_mecca
-    }
+    required_missions = { atj_porch_of_mecca }
     provinces_to_highlight = {
       owner = {
         primary_culture = sumatran
@@ -104,14 +102,12 @@ atj_1 = {
       custom_tooltip = atj_holy_war_cb_java_tt
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   atj_java_islam = {
     icon = mission_invade_island
-    required_missions = {
-      atj_sumatra_islam
-    }
+    required_missions = { atj_sumatra_islam }
     provinces_to_highlight = {
       owner = {
         OR = {
@@ -143,14 +139,12 @@ atj_1 = {
       custom_tooltip = atj_holy_war_cb_moluccas_tt
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   atj_moluccas_islam = {
     icon = mission_mosque
-    required_missions = {
-      atj_java_islam
-    }
+    required_missions = { atj_java_islam }
     provinces_to_highlight = {
       owner = {
         OR = {
@@ -182,7 +176,7 @@ atj_1 = {
       custom_tooltip = atj_holy_war_cb_neighbors_tt
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }
@@ -202,9 +196,7 @@ atj_2 = {
   has_country_shield = yes
   atj_sublime_porte = {
     icon = mission_ottoman_harem
-    required_missions = {
-      atj_porch_of_mecca
-    }
+    required_missions = { atj_porch_of_mecca }
     provinces_to_highlight = {
       has_discovered = ROOT
       owner = {
@@ -242,7 +234,7 @@ atj_2 = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Probably a nerf to the Ottomans as they have some random Pacific nation as ally
     }
   }
   atj_conquer_aceh = {
@@ -296,14 +288,12 @@ atj_2 = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   atj_sumatra_campaign = {
     icon = mission_kowtow
-    required_missions = {
-      atj_conquer_aceh
-    }
+    required_missions = { atj_conquer_aceh }
     provinces_to_highlight = {
       OR = {
         area = central_sumatra_area
@@ -330,7 +320,7 @@ atj_2 = {
         fire = 5
         manuever = 4
         siege = 2
-        name = "“^›sÉbÈT‚„"  # Keumalahayati
+        name = "“^›sÉbÈT‚„" 	# Keumalahayati
         female = yes
       }
       south_sumatra_area = {
@@ -401,14 +391,12 @@ atj_2 = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   atj_peninsula_campaign = {
     icon = mission_asian_cannon
-    required_missions = {
-      atj_sumatra_campaign
-    }
+    required_missions = { atj_sumatra_campaign }
     provinces_to_highlight = {
       OR = {
         area = johor_area
@@ -438,7 +426,7 @@ atj_2 = {
       add_mil_power = 200
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }

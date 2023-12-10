@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Delhi
+# Scripted by Sara Wendel-÷rtqvist
+########################################
 namespace = flavor_dlh
 normal_or_historical_nations = yes
+# The Marathi Revolt
 country_event = {
   id = flavor_dlh.1
   title = "flavor_dlh.EVTNAME1"
@@ -14,7 +19,7 @@ country_event = {
     }
     NOT = {
       exists = MAR
-    }
+    } 	#  Marathas
     any_owned_province = {
       OR = {
         area = maidan_area
@@ -55,6 +60,7 @@ country_event = {
     }
   }
 }
+# Tiger on the Border
 country_event = {
   id = flavor_dlh.2
   title = "flavor_dlh.EVTNAME2"
@@ -96,6 +102,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# The Lodi Dynasty
 country_event = {
   id = flavor_dlh.3
   title = "flavor_dlh.EVTNAME3"
@@ -104,7 +111,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = DLH
-    dynasty = "mÍè"  # Lodi
+    dynasty = "mÍè" 	# Lodi
     OR = {
       NOT = {
         dip = 2
@@ -133,6 +140,7 @@ country_event = {
     set_country_flag = dlh_lodi_flag
   }
 }
+# The Incompetence of the Lodis
 country_event = {
   id = flavor_dlh.4
   title = "flavor_dlh.EVTNAME4"
@@ -141,7 +149,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = DLH
-    dynasty = "mÍè"  # Lodi
+    dynasty = "mÍè" 	# Lodi
     OR = {
       NOT = {
         dip = 3
@@ -171,6 +179,7 @@ country_event = {
     clr_country_flag = dlh_lodi_flag
   }
 }
+# The Rise of Bahlul Lodi
 country_event = {
   id = flavor_dlh.5
   title = "flavor_dlh.5.t"
@@ -181,7 +190,7 @@ country_event = {
     tag = DLH
     is_at_war = no
     SRH = {
-      dynasty = "mÍè"  # Lodi
+      dynasty = "mÍè" 	# Lodi
       is_subject_of = ROOT
     }
     NOT = {
@@ -199,7 +208,7 @@ country_event = {
     months = 3
   }
   option = {
-    name = "flavor_dlh.5.a"
+    name = "flavor_dlh.5.a" 	# We must rein him in.
     ai_chance = {
       factor = 100
     }
@@ -212,7 +221,7 @@ country_event = {
     add_prestige = 10
   }
   option = {
-    name = "flavor_dlh.5.b"
+    name = "flavor_dlh.5.b" 	# We have lost control over Sirhind and the Punjab.
     ai_chance = {
       factor = 0
     }
@@ -231,6 +240,7 @@ country_event = {
     }
   }
 }
+# The Rise of Bahlul Lodi
 country_event = {
   id = flavor_dlh.6
   title = "flavor_dlh.6.t"
@@ -267,6 +277,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# The Rise of Bahlul Lodi
 country_event = {
   id = flavor_dlh.7
   title = "flavor_dlh.7.t"
@@ -289,6 +300,11 @@ country_event = {
     }
   }
 }
+########################################
+# Additional Flavor Events for Delhi
+# Scripted by Daniel Tolman
+########################################
+# The Founding of Agra
 country_event = {
   id = flavor_dlh.8
   title = "flavor_dlh.EVTNAME8"
@@ -303,6 +319,7 @@ country_event = {
     days = 1
   }
   option = {
+    # keep capital in Delhi
     name = "flavor_dlh.EVTOPTA8"
     capital_scope = {
       add_base_manpower = 2
@@ -310,16 +327,17 @@ country_event = {
       add_base_production = 2
     }
     524 = {
-      change_province_name = "?ñ<h…b"  # Agra
-      rename_capital = "?ñ<h…b"  # Agra
+      change_province_name = "?ñ<h…b" 	# Agra
+      rename_capital = "?ñ<h…b" 	# Agra
     }
   }
   option = {
+    # move capital to Agra
     name = "flavor_dlh.EVTOPTB8"
     524 = {
       move_capital_effect = yes
-      change_province_name = "?ñ<h…b"  # Agra
-      rename_capital = "?ñ<h…b"  # Agra
+      change_province_name = "?ñ<h…b" 	# Agra
+      rename_capital = "?ñ<h…b" 	# Agra
       add_base_manpower = 2
       add_base_tax = 2
       add_base_production = 2

@@ -18,7 +18,7 @@ bah_indigenization = {
   has_country_shield = yes
   brahman_administrators = {
     icon = mission_brahmin_administrators
-    required_missions = {}
+    required_missions = {} 	# None
     trigger = {
       if = {
         limit = {
@@ -60,15 +60,13 @@ bah_indigenization = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   empower_deccani_nobles = {
     icon = mission_deccanis
     position = 3
-    required_missions = {
-      brahman_administrators
-    }
+    required_missions = { brahman_administrators }
     provinces_to_highlight = {
       OR = {
         province_id = 544
@@ -101,14 +99,12 @@ bah_indigenization = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   marathi_fiefs = {
     icon = mission_marathi_fiefs
-    required_missions = {
-      empower_deccani_nobles
-    }
+    required_missions = { empower_deccani_nobles }
     position = 4
     trigger = {
       estate_loyalty = {
@@ -134,22 +130,19 @@ bah_indigenization = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   metropolis_of_the_deccan = {
     icon = mission_metropolis_of_the_deccan
-    required_missions = {
-      marathi_fiefs
-      mahmud_gawans_madrassah
-    }
+    required_missions = { marathi_fiefs mahmud_gawans_madrassah }
     provinces_to_highlight = {
       is_capital = yes
       owned_by = ROOT
     }
     trigger = {
       capital_scope = {
-        development = 20
+        development = 20 	# 7 more than at start
         province_has_center_of_trade_of_level = 3
         if = {
           limit = {
@@ -177,7 +170,7 @@ bah_indigenization = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
 }
@@ -224,15 +217,13 @@ bah_gharbians = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reconquest
     }
   }
   gharbians_mission = {
     icon = mission_gharbianss
     position = 3
-    required_missions = {
-      recover_konkan_coast
-    }
+    required_missions = { recover_konkan_coast }
     provinces_to_highlight = {
       province_id = 2089
     }
@@ -263,7 +254,7 @@ bah_gharbians = {
         add_reform_progress_small_effect = yes
         define_advisor = {
           type = trader
-          name = "lšƒ·V  RN"  # Mahmud Gawan
+          name = "lšƒ·V  RN" 	# Mahmud Gawan
           culture = persian
           religion = shiite
           skill = 3
@@ -272,14 +263,12 @@ bah_gharbians = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reconquest
     }
   }
   mahmud_gawans_madrassah = {
     icon = mission_gawans_madrasar
-    required_missions = {
-      gharbians_mission
-    }
+    required_missions = { gharbians_mission }
     position = 4
     provinces_to_highlight = {
       is_capital = yes
@@ -287,7 +276,7 @@ bah_gharbians = {
     }
     trigger = {
       capital_scope = {
-        development = 17
+        development = 17 	# 4 more than at start
         has_building = temple
       }
     }
@@ -311,15 +300,12 @@ bah_gharbians = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   persianate_empire = {
     icon = mission_persianate_empire
-    required_missions = {
-      mahmud_gawans_madrassah
-      persian_gulf
-    }
+    required_missions = { mahmud_gawans_madrassah persian_gulf }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -420,7 +406,7 @@ bah_gharbians = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# Way too far fetched
     }
   }
 }
@@ -526,15 +512,13 @@ bah_persian_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Plausible
     }
   }
   conquer_gujarat = {
     icon = mission_conquer_gujarat_bah
     position = 4
-    required_missions = {
-      secure_khandesh
-    }
+    required_missions = { secure_khandesh }
     provinces_to_highlight = {
       OR = {
         area = ahmedabad_area
@@ -587,14 +571,12 @@ bah_persian_branch = {
       }
     }
     ai_weight = {
-      factor = 100
+      factor = 100 	# Nice to have
     }
   }
   arabian_sea_trade_ports = {
     icon = mission_arabian_sea_trade
-    required_missions = {
-      conquer_gujarat
-    }
+    required_missions = { conquer_gujarat }
     provinces_to_highlight = {
       OR = {
         province_id = 400
@@ -652,14 +634,12 @@ bah_persian_branch = {
       }
     }
     ai_weight = {
-      factor = 25
+      factor = 25 	# Leaving India now, which is... well, in that case it is okay
     }
   }
   persian_gulf = {
     icon = mission_dominate_persian_gulf
-    required_missions = {
-      arabian_sea_trade_ports
-    }
+    required_missions = { arabian_sea_trade_ports }
     provinces_to_highlight = {
       OR = {
         area = basra_area
@@ -713,7 +693,7 @@ bah_persian_branch = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	# But this one goes a little bit too far for the AI
     }
   }
 }
@@ -789,14 +769,12 @@ bah_vijayanagari_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical Rival basically
     }
   }
   southern_frontier = {
     icon = mission_southern_frontier_dharma
-    required_missions = {
-      city_of_victory
-    }
+    required_missions = { city_of_victory }
     provinces_to_highlight = {
       area = rayalaseema_area
       NOT = {
@@ -856,15 +834,13 @@ bah_vijayanagari_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical Rival conquest
     }
   }
   bijapur_karnatak = {
     icon = mission_bijapur_karnatak
     position = 4
-    required_missions = {
-      southern_frontier
-    }
+    required_missions = { southern_frontier }
     provinces_to_highlight = {
       OR = {
         area = mysore_area
@@ -883,7 +859,7 @@ bah_vijayanagari_branch = {
             owns = 569
           }
         }
-        owns = 569
+        owns = 569 	# Bijapur
       }
       mysore_area = {
         type = all
@@ -914,7 +890,7 @@ bah_vijayanagari_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical Rival conquest
     }
   }
 }
@@ -939,9 +915,7 @@ bah_delhi_branch = {
   conquer_malwa = {
     icon = mission_conquer_malwa_bah
     position = 5
-    required_missions = {
-      conquer_gujarat
-    }
+    required_missions = { conquer_gujarat }
     provinces_to_highlight = {
       OR = {
         area = malwa_area
@@ -968,15 +942,13 @@ bah_delhi_branch = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   crush_delhi = {
     icon = mission_crush_delhi
     position = 7
-    required_missions = {
-      conquer_malwa
-    }
+    required_missions = { conquer_malwa }
     provinces_to_highlight = {
       province_id = 522
     }
@@ -1021,7 +993,7 @@ bah_delhi_branch = {
       }
     }
     ai_weight = {
-      factor = 50
+      factor = 50 	# Little too ambitious
     }
   }
 }
@@ -1078,14 +1050,12 @@ bah_coromandel_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Integrate vassal
     }
   }
   conquer_andhra = {
     icon = mission_conquer_andhra_bah
-    required_missions = {
-      rein_in_the_velamas
-    }
+    required_missions = { rein_in_the_velamas }
     provinces_to_highlight = {
       area = andhra_area
       NOT = {
@@ -1109,14 +1079,12 @@ bah_coromandel_branch = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
   growth_of_golconda = {
     icon = mission_growth_of_golcond
-    required_missions = {
-      conquer_andhra
-    }
+    required_missions = { conquer_andhra }
     provinces_to_highlight = {
       province_id = 542
       NOT = {
@@ -1149,8 +1117,8 @@ bah_coromandel_branch = {
         duration = 10950
       }
       542 = {
-        rename_capital = "wm—VÉbôT"  # Hyderabad
-        change_province_name = "wm—VÉbôT"  # Hyderabad
+        rename_capital = "wm—VÉbôT" 	# Hyderabad
+        change_province_name = "wm—VÉbôT" 	# Hyderabad
       }
       north_carnatic_area = {
         limit = {
@@ -1198,14 +1166,12 @@ bah_coromandel_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   golconda_karnatak = {
     icon = mission_coromandel_expansion
-    required_missions = {
-      growth_of_golconda
-    }
+    required_missions = { growth_of_golconda }
     provinces_to_highlight = {
       OR = {
         area = north_carnatic_area
@@ -1248,15 +1214,12 @@ bah_coromandel_branch = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Historical Rival conquest
     }
   }
   coromandel_entrepot = {
     icon = mission_entrepot_of_india
-    required_missions = {
-      golconda_karnatak
-      bijapur_karnatak
-    }
+    required_missions = { golconda_karnatak bijapur_karnatak }
     provinces_to_highlight = {
       province_id = 1340
     }
@@ -1311,7 +1274,7 @@ bah_coromandel_branch = {
       }
     }
     ai_weight = {
-      factor = 75
+      factor = 75 	# Default
     }
   }
 }

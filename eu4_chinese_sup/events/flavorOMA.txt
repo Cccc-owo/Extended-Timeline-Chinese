@@ -1,5 +1,10 @@
+########################################
+# Events for Oman
+# written by Johan Andersson
+########################################
 namespace = flavor_oma
 normal_or_historical_nations = yes
+#Struggle (repeating event)
 country_event = {
   id = flavor_oma.1
   title = flavor_oma.1.t
@@ -8,10 +13,10 @@ country_event = {
   trigger = {
     tag = OMA
     has_reform = feudal_theocracy
-    dynasty = "³ujSIl"  # Nabhan
+    dynasty = "³ujSIl" 	# Nabhan
   }
   mean_time_to_happen = {
-    months = 240
+    months = 240 	# happens maybe every 20 years.
   }
   option = {
     name = flavor_oma.1.a
@@ -40,6 +45,7 @@ country_event = {
     }
   }
 }
+#Conflict with Portugal
 country_event = {
   id = flavor_oma.2
   title = flavor_oma.2.t
@@ -89,6 +95,7 @@ country_event = {
     add_navy_tradition = -10
   }
 }
+#POR gets a cb!
 country_event = {
   id = flavor_oma.3
   title = flavor_oma.3.t
@@ -98,9 +105,10 @@ country_event = {
   option = {
     name = flavor_oma.3.a
     add_prestige = 5
-    add_claim = 399
+    add_claim = 399 	# Suhar
   }
 }
+# Ship building of Sur
 country_event = {
   id = flavor_oma.4
   title = flavor_oma.4.t

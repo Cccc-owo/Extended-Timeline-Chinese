@@ -14,9 +14,9 @@ war_of_the_roses = {
   can_start = {
     current_age = age_of_discovery
     OR = {
-      dynasty = "¦uKQ"  # York
-      dynasty = "pQV¯eyr"  # Lancaster
-      dynasty = "Ñ‘À–±‚"  # Plantagenet
+      dynasty = "¦uKQ" 	# York
+      dynasty = "pQV¯eyr" 	# Lancaster
+      dynasty = "Ñ‘À–±‚" 	# Plantagenet
     }
     has_any_disaster = no
     OR = {
@@ -24,13 +24,13 @@ war_of_the_roses = {
       AND = {
         has_heir = yes
         NOT = {
-          heir_dynasty = "¦uKQ"  # York
+          heir_dynasty = "¦uKQ" 	# York
         }
         NOT = {
-          heir_dynasty = "pQV¯eyr"  # Lancaster
+          heir_dynasty = "pQV¯eyr" 	# Lancaster
         }
         NOT = {
-          heir_dynasty = "Ñ‘À–±‚"  # Plantagenet
+          heir_dynasty = "Ñ‘À–±‚" 	# Plantagenet
         }
       }
     }
@@ -43,9 +43,9 @@ war_of_the_roses = {
       AND = {
         has_heir = yes
         OR = {
-          heir_dynasty = "¦uKQ"  # York
-          heir_dynasty = "pQV¯eyr"  # Lancaster
-          heir_dynasty = "Ñ‘À–±‚"  # Plantagenet
+          heir_dynasty = "¦uKQ" 	# York
+          heir_dynasty = "pQV¯eyr" 	# Lancaster
+          heir_dynasty = "Ñ‘À–±‚" 	# Plantagenet
         }
       }
       has_regency = yes
@@ -71,13 +71,13 @@ war_of_the_roses = {
     modifier = {
       factor = 0.5
       NOT = {
-        dynasty = "¦uKQ"  # York
+        dynasty = "¦uKQ" 	# York
       }
     }
     modifier = {
       factor = 0.5
       NOT = {
-        dynasty = "pQV¯eyr"  # Lancaster
+        dynasty = "pQV¯eyr" 	# Lancaster
       }
     }
     modifier = {
@@ -141,9 +141,13 @@ war_of_the_roses = {
       100 = war_of_the_roses.3
       100 = war_of_the_roses.4
       100 = war_of_the_roses.5
+      #6 is triggere from on battle	
       100 = war_of_the_roses.7
       100 = war_of_the_roses.8
       100 = war_of_the_roses.9
+      #10 & 11 is triggered from siege won
+      #12 % 13 triggers for other nations, and fires 14.
+      #101 & 102 are endings for rebel victory.
     }
   }
 }

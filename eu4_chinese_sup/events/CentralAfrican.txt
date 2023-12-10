@@ -1,4 +1,10 @@
+########################################
+# Events for Central African nations
+# written by Rufus Tronde and Petter Vilberg
+########################################
 namespace = central_african
+### Malagasy Events
+# Rise of the Maroserana
 country_event = {
   id = central_african.1
   title = "central_african.1.t"
@@ -62,6 +68,7 @@ country_event = {
     }
   }
 }
+# Transcribe the Ibonia
 country_event = {
   id = central_african.2
   title = "central_african.2.t"
@@ -78,6 +85,7 @@ country_event = {
   mean_time_to_happen = {
     months = 120
   }
+  # Transcribe it
   option = {
     name = "central_african.2.a"
     add_prestige = 20
@@ -87,11 +95,13 @@ country_event = {
       set_global_flag = ibonia_transcribed
     }
   }
+  # Don't transcribe it
   option = {
     name = "central_african.2.b"
     add_prestige = -5
   }
 }
+# Soldiers Breaks Fady
 country_event = {
   id = central_african.3
   title = "central_african.3.t"
@@ -116,6 +126,7 @@ country_event = {
   mean_time_to_happen = {
     months = 600
   }
+  # 
   option = {
     name = "central_african.3.a"
     random_known_country = {
@@ -142,18 +153,21 @@ country_event = {
       }
     }
   }
+  # 
   option = {
     name = "central_african.3.b"
     add_prestige = -5
     add_dip_power = -20
   }
 }
+# Visitor Breaks Fady
 country_event = {
   id = central_african.4
   title = "central_african.4.t"
   desc = "central_african.4.d"
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
+  # 
   option = {
     name = "central_african.4.a"
     add_casus_belli = {
@@ -163,6 +177,8 @@ country_event = {
     }
   }
 }
+### Luba Events
+# Lukasa (Memory boards)
 country_event = {
   id = central_african.5
   title = "central_african.5.t"
@@ -176,23 +192,28 @@ country_event = {
   mean_time_to_happen = {
     months = 900
   }
+  # Record our policies
   option = {
     name = "central_african.5.a"
     add_adm_power = 50
   }
+  # Record our trade routes
   option = {
     name = "central_african.5.b"
     add_dip_power = 50
   }
+  # Record our great warriors
   option = {
     name = "central_african.5.c"
     add_army_tradition = 10
   }
+  # Record the chief's ancestry
   option = {
     name = "central_african.5.e"
     add_legitimacy = 30
   }
 }
+# Expand the Mbudye
 country_event = {
   id = central_african.6
   title = "central_african.6.t"
@@ -208,6 +229,7 @@ country_event = {
   mean_time_to_happen = {
     months = 1200
   }
+  # Expand it
   option = {
     name = "central_african.6.a"
     add_country_modifier = {
@@ -215,6 +237,7 @@ country_event = {
       duration = 7300
     }
   }
+  # Leave it as it is
   option = {
     name = "central_african.6.b"
     add_adm_power = 25
@@ -222,6 +245,7 @@ country_event = {
     add_mil_power = 25
   }
 }
+# Mbudye Clashes with Chief
 country_event = {
   id = central_african.7
   title = "central_african.7.t"
@@ -234,15 +258,18 @@ country_event = {
   mean_time_to_happen = {
     months = 180
   }
+  # 
   option = {
     name = "central_african.7.a"
     add_legitimacy = -20
   }
+  # 
   option = {
     name = "central_african.7.b"
     add_prestige = -10
   }
 }
+# Mbudye Generational Conflict
 country_event = {
   id = central_african.8
   title = "central_african.8.t"
@@ -255,11 +282,13 @@ country_event = {
   mean_time_to_happen = {
     months = 180
   }
+  # Side with Elders
   option = {
     name = "central_african.8.a"
     add_legitimacy = 20
     add_adm_power = -50
   }
+  # Side with new blood
   option = {
     name = "central_african.8.b"
     define_advisor = {
@@ -276,6 +305,7 @@ country_event = {
     add_stability = -1
   }
 }
+#Antionio Fernandes
 country_event = {
   id = central_african.9
   title = central_african.9.t
@@ -330,6 +360,7 @@ country_event = {
     }
   }
 }
+#Increased Trade With India
 country_event = {
   id = central_african.10
   title = central_african.10.t
@@ -375,6 +406,7 @@ country_event = {
     add_years_of_income = 0.5
   }
 }
+#Descended from the same breast
 country_event = {
   id = central_african.11
   title = central_african.11.t
@@ -398,6 +430,8 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+#MARAVI
+#The Land of Flames
 country_event = {
   id = central_african.12
   title = central_african.12.t
@@ -423,6 +457,7 @@ country_event = {
     }
   }
 }
+#The Chewa
 country_event = {
   id = central_african.13
   title = central_african.13.t
@@ -446,6 +481,7 @@ country_event = {
     }
   }
 }
+#Nyau Secret Societies
 country_event = {
   id = central_african.14
   title = central_african.14.t
@@ -501,6 +537,7 @@ country_event = {
     add_stability = -1
   }
 }
+#Memory of the King
 country_event = {
   id = central_african.15
   title = central_african.15.t
@@ -521,23 +558,28 @@ country_event = {
     months = 400
   }
   option = {
+    #Njobvu, the elephant
     name = central_african.15.a
     add_prestige = 15
     add_legitimacy = 10
   }
   option = {
+    #Ndondo, the snake
     name = central_african.15.b
     add_dip_power = 50
   }
   option = {
+    #Kasiyamaliro, the Antelope
     name = central_african.15.c
     add_stability_or_adm_power = yes
   }
   option = {
+    #Mkango, The Lion
     name = central_african.15.e
     add_mil_power = 25
   }
 }
+#Cambarantama
 country_event = {
   id = central_african.16
   title = central_african.16.t
@@ -560,8 +602,8 @@ country_event = {
   option = {
     name = central_african.16.a
     define_ruler = {
-      name = "i`TX÷– I úWôus|Éb"  # Ntare I Kivimira
-      dynasty = "NWôTpQTXlš"  # Cambarantama
+      name = "i`TX÷– I úWôus|Éb" 	# Ntare I Kivimira
+      dynasty = "NWôTpQTXlš" 	# Cambarantama
       adm = 5
       dip = 4
       mil = 4
@@ -588,13 +630,14 @@ country_event = {
   option = {
     name = central_african.16.b
     define_advisor = {
-      name = "i`TX÷– NWôTpQTXlš"  # Ntare Cambarantama
+      name = "i`TX÷– NWôTpQTXlš" 	# Ntare Cambarantama
       type = commandant
       skill = 2
       discount = yes
     }
   }
 }
+#The Batembuzi of Kitara
 country_event = {
   id = central_african.17
   title = central_african.17.t
@@ -708,16 +751,19 @@ country_event = {
       }
     }
   }
+  #We rule with the authority of the Batembuzi
   option = {
     name = central_african.17.a
     add_prestige = 10
     add_stability_or_adm_power = yes
   }
+  #Ensure our neighbors know of our lineage.
   option = {
     name = central_african.17.b
     add_prestige = 10
     add_dip_power = 75
   }
+  #We will restore the borders of old Kitara!
   option = {
     name = central_african.17.c
     trigger = {
@@ -735,6 +781,7 @@ country_event = {
     }
   }
 }
+#Exceptional Katikkiri
 country_event = {
   id = central_african.18
   title = central_african.18.t
@@ -769,6 +816,7 @@ country_event = {
     add_dip_power = 100
   }
 }
+#Kateregga Seizes the Throne
 country_event = {
   id = central_african.19
   title = central_african.19.t
@@ -791,8 +839,8 @@ country_event = {
   option = {
     name = central_african.19.a
     define_ruler = {
-      name = "aSyr÷– R"  # Kateregga
-      dynasty = "aSŽ<h÷–"  # Kamegere
+      name = "aSyr÷– R" 	# Kateregga
+      dynasty = "aSŽ<h÷–" 	# Kamegere
       adm = 3
       dip = 5
       mil = 4
@@ -824,6 +872,7 @@ country_event = {
     add_adm_power = -25
   }
 }
+#Kateregga's Children
 country_event = {
   id = central_african.20
   title = central_african.20.t
@@ -842,25 +891,26 @@ country_event = {
   option = {
     name = central_african.20.a
     define_heir = {
-      dynasty = "aSŽ<h÷–"  # Kamegere
+      dynasty = "aSŽ<h÷–" 	# Kamegere
       claim = 100
     }
   }
   option = {
     name = central_african.20.b
     define_heir = {
-      dynasty = "aSŽ<h÷–"  # Kamegere
+      dynasty = "aSŽ<h÷–" 	# Kamegere
       claim = 70
     }
   }
   option = {
     name = central_african.20.c
     define_heir = {
-      dynasty = "aSŽ<h÷–"  # Kamegere
+      dynasty = "aSŽ<h÷–" 	# Kamegere
       claim = 30
     }
   }
 }
+#Kateregga dies
 country_event = {
   id = central_african.21
   title = central_african.21.t

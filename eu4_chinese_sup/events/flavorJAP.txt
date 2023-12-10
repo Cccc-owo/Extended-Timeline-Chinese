@@ -1,5 +1,12 @@
+########################################
+# General Flavor Events for Japan and Daimyos
+# written by Sara Wendel-Örtqvist
+########################################
+# Reworked and given alternative effects for Mandate of Heaven / 1.20 by Drikus Kuiper.
+########################################
 namespace = flavor_jap
 normal_or_historical_nations = yes
+# Onin War
 country_event = {
   id = flavor_jap.1
   title = "flavor_jap.EVTNAME1"
@@ -59,6 +66,7 @@ country_event = {
     }
   }
 }
+# Onin War
 country_event = {
   id = flavor_jap.56
   title = "flavor_jap.EVTNAME1"
@@ -113,6 +121,7 @@ country_event = {
     add_legitimacy = -20
   }
 }
+# Ikko-ikkis rising!
 country_event = {
   id = flavor_jap.2
   title = "flavor_jap.EVTNAME2"
@@ -244,6 +253,7 @@ country_event = {
     add_prestige = -10
   }
 }
+# Ikko-ikkis spreading!
 country_event = {
   id = flavor_jap.3
   title = "flavor_jap.EVTNAME3"
@@ -344,6 +354,7 @@ country_event = {
     add_prestige = -10
   }
 }
+# Wokou
 country_event = {
   id = flavor_jap.4
   title = "flavor_jap.EVTNAME4"
@@ -420,7 +431,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTA4"
+    name = "flavor_jap.EVTOPTA4" 	#  Fund the pirates
     add_years_of_income = -0.5
     add_prestige = -15
     add_country_modifier = {
@@ -451,7 +462,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTB4"
+    name = "flavor_jap.EVTOPTB4" 	#  Crack down on piracy
     add_prestige = 25
     if = {
       limit = {
@@ -487,6 +498,7 @@ country_event = {
     }
   }
 }
+# Question about Sakoku
 country_event = {
   id = flavor_jap.5
   title = "flavor_jap.EVTNAME5"
@@ -513,7 +525,7 @@ country_event = {
     months = 600
   }
   option = {
-    name = "flavor_jap.EVTOPTA5"
+    name = "flavor_jap.EVTOPTA5" 	#  Keep following the Sakoku
     ai_chance = {
       factor = 100
     }
@@ -524,7 +536,7 @@ country_event = {
     set_country_flag = jap_sakoku
   }
   option = {
-    name = "flavor_jap.EVTOPTB5"
+    name = "flavor_jap.EVTOPTB5" 	#  Reject Sakoku law
     ai_chance = {
       factor = 0
     }
@@ -543,6 +555,7 @@ country_event = {
     }
   }
 }
+# Rangaku
 country_event = {
   id = flavor_jap.6
   title = "flavor_jap.EVTNAME6"
@@ -571,20 +584,21 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_jap.EVTOPTA6"
+    name = "flavor_jap.EVTOPTA6" 	#  Open our provinces to the Dutch
     add_ruler_modifier = {
       name = jap_rangaku
     }
     set_country_flag = jap_rangaku
   }
   option = {
-    name = "flavor_jap.EVTOPTB6"
+    name = "flavor_jap.EVTOPTB6" 	#  Keep our provinces closed
     add_ruler_modifier = {
       name = jap_closed
     }
     set_country_flag = jap_rangaku
   }
 }
+# Nanban Boeki
 country_event = {
   id = flavor_jap.7
   title = "flavor_jap.EVTNAME7"
@@ -619,7 +633,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_jap.EVTOPTA7"
+    name = "flavor_jap.EVTOPTA7" 	#  Welcome the new traders
     add_country_modifier = {
       name = western_trade
       duration = -1
@@ -627,6 +641,7 @@ country_event = {
     set_country_flag = western_trade_flag
   }
 }
+# Western Wrecked Ship (William Adams)
 country_event = {
   id = flavor_jap.8
   title = "flavor_jap.EVTNAME8"
@@ -656,21 +671,21 @@ country_event = {
     set_country_flag = william_adams
   }
   option = {
-    name = "flavor_jap.EVTOPTA8"
+    name = "flavor_jap.EVTOPTA8" 	#  Do nothing
     add_stability_or_adm_power = yes
   }
   option = {
-    name = "flavor_jap.EVTOPTB8"
+    name = "flavor_jap.EVTOPTB8" 	#  Help the foreign shipwreckers
     add_stability = -1
     add_ruler_modifier = {
       name = jap_western_wrecked_ship
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTC8"
+    name = "flavor_jap.EVTOPTC8" 	#  Bring the foreigner to me
     add_prestige = -10
     define_advisor = {
-      name = "ZÉ^ šNSV¯e"  # William Adams
+      name = "ZÉ^ šNSV¯e" 	# William Adams
       culture = english
       religion = protestant
       type = trader
@@ -679,6 +694,7 @@ country_event = {
     }
   }
 }
+# Kirishitan
 country_event = {
   id = flavor_jap.9
   title = "flavor_jap.EVTNAME9"
@@ -755,7 +771,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTA9"
+    name = "flavor_jap.EVTOPTA9" 	#  Stop the missionaries!
     every_owned_province = {
       limit = {
         has_province_flag = jap_kirishitan_flag
@@ -768,7 +784,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTB9"
+    name = "flavor_jap.EVTOPTB9" 	#  Let them spread their faith
     add_prestige = -25
     add_stability = -1
     every_owned_province = {
@@ -783,6 +799,7 @@ country_event = {
     }
   }
 }
+# Attempted Coup!
 country_event = {
   id = flavor_jap.10
   title = "flavor_jap.EVTNAME10"
@@ -816,6 +833,7 @@ country_event = {
     }
   }
   option = {
+    # There shall be no mercy for this dishonorable act!
     name = "flavor_jap.EVTOPTA10"
     add_prestige = 10
     kill_leader = {
@@ -823,6 +841,7 @@ country_event = {
     }
   }
 }
+# Jokamachi or Castle towns
 country_event = {
   id = flavor_jap.11
   title = "flavor_jap.EVTNAME11"
@@ -860,7 +879,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTA11"
+    name = "flavor_jap.EVTOPTA11" 	#  Fund Jokamachi
     ai_chance = {
       factor = 80
     }
@@ -878,13 +897,14 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTB11"
+    name = "flavor_jap.EVTOPTB11" 	#  Don't fund Jokamachi
     ai_chance = {
       factor = 20
     }
     add_mil_power = 100
   }
 }
+# Rise of urban culture
 country_event = {
   id = flavor_jap.12
   title = "flavor_jap.EVTNAME12"
@@ -925,6 +945,7 @@ country_event = {
     }
   }
 }
+# Terakoya
 country_event = {
   id = flavor_jap.13
   title = "flavor_jap.EVTNAME13"
@@ -970,7 +991,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTA13"
+    name = "flavor_jap.EVTOPTA13" 	#  Establish Terakoya
     add_years_of_income = -0.5
     add_country_modifier = {
       name = jap_terakoya
@@ -1017,6 +1038,7 @@ country_event = {
     set_country_flag = jap_terakoya_country_flag
   }
 }
+# Military Developments
 country_event = {
   id = flavor_jap.14
   title = "flavor_jap.EVTNAME14"
@@ -1050,6 +1072,7 @@ country_event = {
     add_prestige = 25
   }
 }
+# Allow organisation of Za
 country_event = {
   id = flavor_jap.15
   title = "flavor_jap.EVTNAME15"
@@ -1082,7 +1105,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTA15"
+    name = "flavor_jap.EVTOPTA15" 	#  Allow organization of za
     add_country_modifier = {
       name = jap_za
       duration = -1
@@ -1090,10 +1113,11 @@ country_event = {
     set_country_flag = jap_za_flag
   }
   option = {
-    name = "flavor_jap.EVTOPTB15"
+    name = "flavor_jap.EVTOPTB15" 	#  Disallow it
     add_mercantilism = 3
   }
 }
+# Free trade (Rakuichi, elimination of za)
 country_event = {
   id = flavor_jap.16
   title = "flavor_jap.EVTNAME16"
@@ -1162,12 +1186,12 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTA16"
+    name = "flavor_jap.EVTOPTA16" 	#  Declare Free Trade
     remove_country_modifier = jap_za
     add_mercantilism = 2
   }
   option = {
-    name = "flavor_jap.EVTOPTB16"
+    name = "flavor_jap.EVTOPTB16" 	#  Keep it as it is
     remove_country_modifier = jap_za
     add_country_modifier = {
       name = jap_za_monopoly
@@ -1185,6 +1209,7 @@ country_event = {
     }
   }
 }
+# Higashiyama culture
 country_event = {
   id = flavor_jap.17
   title = "flavor_jap.EVTNAME17"
@@ -1204,7 +1229,7 @@ country_event = {
     months = 600
   }
   option = {
-    name = "flavor_jap.EVTOPTA17"
+    name = "flavor_jap.EVTOPTA17" 	#  Encourage
     add_years_of_income = -0.5
     add_country_modifier = {
       name = jap_higashiyama_culture
@@ -1243,6 +1268,7 @@ country_event = {
     set_country_flag = jap_higashiyama_culture_flag
   }
 }
+# Build Ginkakuji (Silver Pavillion)
 country_event = {
   id = flavor_jap.18
   title = "flavor_jap.EVTNAME18"
@@ -1292,6 +1318,7 @@ country_event = {
     set_country_flag = jap_ginkakuji
   }
 }
+# Sekisho
 country_event = {
   id = flavor_jap.19
   title = "flavor_jap.EVTNAME19"
@@ -1389,6 +1416,7 @@ country_event = {
     }
   }
 }
+# Buke Shohatto
 country_event = {
   id = flavor_jap.20
   title = "flavor_jap.EVTNAME20"
@@ -1417,7 +1445,7 @@ country_event = {
     months = 400
   }
   option = {
-    name = "flavor_jap.EVTOPTA20"
+    name = "flavor_jap.EVTOPTA20" 	#  Implement Buke Shohatto for the whole of Japan
     add_years_of_income = -0.5
     add_country_modifier = {
       name = jap_buke_shohatto
@@ -1441,6 +1469,7 @@ country_event = {
     add_prestige = -10
   }
 }
+# Daimyo: Buke Shohatto 
 country_event = {
   id = flavor_jap.21
   title = "flavor_jap.EVTNAME20"
@@ -1460,6 +1489,7 @@ country_event = {
     }
   }
 }
+# Gokaido
 country_event = {
   id = flavor_jap.22
   title = "flavor_jap.EVTNAME22"
@@ -1489,7 +1519,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTA22"
+    name = "flavor_jap.EVTOPTA22" 	#  Establish the Gokaido
     add_years_of_income = -0.5
     add_country_modifier = {
       name = jap_gokaido
@@ -1501,6 +1531,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Kyoho Reforms
 country_event = {
   id = flavor_jap.23
   title = "flavor_jap.EVTNAME23"
@@ -1546,14 +1577,14 @@ country_event = {
     set_country_flag = jap_kyoho_reforms
   }
   option = {
-    name = "flavor_jap.EVTOPTA23"
+    name = "flavor_jap.EVTOPTA23" 	#  Reform the Trade
     add_mercantilism = 5
     add_ruler_modifier = {
       name = jap_trade_reform
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTB23"
+    name = "flavor_jap.EVTOPTB23" 	#  Reform the Military
     add_army_tradition = 20
     add_navy_tradition = 20
     add_ruler_modifier = {
@@ -1561,7 +1592,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTC23"
+    name = "flavor_jap.EVTOPTC23" 	#  Reform the Economy
     random_owned_province = {
       limit = {
         is_capital = yes
@@ -1573,6 +1604,7 @@ country_event = {
     }
   }
 }
+# Genroku-era culture
 country_event = {
   id = flavor_jap.24
   title = "flavor_jap.EVTNAME24"
@@ -1602,7 +1634,7 @@ country_event = {
     months = 800
   }
   option = {
-    name = "flavor_jap.EVTOPTA24"
+    name = "flavor_jap.EVTOPTA24" 	#  Start the era of Genroku!
     add_stability_or_adm_power = yes
     add_country_modifier = {
       name = jap_genroku
@@ -1611,6 +1643,7 @@ country_event = {
     set_country_flag = jap_genroku
   }
 }
+# Confucianism
 country_event = {
   id = flavor_jap.25
   title = "flavor_jap.EVTNAME25"
@@ -1766,6 +1799,7 @@ country_event = {
     }
   }
 }
+# Confucian ideas on the rise
 country_event = {
   id = flavor_jap.26
   title = "flavor_jap.EVTNAME26"
@@ -1915,6 +1949,7 @@ country_event = {
     }
   }
 }
+# Kokugaku
 country_event = {
   id = flavor_jap.27
   title = "flavor_jap.EVTNAME27"
@@ -1942,6 +1977,7 @@ country_event = {
     }
   }
 }
+# Oie Sodo
 country_event = {
   id = flavor_jap.28
   title = "flavor_jap.EVTNAME28"
@@ -1974,12 +2010,12 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_jap.EVTOPTA28"
+    name = "flavor_jap.EVTOPTA28" 	#  Follow the noble's advice
     kill_heir = {}
     add_legitimacy = 20
   }
   option = {
-    name = "flavor_jap.EVTOPTB28"
+    name = "flavor_jap.EVTOPTB28" 	#  Refuse to comply to their demands
     add_legitimacy = -10
     random_owned_province = {
       limit = {
@@ -1992,6 +2028,7 @@ country_event = {
     }
   }
 }
+# Sankin Kotai
 country_event = {
   id = flavor_jap.29
   title = "flavor_jap.EVTNAME29"
@@ -2073,6 +2110,7 @@ country_event = {
     }
   }
 }
+# Daimyo: Sankin Kotai
 country_event = {
   id = flavor_jap.30
   title = "flavor_jap.EVTNAME29"
@@ -2091,6 +2129,8 @@ country_event = {
     }
   }
 }
+### From JapanEvents and ShogunEvents ###
+# Unruly Samurai
 country_event = {
   id = flavor_jap.31
   title = "flavor_jap.EVTNAME31"
@@ -2133,6 +2173,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Sword Hunt - episode 1: The Bad Hunt(er)
 country_event = {
   id = flavor_jap.32
   title = "flavor_jap.EVTNAME32"
@@ -2170,6 +2211,7 @@ country_event = {
     }
   }
 }
+#  Sword Hunt - episode 2: Captured Prey
 country_event = {
   id = flavor_jap.33
   title = "flavor_jap.EVTNAME33"
@@ -2194,6 +2236,7 @@ country_event = {
     add_prestige = 25
   }
 }
+# Sword Hunt - episode 3: Disrupted Hunt
 country_event = {
   id = flavor_jap.34
   title = "flavor_jap.EVTNAME34"
@@ -2214,6 +2257,7 @@ country_event = {
     clr_country_flag = sword_hunter_flag
   }
 }
+# Province converts to Catholicism
 province_event = {
   id = flavor_jap.35
   title = "flavor_jap.EVTNAME35"
@@ -2251,6 +2295,7 @@ province_event = {
     change_religion = catholic
   }
 }
+# Ninja strike
 country_event = {
   id = flavor_jap.36
   title = "flavor_jap.EVTNAME36"
@@ -2318,6 +2363,7 @@ country_event = {
     }
   }
 }
+# Ninja strike succeeds
 country_event = {
   id = flavor_jap.37
   title = "flavor_jap.EVTNAME36"
@@ -2338,6 +2384,7 @@ country_event = {
     }
   }
 }
+# Ninja strike fails
 country_event = {
   id = flavor_jap.38
   title = "flavor_jap.EVTNAME36"
@@ -2358,6 +2405,7 @@ country_event = {
     }
   }
 }
+# Way of the Tea
 country_event = {
   id = flavor_jap.39
   title = "flavor_jap.EVTNAME39"
@@ -2412,6 +2460,7 @@ country_event = {
     set_country_flag = rejected_tea_province
   }
 }
+# Tea with the Emperor
 country_event = {
   id = flavor_jap.40
   title = "flavor_jap.EVTNAME40"
@@ -2446,6 +2495,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Heirless
 country_event = {
   id = flavor_jap.41
   title = "flavor_jap.EVTNAME41"
@@ -2484,6 +2534,7 @@ country_event = {
     add_prestige = -25
   }
 }
+# Losing Face
 country_event = {
   id = flavor_jap.42
   title = "flavor_jap.EVTNAME42"
@@ -2524,6 +2575,7 @@ country_event = {
     add_stability = -1
   }
 }
+# Levying Additional Taxation
 country_event = {
   id = flavor_jap.43
   title = "flavor_jap.EVTNAME43"
@@ -2558,6 +2610,7 @@ country_event = {
     add_yearly_manpower = 1.5
   }
 }
+# Sword of The Daimyo
 country_event = {
   id = flavor_jap.44
   title = "flavor_jap.EVTNAME44"
@@ -2614,6 +2667,7 @@ country_event = {
     }
   }
 }
+# Lacquerware for the Emperor
 country_event = {
   id = flavor_jap.45
   title = "flavor_jap.EVTNAME45"
@@ -2649,6 +2703,7 @@ country_event = {
     add_prestige = -15
   }
 }
+#  The First Sake
 country_event = {
   id = flavor_jap.46
   title = "flavor_jap.EVTNAME46"
@@ -2697,6 +2752,7 @@ country_event = {
     }
   }
 }
+# Calling up Recruits
 country_event = {
   id = flavor_jap.47
   title = "flavor_jap.EVTNAME47"
@@ -2750,6 +2806,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Bushido
 country_event = {
   id = flavor_jap.48
   title = "flavor_jap.EVTNAME48"
@@ -2788,6 +2845,7 @@ country_event = {
     add_mil_power = 150
   }
 }
+# Spreading Rumors
 country_event = {
   id = flavor_jap.49
   title = "flavor_jap.EVTNAME49"
@@ -2835,6 +2893,7 @@ country_event = {
     }
   }
 }
+# A Son Finds His Way Home
 country_event = {
   id = flavor_jap.50
   title = "flavor_jap.EVTNAME50"
@@ -2874,7 +2933,7 @@ country_event = {
     define_heir = {
       claim = 95
       male = yes
-      name = "CQáO"  # Motonobu
+      name = "CQáO" 	# Motonobu
       age = 15
       dip = 4
       dynasty = ROOT
@@ -2886,7 +2945,7 @@ country_event = {
     define_heir = {
       claim = 95
       male = yes
-      name = "¶R·^"  # Ieyasu
+      name = "¶R·^" 	# Ieyasu
       age = 15
       adm = 4
       dynasty = ROOT
@@ -2899,13 +2958,14 @@ country_event = {
     define_heir = {
       claim = 95
       male = yes
-      name = "CQ·^"  # Motoyasu
+      name = "CQ·^" 	# Motoyasu
       age = 15
       mil = 4
       dynasty = ROOT
     }
   }
 }
+# Exceptional Swords
 country_event = {
   id = flavor_jap.51
   title = "flavor_jap.EVTNAME51"
@@ -2932,6 +2992,7 @@ country_event = {
     }
   }
 }
+# Hangings in the Han
 country_event = {
   id = flavor_jap.52
   title = "flavor_jap.EVTNAME52"
@@ -3038,6 +3099,7 @@ country_event = {
     }
   }
 }
+# New Generation of Samurai
 country_event = {
   id = flavor_jap.53
   title = "flavor_jap.EVTNAME53"
@@ -3071,6 +3133,7 @@ country_event = {
     add_army_tradition = 5
   }
 }
+# Strengthening the Shogunate
 country_event = {
   id = flavor_jap.54
   title = "flavor_jap.EVTNAME54"
@@ -3112,6 +3175,7 @@ country_event = {
     add_army_tradition = 10
   }
 }
+# Death or Glory?
 country_event = {
   id = flavor_jap.55
   title = "flavor_jap.EVTNAME55"
@@ -3161,6 +3225,7 @@ country_event = {
     }
   }
 }
+#Independent as Daimyo
 country_event = {
   id = flavor_jap.57
   title = flavor_jap.57.t
@@ -3197,6 +3262,7 @@ country_event = {
     add_government_reform = indep_daimyo
   }
 }
+# Returning to the fold
 country_event = {
   id = flavor_jap.58
   title = flavor_jap.58.t
@@ -3209,7 +3275,7 @@ country_event = {
     }
     NOT = {
       tag = PAP
-    }
+    } 	#  Just no, the Pope isn't a Daimyo.
     NOT = {
       OR = {
         AND = {
@@ -3247,6 +3313,7 @@ country_event = {
     }
   }
 }
+#The Grand Temple of Ise
 country_event = {
   id = flavor_jap.59
   title = flavor_jap.59.t
@@ -3265,6 +3332,7 @@ country_event = {
     months = 12
   }
   option = {
+    #Interesting.
     name = flavor_jap.59.a
     ai_chance = {
       factor = 1
@@ -3278,6 +3346,7 @@ country_event = {
     }
   }
   option = {
+    #This is a fascinating religion, let us embrace it instead.
     ai_chance = {
       factor = 1
     }
@@ -3292,9 +3361,11 @@ country_event = {
         government = tribal
       }
       change_government = monarchy
+      #set_legacy_government = despotic_monarchy
     }
   }
   option = {
+    #Let them worship their idols.
     name = flavor_jap.59.c
     trigger = {
       full_idea_group = humanist_ideas
@@ -3315,6 +3386,7 @@ country_event = {
     }
   }
 }
+# Iwami Ginzan Silver Mine
 province_event = {
   id = flavor_jap.60
   title = flavor_jap.60.t
@@ -3322,7 +3394,7 @@ province_event = {
   picture = COURT_eventPicture
   fire_only_once = yes
   trigger = {
-    province_id = 4183
+    province_id = 4183 	#  Iwami
     is_year = 1526
     NOT = {
       trade_goods = gold
@@ -3337,6 +3409,7 @@ province_event = {
     add_base_production = 3
   }
 }
+#Sado Kinzan
 province_event = {
   id = flavor_jap.61
   title = flavor_jap.61.t
@@ -3346,7 +3419,7 @@ province_event = {
   trigger = {
     OR = {
       AND = {
-        province_id = 1024
+        province_id = 1024 	#  Echigo
         is_year = 1526
         NOT = {
           trade_goods = gold
@@ -3356,7 +3429,7 @@ province_event = {
         owner = {
           has_country_flag = jap_flavor_61_flag
         }
-        province_id = 1024
+        province_id = 1024 	#  Echigo
         NOT = {
           trade_goods = gold
         }
@@ -3371,6 +3444,7 @@ province_event = {
     change_trade_goods = gold
   }
 }
+#1.35 Event Additions by Big Boss#
 country_event = {
   id = flavor_jap.62
   title = flavor_jap.62.t
@@ -3434,7 +3508,7 @@ country_event = {
   option = {
     name = flavor_jap.65.a
     define_ruler = {
-      dynasty = "'YŒT"  # Yamato
+      dynasty = "'YŒT" 	# Yamato
       change_adm = 3
       change_dip = 3
       change_mil = 3
@@ -3485,6 +3559,7 @@ country_event = {
     }
   }
 }
+# Of Spice and Herbs
 country_event = {
   id = flavor_jap.67
   title = flavor_jap.67.t
@@ -3542,6 +3617,7 @@ country_event = {
     }
   }
 }
+# The First Geisha
 country_event = {
   id = flavor_jap.68
   title = flavor_jap.68.t
@@ -3559,7 +3635,7 @@ country_event = {
   option = {
     name = flavor_jap.68.a
     define_advisor = {
-      name = "ÊƒKS"  # Kikuya
+      name = "ÊƒKS" 	# Kikuya
       type = artist
       skill = 3
       cost_multiplier = 0.25
@@ -3567,6 +3643,7 @@ country_event = {
     }
   }
 }
+# Poetry and Songs of the Edo Period
 country_event = {
   id = flavor_jap.69
   title = flavor_jap.69.t
@@ -3601,7 +3678,7 @@ country_event = {
     name = flavor_jap.69.a
     add_dip_power = 50
     define_advisor = {
-      name = "Œg>S­‚I…"  # Matsuo Basho
+      name = "Œg>S­‚I…" 	# Matsuo Basho
       type = artist
       skill = 3
       cost_multiplier = 0.5
@@ -3609,6 +3686,7 @@ country_event = {
     }
   }
 }
+# Way of Chonindo
 country_event = {
   id = flavor_jap.70
   title = flavor_jap.70.t
@@ -3703,6 +3781,7 @@ country_event = {
   }
 }
 country_event = {
+  #Kanda Matsuri Festivals in [Root.Capital.GetName]
   id = flavor_jap.72
   title = flavor_jap.72.t
   desc = flavor_jap.72.d
@@ -3746,6 +3825,7 @@ country_event = {
   }
 }
 country_event = {
+  #Onna Musha and the Edo Period
   id = flavor_jap.73
   title = flavor_jap.73.t
   desc = flavor_jap.73.d
@@ -3770,7 +3850,7 @@ country_event = {
       }
     }
     define_general = {
-      name = "'Ykydž"  # Ohori Tsuruhime
+      name = "'Ykydž" 	# Ohori Tsuruhime
       female = yes
       fire = 4
       shock = 6

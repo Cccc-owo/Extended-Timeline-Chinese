@@ -1,4 +1,6 @@
 namespace = ambrosian_republic
+# ending event
+# text depending on resolution
 country_event = {
   id = ambrosian_republic.1
   title = ambrosian_republic.1.t
@@ -57,6 +59,7 @@ country_event = {
     add_prestige = 20
   }
 }
+# France and the Emperor react
 country_event = {
   id = ambrosian_republic.2
   title = ambrosian_republic.2.t
@@ -107,6 +110,7 @@ country_event = {
     }
   }
 }
+# for France
 country_event = {
   id = ambrosian_republic.3
   title = ambrosian_republic.2.t
@@ -146,6 +150,7 @@ country_event = {
     add_prestige = 5
   }
 }
+# for emperor
 country_event = {
   id = ambrosian_republic.4
   title = ambrosian_republic.2.t
@@ -185,6 +190,7 @@ country_event = {
     add_prestige = 5
   }
 }
+# Sforza defects to Milan
 country_event = {
   id = ambrosian_republic.5
   title = ambrosian_republic.5.t
@@ -277,10 +283,11 @@ country_event = {
     }
   }
   option = {
+    # recruit Sforza
     name = ambrosian_republic.5.a
     set_country_flag = sforza_hired
     define_general = {
-      name = "VgRØe—y ØeèySNb"  # Francesco Sforza
+      name = "VgRØe—y ØeèySNb" 	# Francesco Sforza
       shock = 5
       fire = 3
       manuever = 4
@@ -325,6 +332,7 @@ country_event = {
     }
   }
   option = {
+    # we don't need him
     name = ambrosian_republic.5.b
     ai_chance = {
       factor = 0
@@ -336,7 +344,7 @@ country_event = {
       }
       VEN = {
         define_general = {
-          name = "VgRØe—y ØeèySNb"  # Francesco Sforza
+          name = "VgRØe—y ØeèySNb" 	# Francesco Sforza
           shock = 5
           fire = 3
           manuever = 4
@@ -353,7 +361,7 @@ country_event = {
       }
       event_target:sforza_origin_country = {
         define_general = {
-          name = "VgRØe—y ØeèySNb"  # Francesco Sforza
+          name = "VgRØe—y ØeèySNb" 	# Francesco Sforza
           shock = 5
           fire = 3
           manuever = 4
@@ -372,13 +380,14 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 2
-          leader = "VgRØe—y"  # Francesco
-          leader_dynasty = "ØeèySNb"  # Sforza
+          leader = "VgRØe—y" 	# Francesco
+          leader_dynasty = "ØeèySNb" 	# Sforza
         }
       }
     }
   }
 }
+# Sforza clashes with political rivals
 country_event = {
   id = ambrosian_republic.6
   title = ambrosian_republic.6.t
@@ -405,12 +414,13 @@ country_event = {
       flag = sforza_hired
       days = 700
     }
-    has_leader = "VgRØe—y ØeèySNb"  # Francesco Sforza
+    has_leader = "VgRØe—y ØeèySNb" 	# Francesco Sforza
     any_owned_province = {
       region = italy_region
     }
   }
   option = {
+    # Sforza establishes military rule
     name = ambrosian_republic.6.a
     ai_chance = {
       factor = 75
@@ -419,7 +429,7 @@ country_event = {
     add_government_reform = military_dictatorship_reform
     set_country_flag = mlo_military_rule
     define_leader_to_ruler = {
-      name = "VgRØe—y ØeèySNb"  # Francesco Sforza
+      name = "VgRØe—y ØeèySNb" 	# Francesco Sforza
       ADM = 5
       DIP = 5
       MIL = 5
@@ -427,13 +437,14 @@ country_event = {
     }
   }
   option = {
+    # we don't need him
     name = ambrosian_republic.6.b
     ai_chance = {
       factor = 25
     }
     add_stability = -2
     kill_leader = {
-      type = "VgRØe—y ØeèySNb"  # Francesco Sforza
+      type = "VgRØe—y ØeèySNb" 	# Francesco Sforza
     }
     random_owned_province = {
       limit = {
@@ -442,12 +453,13 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 2
-        leader = "VgRØe—y"  # Francesco
-        leader_dynasty = "ØeèySNb"  # Sforza
+        leader = "VgRØe—y" 	# Francesco
+        leader_dynasty = "ØeèySNb" 	# Sforza
       }
     }
   }
 }
+# Sforza declares himself Duke
 country_event = {
   id = ambrosian_republic.7
   title = ambrosian_republic.7.t
@@ -474,7 +486,7 @@ country_event = {
       flag = mlo_military_rule
       days = 365
     }
-    has_ruler = "VgRØe—y ØeèySNb"  # Francesco Sforza
+    has_ruler = "VgRØe—y ØeèySNb" 	# Francesco Sforza
   }
   immediate = {
     hidden_effect = {
@@ -482,6 +494,7 @@ country_event = {
     }
   }
   option = {
+    # all hail Duke Sforza
     name = "ambrosian_republic.7.a"
     ai_chance = {
       factor = 90
@@ -490,8 +503,8 @@ country_event = {
     add_government_reform = feudalism_reform
     add_legitimacy = 50
     define_heir = {
-      name = "†R±ÉöNPO õsKNöN"  # Galeazzo Maria
-      dynasty = "ØeèySNb"  # Sforza
+      name = "†R±ÉöNPO õsKNöN" 	# Galeazzo Maria
+      dynasty = "ØeèySNb" 	# Sforza
       birth_date = 1444.1.24
       claim = 100
     }
@@ -499,12 +512,13 @@ country_event = {
     custom_tooltip = ambrosian_republic_resolved_tt
   }
   option = {
+    # Appoint a new dictator
     name = "ambrosian_republic.7.b"
     ai_chance = {
       factor = 5
     }
     define_ruler = {
-      name = "≈ñT^ ÆvGY<S˙ã"  # Jacopo Piccinino
+      name = "≈ñT^ ÆvGY<S˙ã" 	# Jacopo Piccinino
     }
     random_owned_province = {
       limit = {
@@ -513,20 +527,21 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 2
-        leader = "VgRØe—y"  # Francesco
-        leader_dynasty = "ØeèySNb"  # Sforza
+        leader = "VgRØe—y" 	# Francesco
+        leader_dynasty = "ØeèySNb" 	# Sforza
       }
     }
     custom_tooltip = ambrosian_republic_resolved_tt
   }
   option = {
+    # restore ambrosian republic under Lampugnano's republican direction
     name = "ambrosian_republic.7.c"
     ai_chance = {
       factor = 5
     }
     add_government_reform = ambrosian_republic
     define_ruler = {
-      name = "TNªl pQnf<SöN˙ã"  # Giorgio Lampugnano
+      name = "TNªl pQnf<SöN˙ã" 	# Giorgio Lampugnano
     }
     random_owned_province = {
       limit = {
@@ -535,13 +550,14 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 2
-        leader = "VgRØe—y"  # Francesco
-        leader_dynasty = "ØeèySNb"  # Sforza
+        leader = "VgRØe—y" 	# Francesco
+        leader_dynasty = "ØeèySNb" 	# Sforza
       }
     }
     custom_tooltip = ambrosian_republic_resolved_tt
   }
 }
+# Sforza dies after becoming dictator but before seizing the throne
 country_event = {
   id = ambrosian_republic.8
   title = ambrosian_republic.8.t
@@ -568,7 +584,7 @@ country_event = {
     }
     has_reform = military_dictatorship_reform
     NOT = {
-      has_ruler = "VgRØe—y ØeèySNb"  # Francesco Sforza
+      has_ruler = "VgRØe—y ØeèySNb" 	# Francesco Sforza
     }
   }
   immediate = {
@@ -577,6 +593,7 @@ country_event = {
     }
   }
   option = {
+    # all hail the new dictator
     name = "ambrosian_republic.8.a"
     ai_chance = {
       factor = 25
@@ -590,12 +607,13 @@ country_event = {
       spawn_rebels = {
         type = particularist_rebels
         size = 1
-        leader = "TNªl"  # Giorgio
-        leader_dynasty = "pQnf<SöN˙ã"  # Lampugnano
+        leader = "TNªl" 	# Giorgio
+        leader_dynasty = "pQnf<SöN˙ã" 	# Lampugnano
       }
     }
   }
   option = {
+    # restore the ambrosian republic
     name = "ambrosian_republic.8.b"
     ai_chance = {
       factor = 75
@@ -603,7 +621,7 @@ country_event = {
     add_government_reform = ambrosian_republic
     add_republican_tradition = 20
     define_ruler = {
-      name = "TNªl pQnf<SöN˙ã"  # Giorgio Lampugnano
+      name = "TNªl pQnf<SöN˙ã" 	# Giorgio Lampugnano
     }
     custom_tooltip = ambrosian_republic_resolved_tt
     random_owned_province = {
@@ -613,12 +631,13 @@ country_event = {
       spawn_rebels = {
         type = particularist_rebels
         size = 1
-        leader = "≈ñT^"  # Jacopo
-        leader_dynasty = "ÆvGY<S˙ã"  # Piccinino
+        leader = "≈ñT^" 	# Jacopo
+        leader_dynasty = "ÆvGY<S˙ã" 	# Piccinino
       }
     }
   }
 }
+# Sforza joins enemy country
 country_event = {
   id = ambrosian_republic.9
   title = ambrosian_republic.9.t
@@ -642,7 +661,7 @@ country_event = {
     name = "ambrosian_republic.9.a"
     tooltip = {
       define_general = {
-        name = "VgRØe—y ØeèySNb"  # Francesco Sforza
+        name = "VgRØe—y ØeèySNb" 	# Francesco Sforza
         shock = 5
         fire = 3
         manuever = 4

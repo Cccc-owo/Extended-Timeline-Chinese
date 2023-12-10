@@ -8,9 +8,7 @@ lubeck_missions_1 = {
   has_country_shield = yes
   hsa_gateway_to_east = {
     icon = mission_develop_nevas_port
-    required_missions = {
-      hsa_young_men_lubeck
-    }
+    required_missions = { hsa_young_men_lubeck }
     position = 2
     provinces_to_highlight = {
       province_id = 38
@@ -64,9 +62,7 @@ lubeck_missions_1 = {
   }
   hsa_st_peterhof_depot = {
     icon = explore_caribbean
-    required_missions = {
-      hsa_gateway_to_east
-    }
+    required_missions = { hsa_gateway_to_east }
     position = 4
     provinces_to_highlight = {
       province_id = 310
@@ -92,7 +88,7 @@ lubeck_missions_1 = {
     effect = {
       country_event = {
         id = flavor_hsa.5
-      }
+      } 	# flavor_hsa.5
       custom_tooltip = hsa_every_league_member_wealth_tt
       hidden_effect = {
         every_country = {
@@ -122,9 +118,7 @@ lubeck_missions_1 = {
   }
   hsa_peace_vordingborg = {
     icon = mission_alliances
-    required_missions = {
-      hsa_expand_market_square
-    }
+    required_missions = { hsa_expand_market_square }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -147,6 +141,7 @@ lubeck_missions_1 = {
           }
         }
         45 = {
+          #Lubeck
           trade_share = {
             country = ROOT
             share = 50
@@ -174,9 +169,7 @@ lubeck_missions_1 = {
   }
   hsa_herring_migration = {
     icon = mission_rb_cod_wars
-    required_missions = {
-      hsa_peace_vordingborg
-    }
+    required_missions = { hsa_peace_vordingborg }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -229,16 +222,14 @@ lubeck_missions_1 = {
       else = {
         country_event = {
           id = flavor_hsa.6
-        }
+        } 	# flavor_hsa.6
       }
       custom_tooltip = general_tooltip_dynamic_reward
     }
   }
   hsa_markets_bryggen = {
     icon = promote_urbanization
-    required_missions = {
-      hsa_herring_migration
-    }
+    required_missions = { hsa_herring_migration }
     position = 9
     provinces_to_highlight = {
       province_id = 23
@@ -273,7 +264,7 @@ lubeck_missions_1 = {
         }
         country_event = {
           id = flavor_hsa.7
-        }
+        } 	# flavor_hsa.7
       }
       else = {
         23 = {
@@ -459,10 +450,7 @@ lubeck_missions_1 = {
   }
   hsa_wards_city = {
     icon = personal_diplomacy
-    required_missions = {
-      hsa_organize_hanseatic_diets
-      hsa_tend_towns
-    }
+    required_missions = { hsa_organize_hanseatic_diets hsa_tend_towns }
     position = 11
     trigger = {
       mercantilism = 60
@@ -506,9 +494,7 @@ lubeck_missions_2 = {
   has_country_shield = yes
   hsa_restore_visby = {
     icon = return_visby_to_the_league
-    required_missions = {
-      hsa_young_men_lubeck
-    }
+    required_missions = { hsa_young_men_lubeck }
     position = 2
     provinces_to_highlight = {
       province_id = 25
@@ -548,7 +534,7 @@ lubeck_missions_2 = {
     effect = {
       country_event = {
         id = flavor_hsa.8
-      }
+      } 	# flavor_hsa.8
       east_prussia_area = {
         limit = {
           NOT = {
@@ -575,9 +561,7 @@ lubeck_missions_2 = {
   }
   hsa_induct_danzig_ports = {
     icon = capture_adriatic_ports
-    required_missions = {
-      hsa_restore_visby
-    }
+    required_missions = { hsa_restore_visby }
     position = 3
     provinces_to_highlight = {
       province_id = 43
@@ -602,14 +586,12 @@ lubeck_missions_2 = {
     effect = {
       country_event = {
         id = flavor_hsa.9
-      }
+      } 	# flavor_hsa.9
     }
   }
   hsa_royal_prussia = {
     icon = tame_brandenburg
-    required_missions = {
-      hsa_induct_danzig_ports
-    }
+    required_missions = { hsa_induct_danzig_ports }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -674,10 +656,7 @@ lubeck_missions_2 = {
   }
   hsa_impose_lubeck_law = {
     icon = mission_rb_monopolize_the_channel
-    required_missions = {
-      hsa_herring_migration
-      hsa_expand_market_square
-    }
+    required_missions = { hsa_herring_migration hsa_expand_market_square }
     position = 9
     trigger = {
       stability = 1
@@ -822,9 +801,7 @@ lubeck_missions_2 = {
   }
   hsa_tend_towns = {
     icon = renovate_berlin
-    required_missions = {
-      hsa_impose_lubeck_law
-    }
+    required_missions = { hsa_impose_lubeck_law }
     position = 10
     provinces_to_highlight = {
       owned_by = ROOT
@@ -874,9 +851,7 @@ lubeck_missions_2 = {
   }
   hsa_develop_mineral_trade = {
     icon = mission_establish_mint_towns
-    required_missions = {
-      hsa_tend_towns
-    }
+    required_missions = { hsa_tend_towns }
     position = 11
     provinces_to_highlight = {
       province_id = 4742
@@ -1142,9 +1117,7 @@ lubeck_missions_3 = {
   }
   hsa_grinning_steers_head = {
     icon = protect_against_austria
-    required_missions = {
-      hsa_young_men_lubeck
-    }
+    required_missions = { hsa_young_men_lubeck }
     position = 2
     provinces_to_highlight = {
       area = mecklenburg_area
@@ -1225,9 +1198,7 @@ lubeck_missions_3 = {
   }
   hsa_along_sea = {
     icon = mission_hanseatic_city
-    required_missions = {
-      hsa_grinning_steers_head
-    }
+    required_missions = { hsa_grinning_steers_head }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1269,6 +1240,7 @@ lubeck_missions_3 = {
         limit = {
           NOT = {
             45 = {
+              #Lubeck
               trade_share = {
                 country = ROOT
                 share = 50
@@ -1292,9 +1264,7 @@ lubeck_missions_3 = {
   }
   hsa_double_entry_bookkeeping = {
     icon = medici_bank_ledgers
-    required_missions = {
-      hsa_expand_market_square
-    }
+    required_missions = { hsa_expand_market_square }
     position = 7
     trigger = {
       OR = {
@@ -1322,16 +1292,14 @@ lubeck_missions_3 = {
         skill = 3
         culture = tuscan
         cost_multiplier = 0.3
-        name = "bSaS ^TN)R"  # Luca Pacioli
+        name = "bSaS ^TN)R" 	# Luca Pacioli
       }
       add_adm_power = 100
     }
   }
   hsa_queens_hall = {
     icon = powerhouse_of_the_north
-    required_missions = {
-      hsa_double_entry_bookkeeping
-    }
+    required_missions = { hsa_double_entry_bookkeeping }
     position = 8
     provinces_to_highlight = {
       province_id = 45
@@ -1353,7 +1321,7 @@ lubeck_missions_3 = {
     effect = {
       country_event = {
         id = flavor_hsa.10
-      }
+      } 	# flavor_hsa.10
       45 = {
         add_province_modifier = {
           name = hsa_expand_the_hansehalle_modifier
@@ -1364,9 +1332,7 @@ lubeck_missions_3 = {
   }
   hsa_construct_holstentor = {
     icon = defend_the_city
-    required_missions = {
-      hsa_queens_hall
-    }
+    required_missions = { hsa_queens_hall }
     position = 9
     provinces_to_highlight = {
       province_id = 45
@@ -1383,14 +1349,12 @@ lubeck_missions_3 = {
     effect = {
       country_event = {
         id = flavor_hsa.11
-      }
+      } 	# flavor_hsa.11
     }
   }
   hsa_new_system_trade = {
     icon = mission_dominate_home_trade_node
-    required_missions = {
-      hsa_construct_holstentor
-    }
+    required_missions = { hsa_construct_holstentor }
     position = 10
     trigger = {
       mercantilism = 40
@@ -1405,6 +1369,7 @@ lubeck_missions_3 = {
         }
       }
       45 = {
+        #Lubeck
         trade_share = {
           country = ROOT
           share = 50
@@ -1414,7 +1379,7 @@ lubeck_missions_3 = {
     effect = {
       country_event = {
         id = flavor_hsa.12
-      }
+      } 	# flavor_hsa.12
     }
   }
   hsa_queen_of_the_hansa = {
@@ -1427,6 +1392,7 @@ lubeck_missions_3 = {
     }
     position = 12
     provinces_to_highlight = {
+      #untested
       OR = {
         province_id = 45
         province_id = 1975
@@ -1499,7 +1465,7 @@ lubeck_missions_3 = {
       custom_tooltip = hsa_based_on_the_development_of_our_capital_tt
       country_event = {
         id = flavor_hsa.26
-      }
+      } 	# flavor_hsa.26
       custom_tooltip = hsa_diplomatic_upkeep_boost_tt
       hidden_effect = {
         if = {
@@ -1567,9 +1533,7 @@ lubeck_missions_4 = {
   has_country_shield = yes
   hsa_secure_salt_road = {
     icon = claim_the_borderlands
-    required_missions = {
-      hsa_young_men_lubeck
-    }
+    required_missions = { hsa_young_men_lubeck }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -1791,9 +1755,7 @@ lubeck_missions_4 = {
   }
   hsa_flow_trade = {
     icon = sources_of_trade
-    required_missions = {
-      hsa_secure_salt_road
-    }
+    required_missions = { hsa_secure_salt_road }
     position = 3
     provinces_to_highlight = {
       area = weser_area
@@ -1824,6 +1786,7 @@ lubeck_missions_4 = {
     }
     effect = {
       1876 = {
+        #Rhineland
         add_trade_modifier = {
           who = ROOT
           duration = 7300
@@ -2002,9 +1965,7 @@ lubeck_missions_4 = {
   }
   hsa_finance_guilds = {
     icon = mission_state_manufactories
-    required_missions = {
-      hsa_expand_market_square
-    }
+    required_missions = { hsa_expand_market_square }
     position = 7
     trigger = {
       capital_scope = {
@@ -2114,10 +2075,7 @@ lubeck_missions_4 = {
   }
   hsa_charter_north_america = {
     icon = mission_caribbean_cn
-    required_missions = {
-      hsa_new_system_trade
-      hsa_develop_handsflotte
-    }
+    required_missions = { hsa_new_system_trade hsa_develop_handsflotte }
     position = 11
     provinces_to_highlight = {
       area = newfoundland_area
@@ -2206,10 +2164,7 @@ lubeck_missions_5 = {
   }
   hsa_pen_sword = {
     icon = unite_the_realm
-    required_missions = {
-      hsa_secure_salt_road
-      hsa_imperial_allegience
-    }
+    required_missions = { hsa_secure_salt_road hsa_imperial_allegience }
     position = 3
     provinces_to_highlight = {
       area = holstein_area
@@ -2263,6 +2218,7 @@ lubeck_missions_5 = {
         custom_tooltip = hsa_reduce_denmark_trade_tt
         hidden_effect = {
           45 = {
+            #Lubeck
             add_trade_modifier = {
               who = DAN
               duration = 3650
@@ -2276,9 +2232,7 @@ lubeck_missions_5 = {
   }
   hsa_bypass_sound_toll = {
     icon = mission_trade_with_cathay
-    required_missions = {
-      hsa_pen_sword
-    }
+    required_missions = { hsa_pen_sword }
     position = 4
     provinces_to_highlight = {
       province_id = 12
@@ -2351,9 +2305,7 @@ lubeck_missions_5 = {
   }
   hsa_tame_north_sea = {
     icon = imperial_navy
-    required_missions = {
-      hsa_bypass_sound_toll
-    }
+    required_missions = { hsa_bypass_sound_toll }
     position = 5
     provinces_to_highlight = {
       province_id = 1975
@@ -2406,9 +2358,7 @@ lubeck_missions_5 = {
   }
   hsa_schiffbauer_gilde = {
     icon = renaissance_city
-    required_missions = {
-      hsa_expand_admiralty
-    }
+    required_missions = { hsa_expand_admiralty }
     position = 8
     provinces_to_highlight = {
       province_id = 45
@@ -2447,14 +2397,12 @@ lubeck_missions_5 = {
     effect = {
       country_event = {
         id = flavor_hsa.13
-      }
+      } 	# flavor_hsa.13
     }
   }
   hsa_marine_pilots = {
     icon = overshadow_venice
-    required_missions = {
-      hsa_schiffbauer_gilde
-    }
+    required_missions = { hsa_schiffbauer_gilde }
     position = 10
     trigger = {
       naval_forcelimit = 25
@@ -2487,9 +2435,7 @@ lubeck_missions_5 = {
   }
   hsa_eagle_of_lubeck = {
     icon = mission_launch_a_flagship
-    required_missions = {
-      hsa_marine_pilots
-    }
+    required_missions = { hsa_marine_pilots }
     position = 11
     trigger = {
       if = {
@@ -2522,7 +2468,7 @@ lubeck_missions_5 = {
     effect = {
       country_event = {
         id = flavor_hsa.14
-      }
+      } 	# flavor_hsa.14
     }
   }
 }

@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Hannover
+# Scripted by Sara Wendel-Örtqvist
+########################################
 namespace = flavor_han
 normal_or_historical_nations = yes
+# Gottfried Wilhelm Leibniz
 country_event = {
   id = flavor_han.1
   title = "flavor_han.EVTNAME1"
@@ -8,10 +13,10 @@ country_event = {
   fire_only_once = yes
   trigger = {
     OR = {
-      owns = 62
-      owns = 63
-      owns = 67
-      owns = 1758
+      owns = 62 	# Leipzig
+      owns = 63 	# Jena
+      owns = 67 	# Altdorf
+      owns = 1758 	# Hannover
     }
     is_year = 1676
     NOT = {
@@ -32,7 +37,7 @@ country_event = {
     define_advisor = {
       type = philosopher
       skill = 3
-      name = "byrVÌ‘·V ZÉ^ ±ƒ^<S(ƒ"  # Gottfried Wilhelm Leibniz
+      name = "byrVÌ‘·V ZÉ^ ±ƒ^<S(ƒ" 	# Gottfried Wilhelm Leibniz
       culture = saxon
       discount = yes
     }

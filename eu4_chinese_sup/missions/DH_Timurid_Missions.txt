@@ -101,14 +101,12 @@ dh_tim_india = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Tall
     }
   }
   dh_tim_khorasan_one = {
     icon = per_establish_western_defenses
-    required_missions = {
-      dh_tim_army_built
-    }
+    required_missions = { dh_tim_army_built }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -175,14 +173,12 @@ dh_tim_india = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   dh_tim_khorasan_two = {
     icon = per_establish_eastern_defenses
-    required_missions = {
-      dh_tim_khorasan_one
-    }
+    required_missions = { dh_tim_khorasan_one }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -216,7 +212,7 @@ dh_tim_india = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   dh_indian_raid = {
@@ -238,14 +234,14 @@ dh_tim_india = {
     effect = {
       add_country_modifier = {
         name = "mug_formation_hope"
-        duration = 9125
+        duration = 9125 	# 25 years
       }
       if = {
         limit = {
           is_year = 1750
         }
         define_general = {
-          name = "åÇ»T»è∑V Wl jgpQ<S"  # Ahmad Khan Abdali
+          name = "åÇ»T»è∑V Wl jgpQ<S" 	# Ahmad Khan Abdali
           shock = 1
           fire = 5
           manuever = 5
@@ -258,7 +254,7 @@ dh_tim_india = {
           is_year = 1700
         }
         define_general = {
-          name = "≥uÍèS ì^Ãë ç<h"  # Nadir Quli Beg
+          name = "≥uÍèS ì^Ãë ç<h" 	# Nadir Quli Beg
           fire = 3
           shock = 5
           manuever = 5
@@ -271,7 +267,7 @@ dh_tim_india = {
           is_year = 1650
         }
         define_general = {
-          name = "eYgR^ ^(g?Q"  # AurangzÓb Timurid
+          name = "eYgR^ ^(g?Q" 	# AurangzÓb Timurid
           shock = 5
           fire = 5
           manuever = 2
@@ -284,7 +280,7 @@ dh_tim_india = {
           is_year = 1600
         }
         define_general = {
-          name = "?ñKQÙT ^(g?Q"  # Akbar Timurid
+          name = "?ñKQÙT ^(g?Q" 	# Akbar Timurid
           shock = 4
           fire = 4
           manuever = 2
@@ -297,7 +293,7 @@ dh_tim_india = {
           is_year = 1550
         }
         define_general = {
-          name = "·wlöÕñ ^(g?Q"  # Humayun Timurid
+          name = "·wlöÕñ ^(g?Q" 	# Humayun Timurid
           shock = 4
           fire = 4
           manuever = 2
@@ -310,7 +306,7 @@ dh_tim_india = {
           is_year = 1500
         }
         define_general = {
-          name = "ÙT^S ^(g?Q"  # Babur Timurid
+          name = "ÙT^S ^(g?Q" 	# Babur Timurid
           shock = 5
           fire = 5
           manuever = 3
@@ -323,7 +319,7 @@ dh_tim_india = {
           is_year = 1450
         }
         define_general = {
-          name = "?ñ^ içIN∑V ^(g?Q"  # Abu Said Timurid
+          name = "?ñ^ içIN∑V ^(g?Q" 	# Abu Said Timurid
           shock = 5
           fire = 4
           manuever = 3
@@ -333,7 +329,7 @@ dh_tim_india = {
       }
       else = {
         define_general = {
-          name = "?ñ^ içIN∑V ^(g?Q"  # Abu Said Timurid
+          name = "?ñ^ içIN∑V ^(g?Q" 	# Abu Said Timurid
           shock = 5
           fire = 4
           manuever = 3
@@ -367,9 +363,7 @@ dh_tim_india = {
   }
   dh_conquer_punjab_MUG = {
     icon = mission_indian_soldier_elephant
-    required_missions = {
-      dh_indian_raid
-    }
+    required_missions = { dh_indian_raid }
     provinces_to_highlight = {
       OR = {
         area = lahore_area
@@ -392,7 +386,7 @@ dh_tim_india = {
     effect = {
       add_country_modifier = {
         name = "mug_looting"
-        duration = 9125
+        duration = 9125 	# 25 years
       }
       sirhind_area = {
         limit = {
@@ -418,14 +412,12 @@ dh_tim_india = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
   dh_conquer_delhi = {
     icon = mission_monarch_in_throne_room
-    required_missions = {
-      dh_conquer_punjab_MUG
-    }
+    required_missions = { dh_conquer_punjab_MUG }
     provinces_to_highlight = {
       OR = {
         area = sirhind_area
@@ -448,13 +440,13 @@ dh_tim_india = {
     effect = {
       add_country_modifier = {
         name = "mug_fall_of_delhi"
-        duration = 9125
+        duration = 9125 	# 25 years
       }
       add_treasury = 500
       add_prestige = 20
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Reasonable conquest
     }
   }
 }

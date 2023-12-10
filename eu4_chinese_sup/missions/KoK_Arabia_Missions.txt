@@ -32,7 +32,17 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
         hidden_effect = {
           for_every_level_of_advisor_do = {
             type = adm
-            effect = " if = { limit = { piety = 0 } add_piety = 0.1 } else = { add_piety = -0.1 } "
+            effect = "
+              if = {
+                limit = {
+                  piety = 0
+                }
+                add_piety = 0.1
+              }
+              else = {
+                add_piety = -0.1
+              }
+            "
           }
         }
       }
@@ -41,7 +51,9 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
         hidden_effect = {
           for_every_level_of_advisor_do = {
             type = adm
-            effect = " change_government_reform_progress = 10 "
+            effect = "
+              change_government_reform_progress = 10
+            "
           }
         }
       }
@@ -53,7 +65,13 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
         hidden_effect = {
           for_every_level_of_advisor_do = {
             type = dip
-            effect = " add_government_power = { mechanic_type = tribal_federation_mechanic power_type = tribal_allegiance value = 10 } "
+            effect = "
+              add_government_power = {
+                mechanic_type = tribal_federation_mechanic
+                power_type = tribal_allegiance
+                value = 10
+              }
+            "
           }
         }
       }
@@ -62,7 +80,9 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
         hidden_effect = {
           for_every_level_of_advisor_do = {
             type = dip
-            effect = " add_corruption = -1 "
+            effect = "
+              add_corruption = -1
+            "
           }
         }
       }
@@ -70,16 +90,16 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
       hidden_effect = {
         for_every_level_of_advisor_do = {
           type = mil
-          effect = " add_army_tradition_or_mil_power = { amount = 5 } "
+          effect = "
+            add_army_tradition_or_mil_power = { amount = 5 }
+          "
         }
       }
     }
   }
   ARB_jerusalem = {
     icon = jerusalem
-    required_missions = {
-      ARB_custodians_of_the_holy_cities
-    }
+    required_missions = { ARB_custodians_of_the_holy_cities }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -111,16 +131,31 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
       custom_tooltip = " "
       country_event_with_option_insight = {
         id = flavor_ARB.3
-        option_1 = " add_country_modifier = { name = ARB_dhimmi_self_government duration = 9125 } add_dip_power = 50 "
-        option_2 = " if = { limit = { NOT = { 379 = { religion = ROOT } } } 379 = { change_religion = ROOT } custom_tooltip = " " } add_years_of_income = 1 "
+        option_1 = "
+          add_country_modifier = {
+            name = ARB_dhimmi_self_government
+            duration = 9125
+          }
+          add_dip_power = 50
+        "
+        option_2 = "
+          if = {
+            limit = {
+              NOT = {
+                379 = { religion = ROOT }
+              }
+            }
+            379 = { change_religion = ROOT }
+            custom_tooltip = \" \"
+          }
+          add_years_of_income = 1
+        "
       }
     }
   }
   ARB_mamluks = {
     icon = mission_egyptian_mamluk_soldier
-    required_missions = {
-      ARB_jerusalem
-    }
+    required_missions = { ARB_jerusalem }
     position = 5
     provinces_to_highlight = {
       region = egypt_region
@@ -164,16 +199,77 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
         }
         country_event_with_option_insight = {
           id = flavor_ARB.4
-          option_1 = " add_treasury = -1000 if = { limit = { has_dlc = "Leviathan" } 361 = { set_great_project_tier_1 = { type = al_azhar_university } } custom_tooltip = " " } else = { 361 = { add_province_modifier = { name = ARB_al_azhar_university duration = -1 } } } 361 = { add_or_upgrade_university_building = yes } "
-          option_2 = " if = { limit = { has_estate = estate_church } add_estate_loyalty = { estate = estate_church loyalty = 25 } custom_tooltip = " " }  add_country_modifier = { name = ARB_hanbali_scholars duration = 10950 } "
-          option_3 = " add_prestige_or_monarch_power = { amount = 10 } "
+          option_1 = "
+            add_treasury = -1000
+            if = {
+              limit = {
+                has_dlc = \"Leviathan\"
+              }
+              361 = {
+                set_great_project_tier_1 = {
+                  type = al_azhar_university
+                }
+              }
+              custom_tooltip = \" \"
+            }
+            else = {
+              361 = {
+                add_province_modifier = {
+                  name = ARB_al_azhar_university
+                  duration = -1
+                }
+              }
+            }
+            361 = { add_or_upgrade_university_building = yes }
+          "
+          option_2 = "
+            if = {
+              limit = { has_estate = estate_church }
+              add_estate_loyalty = {
+                estate = estate_church
+                loyalty = 25
+              }
+              custom_tooltip = \" \"
+            }
+            add_country_modifier = {
+              name = ARB_hanbali_scholars
+              duration = 10950
+            }
+          "
+          option_3 = "
+            add_prestige_or_monarch_power = { amount = 10 }
+          "
         }
       }
       else = {
         country_event_with_option_insight = {
           id = flavor_ARB.4
-          option_1 = " add_treasury = -1000 if = { limit = { has_dlc = "Leviathan" } 361 = { set_great_project_tier_1 = { type = al_azhar_university } } custom_tooltip = " " } else = { 361 = { add_province_modifier = { name = ARB_al_azhar_university duration = -1 } } } add_or_upgrade_university_building = yes "
-          option_2 = " add_prestige_or_monarch_power = { amount = 10 } "
+          option_1 = "
+            add_treasury = -1000
+            if = {
+              limit = {
+                has_dlc = \"Leviathan\"
+              }
+              361 = {
+                set_great_project_tier_1 = {
+                  type = al_azhar_university
+                }
+              }
+              custom_tooltip = \" \"
+            }
+            else = {
+              361 = {
+                add_province_modifier = {
+                  name = ARB_al_azhar_university
+                  duration = -1
+                }
+              }
+            }
+            add_or_upgrade_university_building = yes
+          "
+          option_2 = "
+            add_prestige_or_monarch_power = { amount = 10 }
+          "
         }
       }
     }
@@ -246,9 +342,7 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
   }
   ARB_safeguard_pilgrim_routes = {
     icon = mission_traverse_the_sahara
-    required_missions = {
-      ARB_protectors_of_the_holy_cities
-    }
+    required_missions = { ARB_protectors_of_the_holy_cities }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -298,10 +392,7 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
   }
   ARB_spirit_of_hajj = {
     icon = mission_into_arabia
-    required_missions = {
-      ARB_safeguard_pilgrim_routes
-      ARB_expand_jeddah
-    }
+    required_missions = { ARB_safeguard_pilgrim_routes ARB_expand_jeddah }
     position = 8
     provinces_to_highlight = {
       province_id = 385
@@ -400,8 +491,18 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
         }
         complex_dynamic_effect = {
           first_custom_tooltip = ARB_if_at_least_60_church_loyalty
-          first_limit = " estate_loyalty = { estate = estate_church loyalty = 60 } "
-          first_effect = " add_country_modifier = { name = ARB_support_of_the_ulema duration = 7300 } "
+          first_limit = "
+            estate_loyalty = {
+              estate = estate_church
+              loyalty = 60
+            }
+          "
+          first_effect = "
+            add_country_modifier = {
+              name = ARB_support_of_the_ulema
+              duration = 7300
+            }
+          "
         }
       }
     }
@@ -424,9 +525,7 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
   has_country_shield = yes
   ARB_traditional_interpretation = {
     icon = mission_reclaim_morocco
-    required_missions = {
-      ARB_assemble_a_shura
-    }
+    required_missions = { ARB_assemble_a_shura }
     position = 2
     provinces_to_highlight = {}
     trigger = {
@@ -500,23 +599,54 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
           set_country_flag = ARB_may_fire_wahabism
           country_event_with_effect_insight = {
             id = muslim_school_events.22
-            effect = " custom_tooltip = muslim_school_events.22.a.tt  custom_tooltip = ABR_hanbali_countries_now_buff_religious_culture "
+            effect = "
+              custom_tooltip = muslim_school_events.22.a.tt
+              custom_tooltip = ABR_hanbali_countries_now_buff_religious_culture
+            "
           }
         }
         else = {
           simple_dynamic_effect = {
             first_custom_tooltip = ARB_if_legalism
-            first_limit = " piety = 0.9 "
-            first_effect = " set_country_flag = ARB_buff_enforce_religious_unity_flag custom_tooltip = ARB_buff_enforce_religious_unity hidden_effect = { if = { limit = { has_ruler_modifier = muslim_enforced_religion } remove_country_modifier = muslim_enforced_religion add_ruler_modifier = { name = muslim_enforced_religion duration = -1 } } } "
+            first_limit = "
+              piety = 0.9
+            "
+            first_effect = "
+              set_country_flag = ARB_buff_enforce_religious_unity_flag
+              custom_tooltip = ARB_buff_enforce_religious_unity
+              hidden_effect = {
+                if = {
+                  limit = { has_ruler_modifier = muslim_enforced_religion }
+                  remove_country_modifier = muslim_enforced_religion
+                  add_ruler_modifier = { name = muslim_enforced_religion duration = -1 }
+                }
+              }
+            "
             second_custom_tooltip = ARB_if_mysticism
-            second_limit = " NOT = { piety = -0.89 } "
-            second_effect = " if = { limit = { has_dlc = "Golden Century" } custom_tooltip = ARB_grant_access_to_muslim_holy_orders set_country_flag = ARB_grant_access_to_muslim_holy_orders_flag } else = { add_country_modifier = { name = ARB_welcoming_the_sufis duration = -1 } } "
+            second_limit = "
+              NOT = { piety = -0.89 }
+            "
+            second_effect = "
+              if = {
+                limit = {
+                  has_dlc = \"Golden Century\"
+                }
+                custom_tooltip = ARB_grant_access_to_muslim_holy_orders
+                set_country_flag = ARB_grant_access_to_muslim_holy_orders_flag
+              }
+              else = {
+                add_country_modifier = {
+                  name = ARB_welcoming_the_sufis
+                  duration = -1
+                }
+              }
+            "
           }
         }
       }
       else = {
         add_country_modifier = {
-          name = ARB_following_teachings_of_old
+          name = ARB_following_teachings_of_old 	# fallback
           duration = -1
         }
       }
@@ -524,9 +654,7 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
   }
   ARB_custodians_of_the_holy_cities = {
     icon = mission_tear_down_spanish_strongholds
-    required_missions = {
-      ARB_tribal_feuds
-    }
+    required_missions = { ARB_tribal_feuds }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -546,6 +674,7 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
       }
     }
     effect = {
+      #Yemen
       yemen_area = {
         limit = {
           NOT = {
@@ -612,6 +741,7 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
         }
         add_permanent_claim = ROOT
       }
+      #syria and palestine
       syria_area = {
         limit = {
           NOT = {
@@ -667,6 +797,7 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
         }
         add_permanent_claim = ROOT
       }
+      #top egypt
       give_claims = {
         area = delta_area
       }
@@ -694,10 +825,7 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
   }
   ARB_conquer_al_sham = {
     icon = mission_levantine_restoration
-    required_missions = {
-      ARB_jerusalem
-      ARB_custodians_of_the_holy_cities
-    }
+    required_missions = { ARB_jerusalem ARB_custodians_of_the_holy_cities }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -757,9 +885,7 @@ KoK_ARB_hedjaz_najd_bedouin_2 = {
   }
   ARB_expand_jeddah = {
     icon = mission_arabian_sea_trade
-    required_missions = {
-      ARB_protectors_of_the_holy_cities
-    }
+    required_missions = { ARB_protectors_of_the_holy_cities }
     position = 7
     provinces_to_highlight = {
       province_id = 2331
@@ -877,9 +1003,7 @@ KoK_ARB_hedjaz_najd_bedouin_3 = {
   }
   ARB_tribal_feuds = {
     icon = mission_turning_the_tables
-    required_missions = {
-      ARB_request_new_bayah
-    }
+    required_missions = { ARB_request_new_bayah }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -972,10 +1096,7 @@ KoK_ARB_hedjaz_najd_bedouin_3 = {
   }
   ARB_yemen = {
     icon = mission_develop_alhambra
-    required_missions = {
-      ARB_custodians_of_the_holy_cities
-      ARB_rulers_of_the_highlands
-    }
+    required_missions = { ARB_custodians_of_the_holy_cities ARB_rulers_of_the_highlands }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -1111,9 +1232,7 @@ KoK_ARB_hedjaz_najd_bedouin_4 = {
   has_country_shield = yes
   ARB_the_harsh_desert = {
     icon = mission_conquer_air
-    required_missions = {
-      ARB_befriend_local_amirs
-    }
+    required_missions = { ARB_befriend_local_amirs }
     position = 2
     provinces_to_highlight = {
       owned_by = ROOT
@@ -1140,9 +1259,7 @@ KoK_ARB_hedjaz_najd_bedouin_4 = {
   }
   ARB_rulers_of_the_highlands = {
     icon = mission_cope_with_refugees
-    required_missions = {
-      ARB_tribal_feuds
-    }
+    required_missions = { ARB_tribal_feuds }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1250,10 +1367,7 @@ KoK_ARB_hedjaz_najd_bedouin_4 = {
   }
   ARB_wealth_and_power = {
     icon = mission_dharma_mission_arabian_trade
-    required_missions = {
-      ARB_rulers_of_the_highlands
-      ARB_al_haasa
-    }
+    required_missions = { ARB_rulers_of_the_highlands ARB_al_haasa }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1271,7 +1385,7 @@ KoK_ARB_hedjaz_najd_bedouin_4 = {
         OR = {
           area = mascat_area
           area = dhofar_area
-          area = mogostan_area
+          area = mogostan_area 	# exclude from the desired value, ideally
           area = oman_area
         }
         value = 8
@@ -1293,9 +1407,7 @@ KoK_ARB_hedjaz_najd_bedouin_4 = {
   }
   ARB_protect_caravans = {
     icon = mission_conquer_timbuktu
-    required_missions = {
-      ARB_city_among_the_dunes
-    }
+    required_missions = { ARB_city_among_the_dunes }
     position = 7
     provinces_to_highlight = {}
     trigger = {
@@ -1379,9 +1491,21 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
         }
         country_event_with_option_insight = {
           id = flavor_ARB.1
-          option_1 = " custom_tooltip = ARB_upgrade_enlist_general  custom_tooltip = " "  add_adm_power = 50 "
-          option_2 = " custom_tooltip = ARB_upgrade_train_horsemanship  custom_tooltip = " "  add_dip_power = 50 "
-          option_3 = " custom_tooltip = ARB_upgrade_conscript_from_the_tribes  custom_tooltip = " "  add_mil_power = 50 "
+          option_1 = "
+            custom_tooltip = ARB_upgrade_enlist_general
+            custom_tooltip = \" \"
+            add_adm_power = 50
+          "
+          option_2 = "
+            custom_tooltip = ARB_upgrade_train_horsemanship
+            custom_tooltip = \" \"
+            add_dip_power = 50
+          "
+          option_3 = "
+            custom_tooltip = ARB_upgrade_conscript_from_the_tribes
+            custom_tooltip = \" \"
+            add_mil_power = 50
+          "
         }
       }
       else = {
@@ -1400,9 +1524,7 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
   }
   ARB_al_haasa = {
     icon = mission_conquer_tunisia
-    required_missions = {
-      ARB_rulers_of_the_highlands
-    }
+    required_missions = { ARB_rulers_of_the_highlands }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -1507,9 +1629,7 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
   }
   ARB_abbasid_legacy = {
     icon = found_the_vatican_library
-    required_missions = {
-      ARB_al_haasa
-    }
+    required_missions = { ARB_al_haasa }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1532,14 +1652,52 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
       }
       410 = {
         country_or_non_sovereign_subject_holds = ROOT
-      }
+      } 	# Baghdad
     }
     effect = {
       country_event_with_option_insight = {
         id = flavor_ARB.2
-        option_1 = " define_advisor = { type = natural_scientist skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.5 } custom_tooltip = " " if = { limit = { has_dlc = "Rule Britannia" } change_innovativeness = 3 } else = { add_adm_power = 25 add_dip_power = 25 add_mil_power = 25 } "
-        option_2 = " define_advisor = { type = theologian skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.5 }  custom_tooltip = " "  add_adm_power = 75 "
-        option_3 = " define_advisor = { type = philosopher skill = 2 culture = al_iraqiya_arabic religion = ROOT cost_multiplier = 0.25 }  custom_tooltip = " "  add_dip_power = 75 "
+        option_1 = "
+          define_advisor = {
+            type = natural_scientist
+            skill = 2
+            culture = al_iraqiya_arabic
+            religion = ROOT
+            cost_multiplier = 0.5
+          }
+          custom_tooltip = \" \"
+          if = {
+            limit = { has_dlc = \"Rule Britannia\" }
+            change_innovativeness = 3
+          }
+          else = {
+            add_adm_power = 25
+            add_dip_power = 25
+            add_mil_power = 25
+          }
+        "
+        option_2 = "
+          define_advisor = {
+            type = theologian
+            skill = 2
+            culture = al_iraqiya_arabic
+            religion = ROOT
+            cost_multiplier = 0.5
+          }
+          custom_tooltip = \" \"
+          add_adm_power = 75
+        "
+        option_3 = "
+          define_advisor = {
+            type = philosopher
+            skill = 2
+            culture = al_iraqiya_arabic
+            religion = ROOT
+            cost_multiplier = 0.25
+          }
+          custom_tooltip = \" \"
+          add_dip_power = 75
+        "
       }
     }
   }
@@ -1566,7 +1724,7 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
     }
     effect = {
       392 = {
-        change_province_name = "ÍèÃë6w"  # Diriyah
+        change_province_name = "ÍèÃë6w" 	# Diriyah
         custom_tooltip = " "
         add_province_modifier = {
           name = ARB_oasis_city_on_stop_to_mecca
@@ -1579,9 +1737,7 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
   }
   ARB_madrassa = {
     icon = mission_gawans_madrasar
-    required_missions = {
-      ARB_city_among_the_dunes
-    }
+    required_missions = { ARB_city_among_the_dunes }
     position = 7
     provinces_to_highlight = {
       owned_by = ROOT
@@ -1613,6 +1769,7 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
         }
         custom_tooltip = " "
         capital_scope = {
+          #capital_scope because it doesn't show up otherwise
           add_province_triggered_modifier = ARB_local_madrasa
         }
       }
@@ -1625,10 +1782,7 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
   }
   ARB_riyadh = {
     icon = arb_riyadh
-    required_missions = {
-      ARB_madrassa
-      ARB_protect_caravans
-    }
+    required_missions = { ARB_madrassa ARB_protect_caravans }
     position = 8
     provinces_to_highlight = {
       province_id = 392
@@ -1653,7 +1807,7 @@ KoK_ARB_hedjaz_najd_bedouin_5 = {
     }
     effect = {
       392 = {
-        change_province_name = ")R≈ñóV"  # Riyadh
+        change_province_name = ")R≈ñóV" 	# Riyadh
         custom_tooltip = " "
         custom_tooltip = ARB_upgrade_oasis_city
         hidden_effect = {
@@ -1687,9 +1841,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_1 = {
   has_country_shield = yes
   ARB_across_the_strait = {
     icon = mission_reclaim_andalucia
-    required_missions = {
-      ARB_maghreb
-    }
+    required_missions = { ARB_maghreb }
     position = 10
     provinces_to_highlight = {
       region = iberia_region
@@ -1704,10 +1856,10 @@ KoK_ARB_hedjaz_najd_bedouin_arb_1 = {
       }
       223 = {
         country_or_non_sovereign_subject_holds = ROOT
-      }
+      } 	# granada
       225 = {
         country_or_non_sovereign_subject_holds = ROOT
-      }
+      } 	# cordoba
     }
     effect = {
       create_general = {
@@ -1748,9 +1900,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_1 = {
   }
   ARB_tours = {
     icon = mission_the_french_menace
-    required_missions = {
-      ARB_across_the_strait
-    }
+    required_missions = { ARB_across_the_strait }
     position = 11
     provinces_to_highlight = {
       region = france_region
@@ -1783,7 +1933,18 @@ KoK_ARB_hedjaz_najd_bedouin_arb_1 = {
     effect = {
       country_event_with_effect_insight = {
         id = flavor_ARB.7
-        effect = " add_permanent_power_projection = { type = arb_permanent_power_projection amount = 5 } custom_tooltip = " " add_country_modifier = { name = ARB_highway_of_the_martyrs duration = -1 } custom_tooltip = ARB_cb_on_france_and_iberia "
+        effect = "
+          add_permanent_power_projection = {
+            type = arb_permanent_power_projection
+            amount = 5
+          }
+          custom_tooltip = \" \"
+          add_country_modifier = {
+            name = ARB_highway_of_the_martyrs
+            duration = -1
+          }
+          custom_tooltip = ARB_cb_on_france_and_iberia
+        "
       }
     }
   }
@@ -1805,9 +1966,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_2 = {
   has_country_shield = yes
   ARB_maghreb = {
     icon = mission_conquer_tunis
-    required_missions = {
-      ARB_caliphal_ambitions
-    }
+    required_missions = { ARB_caliphal_ambitions }
     position = 9
     provinces_to_highlight = {
       region = maghreb_region
@@ -1850,9 +2009,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_2 = {
   }
   ARB_sicily = {
     icon = arb_sicily
-    required_missions = {
-      ARB_maghreb
-    }
+    required_missions = { ARB_maghreb }
     position = 11
     provinces_to_highlight = {
       OR = {
@@ -1904,9 +2061,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_3 = {
   has_country_shield = yes
   ARB_caliphal_ambitions = {
     icon = mission_restore_caliphate_of_cordoba
-    required_missions = {
-      ARB_unite_arabia
-    }
+    required_missions = { ARB_unite_arabia }
     position = 8
     provinces_to_highlight = {
       owned_by = ROOT
@@ -1925,7 +2080,11 @@ KoK_ARB_hedjaz_najd_bedouin_arb_3 = {
     effect = {
       country_event_with_effect_insight = {
         id = flavor_ARB.5
-        effect = " unlock_government_reform = { government_reform = caliphate_reform } "
+        effect = "
+          unlock_government_reform = {
+            government_reform = caliphate_reform
+          }
+        "
       }
       custom_tooltip = " "
       give_claims = {
@@ -1953,9 +2112,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_3 = {
   }
   ARB_zanzibari_trade = {
     icon = mission_african_gold
-    required_missions = {
-      ARB_caliphal_ambitions
-    }
+    required_missions = { ARB_caliphal_ambitions }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -1984,8 +2141,15 @@ KoK_ARB_hedjaz_najd_bedouin_arb_3 = {
       custom_tooltip = " "
       country_event_with_option_insight = {
         id = flavor_ARB.8
-        option_1 = " add_country_modifier = { name = ARB_reroute_the_trade_north duration = -1 } "
-        option_2 = " custom_tooltip = ARB_cb_on_fetishists_in_south_africa "
+        option_1 = "
+          add_country_modifier = {
+            name = ARB_reroute_the_trade_north
+            duration = -1
+          }
+        "
+        option_2 = "
+          custom_tooltip = ARB_cb_on_fetishists_in_south_africa
+        "
       }
     }
   }
@@ -2056,9 +2220,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_4 = {
   has_country_shield = yes
   ARB_north = {
     icon = mission_pacify_the_berbers
-    required_missions = {
-      ARB_caliphal_ambitions
-    }
+    required_missions = { ARB_caliphal_ambitions }
     position = 9
     provinces_to_highlight = {
       OR = {
@@ -2110,9 +2272,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_4 = {
   }
   ARB_ottomans = {
     icon = mission_ottoman_diplomacy
-    required_missions = {
-      ARB_north
-    }
+    required_missions = { ARB_north }
     position = 11
     provinces_to_highlight = {
       OR = {
@@ -2174,9 +2334,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_5 = {
   has_country_shield = yes
   ARB_persia = {
     icon = mission_into_persia_2
-    required_missions = {
-      ARB_north
-    }
+    required_missions = { ARB_north }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -2224,9 +2382,7 @@ KoK_ARB_hedjaz_najd_bedouin_arb_5 = {
   }
   ARB_beyond_solomons = {
     icon = mission_fortify_rajputana
-    required_missions = {
-      ARB_persia
-    }
+    required_missions = { ARB_persia }
     position = 11
     provinces_to_highlight = {
       OR = {

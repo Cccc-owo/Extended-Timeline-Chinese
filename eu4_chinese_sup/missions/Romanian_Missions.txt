@@ -92,9 +92,7 @@ romanian_missions_1 = {
   }
   rmn_impale_the_sultan = {
     icon = mission_impaled_soldies
-    required_missions = {
-      order_of_the_dragon
-    }
+    required_missions = { order_of_the_dragon }
     provinces_to_highlight = {
       is_capital = yes
       owned_by = TUR
@@ -186,9 +184,7 @@ romanian_missions_1 = {
   }
   rmn_drive_out_the_turks = {
     icon = mission_crusade_for_varna
-    required_missions = {
-      rmn_impale_the_sultan
-    }
+    required_missions = { rmn_impale_the_sultan }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -259,9 +255,7 @@ romanian_missions_1 = {
   }
   rmn_heir_of_rome = {
     icon = mission_monarch_in_throne_room
-    required_missions = {
-      rmn_drive_out_the_turks
-    }
+    required_missions = { rmn_drive_out_the_turks }
     provinces_to_highlight = {
       OR = {
         area = northern_greece_area
@@ -342,9 +336,7 @@ romanian_missions_5 = {
   }
   found_bucharest = {
     icon = mission_eastern_european_city
-    required_missions = {
-      unite_the_voivodes
-    }
+    required_missions = { unite_the_voivodes }
     provinces_to_highlight = {
       province_id = 4531
     }
@@ -370,8 +362,8 @@ romanian_missions_5 = {
     effect = {
       4531 = {
         move_capital_effect = yes
-        change_province_name = "^ RÒR¯eyr"  # Bucuresti
-        rename_capital = "^ RÒR¯eyr"  # Bucuresti
+        change_province_name = "^ RÒR¯eyr" 	# Bucuresti
+        rename_capital = "^ RÒR¯eyr" 	# Bucuresti
         add_base_tax = 1
         add_base_production = 1
         add_base_manpower = 1
@@ -406,9 +398,7 @@ romanian_missions_5 = {
   }
   rmn_conquer_transylvania = {
     icon = mission_impaled_soldies
-    required_missions = {
-      found_bucharest
-    }
+    required_missions = { found_bucharest }
     provinces_to_highlight = {
       OR = {
         area = transylvania_area
@@ -437,9 +427,7 @@ romanian_missions_5 = {
   }
   rmn_fortify_romania = {
     icon = mission_conquer_50_development
-    required_missions = {
-      rmn_conquer_transylvania
-    }
+    required_missions = { rmn_conquer_transylvania }
     trigger = {
       num_of_owned_provinces_with = {
         fort_level = 4
@@ -455,9 +443,7 @@ romanian_missions_5 = {
   }
   rmn_appoint_dregatori = {
     icon = mission_noble_council
-    required_missions = {
-      rmn_fortify_romania
-    }
+    required_missions = { rmn_fortify_romania }
     trigger = {
       if = {
         limit = {

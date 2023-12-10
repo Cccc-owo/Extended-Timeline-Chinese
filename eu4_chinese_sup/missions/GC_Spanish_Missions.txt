@@ -65,11 +65,10 @@ gc_spain_1 = {
   }
   gc_cas_spa_caribbean_discovery = {
     icon = mission_establish_high_seas_navy
-    required_missions = {
-      gc_cas_spa_plus_ultra
-    }
+    required_missions = { gc_cas_spa_plus_ultra }
     position = 4
     completed_by = 1492.1.1
+    # free mission
     trigger = {
       if = {
         limit = {
@@ -143,11 +142,10 @@ gc_spain_1_b = {
   has_country_shield = yes
   gc_cas_spa_caribbean_colony = {
     icon = mission_iberian_conquistador
-    required_missions = {
-      gc_cas_spa_caribbean_discovery
-    }
+    required_missions = { gc_cas_spa_caribbean_discovery }
     position = 5
     completed_by = 1493.1.1
+    # free mission
     provinces_to_highlight = {
       colonial_region = colonial_the_carribean
       NOT = {
@@ -175,9 +173,7 @@ gc_spain_1_b = {
   }
   gc_cas_spa_havana = {
     icon = mission_found_havana
-    required_missions = {
-      gc_cas_spa_caribbean_colony
-    }
+    required_missions = { gc_cas_spa_caribbean_colony }
     completed_by = 1493.1.1
     provinces_to_highlight = {
       OR = {
@@ -256,9 +252,7 @@ gc_spain_1_b = {
   }
   gc_cas_spa_mayans = {
     icon = mission_mayan_conquest
-    required_missions = {
-      gc_cas_spa_havana
-    }
+    required_missions = { gc_cas_spa_havana }
     completed_by = 1493.1.1
     position = 7
     provinces_to_highlight = {
@@ -286,10 +280,9 @@ gc_spain_1_b = {
   }
   gc_cas_spa_california = {
     icon = mission_colonize_california
-    required_missions = {
-      gc_cas_spa_new_spain
-    }
+    required_missions = { gc_cas_spa_new_spain }
     position = 9
+    #completed_by = 1521.1.1
     provinces_to_highlight = {
       colonial_region = colonial_california
       NOT = {
@@ -373,9 +366,7 @@ gc_spain_2 = {
   has_country_shield = yes
   gc_cas_spa_navarra = {
     icon = mission_subjugate_navarra
-    required_missions = {
-      gc_cas_spa_army_ready
-    }
+    required_missions = { gc_cas_spa_army_ready }
     completed_by = 1493.1.1
     position = 2
     provinces_to_highlight = {
@@ -469,9 +460,7 @@ gc_spain_2 = {
   }
   gc_cas_spa_expel_moriscos = {
     icon = mission_expel_the_moriscos
-    required_missions = {
-      gc_cas_spa_iberia_christian
-    }
+    required_missions = { gc_cas_spa_iberia_christian }
     completed_by = 1493.1.1
     position = 4
     provinces_to_highlight = {
@@ -537,9 +526,7 @@ gc_spain_2_b = {
   has_country_shield = yes
   gc_cas_spa_hispaniola = {
     icon = mission_claim_hispaniola
-    required_missions = {
-      gc_cas_spa_caribbean_colony
-    }
+    required_missions = { gc_cas_spa_caribbean_colony }
     completed_by = 1493.1.1
     position = 6
     provinces_to_highlight = {
@@ -590,7 +577,7 @@ gc_spain_2_b = {
         fire = 5
         manuever = 6
         siege = 1
-        name = "ÃWSWS ÑySyr¯e"  # Hernán Cortés
+        name = "ÃWSWS ÑySyr¯e" 	# Hernán Cortés
       }
       490 = {
         add_base_production = 3
@@ -640,10 +627,9 @@ gc_spain_2_b = {
   }
   gc_cas_spa_aztecs = {
     icon = mission_iberian_conquistador
-    required_missions = {
-      gc_cas_spa_hispaniola
-    }
+    required_missions = { gc_cas_spa_hispaniola }
     completed_by = 1521.1.1
+    # free mission
     provinces_to_highlight = {
       OR = {
         area = mexico_area
@@ -686,10 +672,7 @@ gc_spain_2_b = {
   }
   gc_cas_spa_new_spain = {
     icon = mission_kingdom_of_new_spain
-    required_missions = {
-      gc_cas_spa_aztecs
-      gc_cas_spa_mayans
-    }
+    required_missions = { gc_cas_spa_aztecs gc_cas_spa_mayans }
     position = 8
     completed_by = 1521.1.1
     provinces_to_highlight = {
@@ -774,10 +757,9 @@ gc_spain_2_b = {
   }
   gc_cas_spa_florida = {
     icon = mission_colonize_florida
-    required_missions = {
-      gc_cas_spa_new_spain
-    }
+    required_missions = { gc_cas_spa_new_spain }
     position = 9
+    #completed_by = 1521.1.1
     provinces_to_highlight = {
       OR = {
         region = southeast_america_region
@@ -866,6 +848,7 @@ gc_spain_3 = {
     icon = mission_assemble_an_army
     required_missions = {}
     completed_by = 1445.1.1
+    # free mission
     trigger = {
       army_size_percentage = 1
       navy_size_percentage = 1
@@ -903,9 +886,7 @@ gc_spain_3 = {
   }
   gc_cas_spa_reconquista_one = {
     icon = mission_unite_home_region
-    required_missions = {
-      gc_cas_spa_army_ready
-    }
+    required_missions = { gc_cas_spa_army_ready }
     completed_by = 1492.1.1
     provinces_to_highlight = {
       area = upper_andalucia_area
@@ -980,10 +961,9 @@ gc_spain_3 = {
   }
   gc_cas_spa_iberia_christian = {
     icon = mission_religious
-    required_missions = {
-      gc_cas_spa_reconquista_one
-    }
+    required_missions = { gc_cas_spa_reconquista_one }
     completed_by = 1511.1.1
+    # free mission
     provinces_to_highlight = {
       region = iberia_region
       NOT = {
@@ -1019,9 +999,8 @@ gc_spain_3 = {
   }
   gc_cas_spa_reconquista_four = {
     icon = mission_assemble_an_army
-    required_missions = {
-      gc_cas_spa_iberia_christian
-    }
+    required_missions = { gc_cas_spa_iberia_christian }
+    # free mission
     provinces_to_highlight = {
       area = northern_morocco_area
       NOT = {
@@ -1099,9 +1078,7 @@ gc_spain_3_b = {
   has_country_shield = yes
   gc_cas_spa_spanish_main = {
     icon = mission_establish_high_seas_navy
-    required_missions = {
-      gc_cas_spa_caribbean_discovery
-    }
+    required_missions = { gc_cas_spa_caribbean_discovery }
     completed_by = 1509.1.1
     position = 5
     provinces_to_highlight = {
@@ -1111,6 +1088,7 @@ gc_spain_3_b = {
       }
       has_discovered = yes
     }
+    # free mission
     trigger = {
       num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
         value = 5
@@ -1120,7 +1098,7 @@ gc_spain_3_b = {
     }
     effect = {
       define_conquistador = {
-        name = "Vg‰¯eÑy ®v(„W"  # Francisco Pizarro
+        name = "Vg‰¯eÑy ®v(„W" 	# Francisco Pizarro
         fire = 4
         shock = 4
         manuever = 5
@@ -1328,11 +1306,10 @@ gc_spain_3_b = {
   }
   gc_cas_spa_incans = {
     icon = mission_war_chest
-    required_missions = {
-      gc_cas_spa_spanish_main
-    }
+    required_missions = { gc_cas_spa_spanish_main }
     position = 7
     completed_by = 1536.1.1
+    # free mission
     provinces_to_highlight = {
       OR = {
         area = upper_peru
@@ -1388,10 +1365,8 @@ gc_spain_3_b = {
   }
   gc_cas_spa_potosi = {
     icon = mission_potosi_silver
-    required_missions = {
-      gc_cas_spa_incans
-      gc_cas_spa_west_africa
-    }
+    required_missions = { gc_cas_spa_incans gc_cas_spa_west_africa }
+    #completed_by = 1509.1.1
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -1521,10 +1496,8 @@ gc_spain_3_b = {
   }
   gc_cas_spa_native_reductions = {
     icon = mission_native_reductions
-    required_missions = {
-      gc_cas_spa_potosi
-      gc_cas_spa_new_spain
-    }
+    required_missions = { gc_cas_spa_potosi gc_cas_spa_new_spain }
+    #completed_by = 1509.1.1
     position = 9
     provinces_to_highlight = {
       province_id = 216
@@ -1569,6 +1542,7 @@ gc_spain_3_b = {
         }
       }
       216 = {
+        # school of salamanca
         has_building = university
       }
     }
@@ -1807,9 +1781,7 @@ gc_spain_4 = {
   }
   gc_cas_spa_italian_ambition = {
     icon = mission_italian_condottiere
-    required_missions = {
-      gc_cas_spa_reconquista_three
-    }
+    required_missions = { gc_cas_spa_reconquista_three }
     completed_by = 1516.1.1
     provinces_to_highlight = {
       OR = {
@@ -1937,9 +1909,7 @@ gc_spain_4 = {
   }
   gc_cas_spa_italian_ambition_2 = {
     icon = mission_italian_conquest
-    required_missions = {
-      gc_cas_spa_italian_ambition
-    }
+    required_missions = { gc_cas_spa_italian_ambition }
     provinces_to_highlight = {
       OR = {
         area = tuscany_area
@@ -2001,9 +1971,7 @@ gc_spain_4_b = {
   has_country_shield = yes
   gc_spa_spanish_armada = {
     icon = mission_spanish_armada
-    required_missions = {
-      gc_spa_spanish_netherlands
-    }
+    required_missions = { gc_spa_spanish_netherlands }
     position = 4
     trigger = {
       has_flagship = yes
@@ -2135,9 +2103,7 @@ gc_spain_4_b = {
   }
   gc_spa_invade_england = {
     icon = mission_invade_england
-    required_missions = {
-      gc_spa_spanish_armada
-    }
+    required_missions = { gc_spa_spanish_armada }
     provinces_to_highlight = {
       OR = {
         area = wessex_area
@@ -2253,9 +2219,7 @@ gc_spain_4_c = {
   has_country_shield = yes
   gc_cas_spa_la_plata = {
     icon = mission_iberian_conquistador
-    required_missions = {
-      gc_cas_spa_spanish_main
-    }
+    required_missions = { gc_cas_spa_spanish_main }
     completed_by = 1508.1.1
     position = 6
     provinces_to_highlight = {
@@ -2342,9 +2306,7 @@ gc_spain_4_d = {
   }
   gc_cas_spa_discover_spice_islands = {
     icon = mission_sail_to_the_east_indies
-    required_missions = {
-      gc_cas_spa_west_africa
-    }
+    required_missions = { gc_cas_spa_west_africa }
     trigger = {
       custom_trigger_tooltip = {
         tooltip = cas_spice_islands_tooltip
@@ -2425,9 +2387,7 @@ gc_spain_4_d = {
   }
   gc_cas_spa_conquer_philippines = {
     icon = mission_las_islas_filipinas
-    required_missions = {
-      gc_cas_spa_discover_spice_islands
-    }
+    required_missions = { gc_cas_spa_discover_spice_islands }
     provinces_to_highlight = {
       OR = {
         area = mindanao_area
@@ -2532,10 +2492,9 @@ gc_castile_spain_5 = {
   has_country_shield = yes
   gc_cas_spa_reconquista_two = {
     icon = mission_cannons_firing
-    required_missions = {
-      gc_cas_spa_reconquista_three
-    }
+    required_missions = { gc_cas_spa_reconquista_three }
     position = 2
+    # free mission
     provinces_to_highlight = {
       OR = {
         area = beieras_area
@@ -2590,9 +2549,7 @@ gc_spain_5_a = {
   has_country_shield = yes
   gc_spa_spanish_netherlands = {
     icon = mission_spanish_netherlands
-    required_missions = {
-      gc_cas_spa_italian_ambition
-    }
+    required_missions = { gc_cas_spa_italian_ambition }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -2708,9 +2665,7 @@ gc_spain_5_a = {
   }
   gc_spa_austrian_union = {
     icon = mission_the_austrian_succession
-    required_missions = {
-      gc_spa_spanish_netherlands
-    }
+    required_missions = { gc_spa_spanish_netherlands }
     provinces_to_highlight = {
       OR = {
         area = inner_austria_area
@@ -2744,9 +2699,7 @@ gc_spain_5_a = {
   }
   gc_spa_hre = {
     icon = mission_imperial_spain
-    required_missions = {
-      gc_spa_austrian_union
-    }
+    required_missions = { gc_spa_austrian_union }
     trigger = {
       OR = {
         ROOT = {
@@ -2819,9 +2772,7 @@ gc_spain_5_c = {
   has_country_shield = yes
   gc_cas_spa_new_granada = {
     icon = mission_new_kingdom_of_granada
-    required_missions = {
-      gc_cas_spa_spanish_main
-    }
+    required_missions = { gc_cas_spa_spanish_main }
     completed_by = 1509.1.1
     position = 6
     provinces_to_highlight = {

@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Denmark
+# written by Sara Wendel-ýÿrtqvist
+########################################
 namespace = flavor_dan
 normal_or_historical_nations = yes
+# The Pluralistic Reforms of Christian II
 country_event = {
   id = flavor_dan.3285
   title = "flavor_dan.EVTNAME3285"
@@ -26,6 +31,7 @@ country_event = {
     months = 150
   }
   option = {
+    # Rule with the support of the Burghers
     name = "flavor_dan.EVTOPTA3285"
     if = {
       limit = {
@@ -71,6 +77,7 @@ country_event = {
     }
   }
   option = {
+    # Rely on the Royal Council
     name = "flavor_dan.EVTOPTB3285"
     add_stability_or_adm_power = yes
     if = {
@@ -102,6 +109,7 @@ country_event = {
     }
   }
 }
+# The Scandinavian Constitution
 country_event = {
   id = flavor_dan.3287
   title = "flavor_dan.EVTNAME3287"
@@ -168,6 +176,7 @@ country_event = {
     }
   }
 }
+# The Great Naval Reform
 country_event = {
   id = flavor_dan.3288
   title = "flavor_dan.EVTNAME3288"
@@ -194,13 +203,14 @@ country_event = {
     months = 60
   }
   option = {
-    name = "flavor_dan.EVTOPTA3288"
+    name = "flavor_dan.EVTOPTA3288" 	#  Reform the Navy
     add_navy_tradition = 25
     add_adm_power = 100
     add_dip_power = 100
     add_mil_power = 100
   }
 }
+# Peder Oxe
 country_event = {
   id = flavor_dan.3294
   title = "flavor_dan.EVTNAME3294"
@@ -228,7 +238,7 @@ country_event = {
     months = 60
   }
   option = {
-    name = "EXCELLENTMINISTER"
+    name = "EXCELLENTMINISTER" 	#  An Excellent Minister!
     add_adm_power = 25
     if = {
       limit = {
@@ -246,7 +256,7 @@ country_event = {
       }
       define_advisor = {
         type = treasurer
-        name = "iO·VS·eYKQ¯e"  # Peder Oxe
+        name = "iO·VS·eYKQ¯e" 	# Peder Oxe
         culture = danish
         location = 12
         skill = 2
@@ -255,6 +265,7 @@ country_event = {
     }
   }
 }
+# The Mercantile Reforms of Christian IV
 country_event = {
   id = flavor_dan.3296
   title = "flavor_dan.EVTNAME3296"
@@ -282,7 +293,7 @@ country_event = {
     months = 300
   }
   option = {
-    name = "flavor_dan.EVTOPTA3296"
+    name = "flavor_dan.EVTOPTA3296" 	#  Mercantilist Reforms
     if = {
       limit = {
         NOT = {
@@ -297,6 +308,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# The Absolutism
 country_event = {
   id = flavor_dan.3297
   title = "flavor_dan.EVTNAME3297"
@@ -325,7 +337,7 @@ country_event = {
     months = 300
   }
   option = {
-    name = "flavor_swe.EVTOPTA3232"
+    name = "flavor_swe.EVTOPTA3232" 	#  The King shall rule supreme
     if = {
       limit = {
         NOT = {
@@ -341,13 +353,14 @@ country_event = {
     add_stability = -1
   }
   option = {
-    name = "flavor_swe.EVTOPTB3232"
+    name = "flavor_swe.EVTOPTB3232" 	#  The King must heed the Council
     ai_chance = {
       factor = 10
     }
     add_stability = 3
   }
 }
+# The Modernisation of the Navy
 country_event = {
   id = flavor_dan.3298
   title = "flavor_dan.EVTNAME3298"
@@ -388,6 +401,7 @@ country_event = {
     add_army_tradition = 25
   }
 }
+# Peder Griffenfeld
 country_event = {
   id = flavor_dan.3299
   title = "flavor_dan.EVTNAME3299"
@@ -415,11 +429,11 @@ country_event = {
     months = 60
   }
   option = {
-    name = "EXCELLENTMINISTER"
+    name = "EXCELLENTMINISTER" 	#  An Excellent Minister!
     add_adm_power = 25
     define_advisor = {
       type = statesman
-      name = "iO·V <hÌ‘¬‚òƒS·V"  # Peder Griffenfeld
+      name = "iO·V <hÌ‘¬‚òƒS·V" 	# Peder Griffenfeld
       culture = danish
       location = 12
       skill = 2
@@ -427,6 +441,7 @@ country_event = {
     }
   }
 }
+# The Great Northern Conflict
 country_event = {
   id = flavor_dan.3300
   title = "flavor_dan.EVTNAME3300"
@@ -463,9 +478,9 @@ country_event = {
       }
     }
     SWE = {
-      owns = 6
+      owns = 6 	# Skýÿne
       OR = {
-        owns = 26
+        owns = 26 	# Halland
         any_owned_province = {
           is_core = ROOT
         }
@@ -485,7 +500,7 @@ country_event = {
   }
   option = {
     name = "flavor_dan.EVTOPTA3300"
-    add_core = 6
+    add_core = 6 	# Skýÿne
     SWE = {
       add_opinion = {
         who = DAN
@@ -513,6 +528,7 @@ country_event = {
     }
   }
 }
+# The Mercantile Reforms of Christian VI
 country_event = {
   id = flavor_dan.3305
   title = "flavor_dan.EVTNAME3305"
@@ -540,13 +556,13 @@ country_event = {
     months = 90
   }
   option = {
-    name = "flavor_dan.EVTOPTA3305"
+    name = "flavor_dan.EVTOPTA3305" 	#  Mercantilist Reforms
     add_mercantilism = 7.5
     add_dip_power = 50
     add_navy_tradition = 20
     if = {
       limit = {
-        owns = 6
+        owns = 6 	# Skýÿne
       }
       6 = {
         add_base_tax = 1
@@ -555,7 +571,7 @@ country_event = {
     }
     if = {
       limit = {
-        owns = 15
+        owns = 15 	# Jylland
       }
       15 = {
         add_base_tax = 1
@@ -564,6 +580,7 @@ country_event = {
     }
   }
 }
+# Pietism
 country_event = {
   id = flavor_dan.3307
   title = "flavor_dan.EVTNAME3307"
@@ -594,20 +611,21 @@ country_event = {
     months = 300
   }
   option = {
-    name = "flavor_dan.EVTOPTA3307"
+    name = "flavor_dan.EVTOPTA3307" 	#  Endorse Pietism
     add_country_modifier = {
-      name = "pietism"
+      name = pietism
       duration = -1
     }
   }
   option = {
-    name = "flavor_dan.EVTOPTB3307"
+    name = "flavor_dan.EVTOPTB3307" 	#  Outlaw Pietism
     add_country_modifier = {
       name = the_conventicle_edict
       duration = -1
     }
   }
 }
+# The Regency of J.H.E. Bernstorff
 country_event = {
   id = flavor_dan.3308
   title = "flavor_dan.EVTNAME3308"
@@ -642,6 +660,7 @@ country_event = {
     add_mil_power = 25
   }
 }
+# The Regency of Struensee
 country_event = {
   id = flavor_dan.3309
   title = "flavor_dan.EVTNAME3309"
@@ -676,6 +695,7 @@ country_event = {
     add_mil_power = 25
   }
 }
+# The Regency of Ove Hoeg-Guldberg
 country_event = {
   id = flavor_dan.3312
   title = "flavor_dan.EVTNAME3312"
@@ -710,6 +730,7 @@ country_event = {
     add_mil_power = 25
   }
 }
+# The Regency of A.P.Bernstorff
 country_event = {
   id = flavor_dan.3313
   title = "flavor_dan.EVTNAME3313"
@@ -744,6 +765,7 @@ country_event = {
     add_mil_power = 25
   }
 }
+# The Great Agricultural Reform
 country_event = {
   id = flavor_dan.3311
   title = "flavor_dan.EVTNAME3311"
@@ -835,7 +857,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_dan.EVTOPTA3311"
+    name = "flavor_dan.EVTOPTA3311" 	#  Reform the agriculture
     add_innovativeness_small_effect = yes
     random_owned_province = {
       limit = {
@@ -874,7 +896,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_dan.EVTOPTB3311"
+    name = "flavor_dan.EVTOPTB3311" 	#  Reform the army
     add_innovativeness_small_effect = yes
     random_owned_province = {
       limit = {
@@ -913,6 +935,8 @@ country_event = {
     }
   }
 }
+# MINOR FLAVOR EVENTS #
+# Tycho Brahe
 country_event = {
   id = flavor_dan.5080
   title = "flavor_dan.EVTNAME5080"
@@ -948,7 +972,7 @@ country_event = {
     add_prestige = 10
     define_advisor = {
       type = natural_scientist
-      name = ",r7Œ·^Ébk"  # Tycho Brahe
+      name = ",r7Œ·^Ébk" 	# Tycho Brahe
       culture = danish
       discount = yes
       location = 12
@@ -957,6 +981,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# University of Copenhagen
 country_event = {
   id = flavor_dan.2
   title = "flavor_dan.EVTNAME2"
@@ -994,6 +1019,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# St. Clare's Monastery
 country_event = {
   id = flavor_dan.3
   title = "flavor_dan.EVTNAME3"
@@ -1030,6 +1056,11 @@ country_event = {
     add_prestige = 5
   }
 }
+########################################
+# More Events for Denmark
+# written by Henrik Lohmander
+########################################
+# Second Great Mandrowning
 country_event = {
   id = flavor_dan.1
   title = "flavor_dan.1.t"
@@ -1210,6 +1241,7 @@ country_event = {
     }
   }
 }
+# Death of Adolf VIII
 country_event = {
   id = flavor_dan.4
   title = "flavor_dan.4.t"
@@ -1217,14 +1249,14 @@ country_event = {
   desc = {
     trigger = {
       NOT = {
-        dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+        dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
       }
     }
     desc = "flavor_dan.4.da"
   }
   desc = {
     trigger = {
-      dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+      dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
     }
     desc = "flavor_dan.4.db"
   }
@@ -1238,14 +1270,14 @@ country_event = {
     custom_tooltip = flavor_dan.4.a.tt
     if = {
       limit = {
-        dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+        dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
       }
       add_years_of_income = -0.75
     }
     if = {
       limit = {
         NOT = {
-          dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+          dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
         }
       }
       add_years_of_income = -1
@@ -1277,6 +1309,7 @@ country_event = {
     }
   }
 }
+#Treaty of Ribe
 country_event = {
   id = flavor_dan.5
   title = "flavor_dan.5.t"
@@ -1302,8 +1335,8 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = "flavor_dan.5.a"
-    add_prestige = 5
+    name = "flavor_dan.5.a" 	# Quite simple really
+    add_prestige = 5 	# For the Extra Ducal TItle
     add_core = 1775
     every_owned_province = {
       limit = {
@@ -1323,11 +1356,13 @@ country_event = {
     }
   }
 }
+#The State of Denmark
+#Background to the situation in 1444 as well as an opening to dealing with based on the historical crisis in the 1460's. While This combines the reigns of Cristopher and Christian I the time frame is very small and we could not expect Cristopher dying to really alter the way you would attempt to chastise the Danish Nobility.
 country_event = {
   id = flavor_dan.6
   title = "flavor_dan.6.t"
   desc = "flavor_dan.6.d"
-  picture = BAD_WITH_MONARCH_eventPicture
+  picture = BAD_WITH_MONARCH_eventPicture 	# Something rotten
   fire_only_once = yes
   trigger = {
     OR = {
@@ -1348,7 +1383,7 @@ country_event = {
     months = 120
   }
   option = {
-    name = "flavor_dan.6.a"
+    name = "flavor_dan.6.a" 	# Nobility must aid and advice, never rule.
     add_years_of_income = 1
     add_country_modifier = {
       name = "dan_crown_lands_recovered"
@@ -1380,7 +1415,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_dan.6.b"
+    name = "flavor_dan.6.b" 	# The Nobles carry this kingdom on their shoulders, we must give them what they are owed.
     add_country_modifier = {
       name = "dan_crown_lands_lost"
       duration = 5475
@@ -1400,6 +1435,7 @@ country_event = {
     }
   }
 }
+#Bavarian Inheritance
 country_event = {
   id = flavor_dan.7
   title = "flavor_dan.7.t"
@@ -1417,7 +1453,7 @@ country_event = {
         tag = SCA
       }
     }
-    has_ruler = "KQÌ‘¯eXbV III"  # Christopher III
+    has_ruler = "KQÌ‘¯eXbV III" 	# Christopher III
   }
   mean_time_to_happen = {
     months = 24
@@ -1430,6 +1466,8 @@ country_event = {
     }
   }
 }
+#Election of Christian von Oldenburg
+#Can trigger if without an heir in the 15th century. Probably won't happen in all games.
 country_event = {
   id = flavor_dan.8
   title = "flavor_dan.8.t"
@@ -1453,7 +1491,7 @@ country_event = {
       is_subject_of = ROOT
     }
     NOT = {
-      dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+      dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
     }
     is_year = 1450
     NOT = {
@@ -1461,7 +1499,7 @@ country_event = {
     }
     NOT = {
       has_country_flag = christian_elected
-    }
+    } 	# Only set from history, event will never fire twice already.
     has_government_attribute = heir
   }
   mean_time_to_happen = {
@@ -1470,7 +1508,7 @@ country_event = {
   immediate = {
     hidden_effect = {
       SHL = {
-        save_event_target_as = count_of_holstein
+        save_event_target_as = count_of_holstein 	# Used for localisation
       }
     }
   }
@@ -1481,12 +1519,12 @@ country_event = {
     }
     add_years_of_income = 0.1
     define_heir = {
-      name = "KQÌ‘¯e‚„‰R"  # Christian
+      name = "KQÌ‘¯e‚„‰R" 	# Christian
       adm = 4
       dip = 3
       mil = 2
       age = 25
-      dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+      dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
     }
   }
   option = {
@@ -1507,6 +1545,7 @@ country_event = {
     }
   }
 }
+#The Herring Runs Out
 country_event = {
   id = flavor_dan.9
   title = "flavor_dan.9.t"
@@ -1514,7 +1553,7 @@ country_event = {
   picture = MERCHANTS_TALKING_eventPicture
   fire_only_once = yes
   trigger = {
-    owns = 6
+    owns = 6 	# Skýÿne
     is_year = 1550
     NOT = {
       is_year = 1600
@@ -1542,6 +1581,7 @@ country_event = {
     }
   }
 }
+#Danish East India Company
 country_event = {
   id = flavor_dan.10
   title = "flavor_dan.10.t"
@@ -1615,6 +1655,7 @@ country_event = {
     add_dip_power = 50
   }
 }
+#An Embassy from Denmark
 country_event = {
   id = flavor_dan.11
   title = "flavor_dan.11.t"
@@ -1668,6 +1709,7 @@ country_event = {
     }
   }
 }
+#Captain Gjedde returns
 country_event = {
   id = flavor_dan.12
   title = "flavor_dan.12.t"
@@ -1682,6 +1724,7 @@ country_event = {
     }
   }
 }
+#No Danish India this time
 country_event = {
   id = flavor_dan.13
   title = "flavor_dan.13.t"
@@ -1693,6 +1736,7 @@ country_event = {
     add_prestige = -10
   }
 }
+#Great Fire of Copenhagen
 country_event = {
   id = flavor_dan.14
   title = "flavor_dan.14.t"
@@ -1732,6 +1776,7 @@ country_event = {
     }
   }
 }
+#The Murder of Poul Laxmand
 country_event = {
   id = flavor_dan.15
   title = "flavor_dan.15.t"
@@ -1758,7 +1803,7 @@ country_event = {
     months = 150
   }
   option = {
-    name = "flavor_dan.15.a"
+    name = "flavor_dan.15.a" 	# ýÿDu hedder Lax - sýÿ kan du vel svýÿmmeýÿýÿ
     custom_tooltip = flavor_dan.15.a.tt
     add_adm_power = 75
     add_years_of_income = 0.5
@@ -1766,13 +1811,15 @@ country_event = {
     add_corruption = 1
   }
   option = {
-    name = "flavor_dan.15.b"
+    name = "flavor_dan.15.b" 	# We could never profit from such a vile deed.
     add_prestige = 10
     add_corruption = -1
     add_stability_or_adm_power = yes
     add_dip_power = 75
   }
 }
+#Dutch Influences, ie: Reforms of Christian II
+#Effects inherited from old event (which is now related directly to ruling without support of the Nobility).
 country_event = {
   id = flavor_dan.16
   title = "flavor_dan.16.t"
@@ -1831,6 +1878,7 @@ country_event = {
     }
   }
 }
+#Hans Tausen & Poul Helgesen
 country_event = {
   id = flavor_dan.17
   title = "flavor_dan.17.t"
@@ -1864,7 +1912,7 @@ country_event = {
     }
     define_advisor = {
       type = inquisitor
-      name = "Il¯e v–îh"  # Hans Tausen
+      name = "Il¯e v–îh" 	# Hans Tausen
       religion = protestant
       culture = danish
       skill = 3
@@ -1890,7 +1938,7 @@ country_event = {
     add_stability_or_adm_power = yes
     define_advisor = {
       type = theologian
-      name = "ÝOW kS<hîh"  # Poul Helgesen
+      name = "ÝOW kS<hîh" 	# Poul Helgesen
       culture = danish
       religion = catholic
       skill = 3
@@ -1898,6 +1946,7 @@ country_event = {
     }
   }
 }
+#The Oxen Road
 country_event = {
   id = flavor_dan.18
   title = "flavor_dan.18.t"
@@ -1934,6 +1983,7 @@ country_event = {
     }
   }
 }
+#Markus Hess
 country_event = {
   id = flavor_dan.19
   title = "flavor_dan.19.t"
@@ -1964,7 +2014,7 @@ country_event = {
   option = {
     name = "flavor_dan.19.a"
     define_advisor = {
-      name = "lš“^¯e·k¯e"  # Markus Hess
+      name = "lš“^¯e·k¯e" 	# Markus Hess
       culture = danish
       type = trader
       skill = 2
@@ -1975,7 +2025,7 @@ country_event = {
   option = {
     name = "flavor_dan.19.b"
     define_advisor = {
-      name = "lš“^¯e·k¯e"  # Markus Hess
+      name = "lš“^¯e·k¯e" 	# Markus Hess
       type = master_of_mint
       culture = danish
       skill = 2
@@ -1984,6 +2034,7 @@ country_event = {
     }
   }
 }
+#Intrigues between Council and King
 country_event = {
   id = flavor_dan.20
   title = "flavor_dan.20.t"
@@ -2061,6 +2112,7 @@ country_event = {
     }
   }
 }
+#Om miracler, tegn oc obenbaringer oc deris udleggelse
 country_event = {
   id = flavor_dan.21
   title = "flavor_dan.21.t"
@@ -2090,7 +2142,7 @@ country_event = {
     name = "flavor_dan.21.a"
     add_stability_or_adm_power = yes
     define_advisor = {
-      name = "ö^¯e ê…Qîh 6wS°e"  # Jens Dinesen Jersin
+      name = "ö^¯e ê…Qîh 6wS°e" 	# Jens Dinesen Jersin
       culture = danish
       type = theologian
       skill = 3
@@ -2099,6 +2151,7 @@ country_event = {
     }
   }
 }
+#Niels Juel
 country_event = {
   id = flavor_dan.22
   title = "flavor_dan.22.t"
@@ -2128,7 +2181,7 @@ country_event = {
   option = {
     name = "flavor_dan.22.a"
     define_advisor = {
-      name = "<SS¯e 2SS"  # Niels Juel
+      name = "<SS¯e 2SS" 	# Niels Juel
       type = naval_reformer
       culture = danish
       skill = 3
@@ -2139,7 +2192,7 @@ country_event = {
   option = {
     name = "flavor_dan.22.b"
     define_admiral = {
-      name = "<SS¯e 2SS"  # Niels Juel
+      name = "<SS¯e 2SS" 	# Niels Juel
       fire = 4
       shock = 4
       manuever = 4
@@ -2147,6 +2200,52 @@ country_event = {
     }
   }
 }
+########################################
+# DLC Events for Denmark
+# written by Ogulcan Yildirim
+########################################
+#Rebellious Pretenders! - Triggers every 3 years
+#country_event = {
+#	id = flavor_dan.100
+#	title = "flavor_dan.100.t"
+#	desc = "flavor_dan.100.desc"
+#	picture = ANGRY_MOB_eventPicture
+#	is_triggered_only = yes
+#	trigger = {
+#		has_dlc = "Lions of the North"
+#		NOT = { has_country_flag = dan_no_more_swedish_rebels }
+#		has_reform = kalmar_union
+#		SWE = { is_subject_of = ROOT }
+#	}
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+#	
+#	option = {
+#		name = "flavor_dan.100.a"
+#		SWE = {
+#			capital_scope = {
+#				spawn_rebels = {
+#					type = pretender_rebels
+#					size = 2
+#					friend = SWE
+#				}
+#			}
+#			random_owned_province = {
+#				limit = { is_capital = no }
+#				spawn_rebels = {
+#					type = pretender_rebels
+#					size = 1
+#					friend = SWE
+#				}
+#			}
+#		}
+#		ai_chance = {
+#			factor = 1
+#		}
+#	}
+#}
+#The Fate of Eric Gryf
 country_event = {
   id = flavor_dan.101
   title = "flavor_dan.101.t"
@@ -2161,6 +2260,7 @@ country_event = {
     }
   }
   option = {
+    #Release them as a pirate vassal
     name = "flavor_dan.101.b"
     remove_core = 25
     release = GOT
@@ -2189,8 +2289,8 @@ country_event = {
         add_treasury = 200
       }
       define_ruler = {
-        name = "ÃWÌ‘KQ"  # Eric
-        dynasty = "<hÌ‘¬‚"  # Gryf
+        name = "ÃWÌ‘KQ" 	# Eric
+        dynasty = "<hÌ‘¬‚" 	# Gryf
         adm = 1
         dip = 2
         mil = 3
@@ -2203,7 +2303,53 @@ country_event = {
       factor = 0
     }
   }
+  #option = {
+  #	name = "flavor_dan.101.c"
+  #	highlight = yes
+  #	trigger = {
+  #		ai = no
+  #	}
+  #	remove_core = 25
+  #	release = GOT
+  #	create_alliance = GOT
+  #	hidden_effect = {
+  #		GOT = {
+  #			change_government = republic
+  #			add_government_reform = pirate_republic_reform
+  #			adopt_reform_progress = ROOT
+  #			add_republican_tradition = 50
+  #			change_religion = ROOT
+  #			discover_provinces = ROOT
+  #			capital_scope = {
+  #				build_to_forcelimit = {
+  #					infantry = 0.8
+  #					artillery = 0.2
+  #					heavy_ship = 0.3
+  #					light_ship = 0.3
+  #					transport = 0.3
+  #				}
+  #			}
+  #			swap_non_generic_missions = yes
+  #			add_treasury = 200
+  #			define_ruler = {
+  #				name = "Eric"
+  #				dynasty = "Gryf"
+  #				adm = 1
+  #				dip = 2
+  #				mil = 3
+  #				age = 60
+  #				culture = pommeranian
+  #			}
+  #			set_ruler_flag = historical_pirate
+  #		}
+  #	}
+  #	switch_tag = GOT
+  #	ai_chance = {
+  #		factor = 0
+  #	}
+  #}
 }
+#A new World!
 country_event = {
   id = flavor_dan.102
   title = "flavor_dan.102.t"
@@ -2267,6 +2413,7 @@ country_event = {
     }
   }
   option = {
+    #Colonize the Random New World
     name = "flavor_dan.102.a"
     goto = dan_rnw_colonial_province
     trigger = {
@@ -2282,6 +2429,7 @@ country_event = {
     }
   }
   option = {
+    #Colonize Hudson Bay
     name = "flavor_dan.102.b"
     goto = dan_hudson_bay_colonial_province
     trigger = {
@@ -2297,6 +2445,7 @@ country_event = {
     }
   }
   option = {
+    #Colonize Canada
     name = "flavor_dan.102.c"
     goto = dan_canada_colonial_province
     trigger = {
@@ -2312,6 +2461,7 @@ country_event = {
     }
   }
   option = {
+    #Colonize Northeast America
     name = "flavor_dan.102.d"
     goto = dan_northeast_america_colonial_province
     trigger = {
@@ -2327,6 +2477,7 @@ country_event = {
     }
   }
   option = {
+    #Colonize Southeast America
     name = "flavor_dan.102.e"
     goto = dan_southeast_america_colonial_province
     trigger = {
@@ -2342,6 +2493,7 @@ country_event = {
     }
   }
   option = {
+    #Fallback
     name = "flavor_dan.102.zzz"
     trigger = {
       NOT = {
@@ -2365,6 +2517,7 @@ country_event = {
     }
   }
 }
+#Ratification of the Kalmar Union
 country_event = {
   id = flavor_dan.103
   title = "flavor_dan.103.t"
@@ -2377,6 +2530,7 @@ country_event = {
     add_government_reform = danish_archkingdom
   }
 }
+#University of Kobenhavn
 country_event = {
   id = flavor_dan.104
   title = "flavor_dan.104.t"
@@ -2395,6 +2549,7 @@ country_event = {
     }
   }
 }
+#Unification of Scandinavia
 country_event = {
   id = flavor_dan.105
   title = flavor_dan.105.t
@@ -2426,6 +2581,7 @@ country_event = {
     }
   }
 }
+#The [Root.Capital.GetName] Bloodbath
 country_event = {
   id = flavor_dan.106
   title = "flavor_dan.106.t"
@@ -2469,6 +2625,7 @@ country_event = {
     }
   }
 }
+#Select your India Reward
 country_event = {
   id = flavor_dan.107
   title = "flavor_dan.107.t"
@@ -2508,6 +2665,7 @@ country_event = {
     }
   }
 }
+#Trade with Denmark in India
 country_event = {
   id = flavor_dan.108
   title = flavor_dan.108.t
@@ -2515,6 +2673,7 @@ country_event = {
   picture = MERCHANTS_TALKING_eventPicture
   is_triggered_only = yes
   option = {
+    #Good idea
     name = flavor_dan.108.a
     add_country_modifier = {
       name = dan_danish_investment
@@ -2542,6 +2701,7 @@ country_event = {
     }
   }
   option = {
+    #Nah
     name = flavor_dan.108.b
     add_mercantilism = 2
     ai_chance = {
@@ -2570,6 +2730,7 @@ country_event = {
     }
   }
 }
+#The Succession Struggle of the Kalmar Union - Info event
 country_event = {
   id = flavor_dan.109
   title = flavor_dan.109.t
@@ -2583,6 +2744,7 @@ country_event = {
     months = 6
   }
   option = {
+    #Good lord
     name = flavor_dan.109.a
     custom_tooltip = flavor_dan.109.a.tt
     ai_chance = {
@@ -2590,6 +2752,7 @@ country_event = {
     }
   }
 }
+#Denmark provokes a trade conflict
 country_event = {
   id = flavor_dan.110
   title = flavor_dan.110.t
@@ -2605,6 +2768,7 @@ country_event = {
     clr_country_flag = dan_considers_war_with_denmark
   }
   option = {
+    #That's it! We wage war with the Danes!
     name = flavor_dan.110.a
     declare_war_with_cb = {
       casus_belli = cb_trade_conflict_triggered
@@ -2636,6 +2800,7 @@ country_event = {
     }
   }
   option = {
+    #We cannot afford a conflict with Denmark...
     name = flavor_dan.110.b
     45 = {
       add_trade_modifier = {
@@ -2662,6 +2827,7 @@ country_event = {
     }
   }
 }
+#[From.GetName] submits to Danish Trade Dominance
 country_event = {
   id = flavor_dan.111
   title = flavor_dan.111.t
@@ -2669,6 +2835,7 @@ country_event = {
   picture = CONQUEST_eventPicture
   is_triggered_only = yes
   option = {
+    #Excellent!
     name = flavor_dan.111.a
     tooltip = {
       45 = {
@@ -2688,6 +2855,7 @@ country_event = {
     }
   }
 }
+#Norway's Role in the Kalmar Union
 country_event = {
   id = flavor_dan.112
   title = flavor_dan.112.t
@@ -2695,6 +2863,7 @@ country_event = {
   picture = NOBLE_ESTATE_eventPicture
   is_triggered_only = yes
   option = {
+    #Grant Norway a more important role in the Union
     name = flavor_dan.112.a
     add_country_modifier = {
       name = dan_nor_equal_crowns
@@ -2726,6 +2895,7 @@ country_event = {
     }
   }
   option = {
+    #Let's keep status quo
     name = flavor_dan.112.b
     add_dip_power = 100
     ai_chance = {
@@ -2733,6 +2903,7 @@ country_event = {
     }
   }
   option = {
+    #Exploit the Norwegian Crown
     name = flavor_dan.112.c
     add_country_modifier = {
       name = dan_exploiting_norwegians
@@ -2750,6 +2921,7 @@ country_event = {
     }
   }
 }
+#Merc Contracts for Denmark
 country_event = {
   id = flavor_dan.113
   title = flavor_dan.113.t
@@ -2975,6 +3147,7 @@ country_event = {
     }
   }
 }
+#Sweden's Role in the Kalmar Union
 country_event = {
   id = flavor_dan.114
   title = flavor_dan.114.t
@@ -2982,6 +3155,7 @@ country_event = {
   picture = NOBLE_ESTATE_DEMANDS_eventPicture
   is_triggered_only = yes
   option = {
+    #Grant Sweden a more important role in the Union
     name = flavor_dan.114.a
     add_country_modifier = {
       name = dan_swe_supports_pro_unionists
@@ -2999,6 +3173,7 @@ country_event = {
     }
   }
   option = {
+    #Let's keep status quo
     name = flavor_dan.114.b
     add_adm_power = 100
     ai_chance = {
@@ -3006,6 +3181,7 @@ country_event = {
     }
   }
   option = {
+    #Exploit the Swedish Crown
     name = flavor_dan.114.c
     add_country_modifier = {
       name = dan_exploiting_swedes
@@ -3021,6 +3197,7 @@ country_event = {
     }
   }
 }
+#Sweden's Dream of Independence
 country_event = {
   id = flavor_dan.115
   title = "flavor_dan.115.t"
@@ -3065,6 +3242,7 @@ country_event = {
     }
   }
 }
+# The Scandinavian Constitution
 country_event = {
   id = flavor_dan.116
   title = "flavor_dan.EVTNAME3287"
@@ -3097,6 +3275,7 @@ country_event = {
     }
   }
 }
+#Discontent of the Swedish Nobility
 country_event = {
   id = flavor_dan.117
   title = "flavor_dan.117.t"
@@ -3134,6 +3313,7 @@ country_event = {
     }
   }
 }
+# Swedish Nobility Rebellion
 country_event = {
   id = flavor_dan.118
   title = "flavor_dan.118.t"
@@ -3147,6 +3327,7 @@ country_event = {
     }
   }
   option = {
+    #Let it escalate
     name = "flavor_dan.118.a"
     SWE = {
       capital_scope = {
@@ -3206,6 +3387,7 @@ country_event = {
     }
   }
   option = {
+    #Eliminate the Noble Threat now!
     name = "flavor_dan.118.b"
     add_stability_or_adm_power = yes
     mil_power_cost = 75
@@ -3222,6 +3404,7 @@ country_event = {
     set_country_flag = dan_handled_swedish_nobility_issue
   }
 }
+# A new North Sea Empire
 country_event = {
   id = flavor_dan.119
   title = "flavor_dan.119.t"
@@ -3229,6 +3412,7 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
+    #Make London to our new Capital!
     name = "flavor_dan.119.a"
     set_capital = 236
     add_accepted_culture_or_dip_power = {
@@ -3242,6 +3426,7 @@ country_event = {
     }
   }
   option = {
+    #We rule from Coppenhagen!
     name = "flavor_dan.119.b"
     capital_scope = {
       add_base_tax = 3
@@ -3253,6 +3438,7 @@ country_event = {
     }
   }
 }
+# Loss of the English Channel Trade
 country_event = {
   id = flavor_dan.120
   title = "flavor_dan.120.t"
@@ -3274,10 +3460,12 @@ country_event = {
   }
   fire_only_once = yes
   option = {
+    #Darn
     name = "flavor_dan.120.a"
     remove_country_modifier = dan_control_over_the_english_channel
   }
 }
+#Remove subject related modifiers when they are no longer applicable
 country_event = {
   id = flavor_dan.121
   title = none
@@ -3367,6 +3555,7 @@ country_event = {
     }
   }
 }
+# Consequences of the Stockholm Bloodbath
 country_event = {
   id = flavor_dan.122
   title = "flavor_dan.122.t"
@@ -3374,6 +3563,7 @@ country_event = {
   picture = REVOLUTION_eventPicture
   is_triggered_only = yes
   option = {
+    #Keeping them loyal will be impossible now...
     name = "flavor_dan.122.a"
     tooltip = {
       FROM = {
@@ -3396,6 +3586,7 @@ country_event = {
     }
   }
 }
+# The last Pretender Rebellions of Sweden
 country_event = {
   id = flavor_dan.123
   title = "flavor_dan.123.t"
@@ -3406,6 +3597,7 @@ country_event = {
     overlord_of = SWE
   }
   option = {
+    #Oh wonderful
     name = "flavor_dan.123.a"
     SWE = {
       capital_scope = {
@@ -3439,6 +3631,7 @@ country_event = {
     }
   }
 }
+#Choose between Mercs and Standing Army
 country_event = {
   id = flavor_dan.124
   title = flavor_dan.124.t
@@ -3446,6 +3639,7 @@ country_event = {
   picture = MILITARY_CAMP_eventPicture
   is_triggered_only = yes
   option = {
+    #Double down on Mercs
     name = flavor_dan.124.a
     add_country_modifier = {
       name = dan_sca_standing_professional_merc_army
@@ -3453,6 +3647,7 @@ country_event = {
     }
   }
   option = {
+    #The time for Mercs is long over
     name = flavor_dan.124.b
     remove_country_modifier = dan_sca_merc_contract
     remove_country_modifier = dan_sca_grand_merc_army
@@ -3460,10 +3655,12 @@ country_event = {
       name = dan_sca_refocus_on_personal_armies
       duration = -1
     }
-    custom_tooltip = dan_sca_refocus_on_personal_armies_tt
+    custom_tooltip = dan_sca_refocus_on_personal_armies_tt 	# Can no longer recruit mercenaries as long this modifier is active
   }
 }
+#Kalmar Union mechanics
 namespace = kalmar_union_events
+#A new ruler comes to the throne
 country_event = {
   id = kalmar_union_events.1
   title = kalmar_union_events.1.t
@@ -3524,10 +3721,12 @@ country_event = {
     }
   }
   option = {
+    #The kingdoms will have to accept [Root.Monarch.GetName]
     name = kalmar_union_events.1.a
     custom_tooltip = kalmar_union_events.1.a.tt
     ai_chance = {
       factor = 1
+      #Some subject is getting annoying
       modifier = {
         factor = 0
         current_age = age_of_discovery
@@ -3535,6 +3734,7 @@ country_event = {
           has_country_flag = dan_rebellious_union_partner
         }
       }
+      #Rebellious subject
       modifier = {
         factor = 0
         current_age = age_of_discovery
@@ -3546,6 +3746,8 @@ country_event = {
           liberty_desire = 75
         }
       }
+      #The Kalmar Union should fall apart after the Age of Discovery
+      #Some subject is getting annoying
       modifier = {
         factor = 0.8
         NOT = {
@@ -3555,6 +3757,7 @@ country_event = {
           has_country_flag = dan_rebellious_union_partner
         }
       }
+      #Rebellious subject
       modifier = {
         factor = 0.7
         NOT = {
@@ -3583,6 +3786,7 @@ country_event = {
     }
   }
   option = {
+    #Ensure the love of the kingdoms
     name = kalmar_union_events.1.b
     add_ruler_modifier = {
       name = dan_granting_privileges_to_juniors
@@ -3612,12 +3816,14 @@ country_event = {
     }
     ai_chance = {
       factor = 1
+      #Has a really good ruler which doesn't get rejected
       modifier = {
         factor = 0
         ruler_total_stats = {
           amount = 14
         }
       }
+      #Has an okay ruler which doesn't get rejected
       modifier = {
         factor = 0.5
         ruler_total_stats = {
@@ -3627,6 +3833,7 @@ country_event = {
     }
   }
   option = {
+    #Make concessions for the Rebellious nobels
     name = kalmar_union_events.1.c
     trigger = {
       any_subject_country = {
@@ -3666,12 +3873,14 @@ country_event = {
     }
     ai_chance = {
       factor = 100
+      #Has a really good ruler which doesn't get rejected
       modifier = {
         factor = 0
         ruler_total_stats = {
           amount = 14
         }
       }
+      #Has an okay ruler which doesn't get rejected
       modifier = {
         factor = 0.5
         ruler_total_stats = {
@@ -3693,6 +3902,7 @@ country_event = {
     }
   }
 }
+#Election of the new King of the Kalmar Union
 country_event = {
   id = kalmar_union_events.2
   title = kalmar_union_events.2.t
@@ -3704,6 +3914,7 @@ country_event = {
     has_government_attribute = kalmar_union_succession
   }
   option = {
+    #[Root.Monarch.GetName] shall be the elected [Root.Monarch.GetTitle] of [Root.GetName]!
     name = kalmar_union_events.2.a
     FROM = {
       add_prestige = 10
@@ -3854,8 +4065,10 @@ country_event = {
     }
   }
   option = {
+    #We will not bow before him. We have a better idea though
     name = kalmar_union_events.2.b
     trigger = {
+      #Originally the plan was to have this option for every subject but it's not feasible 
       if = {
         limit = {
           tag = SWE
@@ -3898,12 +4111,14 @@ country_event = {
     }
     ai_chance = {
       factor = 1
+      #Has a really good ruler which doesn't get rejected
       modifier = {
         factor = 0
         ruler_total_stats = {
           amount = 14
         }
       }
+      #Has an okay ruler which doesn't get rejected
       modifier = {
         factor = 0.5
         ruler_total_stats = {
@@ -4203,6 +4418,7 @@ country_event = {
     }
   }
   option = {
+    #How about... no?
     name = kalmar_union_events.2.c
     add_liberty_desire = 20
     FROM = {
@@ -4226,12 +4442,14 @@ country_event = {
     }
     ai_chance = {
       factor = 1
+      #Has a really good ruler which doesn't get rejected
       modifier = {
         factor = 0
         ruler_total_stats = {
           amount = 14
         }
       }
+      #Has an okay ruler which doesn't get rejected
       modifier = {
         factor = 0.5
         ruler_total_stats = {
@@ -4531,6 +4749,7 @@ country_event = {
     }
   }
 }
+#Select one of the estates to become the new King
 country_event = {
   id = kalmar_union_events.3
   title = kalmar_union_events.3.t
@@ -4546,6 +4765,7 @@ country_event = {
     }
   }
   option = {
+    #Select one from the Clergy
     name = kalmar_union_events.3.a
     custom_tooltip = kalmar_union_events.3.a.tt
     hidden_effect = {
@@ -4602,6 +4822,7 @@ country_event = {
     }
   }
   option = {
+    #Select one from the Burghers
     name = kalmar_union_events.3.b
     custom_tooltip = kalmar_union_events.3.b.tt
     hidden_effect = {
@@ -4658,6 +4879,7 @@ country_event = {
     }
   }
   option = {
+    #Select one from the Nobility
     name = kalmar_union_events.3.c
     custom_tooltip = kalmar_union_events.3.c.tt
     hidden_effect = {
@@ -4729,6 +4951,7 @@ country_event = {
     }
   }
 }
+#The candidate from [From.GetName]
 country_event = {
   id = kalmar_union_events.4
   title = kalmar_union_events.4.t
@@ -4736,6 +4959,7 @@ country_event = {
   picture = NOBLE_ESTATE_eventPicture
   is_triggered_only = yes
   option = {
+    #Accept him
     name = kalmar_union_events.4.a
     trigger = {
       OR = {
@@ -4816,12 +5040,14 @@ country_event = {
     }
     ai_chance = {
       factor = 1
+      #Has a really good ruler which doesn't get rejected
       modifier = {
         factor = 0
         ruler_total_stats = {
           amount = 14
         }
       }
+      #Has an okay ruler which doesn't get rejected
       modifier = {
         factor = 0.5
         ruler_total_stats = {
@@ -4831,6 +5057,7 @@ country_event = {
     }
   }
   option = {
+    #Refuse to take him
     name = kalmar_union_events.4.b
     trigger = {
       OR = {
@@ -4880,6 +5107,7 @@ country_event = {
     }
   }
   option = {
+    #Fallback
     name = kalmar_union_events.4.c
     trigger = {
       NOT = {
@@ -4911,6 +5139,7 @@ country_event = {
     }
   }
 }
+#A new ruler comes to the throne
 country_event = {
   id = kalmar_union_events.5
   title = kalmar_union_events.5.t
@@ -4957,14 +5186,17 @@ country_event = {
     }
   }
   option = {
+    #The kingdoms will have to accept [Root.Monarch.GetName]
     name = kalmar_union_events.1.a
     custom_tooltip = kalmar_union_events.1.a.tt
     ai_chance = {
       factor = 1
+      #Has the money to burn
       modifier = {
         factor = 0
         years_of_income = 3
       }
+      #Some subject is getting annoying
       modifier = {
         factor = 0
         any_subject_country = {
@@ -4975,6 +5207,7 @@ country_event = {
         }
         years_of_income = 2
       }
+      #Rebellious subject
       modifier = {
         factor = 0
         any_subject_country = {
@@ -4991,6 +5224,7 @@ country_event = {
     }
   }
   option = {
+    #Ensure the love of the kingdoms
     name = kalmar_union_events.1.b
     custom_tooltip = kalmar_union_events.1.b.tt
     add_ruler_modifier = {
@@ -5023,12 +5257,14 @@ country_event = {
     }
     ai_chance = {
       factor = 1
+      #Has a really good ruler which doesn't get rejected
       modifier = {
         factor = 0
         ruler_total_stats = {
           amount = 14
         }
       }
+      #Has an okay ruler which doesn't get rejected
       modifier = {
         factor = 0.5
         ruler_total_stats = {
@@ -5038,6 +5274,7 @@ country_event = {
     }
   }
   option = {
+    #Make concessions for the Rebellious nobels
     name = kalmar_union_events.1.c
     trigger = {
       any_subject_country = {
@@ -5080,12 +5317,14 @@ country_event = {
     }
     ai_chance = {
       factor = 100
+      #Has a really good ruler which doesn't get rejected
       modifier = {
         factor = 0
         ruler_total_stats = {
           amount = 14
         }
       }
+      #Has an okay ruler which doesn't get rejected
       modifier = {
         factor = 0.5
         ruler_total_stats = {
@@ -5095,6 +5334,7 @@ country_event = {
     }
   }
 }
+#Election of the new King of the Kalmar Union - without new candidate
 country_event = {
   id = kalmar_union_events.6
   title = kalmar_union_events.6.t
@@ -5113,6 +5353,7 @@ country_event = {
     clr_country_flag = dan_picked_suggested_ruler
   }
   option = {
+    #[Root.Monarch.GetName] shall be the elected [Root.Monarch.GetTitle] of [Root.GetName]!
     name = kalmar_union_events.2.a
     FROM = {
       add_prestige = 10
@@ -5247,6 +5488,7 @@ country_event = {
     }
   }
   option = {
+    #How about... no?
     name = kalmar_union_events.2.c
     add_liberty_desire = 20
     capital_scope = {
@@ -5270,16 +5512,19 @@ country_event = {
     }
     ai_chance = {
       factor = 1
+      #That's our ruler on the throne!
       modifier = {
         factor = 0
         has_country_flag = dan_picked_suggested_ruler
       }
+      #Has a really good ruler which doesn't get rejected
       modifier = {
         factor = 0
         ruler_total_stats = {
           amount = 14
         }
       }
+      #Has an okay ruler which doesn't get rejected
       modifier = {
         factor = 0.5
         ruler_total_stats = {
@@ -5579,6 +5824,8 @@ country_event = {
     }
   }
 }
+#Random Kalmar Events - Triggered by on_five_year_pulse_4
+#Pretender Rebels	- Bad Event
 country_event = {
   id = kalmar_union_events.7
   title = kalmar_union_events.7.t
@@ -5629,6 +5876,7 @@ country_event = {
     }
   }
   option = {
+    #Fight off the pretenders
     name = kalmar_union_events.7.a
     event_target:dan_rebellious_junior_partner = {
       capital_scope = {
@@ -5657,6 +5905,7 @@ country_event = {
     }
   }
   option = {
+    #Orchestrate the assassination of the leader
     name = kalmar_union_events.7.b
     add_years_of_income = -0.5
     random_list = {
@@ -5702,6 +5951,7 @@ country_event = {
     }
   }
 }
+#Current king loses support	- Bad Event
 country_event = {
   id = kalmar_union_events.8
   title = kalmar_union_events.8.t
@@ -5778,6 +6028,7 @@ country_event = {
     }
   }
   option = {
+    #Doesn't really matter
     name = kalmar_union_events.8.a
     event_target:dan_rebellious_junior_partner = {
       add_ruler_modifier = {
@@ -5794,6 +6045,7 @@ country_event = {
     }
   }
   option = {
+    #Give dan_rebellious_junior_partner nobility extra privileges
     name = kalmar_union_events.8.b
     add_estate_loyalty = {
       estate = estate_nobles
@@ -5824,6 +6076,7 @@ country_event = {
     }
   }
 }
+#Own nobility demands stuff	- Bad Event
 country_event = {
   id = kalmar_union_events.9
   title = kalmar_union_events.9.t
@@ -5953,6 +6206,7 @@ country_event = {
     clr_country_flag = dan_nobles_demand_military_support
   }
   option = {
+    #Crush the Nobility
     name = kalmar_union_events.9.a
     add_estate_loyalty = {
       estate = estate_nobles
@@ -5969,6 +6223,7 @@ country_event = {
     }
   }
   option = {
+    #Fight off the pretenders
     name = kalmar_union_events.9.b
     add_estate_loyalty = {
       estate = estate_nobles
@@ -6029,6 +6284,7 @@ country_event = {
     }
   }
 }
+#Kalmar Union falls apart
 country_event = {
   id = kalmar_union_events.10
   title = kalmar_union_events.10.t

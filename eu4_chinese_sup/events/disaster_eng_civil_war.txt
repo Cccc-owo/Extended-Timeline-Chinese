@@ -1,4 +1,8 @@
+########################################
+# English Civil War
+########################################
 namespace = english_civil_war
+# The English Civil War
 country_event = {
   id = english_civil_war.1
   title = "flavor_eng.EVTNAME9225"
@@ -125,6 +129,7 @@ country_event = {
     }
   }
   option = {
+    # Parliamentarians
     name = "flavor_eng.EVTOPTA9225"
     ai_chance = {
       factor = 50
@@ -173,8 +178,8 @@ country_event = {
     change_government_to_republic = yes
     add_government_reform = protectorate_parliament_reform
     define_ruler = {
-      name = "eY)RV KQ&OZS"  # Oliver Cromwell
-      dynasty = "KQ&OZS"  # Cromwell
+      name = "eY)RV KQ&OZS" 	# Oliver Cromwell
+      dynasty = "KQ&OZS" 	# Cromwell
       ADM = 4
       DIP = 4
       MIL = 5
@@ -192,6 +197,7 @@ country_event = {
     set_ruler_flag = cromwell_flag
   }
   option = {
+    # Royalists
     name = "flavor_eng.EVTOPTB9225"
     ai_chance = {
       factor = 50
@@ -206,8 +212,8 @@ country_event = {
       spawn_rebels = {
         type = parliamentarians_rebels
         size = 3
-        leader = "eY)RV"  # Oliver
-        leader_dynasty = "KQ&OZS"  # Cromwell
+        leader = "eY)RV" 	# Oliver
+        leader_dynasty = "KQ&OZS" 	# Cromwell
       }
       clr_province_flag = ENG_cw_spawn_rebels_here
     }
@@ -233,6 +239,7 @@ country_event = {
     clr_country_flag = english_civil_war_start_event
   }
 }
+# Self-denying Ordinance and New Model Army
 country_event = {
   id = english_civil_war.2
   title = "flavor_eng.EVTNAME9226"
@@ -252,6 +259,7 @@ country_event = {
     set_country_flag = ENG_had_event_9226
   }
   option = {
+    # Pass the Ordinance and reform the army
     name = "flavor_eng.EVTOPTA9226"
     ai_chance = {
       factor = 90
@@ -261,13 +269,14 @@ country_event = {
       duration = 3650
     }
     define_general = {
-      name = "XblöØe∑9çS’lKQØe5rÎX"  # Sir Thomas Fairfax
+      name = "XblöØe∑9çS’lKQØe5rÎX" 	# Sir Thomas Fairfax
       shock = 4
       fire = 4
       manuever = 3
     }
   }
   option = {
+    # It is not needed
     name = "flavor_eng.EVTOPTB9226"
     ai_chance = {
       factor = 10
@@ -276,6 +285,7 @@ country_event = {
     add_yearly_manpower = 0.5
   }
 }
+# New Model Army
 country_event = {
   id = english_civil_war.3
   title = "flavor_eng.EVTNAME9227"
@@ -295,6 +305,7 @@ country_event = {
     set_country_flag = ENG_had_event_9227
   }
   option = {
+    # Pass the Ordinance and reform the army
     name = "flavor_eng.EVTOPTA9227"
     ai_chance = {
       factor = 90
@@ -305,6 +316,7 @@ country_event = {
     }
   }
   option = {
+    # It is not needed
     name = "flavor_eng.EVTOPTB9227"
     ai_chance = {
       factor = 10
@@ -313,6 +325,7 @@ country_event = {
     add_yearly_manpower = 0.5
   }
 }
+# Treaty with the Scots
 country_event = {
   id = english_civil_war.4
   title = "flavor_eng.EVTNAME9228"
@@ -343,6 +356,7 @@ country_event = {
     set_country_flag = ENG_had_event_9228
   }
   option = {
+    # Give in to their demands
     name = "flavor_eng.EVTOPTA9228"
     ai_chance = {
       factor = 50
@@ -382,6 +396,7 @@ country_event = {
     }
   }
   option = {
+    # Who are they to demand anything!
     name = "flavor_eng.EVTOPTB9228"
     ai_chance = {
       factor = 50
@@ -420,6 +435,7 @@ country_event = {
     }
   }
 }
+# Treaty with the Scots
 country_event = {
   id = english_civil_war.5
   title = "flavor_eng.EVTNAME9229"
@@ -450,6 +466,7 @@ country_event = {
     set_country_flag = ENG_had_event_9229
   }
   option = {
+    # Give in to their demands
     name = "flavor_eng.EVTOPTA9229"
     ai_chance = {
       factor = 50
@@ -489,6 +506,7 @@ country_event = {
     }
   }
   option = {
+    # Who are they to demand anything!
     name = "flavor_eng.EVTOPTB9229"
     ai_chance = {
       factor = 50
@@ -527,6 +545,7 @@ country_event = {
     }
   }
 }
+# The Rebellion in Wales
 country_event = {
   id = english_civil_war.6
   title = "flavor_eng.EVTNAME9230"
@@ -550,6 +569,7 @@ country_event = {
     set_country_flag = ENG_had_event_9230
   }
   option = {
+    # Pay them
     name = "flavor_eng.EVTOPTA9230"
     ai_chance = {
       factor = 50
@@ -557,6 +577,7 @@ country_event = {
     add_years_of_income = -0.25
   }
   option = {
+    # Let them revolt
     name = "flavor_eng.EVTOPTB9230"
     ai_chance = {
       factor = 50
@@ -573,6 +594,7 @@ country_event = {
     }
   }
 }
+# The Rebellion in Wales
 country_event = {
   id = english_civil_war.7
   title = "flavor_eng.EVTNAME9231"
@@ -596,6 +618,7 @@ country_event = {
     set_country_flag = ENG_had_event_9231
   }
   option = {
+    # Pay them
     name = "flavor_eng.EVTOPTA9231"
     ai_chance = {
       factor = 50
@@ -603,6 +626,7 @@ country_event = {
     add_years_of_income = -0.25
   }
   option = {
+    # Let them revolt
     name = "flavor_eng.EVTOPTB9231"
     ai_chance = {
       factor = 50
@@ -619,6 +643,7 @@ country_event = {
     }
   }
 }
+# The Rebellion in Ireland
 country_event = {
   id = english_civil_war.8
   title = "flavor_eng.EVTNAME9232"
@@ -675,6 +700,7 @@ country_event = {
     }
   }
   option = {
+    # Pay them
     name = "flavor_eng.EVTOPTA9232"
     ai_chance = {
       factor = 50
@@ -682,6 +708,7 @@ country_event = {
     add_years_of_income = -0.25
   }
   option = {
+    # Let them revolt
     name = "flavor_eng.EVTOPTB9232"
     ai_chance = {
       factor = 50
@@ -698,6 +725,7 @@ country_event = {
     }
   }
 }
+# The Rebellion in Ireland
 country_event = {
   id = english_civil_war.9
   title = "flavor_eng.EVTNAME9233"
@@ -754,6 +782,7 @@ country_event = {
     }
   }
   option = {
+    # Pay them
     name = "flavor_eng.EVTOPTA9233"
     ai_chance = {
       factor = 50
@@ -761,6 +790,7 @@ country_event = {
     add_years_of_income = -0.25
   }
   option = {
+    # Let them revolt
     name = "flavor_eng.EVTOPTB9233"
     ai_chance = {
       factor = 50
@@ -777,6 +807,7 @@ country_event = {
     }
   }
 }
+# Pride's Purge
 country_event = {
   id = english_civil_war.10
   title = "flavor_eng.EVTNAME9234"
@@ -812,6 +843,7 @@ country_event = {
     set_country_flag = ENG_had_event_9234
   }
   option = {
+    # Execute those not loyal
     name = "flavor_eng.EVTOPTA9234"
     ai_chance = {
       factor = 75
@@ -840,6 +872,7 @@ country_event = {
     }
   }
   option = {
+    # Pardon them
     name = "flavor_eng.EVTOPTB9234"
     ai_chance = {
       factor = 25
@@ -849,6 +882,7 @@ country_event = {
     add_stability = -1
   }
 }
+# End of the English Civil War
 country_event = {
   id = english_civil_war.100
   title = "flavor_eng.EVTNAME9235"
@@ -864,6 +898,7 @@ country_event = {
     on_non_estate_disaster_end = yes
   }
   option = {
+    # Order has finally been restored
     name = "flavor_eng.EVTOPTA9235"
     trigger = {
       has_country_flag = supports_royalists
@@ -887,6 +922,7 @@ country_event = {
       else = {
         add_government_reform = autocracy_reform
       }
+      #set_legacy_government = despotic_monarchy
     }
     if = {
       limit = {
@@ -913,6 +949,7 @@ country_event = {
     }
   }
   option = {
+    # Order has finally been restored
     name = "flavor_eng.EVTOPTB9235"
     trigger = {
       has_country_flag = supports_parliamentarians
@@ -951,6 +988,7 @@ country_event = {
     }
   }
   option = {
+    #Lost to Royalists
     name = flavor_eng.lost_to_royalists
     trigger = {
       has_country_flag = supports_parliamentarians
@@ -972,6 +1010,7 @@ country_event = {
       else = {
         add_government_reform = autocracy_reform
       }
+      #set_legacy_government = despotic_monarchy
     }
     if = {
       limit = {
@@ -985,6 +1024,7 @@ country_event = {
     clr_country_flag = supports_parliamentarians
   }
   option = {
+    #Lost to Parliamentarians
     name = flavor_eng.lost_to_parliament
     trigger = {
       has_country_flag = supports_royalists
@@ -992,7 +1032,7 @@ country_event = {
     }
     if = {
       limit = {
-        dynasty = "KQ&OZS"  # Cromwell
+        dynasty = "KQ&OZS" 	# Cromwell
       }
       set_country_flag = english_civil_war_won_by_parliamentarians
       change_government_to_republic = yes
@@ -1007,6 +1047,7 @@ country_event = {
     clr_country_flag = supports_royalists
   }
 }
+# Parliamentarian Victory
 country_event = {
   id = english_civil_war.11
   title = "english_civil_war.11.t"
@@ -1028,6 +1069,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
+    # A Republic
     name = "english_civil_war.11.a"
     ai_chance = {
       factor = 25
@@ -1047,8 +1089,10 @@ country_event = {
       }
       add_government_reform = parliamentary_republic_reform
     }
+    #set_legacy_government = constitutional_republic
   }
   option = {
+    # A Monarchy
     name = "english_civil_war.11.b"
     ai_chance = {
       factor = 75
@@ -1085,8 +1129,10 @@ country_event = {
     else = {
       add_government_reform = english_monarchy
     }
+    #set_legacy_government = constitutional_monarchy
   }
 }
+#Parliamentarian Victory - Death of Cromwell
 country_event = {
   id = english_civil_war.12
   title = "english_civil_war.12.t"
@@ -1119,6 +1165,7 @@ country_event = {
     }
   }
   option = {
+    # A Republic
     name = "english_civil_war.11.a"
     ai_chance = {
       factor = 25
@@ -1138,8 +1185,10 @@ country_event = {
       }
       add_government_reform = parliamentary_republic_reform
     }
+    #set_legacy_government = constitutional_republic
   }
   option = {
+    # A Monarchy
     name = "english_civil_war.11.b"
     ai_chance = {
       factor = 75
@@ -1176,5 +1225,6 @@ country_event = {
     else = {
       add_government_reform = english_monarchy
     }
+    #set_legacy_government = constitutional_monarchy
   }
 }

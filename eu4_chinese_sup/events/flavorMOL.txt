@@ -1,5 +1,8 @@
+# Flavour events for Moldavia - Roman II's Coup
+# By Daniel Tolman
 namespace = flavor_mol
 normal_or_historical_nations = yes
+# For Poland. Support for Roman
 country_event = {
   id = flavor_mol.1
   title = "flavor_mol.EVTNAME1"
@@ -33,6 +36,7 @@ country_event = {
     }
   }
   option = {
+    # support Roman with money
     name = "flavor_mol.1.a"
     add_years_of_income = -0.5
     ai_chance = {
@@ -52,6 +56,7 @@ country_event = {
     }
   }
   option = {
+    # support roman with manpower
     name = "flavor_mol.1.b"
     add_yearly_manpower = -1
     MOL = {
@@ -62,6 +67,7 @@ country_event = {
     }
   }
   option = {
+    # don't support Roman
     name = "flavor_mol.1.c"
     ai_chance = {
       factor = 0
@@ -70,6 +76,7 @@ country_event = {
     add_legitimacy = -10
   }
 }
+# For Moldavia
 country_event = {
   id = flavor_mol.2
   title = "flavor_mol.EVTNAME2"
@@ -79,14 +86,15 @@ country_event = {
   is_triggered_only = yes
   major = yes
   option = {
+    # Polish March
     name = "flavor_mol.2.a"
     ai_chance = {
       factor = 65
     }
     set_global_flag = mol_polish_march
     define_ruler = {
-      name = "W¸f"  # Roman
-      dynasty = "Fzôlyr"  # Musat
+      name = "W¸f" 	# Roman
+      dynasty = "Fzôlyr" 	# Musat
       age = 20
       claim = 75
     }
@@ -112,6 +120,7 @@ country_event = {
     }
   }
   option = {
+    # Hungarian March
     name = "flavor_mol.2.b"
     trigger = {
       HUN = {
@@ -127,8 +136,8 @@ country_event = {
     }
     set_global_flag = mol_hungarian_march
     define_ruler = {
-      name = "|VóVÅú"  # Petru
-      dynasty = "Fzôlyr"  # Musat
+      name = "|VóVÅú" 	# Petru
+      dynasty = "Fzôlyr" 	# Musat
       age = 45
       claim = 100
     }
@@ -163,6 +172,7 @@ country_event = {
     }
   }
   option = {
+    # Independence
     name = "flavor_mol.2.c"
     ai_chance = {
       factor = 15
@@ -175,8 +185,8 @@ country_event = {
       spawn_rebels = {
         size = 1
         type = pretender_rebels
-        leader = "W¸f"  # Roman
-        leader_dynasty = "Fzôlyr"  # Musat
+        leader = "W¸f" 	# Roman
+        leader_dynasty = "Fzôlyr" 	# Musat
       }
     }
     hidden_effect = {
@@ -189,6 +199,7 @@ country_event = {
     }
   }
 }
+# Poland reacts to Moldavian decision
 country_event = {
   id = flavor_mol.3
   title = "flavor_mol.EVTNAME3"
@@ -264,6 +275,7 @@ country_event = {
     }
   }
 }
+# For Hungary
 country_event = {
   id = flavor_mol.4
   title = "flavor_mol.EVTNAME4"

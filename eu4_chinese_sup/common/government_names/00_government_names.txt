@@ -1,3 +1,6 @@
+# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
 georgian = {
   rank = {
     1 = SAMTAVRO
@@ -734,6 +737,7 @@ celestial_parliament = {
     has_reform = parliamentary_reform
   }
 }
+#Subject Specific
 ottoman_marches = {
   rank = {
     1 = PASHALIK
@@ -1091,9 +1095,10 @@ herzegovina_monarchy = {
     tag = HRZ
   }
 }
+#HRE
 holy_roman_electors_monarchy = {
   rank = {
-    1 = ELECTORATE_DUCHY
+    1 = ELECTORATE_DUCHY 	# Kurfuerstentum
     2 = KINGDOM
     3 = EMPIRE
   }
@@ -1133,7 +1138,7 @@ holy_roman_electors_monarchy = {
     is_emperor = no
     NOT = {
       tag = HAB
-    }
+    } 	# Archdukes
   }
 }
 holy_roman_electors_bishoprics = {
@@ -1210,6 +1215,7 @@ trade_company_republic = {
     has_reform = trade_company_government
   }
 }
+#Shogunate
 japanese_shogunate = {
   rank = {
     3 = EMPIRE
@@ -1258,6 +1264,7 @@ japanese_shogunate = {
   }
 }
 islamic_syncretism_kingdoms = {
+  #For countries in a node being converted to islam.
   rank = {
     1 = EMIRATE
     2 = SULTANATE
@@ -1631,6 +1638,7 @@ muslim_tribal = {
   }
 }
 kathiawar_tribal_monarchy = {
+  #Sammas of Sindh are also Jams
   rank = {
     1 = PRINCEDOM
     2 = KINGDOM
@@ -1715,6 +1723,7 @@ sistan_monarchy = {
     tag = SIS
   }
 }
+#More Specific Monarchies
 turcoman_persian_monarchy = {
   rank = {
     1 = SHEIKHDOM
@@ -1919,7 +1928,7 @@ cristopher_of_bavaria_monarchy = {
       AND = {
         tag = DAN
         government = monarchy
-        has_ruler = "KQÃëØeXbV III"  # Christopher III
+        has_ruler = "KQÃëØeXbV III" 	# Christopher III
       }
       has_ruler_flag = has_proclaimed_archking_title
     }
@@ -1964,7 +1973,8 @@ hunyadi_regent_monarchy = {
   trigger = {
     tag = HUN
     government = monarchy
-    has_heir = "…bÍèØe≥RØe 0WêyÅPR0"  # Ladislaus Postumus
+    #		has_ruler = "J·nos"
+    has_heir = "…bÍèØe≥RØe 0WêyÅPR0" 	# Ladislaus Postumus
   }
 }
 austrian_monarchy = {
@@ -2386,7 +2396,7 @@ serbian_monarchy = {
     3 = HEIR_fem
   }
   trigger = {
-    government = monarchy
+    government = monarchy 	# All later monarchies
     OR = {
       primary_culture = serbian
       primary_culture = serbian_new
@@ -2440,6 +2450,7 @@ byzantine_monarchy = {
   }
 }
 greek_monarchy = {
+  #Greeks without Byzantine Ties
   rank = {
     1 = DUCHY
     2 = KINGDOM
@@ -2484,6 +2495,7 @@ greek_monarchy = {
   }
 }
 arakanese_monarchy = {
+  #Buddhist state that used Muslim titles.
   rank = {
     1 = EMIRATE
     2 = SULTANATE
@@ -2525,6 +2537,7 @@ arakanese_monarchy = {
   }
 }
 pangasinan_monarchy = {
+  #Buddhist state that used Muslim titles.
   rank = {
     1 = BARANGAY
     2 = GRAND_BARANGAY
@@ -2690,7 +2703,7 @@ egyptian_monarchy = {
       has_reform = letat_cest_moi_reform
       has_reform = regional_representation_reform
     }
-    primary_culture = al_misr_arabic
+    primary_culture = al_misr_arabic 	# Egyptian
     religion_group = muslim
   }
 }
@@ -2755,7 +2768,7 @@ pagan_egyptian_monarchy = {
     government = monarchy
     OR = {
       AND = {
-        primary_culture = al_misr_arabic
+        primary_culture = al_misr_arabic 	# Egyptian
         religion = animism
       }
       primary_culture = old_egyptian
@@ -3814,6 +3827,7 @@ burman_monarchy = {
     culture_group = burman
   }
 }
+#Less Specific Monarchies
 barangay_polity = {
   rank = {
     1 = BARANGAY
@@ -4366,7 +4380,7 @@ chinese_monarchy = {
   }
   trigger = {
     government = monarchy
-    culture_group = east_asian
+    culture_group = east_asian 	# Chinese
   }
 }
 hindu_monarchy = {
@@ -4452,7 +4466,7 @@ buddhist_monarchy = {
       government = tribal
     }
     OR = {
-      religion = buddhism
+      religion = buddhism 	# Theravada
       religion = vajrayana
       religion = mahayana
     }
@@ -4505,6 +4519,7 @@ muslim_monarchy = {
     }
   }
 }
+#Republics
 german_free_city = {
   rank = {
     1 = FREE_CITY
@@ -4534,6 +4549,7 @@ gov_free_city = {
     has_reform = free_city
   }
 }
+#If only two first levels used then reorder so that only 2 and 3 are used
 iberian_colonial_government = {
   rank = {
     1 = COLONY
@@ -4554,6 +4570,7 @@ iberian_colonial_government = {
     }
   }
 }
+#If only two first levels used then reorder so that only 2 and 3 are used
 dutch_colonial_government = {
   rank = {
     1 = COLONY
@@ -4822,6 +4839,7 @@ italian_republic = {
   }
 }
 hindu_republic = {
+  #Based on titles in Maratha administration
   rank = {
     1 = REPUBLIC
     2 = GRAND_REPUBLIC
@@ -4861,7 +4879,7 @@ buddhist_noble_republic = {
   trigger = {
     has_reform = noble_elite_reform
     OR = {
-      religion = buddhism
+      religion = buddhism 	# Theravada
       religion = vajrayana
       religion = mahayana
     }
@@ -4910,6 +4928,7 @@ march_eastern_christian_monarchy = {
   heir_female = {
     1 = HEIR_fem
   }
+  #Standard titles for Heirs and Consorts
   trigger = {
     government = monarchy
     NOT = {

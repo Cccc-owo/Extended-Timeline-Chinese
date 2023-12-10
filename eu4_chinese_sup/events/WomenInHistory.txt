@@ -1,5 +1,10 @@
+########################################
+# Events for Women in History
+# written by Sara Wendel-Örtqvist
+########################################
 namespace = women_history_events
 normal_or_historical_nations = yes
+# Queen Elizabeth I (1533-1603)
 country_event = {
   id = women_history_events.1
   title = women_history_events.1.t
@@ -9,7 +14,7 @@ country_event = {
   trigger = {
     NOT = {
       has_dlc = "Domination"
-    }
+    } 	# Domination version of this event
     is_year = 1533
     NOT = {
       is_year = 1603
@@ -37,8 +42,8 @@ country_event = {
   option = {
     name = women_history_events.1.a
     define_ruler = {
-      name = "OKNƒ‹v"  # Elizabeth
-      dynasty = "ıÎ”"  # Tudor
+      name = "OKNƒ‹v" 	# Elizabeth
+      dynasty = "ıÎ”" 	# Tudor
       culture = english
       adm = 6
       dip = 6
@@ -71,13 +76,14 @@ country_event = {
     define_advisor = {
       culture = english
       female = yes
-      type = statesman
+      type = statesman 	# spymaster
       skill = 2
       discount = yes
-      name = "OKNƒ‹v ıÎ”"  # Elizabeth Tudor
+      name = "OKNƒ‹v ıÎ”" 	# Elizabeth Tudor
     }
   }
 }
+# Queen Catherine II (the Great) (1729-1796)
 country_event = {
   id = women_history_events.2
   title = women_history_events.2.t
@@ -86,7 +92,7 @@ country_event = {
   trigger = {
     NOT = {
       has_dlc = "Domination"
-    }
+    } 	# Domination version of this event
     tag = RUS
     is_year = 1729
     NOT = {
@@ -131,8 +137,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "öSaSwc3tZ"  # Yekaterina
-        dynasty = "Wüfú‹+Y"  # Romanov
+        name = "öSaSwc3tZ" 	# Yekaterina
+        dynasty = "Wüfú‹+Y" 	# Romanov
         adm = 6
         dip = 6
         mil = 5
@@ -142,8 +148,8 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = "öSaSwc3tZ"  # Yekaterina
-        dynasty = "Wüfú‹+Y"  # Romanov
+        name = "öSaSwc3tZ" 	# Yekaterina
+        dynasty = "Wüfú‹+Y" 	# Romanov
         adm = 6
         dip = 6
         mil = 5
@@ -183,24 +189,25 @@ country_event = {
       define_advisor = {
         female = yes
         culture = russian_new
-        type = statesman
+        type = statesman 	# spymaster
         discount = yes
         skill = 2
-        name = "öSaSwc3tZ Wüfú‹+Y"  # Yekaterina Romanov
+        name = "öSaSwc3tZ Wüfú‹+Y" 	# Yekaterina Romanov
       }
     }
     else = {
       define_advisor = {
         female = yes
         culture = russian
-        type = statesman
+        type = statesman 	# spymaster
         discount = yes
         skill = 2
-        name = "öSaSwc3tZ Wüfú‹+Y"  # Yekaterina Romanov
+        name = "öSaSwc3tZ Wüfú‹+Y" 	# Yekaterina Romanov
       }
     }
   }
 }
+# Kösem Sultan (1590-1651)
 country_event = {
   id = women_history_events.3
   title = women_history_events.3.t
@@ -241,8 +248,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "ïg^XÆYÏ‚9N"  # Kösem Sultan
-        dynasty = "eY¯eüfeYbS"  # Osmanoglu
+        name = "ïg^XÆYÏ‚9N" 	# Kösem Sultan
+        dynasty = "eY¯eüfeYbS" 	# Osmanoglu
         culture = ruthenian
         adm = 5
         dip = 4
@@ -265,7 +272,7 @@ country_event = {
         has_government_attribute = queen
       }
       define_consort = {
-        name = "ïg^XÆYÏ‚9N"  # Kösem Sultan
+        name = "ïg^XÆYÏ‚9N" 	# Kösem Sultan
         culture = ruthenian
         adm = 5
         dip = 4
@@ -280,8 +287,8 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = "ïg^XÆYÏ‚9N"  # Kösem Sultan
-        dynasty = "eY¯eüfeYbS"  # Osmanoglu
+        name = "ïg^XÆYÏ‚9N" 	# Kösem Sultan
+        dynasty = "eY¯eüfeYbS" 	# Osmanoglu
         culture = ruthenian
         adm = 5
         dip = 4
@@ -304,14 +311,15 @@ country_event = {
     add_meritocracy_effect = yes
     define_advisor = {
       female = yes
-      type = statesman
+      type = statesman 	# spymaster
       culture = ruthenian
       discount = yes
       skill = 2
-      name = "ïg^XÆYÏ‚9N"  # Kosem Sultan
+      name = "ïg^XÆYÏ‚9N" 	# Kosem Sultan
     }
   }
 }
+# Maria Theresa (1717-1780)
 country_event = {
   id = women_history_events.4
   title = women_history_events.4.t
@@ -349,8 +357,8 @@ country_event = {
   option = {
     name = women_history_events.4.a
     define_ruler = {
-      name = "›sKNšN yrŒ…ƒ"  # Maria Theresia
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      name = "›sKNšN yrŒ…ƒ" 	# Maria Theresia
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       culture = austrian
       adm = 5
       dip = 5
@@ -380,14 +388,15 @@ country_event = {
     add_meritocracy_effect = yes
     define_advisor = {
       female = yes
-      type = statesman
+      type = statesman 	# spymaster
       culture = austrian
       discount = yes
       skill = 2
-      name = "›sKNšN yrŒ…ƒ ¯Q ÈT^¯e!X"  # Maria Theresia von Habsburg
+      name = "›sKNšN yrŒ…ƒ ¯Q ÈT^¯e!X" 	# Maria Theresia von Habsburg
     }
   }
 }
+# Roxelana (1500-1558)
 country_event = {
   id = women_history_events.5
   title = women_history_events.5.t
@@ -423,7 +432,7 @@ country_event = {
       discount = yes
       culture = ruthenian
       skill = 2
-      name = "¸‹Œ…ÆYÏ‚9N"  # Hurrem Sultan
+      name = "¸‹Œ…ÆYÏ‚9N" 	# Hurrem Sultan
     }
   }
   option = {
@@ -435,10 +444,11 @@ country_event = {
       culture = ruthenian
       skill = 2
       discount = yes
-      name = "¸‹Œ…ÆYÏ‚9N"  # Hurrem Sultan
+      name = "¸‹Œ…ÆYÏ‚9N" 	# Hurrem Sultan
     }
   }
 }
+# Queen Christina of Sweden (1626-1689)
 country_event = {
   id = women_history_events.6
   title = women_history_events.6.t
@@ -470,8 +480,8 @@ country_event = {
   option = {
     name = women_history_events.6.a
     define_ruler = {
-      name = "KQÌ‘¯e‚„Z"  # Christina
-      dynasty = "æt(„"  # Vasa
+      name = "KQÌ‘¯e‚„Z" 	# Christina
+      dynasty = "æt(„" 	# Vasa
       female = yes
       culture = swedish
       adm = 2
@@ -507,10 +517,11 @@ country_event = {
       culture = swedish
       discount = yes
       skill = 2
-      name = "KQÌ‘¯e‚„Z æt(„"  # Kristina Vasa
+      name = "KQÌ‘¯e‚„Z æt(„" 	# Kristina Vasa
     }
   }
 }
+# Germaine de Staël (1766-1817)
 country_event = {
   id = women_history_events.7
   title = women_history_events.7.t
@@ -540,7 +551,7 @@ country_event = {
       culture = swiss
       discount = yes
       skill = 2
-      name = "pgüf··V·¯e4bS"  # Germaine de Staël
+      name = "pgüf··V·¯e4bS" 	# Germaine de Staël
     }
   }
   option = {
@@ -552,10 +563,11 @@ country_event = {
       culture = swiss
       discount = yes
       skill = 2
-      name = "pgüf··V·¯e4bS"  # Germaine de Staël
+      name = "pgüf··V·¯e4bS" 	# Germaine de Staël
     }
   }
 }
+# Mary Wollstonecraft (1759-1797)
 country_event = {
   id = women_history_events.8
   title = women_history_events.8.t
@@ -597,7 +609,7 @@ country_event = {
       type = statesman
       skill = 2
       discount = yes
-      name = "›sKN·ƒl¯eKQÉb+Yyr"  # Mary Wollstonecraft
+      name = "›sKN·ƒl¯eKQÉb+Yyr" 	# Mary Wollstonecraft
     }
   }
   option = {
@@ -605,6 +617,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# Aphra Behn (1640-1689)
 country_event = {
   id = women_history_events.9
   title = women_history_events.9.t
@@ -640,7 +653,7 @@ country_event = {
       discount = yes
       culture = english
       skill = 2
-      name = "ÃW™‚Éb·i`"  # Aphra Behn
+      name = "ÃW™‚Éb·i`" 	# Aphra Behn
     }
   }
   option = {
@@ -651,6 +664,7 @@ country_event = {
     }
   }
 }
+# Eliza Lucas 1722-1793
 country_event = {
   id = women_history_events.10
   title = women_history_events.10.t
@@ -694,7 +708,7 @@ country_event = {
       type = natural_scientist
       discount = yes
       skill = 2
-      name = "Œ‚‰ƒ(„ bSaS¯e"  # Eliza Lucas
+      name = "Œ‚‰ƒ(„ bSaS¯e" 	# Eliza Lucas
     }
   }
   option = {
@@ -706,6 +720,7 @@ country_event = {
     }
   }
 }
+# Isabella of Castile (1451-1504)
 country_event = {
   id = women_history_events.11
   title = women_history_events.11.t
@@ -753,8 +768,8 @@ country_event = {
     name = women_history_events.11.a
     add_meritocracy_effect = yes
     define_heir = {
-      name = "OƒS"  # Isabel
-      dynasty = "·V yrÉb¯eTXlšÉb"  # de Trastámara
+      name = "OƒS" 	# Isabel
+      dynasty = "·V yrÉb¯eTXlšÉb" 	# de Trastámara
       culture = castillian
       claim = 95
       adm = 5
@@ -787,10 +802,11 @@ country_event = {
       discount = yes
       skill = 2
       culture = castillian
-      name = "OƒÉb ·V yrÉb¯eTXlšÉb"  # Isabel de Trastámara
+      name = "OƒÉb ·V yrÉb¯eTXlšÉb" 	# Isabel de Trastámara
     }
   }
 }
+# Sophie Germain (1776 - 1831)
 country_event = {
   id = women_history_events.12
   title = women_history_events.12.t
@@ -820,7 +836,7 @@ country_event = {
       culture = cosmopolitan_french
       skill = 2
       discount = yes
-      name = "0tòƒ·ípSüf"  # Sophie Germain
+      name = "0tòƒ·ípSüf" 	# Sophie Germain
     }
   }
   option = {
@@ -828,6 +844,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Caterina Sforza
 country_event = {
   id = women_history_events.13
   title = women_history_events.13.t
@@ -868,7 +885,7 @@ country_event = {
       culture = umbrian
       discount = yes
       skill = 2
-      name = "aSğlKNZ ¯eySNb"  # Caterina Sforza
+      name = "aSğlKNZ ¯eySNb" 	# Caterina Sforza
     }
   }
   option = {
@@ -880,7 +897,7 @@ country_event = {
       discount = yes
       culture = umbrian
       skill = 2
-      name = "aSğlKNZ ¯eySNb"  # Caterina Sforza
+      name = "aSğlKNZ ¯eySNb" 	# Caterina Sforza
     }
   }
   option = {
@@ -888,6 +905,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Catherine de Medici 1519-1589
 country_event = {
   id = women_history_events.14
   title = women_history_events.14.t
@@ -921,8 +939,8 @@ country_event = {
     name = women_history_events.14.a
     add_meritocracy_effect = yes
     define_ruler = {
-      name = "ïQmt3t"  # Catherine
-      dynasty = "·V ,rGY"  # de' Medici
+      name = "ïQmt3t" 	# Catherine
+      dynasty = "·V ,rGY" 	# de' Medici
       culture = tuscan
       adm = 4
       dip = 2
@@ -958,10 +976,11 @@ country_event = {
       culture = tuscan
       discount = yes
       skill = 2
-      name = "ïQmt3t··V·,rGY"  # Catherine de' Medici
+      name = "ïQmt3t··V·,rGY" 	# Catherine de' Medici
     }
   }
 }
+# Amalie Elisabeth
 country_event = {
   id = women_history_events.15
   title = women_history_events.15.t
@@ -995,7 +1014,7 @@ country_event = {
   option = {
     name = women_history_events.15.a
     define_ruler = {
-      name = "?–›s‰ƒ OKNƒ‹v"  # Amalie Elisabeth
+      name = "?–›s‰ƒ OKNƒ‹v" 	# Amalie Elisabeth
       culture = hessian
       adm = 4
       dip = 3
@@ -1031,10 +1050,11 @@ country_event = {
       culture = hessian
       discount = yes
       skill = 2
-      name = "?–›s‰ƒ OKNƒ‹v"  # Amalie Elisabeth
+      name = "?–›s‰ƒ OKNƒ‹v" 	# Amalie Elisabeth
     }
   }
 }
+# La Malinche (c. 1500-unknown)
 country_event = {
   id = women_history_events.16
   title = women_history_events.16.t
@@ -1097,13 +1117,13 @@ country_event = {
       type = diplomat
       skill = 2
       culture = aztek
-      name = "Éb·lš—gR"  # La Malinche
+      name = "Éb·lš—gR" 	# La Malinche
     }
   }
   option = {
     name = women_history_events.16.b
     define_conquistador = {
-      name = "Éb·lš—gR"  # La Malinche
+      name = "Éb·lš—gR" 	# La Malinche
       female = yes
       fire = 1
       shock = 2
@@ -1116,6 +1136,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Juana Ines de la Cruz
 country_event = {
   id = women_history_events.17
   title = women_history_events.17.t
@@ -1165,7 +1186,7 @@ country_event = {
       discount = yes
       culture = castillian
       skill = 2
-      name = "áw‰RZ·O…Q¯e··V·Éb·KQœyQ"  # Juana Ines de la Cruz
+      name = "áw‰RZ·O…Q¯e··V·Éb·KQœyQ" 	# Juana Ines de la Cruz
     }
   }
   option = {
@@ -1176,6 +1197,7 @@ country_event = {
     }
   }
 }
+# Jeanne d'Albret
 country_event = {
   id = women_history_events.18
   title = women_history_events.18.t
@@ -1206,8 +1228,8 @@ country_event = {
   option = {
     name = women_history_events.18.a
     define_ruler = {
-      name = "©‹Z"  # Jeanne
-      dynasty = "·V ?–S^÷–"  # d'Albret
+      name = "©‹Z" 	# Jeanne
+      dynasty = "·V ?–S^÷–" 	# d'Albret
       culture = basque
       adm = 4
       dip = 4
@@ -1243,10 +1265,11 @@ country_event = {
       type = statesman
       discount = yes
       skill = 2
-      name = "©‹Z··V·?–S^÷–"  # Jeanne d'Albret
+      name = "©‹Z··V·?–S^÷–" 	# Jeanne d'Albret
     }
   }
 }
+# Nzinga of Ndongo and Matamba
 country_event = {
   id = women_history_events.19
   title = women_history_events.19.t
@@ -1298,8 +1321,8 @@ country_event = {
   option = {
     name = women_history_events.19.a
     define_ruler = {
-      name = "i`%m R ÆYísê"  # Nzinga Mbandi
-      dynasty = "i`bÉb"  # Ngola
+      name = "i`%m R ÆYísê" 	# Nzinga Mbandi
+      dynasty = "i`bÉb" 	# Ngola
       culture = ROOT
       DIP = 5
       ADM = 5
@@ -1334,10 +1357,11 @@ country_event = {
       culture = kongolese
       discount = yes
       skill = 2
-      name = "i`%m R ÆYísê i`bÉb"  # Nzinga Mbandi Ngola
+      name = "i`%m R ÆYísê i`bÉb" 	# Nzinga Mbandi Ngola
     }
   }
 }
+# Tarabai
 country_event = {
   id = women_history_events.20
   title = women_history_events.20.t
@@ -1376,9 +1400,9 @@ country_event = {
   option = {
     name = women_history_events.20.a
     define_ruler = {
-      name = "TXÉbÜb"  # Tarabai
+      name = "TXÉbÜb" 	# Tarabai
       culture = marathi
-      dynasty = "«ƒ‰yr"  # Mohite
+      dynasty = "«ƒ‰yr" 	# Mohite
       DIP = 4
       ADM = 3
       MIL = 3
@@ -1412,10 +1436,11 @@ country_event = {
       culture = marathi
       type = statesman
       skill = 2
-      name = "TXÉbÜb «ƒ‰yr"  # Tarabai Mohite
+      name = "TXÉbÜb «ƒ‰yr" 	# Tarabai Mohite
     }
   }
 }
+# Jane Austen
 country_event = {
   id = women_history_events.21
   title = women_history_events.21.t
@@ -1455,10 +1480,11 @@ country_event = {
       culture = english
       discount = yes
       skill = 2
-      name = "r·eY¯eNl"  # Jane Austen
+      name = "r·eY¯eNl" 	# Jane Austen
     }
   }
 }
+# Gráinne Ní Mháille
 country_event = {
   id = women_history_events.22
   title = women_history_events.22.t
@@ -1504,7 +1530,7 @@ country_event = {
       type = commandant
       culture = irish
       skill = 2
-      name = "<hpQ…Q <S ætÒR"  # Grainne Ni Mhaille
+      name = "<hpQ…Q <S ætÒR" 	# Grainne Ni Mhaille
       discount = yes
     }
   }
@@ -1516,7 +1542,7 @@ country_event = {
       }
     }
     define_admiral = {
-      name = "<hpQ…Q <S ætÒR"  # Grainne Ni Mhaille
+      name = "<hpQ…Q <S ætÒR" 	# Grainne Ni Mhaille
       shock = 4
       fire = 4
       manuever = 3
@@ -1538,7 +1564,7 @@ country_event = {
       has_global_flag = grace_omalley_flag
     }
     define_ruler = {
-      name = "<hpQ…Q <S ætÒR"  # Grainne Ni Mhaille
+      name = "<hpQ…Q <S ætÒR" 	# Grainne Ni Mhaille
       adm = 3
       dip = 4
       mil = 5
@@ -1553,7 +1579,7 @@ country_event = {
       }
       capital_scope = {
         create_flagship = {
-          name = "‹vwmlš"  # White Seahorse
+          name = "‹vwmlš" 	# White Seahorse
           type = heavy_ship
         }
       }
@@ -1566,13 +1592,14 @@ country_event = {
       }
       capital_scope = {
         create_named_ship = {
-          name = "‹vwmlš"  # White Seahorse
+          name = "‹vwmlš" 	# White Seahorse
           type = heavy_ship
         }
       }
     }
   }
 }
+# Julie d'Aubigny
 country_event = {
   id = women_history_events.23
   title = women_history_events.23.t
@@ -1607,14 +1634,14 @@ country_event = {
       type = commandant
       culture = gascon
       skill = 2
-      name = "1g‰ƒ··VeYÔk<S"  # Julie d'Aubigny
+      name = "1g‰ƒ··VeYÔk<S" 	# Julie d'Aubigny
       discount = yes
     }
   }
   option = {
     name = women_history_events.23.b
     define_general = {
-      name = "1g‰ƒ··VeYÔk<S"  # Julie d'Aubigny
+      name = "1g‰ƒ··VeYÔk<S" 	# Julie d'Aubigny
       shock = 4
       fire = 4
       manuever = 3
@@ -1627,6 +1654,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Anne Boleyn
 country_event = {
   id = women_history_events.24
   title = women_history_events.24.t
@@ -1663,7 +1691,7 @@ country_event = {
       discount = yes
       skill = 2
       culture = english
-      name = "‰R®Y·ZS—g"  # Anne Boleyn
+      name = "‰R®Y·ZS—g" 	# Anne Boleyn
     }
   }
   option = {
@@ -1671,6 +1699,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Siti Wan Kembang
 country_event = {
   id = women_history_events.25
   title = women_history_events.25.t
@@ -1702,7 +1731,7 @@ country_event = {
       female = yes
       type = commandant
       skill = 2
-      name = "‰‚„·N·¯w¦"  # Siti Wan Kembang
+      name = "‰‚„·N·¯w¦" 	# Siti Wan Kembang
       culture = malayan
       discount = yes
     }
@@ -1710,7 +1739,7 @@ country_event = {
   option = {
     name = women_history_events.25.b
     define_general = {
-      name = "‰‚„·N·¯w¦"  # Siti Wan Kembang
+      name = "‰‚„·N·¯w¦" 	# Siti Wan Kembang
       shock = 5
       fire = 2
       manuever = 5
@@ -1723,6 +1752,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Catherine of Aragon 
 country_event = {
   id = women_history_events.26
   title = women_history_events.26.t
@@ -1760,7 +1790,7 @@ country_event = {
       type = diplomat
       culture = castillian
       skill = 2
-      name = "?–Éb!„vïQmt3t"  # Catherine of Aragon
+      name = "?–Éb!„vïQmt3t" 	# Catherine of Aragon
       discount = yes
     }
   }
@@ -1769,6 +1799,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Margaret of Anjou
 country_event = {
   id = women_history_events.27
   title = women_history_events.27.t
@@ -1809,8 +1840,8 @@ country_event = {
   option = {
     name = women_history_events.27.c
     define_ruler = {
-      name = "›s<hKNyr"  # Margaret
-      dynasty = "·V ‰R9ƒ"  # d'Anjou
+      name = "›s<hKNyr" 	# Margaret
+      dynasty = "·V ‰R9ƒ" 	# d'Anjou
       culture = cosmopolitan_french
       adm = 3
       dip = 4
@@ -1845,8 +1876,8 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_consort = {
-      name = "›s<hKNyr"  # Margaret
-      dynasty = "·V ‰R9ƒ"  # d'Anjou
+      name = "›s<hKNyr" 	# Margaret
+      dynasty = "·V ‰R9ƒ" 	# d'Anjou
       culture = cosmopolitan_french
       adm = 3
       dip = 4
@@ -1871,10 +1902,11 @@ country_event = {
       culture = cosmopolitan_french
       discount = yes
       skill = 2
-      name = "›s<hKNyr ·V ‰R9ƒ"  # Margaret d'Anjou
+      name = "›s<hKNyr ·V ‰R9ƒ" 	# Margaret d'Anjou
     }
   }
 }
+# Louise of Mecklenburg-Strelitz (1776  1810)
 country_event = {
   id = women_history_events.28
   title = women_history_events.28.t
@@ -1907,7 +1939,7 @@ country_event = {
       culture = pommeranian
       skill = 2
       discount = yes
-      name = "…hKQ&O!X-Ëeyr÷–)R(ƒ„v2—fN"  # Louise of Mecklenburg-Strelitz
+      name = "…hKQ&O!X-Ëeyr÷–)R(ƒ„v2—fN" 	# Louise of Mecklenburg-Strelitz
     }
   }
   option = {
@@ -1918,6 +1950,7 @@ country_event = {
     }
   }
 }
+# Ayse Hafsa Sultan
 country_event = {
   id = women_history_events.29
   title = women_history_events.29.t
@@ -1955,8 +1988,9 @@ country_event = {
   option = {
     name = women_history_events.29.a
     define_ruler = {
-      name = "Œ‚0Œ ÈT+YƒÏ‚9N"  # Ayse Hafsa Sultan
-      dynasty = "eY¯eüfeYbS"  # Osmanoglu
+      #Change to Queen
+      name = "Œ‚0Œ ÈT+YƒÏ‚9N" 	# Ayse Hafsa Sultan
+      dynasty = "eY¯eüfeYbS" 	# Osmanoglu
       culture = crimean
       adm = 2
       dip = 4
@@ -1992,10 +2026,11 @@ country_event = {
       skill = 2
       culture = crimean
       discount = yes
-      name = "Œ‚0Œ·ÈT+YƒÏ‚9N"  # Ayse Hafsa Sultan
+      name = "Œ‚0Œ·ÈT+YƒÏ‚9N" 	# Ayse Hafsa Sultan
     }
   }
 }
+# Roshanara Begum
 country_event = {
   id = women_history_events.30
   title = women_history_events.30.t
@@ -2032,8 +2067,8 @@ country_event = {
   option = {
     name = women_history_events.30.a
     define_ruler = {
-      name = "WÊsZÉb+RìY"  # Roshanara Begum
-      dynasty = "^(g?Q"  # Timurid
+      name = "WÊsZÉb+RìY" 	# Roshanara Begum
+      dynasty = "^(g?Q" 	# Timurid
       culture = kanauji
       adm = 3
       dip = 2
@@ -2071,11 +2106,12 @@ country_event = {
       culture = kanauji
       skill = 2
       discount = yes
-      name = "WÊsZÉb+RìY"  # Roshanara Begum
+      name = "WÊsZÉb+RìY" 	# Roshanara Begum
     }
     add_corruption = 0.5
   }
 }
+# Abigail Adams (1744  1818)
 country_event = {
   id = women_history_events.31
   title = women_history_events.31.t
@@ -2104,7 +2140,7 @@ country_event = {
       type = statesman
       skill = 2
       discount = yes
-      name = "?–ÔkÖvS·šNSV¯e"  # Abigail Adams
+      name = "?–ÔkÖvS·šNSV¯e" 	# Abigail Adams
       culture = american
     }
   }
@@ -2116,6 +2152,7 @@ country_event = {
     }
   }
 }
+# Rani Abbakka Chowta
 country_event = {
   id = women_history_events.32
   title = women_history_events.32.t
@@ -2177,14 +2214,14 @@ country_event = {
       culture = kannada
       discount = yes
       skill = 2
-      name = "?–ôTaS·TNTX"  # Abbakka Chowta
+      name = "?–ôTaS·TNTX" 	# Abbakka Chowta
     }
   }
   option = {
     name = women_history_events.32.b
     define_ruler = {
-      name = "?–ôTaS"  # Abbakka
-      dynasty = "TNTX"  # Chowta
+      name = "?–ôTaS" 	# Abbakka
+      dynasty = "TNTX" 	# Chowta
       culture = kannada
       adm = 3
       dip = 3
@@ -2208,7 +2245,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_general = {
-      name = "?–ôTaS·TNTX"  # Abbakka Chowta
+      name = "?–ôTaS·TNTX" 	# Abbakka Chowta
       shock = 2
       fire = 4
       manuever = 4
@@ -2217,6 +2254,7 @@ country_event = {
     }
   }
 }
+# Sacagawea (1787?  1812)
 country_event = {
   id = women_history_events.33
   title = women_history_events.33.t
@@ -2248,7 +2286,7 @@ country_event = {
   option = {
     name = women_history_events.33.a
     define_conquistador = {
-      name = "(„aS RôušN"  # Sacagawea
+      name = "(„aS RôušN" 	# Sacagawea
       fire = 1
       shock = 2
       manuever = 3
@@ -2264,10 +2302,11 @@ country_event = {
       skill = 2
       culture = shoshone
       discount = yes
-      name = "(„aS RôušN"  # Sacagawea
+      name = "(„aS RôušN" 	# Sacagawea
     }
   }
 }
+# Pari Khan Khanum (d. 1578)
 country_event = {
   id = women_history_events.34
   title = women_history_events.34.t
@@ -2303,8 +2342,8 @@ country_event = {
   option = {
     name = women_history_events.34.a
     define_ruler = {
-      name = "^Ì‘ Wl WlªRÆY"  # Pari Khan Khanum
-      dynasty = "(„Õlôu"  # Safavid
+      name = "^Ì‘ Wl WlªRÆY" 	# Pari Khan Khanum
+      dynasty = "(„Õlôu" 	# Safavid
       culture = persian
       adm = 3
       dip = 3
@@ -2340,10 +2379,11 @@ country_event = {
       culture = persian
       discount = yes
       skill = 2
-      name = "^Ì‘·Wl·WlªRÆY"  # Pari Khan Khanum
+      name = "^Ì‘·Wl·WlªRÆY" 	# Pari Khan Khanum
     }
   }
 }
+# Meera Bai
 country_event = {
   id = women_history_events.35
   title = women_history_events.35.t
@@ -2379,7 +2419,7 @@ country_event = {
       culture = rajput
       discount = yes
       skill = 2
-      name = "s|Éb·Üb"  # Meera Bai
+      name = "s|Éb·Üb" 	# Meera Bai
     }
   }
   option = {
@@ -2390,6 +2430,7 @@ country_event = {
     }
   }
 }
+# Amina
 country_event = {
   id = women_history_events.36
   title = women_history_events.36.t
@@ -2432,8 +2473,8 @@ country_event = {
   option = {
     name = women_history_events.36.a
     define_ruler = {
-      name = "?–s|Z"  # Amina
-      dynasty = "Nb."  # Zazzau
+      name = "?–s|Z" 	# Amina
+      dynasty = "Nb." 	# Zazzau
       culture = hausa
       dip = 4
       adm = 5
@@ -2463,7 +2504,7 @@ country_event = {
       culture = hausa
       discount = yes
       skill = 2
-      name = "?–s|Z"  # Amina
+      name = "?–s|Z" 	# Amina
     }
   }
   option = {
@@ -2472,7 +2513,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_general = {
-      name = "?–s|Z"  # Amina
+      name = "?–s|Z" 	# Amina
       fire = 4
       shock = 4
       manuever = 5
@@ -2481,6 +2522,7 @@ country_event = {
     }
   }
 }
+# Mandukhai Khatun
 country_event = {
   id = women_history_events.37
   title = women_history_events.37.t
@@ -2518,7 +2560,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_general = {
-      name = "ánıwmÈToS"  # Mandukhai Khatun
+      name = "ánıwmÈToS" 	# Mandukhai Khatun
       fire = 4
       shock = 4
       manuever = 5
@@ -2529,8 +2571,8 @@ country_event = {
   option = {
     name = women_history_events.37.b
     define_ruler = {
-      name = "ánıwmÈToS"  # Mandukhai Khatun
-      dynasty = "iR?QêS²e"  # Borjigin
+      name = "ánıwmÈToS" 	# Mandukhai Khatun
+      dynasty = "iR?QêS²e" 	# Borjigin
       dip = 4
       adm = 5
       mil = 6
@@ -2566,10 +2608,11 @@ country_event = {
       type = commandant
       skill = 2
       culture = mongol
-      name = "ánıwmÈToS"  # Mandukhai Khatun
+      name = "ánıwmÈToS" 	# Mandukhai Khatun
     }
   }
 }
+# Ho Xuan Huong
 country_event = {
   id = women_history_events.38
   title = women_history_events.38.t
@@ -2608,7 +2651,7 @@ country_event = {
         discount = yes
         culture = vietnamese_new
         skill = 2
-        name = "áw%f™™"  # Ho Xuan Huong
+        name = "áw%f™™" 	# Ho Xuan Huong
       }
     }
     else = {
@@ -2618,7 +2661,7 @@ country_event = {
         discount = yes
         culture = vietnamese
         skill = 2
-        name = "áw%f™™"  # Ho Xuan Huong
+        name = "áw%f™™" 	# Ho Xuan Huong
       }
     }
   }
@@ -2630,6 +2673,7 @@ country_event = {
     }
   }
 }
+# Inion Dubh
 country_event = {
   id = women_history_events.39
   title = women_history_events.39.t
@@ -2664,8 +2708,8 @@ country_event = {
   option = {
     name = women_history_events.39.a
     define_ruler = {
-      name = "ÑsY?Q"  # Inion Dubh
-      dynasty = "Y<SS"  # Dhomhnaill
+      name = "ÑsY?Q" 	# Inion Dubh
+      dynasty = "Y<SS" 	# Dhomhnaill
       culture = irish
       dip = 4
       adm = 5
@@ -2701,10 +2745,11 @@ country_event = {
       discount = yes
       culture = irish
       skill = 2
-      name = "ÑsY?Q"  # Inion Dubh
+      name = "ÑsY?Q" 	# Inion Dubh
     }
   }
 }
+# Rani Durgavati
 country_event = {
   id = women_history_events.40
   title = women_history_events.40.t
@@ -2734,8 +2779,8 @@ country_event = {
   option = {
     name = women_history_events.40.a
     define_ruler = {
-      name = "jgææt‚„"  # Durgavati
-      dynasty = " RSÈT-è•·VÉb"  # Garha-Mandli
+      name = "jgææt‚„" 	# Durgavati
+      dynasty = " RSÈT-è•·VÉb" 	# Garha-Mandli
       culture = gondi
       ADM = 3
       DIP = 4
@@ -2771,10 +2816,11 @@ country_event = {
       discount = yes
       skill = 2
       culture = gondi
-      name = "jgææt‚„ ætÉbs|"  # Durgavati Maravi
+      name = "jgææt‚„ ætÉbs|" 	# Durgavati Maravi
     }
   }
 }
+# Kateri Tekakwitha
 country_event = {
   id = women_history_events.41
   title = women_history_events.41.t
@@ -2782,8 +2828,8 @@ country_event = {
   picture = wihgfx_FEMALE_SCHOLAR_eventPicture
   trigger = {
     OR = {
-      owns = 965
-      owns = 992
+      owns = 965 	#  Manhattan
+      owns = 992 	#  Algonquin
     }
     religion = catholic
     is_year = 1656
@@ -2810,6 +2856,7 @@ country_event = {
     }
   }
 }
+# Maria Sibylla Merian
 country_event = {
   id = women_history_events.42
   title = women_history_events.42.t
@@ -2847,7 +2894,7 @@ country_event = {
       discount = yes
       skill = 2
       culture = hessian
-      name = "›s)RšN·‰ÔkÉb·…hÌ‘‰R"  # Maria Sibylla Merian
+      name = "›s)RšN·‰ÔkÉb·…hÌ‘‰R" 	# Maria Sibylla Merian
     }
   }
   option = {
@@ -2858,6 +2905,7 @@ country_event = {
     }
   }
 }
+# Kenau Simonsdochter Hasselaer
 country_event = {
   id = women_history_events.43
   title = women_history_events.43.t
@@ -2895,7 +2943,7 @@ country_event = {
       culture = dutch
       discount = yes
       skill = 2
-      name = "KQYt·‰™„¯eYkyr·ÈT‚ÉbS"  # Kenau Simonsdochter Hasselaer
+      name = "KQYt·‰™„¯eYkyr·ÈT‚ÉbS" 	# Kenau Simonsdochter Hasselaer
     }
   }
   option = {
@@ -2908,7 +2956,7 @@ country_event = {
   option = {
     name = women_history_events.43.c
     define_general = {
-      name = "KQYt·‰™„¯eYkyr·ÈT‚ÉbS"  # Kenau Simonsdochter Hasselaer
+      name = "KQYt·‰™„¯eYkyr·ÈT‚ÉbS" 	# Kenau Simonsdochter Hasselaer
       shock = 2
       fire = 2
       manuever = 2
@@ -2917,6 +2965,7 @@ country_event = {
     }
   }
 }
+# Elena Cornaro Piscopia
 country_event = {
   id = women_history_events.44
   title = women_history_events.44.t
@@ -2952,7 +3001,7 @@ country_event = {
       type = theologian
       discount = yes
       skill = 2
-      name = "Œ‚²ƒZ·ÑyS³uW·®v¯eÑy®všN"  # Elena Cornaro Piscopia
+      name = "Œ‚²ƒZ·ÑyS³uW·®v¯eÑy®všN" 	# Elena Cornaro Piscopia
     }
   }
   option = {
@@ -2963,6 +3012,7 @@ country_event = {
     }
   }
 }
+# Yekaterina Romanovna Vorontsova-Dashkova
 country_event = {
   id = women_history_events.45
   title = women_history_events.45.t
@@ -3003,7 +3053,7 @@ country_event = {
         type = diplomat
         culture = russian_new
         skill = 2
-        name = "öSaSwc3tZ Wüfú‹™‚Z ƒl&OPOZ-¾ÀNÑyZ"  # Yekaterina Romanovna Vorontsova-Dashkova
+        name = "öSaSwc3tZ Wüfú‹™‚Z ƒl&OPOZ-¾ÀNÑyZ" 	# Yekaterina Romanovna Vorontsova-Dashkova
       }
     }
     else = {
@@ -3013,7 +3063,7 @@ country_event = {
         type = diplomat
         culture = russian
         skill = 2
-        name = "öSaSwc3tZ Wüfú‹™‚Z ƒl&OPOZ-¾ÀNÑyZ"  # Yekaterina Romanovna Vorontsova-Dashkova
+        name = "öSaSwc3tZ Wüfú‹™‚Z ƒl&OPOZ-¾ÀNÑyZ" 	# Yekaterina Romanovna Vorontsova-Dashkova
       }
     }
   }
@@ -3025,6 +3075,7 @@ country_event = {
     }
   }
 }
+# Marie Crous
 country_event = {
   id = women_history_events.46
   title = women_history_events.46.t
@@ -3056,7 +3107,7 @@ country_event = {
       type = philosopher
       culture = cosmopolitan_french
       skill = 2
-      name = "›sKN·KQœ¯e"  # Marie Crous
+      name = "›sKN·KQœ¯e" 	# Marie Crous
       discount = yes
     }
   }
@@ -3068,6 +3119,7 @@ country_event = {
     }
   }
 }
+# Ohatsu
 country_event = {
   id = women_history_events.47
   title = women_history_events.47.t
@@ -3103,7 +3155,7 @@ country_event = {
       discount = yes
       skill = 2
       culture = japanese
-      name = "?–R"  # Ohatsu
+      name = "?–R" 	# Ohatsu
     }
   }
   option = {
@@ -3114,6 +3166,7 @@ country_event = {
     }
   }
 }
+# Empress Dowager Xiaozhuang (1613  1688)
 country_event = {
   id = women_history_events.48
   title = women_history_events.48.t
@@ -3156,14 +3209,14 @@ country_event = {
       discount = yes
       type = diplomat
       skill = 2
-      name = "kR„^*YT"  # Empress Dowager Xiaozhuang
+      name = "kR„^*YT" 	# Empress Dowager Xiaozhuang
     }
   }
   option = {
     name = women_history_events.48.b
     define_ruler = {
-      name = "kR„^"  # Xiaozhuang
-      dynasty = "1r°eÉ‰W"  # Aisin Gioro
+      name = "kR„^" 	# Xiaozhuang
+      dynasty = "1r°eÉ‰W" 	# Aisin Gioro
       culture = chihan
       adm = 4
       dip = 4
@@ -3188,6 +3241,7 @@ country_event = {
     }
   }
 }
+# Inés de Suárez
 country_event = {
   id = women_history_events.49
   title = women_history_events.49.t
@@ -3225,13 +3279,13 @@ country_event = {
       culture = castillian
       discount = yes
       skill = 2
-      name = "O…Q¯e ·V Ï‚šN÷–¯e"  # Ines de Suarez
+      name = "O…Q¯e ·V Ï‚šN÷–¯e" 	# Ines de Suarez
     }
   }
   option = {
     name = women_history_events.49.b
     define_conquistador = {
-      name = "O…Q¯e ·V Ï‚šN÷–¯e"  # Ines de Suarez
+      name = "O…Q¯e ·V Ï‚šN÷–¯e" 	# Ines de Suarez
       female = yes
       fire = 2
       shock = 3
@@ -3242,7 +3296,7 @@ country_event = {
   option = {
     name = women_history_events.49.c
     define_general = {
-      name = "O…Q¯e ·V Ï‚šN÷–¯e"  # Ines de Suarez
+      name = "O…Q¯e ·V Ï‚šN÷–¯e" 	# Ines de Suarez
       female = yes
       fire = 4
       shock = 3
@@ -3251,6 +3305,7 @@ country_event = {
     }
   }
 }
+# Kaihime
 country_event = {
   id = women_history_events.50
   title = women_history_events.50.t
@@ -3286,13 +3341,13 @@ country_event = {
       type = commandant
       culture = japanese
       skill = 2
-      name = "2ueìY"  # Kaihime
+      name = "2ueìY" 	# Kaihime
     }
   }
   option = {
     name = women_history_events.50.b
     define_general = {
-      name = "2ueìY"  # Kaihime
+      name = "2ueìY" 	# Kaihime
       female = yes
       fire = 5
       shock = 3
@@ -3301,6 +3356,7 @@ country_event = {
     }
   }
 }
+# Nazo Tokhi
 country_event = {
   id = women_history_events.51
   title = women_history_events.51.t
@@ -3336,13 +3392,13 @@ country_event = {
       type = commandant
       discount = yes
       skill = 2
-      name = "±PO·Xb^"  # Nazo Tokhi
+      name = "±PO·Xb^" 	# Nazo Tokhi
     }
   }
   option = {
     name = women_history_events.51.b
     define_general = {
-      name = "±PO·Xb^"  # Nazo Tokhi
+      name = "±PO·Xb^" 	# Nazo Tokhi
       female = yes
       fire = 4
       shock = 4
@@ -3351,6 +3407,7 @@ country_event = {
     }
   }
 }
+# Qin Liangyu
 country_event = {
   id = women_history_events.52
   title = women_history_events.52.t
@@ -3386,7 +3443,7 @@ country_event = {
   option = {
     name = women_history_events.52.a
     define_general = {
-      name = "æyo‚‰s"  # Qin Liangyu
+      name = "æyo‚‰s" 	# Qin Liangyu
       female = yes
       fire = 5
       shock = 4
@@ -3398,7 +3455,7 @@ country_event = {
     name = women_history_events.52.b
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "æyo‚‰s"  # Qin Liangyu
+      name = "æyo‚‰s" 	# Qin Liangyu
       type = army_reformer
       culture = chihan
       discount = yes
@@ -3407,6 +3464,7 @@ country_event = {
     }
   }
 }
+# Ilona Zrinyi
 country_event = {
   id = women_history_events.53
   title = women_history_events.53.t
@@ -3456,7 +3514,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "OmZ yQÌ‘<S"  # Ilona Zrinyi
+      name = "OmZ yQÌ‘<S" 	# Ilona Zrinyi
       discount = yes
       type = statesman
       skill = 2
@@ -3467,8 +3525,8 @@ country_event = {
   option = {
     name = women_history_events.53.b
     define_ruler = {
-      name = "OmZ"  # Ilona
-      dynasty = "yQÌ‘<S"  # Zrinyi
+      name = "OmZ" 	# Ilona
+      dynasty = "yQÌ‘<S" 	# Zrinyi
       culture = croatian
       adm = 3
       dip = 4
@@ -3498,7 +3556,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_general = {
-      name = "OmZ yQÌ‘<S"  # Ilona Zrinyi
+      name = "OmZ yQÌ‘<S" 	# Ilona Zrinyi
       shock = 4
       fire = 2
       manuever = 3
@@ -3507,6 +3565,7 @@ country_event = {
     }
   }
 }
+# Wang Zhenyi
 country_event = {
   id = women_history_events.54
   title = women_history_events.54.t
@@ -3542,7 +3601,7 @@ country_event = {
     name = women_history_events.54.b
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "‹sêN"  # Wang Zhenyi
+      name = "‹sêN" 	# Wang Zhenyi
       culture = chihan
       discount = yes
       type = philosopher
@@ -3551,6 +3610,7 @@ country_event = {
     }
   }
 }
+# Suriyothai
 country_event = {
   id = women_history_events.55
   title = women_history_events.55.t
@@ -3588,6 +3648,7 @@ country_event = {
     }
   }
 }
+# Sayyida al Hurra
 country_event = {
   id = women_history_events.56
   title = women_history_events.56.t
@@ -3622,7 +3683,7 @@ country_event = {
     name = women_history_events.56.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "iIN·V·áwÉb"  # Sayyida al Hurra
+      name = "iIN·V·áwÉb" 	# Sayyida al Hurra
       culture = berber
       type = navigator
       discount = yes
@@ -3633,7 +3694,7 @@ country_event = {
   option = {
     name = women_history_events.56.b
     define_admiral = {
-      name = "iIN·V·áwÉb"  # Sayyida al Hurra
+      name = "iIN·V·áwÉb" 	# Sayyida al Hurra
       shock = 4
       fire = 4
       manuever = 4
@@ -3641,6 +3702,7 @@ country_event = {
     }
   }
 }
+# Olympe de Gouges
 country_event = {
   id = women_history_events.57
   title = women_history_events.57.t
@@ -3665,7 +3727,7 @@ country_event = {
     name = women_history_events.57.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "eYpQnf··VäSíp"  # Olympe de Gouges
+      name = "eYpQnf··VäSíp" 	# Olympe de Gouges
       discount = yes
       culture = gascon
       type = diplomat
@@ -3681,6 +3743,7 @@ country_event = {
     }
   }
 }
+# Izumo no Okuni
 country_event = {
   id = women_history_events.58
   title = women_history_events.58.t
@@ -3711,7 +3774,7 @@ country_event = {
     name = women_history_events.58.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "úQ‘N?–ıV"  # Izumo no Okuni
+      name = "úQ‘N?–ıV" 	# Izumo no Okuni
       culture = japanese
       discount = yes
       type = artist
@@ -3727,6 +3790,7 @@ country_event = {
     }
   }
 }
+# Nora of Kelmendi
 country_event = {
   id = women_history_events.59
   title = women_history_events.59.t
@@ -3761,7 +3825,7 @@ country_event = {
     name = women_history_events.59.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "GYSè•ê„vú‹Éb"  # Nora of Kelmendi
+      name = "GYSè•ê„vú‹Éb" 	# Nora of Kelmendi
       type = army_organiser
       culture = albanian
       discount = yes
@@ -3772,7 +3836,7 @@ country_event = {
   option = {
     name = women_history_events.59.b
     define_general = {
-      name = "GYSè•ê„vú‹Éb"  # Nora of Kelmendi
+      name = "GYSè•ê„vú‹Éb" 	# Nora of Kelmendi
       shock = 2
       fire = 3
       manuever = 4
@@ -3781,6 +3845,7 @@ country_event = {
     }
   }
 }
+# Martha Washington
 country_event = {
   id = women_history_events.60
   title = women_history_events.60.t
@@ -3812,7 +3877,7 @@ country_event = {
     name = women_history_events.60.b
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "›sƒ·NSÛv˜"  # Martha Washington
+      name = "›sƒ·NSÛv˜" 	# Martha Washington
       type = diplomat
       culture = american
       discount = yes
@@ -3821,6 +3886,7 @@ country_event = {
     }
   }
 }
+# Elizabeth Wilbraham
 country_event = {
   id = women_history_events.61
   title = women_history_events.61.t
@@ -3859,7 +3925,7 @@ country_event = {
     add_meritocracy_effect = yes
     define_advisor = {
       culture = english
-      name = "OKNƒ‹v·ZS^ÉbU"  # Elizabeth Wilbraham
+      name = "OKNƒ‹v·ZS^ÉbU" 	# Elizabeth Wilbraham
       discount = yes
       type = artist
       skill = 2
@@ -3867,6 +3933,7 @@ country_event = {
     }
   }
 }
+# Anna Bunina
 country_event = {
   id = women_history_events.62
   title = women_history_events.62.t
@@ -3898,7 +3965,7 @@ country_event = {
     name = women_history_events.62.b
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "‰RZ·^RZ"  # Anna Bunina
+      name = "‰RZ·^RZ" 	# Anna Bunina
       culture = ryazanian
       type = artist
       discount = yes
@@ -3907,6 +3974,7 @@ country_event = {
     }
   }
 }
+# Dorothea of Saxe-Lauenburg
 country_event = {
   id = women_history_events.63
   title = women_history_events.63.t
@@ -3934,7 +4002,7 @@ country_event = {
     name = women_history_events.63.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "(„KQîh-³Ri`!X„vY„‰Z"  # Dorothea of Saxe-Lauenburg
+      name = "(„KQîh-³Ri`!X„vY„‰Z" 	# Dorothea of Saxe-Lauenburg
       type = diplomat
       culture = saxon
       discount = yes
@@ -3947,6 +4015,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# Mary of Hungary
 country_event = {
   id = women_history_events.64
   title = women_history_events.64.t
@@ -3984,7 +4053,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "SYr)R„v›sKN"  # Mary of Hungary
+      name = "SYr)R„v›sKN" 	# Mary of Hungary
       culture = hungarian
       discount = yes
       type = diplomat
@@ -3995,8 +4064,8 @@ country_event = {
   option = {
     name = women_history_events.64.b
     define_ruler = {
-      name = "›sKN"  # Mary
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      name = "›sKN" 	# Mary
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       culture = hungarian
       adm = 4
       dip = 5
@@ -4021,6 +4090,7 @@ country_event = {
     }
   }
 }
+# Margaret of Austria, Duchess of Savoy
 country_event = {
   id = women_history_events.65
   title = women_history_events.65.t
@@ -4055,7 +4125,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "eY0W)R„v›s<hKNyr"  # Margaret of Austria
+      name = "eY0W)R„v›s<hKNyr" 	# Margaret of Austria
       discount = yes
       type = diplomat
       culture = austrian
@@ -4066,8 +4136,8 @@ country_event = {
   option = {
     name = women_history_events.65.b
     define_ruler = {
-      name = "›s<hKNyr"  # Margaret
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      name = "›s<hKNyr" 	# Margaret
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       culture = austrian
       adm = 4
       dip = 3
@@ -4092,6 +4162,7 @@ country_event = {
     }
   }
 }
+# Isabella Clara Eugenia
 country_event = {
   id = women_history_events.66
   title = women_history_events.66.t
@@ -4132,7 +4203,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "O(„Éb·KQÉbÉb·2SÑ‘®YšN"  # Isabella Clara Eugenia
+      name = "O(„Éb·KQÉbÉb·2SÑ‘®YšN" 	# Isabella Clara Eugenia
       discount = yes
       culture = castillian
       type = diplomat
@@ -4143,8 +4214,8 @@ country_event = {
   option = {
     name = women_history_events.66.b
     define_ruler = {
-      name = "O(„Éb KQÉbÉb 2SÑ‘®YšN"  # Isabella Clara Eugenia
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      name = "O(„Éb KQÉbÉb 2SÑ‘®YšN" 	# Isabella Clara Eugenia
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       culture = castillian
       adm = 4
       dip = 3
@@ -4169,6 +4240,7 @@ country_event = {
     }
   }
 }
+# Urszula Meyerin
 country_event = {
   id = women_history_events.67
   title = women_history_events.67.t
@@ -4213,7 +4285,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_advisor = {
-      name = "LNS‚Éb·lš6w—g"  # Urszula Meyerin
+      name = "LNS‚Éb·lš6w—g" 	# Urszula Meyerin
       type = diplomat
       culture = bavarian
       discount = yes
@@ -4224,8 +4296,8 @@ country_event = {
   option = {
     name = women_history_events.67.b
     define_ruler = {
-      name = "LNS‚Éb"  # Urszula
-      dynasty = "lš6w—g"  # Meyerin
+      name = "LNS‚Éb" 	# Urszula
+      dynasty = "lš6w—g" 	# Meyerin
       culture = bavarian
       adm = 3
       dip = 4
@@ -4250,6 +4322,7 @@ country_event = {
     }
   }
 }
+# Elzbieta Helena Sieniawska
 country_event = {
   id = women_history_events.68
   title = women_history_events.68.t
@@ -4294,7 +4367,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "1rSåe+RTX·wm&OZ·0Œ<SšN+Y¯eaS"  # Elzbieta Helena Sieniawska
+      name = "1rSåe+RTX·wm&OZ·0Œ<SšN+Y¯eaS" 	# Elzbieta Helena Sieniawska
       culture = polish
       type = diplomat
       discount = yes
@@ -4305,8 +4378,8 @@ country_event = {
   option = {
     name = women_history_events.68.b
     define_ruler = {
-      name = "1rSåe+RTX wm&OZ"  # Elzbieta Helena
-      dynasty = "0Œ<SšN+Y¯eaS"  # Sieniawska
+      name = "1rSåe+RTX wm&OZ" 	# Elzbieta Helena
+      dynasty = "0Œ<SšN+Y¯eaS" 	# Sieniawska
       culture = polish
       adm = 3
       dip = 4
@@ -4331,6 +4404,7 @@ country_event = {
     }
   }
 }
+# Marie Louise Gonzaga
 country_event = {
   id = women_history_events.69
   title = women_history_events.69.t
@@ -4385,7 +4459,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "›sKN·2—fN·ˆQ(„ R"  # Marie Louise Gonzaga
+      name = "›sKN·2—fN·ˆQ(„ R" 	# Marie Louise Gonzaga
       type = statesman
       culture = burgundian
       discount = yes
@@ -4396,8 +4470,8 @@ country_event = {
   option = {
     name = women_history_events.69.b
     define_ruler = {
-      name = "›sKN 2—fN"  # Marie Louise
-      dynasty = "ˆQ(„ R"  # Gonzaga
+      name = "›sKN 2—fN" 	# Marie Louise
+      dynasty = "ˆQ(„ R" 	# Gonzaga
       culture = burgundian
       adm = 4
       dip = 3
@@ -4422,6 +4496,7 @@ country_event = {
     }
   }
 }
+# Maria Carolina of Austria
 country_event = {
   id = women_history_events.70
   title = women_history_events.70.t
@@ -4462,7 +4537,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "›s)RšN aSm3tZ ¯Q ÈT^¯e!X"  # Maria Carolina von Habsburg
+      name = "›s)RšN aSm3tZ ¯Q ÈT^¯e!X" 	# Maria Carolina von Habsburg
       culture = austrian
       type = statesman
       discount = yes
@@ -4473,8 +4548,8 @@ country_event = {
   option = {
     name = women_history_events.70.b
     define_ruler = {
-      name = "›sKNšN·aSm3tZ"  # Maria Carolina
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      name = "›sKNšN·aSm3tZ" 	# Maria Carolina
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       culture = austrian
       adm = 3
       dip = 4
@@ -4499,6 +4574,7 @@ country_event = {
     }
   }
 }
+# Marie Antoinette
 country_event = {
   id = women_history_events.71
   title = women_history_events.71.t
@@ -4526,7 +4602,7 @@ country_event = {
     name = women_history_events.71.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "›sKN·‰RXbæt…Qyr"  # Marie Antoinette
+      name = "›sKN·‰RXbæt…Qyr" 	# Marie Antoinette
       culture = austrian
       type = statesman
       skill = 2
@@ -4541,6 +4617,7 @@ country_event = {
     add_mil_power = 50
   }
 }
+# Anacaona
 country_event = {
   id = women_history_events.72
   title = women_history_events.72.t
@@ -4573,7 +4650,7 @@ country_event = {
     name = women_history_events.72.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "?–ZaSeYZ"  # Anacaona
+      name = "?–ZaSeYZ" 	# Anacaona
       type = statesman
       discount = yes
       culture = arawak
@@ -4587,6 +4664,7 @@ country_event = {
     add_dip_power = 50
   }
 }
+# Barbara of Cilli
 country_event = {
   id = women_history_events.73
   title = women_history_events.73.t
@@ -4617,7 +4695,7 @@ country_event = {
     name = women_history_events.73.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "Ç‘R„v­‚­‚Éb"  # Barbara of Cilli
+      name = "Ç‘R„v­‚­‚Éb" 	# Barbara of Cilli
       discount = yes
       type = statesman
       skill = 2
@@ -4636,6 +4714,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Eleni of Ethiopia
 country_event = {
   id = women_history_events.74
   title = women_history_events.74.t
@@ -4693,7 +4772,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "ÃW^XÄOÔkšN„v1rpQ®Y"  # Eleni of Ethiopia
+      name = "ÃW^XÄOÔkšN„v1rpQ®Y" 	# Eleni of Ethiopia
       type = statesman
       culture = sidamo
       religion = sunni
@@ -4710,8 +4789,8 @@ country_event = {
         has_government_attribute = queen
       }
       define_consort = {
-        name = "1rpQ®Y"  # Eleni
-        dynasty = "ÈTêšN"  # Hadiya
+        name = "1rpQ®Y" 	# Eleni
+        dynasty = "ÈTêšN" 	# Hadiya
         culture = sidamo
         religion = sunni
         adm = 4
@@ -4733,8 +4812,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "1rpQ®Y"  # Eleni
-        dynasty = "ÈTêšN"  # Hadiya
+        name = "1rpQ®Y" 	# Eleni
+        dynasty = "ÈTêšN" 	# Hadiya
         culture = sidamo
         religion = sunni
         adm = 4
@@ -4757,6 +4836,7 @@ country_event = {
     }
   }
 }
+# Tun Fatimah
 country_event = {
   id = women_history_events.75
   title = women_history_events.75.t
@@ -4804,7 +4884,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_advisor = {
-      name = "fe·Õl‚„›s"  # Tun Fatimah
+      name = "fe·Õl‚„›s" 	# Tun Fatimah
       type = army_organiser
       culture = malayan
       discount = yes
@@ -4815,8 +4895,8 @@ country_event = {
   option = {
     name = women_history_events.75.b
     define_ruler = {
-      name = "fe Õl‚„›s"  # Tun Fatimah
-      dynasty = "²R)RiO"  # Srivijaya
+      name = "fe Õl‚„›s" 	# Tun Fatimah
+      dynasty = "²R)RiO" 	# Srivijaya
       culture = malayan
       adm = 3
       dip = 4
@@ -4841,6 +4921,7 @@ country_event = {
     }
   }
 }
+# Khayr al-Nisa Begum
 country_event = {
   id = women_history_events.76
   title = women_history_events.76.t
@@ -4877,7 +4958,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "wmS·®Y(„· RÆY"  # Khayr al-Nisa Begum
+      name = "wmS·®Y(„· RÆY" 	# Khayr al-Nisa Begum
       type = statesman
       culture = mazandarani
       discount = yes
@@ -4888,8 +4969,8 @@ country_event = {
   option = {
     name = women_history_events.76.b
     define_ruler = {
-      name = "wmS ®Y(„  RÆY"  # Khayr al-Nisa Begum
-      dynasty = "(„Õlôu"  # Safavid
+      name = "wmS ®Y(„  RÆY" 	# Khayr al-Nisa Begum
+      dynasty = "(„Õlôu" 	# Safavid 	# Marashi
       culture = mazandarani
       adm = 5
       dip = 4
@@ -4917,6 +4998,7 @@ country_event = {
     }
   }
 }
+# Sophia Alekseyevna
 country_event = {
   id = women_history_events.77
   title = women_history_events.77.t
@@ -4956,7 +5038,7 @@ country_event = {
         }
       }
       define_advisor = {
-        name = "0tòƒZ ?–RKQ0Œ6w+YZ Wüfú‹+Y"  # Sophia Alekseyevna Romanov
+        name = "0tòƒZ ?–RKQ0Œ6w+YZ Wüfú‹+Y" 	# Sophia Alekseyevna Romanov
         culture = russian_new
         discount = yes
         type = statesman
@@ -4966,7 +5048,7 @@ country_event = {
     }
     else = {
       define_advisor = {
-        name = "0tòƒZ ?–RKQ0Œ6w+YZ Wüfú‹+Y"  # Sophia Alekseyevna Romanov
+        name = "0tòƒZ ?–RKQ0Œ6w+YZ Wüfú‹+Y" 	# Sophia Alekseyevna Romanov
         culture = russian
         discount = yes
         type = statesman
@@ -4984,8 +5066,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "0tòƒZ"  # Sophia
-        dynasty = "Wüfú‹+Y"  # Romanov
+        name = "0tòƒZ" 	# Sophia
+        dynasty = "Wüfú‹+Y" 	# Romanov
         culture = russian_new
         adm = 3
         dip = 4
@@ -4995,8 +5077,8 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = "0tòƒZ"  # Sophia
-        dynasty = "Wüfú‹+Y"  # Romanov
+        name = "0tòƒZ" 	# Sophia
+        dynasty = "Wüfú‹+Y" 	# Romanov
         culture = russian
         adm = 3
         dip = 4
@@ -5016,6 +5098,7 @@ country_event = {
     }
   }
 }
+# Madame Tussaud
 country_event = {
   id = women_history_events.78
   title = women_history_events.78.t
@@ -5044,7 +5127,7 @@ country_event = {
     name = women_history_events.78.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "jgƒ+YºN"  # Madame Tussaud
+      name = "jgƒ+YºN" 	# Madame Tussaud
       culture = burgundian
       type = artist
       discount = yes
@@ -5057,6 +5140,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# Queen Pokou
 country_event = {
   id = women_history_events.79
   title = women_history_events.79.t
@@ -5088,7 +5172,7 @@ country_event = {
     name = women_history_events.79.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "âlÑy"  # Pokou
+      name = "âlÑy" 	# Pokou
       type = statesman
       discount = yes
       culture = aka
@@ -5104,6 +5188,7 @@ country_event = {
     }
   }
 }
+# Ratu Hijau
 country_event = {
   id = women_history_events.80
   title = women_history_events.80.t
@@ -5160,7 +5245,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "ÉbşV·‰ RVe"  # Ratu Hijau
+      name = "ÉbşV·‰ RVe" 	# Ratu Hijau
       discount = yes
       culture = malayan
       type = statesman
@@ -5171,8 +5256,8 @@ country_event = {
   option = {
     name = women_history_events.80.b
     define_ruler = {
-      name = "ÉbşV ‰ RVe"  # Ratu Hijau
-      dynasty = "àVpQ·V"  # Inland
+      name = "ÉbşV ‰ RVe" 	# Ratu Hijau
+      dynasty = "àVpQ·V" 	# Inland
       culture = malayan
       adm = 4
       dip = 3
@@ -5202,7 +5287,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_advisor = {
-      name = "ÉbşV·Ôkœ"  # Ratu Biru
+      name = "ÉbşV·Ôkœ" 	# Ratu Biru
       culture = malayan
       type = diplomat
       discount = yes
@@ -5213,8 +5298,8 @@ country_event = {
   option = {
     name = women_history_events.80.e
     define_ruler = {
-      name = "ÉbşV Ôkœ"  # Ratu Biru
-      dynasty = "àVpQ·V"  # Inland
+      name = "ÉbşV Ôkœ" 	# Ratu Biru
+      dynasty = "àVpQ·V" 	# Inland
       culture = malayan
       adm = 3
       dip = 4
@@ -5245,7 +5330,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "ÉbşV·pSäS"  # Ratu Ingu
+      name = "ÉbşV·pSäS" 	# Ratu Ingu
       type = commandant
       culture = malayan
       skill = 2
@@ -5256,8 +5341,8 @@ country_event = {
   option = {
     name = women_history_events.80.g
     define_ruler = {
-      name = "ÉbşV pSäS"  # Ratu Ingu
-      dynasty = "àVpQ·V"  # Inland
+      name = "ÉbşV pSäS" 	# Ratu Ingu
+      dynasty = "àVpQ·V" 	# Inland
       culture = malayan
       adm = 3
       dip = 3
@@ -5282,6 +5367,7 @@ country_event = {
     }
   }
 }
+# Rani Mangammal
 country_event = {
   id = women_history_events.81
   title = women_history_events.81.t
@@ -5321,7 +5407,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "Éb®Y·üf RÆYS"  # Rani Mangammal
+      name = "Éb®Y·üf RÆYS" 	# Rani Mangammal
       culture = tamil
       type = diplomat
       discount = yes
@@ -5332,8 +5418,8 @@ country_event = {
   option = {
     name = women_history_events.81.b
     define_ruler = {
-      name = "Éb®Y üf RÆYS"  # Rani Mangammal
-      dynasty = "±6wæ"  # Nayak
+      name = "Éb®Y üf RÆYS" 	# Rani Mangammal
+      dynasty = "±6wæ" 	# Nayak
       culture = tamil
       adm = 4
       dip = 3
@@ -5358,6 +5444,7 @@ country_event = {
     }
   }
 }
+# Anne Bonny
 country_event = {
   id = women_history_events.82
   title = women_history_events.82.t
@@ -5398,7 +5485,7 @@ country_event = {
     name = women_history_events.82.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "‰R®Y·ZS<S"  # Anne Bonny
+      name = "‰R®Y·ZS<S" 	# Anne Bonny
       type = naval_reformer
       culture = irish
       discount = yes
@@ -5409,7 +5496,7 @@ country_event = {
   option = {
     name = women_history_events.82.b
     define_admiral = {
-      name = "‰R®Y·ZS<S"  # Anne Bonny
+      name = "‰R®Y·ZS<S" 	# Anne Bonny
       shock = 2
       fire = 5
       manuever = 3
@@ -5417,6 +5504,7 @@ country_event = {
     }
   }
 }
+# Lucrezia Borgia
 country_event = {
   id = women_history_events.83
   title = women_history_events.83.t
@@ -5445,7 +5533,7 @@ country_event = {
     name = women_history_events.83.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "bSKQ÷–PŸZ·âl	TšN"  # Lucrezia Borgia
+      name = "bSKQ÷–PŸZ·âl	TšN" 	# Lucrezia Borgia
       culture = umbrian
       discount = yes
       type = statesman
@@ -5458,6 +5546,7 @@ country_event = {
     add_dip_power = 50
   }
 }
+# Nur Jahan
 country_event = {
   id = women_history_events.84
   title = women_history_events.84.t
@@ -5508,7 +5597,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "ªRS·>Wl"  # Nur Jahan
+      name = "ªRS·>Wl" 	# Nur Jahan
       type = statesman
       culture = afghani
       discount = yes
@@ -5519,8 +5608,8 @@ country_event = {
   option = {
     name = women_history_events.84.b
     define_ruler = {
-      name = "ªRS >Wl"  # Nur Jahan
-      dynasty = "^(g?Q"  # Timurid
+      name = "ªRS >Wl" 	# Nur Jahan
+      dynasty = "^(g?Q" 	# Timurid
       culture = afghani
       adm = 3
       dip = 4
@@ -5548,6 +5637,7 @@ country_event = {
     }
   }
 }
+# Mary Read
 country_event = {
   id = women_history_events.85
   title = women_history_events.85.t
@@ -5591,7 +5681,7 @@ country_event = {
   option = {
     name = women_history_events.85.b
     define_admiral = {
-      name = "›sKN·^t·V"  # Mary Read
+      name = "›sKN·^t·V" 	# Mary Read
       shock = 2
       fire = 5
       manuever = 3
@@ -5599,6 +5689,7 @@ country_event = {
     }
   }
 }
+# Mumtaz Mahal
 country_event = {
   id = women_history_events.86
   title = women_history_events.86.t
@@ -5654,6 +5745,7 @@ country_event = {
     }
   }
 }
+# Nanyehi
 country_event = {
   id = women_history_events.87
   title = women_history_events.87.t
@@ -5691,7 +5783,7 @@ country_event = {
     name = women_history_events.87.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "WS6w^"  # Nanyehi
+      name = "WS6w^" 	# Nanyehi
       type = diplomat
       culture = cherokee
       discount = yes
@@ -5707,6 +5799,7 @@ country_event = {
     }
   }
 }
+# Vendela Skytte
 country_event = {
   id = women_history_events.88
   title = women_history_events.88.t
@@ -5737,7 +5830,7 @@ country_event = {
     name = women_history_events.88.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = ")n·VÉb·¯eNYyr"  # Vendela Skytte
+      name = ")n·VÉb·¯eNYyr" 	# Vendela Skytte
       type = statesman
       culture = swedish
       discount = yes
@@ -5753,6 +5846,7 @@ country_event = {
     }
   }
 }
+# Ahilyabai Holkar
 country_event = {
   id = women_history_events.89
   title = women_history_events.89.t
@@ -5795,7 +5889,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "?–œUšNÜb·jŒaS"  # Ahilyabai Holkar
+      name = "?–œUšNÜb·jŒaS" 	# Ahilyabai Holkar
       culture = marathi
       discount = yes
       type = commandant
@@ -5809,7 +5903,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_general = {
-      name = "?–œUšNÜb·jŒaS"  # Ahilyabai Holkar
+      name = "?–œUšNÜb·jŒaS" 	# Ahilyabai Holkar
       shock = 3
       fire = 4
       manuever = 1
@@ -5820,8 +5914,8 @@ country_event = {
   option = {
     name = women_history_events.89.c
     define_ruler = {
-      name = "?–œUšNÜb"  # Ahilyabai
-      dynasty = "jŒaS"  # Holkar
+      name = "?–œUšNÜb" 	# Ahilyabai
+      dynasty = "jŒaS" 	# Holkar
       culture = marathi
       ADM = 6
       DIP = 4
@@ -5847,6 +5941,7 @@ country_event = {
     }
   }
 }
+# Jahanzeb Banu Begum
 country_event = {
   id = women_history_events.90
   title = women_history_events.90.t
@@ -5875,7 +5970,7 @@ country_event = {
     add_meritocracy_effect = yes
     define_advisor = {
       discount = yes
-      name = "NbWlR^·ôTªR·äSÆY"  # Jahanzeb Banu Begum
+      name = "NbWlR^·ôTªR·äSÆY" 	# Jahanzeb Banu Begum
       type = diplomat
       skill = 2
       female = yes
@@ -5884,7 +5979,7 @@ country_event = {
   option = {
     name = women_history_events.90.b
     define_general = {
-      name = "NbWlR^·ôTªR·äSÆY"  # Jahanzeb Banu Begum
+      name = "NbWlR^·ôTªR·äSÆY" 	# Jahanzeb Banu Begum
       shock = 4
       fire = 3
       manuever = 3
@@ -5893,6 +5988,7 @@ country_event = {
     }
   }
 }
+# Ching Shih
 country_event = {
   id = women_history_events.91
   title = women_history_events.91.t
@@ -5929,7 +6025,7 @@ country_event = {
     name = women_history_events.91.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "Ñl"  # Ching Shih
+      name = "Ñl" 	# Ching Shih
       culture = chihan
       type = naval_reformer
       discount = yes
@@ -5940,7 +6036,7 @@ country_event = {
   option = {
     name = women_history_events.91.b
     define_admiral = {
-      name = "Ñl"  # Ching Shih
+      name = "Ñl" 	# Ching Shih
       shock = 3
       fire = 4
       manuever = 3
@@ -5948,6 +6044,7 @@ country_event = {
     }
   }
 }
+# Mentewab
 country_event = {
   id = women_history_events.92
   title = women_history_events.92.t
@@ -5982,7 +6079,7 @@ country_event = {
     add_dip_power = 100
     add_mil_power = 100
     define_advisor = {
-      name = "è•yrætôT"  # Mentewab
+      name = "è•yrætôT" 	# Mentewab
       type = statesman
       culture = amhara
       discount = yes
@@ -5993,8 +6090,8 @@ country_event = {
   option = {
     name = women_history_events.92.b
     define_ruler = {
-      name = "è•yrætôT"  # Mentewab
-      dynasty = "NbWè•"  # Solomonid
+      name = "è•yrætôT" 	# Mentewab
+      dynasty = "NbWè•" 	# Solomonid
       culture = amhara
       adm = 3
       dip = 4
@@ -6020,6 +6117,7 @@ country_event = {
     }
   }
 }
+# Safiye Sultan
 country_event = {
   id = women_history_events.93
   title = women_history_events.93.t
@@ -6053,7 +6151,7 @@ country_event = {
     name = women_history_events.93.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "ƒòƒ6wÏ‚9N"  # Safiye Sultan
+      name = "ƒòƒ6wÏ‚9N" 	# Safiye Sultan
       culture = albanian
       religion = sunni
       type = treasurer
@@ -6065,7 +6163,7 @@ country_event = {
   option = {
     name = women_history_events.93.b
     define_advisor = {
-      name = "ƒòƒ6wÏ‚9N"  # Safiye Sultan
+      name = "ƒòƒ6wÏ‚9N" 	# Safiye Sultan
       type = diplomat
       culture = albanian
       religion = sunni
@@ -6075,6 +6173,7 @@ country_event = {
     }
   }
 }
+# Angelica Kauffman
 country_event = {
   id = women_history_events.94
   title = women_history_events.94.t
@@ -6107,7 +6206,7 @@ country_event = {
     name = women_history_events.94.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "‰Rpg‰ƒaS·w+Yüf"  # Angelica Kauffman
+      name = "‰Rpg‰ƒaS·w+Yüf" 	# Angelica Kauffman
       culture = swiss
       type = artist
       skill = 2
@@ -6121,6 +6220,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# Elizabeth of Russia
 country_event = {
   id = women_history_events.95
   title = women_history_events.95.t
@@ -6160,7 +6260,7 @@ country_event = {
         }
       }
       define_advisor = {
-        name = "OKNƒ‹v Wüfú‹+Y"  # Elizaveta Romanov
+        name = "OKNƒ‹v Wüfú‹+Y" 	# Elizaveta Romanov
         type = statesman
         discount = yes
         culture = russian_new
@@ -6170,7 +6270,7 @@ country_event = {
     }
     else = {
       define_advisor = {
-        name = "OKNƒ‹v Wüfú‹+Y"  # Elizaveta Romanov
+        name = "OKNƒ‹v Wüfú‹+Y" 	# Elizaveta Romanov
         type = statesman
         discount = yes
         culture = russian
@@ -6188,8 +6288,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "OKNƒ‹v"  # Elizaveta
-        dynasty = "Wüfú‹+Y"  # Romanov
+        name = "OKNƒ‹v" 	# Elizaveta
+        dynasty = "Wüfú‹+Y" 	# Romanov
         culture = russian_new
         adm = 3
         dip = 4
@@ -6199,8 +6299,8 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = "OKNƒ‹v"  # Elizaveta
-        dynasty = "Wüfú‹+Y"  # Romanov
+        name = "OKNƒ‹v" 	# Elizaveta
+        dynasty = "Wüfú‹+Y" 	# Romanov
         culture = russian
         adm = 3
         dip = 4
@@ -6227,6 +6327,7 @@ country_event = {
     }
   }
 }
+# Anna of Russia
 country_event = {
   id = women_history_events.96
   title = women_history_events.96.t
@@ -6284,7 +6385,7 @@ country_event = {
         }
       }
       define_advisor = {
-        name = "ÄOW¯e„v‰RZ"  # Anna of Russia
+        name = "ÄOW¯e„v‰RZ" 	# Anna of Russia
         culture = russian_new
         type = statesman
         skill = 2
@@ -6294,7 +6395,7 @@ country_event = {
     }
     else = {
       define_advisor = {
-        name = "ÄOW¯e„v‰RZ"  # Anna of Russia
+        name = "ÄOW¯e„v‰RZ" 	# Anna of Russia
         culture = russian
         type = statesman
         skill = 2
@@ -6312,8 +6413,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "‰RZ"  # Anna
-        dynasty = "Wüfú‹+Y"  # Romanov
+        name = "‰RZ" 	# Anna
+        dynasty = "Wüfú‹+Y" 	# Romanov
         culture = russian_new
         adm = 3
         dip = 3
@@ -6323,8 +6424,8 @@ country_event = {
     }
     else = {
       define_ruler = {
-        name = "‰RZ"  # Anna
-        dynasty = "Wüfú‹+Y"  # Romanov
+        name = "‰RZ" 	# Anna
+        dynasty = "Wüfú‹+Y" 	# Romanov
         culture = russian
         adm = 3
         dip = 3
@@ -6350,6 +6451,7 @@ country_event = {
     }
   }
 }
+# Nurbanu Sultan
 country_event = {
   id = women_history_events.97
   title = women_history_events.97.t
@@ -6388,7 +6490,7 @@ country_event = {
     add_mil_power = 100
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "ªRSôTªRÏ‚9N"  # Nurbanu Sultan
+      name = "ªRSôTªRÏ‚9N" 	# Nurbanu Sultan
       culture = greek
       religion = sunni
       type = statesman
@@ -6414,8 +6516,8 @@ country_event = {
         }
       }
       define_ruler = {
-        name = "ªRSôTªRÏ‚9N"  # Nurbanu Sultan
-        dynasty = "eY¯eüfeYbS"  # Osmanoglu
+        name = "ªRSôTªRÏ‚9N" 	# Nurbanu Sultan
+        dynasty = "eY¯eüfeYbS" 	# Osmanoglu
         culture = greek
         religion = sunni
         adm = 4
@@ -6436,7 +6538,7 @@ country_event = {
         has_government_attribute = queen
       }
       define_consort = {
-        name = "ªRSôTªRÏ‚9N"  # Nurbanu Sultan
+        name = "ªRSôTªRÏ‚9N" 	# Nurbanu Sultan
         adm = 4
         culture = greek
         religion = sunni
@@ -6453,6 +6555,7 @@ country_event = {
     }
   }
 }
+# Heo Nanseolheon
 country_event = {
   id = women_history_events.98
   title = women_history_events.98.t
@@ -6486,7 +6589,7 @@ country_event = {
         }
       }
       define_advisor = {
-        name = "¸‹pQê–i"  # Heo Nanseolheon
+        name = "¸‹pQê–i" 	# Heo Nanseolheon
         discount = yes
         culture = korean_new
         type = artist
@@ -6496,7 +6599,7 @@ country_event = {
     }
     else = {
       define_advisor = {
-        name = "¸‹pQê–i"  # Heo Nanseolheon
+        name = "¸‹pQê–i" 	# Heo Nanseolheon
         discount = yes
         culture = korean
         type = artist
@@ -6513,6 +6616,7 @@ country_event = {
     }
   }
 }
+# Mariam-uz-Zamani
 country_event = {
   id = women_history_events.99
   title = women_history_events.99.t
@@ -6540,7 +6644,7 @@ country_event = {
     name = women_history_events.99.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "lšÌ‘f-LNyQ-Nblš<S"  # Mariam-uz-Zamani
+      name = "lšÌ‘f-LNyQ-Nblš<S" 	# Mariam-uz-Zamani
       culture = kanauji
       discount = yes
       type = treasurer
@@ -6556,6 +6660,7 @@ country_event = {
     }
   }
 }
+# Franciszka Urszula Radziwillowa
 country_event = {
   id = women_history_events.100
   title = women_history_events.100.t
@@ -6587,7 +6692,7 @@ country_event = {
     name = women_history_events.100.a
     add_meritocracy_effect = yes
     define_advisor = {
-      name = "Vg‰¯eaS·LNÏ‚Éb·ÉbPŸôumZ"  # Franciszka Urszula Radziwillowa
+      name = "Vg‰¯eaS·LNÏ‚Éb·ÉbPŸôumZ" 	# Franciszka Urszula Radziwillowa
       culture = polish
       discount = yes
       type = artist

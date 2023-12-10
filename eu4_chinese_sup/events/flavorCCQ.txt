@@ -1,5 +1,10 @@
+########################################
+# Events for Calchaqui
+# written by Sara Wendel-Örtqvist
+########################################
 namespace = flavor_ccq
 normal_or_historical_nations = yes
+# Inca Hualpa
 country_event = {
   id = flavor_ccq.1
   title = flavor_ccq.1.t
@@ -14,6 +19,8 @@ country_event = {
       }
       war_with = ROOT
     }
+    #is_year = 1650
+    #NOT = { is_year = 1670 }
     any_neighbor_country = {
       capital_scope = {
         continent = europe
@@ -31,7 +38,7 @@ country_event = {
     name = flavor_ccq.1.a
     add_stability = -1
     define_general = {
-      name = "pS R„váwS^"  # Inca Hualpa
+      name = "pS R„váwS^" 	# Inca Hualpa
       shock = 1
       fire = 3
       manuever = 2

@@ -1,4 +1,5 @@
 namespace = ming_crisis
+# Mandate Questioned
 country_event = {
   id = ming_crisis.1
   title = "ming_crisis.1.t"
@@ -67,6 +68,7 @@ country_event = {
     add_corruption = 5
   }
 }
+# The Mandate Restored
 country_event = {
   id = ming_crisis.2
   title = "ming_crisis.2.t"
@@ -92,6 +94,7 @@ country_event = {
     }
   }
 }
+# Li Zicheng's rebellion and the Shun dynasty
 country_event = {
   id = ming_crisis.3
   title = "ming_crisis.3.t"
@@ -147,6 +150,7 @@ country_event = {
         clear_rebels = yes
       }
       every_owned_province = {
+        #get rid of bordergore from random Mongolian provinces
         limit = {
           region = mongolia_region
           any_neighbor_province = {
@@ -204,8 +208,8 @@ country_event = {
     add_mandate = -10
     CSH = {
       define_ruler = {
-        name = "ÍÅb"  # Zicheng
-        dynasty = "Ng"  # Li
+        name = "ÍÅb" 	# Zicheng
+        dynasty = "Ng" 	# Li
       }
       add_yearly_manpower = 15
       add_years_of_income = 15
@@ -237,8 +241,8 @@ country_event = {
     add_mandate = -10
     CSH = {
       define_ruler = {
-        name = "ÍÅb"  # Zicheng
-        dynasty = "Ng"  # Li
+        name = "ÍÅb" 	# Zicheng
+        dynasty = "Ng" 	# Li
       }
       add_yearly_manpower = 15
       add_years_of_income = 15
@@ -271,9 +275,11 @@ country_event = {
               has_reform = steppe_horde
               total_own_and_non_tributary_subject_development = 300
               is_subject = no
+              #NOT = { truce_with = ROOT }
               NOT = {
                 alliance_with = ROOT
               }
+              #NOT = { is_subject_of = ROOT }
             }
           }
           random_neighbor_country = {
@@ -281,9 +287,11 @@ country_event = {
               has_reform = steppe_horde
               total_own_and_non_tributary_subject_development = 300
               is_subject = no
+              #NOT = { truce_with = ROOT }
               NOT = {
                 alliance_with = ROOT
               }
+              #NOT = { is_subject_of = ROOT }
             }
             country_event = {
               id = ming_crisis.9
@@ -312,6 +320,7 @@ country_event = {
     }
   }
 }
+# Yunnan Protectorate
 country_event = {
   id = ming_crisis.4
   title = "ming_crisis.4.t"
@@ -437,6 +446,7 @@ country_event = {
     }
   }
 }
+# Losing Control in the South
 country_event = {
   id = ming_crisis.5
   title = "ming_crisis.5.t"
@@ -722,6 +732,7 @@ country_event = {
     }
   }
 }
+# Peasants revolt in [area]
 country_event = {
   id = ming_crisis.6
   title = "ming_crisis.6.t"
@@ -781,6 +792,7 @@ country_event = {
     }
   }
 }
+# Gatekeeper for ending depending on whether you kept the Mandate or not
 country_event = {
   id = ming_crisis.7
   title = none
@@ -810,6 +822,7 @@ country_event = {
   }
   option = {}
 }
+# The Mandate Restored
 country_event = {
   id = ming_crisis.8
   title = "ming_crisis.8.t"
@@ -831,6 +844,7 @@ country_event = {
     add_stability = 1
   }
 }
+# Manchu/Nomadic Intervention on Shun
 country_event = {
   id = ming_crisis.9
   title = "ming_crisis.9.t"
@@ -988,6 +1002,7 @@ country_event = {
     }
   }
 }
+# Ming falls apart!
 country_event = {
   id = ming_crisis.11
   title = "ming_crisis.11.t"

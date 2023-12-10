@@ -1,5 +1,10 @@
+########################################
+# Events for Milano
+# written by Johan Andersson
+########################################
 namespace = flavor_mlo
 normal_or_historical_nations = yes
+# The Ambrosian Republic
 country_event = {
   id = flavor_mlo.1
   title = flavor_mlo.1.t
@@ -61,6 +66,7 @@ country_event = {
     }
   }
 }
+# Low tradition, Guelphs vs Ghibellines
 country_event = {
   id = flavor_mlo.2
   title = flavor_mlo.2.t
@@ -97,6 +103,7 @@ country_event = {
     }
   }
 }
+# Ospedale Maggiore
 country_event = {
   id = flavor_mlo.3
   title = flavor_mlo.3.t
@@ -126,6 +133,7 @@ country_event = {
     }
   }
 }
+# Peace of Lodi
 country_event = {
   id = flavor_mlo.4
   title = flavor_mlo.4.t
@@ -202,6 +210,7 @@ country_event = {
     add_mil_power = 10
   }
 }
+# For the other countries
 country_event = {
   id = flavor_mlo.5
   title = flavor_mlo.5.t
@@ -236,6 +245,7 @@ country_event = {
     }
   }
 }
+# Niccolo Macchiavelli
 country_event = {
   id = flavor_mlo.6
   title = flavor_mlo.6.t
@@ -279,7 +289,7 @@ country_event = {
     define_advisor = {
       type = philosopher
       culture = tuscan
-      name = "<SÑym·lšúWÅ–ôu)R"  # Niccolò Machiavelli
+      name = "<SÑym·lšúWÅ–ôu)R" 	# Niccolò Machiavelli
       discount = yes
       location = 116
       skill = 2
@@ -298,7 +308,7 @@ country_event = {
     }
     define_advisor = {
       type = statesman
-      name = "<SÑym·lšúWÅ–ôu)R"  # Niccolò Machiavelli
+      name = "<SÑym·lšúWÅ–ôu)R" 	# Niccolò Machiavelli
       culture = tuscan
       discount = yes
       location = 116
@@ -307,6 +317,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The Prince
 country_event = {
   id = flavor_mlo.7
   title = flavor_mlo.7.t
@@ -355,6 +366,7 @@ country_event = {
     }
   }
 }
+# Praise from Machiavelli
 country_event = {
   id = flavor_mlo.8
   title = flavor_mlo.8.t
@@ -367,6 +379,7 @@ country_event = {
     add_dip_power = 50
   }
 }
+# Leonardo da Vinci
 country_event = {
   id = flavor_mlo.9
   title = flavor_mlo.9.t
@@ -390,7 +403,7 @@ country_event = {
     name = flavor_mlo.9.a
     define_advisor = {
       type = natural_scientist
-      name = "ReY³uY·¾·¬‚GY"  # Leonardo da Vinci
+      name = "ReY³uY·¾·¬‚GY" 	# Leonardo da Vinci
       culture = tuscan
       location = 104
       discount = yes
@@ -401,6 +414,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# The centre of fashion
 country_event = {
   id = flavor_mlo.10
   title = flavor_mlo.10.t
@@ -426,6 +440,7 @@ country_event = {
     }
   }
 }
+# Milano and Swiss Mercenaries
 country_event = {
   id = flavor_mlo.11
   title = flavor_mlo.11.t
@@ -445,7 +460,7 @@ country_event = {
     }
     NOT = {
       num_of_cities = FRA
-    }
+    } 	# france must be a bit bigger.
   }
   mean_time_to_happen = {
     months = 1
@@ -458,7 +473,12 @@ country_event = {
     }
   }
 }
+###########################################
+# More Events for Milano
+# written and scripted by Pierre du Plessis
+###########################################
 namespace = new_flavour_mlo
+# Silk in Como?
 province_event = {
   id = new_flavour_mlo.15
   title = new_flavour_mlo.15.name
@@ -490,7 +510,7 @@ province_event = {
     }
   }
   option = {
-    name = new_flavour_mlo.15.b
+    name = new_flavour_mlo.15.b 	# Channel his inventive energies elsewhere.
     owner = {
       if = {
         limit = {

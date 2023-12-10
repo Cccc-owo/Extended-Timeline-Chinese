@@ -1,5 +1,10 @@
+########################################
+# Events for The Mamelukes
+# written by Johan Andersson
+########################################
 namespace = flavor_mam
 normal_or_historical_nations = yes
+# Turks take Constantinople
 country_event = {
   id = flavor_mam.1
   title = flavor_mam.1.t
@@ -10,15 +15,15 @@ country_event = {
     tag = MAM
     NOT = {
       is_rival = TUR
-    }
+    } 	# Ottomans are not our rival.
     TUR = {
       owns = 151
-    }
+    } 	# Constantinople
     151 = {
       NOT = {
         months_since_defection = 24
       }
-    }
+    } 	# within 2 years.
   }
   mean_time_to_happen = {
     months = 7
@@ -43,6 +48,7 @@ country_event = {
     }
   }
 }
+#The Public works of Cairo
 country_event = {
   id = flavor_mam.2
   title = flavor_mam.2.t
@@ -54,7 +60,7 @@ country_event = {
       AND = {
         tag = MAM
         is_year = 1457
-        owns = 361
+        owns = 361 	# we have to own cairo
         NOT = {
           is_year = 1459
         }
@@ -82,6 +88,7 @@ country_event = {
     }
   }
 }
+# Install a vassal ruler on Cyprus... 'James II'
 country_event = {
   id = flavor_mam.3
   title = flavor_mam.3.t
@@ -131,6 +138,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Cyprus response
 country_event = {
   id = flavor_mam.4
   title = flavor_mam.4.t
@@ -138,7 +146,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_mam.4.a
+    name = flavor_mam.4.a 	# Accept James as ruler.
     MAM = {
       country_event = {
         id = flavor_mam.5
@@ -159,12 +167,12 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "Å–KQ"  # Jacques
-      dynasty = "·V T‰<Sf"  # de Lusignan
+      name = "Å–KQ" 	# Jacques
+      dynasty = "·V T‰<Sf" 	# de Lusignan
     }
   }
   option = {
-    name = flavor_mam.4.b
+    name = flavor_mam.4.b 	# Bribe the Mamelukes
     ai_chance = {
       factor = 0
     }
@@ -179,7 +187,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mam.4.c
+    name = flavor_mam.4.c 	# Refuse the demands!
     ai_chance = {
       factor = 0
     }
@@ -198,6 +206,7 @@ country_event = {
     }
   }
 }
+# CYP has installed him
 country_event = {
   id = flavor_mam.5
   title = flavor_mam.5.t
@@ -216,6 +225,7 @@ country_event = {
     add_prestige = 20
   }
 }
+# CYP bribes us
 country_event = {
   id = flavor_mam.6
   title = flavor_mam.6.t
@@ -228,6 +238,7 @@ country_event = {
     add_prestige = 5
   }
 }
+# CYP confronts us
 country_event = {
   id = flavor_mam.7
   title = flavor_mam.7.t
@@ -239,6 +250,7 @@ country_event = {
     add_claim = 321
   }
 }
+# Ibn Taghribirdi
 country_event = {
   id = flavor_mam.8
   title = flavor_mam.8.t
@@ -268,6 +280,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Nobility demands
 country_event = {
   id = flavor_mam.9
   title = flavor_mam.9.t
@@ -296,6 +309,7 @@ country_event = {
     }
   }
 }
+# Fire in Medina
 country_event = {
   id = flavor_mam.10
   title = flavor_mam.10.t
@@ -324,6 +338,7 @@ country_event = {
     add_legitimacy = -5
   }
 }
+# Spanish friends...
 country_event = {
   id = flavor_mam.11
   title = flavor_mam.11.t
@@ -357,15 +372,16 @@ country_event = {
       truce_with = SPA
     }
     TUR = {
-      owns = 141
-      owns = 151
-      owns = 146
+      owns = 141 	# serbia
+      owns = 151 	# constantinople
+      owns = 146 	# athens
     }
+    #if spain exists and have an interest in the med..
     exists = SPA
     SPA = {
-      owns = 333
-      owns = 213
-      owns = 126
+      owns = 333 	#  baleares
+      owns = 213 	#  barcelona
+      owns = 126 	#  malta
     }
   }
   mean_time_to_happen = {
@@ -386,6 +402,7 @@ country_event = {
     }
   }
 }
+# SPA gets to know it...
 country_event = {
   id = flavor_mam.12
   title = flavor_mam.12.t
@@ -402,6 +419,7 @@ country_event = {
     }
   }
 }
+# Plague in Cairo
 country_event = {
   id = flavor_mam.13
   title = flavor_mam.13.t
@@ -426,6 +444,7 @@ country_event = {
     }
   }
 }
+#Revenue Administration
 country_event = {
   id = flavor_mam.14
   title = flavor_mam.14.t
@@ -469,6 +488,7 @@ country_event = {
     add_years_of_income = 0.10
   }
 }
+# Portugese - Mamluk - Trade Conflict
 country_event = {
   id = flavor_mam.15
   title = flavor_mam.15.t
@@ -482,11 +502,12 @@ country_event = {
     manpower_percentage = 0.5
     owns = 2315
     4346 = {
+      #Gulf of Aden
       is_strongest_trade_power = POR
     }
     NOT = {
       num_of_light_ship = POR
-    }
+    } 	#  we have to have less lightships.
   }
   mean_time_to_happen = {
     months = 3
@@ -537,6 +558,7 @@ country_event = {
     }
   }
 }
+# POR gets a cb!
 country_event = {
   id = flavor_mam.16
   title = flavor_mam.16.t
@@ -553,6 +575,7 @@ country_event = {
     }
   }
 }
+# The anti-ottoman coalition of Shah Ismail
 country_event = {
   id = flavor_mam.17
   title = flavor_mam.17.t
@@ -595,9 +618,9 @@ country_event = {
       }
     }
     TUR = {
-      owns = 141
-      owns = 151
-      owns = 146
+      owns = 141 	#  Serbia
+      owns = 151 	#  Constantinople
+      owns = 146 	#  Athens
     }
     TUR = {
       NOT = {
@@ -638,6 +661,7 @@ country_event = {
     add_piety = 0.05
   }
 }
+# Emissaries going through Mamelukes, we can decide
 country_event = {
   id = flavor_mam.18
   title = flavor_mam.18.t
@@ -664,6 +688,7 @@ country_event = {
     add_piety = 0.05
   }
 }
+# Venice response
 country_event = {
   id = flavor_mam.19
   title = flavor_mam.19.t
@@ -690,6 +715,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# MAM, final decision
 country_event = {
   id = flavor_mam.20
   title = flavor_mam.20.t
@@ -738,6 +764,7 @@ country_event = {
     add_piety = 0.05
   }
 }
+# Inform new coalition members
 country_event = {
   id = flavor_mam.21
   title = flavor_mam.21.t
@@ -749,6 +776,7 @@ country_event = {
     add_prestige = 5
   }
 }
+# Turkey gets chance to eliminate them for good
 country_event = {
   id = flavor_mam.22
   title = flavor_mam.22.t
@@ -774,6 +802,7 @@ country_event = {
     add_war_exhaustion = -5
   }
 }
+# The Holy Cities
 country_event = {
   id = flavor_mam.23
   title = flavor_mam.23.t
@@ -839,6 +868,8 @@ country_event = {
     }
   }
 }
+#1.36
+# 
 country_event = {
   id = flavor_mam.100
   title = flavor_mam.100.t
@@ -915,6 +946,7 @@ country_event = {
     add_navy_tradition = 10
   }
 }
+#Renovating the Zahiriyya Library
 country_event = {
   id = flavor_mam.101
   title = flavor_mam.101.t
@@ -943,6 +975,7 @@ country_event = {
     }
   }
 }
+#The Grain Trade in Egypt
 country_event = {
   id = flavor_mam.102
   title = flavor_mam.102.t
@@ -959,6 +992,7 @@ country_event = {
         }
         remove_province_modifier = nile_estuary_modifier
         add_province_modifier = {
+          #TODO add in scripted trigger
           name = expanded_nile_estuary_modifier
           duration = -1
         }
@@ -986,6 +1020,7 @@ country_event = {
     }
   }
 }
+#The Administration of the Mamluk Empire
 country_event = {
   id = flavor_mam.103
   title = flavor_mam.103.t
@@ -1058,6 +1093,7 @@ country_event = {
     add_government_reform = egyptian_government_reform
   }
 }
+#The Waqf of [Root.Monarch.GetName]
 country_event = {
   id = flavor_mam.104
   title = flavor_mam.104.t
@@ -1155,6 +1191,7 @@ country_event = {
     }
   }
 }
+#Coffea Arabica
 country_event = {
   id = flavor_mam.105
   title = flavor_mam.105.t
@@ -1185,6 +1222,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Beacons of Gonder
   id = flavor_mam.106
   title = flavor_mam.106.t
   desc = flavor_mam.106.d
@@ -1265,6 +1303,7 @@ country_event = {
   }
 }
 country_event = {
+  #A Competent Ethiopian Noble
   id = flavor_mam.107
   title = flavor_mam.107.t
   desc = flavor_mam.107.d
@@ -1289,6 +1328,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Many Capitals of the Ethiopians
   id = flavor_mam.108
   title = flavor_mam.108.t
   desc = flavor_mam.108.d
@@ -1328,6 +1368,7 @@ country_event = {
   }
 }
 country_event = {
+  #Coptic Monasteries Flourish
   id = flavor_mam.109
   title = flavor_mam.109.t
   desc = flavor_mam.109.d
@@ -1377,6 +1418,7 @@ country_event = {
   }
 }
 country_event = {
+  #Ethiopian Recruits in the Army
   id = flavor_mam.110
   title = flavor_mam.110.t
   desc = flavor_mam.110.d
@@ -1399,6 +1441,7 @@ country_event = {
   }
 }
 country_event = {
+  #Administrating the Northern Territories
   id = flavor_mam.111
   title = flavor_mam.111.t
   desc = flavor_mam.111.d
@@ -1442,6 +1485,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Heart of an Empire
   id = flavor_mam.112
   title = flavor_mam.112.t
   desc = flavor_mam.112.d
@@ -1486,6 +1530,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Dar al-Makhzen
   id = flavor_mam.113
   title = flavor_mam.113.t
   desc = flavor_mam.113.d
@@ -1522,6 +1567,7 @@ country_event = {
   }
 }
 country_event = {
+  #Architecture in Safavid Persia
   id = flavor_mam.114
   title = flavor_mam.114.t
   desc = flavor_mam.114.d
@@ -1550,6 +1596,7 @@ country_event = {
   }
 }
 country_event = {
+  #Construction Commences in [4316.GetName]
   id = flavor_mam.115
   title = flavor_mam.115.t
   desc = flavor_mam.115.d
@@ -1575,6 +1622,7 @@ country_event = {
     }
   }
 }
+# Extension of Coffee Monopoly
 country_event = {
   id = flavor_mam.116
   title = flavor_mam.116.t

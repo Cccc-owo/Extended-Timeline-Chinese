@@ -1,5 +1,9 @@
+########################################
+# Major Flavor Events                  #
+########################################
 namespace = flavor_fra
 normal_or_historical_nations = yes
+# The Birth of a Permanent Taxation System
 country_event = {
   id = flavor_fra.9100
   title = "flavor_fra.EVTNAME9100"
@@ -17,6 +21,7 @@ country_event = {
     months = 300
   }
   option = {
+    # Issue it
     name = "flavor_fra.EVTOPTA9100"
     if = {
       limit = {
@@ -47,6 +52,7 @@ country_event = {
     }
   }
 }
+# The End of the Hundred Years War
 country_event = {
   id = flavor_fra.9104
   title = "flavor_fra.EVTNAME9104"
@@ -133,11 +139,13 @@ country_event = {
     }
   }
   option = {
+    # Time to build a stronger nation
     name = "flavor_fra.EVTOPTA3104"
     add_stability_or_adm_power = yes
     add_adm_power = 50
   }
 }
+# The Inheritance of Anjou
 country_event = {
   id = flavor_fra.3105
   title = "flavor_fra.EVTNAME3105"
@@ -175,8 +183,8 @@ country_event = {
       }
     }
     OR = {
-      dynasty = "∑V ÊtbSÊt"  # de Valois
-      dynasty = "∑V âR9É"  # d'Anjou
+      dynasty = "∑V ÊtbSÊt" 	# de Valois
+      dynasty = "∑V âR9É" 	# d'Anjou
     }
     any_country = {
       OR = {
@@ -201,6 +209,7 @@ country_event = {
     months = 300
   }
   option = {
+    # Let us claim what is rightfully Ours!
     name = "flavor_fra.EVTOPTA3105"
     if = {
       limit = {
@@ -263,6 +272,7 @@ country_event = {
     set_country_flag = claimed_naples
   }
   option = {
+    # Let us drop our claims for good!
     name = "flavor_fra.EVTOPTB3105"
     every_known_country = {
       limit = {
@@ -290,6 +300,7 @@ country_event = {
     }
   }
 }
+# The State take control of the Guilds
 country_event = {
   id = flavor_fra.3106
   title = "flavor_fra.EVTNAME3106"
@@ -306,6 +317,7 @@ country_event = {
     months = 300
   }
   option = {
+    # Take Control of the Guilds
     name = "flavor_fra.EVTOPTA3106"
     if = {
       limit = {
@@ -318,16 +330,19 @@ country_event = {
     add_years_of_income = 0.33
   }
   option = {
+    # Do not mess with the Guilds
     name = "flavor_fra.EVTOPTB3106"
     add_stability_or_adm_power = yes
   }
   option = {
+    # Give more control to the Guilds
     name = "flavor_fra.EVTOPTC3106"
     add_adm_power = 25
     add_dip_power = 25
     add_mil_power = 25
   }
 }
+# Le Tellier and Louvois
 country_event = {
   id = 3114
   title = "flavor_fra.EVTNAME3114"
@@ -345,6 +360,7 @@ country_event = {
     months = 200
   }
   option = {
+    # An Excellent Military Specialist!
     name = "flavor_fra.EVTOPTA3114"
     trigger = {
       NOT = {
@@ -355,12 +371,13 @@ country_event = {
     define_advisor = {
       type = army_reformer
       culture = cosmopolitan_french
-      name = "“R l)R6w"  # Le Tellier
+      name = "“R l)R6w" 	# Le Tellier
       discount = yes
       skill = 2
     }
   }
   option = {
+    # An Excellent Military Specialist!
     name = "flavor_fra.EVTOPTA3114"
     trigger = {
       is_year = 1666
@@ -368,13 +385,14 @@ country_event = {
     add_mil_power = 50
     define_advisor = {
       type = army_reformer
-      name = "bSèyÊt"  # Louvois
+      name = "bSèyÊt" 	# Louvois
       culture = cosmopolitan_french
       discount = yes
       skill = 2
     }
   }
 }
+# Samuel de Champlain and the Hurons
 country_event = {
   id = flavor_fra.3115
   title = "flavor_fra.EVTNAME3115"
@@ -403,6 +421,7 @@ country_event = {
     months = 100
   }
   option = {
+    # Let us befriend the Hurons
     name = "flavor_fra.EVTOPTA3115"
     HUR = {
       add_opinion = {
@@ -412,6 +431,7 @@ country_event = {
     }
   }
   option = {
+    # Let us befriend the Iroquois
     name = "flavor_fra.EVTOPTB3115"
     IRO = {
       add_opinion = {
@@ -421,6 +441,7 @@ country_event = {
     }
   }
 }
+# Revolt in France
 country_event = {
   id = flavor_fra.3118
   title = "flavor_fra.EVTNAME3118"
@@ -462,6 +483,7 @@ country_event = {
     }
   }
   option = {
+    # Treat the Noble Rebels with Dignity
     name = "flavor_fra.EVTOPTA3118"
     random_owned_province = {
       limit = {
@@ -476,6 +498,7 @@ country_event = {
     }
   }
   option = {
+    # Kill them and expropriate their land
     name = "flavor_fra.EVTOPTB3118"
     add_years_of_income = 0.5
     random_owned_province = {
@@ -491,6 +514,7 @@ country_event = {
     }
   }
 }
+# Protestant Revolt in B?arn
 country_event = {
   id = flavor_fra.3119
   title = "flavor_fra.EVTNAME3119"
@@ -499,7 +523,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = FRA
-    owns = 176
+    owns = 176 	#  B?arn
     176 = {
       has_owner_religion = no
       religion = protestant
@@ -509,6 +533,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Crush them!
     name = "flavor_fra.EVTOPTA3119"
     176 = {
       spawn_rebels = {
@@ -518,6 +543,7 @@ country_event = {
     }
   }
 }
+# Richelieu
 country_event = {
   id = flavor_fra.3120
   title = "flavor_fra.EVTNAME3120"
@@ -538,6 +564,7 @@ country_event = {
     months = 60
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     if = {
       limit = {
@@ -552,7 +579,7 @@ country_event = {
     add_dip_power = 100
     define_advisor = {
       type = statesman
-      name = "?ñSíÇ ©ã Œû^XYu"  # Armand Jean Richelieu
+      name = "?ñSíÇ ©ã Œû^XYu" 	# Armand Jean Richelieu
       culture = cosmopolitan_french
       religion = catholic
       discount = yes
@@ -560,6 +587,7 @@ country_event = {
     }
   }
 }
+# The Fronde in France
 country_event = {
   id = flavor_fra.3122
   title = "flavor_fra.EVTNAME3122"
@@ -583,6 +611,7 @@ country_event = {
     months = 150
   }
   option = {
+    # Crush the Parliament and the Nobles
     name = "flavor_fra.EVTOPTA3122"
     random_owned_province = {
       limit = {
@@ -596,6 +625,7 @@ country_event = {
     }
   }
   option = {
+    # Appease them
     name = "flavor_fra.EVTOPTB3122"
     if = {
       limit = {
@@ -616,6 +646,7 @@ country_event = {
     }
   }
 }
+# Acad?mie Francaise
 country_event = {
   id = flavor_fra.3123
   title = "flavor_fra.EVTNAME3123"
@@ -630,6 +661,7 @@ country_event = {
     months = 150
   }
   option = {
+    # Yes we need it
     name = "flavor_fra.EVTOPTA3123"
     if = {
       limit = {
@@ -646,10 +678,12 @@ country_event = {
     }
   }
   option = {
+    # No it's too expensive
     name = "flavor_fra.EVTOPTB3123"
     add_prestige = -5
   }
 }
+# Colbert
 country_event = {
   id = flavor_fra.3124
   title = "flavor_fra.EVTNAME3124"
@@ -675,6 +709,7 @@ country_event = {
     set_country_flag = had_colbert
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     if = {
       limit = {
@@ -689,7 +724,7 @@ country_event = {
     add_mil_power = 25
     define_advisor = {
       type = treasurer
-      name = "©ã-ÙTÇÑØeyr ÔgSçS"  # Jean-Baptiste Colbert
+      name = "©ã-ÙTÇÑØeyr ÔgSçS" 	# Jean-Baptiste Colbert
       culture = cosmopolitan_french
       cost_multiplier = 0.25
       skill = 3
@@ -697,6 +732,7 @@ country_event = {
     set_country_flag = fra_colbert_excellent_minister_flag
   }
   option = {
+    # Concentrate on Economic Reforms
     name = "flavor_fra.EVTOPTA3124"
     if = {
       limit = {
@@ -713,6 +749,7 @@ country_event = {
     set_country_flag = fra_colbert_economic_reform_flag
   }
   option = {
+    # Concentrate on Trade Reforms
     name = "flavor_fra.EVTOPTB3124"
     if = {
       limit = {
@@ -729,6 +766,7 @@ country_event = {
     set_country_flag = fra_colbert_trade_reforms_flag
   }
   option = {
+    # Concentrate on Naval Supremacy
     name = "flavor_fra.EVTOPTC3124"
     add_country_modifier = {
       name = colbert_naval_reforms
@@ -737,6 +775,7 @@ country_event = {
     set_country_flag = fra_colbert_naval_reforms_flag
   }
 }
+# The Commissioning of Versailles
 country_event = {
   id = flavor_fra.3125
   title = "flavor_fra.EVTNAME3125"
@@ -764,10 +803,11 @@ country_event = {
     months = 100
   }
   option = {
+    # We need it for the Glory
     name = "flavor_fra.EVTOPTA3125"
     add_years_of_income = -0.5
     add_country_modifier = {
-      name = "versailles"
+      name = versailles
       duration = -1
     }
     if = {
@@ -782,10 +822,12 @@ country_event = {
     }
   }
   option = {
+    # Such a project will not benefit us
     name = "flavor_fra.EVTOPTB3125"
     add_stability_or_adm_power = yes
   }
 }
+# Chambers of Reunion
 country_event = {
   id = flavor_fra.3127
   title = "flavor_fra.EVTNAME3127"
@@ -814,6 +856,7 @@ country_event = {
     months = 150
   }
   option = {
+    # Make the Claim
     name = "flavor_fra.EVTOPTA3127"
     every_neighbor_country = {
       limit = {
@@ -844,6 +887,7 @@ country_event = {
     set_country_flag = FRA_chambers_of_union
   }
   option = {
+    # Let the matter fall
     name = "flavor_fra.EVTOPTB3127"
     every_neighbor_country = {
       limit = {
@@ -861,6 +905,7 @@ country_event = {
     }
   }
 }
+# Protestants expelled from France
 country_event = {
   id = flavor_fra.3128
   title = "flavor_fra.EVTNAME3128"
@@ -887,6 +932,7 @@ country_event = {
     months = 150
   }
   option = {
+    # Expel the Traitors
     name = "flavor_fra.EVTOPTA3128"
     add_stability_or_adm_power = yes
     set_country_flag = FRA_had_event_3128
@@ -1006,10 +1052,12 @@ country_event = {
     }
   }
   option = {
+    # Have Mercy with these Misguided Creatures
     name = "flavor_fra.EVTOPTB3128"
     add_stability = -1
   }
 }
+# Protestants expelled from France
 country_event = {
   id = flavor_fra.1
   title = "flavor_fra.EVTNAME1"
@@ -1017,6 +1065,7 @@ country_event = {
   picture = RELIGION_eventPicture
   is_triggered_only = yes
   option = {
+    # They are a welcome addition
     name = "flavor_fra.EVTOPTA1"
     random_owned_province = {
       limit = {
@@ -1026,6 +1075,7 @@ country_event = {
     }
   }
 }
+# Protestants expelled from France
 country_event = {
   id = flavor_fra.2
   title = "flavor_fra.EVTNAME2"
@@ -1033,6 +1083,7 @@ country_event = {
   picture = RELIGION_eventPicture
   is_triggered_only = yes
   option = {
+    # They are a welcome addition
     name = "flavor_fra.EVTOPTA2"
     random_owned_province = {
       limit = {
@@ -1042,6 +1093,7 @@ country_event = {
     }
   }
 }
+# The Mississippi Trade Company
 country_event = {
   id = flavor_fra.3132
   title = "flavor_fra.EVTNAME3132"
@@ -1070,11 +1122,13 @@ country_event = {
     set_country_flag = FRA_had_event_3132
   }
   option = {
+    # This sounds like Easy Money!
     name = "flavor_fra.EVTOPTA3132"
     add_years_of_income = 0.5
     set_country_flag = mississippi_trade_company
   }
 }
+# Mississippi Trade Company Folds
 country_event = {
   id = flavor_fra.3133
   title = "flavor_fra.EVTNAME3133"
@@ -1098,11 +1152,13 @@ country_event = {
     clr_country_flag = mississippi_trade_company
   }
   option = {
+    # Hope we can avoid bankruptcy...
     name = "flavor_fra.EVTOPTA3133"
     add_stability = -1
     add_inflation = 5
   }
 }
+# Expansion in North America
 country_event = {
   id = flavor_fra.3134
   title = "flavor_fra.EVTNAME3134"
@@ -1126,10 +1182,12 @@ country_event = {
     clr_country_flag = mississippi_trade_company
   }
   option = {
+    # Thank goodness
     name = "flavor_fra.EVTOPTA3134"
     add_years_of_income = 0.25
   }
 }
+# Charles-Fran?ois de Broglie
 country_event = {
   id = flavor_fra.3135
   title = "flavor_fra.EVTNAME3135"
@@ -1147,17 +1205,19 @@ country_event = {
     months = 90
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 50
     define_advisor = {
       type = statesman
-      name = "Âgt Vg0tÊt ∑V ^Wa"  # Charles FranÁois de Broglie
+      name = "Âgt Vg0tÊt ∑V ^Wa" 	# Charles FranÁois de Broglie
       culture = gascon
       discount = yes
       skill = 2
     }
   }
 }
+# Andr?-Hercule de Fleury
 country_event = {
   id = flavor_fra.3137
   title = "flavor_fra.EVTNAME3137"
@@ -1175,6 +1235,7 @@ country_event = {
     months = 150
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 50
     define_advisor = {
@@ -1188,6 +1249,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# Machault and the 5% tax
 country_event = {
   id = flavor_fra.3139
   title = "flavor_fra.EVTNAME3139"
@@ -1202,6 +1264,7 @@ country_event = {
     months = 300
   }
   option = {
+    # Introduce it for all
     name = "flavor_fra.EVTOPTA3139"
     add_country_modifier = {
       name = five_percent_tax
@@ -1209,6 +1272,7 @@ country_event = {
     }
   }
   option = {
+    # Introduce it, except for Nobless and Priest
     name = "flavor_fra.EVTOPTB3139"
     add_country_modifier = {
       name = five_percent_tax_with_exceptions
@@ -1216,10 +1280,12 @@ country_event = {
     }
   }
   option = {
+    # Do not introduce it
     name = "flavor_fra.EVTOPTC3139"
     add_stability_or_adm_power = yes
   }
 }
+# Turgot and the Economic Reforms
 country_event = {
   id = flavor_fra.3141
   title = "flavor_fra.EVTNAME3141"
@@ -1237,6 +1303,7 @@ country_event = {
     set_country_flag = FRA_had_event_3141
   }
   option = {
+    # Let him Reform
     name = "flavor_fra.EVTOPTA3141"
     if = {
       limit = {
@@ -1253,10 +1320,12 @@ country_event = {
     }
   }
   option = {
+    # Don't Let him Reform
     name = "flavor_fra.EVTOPTB3141"
     add_stability_or_adm_power = yes
   }
 }
+# Necker announce the Budget Deficiet
 country_event = {
   id = flavor_fra.3142
   title = "flavor_fra.EVTNAME3142"
@@ -1275,10 +1344,12 @@ country_event = {
     set_country_flag = FRA_had_event_3142
   }
   option = {
+    # Remove him from his post
     name = "flavor_fra.EVTOPTA3142"
     add_stability_or_adm_power = yes
   }
   option = {
+    # Encourage his excellent work
     name = "flavor_fra.EVTOPTB3142"
     add_stability = -1
     add_country_modifier = {
@@ -1287,6 +1358,7 @@ country_event = {
     }
   }
 }
+# The Eden Agreement
 country_event = {
   id = flavor_fra.3143
   title = "flavor_fra.EVTNAME3143"
@@ -1321,6 +1393,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Sign it
     name = "flavor_fra.EVTOPTA3143"
     if = {
       limit = {
@@ -1346,6 +1419,7 @@ country_event = {
     }
   }
   option = {
+    # Refuse to sign it
     name = "flavor_fra.EVTOPTB3143"
     add_prestige = 5
     if = {
@@ -1372,6 +1446,10 @@ country_event = {
     }
   }
 }
+########################################
+# Minor Flavor Events                  #
+########################################
+# Rousseau publishes 'The Social Contract'
 country_event = {
   id = flavor_fra.5000
   title = "flavor_fra.EVTNAME5000"
@@ -1389,6 +1467,7 @@ country_event = {
     months = 50
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     if = {
       limit = {
@@ -1402,6 +1481,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Voltaire publishes 'Lettres Philosophiques'
 country_event = {
   id = flavor_fra.5001
   title = "flavor_fra.EVTNAME5001"
@@ -1419,6 +1499,7 @@ country_event = {
     months = 50
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_dip_power = 100
     add_papal_influence = -10
@@ -1433,6 +1514,7 @@ country_event = {
     }
   }
 }
+# Montesquieu publishes 'The Spirit of Laws'
 country_event = {
   id = flavor_fra.5002
   title = "flavor_fra.EVTNAME5002"
@@ -1450,6 +1532,7 @@ country_event = {
     months = 50
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_stability_or_adm_power = yes
     if = {
@@ -1464,6 +1547,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# Ren? Descartes
 country_event = {
   id = flavor_fra.5003
   title = "flavor_fra.EVTNAME5003"
@@ -1481,6 +1565,7 @@ country_event = {
     months = 50
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_adm_power = 30
     add_legitimacy = 10
@@ -1495,6 +1580,7 @@ country_event = {
     }
   }
 }
+# Vauban
 country_event = {
   id = flavor_fra.5004
   title = "flavor_fra.EVTNAME5004"
@@ -1512,11 +1598,13 @@ country_event = {
     months = 50
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_mil_power = 50
     add_prestige = 10
   }
 }
+# The Royal Musketeers
 country_event = {
   id = flavor_fra.5
   title = "flavor_fra.EVTNAME5"
@@ -1534,6 +1622,7 @@ country_event = {
         government = monarchy
         treasury = 300
         183 = {
+          # Ile-de-France
           controlled_by = FRA
           owned_by = FRA
           is_capital = yes
@@ -1557,6 +1646,7 @@ country_event = {
     name = "flavor_fra.EVTOPTA5"
     add_army_professionalism = 0.1
     183 = {
+      # Ile-de-France
       add_province_modifier = {
         name = mousquetaires_du_roi
         duration = -1
@@ -1564,6 +1654,7 @@ country_event = {
     }
   }
 }
+# The Surrender of Maine
 country_event = {
   id = flavor_fra.6
   title = "flavor_fra.6.t"
@@ -1643,6 +1734,7 @@ country_event = {
     }
   }
 }
+# The Surrender of Maine
 country_event = {
   id = flavor_fra.7
   title = "flavor_fra.7.t"
@@ -1651,9 +1743,9 @@ country_event = {
   is_triggered_only = yes
   major = yes
   option = {
-    name = "flavor_fra.7.a"
+    name = "flavor_fra.7.a" 	# 'teach them how to war' /Reversed Henry V
     ai_chance = {
-      factor = 100
+      factor = 100 	# Shouldn't take this from them really.
       modifier = {
         factor = 0
         is_at_war = yes
@@ -1674,7 +1766,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_fra.7.b"
+    name = "flavor_fra.7.b" 	# Unpopular but preserves the peace?
     ai_chance = {
       factor = 1
     }
@@ -1705,6 +1797,7 @@ country_event = {
     }
   }
 }
+# The Surrender of Maine
 country_event = {
   id = flavor_fra.8
   title = "flavor_fra.8.t"
@@ -1729,6 +1822,7 @@ country_event = {
     }
   }
 }
+# FranÁois Villon
 country_event = {
   id = flavor_fra.9000
   title = "flavor_fra.EVTNAME9000"
@@ -1745,6 +1839,7 @@ country_event = {
     }
   }
   option = {
+    # Throw him back in jail
     name = "flavor_fra.EVTOPTA9000"
     if = {
       limit = {
@@ -1757,10 +1852,11 @@ country_event = {
     }
   }
   option = {
+    # Bring him to court
     name = "flavor_fra.EVTOPTB9000"
     define_advisor = {
       type = artist
-      name = "Vg0tÊt Ùu∏^"  # FranÁois Villon
+      name = "Vg0tÊt Ùu∏^" 	# FranÁois Villon
       culture = cosmopolitan_french
       discount = yes
       skill = 3
@@ -1776,10 +1872,13 @@ country_event = {
     }
   }
   option = {
+    # Bring him to court
     name = "flavor_fra.EVTOPTC9000"
     add_prestige = -5
   }
 }
+#New event by Pierre du Plessis
+#Reference is to Louise Marie ThÈrËse, The Black Nun of Moret
 country_event = {
   id = flavor_fra.9500
   title = flavor_fra.9500.name
@@ -1852,15 +1951,18 @@ country_event = {
     }
   }
   option = {
+    #Send her to a Convent
     name = flavor_fra.9500.A
     add_prestige = -10
   }
   option = {
+    #She is clearly my daughter
     name = flavor_fra.9500.B
     add_legitimacy = -10
     reduce_mandate_effect = yes
   }
   option = {
+    #Banish this unfaithful wife!
     name = flavor_fra.9500.C
     divorce_consort_effect = yes
   }
@@ -1907,6 +2009,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Habsburg Ring 
   id = flavor_fra.102
   title = flavor_fra.102.t
   desc = flavor_fra.102.d
@@ -2000,6 +2103,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Garden of France 
   id = flavor_fra.103
   title = flavor_fra.103.t
   desc = flavor_fra.103.d
@@ -2030,6 +2134,7 @@ country_event = {
   }
 }
 country_event = {
+  #Catholicon 
   id = flavor_fra.104
   title = flavor_fra.104.t
   desc = flavor_fra.104.d
@@ -2039,7 +2144,7 @@ country_event = {
     name = flavor_fra.104.a
     define_advisor = {
       type = theologian
-      name = "Ìpf …b†R∑V—y"  # Jehan Lagadeuc
+      name = "Ìpf …b†R∑V—y" 	# Jehan Lagadeuc
       culture = breton
       skill = 2
       cost_multiplier = 0.5
@@ -2067,6 +2172,7 @@ country_event = {
   }
 }
 country_event = {
+  #A Lady of Remarkable Beauty
   id = flavor_fra.105
   title = flavor_fra.105.t
   desc = flavor_fra.105.d
@@ -2098,6 +2204,7 @@ country_event = {
   }
 }
 country_event = {
+  #House de Valois
   id = flavor_fra.106
   title = flavor_fra.106.t
   desc = flavor_fra.106.d
@@ -2144,6 +2251,7 @@ country_event = {
   }
 }
 country_event = {
+  #Securing the Milanese Lands 
   id = flavor_fra.109
   title = flavor_fra.109.t
   desc = flavor_fra.109.d
@@ -2186,7 +2294,7 @@ country_event = {
       }
       define_advisor = {
         type = natural_scientist
-        name = "ReY≥uY æè ¨ÇGY"  # Leonardo da Vinci
+        name = "ReY≥uY æè ¨ÇGY" 	# Leonardo da Vinci
         culture = tuscan
         cost_multiplier = 0.25
         skill = 3
@@ -2244,6 +2352,7 @@ country_event = {
     }
   }
   option = {
+    # Give Malta to the Knights of St. John
     name = "flavor_spa.EVTOPTA3156"
     ai_chance = {
       factor = 500
@@ -2311,6 +2420,7 @@ country_event = {
     }
   }
   option = {
+    # Don't give them anything
     name = "flavor_spa.EVTOPTC3156"
     ai_chance = {
       factor = 0
@@ -2330,6 +2440,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Fate of Naples
   id = flavor_fra.113
   title = flavor_fra.113.t
   desc = flavor_fra.113.d
@@ -2459,6 +2570,7 @@ country_event = {
   }
 }
 country_event = {
+  #Victory in the Franco-Spanish War
   id = flavor_fra.114
   title = flavor_fra.114.t
   desc = flavor_fra.114.d
@@ -2540,6 +2652,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Paypal Domain
   id = flavor_fra.115
   title = flavor_fra.115.t
   desc = flavor_fra.115.d
@@ -2602,6 +2715,7 @@ country_event = {
   }
 }
 country_event = {
+  #Treaty fo the Lily Flower
   id = flavor_fra.116
   title = flavor_fra.116.t
   desc = flavor_fra.116.d
@@ -2699,6 +2813,7 @@ country_event = {
   }
 }
 country_event = {
+  #Cooperating with the Holy Father
   id = flavor_fra.117
   title = flavor_fra.117.t
   desc = flavor_fra.117.d
@@ -2776,6 +2891,7 @@ country_event = {
   }
 }
 country_event = {
+  #Early Opera Flourishes
   id = flavor_fra.118
   title = flavor_fra.118.t
   desc = flavor_fra.118.d
@@ -2800,6 +2916,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Angevin Government in Genoa
   id = flavor_fra.119
   title = flavor_fra.119.t
   desc = flavor_fra.119.d
@@ -2852,6 +2969,7 @@ country_event = {
   }
 }
 country_event = {
+  #Golden Bull Treaty 
   id = flavor_fra.120
   title = flavor_fra.120.t
   desc = flavor_fra.120.d
@@ -2905,6 +3023,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Heirs of Charlemagne
   id = flavor_fra.121
   title = flavor_fra.121.t
   desc = flavor_fra.121.d
@@ -2987,6 +3106,7 @@ country_event = {
   }
 }
 country_event = {
+  #The French Alliance Prevails!
   id = flavor_fra.200
   title = flavor_fra.200.t
   desc = flavor_fra.200.d
@@ -3007,6 +3127,7 @@ country_event = {
   }
 }
 country_event = {
+  #I Protect the Saxon Man!
   id = flavor_fra.201
   title = flavor_fra.201.t
   desc = flavor_fra.201.d
@@ -3027,6 +3148,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Rade of the Toulon Arsenal
   id = flavor_fra.202
   title = flavor_fra.202.t
   desc = flavor_fra.202.d
@@ -3062,6 +3184,7 @@ country_event = {
   }
 }
 country_event = {
+  #Rise of the French Isles
   id = flavor_fra.203
   title = flavor_fra.203.t
   desc = flavor_fra.203.d
@@ -3074,6 +3197,8 @@ country_event = {
       duration = -1
     }
     add_accepted_culture = english
+    # custom_tooltip = fra_enabling_parliamentarism_extra_bonus_tt
+    # set_country_flag = fra_powerful_parliament_flag
     change_government_reform_progress = 150
   }
   option = {
@@ -3091,6 +3216,7 @@ country_event = {
   }
 }
 country_event = {
+  #La Sorbonne
   id = flavor_fra.204
   title = flavor_fra.204.t
   desc = flavor_fra.204.d
@@ -3234,6 +3360,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Holy Lands of Jerusalem
   id = flavor_fra.205
   title = flavor_fra.205.t
   desc = flavor_fra.205.d
@@ -3265,9 +3392,9 @@ country_event = {
           OR = {
             area = trans_jordan_area
             area = palestine_area
-            province_id = 378
-            province_id = 1855
-            province_id = 4268
+            province_id = 378 	# County of Tripoli
+            province_id = 1855 	# Sayda
+            province_id = 4268 	# Aqaba
           }
         }
         add_core = KOJ
@@ -3292,6 +3419,7 @@ country_event = {
   }
 }
 country_event = {
+  #France in the 15th Century
   id = flavor_fra.206
   title = flavor_fra.206.t
   desc = flavor_fra.206.d

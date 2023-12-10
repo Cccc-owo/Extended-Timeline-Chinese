@@ -1,4 +1,12 @@
+##############################
+# Fetishist Flavor Events    #
+#                            #
+# Written by Milla Isaksson  #
+# & Mathilda Bjarnehed		 #
+# & Henrik Lohmander	     #
+##############################
 namespace = fetishist_flavor
+#Discovering Yemoja cult
 country_event = {
   id = fetishist_flavor.1
   title = fetishist_flavor.1.t
@@ -16,6 +24,7 @@ country_event = {
     unlock_cult = yemoja_cult
   }
 }
+#Discovering Roog cult
 country_event = {
   id = fetishist_flavor.2
   title = fetishist_flavor.2.t
@@ -33,6 +42,7 @@ country_event = {
     unlock_cult = roog_cult
   }
 }
+#Discovering Nyame cult
 country_event = {
   id = fetishist_flavor.3
   title = fetishist_flavor.3.t
@@ -50,6 +60,7 @@ country_event = {
     unlock_cult = nyame_cult
   }
 }
+#Divination event for the Yemoja
 country_event = {
   id = fetishist_flavor.4
   title = fetishist_flavor.4.t
@@ -132,6 +143,7 @@ country_event = {
     }
   }
 }
+# Refused ceremonial burial of relative
 country_event = {
   id = fetishist_flavor.5
   title = fetishist_flavor.5.t
@@ -217,6 +229,7 @@ country_event = {
     months = 400
   }
   option = {
+    #West African: # Pay for burial yourself
     name = fetishist_flavor.5.a
     custom_tooltip = fetishist_flavor.5.a.tt
     ai_chance = {
@@ -243,6 +256,7 @@ country_event = {
     }
   }
   option = {
+    # Who do they think they are??
     name = fetishist_flavor.5.b
     custom_tooltip = fetishist_flavor.5.b.tt
     ai_chance = {
@@ -265,6 +279,7 @@ country_event = {
     }
   }
   option = {
+    # Let it slide
     name = fetishist_flavor.5.c
     custom_tooltip = fetishist_flavor.5.c.tt
     event_target:nonchalant_neighbor = {
@@ -275,6 +290,7 @@ country_event = {
     }
   }
 }
+# Notification event for nonchalant neighbor
 country_event = {
   id = fetishist_flavor.6
   title = fetishist_flavor.6.t
@@ -357,6 +373,7 @@ country_event = {
     }
   }
 }
+# Ceremony was performed
 country_event = {
   id = fetishist_flavor.7
   title = fetishist_flavor.7.t
@@ -413,6 +430,7 @@ country_event = {
     }
   }
 }
+# A village elder falls sick
 country_event = {
   id = fetishist_flavor.8
   title = fetishist_flavor.8.t
@@ -457,6 +475,7 @@ country_event = {
     months = 400
   }
   option = {
+    # Pray to Tano
     name = fetishist_flavor.8.a
     custom_tooltip = fetishist_flavor.8.a.tt
     ai_chance = {
@@ -476,6 +495,7 @@ country_event = {
     }
   }
   option = {
+    # Pray to Anansi
     name = fetishist_flavor.8.b
     custom_tooltip = fetishist_flavor.8.b.tt
     ai_chance = {
@@ -495,6 +515,7 @@ country_event = {
     }
   }
 }
+# A benevolent snake
 country_event = {
   id = fetishist_flavor.9
   title = fetishist_flavor.9.t
@@ -534,6 +555,7 @@ country_event = {
     }
   }
   option = {
+    # Give thanks to the ancestors
     name = fetishist_flavor.9.a
     add_dip_power = 30
     event_target:heathen_province = {
@@ -544,11 +566,12 @@ country_event = {
     }
   }
 }
+#Unlocking cults from other religions
 country_event = {
   id = fetishist_flavor.11
-  title = fetishist_flavor.11.t
-  desc = fetishist_flavor.11.t
-  picture = POPE_PREACHING_eventPicture
+  title = fetishist_flavor.11.t 	# Never Seen
+  desc = fetishist_flavor.11.t 	# Never Seen
+  picture = POPE_PREACHING_eventPicture 	# Never Seen
   hidden = yes
   immediate = {
     random_neighbor_country = {
@@ -845,9 +868,10 @@ country_event = {
     months = 36
   }
   option = {
-    name = fetishist_flavor.11.t
+    name = fetishist_flavor.11.t 	# Never seen
   }
 }
+#Unlocking Yemoya
 country_event = {
   id = fetishist_flavor.12
   title = fetishist_flavor.1.t
@@ -872,6 +896,7 @@ country_event = {
     unlock_cult = yemoja_cult
   }
 }
+#Unlocking Roog
 country_event = {
   id = fetishist_flavor.13
   title = fetishist_flavor.2.t
@@ -896,6 +921,7 @@ country_event = {
     unlock_cult = roog_cult
   }
 }
+#Unlocking Nyame
 country_event = {
   id = fetishist_flavor.14
   title = fetishist_flavor.3.t
@@ -920,6 +946,7 @@ country_event = {
     unlock_cult = nyame_cult
   }
 }
+#Unlocking Cwezi
 country_event = {
   id = fetishist_flavor.15
   title = fetishist_flavor.101.t
@@ -944,6 +971,7 @@ country_event = {
     unlock_cult = cwezi_cult
   }
 }
+#Unlocking Mlira
 country_event = {
   id = fetishist_flavor.16
   title = fetishist_flavor.102.t
@@ -968,6 +996,7 @@ country_event = {
     unlock_cult = central_african_ancestor_cult
   }
 }
+#Unlocking Mwari
 country_event = {
   id = fetishist_flavor.17
   title = fetishist_flavor.103.t
@@ -992,6 +1021,7 @@ country_event = {
     unlock_cult = mwari_cult
   }
 }
+#Unlocking Enkai
 country_event = {
   id = fetishist_flavor.18
   title = fetishist_flavor.201.t
@@ -1016,6 +1046,7 @@ country_event = {
     unlock_cult = enkai_cult
   }
 }
+#Unlocking Waaq
 country_event = {
   id = fetishist_flavor.19
   title = fetishist_flavor.202.t
@@ -1040,6 +1071,7 @@ country_event = {
     unlock_cult = waaq_cult
   }
 }
+#Unlocking Zanahary
 country_event = {
   id = fetishist_flavor.20
   title = fetishist_flavor.203.t
@@ -1064,11 +1096,12 @@ country_event = {
     unlock_cult = zanahary_cult
   }
 }
+#Unlocking cults from other religions
 country_event = {
   id = fetishist_flavor.21
-  title = fetishist_flavor.21.t
-  desc = fetishist_flavor.21.t
-  picture = POPE_PREACHING_eventPicture
+  title = fetishist_flavor.21.t 	# Never Seen
+  desc = fetishist_flavor.21.t 	# Never Seen
+  picture = POPE_PREACHING_eventPicture 	# Never Seen
   hidden = yes
   immediate = {
     random_owned_province = {
@@ -1363,9 +1396,10 @@ country_event = {
     months = 36
   }
   option = {
-    name = fetishist_flavor.21.t
+    name = fetishist_flavor.21.t 	# Never seen
   }
 }
+#Discovering the Cwezi cult
 country_event = {
   id = fetishist_flavor.101
   title = fetishist_flavor.101.t
@@ -1383,6 +1417,7 @@ country_event = {
     unlock_cult = cwezi_cult
   }
 }
+#Discovering Mlira cult
 country_event = {
   id = fetishist_flavor.102
   title = fetishist_flavor.102.t
@@ -1400,6 +1435,7 @@ country_event = {
     unlock_cult = central_african_ancestor_cult
   }
 }
+#Discovering Mwari cult
 country_event = {
   id = fetishist_flavor.103
   title = fetishist_flavor.103.t
@@ -1417,6 +1453,8 @@ country_event = {
     unlock_cult = mwari_cult
   }
 }
+#Mlira
+#The voice of our ancestors
 country_event = {
   id = fetishist_flavor.130
   title = fetishist_flavor.130.t
@@ -1424,7 +1462,7 @@ country_event = {
   picture = FETISHIST_FIRE_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = central_african_ancestor_cult
     NOT = {
       has_ruler_modifier = ancestral_support
@@ -1447,6 +1485,7 @@ country_event = {
     add_devotion = 5
   }
 }
+#Institutionalized Care Taker of Ancestorial Shrines
 country_event = {
   id = fetishist_flavor.131
   title = fetishist_flavor.131.t
@@ -1454,7 +1493,7 @@ country_event = {
   picture = FETISHIST_FIRE_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = central_african_ancestor_cult
   }
   mean_time_to_happen = {
@@ -1474,6 +1513,7 @@ country_event = {
     add_prestige = -10
   }
 }
+#Ruler Questioned
 country_event = {
   id = fetishist_flavor.132
   title = fetishist_flavor.132.t
@@ -1481,7 +1521,7 @@ country_event = {
   picture = FETISHIST_FIRE_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = central_african_ancestor_cult
     has_ruler_modifier = ancestral_shrine_caretaker
   }
@@ -1500,6 +1540,7 @@ country_event = {
     remove_country_modifier = ancestral_shrine_caretaker
   }
 }
+#Deification of Ancestor
 country_event = {
   id = fetishist_flavor.133
   title = fetishist_flavor.133.t
@@ -1507,9 +1548,9 @@ country_event = {
   picture = FETISHIST_FIRE_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = central_african_ancestor_cult
-    is_year = 1500
+    is_year = 1500 	# At least one dead ruler by now?
     NOT = {
       has_ruler_flag = had_ancestor_deified
     }
@@ -1518,11 +1559,13 @@ country_event = {
     months = 360
   }
   option = {
-    name = fetishist_flavor.133.a
+    name = fetishist_flavor.133.a 	# Praise be $RANDOM_OLD_MONARCH$!
     add_stability_or_adm_power = yes
     set_ruler_flag = had_ancestor_deified
   }
 }
+#Mwari
+#The semi-monotheistic nature of Mwari
 province_event = {
   id = fetishist_flavor.150
   title = fetishist_flavor.150.t
@@ -1532,7 +1575,7 @@ province_event = {
     has_dlc = "Rights of Man"
     is_capital = no
     owner = {
-      religion = shamanism
+      religion = shamanism 	# Fetishism
       has_adopted_cult = mwari_cult
     }
   }
@@ -1576,6 +1619,9 @@ province_event = {
     }
   }
 }
+#Obedience from subordinate chiefs
+#Mwari and the Mhondoro Spirits
+#Purely beneficial event.
 province_event = {
   id = fetishist_flavor.151
   title = fetishist_flavor.151.t
@@ -1586,7 +1632,7 @@ province_event = {
     local_autonomy = 50
     is_state = yes
     owner = {
-      religion = shamanism
+      religion = shamanism 	# Fetishism
       has_adopted_cult = mwari_cult
     }
   }
@@ -1599,6 +1645,7 @@ province_event = {
     add_local_autonomy = -15
   }
 }
+#Wrath of Mwari
 country_event = {
   id = fetishist_flavor.152
   title = fetishist_flavor.152.t
@@ -1606,7 +1653,7 @@ country_event = {
   picture = NATIVES_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = mwari_cult
     any_owned_province = {
       is_looted = yes
@@ -1630,6 +1677,7 @@ country_event = {
     add_stability = -1
   }
 }
+#Local Chief and Mhondoro Spirit
 province_event = {
   id = fetishist_flavor.153
   title = fetishist_flavor.153.t
@@ -1639,7 +1687,7 @@ province_event = {
     has_dlc = "Rights of Man"
     religion = shamanism
     owner = {
-      religion = shamanism
+      religion = shamanism 	# Fetishism
       has_adopted_cult = mwari_cult
       OR = {
         AND = {
@@ -1684,6 +1732,7 @@ province_event = {
     }
   }
 }
+#Royal Fires
 country_event = {
   id = fetishist_flavor.154
   title = fetishist_flavor.154.t
@@ -1691,7 +1740,7 @@ country_event = {
   picture = FETISHIST_FIRE_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = mwari_cult
     num_of_cities = 5
   }
@@ -1713,6 +1762,8 @@ country_event = {
     }
   }
 }
+#Cwezi
+#Endemic Infertility?
 province_event = {
   id = fetishist_flavor.170
   title = fetishist_flavor.170.t
@@ -1720,12 +1771,12 @@ province_event = {
   picture = FETISHIST_FIRE_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     NOT = {
       has_province_modifier = fertility_concerns
     }
     owner = {
-      religion = shamanism
+      religion = shamanism 	# Fetishism
       has_adopted_cult = cwezi_cult
     }
     is_in_capital_area = yes
@@ -1791,6 +1842,7 @@ province_event = {
     }
   }
 }
+#Support of the Cwezi Spirits
 province_event = {
   id = fetishist_flavor.171
   title = fetishist_flavor.171.t
@@ -1801,6 +1853,7 @@ province_event = {
     name = fetishist_flavor.171.a
   }
 }
+#Cwezi Spirits have not heard our plea
 province_event = {
   id = fetishist_flavor.172
   title = fetishist_flavor.172.t
@@ -1820,6 +1873,7 @@ province_event = {
     }
   }
 }
+#Itinerant Sorceress
 country_event = {
   id = fetishist_flavor.173
   title = fetishist_flavor.173.t
@@ -1827,7 +1881,7 @@ country_event = {
   picture = TRIBES_MEETING_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = cwezi_cult
   }
   mean_time_to_happen = {
@@ -1903,6 +1957,7 @@ country_event = {
     }
   }
 }
+#Bad Omen
 country_event = {
   id = fetishist_flavor.174
   title = fetishist_flavor.174.t
@@ -1915,7 +1970,7 @@ country_event = {
   }
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = cwezi_cult
     NOT = {
       stability = 3
@@ -1938,6 +1993,7 @@ country_event = {
     add_prestige = -10
   }
 }
+#Spirit Shrine Enlargement
 country_event = {
   id = fetishist_flavor.175
   title = fetishist_flavor.175.t
@@ -1945,7 +2001,7 @@ country_event = {
   picture = TRIBES_MEETING_eventPicture
   trigger = {
     has_dlc = "Rights of Man"
-    religion = shamanism
+    religion = shamanism 	# Fetishism
     has_adopted_cult = cwezi_cult
     any_owned_province = {
       is_capital = no
@@ -1993,6 +2049,7 @@ country_event = {
     }
   }
 }
+#Discovering Enkai cult
 country_event = {
   id = fetishist_flavor.201
   title = fetishist_flavor.201.t
@@ -2010,6 +2067,7 @@ country_event = {
     unlock_cult = enkai_cult
   }
 }
+#Discovering Waaq cult
 country_event = {
   id = fetishist_flavor.202
   title = fetishist_flavor.202.t
@@ -2027,6 +2085,7 @@ country_event = {
     unlock_cult = waaq_cult
   }
 }
+#Discovering Zanahary cult
 country_event = {
   id = fetishist_flavor.203
   title = fetishist_flavor.203.t
@@ -2044,6 +2103,7 @@ country_event = {
     unlock_cult = zanahary_cult
   }
 }
+#Rain prayer
 country_event = {
   id = fetishist_flavor.204
   title = fetishist_flavor.204.t
@@ -2115,6 +2175,7 @@ country_event = {
       }
     }
   }
+  #Pray and sacrifice - Waaq
   option = {
     name = fetishist_flavor.204.a
     custom_tooltip = fetishist_flavor.204.a.tt
@@ -2140,6 +2201,7 @@ country_event = {
       has_adopted_cult = waaq_cult
     }
   }
+  #Pray and sacrifice - Yemoja
   option = {
     name = fetishist_flavor.204.b
     custom_tooltip = fetishist_flavor.204.b.tt
@@ -2165,6 +2227,7 @@ country_event = {
       has_adopted_cult = yemoja_cult
     }
   }
+  #Do nothing
   option = {
     name = fetishist_flavor.204.c
     custom_tooltip = fetishist_flavor.204.c.tt
@@ -2186,6 +2249,7 @@ country_event = {
     }
   }
 }
+#Waaq: rains of fertility
 country_event = {
   id = fetishist_flavor.205
   title = fetishist_flavor.205.t
@@ -2260,6 +2324,7 @@ country_event = {
     }
   }
 }
+#Waaq: drought
 country_event = {
   id = fetishist_flavor.206
   title = fetishist_flavor.206.t
@@ -2334,6 +2399,7 @@ country_event = {
     }
   }
 }
+#Enkai: warrior rite
 country_event = {
   id = fetishist_flavor.207
   title = fetishist_flavor.207.t
@@ -2372,6 +2438,7 @@ country_event = {
     }
   }
 }
+#Enkai: cattle sacrifice
 country_event = {
   id = fetishist_flavor.208
   title = fetishist_flavor.208.t
@@ -2412,6 +2479,7 @@ country_event = {
       }
     }
   }
+  #Force sacrifice
   option = {
     name = fetishist_flavor.208.a
     custom_tooltip = fetishist_flavor.208.a.tt
@@ -2444,6 +2512,7 @@ country_event = {
       }
     }
   }
+  #Let it be
   option = {
     name = fetishist_flavor.208.b
     custom_tooltip = fetishist_flavor.208.b.tt
@@ -2473,6 +2542,7 @@ country_event = {
     }
   }
 }
+#God is Black
 country_event = {
   id = fetishist_flavor.209
   title = fetishist_flavor.209.t
@@ -2492,6 +2562,7 @@ country_event = {
     }
   }
 }
+#God is Red
 country_event = {
   id = fetishist_flavor.210
   title = fetishist_flavor.210.t
@@ -2503,6 +2574,8 @@ country_event = {
     custom_tooltip = fetishist_flavor.210.a.tt
   }
 }
+#Shared events for starter cults
+#You have an ancestral grave
 country_event = {
   id = fetishist_flavor.301
   title = fetishist_flavor.301.t
@@ -2552,6 +2625,7 @@ country_event = {
     }
   }
 }
+#Abandoning ancestral grave
 country_event = {
   id = fetishist_flavor.302
   title = fetishist_flavor.302.t
@@ -2600,6 +2674,7 @@ country_event = {
     }
   }
 }
+#Losing ancestral tomb 
 country_event = {
   id = fetishist_flavor.303
   title = fetishist_flavor.303.t
@@ -2637,6 +2712,7 @@ country_event = {
     add_prestige = -15
   }
 }
+#Rebuilding ancestral tomb
 country_event = {
   id = fetishist_flavor.304
   title = fetishist_flavor.304.t
@@ -2667,6 +2743,7 @@ country_event = {
       }
     }
   }
+  #Rebuild
   option = {
     name = fetishist_flavor.304.a
     custom_tooltip = fetishist_flavor.304.a.tt
@@ -2694,6 +2771,7 @@ country_event = {
       }
     }
   }
+  #Ignore
   option = {
     name = fetishist_flavor.304.b
     custom_tooltip = fetishist_flavor.304.b.tt
@@ -2704,13 +2782,17 @@ country_event = {
     add_prestige = -10
   }
 }
+#Restoring the tomb or let it crumble
 country_event = {
   id = fetishist_flavor.310
   title = fetishist_flavor.310.t
   picture = FETISHIST_FIRE_eventPicture
   desc = fetishist_flavor.310.d.a
   trigger = {
+    #OR = {
     has_adopted_cult = zanahary_cult
+    #	has_adopted_cult = central_african_ancestor_cult
+    #}
     has_dlc = "Rights of Man"
     any_owned_province = {
       OR = {
@@ -2736,6 +2818,7 @@ country_event = {
       }
     }
   }
+  #Make it grand
   option = {
     name = fetishist_flavor.310.a
     custom_tooltip = fetishist_flavor.310.a.tt
@@ -2770,6 +2853,7 @@ country_event = {
       }
     }
   }
+  #Repair
   option = {
     name = fetishist_flavor.310.b
     custom_tooltip = fetishist_flavor.310.b.tt
@@ -2802,6 +2886,7 @@ country_event = {
       }
     }
   }
+  #Let it crumble
   option = {
     name = fetishist_flavor.310.c
     custom_tooltip = fetishist_flavor.310.c.tt
@@ -2816,6 +2901,7 @@ country_event = {
     }
   }
 }
+#Grand tomb reverting to normal
 country_event = {
   id = fetishist_flavor.311
   title = fetishist_flavor.311.t
@@ -2842,6 +2928,7 @@ country_event = {
     }
   }
 }
+#Natural disaster
 country_event = {
   id = fetishist_flavor.312
   title = fetishist_flavor.312.t
@@ -2891,6 +2978,7 @@ country_event = {
       }
     }
   }
+  #Blame someone else
   option = {
     trigger = {
       has_saved_event_target = earthquake_infidel
@@ -2916,6 +3004,7 @@ country_event = {
       }
     }
   }
+  #Blame internal infidels
   option = {
     trigger = {
       any_owned_province = {
@@ -2935,6 +3024,7 @@ country_event = {
       }
     }
   }
+  #Rebuild
   option = {
     name = fetishist_flavor.312.c
     custom_tooltip = fetishist_flavor.312.c.tt
@@ -2963,6 +3053,7 @@ country_event = {
       }
     }
   }
+  #Be devout
   option = {
     name = fetishist_flavor.312.d
     custom_tooltip = fetishist_flavor.312.d.tt
@@ -2978,6 +3069,8 @@ country_event = {
     }
   }
 }
+#ROTW religion cults
+#Unlocking Christianity
 country_event = {
   id = fetishist_flavor.400
   title = fetishist_flavor.400.t
@@ -2995,6 +3088,7 @@ country_event = {
     unlock_cult = christianity_cult
   }
 }
+#Unlocking Islam
 country_event = {
   id = fetishist_flavor.401
   title = fetishist_flavor.401.t
@@ -3012,6 +3106,7 @@ country_event = {
     unlock_cult = islam_cult
   }
 }
+#Unlocking Buddhism
 country_event = {
   id = fetishist_flavor.402
   title = fetishist_flavor.402.t
@@ -3029,6 +3124,7 @@ country_event = {
     unlock_cult = buddhism_cult
   }
 }
+#Unlocking Dharmic
 country_event = {
   id = fetishist_flavor.403
   title = fetishist_flavor.403.t
@@ -3046,6 +3142,7 @@ country_event = {
     unlock_cult = dharmic_cult
   }
 }
+#Unlocking Teotl
 country_event = {
   id = fetishist_flavor.404
   title = fetishist_flavor.404.t
@@ -3063,6 +3160,7 @@ country_event = {
     unlock_cult = south_central_american_cult
   }
 }
+#Unlocking Norse
 country_event = {
   id = fetishist_flavor.405
   title = fetishist_flavor.405.t
@@ -3080,6 +3178,7 @@ country_event = {
     unlock_cult = norse_cult
   }
 }
+#Unlocking Jewish
 country_event = {
   id = fetishist_flavor.406
   title = fetishist_flavor.406.t
@@ -3097,6 +3196,7 @@ country_event = {
     unlock_cult = jewish_cult
   }
 }
+#Unlocking Zoroastrian
 country_event = {
   id = fetishist_flavor.407
   title = fetishist_flavor.407.t
@@ -3114,6 +3214,7 @@ country_event = {
     unlock_cult = zoroastrian_cult
   }
 }
+#Freyja: fertility
 country_event = {
   id = fetishist_flavor.408
   title = fetishist_flavor.408.t
@@ -3147,6 +3248,7 @@ country_event = {
   mean_time_to_happen = {
     months = 450
   }
+  #Perform ritual
   option = {
     name = fetishist_flavor.408.a
     custom_tooltip = fetishist_flavor.408.a.tt
@@ -3166,12 +3268,14 @@ country_event = {
     }
     hidden_effect = {
       random_list = {
+        #Success
         60 = {
           country_event = {
             id = fetishist_flavor.409
             days = 268
           }
         }
+        #Failure
         40 = {
           country_event = {
             id = fetishist_flavor.410
@@ -3181,6 +3285,7 @@ country_event = {
       }
     }
   }
+  #Don't
   option = {
     name = fetishist_flavor.408.b
     custom_tooltip = fetishist_flavor.408.b.tt
@@ -3190,6 +3295,7 @@ country_event = {
     }
   }
 }
+#Freyja gives you children
 country_event = {
   id = fetishist_flavor.409
   title = fetishist_flavor.409.t
@@ -3211,6 +3317,7 @@ country_event = {
     has_government_attribute = heir
   }
   is_triggered_only = yes
+  #Heir 1
   option = {
     name = fetishist_flavor.409.a
     add_prestige = 10
@@ -3219,10 +3326,11 @@ country_event = {
       religion = norse_pagan_reformed
       female = yes
       age = 0
-      name = "kç˙ãN"  # Hnoss
+      name = "kç˙ãN" 	# Hnoss
       dynasty = ROOT
     }
   }
+  #Heir 2
   option = {
     name = fetishist_flavor.409.b
     add_prestige = 10
@@ -3230,12 +3338,13 @@ country_event = {
       mil = 4
       female = yes
       age = 0
-      name = "<hS^Xá"  # Gersemi
+      name = "<hS^Xá" 	# Gersemi
       religion = norse_pagan_reformed
       dynasty = ROOT
     }
   }
 }
+#No children
 country_event = {
   id = fetishist_flavor.410
   title = fetishist_flavor.410.t
@@ -3262,6 +3371,7 @@ country_event = {
     add_stability = -1
   }
 }
+#Do seid magic?
 country_event = {
   id = fetishist_flavor.411
   title = fetishist_flavor.411.t
@@ -3365,6 +3475,7 @@ country_event = {
     }
   }
 }
+#War seid success
 country_event = {
   id = fetishist_flavor.412
   title = fetishist_flavor.412.t
@@ -3379,6 +3490,7 @@ country_event = {
     }
   }
 }
+#War seid failure
 country_event = {
   id = fetishist_flavor.413
   title = fetishist_flavor.413.t
@@ -3393,6 +3505,7 @@ country_event = {
     }
   }
 }
+#Diplomacy seid success
 country_event = {
   id = fetishist_flavor.414
   title = fetishist_flavor.414.t
@@ -3407,6 +3520,7 @@ country_event = {
     }
   }
 }
+#Diplomacy seid failure
 country_event = {
   id = fetishist_flavor.415
   title = fetishist_flavor.415.t
@@ -3421,6 +3535,7 @@ country_event = {
     }
   }
 }
+#Buddhism: no killing
 country_event = {
   id = fetishist_flavor.416
   title = fetishist_flavor.416.t
@@ -3501,6 +3616,7 @@ country_event = {
     }
   }
 }
+#Buddhism: transferring merit
 country_event = {
   id = fetishist_flavor.417
   title = fetishist_flavor.417.t
@@ -3614,7 +3730,7 @@ province_event = {
           monthly_income = 25
         }
         define_advisor = {
-          name = "ÂNiçöN"  # Isaiah
+          name = "ÂNiçöN" 	# Isaiah
           type = trader
           religion = jewish
           skill = 3
@@ -3628,7 +3744,7 @@ province_event = {
           }
         }
         define_advisor = {
-          name = "ÂNiçöN"  # Isaiah
+          name = "ÂNiçöN" 	# Isaiah
           type = trader
           religion = jewish
           skill = 2
@@ -3649,6 +3765,7 @@ province_event = {
     }
   }
 }
+#Desecration of Sanbat (the Ge'ez word for Sabbath)
 country_event = {
   id = fetishist_flavor.420
   title = fetishist_flavor.420.t
@@ -3726,6 +3843,7 @@ country_event = {
     }
   }
 }
+#Unorthodoxy
 country_event = {
   id = fetishist_flavor.450
   title = fetishist_flavor.450.t
@@ -3766,6 +3884,7 @@ country_event = {
     add_dip_power = -50
   }
 }
+#The Christian Community Brings us Closer
 country_event = {
   id = fetishist_flavor.451
   title = fetishist_flavor.451.t
@@ -3798,6 +3917,7 @@ country_event = {
     }
   }
 }
+#Christian Missionaries
 province_event = {
   id = fetishist_flavor.452
   title = fetishist_flavor.452.t
@@ -3836,7 +3956,7 @@ province_event = {
   }
   is_mtth_scaled_to_size = 1
   option = {
-    name = fetishist_flavor.452.a
+    name = fetishist_flavor.452.a 	# Allow it.
     change_religion = event_target:christian_missionary_origin
     add_province_modifier = {
       name = "christian_mission_fetishism"
@@ -3844,7 +3964,7 @@ province_event = {
     }
   }
   option = {
-    name = fetishist_flavor.452.b
+    name = fetishist_flavor.452.b 	# We must maintain control the Church of X
     custom_tooltip = fetishist_flavor.452.b.tt
     event_target:christian_missionary_origin = {
       add_opinion = {
@@ -3854,6 +3974,7 @@ province_event = {
     }
   }
 }
+#Learned Judge
 country_event = {
   id = fetishist_flavor.455
   title = fetishist_flavor.455.t
@@ -3882,6 +4003,7 @@ country_event = {
     add_prestige = 10
   }
 }
+#Shirazi Merchants
 province_event = {
   id = fetishist_flavor.456
   title = fetishist_flavor.456.t
@@ -3909,6 +4031,7 @@ province_event = {
     }
   }
 }
+#Religious Tensions
 province_event = {
   id = fetishist_flavor.457
   title = fetishist_flavor.457.t
@@ -3963,6 +4086,7 @@ province_event = {
     }
   }
 }
+#Spread of Islam
 province_event = {
   id = fetishist_flavor.458
   title = fetishist_flavor.458.t
@@ -4019,6 +4143,7 @@ province_event = {
     change_religion = event_target:muslim_missionary_origin
   }
 }
+#Spread of Zoroastrianism
 province_event = {
   id = fetishist_flavor.460
   title = fetishist_flavor.460.t
@@ -4060,6 +4185,7 @@ province_event = {
     }
   }
 }
+#Fire Extinguished
 province_event = {
   id = fetishist_flavor.461
   title = fetishist_flavor.461.t
@@ -4113,6 +4239,8 @@ province_event = {
     }
   }
 }
+### Aztec (Teotl) cult flavor events 
+# The Elders think we've grown soft
 country_event = {
   id = fetishist_flavor.500
   title = fetishist_flavor.500.t
@@ -4124,7 +4252,7 @@ country_event = {
     has_dlc = "Rights of Man"
     NOT = {
       had_recent_war = 2
-    }
+    } 	#  Must be over two years since last war
     NOT = {
       has_ruler_modifier = warrior_of_the_sun
     }
@@ -4144,7 +4272,7 @@ country_event = {
     months = 250
   }
   option = {
-    name = fetishist_flavor.500.a
+    name = fetishist_flavor.500.a 	#  Build an observatory
     custom_tooltip = fetishist_flavor.500.a.tt
     ai_chance = {
       factor = 40
@@ -4167,7 +4295,7 @@ country_event = {
     }
   }
   option = {
-    name = fetishist_flavor.500.b
+    name = fetishist_flavor.500.b 	#  Sacrifice
     custom_tooltip = fetishist_flavor.500.b.tt
     ai_chance = {
       factor = 60
@@ -4189,6 +4317,7 @@ country_event = {
     }
   }
 }
+# Observatory built
 country_event = {
   id = fetishist_flavor.501
   title = fetishist_flavor.501.t
@@ -4200,7 +4329,7 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
-    name = fetishist_flavor.501.a
+    name = fetishist_flavor.501.a 	# Yay
     random_owned_province = {
       limit = {
         NOT = {
@@ -4215,6 +4344,7 @@ country_event = {
     }
   }
 }
+# Ruler auto-sacrifice SUCCESS
 country_event = {
   id = fetishist_flavor.502
   title = fetishist_flavor.502.t
@@ -4226,13 +4356,14 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
-    name = fetishist_flavor.502.a
+    name = fetishist_flavor.502.a 	# Yay
     add_mil_power = 100
     add_ruler_modifier = {
       name = warrior_of_the_sun
     }
   }
 }
+# Failed to build observatory
 country_event = {
   id = fetishist_flavor.503
   title = fetishist_flavor.503.t
@@ -4244,7 +4375,7 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
-    name = fetishist_flavor.503.a
+    name = fetishist_flavor.503.a 	# Oh noes
     random_owned_province = {
       limit = {
         NOT = {
@@ -4258,6 +4389,7 @@ country_event = {
     }
   }
 }
+# Ruler auto-sacrifice FAILURE
 country_event = {
   id = fetishist_flavor.504
   title = fetishist_flavor.504.t
@@ -4269,11 +4401,12 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
-    name = fetishist_flavor.504.a
+    name = fetishist_flavor.504.a 	# Oh noes
     change_mil = -1
     change_dip = -1
   }
 }
+# A great goldsmith appears
 country_event = {
   id = fetishist_flavor.505
   title = fetishist_flavor.505.t
@@ -4293,7 +4426,7 @@ country_event = {
     months = 350
   }
   option = {
-    name = fetishist_flavor.505.a
+    name = fetishist_flavor.505.a 	#  The goldsmith becomes famous
     add_prestige = 15
     random_owned_province = {
       limit = {
@@ -4309,6 +4442,7 @@ country_event = {
     }
   }
 }
+# Sacrfifice event
 country_event = {
   id = fetishist_flavor.506
   title = fetishist_flavor.506.t
@@ -4355,7 +4489,7 @@ country_event = {
     months = 360
   }
   option = {
-    name = fetishist_flavor.506.a
+    name = fetishist_flavor.506.a 	#  Order sacrifice
     ai_chance = {
       factor = 60
       modifier = {
@@ -4380,12 +4514,13 @@ country_event = {
     }
   }
   option = {
-    name = fetishist_flavor.506.b
+    name = fetishist_flavor.506.b 	#  Opt out
     ai_chance = {
       factor = 40
     }
   }
 }
+# Sacrifice success!
 country_event = {
   id = fetishist_flavor.507
   title = fetishist_flavor.507.t
@@ -4393,7 +4528,7 @@ country_event = {
   picture = BORDER_TENSION_eventPicture
   is_triggered_only = yes
   option = {
-    name = fetishist_flavor.507.a
+    name = fetishist_flavor.507.a 	#  Excellent - bless our harvests
     add_prestige = 15
     event_target:worried_province = {
       add_province_modifier = {
@@ -4403,7 +4538,7 @@ country_event = {
     }
   }
   option = {
-    name = fetishist_flavor.507.b
+    name = fetishist_flavor.507.b 	#  Excellent - bless our warriors
     add_prestige = 15
     event_target:worried_province = {
       add_province_modifier = {
@@ -4413,6 +4548,7 @@ country_event = {
     }
   }
 }
+# Sacrifice fail
 country_event = {
   id = fetishist_flavor.508
   title = fetishist_flavor.508.t
@@ -4420,7 +4556,7 @@ country_event = {
   picture = BORDER_TENSION_eventPicture
   is_triggered_only = yes
   option = {
-    name = fetishist_flavor.508.a
+    name = fetishist_flavor.508.a 	# Oh noes
     add_prestige = -10
     event_target:worried_province = {
       add_province_modifier = {
@@ -4430,6 +4566,8 @@ country_event = {
     }
   }
 }
+### Dharmic cult events
+# A Blessed Guru
 country_event = {
   id = fetishist_flavor.510
   title = fetishist_flavor.510.t
@@ -4446,7 +4584,7 @@ country_event = {
     months = 350
   }
   option = {
-    name = fetishist_flavor.510.a
+    name = fetishist_flavor.510.a 	#  Make advisor
     add_meritocracy_effect = yes
     define_advisor = {
       skill = 2
@@ -4456,13 +4594,14 @@ country_event = {
     }
   }
   option = {
-    name = fetishist_flavor.510.b
+    name = fetishist_flavor.510.b 	#  Keep him in his village
     add_country_modifier = {
       name = selfless_guru
       duration = 3650
     }
   }
 }
+# Charlatan monk
 country_event = {
   id = fetishist_flavor.511
   title = fetishist_flavor.511.t
@@ -4489,7 +4628,7 @@ country_event = {
     months = 350
   }
   option = {
-    name = fetishist_flavor.511.a
+    name = fetishist_flavor.511.a 	#  So it is
     add_adm_power = -15
     event_target:dharmic_neighbor = {
       add_opinion = {
@@ -4499,6 +4638,12 @@ country_event = {
     }
   }
 }
+##############################
+# More Fetishist Flavor Events
+#                            
+# Written by Ogulcan Yildirim
+##############################
+# Heir can choose a new cult for them
 country_event = {
   id = fetishist_flavor.600
   title = fetishist_flavor.600.t
@@ -4818,6 +4963,7 @@ country_event = {
     }
   }
 }
+# Unlock cult of your choice
 country_event = {
   id = fetishist_flavor.601
   title = fetishist_flavor.601.t
@@ -5178,6 +5324,7 @@ country_event = {
     }
   }
 }
+#Select a primary cult
 country_event = {
   id = fetishist_flavor.602
   title = fetishist_flavor.602.t
@@ -5194,6 +5341,7 @@ country_event = {
     }
   }
   option = {
+    #Select Yemojya
     name = fetishist_flavor.602.a
     trigger = {
       has_unlocked_cult = yemoja_cult
@@ -5571,6 +5719,7 @@ country_event = {
     set_country_flag = has_selected_a_primary_cult
   }
 }
+#Switch your active cult
 country_event = {
   id = fetishist_flavor.603
   title = "fetishist_flavor.603.t"

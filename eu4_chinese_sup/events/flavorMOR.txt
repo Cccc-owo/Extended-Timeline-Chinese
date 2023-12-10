@@ -1,5 +1,10 @@
+###########################################
+# Flavor Events for Morocco
+# Scripted by Henrik Lohmander
+###########################################
 namespace = flavor_mor
 normal_or_historical_nations = yes
+#Crisis of the Maghreb
 country_event = {
   id = flavor_mor.1
   title = flavor_mor.1.t
@@ -16,7 +21,7 @@ country_event = {
     months = 3
   }
   option = {
-    name = flavor_mor.1.a
+    name = flavor_mor.1.a 	# Let them try! We shall rise again!
     add_country_modifier = {
       name = "mor_crisis"
       duration = 1825
@@ -37,6 +42,7 @@ country_event = {
     }
   }
 }
+#Moorish Refugees
 country_event = {
   id = flavor_mor.2
   title = flavor_mor.2.t
@@ -53,13 +59,14 @@ country_event = {
     months = 48
   }
   option = {
-    name = flavor_mor.2.a
+    name = flavor_mor.2.a 	# We welcome you with open arms
     add_country_modifier = {
       name = "mor_andalucian_moors"
       duration = 3650
     }
   }
 }
+#Muhammad al-Jazuli and the Dala'il al-Khayrat
 country_event = {
   id = flavor_mor.3
   title = flavor_mor.3.t
@@ -76,11 +83,12 @@ country_event = {
     months = 63
   }
   option = {
-    name = flavor_mor.3.a
+    name = flavor_mor.3.a 	# Ok
     add_piety = -0.25
     add_prestige = 10
   }
 }
+#Idrisid Cult of Fez
 country_event = {
   id = flavor_mor.4
   title = flavor_mor.4.t
@@ -97,7 +105,7 @@ country_event = {
     months = 168
   }
   option = {
-    name = flavor_mor.4.a
+    name = flavor_mor.4.a 	# Ok
     add_piety = -0.25
     add_country_modifier = {
       name = "mor_idrisid_cult_soaring"
@@ -105,10 +113,11 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mor.4.b
+    name = flavor_mor.4.b 	# Ok
     add_piety = 0.1
   }
 }
+#The Wattasid Viziers - Foreboding
 country_event = {
   id = flavor_mor.5
   title = flavor_mor.5.t
@@ -119,17 +128,18 @@ country_event = {
     tag = MOR
     NOT = {
       is_year = 1455
-    }
+    } 	# Died in 1448
   }
   mean_time_to_happen = {
     months = 33
   }
   option = {
-    name = flavor_mor.5.a
+    name = flavor_mor.5.a 	# A great man has passed away
     add_piety = -0.05
     set_country_flag = mor_death_of_yahya
   }
 }
+#A Wattasid Conspiracy?
 country_event = {
   id = flavor_mor.6
   title = flavor_mor.6.t
@@ -147,7 +157,7 @@ country_event = {
     months = 126
   }
   option = {
-    name = flavor_mor.6.a
+    name = flavor_mor.6.a 	# Kill them all!
     ai_chance = {
       factor = 1
     }
@@ -158,13 +168,14 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mor.6.b
+    name = flavor_mor.6.b 	# They remain our trusted advisors.
     ai_chance = {
       factor = 0
     }
     set_country_flag = mor_wattasid_power
   }
 }
+#Wattasid Revolt
 country_event = {
   id = flavor_mor.7
   title = flavor_mor.7.t
@@ -186,12 +197,13 @@ country_event = {
         size = 3
         culture = berber
         religion = sunni
-        leader = "FzUØž·V"  # Muhammad
-        leader_dynasty = "O,g öSwmšN ætTX¯e"  # ibn Yahya Wattasid
+        leader = "FzUØž·V" 	# Muhammad
+        leader_dynasty = "O,g öSwmšN ætTX¯e" 	# ibn Yahya Wattasid
       }
     }
   }
 }
+#Wattasid Ultimatum
 country_event = {
   id = flavor_mor.8
   title = flavor_mor.8.t
@@ -209,14 +221,14 @@ country_event = {
     set_country_flag = wattasid_resolution
   }
   option = {
-    name = flavor_mor.8.a
+    name = flavor_mor.8.a 	# Abdicate
     ai_chance = {
       factor = 50
     }
     add_stability = -2
     define_ruler = {
-      name = "FzUØž·V I"  # Muhammad I
-      dynasty = "ætTX¯e"  # Wattasid
+      name = "FzUØž·V I" 	# Muhammad I
+      dynasty = "ætTX¯e" 	# Wattasid
       culture = berber
     }
     if = {
@@ -235,7 +247,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mor.8.b
+    name = flavor_mor.8.b 	# This is my Throne!
     ai_chance = {
       factor = 50
     }
@@ -248,12 +260,13 @@ country_event = {
         size = 3
         religion = sunni
         culture = berber
-        leader = "FzUØž·V"  # Muhammad
-        leader_dynasty = "O,g öSwmšN ætTX¯e"  # ibn Yahya Wattasid
+        leader = "FzUØž·V" 	# Muhammad
+        leader_dynasty = "O,g öSwmšN ætTX¯e" 	# ibn Yahya Wattasid
       }
     }
   }
 }
+#The Sudanese Expedition
 country_event = {
   id = flavor_mor.9
   title = flavor_mor.9.t
@@ -299,7 +312,7 @@ country_event = {
     months = 150
   }
   option = {
-    name = flavor_mor.9.a
+    name = flavor_mor.9.a 	# Let us cross the Sahara!
     ai_chance = {
       factor = 1
     }
@@ -328,6 +341,7 @@ country_event = {
     }
   }
 }
+#The Sudanese Expedition - Info Popup
 country_event = {
   id = flavor_mor.10
   title = flavor_mor.10.t
@@ -340,7 +354,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_mor.10.a
+    name = flavor_mor.10.a 	# This cannot end well.
     tooltip = {
       every_province = {
         limit = {
@@ -356,6 +370,7 @@ country_event = {
     }
   }
 }
+#Crisis of the Maghreb - Info Popup
 country_event = {
   id = flavor_mor.11
   title = flavor_mor.1.t
@@ -377,6 +392,8 @@ country_event = {
     }
   }
 }
+# New for 1.28
+# Imperial Cities of Morocco by Daniel Tolman
 country_event = {
   id = flavor_mor.12
   title = flavor_mor.12.t
@@ -448,6 +465,7 @@ country_event = {
     }
   }
 }
+# Tribes and Sufis sense weakness
 country_event = {
   id = flavor_mor.13
   title = flavor_mor.13.t
@@ -474,6 +492,7 @@ country_event = {
     months = 24
   }
   option = {
+    # Assert Dominance beyond the capital
     name = "flavor_mor.13.a"
     add_stability = -1
     add_country_modifier = {
@@ -542,6 +561,7 @@ country_event = {
     }
   }
   option = {
+    # Remain cloistered in Fez
     name = "flavor_mor.13.b"
     add_stability = 1
     343 = {

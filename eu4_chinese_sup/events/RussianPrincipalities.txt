@@ -1,4 +1,9 @@
+###########################################
+# Events for Russian Principalities
+# Written by Henrik Lohmander
+###########################################
 namespace = russian_principality_events
+#Plot of the Prince of [appanage_province.GetName]
 country_event = {
   id = russian_principality_events.1
   title = russian_principality_events.1.t
@@ -89,13 +94,13 @@ country_event = {
     goto = appanage_province
     if = {
       limit = {
-        dynasty = "Yu̑KQ"  # Rurikovich
+        dynasty = "Yu̑KQ" 	# Rurikovich
       }
       event_target:appanage_province = {
         spawn_rebels = {
           type = pretender_rebels
           size = 1
-          leader_dynasty = "Yu̑KQ"  # Rurikovich
+          leader_dynasty = "Yu̑KQ" 	# Rurikovich
         }
       }
     }
@@ -137,6 +142,7 @@ country_event = {
     }
   }
 }
+#Agricultural Intensification
 country_event = {
   id = russian_principality_events.2
   title = russian_principality_events.2.t
@@ -199,14 +205,14 @@ country_event = {
       has_reform = tsardom
     }
     num_of_cities = 5
-    is_subject = no
+    is_subject = no 	# Includes being a tributary
   }
   is_triggered_only = yes
   mean_time_to_happen = {
     days = 1
   }
   option = {
-    name = russian_principality_events.3.a
+    name = russian_principality_events.3.a 	# Let us grant more land to the Boyars.
     add_government_power = {
       mechanic_type = russian_mechanic
       power_type = russian_adm_power
@@ -214,7 +220,7 @@ country_event = {
     }
   }
   option = {
-    name = russian_principality_events.3.b
+    name = russian_principality_events.3.b 	# We do not need the Boyar's for this.
     add_government_power = {
       mechanic_type = russian_mechanic
       power_type = russian_mil_power
@@ -222,6 +228,7 @@ country_event = {
     }
   }
 }
+#Land Acquisition
 country_event = {
   id = russian_principality_events.4
   title = russian_principality_events.4.t
@@ -240,7 +247,7 @@ country_event = {
       }
     }
     num_of_cities = 5
-    is_subject = no
+    is_subject = no 	# Includes being a tributary
     any_owned_province = {
       is_capital = no
       has_owner_culture = yes
@@ -273,7 +280,7 @@ country_event = {
     days = 1
   }
   option = {
-    name = russian_principality_events.4.a
+    name = russian_principality_events.4.a 	# "Land is true wealth."
     trigger_switch = {
       on_trigger = has_country_flag
       land_tax = {
@@ -297,11 +304,11 @@ country_event = {
     }
   }
   option = {
-    name = russian_principality_events.4.b
+    name = russian_principality_events.4.b 	# "We need gold for the royal treasury."
     add_years_of_income = 0.15
   }
   option = {
-    name = russian_principality_events.4.c
+    name = russian_principality_events.4.c 	# "We must use this as leverage in state affairs."
     trigger_switch = {
       on_trigger = has_country_flag
       land_tax = {
@@ -331,6 +338,7 @@ country_event = {
     }
   }
 }
+#Famine
 country_event = {
   id = russian_principality_events.5
   title = russian_principality_events.5.t
@@ -380,7 +388,7 @@ country_event = {
     days = 1
   }
   option = {
-    name = russian_principality_events.5.a
+    name = russian_principality_events.5.a 	# We will leave this to the Boyars.
     ai_chance = {
       factor = 33
     }
@@ -399,7 +407,7 @@ country_event = {
     }
   }
   option = {
-    name = russian_principality_events.5.b
+    name = russian_principality_events.5.b 	# We will let the Church handle this.
     ai_chance = {
       factor = 33
     }
@@ -418,7 +426,7 @@ country_event = {
     }
   }
   option = {
-    name = russian_principality_events.5.c
+    name = russian_principality_events.5.c 	# The [Root.Monarch.GetTitle] [Root.Monarch.GetHerselfHimself] will help them.
     ai_chance = {
       factor = 33
     }
@@ -436,7 +444,7 @@ country_event = {
     }
   }
   option = {
-    name = russian_principality_events.5.dd
+    name = russian_principality_events.5.dd 	# They can join the free Cossacks.
     ai_chance = {
       factor = 0
     }
@@ -455,6 +463,7 @@ country_event = {
     }
   }
 }
+#Forcible Resettling Merchants
 country_event = {
   id = russian_principality_events.6
   title = russian_principality_events.6.t
@@ -476,6 +485,7 @@ country_event = {
   }
   immediate = {
     hidden_effect = {
+      #Taken From:
       random_owned_province = {
         limit = {
           has_owner_culture = no
@@ -531,12 +541,13 @@ country_event = {
         }
         save_event_target_as = province_to_rob
       }
+      #Taken To:
       random_owned_province = {
         limit = {
           is_state = yes
           OR = {
             has_owner_culture = yes
-            is_capital = yes
+            is_capital = yes 	# Always valid
           }
           OR = {
             is_capital = yes
@@ -551,7 +562,7 @@ country_event = {
           is_state = yes
           OR = {
             has_owner_culture = yes
-            is_capital = yes
+            is_capital = yes 	# Always valid
           }
           OR = {
             is_capital = yes
@@ -566,7 +577,7 @@ country_event = {
           is_state = yes
           OR = {
             has_owner_culture = yes
-            is_capital = yes
+            is_capital = yes 	# Always valid
           }
           OR = {
             is_capital = yes
@@ -670,6 +681,7 @@ country_event = {
     }
   }
 }
+#St George's day
 country_event = {
   id = russian_principality_events.7
   title = russian_principality_events.7.t
@@ -754,7 +766,7 @@ country_event = {
     days = 1
   }
   option = {
-    name = russian_principality_events.7.a
+    name = russian_principality_events.7.a 	# We will do as they ask.
     ai_chance = {
       factor = 50
     }
@@ -783,7 +795,7 @@ country_event = {
     reduce_estate_burghers_loyalty_effect = yes
   }
   option = {
-    name = russian_principality_events.7.b
+    name = russian_principality_events.7.b 	# We will not do as they ask.
     ai_chance = {
       factor = 50
     }
@@ -808,6 +820,7 @@ country_event = {
     add_estate_burghers_loyalty_effect = yes
   }
 }
+#Death of a Brother
 country_event = {
   id = russian_principality_events.8
   title = russian_principality_events.8.t
@@ -857,7 +870,7 @@ country_event = {
     days = 1
   }
   option = {
-    name = russian_principality_events.8.a
+    name = russian_principality_events.8.a 	# Confiscate to state
     ai_chance = {
       factor = 50
     }
@@ -875,7 +888,7 @@ country_event = {
     reduce_estate_nobles_loyalty_effect = yes
   }
   option = {
-    name = russian_principality_events.8.b
+    name = russian_principality_events.8.b 	# Confiscate to State
     trigger = {
       num_of_cities = 2
     }
@@ -893,7 +906,7 @@ country_event = {
     reduce_estate_nobles_loyalty_effect = yes
   }
   option = {
-    name = russian_principality_events.8.c
+    name = russian_principality_events.8.c 	# Distribute among siblings
     ai_chance = {
       factor = 50
     }
@@ -906,6 +919,7 @@ country_event = {
     add_estate_nobles_loyalty_effect = yes
   }
 }
+#Tartar Feudatories?
 country_event = {
   id = russian_principality_events.9
   title = russian_principality_events.9.t
@@ -1004,6 +1018,7 @@ country_event = {
     add_legitimacy = 5
   }
 }
+#The X Kremlin
 country_event = {
   id = russian_principality_events.10
   title = russian_principality_events.10.t

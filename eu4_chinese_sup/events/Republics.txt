@@ -1,4 +1,5 @@
 namespace = republics
+# Debates in Republics
 country_event = {
   id = republics.1
   title = republics.1.t
@@ -34,10 +35,11 @@ country_event = {
     add_republican_tradition = 20
     add_stability = -1
     ai_chance = {
-      factor = 100
+      factor = 100 	# Republican Tradition is ALWAYS important
     }
   }
 }
+# Freetraders
 country_event = {
   id = republics.2
   title = republics.2.t
@@ -87,6 +89,7 @@ country_event = {
     }
   }
 }
+# Ruled by Despot
 country_event = {
   id = republics.3
   title = republics.3.t
@@ -155,6 +158,7 @@ country_event = {
           is_tribal = yes
         }
         change_government_to_monarchy = yes
+        #set_legacy_government = despotic_monarchy
       }
       if = {
         limit = {
@@ -171,6 +175,7 @@ country_event = {
           }
         }
         change_government_to_monarchy = yes
+        #set_legacy_government = despotic_monarchy
       }
     }
   }
@@ -182,6 +187,7 @@ country_event = {
           is_tribal = yes
         }
         change_government_to_monarchy = yes
+        #set_legacy_government = despotic_monarchy
       }
       if = {
         limit = {
@@ -198,10 +204,12 @@ country_event = {
           }
         }
         change_government_to_monarchy = yes
+        #set_legacy_government = despotic_monarchy
       }
     }
   }
 }
+# The Trial
 country_event = {
   id = republics.4
   title = republics.4.t
@@ -274,6 +282,7 @@ country_event = {
     }
   }
 }
+# A New Coin
 country_event = {
   id = republics.5
   title = republics.5.t
@@ -329,6 +338,7 @@ country_event = {
     }
   }
 }
+# Foreign Plots?
 country_event = {
   id = republics.6
   title = republics.6.t
@@ -391,6 +401,7 @@ country_event = {
     }
   }
 }
+# Expand the Bodyguard
 country_event = {
   id = republics.7
   title = republics.7.t
@@ -459,6 +470,7 @@ country_event = {
     }
   }
 }
+# The firebrand preacher
 country_event = {
   id = republics.8
   title = republics.8.t
@@ -518,6 +530,7 @@ country_event = {
     }
   }
 }
+# Noble Plot
 country_event = {
   id = republics.9
   title = republics.9.t
@@ -541,6 +554,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
     modifier = {
+      #Will be removed when AI still has troubles to manage RT
       factor = 1.5
       NOT = {
         republican_tradition = 70
@@ -570,6 +584,7 @@ country_event = {
     add_stability = -1
   }
 }
+# Splits in the Council
 country_event = {
   id = republics.10
   title = republics.10.t
@@ -622,6 +637,7 @@ country_event = {
     add_mil_power = -50
   }
 }
+#Disputes effecting governments
 country_event = {
   id = republics.11
   title = republics.11.t
@@ -674,6 +690,7 @@ country_event = {
     add_adm_power = -50
   }
 }
+# Trade Wars
 country_event = {
   id = republics.12
   title = republics.12.t
@@ -726,6 +743,7 @@ country_event = {
     add_dip_power = -50
   }
 }
+#Ceremony Disrupted
 country_event = {
   id = republics.13
   title = republics.13.t
@@ -778,6 +796,7 @@ country_event = {
     add_prestige = -10
   }
 }
+# Trade Focus
 country_event = {
   id = republics.14
   title = "EVTNAME9550"
@@ -800,7 +819,7 @@ country_event = {
     days = 1
   }
   option = {
-    name = "EVTOPTA9550"
+    name = "EVTOPTA9550" 	#  We need more merchants
     ai_chance = {
       factor = 40
     }
@@ -811,7 +830,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9550"
+    name = "EVTOPTB9550" 	#  It's efficiency we lack
     ai_chance = {
       factor = 60
     }
@@ -822,6 +841,7 @@ country_event = {
     }
   }
 }
+# Trade Expansion
 country_event = {
   id = republics.15
   title = "EVTNAME9551"
@@ -894,7 +914,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9551"
+    name = "EVTOPTA9551" 	# Local trade is where our focus should be
     ai_chance = {
       factor = 55
     }
@@ -904,7 +924,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9551"
+    name = "EVTOPTB9551" 	# Perhaps it's time to broaden our horizons
     ai_chance = {
       factor = 45
     }
@@ -914,6 +934,7 @@ country_event = {
     }
   }
 }
+# Budgetary Disagreements
 country_event = {
   id = republics.16
   title = "EVTNAME9552"
@@ -1004,7 +1025,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9552"
+    name = "EVTOPTA9552" 	#  Invest it all in research
     ai_chance = {
       factor = 55
     }
@@ -1018,7 +1039,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9552"
+    name = "EVTOPTB9552" 	#  Save some for future expenses
     ai_chance = {
       factor = 45
     }
@@ -1032,6 +1053,7 @@ country_event = {
     }
   }
 }
+# Disagreements in the Parliament
 country_event = {
   id = republics.17
   title = "EVTNAME9553"
@@ -1105,7 +1127,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9553"
+    name = "EVTOPTA9553" 	#  Try to mediate between the two parties
     ai_chance = {
       factor = 100
     }
@@ -1121,7 +1143,7 @@ country_event = {
     add_mil_power = -25
   }
   option = {
-    name = "EVTOPTB9553"
+    name = "EVTOPTB9553" 	#  Propose some other changes
     ai_chance = {
       factor = 0
     }
@@ -1135,6 +1157,7 @@ country_event = {
     add_stability = -1
   }
 }
+# Misdirected Focus
 country_event = {
   id = republics.18
   title = "EVTNAME9554"
@@ -1218,7 +1241,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9554"
+    name = "EVTOPTA9554" 	#  It's all according to plan
     ai_chance = {
       factor = 5
     }
@@ -1229,7 +1252,7 @@ country_event = {
     add_republican_tradition = -3
   }
   option = {
-    name = "EVTOPTB9554"
+    name = "EVTOPTB9554" 	#  Perhaps our focus has been a bit misdirected
     ai_chance = {
       factor = 95
     }
@@ -1240,6 +1263,7 @@ country_event = {
     add_adm_power = -10
   }
 }
+# Parliamentary Problems
 country_event = {
   id = republics.19
   title = "EVTNAME9555"
@@ -1258,7 +1282,8 @@ country_event = {
   }
   immediate = {
     check_if_non_state_advisor_effect = {
-      chance_of_primary = 75
+      #Hidden, must be followed by erase_advisor_flags_effect
+      chance_of_primary = 75 	# Not percentages!
       chance_of_tertiary = 10
       chance_of_secondary = 25
     }
@@ -1307,7 +1332,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9555"
+    name = "EVTOPTA9555" 	#  Find someone to replace him
     ai_chance = {
       factor = 55
     }
@@ -1328,7 +1353,7 @@ country_event = {
     add_republican_tradition = -10
   }
   option = {
-    name = "EVTOPTB9555"
+    name = "EVTOPTB9555" 	#  Give him another chance
     ai_chance = {
       factor = 45
     }
@@ -1346,6 +1371,7 @@ country_event = {
     erase_advisor_flags_effect = yes
   }
 }
+# Heated Debates
 country_event = {
   id = republics.20
   title = "EVTNAME9556"
@@ -1398,7 +1424,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9556"
+    name = "EVTOPTA9556" 	#  That is probably wise
     hidden_effect = {
       add_country_modifier = {
         name = heated_debates_timer
@@ -1416,7 +1442,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9556"
+    name = "EVTOPTB9556" 	#  It's not really a problem
     hidden_effect = {
       add_country_modifier = {
         name = heated_debates_timer
@@ -1436,6 +1462,7 @@ country_event = {
     }
   }
 }
+# Offense or Defense
 country_event = {
   id = republics.21
   title = "EVTNAME9557"
@@ -1500,7 +1527,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9557"
+    name = "EVTOPTA9557" 	# Offense is probably the only option
     ai_chance = {
       factor = 55
     }
@@ -1511,7 +1538,7 @@ country_event = {
     add_stability = -1
   }
   option = {
-    name = "EVTOPTB9557"
+    name = "EVTOPTB9557" 	# Defense sounds better at this stage
     ai_chance = {
       factor = 45
     }
@@ -1522,6 +1549,7 @@ country_event = {
     add_stability = -1
   }
 }
+# Conflicting Opinions
 country_event = {
   id = republics.22
   title = "EVTNAME9558"
@@ -1572,7 +1600,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9558"
+    name = "EVTOPTA9558" 	#  It's probably best to leave things as they are
     ai_chance = {
       factor = 100
     }
@@ -1586,7 +1614,7 @@ country_event = {
     add_prestige = -8
   }
   option = {
-    name = "EVTOPTB9558"
+    name = "EVTOPTB9558" 	#  Some restructuring might be needed
     ai_chance = {
       factor = 0
     }
@@ -1600,6 +1628,7 @@ country_event = {
     add_stability = -1
   }
 }
+# An infiltrator in Parliament
 country_event = {
   id = republics.23
   title = "EVTNAME9559"
@@ -1671,7 +1700,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9559"
+    name = "EVTOPTA9559" 	#  That's not possible
     ai_chance = {
       factor = 55
     }
@@ -1690,7 +1719,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9559"
+    name = "EVTOPTB9559" 	#  That's the only reasonable explanation
     ai_chance = {
       factor = 45
     }
@@ -1709,6 +1738,7 @@ country_event = {
     }
   }
 }
+# A Traitor in the Parliament
 country_event = {
   id = republics.24
   title = "EVTNAME9560"
@@ -1749,7 +1779,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9560"
+    name = "EVTOPTA9560" 	#  Of course it was one of them
     ai_chance = {
       factor = 55
     }
@@ -1777,7 +1807,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9560"
+    name = "EVTOPTB9560" 	#  It's better to play it safe until we know more
     ai_chance = {
       factor = 45
     }
@@ -1791,6 +1821,7 @@ country_event = {
     add_prestige = -8
   }
 }
+# Political Chaos
 country_event = {
   id = republics.25
   title = "EVTNAME9561"
@@ -1848,7 +1879,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9561"
+    name = "EVTOPTA9561" 	#  That's just the nature of politics
     ai_chance = {
       factor = 55
     }
@@ -1867,7 +1898,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9561"
+    name = "EVTOPTB9561" 	#  Some restructuring might be necessary
     ai_chance = {
       factor = 45
     }
@@ -1882,6 +1913,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Influenced Decisions
 country_event = {
   id = republics.26
   title = "EVTNAME9562"
@@ -1936,7 +1968,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9562"
+    name = "EVTOPTA9562" 	#  It has to stop
     ai_chance = {
       factor = 55
     }
@@ -1953,7 +1985,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9562"
+    name = "EVTOPTB9562" 	#  That can't be true
     ai_chance = {
       factor = 45
     }
@@ -1967,6 +1999,7 @@ country_event = {
     add_corruption = 0.5
   }
 }
+# Financial Disagreements
 country_event = {
   id = republics.27
   title = "EVTNAME9563"
@@ -2034,7 +2067,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9563"
+    name = "EVTOPTA9563" 	#  Mint more money
     ai_chance = {
       factor = 55
     }
@@ -2049,7 +2082,7 @@ country_event = {
     add_inflation = 4
   }
   option = {
-    name = "EVTOPTB9563"
+    name = "EVTOPTB9563" 	#  Raise taxes
     ai_chance = {
       factor = 45
     }
@@ -2064,6 +2097,7 @@ country_event = {
     add_stability = -1
   }
 }
+# Military Spending
 country_event = {
   id = republics.28
   title = "EVTNAME9564"
@@ -2170,7 +2204,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9564"
+    name = "EVTOPTA9564" 	#  Well, trade and production aren't as important
     ai_chance = {
       factor = 55
     }
@@ -2180,7 +2214,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9564"
+    name = "EVTOPTB9564" 	#  Cut back on military expenses
     ai_chance = {
       factor = 45
     }
@@ -2190,6 +2224,7 @@ country_event = {
     }
   }
 }
+# A Strong Army or Navy?
 country_event = {
   id = republics.29
   title = "EVTNAME9565"
@@ -2253,7 +2288,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9565"
+    name = "EVTOPTA9565" 	#  A large navy is the only option
     ai_chance = {
       factor = 55
     }
@@ -2263,7 +2298,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9565"
+    name = "EVTOPTB9565" 	#  A large army would be more beneficial
     ai_chance = {
       factor = 45
     }
@@ -2277,6 +2312,7 @@ country_event = {
     }
   }
 }
+# Military Leniency
 country_event = {
   id = republics.30
   title = "EVTNAME9566"
@@ -2304,7 +2340,7 @@ country_event = {
     days = 1
   }
   option = {
-    name = "EVTOPTA9566"
+    name = "EVTOPTA9566" 	#  They fail to see the bigger picture
     ai_chance = {
       factor = 100
     }
@@ -2319,7 +2355,7 @@ country_event = {
     add_republican_tradition = -2
   }
   option = {
-    name = "EVTOPTB9566"
+    name = "EVTOPTB9566" 	#  It's not of any interest anymore
     ai_chance = {
       factor = 0
     }
@@ -2334,6 +2370,7 @@ country_event = {
     add_republican_tradition = 1
   }
 }
+# Too many liberties
 country_event = {
   id = republics.31
   title = "EVTNAME9567"
@@ -2374,7 +2411,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9567"
+    name = "EVTOPTA9567" 	#  They are exaggerating
     ai_chance = {
       factor = 55
     }
@@ -2389,7 +2426,7 @@ country_event = {
     add_republican_tradition = 1
   }
   option = {
-    name = "EVTOPTB9567"
+    name = "EVTOPTB9567" 	#  Take appropriate measurements
     ai_chance = {
       factor = 45
     }
@@ -2409,6 +2446,7 @@ country_event = {
     add_republican_tradition = -1
   }
 }
+# Economic Decisions
 country_event = {
   id = republics.32
   title = "EVTNAME9568"
@@ -2462,7 +2500,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9568"
+    name = "EVTOPTA9568" 	#  A short term bost is probably the best option
     ai_chance = {
       factor = 55
     }
@@ -2472,7 +2510,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9568"
+    name = "EVTOPTB9568" 	#  Consider the long term consequences
     ai_chance = {
       factor = 45
     }
@@ -2483,6 +2521,7 @@ country_event = {
     add_republican_tradition = 1
   }
 }
+# Military Expenses
 country_event = {
   id = republics.33
   title = "EVTNAME9569"
@@ -2548,7 +2587,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9569"
+    name = "EVTOPTA9569" 	#  Convince them that we can afford it
     ai_chance = {
       factor = 55
     }
@@ -2562,7 +2601,7 @@ country_event = {
     add_years_of_income = -0.10
   }
   option = {
-    name = "EVTOPTB9569"
+    name = "EVTOPTB9569" 	#  Agree to make some cutbacks
     ai_chance = {
       factor = 45
     }
@@ -2574,6 +2613,7 @@ country_event = {
     add_republican_tradition = 1
   }
 }
+# Sympathisers of the Old Government
 country_event = {
   id = republics.34
   title = "EVTNAME9570"
@@ -2639,7 +2679,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9570"
+    name = "EVTOPTA9570" 	#  That won't be necessary
     ai_chance = {
       factor = 55
     }
@@ -2659,7 +2699,7 @@ country_event = {
     add_republican_tradition = 1
   }
   option = {
-    name = "EVTOPTB9570"
+    name = "EVTOPTB9570" 	#  Get to it
     ai_chance = {
       factor = 45
     }
@@ -2674,6 +2714,7 @@ country_event = {
     add_republican_tradition = -1
   }
 }
+# A New Constitution
 country_event = {
   id = republics.35
   title = "EVTNAME9571"
@@ -2744,13 +2785,14 @@ country_event = {
   }
   immediate = {
     check_if_non_state_advisor_effect = {
-      chance_of_primary = 75
+      #Hidden, must be followed by erase_advisor_flags_effect
+      chance_of_primary = 75 	# Not percentages!
       chance_of_tertiary = 10
       chance_of_secondary = 25
     }
   }
   option = {
-    name = "EVTOPTA9571"
+    name = "EVTOPTA9571" 	#  It will be solved soon enough
     ai_chance = {
       factor = 55
     }
@@ -2768,7 +2810,7 @@ country_event = {
     add_republican_tradition = 2
   }
   option = {
-    name = "EVTOPTB9571"
+    name = "EVTOPTB9571" 	#  Request some help
     ai_chance = {
       factor = 45
     }
@@ -2792,6 +2834,7 @@ country_event = {
     erase_advisor_flags_effect = yes
   }
 }
+# Areas of Research
 country_event = {
   id = republics.36
   title = "EVTNAME9572"
@@ -2861,7 +2904,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9572"
+    name = "EVTOPTA9572" 	#  An even spread should do the trick
     ai_chance = {
       factor = 55
     }
@@ -2872,7 +2915,7 @@ country_event = {
     add_republican_tradition = 1
   }
   option = {
-    name = "EVTOPTB9572"
+    name = "EVTOPTB9572" 	#  There's no need for any extra investments
     ai_chance = {
       factor = 45
     }
@@ -2887,6 +2930,7 @@ country_event = {
     add_years_of_income = 0.25
   }
 }
+# Lack of Support
 country_event = {
   id = republics.37
   title = "EVTNAME9573"
@@ -2956,7 +3000,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9573"
+    name = "EVTOPTA9573" 	#  Ignore them
     ai_chance = {
       factor = 55
     }
@@ -2967,7 +3011,7 @@ country_event = {
     add_republican_tradition = -1
   }
   option = {
-    name = "EVTOPTB9573"
+    name = "EVTOPTB9573" 	#  Hear them out once more
     ai_chance = {
       factor = 45
     }
@@ -2982,6 +3026,7 @@ country_event = {
     add_republican_tradition = 1
   }
 }
+# Anxious Parliament
 country_event = {
   id = republics.38
   title = "EVTNAME9574"
@@ -3052,7 +3097,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9574"
+    name = "EVTOPTA9574" 	#  It's nothing to worry about
     ai_chance = {
       factor = 55
     }
@@ -3074,7 +3119,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9574"
+    name = "EVTOPTB9574" 	#  It's better to be safe than sorry
     ai_chance = {
       factor = 45
     }
@@ -3085,6 +3130,7 @@ country_event = {
     }
   }
 }
+# Troublesome Parliament
 country_event = {
   id = republics.39
   title = "EVTNAME9575"
@@ -3152,7 +3198,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9575"
+    name = "EVTOPTA9575" 	#  Make it a bit more clear to them
     ai_chance = {
       factor = 55
     }
@@ -3169,7 +3215,7 @@ country_event = {
     add_republican_tradition = -1
   }
   option = {
-    name = "EVTOPTB9575"
+    name = "EVTOPTB9575" 	#  Let them think they have a say in things
     ai_chance = {
       factor = 45
     }
@@ -3180,6 +3226,7 @@ country_event = {
     add_republican_tradition = 2
   }
 }
+# Overspending
 country_event = {
   id = republics.40
   title = "EVTNAME9576"
@@ -3249,7 +3296,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9576"
+    name = "EVTOPTA9576" 	#  Try to convince them of otherwise
     ai_chance = {
       factor = 100
     }
@@ -3263,7 +3310,7 @@ country_event = {
     add_years_of_income = -0.10
   }
   option = {
-    name = "EVTOPTB9576"
+    name = "EVTOPTB9576" 	#  Let them worry
     ai_chance = {
       factor = 0
     }
@@ -3277,6 +3324,7 @@ country_event = {
     add_stability = -1
   }
 }
+#Embezzlement
 country_event = {
   id = republics.41
   title = "EVTNAME9577"
@@ -3339,7 +3387,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9577"
+    name = "EVTOPTA9577" 	#  There's probably a good explanation for this
     ai_chance = {
       factor = 45
     }
@@ -3354,7 +3402,7 @@ country_event = {
     add_republican_tradition = -1
   }
   option = {
-    name = "EVTOPTB9577"
+    name = "EVTOPTB9577" 	#  Get rid of him
     ai_chance = {
       factor = 55
     }
@@ -3377,6 +3425,7 @@ country_event = {
     add_republican_tradition = 1
   }
 }
+# Planned Coup
 country_event = {
   id = republics.42
   title = "EVTNAME9578"
@@ -3453,7 +3502,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9578"
+    name = "EVTOPTA9578" 	#  You can never be too careful
     ai_chance = {
       factor = 55
     }
@@ -3473,7 +3522,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9578"
+    name = "EVTOPTB9578" 	#  They wouldn't dare!
     ai_chance = {
       factor = 45
     }
@@ -3495,6 +3544,7 @@ country_event = {
     }
   }
 }
+# Possible Traitors
 country_event = {
   id = republics.43
   title = "EVTNAME9579"
@@ -3574,7 +3624,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTA9579"
+    name = "EVTOPTA9579" 	#  Confront them
     ai_chance = {
       factor = 55
     }
@@ -3603,7 +3653,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB9579"
+    name = "EVTOPTB9579" 	#  Send a few spies of your own
     ai_chance = {
       factor = 45
     }
@@ -3614,6 +3664,7 @@ country_event = {
     add_prestige = -10
   }
 }
+# Ruled by Despot
 country_event = {
   id = republics.100
   title = republics.3.t
@@ -3641,6 +3692,7 @@ country_event = {
     add_government_reform = revolutionary_empire_reform
   }
 }
+# Imperials take over
 country_event = {
   id = republics.101
   title = republics.3.t
@@ -3670,6 +3722,7 @@ country_event = {
     add_government_reform = revolutionary_empire_reform
   }
 }
+# Caretakers take over
 country_event = {
   id = republics.102
   title = republics.102.t
@@ -3711,7 +3764,7 @@ country_event = {
           has_government_attribute = is_pirate_republic_reform
         }
         define_ruler = {
-          name = "ÿuQØS®‹O	ÿ"  # (Mutineer Council)
+          name = "ÿuQØS®‹O	ÿ" 	# (Mutineer Council)
           regency = yes
           adm = 2
           dip = 2
@@ -3721,7 +3774,7 @@ country_event = {
       }
       else = {
         define_ruler = {
-          name = "ÿlQqQ‰RhQÔYXTO	ÿ"  # (Committee of Public Safety)
+          name = "ÿlQqQ‰RhQÔYXTO	ÿ" 	# (Committee of Public Safety)
           regency = yes
           adm = 2
           dip = 2

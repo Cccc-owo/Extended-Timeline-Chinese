@@ -1,5 +1,9 @@
+########################################
+# Major Flavor Events  #
+########################################
 namespace = flavor_hab
 normal_or_historical_nations = yes
+# The Imperial Parliament at Augsburg
 country_event = {
   id = flavor_hab.3188
   title = "flavor_hab.EVTNAME3188"
@@ -31,6 +35,7 @@ country_event = {
     }
   }
   option = {
+    # Find a middle ground
     name = "flavor_hab.EVTOPTA3188"
     ai_chance = {
       factor = 50
@@ -47,6 +52,7 @@ country_event = {
     }
   }
   option = {
+    # Support Catholics
     name = "flavor_hab.EVTOPTB3188"
     add_papal_influence = 25
     ai_chance = {
@@ -78,6 +84,7 @@ country_event = {
     }
   }
   option = {
+    # Support Protestants
     name = "flavor_hab.EVTOPTC3188"
     ai_chance = {
       factor = 25
@@ -109,6 +116,7 @@ country_event = {
     }
   }
 }
+# The Royal Letter of Bohemia
 country_event = {
   id = flavor_hab.3193
   title = "flavor_hab.EVTNAME3193"
@@ -136,10 +144,11 @@ country_event = {
     months = 100
     modifier = {
       factor = 0.75
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
     }
   }
   option = {
+    # Issue it
     name = "flavor_hab.EVTOPTA3193"
     set_country_flag = royal_letter_of_bohemia
     BOH = {
@@ -150,6 +159,7 @@ country_event = {
     }
   }
   option = {
+    # Do not issue it
     name = "flavor_hab.EVTOPTB3193"
     set_country_flag = refused_royal_letter_of_bohemia
     BOH = {
@@ -160,6 +170,7 @@ country_event = {
     }
   }
 }
+# The Defenstration of Prague
 country_event = {
   id = flavor_hab.3194
   title = "flavor_hab.EVTNAME3194"
@@ -184,6 +195,7 @@ country_event = {
           senior_union_with = BOH
         }
         266 = {
+          # Bohemia
           owned_by = ROOT
           religion = protestant
         }
@@ -199,7 +211,7 @@ country_event = {
     months = 100
     modifier = {
       factor = 0.75
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
     }
     modifier = {
       factor = 0.25
@@ -210,6 +222,7 @@ country_event = {
     set_country_flag = HAB_had_event_3194
   }
   option = {
+    # Not good at all
     name = "flavor_hab.EVTOPTA3194"
     if = {
       limit = {
@@ -217,6 +230,7 @@ country_event = {
           senior_union_with = BOH
         }
         266 = {
+          # Bohemia
           owned_by = ROOT
           religion = protestant
         }
@@ -239,6 +253,7 @@ country_event = {
     }
   }
 }
+# Peasant Revolt in Austria
 country_event = {
   id = flavor_hab.3195
   title = "flavor_hab.EVTNAME3195"
@@ -269,6 +284,7 @@ country_event = {
     months = 100
   }
   option = {
+    # They must be crushed
     name = "flavor_hab.EVTOPTA3195"
     add_stability = -1
     random_owned_province = {
@@ -286,6 +302,7 @@ country_event = {
     }
   }
 }
+# Noble Revolt in Hungary
 country_event = {
   id = flavor_hab.3201
   title = "flavor_hab.EVTNAME3201"
@@ -329,6 +346,7 @@ country_event = {
     }
   }
   option = {
+    # They should learn their place
     name = "flavor_hab.EVTOPTA3201"
     random_owned_province = {
       limit = {
@@ -354,6 +372,7 @@ country_event = {
     }
   }
   option = {
+    # Give more concessions
     name = "flavor_hab.EVTOPTB3201"
     every_owned_province = {
       limit = {
@@ -373,6 +392,7 @@ country_event = {
     add_mil_power = -100
   }
 }
+# The Purge of the Archbishop of Salzburg
 country_event = {
   id = flavor_hab.3203
   title = "flavor_hab.EVTNAME3203"
@@ -395,6 +415,7 @@ country_event = {
     months = 100
   }
   option = {
+    # Let the Archbishop Purge the Protestants
     name = "flavor_hab.EVTOPTA3203"
     ai_chance = {
       factor = 0
@@ -405,10 +426,12 @@ country_event = {
     }
   }
   option = {
+    # Stop the Archbishop's Purge
     name = "flavor_hab.EVTOPTB3203"
     add_stability = -1
   }
 }
+# Wenzel Anton Kaunitz
 country_event = {
   id = flavor_hab.3206
   title = "flavor_hab.EVTNAME3206"
@@ -430,6 +453,7 @@ country_event = {
     set_country_flag = HAB_had_event_3206
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     add_adm_power = 100
     add_dip_power = 100
@@ -445,6 +469,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+# Metternich
 country_event = {
   id = flavor_hab.3208
   title = "flavor_hab.EVTNAME3208"
@@ -463,6 +488,7 @@ country_event = {
     set_country_flag = HAB_had_event_3208
   }
   option = {
+    # An Excellent Minister!
     name = "EXCELLENTMINISTER"
     if = {
       limit = {
@@ -477,6 +503,7 @@ country_event = {
     add_mil_power = 100
   }
 }
+# The Protestant Rebellion in Hungary
 country_event = {
   id = flavor_hab.3099
   title = "flavor_hab.EVTNAME3099"
@@ -540,6 +567,7 @@ country_event = {
     }
   }
   option = {
+    # Crush the Heretics
     name = "flavor_hab.EVTOPTA3099"
     random_owned_province = {
       limit = {
@@ -549,7 +577,7 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 3
-        leader = "OÀNyrN ZSGYïQ"  # István Bocskay
+        leader = "OÀNyrN ZSGYïQ" 	# István Bocskay
         friend = HUN
       }
       clr_province_flag = hungarian_revolt
@@ -568,6 +596,7 @@ country_event = {
     }
   }
   option = {
+    # Give concessions
     name = "flavor_hab.EVTOPTB3099"
     add_adm_power = -100
     add_dip_power = -100
@@ -579,6 +608,7 @@ country_event = {
     }
   }
 }
+# The Enlightened Reforms of Joseph II
 country_event = {
   id = flavor_hab.3216
   title = "flavor_hab.EVTNAME3216"
@@ -596,6 +626,7 @@ country_event = {
     months = 200
   }
   option = {
+    # Reforms of Enlightenment
     name = "flavor_hab.EVTOPTA3216"
     add_adm_power = 100
     add_dip_power = 100
@@ -611,6 +642,7 @@ country_event = {
     add_innovativeness_big_effect = yes
   }
 }
+# Reichshofrat
 country_event = {
   id = flavor_hab.3328
   title = "flavor_hab.EVTNAME3328"
@@ -628,6 +660,7 @@ country_event = {
     months = 100
   }
   option = {
+    # Create this new council
     name = "flavor_hab.EVTOPTA3328"
     add_stability = -1
     if = {
@@ -639,15 +672,17 @@ country_event = {
       add_reform_progress_small_effect = yes
     }
     add_country_modifier = {
-      name = "reichshofrat"
+      name = reichshofrat
       duration = -1
     }
   }
   option = {
+    # Let the Nobility run these modane things
     name = "flavor_hab.EVTOPTB3328"
     add_stability_or_adm_power = yes
   }
 }
+# The Chastening of Hungary
 country_event = {
   id = flavor_hab.3332
   title = "flavor_hab.EVTNAME3332"
@@ -695,6 +730,7 @@ country_event = {
     }
   }
   option = {
+    # Centralized Administration from our capital
     name = "flavor_hab.EVTOPTA3332"
     134 = {
       add_base_tax = 2
@@ -722,6 +758,7 @@ country_event = {
     }
   }
   option = {
+    # Decentralized Hungarian Noble Council
     name = "flavor_hab.EVTOPTB3332"
     ai_chance = {
       factor = 0
@@ -743,6 +780,7 @@ country_event = {
     }
   }
 }
+# The Insurrection of Duke Imre Thököly
 country_event = {
   id = flavor_hab.3333
   title = "flavor_hab.EVTNAME3333"
@@ -800,6 +838,7 @@ country_event = {
     }
   }
   option = {
+    # Stop the Movement for Independence!
     name = "flavor_hab.EVTOPTA3333"
     add_stability = -1
     carpathia_region = {
@@ -838,7 +877,7 @@ country_event = {
         type = nationalist_rebels
         size = 3
         friend = HUN
-        leader = "OÆY÷– yrKQO"  # Imre Thököly
+        leader = "OÆY÷– yrKQO" 	# Imre Thököly
       }
     }
     if = {
@@ -886,6 +925,7 @@ country_event = {
     }
   }
 }
+# The Reform of the Bureaucracy
 country_event = {
   id = flavor_hab.3336
   title = "flavor_hab.EVTNAME3336"
@@ -900,6 +940,7 @@ country_event = {
     months = 60
   }
   option = {
+    # Reform
     name = "flavor_hab.EVTOPTA3336"
     if = {
       limit = {
@@ -915,11 +956,13 @@ country_event = {
     }
   }
   option = {
+    # Let it be
     name = "flavor_hab.EVTOPTB3336"
     add_stability = 2
     add_years_of_income = 0.5
   }
 }
+# The Reactionary Reforms of 1789
 country_event = {
   id = flavor_hab.3340
   title = "flavor_hab.EVTNAME3340"
@@ -1007,6 +1050,7 @@ country_event = {
     }
   }
   option = {
+    # React against Revolutionary Tendencies!
     name = "flavor_hab.EVTOPTA3340"
     ai_chance = {
       factor = 50
@@ -1035,6 +1079,7 @@ country_event = {
     }
   }
   option = {
+    # Appease them
     name = "flavor_hab.EVTOPTB3340"
     ai_chance = {
       factor = 50
@@ -1061,6 +1106,54 @@ country_event = {
     add_mil_power = -200
   }
 }
+# Privilegium Maius
+#country_event = {
+#	id = flavor_hab.1
+#	title = "flavor_hab.EVTNAME1"
+#	desc = "flavor_hab.EVTDESC1"
+#	picture = REFORM_eventPicture
+#	
+#	
+#	fire_only_once = yes
+#	trigger = {
+#		tag = HAB
+#		NOT = { is_year = 1500 }
+#		is_emperor = yes
+#		dynasty = "von Habsburg"
+#		prestige = 50
+#	}
+#	mean_time_to_happen = {
+#		months = 250
+#		modifier = {
+#			factor = 0.50
+#			prestige = 60
+#		}
+#		modifier = {
+#			factor = 0.50
+#			prestige = 70
+#		}
+#		modifier = {
+#			factor = 0.50
+#			prestige = 80
+#		}
+#		modifier = {
+#			factor = 0.50
+#			prestige = 90
+#		}
+#	}
+#	
+#	option = {		# This is important for our Prestige
+#		name = "flavor_hab.EVTOPTA1"
+#		ai_chance = { factor = 100 }
+#		change_government = archduchy
+#	}
+#	option = {		# Forgery is not the path
+#		name = "flavor_hab.EVTOPTB1"
+#		ai_chance = { factor = 0 }
+#		add_prestige = 10
+#	}
+#}
+# The Golden Roof
 country_event = {
   id = flavor_hab.2
   title = "flavor_hab.EVTNAME2"
@@ -1070,7 +1163,7 @@ country_event = {
   trigger = {
     tag = HAB
     is_emperor = yes
-    owns = 73
+    owns = 73 	#  Tirol
     is_year = 1480
     NOT = {
       is_year = 1530
@@ -1080,14 +1173,16 @@ country_event = {
     months = 100
     modifier = {
       factor = 0.75
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
     }
   }
   option = {
+    # This will show the glory of our dynasty
     name = "flavor_hab.EVTOPTA2"
     add_prestige = 10
   }
 }
+# The Triumphal Procession
 country_event = {
   id = flavor_hab.4
   title = "flavor_hab.EVTNAME4"
@@ -1106,10 +1201,11 @@ country_event = {
     months = 100
     modifier = {
       factor = 0.75
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
     }
   }
   option = {
+    # Glory for the Emperor!
     name = "flavor_hab.EVTOPTA4"
     add_years_of_income = -0.25
     add_ruler_modifier = {
@@ -1117,10 +1213,12 @@ country_event = {
     }
   }
   option = {
+    # It's too costly
     name = "flavor_hab.EVTOPTB4"
     add_prestige = -10
   }
 }
+# Styrian Nobles' Revolt
 country_event = {
   id = flavor_hab.5
   title = "flavor_hab.EVTNAME5"
@@ -1133,12 +1231,13 @@ country_event = {
     NOT = {
       is_year = 1550
     }
-    owns = 1863
+    owns = 1863 	#  Graz
   }
   mean_time_to_happen = {
     months = 500
   }
   option = {
+    # Crush the Rebellion!
     name = "flavor_hab.EVTOPTA5"
     1863 = {
       add_core = STY
@@ -1150,6 +1249,7 @@ country_event = {
     }
   }
 }
+# The Meteorite of Ensisheim
 country_event = {
   id = flavor_hab.6
   title = "flavor_hab.EVTNAME6"
@@ -1162,7 +1262,7 @@ country_event = {
     NOT = {
       is_year = 1550
     }
-    owns = 1880
+    owns = 1880 	#  Sundgau
   }
   mean_time_to_happen = {
     months = 500
@@ -1171,11 +1271,13 @@ country_event = {
     set_country_flag = HAB_had_event_6
   }
   option = {
+    # A true wonder!
     name = "flavor_hab.EVTOPTA6"
     add_stability_or_adm_power = yes
     add_prestige = 25
   }
 }
+# The Habsburg Dynasty
 country_event = {
   id = flavor_hab.7
   title = "flavor_hab.EVTNAME7"
@@ -1188,7 +1290,7 @@ country_event = {
     is_free_or_tributary_trigger = yes
     government = monarchy
     NOT = {
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
     }
     NOT = {
       has_ruler_modifier = spurn_habsburgs
@@ -1226,6 +1328,7 @@ country_event = {
     }
   }
   option = {
+    # DYNASTY shall continue to rule!
     name = "flavor_hab.EVTOPTA7"
     add_legitimacy = 1
     add_prestige = -10
@@ -1237,8 +1340,10 @@ country_event = {
     }
   }
   option = {
+    # The Habsburg dynasty must return!
     name = "flavor_hab.EVTOPTB7"
     add_legitimacy = -50
+    # Male heir
     if = {
       limit = {
         has_country_flag = habsburg_male_heir
@@ -1248,7 +1353,7 @@ country_event = {
           has_country_flag = habsburg_adm_heir
         }
         define_heir = {
-          dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+          dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
           culture = austrian
           ADM = 5
           DIP = 1
@@ -1262,7 +1367,7 @@ country_event = {
           has_country_flag = habsburg_dip_heir
         }
         define_heir = {
-          dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+          dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
           culture = austrian
           DIP = 5
           ADM = 1
@@ -1276,7 +1381,7 @@ country_event = {
           has_country_flag = habsburg_mil_heir
         }
         define_heir = {
-          dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+          dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
           culture = austrian
           MIL = 5
           ADM = 1
@@ -1287,6 +1392,7 @@ country_event = {
       }
       clr_country_flag = habsburg_male_heir
     }
+    # Female heir
     if = {
       limit = {
         has_country_flag = habsburg_female_heir
@@ -1296,7 +1402,7 @@ country_event = {
           has_country_flag = habsburg_adm_heir
         }
         define_heir = {
-          dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+          dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
           female = yes
           culture = austrian
           ADM = 5
@@ -1311,7 +1417,7 @@ country_event = {
           has_country_flag = habsburg_dip_heir
         }
         define_heir = {
-          dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+          dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
           culture = austrian
           female = yes
           DIP = 5
@@ -1326,7 +1432,7 @@ country_event = {
           has_country_flag = habsburg_mil_heir
         }
         define_heir = {
-          dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+          dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
           culture = austrian
           female = yes
           MIL = 5
@@ -1340,6 +1446,10 @@ country_event = {
     }
   }
 }
+########################################
+# Minor Flavor Events  #
+########################################
+# Ludwig van Beethoven
 country_event = {
   id = flavor_hab.5190
   title = "flavor_hab.EVTNAME5190"
@@ -1357,11 +1467,13 @@ country_event = {
     months = 50
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_adm_power = 100
     add_prestige = 10
   }
 }
+# Wolfgang Amadeus Mozart
 country_event = {
   id = flavor_hab.5191
   title = "flavor_hab.EVTNAME5191"
@@ -1379,12 +1491,17 @@ country_event = {
     months = 50
   }
   option = {
+    # Excellent
     name = "EXCELLENT"
     add_dip_power = 100
     add_prestige = 10
     add_innovativeness_small_effect = yes
   }
 }
+########################################
+# The Italian Wars
+########################################
+# The Italian Wars
 country_event = {
   id = flavor_hab.1007
   title = "flavor_spa.EVTNAME1007"
@@ -1432,6 +1549,7 @@ country_event = {
     months = 100
   }
   option = {
+    # Claim all French land in Italy!
     name = "flavor_spa.EVTOPTA1007"
     ai_chance = {
       factor = 90
@@ -1456,6 +1574,7 @@ country_event = {
     }
   }
   option = {
+    # Italy lies outside our sphere of interest
     name = "flavor_spa.EVTOPTB1007"
     ai_chance = {
       factor = 10
@@ -1463,6 +1582,7 @@ country_event = {
     add_prestige = -10
   }
 }
+# The Italian Wars
 country_event = {
   id = flavor_hab.1008
   title = "flavor_spa.EVTNAME1008"
@@ -1483,6 +1603,7 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
+    # Then counter-claim all ADJECTIVE provinces!
     name = "flavor_spa.EVTOPTA1008"
     trigger = {
       italy_region = {
@@ -1508,6 +1629,7 @@ country_event = {
     }
   }
   option = {
+    # We should back down in Italy
     name = "flavor_spa.EVTOPTB1008"
     ai_chance = {
       factor = 10
@@ -1515,6 +1637,7 @@ country_event = {
     add_prestige = -10
   }
   option = {
+    # If it's war they want...
     name = "flavor_hab.EVTOPTC1008"
     trigger = {
       NOT = {
@@ -1535,6 +1658,7 @@ country_event = {
     }
   }
 }
+# The Italian Wars
 country_event = {
   id = flavor_hab.1009
   title = "flavor_spa.EVTNAME1009"
@@ -1555,6 +1679,7 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
+    # How dare they?! Italy is ours!
     name = "flavor_spa.EVTOPTA1009"
     add_opinion = {
       who = FROM
@@ -1562,6 +1687,7 @@ country_event = {
     }
   }
 }
+# German Settlement of Hungary
 country_event = {
   id = flavor_hab.10
   title = flavor_hab.10.t
@@ -1589,14 +1715,15 @@ country_event = {
         owned_by = TUR
       }
     }
-    owns = 153
-    owns = 155
-    owns = 1864
+    owns = 153 	# Pest
+    owns = 155 	# Bekes
+    owns = 1864 	# Somogy
   }
   mean_time_to_happen = {
     months = 100
   }
   option = {
+    # Encourage it!
     name = flavor_hab.10.a
     ai_chance = {
       factor = 80
@@ -1613,6 +1740,7 @@ country_event = {
     }
   }
   option = {
+    # Discourage the Settlements
     name = flavor_hab.10.b
     ai_chance = {
       factor = 20
@@ -1620,6 +1748,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Schwaz Silver Mine
 country_event = {
   id = flavor_hab.11
   title = flavor_hab.11.t
@@ -1642,6 +1771,7 @@ country_event = {
     months = 60
   }
   option = {
+    # Great!
     name = flavor_hab.11.a
     73 = {
       add_permanent_province_modifier = {
@@ -1651,6 +1781,7 @@ country_event = {
     }
   }
 }
+# Generallandtag
 country_event = {
   id = flavor_hab.12
   title = flavor_hab.12.t
@@ -1668,6 +1799,7 @@ country_event = {
     months = 150
   }
   option = {
+    # Great!
     name = flavor_hab.12.a
     if = {
       limit = {
@@ -1682,6 +1814,7 @@ country_event = {
     }
   }
 }
+# Plague in Vienna
 country_event = {
   id = flavor_hab.13
   title = flavor_hab.13.t
@@ -1700,6 +1833,7 @@ country_event = {
     months = 135
   }
   option = {
+    # Oh du lieber Augustin
     name = flavor_hab.13.a
     set_country_flag = hab_had_plague_of_vienna
     add_stability = -1
@@ -1711,6 +1845,7 @@ country_event = {
     }
   }
 }
+# The Pestsäule of Vienna.
 country_event = {
   id = flavor_hab.14
   title = flavor_hab.14.t
@@ -1731,15 +1866,18 @@ country_event = {
     months = 6
   }
   option = {
+    # Let us build a grand Column
     name = flavor_hab.14.a
     add_prestige = 30
     add_legitimacy = 15
   }
   option = {
+    # Let us be conservative.
     name = flavor_hab.14.b
     add_stability_or_adm_power = yes
   }
 }
+# Geheime Kabinettskanzlei
 country_event = {
   id = flavor_hab.15
   title = flavor_hab.15.t
@@ -1757,6 +1895,7 @@ country_event = {
     months = 90
   }
   option = {
+    # Ok.
     name = flavor_hab.15.a
     add_prestige = 5
     add_country_modifier = {
@@ -1765,6 +1904,7 @@ country_event = {
     }
   }
 }
+# Melchior Klesl
 country_event = {
   id = flavor_hab.16
   title = flavor_hab.16.t
@@ -1782,6 +1922,7 @@ country_event = {
     months = 90
   }
   option = {
+    # Such devotion! We have need of this man on the privy council.
     name = flavor_hab.16.a
     if = {
       limit = {
@@ -1796,10 +1937,12 @@ country_event = {
     }
   }
   option = {
+    # That is great to hear, we must not keep him from his work.
     name = flavor_hab.16.b
     add_stability_or_adm_power = yes
   }
 }
+# The Mühlviertel Textile Production
 country_event = {
   id = flavor_hab.17
   title = flavor_hab.17.t
@@ -1818,6 +1961,7 @@ country_event = {
     months = 150
   }
   option = {
+    # Allow the foreign investors to proceed.
     name = flavor_hab.17.a
     133 = {
       change_trade_goods = cloth
@@ -1825,11 +1969,13 @@ country_event = {
     }
   }
   option = {
+    # No the Austrian peasants should not be preoccupied with such things.
     name = flavor_hab.17.b
     add_prestige = 5
     add_legitimacy = 5
   }
 }
+# The Ostende Company
 country_event = {
   id = flavor_hab.18
   title = flavor_hab.18.t
@@ -1854,6 +2000,7 @@ country_event = {
     months = 90
   }
   option = {
+    # Great!
     name = flavor_hab.18.a
     add_country_modifier = {
       name = hab_ostende_company
@@ -1873,6 +2020,7 @@ country_event = {
     }
   }
   option = {
+    # We cannot risk angering our neighbors.
     name = flavor_hab.18.b
     every_country = {
       limit = {
@@ -1891,6 +2039,7 @@ country_event = {
     }
   }
 }
+# Demands to close down the Ostende Company
 country_event = {
   id = flavor_hab.19
   title = flavor_hab.19.t
@@ -1905,6 +2054,7 @@ country_event = {
     months = 105
   }
   option = {
+    # Close down the Company.
     name = flavor_hab.19.a
     remove_country_modifier = hab_ostende_company
     every_country = {
@@ -1928,6 +2078,7 @@ country_event = {
     }
   }
   option = {
+    # Let us not bow to such threats.
     name = flavor_hab.19.b
     every_country = {
       limit = {
@@ -1943,6 +2094,10 @@ country_event = {
     }
   }
 }
+#########################################################################################
+##### New events by Pierre du Plessis                                               #####
+#########################################################################################
+# Institute the Imperial Austrian Monarchy?
 country_event = {
   id = flavor_hab.20
   title = flavor_hab.20.name
@@ -1950,6 +2105,7 @@ country_event = {
   picture = COURT_eventPicture
   is_triggered_only = yes
   option = {
+    # Yes
     name = flavor_hab.20.A
     add_government_reform = austrian_dual_monarchy
     ai_chance = {
@@ -1957,6 +2113,7 @@ country_event = {
     }
   }
   option = {
+    # No
     name = flavor_hab.20.B
     add_country_modifier = {
       name = hab_tolerant_society
@@ -1967,6 +2124,7 @@ country_event = {
     }
   }
 }
+# Ladislaus Postumus: Archduke of Austria, King of Hungary (Austrian version)
 country_event = {
   id = flavor_hab.21
   title = flavor_hab.21.name
@@ -2011,16 +2169,18 @@ country_event = {
     }
   }
 }
+# The Diet of the Hungarian and Croatian Nobility (Austrian version)
 country_event = {
   id = flavor_hab.23
   title = flavor_hab.23.name
   desc = flavor_hab.23.desc
   picture = COURT_eventPicture
-  fire_only_once = yes
+  fire_only_once = yes 	# would be weird if it happened twice
   mean_time_to_happen = {
     months = 6
   }
   trigger = {
+    #		tag = HAB #I guess it should trigger for anyone that manages this
     senior_union_with = HUN
     senior_union_with = CRO
     CRO = {
@@ -2046,6 +2206,7 @@ country_event = {
     }
   }
 }
+# The Diet of the Hungarian and Croatian Nobility (Hungarian version)
 country_event = {
   id = flavor_hab.24
   title = flavor_hab.24.name

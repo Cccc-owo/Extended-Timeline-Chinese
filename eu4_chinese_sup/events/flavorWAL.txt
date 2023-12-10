@@ -1,12 +1,17 @@
+########################################
+# Flavor Events for Wallachia
+# Scripted by Sara Wendel-÷rtqvist
+########################################
 namespace = flavor_wal
 normal_or_historical_nations = yes
+# Vlad the Impaler!
 country_event = {
   id = flavor_wal.1
   title = "flavor_wal.EVTNAME1"
   desc = "flavor_wal.EVTDESC1"
   picture = IMPALED_SOLDIERS_eventPicture
   fire_only_once = yes
-  is_triggered_only = yes
+  is_triggered_only = yes 	#  To avoid Vlad trying to usurp his father
   trigger = {
     tag = WAL
     NOT = {
@@ -16,8 +21,8 @@ country_event = {
   option = {
     name = "flavor_wal.EVTOPTA1"
     define_ruler = {
-      name = "V…b∑V «ëiO¿N"  # Vlad Tepes
-      dynasty = "∑V‰S…b"  # Draculesti
+      name = "V…b∑V «ëiO¿N" 	# Vlad Tepes
+      dynasty = "∑V‰S…b" 	# Draculesti
       adm = 1
       dip = 0
       mil = 5
@@ -65,8 +70,8 @@ country_event = {
         type = pretender_rebels
         size = 1
         culture = romanian
-        leader = "V…b∑V «ëiO¿N"  # Vlad Tepes
-        leader_dynasty = "∑V‰S…b"  # Draculesti
+        leader = "V…b∑V «ëiO¿N" 	# Vlad Tepes
+        leader_dynasty = "∑V‰S…b" 	# Draculesti
       }
     }
     TUR = {
@@ -78,6 +83,8 @@ country_event = {
     }
   }
 }
+# The Impalement of the Sultan (alt history)
+# By Daniel Tolman
 country_event = {
   id = flavor_wal.2
   title = "flavor_wal.EVTNAME2"
@@ -220,6 +227,7 @@ country_event = {
     }
   }
 }
+# For Ottomans
 country_event = {
   id = flavor_wal.3
   title = "flavor_wal.EVTNAME3"

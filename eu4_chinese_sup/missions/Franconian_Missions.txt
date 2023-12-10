@@ -84,9 +84,7 @@ franconia_conquest_group_1 = {
   }
   fkn_liberty = {
     icon = mission_noble_council
-    required_missions = {
-      fkn_defeat_rivals
-    }
+    required_missions = { fkn_defeat_rivals }
     provinces_to_highlight = {
       OR = {
         area = franconia_area
@@ -152,9 +150,7 @@ franconia_conquest_group_1 = {
   }
   fkn_greater_franconia = {
     icon = mission_unite_home_region
-    required_missions = {
-      fkn_liberty
-    }
+    required_missions = { fkn_liberty }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -180,7 +176,7 @@ franconia_conquest_group_1 = {
           ROOT = {
             NOT = {
               num_of_owned_provinces_with = {
-                value = 8
+                value = 8 	# of 9
                 OR = {
                   area = hesse_area
                   area = palatinate_area
@@ -203,7 +199,7 @@ franconia_conquest_group_1 = {
     trigger = {
       owns_core_province = 1876
       num_of_owned_provinces_with = {
-        value = 8
+        value = 8 	# of 9
         OR = {
           area = hesse_area
           area = palatinate_area
@@ -279,9 +275,7 @@ franconia_conquest_group_1 = {
   }
   fkn_subjugate_bavaria = {
     icon = mission_have_two_subjects
-    required_missions = {
-      fkn_greater_franconia
-    }
+    required_missions = { fkn_greater_franconia }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -436,9 +430,7 @@ franconia_conquest_group_2 = {
   fkn_kingdom_of_the_franks = {
     icon = mission_empire
     position = 5
-    required_missions = {
-      fkn_subjugate_bavaria
-    }
+    required_missions = { fkn_subjugate_bavaria }
     provinces_to_highlight = {
       province_id = 183
       OR = {
@@ -451,7 +443,7 @@ franconia_conquest_group_2 = {
       }
     }
     trigger = {
-      owns_core_province = 183
+      owns_core_province = 183 	# Paris
       total_own_and_non_tributary_subject_development = FRA
       army_size = FRA
     }
@@ -561,9 +553,7 @@ franconia_splendour_group = {
   }
   fkn_patronage_of_the_arts = {
     icon = mission_early_modern_university
-    required_missions = {
-      fkn_franconian_prosperity
-    }
+    required_missions = { fkn_franconian_prosperity }
     trigger = {
       has_adm_advisor_2 = yes
       has_dip_advisor_2 = yes
@@ -579,9 +569,7 @@ franconia_splendour_group = {
   }
   fkn_industrial_revolution = {
     icon = mission_have_manufactories
-    required_missions = {
-      fkn_patronage_of_the_arts
-    }
+    required_missions = { fkn_patronage_of_the_arts }
     provinces_to_highlight = {
       owned_by = root
       ROOT = {
@@ -675,9 +663,7 @@ franconia_splendour_group_2 = {
   fkn_sanspareil = {
     icon = mission_monarch_in_throne_room
     position = 4
-    required_missions = {
-      fkn_industrial_revolution
-    }
+    required_missions = { fkn_industrial_revolution }
     provinces_to_highlight = {
       is_capital_of = root
       NOT = {
@@ -702,7 +688,7 @@ franconia_splendour_group_2 = {
         limit = {
           valid_for_personal_unions_trigger = yes
           OR = {
-            dynasty = "¯Q —¨N0t&O"  # von Hohenzollern
+            dynasty = "¯Q —¨N0t&O" 	# von Hohenzollern
             tag = ANS
             tag = BYT
             was_tag = ANS
@@ -723,7 +709,7 @@ franconia_splendour_group_2 = {
         limit = {
           valid_for_personal_unions_trigger = yes
           OR = {
-            dynasty = "¯Q —¨N0t&O"  # von Hohenzollern
+            dynasty = "¯Q —¨N0t&O" 	# von Hohenzollern
             tag = ANS
             tag = BYT
             was_tag = ANS
@@ -768,9 +754,7 @@ franconia_splendour_group_2 = {
   }
   fkn_union_with_brandenburg = {
     icon = mission_alliances
-    required_missions = {
-      fkn_sanspareil
-    }
+    required_missions = { fkn_sanspareil }
     provinces_to_highlight = {
       OR = {
         area = mittelmark_area

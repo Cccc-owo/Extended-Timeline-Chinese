@@ -88,9 +88,7 @@ french_missions_1 = {
   }
   fra_burg_succession = {
     icon = fra_burg_succession
-    required_missions = {
-      fra_liberate_norm
-    }
+    required_missions = { fra_liberate_norm }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -459,10 +457,7 @@ french_missions_1 = {
   }
   fra_border_empire = {
     icon = end_the_habsburgs
-    required_missions = {
-      fra_burg_succession
-      fra_unite_france
-    }
+    required_missions = { fra_burg_succession fra_unite_france }
     position = 4
     provinces_to_highlight = {
       area = bourgogne_area
@@ -543,9 +538,7 @@ french_missions_1_blank_hre = {
   has_country_shield = yes
   fra_branch_mission_1_5 = {
     icon = mission_unknown_mission
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     trigger = {
       custom_trigger_tooltip = {
@@ -577,9 +570,7 @@ french_missions_1_kill_hre_path = {
   has_country_shield = yes
   fra_push_imperial_line = {
     icon = avoid_fragmentation
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -669,9 +660,7 @@ french_missions_1_hre_branch = {
   has_country_shield = yes
   fra_sway_electorate = {
     icon = the_viennese_waltz
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     trigger = {
       not_in_mission_preview_mode = {
@@ -700,6 +689,18 @@ french_missions_1_hre_branch = {
       }
     }
     effect = {
+      # custom_tooltip = fra_remove_hre_ae_tt
+      # hidden_effect = { 
+      # every_known_country = {
+      # limit = { 
+      # is_part_of_hre = yes 
+      # }
+      # reverse_add_aggressive_expansion = {
+      # who = FRA 
+      # value = -10
+      # }
+      # }
+      # }
       add_country_modifier = {
         name = fra_imperial_messengers_modifier
         duration = 7300
@@ -714,7 +715,7 @@ french_missions_1_hre_branch = {
           hre_size = 1
           is_subject = no
         }
-        custom_tooltip = fra_start_heirs_of_charlemagne_incident_tt
+        custom_tooltip = fra_start_heirs_of_charlemagne_incident_tt 	# Not an incident cause apparently incidents are glorified events and i feel like a kid who just learned santa isnt real
         hidden_effect = {
           emperor = {
             country_event = {
@@ -839,10 +840,7 @@ french_missions_1_Continuation_a = {
   }
   fra_crossroad_continents = {
     icon = king_of_sicily
-    required_missions = {
-      fra_raise_slave_ships
-      fra_throne_naples
-    }
+    required_missions = { fra_raise_slave_ships fra_throne_naples }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -973,9 +971,7 @@ french_missions_1_Continuation_a = {
   }
   fra_french_canada = {
     icon = mission_rb_colonise_canada
-    required_missions = {
-      dom_fra_france_discovers_north_america
-    }
+    required_missions = { dom_fra_france_discovers_north_america }
     position = 10
     provinces_to_highlight = {
       region = canada_region
@@ -1040,10 +1036,7 @@ french_missions_1_Continuation_a = {
   }
   fra_colonial_approach = {
     icon = mission_rb_the_thirteen_colonies
-    required_missions = {
-      fra_french_canada
-      fra_found_french_haiti
-    }
+    required_missions = { fra_french_canada fra_found_french_haiti }
     position = 11
     provinces_to_highlight = {
       OR = {
@@ -1116,9 +1109,7 @@ french_missions_1_Continuation_a = {
   }
   dom_fra_indian_dominance = {
     icon = indian_dominance
-    required_missions = {
-      fra_colonial_approach
-    }
+    required_missions = { fra_colonial_approach }
     position = 12
     provinces_to_highlight = {
       superregion = india_superregion
@@ -1145,6 +1136,13 @@ french_missions_1_Continuation_a = {
           province_has_center_of_trade_of_level = 1
         }
       }
+      # OR = {
+      # NOT = { country_or_non_sovereign_subject_holds = ROOT }
+      # AND = {
+      # NOT = { country_or_non_sovereign_subject_holds = ROOT }
+      # province_has_center_of_trade_of_level = 1 
+      # }
+      # }
     }
     trigger = {
       num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -1286,9 +1284,7 @@ french_missions_1_Continuation_a = {
   }
   fra_crown_seat_capital = {
     icon = fra_crown_seat_capital
-    required_missions = {
-      fra_appease_the_princes
-    }
+    required_missions = { fra_appease_the_princes }
     position = 15
     provinces_to_highlight = {
       OR = {
@@ -1423,9 +1419,7 @@ french_missions_1_Continuation_a = {
   }
   fra_french_wars_religion = {
     icon = wars_of_religion
-    required_missions = {
-      fra_movement_centralization
-    }
+    required_missions = { fra_movement_centralization }
     position = 17
     trigger = {
       OR = {
@@ -1535,9 +1529,7 @@ french_rev_missions_1 = {
   has_country_shield = yes
   fra_secure_iberia = {
     icon = fra_peninsular_war
-    required_missions = {
-      fra_grande_armee
-    }
+    required_missions = { fra_grande_armee }
     position = 21
     provinces_to_highlight = {
       region = iberia_region
@@ -1587,11 +1579,7 @@ french_rev_missions_1 = {
         }
         SPA = {
           change_country_color = {
-            color = {
-              95
-              158
-              160
-            }
+            color = { 95 158 160 }
           }
           override_country_name = NPI
           set_country_flag = change_name_NPI_flag
@@ -1603,9 +1591,7 @@ french_rev_missions_1 = {
   }
   fra_military_reform = {
     icon = fra_military_reform
-    required_missions = {
-      fra_national_bank
-    }
+    required_missions = { fra_national_bank }
     position = 23
     trigger = {
       num_of_revolutionary_guard = 75
@@ -1786,10 +1772,7 @@ french_missions_2 = {
   }
   fra_armorican_peninsula = {
     icon = dalmatian_conquest
-    required_missions = {
-      fra_chateux_loire_valley
-      fra_liberate_norm
-    }
+    required_missions = { fra_chateux_loire_valley fra_liberate_norm }
     position = 2
     provinces_to_highlight = {
       area = brittany_area
@@ -1836,9 +1819,7 @@ french_missions_2_blank_hre = {
   has_country_shield = yes
   fra_branch_mission_2_5 = {
     icon = mission_unknown_mission
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     trigger = {
       custom_trigger_tooltip = {
@@ -1889,9 +1870,7 @@ french_missions_2_charlemagne_path = {
   has_country_shield = yes
   fra_right_blood = {
     icon = carolingian_empire
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     trigger = {
       not_in_mission_preview_mode = {
@@ -1965,9 +1944,7 @@ french_missions_2_kill_hre_path = {
   has_country_shield = yes
   fra_break_habsburg_ring = {
     icon = boh_humiliate_austria
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     trigger = {
       not_in_mission_preview_mode = {
@@ -2083,9 +2060,7 @@ french_missions_2_Continuation_b = {
   }
   fra_kingdoms_spain = {
     icon = mission_castillian_aggression
-    required_missions = {
-      fra_throne_naples
-    }
+    required_missions = { fra_throne_naples }
     position = 8
     provinces_to_highlight = {
       region = iberia_region
@@ -2281,9 +2256,7 @@ french_missions_2_Continuation_b = {
   }
   fra_found_french_haiti = {
     icon = mission_colonial
-    required_missions = {
-      dom_fra_france_discovers_north_america
-    }
+    required_missions = { dom_fra_france_discovers_north_america }
     position = 10
     provinces_to_highlight = {
       colonial_region = colonial_the_carribean
@@ -2393,9 +2366,7 @@ french_missions_2_Continuation_b = {
   }
   fra_hudson_bay_fur = {
     icon = mission_rb_settle_the_north
-    required_missions = {
-      fra_colonial_approach
-    }
+    required_missions = { fra_colonial_approach }
     position = 12
     provinces_to_highlight = {
       region = canada_region
@@ -2588,9 +2559,7 @@ french_missions_2_Continuation_b = {
   }
   fra_form_gendarmes = {
     icon = mission_have_two_subjects
-    required_missions = {
-      fra_refine_bombards
-    }
+    required_missions = { fra_refine_bombards }
     position = 15
     trigger = {
       OR = {
@@ -2628,10 +2597,7 @@ french_missions_2_Continuation_b = {
   }
   fra_movement_centralization = {
     icon = reform_bergordnung
-    required_missions = {
-      fra_form_gendarmes
-      fra_crown_seat_capital
-    }
+    required_missions = { fra_form_gendarmes fra_crown_seat_capital }
     position = 16
     trigger = {
       NOT = {
@@ -2655,6 +2621,7 @@ french_missions_2_Continuation_b = {
         limit = {
           has_reform = feudal_france_reform
         }
+        #remove_government_reform = feudal_france_reform 
         add_government_reform = absolutist_france_reform
       }
       else = {
@@ -2665,13 +2632,13 @@ french_missions_2_Continuation_b = {
           government_reform = absolutist_france_reform
         }
       }
+      #custom_tooltip = fra_5_gov_cap_adm_adv_tt 
+      #set_country_flag = 5_gov_cap_bonus_flag 
     }
   }
   fra_reform_legal_system = {
     icon = rhineland_conquest
-    required_missions = {
-      fra_movement_centralization
-    }
+    required_missions = { fra_movement_centralization }
     position = 18
     provinces_to_highlight = {
       owned_by = ROOT
@@ -2761,9 +2728,7 @@ french_rev_missions_2 = {
   }
   fra_cross_rhine = {
     icon = encroach_on_the_germans
-    required_missions = {
-      fra_grande_armee
-    }
+    required_missions = { fra_grande_armee }
     position = 21
     provinces_to_highlight = {
       OR = {
@@ -2862,9 +2827,7 @@ french_rev_missions_2 = {
   }
   fra_religious_settlement = {
     icon = spread_piety
-    required_missions = {
-      fra_national_bank
-    }
+    required_missions = { fra_national_bank }
     position = 23
     trigger = {
       OR = {
@@ -3022,10 +2985,7 @@ french_missions_3 = {
   }
   fra_unite_france = {
     icon = king_of_france
-    required_missions = {
-      fra_retake_aquitaine
-      fra_armorican_peninsula
-    }
+    required_missions = { fra_retake_aquitaine fra_armorican_peninsula }
     position = 3
     provinces_to_highlight = {
       region = france_region
@@ -3071,9 +3031,7 @@ french_missions_3_blank_hre = {
   has_country_shield = yes
   fra_branch_mission_3_5 = {
     icon = mission_unknown_mission
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     trigger = {
       custom_trigger_tooltip = {
@@ -3105,9 +3063,7 @@ french_missions_3_charlemagne_path = {
   has_country_shield = yes
   fra_means_expansion = {
     icon = centralized_empire
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -3246,9 +3202,7 @@ french_missions_3_kill_hre_path = {
   has_country_shield = yes
   fra_dismantle_empire = {
     icon = mission_dismantle_hre
-    required_missions = {
-      fra_border_empire
-    }
+    required_missions = { fra_border_empire }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -3356,9 +3310,7 @@ french_missions_3_continuation_after_hre_missions = {
   has_country_shield = yes
   fra_league_cambrai = {
     icon = expand_the_doges_palace
-    required_missions = {
-      fra_secure_alpine_pass
-    }
+    required_missions = { fra_secure_alpine_pass }
     position = 6
     provinces_to_highlight = {
       area = venetia_area
@@ -3406,6 +3358,14 @@ french_missions_3_continuation_after_hre_missions = {
     effect = {
       custom_tooltip = fra_lapdog_reward_cambrai_tt
       tooltip = {
+        # venetia_area = { 
+        # limit = { 
+        # NOT = { country_or_non_sovereign_subject_holds = PAP } 
+        # }
+        # remove_core = ROOT 
+        # add_core = PAP 
+        # cede_province = PAP 
+        # }
         add_country_modifier = {
           name = fra_venetian_craftsmanship_modifier
           duration = -1
@@ -3674,10 +3634,7 @@ french_missions_3_continuation_after_hre_missions = {
   }
   fra_house_god = {
     icon = answer_the_roman_question
-    required_missions = {
-      fra_throne_naples
-      fra_golden_march
-    }
+    required_missions = { fra_throne_naples fra_golden_march }
     position = 7
     provinces_to_highlight = {
       if = {
@@ -3791,9 +3748,7 @@ french_missions_3_normal_continued = {
   has_country_shield = yes
   fra_dutch_coast = {
     icon = bavarian_netherlands
-    required_missions = {
-      fra_navy_mission_calais
-    }
+    required_missions = { fra_navy_mission_calais }
     position = 11
     provinces_to_highlight = {
       region = low_countries_region
@@ -3918,10 +3873,10 @@ french_missions_3_normal_continued = {
     }
     effect = {
       1272 = {
-        change_province_name = "Éb’‚ÀNwmáS"  # La Manche
+        change_province_name = "Éb’‚ÀNwmáS" 	# La Manche
       }
       1269 = {
-        change_province_name = "NO0Wwm¸S"  # Basse-Cýÿte
+        change_province_name = "NO0Wwm¸S" 	# Basse-Cýÿte
       }
       add_country_modifier = {
         name = fra_channel_dominance_modifier
@@ -3950,9 +3905,7 @@ french_missions_3_normal_continued = {
   }
   fra_retrial_jeanne_darc = {
     icon = control_the_church
-    required_missions = {
-      fra_embrace_renaissance
-    }
+    required_missions = { fra_embrace_renaissance }
     position = 15
     trigger = {
       custom_trigger_tooltip = {
@@ -4001,9 +3954,7 @@ french_missions_3_normal_continued = {
   }
   fra_musketeers = {
     icon = establish_the_musketeers
-    required_missions = {
-      fra_movement_centralization
-    }
+    required_missions = { fra_movement_centralization }
     position = 17
     trigger = {
       OR = {
@@ -4035,9 +3986,7 @@ french_missions_3_normal_continued = {
   }
   fra_absolutism = {
     icon = letat_cest_moi
-    required_missions = {
-      fra_musketeers
-    }
+    required_missions = { fra_musketeers }
     position = 18
     trigger = {
       absolutism = 90
@@ -4257,9 +4206,7 @@ french_rev_missions_3 = {
   has_country_shield = yes
   fra_invade_italy = {
     icon = establish_client_states
-    required_missions = {
-      fra_grande_armee
-    }
+    required_missions = { fra_grande_armee }
     position = 21
     provinces_to_highlight = {
       region = italy_region
@@ -4322,11 +4269,7 @@ french_rev_missions_3 = {
           set_country_flag = is_NCP_flag
           set_country_flag = has_overriden_name_flag
           change_country_color = {
-            color = {
-              65
-              105
-              225
-            }
+            color = { 65 105 225 }
           }
           set_country_flag = has_overriden_color_flag
         }
@@ -4375,9 +4318,7 @@ french_rev_missions_3 = {
   }
   fra_civil_code = {
     icon = standardize_relazioni
-    required_missions = {
-      fra_national_bank
-    }
+    required_missions = { fra_national_bank }
     position = 23
     trigger = {
       num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -4416,9 +4357,7 @@ french_missions_4_normal = {
   has_country_shield = yes
   fra_house_united = {
     icon = the_gallic_wars
-    required_missions = {
-      fra_provencal_question
-    }
+    required_missions = { fra_provencal_question }
     position = 2
     trigger = {
       legitimacy = 95
@@ -4496,9 +4435,7 @@ french_missions_4_branching = {
   has_country_shield = yes
   fra_branch_mission_4_3 = {
     icon = mission_unknown_mission
-    required_missions = {
-      fra_ducal_lands_avignon
-    }
+    required_missions = { fra_ducal_lands_avignon }
     position = 3
     trigger = {
       custom_trigger_tooltip = {
@@ -4513,10 +4450,7 @@ french_missions_4_branching = {
   }
   fra_branch_mission_4_4 = {
     icon = mission_unknown_mission
-    required_missions = {
-      fra_branch_mission_4_3
-      fra_branch_mission_5_3
-    }
+    required_missions = { fra_branch_mission_4_3 fra_branch_mission_5_3 }
     position = 3
     trigger = {
       custom_trigger_tooltip = {
@@ -4545,9 +4479,7 @@ french_missions_4_italian = {
   has_country_shield = yes
   fra_crown_naples = {
     icon = king_of_naples
-    required_missions = {
-      fra_ducal_lands_avignon
-    }
+    required_missions = { fra_ducal_lands_avignon }
     position = 3
     provinces_to_highlight = {
       province_id = 121
@@ -4654,10 +4586,7 @@ french_missions_4_italian = {
   }
   fra_city_lights = {
     icon = italian_riches
-    required_missions = {
-      fra_crown_naples
-      fra_milanese_succession
-    }
+    required_missions = { fra_crown_naples fra_milanese_succession }
     position = 4
     provinces_to_highlight = {
       area = lazio_area
@@ -4724,9 +4653,7 @@ french_missions_4_crusader_kings = {
   has_country_shield = yes
   fra_protector_catholicism = {
     icon = shield_of_christendom
-    required_missions = {
-      fra_ducal_lands_avignon
-    }
+    required_missions = { fra_ducal_lands_avignon }
     position = 3
     trigger = {
       not_in_mission_preview_mode = {
@@ -4773,10 +4700,7 @@ french_missions_4_crusader_kings = {
   }
   fra_shield_of_outremer = {
     icon = kingdom_of_heaven
-    required_missions = {
-      fra_protector_catholicism
-      fra_pilgrimage_jerusalem
-    }
+    required_missions = { fra_protector_catholicism fra_pilgrimage_jerusalem }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -4892,7 +4816,7 @@ french_missions_4_crusader_kings = {
         }
         KOJ = {
           override_country_name = OUT
-          set_country_flag = KOJ_overriden_name_flag
+          set_country_flag = KOJ_overriden_name_flag 	# For Elfryc :) 
           set_country_flag = has_overriden_name_flag
         }
       }
@@ -5015,9 +4939,7 @@ french_missions_4_normal_continuation = {
   }
   fra_italian_heartland = {
     icon = seize_lombardy
-    required_missions = {
-      fra_secure_alpine_pass
-    }
+    required_missions = { fra_secure_alpine_pass }
     position = 6
     provinces_to_highlight = {
       area = lombardy_area
@@ -5178,10 +5100,7 @@ french_missions_4_normal_continuation = {
   }
   fra_expand_french_domain = {
     icon = fra_expand_french_domain
-    required_missions = {
-      fra_house_god
-      fra_secure_genoan_trade
-    }
+    required_missions = { fra_house_god fra_secure_genoan_trade }
     position = 9
     provinces_to_highlight = {
       if = {
@@ -5352,9 +5271,7 @@ french_missions_4_normal_contiuation = {
   has_country_shield = yes
   fra_london = {
     icon = the_london_steelyard
-    required_missions = {
-      fra_navy_mission_calais
-    }
+    required_missions = { fra_navy_mission_calais }
     position = 11
     provinces_to_highlight = {
       area = home_counties_area
@@ -5381,8 +5298,8 @@ french_missions_4_normal_contiuation = {
         add_permanent_claim = ROOT
       }
       236 = {
-        change_province_name = "ÕlpQ‰HS"  # Domaine Francais
-        rename_capital = "&O·V÷–"  # Londres
+        change_province_name = "ÕlpQ‰HS" 	# Domaine Francais
+        rename_capital = "&O·V÷–" 	# Londres
         add_base_tax = 2
         add_base_production = 2
         add_base_manpower = 2
@@ -5403,9 +5320,7 @@ french_missions_4_normal_contiuation = {
   }
   fra_british_isles = {
     icon = mission_rb_empire
-    required_missions = {
-      fra_london
-    }
+    required_missions = { fra_london }
     position = 12
     provinces_to_highlight = {
       region = british_isles_region
@@ -5452,7 +5367,7 @@ french_missions_4_normal_contiuation = {
     }
     effect = {
       define_advisor = {
-        name = "©‹ KQbSÃW"  # Jean Clouet
+        name = "©‹ KQbSÃW" 	# Jean Clouet
         type = artist
         cost_multiplier = 0.25
         skill = 3
@@ -5492,9 +5407,7 @@ french_missions_4_normal_contiuation = {
   }
   fra_nine_universities = {
     icon = appease_the_estates
-    required_missions = {
-      fra_embrace_renaissance
-    }
+    required_missions = { fra_embrace_renaissance }
     position = 15
     provinces_to_highlight = {
       OR = {
@@ -5545,10 +5458,7 @@ french_missions_4_normal_contiuation = {
   }
   fra_merchant_cooperation = {
     icon = friends_in_high_places
-    required_missions = {
-      fra_movement_centralization
-      fra_trade_fairs
-    }
+    required_missions = { fra_movement_centralization fra_trade_fairs }
     position = 17
     provinces_to_highlight = {
       owned_by = ROOT
@@ -5601,7 +5511,7 @@ french_missions_4_normal_contiuation = {
         }
       }
       define_advisor = {
-        name = "<SäSÉb yïQ"  # Nicolas Fouquet
+        name = "<SäSÉb yïQ" 	# Nicolas Fouquet
         type = treasurer
         cost_multiplier = 0.5
         skill = 2
@@ -5610,9 +5520,7 @@ french_missions_4_normal_contiuation = {
   }
   fra_develop_trade = {
     icon = fra_develop_trade
-    required_missions = {
-      fra_merchant_cooperation
-    }
+    required_missions = { fra_merchant_cooperation }
     position = 18
     trigger = {
       has_institution = global_trade
@@ -5808,9 +5716,7 @@ french_rev_missions_4 = {
   }
   fra_low_countries = {
     icon = the_true_freedom
-    required_missions = {
-      fra_enlarge_ports
-    }
+    required_missions = { fra_enlarge_ports }
     position = 21
     provinces_to_highlight = {
       region = low_countries_region
@@ -5850,9 +5756,7 @@ french_rev_missions_4 = {
   }
   fra_educational_reforms = {
     icon = fra_educational_reforms
-    required_missions = {
-      fra_national_bank
-    }
+    required_missions = { fra_national_bank }
     position = 23
     trigger = {
       OR = {
@@ -6007,9 +5911,7 @@ french_missions_5_normal = {
   }
   fra_ducal_lands_avignon = {
     icon = negotiate_for_avignon
-    required_missions = {
-      fra_provencal_question
-    }
+    required_missions = { fra_provencal_question }
     position = 2
     provinces_to_highlight = {
       province_id = 202
@@ -6332,9 +6234,7 @@ french_missions_5_branching = {
   has_country_shield = yes
   fra_branch_mission_5_3 = {
     icon = mission_unknown_mission
-    required_missions = {
-      fra_ducal_lands_avignon
-    }
+    required_missions = { fra_ducal_lands_avignon }
     position = 3
     trigger = {
       custom_trigger_tooltip = {
@@ -6363,9 +6263,7 @@ french_missions_5_italian = {
   has_country_shield = yes
   fra_milanese_succession = {
     icon = milan_victorious
-    required_missions = {
-      fra_ducal_lands_avignon
-    }
+    required_missions = { fra_ducal_lands_avignon }
     position = 3
     provinces_to_highlight = {
       area = lombardy_area
@@ -6409,9 +6307,7 @@ french_missions_5_crusader_kings = {
   has_country_shield = yes
   fra_pilgrimage_jerusalem = {
     icon = levantine_missions
-    required_missions = {
-      fra_ducal_lands_avignon
-    }
+    required_missions = { fra_ducal_lands_avignon }
     position = 3
     provinces_to_highlight = {
       area = palestine_area
@@ -6525,9 +6421,7 @@ french_missions_5_continuation_normal_1 = {
   has_country_shield = yes
   fra_restore_signoria = {
     icon = fra_restore_signoria
-    required_missions = {
-      fra_secure_alpine_pass
-    }
+    required_missions = { fra_secure_alpine_pass }
     position = 6
     provinces_to_highlight = {
       area = liguria_area
@@ -6615,9 +6509,7 @@ french_missions_5_continuation_normal_1 = {
   }
   fra_secure_genoan_trade = {
     icon = the_shape_of_trades_to_come
-    required_missions = {
-      fra_restore_signoria
-    }
+    required_missions = { fra_restore_signoria }
     position = 8
     provinces_to_highlight = {
       if = {
@@ -6797,9 +6689,7 @@ fra_missions_5_continuation = {
   }
   fra_auld_alliance = {
     icon = the_auld_alliance
-    required_missions = {
-      fra_navy_mission_calais
-    }
+    required_missions = { fra_navy_mission_calais }
     position = 11
     provinces_to_highlight = {
       area = lowlands_area
@@ -7032,10 +6922,7 @@ fra_missions_5_continuation = {
   }
   fra_rule_britannia = {
     icon = mission_launch_a_flagship
-    required_missions = {
-      fra_british_isles
-      fra_auld_alliance
-    }
+    required_missions = { fra_british_isles fra_auld_alliance }
     position = 13
     trigger = {
       custom_trigger_tooltip = {
@@ -7140,10 +7027,7 @@ fra_missions_5_continuation = {
   }
   fra_renaissance_architecture = {
     icon = found_batavia
-    required_missions = {
-      fra_connect_provinces
-      fra_embrace_renaissance
-    }
+    required_missions = { fra_connect_provinces fra_embrace_renaissance }
     position = 15
     provinces_to_highlight = {
       owned_by = ROOT
@@ -7221,9 +7105,7 @@ fra_missions_5_continuation = {
   }
   fra_trade_fairs = {
     icon = ansbach_succession
-    required_missions = {
-      fra_renaissance_architecture
-    }
+    required_missions = { fra_renaissance_architecture }
     position = 16
     provinces_to_highlight = {
       owned_by = ROOT
@@ -7269,9 +7151,7 @@ fra_missions_5_continuation = {
   }
   fra_toulon_dockyards = {
     icon = toulon_dockyards
-    required_missions = {
-      fra_trade_fairs
-    }
+    required_missions = { fra_trade_fairs }
     position = 18
     provinces_to_highlight = {
       province_id = 4696
@@ -7453,9 +7333,7 @@ french_rev_missions_5 = {
   }
   fra_napoleonic_navy = {
     icon = fra_napoleonic_navy
-    required_missions = {
-      fra_road_connectivity
-    }
+    required_missions = { fra_road_connectivity }
     position = 21
     trigger = {
       num_of_heavy_ship = 100
@@ -7477,10 +7355,7 @@ french_rev_missions_5 = {
   }
   fra_great_britain = {
     icon = fra_great_britain
-    required_missions = {
-      fra_low_countries
-      fra_napoleonic_navy
-    }
+    required_missions = { fra_low_countries fra_napoleonic_navy }
     position = 22
     provinces_to_highlight = {
       region = british_isles_region
@@ -7523,13 +7398,11 @@ french_rev_missions_5 = {
   }
   fra_trade_hegemony = {
     icon = mission_rb_grow_the_channel
-    required_missions = {
-      fra_national_bank
-      fra_great_britain
-    }
+    required_missions = { fra_national_bank fra_great_britain }
     position = 23
     trigger = {
       1269 = {
+        #Channel
         trade_node_value = 1000
       }
       full_idea_group = trade_ideas

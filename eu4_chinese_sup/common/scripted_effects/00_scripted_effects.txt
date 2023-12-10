@@ -5220,7 +5220,9 @@ create_units_of_type = {
   hidden_effect = {
     for = {
       amount = $amount$
-      effect = "     $province$ = { $unit_type$ = PREV }    "
+      effect = "
+        $province$ = { $unit_type$ = PREV }
+      "
     }
   }
 }
@@ -5234,7 +5236,9 @@ create_units_of_type_in_province = {
     $who$ = {
       for = {
         amount = $amount$
-        effect = "      PREV = { $unit_type$ = $who$ }     "
+        effect = "
+          PREV = { $unit_type$ = $who$ }
+        "
       }
     }
   }
@@ -5301,7 +5305,7 @@ add_accepted_culture_or_dip_power = {
     }
   ]
   [[dip_reward]
-    custom_tooltip = ADD_ACCEPTED_CULTURE_SLOT_LIMITATION_TT # "If the ßYCultureß! is already an ßYAccepted Cultureß!, or if there are not enough ßYSlotsß!, gain ßG100ß! Diplomatic Power instead."
+    custom_tooltip = ADD_ACCEPTED_CULTURE_SLOT_LIMITATION_TT 	#  "If the ßYCultureß! is already an ßYAccepted Cultureß!, or if there are not enough ßYSlotsß!, gain ßG100ß! Diplomatic Power instead."
   ]
   hidden_effect = {
     if = {
@@ -5518,7 +5522,7 @@ count_won_battles_and_reward_at_end = {
   if = {
     limit = {
       ROOT = {
-        has_country_flag = $counting_flag$ #Using country flags because we don't want a country to stack a variable out of control and cause performance issue because of large variables.
+        has_country_flag = $counting_flag$ 	# Using country flags because we don't want a country to stack a variable out of control and cause performance issue because of large variables.
       }
     }
     ROOT = {
@@ -9748,7 +9752,7 @@ determine_value_of_trade_goods_salt = {
               has_terrain = marsh
               NOT = {
                 has_climate = arctic
-              } #Hudson Bay
+              } 	# Hudson Bay
             }
           }
         }
@@ -10043,7 +10047,7 @@ determine_value_of_trade_goods_gold = {
         ROOT = {
           is_random_new_world = yes
           has_terrain = mountain
-          continent = new_world #Always in RNW
+          continent = new_world 	# Always in RNW
         }
       }
       multiply_variable = {
@@ -10077,15 +10081,15 @@ determine_value_of_trade_goods_gold = {
       limit = {
         ROOT = {
           OR = {
-            province_id = 852 # Mexico
-            province_id = 853 # Huastec
-            province_id = 854 # Sayultecas
-            province_id = 2617 # Huichol
-            province_id = 856 # Zacatecas
-            province_id = 857 # Guichichil
-            province_id = 858 # Tamaulipas
-            province_id = 2615 # Guamares
-            province_id = 4781 # Transvaal (Johannesburg mines)
+            province_id = 852 	#  Mexico
+            province_id = 853 	#  Huastec
+            province_id = 854 	#  Sayultecas
+            province_id = 2617 	#  Huichol
+            province_id = 856 	#  Zacatecas
+            province_id = 857 	#  Guichichil
+            province_id = 858 	#  Tamaulipas
+            province_id = 2615 	#  Guamares
+            province_id = 4781 	#  Transvaal (Johannesburg mines)
           }
         }
       }
@@ -10442,15 +10446,15 @@ determine_value_of_trade_goods_tea = {
       limit = {
         ROOT = {
           OR = {
-            area = banda_oriental_area #Yerba Mate
-            area = rio_grande_do_sol_area #Yerba Mate
-            area = buenos_aires_area #Yerba Mate
-            area = misiones_area #Yerba Mate
-            area = beni_area #Yerba Mate
-            area = moxos_area #Yerba Mate
-            area = paraguay_area #Yerba Mate
-            area = sao_paolo_area #Yerba Mate
-            area = west_sao_paolo_area #Yerba Mate
+            area = banda_oriental_area 	# Yerba Mate
+            area = rio_grande_do_sol_area 	# Yerba Mate
+            area = buenos_aires_area 	# Yerba Mate
+            area = misiones_area 	# Yerba Mate
+            area = beni_area 	# Yerba Mate
+            area = moxos_area 	# Yerba Mate
+            area = paraguay_area 	# Yerba Mate
+            area = sao_paolo_area 	# Yerba Mate
+            area = west_sao_paolo_area 	# Yerba Mate
           }
         }
       }
@@ -11635,7 +11639,7 @@ determine_value_of_trade_goods_gems = {
           OR = {
             area = diamantina_area
             area = bogota_area
-            area = murray_river_area #Opal
+            area = murray_river_area 	# Opal
           }
         }
       }
@@ -11648,9 +11652,9 @@ determine_value_of_trade_goods_gems = {
       limit = {
         ROOT = {
           OR = {
-            province_id = 1093 #Opal
-            province_id = 2736 #Opal
-            province_id = 4862 #Opal
+            province_id = 1093 	# Opal
+            province_id = 2736 	# Opal
+            province_id = 4862 	# Opal
           }
         }
       }
@@ -11678,7 +11682,7 @@ determine_value_of_trade_goods_gems = {
             has_terrain = jungle
             has_terrain = hills
             has_terrain = highlands
-            has_terrain = coastline #Pearls
+            has_terrain = coastline 	# Pearls
           }
         }
       }
@@ -11692,7 +11696,7 @@ determine_value_of_trade_goods_gems = {
         ROOT = {
           is_random_new_world = yes
           has_terrain = mountain
-          continent = new_world #Always in RNW
+          continent = new_world 	# Always in RNW
         }
       }
       multiply_variable = {
@@ -13988,156 +13992,156 @@ restore_greek_names = {
   custom_tooltip = reestablishing_themes_names_tooltip
   hidden_effect = {
     149 = {
-      change_province_name = "»T∑VoÇ!X" #Adrianople
-      rename_capital = "»T∑VoÇ!X" #Adrianople
+      change_province_name = "»T∑VoÇ!X" 	# Adrianople
+      rename_capital = "»T∑VoÇ!X" 	# Adrianople
     }
     151 = {
-      change_province_name = "TÎXfWN!X" #Constantinople
-      rename_capital = "TÎXfWN!X" #Constantinople
+      change_province_name = "TÎXfWN!X" 	# Constantinople
+      rename_capital = "TÎXfWN!X" 	# Constantinople
     }
     316 = {
-      change_province_name = "eYnf–clöê" #Optimatoi
-      rename_capital = "<S—ys|ï^öN" #Nikomedeia
+      change_province_name = "eYnf–clöê" 	# Optimatoi
+      rename_capital = "<S—ys|ï^öN" 	# Nikomedeia
     }
     317 = {
-      change_province_name = "eYnfâ—ë" #Opsikion
-      rename_capital = "nfÅú(Ñ" #Prussa
+      change_province_name = "eYnfâ—ë" 	# Opsikion
+      rename_capital = "nfÅú(Ñ" 	# Prussa
     }
     318 = {
-      change_province_name = "ÎX¶û±ê" #Smyrna
-      rename_capital = "ÎX¶û±ê" #Smyrna
+      change_province_name = "ÎX¶û±ê" 	# Smyrna
+      rename_capital = "ÎX¶û±ê" 	# Smyrna
     }
     319 = {
-      change_province_name = "s|…b(Ñ" #Mylasa
-      rename_capital = "Fz…b" #Mougla
+      change_province_name = "s|…b(Ñ" 	# Mylasa
+      rename_capital = "Fz…b" 	# Mougla
     }
     322 = {
-      change_province_name = "—yÇÑ√W¡" #Kotyaion
-      rename_capital = "—yÇÑ√W¡" #Kotyaion
+      change_province_name = "—yÇÑ√W¡" 	# Kotyaion
+      rename_capital = "—yÇÑ√W¡" 	# Kotyaion
     }
     323 = {
-      change_province_name = "O—y<S¡" #Ikonion
-      rename_capital = "O—y<S¡" #Iconion
+      change_province_name = "O—y<S¡" 	# Ikonion
+      rename_capital = "O—y<S¡" 	# Iconion
     }
     324 = {
-      change_province_name = "…bpQæè" #Laranda
-      rename_capital = "…bpQæè" #Laranda
+      change_province_name = "…bpQæè" 	# Laranda
+      rename_capital = "…bpQæè" 	# Laranda
     }
     325 = {
-      change_province_name = "^+Y…bb<SöN" #Paphlagonia
-      rename_capital = "–c´É<SeY" #Timonio
+      change_province_name = "^+Y…bb<SöN" 	# Paphlagonia
+      rename_capital = "–c´É<SeY" 	# Timonio
     }
     326 = {
-      change_province_name = "†R…b–cöN" #Galatia
-      rename_capital = "âRES…b" #Ancyra
+      change_province_name = "†R…b–cöN" 	# Galatia
+      rename_capital = "âRES…b" 	# Ancyra
     }
     327 = {
-      change_province_name = "GYÃë^NöN" #Cilicia
-      rename_capital = "?ñTX≥u" #Atana
+      change_province_name = "GYÃë^NöN" 	# Cilicia
+      rename_capital = "?ñTX≥u" 	# Atana
     }
     328 = {
-      change_province_name = "!ï˙ãÆv" #Sinope
-      rename_capital = "!ï˙ãnf" #Sinop
+      change_province_name = "!ï˙ãÆv" 	# Sinope
+      rename_capital = "!ï˙ãnf" 	# Sinop
     }
     329 = {
-      change_province_name = "^XÙTØe“VöN" #Sebasteia
-      rename_capital = "^XÙTØeXb‚l)RØe" #Sebastopolis
+      change_province_name = "^XÙTØe“VöN" 	# Sebasteia
+      rename_capital = "^XÙTØeXb‚l)RØe" 	# Sebastopolis
     }
     330 = {
-      change_province_name = "yr…b‘kåg" #Trebizond
-      rename_capital = "yr…biOVyØe" #Trapezous
+      change_province_name = "yr…b‘kåg" 	# Trebizond
+      rename_capital = "yr…biOVyØe" 	# Trapezous
     }
     331 = {
-      change_province_name = "ƒreYYâ‚l)RØe" #Theodosiopolis
-      rename_capital = "ƒreYYâ‚l)RØe" #Theodosiopolis
+      change_province_name = "ƒreYYâ‚l)RØe" 	# Theodosiopolis
+      rename_capital = "ƒreYYâ‚l)RØe" 	# Theodosiopolis
     }
     1764 = {
-      change_province_name = "®XÓh^ÃëöN" #Mesambria
-      rename_capital = "®XÓh^ÃëöN" #Mesambria
+      change_province_name = "®XÓh^ÃëöN" 	# Mesambria
+      rename_capital = "®XÓh^ÃëöN" 	# Mesambria
     }
     1846 = {
-      change_province_name = "öNé<SöNTR" #Armeniakon
-      rename_capital = "?ñlöâöN" #Amasea
+      change_province_name = "öNé<SöNTR" 	# Armeniakon
+      rename_capital = "?ñlöâöN" 	# Amasea
     }
     1848 = {
-      change_province_name = "ÙTÃëØe" #Baris
-      rename_capital = "ÙTÃëØe" #Baris
+      change_province_name = "ÙTÃëØe" 	# Baris
+      rename_capital = "ÙTÃëØe" 	# Baris
     }
     2296 = {
-      change_province_name = "?ñQSYØe" #Abydos
-      rename_capital = "Æv÷vO" #Pigai
+      change_province_name = "?ñQSYØe" 	# Abydos
+      rename_capital = "Æv÷vO" 	# Pigai
     }
     2297 = {
-      change_province_name = "rÇ˜ñØeâ¡" #Thrakesion
-      rename_capital = "lö<hÖmâöN" #Magnesia
+      change_province_name = "rÇ˜ñØeâ¡" 	# Thrakesion
+      rename_capital = "lö<hÖmâöN" 	# Magnesia
     }
     2298 = {
-      change_province_name = "?ñTX)RöN" #Attalia
-      rename_capital = "?ñTX)RöN" #Attalia
+      change_province_name = "?ñTX)RöN" 	# Attalia
+      rename_capital = "?ñTX)RöN" 	# Attalia
     }
     2299 = {
-      change_province_name = "ËêIR…bÃë¡" #Boukellarion
-      rename_capital = "KQ≥RÍèeY‚l)RØe" #Klaudiopol
+      change_province_name = "ËêIR…bÃë¡" 	# Boukellarion
+      rename_capital = "KQ≥RÍèeY‚l)RØe" 	# Klaudiopol
     }
     2300 = {
-      change_province_name = "aS^Y˙WöN" #Cappadocia
-      rename_capital = "TXÙu¡" #Tavium
+      change_province_name = "aS^Y˙WöN" 	# Cappadocia
+      rename_capital = "TXÙu¡" 	# Tavium
     }
     2301 = {
-      change_province_name = "»TS^âR" #Charsianon
-      rename_capital = "ÔQíd)RöN" #Ceasarea
+      change_province_name = "»TS^âR" 	# Charsianon
+      rename_capital = "ÔQíd)RöN" 	# Ceasarea
     }
     2302 = {
-      change_province_name = "^X	tâöN" #Seleucia
-      rename_capital = "ÔQSlö…b	T" #Kermarage
+      change_province_name = "^X	tâöN" 	# Seleucia
+      rename_capital = "ÔQSlö…b	T" 	# Kermarage
     }
     2304 = {
-      change_province_name = "»TSÍèöN" #Chaldia
-      rename_capital = "?ñs|0tØe" #Amissos
+      change_province_name = "»TSÍèöN" 	# Chaldia
+      rename_capital = "?ñs|0tØe" 	# Amissos
     }
     2305 = {
-      change_province_name = "?ñéU)R^XÖm" #Acilisene
-      rename_capital = "?ñéU)R^XÖm" #Acilisene
+      change_province_name = "?ñéU)R^XÖm" 	# Acilisene
+      rename_capital = "?ñéU)R^XÖm" 	# Acilisene
     }
     2750 = {
-      change_province_name = "SÅõR‚l)RØe" #Philippopolis
-      rename_capital = "SÅõR‚l)RØe" #Philippopolis
+      change_province_name = "SÅõR‚l)RØe" 	# Philippopolis
+      rename_capital = "SÅõR‚l)RØe" 	# Philippopolis
     }
     4307 = {
-      change_province_name = "—ym<SöN" #Colonia
-      rename_capital = "—ym<SöN" #Colonia
+      change_province_name = "—ym<SöN" 	# Colonia
+      rename_capital = "—ym<SöN" 	# Colonia
     }
     4308 = {
-      change_province_name = "≥RÍè˙WöN" #Laodicea
-      rename_capital = "≥RÍè˙WöN" #Laodicea
+      change_province_name = "≥RÍè˙WöN" 	# Laodicea
+      rename_capital = "≥RÍè˙WöN" 	# Laodicea
     }
     4309 = {
-      change_province_name = "yr…b±ÉØe" #Tralles
-      rename_capital = "yr…b±ÉØe" #Tralles
+      change_province_name = "yr…b±ÉØe" 	# Tralles
+      rename_capital = "yr…b±ÉØe" 	# Tralles
     }
     4310 = {
-      change_province_name = "l+YÃëÔQ" #Tephrike
-      rename_capital = "l+YÃëÔQ" #Tephrike
+      change_province_name = "l+YÃëÔQ" 	# Tephrike
+      rename_capital = "l+YÃëÔQ" 	# Tephrike
     }
     4311 = {
-      change_province_name = "âR≥uXb)RTR" #Anatolikon
-      rename_capital = "‚l)RPOÃë¡" #Polydorion
+      change_province_name = "âR≥uXb)RTR" 	# Anatolikon
+      rename_capital = "‚l)RPOÃë¡" 	# Polydorion
     }
     4312 = {
-      change_province_name = "Y)RYu∆Y" #Dorylaeum
-      rename_capital = "Y)RYu∆Y" #Dorylaeum
+      change_province_name = "Y)RYu∆Y" 	# Dorylaeum
+      rename_capital = "Y)RYu∆Y" 	# Dorylaeum
     }
     4313 = {
-      change_province_name = "u<h…b" #Gangra
-      rename_capital = "u<h…b" #Gangra
+      change_province_name = "u<h…b" 	# Gangra
+      rename_capital = "u<h…b" 	# Gangra
     }
     4314 = {
-      change_province_name = "ÂgÎXN<S‚l)RØe" #Justinianopolis
-      rename_capital = "ÂgÎXN<S‚l)RØe" #Justinianopolis
+      change_province_name = "ÂgÎXN<S‚l)RØe" 	# Justinianopolis
+      rename_capital = "ÂgÎXN<S‚l)RØe" 	# Justinianopolis
     }
     4315 = {
-      change_province_name = "√W+YYKQâöN" #Evdoksia
-      rename_capital = "√W+YYKQâöN" #Evdoksia
+      change_province_name = "√W+YYKQâöN" 	# Evdoksia
+      rename_capital = "√W+YYKQâöN" 	# Evdoksia
     }
   }
 }

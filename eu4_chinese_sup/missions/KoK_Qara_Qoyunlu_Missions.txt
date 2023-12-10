@@ -86,9 +86,7 @@ qara_qoyunlu_first = {
   }
   qara_qoyunlu_custodian_of_baghdad = {
     icon = mission_into_persia_1
-    required_missions = {
-      qara_qoyunlu_emirs_mesopotamia
-    }
+    required_missions = { qara_qoyunlu_emirs_mesopotamia }
     position = 2
     provinces_to_highlight = {
       province_id = 410
@@ -125,9 +123,7 @@ qara_qoyunlu_first = {
   }
   qara_qoyunlu_house_of_wisdom = {
     icon = mission_quran
-    required_missions = {
-      qara_qoyunlu_custodian_of_baghdad
-    }
+    required_missions = { qara_qoyunlu_custodian_of_baghdad }
     position = 2
     provinces_to_highlight = {
       province_id = 410
@@ -169,9 +165,7 @@ qara_qoyunlu_first = {
   }
   qara_qoyunlu_era = {
     icon = qara_qoyunlu_era
-    required_missions = {
-      qara_qoyunlu_house_of_wisdom
-    }
+    required_missions = { qara_qoyunlu_house_of_wisdom }
     position = 4
     provinces_to_highlight = {}
     trigger = {
@@ -228,9 +222,7 @@ qara_qoyunlu_first = {
   }
   qara_qoyunlu_merchant_fleet = {
     icon = mission_arabian_sea_trade
-    required_missions = {
-      qara_qoyunlu_dominate_the_gulf
-    }
+    required_missions = { qara_qoyunlu_dominate_the_gulf }
     position = 5
     trigger = {
       navy_size_percentage = 0.8
@@ -305,9 +297,7 @@ qara_qoyunlu_first = {
   }
   qara_qoyunlu_maragheh_observatory = {
     icon = qara_qoyunlu_maragheh_observatory
-    required_missions = {
-      qara_qoyunlu_patronize_arts
-    }
+    required_missions = { qara_qoyunlu_patronize_arts }
     position = 8
     provinces_to_highlight = {
       province_id = 2207
@@ -451,9 +441,7 @@ qara_qoyunlu_second = {
   has_country_shield = yes
   qara_qoyunlu_secure_basra = {
     icon = mission_restore_caliphate_of_cordoba
-    required_missions = {
-      qara_qoyunlu_emirs_mesopotamia
-    }
+    required_missions = { qara_qoyunlu_emirs_mesopotamia }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -521,9 +509,7 @@ qara_qoyunlu_second = {
   }
   qara_qoyunlu_dominate_the_gulf = {
     icon = qara_qoyunlu_dominate_the_gulf
-    required_missions = {
-      qara_qoyunlu_secure_basra
-    }
+    required_missions = { qara_qoyunlu_secure_basra }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -538,6 +524,7 @@ qara_qoyunlu_second = {
     trigger = {
       owns = 408
       408 = {
+        #Basra
         trade_share = {
           country = ROOT
           share = 50
@@ -615,9 +602,7 @@ qara_qoyunlu_second = {
   }
   qara_qoyunlu_control_hormuz = {
     icon = mission_conquer_andhra_bah
-    required_missions = {
-      qara_qoyunlu_dominate_the_gulf
-    }
+    required_missions = { qara_qoyunlu_dominate_the_gulf }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -656,6 +641,7 @@ qara_qoyunlu_second = {
         }
       }
       2999 = {
+        #Hormuz
         trade_share = {
           country = ROOT
           share = 75
@@ -758,9 +744,7 @@ qara_qoyunlu_second = {
   }
   qara_qoyunlu_blue_mosque = {
     icon = mission_central_asian_city
-    required_missions = {
-      qara_qoyunlu_patronize_arts
-    }
+    required_missions = { qara_qoyunlu_patronize_arts }
     position = 9
     provinces_to_highlight = {
       province_id = 416
@@ -820,10 +804,7 @@ qara_qoyunlu_second = {
   }
   qara_qoyunlu_pearl_of_the_empire = {
     icon = mission_metropolis_of_the_deccan
-    required_missions = {
-      qara_qoyunlu_blue_mosque
-      qara_qoyunlu_imperial_fabrics
-    }
+    required_missions = { qara_qoyunlu_blue_mosque qara_qoyunlu_imperial_fabrics }
     position = 10
     provinces_to_highlight = {
       province_id = 416
@@ -930,9 +911,7 @@ qara_qoyunlu_third = {
   has_country_shield = yes
   qara_qoyunlu_dismantle_ak_qoyunlu = {
     icon = qara_qoyunlu_dismantle_ak_qoyunlu
-    required_missions = {
-      qara_qoyunlu_stabilize_interior
-    }
+    required_missions = { qara_qoyunlu_stabilize_interior }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -1078,9 +1057,7 @@ qara_qoyunlu_third = {
   }
   qara_qoyunlu_anatolian_turnabout = {
     icon = mission_ottoman_diplomacy
-    required_missions = {
-      qara_qoyunlu_dismantle_ak_qoyunlu
-    }
+    required_missions = { qara_qoyunlu_dismantle_ak_qoyunlu }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -1174,10 +1151,7 @@ qara_qoyunlu_third = {
   }
   qara_qoyunlu_reform_the_army = {
     icon = mission_ottoman_early_army
-    required_missions = {
-      qara_qoyunlu_anatolian_turnabout
-      qara_qoyunlu_mounted_dread
-    }
+    required_missions = { qara_qoyunlu_anatolian_turnabout qara_qoyunlu_mounted_dread }
     position = 5
     provinces_to_highlight = {}
     trigger = {
@@ -1222,9 +1196,7 @@ qara_qoyunlu_third = {
   }
   qara_qoyunlu_a_gunpowder_empire = {
     icon = mission_guns_of_urban
-    required_missions = {
-      qara_qoyunlu_reform_the_army
-    }
+    required_missions = { qara_qoyunlu_reform_the_army }
     position = 6
     trigger = {
       if = {
@@ -1273,9 +1245,7 @@ qara_qoyunlu_third = {
   }
   qara_qoyunlu_splendid_court = {
     icon = mission_gharbianss
-    required_missions = {
-      qara_qoyunlu_patronize_arts
-    }
+    required_missions = { qara_qoyunlu_patronize_arts }
     position = 8
     provinces_to_highlight = {
       owned_by = ROOT
@@ -1316,9 +1286,7 @@ qara_qoyunlu_third = {
   }
   qara_qoyunlu_kitab = {
     icon = mission_court_education
-    required_missions = {
-      qara_qoyunlu_splendid_court
-    }
+    required_missions = { qara_qoyunlu_splendid_court }
     position = 10
     trigger = {
       prestige = 60
@@ -1508,9 +1476,7 @@ qara_qoyunlu_fourth = {
   }
   qara_qoyunlu_caucasian_consolidation = {
     icon = mission_the_caucasus_rus
-    required_missions = {
-      qara_qoyunlu_stabilize_interior
-    }
+    required_missions = { qara_qoyunlu_stabilize_interior }
     position = 2
     provinces_to_highlight = {
       region = caucasia_region
@@ -1701,9 +1667,7 @@ qara_qoyunlu_fourth = {
   }
   qara_qoyunlu_overpower_the_mamluks = {
     icon = mission_break_the_mamluks
-    required_missions = {
-      qara_qoyunlu_dismantle_ak_qoyunlu
-    }
+    required_missions = { qara_qoyunlu_dismantle_ak_qoyunlu }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1831,9 +1795,7 @@ qara_qoyunlu_fourth = {
   }
   qara_qoyunlu_architecture = {
     icon = mission_gawans_madrasar
-    required_missions = {
-      qara_qoyunlu_legacy_of_seljuk
-    }
+    required_missions = { qara_qoyunlu_legacy_of_seljuk }
     position = 6
     provinces_to_highlight = {
       owned_by = ROOT
@@ -1880,7 +1842,13 @@ qara_qoyunlu_fourth = {
         unlock_estate_privilege = {
           estate_privilege = estate_burghers_great_works_of_iran
           modifier_tooltip = estate_burghers_great_works_of_iran_tooltip
-          effect_tooltip = " change_estate_land_share = { estate = estate_burghers share = 5 } custom_tooltip = estate_burghers_great_works_of_iran_tt "
+          effect_tooltip = "
+            change_estate_land_share = {
+              estate = estate_burghers
+              share = 5
+            }
+            custom_tooltip = estate_burghers_great_works_of_iran_tt
+          "
         }
       }
       else = {
@@ -1899,9 +1867,7 @@ qara_qoyunlu_fourth = {
   }
   qara_qoyunlu_repopulate_iran = {
     icon = mission_conquer_central_deccan
-    required_missions = {
-      qara_qoyunlu_architecture
-    }
+    required_missions = { qara_qoyunlu_architecture }
     position = 7
     provinces_to_highlight = {
       owned_by = ROOT
@@ -1945,17 +1911,21 @@ qara_qoyunlu_fourth = {
       hidden_effect = {
         for = {
           amount = 10
-          effect = " random_owned_province = { limit = { culture_group = iranian } add_base_tax = 1 } "
+          effect = "
+            random_owned_province = {
+              limit = {
+                culture_group = iranian
+              }
+              add_base_tax = 1
+            }
+          "
         }
       }
     }
   }
   qara_qoyunlu_shahanshahs_of_eranshahr = {
     icon = mission_persianate_empire
-    required_missions = {
-      qara_qoyunlu_repopulate_iran
-      qara_qoyunlu_splendid_court
-    }
+    required_missions = { qara_qoyunlu_repopulate_iran qara_qoyunlu_splendid_court }
     position = 9
     trigger = {
       stability = 3
@@ -2014,7 +1984,7 @@ qara_qoyunlu_fifth = {
         }
         TIM = {
           NOT = {
-            has_ruler = "ôl»TÅú"  # Shah Rukh
+            has_ruler = "ôl»TÅú" 	# Shah Rukh
           }
         }
         NOT = {
@@ -2104,9 +2074,7 @@ qara_qoyunlu_fifth = {
   }
   qara_qoyunlu_heart_of_iran = {
     icon = mission_unite_home_region
-    required_missions = {
-      qara_qoyunlu_princes_of_persia
-    }
+    required_missions = { qara_qoyunlu_princes_of_persia }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -2229,9 +2197,7 @@ qara_qoyunlu_fifth = {
   }
   qara_qoyunlu_dethrone_the_timurids = {
     icon = aq_qoyunlu_dethrone_the_timurids
-    required_missions = {
-      qara_qoyunlu_heart_of_iran
-    }
+    required_missions = { qara_qoyunlu_heart_of_iran }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -2284,7 +2250,7 @@ qara_qoyunlu_fifth = {
         limit = {
           NOT = {
             any_country = {
-              dynasty = "^(g?Q"  # Timurid
+              dynasty = "^(g?Q" 	# Timurid
             }
           }
         }
@@ -2318,7 +2284,7 @@ qara_qoyunlu_fifth = {
           limit = {
             NOT = {
               any_country = {
-                dynasty = "^(g?Q"  # Timurid
+                dynasty = "^(g?Q" 	# Timurid
               }
             }
           }
@@ -2336,9 +2302,7 @@ qara_qoyunlu_fifth = {
   }
   qara_qoyunlu_legacy_of_seljuk = {
     icon = per_the_seljuk_successors
-    required_missions = {
-      qara_qoyunlu_dethrone_the_timurids
-    }
+    required_missions = { qara_qoyunlu_dethrone_the_timurids }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -2428,9 +2392,7 @@ qara_qoyunlu_fifth = {
   }
   qara_qoyunlu_the_oghuz_homeland = {
     icon = mission_lit_harness_steppes
-    required_missions = {
-      qara_qoyunlu_legacy_of_seljuk
-    }
+    required_missions = { qara_qoyunlu_legacy_of_seljuk }
     position = 7
     provinces_to_highlight = {
       OR = {

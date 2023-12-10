@@ -1,3 +1,4 @@
+#Gotland Monarchy missions
 got_monarchy_slot_1 = {
   slot = 1
   generic = no
@@ -361,9 +362,7 @@ got_monarchy_slot_2 = {
   got_monarchy_occupy_koppenhagen = {
     icon = mission_end_the_sound_toll
     position = 3
-    required_missions = {
-      got_monarchy_declare_war
-    }
+    required_missions = { got_monarchy_declare_war }
     provinces_to_highlight = {
       is_capital_of = DAN
     }
@@ -568,9 +567,7 @@ got_monarchy_slot_2 = {
   got_monarchy_king_of_denmark = {
     icon = mission_crown_of_denmark
     position = 5
-    required_missions = {
-      got_monarchy_execute_the_wrong_king
-    }
+    required_missions = { got_monarchy_execute_the_wrong_king }
     provinces_to_highlight = {
       OR = {
         owned_by = DAN
@@ -816,6 +813,7 @@ got_monarchy_slot_3 = {
     }
   }
 }
+#Gotland Merchant Republic missions
 got_republic_slot_1 = {
   slot = 1
   generic = no
@@ -898,9 +896,7 @@ got_republic_slot_1 = {
   got_republic_trade_federation = {
     icon = the_london_steelyard
     position = 2
-    required_missions = {
-      got_join_the_empire
-    }
+    required_missions = { got_join_the_empire }
     provinces_to_highlight = {
       OR = {
         has_river_estuary_trigger = yes
@@ -962,9 +958,7 @@ got_republic_slot_1 = {
   got_republic_dominate_the_baltic_trace = {
     icon = reform_the_monte
     position = 3
-    required_missions = {
-      got_republic_trade_federation
-    }
+    required_missions = { got_republic_trade_federation }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -1038,9 +1032,7 @@ got_republic_slot_1 = {
   got_republic_dominate_lubeck_trace = {
     icon = return_visby_to_the_league
     position = 4
-    required_missions = {
-      got_republic_dominate_the_baltic_trace
-    }
+    required_missions = { got_republic_dominate_the_baltic_trace }
     provinces_to_highlight = {
       province_id = 45
       OR = {
@@ -1080,9 +1072,7 @@ got_republic_slot_1 = {
   got_republic_beyond_lubeck = {
     icon = mission_control_the_channel
     position = 5
-    required_missions = {
-      got_republic_dominate_lubeck_trace
-    }
+    required_missions = { got_republic_dominate_lubeck_trace }
     provinces_to_highlight = {
       province_id = 1269
     }
@@ -1166,15 +1156,33 @@ got_republic_slot_2 = {
       else = {
         faction_in_power_effect = {
           faction = mr_aristocrats
-          effect = " add_navy_tradition = 20 add_country_modifier = { name = got_combat_fleet duration = 9125 } "
+          effect = "
+            add_navy_tradition = 20
+            add_country_modifier = {
+              name = got_combat_fleet
+              duration = 9125
+            }
+          "
         }
         faction_in_power_effect = {
           faction = mr_traders
-          effect = " add_treasury = 100 add_country_modifier = { name = got_merchants_of_the_baltics duration = 9125 } "
+          effect = "
+            add_treasury = 100
+            add_country_modifier = {
+              name = got_merchants_of_the_baltics
+              duration = 9125
+            }
+          "
         }
         faction_in_power_effect = {
           faction = mr_guilds
-          effect = " capital_scope = { add_base_production = 2 } add_country_modifier = { name = got_artisan_fleet duration = 9125 } "
+          effect = "
+            capital_scope = { add_base_production = 2 }
+            add_country_modifier = {
+              name = got_artisan_fleet
+              duration = 9125
+            }
+          "
         }
       }
     }
@@ -1182,10 +1190,7 @@ got_republic_slot_2 = {
   got_republic_strong_mercantilism = {
     icon = dominant_economy
     position = 3
-    required_missions = {
-      got_republic_trade_federation
-      got_republic_trade_fleet
-    }
+    required_missions = { got_republic_trade_federation got_republic_trade_fleet }
     provinces_to_highlight = {}
     trigger = {
       if = {
@@ -1239,15 +1244,30 @@ got_republic_slot_2 = {
       else = {
         faction_in_power_effect = {
           faction = mr_aristocrats
-          effect = " add_country_modifier = { name = got_aristocratic_trade_focus duration = 9125 } "
+          effect = "
+            add_country_modifier = {
+              name = got_aristocratic_trade_focus
+              duration = 9125
+            }
+          "
         }
         faction_in_power_effect = {
           faction = mr_traders
-          effect = " add_country_modifier = { name = got_trader_reign duration = 9125 } "
+          effect = "
+            add_country_modifier = {
+              name = got_trader_reign
+              duration = 9125
+            }
+          "
         }
         faction_in_power_effect = {
           faction = mr_guilds
-          effect = " add_country_modifier = { name = got_oligarchic_guilds_rule duration = 9125 } "
+          effect = "
+            add_country_modifier = {
+              name = got_oligarchic_guilds_rule
+              duration = 9125
+            }
+          "
         }
       }
     }
@@ -1255,10 +1275,7 @@ got_republic_slot_2 = {
   got_republic_dominate_commerce = {
     icon = mission_seize_north_sea_trade
     position = 5
-    required_missions = {
-      got_republic_strong_mercantilism
-      got_republic_russian_kontor
-    }
+    required_missions = { got_republic_strong_mercantilism got_republic_russian_kontor }
     provinces_to_highlight = {
       province_id = 1926
       NOT = {
@@ -1279,7 +1296,7 @@ got_republic_slot_2 = {
           all_known_country = {
             is_in_trade_league_with = ROOT
           }
-          amount = 7
+          amount = 7 	#  8 members include Lubeck
         }
       }
       else = {
@@ -1315,15 +1332,30 @@ got_republic_slot_2 = {
       else = {
         faction_in_power_effect = {
           faction = mr_aristocrats
-          effect = " add_country_modifier = { name = got_baltic_military_power duration = -1 } "
+          effect = "
+            add_country_modifier = {
+              name = got_baltic_military_power
+              duration = -1
+            }
+          "
         }
         faction_in_power_effect = {
           faction = mr_traders
-          effect = " add_country_modifier = { name = got_baltic_monopoly duration = -1 } "
+          effect = "
+            add_country_modifier = {
+              name = got_baltic_monopoly
+              duration = -1
+            }
+          "
         }
         faction_in_power_effect = {
           faction = mr_guilds
-          effect = " add_country_modifier = { name = got_baltic_maritime_empire duration = -1 } "
+          effect = "
+            add_country_modifier = {
+              name = got_baltic_maritime_empire
+              duration = -1
+            }
+          "
         }
         custom_tooltip = got_republic_dominate_commerce_tt
       }
@@ -1404,10 +1436,7 @@ got_republic_slot_3 = {
   got_republic_get_the_sound_toll = {
     icon = mission_the_sound_toll
     position = 2
-    required_missions = {
-      got_republic_trade_fleet
-      got_republic_mercenaries
-    }
+    required_missions = { got_republic_trade_fleet got_republic_mercenaries }
     provinces_to_highlight = {
       province_id = 12
       OR = {
@@ -1491,11 +1520,9 @@ got_republic_slot_3 = {
   got_republic_russian_kontor = {
     icon = mission_novgorod_the_great
     position = 4
-    required_missions = {
-      got_republic_compete_with_novgorod
-    }
+    required_missions = { got_republic_compete_with_novgorod }
     provinces_to_highlight = {
-      province_id = 310
+      province_id = 310 	#  Novgorod
     }
     trigger = {
       OR = {
@@ -1544,6 +1571,7 @@ got_republic_slot_3 = {
     }
   }
 }
+#Gotland Pirate missions
 got_pirate_slot_1 = {
   slot = 1
   generic = no
@@ -1641,9 +1669,7 @@ got_pirate_slot_1_new_world = {
   got_pirate_beyond_the_sound_toll = {
     icon = mission_exploration
     position = 3
-    required_missions = {
-      got_pirate_sink_the_danes
-    }
+    required_missions = { got_pirate_sink_the_danes }
     provinces_to_highlight = {
       OR = {
         province_id = 481
@@ -1692,9 +1718,7 @@ got_pirate_slot_1_new_world = {
   got_pirate_take_over_the_caribbeans = {
     icon = mission_caribbean_cn
     position = 4
-    required_missions = {
-      got_pirate_beyond_the_sound_toll
-    }
+    required_missions = { got_pirate_beyond_the_sound_toll }
     provinces_to_highlight = {
       OR = {
         province_id = 481
@@ -1746,9 +1770,7 @@ got_pirate_slot_1_new_world = {
   got_pirate_the_worst_pirate = {
     icon = mission_sponsor_piracy
     position = 5
-    required_missions = {
-      got_pirate_take_over_the_caribbeans
-    }
+    required_missions = { got_pirate_take_over_the_caribbeans }
     provinces_to_highlight = {
       province_id = 489
       NOT = {
@@ -1855,9 +1877,7 @@ got_pirate_slot_2 = {
   got_pirate_sink_the_danes = {
     icon = mission_disrupt_portuguese_trade
     position = 2
-    required_missions = {
-      got_pirate_the_pirate_fleet
-    }
+    required_missions = { got_pirate_the_pirate_fleet }
     provinces_to_highlight = {
       is_capital_of = DAN
     }
@@ -1898,9 +1918,7 @@ got_pirate_slot_2 = {
   got_pirate_kronborg_the_pirate_castle = {
     icon = mission_the_sound_toll
     position = 3
-    required_missions = {
-      got_pirate_sink_the_danes
-    }
+    required_missions = { got_pirate_sink_the_danes }
     provinces_to_highlight = {
       province_id = 12
       OR = {
@@ -1928,9 +1946,7 @@ got_pirate_slot_2 = {
   got_pirate_loot_london = {
     icon = mission_fire_of_london
     position = 4
-    required_missions = {
-      got_pirate_raid_the_north_sea
-    }
+    required_missions = { got_pirate_raid_the_north_sea }
     provinces_to_highlight = {
       province_id = 236
       NOT = {
@@ -1980,9 +1996,7 @@ got_pirate_slot_2 = {
   got_pirate_raid_the_berbers = {
     icon = mission_raid_the_berbers
     position = 5
-    required_missions = {
-      got_pirate_reach_the_mediterrenean_sea
-    }
+    required_missions = { got_pirate_reach_the_mediterrenean_sea }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -2052,7 +2066,7 @@ got_pirate_slot_2 = {
             has_port = yes
           }
           create_flagship = {
-            name = "wm˜ñN∑ÙTÙTW(Ñ"  # Hayrettin Barbarossa
+            name = "wm˜ñN∑ÙTÙTW(Ñ" 	# Hayrettin Barbarossa
             type = heavy_ship
           }
         }
@@ -2086,9 +2100,7 @@ got_pirate_slot_3 = {
   got_pirate_the_lubeck_port = {
     icon = defend_the_city
     position = 2
-    required_missions = {
-      got_pirate_raid_the_baltics
-    }
+    required_missions = { got_pirate_raid_the_baltics }
     provinces_to_highlight = {
       province_id = 45
       NOT = {
@@ -2189,9 +2201,7 @@ got_pirate_slot_3 = {
   got_pirate_loot_the_lowlands = {
     icon = chater_the_voc
     position = 4
-    required_missions = {
-      got_pirate_raid_the_north_sea
-    }
+    required_missions = { got_pirate_raid_the_north_sea }
     provinces_to_highlight = {
       region = low_countries_region
       trade_goods = cloth
@@ -2277,9 +2287,7 @@ got_pirate_slot_3 = {
   got_pirate_the_curia_treasure = {
     icon = mission_war_chest
     position = 5
-    required_missions = {
-      got_pirate_reach_the_mediterrenean_sea
-    }
+    required_missions = { got_pirate_reach_the_mediterrenean_sea }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -2442,9 +2450,7 @@ got_pirate_slot_4 = {
   got_pirate_the_danzig_port = {
     icon = mission_danzig_or_war
     position = 2
-    required_missions = {
-      got_pirate_raid_the_baltics
-    }
+    required_missions = { got_pirate_raid_the_baltics }
     provinces_to_highlight = {
       province_id = 43
       NOT = {
@@ -2500,15 +2506,30 @@ got_pirate_slot_4 = {
     effect = {
       faction_in_power_effect = {
         faction = pr_buccaneers
-        effect = " add_country_modifier = { name = got_the_buccaneers_focus duration = -1 } "
+        effect = "
+          add_country_modifier = {
+            name = got_the_buccaneers_focus
+            duration = -1
+          }
+        "
       }
       faction_in_power_effect = {
         faction = pr_smugglers
-        effect = " add_country_modifier = { name = got_the_smugglers_focus duration = -1 } "
+        effect = "
+          add_country_modifier = {
+            name = got_the_smugglers_focus
+            duration = -1
+          }
+        "
       }
       faction_in_power_effect = {
         faction = pr_captains
-        effect = " add_country_modifier = { name = got_the_captains_focus duration = -1 } "
+        effect = "
+          add_country_modifier = {
+            name = got_the_captains_focus
+            duration = -1
+          }
+        "
       }
       custom_tooltip = got_republic_dominate_commerce_tt
       set_country_flag = got_unlock_pirate_faction_decisions
@@ -2673,9 +2694,7 @@ got_pirate_slot_4 = {
   got_pirate_loot_venices_arsenal = {
     icon = mission_raid_on_venice
     position = 5
-    required_missions = {
-      got_pirate_reach_the_mediterrenean_sea
-    }
+    required_missions = { got_pirate_reach_the_mediterrenean_sea }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -2767,9 +2786,7 @@ got_pirate_slot_5 = {
   got_pirate_the_riga_port = {
     icon = mission_conquer_riga
     position = 2
-    required_missions = {
-      got_pirate_raid_the_baltics
-    }
+    required_missions = { got_pirate_raid_the_baltics }
     provinces_to_highlight = {
       province_id = 38
       NOT = {
@@ -2863,7 +2880,7 @@ got_pirate_slot_5 = {
             add_historical_friend = ROOT
             define_ruler = {
               force_republican_names = yes
-              dynasty = "ØeyrSyrçKQ"  # Stˆrtebeker
+              dynasty = "ØeyrSyrçKQ" 	# Stˆrtebeker
               culture = pommeranian
             }
             add_republican_tradition = 50

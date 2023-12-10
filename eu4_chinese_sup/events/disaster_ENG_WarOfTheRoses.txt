@@ -1,4 +1,5 @@
 namespace = war_of_the_roses
+# Start Event
 country_event = {
   id = war_of_the_roses.1
   title = war_of_the_roses.1.t
@@ -20,12 +21,13 @@ country_event = {
     }
   }
   option = {
+    # Support the House of Lancaster
     name = war_of_the_roses.1.a
     add_stability = -2
     set_country_flag = war_of_the_roses
     set_country_flag = supports_house_of_lancaster
     define_ruler = {
-      dynasty = "pQV¯eyr"  # Lancaster
+      dynasty = "pQV¯eyr" 	# Lancaster
       age = 31
     }
     if = {
@@ -47,7 +49,7 @@ country_event = {
     add_yearly_manpower = -2.5
     if = {
       limit = {
-        owns = 245
+        owns = 245 	#  Yorkshire
         245 = {
           NOT = {
             units_in_province = 1
@@ -62,8 +64,8 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "tåg·V"  # Richard
-          leader_dynasty = "¦uKQ"  # York
+          leader = "tåg·V" 	# Richard
+          leader_dynasty = "¦uKQ" 	# York
           win = yes
         }
       }
@@ -95,19 +97,20 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "tåg·V"  # Richard
-          leader_dynasty = "¦uKQ"  # York
+          leader = "tåg·V" 	# Richard
+          leader_dynasty = "¦uKQ" 	# York
           win = yes
         }
       }
     }
   }
   option = {
+    # Support the House of York
     name = war_of_the_roses.1.b
     add_stability = -2
     set_country_flag = supports_house_of_york
     define_ruler = {
-      dynasty = "¦uKQ"  # York
+      dynasty = "¦uKQ" 	# York
       age = 31
     }
     if = {
@@ -129,7 +132,7 @@ country_event = {
     add_yearly_manpower = -2.5
     if = {
       limit = {
-        owns = 244
+        owns = 244 	#  Lancashire
         244 = {
           NOT = {
             units_in_province = 1
@@ -144,8 +147,8 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "1r·VNS"  # Edward
-          leader_dynasty = "pQV¯eyr"  # Lancaster
+          leader = "1r·VNS" 	# Edward
+          leader_dynasty = "pQV¯eyr" 	# Lancaster
           win = yes
         }
       }
@@ -177,14 +180,18 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "1r·VNS"  # Edward
-          leader_dynasty = "pQV¯eyr"  # Lancaster
+          leader = "1r·VNS" 	# Edward
+          leader_dynasty = "pQV¯eyr" 	# Lancaster
           win = yes
         }
       }
     }
   }
 }
+########################################
+# Provinces Declare their Support
+########################################
+# Support in Province
 country_event = {
   id = war_of_the_roses.2
   title = war_of_the_roses.2.t
@@ -212,6 +219,7 @@ country_event = {
     days = 1
   }
   option = {
+    # This is most welcomed
     name = war_of_the_roses.2.a
     random_owned_province = {
       limit = {
@@ -257,6 +265,7 @@ country_event = {
     }
   }
 }
+# Province Declares for Lancaster!
 country_event = {
   id = war_of_the_roses.3
   title = war_of_the_roses.3.t
@@ -306,6 +315,7 @@ country_event = {
     }
   }
   option = {
+    # Dire news
     name = war_of_the_roses.3.a
     event_target:disloyal_province = {
       add_province_modifier = {
@@ -333,6 +343,7 @@ country_event = {
     }
   }
 }
+# Province Declares for York!
 country_event = {
   id = war_of_the_roses.4
   title = war_of_the_roses.4.t
@@ -382,6 +393,7 @@ country_event = {
     }
   }
   option = {
+    # Dire news
     name = war_of_the_roses.4.a
     event_target:disloyal_province = {
       add_province_modifier = {
@@ -406,6 +418,10 @@ country_event = {
     }
   }
 }
+########################################
+# Internal Problems
+########################################
+# Nobles Disgruntled in Province
 country_event = {
   id = war_of_the_roses.5
   title = war_of_the_roses.5.t
@@ -421,6 +437,7 @@ country_event = {
     days = 1
   }
   option = {
+    # These gifts should show our gratitude
     name = war_of_the_roses.5.a
     ai_chance = {
       factor = 50
@@ -428,6 +445,7 @@ country_event = {
     add_years_of_income = -0.25
   }
   option = {
+    # It is nothing but their duty
     name = war_of_the_roses.5.b
     ai_chance = {
       factor = 50
@@ -444,6 +462,7 @@ country_event = {
     }
   }
 }
+# Rebel Leaders Captured
 province_event = {
   id = war_of_the_roses.6
   title = war_of_the_roses.6.t
@@ -456,6 +475,7 @@ province_event = {
       tag = REB
     }
     OR = {
+      #so that is isn't unrelated rebels
       region = british_isles_region
       NOT = {
         nationalism = 1
@@ -467,6 +487,7 @@ province_event = {
     }
   }
   option = {
+    # Pardon them
     name = war_of_the_roses.6.a
     ai_chance = {
       factor = 50
@@ -480,6 +501,7 @@ province_event = {
     }
   }
   option = {
+    # Execute them
     name = war_of_the_roses.6.b
     ai_chance = {
       factor = 50
@@ -493,12 +515,14 @@ province_event = {
     }
   }
 }
+# Soldiers Desert
 country_event = {
   id = war_of_the_roses.7
   title = war_of_the_roses.7.t
   desc = war_of_the_roses.7.d
   picture = WAR_OF_THE_ROSES_eventPicture
   trigger = {
+    #otherwise option A is too easy
     manpower_percentage = 0.1
   }
   is_triggered_only = yes
@@ -507,6 +531,7 @@ country_event = {
     days = 1
   }
   option = {
+    # There is nothing we can do
     name = war_of_the_roses.7.a
     ai_chance = {
       factor = 10
@@ -515,6 +540,7 @@ country_event = {
     add_legitimacy = -5
   }
   option = {
+    # Import food from abroad
     name = war_of_the_roses.7.b
     ai_chance = {
       factor = 70
@@ -525,6 +551,7 @@ country_event = {
     }
   }
   option = {
+    # Let them take from the local peasants
     name = war_of_the_roses.7.c
     ai_chance = {
       factor = 20
@@ -535,6 +562,7 @@ country_event = {
     }
   }
 }
+# Legitimacy Questioned
 country_event = {
   id = war_of_the_roses.8
   title = war_of_the_roses.8.t
@@ -551,6 +579,7 @@ country_event = {
     days = 1
   }
   option = {
+    # Buy their continued support
     name = war_of_the_roses.8.a
     ai_chance = {
       factor = 50
@@ -558,6 +587,7 @@ country_event = {
     add_years_of_income = -0.25
   }
   option = {
+    # How dare they question me?
     name = war_of_the_roses.8.b
     ai_chance = {
       factor = 50
@@ -568,6 +598,10 @@ country_event = {
     }
   }
 }
+########################################
+# Rebel Stronghold & Invasion
+########################################
+# Rumors of Large Revolt in Province
 country_event = {
   id = war_of_the_roses.9
   title = war_of_the_roses.9.t
@@ -594,6 +628,7 @@ country_event = {
     days = 1
   }
   option = {
+    # Send money to help the local authorities
     name = war_of_the_roses.9.a
     ai_chance = {
       factor = 25
@@ -602,6 +637,7 @@ country_event = {
     add_dip_power = -50
   }
   option = {
+    # The money is better needed closer to home
     name = war_of_the_roses.9.b
     ai_chance = {
       factor = 75
@@ -631,6 +667,7 @@ country_event = {
     }
   }
 }
+# Lancaster Stronghold
 province_event = {
   id = war_of_the_roses.10
   title = war_of_the_roses.10.t
@@ -646,6 +683,7 @@ province_event = {
     has_province_modifier = wotr_local_support_for_lancaster
   }
   option = {
+    # This is a serious threat
     name = war_of_the_roses.10.a
     add_province_modifier = {
       name = rebel_stronghold
@@ -653,6 +691,7 @@ province_event = {
     }
   }
 }
+# York Stronghold
 province_event = {
   id = war_of_the_roses.11
   title = war_of_the_roses.11.t
@@ -668,6 +707,7 @@ province_event = {
     has_province_modifier = wotr_local_support_for_york
   }
   option = {
+    # This is a serious threat
     name = war_of_the_roses.11.a
     add_province_modifier = {
       name = rebel_stronghold
@@ -675,6 +715,10 @@ province_event = {
     }
   }
 }
+########################################
+# Foreign Support
+########################################
+# Support House of Lancaster
 country_event = {
   id = war_of_the_roses.12
   title = war_of_the_roses.12.t
@@ -793,6 +837,7 @@ country_event = {
     }
   }
   option = {
+    # Send them a token force
     name = war_of_the_roses.12.a
     trigger = {
       manpower = 5
@@ -825,6 +870,7 @@ country_event = {
     }
   }
   option = {
+    # Send them some money
     name = war_of_the_roses.12.b
     ai_chance = {
       factor = 25
@@ -850,6 +896,7 @@ country_event = {
     }
   }
   option = {
+    # We will not support rebels
     name = war_of_the_roses.12.c
     ai_chance = {
       factor = 25
@@ -881,6 +928,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Support House of York
 country_event = {
   id = war_of_the_roses.13
   title = war_of_the_roses.13.t
@@ -999,6 +1047,7 @@ country_event = {
     }
   }
   option = {
+    # Send them a token force
     name = war_of_the_roses.13.a
     trigger = {
       manpower = 5
@@ -1031,6 +1080,7 @@ country_event = {
     }
   }
   option = {
+    # Send them some money
     name = war_of_the_roses.13.b
     ai_chance = {
       factor = 25
@@ -1056,6 +1106,7 @@ country_event = {
     }
   }
   option = {
+    # We will not support rebels
     name = war_of_the_roses.13.c
     ai_chance = {
       factor = 25
@@ -1087,6 +1138,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Country Intervenes!
 country_event = {
   id = war_of_the_roses.14
   title = war_of_the_roses.14.t
@@ -1095,6 +1147,7 @@ country_event = {
   is_triggered_only = yes
   immediate = {
     hidden_effect = {
+      #This is necessary because it breaks the whole disaster if you wait until you have defeated the initial pretender rebels before clicking the option.
       if = {
         limit = {
           any_owned_province = {
@@ -1170,6 +1223,7 @@ country_event = {
     }
   }
   option = {
+    # How dare they!
     name = war_of_the_roses.14.a
     tooltip = {
       event_target:the_province = {
@@ -1182,6 +1236,10 @@ country_event = {
     }
   }
 }
+########################################
+# The End of the War
+########################################
+# The End of the War of the Roses
 country_event = {
   id = war_of_the_roses.100
   title = war_of_the_roses.100.t
@@ -1192,10 +1250,13 @@ country_event = {
   immediate = {
     on_non_estate_disaster_end = yes
     hidden_effect = {
+      # Clear Flags
+      # Clear Country Modifiers
       remove_country_modifier = low_fertility
       remove_country_modifier = importing_food
       remove_country_modifier = plundering_soldiers
       remove_country_modifier = legitimacy_questioned
+      # Clear Province Modifiers
       every_owned_province = {
         if = {
           limit = {
@@ -1232,6 +1293,7 @@ country_event = {
     }
   }
   option = {
+    # Order has finally been restored
     name = war_of_the_roses.100.a
     add_stability_or_adm_power = yes
     add_prestige = 50
@@ -1297,6 +1359,7 @@ country_event = {
     }
   }
 }
+# House of Lancaster wins the War of the Roses
 country_event = {
   id = war_of_the_roses.101
   title = war_of_the_roses.101.t
@@ -1309,16 +1372,19 @@ country_event = {
     tag = ENG
     has_disaster = war_of_the_roses
     has_country_flag = supports_house_of_york
-    dynasty = "pQV¯eyr"  # Lancaster
+    dynasty = "pQV¯eyr" 	# Lancaster
   }
   immediate = {
     hidden_effect = {
+      # Clear Flags
       clr_country_flag = supports_house_of_lancaster
       clr_country_flag = supports_house_of_york
+      # Clear Country Modifiers
       remove_country_modifier = importing_food
       remove_country_modifier = plundering_soldiers
       remove_country_modifier = legitimacy_questioned
       remove_country_modifier = low_fertility
+      # Clear Province Modifiers
       every_owned_province = {
         if = {
           limit = {
@@ -1356,6 +1422,7 @@ country_event = {
     end_disaster = war_of_the_roses
   }
   option = {
+    # Long live the House of Lancaster!
     name = war_of_the_roses.101.a
     add_stability_or_adm_power = yes
     add_prestige = -50
@@ -1372,6 +1439,7 @@ country_event = {
     }
   }
 }
+# House of York wins the War of the Roses
 country_event = {
   id = war_of_the_roses.102
   title = war_of_the_roses.102.t
@@ -1384,16 +1452,19 @@ country_event = {
     tag = ENG
     has_disaster = war_of_the_roses
     has_country_flag = supports_house_of_lancaster
-    dynasty = "¦uKQ"  # York
+    dynasty = "¦uKQ" 	# York
   }
   immediate = {
     hidden_effect = {
+      # Clear Flags
       clr_country_flag = supports_house_of_lancaster
       clr_country_flag = supports_house_of_york
+      # Clear Country Modifiers
       remove_country_modifier = importing_food
       remove_country_modifier = plundering_soldiers
       remove_country_modifier = legitimacy_questioned
       remove_country_modifier = low_fertility
+      # Clear Province Modifiers
       every_owned_province = {
         if = {
           limit = {
@@ -1431,6 +1502,7 @@ country_event = {
     end_disaster = war_of_the_roses
   }
   option = {
+    # Long live the House of York!
     name = war_of_the_roses.102.a
     add_stability_or_adm_power = yes
     add_prestige = -50
@@ -1447,6 +1519,7 @@ country_event = {
     }
   }
 }
+# Improved Relations with England
 country_event = {
   id = war_of_the_roses.103
   title = war_of_the_roses.103.t
@@ -1457,6 +1530,7 @@ country_event = {
     clr_country_flag = support_for_war_of_the_roses
   }
   option = {
+    # Good news
     name = war_of_the_roses.103.a
     FROM = {
       add_opinion = {
@@ -1466,6 +1540,7 @@ country_event = {
     }
   }
 }
+# Relations Deteriorate with England
 country_event = {
   id = war_of_the_roses.104
   title = war_of_the_roses.104.t
@@ -1476,6 +1551,7 @@ country_event = {
     clr_country_flag = support_for_war_of_the_roses
   }
   option = {
+    # Oh...
     name = war_of_the_roses.104.a
     trigger = {
       NOT = {
@@ -1490,6 +1566,7 @@ country_event = {
     }
   }
   option = {
+    # Good thing we didn't!
     name = war_of_the_roses.104.b
     trigger = {
       has_country_flag = no_support_for_rose_rebels
@@ -1503,6 +1580,7 @@ country_event = {
     clr_country_flag = no_support_for_rose_rebels
   }
 }
+# Relations Deteriorate with England
 country_event = {
   id = war_of_the_roses.105
   title = war_of_the_roses.105.t
@@ -1513,6 +1591,7 @@ country_event = {
     clr_country_flag = support_for_war_of_the_roses
   }
   option = {
+    # Oh...
     name = war_of_the_roses.105.a
     trigger = {
       NOT = {
@@ -1527,6 +1606,7 @@ country_event = {
     }
   }
   option = {
+    # Good thing we didn't!
     name = war_of_the_roses.104.b
     trigger = {
       has_country_flag = no_support_for_rose_rebels
@@ -1540,6 +1620,7 @@ country_event = {
     clr_country_flag = no_support_for_rose_rebels
   }
 }
+# An unrelated dynasty triumphs in the war of the roses.
 country_event = {
   id = war_of_the_roses.106
   title = war_of_the_roses.106.t
@@ -1552,21 +1633,24 @@ country_event = {
     tag = ENG
     has_disaster = war_of_the_roses
     NOT = {
-      dynasty = "¦uKQ"  # York
+      dynasty = "¦uKQ" 	# York
     }
     NOT = {
-      dynasty = "pQV¯eyr"  # Lancaster
+      dynasty = "pQV¯eyr" 	# Lancaster
     }
   }
   immediate = {
     hidden_effect = {
       set_country_flag = war_of_the_roses_was_had
+      # Clear Flags
       clr_country_flag = supports_house_of_lancaster
       clr_country_flag = supports_house_of_york
+      # Clear Country Modifiers
       remove_country_modifier = importing_food
       remove_country_modifier = plundering_soldiers
       remove_country_modifier = legitimacy_questioned
       remove_country_modifier = low_fertility
+      # Clear Province Modifiers
       every_owned_province = {
         if = {
           limit = {
@@ -1604,6 +1688,7 @@ country_event = {
     end_disaster = war_of_the_roses
   }
   option = {
+    # Long Live the X dynasty
     name = war_of_the_roses.106.a
     add_stability = -1
     add_prestige = -50
@@ -1621,6 +1706,8 @@ country_event = {
     }
   }
 }
+#####Pretender flees (prevents very fast end to the disaster)
+#From on_battle_won_province
 country_event = {
   id = war_of_the_roses.200
   title = war_of_the_roses.200.name
@@ -1780,8 +1867,8 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 2
-          leader = "1r·VNS"  # Edward
-          leader_dynasty = "pQV¯eyr"  # Lancaster
+          leader = "1r·VNS" 	# Edward
+          leader_dynasty = "pQV¯eyr" 	# Lancaster
           win = yes
         }
       }
@@ -1789,8 +1876,8 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 2
-          leader = "tåg·V"  # Richard
-          leader_dynasty = "¦uKQ"  # York
+          leader = "tåg·V" 	# Richard
+          leader_dynasty = "¦uKQ" 	# York
           win = yes
         }
       }

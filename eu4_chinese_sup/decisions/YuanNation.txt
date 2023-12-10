@@ -52,10 +52,10 @@ country_decisions = {
     }
     provinces_to_highlight = {
       OR = {
-        province_id = 723
-        province_id = 1816
-        province_id = 4678
-        province_id = 2136
+        province_id = 723 	# Xilin Gol
+        province_id = 1816 	# Beijing
+        province_id = 4678 	# Qaraqorum
+        province_id = 2136 	# Xuanha
         AND = {
           culture = mongol
           NOT = {
@@ -98,11 +98,12 @@ country_decisions = {
       }
       is_at_war = no
       stability = 2
-      owns_core_province = 723
-      owns_core_province = 4678
-      owns_core_province = 2136
-      owns_core_province = 1816
+      owns_core_province = 723 	# Xilin Gol
+      owns_core_province = 4678 	# Qaraqorum
+      owns_core_province = 2136 	# Xuanha
+      owns_core_province = 1816 	# Beijing
       1816 = {
+        #Beijing
         is_state = yes
       }
       custom_trigger_tooltip = {
@@ -164,17 +165,17 @@ country_decisions = {
         add_base_tax = 1
         add_base_production = 1
         add_base_manpower = 1
-        change_province_name = "'Y˝ê"  # Khanbaliq
-        rename_capital = "'Y˝ê"  # Khanbaliq
+        change_province_name = "'Y˝ê" 	# Khanbaliq
+        rename_capital = "'Y˝ê" 	# Khanbaliq
         move_capital_effect = yes
       }
       723 = {
-        change_province_name = "N˝ê"  # Xanadu
-        rename_capital = "N˝ê"  # Xanadu
+        change_province_name = "N˝ê" 	# Xanadu
+        rename_capital = "N˝ê" 	# Xanadu
       }
       2136 = {
-        change_province_name = "-N˝ê"  # Zhongdu
-        rename_capital = "-N˝ê"  # Zhongdu
+        change_province_name = "-N˝ê" 	# Zhongdu
+        rename_capital = "-N˝ê" 	# Zhongdu
       }
       change_tag = YUA
       on_change_tag_effect = yes
@@ -232,6 +233,7 @@ country_decisions = {
       add_prestige = 20
       set_country_flag = formed_yuan_flag
       if = {
+        #Sinicize the Mongols
         limit = {
           NOT = {
             has_global_flag = sinicized_altaic_flag
@@ -309,7 +311,7 @@ country_decisions = {
         }
         country_event = {
           id = ideagroups.1
-        }
+        } 	# Swap Ideas
       }
     }
     ai_will_do = {

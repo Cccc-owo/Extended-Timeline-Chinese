@@ -1,4 +1,5 @@
 namespace = emp_mission_events
+# The Pope cedes Avignon to Provence
 country_event = {
   id = emp_mission_events.1
   title = emp_mission_events.1.t
@@ -6,7 +7,7 @@ country_event = {
   picture = POPE_PREACHING_eventPicture
   is_triggered_only = yes
   option = {
-    name = emp_mission_events.1.a
+    name = emp_mission_events.1.a 	# Agree
     202 = {
       cede_province = PRO
       add_core = PRO
@@ -14,12 +15,13 @@ country_event = {
     }
   }
   option = {
-    name = emp_mission_events.1.b
+    name = emp_mission_events.1.b 	# Refuse
     ai_chance = {
       factor = 0
     }
   }
 }
+# Geneva wants to join the Confederacy
 country_event = {
   id = emp_mission_events.2
   title = emp_mission_events.2.t
@@ -31,6 +33,7 @@ country_event = {
     vassalize = GNV
   }
 }
+# The Geneva Conventions
 country_event = {
   id = emp_mission_events.3
   title = emp_mission_events.3.t
@@ -115,6 +118,7 @@ country_event = {
     }
   }
 }
+# Geneva overlord notified of increased liberty desire
 country_event = {
   id = emp_mission_events.4
   title = emp_mission_events.4.t
@@ -122,6 +126,7 @@ country_event = {
   picture = BAD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
+    # do not let them go
     name = "emp_mission_events.4.a"
     ai_chance = {
       factor = 0
@@ -136,6 +141,7 @@ country_event = {
     }
   }
   option = {
+    # let them join SWI
     name = "emp_mission_events.4.b"
     ai_chance = {
       factor = 50
@@ -157,6 +163,7 @@ country_event = {
     }
   }
 }
+# The HRE is crowned by the Pope
 country_event = {
   id = emp_mission_events.5
   title = emp_mission_events.5.t
@@ -182,6 +189,7 @@ country_event = {
     }
   }
 }
+# The Fire of Moscow
 country_event = {
   id = emp_mission_events.6
   title = emp_mission_events.6.t
@@ -206,6 +214,7 @@ country_event = {
     }
   }
 }
+# Smashing of the Ducal Ring of Normandy
 country_event = {
   id = emp_mission_events.7
   title = emp_mission_events.7.t
@@ -246,6 +255,7 @@ country_event = {
     }
   }
 }
+# Bohemia decides the fate of Brandenburg
 country_event = {
   id = emp_mission_events.8
   title = emp_mission_events.8.t
@@ -297,6 +307,7 @@ country_event = {
     }
   }
   option = {
+    # restore the march of brandenburg
     name = emp_mission_events.8.b
     trigger = {
       NOT = {
@@ -328,6 +339,7 @@ country_event = {
     }
   }
   option = {
+    # The current situation suits us
     name = emp_mission_events.8.c
     add_prestige = 5
     if = {
@@ -349,6 +361,7 @@ country_event = {
     }
   }
 }
+# Bohemia decides the fate of Saxony
 country_event = {
   id = emp_mission_events.9
   title = emp_mission_events.9.t
@@ -356,6 +369,7 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
+    # make it a PU, so that there's no election score penalty for having them as a subject
     name = emp_mission_events.8.a
     trigger = {
       NOT = {
@@ -400,6 +414,7 @@ country_event = {
     }
   }
   option = {
+    # keep them as a vassal
     name = emp_mission_events.8.c
     add_prestige = 5
     if = {
@@ -421,6 +436,7 @@ country_event = {
     }
   }
 }
+# The Duke of Alençon by Daniel Tolman
 country_event = {
   id = emp_mission_events.10
   title = emp_mission_events.10.t
@@ -458,6 +474,7 @@ country_event = {
     }
   }
   option = {
+    # restore the duke
     name = emp_mission_events.10.a
     hidden_effect = {
       release = ALE
@@ -498,15 +515,15 @@ country_event = {
       }
       ALE = {
         define_ruler = {
-          name = "¦uð II"  # Jean II
-          dynasty = "·V ætbSæt"  # de Valois
+          name = "¦uð II" 	# Jean II
+          dynasty = "·V ætbSæt" 	# de Valois
         }
       }
     }
     else = {
       ALE = {
         define_ruler = {
-          dynasty = "·V ætbSæt"  # de Valois
+          dynasty = "·V ætbSæt" 	# de Valois
         }
       }
     }
@@ -539,6 +556,7 @@ country_event = {
     }
   }
 }
+# Swabian nations join the rising Swabia
 country_event = {
   id = emp_mission_events.11
   title = emp_mission_events.11.name
@@ -546,6 +564,7 @@ country_event = {
   picture = CONQUEST_eventPicture
   is_triggered_only = yes
   option = {
+    # join them
     name = emp_mission_events.11.a
     from = {
       hidden_effect = {
@@ -599,6 +618,7 @@ country_event = {
     }
   }
   option = {
+    # do not join them
     name = emp_mission_events.11.b
     add_stability = -1
     from = {
@@ -621,6 +641,7 @@ country_event = {
     }
   }
 }
+# They said no to .11
 country_event = {
   id = emp_mission_events.12
   title = emp_mission_events.12.name
@@ -628,7 +649,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
-    name = "UNFORTUNATE"
+    name = UNFORTUNATE
     from = {
       every_owned_province = {
         limit = {
@@ -639,6 +660,7 @@ country_event = {
     }
   }
 }
+# They said yes to .11
 country_event = {
   id = emp_mission_events.13
   title = emp_mission_events.13.name
@@ -646,7 +668,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
-    name = "EXCELLENT"
+    name = EXCELLENT
     inherit = from
   }
 }

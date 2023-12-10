@@ -1,4 +1,9 @@
+#################################################
+# Revolution & Napoleon                         #
+# Heavily amended for 1.30 by Pierre du Plessis #
+#################################################
 namespace = french_revolution
+# The General Estates
 country_event = {
   id = french_revolution.1
   title = "flavor_fra.EVTNAME3144"
@@ -99,6 +104,7 @@ country_event = {
     }
   }
   option = {
+    # Dire times are ahead of us
     name = "EVTOPTA3011"
     trigger = {
       NOT = {
@@ -108,7 +114,7 @@ country_event = {
     add_prestige = -10
   }
   option = {
-    name = revolution.1.A
+    name = revolution.1.A 	#  Crush them
     trigger = {
       has_dlc = "Emperor"
     }
@@ -139,7 +145,7 @@ country_event = {
     }
   }
   option = {
-    name = revolution.1.B
+    name = revolution.1.B 	#  Vive la Revolution!
     trigger = {
       has_dlc = "Emperor"
     }
@@ -194,6 +200,7 @@ country_event = {
     }
   }
 }
+# The French Revolution
 country_event = {
   id = french_revolution.2
   title = "flavor_fra.EVTNAME3779"
@@ -209,6 +216,7 @@ country_event = {
     days = 1
   }
   option = {
+    # A Revolution has struck us!
     name = "flavor_fra.EVTOPTA3779"
     if = {
       limit = {
@@ -241,6 +249,7 @@ country_event = {
     }
   }
 }
+# The Reign of Terror
 country_event = {
   id = french_revolution.3
   title = "flavor_fra.EVTNAME3145"
@@ -271,6 +280,7 @@ country_event = {
     days = 1
   }
   option = {
+    # Execute the enemies of the Revolution!
     name = "flavor_fra.EVTOPTA3145"
     add_army_tradition = -20
     add_navy_tradition = -20
@@ -281,7 +291,7 @@ country_event = {
       duration = 3650
     }
     define_ruler = {
-      name = "löKQâs|ﬁè ∑V W=OØeá^S"  # Maximilien de Robespierre
+      name = "löKQâs|ﬁè ∑V W=OØeá^S" 	# Maximilien de Robespierre
       adm = 3
       dip = 0
       mil = 4
@@ -309,6 +319,7 @@ country_event = {
     }
   }
   option = {
+    # Show leniency
     name = "flavor_fra.EVTOPTB3145"
     add_stability = -3
     ai_chance = {
@@ -316,6 +327,7 @@ country_event = {
     }
   }
 }
+# The Reign of Terror targets an advisor (disaster version)
 country_event = {
   id = french_revolution.301
   title = french_revolution.301.name
@@ -413,6 +425,7 @@ country_event = {
     }
   }
   option = {
+    # Execute the enemy of the Revolution!
     name = french_revolution.301.A
     trigger_switch = {
       on_trigger = has_country_flag
@@ -428,6 +441,7 @@ country_event = {
     }
   }
   option = {
+    # Show leniency
     name = french_revolution.301.B
     add_revolutionary_zeal_or_absolutism = {
       amount = -10
@@ -453,6 +467,7 @@ country_event = {
     }
   }
 }
+# The Reign of Terror targets an advisor (non-disaster version)
 country_event = {
   id = french_revolution.302
   title = french_revolution.301.name
@@ -553,6 +568,7 @@ country_event = {
     }
   }
   option = {
+    # Execute the enemy of the Revolution!
     name = french_revolution.301.A
     trigger_switch = {
       on_trigger = has_country_flag
@@ -568,6 +584,7 @@ country_event = {
     }
   }
   option = {
+    # Show leniency
     name = french_revolution.301.B
     add_revolutionary_zeal_or_absolutism = {
       amount = -5
@@ -593,6 +610,7 @@ country_event = {
     }
   }
 }
+# The Reign of Terror gives bonus (non-disaster version)
 country_event = {
   id = french_revolution.303
   title = french_revolution.303.name
@@ -635,12 +653,14 @@ country_event = {
     }
   }
   option = {
+    # Yay
     name = french_revolution.303.A
     add_revolutionary_zeal_or_absolutism = {
       amount = 10
     }
   }
 }
+# The Reign of Terror gives bonus (disaster version)
 country_event = {
   id = french_revolution.304
   title = french_revolution.303.name
@@ -680,12 +700,14 @@ country_event = {
     }
   }
   option = {
+    # Yay
     name = french_revolution.303.A
     add_revolutionary_zeal_or_absolutism = {
       amount = 10
     }
   }
 }
+# The End of Terror
 country_event = {
   id = french_revolution.4
   title = "flavor_fra.EVTNAME3781"
@@ -714,6 +736,7 @@ country_event = {
     set_country_flag = the_directory_flag
   }
   option = {
+    # A Coup-de-Etat has brought Order
     name = "flavor_fra.EVTOPTA3781"
     trigger = {
       NOT = {
@@ -725,6 +748,7 @@ country_event = {
     remove_country_modifier = the_reign_of_terror
   }
   option = {
+    # Depose him
     name = french_revolution.4.robespierre.A
     trigger = {
       has_ruler_flag = robespierre_flag
@@ -734,6 +758,7 @@ country_event = {
     remove_country_modifier = the_reign_of_terror
   }
   option = {
+    # Keep him
     name = french_revolution.4.robespierre.B
     trigger = {
       has_ruler_flag = robespierre_flag
@@ -748,6 +773,7 @@ country_event = {
     }
   }
 }
+# The Execution of King Louis
 country_event = {
   id = french_revolution.5
   title = "flavor_fra.EVTNAME3146"
@@ -889,6 +915,7 @@ country_event = {
     }
   }
   option = {
+    # 361 votes for and 360 against execution
     name = "flavor_fra.EVTOPTA3146"
     add_stability_or_adm_power = yes
     set_country_flag = fra_monarch_executed
@@ -943,10 +970,12 @@ country_event = {
     }
   }
   option = {
+    # 361 votes against and 360 for execution
     name = "flavor_fra.EVTOPTB3146"
     add_stability = -1
   }
 }
+# The Chouan Revolt
 country_event = {
   id = french_revolution.6
   title = "flavor_fra.EVTNAME3147"
@@ -1014,6 +1043,7 @@ country_event = {
     }
   }
   option = {
+    # Royalists and Religious Rebels are on the move
     name = "flavor_fra.EVTOPTA3147"
     add_republican_tradition = -10
     random_owned_province = {
@@ -1038,6 +1068,7 @@ country_event = {
     }
   }
 }
+# NapolÈon Bonaparte
 country_event = {
   id = french_revolution.7
   title = "flavor_fra.EVTNAME3148"
@@ -1054,7 +1085,7 @@ country_event = {
       has_country_flag = the_directory_flag
     }
     NOT = {
-      dynasty = "‚lˇbÙT"  # Bonaparte
+      dynasty = "‚lˇbÙT" 	# Bonaparte
     }
     is_revolution_target = yes
   }
@@ -1065,6 +1096,7 @@ country_event = {
     set_global_flag = napoleon_happened_flag
   }
   option = {
+    # We need Brilliant Leadership!
     name = "flavor_fra.EVTOPTA3148"
     add_stability = -1
     if = {
@@ -1078,8 +1110,8 @@ country_event = {
       }
     }
     define_ruler = {
-      name = "ˇb4x—N I"  # NapolÈon I
-      dynasty = "‚lˇbÙT"  # Bonaparte
+      name = "ˇb4x—N I" 	# NapolÈon I
+      dynasty = "‚lˇbÙT" 	# Bonaparte
       adm = 6
       dip = 6
       mil = 6
@@ -1117,6 +1149,7 @@ country_event = {
     }
   }
   option = {
+    # We don't want a new Ceasar
     name = "flavor_fra.EVTOPTB3148"
     add_stability = 1
     if = {
@@ -1143,8 +1176,8 @@ country_event = {
           spawn_rebels = {
             size = 3
             type = pretender_rebels
-            leader = "ˇb4x—N"  # NapolÈon
-            leader_dynasty = "‚lˇbÙT"  # Bonaparte
+            leader = "ˇb4x—N" 	# NapolÈon
+            leader_dynasty = "‚lˇbÙT" 	# Bonaparte
             win = yes
           }
         }
@@ -1158,8 +1191,8 @@ country_event = {
           spawn_rebels = {
             size = 3
             type = pretender_rebels
-            leader = "ˇb4x—N"  # NapolÈon
-            leader_dynasty = "‚lˇbÙT"  # Bonaparte
+            leader = "ˇb4x—N" 	# NapolÈon
+            leader_dynasty = "‚lˇbÙT" 	# Bonaparte
             win = yes
           }
         }
@@ -1175,14 +1208,15 @@ country_event = {
         spawn_rebels = {
           size = 3
           type = pretender_rebels
-          leader = "ˇb4x—N"  # NapolÈon
-          leader_dynasty = "‚lˇbÙT"  # Bonaparte
+          leader = "ˇb4x—N" 	# NapolÈon
+          leader_dynasty = "‚lˇbÙT" 	# Bonaparte
           win = yes
         }
       }
     }
   }
 }
+# The Infernal Machine
 country_event = {
   id = french_revolution.8
   title = "flavor_fra.EVTNAME100"
@@ -1224,6 +1258,7 @@ country_event = {
     }
   }
   option = {
+    # Tragedy
     name = french_revolution.8.B
     trigger = {
       has_country_flag = napoleon_dies
@@ -1232,6 +1267,7 @@ country_event = {
     kill_ruler = yes
   }
   option = {
+    # A lucky escape
     name = "flavor_fra.EVTOPTA100"
     trigger = {
       NOT = {
@@ -1244,6 +1280,7 @@ country_event = {
     clr_country_flag = napoleon_dies
   }
 }
+# Aspirations of an Empire
 country_event = {
   id = french_revolution.9
   title = "flavor_fra.EVTNAME101"
@@ -1255,6 +1292,7 @@ country_event = {
     has_ruler_flag = bonaparte_flag
   }
   option = {
+    # France will be an empire!
     name = "flavor_fra.EVTOPTA101"
     add_stability = -2
     if = {
@@ -1280,10 +1318,13 @@ country_event = {
     }
   }
   option = {
+    # The revolution must continue!
     name = "flavor_fra.EVTOPTB101"
     add_republican_tradition = 10
   }
 }
+###These events are now also used as reactionary events for the normal revolution if you chose to embrace
+# The Revolutionary Republic
 country_event = {
   id = french_revolution.10
   title = french_revolution.10.name
@@ -1416,6 +1457,7 @@ country_event = {
     }
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     trigger = {
       has_country_flag = noble_rebels_rise
@@ -1431,6 +1473,7 @@ country_event = {
     clr_country_flag = noble_rebels_rise
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     add_republican_tradition = -10
     trigger = {
@@ -1440,6 +1483,7 @@ country_event = {
     }
   }
 }
+# The Revolutionary Republic
 country_event = {
   id = french_revolution.11
   title = french_revolution.11.name
@@ -1583,6 +1627,7 @@ country_event = {
     }
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     trigger = {
       has_country_flag = noble_rebels_rise
@@ -1598,6 +1643,7 @@ country_event = {
     clr_country_flag = noble_rebels_rise
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     trigger = {
       NOT = {
@@ -1607,6 +1653,7 @@ country_event = {
     add_republican_tradition = -10
   }
 }
+# The Revolutionary Republic
 country_event = {
   id = french_revolution.12
   title = french_revolution.12.name
@@ -1740,6 +1787,7 @@ country_event = {
     }
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     trigger = {
       has_country_flag = noble_rebels_rise
@@ -1755,6 +1803,7 @@ country_event = {
     clr_country_flag = noble_rebels_rise
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     trigger = {
       NOT = {
@@ -1764,6 +1813,7 @@ country_event = {
     add_republican_tradition = -10
   }
 }
+# The Revolutionary Republic
 country_event = {
   id = french_revolution.13
   title = french_revolution.13.name
@@ -1868,6 +1918,7 @@ country_event = {
     }
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     add_republican_tradition = -10
     if = {
@@ -1893,6 +1944,7 @@ country_event = {
     }
   }
 }
+# The Revolutionary Republic
 country_event = {
   id = french_revolution.14
   title = french_revolution.14.name
@@ -2006,6 +2058,7 @@ country_event = {
     }
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     add_republican_tradition = -10
     if = {
@@ -2031,6 +2084,7 @@ country_event = {
     }
   }
 }
+# The Revolutionary Republic
 country_event = {
   id = french_revolution.15
   title = french_revolution.15.name
@@ -2145,6 +2199,7 @@ country_event = {
     }
   }
   option = {
+    # The republic will survive!
     name = "flavor_fra.EVTOPTA110"
     add_republican_tradition = -10
     if = {
@@ -2180,6 +2235,7 @@ country_event = {
     }
   }
 }
+# The Revolutionary Republic
 country_event = {
   id = french_revolution.16
   title = french_revolution.16.name
@@ -2305,6 +2361,7 @@ country_event = {
     }
   }
   option = {
+    # Who dares question the republic!
     name = "flavor_fra.EVTOPTA116"
     add_republican_tradition = -10
     if = {
@@ -2330,18 +2387,22 @@ country_event = {
     }
   }
   option = {
+    # Increase public relief program
     name = "flavor_fra.EVTOPTB116"
     add_adm_power = -50
   }
   option = {
+    # Cut back on diplomatic spending
     name = "flavor_fra.EVTOPTC116"
     add_dip_power = -50
   }
   option = {
+    # Cut back on military spending
     name = "flavor_fra.EVTOPTD116"
     add_mil_power = -50
   }
 }
+# The French Gamble for Supremacy
 country_event = {
   id = french_revolution.17
   title = "flavor_fra.EVTNAME3790"
@@ -2373,6 +2434,7 @@ country_event = {
     set_country_flag = french_gamble_for_supremacy_flag
   }
   option = {
+    # We are the Master of Europe
     name = "flavor_fra.EVTOPTA3790"
     add_prestige = 100
   }
@@ -2441,6 +2503,7 @@ country_event = {
     }
   }
   option = {
+    # Long Live the King!
     name = "french_revolution.18.a"
     trigger = {
       NOT = {
@@ -2455,6 +2518,7 @@ country_event = {
     clear_standard_revolution_elements_effect = yes
   }
   option = {
+    # Long Live the Republic!
     name = "french_revolution.18.b"
     trigger = {
       is_revolutionary_republic_trigger = yes
@@ -2467,7 +2531,7 @@ country_event = {
     clear_standard_revolution_elements_effect = yes
   }
   option = {
-    name = french_revolution.18.e
+    name = french_revolution.18.e 	#  We lost
     trigger = {
       has_dlc = "Emperor"
       OR = {
@@ -2508,7 +2572,7 @@ country_event = {
     clear_standard_revolution_elements_effect = yes
   }
   option = {
-    name = french_revolution.18.f
+    name = french_revolution.18.f 	#  We won
     trigger = {
       has_dlc = "Emperor"
       OR = {

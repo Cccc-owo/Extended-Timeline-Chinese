@@ -1,4 +1,5 @@
 normal_or_historical_nations = yes
+# Braveheart
 province_event = {
   id = 960
   title = "EVTNAME960"
@@ -33,7 +34,12 @@ province_event = {
     cavalry = ROOT
   }
 }
+########################################
+# Flavor Events for Scotland
+# written by Sara Wendel-÷rtqvist
+########################################
 namespace = flavor_sco
+#The Breaking of the Douglases
 country_event = {
   id = flavor_sco.1
   title = "flavor_sco.EVTNAME1"
@@ -50,7 +56,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_sco.EVTOPTA1"
+    name = "flavor_sco.EVTOPTA1" 	# Destroy the castles and confiscate the lands of Douglases
     add_years_of_income = 0.5
     add_adm_power = 50
     random_owned_province = {
@@ -64,11 +70,12 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_sco.EVTOPTB1"
+    name = "flavor_sco.EVTOPTB1" 	# Make peace with the Douglas family
     add_prestige = -5
     add_stability_or_adm_power = yes
   }
 }
+#The Auld Alliance
 country_event = {
   id = flavor_sco.2
   title = "flavor_sco.EVTNAME2"
@@ -91,7 +98,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_sco.EVTOPTA2"
+    name = "flavor_sco.EVTOPTA2" 	# Good relations with France
     FRA = {
       add_opinion = {
         who = SCO
@@ -110,7 +117,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_sco.EVTOPTB2"
+    name = "flavor_sco.EVTOPTB2" 	# Have nothing to do with France
     ENG = {
       add_opinion = {
         who = SCO
@@ -125,6 +132,7 @@ country_event = {
     }
   }
 }
+#Cardinal Beaton
 country_event = {
   id = flavor_sco.3
   title = "flavor_sco.EVTNAME3"
@@ -147,14 +155,14 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_sco.EVTOPTA3"
+    name = "flavor_sco.EVTOPTA3" 	# An excellent minister
     add_adm_power = 50
     add_mil_power = 50
     add_dip_power = 50
     add_prestige = 10
     define_advisor = {
       type = theologian
-      name = "‘kò¢gHg"  # Cardinal Beaton
+      name = "‘kò¢gHg" 	# Cardinal Beaton
       religion = catholic
       culture = scottish
       discount = yes
@@ -162,6 +170,7 @@ country_event = {
     }
   }
 }
+#John Knox and the Religious Strife
 country_event = {
   id = flavor_sco.4
   title = "flavor_sco.EVTNAME4"
@@ -185,7 +194,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_sco.EVTOPTA4"
+    name = "flavor_sco.EVTOPTA4" 	# Religious Turmoil
     random_owned_province = {
       limit = {
         continent = europe
@@ -203,6 +212,7 @@ country_event = {
     }
   }
 }
+# The First Covenant
 country_event = {
   id = flavor_sco.5
   title = "flavor_sco.EVTNAME5"
@@ -221,7 +231,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_sco.EVTOPTA5"
+    name = "flavor_sco.EVTOPTA5" 	# Support the Lords of the Congregation
     add_stability = -1
     every_owned_province = {
       limit = {
@@ -236,11 +246,12 @@ country_event = {
     add_treasury = 300
   }
   option = {
-    name = "flavor_sco.EVTOPTB5"
+    name = "flavor_sco.EVTOPTB5" 	# Oppose the Lords of the Congregation
     add_stability = -1
     add_papal_influence = 10
   }
 }
+# The Scottish East India Company
 country_event = {
   id = flavor_sco.6
   title = "flavor_sco.EVTNAME6"
@@ -300,7 +311,7 @@ country_event = {
     months = 2000
   }
   option = {
-    name = "flavor_sco.EVTOPTA6"
+    name = "flavor_sco.EVTOPTA6" 	# We will exploit this!
     add_years_of_income = -0.5
     add_country_modifier = {
       name = "scottish_india_trade_co"
@@ -308,6 +319,7 @@ country_event = {
     }
   }
 }
+# Major Road Constructions in the Highlands
 country_event = {
   id = flavor_sco.7
   title = "flavor_sco.EVTNAME7"
@@ -325,7 +337,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_sco.EVTOPTA7"
+    name = "flavor_sco.EVTOPTA7" 	# Do it
     add_treasury = -50
     252 = {
       add_base_tax = 1
@@ -335,10 +347,11 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_sco.EVTOPTB7"
+    name = "flavor_sco.EVTOPTB7" 	# Don't do it
     add_stability_or_adm_power = yes
   }
 }
+#The Glasgow Chamber of Commerce
 country_event = {
   id = flavor_sco.8
   title = "flavor_sco.EVTNAME8"
@@ -356,11 +369,11 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_sco.EVTOPTA8"
+    name = "flavor_sco.EVTOPTA8" 	# Tradereform
     add_mercantilism = 5
   }
   option = {
-    name = "flavor_sco.EVTOPTB8"
+    name = "flavor_sco.EVTOPTB8" 	# Free trade
     add_mercantilism = -5
     add_years_of_income = 2
     add_country_modifier = {
@@ -369,6 +382,7 @@ country_event = {
     }
   }
 }
+# George Bruce of Carnock
 country_event = {
   id = flavor_sco.9
   title = "flavor_sco.EVTNAME9"
@@ -386,20 +400,21 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_sco.EVTOPTA9"
+    name = "flavor_sco.EVTOPTA9" 	# Employ him
     define_advisor = {
       type = natural_scientist
-      name = "TNªl ^ÅúØe"  # George Bruce
+      name = "TNªl ^ÅúØe" 	# George Bruce
       culture = scottish
       discount = yes
       skill = 3
     }
   }
   option = {
-    name = "flavor_sco.EVTOPBT9"
+    name = "flavor_sco.EVTOPBT9" 	# Ignore him
     add_prestige = -1
   }
 }
+# Witchcraft Acts
 country_event = {
   id = flavor_sco.10
   title = "flavor_sco.EVTNAME10"
@@ -428,12 +443,14 @@ country_event = {
     add_prestige = -5
   }
 }
+# The Annexation of London
 country_event = {
   id = flavor_sco.11
   title = "flavor_sco.EVTNAME11"
   desc = "flavor_sco.EVTDESC11"
   picture = CITY_DEVELOPMENT_eventPicture
   is_triggered_only = yes
+  # move everything to edinburgh
   option = {
     name = "flavor_sco.EVTOPTA11"
     236 = {
@@ -451,6 +468,7 @@ country_event = {
       }
     }
   }
+  # leave london alone
   option = {
     name = "flavor_sco.EVTOPTB11"
     add_stability_or_adm_power = yes

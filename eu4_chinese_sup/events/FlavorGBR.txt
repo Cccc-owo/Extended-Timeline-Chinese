@@ -1,5 +1,11 @@
+#####################################################
+# 1.35 Events for Great Britain / Angevin Kingdom
+# written by Ogulcan Yildirim and Roger Corominas
+#####################################################
+# Events related to missions
 namespace = flavor_gbr
 normal_or_historical_nations = yes
+# The Angevin Past
 country_event = {
   id = flavor_gbr.1
   title = flavor_gbr.1.t
@@ -68,6 +74,8 @@ country_event = {
     }
   }
 }
+# Purchase of [369.GetName]
+# Triggered through a decision
 country_event = {
   id = flavor_gbr.2
   title = flavor_gbr.2.t
@@ -90,6 +98,7 @@ country_event = {
       factor = 1
     }
   }
+  #We will consider this for later
   option = {
     name = flavor_gbr.2.b
     custom_tooltip = flavor_gbr.2.b.tt
@@ -99,12 +108,14 @@ country_event = {
     }
   }
 }
+# Accept Purchase?
 country_event = {
   id = flavor_gbr.3
   title = flavor_gbr.3.t
   desc = flavor_gbr.3.desc
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
+  #Sell
   option = {
     name = flavor_gbr.3.a
     add_treasury = 200
@@ -185,6 +196,7 @@ country_event = {
       }
     }
   }
+  #Do not sell
   option = {
     name = flavor_gbr.3.b
     tooltip = {
@@ -260,6 +272,7 @@ country_event = {
     }
   }
 }
+# They accepted!
 country_event = {
   id = flavor_gbr.4
   title = flavor_gbr.4.t
@@ -283,6 +296,7 @@ country_event = {
     }
   }
 }
+# They refused!
 country_event = {
   id = flavor_gbr.5
   title = flavor_gbr.5.t
@@ -300,12 +314,14 @@ country_event = {
     }
   }
 }
+# The Irish Crown
 country_event = {
   id = flavor_gbr.6
   title = flavor_gbr.6.t
   desc = flavor_gbr.6.desc
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
+  #Keep Ireland under direct rule
   option = {
     name = flavor_gbr.6.a
     add_adm_power = 50
@@ -350,6 +366,7 @@ country_event = {
       factor = 1
     }
   }
+  #Rule over Ireland in a Personal Union
   option = {
     name = flavor_gbr.6.b
     add_adm_power = 50
@@ -463,6 +480,7 @@ country_event = {
     }
   }
 }
+# The Fur Trade
 country_event = {
   id = flavor_gbr.7
   title = flavor_gbr.7.t
@@ -470,6 +488,7 @@ country_event = {
   picture = FUR_TRADE_eventPicture
   is_triggered_only = yes
   major = yes
+  #Nice
   option = {
     name = flavor_gbr.7.a
     if = {
@@ -494,12 +513,14 @@ country_event = {
     }
   }
 }
+# The East India Company
 country_event = {
   id = flavor_gbr.10
   title = flavor_eng.EVTNAME9145
   desc = flavor_eng.EVTDESC9145
   picture = MERCHANTS_ARGUING_eventPicture
   is_triggered_only = yes
+  #Establish this East India Company
   option = {
     name = flavor_gbr.10.a
     custom_tooltip = flavor_gbr.10.a.tt
@@ -527,8 +548,8 @@ country_event = {
         change_religion = ROOT
         change_primary_culture = ROOT
         define_ruler = {
-          name = "XblöØe"  # Thomas
-          dynasty = "ÚS»èØe"  # Smythe
+          name = "XblöØe" 	# Thomas
+          dynasty = "ÚS»èØe" 	# Smythe
           change_adm = 3
           change_dip = 3
           change_mil = 3
@@ -690,6 +711,7 @@ country_event = {
       factor = 1
     }
   }
+  #We do not need such enterprise on foreign ground
   option = {
     name = flavor_gbr.10.b
     coromandel_region = {
@@ -839,6 +861,7 @@ country_event = {
       factor = 1
     }
   }
+  #Play as the East India Company
   option = {
     name = flavor_gbr.10.c
     trigger = {
@@ -869,8 +892,8 @@ country_event = {
         change_religion = ROOT
         change_primary_culture = ROOT
         define_ruler = {
-          name = "XblöØe"  # Thomas
-          dynasty = "ÚS»èØe"  # Smythe
+          name = "XblöØe" 	# Thomas
+          dynasty = "ÚS»èØe" 	# Smythe
           change_adm = 3
           change_dip = 3
           change_mil = 3
@@ -1034,6 +1057,7 @@ country_event = {
     }
   }
 }
+# The Globe Theatre
 country_event = {
   id = flavor_gbr.12
   title = flavor_gbr.12.t
@@ -1048,6 +1072,7 @@ country_event = {
       }
     }
   }
+  #Wondersome
   option = {
     name = flavor_gbr.12.a
     set_country_flag = eng_globe_theatre
@@ -1062,6 +1087,7 @@ country_event = {
     }
   }
 }
+# The Royal Society
 country_event = {
   id = flavor_gbr.13
   title = flavor_gbr.13.t
@@ -1136,6 +1162,7 @@ country_event = {
     }
   }
   goto = capital
+  #A beacon of light
   option = {
     name = flavor_gbr.13.a
     add_innovativeness_or_monarch_power = {
@@ -1156,12 +1183,14 @@ country_event = {
     }
   }
 }
+# Select an advisor Menu
 country_event = {
   id = flavor_gbr.15
   title = flavor_gbr.15.t
   desc = flavor_gbr.15.desc
   picture = ADVISOR_eventPicture
   is_triggered_only = yes
+  #Select ADM advisor
   option = {
     name = flavor_gbr.15.a
     set_country_flag = selected_adm_advisor
@@ -1173,6 +1202,7 @@ country_event = {
       factor = 1
     }
   }
+  #Select DIP advisor
   option = {
     name = flavor_gbr.15.b
     set_country_flag = selected_dip_advisor
@@ -1184,6 +1214,7 @@ country_event = {
       factor = 1
     }
   }
+  #Select MIL advisor
   option = {
     name = flavor_gbr.15.c
     set_country_flag = selected_mil_advisor
@@ -1196,6 +1227,7 @@ country_event = {
     }
   }
 }
+# Select an advisor Selection
 country_event = {
   id = flavor_gbr.16
   title = flavor_gbr.16.t
@@ -1238,6 +1270,7 @@ country_event = {
     clr_country_flag = selected_dip_advisor
     clr_country_flag = selected_mil_advisor
   }
+  #ADM Advisor - artist
   option = {
     name = flavor_gbr.16.a
     trigger = {
@@ -1250,6 +1283,7 @@ country_event = {
       factor = 1
     }
   }
+  #ADM Advisor - inquisitor
   option = {
     name = flavor_gbr.16.b
     trigger = {
@@ -1262,6 +1296,7 @@ country_event = {
       factor = 1
     }
   }
+  #ADM Advisor - master_of_mint
   option = {
     name = flavor_gbr.16.c
     trigger = {
@@ -1274,6 +1309,7 @@ country_event = {
       factor = 1
     }
   }
+  #ADM Advisor - natural_scientist
   option = {
     name = flavor_gbr.16.d
     trigger = {
@@ -1286,6 +1322,7 @@ country_event = {
       factor = 1
     }
   }
+  #ADM Advisor - theologian
   option = {
     name = flavor_gbr.16.e
     trigger = {
@@ -1298,6 +1335,7 @@ country_event = {
       factor = 1
     }
   }
+  #ADM Advisor - treasurer
   option = {
     name = flavor_gbr.16.f
     trigger = {
@@ -1310,6 +1348,7 @@ country_event = {
       factor = 1
     }
   }
+  #ADM Advisor - philosopher
   option = {
     name = flavor_gbr.16.g
     trigger = {
@@ -1322,6 +1361,7 @@ country_event = {
       factor = 1
     }
   }
+  #DIP Advisor - diplomat
   option = {
     name = flavor_gbr.16.h
     trigger = {
@@ -1334,6 +1374,7 @@ country_event = {
       factor = 1
     }
   }
+  #DIP Advisor - colonial_governor
   option = {
     name = flavor_gbr.16.i
     trigger = {
@@ -1346,6 +1387,7 @@ country_event = {
       factor = 1
     }
   }
+  #DIP Advisor - naval_reformer
   option = {
     name = flavor_gbr.16.j
     trigger = {
@@ -1360,6 +1402,7 @@ country_event = {
       factor = 1
     }
   }
+  #DIP Advisor - navigator
   option = {
     name = flavor_gbr.16.k
     trigger = {
@@ -1373,6 +1416,7 @@ country_event = {
       factor = 1
     }
   }
+  #DIP Advisor - spymaster
   option = {
     name = flavor_gbr.16.l
     trigger = {
@@ -1385,6 +1429,7 @@ country_event = {
       factor = 1
     }
   }
+  #DIP Advisor - statesman
   option = {
     name = flavor_gbr.16.m
     trigger = {
@@ -1397,6 +1442,7 @@ country_event = {
       factor = 1
     }
   }
+  #DIP Advisor - trader
   option = {
     name = flavor_gbr.16.n
     trigger = {
@@ -1411,6 +1457,7 @@ country_event = {
       factor = 1
     }
   }
+  #MIL Advisor - army_organiser
   option = {
     name = flavor_gbr.16.o
     trigger = {
@@ -1423,6 +1470,7 @@ country_event = {
       factor = 1
     }
   }
+  #MIL Advisor - army_reformer
   option = {
     name = flavor_gbr.16.p
     trigger = {
@@ -1435,6 +1483,7 @@ country_event = {
       factor = 1
     }
   }
+  #MIL Advisor - commandant
   option = {
     name = flavor_gbr.16.q
     trigger = {
@@ -1447,6 +1496,7 @@ country_event = {
       factor = 1
     }
   }
+  #MIL Advisor - grand_captain
   option = {
     name = flavor_gbr.16.r
     trigger = {
@@ -1459,6 +1509,7 @@ country_event = {
       factor = 1
     }
   }
+  #MIL Advisor - recruitmaster
   option = {
     name = flavor_gbr.16.s
     trigger = {
@@ -1471,6 +1522,7 @@ country_event = {
       factor = 1
     }
   }
+  #MIL Advisor - fortification_expert
   option = {
     name = flavor_gbr.16.u
     trigger = {
@@ -1483,6 +1535,7 @@ country_event = {
       factor = 1
     }
   }
+  #MIL Advisor - quartermaster
   option = {
     name = flavor_gbr.16.v
     trigger = {
@@ -1495,6 +1548,7 @@ country_event = {
       factor = 1
     }
   }
+  #Fallback
   option = {
     name = flavor_gbr.16.zzz
     trigger = {
@@ -1513,6 +1567,7 @@ country_event = {
     }
   }
 }
+# Renaming of the Angevin Realm
 country_event = {
   id = flavor_gbr.20
   title = flavor_gbr.20.t
@@ -1528,6 +1583,7 @@ country_event = {
       clr_country_flag = ave_state_name
     }
   }
+  #Angevin Empire
   option = {
     name = flavor_gbr.20.a
     trigger = {
@@ -1540,6 +1596,7 @@ country_event = {
       factor = 1
     }
   }
+  #Angevin Kingdom
   option = {
     name = flavor_gbr.20.b
     trigger = {
@@ -1554,6 +1611,7 @@ country_event = {
       factor = 1
     }
   }
+  #Angevin Duchy... ._.
   option = {
     name = flavor_gbr.20.c
     trigger = {
@@ -1568,6 +1626,7 @@ country_event = {
       factor = 1
     }
   }
+  #Angevin Republic
   option = {
     name = flavor_gbr.20.d
     trigger = {
@@ -1579,6 +1638,7 @@ country_event = {
       factor = 1
     }
   }
+  #Angevin Theocracy
   option = {
     name = flavor_gbr.20.e
     trigger = {
@@ -1590,6 +1650,7 @@ country_event = {
       factor = 1
     }
   }
+  #Angevin Fallback
   option = {
     name = flavor_gbr.20.f
     trigger = {
@@ -1610,6 +1671,7 @@ country_event = {
     }
   }
 }
+# Holy Empire of Britannia - Easter Egg
 country_event = {
   id = flavor_gbr.21
   title = flavor_gbr.21.t
@@ -1649,6 +1711,7 @@ country_event = {
   mean_time_to_happen = {
     months = 300
   }
+  #All hail Britannia
   option = {
     name = flavor_gbr.21.a
     add_prestige_or_monarch_power = {
@@ -1666,6 +1729,7 @@ country_event = {
     }
   }
 }
+# Angevin Age
 country_event = {
   id = flavor_gbr.22
   title = flavor_gbr.22.t
@@ -1690,6 +1754,7 @@ country_event = {
   mean_time_to_happen = {
     months = 100
   }
+  #The World belongs to the Empire!
   option = {
     name = flavor_gbr.22.a
     add_splendor = 400
@@ -1705,6 +1770,7 @@ country_event = {
     }
   }
 }
+# The Iberian Crown
 country_event = {
   id = flavor_gbr.23
   title = flavor_gbr.23.t
@@ -1730,6 +1796,7 @@ country_event = {
       }
     }
   }
+  #Keep Iberia under direct rule
   option = {
     name = flavor_gbr.23.a
     add_adm_power = 50
@@ -1747,6 +1814,7 @@ country_event = {
       factor = 1
     }
   }
+  #Rule over Spain in a Personal Union
   option = {
     name = flavor_gbr.23.b
     add_adm_power = 50
@@ -1800,12 +1868,14 @@ country_event = {
     }
   }
 }
+# The Italian Crown
 country_event = {
   id = flavor_gbr.24
   title = flavor_gbr.24.t
   desc = flavor_gbr.24.desc
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
+  #Keep Italy under direct rule
   option = {
     name = flavor_gbr.24.a
     add_adm_power = 50
@@ -1823,6 +1893,7 @@ country_event = {
       factor = 1
     }
   }
+  #Rule over Italy in a Personal Union
   option = {
     name = flavor_gbr.24.b
     add_adm_power = 50
@@ -1876,6 +1947,8 @@ country_event = {
     }
   }
 }
+# Random flavor events
+# Henry VIII
 country_event = {
   id = flavor_gbr.100
   title = flavor_gbr.100.t
@@ -1919,10 +1992,11 @@ country_event = {
       }
     }
   }
+  #What a great king
   option = {
     name = flavor_gbr.100.a
     define_heir = {
-      name = "®N)R"  # Henry
+      name = "®N)R" 	# Henry
       adm = 5
       dip = 5
       mil = 5
@@ -1938,6 +2012,7 @@ country_event = {
       factor = 1
     }
   }
+  #I think we are better off without him
   option = {
     name = flavor_tur.239.b
     trigger = {
@@ -1975,6 +2050,7 @@ country_event = {
     }
   }
 }
+# Elizabethian Era
 country_event = {
   id = flavor_gbr.101
   title = flavor_gbr.101.t
@@ -2034,7 +2110,7 @@ country_event = {
   option = {
     name = flavor_gbr.101.a
     define_ruler = {
-      name = "OKNéÉãv"  # Elizabeth
+      name = "OKNéÉãv" 	# Elizabeth
       culture = ROOT
       adm = 6
       dip = 6
@@ -2098,12 +2174,13 @@ country_event = {
     }
   }
 }
+# Religious Stance of the current King
 country_event = {
   id = flavor_gbr.102
   title = flavor_gbr.102.t
   desc = flavor_gbr.102.desc
   picture = HENRY_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Fires whenever you have a new monarch; religious policy of the king
   trigger = {
     has_country_modifier = eng_the_age_of_reformation
   }
@@ -2125,6 +2202,7 @@ country_event = {
       }
     }
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.102.a
     add_church_power = 50
@@ -2254,6 +2332,7 @@ country_event = {
       }
     }
   }
+  #We must return to Catholicism
   option = {
     name = flavor_gbr.102.b
     add_papal_influence = 50
@@ -2370,6 +2449,7 @@ country_event = {
       }
     }
   }
+  #Religion is a considerate part of the country
   option = {
     name = flavor_gbr.102.c
     if = {
@@ -2448,12 +2528,13 @@ country_event = {
     }
   }
 }
+# Consequences of following the reformation - Persecution of the Catholics
 country_event = {
   id = flavor_gbr.103
   title = flavor_gbr.103.t
   desc = flavor_gbr.103.desc
   picture = RELIGIOUS_WARS_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     OR = {
       has_country_modifier = eng_reformer_ruler
@@ -2480,6 +2561,7 @@ country_event = {
       }
     }
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.103.a
     add_years_of_income = 0.1
@@ -2529,12 +2611,13 @@ country_event = {
     }
   }
 }
+# Consequences of following the reformation - Event 2
 country_event = {
   id = flavor_gbr.104
   title = flavor_gbr.104.t
   desc = flavor_gbr.104.desc
   picture = CHURCH_ESTATE_UPSET_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     OR = {
       has_country_modifier = eng_reformer_ruler
@@ -2552,6 +2635,7 @@ country_event = {
       }
     }
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.104.a
     if = {
@@ -2623,12 +2707,13 @@ country_event = {
     }
   }
 }
+# Consequences of following the reformation - Event 3
 country_event = {
   id = flavor_gbr.105
   title = flavor_gbr.105.t
   desc = flavor_gbr.105.desc
   picture = ECONOMY_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     OR = {
       has_country_modifier = eng_reformer_ruler
@@ -2658,6 +2743,7 @@ country_event = {
       }
     }
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.105.a
     add_years_of_income = 0.1
@@ -2681,6 +2767,7 @@ country_event = {
       factor = 1
     }
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.105.b
     if = {
@@ -2712,12 +2799,13 @@ country_event = {
     }
   }
 }
+# Consequences of following the catholocism - Event 1
 country_event = {
   id = flavor_gbr.106
   title = flavor_gbr.106.t
   desc = flavor_gbr.106.desc
   picture = PRAYING_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     OR = {
       has_country_modifier = eng_catholic_ruler
@@ -2744,6 +2832,7 @@ country_event = {
     }
   }
   goto = event_province
+  #We must follow the reformation
   option = {
     name = flavor_gbr.106.a
     if = {
@@ -2807,12 +2896,13 @@ country_event = {
     }
   }
 }
+# Consequences of following the catholocism - Event 2
 country_event = {
   id = flavor_gbr.107
   title = flavor_gbr.107.t
   desc = flavor_gbr.107.desc
   picture = POPE_PREACHING_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     OR = {
       has_country_modifier = eng_catholic_ruler
@@ -2830,6 +2920,7 @@ country_event = {
       }
     }
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.107.a
     if = {
@@ -2855,12 +2946,13 @@ country_event = {
     }
   }
 }
+# Consequences of following the catholocism - Event 3
 country_event = {
   id = flavor_gbr.108
   title = flavor_gbr.108.t
   desc = flavor_gbr.108.desc
   picture = PROTESTANT_PRINTED_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     OR = {
       has_country_modifier = eng_catholic_ruler
@@ -2892,6 +2984,7 @@ country_event = {
     }
   }
   goto = event_province
+  #We must follow the reformation
   option = {
     name = flavor_gbr.108.a
     if = {
@@ -2936,12 +3029,13 @@ country_event = {
     }
   }
 }
+# Consequences of having no clue - Event 1
 country_event = {
   id = flavor_gbr.109
   title = flavor_gbr.109.t
   desc = flavor_gbr.109.desc
   picture = ADVISOR_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     has_country_modifier = eng_tolerant_ruler
     NOT = {
@@ -2959,6 +3053,7 @@ country_event = {
       }
     }
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.109.a
     add_country_modifier = {
@@ -2971,12 +3066,13 @@ country_event = {
     }
   }
 }
+# Consequences of having no clue - Event 2
 country_event = {
   id = flavor_gbr.110
   title = flavor_gbr.110.t
   desc = flavor_gbr.110.desc
   picture = RELIGIOUS_TURMOIL_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     has_country_modifier = eng_tolerant_ruler
   }
@@ -3000,6 +3096,7 @@ country_event = {
       }
     }
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.110.a
     if = {
@@ -3123,12 +3220,13 @@ country_event = {
     }
   }
 }
+# Consequences of having no clue - Event 3
 country_event = {
   id = flavor_gbr.111
   title = flavor_gbr.111.t
   desc = flavor_gbr.111.desc
   picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Pulse event
   trigger = {
     has_country_modifier = eng_tolerant_ruler
     check_variable = {
@@ -3139,6 +3237,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  #We must follow the reformation
   option = {
     name = flavor_gbr.111.a
     remove_country_modifier = eng_tolerant_ruler
@@ -3152,6 +3251,7 @@ country_event = {
     }
   }
 }
+# Conflict between Monarch and Parliament
 country_event = {
   id = flavor_gbr.112
   title = flavor_gbr.112.t
@@ -3181,6 +3281,7 @@ country_event = {
     has_parliament = yes
     reform_level = 6
   }
+  #A dangerous development...
   option = {
     name = flavor_gbr.112.a
     add_government_reform = parliament_vs_monarchy_reform
@@ -3190,6 +3291,7 @@ country_event = {
     }
   }
 }
+# The conflict escalates...
 country_event = {
   id = flavor_gbr.113
   title = flavor_gbr.113.t
@@ -3208,6 +3310,7 @@ country_event = {
       }
     }
   }
+  #Let us turn to aggressive negotiations.
   option = {
     name = flavor_gbr.113.a
     if = {
@@ -3235,6 +3338,10 @@ country_event = {
     else = {
       add_stability = -3
     }
+    #freeze_government_power = {
+    #	mechanic_type = parliament_vs_monarchy_mechanic
+    #	power_type = governmental_power
+    #}
     remove_government_reform = parliament_vs_monarchy_reform
     custom_tooltip = flavor_gbr.113.a.tt
     set_country_flag = eng_easier_civil_war_triggers
@@ -3243,6 +3350,7 @@ country_event = {
     }
   }
 }
+# Bloody Mary
 country_event = {
   id = flavor_gbr.114
   title = flavor_gbr.114.t
@@ -3295,7 +3403,7 @@ country_event = {
   option = {
     name = flavor_gbr.114.a
     define_ruler = {
-      name = "õsKN"  # Mary
+      name = "õsKN" 	# Mary
       culture = ROOT
       adm = 4
       dip = 3
@@ -3354,6 +3462,7 @@ country_event = {
     }
   }
 }
+# Order of Chivalry
 country_event = {
   id = flavor_gbr.115
   title = flavor_gbr.115.t
@@ -3382,6 +3491,7 @@ country_event = {
       current_age = age_of_discovery
     }
   }
+  #Dawn of a new order
   option = {
     name = flavor_gbr.115.a
     add_country_modifier = {
@@ -3399,6 +3509,7 @@ country_event = {
       }
     }
   }
+  #Not worth of our time
   option = {
     name = flavor_gbr.115.b
     add_prestige = -5
@@ -3411,6 +3522,7 @@ country_event = {
     }
   }
 }
+# Jousting in England
 country_event = {
   id = flavor_gbr.116
   title = flavor_gbr.116.t
@@ -3437,6 +3549,7 @@ country_event = {
     }
     current_age = age_of_discovery
   }
+  #A wonderful sport.
   option = {
     name = flavor_gbr.116.a
     add_army_tradition = 10
@@ -3452,6 +3565,35 @@ country_event = {
     }
   }
 }
+# The Glorious Revolution
+#country_event = {
+#	id = flavor_gbr.117
+#	title = flavor_gbr.117.t
+#	desc = flavor_gbr.117.desc
+#	picture = BATTLE_eventPictur
+#	fire_only_once = yes
+#	mean_time_to_happen = {
+#		months = 120
+#	}
+#	trigger = {
+#		has_dlc = "Domination"
+#		OR = {
+#			tag = ENG
+#			tag = GBR
+#			tag = AVE
+#		}
+#		current_age = age_of_reformation
+#	}
+#	
+#	#Gruesome queen...
+#	option = {
+#		name = flavor_gbr.117.a
+#		ai_chance = {
+#			factor = 1
+#		}
+#	}
+#}
+# The Fifth Monarchists
 country_event = {
   id = flavor_gbr.118
   title = flavor_gbr.118.t
@@ -3501,6 +3643,7 @@ country_event = {
       }
     }
   }
+  #We should not entertain such idea of madness
   option = {
     name = flavor_gbr.118.b
     event_target:revolt_province = {
@@ -3512,6 +3655,7 @@ country_event = {
       factor = 1
     }
   }
+  #We shall follow God's signs.
   option = {
     name = flavor_gbr.118.a
     trigger = {
@@ -3567,12 +3711,14 @@ country_event = {
     }
   }
 }
+# The Fifth Monarchists - A new Era!
 country_event = {
   id = flavor_gbr.119
   title = flavor_gbr.119.t
   desc = flavor_gbr.119.desc
   picture = RELIGIOUS_TURMOIL_eventPicture
   is_triggered_only = yes
+  #His will be done!
   option = {
     name = flavor_gbr.119.a
     custom_tooltip = flavor_gbr.118.a.tt
@@ -3594,6 +3740,7 @@ country_event = {
     }
   }
 }
+# The Fifth Monarchists - The End of Madness
 country_event = {
   id = flavor_gbr.120
   title = flavor_gbr.120.t
@@ -3648,6 +3795,7 @@ country_event = {
       set_country_flag = had_fifth_monarchists_end_event
     }
   }
+  #The wheel has turned.
   option = {
     name = flavor_gbr.120.a
     if = {
@@ -3688,6 +3836,7 @@ country_event = {
     }
   }
 }
+# Anglican HRE
 country_event = {
   id = flavor_gbr.121
   title = flavor_gbr.121.t
@@ -3722,6 +3871,7 @@ country_event = {
   after = {
     set_hre_religion_locked = yes
   }
+  #United into one faith.
   option = {
     name = flavor_gbr.121.a
     set_hre_religion = anglican
@@ -3730,6 +3880,7 @@ country_event = {
     }
   }
 }
+# England / GB / Angevin Empire during the Age of Reformation
 country_event = {
   id = flavor_gbr.122
   title = flavor_gbr.122.t
@@ -3751,6 +3902,7 @@ country_event = {
       religion = hussite
     }
   }
+  #Uncertain Time are ahead...
   option = {
     name = flavor_gbr.122.a
     add_country_modifier = {
@@ -3764,9 +3916,10 @@ country_event = {
     }
   }
 }
+# Pax Britannica
 country_event = {
   id = flavor_gbr.199
-  title = flavor_gbr.199.t.b
+  title = flavor_gbr.199.t.b 	# Custom loc
   desc = {
     desc = flavor_gbr.199.desc.a
     trigger = {
@@ -3811,6 +3964,7 @@ country_event = {
       army_size = 200
     }
   }
+  #We are the most glorious empire!
   option = {
     name = flavor_gbr.199.a
     if = {
@@ -3836,17 +3990,19 @@ country_event = {
     }
   }
 }
+# Select trade good of colonized province
+# Colonial Venture
 province_event = {
   id = flavor_gbr.200
   title = flavor_gbr.200.t
   desc = flavor_gbr.200.desc
   picture = TRADEGOODS_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# Always when a colony finishes
   goto = ROOT
   immediate = {
     hidden_effect = {
       owner = {
-        save_event_target_as = "ColonizingCountry"
+        save_event_target_as = ColonizingCountry
       }
       if = {
         limit = {
@@ -4170,12 +4326,14 @@ province_event = {
       }
     }
   }
+  #Keep the current trade good
   option = {
     name = flavor_gbr.200.a
     ai_chance = {
       factor = 1
     }
   }
+  #grain
   option = {
     name = flavor_gbr.200.grain
     trigger = {
@@ -4190,6 +4348,7 @@ province_event = {
       factor = 0
     }
   }
+  #wine
   option = {
     name = flavor_gbr.200.wine
     trigger = {
@@ -4204,6 +4363,7 @@ province_event = {
       factor = 0
     }
   }
+  #wool
   option = {
     name = flavor_gbr.200.wool
     trigger = {
@@ -4218,6 +4378,7 @@ province_event = {
       factor = 0
     }
   }
+  #cloth
   option = {
     name = flavor_gbr.200.cloth
     trigger = {
@@ -4232,6 +4393,7 @@ province_event = {
       factor = 0
     }
   }
+  #fish
   option = {
     name = flavor_gbr.200.fish
     trigger = {
@@ -4246,6 +4408,7 @@ province_event = {
       factor = 0
     }
   }
+  #fur
   option = {
     name = flavor_gbr.200.fur
     trigger = {
@@ -4260,6 +4423,7 @@ province_event = {
       factor = 0
     }
   }
+  #salt
   option = {
     name = flavor_gbr.200.salt
     trigger = {
@@ -4274,6 +4438,7 @@ province_event = {
       factor = 0
     }
   }
+  #naval_supplies
   option = {
     name = flavor_gbr.200.naval_supplies
     trigger = {
@@ -4288,6 +4453,7 @@ province_event = {
       factor = 0
     }
   }
+  #copper
   option = {
     name = flavor_gbr.200.copper
     trigger = {
@@ -4302,6 +4468,7 @@ province_event = {
       factor = 0
     }
   }
+  #gold
   option = {
     name = flavor_gbr.200.gold
     trigger = {
@@ -4316,6 +4483,7 @@ province_event = {
       factor = 0
     }
   }
+  #iron
   option = {
     name = flavor_gbr.200.iron
     trigger = {
@@ -4330,6 +4498,7 @@ province_event = {
       factor = 0
     }
   }
+  #slaves
   option = {
     name = flavor_gbr.200.slaves
     trigger = {
@@ -4344,6 +4513,7 @@ province_event = {
       factor = 0
     }
   }
+  #ivory
   option = {
     name = flavor_gbr.200.ivory
     trigger = {
@@ -4358,6 +4528,7 @@ province_event = {
       factor = 0
     }
   }
+  #tea
   option = {
     name = flavor_gbr.200.tea
     trigger = {
@@ -4372,6 +4543,7 @@ province_event = {
       factor = 0
     }
   }
+  #chinaware
   option = {
     name = flavor_gbr.200.chinaware
     trigger = {
@@ -4386,6 +4558,7 @@ province_event = {
       factor = 0
     }
   }
+  #spices
   option = {
     name = flavor_gbr.200.spices
     trigger = {
@@ -4400,6 +4573,7 @@ province_event = {
       factor = 0
     }
   }
+  #coffee
   option = {
     name = flavor_gbr.200.coffee
     trigger = {
@@ -4414,6 +4588,7 @@ province_event = {
       factor = 0
     }
   }
+  #cotton
   option = {
     name = flavor_gbr.200.cotton
     trigger = {
@@ -4428,6 +4603,7 @@ province_event = {
       factor = 0
     }
   }
+  #sugar
   option = {
     name = flavor_gbr.200.sugar
     trigger = {
@@ -4442,6 +4618,7 @@ province_event = {
       factor = 0
     }
   }
+  #tobacco
   option = {
     name = flavor_gbr.200.tobacco
     trigger = {
@@ -4456,6 +4633,7 @@ province_event = {
       factor = 0
     }
   }
+  #cocoa
   option = {
     name = flavor_gbr.200.cocoa
     trigger = {
@@ -4470,6 +4648,7 @@ province_event = {
       factor = 0
     }
   }
+  #silk
   option = {
     name = flavor_gbr.200.silk
     trigger = {
@@ -4484,6 +4663,7 @@ province_event = {
       factor = 0
     }
   }
+  #dyes
   option = {
     name = flavor_gbr.200.dyes
     trigger = {
@@ -4498,6 +4678,7 @@ province_event = {
       factor = 0
     }
   }
+  #tropical_wood
   option = {
     name = flavor_gbr.200.tropical_wood
     trigger = {
@@ -4512,6 +4693,7 @@ province_event = {
       factor = 0
     }
   }
+  #livestock
   option = {
     name = flavor_gbr.200.livestock
     trigger = {
@@ -4526,6 +4708,7 @@ province_event = {
       factor = 0
     }
   }
+  #incense
   option = {
     name = flavor_gbr.200.incense
     trigger = {
@@ -4540,6 +4723,7 @@ province_event = {
       factor = 0
     }
   }
+  #glass
   option = {
     name = flavor_gbr.200.glass
     trigger = {
@@ -4554,6 +4738,7 @@ province_event = {
       factor = 0
     }
   }
+  #paper
   option = {
     name = flavor_gbr.200.paper
     trigger = {
@@ -4568,6 +4753,7 @@ province_event = {
       factor = 0
     }
   }
+  #gems
   option = {
     name = flavor_gbr.200.gems
     trigger = {
@@ -4582,6 +4768,7 @@ province_event = {
       factor = 0
     }
   }
+  #coal
   option = {
     name = flavor_gbr.200.coal
     trigger = {
@@ -4596,6 +4783,7 @@ province_event = {
       factor = 0
     }
   }
+  #cloves
   option = {
     name = flavor_gbr.200.cloves
     trigger = {
@@ -4610,6 +4798,7 @@ province_event = {
       factor = 0
     }
   }
+  #unknown
   option = {
     name = flavor_gbr.200.unknown
     trigger = {

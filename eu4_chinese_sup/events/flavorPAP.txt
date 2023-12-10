@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Papal States
+# Scripted by Sara Wendel-ýÿrtqvist
+########################################
 namespace = flavor_pap
 normal_or_historical_nations = yes
+# The Commissioning of the Saint Peter's Basilica
 country_event = {
   id = flavor_pap.1
   title = "flavor_pap.EVTNAME1"
@@ -39,6 +44,7 @@ country_event = {
     add_dip_power = 25
   }
 }
+# The Foundation of Societas Jesu
 country_event = {
   id = flavor_pap.2
   title = "flavor_pap.EVTNAME2"
@@ -94,6 +100,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# SPA/POR - The Foundation of Societas Jesu
 country_event = {
   id = flavor_pap.3
   title = "flavor_pap.EVTNAME3"
@@ -103,8 +110,17 @@ country_event = {
   option = {
     name = "flavor_pap.EVTOPTA3"
     add_papal_influence = 10
+    # if = {
+    # limit = { 
+    # religion_group = christian 
+    # has_dlc = "Golden Century"
+    # }
+    # custom_tooltip = enable_jesuit_order_tt
+    # set_country_flag = enable_jesuit_order_flag
+    # }
   }
 }
+# Reorganisation of the Holy Inquisition
 country_event = {
   id = flavor_pap.4
   title = "flavor_pap.EVTNAME4"
@@ -138,6 +154,7 @@ country_event = {
     }
   }
 }
+# Giordano Bruno
 country_event = {
   id = flavor_pap.5
   title = "flavor_pap.EVTNAME5"
@@ -168,6 +185,7 @@ country_event = {
     add_dip_power = 25
   }
 }
+# The Cleansing of the Pontinian Marches
 country_event = {
   id = flavor_pap.6
   title = "flavor_pap.EVTNAME6"
@@ -180,7 +198,7 @@ country_event = {
     NOT = {
       is_year = 1800
     }
-    owns = 118
+    owns = 118 	#  Roma
   }
   mean_time_to_happen = {
     months = 300
@@ -192,6 +210,7 @@ country_event = {
     }
   }
 }
+# The Counter-Reformation and the Reformation of the Catholic Faith
 country_event = {
   id = flavor_pap.7
   title = "flavor_pap.EVTNAME7"
@@ -199,6 +218,7 @@ country_event = {
   picture = REFORM_eventPicture
   fire_only_once = yes
   major = yes
+  # this = country seeing popup, from = original event scope
   major_trigger = {
     religion_group = christian
   }
@@ -282,6 +302,7 @@ country_event = {
     }
   }
 }
+# The Council of Trent
 country_event = {
   id = flavor_pap.8
   title = "flavor_pap.EVTNAME8"
@@ -315,6 +336,8 @@ country_event = {
     }
   }
 }
+# Sublimis Deus
+# by Daniel Tolman
 country_event = {
   id = flavor_pap.9
   title = "flavor_pap.EVTNAME9"
@@ -393,6 +416,7 @@ country_event = {
     }
   }
 }
+# Sublimis Deus for target countries
 country_event = {
   id = flavor_pap.10
   title = "flavor_pap.EVTNAME9"
@@ -431,6 +455,7 @@ country_event = {
     }
   }
 }
+# Pope declares the Great Schism mended
 country_event = {
   id = flavor_pap.11
   title = "flavor_pap.EVTNAME11"
@@ -493,6 +518,7 @@ country_event = {
     }
   }
 }
+# The Jesuits return
 country_event = {
   id = flavor_pap.13
   title = "flavor_pap.EVTNAME13"
@@ -570,7 +596,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pap.EVTOPTA14"
+    name = "flavor_pap.EVTOPTA14" 	#  Yes, we may benefit from their learning
     random_owned_province = {
       limit = {
         has_port = yes
@@ -612,6 +638,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Kirishitan return!
 country_event = {
   id = flavor_pap.15
   title = "flavor_pap.EVTNAME15"
@@ -749,7 +776,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pap.EVTOPTA15"
+    name = "flavor_pap.EVTOPTA15" 	#  Stop the missionaries!
     every_owned_province = {
       limit = {
         has_province_flag = jap_kirishitan_flag
@@ -762,7 +789,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pap.EVTOPTB15"
+    name = "flavor_pap.EVTOPTB15" 	#  Let them spread their faith
     add_prestige = -25
     add_stability = -1
     every_owned_province = {
@@ -777,6 +804,8 @@ country_event = {
     }
   }
 }
+# The Borgia Pope by Daniel Tolman
+# Borgia Pope
 country_event = {
   id = flavor_pap.16
   title = "flavor_pap.16.t"
@@ -795,7 +824,7 @@ country_event = {
     }
     picture = POPE_PREACHING_eventPicture
   }
-  is_triggered_only = yes
+  is_triggered_only = yes 	#  on monarch death
   fire_only_once = yes
   trigger = {
     is_year = 1490
@@ -820,12 +849,14 @@ country_event = {
     add_reform_desire = 0.025
     set_global_flag = borgia_pope_global
     custom_tooltip = borgia_pope_tt
+    # reduced cost of appointing cardinals, and corruption
     add_ruler_modifier = {
       name = "borgia_pope"
       duration = -1
     }
   }
 }
+# Cesare Borgia resigns as Cardinal
 country_event = {
   id = flavor_pap.17
   title = "flavor_pap.17.t"
@@ -857,7 +888,7 @@ country_event = {
     add_reform_desire = 0.01
     add_army_tradition = 10
     define_general = {
-      name = "R(„÷– âl	TšN"  # Cesare Borgia
+      name = "R(„÷– âl	TšN" 	# Cesare Borgia
       shock = 5
       fire = 4
       manuever = 4
@@ -865,6 +896,7 @@ country_event = {
     }
   }
 }
+# Borgia scandals
 country_event = {
   id = flavor_pap.18
   title = "flavor_pap.18.t"
@@ -899,6 +931,7 @@ country_event = {
     name = flavor_pap.18.a
     add_stability = -1
     add_ruler_modifier = {
+      # lose diprep
       name = "scandalized_papacy"
       duration = -1
     }
@@ -910,25 +943,27 @@ country_event = {
     }
     add_dip_power = 50
     add_ruler_modifier = {
+      # add diprep
       name = "borgia_diplomacy"
       duration = -1
     }
     highlight = yes
   }
 }
+# Death of the Borgia Pope, Cesare goes into exile
 country_event = {
   id = flavor_pap.19
   title = "flavor_pap.19.t"
   desc = {
     trigger = {
-      has_leader = "R(„÷– âl	TšN"  # Cesare Borgia
+      has_leader = "R(„÷– âl	TšN" 	# Cesare Borgia
     }
     desc = "flavor_pap.19.d"
   }
   desc = {
     trigger = {
       NOT = {
-        has_leader = "R(„÷– âl	TšN"  # Cesare Borgia
+        has_leader = "R(„÷– âl	TšN" 	# Cesare Borgia
       }
     }
     desc = "flavor_pap.19.d2"
@@ -948,7 +983,7 @@ country_event = {
     picture = POPE_PREACHING_eventPicture
   }
   fire_only_once = yes
-  is_triggered_only = yes
+  is_triggered_only = yes 	#  on monarch death
   trigger = {
     has_global_flag = borgia_pope_global
     tag = PAP
@@ -968,11 +1003,11 @@ country_event = {
     }
     if = {
       limit = {
-        has_leader = "R(„÷– âl	TšN"  # Cesare Borgia
+        has_leader = "R(„÷– âl	TšN" 	# Cesare Borgia
       }
       hidden_effect = {
         kill_leader = {
-          type = "R(„÷– âl	TšN"  # Cesare Borgia
+          type = "R(„÷– âl	TšN" 	# Cesare Borgia
         }
       }
       if = {
@@ -991,6 +1026,7 @@ country_event = {
     }
   }
 }
+# Cesare flees to Navarra
 country_event = {
   id = flavor_pap.20
   title = "flavor_pap.20.t"
@@ -1001,7 +1037,7 @@ country_event = {
   option = {
     name = flavor_pap.20.a
     define_general = {
-      name = "R(„÷– âl	TšN"  # Cesare Borgia
+      name = "R(„÷– âl	TšN" 	# Cesare Borgia
       shock = 5
       fire = 4
       manuever = 4
@@ -1009,6 +1045,7 @@ country_event = {
     }
   }
 }
+# Council of Trent Ends
 country_event = {
   id = flavor_pap.21
   title = "flavor_pap.21.t"
@@ -1042,6 +1079,7 @@ country_event = {
   }
   fire_only_once = yes
   major = yes
+  # this = country seeing popup, from = original event scope
   major_trigger = {
     religion_group = christian
   }

@@ -79,9 +79,7 @@ eng_rb_gibraltar = {
   has_country_shield = yes
   eng_rb_take_gibraltar = {
     icon = mission_rb_take_gibraltar
-    required_missions = {
-      eng_mighty_navy
-    }
+    required_missions = { eng_mighty_navy }
     completed_by = 1713.4.11
     position = 2
     provinces_to_highlight = {
@@ -152,9 +150,7 @@ eng_rb_islands_med = {
   has_country_shield = yes
   eng_rb_take_baleares = {
     icon = mission_rb_increase_our_reach
-    required_missions = {
-      eng_rb_take_gibraltar
-    }
+    required_missions = { eng_rb_take_gibraltar }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -199,9 +195,7 @@ eng_rb_islands_med = {
   }
   eng_rb_take_mediterranean_islands = {
     icon = mission_rb_mediterranean_authority
-    required_missions = {
-      eng_rb_take_baleares
-    }
+    required_missions = { eng_rb_take_baleares }
     provinces_to_highlight = {
       OR = {
         province_id = 126
@@ -265,10 +259,7 @@ eng_rb_egypt = {
   has_country_shield = yes
   eng_rb_take_delta = {
     icon = mission_rb_seize_alexandria
-    required_missions = {
-      eng_rb_take_baleares
-      eng_rb_empire_status
-    }
+    required_missions = { eng_rb_take_baleares eng_rb_empire_status }
     position = 4
     provinces_to_highlight = {
       area = delta_area
@@ -301,9 +292,7 @@ eng_rb_egypt = {
   }
   eng_rb_take_bahari = {
     icon = mission_rb_egyptian_authority
-    required_missions = {
-      eng_rb_take_delta
-    }
+    required_missions = { eng_rb_take_delta }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -395,9 +384,7 @@ eng_rb_stability = {
   }
   eng_rb_control_state_religion = {
     icon = mission_rb_control_state_religion
-    required_missions = {
-      eng_rb_war_of_roses
-    }
+    required_missions = { eng_rb_war_of_roses }
     completed_by = 1534.1.1
     trigger = {
       NOT = {
@@ -419,9 +406,7 @@ eng_rb_stability = {
   }
   eng_rb_empire_status = {
     icon = mission_rb_empire
-    required_missions = {
-      eng_rb_control_state_religion
-    }
+    required_missions = { eng_rb_control_state_religion }
     trigger = {
       if = {
         limit = {
@@ -466,9 +451,7 @@ eng_rb_burgundy = {
   has_country_shield = yes
   eng_rb_conquer_burgundy = {
     icon = mission_rb_repatriate_burgundy
-    required_missions = {
-      eng_rb_angevin
-    }
+    required_missions = { eng_rb_angevin }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -550,9 +533,7 @@ gbr_rb_canada_group = {
   has_country_shield = yes
   eng_rb_canada = {
     icon = mission_rb_colonise_canada
-    required_missions = {
-      english_colony_in_north_america
-    }
+    required_missions = { english_colony_in_north_america }
     completed_by = 1613.1.1
     position = 7
     provinces_to_highlight = {
@@ -609,9 +590,7 @@ eng_rb_trade_value_group = {
   has_country_shield = yes
   eng_rb_trade_value = {
     icon = mission_rb_grow_the_channel
-    required_missions = {
-      eng_establish_trade_in_home_cot_gb
-    }
+    required_missions = { eng_establish_trade_in_home_cot_gb }
     position = 9
     provinces_to_highlight = {
       province_id = 1269
@@ -718,9 +697,7 @@ eng_rb_buildings_group = {
   }
   eng_rb_coal = {
     icon = mission_rb_prospect_for_coal
-    required_missions = {
-      eng_rb_universities
-    }
+    required_missions = { eng_rb_universities }
     position = 10
     trigger = {
       has_institution = enlightenment
@@ -789,9 +766,7 @@ eng_rb_buildings_group = {
   }
   eng_rb_furnaces = {
     icon = mission_rb_build_furnaces
-    required_missions = {
-      eng_rb_coal
-    }
+    required_missions = { eng_rb_coal }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -854,9 +829,7 @@ eng_rb_conquest_europe = {
   has_country_shield = yes
   eng_rb_brittany = {
     icon = mission_rb_conquer_brittany
-    required_missions = {
-      eng_reclaim_arm_paris
-    }
+    required_missions = { eng_reclaim_arm_paris }
     position = 4
     provinces_to_highlight = {
       area = brittany_area
@@ -950,9 +923,7 @@ eng_rb_conquest_europe = {
   }
   eng_rb_angevin = {
     icon = mission_rb_angevin_kingdom
-    required_missions = {
-      eng_rb_brittany
-    }
+    required_missions = { eng_rb_brittany }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1063,9 +1034,7 @@ gbr_rb_empire_group = {
   has_country_shield = yes
   eng_rb_hre_electors = {
     icon = mission_rb_control_electors
-    required_missions = {
-      eng_rb_angevin
-    }
+    required_missions = { eng_rb_angevin }
     position = 6
     trigger = {
       if = {
@@ -1105,9 +1074,7 @@ gbr_rb_empire_group = {
   }
   eng_rb_hre_emperor = {
     icon = mission_rb_ascendant
-    required_missions = {
-      eng_rb_hre_electors
-    }
+    required_missions = { eng_rb_hre_electors }
     trigger = {
       OR = {
         ROOT = {
@@ -1166,9 +1133,7 @@ gbr_rb_spice_islands_group = {
   has_country_shield = yes
   eng_rb_spice_islands = {
     icon = mission_rb_colonise_spice_islands
-    required_missions = {
-      england_discovers_india
-    }
+    required_missions = { england_discovers_india }
     position = 8
     completed_by = 1776.1.1
     provinces_to_highlight = {
@@ -1262,9 +1227,7 @@ gbr_rb_indian_group = {
   has_country_shield = yes
   gbr_rb_india_landfall = {
     icon = mission_rb_conquer_bengal
-    required_missions = {
-      eng_rb_spice_islands
-    }
+    required_missions = { eng_rb_spice_islands }
     position = 9
     completed_by = 1789.1.1
     provinces_to_highlight = {
@@ -1362,9 +1325,7 @@ gbr_rb_indian_group = {
   }
   gbr_rb_india_coast = {
     icon = mission_rb_take_indian_coast
-    required_missions = {
-      gbr_rb_india_landfall
-    }
+    required_missions = { gbr_rb_india_landfall }
     provinces_to_highlight = {
       OR = {
         area = orissa_area
@@ -1434,9 +1395,7 @@ gbr_rb_indian_group = {
   }
   gbr_rb_india_landgrab = {
     icon = mission_rb_take_north_india
-    required_missions = {
-      gbr_rb_india_coast
-    }
+    required_missions = { gbr_rb_india_coast }
     provinces_to_highlight = {
       OR = {
         area = bihar_area
@@ -1509,9 +1468,7 @@ gbr_rb_india_princes = {
   has_country_shield = yes
   gbr_rb_india_princedoms = {
     icon = mission_rb_inland_india
-    required_missions = {
-      gbr_rb_india_landfall
-    }
+    required_missions = { gbr_rb_india_landfall }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -1612,9 +1569,7 @@ gbr_rb_northern_colonial = {
   has_country_shield = yes
   eng_rb_take_shetland_and_faro_isles = {
     icon = mission_rb_conquer_the_isles
-    required_missions = {
-      conquer_scotland
-    }
+    required_missions = { conquer_scotland }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1657,9 +1612,7 @@ gbr_rb_northern_colonial = {
   }
   eng_rb_greenland = {
     icon = mission_rb_settle_the_north
-    required_missions = {
-      eng_rb_take_shetland_and_faro_isles
-    }
+    required_missions = { eng_rb_take_shetland_and_faro_isles }
     provinces_to_highlight = {
       area = greenland_area
       NOT = {
@@ -1697,52 +1650,52 @@ gbr_rb_northern_colonial = {
         hidden_effect = {
           random_list = {
             10 = {
-              change_province_name = "∞eÀu¶u"  # Novum Novum Eboracum
-              rename_capital = "∞eÀu¶u"  # Novum Novum Eboracum
+              change_province_name = "∞eÀu¶u" 	# Novum Novum Eboracum
+              rename_capital = "∞eÀu¶u" 	# Novum Novum Eboracum
             }
             10 = {
-              change_province_name = "S&Ofe"  # Little London
-              rename_capital = "S&Ofe"  # Little London
+              change_province_name = "S&Ofe" 	# Little London
+              rename_capital = "S&Ofe" 	# Little London
             }
             10 = {
-              change_province_name = "∞eeYlö"  # New Omagh
-              rename_capital = "∞eeYlö"  # New Omagh
+              change_province_name = "∞eeYlö" 	# New Omagh
+              rename_capital = "∞eeYlö" 	# New Omagh
             }
             10 = {
-              change_province_name = "∞e=Oi`)R"  # New Burnley
-              rename_capital = "∞e=Oi`)R"  # New Burnley
+              change_province_name = "∞e=Oi`)R" 	# New Burnley
+              rename_capital = "∞e=Oi`)R" 	# New Burnley
             }
             10 = {
-              change_province_name = "∞eæè“R∆Y"  # New Durham
-              rename_capital = "∞eæè“R∆Y"  # New Durham
+              change_province_name = "∞eæè“R∆Y" 	# New Durham
+              rename_capital = "∞eæè“R∆Y" 	# New Durham
             }
             10 = {
-              change_province_name = "∞e»TW÷vyr"  # New Harrogate
-              rename_capital = "∞e»TW÷vyr"  # New Harrogate
+              change_province_name = "∞e»TW÷vyr" 	# New Harrogate
+              rename_capital = "∞e»TW÷vyr" 	# New Harrogate
             }
             10 = {
-              change_province_name = "∞e∑^ÉlS"  # New Cornwall
-              rename_capital = "∞e∑^ÉlS"  # New Cornwall
+              change_province_name = "∞e∑^ÉlS" 	# New Cornwall
+              rename_capital = "∞e∑^ÉlS" 	# New Cornwall
             }
             10 = {
-              change_province_name = ",råN)Rirfm"  # Liverpool Secundum
-              rename_capital = ",råN)Rirfm"  # Liverpool Secundum
+              change_province_name = ",råN)Rirfm" 	# Liverpool Secundum
+              rename_capital = ",råN)Rirfm" 	# Liverpool Secundum
             }
             10 = {
-              change_province_name = "|VóVêŒò=n"  # Pieter's Haven
-              rename_capital = "|VóVêŒò=n"  # Pieter's Haven
+              change_province_name = "|VóVêŒò=n" 	# Pieter's Haven
+              rename_capital = "|VóVêŒò=n" 	# Pieter's Haven
             }
             8 = {
-              change_province_name = "∞e˝êœgóg"  # New Dublin
-              rename_capital = "∞e˝êœgóg"  # New Dublin
+              change_province_name = "∞e˝êœgóg" 	# New Dublin
+              rename_capital = "∞e˝êœgóg" 	# New Dublin
             }
             1 = {
-              change_province_name = "4N¨QŒW"  # Winterfell
-              rename_capital = "4N¨QŒW"  # Winterfell
+              change_province_name = "4N¨QŒW" 	# Winterfell
+              rename_capital = "4N¨QŒW" 	# Winterfell
             }
             1 = {
-              change_province_name = "›uﬂW˝lâ"  # Jersey Ultima
-              rename_capital = "›uﬂW˝lâ"  # Jersey Ultima
+              change_province_name = "›uﬂW˝lâ" 	# Jersey Ultima
+              rename_capital = "›uﬂW˝lâ" 	# Jersey Ultima
             }
           }
         }
@@ -1783,9 +1736,7 @@ eng_rb_thirteen_colonies_group = {
   has_country_shield = yes
   eng_rb_own_thirteen_colonies = {
     icon = mission_rb_the_thirteen_colonies
-    required_missions = {
-      english_colony_in_north_america
-    }
+    required_missions = { english_colony_in_north_america }
     completed_by = 1701.1.1
     position = 7
     provinces_to_highlight = {
@@ -1895,9 +1846,7 @@ eng_rb_trade_in_home_cot_group = {
   }
   eng_hanseatic_one = {
     icon = mission_rb_control_the_hansa
-    required_missions = {
-      eng_establish_trade_in_home_cot_gb
-    }
+    required_missions = { eng_establish_trade_in_home_cot_gb }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -1951,9 +1900,7 @@ eng_rb_trade_in_home_cot_group = {
   }
   eng_hanseatic_two = {
     icon = mission_rb_hanseatic_east
-    required_missions = {
-      eng_hanseatic_one
-    }
+    required_missions = { eng_hanseatic_one }
     position = 9
     provinces_to_highlight = {
       OR = {

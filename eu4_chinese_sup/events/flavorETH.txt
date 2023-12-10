@@ -1,5 +1,10 @@
+########################################
+# Events for Ethiopia
+# written by Johan Andersson
+########################################
 namespace = flavor_eth
 normal_or_historical_nations = yes
+# Pero da Covilha
 country_event = {
   id = flavor_eth.1
   title = flavor_eth.1.t
@@ -76,6 +81,7 @@ country_event = {
     }
   }
 }
+#An Embassy Is Here!
 country_event = {
   id = flavor_eth.2
   title = flavor_eth.2.t
@@ -117,6 +123,7 @@ country_event = {
     add_years_of_income = 1.0
   }
 }
+#Prester John?
 country_event = {
   id = flavor_eth.3
   title = flavor_eth.3.t
@@ -160,6 +167,7 @@ country_event = {
     }
   }
 }
+# aid given
 country_event = {
   id = flavor_eth.4
   title = flavor_eth.4.t
@@ -178,6 +186,7 @@ country_event = {
     }
   }
 }
+# aid refused
 country_event = {
   id = flavor_eth.5
   title = flavor_eth.5.t
@@ -189,6 +198,11 @@ country_event = {
     add_legitimacy = -10
   }
 }
+########################################
+# Additional Events for Ethiopia
+# written by Henrik Lohmander
+########################################
+# Centralization reforms of Zara Yakob
 country_event = {
   id = flavor_eth.6
   title = flavor_eth.6.t
@@ -200,7 +214,7 @@ country_event = {
     NOT = {
       is_year = 1460
     }
-    has_ruler = "Nb…b ≈ñT^"  # Zara Yakob
+    has_ruler = "Nb…b ≈ñT^" 	# Zara Yakob
   }
   mean_time_to_happen = {
     months = 48
@@ -235,6 +249,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The itinerant capital
 country_event = {
   id = flavor_eth.7
   title = flavor_eth.7.t
@@ -254,6 +269,7 @@ country_event = {
     months = 48
   }
   option = {
+    #This is how it always has been
     name = flavor_eth.7.a
     ai_chance = {
       factor = 50
@@ -262,7 +278,7 @@ country_event = {
     set_country_flag = eth_itinerant_capital_flag
   }
   option = {
-    name = flavor_eth.7.b
+    name = flavor_eth.7.b 	# Actively encourage cultural conversion of the countryside
     set_country_flag = eth_itinerant_capital_flag
     ai_chance = {
       factor = 50
@@ -273,6 +289,7 @@ country_event = {
     }
   }
 }
+# Debre Berhan - The Mountain of Light
 country_event = {
   id = flavor_eth.8
   title = flavor_eth.8.t
@@ -285,7 +302,7 @@ country_event = {
     NOT = {
       is_year = 1520
     }
-    owns_core_province = 1213
+    owns_core_province = 1213 	# Shewa
     has_country_flag = eth_itinerant_capital_flag
     NOT = {
       has_dlc = "Origins"
@@ -296,7 +313,7 @@ country_event = {
     months = 195
   }
   option = {
-    name = flavor_eth.8.a
+    name = flavor_eth.8.a 	# The time has come for a permanent capital
     ai_chance = {
       factor = 90
     }
@@ -305,13 +322,13 @@ country_event = {
     add_adm_power = -25
     set_capital = 1213
     1213 = {
-      rename_capital = "∑V^^tçS"  # Debre Berhan
+      rename_capital = "∑V^^tçS" 	# Debre Berhan
       add_building = temple
     }
     every_owned_province = {
       limit = {
         OR = {
-          province_id = 1213
+          province_id = 1213 	# Shewa
           any_neighbor_province = {
             province_id = 1213
           }
@@ -321,13 +338,14 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.8.b
+    name = flavor_eth.8.b 	# Let us not break with tried traditions
     ai_chance = {
       factor = 10
     }
     add_stability_or_adm_power = yes
   }
 }
+# Debre Berhan Plundered
 province_event = {
   id = flavor_eth.9
   title = flavor_eth.9.t
@@ -346,7 +364,7 @@ province_event = {
     months = 1
   }
   option = {
-    name = flavor_eth.9.a
+    name = flavor_eth.9.a 	# To the provinces!
     owner = {
       set_country_flag = eth_itinerant_capital_flag
       clr_country_flag = eth_debre_berhan_capital_flag
@@ -354,6 +372,7 @@ province_event = {
     }
   }
 }
+# Gondar - A new Capital
 country_event = {
   id = flavor_eth.10
   title = flavor_eth.10.t
@@ -363,7 +382,7 @@ country_event = {
   trigger = {
     tag = ETH
     is_year = 1630
-    owns_core_province = 1224
+    owns_core_province = 1224 	# Begmeder
     NOT = {
       has_dlc = "Origins"
     }
@@ -376,7 +395,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.10.a
+    name = flavor_eth.10.a 	# The time has come for a permanent capital
     clr_country_flag = eth_itinerant_capital_flag
     ai_chance = {
       factor = 90
@@ -396,13 +415,15 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.10.b
+    name = flavor_eth.10.b 	# Let us not break with tried traditions
     ai_chance = {
       factor = 10
     }
     add_stability_or_adm_power = yes
   }
 }
+# Ethiopian-Mamluk Relations
+#The fate of the Egyptian Copts
 country_event = {
   id = flavor_eth.11
   title = flavor_eth.11.t
@@ -438,7 +459,7 @@ country_event = {
     months = 90
   }
   option = {
-    name = flavor_eth.11.a
+    name = flavor_eth.11.a 	# Send a strongly worded letter
     ai_chance = {
       factor = 1
     }
@@ -459,14 +480,14 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.11.b
+    name = flavor_eth.11.b 	# Avoid angering MAM
     ai_chance = {
       factor = 0
     }
     add_prestige = -15
   }
   option = {
-    name = flavor_eth.11.c
+    name = flavor_eth.11.c 	# This is cause for war!
     ai_chance = {
       factor = 0
     }
@@ -483,6 +504,7 @@ country_event = {
     }
   }
 }
+# A letter arrives from Ethiopia
 country_event = {
   id = flavor_eth.12
   title = flavor_eth.12.t
@@ -490,7 +512,7 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_eth.12.a
+    name = flavor_eth.12.a 	# Send a sarcastic reply.
     ai_chance = {
       factor = 90
     }
@@ -503,7 +525,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.12.b
+    name = flavor_eth.12.b 	# Attempt to apologize and repair relations.
     ai_chance = {
       factor = 10
     }
@@ -522,6 +544,7 @@ country_event = {
     }
   }
 }
+# A letter arrives from Ethiopia
 country_event = {
   id = flavor_eth.13
   title = flavor_eth.13.t
@@ -529,7 +552,7 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_eth.13.a
+    name = flavor_eth.13.a 	# They wouldn't dare
     tooltip = {
       ETH = {
         add_casus_belli = {
@@ -541,6 +564,7 @@ country_event = {
     }
   }
 }
+#An ambassador from the Mamluks
 country_event = {
   id = flavor_eth.14
   title = flavor_eth.14.t
@@ -548,7 +572,7 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_eth.14.a
+    name = flavor_eth.14.a 	# Imprison the Ambassador
     ai_chance = {
       factor = 90
     }
@@ -565,7 +589,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.14.b
+    name = flavor_eth.14.b 	# This is cause for war!
     ai_chance = {
       factor = 0
     }
@@ -583,13 +607,14 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.14.c
+    name = flavor_eth.14.c 	# Let's just drop it.
     ai_chance = {
       factor = 10
     }
     add_prestige = -15
   }
 }
+#The Mamluks Apologize
 country_event = {
   id = flavor_eth.15
   title = flavor_eth.15.t
@@ -597,7 +622,7 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_eth.15.a
+    name = flavor_eth.15.a 	# Ok
     add_prestige = 10
     tooltip = {
       add_opinion = {
@@ -607,6 +632,7 @@ country_event = {
     }
   }
 }
+#Ambassador Detained
 country_event = {
   id = flavor_eth.16
   title = flavor_eth.16.t
@@ -614,7 +640,7 @@ country_event = {
   picture = ACCUSATION_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_eth.16.a
+    name = flavor_eth.16.a 	# Ok
     set_country_flag = eth_ambassador_detained
     tooltip = {
       add_opinion = {
@@ -624,6 +650,7 @@ country_event = {
     }
   }
 }
+#Death of a Bishop
 country_event = {
   id = flavor_eth.17
   title = flavor_eth.17.t
@@ -659,7 +686,7 @@ country_event = {
     months = 450
   }
   option = {
-    name = flavor_eth.17.a
+    name = flavor_eth.17.a 	# Prevent the appointment of a new Bishop
     ai_chance = {
       factor = 90
     }
@@ -675,12 +702,13 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.17.b
+    name = flavor_eth.17.b 	# We must not interfere in these matters
     ai_chance = {
       factor = 10
     }
   }
 }
+#Bishop missing
 country_event = {
   id = flavor_eth.18
   title = flavor_eth.18.t
@@ -688,7 +716,7 @@ country_event = {
   picture = ORTHODOX_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_eth.18.a
+    name = flavor_eth.18.a 	# Ok
     add_stability = -1
     tooltip = {
       add_opinion = {
@@ -698,6 +726,7 @@ country_event = {
     }
   }
 }
+#The Monastic Orders
 country_event = {
   id = flavor_eth.19
   title = flavor_eth.19.t
@@ -743,7 +772,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.19.a
+    name = flavor_eth.19.a 	# Attempt to rein them in
     ai_chance = {
       factor = 50
     }
@@ -756,7 +785,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.19.b
+    name = flavor_eth.19.b 	# We must safeguard the privileges of the Monasteries.
     ai_chance = {
       factor = 50
     }
@@ -769,6 +798,7 @@ country_event = {
     }
   }
 }
+#Independence from the Patriarchate
 country_event = {
   id = flavor_eth.20
   title = flavor_eth.20.t
@@ -792,14 +822,14 @@ country_event = {
     months = 40
   }
   option = {
-    name = flavor_eth.20.a
+    name = flavor_eth.20.a 	# We cannot break with our Patriarch
     ai_chance = {
       factor = 90
     }
     add_stability_or_adm_power = yes
   }
   option = {
-    name = flavor_eth.20.b
+    name = flavor_eth.20.b 	# Our Church should be free of foreign influence.
     ai_chance = {
       factor = 10
     }
@@ -811,6 +841,7 @@ country_event = {
     set_country_flag = eth_autonomous_church
   }
 }
+#The Oromo
 country_event = {
   id = flavor_eth.21
   title = flavor_eth.21.t
@@ -838,7 +869,7 @@ country_event = {
     months = 330
   }
   option = {
-    name = flavor_eth.21.a
+    name = flavor_eth.21.a 	# Ok.
     every_province = {
       limit = {
         OR = {
@@ -895,6 +926,7 @@ country_event = {
     }
   }
 }
+#Oromo info event
 country_event = {
   id = flavor_eth.22
   title = flavor_eth.21.t
@@ -902,7 +934,7 @@ country_event = {
   picture = FAMINE_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_eth.21.a
+    name = flavor_eth.21.a 	# Ok.
     1207 = {
       if = {
         limit = {
@@ -983,6 +1015,7 @@ country_event = {
     }
   }
 }
+#Oromo Settlers (repeating)
 province_event = {
   id = flavor_eth.23
   title = flavor_eth.23.t
@@ -1013,7 +1046,7 @@ province_event = {
     }
   }
   option = {
-    name = flavor_eth.23.a
+    name = flavor_eth.23.a 	# Ok.
     add_province_modifier = {
       name = "eth_oromo_migration"
       duration = 3650
@@ -1022,6 +1055,7 @@ province_event = {
     change_religion = shamanism
   }
 }
+#Integration of the Oromo
 country_event = {
   id = flavor_eth.24
   title = flavor_eth.24.t
@@ -1037,7 +1071,7 @@ country_event = {
     }
     OR = {
       num_of_owned_provinces_with = {
-        value = 6
+        value = 6 	# Can trigger once there are Oromos in 6 provinces or more in one country.
         has_province_modifier = eth_oromo_migration
       }
       had_global_flag = {
@@ -1061,7 +1095,7 @@ country_event = {
         country_event = {
           id = flavor_eth.25
           days = 1
-        }
+        } 	# Info Event
       }
     }
   }
@@ -1090,7 +1124,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.24.a
+    name = flavor_eth.24.a 	# Ok.
     set_global_flag = end_of_oromo_migrations
     every_province = {
       limit = {
@@ -1109,6 +1143,7 @@ country_event = {
     }
   }
 }
+#Info events for other affected countries
 country_event = {
   id = flavor_eth.25
   title = flavor_eth.24.t
@@ -1116,10 +1151,11 @@ country_event = {
   picture = CITY_DEVELOPMENT_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_eth.24.a
+    name = flavor_eth.24.a 	# Ok.
     set_country_flag = eth_end_oromo
   }
 }
+#Amba Geshen - The Mountain of Kings
 country_event = {
   id = flavor_eth.26
   title = flavor_eth.26.t
@@ -1139,7 +1175,7 @@ country_event = {
     months = 48
   }
   option = {
-    name = flavor_eth.26.a
+    name = flavor_eth.26.a 	# We are fortunate that our ancestors had such foresight.
     ai_chance = {
       factor = 90
     }
@@ -1154,13 +1190,14 @@ country_event = {
     }
   }
   option = {
-    name = flavor_eth.26.b
+    name = flavor_eth.26.b 	# We have no need for this gilded prison.
     ai_chance = {
       factor = 10
     }
     custom_tooltip = flavor_eth.26.b.tt
   }
 }
+#Helen of Ethiopia
 country_event = {
   id = flavor_eth.27
   title = flavor_eth.27.t
@@ -1168,7 +1205,7 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   fire_only_once = yes
   trigger = {
-    has_ruler = "Nb…b ≈ñT^"  # Zara Yakob
+    has_ruler = "Nb…b ≈ñT^" 	# Zara Yakob
     NOT = {
       is_year = 1468
     }
@@ -1183,7 +1220,7 @@ country_event = {
     set_global_flag = wih_eleniethiopia_flag
   }
   option = {
-    name = flavor_eth.27.a
+    name = flavor_eth.27.a 	# Ok
     add_adm_power = 25
     if = {
       limit = {
@@ -1193,9 +1230,9 @@ country_event = {
       }
       define_advisor = {
         type = statesman
-        name = "1rpQÆY"  # Eleni
+        name = "1rpQÆY" 	# Eleni
         culture = sidamo
-        religion = coptic
+        religion = coptic 	# But was muslim
         skill = 3
         female = yes
         discount = yes
@@ -1207,11 +1244,11 @@ country_event = {
         has_government_attribute = queen
       }
       define_consort = {
-        name = "1rpQÆY"  # Eleni
+        name = "1rpQÆY" 	# Eleni
         country_of_origin = HDY
-        dynasty = "»TÍèöN"  # Hadiya
+        dynasty = "»TÍèöN" 	# Hadiya
         culture = sidamo
-        religion = coptic
+        religion = coptic 	# But was muslim
         adm = 4
         dip = 4
         mil = 3
@@ -1224,6 +1261,7 @@ country_event = {
     }
   }
 }
+#Disaster at the Mountain of Kings
 country_event = {
   id = flavor_eth.28
   title = flavor_eth.28.t
@@ -1238,7 +1276,7 @@ country_event = {
     months = 1000
   }
   option = {
-    name = flavor_eth.28.a
+    name = flavor_eth.28.a 	# All is lost.
     ai_chance = {
       factor = 90
     }
@@ -1246,6 +1284,11 @@ country_event = {
     remove_country_modifier = eth_mount_geshen
   }
 }
+########################################
+# DLC Events for Ethiopia
+# written by Ogulcan Yildirim
+########################################
+#The many troubles of the Negusa Nagast
 country_event = {
   id = flavor_eth.29
   title = flavor_eth.29.t
@@ -1287,6 +1330,7 @@ country_event = {
     }
   }
 }
+#Permanent Cities for Ethiopia
 country_event = {
   id = flavor_eth.30
   title = flavor_eth.30.t
@@ -1325,6 +1369,7 @@ country_event = {
     }
   }
 }
+#The Ark of the Covenant - Depreceated
 country_event = {
   id = flavor_eth.33
   title = flavor_eth.33.t
@@ -1344,6 +1389,7 @@ country_event = {
     }
   }
 }
+#The integration of Damot and Hadiya
 country_event = {
   id = flavor_eth.35
   title = flavor_eth.35.t
@@ -1351,6 +1397,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
+    #Integrate the vassals
     name = flavor_eth.35.a
     add_country_modifier = {
       name = eth_better_integration
@@ -1361,6 +1408,7 @@ country_event = {
     }
   }
   option = {
+    #Just demand more tribute instead
     name = flavor_eth.35.b
     add_country_modifier = {
       name = eth_better_vassal_handling
@@ -1371,6 +1419,7 @@ country_event = {
     }
   }
 }
+#Liberation of the Copts
 country_event = {
   id = flavor_eth.37
   title = flavor_eth.37.t
@@ -1390,6 +1439,7 @@ country_event = {
     }
   }
 }
+#Reconstruction of Adulis
 country_event = {
   id = flavor_eth.38
   title = flavor_eth.38.t
@@ -1399,8 +1449,8 @@ country_event = {
   option = {
     name = flavor_eth.38.a
     1230 = {
-      change_province_name = "?ñjg)RØe"  # Adulis
-      rename_capital = "?ñjg)RØe"  # Adulis
+      change_province_name = "?ñjg)RØe" 	# Adulis
+      rename_capital = "?ñjg)RØe" 	# Adulis
       add_base_tax = 3
       add_base_production = 3
       add_base_manpower = 2
@@ -1411,6 +1461,7 @@ country_event = {
     }
   }
 }
+#Restore the Aksumite Empire
 country_event = {
   id = flavor_eth.39
   title = flavor_eth.39.t
@@ -1435,7 +1486,7 @@ country_event = {
       }
       country_event = {
         id = ideagroups.1
-      }
+      } 	# Swap Ideas
     }
     set_country_flag = formed_aksumite_empire_flag
     ai_chance = {
@@ -1457,6 +1508,7 @@ country_event = {
     }
   }
 }
+#Deal with the Beta Israelis
 country_event = {
   id = flavor_eth.40
   title = flavor_eth.40.t
@@ -1464,6 +1516,7 @@ country_event = {
   picture = AFRICAN_BATTLE_eventPicture
   is_triggered_only = yes
   option = {
+    #Try to convert them
     name = flavor_eth.40.a
     add_stability = -2
     if = {
@@ -1498,6 +1551,7 @@ country_event = {
     }
   }
   option = {
+    #We should not create a bigger rift between our people
     name = flavor_eth.40.b
     add_stability = 1
     if = {
@@ -1527,6 +1581,7 @@ country_event = {
     }
   }
 }
+#Sail through the Nil
 country_event = {
   id = flavor_eth.41
   title = flavor_eth.41.t
@@ -1541,11 +1596,12 @@ country_event = {
     hidden_effect = {
       country_event = {
         id = flavor_eth.42
-        days = 50
+        days = 50 	# The actual ingame time needed to reach Rome from Dumyat with galleys
       }
     }
   }
 }
+#Reach Italy
 country_event = {
   id = flavor_eth.42
   title = flavor_eth.42.t
@@ -1579,6 +1635,7 @@ country_event = {
     }
   }
 }
+#Pope's contact with Ethiopia
 country_event = {
   id = flavor_eth.43
   title = flavor_eth.43.t
@@ -1603,6 +1660,7 @@ country_event = {
     }
   }
 }
+#Alliance with Portugal for Ethiopia
 country_event = {
   id = flavor_eth.44
   title = flavor_eth.44.t
@@ -1610,6 +1668,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
+    #Let's try it
     name = flavor_eth.44.a
     POR = {
       country_event = {
@@ -1630,6 +1689,7 @@ country_event = {
     }
   }
   option = {
+    #We are better without them
     name = flavor_eth.44.b
     add_dip_power = 100
     ai_chance = {
@@ -1648,6 +1708,7 @@ country_event = {
     }
   }
 }
+#Alliance with Ethiopia for Portugal
 country_event = {
   id = flavor_eth.45
   title = flavor_eth.45.t
@@ -1655,6 +1716,7 @@ country_event = {
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
   option = {
+    #Accept alliance
     name = flavor_eth.45.a
     add_historical_friend = FROM
     tooltip = {
@@ -1704,6 +1766,7 @@ country_event = {
     }
   }
   option = {
+    #Refuse alliance
     name = flavor_eth.45.b
     hidden_effect = {
       FROM = {
@@ -1731,6 +1794,7 @@ country_event = {
     }
   }
 }
+#Portugal accepts alliance
 country_event = {
   id = flavor_eth.46
   title = flavor_eth.46.t
@@ -1765,6 +1829,7 @@ country_event = {
     }
   }
 }
+#Portugal refuses alliance
 country_event = {
   id = flavor_eth.47
   title = flavor_eth.47.t
@@ -1775,6 +1840,7 @@ country_event = {
     name = flavor_eth.47.a
   }
 }
+#Westernize your troops
 country_event = {
   id = flavor_eth.48
   title = flavor_eth.48.t
@@ -1792,6 +1858,8 @@ country_event = {
     add_mil_power = -200
   }
 }
+#Random flavor events
+#Adal gets support from the Ottomans
 country_event = {
   id = flavor_eth.49
   title = flavor_eth.49.t
@@ -1830,7 +1898,7 @@ country_event = {
       clr_country_flag = ada_has_turkish_help
     }
     define_general = {
-      name = "içIN∑V FzUÿû∑V"  # Sayid Mehmed
+      name = "içIN∑V FzUÿû∑V" 	# Sayid Mehmed
       shock = 3
       fire = 3
       manuever = 2
@@ -1843,6 +1911,7 @@ country_event = {
     }
   }
 }
+#Ethiopia gets support from the Portugese
 country_event = {
   id = flavor_eth.50
   title = flavor_eth.50.t
@@ -1884,7 +1953,7 @@ country_event = {
       clr_country_flag = eth_portuguese_help
     }
     define_general = {
-      name = "KQÃëØeXb˙e æè KOlö"  # CristÛv„o da Gama
+      name = "KQÃëØeXb˙e æè KOlö" 	# CristÛv„o da Gama
       shock = 4
       fire = 4
       manuever = 3
@@ -1897,6 +1966,7 @@ country_event = {
     }
   }
 }
+#End of the conflicts between Portugal and the Ottomans
 country_event = {
   id = flavor_eth.51
   title = flavor_eth.51.t
@@ -1927,6 +1997,7 @@ country_event = {
     }
   }
 }
+#Jesuit activities in Ethiopia
 country_event = {
   id = flavor_eth.52
   title = flavor_eth.52.t
@@ -1958,6 +2029,7 @@ country_event = {
     months = 120
   }
   option = {
+    #Banish them from Ethiopia
     name = flavor_eth.52.a
     reverse_add_opinion = {
       who = POR
@@ -1978,6 +2050,7 @@ country_event = {
     }
   }
   option = {
+    #Tolerate them
     name = flavor_eth.52.b
     random_owned_province = {
       limit = {
@@ -2018,6 +2091,7 @@ country_event = {
     }
   }
   option = {
+    #Convert to Catholicism 
     name = flavor_eth.52.c
     change_religion = catholic
     capital_scope = {
@@ -2063,6 +2137,8 @@ country_event = {
     }
   }
 }
+#Mechanic events
+#Itinerant Capital Mechanic - Move the capital
 country_event = {
   id = flavor_eth.100
   title = none
@@ -2118,6 +2194,7 @@ country_event = {
     }
   }
 }
+#Itinerant Capital Mechanic - Remove flag
 country_event = {
   id = flavor_eth.101
   title = none
@@ -2159,6 +2236,7 @@ country_event = {
     }
   }
 }
+#Itinerant Capital Mechanic - Give modifier to new province
 country_event = {
   id = flavor_eth.102
   title = none
@@ -2201,6 +2279,7 @@ country_event = {
     }
   }
 }
+#Itinerant Capital - AI event because I don't trust the AI to handle this and I want them to survive until 1820
 country_event = {
   id = flavor_eth.103
   title = none
@@ -2226,7 +2305,7 @@ country_event = {
       is_city = yes
     }
     ai = yes
-    is_at_war = no
+    is_at_war = no 	# You cannot move your capital during war
   }
   mean_time_to_happen = {
     days = 1

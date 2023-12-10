@@ -20,6 +20,7 @@ swe_scandinavian_colonialism_mission_slot = {
   }
   has_country_shield = yes
   swe_engelbrekt_rebellion = {
+    #aka. build troops
     icon = mission_engelbrekt
     position = 1
     required_missions = {}
@@ -57,10 +58,7 @@ swe_scandinavian_colonialism_mission_slot = {
   swe_conquer_scania = {
     icon = mission_conquer_skaneland
     position = 3
-    required_missions = {
-      swe_engelbrekt_rebellion
-      swe_declare_independence
-    }
+    required_missions = { swe_engelbrekt_rebellion swe_declare_independence }
     provinces_to_highlight = {
       area = skaneland_area
       NOT = {
@@ -164,9 +162,7 @@ swe_scandinavian_colonialism_mission_slot = {
   swe_claim_norwegian_crown = {
     icon = mission_conquer_norway
     position = 4
-    required_missions = {
-      swe_conquer_scania
-    }
+    required_missions = { swe_conquer_scania }
     provinces_to_highlight = {
       OR = {
         area = eastern_norway
@@ -257,9 +253,7 @@ swe_scandinavian_colonialism_mission_slot = {
   swe_fall_of_denmark = {
     icon = mission_end_the_sound_toll
     position = 5
-    required_missions = {
-      swe_claim_norwegian_crown
-    }
+    required_missions = { swe_claim_norwegian_crown }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -511,9 +505,7 @@ swe_scandinavian_colonialism_mission_slot = {
   swe_forest_expansion = {
     icon = mission_expand_into_the_forest
     position = 9
-    required_missions = {
-      swe_handle_the_sami
-    }
+    required_missions = { swe_handle_the_sami }
     provinces_to_highlight = {
       OR = {
         has_terrain = woods
@@ -752,9 +744,7 @@ swe_north_america_mission_slot = {
   swe_colonize_delaware = {
     icon = mission_swedish_colonialism
     position = 11
-    required_missions = {
-      swe_colonial_ambitions
-    }
+    required_missions = { swe_colonial_ambitions }
     provinces_to_highlight = {
       OR = {
         colonial_region = colonial_canada
@@ -807,9 +797,7 @@ swe_north_america_mission_slot = {
   swe_colonize_caribbeans = {
     icon = mission_colonize_the_caribbean
     position = 12
-    required_missions = {
-      swe_colonize_delaware
-    }
+    required_missions = { swe_colonize_delaware }
     provinces_to_highlight = {
       colonial_region = colonial_the_carribean
       OR = {
@@ -845,7 +833,7 @@ swe_north_america_mission_slot = {
             has_port = yes
           }
           create_flagship = {
-            name = "‹s Q"  # Kronan
+            name = "‹s Q" 	# Kronan
             type = heavy_ship
           }
         }
@@ -882,9 +870,7 @@ swe_rnw_mission_slot = {
   swe_colonize_random_new_world = {
     icon = mission_settlers_north_america
     position = 12
-    required_missions = {
-      swe_colonial_ambitions
-    }
+    required_missions = { swe_colonial_ambitions }
     provinces_to_highlight = {
       continent = new_world
       has_discovered = ROOT
@@ -1008,9 +994,7 @@ swe_diplomacy_mission_slot = {
   swe_swedish_pommerania = {
     icon = mission_conquer_pomerania
     position = 3
-    required_missions = {
-      swe_declare_independence
-    }
+    required_missions = { swe_declare_independence }
     provinces_to_highlight = {
       OR = {
         area = hinter_pommern_area
@@ -1191,9 +1175,7 @@ swe_diplomacy_mission_slot = {
   swe_bane_of_the_hansa = {
     icon = mission_bane_of_the_hansa
     position = 4
-    required_missions = {
-      swe_swedish_pommerania
-    }
+    required_missions = { swe_swedish_pommerania }
     provinces_to_highlight = {
       province_id = 45
     }
@@ -1218,6 +1200,7 @@ swe_diplomacy_mission_slot = {
       }
     }
     effect = {
+      #Maybe a new event for Lübeck?
       if = {
         limit = {
           owns_or_non_sovereign_subject_of = 45
@@ -1304,9 +1287,7 @@ swe_diplomacy_mission_slot = {
   swe_the_swedish_trade_fleet = {
     icon = mission_establish_high_seas_navy
     position = 8
-    required_missions = {
-      swe_high_income
-    }
+    required_missions = { swe_high_income }
     provinces_to_highlight = {}
     trigger = {
       num_of_light_ship = 12
@@ -1323,9 +1304,7 @@ swe_diplomacy_mission_slot = {
   swe_create_baltic_trde_posts = {
     icon = mission_dominate_home_trade_node
     position = 9
-    required_missions = {
-      swe_the_swedish_trade_fleet
-    }
+    required_missions = { swe_the_swedish_trade_fleet }
     provinces_to_highlight = {
       OR = {
         region = scandinavia_region
@@ -1389,10 +1368,7 @@ swe_diplomacy_mission_slot = {
   swe_monopolize_the_baltic_sea = {
     icon = mission_rb_monopolize_the_channel
     position = 10
-    required_missions = {
-      swe_create_baltic_trde_posts
-      swe_industrialize_sweden
-    }
+    required_missions = { swe_create_baltic_trde_posts swe_industrialize_sweden }
     provinces_to_highlight = {
       OR = {
         AND = {
@@ -1469,9 +1445,7 @@ swe_diplomacy_mission_slot = {
   swe_colonize_west_african_coast = {
     icon = mission_west_african_ports
     position = 11
-    required_missions = {
-      swe_colonial_ambitions
-    }
+    required_missions = { swe_colonial_ambitions }
     provinces_to_highlight = {
       region = guinea_region
       NOT = {
@@ -1515,9 +1489,7 @@ swe_diplomacy_mission_slot = {
   swe_beyond_africa = {
     icon = mission_coromandel_trade
     position = 12
-    required_missions = {
-      swe_colonize_west_african_coast
-    }
+    required_missions = { swe_colonize_west_african_coast }
     provinces_to_highlight = {
       has_discovered = ROOT
       NOT = {
@@ -1619,9 +1591,7 @@ swe_kalmar_union_mission_slot = {
   swe_the_livonian_order = {
     icon = mission_the_livonians
     position = 3
-    required_missions = {
-      swe_declare_independence
-    }
+    required_missions = { swe_declare_independence }
     provinces_to_highlight = {
       OR = {
         area = estonia_ingria_area
@@ -1839,9 +1809,7 @@ swe_kalmar_union_mission_slot = {
   swe_the_teutonic_order = {
     icon = mission_conquer_prussia
     position = 5
-    required_missions = {
-      swe_the_livonian_order
-    }
+    required_missions = { swe_the_livonian_order }
     provinces_to_highlight = {
       OR = {
         area = east_prussia_area
@@ -2041,9 +2009,7 @@ swe_kalmar_union_mission_slot = {
   swe_dominium_maris_baltici = {
     icon = mission_baltic_empire
     position = 6
-    required_missions = {
-      swe_the_teutonic_order
-    }
+    required_missions = { swe_the_teutonic_order }
     provinces_to_highlight = {
       OR = {
         region = baltic_region
@@ -2649,9 +2615,7 @@ swe_kalmar_union_mission_slot = {
   swe_develop_dalaskogen = {
     icon = mission_dalaskogen
     position = 8
-    required_missions = {
-      swe_high_income
-    }
+    required_missions = { swe_high_income }
     provinces_to_highlight = {
       province_id = 8
     }
@@ -2681,9 +2645,7 @@ swe_kalmar_union_mission_slot = {
   swe_industrialize_sweden = {
     icon = mission_iron_and_copper
     position = 9
-    required_missions = {
-      swe_develop_dalaskogen
-    }
+    required_missions = { swe_develop_dalaskogen }
     provinces_to_highlight = {
       OR = {
         province_id = 8
@@ -2756,9 +2718,7 @@ swe_kalmar_union_mission_slot = {
   swe_the_carolean_units = {
     icon = mission_gustavus
     position = 11
-    required_missions = {
-      swe_reforms_of_vasa
-    }
+    required_missions = { swe_reforms_of_vasa }
     provinces_to_highlight = {}
     trigger = {
       reform_level = 5
@@ -2773,7 +2733,9 @@ swe_kalmar_union_mission_slot = {
           mil_power_cost = 800
           if = {
             limit = {
+              #Promote Advisors - +2
               has_dlc = "Cradle of Civilization"
+              #National Focus - +2
               has_dlc = "Res Publica"
               has_dlc = "Common Sense"
             }
@@ -2820,9 +2782,7 @@ swe_kalmar_union_mission_slot = {
   swe_drill_the_carolean = {
     icon = mission_the_caroleans
     position = 12
-    required_missions = {
-      swe_the_carolean_units
-    }
+    required_missions = { swe_the_carolean_units }
     provinces_to_highlight = {}
     trigger = {
       num_of_carolean = 20
@@ -2910,9 +2870,7 @@ swe_internal_slot = {
   swe_conquest_of_novgorod = {
     icon = mission_novgorod_the_great
     position = 3
-    required_missions = {
-      swe_declare_independence
-    }
+    required_missions = { swe_declare_independence }
     provinces_to_highlight = {
       OR = {
         province_id = 33
@@ -2961,8 +2919,8 @@ swe_internal_slot = {
         dip_reward = yes
       }
       310 = {
-        change_province_name = "—SÆY RÒR"  # Hólmgarðr
-        rename_capital = "—SÆY RÒR"  # Hólmgarðr
+        change_province_name = "—SÆY RÒR" 	# Hólmgarðr
+        rename_capital = "—SÆY RÒR" 	# Hólmgarðr
         custom_tooltip = will_upgrade_center_of_trade_to_level_2_tt
         hidden_effect = {
           if = {
@@ -3039,9 +2997,7 @@ swe_internal_slot = {
   swe_conquest_of_moscovy = {
     icon = mission_take_over_the_kremlin
     position = 4
-    required_missions = {
-      swe_conquest_of_novgorod
-    }
+    required_missions = { swe_conquest_of_novgorod }
     provinces_to_highlight = {
       province_id = 295
       OR = {
@@ -3190,9 +3146,7 @@ swe_internal_slot = {
   swe_a_swedish_great_power = {
     icon = mission_swedish_great_power
     position = 8
-    required_missions = {
-      swe_dabble_into_european_diplomacy
-    }
+    required_missions = { swe_dabble_into_european_diplomacy }
     provinces_to_highlight = {
       owner = {
         NOT = {
@@ -3236,9 +3190,7 @@ swe_internal_slot = {
   swe_swedish_universities = {
     icon = misison_uppsala_university
     position = 9
-    required_missions = {
-      swe_the_theologian_discussions
-    }
+    required_missions = { swe_the_theologian_discussions }
     provinces_to_highlight = {
       OR = {
         province_id = 1
@@ -3321,9 +3273,7 @@ swe_internal_slot = {
   swe_finnish_swedish_relations = {
     icon = mission_the_finns
     position = 11
-    required_missions = {
-      swe_reforms_of_vasa
-    }
+    required_missions = { swe_reforms_of_vasa }
     provinces_to_highlight = {
       owned_by = ROOT
       OR = {
@@ -3370,9 +3320,7 @@ swe_internal_slot = {
   swe_steel_for_the_hakkapeliitta = {
     icon = mission_the_hakkapeliitta
     position = 12
-    required_missions = {
-      swe_finnish_swedish_relations
-    }
+    required_missions = { swe_finnish_swedish_relations }
     provinces_to_highlight = {
       culture = finnish
       OR = {
@@ -3518,12 +3466,10 @@ swe_swedish_military_mission_slot = {
     }
   }
   swe_a_new_dynasty = {
+    #Get Stability and Legitimacy up
     icon = mission_restore_faith_in_the_throne
     position = 3
-    required_missions = {
-      swe_gain_support_from_estates
-      swe_declare_independence
-    }
+    required_missions = { swe_gain_support_from_estates swe_declare_independence }
     provinces_to_highlight = {}
     trigger = {
       stability = 1
@@ -3568,9 +3514,7 @@ swe_swedish_military_mission_slot = {
   swe_the_polish_throne = {
     icon = mission_the_polish_throne
     position = 5
-    required_missions = {
-      swe_a_new_dynasty
-    }
+    required_missions = { swe_a_new_dynasty }
     provinces_to_highlight = {
       if = {
         limit = {
@@ -3727,6 +3671,7 @@ swe_swedish_military_mission_slot = {
         }
       }
       else = {
+        #Fallback case
         custom_trigger_tooltip = {
           tooltip = swe_the_polish_throne_tt
           mission_completed = swe_a_new_dynasty
@@ -3853,6 +3798,7 @@ swe_swedish_military_mission_slot = {
         add_splendor = 400
       }
       else_if = {
+        #Fallback case
         limit = {
           mission_completed = swe_a_new_dynasty
           NOT = {
@@ -3958,9 +3904,7 @@ swe_religion_start_mission_slot = {
   swe_the_theologian_discussions = {
     icon = mission_religious
     position = 8
-    required_missions = {
-      swe_dabble_into_european_diplomacy
-    }
+    required_missions = { swe_dabble_into_european_diplomacy }
     provinces_to_highlight = {}
     trigger = {
       if = {
@@ -4107,9 +4051,7 @@ swe_religion_mission_slot = {
   swe_first_religion_mission = {
     icon = mission_unknown_mission
     position = 9
-    required_missions = {
-      swe_the_theologian_discussions
-    }
+    required_missions = { swe_the_theologian_discussions }
     provinces_to_highlight = {}
     trigger = {
       custom_trigger_tooltip = {
@@ -4221,9 +4163,7 @@ swe_religion_mission_slot = {
   swe_second_religion_mission = {
     icon = mission_unknown_mission
     position = 10
-    required_missions = {
-      swe_first_religion_mission
-    }
+    required_missions = { swe_first_religion_mission }
     provinces_to_highlight = {}
     trigger = {
       custom_trigger_tooltip = {
@@ -4399,9 +4339,7 @@ swe_religion_mission_slot = {
   swe_third_religion_mission = {
     icon = mission_unknown_mission
     position = 11
-    required_missions = {
-      swe_second_religion_mission
-    }
+    required_missions = { swe_second_religion_mission }
     provinces_to_highlight = {}
     trigger = {
       custom_trigger_tooltip = {
@@ -4604,9 +4542,7 @@ swe_religion_mission_slot = {
   swe_fourth_religion_mission = {
     icon = mission_unknown_mission
     position = 12
-    required_missions = {
-      swe_third_religion_mission
-    }
+    required_missions = { swe_third_religion_mission }
     provinces_to_highlight = {}
     trigger = {
       custom_trigger_tooltip = {
@@ -4771,9 +4707,7 @@ swe_catholic_mission_slot = {
   swe_envies_of_the_pope = {
     icon = sway_the_pope
     position = 9
-    required_missions = {
-      swe_the_theologian_discussions
-    }
+    required_missions = { swe_the_theologian_discussions }
     provinces_to_highlight = {
       owned_by = PAP
     }
@@ -4825,9 +4759,7 @@ swe_catholic_mission_slot = {
   swe_catholic_bulwark = {
     icon = shield_of_christendom
     position = 10
-    required_missions = {
-      swe_envies_of_the_pope
-    }
+    required_missions = { swe_envies_of_the_pope }
     provinces_to_highlight = {
       owned_by = ROOT
       NOT = {
@@ -4872,9 +4804,7 @@ swe_catholic_mission_slot = {
   swe_catholic_30_years_war = {
     icon = the_holy_league
     position = 11
-    required_missions = {
-      swe_catholic_bulwark
-    }
+    required_missions = { swe_catholic_bulwark }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5003,9 +4933,7 @@ swe_catholic_mission_slot = {
   swe_catholic_defender_of_faith = {
     icon = defender_of_the_faith
     position = 12
-    required_missions = {
-      swe_catholic_30_years_war
-    }
+    required_missions = { swe_catholic_30_years_war }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5080,9 +5008,7 @@ swe_protestant_mission_slot = {
   swe_defenders_of_the_reformers = {
     icon = join_the_reformation
     position = 9
-    required_missions = {
-      swe_the_theologian_discussions
-    }
+    required_missions = { swe_the_theologian_discussions }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5127,9 +5053,7 @@ swe_protestant_mission_slot = {
   swe_protestant_sword = {
     icon = mission_sword_of_the_reformation
     position = 10
-    required_missions = {
-      swe_defenders_of_the_reformers
-    }
+    required_missions = { swe_defenders_of_the_reformers }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5248,9 +5172,7 @@ swe_protestant_mission_slot = {
   swe_protestant_30_years_war = {
     icon = mission_thirty_years_war
     position = 11
-    required_missions = {
-      swe_protestant_sword
-    }
+    required_missions = { swe_protestant_sword }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5335,9 +5257,7 @@ swe_protestant_mission_slot = {
   swe_protestant_defender_of_faith = {
     icon = mission_sweden_and_the_reformation
     position = 12
-    required_missions = {
-      swe_protestant_30_years_war
-    }
+    required_missions = { swe_protestant_30_years_war }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5415,9 +5335,7 @@ swe_humanist_mission_slot = {
   swe_commune_between_the_religions = {
     icon = mission_hands_praying
     position = 9
-    required_missions = {
-      swe_the_theologian_discussions
-    }
+    required_missions = { swe_the_theologian_discussions }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5444,9 +5362,7 @@ swe_humanist_mission_slot = {
   swe_revoke_clergy_power = {
     icon = mission_rb_control_state_religion
     position = 10
-    required_missions = {
-      swe_commune_between_the_religions
-    }
+    required_missions = { swe_commune_between_the_religions }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5487,9 +5403,7 @@ swe_humanist_mission_slot = {
   swe_multi_cultural_kingdom = {
     icon = mission_eastern_european_city
     position = 11
-    required_missions = {
-      swe_revoke_clergy_power
-    }
+    required_missions = { swe_revoke_clergy_power }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5517,9 +5431,7 @@ swe_humanist_mission_slot = {
   swe_establish_peace_of_westphalia = {
     icon = peace_in_europe
     position = 12
-    required_missions = {
-      swe_multi_cultural_kingdom
-    }
+    required_missions = { swe_multi_cultural_kingdom }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5587,9 +5499,7 @@ swe_norse_mission_slot = {
   swe_worship_the_gods = {
     icon = mission_norse_faith
     position = 9
-    required_missions = {
-      swe_the_theologian_discussions
-    }
+    required_missions = { swe_the_theologian_discussions }
     provinces_to_highlight = {
       owned_by = ROOT
       OR = {
@@ -5630,9 +5540,7 @@ swe_norse_mission_slot = {
   swe_spread_the_norse_faith = {
     icon = mission_longships
     position = 10
-    required_missions = {
-      swe_worship_the_gods
-    }
+    required_missions = { swe_worship_the_gods }
     provinces_to_highlight = {
       region = scandinavia_region
       NOT = {
@@ -5670,9 +5578,7 @@ swe_norse_mission_slot = {
   swe_devastate_the_christians = {
     icon = mission_devastate_christianity
     position = 11
-    required_missions = {
-      swe_spread_the_norse_faith
-    }
+    required_missions = { swe_spread_the_norse_faith }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -5716,9 +5622,7 @@ swe_norse_mission_slot = {
   swe_a_viking_empire = {
     icon = mission_the_varangians
     position = 12
-    required_missions = {
-      swe_devastate_the_christians
-    }
+    required_missions = { swe_devastate_the_christians }
     provinces_to_highlight = {
       owned_by = ROOT
       NOT = {
@@ -5744,6 +5648,10 @@ swe_norse_mission_slot = {
     }
   }
 }
+#Scandinavian-Swedish missions
+#Missions are ordered in certain "Packs" you unlock for forming Scandinvaia as Sweden
+#These packs are designed around the Swedish mission tree in order to avoid missions with repeating conditions or stacking rewards
+#Swedish Mission Pack - Caroliner, Hakkapeliitta and Gustavus ambitions
 swe_sca_hre_slot = {
   slot = 2
   generic = no
@@ -5851,7 +5759,7 @@ swe_sca_hre_slot = {
         }
         add_country_modifier = {
           name = "succesful_bid_for_imperial_crown"
-          duration = 5475
+          duration = 5475 	# 15 years
         }
       }
       else_if = {
@@ -5956,9 +5864,7 @@ swe_sca_hre_slot = {
   }
   swe_sca_low_countries = {
     icon = interest_of_holland
-    required_missions = {
-      swe_sca_secure_electors
-    }
+    required_missions = { swe_sca_secure_electors }
     position = 14
     provinces_to_highlight = {
       OR = {
@@ -6126,9 +6032,7 @@ swe_sca_caroliner_slot = {
   has_country_shield = yes
   swe_sca_refine_the_carolaen_training = {
     icon = mission_refine_the_carolean
-    required_missions = {
-      swe_drill_the_carolean
-    }
+    required_missions = { swe_drill_the_carolean }
     position = 4
     provinces_to_highlight = {
       owned_by = ROOT
@@ -6187,9 +6091,7 @@ swe_sca_caroliner_slot = {
   }
   swe_sca_north_germany = {
     icon = centralized_empire
-    required_missions = {
-      swe_sca_secure_electors
-    }
+    required_missions = { swe_sca_secure_electors }
     position = 14
     provinces_to_highlight = {
       OR = {
@@ -6492,6 +6394,7 @@ swe_sca_caroliner_slot = {
       add_country_modifier = {
         name = sca_hegemony_over_germany
         duration = -1
+        #desc = sca_hegemony_over_germany_tt
       }
       custom_tooltip = swe_sca_emperor_of_the_germans_tt
       hidden_effect = {
@@ -6551,9 +6454,7 @@ swe_sca_hakkapeliitta_slot = {
   has_country_shield = yes
   swe_sca_incoroporate_the_hakkapeliita = {
     icon = mission_lead_the_hakkapeliitta
-    required_missions = {
-      swe_steel_for_the_hakkapeliitta
-    }
+    required_missions = { swe_steel_for_the_hakkapeliitta }
     position = 13
     provinces_to_highlight = {
       owned_by = ROOT
@@ -6601,9 +6502,7 @@ swe_sca_hakkapeliitta_slot = {
   }
   swe_sca_north_borderlands = {
     icon = mission_cannons_firing
-    required_missions = {
-      swe_sca_secure_electors
-    }
+    required_missions = { swe_sca_secure_electors }
     position = 14
     provinces_to_highlight = {
       AND = {
@@ -6665,6 +6564,8 @@ swe_sca_hakkapeliitta_slot = {
     }
   }
 }
+#Norwegian development missions (has to be placed here or else mission positions are ruined)
+#Scandinavian Develop Pack for Denmark + Sweden
 sca_swe_industrialize_norway_slot = {
   slot = 1
   generic = no
@@ -6737,9 +6638,7 @@ sca_swe_industrialize_norway_slot = {
   sca_expand_norwegian_infrastructure = {
     icon = mission_develop_the_scandes
     position = 14
-    required_missions = {
-      sca_invest_into_work_forces
-    }
+    required_missions = { sca_invest_into_work_forces }
     provinces_to_highlight = {
       OR = {
         area = northern_norway
@@ -6788,9 +6687,7 @@ sca_swe_industrialize_norway_slot = {
   sca_intensify_metal_production = {
     icon = mission_industrial_forging
     position = 15
-    required_missions = {
-      sca_expand_norwegian_infrastructure
-    }
+    required_missions = { sca_expand_norwegian_infrastructure }
     provinces_to_highlight = {
       OR = {
         trade_goods = copper
@@ -6830,6 +6727,7 @@ sca_swe_industrialize_norway_slot = {
     }
   }
 }
+#Danish/Swedish Mission Pack - Competent Fleet
 swe_sca_competent_fleet_slot = {
   slot = 5
   generic = no
@@ -6929,9 +6827,7 @@ swe_sca_competent_fleet_slot = {
   }
   swe_sca_hire_norwegian_sailors = {
     icon = mission_sailor_boat
-    required_missions = {
-      swe_sca_learn_from_the_danes
-    }
+    required_missions = { swe_sca_learn_from_the_danes }
     position = 14
     provinces_to_highlight = {
       if = {
@@ -7016,9 +6912,7 @@ swe_sca_competent_fleet_slot = {
   }
   swe_sca_the_unsinkable_vasa_ii = {
     icon = mission_vasa_ship
-    required_missions = {
-      swe_sca_hire_norwegian_sailors
-    }
+    required_missions = { swe_sca_hire_norwegian_sailors }
     position = 15
     provinces_to_highlight = {}
     trigger = {

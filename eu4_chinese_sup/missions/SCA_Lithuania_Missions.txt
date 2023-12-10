@@ -15,9 +15,7 @@ lit_dlc_1 = {
   has_country_shield = yes
   lit_emblem_faith = {
     icon = catholic_confraternity
-    required_missions = {
-      lit_stabilize_interior
-    }
+    required_missions = { lit_stabilize_interior }
     position = 2
     trigger = {
       estate_loyalty = {
@@ -67,6 +65,14 @@ lit_dlc_1 = {
           add_cardinal = yes
         }
       }
+      #if = { #Commented out, as there was an error regarding Saint Casimir identity
+      #limit = { 
+      #religion = catholic
+      #has_ruler_flag = lit_casimir_alive_flag 
+      #}
+      #custom_tooltip = lit_canonize_casimir_tt
+      #country_event = { id = flavor_lit.14 }
+      #}
       else_if = {
         limit = {
           religion = orthodox
@@ -84,9 +90,7 @@ lit_dlc_1 = {
   }
   lit_privilege_vilnius = {
     icon = immaculate_government
-    required_missions = {
-      lit_emblem_faith
-    }
+    required_missions = { lit_emblem_faith }
     position = 3
     trigger = {
       religious_unity = 1
@@ -127,9 +131,7 @@ lit_dlc_1 = {
   }
   sca_lit_religious_unity = {
     icon = mission_luther_theses
-    required_missions = {
-      lit_privilege_vilnius
-    }
+    required_missions = { lit_privilege_vilnius }
     position = 4
     trigger = {
       religious_unity = 1
@@ -177,9 +179,7 @@ lit_dlc_1 = {
   }
   lit_jesuit_academy = {
     icon = mission_lit_jesuit_academy
-    required_missions = {
-      sca_lit_religious_unity
-    }
+    required_missions = { sca_lit_religious_unity }
     position = 5
     provinces_to_highlight = {
       province_id = 272
@@ -307,9 +307,7 @@ lit_dlc_2 = {
   }
   lit_reform_magdeburg_laws = {
     icon = mission_lit_reform_magdeburg_laws
-    required_missions = {
-      lit_emblem_faith
-    }
+    required_missions = { lit_emblem_faith }
     position = 3
     trigger = {
       num_of_owned_provinces_with = {
@@ -382,9 +380,7 @@ lit_dlc_2 = {
   }
   lit_elective_courts = {
     icon = reform_the_nomocanon
-    required_missions = {
-      sca_lit_religious_unity
-    }
+    required_missions = { sca_lit_religious_unity }
     position = 5
     trigger = {
       reform_level = 4
@@ -404,10 +400,7 @@ lit_dlc_2 = {
   }
   lit_enforce_tribunal = {
     icon = reform_bergordnung
-    required_missions = {
-      lit_elective_courts
-      lit_jesuit_academy
-    }
+    required_missions = { lit_elective_courts lit_jesuit_academy }
     position = 6
     trigger = {
       OR = {
@@ -462,9 +455,7 @@ lit_dlc_3 = {
   has_country_shield = yes
   sca_lit_ukraine_2 = {
     icon = mission_eastern_european_city
-    required_missions = {
-      lit_stabilize_interior
-    }
+    required_missions = { lit_stabilize_interior }
     position = 2
     provinces_to_highlight = {
       province_id = 280
@@ -520,9 +511,7 @@ lit_dlc_3 = {
   }
   sca_lit_develop_sluck = {
     icon = mission_noble_council
-    required_missions = {
-      sca_lit_ukraine_2
-    }
+    required_missions = { sca_lit_ukraine_2 }
     position = 3
     provinces_to_highlight = {
       province_id = 4545
@@ -572,10 +561,7 @@ lit_dlc_3 = {
   }
   lit_build_manufactories = {
     icon = industrialized_rhineland
-    required_missions = {
-      sca_lit_develop_sluck
-      lit_reform_magdeburg_laws
-    }
+    required_missions = { sca_lit_develop_sluck lit_reform_magdeburg_laws }
     position = 4
     trigger = {
       num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -754,9 +740,7 @@ lit_dlc_4 = {
   }
   sca_lit_conquer_crimea = {
     icon = mission_sca_lit_conquer_crimea
-    required_missions = {
-      sca_mission_lit_cossacks
-    }
+    required_missions = { sca_mission_lit_cossacks }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -796,9 +780,7 @@ lit_dlc_4 = {
   }
   lit_harness_steppes = {
     icon = mission_lit_harness_steppes
-    required_missions = {
-      sca_lit_conquer_crimea
-    }
+    required_missions = { sca_lit_conquer_crimea }
     position = 4
     trigger = {
       development_in_provinces = {
@@ -1116,9 +1098,7 @@ lit_dlc_5 = {
   }
   lit_march_west = {
     icon = mission_lit_march_west
-    required_missions = {
-      lit_settle_polish_inheritance
-    }
+    required_missions = { lit_settle_polish_inheritance }
     position = 2
     trigger = {
       OR = {
@@ -1201,9 +1181,7 @@ lit_dlc_5 = {
   }
   sca_lit_defeat_the_livonian_order = {
     icon = mission_livonian_knights
-    required_missions = {
-      lit_march_west
-    }
+    required_missions = { lit_march_west }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1294,9 +1272,7 @@ lit_dlc_5 = {
   }
   sca_mission_lit_polish_union = {
     icon = mission_sca_mission_lit_polish_union
-    required_missions = {
-      sca_lit_defeat_the_livonian_order
-    }
+    required_missions = { sca_lit_defeat_the_livonian_order }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -1388,9 +1364,7 @@ lit_dlc_5 = {
   }
   sca_lit_conquer_novgorod = {
     icon = mission_conquer_novgorod
-    required_missions = {
-      sca_mission_lit_polish_union
-    }
+    required_missions = { sca_mission_lit_polish_union }
     position = 5
     provinces_to_highlight = {
       area = novgorod_area
@@ -1503,9 +1477,7 @@ lit_dlc_5 = {
   }
   sca_lit_conquer_muscovy = {
     icon = mission_defeat_muscovy
-    required_missions = {
-      sca_lit_conquer_novgorod
-    }
+    required_missions = { sca_lit_conquer_novgorod }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -1552,7 +1524,7 @@ lit_dlc_5 = {
         }
         RUS = {
           define_ruler = {
-            name = "·Vs|yrÌ‘"  # Dmitry
+            name = "·Vs|yrÌ‘" 	# Dmitry
           }
         }
       }
@@ -1565,7 +1537,7 @@ lit_dlc_5 = {
         }
         MOS = {
           define_ruler = {
-            name = "·Vs|yrÌ‘"  # Dmitry
+            name = "·Vs|yrÌ‘" 	# Dmitry
           }
         }
       }

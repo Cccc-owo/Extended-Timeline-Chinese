@@ -1,4 +1,8 @@
 namespace = counts_feud
+########################################
+# Count's Feud
+########################################
+# Support monarch or pretender?
 country_event = {
   id = counts_feud.1
   title = counts_feud.1.t
@@ -62,8 +66,8 @@ country_event = {
         size = 1
         win = yes
         unrest = 20
-        leader = "KQÌ‘¯eXbV"  # Christoffer
-        leader_dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+        leader = "KQÌ‘¯eXbV" 	# Christoffer
+        leader_dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
       }
       clr_province_flag = counts_feud
     }
@@ -91,8 +95,8 @@ country_event = {
       adm = 2
       dip = 3
       mil = 2
-      name = "KQÌ‘¯eXbV"  # Christoffer
-      dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+      name = "KQÌ‘¯eXbV" 	# Christoffer
+      dynasty = "¯Q eYS‰v!X" 	# von Oldenburg
     }
     if = {
       limit = {
@@ -115,6 +119,7 @@ country_event = {
     clr_country_flag = counts_feud_start_event
   }
 }
+# Manors burned down!
 country_event = {
   id = counts_feud.2
   title = counts_feud.2.t
@@ -168,6 +173,7 @@ country_event = {
     }
   }
 }
+# Event for Sweden! Send forces to help?
 country_event = {
   id = counts_feud.3
   title = counts_feud.3.t
@@ -220,7 +226,7 @@ country_event = {
     }
   }
   option = {
-    name = counts_feud.3.a
+    name = counts_feud.3.a 	# Help rebels
     DAN = {
       if = {
         limit = {
@@ -282,7 +288,7 @@ country_event = {
     }
   }
   option = {
-    name = counts_feud.3.b
+    name = counts_feud.3.b 	# Help monarch
     DAN = {
       random_owned_province = {
         limit = {
@@ -308,10 +314,11 @@ country_event = {
     }
   }
   option = {
-    name = counts_feud.3.c
+    name = counts_feud.3.c 	# Do nothing
     add_prestige = -1
   }
 }
+# DAN: SWE helped rebels!?
 country_event = {
   id = counts_feud.4
   title = counts_feud.4.t
@@ -328,6 +335,7 @@ country_event = {
     }
   }
 }
+# DAN: SWE helped us!
 country_event = {
   id = counts_feud.5
   title = counts_feud.5.t
@@ -344,6 +352,7 @@ country_event = {
     }
   }
 }
+# Skipper Clement captured
 country_event = {
   id = counts_feud.6
   title = counts_feud.6.t
@@ -365,6 +374,7 @@ country_event = {
     }
   }
 }
+# The Aftermath
 country_event = {
   id = counts_feud.100
   title = counts_feud.100.t

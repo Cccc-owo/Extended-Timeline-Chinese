@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Vijayanagar
+# written by Sara Wendel-÷rtqvist
+########################################
 namespace = flavor_vij
 normal_or_historical_nations = yes
+# Mysore Revolts
 country_event = {
   id = flavor_vij.1
   title = "flavor_vij.EVTNAME1"
@@ -13,10 +18,10 @@ country_event = {
     NOT = {
       is_year = 1600
     }
-    owns = 533
+    owns = 533 	#  Mysore
     NOT = {
       exists = MYS
-    }
+    } 	# Mysore
     any_owned_province = {
       is_core = MYS
     }
@@ -25,7 +30,7 @@ country_event = {
     months = 2000
   }
   option = {
-    name = "flavor_vij.EVTOPTA1"
+    name = "flavor_vij.EVTOPTA1" 	#  Try to surpress revolt
     random_owned_province = {
       limit = {
         is_core = MYS
@@ -34,6 +39,7 @@ country_event = {
     }
   }
 }
+#Kanaka Dasa
 country_event = {
   id = flavor_vij.2
   title = "flavor_vij.EVTNAME2"
@@ -51,22 +57,23 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA2"
+    name = "flavor_vij.EVTOPTA2" 	# This man is vital to our empire!
     add_meritocracy_effect = yes
     define_advisor = {
       type = philosopher
-      name = "aS±êaS∑æè(Ñ"  # Kanaka Dasa
+      name = "aS±êaS∑æè(Ñ" 	# Kanaka Dasa
       discount = yes
       skill = 3
     }
     add_innovativeness_small_effect = yes
   }
   option = {
-    name = "flavor_vij.EVTOPTB2"
+    name = "flavor_vij.EVTOPTB2" 	# Send him out to spread his wisdom throughout our land
     add_adm_power = 50
     add_innovativeness_big_effect = yes
   }
 }
+#Dodda Ganeshana Gudi
 country_event = {
   id = flavor_vij.3
   title = "flavor_vij.EVTNAME3"
@@ -80,6 +87,7 @@ country_event = {
       is_year = 1580
     }
     has_regency = no
+    #Ruler: at least one stat above 4
     NOT = {
       has_ruler_modifier = vij_veerabhadra_temple
     }
@@ -88,18 +96,19 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA3"
+    name = "flavor_vij.EVTOPTA3" 	# Sponsor the temple
     add_years_of_income = -0.2
     add_ruler_modifier = {
       name = vij_dodda_ganeshana_gudi_temple
     }
   }
   option = {
-    name = "flavor_vij.EVTOPTB3"
+    name = "flavor_vij.EVTOPTB3" 	# Send help
     add_adm_power = -20
     add_prestige = 10
   }
 }
+#Veerabhadra Temple
 country_event = {
   id = flavor_vij.4
   title = "flavor_vij.EVTNAME4"
@@ -126,17 +135,18 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA3"
+    name = "flavor_vij.EVTOPTA3" 	# Sponsor the temple
     add_years_of_income = -0.2
     add_ruler_modifier = {
       name = vij_veerabhadra_temple
     }
   }
   option = {
-    name = "flavor_vij.EVTOPTB3"
+    name = "flavor_vij.EVTOPTB3" 	# Send help
     add_adm_power = 50
   }
 }
+#Vellore Fort
 country_event = {
   id = flavor_vij.5
   title = "flavor_vij.EVTNAME5"
@@ -151,6 +161,7 @@ country_event = {
     }
     mil = 4
     1949 = {
+      #Rayalaseema
       can_build = fort_16th
       num_free_building_slots = 1
     }
@@ -159,9 +170,10 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA5"
+    name = "flavor_vij.EVTOPTA5" 	# Build the fort
     add_treasury = -30
     1949 = {
+      #Rayalaseema
       if = {
         limit = {
           has_building = fort_15th
@@ -173,10 +185,11 @@ country_event = {
     add_mil_power = 25
   }
   option = {
-    name = "flavor_vij.EVTOPTB5"
+    name = "flavor_vij.EVTOPTB5" 	# Ignore it
     add_prestige = -5
   }
 }
+# Krishnadevaraya
 country_event = {
   id = flavor_vij.6
   title = "flavor_vij.EVTNAME6"
@@ -209,12 +222,13 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA6"
+    name = "flavor_vij.EVTOPTA6" 	#  The Gods smile upon us!
     add_adm_power = 50
     add_dip_power = 50
     add_mil_power = 50
   }
 }
+# Molla
 country_event = {
   id = flavor_vij.7
   title = "flavor_vij.EVTNAME7"
@@ -233,15 +247,16 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA7"
+    name = "flavor_vij.EVTOPTA7" 	# Support her!
     add_years_of_income = -0.05
     add_adm_power = 50
   }
   option = {
-    name = "flavor_vij.EVTOPTB7"
+    name = "flavor_vij.EVTOPTB7" 	# Ignore her
     add_prestige = -1
   }
 }
+# Tallapaka Tirumalamma
 country_event = {
   id = flavor_vij.8
   title = "flavor_vij.EVTNAME8"
@@ -260,15 +275,16 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA7"
+    name = "flavor_vij.EVTOPTA7" 	# Support her!
     add_years_of_income = -0.05
     add_dip_power = 50
   }
   option = {
-    name = "flavor_vij.EVTOPTB7"
+    name = "flavor_vij.EVTOPTB7" 	# Ignore her
     add_prestige = -1
   }
 }
+# Astadiggajas
 country_event = {
   id = flavor_vij.9
   title = "flavor_vij.EVTNAME9"
@@ -305,7 +321,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA9"
+    name = "flavor_vij.EVTOPTA9" 	# Let the Prabandha Age begin!
     add_years_of_income = -0.15
     add_country_modifier = {
       name = vij_astadiggajas
@@ -313,11 +329,12 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_vij.EVTOPTB9"
+    name = "flavor_vij.EVTOPTB9" 	# Focus on other things
     add_mil_power = 20
     add_prestige = -1
   }
 }
+# Vyasatirtha
 country_event = {
   id = flavor_vij.10
   title = "flavor_vij.EVTNAME10"
@@ -335,19 +352,24 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_vij.EVTOPTA2"
+    name = "flavor_vij.EVTOPTA2" 	# This man is vital to our empire!
     define_advisor = {
       type = philosopher
-      name = "◊k6wZ∑–cSTX"  # Vyasatirtha
+      name = "◊k6wZ∑–cSTX" 	# Vyasatirtha
       discount = yes
       skill = 2
     }
   }
   option = {
-    name = "flavor_vij.EVTOPTB2"
+    name = "flavor_vij.EVTOPTB2" 	# Send him out to spread his wisdom throughout our land
     add_adm_power = 50
   }
 }
+########################################
+# Additional Flavor Events for Vijayanagar
+# written by Henrik Lohmander
+########################################
+#The Tamil Trade Guilds
 country_event = {
   id = flavor_vij.11
   title = "flavor_vij.11.t"
@@ -368,7 +390,7 @@ country_event = {
     months = 60
   }
   option = {
-    name = "flavor_vij.11.a"
+    name = "flavor_vij.11.a" 	# We can allow them greater autonomy.
     ai_chance = {
       factor = 1
     }
@@ -385,7 +407,7 @@ country_event = {
     set_country_flag = had_tamil_trade_event
   }
   option = {
-    name = "flavor_vij.11.b"
+    name = "flavor_vij.11.b" 	# We need to keep these shopkeepers on a tight leash
     ai_chance = {
       factor = 0
     }
@@ -402,6 +424,7 @@ country_event = {
     set_country_flag = had_tamil_trade_event
   }
 }
+#Vaduga
 country_event = {
   id = flavor_vij.12
   title = "flavor_vij.12.t"
@@ -422,11 +445,11 @@ country_event = {
     months = 168
   }
   option = {
-    name = "flavor_vij.12.a"
+    name = "flavor_vij.12.a" 	# Ignore the Tamil protests.
     every_owned_province = {
       limit = {
         culture = tamil
-        has_port = no
+        has_port = no 	# Only the highlands
       }
       add_province_modifier = {
         name = "vadugan_settlement"
@@ -436,11 +459,11 @@ country_event = {
     set_country_flag = had_vaduga_event
   }
   option = {
-    name = "flavor_vij.12.b"
+    name = "flavor_vij.12.b" 	# Help them defend their homes.
     every_owned_province = {
       limit = {
         culture = tamil
-        has_port = no
+        has_port = no 	# Only the highlands
       }
       add_local_autonomy = 25
       add_province_modifier = {
@@ -451,6 +474,7 @@ country_event = {
     set_country_flag = had_vaduga_event
   }
 }
+#Rise of Tamil Grandee (Chellappa Saluva Narasimha Nayaka)
 country_event = {
   id = flavor_vij.13
   title = "flavor_vij.13.t"
@@ -472,12 +496,12 @@ country_event = {
     months = 50
   }
   option = {
-    name = "flavor_vij.13.a"
+    name = "flavor_vij.13.a" 	# Keep your friends close and your enemies closer
     ai_chance = {
       factor = 50
     }
     define_general = {
-      name = "RáU^ ôlÅúÊt"  # Chellappa Saluva
+      name = "RáU^ ôlÅúÊt" 	# Chellappa Saluva
       shock = 4
       fire = 3
       manuever = 4
@@ -485,7 +509,7 @@ country_event = {
     set_country_flag = chellappas_ambition
   }
   option = {
-    name = "flavor_vij.13.b"
+    name = "flavor_vij.13.b" 	# Try to limit his influence to his Tamil power base.
     ai_chance = {
       factor = 50
     }
@@ -503,12 +527,12 @@ country_event = {
       limit = {
         culture = tamil
       }
-      add_local_autonomy = 15
+      add_local_autonomy = 15 	# This benefits other Tamil chiefs and powerholders too.
     }
     set_country_flag = chellappa_local
   }
   option = {
-    name = "flavor_vij.13.c"
+    name = "flavor_vij.13.c" 	# Strike now to crush him before he grows too strong.
     ai_chance = {
       factor = 0
     }
@@ -520,8 +544,8 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        leader = "RáU^"  # Chellappa
-        leader_dynasty = "(ÑbSÊt"  # Saluva
+        leader = "RáU^" 	# Chellappa
+        leader_dynasty = "(ÑbSÊt" 	# Saluva
       }
     }
     random_owned_province = {
@@ -536,6 +560,7 @@ country_event = {
     set_country_flag = chellappa_mission_flag
   }
 }
+#Revolt of Chellappa (pretender)
 country_event = {
   id = flavor_vij.14
   title = "flavor_vij.14.t"
@@ -548,7 +573,7 @@ country_event = {
       flag = chellappas_ambition
       days = 1825
     }
-    has_leader = "RáU^ ôlÅúÊt"  # Chellappa Saluva
+    has_leader = "RáU^ ôlÅúÊt" 	# Chellappa Saluva
     any_owned_province = {
       culture = tamil
     }
@@ -557,7 +582,7 @@ country_event = {
     months = 24
   }
   option = {
-    name = "flavor_vij.14.a"
+    name = "flavor_vij.14.a" 	# Ok
     if = {
       limit = {
         any_owned_province = {
@@ -573,8 +598,8 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "±êWÁP√ã"  # Narasimha
-          leader_dynasty = "(ÑbSÊt"  # Saluva
+          leader = "±êWÁP√ã" 	# Narasimha
+          leader_dynasty = "(ÑbSÊt" 	# Saluva
         }
       }
     }
@@ -586,19 +611,20 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "±êWÁP√ã"  # Narasimha
-          leader_dynasty = "(ÑbSÊt"  # Saluva
+          leader = "±êWÁP√ã" 	# Narasimha
+          leader_dynasty = "(ÑbSÊt" 	# Saluva
         }
       }
     }
     kill_leader = {
-      type = "RáU^ ôlÅúÊt"  # Chellappa Saluva
+      type = "RáU^ ôlÅúÊt" 	# Chellappa Saluva
     }
     add_stability = -1
     clr_country_flag = chellappas_ambition
     set_country_flag = chellappa_mission_flag
   }
 }
+#Revolt of Chellappa (nationalist)
 country_event = {
   id = flavor_vij.15
   title = "flavor_vij.15.t"
@@ -620,7 +646,7 @@ country_event = {
     months = 24
   }
   option = {
-    name = "flavor_vij.15.a"
+    name = "flavor_vij.15.a" 	# Ok
     random_owned_province = {
       limit = {
         culture = tamil
@@ -653,8 +679,8 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 3
-        leader = "RáU^"  # Chellappa
-        leader_dynasty = "(ÑbSÊt"  # Saluva
+        leader = "RáU^" 	# Chellappa
+        leader_dynasty = "(ÑbSÊt" 	# Saluva
       }
     }
     add_stability = -1
@@ -662,6 +688,7 @@ country_event = {
     set_country_flag = chellappa_mission_flag
   }
 }
+#Chellappa Marginalized
 country_event = {
   id = flavor_vij.16
   title = "flavor_vij.16.t"
@@ -688,7 +715,7 @@ country_event = {
     months = 24
   }
   option = {
-    name = "flavor_vij.16.a"
+    name = "flavor_vij.16.a" 	# Ok
     add_stability_or_adm_power = yes
     clr_country_flag = chellappa_local
     random_owned_province = {
@@ -700,6 +727,7 @@ country_event = {
     set_country_flag = chellappa_mission_flag
   }
 }
+#Pulicat
 country_event = {
   id = flavor_vij.17
   title = "flavor_vij.17.t"
@@ -708,7 +736,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = VIJ
-    owns = 539
+    owns = 539 	# Pulicat
     OR = {
       AND = {
         NOT = {
@@ -729,7 +757,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_vij.17.a"
+    name = "flavor_vij.17.a" 	# Ok
     add_dip_power = 25
     539 = {
       add_province_modifier = {
@@ -739,6 +767,7 @@ country_event = {
     }
   }
 }
+#Tirupati Temple Complex
 country_event = {
   id = flavor_vij.18
   title = "flavor_vij.18.t"
@@ -766,7 +795,7 @@ country_event = {
     months = 180
   }
   option = {
-    name = "flavor_vij.18.a"
+    name = "flavor_vij.18.a" 	# Let us patronize this temple
     trigger = {
       NOT = {
         has_country_flag = tirupati_flag
@@ -781,7 +810,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_vij.18.b"
+    name = "flavor_vij.18.b" 	# We shall make a more modest contribution
     trigger = {
       NOT = {
         has_country_flag = tirupati_flag
@@ -790,7 +819,7 @@ country_event = {
     add_prestige = 10
   }
   option = {
-    name = "flavor_vij.18.a"
+    name = "flavor_vij.18.a" 	# Let us patronize this temple
     trigger = {
       has_country_flag = tirupati_flag
     }
@@ -802,6 +831,7 @@ country_event = {
     }
   }
 }
+#Abd-ur-Razzaq
 country_event = {
   id = flavor_vij.19
   title = "flavor_vij.19.t"
@@ -829,6 +859,11 @@ country_event = {
     }
   }
 }
+########################################
+# Yet more Flavor Events for Vijayanagar
+# written by Daniel Tolman
+########################################
+# Chakulya Imperial Capital
 country_event = {
   id = flavor_vij.20
   title = "flavor_vij.20.t"
@@ -843,6 +878,7 @@ country_event = {
     days = 1
   }
   option = {
+    # keep capital in Vijayanagar
     name = "flavor_vij.20.a"
     trigger = {
       capital = 541
@@ -854,20 +890,22 @@ country_event = {
     }
   }
   option = {
+    # move capital to Bidar, rename to Kalyana
     name = "flavor_vij.20.b"
     trigger = {
       owns = 1948
     }
     1948 = {
       move_capital_effect = yes
-      change_province_name = "aS≈ñ±ê"  # Kalyana
-      rename_capital = "aS≈ñ±ê"  # Kalyana
+      change_province_name = "aS≈ñ±ê" 	# Kalyana
+      rename_capital = "aS≈ñ±ê" 	# Kalyana
       add_base_tax = 2
       add_base_production = 2
       add_base_manpower = 2
     }
   }
   option = {
+    # keep capital where it is if not vijayanagar
     name = "flavor_vij.20.c"
     trigger = {
       NOT = {
@@ -881,6 +919,7 @@ country_event = {
     }
   }
 }
+# City of Victory
 country_event = {
   id = flavor_vij.21
   title = "flavor_vij.21.t"

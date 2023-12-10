@@ -1,4 +1,5 @@
 namespace = dai_disaster
+# Start event - Pick a side
 country_event = {
   id = dai_disaster.1
   title = dai_disaster.1.t
@@ -7,6 +8,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
+    # Le (or Nguyen if later) dynasty in the south
     name = dai_disaster.1.a
     trigger = {
       num_of_owned_provinces_with = {
@@ -29,11 +31,11 @@ country_event = {
       limit = {
         current_age = age_of_reformation
         NOT = {
-          dynasty = "Î"  # Le
+          dynasty = "Î" 	# Le
         }
       }
       define_ruler = {
-        dynasty = "Î"  # Le
+        dynasty = "Î" 	# Le
       }
     }
     else_if = {
@@ -42,11 +44,11 @@ country_event = {
           current_age = age_of_reformation
         }
         NOT = {
-          dynasty = ".–"  # Nguyen
+          dynasty = ".–" 	# Nguyen
         }
       }
       define_ruler = {
-        dynasty = ".–"  # Nguyen
+        dynasty = ".–" 	# Nguyen
       }
     }
     country_event = {
@@ -54,6 +56,7 @@ country_event = {
     }
   }
   option = {
+    # Mac (or Trinh if later) dynasty in the north
     name = dai_disaster.1.b
     trigger = {
       num_of_owned_provinces_with = {
@@ -78,11 +81,11 @@ country_event = {
       limit = {
         current_age = age_of_reformation
         NOT = {
-          dynasty = "«ƒ"  # Mac
+          dynasty = "«ƒ" 	# Mac
         }
       }
       define_ruler = {
-        dynasty = "«ƒ"  # Mac
+        dynasty = "«ƒ" 	# Mac
       }
     }
     else_if = {
@@ -91,11 +94,11 @@ country_event = {
           current_age = age_of_reformation
         }
         NOT = {
-          dynasty = "Ñ"  # Trinh
+          dynasty = "Ñ" 	# Trinh
         }
       }
       define_ruler = {
-        dynasty = "Ñ"  # Trinh
+        dynasty = "Ñ" 	# Trinh
       }
     }
     country_event = {
@@ -103,6 +106,7 @@ country_event = {
     }
   }
 }
+# Dai Viet splits in two
 country_event = {
   id = dai_disaster.2
   title = dai_disaster.2.t
@@ -113,6 +117,7 @@ country_event = {
   fire_only_once = yes
   immediate = {
     hidden_effect = {
+      # Create Northern country if Dai Viet picked the Southern Dynasty
       if = {
         limit = {
           has_country_flag = dai_southern_dynasty
@@ -144,12 +149,12 @@ country_event = {
               current_age = age_of_reformation
             }
             define_ruler = {
-              dynasty = "«ƒ"  # Mac
+              dynasty = "«ƒ" 	# Mac
             }
           }
           else = {
             define_ruler = {
-              dynasty = "Ñ"  # Trinh
+              dynasty = "Ñ" 	# Trinh
             }
           }
         }
@@ -180,6 +185,7 @@ country_event = {
           save_event_target_as = vietnam_rival_dynasty
         }
       }
+      # Create Southern country if Dai Viet picked the Northern Dynasty
       else = {
         every_owned_province = {
           limit = {
@@ -206,12 +212,12 @@ country_event = {
               current_age = age_of_reformation
             }
             define_ruler = {
-              dynasty = "Î"  # Le
+              dynasty = "Î" 	# Le
             }
           }
           else = {
             define_ruler = {
-              dynasty = ".–"  # Nguyen
+              dynasty = ".–" 	# Nguyen
             }
           }
         }
@@ -244,6 +250,7 @@ country_event = {
     }
   }
   option = {
+    # for the southern dynasty
     name = dai_disaster.2.a
     trigger = {
       has_country_flag = dai_southern_dynasty
@@ -285,6 +292,7 @@ country_event = {
     }
   }
   option = {
+    # for the northern dynasty
     name = dai_disaster.2.a
     trigger = {
       has_country_flag = dai_northern_dynasty
@@ -326,6 +334,7 @@ country_event = {
     }
   }
 }
+# Warning event
 country_event = {
   id = dai_disaster.3
   title = dai_disaster.3.t

@@ -1,10 +1,12 @@
 namespace = granada_civil_war
+# granada_civil_war
 country_event = {
   id = granada_civil_war.1
   title = "granada_civil_war.1.t"
   desc = "granada_civil_war.1.desc"
   picture = CIVIL_WAR_eventPicture
   major = yes
+  # this = country seeing popup, from = original event scope
   major_trigger = {
     capital_scope = {
       OR = {
@@ -34,8 +36,8 @@ country_event = {
             type = pretender_rebels
             religion = ROOT
             size = 2
-            leader = "O.ty"  # Yûsuf
-            leader_dynasty = "HY¯eS"  # Nasrid
+            leader = "O.ty" 	# Yûsuf
+            leader_dynasty = "HY¯eS" 	# Nasrid
             win = yes
           }
           add_local_autonomy = 25
@@ -47,8 +49,8 @@ country_event = {
             type = pretender_rebels
             religion = ROOT
             size = 2
-            leader = "O.ty"  # Yûsuf
-            leader_dynasty = "HY¯eS"  # Nasrid
+            leader = "O.ty" 	# Yûsuf
+            leader_dynasty = "HY¯eS" 	# Nasrid
           }
         }
       }
@@ -56,10 +58,11 @@ country_event = {
     }
   }
   option = {
-    name = "granada_civil_war.1.a"
+    name = "granada_civil_war.1.a" 	#  Crush them!
     add_prestige = -10
   }
 }
+# End of Civil War
 country_event = {
   id = granada_civil_war.2
   title = "granada_civil_war.2.t"
@@ -99,7 +102,7 @@ country_event = {
     }
     define_heir = {
       dynasty = ROOT
-      name = "O.ty"  # Yûsuf
+      name = "O.ty" 	# Yûsuf
       claim = 50
       age = 45
       male = yes

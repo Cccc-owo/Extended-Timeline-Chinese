@@ -1,5 +1,7 @@
+# Flavour events for Navarra by Daniel Tolman
 namespace = flavor_nav
 normal_or_historical_nations = yes
+# Terranova
 country_event = {
   id = flavor_nav.1
   title = flavor_nav.1.t
@@ -8,6 +10,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   option = {
+    # Relocate to Newfoundland
     name = flavor_nav.1.a
     trigger = {
       owns = 2573
@@ -17,8 +20,8 @@ country_event = {
     }
     2573 = {
       move_capital_effect = yes
-      rename_capital = "yrÉbú‹æt"  # Terranova
-      change_province_name = "yrÉbú‹æt"  # Terranova
+      rename_capital = "yrÉbú‹æt" 	# Terranova
+      change_province_name = "yrÉbú‹æt" 	# Terranova
       change_culture = ROOT
       change_religion = ROOT
       add_base_tax = 2
@@ -37,16 +40,18 @@ country_event = {
     }
   }
   option = {
+    # Develop the town
     name = flavor_nav.1.b
     2573 = {
-      rename_capital = "yrÉbú‹æt"  # Terranova
-      change_province_name = "yrÉbú‹æt"  # Terranova
+      rename_capital = "yrÉbú‹æt" 	# Terranova
+      change_province_name = "yrÉbú‹æt" 	# Terranova
       add_base_tax = 1
       add_base_production = 1
       add_base_manpower = 1
     }
   }
 }
+# Aragon-Navarra Succession on startup
 country_event = {
   id = flavor_nav.2
   title = flavor_nav.2.t
@@ -67,6 +72,7 @@ country_event = {
     name = flavor_nav.2.a
   }
 }
+# Succession event for Aragon
 country_event = {
   id = flavor_nav.4
   title = flavor_nav.4.t
@@ -164,6 +170,7 @@ country_event = {
     }
   }
 }
+# For Navarra if player
 country_event = {
   id = flavor_nav.5
   title = flavor_nav.4.t
@@ -172,6 +179,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
+    # Navarra should be senior!
     name = flavor_nav.5.a
     add_casus_belli = {
       type = cb_restore_personal_union
@@ -200,6 +208,7 @@ country_event = {
     }
   }
   option = {
+    # Accept union with Aragon
     name = flavor_nav.5.b
     ARA = {
       create_union = NAV

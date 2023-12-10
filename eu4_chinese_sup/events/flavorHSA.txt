@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Hansa
+# written by Sara Wendel-ýÿrtqvist
+########################################
 namespace = flavor_hsa
 normal_or_historical_nations = yes
+# Georg Giese
 country_event = {
   id = flavor_hsa.1
   title = "flavor_hsa.EVTNAME1"
@@ -7,13 +12,13 @@ country_event = {
   picture = ADVISOR_eventPicture
   fire_only_once = yes
   trigger = {
-    always = no
+    always = no 	# Outdated event
     tag = HSA
     is_year = 1520
     NOT = {
       is_year = 1562
     }
-    owns = 43
+    owns = 43 	# Danzig
   }
   mean_time_to_happen = {
     months = 200
@@ -24,7 +29,7 @@ country_event = {
     add_prestige = 10
     define_advisor = {
       type = trader
-      name = "<heYS<h 	Týl"  # Georg Giese
+      name = "<heYS<h 	Týl" 	# Georg Giese
       culture = prussian
       discount = yes
       skill = 3
@@ -32,6 +37,7 @@ country_event = {
     }
   }
 }
+# Shipbuilding technology
 country_event = {
   id = flavor_hsa.2
   title = "flavor_hsa.EVTNAME2"
@@ -42,8 +48,8 @@ country_event = {
     NOT = {
       is_year = 1500
     }
-    owns = 43
-    owns = 45
+    owns = 43 	# Danzig
+    owns = 45 	# Lýÿbeck
     NOT = {
       has_ruler_modifier = hsa_stop_shipbuilding_technology
     }
@@ -90,6 +96,7 @@ country_event = {
     }
   }
 }
+# Hold a Tagfahrt
 country_event = {
   id = flavor_hsa.3
   title = "flavor_hsa.EVTNAME3"
@@ -132,6 +139,7 @@ country_event = {
     }
   }
 }
+# Heinrich Sudermann
 country_event = {
   id = flavor_hsa.4
   title = "flavor_hsa.EVTNAME4"
@@ -149,7 +157,7 @@ country_event = {
     months = 200
     modifier = {
       factor = 0.8
-      owns = 85
+      owns = 85 	# Kýÿln
     }
   }
   option = {
@@ -157,7 +165,7 @@ country_event = {
     add_dip_power = 100
     define_advisor = {
       type = trader
-      name = "wmàVÌ‘^ Ï‚·Vüf"  # Heinrich Sudermann
+      name = "wmàVÌ‘^ Ï‚·Vüf" 	# Heinrich Sudermann
       culture = hessian
       discount = yes
       skill = 3
@@ -165,6 +173,7 @@ country_event = {
   }
 }
 country_event = {
+  #Novgorod Kontor Event
   id = flavor_hsa.5
   title = flavor_hsa.5.t
   desc = flavor_hsa.5.d
@@ -200,6 +209,7 @@ country_event = {
   }
 }
 country_event = {
+  #Herring Currents of the Lubeckbothe
   id = flavor_hsa.6
   title = flavor_hsa.6.t
   desc = flavor_hsa.6.d
@@ -259,6 +269,7 @@ country_event = {
   }
 }
 country_event = {
+  #Docks & Wharfs of Bryggen
   id = flavor_hsa.7
   title = flavor_hsa.7.t
   desc = flavor_hsa.7.d
@@ -267,6 +278,7 @@ country_event = {
   option = {
     name = flavor_hsa.7.a
     1975 = {
+      #North Sea
       add_trade_modifier = {
         who = ROOT
         duration = -1
@@ -299,6 +311,7 @@ country_event = {
   }
 }
 country_event = {
+  #Hanseatic Town of Visby
   id = flavor_hsa.8
   title = flavor_hsa.8.t
   desc = flavor_hsa.8.d
@@ -325,6 +338,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Danzig Confederation
   id = flavor_hsa.9
   title = flavor_hsa.9.t
   desc = flavor_hsa.9.d
@@ -356,6 +370,7 @@ country_event = {
   }
 }
 country_event = {
+  #Town Hall of Lubeck 
   id = flavor_hsa.10
   title = flavor_hsa.10.t
   desc = flavor_hsa.10.d
@@ -371,6 +386,7 @@ country_event = {
   }
 }
 country_event = {
+  #The City Gates of Lubeck 
   id = flavor_hsa.11
   title = flavor_hsa.11.t
   desc = flavor_hsa.11.d
@@ -387,6 +403,7 @@ country_event = {
   }
 }
 country_event = {
+  #Theory of Mercantilism
   id = flavor_hsa.12
   title = flavor_hsa.12.t
   desc = flavor_hsa.12.d
@@ -401,6 +418,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Hanseatic Cog
   id = flavor_hsa.13
   title = flavor_hsa.13.t
   desc = flavor_hsa.13.d
@@ -416,6 +434,7 @@ country_event = {
   }
 }
 country_event = {
+  #Adler von Lubeck 
   id = flavor_hsa.14
   title = flavor_hsa.14.t
   desc = flavor_hsa.14.d
@@ -432,6 +451,7 @@ country_event = {
   }
 }
 country_event = {
+  #Trade Privileges of the Hansa 
   id = flavor_hsa.16
   title = flavor_hsa.16.t
   desc = flavor_hsa.16.d
@@ -514,6 +534,7 @@ country_event = {
   }
 }
 country_event = {
+  #A Royal Offer for Danzig  
   id = flavor_hsa.17
   title = flavor_hsa.17.t
   desc = flavor_hsa.17.d
@@ -644,6 +665,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Stalhof Kontor 
   id = flavor_hsa.18
   title = flavor_hsa.18.t
   desc = flavor_hsa.18.d
@@ -707,6 +729,7 @@ country_event = {
   }
 }
 country_event = {
+  #Coin and Diplomacy 
   id = flavor_hsa.19
   title = flavor_hsa.19.t
   desc = flavor_hsa.19.d
@@ -724,6 +747,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Lifeblood of Lubeck 
   id = flavor_hsa.20
   title = flavor_hsa.20.t
   desc = flavor_hsa.20.d
@@ -768,6 +792,7 @@ country_event = {
   }
 }
 country_event = {
+  #George Giese
   id = flavor_hsa.21
   title = flavor_hsa.21.t
   desc = flavor_hsa.21.d
@@ -786,7 +811,7 @@ country_event = {
   option = {
     name = flavor_hsa.21.a
     define_ruler = {
-      name = "<heYS<h 	Týl"  # Georg Giese
+      name = "<heYS<h 	Týl" 	# Georg Giese
       age = 35
       change_adm = 1
       change_dip = 2
@@ -804,7 +829,7 @@ country_event = {
   option = {
     name = flavor_hsa.21.b
     define_advisor = {
-      name = "<heYS<h 	Týl"  # Georg Giese
+      name = "<heYS<h 	Týl" 	# Georg Giese
       type = trader
       cost_multiplier = 0.5
       skill = 3
@@ -816,6 +841,7 @@ country_event = {
   }
 }
 country_event = {
+  #Albrecht Moldenhauer
   id = flavor_hsa.22
   title = flavor_hsa.22.t
   desc = flavor_hsa.22.d
@@ -832,7 +858,7 @@ country_event = {
   option = {
     name = flavor_hsa.22.a
     define_advisor = {
-      name = "?–S^÷–^yr «ƒS‰vjŒS"  # Albrecht Moldenhauer
+      name = "?–S^÷–^yr «ƒS‰vjŒS" 	# Albrecht Moldenhauer
       type = trader
       cost_multiplier = 0.5
     }
@@ -840,6 +866,7 @@ country_event = {
   }
 }
 country_event = {
+  #Grevens Fejde
   id = flavor_hsa.23
   title = flavor_hsa.23.t
   desc = flavor_hsa.23.d
@@ -977,6 +1004,7 @@ country_event = {
   }
 }
 country_event = {
+  #Hans Holbein the Younger
   id = flavor_hsa.25
   title = flavor_hsa.25.t
   desc = flavor_hsa.25.d
@@ -996,7 +1024,7 @@ country_event = {
   option = {
     name = flavor_hsa.25.a
     define_advisor = {
-      name = "SIl¯e —SÜbàV"  # Hans Holbein the Younger
+      name = "SIl¯e —SÜbàV" 	# Hans Holbein the Younger
       type = artist
       cost_multiplier = 0.5
       skill = 3
@@ -1006,6 +1034,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Crowning of a Queen
   id = flavor_hsa.26
   title = flavor_hsa.26.t
   desc = flavor_hsa.26.d

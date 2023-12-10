@@ -1,5 +1,9 @@
+########################################
+# Major Flavor Events                  #
+########################################
 namespace = flavor_orl
 normal_or_historical_nations = yes
+# Retrial of Joan of Arc finds her innocent
 country_event = {
   id = flavor_orl.4
   title = flavor_orl.4.t
@@ -22,6 +26,7 @@ country_event = {
     set_global_flag = maid_of_orleans
   }
 }
+# Protestants destroy the statue of Joan
 country_event = {
   id = flavor_orl.6
   title = flavor_orl.6.t
@@ -30,7 +35,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     has_global_flag = maid_of_orleans
-    owns = 184
+    owns = 184 	#  Orleans
     culture_group = french
     religion_group = christian
     current_age = age_of_reformation
@@ -59,6 +64,7 @@ country_event = {
       }
     }
   }
+  # Rebuild the statue (Catholic)
   option = {
     name = flavor_orl.6.o.a
     trigger = {
@@ -70,6 +76,7 @@ country_event = {
       duration = 3650
     }
   }
+  # Rebuild the statue (Heretic)
   option = {
     name = flavor_orl.6.o.b
     trigger = {
@@ -83,6 +90,7 @@ country_event = {
       duration = 3650
     }
   }
+  # Drop the matter
   option = {
     name = flavor_orl.6.o.c
     if = {
@@ -103,6 +111,7 @@ country_event = {
     clr_global_flag = maid_of_orleans
   }
 }
+# Catholic league approves of us joining
 country_event = {
   id = flavor_orl.8
   title = flavor_orl.8.t
@@ -112,7 +121,7 @@ country_event = {
   trigger = {
     has_global_flag = maid_of_orleans
     has_dlc = "Art of War"
-    owns = 184
+    owns = 184 	#  Orleans
     culture_group = french
     religion_group = christian
     hre_leagues_enabled = yes
@@ -131,6 +140,7 @@ country_event = {
     }
   }
 }
+# Beatification of Joan
 country_event = {
   id = flavor_orl.10
   title = flavor_orl.10.t
@@ -143,7 +153,7 @@ country_event = {
       current_age = age_of_absolutism
       current_age = age_of_revolutions
     }
-    owns = 184
+    owns = 184 	#  Orleans
     culture_group = french
     religion = catholic
     exists = PAP
@@ -151,6 +161,7 @@ country_event = {
       has_cardinal = yes
     }
   }
+  # Late game bonus for FRA, early Absolutism with extra fun for ORL runs
   mean_time_to_happen = {
     years = 100
     modifier = {
@@ -162,6 +173,7 @@ country_event = {
       has_country_flag = had_maid_of_orleans
     }
   }
+  # Saint Joan, pray for us
   option = {
     name = flavor_orl.10.o.a
     add_country_modifier = {
@@ -181,17 +193,20 @@ country_event = {
     }
   }
 }
+# The Militant Order of Saint Joan
 country_event = {
   id = flavor_orl.11
   title = flavor_orl.11.t
   desc = flavor_orl.11.d
   picture = BATTLE_eventPicture
   is_triggered_only = yes
+  # Accept their service
   option = {
     name = flavor_orl.11.o.a
     custom_tooltip = flavor_orl.11.o.a.t
     set_country_flag = militant_order_of_saint_joan
   }
+  # Have them take over
   option = {
     name = flavor_orl.11.o.b
     add_country_modifier = {
@@ -212,7 +227,7 @@ country_event = {
         is_female = no
       }
       define_ruler = {
-        name = "©‹Z"  # Jeanne
+        name = "©‹Z" 	# Jeanne
         change_mil = 3
         female = yes
       }

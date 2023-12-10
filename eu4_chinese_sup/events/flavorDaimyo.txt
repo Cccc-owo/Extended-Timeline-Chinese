@@ -1,17 +1,33 @@
+########################################
+# Events for the various Daimyos of Japan
+# And the Shogunate/a United Japan
+# written by Henrik Lohmander
+########################################
 namespace = flavor_daimyo
 normal_or_historical_nations = yes
+#Tag Specific:
+#Hosokawa: 3
+#Yamana: 1
+#Uesugi: 2
+#Takeda: 1
+#Hatakeyama: 1
+#Shiba: 1
+#Oda: 4
+#Ryuku: 1
+#Ouchi: 1
+#Rise of the Chosokabe
 country_event = {
   id = flavor_daimyo.1
   title = flavor_daimyo.1.t
   desc = flavor_daimyo.1.d
   picture = COURT_eventPicture
-  fire_only_once = yes
+  fire_only_once = yes 	# No resurrections 
   trigger = {
     NOT = {
       is_year = 1560
     }
     has_reform = shogunate
-    owns = 1819
+    owns = 1819 	# Tosa
     NOT = {
       tag = HSK
     }
@@ -21,7 +37,7 @@ country_event = {
     months = 24
   }
   option = {
-    name = flavor_daimyo.1.a
+    name = flavor_daimyo.1.a 	# Let us empower the Chosokabe.
     ai_chance = {
       factor = 90
       modifier = {
@@ -58,8 +74,8 @@ country_event = {
       }
       adopt_reform_progress = ROOT
       define_ruler = {
-        name = "CQ≤N"  # Motochika
-        dynasty = "ïóRbËê"  # Chosokabe
+        name = "CQ≤N" 	# Motochika
+        dynasty = "ïóRbËê" 	# Chosokabe
         adm = 4
         dip = 4
         mil = 5
@@ -67,7 +83,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.1.b
+    name = flavor_daimyo.1.b 	# We will keep it under our own control.
     ai_chance = {
       factor = 10
     }
@@ -85,19 +101,20 @@ country_event = {
     }
   }
 }
+#Rise of the Later Hojo
 country_event = {
   id = flavor_daimyo.2
   title = flavor_daimyo.2.t
   desc = flavor_daimyo.2.d
   picture = COURT_eventPicture
-  fire_only_once = yes
+  fire_only_once = yes 	# No resurrections 
   trigger = {
     has_reform = shogunate
     is_year = 1490
     NOT = {
       is_year = 1515
     }
-    owns = 1028
+    owns = 1028 	# Musashi
     NOT = {
       tag = UES
     }
@@ -108,7 +125,7 @@ country_event = {
     months = 24
   }
   option = {
-    name = flavor_daimyo.2.a
+    name = flavor_daimyo.2.a 	# It is time for the Hojo to Shine.
     ai_chance = {
       factor = 90
       modifier = {
@@ -144,8 +161,8 @@ country_event = {
       }
       adopt_reform_progress = ROOT
       define_ruler = {
-        name = "ÈeëN"  # Soun
-        dynasty = "Sag"  # Hojo
+        name = "ÈeëN" 	# Soun
+        dynasty = "Sag" 	# Hojo
         adm = 5
         dip = 4
         mil = 5
@@ -153,7 +170,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.2.b
+    name = flavor_daimyo.2.b 	# Let us strike down these traitors.
     ai_chance = {
       factor = 10
     }
@@ -169,26 +186,27 @@ country_event = {
       }
       spawn_rebels = {
         type = nationalist_rebels
-        leader = "ÈeëN Sag"  # Soun Hojo
+        leader = "ÈeëN Sag" 	# Soun Hojo
         friend = HJO
         size = 1
       }
     }
   }
 }
+#The Mori Clan
 country_event = {
   id = flavor_daimyo.3
   title = flavor_daimyo.3.t
   desc = flavor_daimyo.3.d
   picture = BATTLE_eventPicture
-  fire_only_once = yes
+  fire_only_once = yes 	# No resurrections 
   trigger = {
     has_reform = shogunate
     is_year = 1490
     NOT = {
       is_year = 1550
     }
-    owns = 1825
+    owns = 1825 	# Aki
     NOT = {
       tag = YMN
     }
@@ -199,7 +217,7 @@ country_event = {
     months = 24
   }
   option = {
-    name = flavor_daimyo.3.a
+    name = flavor_daimyo.3.a 	# Aki is a Mori province.
     ai_chance = {
       factor = 90
       modifier = {
@@ -236,8 +254,8 @@ country_event = {
       }
       adopt_reform_progress = ROOT
       define_ruler = {
-        name = "CQ1S"  # Motonari
-        dynasty = "€k)R"  # Mori
+        name = "CQ1S" 	# Motonari
+        dynasty = "€k)R" 	# Mori
         adm = 5
         dip = 6
         mil = 4
@@ -245,7 +263,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.3.b
+    name = flavor_daimyo.3.b 	# We cannot tolerate such insolence!
     ai_chance = {
       factor = 10
     }
@@ -261,20 +279,21 @@ country_event = {
       }
       spawn_rebels = {
         type = nationalist_rebels
-        leader = "CQ1S €k)R"  # Motonari Mori
+        leader = "CQ1S €k)R" 	# Motonari Mori
         friend = MRI
         size = 1
       }
     }
   }
 }
+#Shiba Yoshikado
 country_event = {
   id = flavor_daimyo.4
   title = flavor_daimyo.4.t
   desc = flavor_daimyo.4.d
   picture = BATTLE_eventPicture
   fire_only_once = yes
-  is_triggered_only = yes
+  is_triggered_only = yes 	# On new monarch
   trigger = {
     tag = SBA
     has_reform = daimyo
@@ -286,7 +305,7 @@ country_event = {
     }
     NOT = {
       has_country_flag = shiba_yoshikado_flag
-    }
+    } 	# Set in history
   }
   immediate = {
     hidden_effect = {
@@ -300,18 +319,18 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.4.a
+    name = flavor_daimyo.4.a 	# Stay true to [Root.Monarch.GetName]
     event_target:yoshikado_pretender_province = {
       spawn_rebels = {
         size = 1
         type = pretender_rebels
-        leader = "IN…^"  # Yoshikado
-        leader_dynasty = "Øe‚l"  # Shiba
+        leader = "IN…^" 	# Yoshikado
+        leader_dynasty = "Øe‚l" 	# Shiba
       }
     }
   }
   option = {
-    name = flavor_daimyo.4.b
+    name = flavor_daimyo.4.b 	# Support Yoshikado
     capital_scope = {
       if = {
         limit = {
@@ -321,6 +340,7 @@ country_event = {
           type = nationalist_rebels
           size = 1
           separatists_target = ASA
+          #this is needed because the only ASA province is also the capital of Shiba
           should_take_capital = yes
         }
       }
@@ -333,6 +353,7 @@ country_event = {
     }
   }
 }
+#Rightful Succession
 country_event = {
   id = flavor_daimyo.5
   title = flavor_daimyo.5.t
@@ -368,21 +389,21 @@ country_event = {
     months = 90
   }
   option = {
-    name = flavor_daimyo.5.a
+    name = flavor_daimyo.5.a 	# Side with [Root.Heir.GetName].
     event_target:rebel_province = {
       spawn_rebels = {
         type = pretender_rebels
         size = 1
-        leader = "cÃR"  # Mochitomi
-        leader_dynasty = "`uqS"  # Hatakeyama
+        leader = "cÃR" 	# Mochitomi
+        leader_dynasty = "`uqS" 	# Hatakeyama
       }
     }
   }
   option = {
-    name = flavor_daimyo.5.b
+    name = flavor_daimyo.5.b 	# Support Mochitomi's claim.
     remove_heir = {}
     define_heir = {
-      name = "cÃR"  # Mochitomi
+      name = "cÃR" 	# Mochitomi
       dynasty = ROOT
       age = 30
       claim = 75
@@ -390,6 +411,7 @@ country_event = {
     add_stability = -1
   }
 }
+#Succession of [Root.Monarch.GetName]
 country_event = {
   id = flavor_daimyo.6
   title = flavor_daimyo.6.t
@@ -445,9 +467,9 @@ country_event = {
     months = 180
   }
   option = {
-    name = flavor_daimyo.6.a
+    name = flavor_daimyo.6.a 	# I will name Sumitomo as the heir apparent.
     define_heir = {
-      name = "`uqS"  # Sumitomo
+      name = "`uqS" 	# Sumitomo
       dynasty = ROOT
       claim = 50
       age = 30
@@ -456,8 +478,8 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 1
-        leader = "ÿö˝V"  # Takakuni
-        leader_dynasty = "∆u›T"  # Hosokawa
+        leader = "ÿö˝V" 	# Takakuni
+        leader_dynasty = "∆u›T" 	# Hosokawa
       }
     }
     if = {
@@ -468,16 +490,16 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 1
-          leader = "ÑoKN"  # Sumiyuki
-          leader_dynasty = "∆u›T"  # Hosokawa
+          leader = "ÑoKN" 	# Sumiyuki
+          leader_dynasty = "∆u›T" 	# Hosokawa
         }
       }
     }
   }
   option = {
-    name = flavor_daimyo.6.b
+    name = flavor_daimyo.6.b 	# Sumiyuki of the Kujo would be best.
     define_heir = {
-      name = "ÑoKN"  # Sumiyuki
+      name = "ÑoKN" 	# Sumiyuki
       dynasty = ROOT
       claim = 50
       age = 30
@@ -486,8 +508,8 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 1
-        leader = "ÿö˝V"  # Takakuni
-        leader_dynasty = "∆u›T"  # Hosokawa
+        leader = "ÿö˝V" 	# Takakuni
+        leader_dynasty = "∆u›T" 	# Hosokawa
       }
     }
     if = {
@@ -498,16 +520,16 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 1
-          leader = "`uqS"  # Sumitomo
-          leader_dynasty = "∆u›T"  # Hosokawa
+          leader = "`uqS" 	# Sumitomo
+          leader_dynasty = "∆u›T" 	# Hosokawa
         }
       }
     }
   }
   option = {
-    name = flavor_daimyo.6.c
+    name = flavor_daimyo.6.c 	# Takakuni is a worthy successor.
     define_heir = {
-      name = "ÿö˝V"  # Takakuni
+      name = "ÿö˝V" 	# Takakuni
       dynasty = ROOT
       claim = 50
       age = 30
@@ -516,8 +538,8 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 1
-        leader = "`uqS"  # Sumitomo
-        leader_dynasty = "∆u›T"  # Hosokawa
+        leader = "`uqS" 	# Sumitomo
+        leader_dynasty = "∆u›T" 	# Hosokawa
       }
     }
     if = {
@@ -528,13 +550,14 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 1
-          leader = "ÑoKN"  # Sumiyuki
-          leader_dynasty = "∆u›T"  # Hosokawa
+          leader = "ÑoKN" 	# Sumiyuki
+          leader_dynasty = "∆u›T" 	# Hosokawa
         }
       }
     }
   }
 }
+#Rise of the Miyoshi Family
 country_event = {
   id = flavor_daimyo.7
   title = flavor_daimyo.7.t
@@ -556,28 +579,29 @@ country_event = {
     months = 60
   }
   option = {
-    name = flavor_daimyo.7.a
+    name = flavor_daimyo.7.a 	# Rebel Scum!
     1820 = {
       spawn_rebels = {
         size = 1
         type = pretender_rebels
-        leader = "ïÜ^"  # Nagayoshi
-        leader_dynasty = "	NãY"  # Miyoshi
+        leader = "ïÜ^" 	# Nagayoshi
+        leader_dynasty = "	NãY" 	# Miyoshi
       }
     }
   }
   option = {
-    name = flavor_daimyo.7.b
+    name = flavor_daimyo.7.b 	# It is time to make room for a man of ability.
     add_stability = -1
     define_ruler = {
-      name = "ïÜ^"  # Nagayoshi
-      dynasty = "	NãY"  # Miyoshi
+      name = "ïÜ^" 	# Nagayoshi
+      dynasty = "	NãY" 	# Miyoshi
       change_adm = 3
       change_dip = 3
       change_mil = 3
     }
   }
 }
+#The Ogigayatsu
 country_event = {
   id = flavor_daimyo.8
   title = flavor_daimyo.8.t
@@ -591,29 +615,30 @@ country_event = {
     NOT = {
       is_year = 1530
     }
-    owns = 1028
+    owns = 1028 	# Musashi
   }
   mean_time_to_happen = {
     months = 150
   }
   option = {
-    name = flavor_daimyo.8.a
+    name = flavor_daimyo.8.a 	# Death to all traitors!
     1028 = {
       spawn_rebels = {
         type = pretender_rebels
         size = 1
-        leader = "ç?e"  # Sadamasa
-        leader_dynasty = "NIg"  # Uesugi
+        leader = "ç?e" 	# Sadamasa
+        leader_dynasty = "NIg" 	# Uesugi
       }
     }
   }
   option = {
-    name = flavor_daimyo.8.b
+    name = flavor_daimyo.8.b 	# We must keep the family together.
     1028 = {
       add_local_autonomy = 50
     }
   }
 }
+#Restoration of the Akamatsu
 country_event = {
   id = flavor_daimyo.9
   title = flavor_daimyo.9.t
@@ -622,14 +647,14 @@ country_event = {
   fire_only_once = yes
   trigger = {
     has_reform = shogunate
-    owns = 1019
+    owns = 1019 	# Harima
     num_of_cities = 5
   }
   mean_time_to_happen = {
     months = 24
   }
   option = {
-    name = flavor_daimyo.9.a
+    name = flavor_daimyo.9.a 	# The Akamatsu have redeemed themselves.
     add_yearly_manpower = 1.5
     add_legitimacy = 15
     1019 = {
@@ -651,15 +676,16 @@ country_event = {
       }
       adopt_reform_progress = ROOT
       define_ruler = {
-        dynasty = "dçåg"  # Akamatsu
+        dynasty = "dçåg" 	# Akamatsu
       }
     }
   }
   option = {
-    name = flavor_daimyo.9.b
+    name = flavor_daimyo.9.b 	# We could never trust these traitors.
     add_prestige = 5
   }
 }
+#The Meireki Conflagration
 country_event = {
   id = flavor_daimyo.10
   title = flavor_daimyo.10.t
@@ -667,17 +693,17 @@ country_event = {
   picture = BAD_WITH_MONARCH_eventPicture
   fire_only_once = yes
   trigger = {
-    owns = 1028
-    is_year = 1655
+    owns = 1028 	# Musashi
+    is_year = 1655 	# Meireki Era
     NOT = {
       is_year = 1658
-    }
+    } 	# End of Meireki Era
   }
   mean_time_to_happen = {
     months = 9
   }
   option = {
-    name = flavor_daimyo.10.a
+    name = flavor_daimyo.10.a 	# We need large boulevards and dedicated fire brigades.
     add_years_of_income = -0.25
     1028 = {
       add_province_modifier = {
@@ -688,7 +714,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.10.b
+    name = flavor_daimyo.10.b 	# We must focus on restoring the homes of our poor citizens.
     add_years_of_income = -0.25
     1028 = {
       add_province_modifier = {
@@ -699,13 +725,14 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.10.c
+    name = flavor_daimyo.10.c 	# Fires and Quarrels are the Flowers of Edo.
     custom_tooltip = flavor_daimyo.10.c.tt
     1028 = {
       add_devastation = 75
     }
   }
 }
+#Nankai Tsunami
 country_event = {
   id = flavor_daimyo.11
   title = flavor_daimyo.11.t
@@ -746,7 +773,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.11.a
+    name = flavor_daimyo.11.a 	# We will remember the dead.
     every_owned_province = {
       limit = {
         OR = {
@@ -768,6 +795,7 @@ country_event = {
     }
   }
 }
+#Nankai Tsunami
 country_event = {
   id = flavor_daimyo.12
   title = flavor_daimyo.12.t
@@ -797,6 +825,7 @@ country_event = {
     }
   }
 }
+#Hoei Eruption of Mt Fuji
 country_event = {
   id = flavor_daimyo.13
   title = flavor_daimyo.13.t
@@ -804,11 +833,11 @@ country_event = {
   picture = BAD_WITH_MONARCH_eventPicture
   fire_only_once = yes
   trigger = {
-    is_year = 1704
+    is_year = 1704 	# Start of Hoei
     NOT = {
       is_year = 1711
-    }
-    owns = 1029
+    } 	# End of Hoei
+    owns = 1029 	# Kai
   }
   mean_time_to_happen = {
     months = 21
@@ -838,7 +867,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.13.a
+    name = flavor_daimyo.13.a 	# We will remember the dead.
     every_owned_province = {
       limit = {
         OR = {
@@ -861,6 +890,7 @@ country_event = {
     }
   }
 }
+#Hoei Eruption of Mt Fuji
 country_event = {
   id = flavor_daimyo.14
   title = flavor_daimyo.14.t
@@ -868,7 +898,7 @@ country_event = {
   picture = BAD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_daimyo.14.a
+    name = flavor_daimyo.14.a 	# We will remember the dead.
     every_owned_province = {
       limit = {
         OR = {
@@ -891,6 +921,7 @@ country_event = {
     }
   }
 }
+#Shimabara Rebellion
 country_event = {
   id = flavor_daimyo.15
   title = flavor_daimyo.15.t
@@ -903,13 +934,13 @@ country_event = {
     NOT = {
       is_year = 1650
     }
-    owns = 1017
+    owns = 1017 	# Suo
   }
   mean_time_to_happen = {
     months = 60
   }
   option = {
-    name = flavor_daimyo.15.a
+    name = flavor_daimyo.15.a 	# Crush them.
     1017 = {
       spawn_rebels = {
         type = anti_tax_rebels
@@ -929,6 +960,7 @@ country_event = {
     }
   }
 }
+#The Ako Vendetta
 country_event = {
   id = flavor_daimyo.16
   title = flavor_daimyo.16.t
@@ -946,7 +978,7 @@ country_event = {
     months = 90
   }
   option = {
-    name = flavor_daimyo.16.a
+    name = flavor_daimyo.16.a 	# Let them take their own life honorably through Seppuku.
     add_stability = -2
     add_country_modifier = {
       name = "chushingura"
@@ -954,7 +986,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.16.b
+    name = flavor_daimyo.16.b 	# Law and order must rule, let us execute these ronin.
     add_stability_or_adm_power = yes
     add_country_modifier = {
       name = "chushingura_popular_bandits"
@@ -962,6 +994,7 @@ country_event = {
     }
   }
 }
+#The rise of the Yamana
 country_event = {
   id = flavor_daimyo.17
   title = flavor_daimyo.17.t
@@ -982,16 +1015,17 @@ country_event = {
     months = 12
   }
   option = {
-    name = flavor_daimyo.17.a
+    name = flavor_daimyo.17.a 	# Let us bide our time and build our power to challenge the Hosokawa in the future.
     add_adm_power = 50
     add_yearly_manpower = 1
   }
   option = {
-    name = flavor_daimyo.17.b
+    name = flavor_daimyo.17.b 	# Let us forge alliances and pacts to contain the Hosokawa influence.
     add_dip_power = 75
     add_years_of_income = 0.25
   }
 }
+#Kyoto of the West
 country_event = {
   id = flavor_daimyo.18
   title = flavor_daimyo.18.t
@@ -1010,11 +1044,11 @@ country_event = {
     months = 150
   }
   option = {
-    name = flavor_daimyo.18.a
+    name = flavor_daimyo.18.a 	# A nice dream, but an expensive one.
     add_prestige = -5
   }
   option = {
-    name = flavor_daimyo.18.b
+    name = flavor_daimyo.18.b 	# Yamaguchi shall be like no city before it.
     add_years_of_income = -1.5
     1017 = {
       add_province_modifier = {
@@ -1024,6 +1058,7 @@ country_event = {
     }
   }
 }
+#Merchant of Sakai
 country_event = {
   id = flavor_daimyo.19
   title = flavor_daimyo.19.t
@@ -1042,7 +1077,7 @@ country_event = {
     months = 90
   }
   option = {
-    name = flavor_daimyo.19.a
+    name = flavor_daimyo.19.a 	# Let us support Sakai.
     1021 = {
       add_province_modifier = {
         name = "merchant_council_of_sakai"
@@ -1051,13 +1086,14 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.19.b
+    name = flavor_daimyo.19.b 	# Confiscate their properties.
     add_years_of_income = 1.5
     1021 = {
       add_devastation = 25
     }
   }
 }
+#Revolt of Harunobu
 country_event = {
   id = flavor_daimyo.20
   title = flavor_daimyo.20.t
@@ -1075,18 +1111,18 @@ country_event = {
     months = 45
   }
   option = {
-    name = flavor_daimyo.20.a
+    name = flavor_daimyo.20.a 	# We must look to Harunobu for leadership.
     add_stability = -1
     define_ruler = {
-      name = "·OÑs"  # Shingen
-      dynasty = "fk0u"  # Takeda
+      name = "·OÑs" 	# Shingen
+      dynasty = "fk0u" 	# Takeda
       adm = 5
       dip = 5
       mil = 5
     }
   }
   option = {
-    name = flavor_daimyo.20.b
+    name = flavor_daimyo.20.b 	# Crush him.
     add_stability_or_adm_power = yes
     random_owned_province = {
       limit = {
@@ -1095,12 +1131,13 @@ country_event = {
       spawn_rebels = {
         type = pretender_rebels
         size = 1
-        leader = "·OÑs"  # Shingen
-        leader_dynasty = "fk0u"  # Takeda
+        leader = "·OÑs" 	# Shingen
+        leader_dynasty = "fk0u" 	# Takeda
       }
     }
   }
 }
+#The Kyotoku Incident
 country_event = {
   id = flavor_daimyo.21
   title = flavor_daimyo.21.t
@@ -1142,7 +1179,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.21.a
+    name = flavor_daimyo.21.a 	# The days of the Kubo are numbered!
     add_stability = -1
     random_owned_province = {
       limit = {
@@ -1152,8 +1189,8 @@ country_event = {
         }
       }
       spawn_rebels = {
-        leader = "bl"  # Shigeuji
-        leader_dynasty = "≥ç)R"  # Ashikaga
+        leader = "bl" 	# Shigeuji
+        leader_dynasty = "≥ç)R" 	# Ashikaga
         type = pretender_rebels
         size = 2
       }
@@ -1172,7 +1209,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.21.b
+    name = flavor_daimyo.21.b 	# We must not disturb the peace.
     add_prestige = -10
     add_stability = 1
     overlord = {
@@ -1183,6 +1220,7 @@ country_event = {
     }
   }
 }
+#Azuchi Castle
 country_event = {
   id = flavor_daimyo.22
   title = flavor_daimyo.22.t
@@ -1199,7 +1237,7 @@ country_event = {
     months = 30
   }
   option = {
-    name = flavor_daimyo.22.a
+    name = flavor_daimyo.22.a 	# A marvelous project!
     add_years_of_income = -1.5
     1020 = {
       add_province_modifier = {
@@ -1209,10 +1247,11 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.22.b
+    name = flavor_daimyo.22.b 	# We have no time for such vanities.
     add_prestige = -5
   }
 }
+#Nobunagas Ambition
 country_event = {
   id = flavor_daimyo.23
   title = flavor_daimyo.23.t
@@ -1224,7 +1263,7 @@ country_event = {
     capital = 1030
     NOT = {
       has_reform = shogunate
-    }
+    } 	# Too far removed from history
     is_year = 1550
     NOT = {
       is_year = 1560
@@ -1234,28 +1273,29 @@ country_event = {
     months = 30
   }
   option = {
-    name = flavor_daimyo.23.a
+    name = flavor_daimyo.23.a 	# Tenka Fubu.
     add_stability = -2
     define_ruler = {
-      name = "·Oï"  # Nobunaga
-      dynasty = "«u0u"  # Oda
+      name = "·Oï" 	# Nobunaga
+      dynasty = "«u0u" 	# Oda
       adm = 5
       dip = 5
       mil = 6
     }
   }
   option = {
-    name = flavor_daimyo.23.b
+    name = flavor_daimyo.23.b 	# Crush him.
     1030 = {
       spawn_rebels = {
         type = pretender_rebels
         size = 2
-        leader = "·Oï"  # Nobunaga
-        leader_dynasty = "«u0u"  # Oda
+        leader = "·Oï" 	# Nobunaga
+        leader_dynasty = "«u0u" 	# Oda
       }
     }
   }
 }
+#Hideyoshi
 country_event = {
   id = flavor_daimyo.24
   title = flavor_daimyo.24.t
@@ -1274,9 +1314,9 @@ country_event = {
     months = 30
   }
   option = {
-    name = flavor_daimyo.24.a
+    name = flavor_daimyo.24.a 	# We have great need of such generals.
     define_general = {
-      name = "0N„Å¿y	T"  # Toyotomi Hideyoshi
+      name = "0N„Å¿y	T" 	# Toyotomi Hideyoshi
       shock = 4
       fire = 4
       manuever = 4
@@ -1284,10 +1324,10 @@ country_event = {
     }
   }
   option = {
-    name = flavor_daimyo.24.b
+    name = flavor_daimyo.24.b 	# A skilled negotiator for our clan.
     define_heir = {
-      name = "¿y	T"  # Hideyoshi
-      dynasty = "0N„Å"  # Toyotomi
+      name = "¿y	T" 	# Hideyoshi
+      dynasty = "0N„Å" 	# Toyotomi
       age = 25
       claim = 75
       adm = 5
@@ -1296,6 +1336,7 @@ country_event = {
     }
   }
 }
+#Economic Reforms of [Root.Monarch.GetName]
 country_event = {
   id = flavor_daimyo.25
   title = flavor_daimyo.25.t
@@ -1313,12 +1354,13 @@ country_event = {
     months = 60
   }
   option = {
-    name = flavor_daimyo.25.a
+    name = flavor_daimyo.25.a 	# Excellent.
     add_mercantilism = 1
     add_dip_power = 75
     add_adm_power = 75
   }
 }
+#The Great Days of Chuzan
 country_event = {
   id = flavor_daimyo.26
   title = flavor_daimyo.26.t
@@ -1338,7 +1380,7 @@ country_event = {
     months = 150
   }
   option = {
-    name = flavor_daimyo.26.a
+    name = flavor_daimyo.26.a 	# This is truly a golden era for our kingdom.
     add_prestige = 10
     add_dip_power = 35
     add_adm_power = 35

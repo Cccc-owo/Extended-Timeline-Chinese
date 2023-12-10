@@ -1,5 +1,10 @@
+###########################################
+# Flavor Events for Byzantine Missions
+# Scripted by Henrik Lohmander
+###########################################
 namespace = flavor_byz
 normal_or_historical_nations = yes
+#Sack of Venice
 country_event = {
   id = flavor_byz.1
   title = flavor_byz.1.t
@@ -124,6 +129,8 @@ country_event = {
     }
   }
 }
+# The Patriarch of Constantinople declares the Great Schism mended
+# by Veronica Pazos
 country_event = {
   id = flavor_byz.2
   title = flavor_byz.2.t
@@ -242,7 +249,17 @@ country_event = {
       pick_best_provinces = {
         3 = yes
         scale = higher_development_than
-        global_trigger = " country_or_non_sovereign_subject_holds = ROOT  OR = { area = apulia_area area = calabria_area area = sicily_area area = western_sicily_area } NOT = { province_id = 123 } NOT = { province_id = 122 } "
+        global_trigger = "
+          country_or_non_sovereign_subject_holds = ROOT 
+          OR = {
+            area = apulia_area
+            area = calabria_area
+            area = sicily_area
+            area = western_sicily_area
+          }
+          NOT = { province_id = 123 }
+          NOT = { province_id = 122 }
+        "
         scope = every_province
         event_target_name = "Byz_griko_target"
       }
@@ -290,7 +307,7 @@ country_event = {
       factor = 1
     }
     create_general_with_pips = {
-      name = "ÇÑ)ReYØe"  # Tyllios
+      name = "ÇÑ)ReYØe" 	# Tyllios
       tradition = 80
       add_fire = 1
       add_shock = 1
@@ -302,7 +319,7 @@ country_event = {
       factor = 1
     }
     create_general_with_pips = {
-      name = "ÇÑ)ReYØe"  # Tyllios
+      name = "ÇÑ)ReYØe" 	# Tyllios
       tradition = 80
       add_shock = 2
       add_manuever = 1
@@ -315,7 +332,7 @@ country_event = {
     }
     create_general_with_pips = {
       tradition = 80
-      name = "ÇÑ)ReYØe"  # Tyllios
+      name = "ÇÑ)ReYØe" 	# Tyllios
       add_siege = 1
       add_manuever = 1
     }
@@ -327,7 +344,7 @@ country_event = {
     }
     create_general_with_pips = {
       tradition = 80
-      name = "ÇÑ)ReYØe"  # Tyllios
+      name = "ÇÑ)ReYØe" 	# Tyllios
       add_fire = 1
       add_manuever = 2
     }
@@ -653,7 +670,7 @@ country_event = {
   desc = MEE_Byzantine_Events.11.d
   picture = FORT_eventPicture
   is_triggered_only = yes
-  goto = 4701
+  goto = 4701 	# more important than losing in 145
   option = {
     name = MEE_Byzantine_Events.11.a
     ai_chance = {
@@ -765,6 +782,7 @@ country_event = {
   desc = MEE_Byzantine_Events.13.d
   picture = FORT_eventPicture
   is_triggered_only = yes
+  #hidden = yes
   goto = 4701
   option = {
     name = MEE_Byzantine_Events.13.a
@@ -790,6 +808,7 @@ country_event = {
   desc = MEE_Byzantine_Events.14.d
   picture = FORT_eventPicture
   is_triggered_only = yes
+  #hidden = yes
   goto = 151
   option = {
     name = MEE_Byzantine_Events.14.a
@@ -992,7 +1011,7 @@ country_event = {
   picture = RELIGION_eventPicture
   is_triggered_only = yes
   major = yes
-  goto = 151
+  goto = 151 	# arguably most important seat
   option = {
     name = MEE_Byzantine_Events.17.a
     ai_chance = {
@@ -1028,7 +1047,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.18
-  title = MEE_Byzantine_Events.18.t
+  title = MEE_Byzantine_Events.18.t 	# ecumenical council
   desc = MEE_Byzantine_Events.18.d
   picture = RELIGION_eventPicture
   is_triggered_only = yes
@@ -1100,7 +1119,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.19
-  title = MEE_Byzantine_Events.19.t
+  title = MEE_Byzantine_Events.19.t 	# the notaras family
   desc = MEE_Byzantine_Events.19.d
   picture = TRADEGOODS_eventPicture
   is_triggered_only = yes
@@ -1114,7 +1133,7 @@ country_event = {
       fire = 3
       manuever = 2
       siege = 0
-      name = "bSaSØe ˙ãTX…bØe"  # Loukas Notaras
+      name = "bSaSØe ˙ãTX…bØe" 	# Loukas Notaras
     }
     custom_tooltip = " "
     add_navy_tradition = 20
@@ -1131,17 +1150,36 @@ country_event = {
     custom_tooltip = " "
     define_advisor = {
       type = trader
-      name = "˙ãTX…bØe"  # Notaras
+      name = "˙ãTX…bØe" 	# Notaras 	# Can I somehow make it generate a random name?
       skill = 3
       culture = ROOT
       religion = ROOT
-      cost_multiplier = 0.4
+      cost_multiplier = 0.4 	# so its slightly better than events
     }
   }
 }
+# country_event = {
+# id = MEE_Byzantine_Events.20 
+# title = MEE_Byzantine_Events.20.t #Future of the Kommerkion
+# desc = MEE_Byzantine_Events.20.d
+# picture = GOOD_WITH_MONARCH_eventPicture
+# is_triggered_only = yes 
+# option = {
+# name = MEE_Byzantine_Events.20.a #set it up
+# ai_chance = {
+# factor = 1
+# }
+# }
+# option = {
+# name = MEE_Byzantine_Events.20.b #abolish it
+# ai_chance = {
+# factor = 1
+# }
+# }
+# }
 country_event = {
   id = MEE_Byzantine_Events.21
-  title = MEE_Byzantine_Events.21.t
+  title = MEE_Byzantine_Events.21.t 	# Byzantine Merchants Regain Prominence
   desc = MEE_Byzantine_Events.21.d
   picture = TRADEGOODS_eventPicture
   is_triggered_only = yes
@@ -1159,7 +1197,7 @@ country_event = {
       factor = 1
     }
     custom_tooltip = BYZ_buff_burgher_loans
-    set_country_flag = BYZ_buff_burgher_loans_flag
+    set_country_flag = BYZ_buff_burgher_loans_flag 	# I know this one doesn't end in _buff. 
   }
   option = {
     name = MEE_Byzantine_Events.21.c
@@ -1172,30 +1210,40 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.22
-  title = MEE_Byzantine_Events.22.t
+  title = MEE_Byzantine_Events.22.t 	# Royal Purple Map
   desc = MEE_Byzantine_Events.22.d
   picture = GREAT_BUILDING_eventPicture
   is_triggered_only = yes
   option = {
-    name = MEE_Byzantine_Events.22.a
+    name = MEE_Byzantine_Events.22.a 	# keep our color
     ai_chance = {
       factor = 1
     }
   }
   option = {
-    name = MEE_Byzantine_Events.22.b
+    name = MEE_Byzantine_Events.22.b 	# roman empire color
     ai_chance = {
       factor = 0
     }
     custom_tooltip = BYZ_we_will_adopt_color_of_roman_empire
     change_country_color = {
-      color = {
-        167
-        10
-        100
-      }
+      color = { 167 10 100 }
     }
   }
+  # option = {
+  # name = MEE_Byzantine_Events.22.c #angevin empire color
+  # ai_chance = {
+  # factor = 0
+  # }
+  # change_country_color = { color = { 110 0 140 } }
+  # }
+  # option = {
+  # name = MEE_Byzantine_Events.22.e #malaya color
+  # ai_chance = {
+  # factor = 0
+  # }
+  # change_country_color = { color = { 80 10 165 } }
+  # }
 }
 province_event = {
   id = MEE_Byzantine_Events.23
@@ -1237,6 +1285,7 @@ province_event = {
     ai_chance = {
       factor = 0
     }
+    #custom_tooltip = BYZ_nothing_will_occur
     add_base_tax = 1
     add_base_production = 1
     add_base_manpower = 1
@@ -1244,13 +1293,14 @@ province_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.24
-  title = MEE_Byzantine_Events.24.t
+  title = MEE_Byzantine_Events.24.t 	# Mosaicists
   desc = MEE_Byzantine_Events.24.d
   picture = PAINTER_ARTIST_eventPicture
   is_triggered_only = yes
   immediate = {
     hidden_effect = {
       save_event_target_as = byz_event_from_recipient
+      #Should select the most powerful ally, most powerful player ally if possible
       random_ally = {
         save_event_target_as = byz_mosaicists_ally
       }
@@ -1262,19 +1312,20 @@ country_event = {
       }
       random_ally = {
         limit = {
-          ai = no
+          ai = no 	# player
           was_player = yes
         }
         save_event_target_as = byz_mosaicists_ally
       }
       every_ally = {
         limit = {
-          ai = no
+          ai = no 	# player
           was_player = yes
           total_development = event_target:byz_mosaicists_ally
         }
         save_event_target_as = byz_mosaicists_ally
       }
+      #Select most powerful country, preferably most powerful player country, from Europe or Middle East
       random_known_country = {
         limit = {
           byz_is_in_middle_east_or_europe = yes
@@ -1310,6 +1361,7 @@ country_event = {
         }
         save_event_target_as = byz_mosaicists_powerful
       }
+      #Select a wealthy country that isn't also the most powerful country in the desired area
       random_known_country = {
         limit = {
           byz_is_in_middle_east_or_europe = yes
@@ -1421,7 +1473,7 @@ country_event = {
   option = {
     name = MEE_Byzantine_Events.24.e
     ai_chance = {
-      factor = 0.01
+      factor = 0.01 	# relatively low
     }
     if = {
       limit = {
@@ -1442,7 +1494,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.25
-  title = MEE_Byzantine_Events.25.t
+  title = MEE_Byzantine_Events.25.t 	# Byzantine Offer
   desc = MEE_Byzantine_Events.25.d
   picture = ECONOMY_eventPicture
   is_triggered_only = yes
@@ -1609,7 +1661,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.26
-  title = MEE_Byzantine_Events.26.t
+  title = MEE_Byzantine_Events.26.t 	# Price change for silk
   desc = MEE_Byzantine_Events.26.d
   picture = TRADEGOODS_eventPicture
   is_triggered_only = yes
@@ -1628,7 +1680,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.27
-  title = MEE_Byzantine_Events.27.t
+  title = MEE_Byzantine_Events.27.t 	# theme system
   desc = MEE_Byzantine_Events.27.d
   picture = BATTLE_eventPicture
   is_triggered_only = yes
@@ -1677,7 +1729,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.28
-  title = MEE_Byzantine_Events.28.t
+  title = MEE_Byzantine_Events.28.t 	# Handle Branching Missions
   desc = MEE_Byzantine_Events.28.d
   picture = COURT_eventPicture
   is_triggered_only = yes
@@ -1734,6 +1786,7 @@ country_event = {
     trigger = {}
     custom_tooltip = BYZ_nothing_will_occur
   }
+  #AI section
   option = {
     trigger = {
       ai = yes
@@ -1835,7 +1888,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.31
-  title = MEE_Byzantine_Events.31.t
+  title = MEE_Byzantine_Events.31.t 	# rumelihasari 
   desc = MEE_Byzantine_Events.31.d
   picture = FORT_eventPicture
   mean_time_to_happen = {
@@ -1849,7 +1902,7 @@ country_event = {
     is_year = 1450
     not = {
       is_year = 1460
-    }
+    } 	# After that Byz should be either dead, or has won against the Ottomans already
     151 = {
       owned_by = BYZ
     }
@@ -2007,7 +2060,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.34
-  title = MEE_Byzantine_Events.34.t
+  title = MEE_Byzantine_Events.34.t 	# ottomans ceases tribute for orhan
   desc = MEE_Byzantine_Events.34.d
   picture = BANKRUPTCY_eventPicture
   mean_time_to_happen = {
@@ -2103,7 +2156,7 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "eYSU R±É‘k"  # Orhan Celebi
+          leader = "eYSU R±É‘k" 	# Orhan Celebi
         }
       }
     }
@@ -2135,7 +2188,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.37
-  title = MEE_Byzantine_Events.37.t
+  title = MEE_Byzantine_Events.37.t 	# orhan's retinue
   desc = MEE_Byzantine_Events.37.d
   picture = COUNTRY_COLLAPSE_eventPicture
   mean_time_to_happen = {
@@ -2174,7 +2227,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.38
-  title = MEE_Byzantine_Events.38.t
+  title = MEE_Byzantine_Events.38.t 	# constantinople outgrows its walls
   desc = MEE_Byzantine_Events.38.d
   picture = {
     picture = CONSTANTINOPLE_eventPicture
@@ -2220,7 +2273,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.39
-  title = MEE_Byzantine_Events.39.t
+  title = MEE_Byzantine_Events.39.t 	# campaign into thessaly
   desc = MEE_Byzantine_Events.39.d
   picture = BORDER_TENSION_eventPicture
   mean_time_to_happen = {
@@ -2235,8 +2288,8 @@ country_event = {
     tag = BYZ
     is_year = 1446
     OR = {
-      has_ruler = "TÎXfWN"  # Konstantinos
-      has_heir = "TÎXfWN"  # Konstantinos
+      has_ruler = "TÎXfWN" 	# Konstantinos
+      has_heir = "TÎXfWN" 	# Konstantinos
     }
     NOT = {
       is_year = 1450
@@ -2252,7 +2305,7 @@ country_event = {
     custom_tooltip = " "
     if = {
       limit = {
-        has_ruler = "TÎXfWN"  # Konstantinos
+        has_ruler = "TÎXfWN" 	# Konstantinos
       }
       change_mil = 1
       define_ruler_to_general = {
@@ -2309,7 +2362,7 @@ country_event = {
     }
     if = {
       limit = {
-        has_ruler = "TÎXfWN"  # Konstantinos
+        has_ruler = "TÎXfWN" 	# Konstantinos
       }
       change_mil = 1
       set_ruler_flag = civil_war_exempt
@@ -2322,7 +2375,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.40
-  title = MEE_Byzantine_Events.40.t
+  title = MEE_Byzantine_Events.40.t 	# punitive expedition
   desc = MEE_Byzantine_Events.40.d
   picture = BATTLE_eventPicture
   is_triggered_only = yes
@@ -2355,7 +2408,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.41
-  title = MEE_Byzantine_Events.41.t
+  title = MEE_Byzantine_Events.41.t 	# evade taxes
   desc = MEE_Byzantine_Events.41.d
   picture = ECONOMY_eventPicture
   mean_time_to_happen = {
@@ -2374,6 +2427,7 @@ country_event = {
     add_years_of_income = 2
     custom_tooltip = " "
     add_estate_loyalty = {
+      #no need for check. this privilege requires a burgher-only privilege.
       estate = estate_burghers
       loyalty = -20
     }
@@ -2401,15 +2455,15 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.42
-  title = MEE_Byzantine_Events.42.t
+  title = MEE_Byzantine_Events.42.t 	# demetrios claims the throne
   desc = MEE_Byzantine_Events.42.d
   picture = BAD_WITH_MONARCH_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# on action
   trigger = {
     NOT = {
       is_year = 1460
     }
-    has_ruler = "TÎXfWN"  # Konstantinos
+    has_ruler = "TÎXfWN" 	# Konstantinos
   }
   option = {
     name = MEE_Byzantine_Events.42.a
@@ -2424,7 +2478,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.43
-  title = MEE_Byzantine_Events.43.t
+  title = MEE_Byzantine_Events.43.t 	#  Ottoman troops haul ships
   desc = MEE_Byzantine_Events.43.d
   picture = HARBOUR_eventPicture
   mean_time_to_happen = {
@@ -2466,7 +2520,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.44
-  title = MEE_Byzantine_Events.44.t
+  title = MEE_Byzantine_Events.44.t 	# Walls of Constantinople
   desc = MEE_Byzantine_Events.44.d
   picture = FORT_eventPicture
   fire_only_once = yes
@@ -2507,7 +2561,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.45
-  title = MEE_Byzantine_Events.45.t
+  title = MEE_Byzantine_Events.45.t 	# Fall of Constantinople
   desc = MEE_Byzantine_Events.45.d
   picture = SIEGE_PRAGUE_CASTLE_eventPicture
   fire_only_once = yes
@@ -2557,8 +2611,8 @@ country_event = {
       BYZ = {
         change_tag = MOE
         define_ruler = {
-          name = "∑Vs|yrÃë"  # Demetrios
-          dynasty = "ÙTReYeu"  # Palaiologos
+          name = "∑Vs|yrÃë" 	# Demetrios
+          dynasty = "ÙTReYeu" 	# Palaiologos
           adm = 2
           dip = 1
           mil = 1
@@ -2593,7 +2647,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.46
-  title = MEE_Byzantine_Events.46.t
+  title = MEE_Byzantine_Events.46.t 	# Ottomans Advance on Morea
   desc = MEE_Byzantine_Events.46.d
   picture = SIEGE_eventPicture
   is_triggered_only = yes
@@ -2610,8 +2664,8 @@ country_event = {
       }
       change_tag = MOE
       define_ruler = {
-        name = "∑Vs|yrÃë"  # Demetrios
-        dynasty = "ÙTReYeu"  # Palaiologos
+        name = "∑Vs|yrÃë" 	# Demetrios
+        dynasty = "ÙTReYeu" 	# Palaiologos
         adm = 2
         dip = 1
         mil = 1
@@ -2664,7 +2718,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.47
-  title = MEE_Byzantine_Events.47.t
+  title = MEE_Byzantine_Events.47.t 	# Unionist Revolt
   desc = MEE_Byzantine_Events.47.d
   picture = RELIGIOUS_TURMOIL_eventPicture
   mean_time_to_happen = {
@@ -2675,15 +2729,18 @@ country_event = {
     }
     modifier = {
       factor = 0.5
-      num_of_cities = 15
+      num_of_cities = 15 	# no longer in danger
     }
     modifier = {
       factor = 0.5
-      num_of_cities = 30
+      num_of_cities = 30 	# definitely no longer in danger
     }
   }
   trigger = {
     has_estate_privilege = estate_church_union_of_the_churches
+    # any_owned_province = { 
+    # religion = orthodox
+    # }
     or = {
       is_at_war = no
       total_development = 100
@@ -2738,7 +2795,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.48
-  title = MEE_Byzantine_Events.48.t
+  title = MEE_Byzantine_Events.48.t 	# We mend the schism
   desc = MEE_Byzantine_Events.48.d
   picture = RELIGIOUS_CONVERSION_eventPicture
   is_triggered_only = yes
@@ -2788,7 +2845,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.49
-  title = MEE_Byzantine_Events.49.t
+  title = MEE_Byzantine_Events.49.t 	# Impending doom
   desc = MEE_Byzantine_Events.49.d
   picture = REFORM_eventPicture
   fire_only_once = yes
@@ -2837,7 +2894,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.50
-  title = MEE_Byzantine_Events.50.t
+  title = MEE_Byzantine_Events.50.t 	# Giovanni Gustiniani
   desc = MEE_Byzantine_Events.50.d
   picture = MILITARY_CAMP_eventPicture
   is_triggered_only = yes
@@ -2850,7 +2907,7 @@ country_event = {
       factor = 1
     }
     define_general = {
-      name = "TNÊt<S 1gØeÇÑ<SöN<S"  # Giovanni Giustiniani
+      name = "TNÊt<S 1gØeÇÑ<SöN<S" 	# Giovanni Giustiniani
       fire = 2
       shock = 2
       manuever = 3
@@ -2862,7 +2919,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.51
-  title = MEE_Byzantine_Events.51.t
+  title = MEE_Byzantine_Events.51.t 	# Confirm the Union of Florence
   desc = MEE_Byzantine_Events.51.d
   picture = ORTHODOX_eventPicture
   fire_only_once = yes
@@ -2924,7 +2981,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.52
-  title = MEE_Byzantine_Events.52.t
+  title = MEE_Byzantine_Events.52.t 	# Papal Assertiveness
   desc = MEE_Byzantine_Events.52.d
   picture = ORTHODOX_eventPicture
   fire_only_once = yes
@@ -3135,7 +3192,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.56
-  title = MEE_Byzantine_Events.56.t
+  title = MEE_Byzantine_Events.56.t 	#  What is a Pronoia Subject
   desc = MEE_Byzantine_Events.56.d
   picture = COURT_eventPicture
   is_triggered_only = yes
@@ -3158,7 +3215,7 @@ country_event = {
 }
 country_event = {
   id = MEE_Byzantine_Events.57
-  title = MEE_Byzantine_Events.57.t
+  title = MEE_Byzantine_Events.57.t 	#  Western Support
   desc = MEE_Byzantine_Events.57.d
   picture = MILITARY_CAMP_eventPicture
   trigger = {

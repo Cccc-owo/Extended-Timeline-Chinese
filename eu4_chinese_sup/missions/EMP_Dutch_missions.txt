@@ -23,9 +23,7 @@ emp_ned_slot1_branch = {
   has_country_shield = yes
   emp_ned_seize_ceylon = {
     icon = seize_ceylon
-    required_missions = {
-      emp_ned_charter_the_voc
-    }
+    required_missions = { emp_ned_charter_the_voc }
     position = 6
     completed_by = 1640.1.1
     provinces_to_highlight = {
@@ -63,9 +61,7 @@ emp_ned_slot1_branch = {
   }
   emp_ned_found_batavia = {
     icon = found_batavia
-    required_missions = {
-      emp_ned_seize_ceylon
-    }
+    required_missions = { emp_ned_seize_ceylon }
     position = 7
     completed_by = 1660.1.1
     provinces_to_highlight = {
@@ -81,7 +77,7 @@ emp_ned_slot1_branch = {
     }
     effect = {
       630 = {
-        rename_capital = "ÙTæèÙuöN"  # Batavia
+        rename_capital = "ÙTæèÙuöN" 	# Batavia
       }
       malacca_area = {
         limit = {
@@ -98,9 +94,7 @@ emp_ned_slot1_branch = {
   }
   emp_ned_conquer_malacca = {
     icon = conquer_malacca
-    required_missions = {
-      emp_ned_found_batavia
-    }
+    required_missions = { emp_ned_found_batavia }
     position = 8
     completed_by = 1665.1.1
     provinces_to_highlight = {
@@ -131,9 +125,7 @@ emp_ned_slot1_branch = {
   }
   emp_ned_dutch_formosa = {
     icon = dutch_formosa
-    required_missions = {
-      emp_ned_conquer_malacca
-    }
+    required_missions = { emp_ned_conquer_malacca }
     position = 9
     provinces_to_highlight = {
       area = taiwan_area
@@ -166,9 +158,7 @@ emp_ned_slot1_branch = {
   }
   emp_ned_secure_dejima = {
     icon = secure_dejima
-    required_missions = {
-      emp_ned_dutch_formosa
-    }
+    required_missions = { emp_ned_dutch_formosa }
     position = 10
     provinces_to_highlight = {
       province_id = 4182
@@ -221,7 +211,7 @@ emp_ned_slot2_branch = {
     icon = assert_our_sovereignty
     required_missions = {}
     position = 1
-    completed_by = 1568.5.23
+    completed_by = 1568.5.23 	#  Battle of Heiligerlee, first Dutch victory of the Eighty Years' War
     trigger = {
       is_subject = no
       custom_trigger_tooltip = {
@@ -238,9 +228,7 @@ emp_ned_slot2_branch = {
   }
   emp_ned_challenge_spanish_power = {
     icon = challenge_spanish_power
-    required_missions = {
-      emp_ned_assert_dutch_sovereignty
-    }
+    required_missions = { emp_ned_assert_dutch_sovereignty }
     position = 2
     trigger = {
       if = {
@@ -302,9 +290,7 @@ emp_ned_slot2_branch = {
   }
   emp_ned_fixed_garrison_system = {
     icon = fixed_garrison_system
-    required_missions = {
-      emp_ned_challenge_spanish_power
-    }
+    required_missions = { emp_ned_challenge_spanish_power }
     position = 2
     provinces_to_highlight = {
       region = low_countries_region
@@ -401,11 +387,9 @@ emp_ned_slot2_ned_branch = {
   has_country_shield = yes
   emp_ned_leiden_university = {
     icon = leiden_university
-    required_missions = {
-      emp_ned_baltic_bulk_trades
-      ned_religious_unity
-    }
+    required_missions = { emp_ned_baltic_bulk_trades ned_religious_unity }
     position = 4
+    #completed_by
     provinces_to_highlight = {
       province_id = 4383
     }
@@ -450,11 +434,9 @@ emp_ned_slot2_ned_fla_branch = {
   has_country_shield = yes
   emp_ned_leiden_university_fla = {
     icon = leiden_university
-    required_missions = {
-      emp_ned_baltic_bulk_trades
-      fla_lowlands_three
-    }
+    required_missions = { emp_ned_baltic_bulk_trades fla_lowlands_three }
     position = 4
+    #completed_by
     provinces_to_highlight = {
       province_id = 4383
     }
@@ -497,11 +479,9 @@ emp_ned_slot2_indies_branch = {
   has_country_shield = yes
   emp_ned_charter_the_voc = {
     icon = mission_trade_company_region_abroad
-    required_missions = {
-      emp_ned_invest_in_the_rich_trades
-    }
+    required_missions = { emp_ned_invest_in_the_rich_trades }
     position = 5
-    completed_by = 1602.3.20
+    completed_by = 1602.3.20 	#  historical date of its establishment
     trigger = {
       trade_company_indonesia = {
         has_discovered = ROOT
@@ -526,11 +506,9 @@ emp_ned_slot2_indies_branch = {
   }
   emp_ned_control_coromandel_trade = {
     icon = control_coromandel
-    required_missions = {
-      emp_ned_seize_ceylon
-    }
+    required_missions = { emp_ned_seize_ceylon }
     position = 7
-    completed_by = 1665.1.1
+    completed_by = 1665.1.1 	#  arbitrary
     provinces_to_highlight = {
       province_id = 1340
       has_discovered = ROOT
@@ -546,9 +524,7 @@ emp_ned_slot2_indies_branch = {
   }
   emp_ned_indonesia_cot = {
     icon = indonesian_trade
-    required_missions = {
-      emp_ned_conquer_malacca
-    }
+    required_missions = { emp_ned_conquer_malacca }
     position = 9
     provinces_to_highlight = {
       province_id = 1361
@@ -556,6 +532,7 @@ emp_ned_slot2_indies_branch = {
     }
     trigger = {
       1361 = {
+        # Straits of Johor
         is_strongest_trade_power = ROOT
       }
     }
@@ -568,9 +545,7 @@ emp_ned_slot2_indies_branch = {
   }
   emp_ned_dutch_east_indies = {
     icon = dutch_east_indies
-    required_missions = {
-      emp_ned_indonesia_cot
-    }
+    required_missions = { emp_ned_indonesia_cot }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -654,9 +629,7 @@ emp_ned_slot3_branch = {
   }
   emp_ned_reform_the_admiralty_colleges = {
     icon = mission_rb_grow_the_channel
-    required_missions = {
-      emp_ned_sea_beggars
-    }
+    required_missions = { emp_ned_sea_beggars }
     position = 2
     completed_by = 1597.1.1
     trigger = {
@@ -695,9 +668,7 @@ emp_ned_slot3_branch = {
   }
   emp_ned_invest_in_the_rich_trades = {
     icon = invest_in_the_rich_trades
-    required_missions = {
-      emp_ned_baltic_bulk_trades
-    }
+    required_missions = { emp_ned_baltic_bulk_trades }
     position = 4
     completed_by = 1580.1.1
     provinces_to_highlight = {
@@ -718,9 +689,7 @@ emp_ned_slot3_branch = {
   }
   emp_ned_charter_the_wic = {
     icon = charter_the_wic
-    required_missions = {
-      emp_ned_invest_in_the_rich_trades
-    }
+    required_missions = { emp_ned_invest_in_the_rich_trades }
     position = 5
     completed_by = 1621.6.3
     provinces_to_highlight = {
@@ -745,9 +714,7 @@ emp_ned_slot3_branch = {
   }
   emp_ned_colonize_the_cape = {
     icon = colonize_the_cape
-    required_missions = {
-      emp_ned_charter_the_voc
-    }
+    required_missions = { emp_ned_charter_the_voc }
     position = 6
     completed_by = 1652.1.1
     provinces_to_highlight = {
@@ -786,9 +753,7 @@ emp_ned_slot3_branch = {
   }
   emp_ned_discover_australia = {
     icon = colonize_australia
-    required_missions = {
-      emp_ned_colonize_the_cape
-    }
+    required_missions = { emp_ned_colonize_the_cape }
     position = 7
     completed_by = 1660.1.1
     trigger = {
@@ -814,6 +779,7 @@ emp_ned_slot3_branch = {
   }
 }
 emp_ned_slot4_branch = {
+  # Statists
   slot = 4
   generic = no
   ai = yes
@@ -832,6 +798,7 @@ emp_ned_slot4_branch = {
     icon = strengthen_the_vroedschappen
     required_missions = {}
     position = 1
+    #completed_by
     trigger = {
       if = {
         limit = {
@@ -880,9 +847,7 @@ emp_ned_slot4_branch = {
   }
   emp_ned_reform_the_generality_lands = {
     icon = generality_lands
-    required_missions = {
-      emp_ned_strengthen_the_vroedschappen
-    }
+    required_missions = { emp_ned_strengthen_the_vroedschappen }
     position = 2
     trigger = {
       crown_land_share = 60
@@ -914,9 +879,7 @@ emp_ned_slot4_branch = {
   }
   emp_ned_adjust_the_general_means = {
     icon = adjust_the_general_means
-    required_missions = {
-      emp_ned_reform_the_generality_lands
-    }
+    required_missions = { emp_ned_reform_the_generality_lands }
     position = 3
     provinces_to_highlight = {
       region = low_countries_region
@@ -962,15 +925,14 @@ emp_ned_slot4_branch = {
   }
   emp_ned_interest_of_holland = {
     icon = interest_of_holland
-    required_missions = {
-      emp_ned_adjust_the_general_means
-    }
+    required_missions = { emp_ned_adjust_the_general_means }
     position = 4
     provinces_to_highlight = {
       province_id = 1269
     }
     trigger = {
       1269 = {
+        # English Channel
         trade_share = {
           country = ROOT
           share = 50
@@ -1082,9 +1044,7 @@ emp_ned_slot4_branch = {
   }
   emp_ned_the_true_freedom = {
     icon = the_true_freedom
-    required_missions = {
-      emp_ned_interest_of_holland
-    }
+    required_missions = { emp_ned_interest_of_holland }
     position = 5
     trigger = {
       trade_income_percentage = 0.5
@@ -1140,9 +1100,7 @@ emp_ned_slot4_colony_branch = {
   has_country_shield = yes
   emp_ned_explore_caribbean = {
     icon = explore_caribbean
-    required_missions = {
-      emp_ned_charter_the_wic
-    }
+    required_missions = { emp_ned_charter_the_wic }
     position = 6
     completed_by = 1550.1.1
     trigger = {
@@ -1176,9 +1134,7 @@ emp_ned_slot4_colony_branch = {
   }
   emp_ned_settle_north_america = {
     icon = settle_north_america
-    required_missions = {
-      emp_ned_explore_caribbean
-    }
+    required_missions = { emp_ned_explore_caribbean }
     position = 7
     completed_by = 1640.1.1
     provinces_to_highlight = {
@@ -1226,6 +1182,7 @@ emp_ned_slot4_colony_branch = {
   }
 }
 emp_ned_slot5_branch = {
+  # Orangists
   slot = 5
   generic = no
   ai = yes
@@ -1283,9 +1240,7 @@ emp_ned_slot5_branch = {
   }
   emp_ned_contracts_of_correspondence = {
     icon = contracts_of_correspondence
-    required_missions = {
-      emp_ned_merge_the_stadtholders
-    }
+    required_missions = { emp_ned_merge_the_stadtholders }
     position = 2
     completed_by = 1600.1.1
     trigger = {
@@ -1317,9 +1272,7 @@ emp_ned_slot5_branch = {
   }
   emp_ned_general_reglement = {
     icon = issue_general_reglement
-    required_missions = {
-      emp_ned_contracts_of_correspondence
-    }
+    required_missions = { emp_ned_contracts_of_correspondence }
     position = 3
     completed_by = 1650.1.1
     trigger = {
@@ -1367,10 +1320,7 @@ emp_ned_slot5_branch = {
   }
   emp_ned_the_glorious_revolution = {
     icon = the_glorious_revolution
-    required_missions = {
-      emp_ned_general_reglement
-      emp_ned_interest_of_holland
-    }
+    required_missions = { emp_ned_general_reglement emp_ned_interest_of_holland }
     position = 5
     completed_by = 1689.1.1
     ai_weight = {
@@ -1452,10 +1402,9 @@ emp_ned_slot5_branch = {
   }
   emp_ned_je_maintiendrai = {
     icon = je_maintiendrai
-    required_missions = {
-      emp_ned_the_glorious_revolution
-    }
+    required_missions = { emp_ned_the_glorious_revolution }
     position = 6
+    #completed_by
     trigger = {
       if = {
         limit = {
@@ -1522,9 +1471,7 @@ emp_ned_slot5_colony_branch = {
   has_country_shield = yes
   emp_ned_colonize_brazil = {
     icon = colonize_brazil
-    required_missions = {
-      emp_ned_explore_caribbean
-    }
+    required_missions = { emp_ned_explore_caribbean }
     position = 7
     completed_by = 1650.1.1
     provinces_to_highlight = {

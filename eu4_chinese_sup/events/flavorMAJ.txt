@@ -1,5 +1,8 @@
+# Flavour events for Majapahit
+# Written by Daniel Tolman
 namespace = majapahit
 normal_or_historical_nations = yes
+# A hero emerges
 country_event = {
   id = majapahit.1
   title = majapahit.1.t
@@ -20,9 +23,9 @@ country_event = {
     ai_chance = {
       factor = 0
     }
-    custom_tooltip = damarwulan_tt
+    custom_tooltip = damarwulan_tt 	#  Damarwulan must win 5 battles against the enemies of Majapahit
     define_general = {
-      name = "æèõsSLNpQ"  # Damarwulan
+      name = "æèõsSLNpQ" 	# Damarwulan
       shock = 4
       fire = 2
       manuever = 3
@@ -31,19 +34,23 @@ country_event = {
     hidden_effect = {
       set_country_flag = maj_damarwulan
       set_variable = {
-        which = "DamarwulanWinVariable"
+        which = DamarwulanWinVariable
         value = 0
       }
     }
+    # in on_actions, create a variabe that counts battles won by armies commmanded by a general with this name
+    # on 5 victories, trigger the next event
   }
   option = {
     name = majapahit.1.b
     ai_chance = {
       factor = 1
     }
+    # banish him for sleeping with the PMs daughter
     add_legitimacy = 10
   }
 }
+# Damarwulan returns victorious
 country_event = {
   id = majapahit.2
   title = majapahit.2.t
@@ -80,6 +87,7 @@ country_event = {
           }
         }
       }
+      # can have  consorts
       has_regency = no
       has_consort = no
       is_female = yes
@@ -88,7 +96,7 @@ country_event = {
     add_stability = 1
     add_legitimacy = 25
     define_consort = {
-      name = "æèõsSLNpQ"  # Damarwulan
+      name = "æèõsSLNpQ" 	# Damarwulan
       country_of_origin = ROOT
       religion = ROOT
       culture = ROOT
@@ -96,6 +104,9 @@ country_event = {
       dip = 4
       mil = 5
     }
+    # convert general to consort
+    # new effect
+    # set joint rule active
   }
   option = {
     name = majapahit.2.b
@@ -106,7 +117,7 @@ country_event = {
     add_stability = 1
     add_legitimacy = 25
     define_heir = {
-      name = "æèõsSLNpQ"  # Damarwulan
+      name = "æèõsSLNpQ" 	# Damarwulan
       dynasty = ROOT
       claim = 100
       religion = ROOT
@@ -116,6 +127,8 @@ country_event = {
       mil = 5
       age = 25
     }
+    # convert general to heir
+    # new effect
   }
   option = {
     name = majapahit.2.c
@@ -124,6 +137,8 @@ country_event = {
     add_prestige = 10
   }
 }
+# Fall of Majapahit Disaster
+# Start event
 country_event = {
   id = majapahit.3
   title = majapahit.3.t
@@ -145,6 +160,7 @@ country_event = {
     set_country_flag = majapahit_disaster_flag
   }
 }
+# End event
 country_event = {
   id = majapahit.4
   title = majapahit.4.t
@@ -161,9 +177,10 @@ country_event = {
   }
   option = {
     name = majapahit.4.a
-    add_stability = 1
+    add_stability = 1 	#  other rewards are in missions
   }
 }
+# The Rise of Demak
 country_event = {
   id = majapahit.5
   title = majapahit.5.t
@@ -278,6 +295,7 @@ country_event = {
     }
   }
 }
+# The Rise of Mataram
 country_event = {
   id = majapahit.6
   title = majapahit.6.t
@@ -381,6 +399,7 @@ country_event = {
     }
   }
 }
+# Subject liberty desire
 country_event = {
   id = majapahit.7
   title = majapahit.7.t
@@ -468,6 +487,7 @@ country_event = {
     }
   }
 }
+# Pretender to Majapahit
 country_event = {
   id = majapahit.8
   title = majapahit.8.t
@@ -518,6 +538,7 @@ country_event = {
     }
   }
 }
+# Aid from Muslim Merchants
 country_event = {
   id = majapahit.9
   title = majapahit.9.t
@@ -566,6 +587,7 @@ country_event = {
     }
   }
 }
+# Spread of Islam in [province]
 country_event = {
   id = majapahit.10
   title = majapahit.10.t

@@ -1,5 +1,10 @@
+########################################
+# Events for Bohemia
+# written by Johan Andersson
+########################################
 namespace = flavor_boh
 normal_or_historical_nations = yes
+#Hussites march on Prague
 country_event = {
   id = flavor_boh.1
   title = flavor_boh.1.t
@@ -42,6 +47,7 @@ country_event = {
     }
   }
   option = {
+    # Convert to Hussite
     ai_chance = {
       factor = 10
     }
@@ -63,8 +69,8 @@ country_event = {
     }
     change_religion = hussite
     define_ruler = {
-      name = "Oåe"  # Jirí
-      dynasty = "yQ âlpg^Éb·V"  # z Podebrad
+      name = "Oåe" 	# Jirí
+      dynasty = "yQ âlpg^Éb·V" 	# z Podebrad
       adm = 5
       dip = 4
       mil = 3
@@ -91,6 +97,7 @@ country_event = {
     add_reform_desire = 0.02
   }
   option = {
+    # Hussite King, Catholic nation - tolerance option
     ai_chance = {
       factor = 90
     }
@@ -112,8 +119,8 @@ country_event = {
       remove_heir = {}
     }
     define_ruler = {
-      name = "Oåe"  # Jirí
-      dynasty = "yQ âlpg^Éb·V"  # z Podebrad
+      name = "Oåe" 	# Jirí
+      dynasty = "yQ âlpg^Éb·V" 	# z Podebrad
       adm = 5
       dip = 4
       mil = 3
@@ -137,14 +144,15 @@ country_event = {
     }
   }
   option = {
+    # Fight them
     name = flavor_boh.1.b
     set_country_flag = hussite_regency_mission_flag
     266 = {
       spawn_rebels = {
         type = pretender_rebels
         size = 1
-        leader = "Oåe"  # Jirí
-        leader_dynasty = "yQ âlpg^Éb·V"  # z Podebrad
+        leader = "Oåe" 	# Jirí
+        leader_dynasty = "yQ âlpg^Éb·V" 	# z Podebrad
       }
     }
     random_owned_province = {
@@ -172,6 +180,7 @@ country_event = {
     }
   }
 }
+#The Heretic King
 country_event = {
   id = flavor_boh.2
   title = flavor_boh.2.t
@@ -250,6 +259,7 @@ country_event = {
     }
   }
   option = {
+    # reconciliation
     ai_chance = {
       factor = 90
       modifier = {
@@ -317,7 +327,7 @@ country_event = {
         religion = hussite
       }
       custom_tooltip = rejected_reconciliation_tt
-      set_ruler_flag = hussite_heretic
+      set_ruler_flag = hussite_heretic 	#  catholics can cleanse heresy against you for 15 years
     }
     if = {
       limit = {
@@ -331,6 +341,7 @@ country_event = {
     }
   }
 }
+# Confederacy of Zelena Hora
 country_event = {
   id = flavor_boh.3
   title = flavor_boh.3.t
@@ -417,6 +428,7 @@ country_event = {
     }
   }
 }
+# The Vladislav Hall
 country_event = {
   id = flavor_boh.4
   title = flavor_boh.4.t
@@ -436,6 +448,7 @@ country_event = {
     add_prestige = 50
   }
 }
+# Municipal Constitution
 country_event = {
   id = flavor_boh.5
   title = flavor_boh.5.t
@@ -476,6 +489,7 @@ country_event = {
     }
   }
 }
+# Brahe & Kepler
 country_event = {
   id = flavor_boh.6
   title = flavor_boh.6.t
@@ -505,6 +519,7 @@ country_event = {
     add_army_tradition = 10
   }
 }
+# Hussite Traditions
 country_event = {
   id = flavor_boh.7
   title = flavor_boh.7.t
@@ -523,7 +538,7 @@ country_event = {
     }
     picture = POPE_PREACHING_eventPicture
   }
-  is_triggered_only = yes
+  is_triggered_only = yes 	#  initially triggered by Protestant event and then by itself
   trigger = {
     OR = {
       tag = BOH
@@ -533,6 +548,7 @@ country_event = {
     }
   }
   option = {
+    # Remain Hussite
     ai_chance = {
       factor = 20
     }
@@ -544,12 +560,13 @@ country_event = {
       limit = {
         has_dlc = "Art of War"
       }
-      custom_tooltip = remain_hussite_tt
+      custom_tooltip = remain_hussite_tt 	#  warning that you won't get a side for the league war
     }
     add_prestige = 10
     add_church_power = 10
   }
   option = {
+    # Switch to Protestant
     ai_chance = {
       factor = 80
     }
@@ -588,6 +605,7 @@ country_event = {
     }
   }
   option = {
+    # Hussite provinces convert
     trigger = {
       NOT = {
         religion = hussite
@@ -602,6 +620,7 @@ country_event = {
     }
   }
 }
+# Winter King in Prague
 country_event = {
   id = flavor_boh.8
   title = flavor_boh.8.t
@@ -664,6 +683,7 @@ country_event = {
     }
   }
 }
+# The Hussites of Bohemia (Papal reaction)
 country_event = {
   id = flavor_boh.9
   title = flavor_boh.9.t
@@ -684,7 +704,7 @@ country_event = {
   }
   is_triggered_only = yes
   option = {
-    name = flavor_boh.9.a
+    name = flavor_boh.9.a 	# Condemn the [From.Monarch.GetTitle]
     ai_chance = {
       factor = 90
     }
@@ -701,7 +721,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_boh.9.b
+    name = flavor_boh.9.b 	# We must seek Reconciliation
     ai_chance = {
       factor = 10
     }
@@ -718,6 +738,7 @@ country_event = {
     }
   }
 }
+# The Pope Condemns [Root.Monarch.GetName]
 country_event = {
   id = flavor_boh.10
   title = flavor_boh.10.t
@@ -740,9 +761,10 @@ country_event = {
   is_triggered_only = yes
   option = {
     name = flavor_boh.10.a
-    add_prestige = -5
+    add_prestige = -5 	# Real effects are in the modifier you already got.
   }
 }
+# Papacy remains 
 country_event = {
   id = flavor_boh.11
   title = flavor_boh.11.t
@@ -773,6 +795,8 @@ country_event = {
     }
   }
 }
+# New Events for Bohemia by Daniel Tolman
+# Compacts of Basel
 country_event = {
   id = flavor_boh.12
   title = flavor_boh.12.t
@@ -803,14 +827,17 @@ country_event = {
     months = 1
   }
   option = {
+    # religious toleration
     name = flavor_boh.12.a
     custom_tooltip = first_hussite_tt
     add_country_modifier = {
+      # tolerance heretics
       name = "religious_peace_hussites"
       duration = 3650
     }
   }
   option = {
+    # abandon religious peace
     name = flavor_boh.12.b
     add_country_modifier = {
       name = "hussite_persecution"

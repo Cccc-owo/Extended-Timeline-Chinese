@@ -1,5 +1,10 @@
+########################################
+# Flavor Events for Habsan / Janjira
+# Scripted by Henrik Lohmander
+########################################
 namespace = flavor_jaj
 normal_or_historical_nations = yes
+#Creation of Habsan/Janjira
 country_event = {
   id = flavor_jaj.1
   title = "flavor_jaj.1.t"
@@ -27,7 +32,7 @@ country_event = {
     months = 600
     modifier = {
       factor = 0.5
-      owns = 2089
+      owns = 2089 	#  Chaul
     }
   }
   immediate = {
@@ -45,8 +50,8 @@ country_event = {
           limit = {
             province_id = 2089
           }
-          change_province_name = "—ë	T…b"  # Janjira
-          rename_capital = "—ë	T…b"  # Janjira
+          change_province_name = "—ë	T…b" 	# Janjira
+          rename_capital = "—ë	T…b" 	# Janjira
         }
         add_core = JAJ
       }
@@ -57,7 +62,7 @@ country_event = {
         adopt_reform_progress = ROOT
         change_primary_culture = amhara
         define_ruler = {
-          dynasty = "âÍè"  # Siddhi
+          dynasty = "âÍè" 	# Siddhi
           culture = amhara
           religion = sunni
           claim = 100
