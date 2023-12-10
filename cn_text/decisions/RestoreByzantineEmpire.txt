@@ -16,7 +16,7 @@ country_decisions = {
         ai = no
       }
       NOT = {
-        exists = BYZ
+        tag = BYZ
       }
       NOT = {
         tag = HLR
@@ -67,19 +67,34 @@ country_decisions = {
       }
     }
     allow = {
-      owns = 149
-      owns = 144
-      owns = 147
-      owns = 148
-      owns = 146
-      owns = 145
-      owns = 1773
-      owns = 316
-      owns = 317
-      owns = 318
-      owns = 1853
-      owns = 2296
+      NOT = {
+        exists = BYZ
+      }
+      NOT = {
+        exists = LAE
+      }
       owns = 151
+      OR = {
+        tag = NCA
+        tag = TRE
+        tag = THS
+        tag = EPI
+        tag = MOE
+        AND = {
+          owns = 149
+          owns = 144
+          owns = 147
+          owns = 148
+          owns = 146
+          owns = 145
+          owns = 1773
+          owns = 316
+          owns = 317
+          owns = 318
+          owns = 1853
+          owns = 2296
+        }
+      }
       151 = {
         is_state = yes
       }
