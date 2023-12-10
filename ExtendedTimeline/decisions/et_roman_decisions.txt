@@ -338,36 +338,6 @@ country_decisions = {
 		}
 	}
 
-	restore_byzantium = {
-		major = yes
-		potential = {
-			NOT = { exists = BYZ }
-			primary_culture = greek
-			OR = {
-				tag = NCA
-				tag = TRE
-				tag = THS
-				tag = EPI
-				tag = MOE
-			}
-		}
-		allow = {
-			is_subject = no
-			is_at_war = no
-			NOT = { exists = LAE }
-			owns = 151
-			is_core = 151
-		}
-		effect = {
-			change_tag = BYZ
-			add_prestige = 25
-			swap_free_idea_group = yes
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	roman_technology_reform = {
 		major = yes
 		potential = {

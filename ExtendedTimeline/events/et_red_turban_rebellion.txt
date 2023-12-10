@@ -1,0 +1,939 @@
+namespace = red_turbans
+
+# The red turbans on monthly* 
+ country_event = {
+    id = red_turbans.1
+	title = "red_turbans.1.t"
+	desc = "red_turbans.1.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = { set_country_flag = red_turban_rebellion_started_flag }
+	}
+	option = {
+		name = "red_turbans.1.a"
+		add_stability = -1
+		random_owned_province = {
+			limit = {
+				superregion = china_superregion
+				culture_group = east_asian
+				NOT = { accepted_culture = ROOT }
+			}
+		    spawn_rebels = {
+				type = separatists_rebels 
+				size = 2
+				separatists_target = MNG
+			}
+		}
+		random_owned_province = {
+			limit = {
+				superregion = china_superregion
+				culture_group = east_asian
+				NOT = { accepted_culture = ROOT }
+			}
+		    spawn_rebels = {
+				type = separatists_rebels 
+				size = 2
+				separatists_target = MNG
+			}
+		}
+	}
+}
+
+# The red turbans on end
+country_event = {
+    id = red_turbans.2
+	title = "red_turbans.2.t"
+	desc = "red_turbans.2.desc"
+	picture = MONGOL_BANNERS_eventPicture
+	
+    is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = { set_country_flag = red_turbans_rebellion_happened_flag }
+	}
+    option = {
+		name = "red_turbans.2.a"
+		add_stability = 2
+		add_mandate = 50
+	}
+}
+
+# More chinese revolts
+country_event = {
+    id = red_turbans.3
+	title = "red_turbans.3.t"
+	desc = "red_turbans.3.desc"
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	
+	trigger = {
+		any_owned_province = {
+			superregion = china_superregion
+			culture_group = east_asian
+			NOT = { accepted_culture = ROOT }
+			controlled_by = ROOT
+		}
+	}
+
+    option = {
+		name = "red_turbans.3.a"
+		random_owned_province = {
+			limit = {
+				superregion = china_superregion
+				culture_group = east_asian
+				NOT = { accepted_culture = ROOT }
+				controlled_by = ROOT
+			}
+			spawn_rebels = {
+				type = separatist_rebels
+				size = 1
+				separatists_target = MNG
+			}
+		}
+	}
+}
+
+# Discrimination of Han 
+country_event = {
+    id = red_turbans.8
+	title = "red_turbans.8.t"
+	desc = "red_turbans.8.desc"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "red_turbans.8.a"
+		hidden_effect = { set_country_flag = discrimination_of_han_flag }
+	    china_superregion = {
+			type = all
+			limit = {
+                culture_group = east_asian
+				NOT = { accepted_culture = ROOT }
+            }
+			add_unrest = 20
+        }
+		add_mandate = -20
+		add_stability = -1
+	}
+}
+
+# Corruption in the court
+country_event = {
+    id = red_turbans.9
+	title = "red_turbans.9.t"
+	desc = "red_turbans.9.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		had_country_flag = {
+			flag = discrimination_of_han_flag
+			days = 560		
+		}
+	}
+	
+	option = {
+		name = "red_turbans.9.a"
+		add_corruption = 10
+		add_mandate = -10
+		hidden_effect = {
+	    set_country_flag = yuan_corruption_flag
+			duration = 10000 
+		}
+	}
+}
+
+# White Lotus Society
+country_event = {
+    id = red_turbans.11
+	title = "red_turbans.11.t"
+	desc = "red_turbans.11.desc"
+	picture = MMETR_TEN_EUNUCHS_eventPicture
+	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		had_country_flag = {
+			flag = discrimination_of_han_flag
+			days = 300		#disaster has gone on for 1 year
+		}
+	}
+	
+	option = {
+		name = "red_turbans.11.a"
+		china_superregion = {
+			type = random
+			amount = 50
+			limit = {
+                culture_group = east_asian
+				NOT = { accepted_culture = ROOT }
+            }
+			add_local_autonomy = 100
+        }
+		add_mandate = -5
+	}
+}
+
+# Empire s inflaccion
+country_event = {
+    id = red_turbans.12
+	title = "red_turbans.12.t"
+	desc = "red_turbans.12.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		had_country_flag = {
+			flag = discrimination_of_han_flag
+			days = 720
+		}
+	}
+	option = {
+		name = "red_turbans.12.a"
+		add_inflation = 5
+		add_country_modifier = {
+			name = yuans_inflation
+			duration = 9125		#25 years
+		}
+		random_owned_province = {
+			amount = 5
+			limit = {
+				superregion = china_superregion
+			}
+			spawn_rebels = {
+				type = anti_tax_rebels 
+				size = 1
+			}
+		}
+	}
+}
+
+# The Black death
+country_event = {
+    id = red_turbans.13
+	title = "red_turbans.13.t"
+	desc = "red_turbans.13.desc"
+	picture = PLAGUE_eventPicture
+	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		had_country_flag = {
+			flag = discrimination_of_han_flag
+			days = 1825     #5 years
+		}
+	}
+	option = {
+		name = "red_turbans.13.a"
+		china_superregion = {
+			type = random
+			amount = 30
+			limit = {
+                culture_group = east_asian
+            }
+        }
+		add_devastation = 80
+		add_base_manpower = -3
+		add_base_production = -3
+		add_base_tax = -3
+		add_country_modifier = {
+			name = mongol_mandate_questioned
+			duration = 3650
+		}
+		
+	}
+}
+
+# Rise of the general Zhu Yuanzhang
+country_event = {
+    id = red_turbans.14
+	title = "red_turbans.14.t"
+	desc = "red_turbans.14.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		had_country_flag = {
+			flag = discrimination_of_han_flag
+			days = 4300     #12 years 1352
+		}
+	}
+	option = {
+		name = "red_turbans.14.a"
+		hidden_effect = { set_country_flag = rise_of_zhu_yuanzhang }
+		add_stability = -1
+		add_mandate = -10
+		random_owned_province = {
+			limit = {
+				superregion = china_superregion
+				culture_group = east_asian
+				NOT = { accepted_culture = ROOT }
+			}
+			spawn_rebels = {
+				type = separatist_rebels
+				size = 3
+				separatists_target = MNG
+			}
+		}
+		if = {
+			limit = { exists = MNG }
+			MNG = {
+				add_country_modifier = {
+					name = ming_nationalism
+					duration = 9125
+				}
+			}
+		}
+		china_superregion = {
+			limit = {
+                culture_group = east_asian
+				NOT = { is_core = MNG }
+            }
+			add_core = MNG
+        }
+    }
+}
+
+# Han uprising 
+country_event = {
+    id = red_turbans.15
+	title = "red_turbans.15.t"
+	desc = "red_turbans.15.desc"
+	picture = BORDER_TENSION_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	
+	trigger = {
+		any_owned_province = {
+			superregion = china_superregion
+			culture_group = east_asian
+			NOT = { accepted_culture = ROOT }
+			controlled_by = ROOT
+		}
+	}
+	
+    option = {
+		name = "red_turbans.15.a"
+		random_owned_province = {
+			limit = {
+				superregion = china_superregion
+				culture_group = east_asian
+				NOT = { accepted_culture = ROOT }
+				controlled_by = ROOT
+			}
+			spawn_rebels = {
+				type = Separatist_rebels
+				size = 2
+				separatists_target = HND
+			}
+		}
+		china_superregion = {
+			limit = {
+                culture_group = east_asian
+				NOT = { is_core = HND }
+            }
+			add_core = HND
+        }
+		add_mandate = -5
+	}
+}
+
+# Ming uprising 
+country_event = {
+    id = red_turbans.16
+	title = "red_turbans.16.t"
+	desc = "red_turbans.16.desc"
+	picture = BORDER_TENSION_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	
+	trigger = {
+		any_owned_province = {
+			superregion = china_superregion
+			culture_group = east_asian
+			NOT = { accepted_culture = ROOT }
+			controlled_by = ROOT
+		}
+	}
+	
+    option = {
+		name = "red_turbans.16.a"
+		random_owned_province = {
+			limit = {
+				superregion = china_superregion
+				culture_group = east_asian
+				NOT = { accepted_culture = ROOT }
+				controlled_by = ROOT
+			}
+			spawn_rebels = {
+				type = Separatist_rebels
+				size = 1
+				separatists_target = MNG
+			}
+			add_local_autonomy = 100
+		}
+	}
+}
+
+# Flood
+country_event = {
+    id = red_turbans.17
+	title = "red_turbans.17.t"
+	desc = "red_turbans.17.desc"
+	picture = MMETR_FLOODING_YELLOW_RIVER_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	
+    option = {
+		name = "red_turbans.17.a"
+        add_mandate = -20
+		south_china_region = {
+			type = random
+			amount = 2
+		}
+		add_devastation = 70
+		add_unrest = 40
+	}
+}
+
+# Rise of Wu
+country_event = {
+    id = red_turbans.18
+	title = "red_turbans.18.t"
+	desc = "red_turbans.18.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { exists = WUU }
+		any_owned_province = {
+			OR = {
+				area = north_jiangsu_area
+				area = south_jiangsu_area
+			}
+		}
+		all_owned_province = {
+			OR = {
+				AND = {
+					NOT = { area = north_jiangsu_area }
+					NOT = { area = south_jiangsu_area }
+				}
+				NOT = { controlled_by = ROOT }
+			}
+		}
+    }
+    option = {
+		name = "red_turbans.18.a"
+        add_mandate = -20
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = north_jiangsu_area
+					area = south_jiangsu_area
+				}
+				controlled_by = REB
+			}
+			add_core = WUU
+			cede_province = WUU
+			clear_rebels = yes
+		}
+		WUU = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+		hidden_effect = {
+			WUU = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				add_country_modifier = {
+					name = ming_nationalism
+					duration = 9125 
+				}
+				if = {
+					limit = {
+						exists = XIA
+					}
+					declare_war_with_cb = {
+						who = XIA
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = HND
+					}
+					declare_war_with_cb = {
+						who = HND
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = MNG
+					}
+					declare_war_with_cb = {
+						who = MNG
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = MIN
+					}
+					declare_war_with_cb = {
+						who = MIN
+						casus_belli = cb_annex
+					}
+				}
+			}
+		}
+    }
+}
+
+# Rise of Xia
+ country_event = {
+    id = red_turbans.19
+	title = "red_turbans.19.t"
+	desc = "red_turbans.19.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { exists = XIA }
+		any_owned_province = {
+			OR = {
+				area = sichuan_area
+				area = chuanbei_area
+				area = chuannan_area
+			}
+		}
+		all_owned_province = {
+			OR = {
+				AND = {
+					NOT = { area = sichuan_area }
+					NOT = { area = chuanbei_area }
+					NOT = { area = chuannan_area }
+				}
+				NOT = { controlled_by = ROOT }
+			}
+		}
+	}
+    option = {
+		name = "red_turbans.19.a"
+        add_mandate = -20
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = sichuan_area
+					area = chuanbei_area
+					area = chuannan_area
+				}
+				controlled_by = REB
+			}
+			add_core = XIA
+			cede_province = XIA
+			clear_rebels = yes
+		}
+		XIA = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+		hidden_effect = {
+			XIA = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				add_country_modifier = {
+					name = ming_nationalism
+					duration = 9125 
+				}
+				if = {
+					limit = {
+						exists = WUU
+					}
+					declare_war_with_cb = {
+						who = WUU
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = HND
+					}
+					declare_war_with_cb = {
+						who = HND
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = MNG
+					}
+					declare_war_with_cb = {
+						who = MNG
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = MIN
+					}
+					declare_war_with_cb = {
+						who = MIN
+						casus_belli = cb_annex
+					}
+				}
+			}
+		}
+    }
+}
+
+# Rise of Han
+ country_event = {
+    id = red_turbans.20
+	title = "red_turbans.20.t"
+	desc = "red_turbans.20.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { exists = HND }
+		any_owned_province = {
+			area = hunan_area
+		}
+		all_owned_province = {
+			OR = {
+				NOT = { area = hunan_area }
+				NOT = { controlled_by = ROOT }
+			}
+		}
+    }
+    option = {
+		name = "red_turbans.20.a"
+        add_mandate = -20
+		every_owned_province = {
+			limit = {
+				area = hunan_area
+				controlled_by = REB
+			}
+			add_core = HND
+			cede_province = HND
+			clear_rebels = yes
+		}
+		HND = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+		hidden_effect = {
+			HND = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				add_country_modifier = {
+					name = ming_nationalism
+					duration = 9125 
+				}
+				if = {
+					limit = {
+						exists = WUU
+					}
+					declare_war_with_cb = {
+						who = WUU
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = XIA
+					}
+					declare_war_with_cb = {
+						who = XIA
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = MNG
+					}
+					declare_war_with_cb = {
+						who = MNG
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = MIN
+					}
+					declare_war_with_cb = {
+						who = MIN
+						casus_belli = cb_annex
+					}
+				}
+			}
+		}
+    }
+}
+# Rise of Ming
+ country_event = {
+    id = red_turbans.21
+	title = "red_turbans.21.t"
+	desc = "red_turbans.21.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = rise_of_zhu_yuanzhang
+		NOT = { exists = MNG }
+		any_owned_province = {
+			OR = {
+				area = jiangxi_area
+				area = south_anhui_area
+				area = north_anhui_area
+			}
+		}
+		all_owned_province = {
+			OR = {
+				AND = {
+					NOT = { area = jiangxi_area }
+					NOT = { area = south_anhui_area }
+					NOT = { area = north_anhui_area }
+				}
+				NOT = { controlled_by = ROOT }
+			}
+		}
+    }
+    option = {
+		name = "red_turbans.21.a"
+        add_mandate = -20
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = jiangxi_area 
+					area = south_anhui_area
+					area = north_anhui_area
+				}
+				controlled_by = REB
+			}
+			add_core = MNG
+			cede_province = MNG
+			clear_rebels = yes
+		}
+		MNG = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+		hidden_effect = {
+			MNG = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				add_country_modifier = {
+					name = ming_nationalism
+					duration = 9125 
+				}
+				if = {
+					limit = {
+						exists = WUU
+					}
+					declare_war_with_cb = {
+						who = WUU
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = XIA
+					}
+					declare_war_with_cb = {
+						who = XIA
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = HND
+					}
+					declare_war_with_cb = {
+						who = HND
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = MIN
+					}
+					declare_war_with_cb = {
+						who = MIN
+						casus_belli = cb_annex
+					}
+				}
+			}
+		}
+    }
+}
+
+# Rise of Min
+ country_event = {
+    id = red_turbans.22
+	title = "red_turbans.22.t"
+	desc = "red_turbans.22.desc"
+	picture = MMETR_YELLOW_TURBANS_eventPicture
+	
+	is_triggered_only = yes		#So that only fires through disaster if triggers are met
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { exists = MIN }
+		any_owned_province = {
+			area = fujian_area
+		}
+		all_owned_province = {
+			OR = {
+				NOT = { area = fujian_area }
+				NOT = { controlled_by = ROOT }
+			}
+		}
+    }
+    option = {
+		name = "red_turbans.22.a"
+		every_owned_province = {
+			limit = {
+				area = fujian_area
+				controlled_by = REB
+			}
+			add_core = MIN
+			cede_province = MIN
+			clear_rebels = yes
+		}
+		MIN = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+		hidden_effect = {
+			MIN = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.3
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+				add_country_modifier = {
+					name = ming_nationalism
+					duration = 9125 
+				}
+				if = {
+					limit = {
+						exists = WUU
+					}
+					declare_war_with_cb = {
+						who = WUU
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = XIA
+					}
+					declare_war_with_cb = {
+						who = XIA
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = HND
+					}
+					declare_war_with_cb = {
+						who = HND
+						casus_belli = cb_annex
+					}
+				}
+				if = {
+					limit = {
+						exists = MNG
+					}
+					declare_war_with_cb = {
+						who = MNG
+						casus_belli = cb_annex
+					}
+				}
+			}
+		}
+    }
+}
+
+# Chinese volunteers
+ country_event = {
+    id = red_turbans.23
+	title = "red_turbans.23.t"
+	desc = "red_turbans.23.desc"
+	picture = LAND_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	
+    option = {
+		name = "red_turbans.23.a"
+		add_manpower = 5
+	}
+}

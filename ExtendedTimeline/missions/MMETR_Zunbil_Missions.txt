@@ -1,0 +1,1292 @@
+zunbil_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ZAB	#Zabul / Zunbils
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	zab_envoys_to_the_middle_kingdom_mission = {
+		icon = mission_chinese_warlords_alliance
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			owner = {
+				is_emperor_of_china = yes
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			any_country = {
+				is_emperor_of_china = yes
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 80
+					}
+					owes_favors = { 
+						who = ROOT 
+						value = 10 
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.1
+			}
+			
+			tooltip = {
+				country_event = {
+					id = mmetr_ZAB_mission_events.2
+				}
+				
+				add_country_modifier = {
+					name = "me_zab_gedalouzhi_xielifa"
+					duration = 10950
+				}
+			}
+		}
+	}
+	zab_capable_administrators_mission = {
+		icon = mission_deccanis
+		required_missions = {  }
+		position = 2
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 3
+			}
+			OR = {
+				has_adm_advisor = yes 
+				has_dip_advisor = yes 
+				has_mil_advisor = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_just_administration"
+				duration = 10950
+			}
+		}
+	}
+	zab_land_of_a_hundred_kings_mission = {
+		icon = mission_conquer_kannauj
+		required_missions = { zab_capable_administrators_mission }
+		position = 4
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				num_of_buildings_in_province = 1
+			}
+		}
+		trigger = {
+			stability = 3
+			capital_scope = {
+				num_of_buildings_in_province = 3
+			}
+			num_of_owned_provinces_with = {
+				value = 15
+				num_of_buildings_in_province = 1
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_loyal_client_kings"
+				duration = 10950
+			}
+		}
+	}
+	zab_the_pearl_of_khorasan_mission = {
+		icon = mission_growth_of_golcond	#string for mission_growth_of_golconda
+		required_missions = { zab_control_tokharistan_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 446
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 446	#Herat
+			446 = {
+				development = 8
+			}
+		}
+		effect = {
+			446 = {
+				add_province_modifier = {
+					name = "me_zab_pearl_of_khorasan"
+					duration = -1
+				}
+			}
+		}
+	}
+	zab_legacy_of_the_ebodalo_mission = {
+		icon = mission_hephthalites_white_huns
+		required_missions = { zab_the_pearl_of_khorasan_mission zab_tokharians_of_the_tarim_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = kashgaria_area
+				area = tarim_basin_area
+				area = shanshan_area
+				area = transoxiana_area
+				area = merv_area
+				area = balkh_area
+				area = arys_area
+				area = ferghana_area
+				area = herat_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kashgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tarim_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shanshan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			transoxiana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			merv_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			balkh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			arys_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ferghana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			herat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.6
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_zab_turkic_hephthalite_confederation"
+					duration = -1
+				}
+			}
+		}
+	}
+	zab_protect_the_solar_cities_mission = {
+		icon = mission_zoroastrian_fire_temple_ateshgah
+		required_missions = { zab_avenge_the_sassanids_mission }
+		position = 9
+		provinces_to_highlight = {
+			#Holy sites for Zunism
+			OR = {
+				province_id = 4326
+				province_id = 2229
+				province_id = 451
+				province_id = 506
+				province_id = 1947
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = {
+				religion = zunism
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4326
+			owns_or_non_sovereign_subject_of = 2229
+			owns_or_non_sovereign_subject_of = 451
+			owns_or_non_sovereign_subject_of = 506
+			owns_or_non_sovereign_subject_of = 1947
+			4326 = {
+				religion = zunism
+			}
+			2229 = {
+				religion = zunism
+			}
+			451 = {
+				religion = zunism
+			}
+			506 = {
+				religion = zunism
+			}
+			1947 = {
+				religion = zunism
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_protector_of_holy_sites"
+				duration = -1
+			}
+		}
+	}
+}
+
+zunbil_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ZAB	#Zabul / Zunbils
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	zab_arab_diplomacy_mission = {
+		icon = mission_black_standard_of_the_eagle
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			owner = {
+				OR = {
+					has_reform = caliphate_reform
+					has_reform = caliphate_theocratic_reform		#added for RSD / Alids
+				}
+			}
+		}
+		trigger = {
+			any_neighbor_country = {
+				OR = {
+					has_reform = caliphate_reform
+					has_reform = caliphate_theocratic_reform
+				}
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+				NOT = {
+					war_with = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.12
+			}
+			custom_tooltip = zab_arab_diplomacy_mission.tt
+		}
+	}
+	zab_blessings_of_coin_mission = {
+		icon = mission_establish_mint_towns
+		required_missions = { zab_cultivate_ghazni_mission }
+		position = 2
+		trigger = {
+			share_of_starting_income = 1.5
+			NOT = { num_of_loans = 1 } 
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_merchantry_deitys_blessing"
+				duration = 10950
+			}
+		}
+	}
+	zab_silk_trade_connections_mission = {
+		icon = mission_merchant_of_gujarat
+		required_missions = { zab_blessings_of_coin_mission zab_capable_administrators_mission }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 454
+			NOT = {
+				is_strongest_trade_power = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			454 = {		#Samarkand province and trade node
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			add_country_modifier = {
+				name = "me_zab_silk_road_middlemen"
+				duration = 10950
+			}
+		}
+	}
+	zab_control_tokharistan_mission = {
+		icon = mission_conquer_mewar
+		required_missions = { zab_rutbilid_banners_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2227	#Kunduz
+				province_id = 450	#Balkh
+				province_id = 2225	#Bamyan / Bamiyan
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 2227		#Kunduz
+			owns_or_non_sovereign_subject_of = 450		#Balkh
+			owns_or_non_sovereign_subject_of = 2225		#Bamyan / Bamiyan 
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.4
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_zab_governors_of_tokharistan"
+					duration = 10950
+				}
+			}
+			kashgaria_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+			tarim_basin_area = {		#North Altishahr
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+			shanshan_area = {		#North Altishahr
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+		}
+	}
+	zab_tokharians_of_the_tarim_mission = {
+		icon = mission_pue_sky_city
+		required_missions = { zab_control_tokharistan_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = kashgaria_area
+				area = tarim_basin_area
+				area = shanshan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kashgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tarim_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shanshan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_tarim_oasis_cities"
+				duration = 10950
+			}
+		}
+	}
+	zab_avenge_the_sassanids_mission = {
+		icon = mission_kaviani_banner_close
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			region = persia_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				region = persia_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_liberator_of_persia"
+				duration = 10950
+			}
+		}
+	}
+	zab_empire_under_the_sun_mission = {
+		icon = mission_persianate_empire
+		required_missions = { zab_avenge_the_sassanids_mission }
+		position = 10
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				religion = zunism
+			}
+		}
+		trigger = {
+			religion = zunism
+			num_of_owned_provinces_with = {
+				value = 100
+				religion = zunism
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = "me_zab_zuns_chosen"
+				duration = -1
+			}
+			set_government_rank = 3
+			
+			#country_event = {
+			#	id = mmetr_ZAB_mission_events.15
+			#}
+			#custom_tooltip = zab_empire_under_the_sun_mission.tt
+		}
+	}
+}
+
+zunbil_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ZAB	#Zabul / Zunbils
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	zab_cultivate_ghazni_mission = {		#changed to other capital of Zamindawar
+		icon = mission_growth_of_ahmedabad
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 2229		#Zamindawar / Bust
+			OR = {
+				NOT = { num_of_times_improved = 5 }
+				NOT = { fort_level = 2 }
+				NOT = { num_of_buildings_in_province = 2 }
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			capital = 2229	#Zamindawar / Bust
+			2229 = {
+				num_of_times_improved = 5
+			}
+			2229 = {
+				fort_level = 2
+			}
+			2229 = {
+				num_of_buildings_in_province = 2
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.3
+			}
+			tooltip = {
+				2229 = {
+					add_province_modifier = {
+						name = "me_zab_capital_of_the_zunbils"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	zab_gatekeepers_of_india_mission = {
+		icon = mission_restore_rule_over_mysore
+		required_missions = { zab_cultivate_ghazni_mission zab_cities_of_zabulistan_mission }
+		position = 2
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+			NOT = {
+				OR = {
+					fort_level = 2
+					base_manpower = 5
+				}
+			}
+		}
+		trigger = {
+			capital_scope = {
+				fort_level = 2
+			}
+			capital_scope = {
+				base_manpower = 5
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				fort_level = 1
+				OR = {
+					region = khorasan_region
+					region = hindusthan_region
+					region = west_india_region
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.8
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_zab_gatekeepers_of_india"
+					duration = -1
+				}
+			}
+		}
+	}
+	zab_rutbilid_banners_mission = {
+		icon = mission_abu_saids_dream
+		required_missions = {  }
+		position = 4
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_warriors_of_zun"
+				duration = 10950
+			}
+			ghor_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kabulistan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			balkh_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	zab_cross_the_amu_darya_mission = {
+		icon = mission_central_asian_city
+		required_missions = { zab_control_tokharistan_mission zab_shahis_of_kabulistan_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 454
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 454		#Samarkand
+		}
+		effect = {
+			454 = {
+				add_province_modifier = {
+					name = "me_zab_trading_fortress"
+					duration = -1
+				}
+			}
+			ferghana_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			arys_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	zab_lord_of_sogdia_mission = {
+		icon = mission_marwari_horses
+		required_missions = { zab_cross_the_amu_darya_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = ferghana_area
+				area = arys_area
+				area = transoxiana_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			ferghana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			arys_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			transoxiana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_army_tradition = 10
+			add_country_modifier = {
+				name = "me_zab_sogdian_merchants"
+				duration = -1
+			}
+		}
+	}
+	zab_governors_of_sistan_mission = {
+		icon = mission_muslim_administrators
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			area = sistan_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.7
+			}
+			tooltip = {
+				add_prestige = 15
+				add_army_tradition = 15
+				sistan_area = {
+					add_province_modifier = {
+						name = "me_zab_sistan_integration"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	zab_iranian_restoration_mission = {
+		icon = mission_azar_goshnasp_sas
+		required_missions = { zab_avenge_the_sassanids_mission zab_governors_of_sistan_mission }
+		position = 9
+		provinces_to_highlight = {
+			region = persia_region
+			NOT = {
+				religion = zunism
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				religion = zunism
+				region = persia_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_zunist_syncretism"
+				duration = -1
+			}
+		}
+	}
+}
+
+zunbil_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ZAB	#Zabul / Zunbils
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	zab_cities_of_zabulistan_mission = {
+		icon = mission_conquer_nagaur
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 447
+				province_id = 2225
+				province_id = 2229
+				province_id = 448
+			}
+			NOT = {
+				num_of_times_improved = 3
+				num_of_buildings_in_province = 1
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 447
+			owns_core_province = 2225
+			owns_core_province = 2229
+			owns_core_province = 448
+			447 = {
+				num_of_times_improved = 3
+				num_of_buildings_in_province = 1
+			}
+			2225 = {
+				num_of_times_improved = 3
+				num_of_buildings_in_province = 1
+			}
+			2229 = {
+				num_of_times_improved = 3
+				num_of_buildings_in_province = 1
+			}
+			448 = {
+				num_of_times_improved = 3
+				num_of_buildings_in_province = 1
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_tax = 1
+				add_base_manpower = 1
+			}
+			add_country_modifier = {
+				name = "me_zab_urbanization_of_zabul"
+				duration = 10950
+			}
+		}
+	}
+	zab_kingdom_of_the_khalaj_mission = {
+		icon = mission_conquer_maharashtra
+		required_missions = { zab_cities_of_zabulistan_mission zab_zunist_temples_mission }
+		position = 3
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				region = khorasan_region
+				region = central_asia_region
+				region = persia_region
+				region = hindusthan_region
+			}
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 150
+				OR = {
+					region = khorasan_region
+					region = central_asia_region
+					region = persia_region
+					region = hindusthan_region
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				has_owner_accepted_culture = yes
+				has_owner_culture = no
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_kingdom_of_many"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "me_zab_khalaj_hegemony"
+				duration = 10950
+			}
+		}
+	}
+	zab_shahis_of_kabulistan_mission = {
+		icon = mission_the_ganges_campaign
+		required_missions = { zab_rutbilid_banners_mission }
+		position = 5
+		provinces_to_highlight = {
+			area = kabulistan_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kabulistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.5
+			}
+			
+			tooltip = {
+				add_country_modifier = {
+					name = "me_zab_union_with_the_kabul_khalaj"
+					duration = 10950
+				}
+			}
+			
+			add_army_tradition = 15
+			sind_sagar_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	zab_march_into_gandhara_mission = {
+		icon = mission_control_the_desh
+		required_missions = { zab_shahis_of_kabulistan_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = sind_sagar_area
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				AND = {
+					province_id = 2077
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2077	#Taxila
+			sind_sagar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.10
+			}
+			multan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+			lahore_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+		}
+	}
+	zab_king_of_punjab_mission = {
+		icon = mission_unite_rajputana
+		required_missions = { zab_march_into_gandhara_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = multan_area
+				area = lahore_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			multan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lahore_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_king_of_punjab"
+				duration = 10950
+			}
+			add_army_tradition = 10
+			sirhind_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+			upper_doab_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+			sindh_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+			northern_sindh_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+				discover_country = ROOT
+			}
+		}
+	}
+	zab_indian_campaign_mission = {
+		icon = mission_prepare_an_invasion_force
+		required_missions = { zab_king_of_punjab_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = sirhind_area
+				area = upper_doab_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sirhind_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_doab_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				OR = {
+					region = hindusthan_region
+					region = west_india_region
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_the_victorious"
+				duration = 10950
+			}
+		}
+	}
+	zab_maharaja_of_hindustan_mission = {
+		icon = mission_emperor_of_hindusthan
+		required_missions = { zab_indian_campaign_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				region = hindusthan_region
+				region = west_india_region
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 40
+				OR = {
+					region = hindusthan_region
+					region = west_india_region
+				}
+			}
+		}
+		effect = {
+			add_prestige = 30
+			add_country_modifier = {
+				name = "me_zab_maharaja_of_hindustan"
+				duration = -1
+			}
+		}
+	}
+}
+
+zunbil_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ZAB	#Zabul / Zunbils
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	zab_shrine_to_zun_mission = {
+		icon = mission_protect_jain_communities
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 2229		#Zamindawar / Bust
+			OR = {
+				NOT = {
+					has_building = temple
+				}
+				NOT = {
+					has_building = cathedral
+				}
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion = zunism
+			owns_core_province = 2229
+			2229 = {
+				religion = zunism
+			}
+			2229 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			2229 = {
+				add_country_modifier = {
+					name = "me_zab_shrine_of_zun"
+					duration = -1
+				}
+			}
+		}
+	}
+	zab_zunist_temples_mission = {
+		icon = mission_conquer_malwa_bng
+		required_missions = { zab_shrine_to_zun_mission }
+		position = 2
+		trigger = {
+			religion = zunism
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_missionaries_of_zun"
+				duration = -1
+			}
+		}
+	}
+	zab_praise_the_sun_mission = {
+		icon = mission_pol_breadbasket_europe
+		required_missions = { zab_zunist_temples_mission }
+		position = 4
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				religion = zunism
+			}
+		}
+		trigger = {
+			religion = zunism
+			grown_by_states = 5
+			religious_unity = 0.95
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "me_zab_blessings_of_the_sun"
+				duration = 10950
+			}
+		}
+	}
+	zab_recruit_the_ayyar_bands_mission = {
+		icon = mission_defeat_mewar
+		required_missions = { zab_rutbilid_banners_mission }
+		position = 5
+		trigger = {
+			num_of_mercenaries = 6
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.9
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_zab_zabulistan_ayyarun"
+					duration = 10950
+				}
+			}
+		}
+	}
+	zab_restore_taxila_university_mission = {
+		icon = mission_court_education
+		required_missions = { zab_march_into_gandhara_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 2077
+			OR = {
+				NOT = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+				NOT = {
+					num_of_times_improved = 5
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 2077	#Taxila
+			2077 = {
+				num_of_times_improved = 5
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_ZAB_mission_events.11
+			}
+			tooltip = {
+				add_prestige = 10
+				2077 = {
+					add_base_production = 1
+					add_country_modifier = {
+						name = "me_zab_new_taxila_university"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	zab_seize_the_sindh_mission = {
+		icon = mission_advance_to_the_arabian_sea
+		required_missions = { zab_king_of_punjab_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = sindh_area
+				area = northern_sindh_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			sindh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_sindh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_open_sea_access"
+				duration = 10950
+			}
+		}
+	}
+	zab_shaivist_traditions_mission = {
+		icon = mission_patronize_local_gods
+		required_missions = { zab_indian_campaign_mission }
+		position = 10
+		provinces_to_highlight = {
+			owned_by = ROOT
+			religion = hinduism
+			has_owner_accepted_culture = no
+			has_owner_culture = no
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				religion = hinduism
+				has_owner_accepted_culture = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_zab_shaivist_integration"
+				duration = -1
+			}
+		}
+	}
+}

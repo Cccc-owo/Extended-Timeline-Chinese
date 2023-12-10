@@ -1,0 +1,356 @@
+namespace = mmetr_RUM_mission_events
+
+# The City of Alaiye
+country_event = {
+	id = mmetr_RUM_mission_events.1
+	title = "mmetr_RUM_mission_events.1.t"
+	desc = "mmetr_RUM_mission_events.1.desc"
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.1.a"
+		
+		319 = {
+			rename_capital = "Alaiye"
+			add_province_modifier = {
+				name = "me_rum_city_state_of_alaiye"
+				duration = -1
+			}
+		}
+	}
+}
+
+# The Atabegs in the East
+country_event = {
+	id = mmetr_RUM_mission_events.2
+	title = "mmetr_RUM_mission_events.2.t"
+	desc = "mmetr_RUM_mission_events.2.desc"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_rum_atabeg_tribute"
+			duration = 10950
+		}
+		north_kurdistan_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_rum_autonomous_atabegs"
+				duration = 10950
+			}
+		}
+		samtskhe_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_rum_autonomous_atabegs"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_RUM_mission_events.2.b"
+		
+		add_country_modifier = {
+			name = "me_rum_atabeg_levies"
+			duration = 10950
+		}
+		north_kurdistan_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_rum_direct_roman_rule"
+				duration = 10950
+			}
+		}
+		samtskhe_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_rum_direct_rumi_rule"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# Armenian Emporia of Cilicia
+country_event = {
+	id = mmetr_RUM_mission_events.3
+	title = "mmetr_RUM_mission_events.3.t"
+	desc = "mmetr_RUM_mission_events.3.desc"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.3.a"
+		
+		add_country_modifier = {
+			name = "me_rum_cilician_trade_networks"
+			duration = 10950
+		}
+		
+		#Cyprus, part of Armenian diaspora flees to Cyprus
+		321 = {
+			owner = {
+				country_event = {
+					id = mmetr_RUM_mission_events.4
+				}
+			}
+		}
+	}
+}
+
+# Cilician Armenians Flee to Cyprus
+country_event = {
+	id = mmetr_RUM_mission_events.4
+	title = "mmetr_RUM_mission_events.4.t"
+	desc = "mmetr_RUM_mission_events.4.desc"
+	picture = EUROPEAN_REFUGEES_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.4.a"
+		
+		#Cyprus, part of Armenian diaspora flees to Cyprus
+		321 = {
+			add_base_tax = 1
+		}
+	}
+}
+
+# Greek Aristocrats Integrated
+country_event = {
+	id = mmetr_RUM_mission_events.5
+	title = "mmetr_RUM_mission_events.5.t"
+	desc = "mmetr_RUM_mission_events.5.desc"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_rum_greek_christian_aristocracy"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_RUM_mission_events.5.b"
+		
+		add_country_modifier = {
+			name = "me_rum_converting_the_aristocracy"
+			duration = 10950
+		}
+	}
+}
+
+# New Medreseler in Anatolia
+country_event = {
+	id = mmetr_RUM_mission_events.6
+	title = "mmetr_RUM_mission_events.6.t"
+	desc = "mmetr_RUM_mission_events.6.desc"
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_rum_medreseler_of_rum"
+			duration = 10950
+		}
+	}
+}
+
+# The City of the World's Desire
+country_event = {
+	id = mmetr_RUM_mission_events.7
+	title = "mmetr_RUM_mission_events.7.t"
+	desc = "mmetr_RUM_mission_events.7.desc"
+	picture = MMETR_HAGIA_SOPHIA_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.7.a"
+		
+		set_capital = 151
+		151 = {
+			add_province_modifier = {
+				name = "me_rum_seat_of_the_roman_sultan"
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_RUM_mission_events.7.b"
+		
+		capital_scope = {
+			add_province_modifier = {
+				name = "me_rum_seat_of_the_roman_sultan"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Aleppo Falls to [Root.Monarch.GetTitle] [Root.Monarch.GetName]
+country_event = {
+	id = mmetr_RUM_mission_events.8
+	title = "mmetr_RUM_mission_events.8.t"
+	desc = "mmetr_RUM_mission_events.8.desc"
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_rum_suleiman_avenged"
+			duration = 9125
+		}
+	}
+}
+
+# Custodian of Jerusalem
+country_event = {
+	id = mmetr_RUM_mission_events.9
+	title = "mmetr_RUM_mission_events.9.t"
+	desc = "mmetr_RUM_mission_events.9.desc"
+	picture = CRUSADE_BATTLE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.9.a"
+		
+		add_country_modifier = {
+			name = "me_rum_holy_conqueror"
+			duration = -1
+		}
+	}
+}
+
+# A Trade Colony Across the Sea
+country_event = {
+	id = mmetr_RUM_mission_events.10
+	title = "mmetr_RUM_mission_events.10.t"
+	desc = "mmetr_RUM_mission_events.10.desc"
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.10.a"
+		
+		if = {
+			limit = {
+				NOT = {
+					owns = 2410
+				}
+			}
+			2410 = {
+				cede_province = ROOT
+				add_territorial_core = ROOT
+			}
+		}
+		2410 = {
+			add_province_modifier = {
+				name = "me_rum_rumi_trade_colony"
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns = 285
+				}
+			}
+			285 = {
+				cede_province = ROOT
+				add_territorial_core = ROOT
+			}
+		}
+		285 = {
+			add_province_modifier = {
+				name = "me_rum_rumi_trade_colony"
+				duration = -1
+			}
+		}
+		add_mercantilism = 1
+	}
+}
+
+# Great Sultan of the Greeks
+country_event = {
+	id = mmetr_RUM_mission_events.11
+	title = "mmetr_RUM_mission_events.11.t"
+	desc = "mmetr_RUM_mission_events.11.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.11.a"
+		
+		add_country_modifier = {
+			name = "me_rum_true_roman_emperor"
+			duration = -1
+		}
+		balkan_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# The Sultan in Rome
+country_event = {
+	id = mmetr_RUM_mission_events.12
+	title = "mmetr_RUM_mission_events.12.t"
+	desc = "mmetr_RUM_mission_events.12.desc"
+	picture = ROMAN_ROAD_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_RUM_mission_events.12.a"
+		
+		add_country_modifier = {
+			name = "me_rum_missionaries_to_italy"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_RUM_mission_events.12.b"
+		
+		add_country_modifier = {
+			name = "me_rum_christians_of_roma"
+			duration = 10950
+		}
+	}
+}

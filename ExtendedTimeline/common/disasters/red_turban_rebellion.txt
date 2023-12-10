@@ -1,0 +1,159 @@
+red_turban_rebellion = {
+    potential = {
+		NOT = { has_country_modifier = nomadic_conquest }
+		NOT = { has_country_flag = red_turbans_rebellion_happened_flag }
+		normal_or_historical_nations = yes
+		NOT = { culture_group = east_asian }
+		num_of_cities = 100
+		num_of_owned_provinces_with = {
+	        value = 60
+			superregion = china_superregion
+			culture_group = east_asian
+		}
+		NOT = { started_in = 1370.1.1 }
+	}
+
+	can_start = {
+		NOT = { stability = 3 }
+		num_of_cities = 100
+		num_of_owned_provinces_with = {
+	        value = 30
+			superregion = china_superregion
+			culture_group = east_asian
+	        has_owner_accepted_culture = no
+		}
+		if = {
+			limit = {	
+				has_dlc = "Mandate of Heaven"
+			}
+			OR = {
+				AND = {
+					NOT = { imperial_mandate = 50 }
+					is_emperor_of_china = yes
+				}
+				NOT = { is_emperor_of_china = yes }
+				NOT = { stability = 2 }
+			}
+		}
+		else = {
+			OR = {
+				has_country_modifier = the_mandate_of_heaven_lost
+				has_country_modifier = lost_mandate_of_heaven
+				NOT = { stability = 2 }
+			}     
+		}
+    }
+	can_stop = {
+        has_any_disaster = yes
+		stability = 3
+    }
+	progress = {
+	    modifier = {
+			factor = 2
+			NOT = { imperial_mandate = 50 }
+			imperial_mandate = 30
+		}
+		modifier = {
+			factor = 3
+			NOT = { imperial_mandate = 30 }
+			imperial_mandate = 10
+		}
+		modifier = {
+			factor = 10
+			NOT = { imperial_mandate = 10 }
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 2
+		}
+	    modifier = {
+			factor = 10
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 2
+			corruption = 5
+			NOT = { corruption = 10 }
+		}
+		modifier = {
+			factor = 5
+			corruption = 10
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 10
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 2
+			has_heir = no
+		}
+		modifier = {
+			factor = 2
+			war_exhaustion = 4
+		}
+	}
+	can_end = {
+		OR = {
+			AND = {
+				stability = 3
+				NOT = { num_of_revolts = 1 }
+			}
+			NOT = {
+				any_owned_province = { superregion = china_superregion }
+			}
+		}
+	}
+	modifier = {
+		global_unrest = 10
+		stability_cost_modifier = 0.3
+		land_morale = -0.10
+		global_monthly_devastation = 0.05
+		global_tax_modifier = -0.5
+		global_trade_goods_size_modifier = -0.1
+	}	
+			
+	on_start = red_turbans.1
+	on_end = red_turbans.2
+
+	on_monthly = {
+		events = {
+		   red_turbans.9          #Yuan s corruption
+           red_turbans.11	       #White lotus society
+           red_turbans.12		   #Empire s inflation
+		   red_turbans.13         #The black death
+		   red_turbans.14         #Zhu Yuanzhang
+           red_turbans.18		   #Rise of Wu
+		   red_turbans.19         #Rise of Xia
+		   red_turbans.20         #Rise of Han
+		   red_turbans.21         #Rise of Ming
+		   red_turbans.22         #Rise of Min
+		   
+		   red_turbans.25         #Reparations of the yellow river 1344
+		   red_turbans.26         #The Ispah rebellion 1357
+		}
+		random_events = {
+		    500 = 0
+			25 = red_turbans.3     #anti tax rebels
+			25 = red_turbans.8
+			25 = red_turbans.17    #Flood
+		    50 = red_turbans.16    #Ming urprising (description missing)
+			25 = red_turbans.15    #Han urprising
+            50 = red_turbans.23    #Volunteers
+			50 = red_turbans.27    #Warlord rising
+			
+			50 = red_turbans.24    #Muslim revolt
+		}
+	}
+}

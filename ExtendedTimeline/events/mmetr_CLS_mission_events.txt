@@ -1,0 +1,601 @@
+namespace = mmetr_CLS_mission_events
+
+# Pandya Dynasts Flee to Lanka
+country_event = {
+	id = mmetr_CLS_mission_events.1
+	title = "mmetr_CLS_mission_events.1.t"
+	desc = "mmetr_CLS_mission_events.1.desc"
+	picture = SMUGGLERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_CLS_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_cls_raja_of_two_crowns"
+			duration = 10950
+		}
+		lanka_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		south_lanka_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# Anuradhapura Reclaimed
+country_event = {
+	id = mmetr_CLS_mission_events.2
+	title = "mmetr_CLS_mission_events.2.t"
+	desc = "mmetr_CLS_mission_events.2.desc"
+	picture = NUSANTARA_QUEEN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_CLS_mission_events.2.a"
+		
+		lanka_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_cls_tamil_rule_restored_in_lanka"
+				duration = 10950
+			}
+		}
+		south_lanka_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_cls_tamil_rule_restored_in_lanka"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# Chola Rule in Lanka
+country_event = {
+	id = mmetr_CLS_mission_events.3
+	title = "mmetr_CLS_mission_events.3.t"
+	desc = "mmetr_CLS_mission_events.3.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_CLS_mission_events.3.a"
+		
+		lanka_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_cls_tamil_settlement_policy"
+				duration = 10950
+			}
+		}
+		south_lanka_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_cls_tamil_settlement_policy"
+				duration = 10950
+			}
+		}
+		
+		country_event = {
+			id = mmetr_CLS_mission_events.4
+		}
+	}
+	
+	option = {
+		name = "mmetr_CLS_mission_events.3.b"
+		
+		lanka_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_cls_lankan_autonomy_policy"
+				duration = 10950
+			}
+		}
+		south_lanka_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_cls_lankan_autonomy_policy"
+				duration = 10950
+			}
+		}
+		
+		country_event = {
+			id = mmetr_CLS_mission_events.4
+		}
+	}
+}
+
+# A New Client King in Anuradhapura?
+country_event = {
+	id = mmetr_CLS_mission_events.4
+	title = "mmetr_CLS_mission_events.4.t"
+	desc = "mmetr_CLS_mission_events.4.desc"
+	picture = NUSANTARA_QUEEN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_CLS_mission_events.4.a"
+		
+		lanka_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = RAJ		#tag for Anuradhapura in ET
+			add_core = RAJ
+		}
+		south_lanka_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cede_province = RAJ		#tag for Anuradhapura in ET
+			add_core = RAJ
+		}
+		vassalize = RAJ
+		RAJ = {
+			change_government = monarchy
+			add_government_reform = nayankara_reform
+			change_religion = ROOT
+			change_primary_culture = ROOT
+			define_ruler = {
+				dynasty = ROOT
+				culture = ROOT
+				religion = ROOT
+				claim = 80
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_CLS_mission_events.4.b"
+		
+		
+	}
+}
+
+# Global Trade Hub of Muchiri
+country_event = {
+	id = mmetr_CLS_mission_events.5
+	title = "mmetr_CLS_mission_events.5.t"
+	desc = "mmetr_CLS_mission_events.5.desc"
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_CLS_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_cls_muchiri_trade"
+			duration = 10950
+		}
+	}
+}
+
+# Brihadisvara Temple
+country_event = {
+	id = mmetr_CLS_mission_events.6
+	title = "mmetr_CLS_mission_events.6.t"
+	desc = "mmetr_CLS_mission_events.6.desc"
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_CLS_mission_events.6.a"
+		
+		add_prestige = 20
+		add_country_modifier = {
+			name = "me_cls_brihadisvara_temple"
+			duration = 10950
+		}
+		define_advisor = {
+			type = theologian
+			skill = 3
+			discount = yes
+		}
+	}
+}
+
+# Oath of the Navakandam
+country_event = {
+	id = mmetr_CLS_mission_events.7
+	title = "mmetr_CLS_mission_events.7.t"
+	desc = "mmetr_CLS_mission_events.7.desc"
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_CLS_mission_events.7.a"
+		
+		add_country_modifier = {
+			name = "me_cls_oath_of_the_navakandam"
+			duration = 10950
+		}
+	}
+}
+
+# Naval Base in Ma-Nakkavaram
+country_event = {
+	id = mmetr_CLS_mission_events.8
+	title = "mmetr_CLS_mission_events.8.t"
+	desc = "mmetr_CLS_mission_events.8.desc"
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.8.a"
+		
+		if = {
+			limit = {
+				574 = {
+					is_empty = yes
+				}
+			}
+			574 = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		574 = {
+			add_province_modifier = {
+				name = "me_cls_chola_naval_base"
+				duration = -1
+			}
+		}
+		lower_burma_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		malacca_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		if = {
+			limit = {
+				exists = SRI	#Srivijaya
+			}
+			add_casus_belli = {
+				target = SRI
+				type = cb_vassalize_mission
+				months = 300
+			}
+		}
+	}
+}
+
+# The Tirukkural
+country_event = {
+	id = mmetr_CLS_mission_events.9
+	title = "mmetr_CLS_mission_events.9.t"
+	desc = "mmetr_CLS_mission_events.9.desc"
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_cls_tirukkural"
+			duration = 10950
+		}
+	}
+}
+
+# The Loyal Vellalar Caste
+country_event = {
+	id = mmetr_CLS_mission_events.10
+	title = "mmetr_CLS_mission_events.10.t"
+	desc = "mmetr_CLS_mission_events.10.desc"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.10.a"
+		
+		define_advisor = {
+			type = treasurer
+			skill = 2
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_CLS_mission_events.10.b"
+		
+		define_advisor = {
+			type = natural_scientist
+			skill = 2
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_CLS_mission_events.10.c"
+		
+		define_advisor = {
+			type = commandant
+			skill = 2
+			discount = yes
+		}
+	}
+}
+
+# Wootz Steel of Tamilakam
+country_event = {
+	id = mmetr_CLS_mission_events.11
+	title = "mmetr_CLS_mission_events.11.t"
+	desc = "mmetr_CLS_mission_events.11.desc"
+	picture = MILITARY_CAMP_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.11.a"
+		
+		add_country_modifier = {
+			name = "me_cls_wootz_steel_weapons"
+			duration = 10950
+		}
+	}
+}
+
+# A Kingdom of All Dravidians
+country_event = {
+	id = mmetr_CLS_mission_events.12
+	title = "mmetr_CLS_mission_events.12.t"
+	desc = "mmetr_CLS_mission_events.12.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.12.a"
+		
+		override_country_name = DRAVIDA_NAME
+	}
+	
+	option = {
+		name = "mmetr_CLS_mission_events.12.b"
+		
+		
+	}
+}
+
+# The Religious Communities of Odda
+country_event = {
+	id = mmetr_CLS_mission_events.13
+	title = "mmetr_CLS_mission_events.13.t"
+	desc = "mmetr_CLS_mission_events.13.desc"
+	picture = NUSANTARA_QUEEN_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.13.a"
+		
+		add_country_modifier = {
+			name = "me_cls_king_of_kalinga_and_odda"
+			duration = 10950
+		}
+		jharkhand_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		east_bengal_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		west_bengal_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# The Cholaganga Tank
+country_event = {
+	id = mmetr_CLS_mission_events.14
+	title = "mmetr_CLS_mission_events.14.t"
+	desc = "mmetr_CLS_mission_events.14.desc"
+	picture = IMPORTANT_STATUE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.14.a"
+		
+		capital_scope = {
+			add_province_modifier = {
+				name = "me_cls_cholaganga_tank"
+				duration = -1
+			}
+		}
+		add_country_modifier = {
+			name = "me_cls_sacred_waters_of_the_ganga"
+			duration = 7300
+		}
+		purvanchal_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		oudh_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		upper_doab_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		sirhind_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		lahore_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# Vassals Across the Indian Ocean
+country_event = {
+	id = mmetr_CLS_mission_events.15
+	title = "mmetr_CLS_mission_events.15.t"
+	desc = "mmetr_CLS_mission_events.15.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.15.a"
+		
+		add_navy_tradition = 15
+		add_country_modifier = {
+			name = "me_cls_overseas_subjects"
+			duration = 10950
+		}
+	}
+}
+
+# Kadaram and Ilangasoka Conquered
+country_event = {
+	id = mmetr_CLS_mission_events.16
+	title = "mmetr_CLS_mission_events.16.t"
+	desc = "mmetr_CLS_mission_events.16.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.16.a"
+		
+		add_navy_tradition = 15
+		add_country_modifier = {
+			name = "me_cls_overseas_glory"
+			duration = 10950
+		}
+	}
+}
+
+# Hanuman, Companion of Rama
+country_event = {
+	id = mmetr_CLS_mission_events.17
+	title = "mmetr_CLS_mission_events.17.t"
+	desc = "mmetr_CLS_mission_events.17.desc"
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.17.a"
+		
+		add_country_modifier = {
+			name = "me_cls_hanuman"
+			duration = -1
+		}
+	}
+}
+
+# Chola Prince in Srivijaya
+country_event = {
+	id = mmetr_CLS_mission_events.18
+	title = "mmetr_CLS_mission_events.18.t"
+	desc = "mmetr_CLS_mission_events.18.desc"
+	picture = MMETR_KHMER_KING_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "mmetr_CLS_mission_events.18.a"
+		
+		SRI = {
+			change_government = monarchy
+			add_government_reform = nayankara_reform
+			change_religion = ROOT
+			change_primary_culture = ROOT
+			define_ruler = {
+				dynasty = ROOT
+				culture = ROOT
+				religion = ROOT
+				claim = 75
+			}
+			
+			add_country_modifier = {
+				name = "me_cls_chola_princely_vassal"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_CLS_mission_events.18.b"
+		
+		SRI = {
+			add_country_modifier = {
+				name = "me_cls_srivijaya_autonomy"
+				duration = 10950
+			}
+		}
+	}
+}
+

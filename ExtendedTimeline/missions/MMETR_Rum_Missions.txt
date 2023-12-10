@@ -1,0 +1,1460 @@
+rum_mmetr_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = RUM
+		NOT = { started_in = 1307.1.1 }		#When Konya replaces Rum
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	rum_mediterranean_seaports_mission = {
+		icon = mission_seize_the_bengal_coast
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_port = yes
+			NOT = {
+				OR = {
+					has_building = marketplace
+					has_building = dock
+				}
+			}
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				has_port = yes
+				OR = {
+					has_building = marketplace
+					has_building = dock
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_roman_ports"
+				duration = 10950
+			}
+		}
+	}
+	rum_cultivate_port_alaiye_mission = {
+		icon = mission_shipyards_of_gujarat
+		required_missions = { rum_mediterranean_seaports_mission }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 319		#Antalya / Alanya / Alaiye
+			NOT = {
+				OR = {
+					num_of_times_improved_by_owner = 5
+					owned_by = ROOT
+					num_of_buildings_in_province = 2
+				}
+			}
+		}
+		trigger = {
+			owns = 319
+			319 = {
+				num_of_times_improved_by_owner = 5
+			}
+			319 = {
+				num_of_buildings_in_province = 2
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_RUM_mission_events.1
+			}
+			tooltip = {
+				319 = {
+					rename_capital = "Alaiye"
+					add_province_modifier = {
+						name = "me_rum_city_state_of_alaiye"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	rum_beyond_erzurums_gates_mission = {
+		icon = mission_the_caucasus_tur
+		required_missions = { rum_rally_under_the_eagle_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 331	#Erzurum
+				area = north_kurdistan_area
+				area = samtskhe_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 331
+			north_kurdistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			samtskhe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_RUM_mission_events.2
+			}
+			imereti_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kartli_kakheti_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			armenia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_subjugate_the_georgians_mission = {
+		icon = mission_georgian_warrior
+		required_missions = { rum_beyond_erzurums_gates_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = imereti_area
+				area = kartli_kakheti_area
+				area = armenia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			armenia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_mountain_warfare_experts"
+				duration = 10950
+			}
+		}
+	}
+	rum_control_syria_mission = {
+		icon = mission_fatimid_caliphate
+		required_missions = { rum_besiege_aleppo_mission }
+		position = 8
+		provinces_to_highlight = {
+			area = syria_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "me_rum_christians_of_syria"
+				duration = 10950
+			}
+			palestine_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_end_to_the_crusades_mission = {
+		icon = mission_saladin_crusaders_surrender
+		required_missions = { rum_control_syria_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = palestine_area
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				AND = {
+					province_id = 379
+					OR = {
+						has_owner_religion = no
+						NOT = {
+							religion_group = muslim
+						}
+					}
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion_group = muslim
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			379 = {		#Jerusalem
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_RUM_mission_events.9
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_rum_holy_conqueror"
+					duration = -1
+				}
+			}
+		}
+	}
+	rum_egyptian_campaign_mission = {
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { rum_end_to_the_crusades_mission }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				province_id = 361	#Cairo
+				province_id = 358	#Alexandria
+			}
+			OR = {
+				NOT = { 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 361
+			owns_or_non_sovereign_subject_of = 358
+			num_of_owned_provinces_with = {
+				value = 10
+				region = egypt_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_sultan_of_egypt"
+				duration = 10950
+			}
+		}
+	}
+	rum_consolidate_cairo_mission = {
+		icon = mission_cairo_citadel
+		required_missions = { rum_egyptian_campaign_mission }
+		position = 12
+		provinces_to_highlight = {
+			province_id = 361
+			NOT = {
+				OR = {
+					num_of_times_improved_by_owner = 3
+					num_of_buildings_in_province = 2
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 361
+			361  {
+				num_of_times_improved_by_owner = 3
+			}
+			361  {
+				num_of_buildings_in_province = 2
+			}
+		}
+		effect = {
+			361 = {
+				add_province_modifier = {
+					name = "me_rum_atabeg_of_cairo"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+rum_mmetr_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = RUM
+		NOT = { started_in = 1307.1.1 }		#When Konya replaces Rum
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	rum_caravanserais_mission = {
+		icon = mission_merchant_of_gujarat
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 7
+				has_port = no
+				OR = {
+					has_building = marketplace
+					has_building = trade_post
+					has_building = trade_depot
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_sel_caravanserai_network"
+				duration = 10950
+			}
+		}
+	}
+	rum_roman_riches_mission = {
+		icon = mission_entrepot_of_india
+		required_missions = { rum_caravanserais_mission rum_seljuk_architecture_mission }
+		position = 3
+		trigger = {
+			capital_scope = {
+				development = 20
+			}
+			share_of_starting_income = 2.0
+			years_of_income = 2.0
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "me_rum_overflowing_treasury"
+				duration = 10950
+			}
+		}
+	}
+	rum_recruit_the_ghilman_mission = {
+		icon = mission_defeat_mewar
+		required_missions = { rum_rally_under_the_eagle_mission }
+		position = 5
+		trigger = {
+			grown_by_states = 3
+			num_of_owned_provinces_with = {
+				value = 5
+				NOT = {
+					religion_group = muslim
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_expanded_ghilman_corps"
+				duration = 10950
+			}
+		}
+	}
+	rum_askar_and_daylamite_mission = {
+		icon = mission_battle_of_varna
+		required_missions = { rum_recruit_the_ghilman_mission }
+		position = 6
+		trigger = {
+			army_tradition = 70
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_askar_tribal_cavalry"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "me_rum_askar_mounted_archers"
+				duration = 7300
+			}
+		}
+	}
+	rum_besiege_aleppo_mission = {
+		icon = mission_fall_of_constantinople
+		required_missions = { rum_armenians_of_cilicia_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 377
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 377
+		}
+		effect = {
+			country_event = {
+				id = mmetr_RUM_mission_events.8
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_rum_suleiman_avenged"
+					duration = 9125
+				}
+			}
+			syria_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			al_jazira_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_iranian_ambitions_mission = {
+		icon = mission_abu_saids_dream
+		required_missions = { rum_besiege_aleppo_mission }
+		position = 9
+		provinces_to_highlight = {
+			region = persia_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 7
+				region = persia_region
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+			add_country_modifier = {
+				name = "me_rum_persian_expansion"
+				duration = 9125
+			}
+			tabriz_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shahrizor_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			luristan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			azerbaijan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			isfahan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iraq_e_ajam_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_bulwark_of_islam_mission = {
+		icon = mission_into_arabia
+		required_missions = { rum_end_to_the_crusades_mission }
+		position = 10
+		trigger = {
+			religion_group = muslim
+			is_defender_of_faith = yes
+			any_neighbor_country = {
+				NOT = {
+					religion_group = muslim
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_defender_of_islam"
+				duration = 10950
+			}
+		}
+	}
+	rum_new_emirs_in_persia_mission = {
+		icon = mission_fiqh_laws
+		required_missions = { rum_seljuk_restoration_mission }
+		position = 11
+		provinces_to_highlight = {
+			region = persia_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 1
+			persia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_emirs_and_atabegs"
+				duration = -1
+			}
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 3
+					}
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+}
+
+rum_mmetr_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = RUM
+		NOT = { started_in = 1307.1.1 }		#When Konya replaces Rum
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	rum_palace_in_iconium_mission = {
+		icon = mission_metropolis_of_the_deccan
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 323	#Konya
+			OR = {
+				NOT = {
+					owned_by = 323
+					is_core = 323
+				}
+				NOT = {
+					num_of_times_improved_by_owner = 5
+				}
+				NOT = {
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+				NOT = {
+					num_of_buildings_in_province = 3
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 323
+			323 = {
+				num_of_times_improved_by_owner = 5
+			}
+			323 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			323 = {
+				num_of_buildings_in_province = 3
+			}
+		}
+		effect = {
+			323 = {
+				add_country_modifier = {
+					name = "me_rum_seljuk_palace"
+					duration = -1
+				}
+			}
+		}
+	}
+	rum_seljuk_architecture_mission = {
+		icon = mission_into_persia_1
+		required_missions = { rum_palace_in_iconium_mission }
+		position = 2
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				num_of_buildings_in_province = 1
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_architectural_expansion"
+				duration = 10950
+			}
+		}
+	}
+	rum_rally_under_the_eagle_mission = {
+		icon = mission_seljuk_rum_flag
+		required_missions = {  }
+		position = 4
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.5
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_seljuk_armies_of_rum"
+				duration = 10950
+			}
+			anatolia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			samtskhe_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_armenians_of_cilicia_mission = {
+		icon = mission_sassanid_golden_cataphract_attack
+		required_missions = { rum_rally_under_the_eagle_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 327		#provinces of cukurova_area excluding Cyprus
+				province_id = 2302
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 327
+			owns_or_non_sovereign_subject_of = 2302
+		}
+		effect = {
+			tooltip = {
+				add_country_modifier = {
+					name = "me_rum_cilician_trade_networks"
+					duration = 10950
+				}
+			}
+			country_event = {
+				id = mmetr_RUM_mission_events.3
+			}
+			aleppo_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_march_to_baghdad_mission = {
+		icon = mission_black_standard_of_the_eagle
+		required_missions = { rum_besiege_aleppo_mission }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 410
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 410	#Baghdad
+			ABA = {
+				OR = {
+					is_subject_of = ROOT
+					NOT = { 
+						owns = 410
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_baghdad_retaken"
+				duration = 10950
+			}
+			if = {
+				limit = {
+					OR = {
+						overlord_of = ABA
+						NOT = { exists = ABA }
+					}
+				}
+				add_country_modifier = {
+					name = "me_rum_caliphal_diplomacy"
+					duration = 10950
+				}
+			}
+		}
+	}
+	rum_seljuk_restoration_mission = {
+		icon = mission_islamic_golden_age
+		required_missions = { rum_march_to_baghdad_mission rum_iranian_ambitions_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = tabriz_area
+				area = shahrizor_area
+				area = luristan_area
+				area = azerbaijan_area
+				area = isfahan_area
+				area = iraq_e_ajam_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			tabriz_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			shahrizor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			luristan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			isfahan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			iraq_e_ajam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_sultan_of_persia"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "me_rum_seljuk_domains_restored"
+				duration = 10950
+			}
+			persia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_a_seljuk_empire_mission = {
+		icon = mission_persianate_empire
+		required_missions = { rum_seljuk_restoration_mission rum_hegemon_of_hellas_mission }
+		position = 11
+		trigger = {
+			OR = {
+				government_rank = 3
+				total_development = 1000
+				NOT = {
+					great_power_rank = 4
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_country_modifier = {
+				name = "me_rum_emperor_of_rum"
+				duration = -1
+			}
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 3
+					}
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+}
+
+rum_mmetr_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = RUM
+		NOT = { started_in = 1307.1.1 }		#When Konya replaces Rum
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	rum_roman_aristocracy_mission = {
+		icon = mission_noble_council
+		required_missions = { }
+		position = 1
+		trigger = {
+			accepted_culture = greek
+			OR = {
+				employed_advisor = {
+					culture = greek
+				}
+				estate_loyalty = {
+					estate = estate_dhimmi
+					loyalty = 60
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_RUM_mission_events.5
+			}
+		}
+	}
+	rum_greek_administration_mission = {
+		icon = mission_pf_cross
+		required_missions = { rum_roman_aristocracy_mission }
+		position = 2
+		trigger = {
+			grown_by_states = 3
+			num_of_states = 7
+			stability = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_rumi_administration"
+				duration = -1
+			}
+		}
+	}
+	rum_greco_persian_renaissance_mission = {
+		icon = mission_the_firman
+		required_missions = { rum_greek_administration_mission rum_seljuk_architecture_mission rum_patron_of_persianization_mission }
+		position = 3
+		trigger = {
+			grown_by_development = 100
+			OR = {
+				prestige = 70
+				philosopher = 3
+				artist = 3
+				in_golden_age = yes
+				has_had_golden_age = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_greco_persian_revival"
+				duration = 10950
+			}
+		}
+	}
+	rum_the_land_of_the_romans_mission = {
+		icon = mission_byzantine_flag_waving
+		required_missions = { rum_rally_under_the_eagle_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = rum_area
+				area = ankara_area
+				area = karaman_area
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			rum_area = {
+				type = all
+				owned_by = ROOT
+			}
+			ankara_area = {
+				type = all
+				owned_by = ROOT
+			}
+			karaman_area = {
+				type = all
+				owned_by = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				development = 9
+				region = anatolia_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_rumi_levies"
+				duration = 10950
+			}
+		}
+	}
+	rum_legacy_of_manzikert_mission = {
+		icon = mission_seljuk_rum_sultanate_banners
+		required_missions = { rum_the_land_of_the_romans_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = hudavendigar_area
+				area = aydin_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			add_country_modifier = {
+				name = "me_rum_aegean_access"
+				duration = 10950
+			}
+			thrace_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_seize_the_roman_throne_mission = {
+		icon = mission_hagia_sophia
+		required_missions = { rum_legacy_of_manzikert_mission rum_greeks_of_trebizond_mission }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 151
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 151	#Constantinople
+		}
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = "me_rum_sultan_of_constantinople"
+				duration = 10950
+			}
+			if = {
+				limit = {
+					NOT = {
+						capital = 151
+					}
+				}
+				country_event = {
+					id = mmetr_RUM_mission_events.7
+				}
+			}
+			else_if = {
+				limit = {
+					capital = 151
+				}
+				151 = {
+					add_province_modifier = {
+						name = "me_rum_seat_of_the_roman_sultan"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	rum_across_the_propontis_mission = {
+		icon = mission_retake_ceuta
+		required_missions = { rum_seize_the_roman_throne_mission }
+		position = 9
+		provinces_to_highlight = {
+			area = thrace_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_greek_campaign"
+				duration = 10950
+			}
+			macedonia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_greece_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_greece_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_hegemon_of_hellas_mission = {
+		icon = mission_parthenon
+		required_missions = { rum_across_the_propontis_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = macedonia_area
+				area = morea_area
+				area = central_greece_area
+				area = northern_greece_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			army_size = BYZ
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_RUM_mission_events.11
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_rum_true_roman_emperor"
+					duration = -1
+				}
+				balkan_region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	rum_rome_for_romans_mission = {
+		icon = mission_the_roman_sultan
+		required_missions = { rum_hegemon_of_hellas_mission }
+		position = 12
+		provinces_to_highlight = {
+			province_id = 118
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns = 118	#Roma
+		}
+		effect = {
+			add_navy_tradition = 20
+			italy_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			118 = {
+				add_province_modifier = {
+					name = "me_rum_twin_capitals_reunited"
+					duration = -1
+				}
+			}
+			country_event = {
+				id = mmetr_RUM_mission_events.12
+			}
+		}
+	}
+}
+
+rum_mmetr_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = RUM
+		NOT = { started_in = 1307.1.1 }		#When Konya replaces Rum
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	rum_messengers_of_islam_mission = {
+		icon = mission_quran
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			owned_by = ROOT
+			region = anatolia_region
+			NOT = {
+				has_owner_religion = yes
+			}
+		}
+		trigger = {
+			religion_group = muslim
+			num_of_owned_provinces_with = {
+				value = 15
+				region = anatolia_region
+				has_owner_religion = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_RUM_mission_events.6
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_rum_medreseler_of_rum"
+					duration = 10950
+				}
+			}
+		}
+	}
+	rum_patron_of_persianization_mission = {
+		icon = mission_persian_lion
+		required_missions = { rum_messengers_of_islam_mission }
+		position = 2
+		trigger = {
+			OR = {
+				monthly_adm = 8
+				accepted_culture = persian
+				employed_advisor = {
+					culture = persian
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_perso_islamic_legacy"
+				duration = 10950
+			}
+		}
+	}
+	rum_friends_of_the_sultan_mission = {
+		icon = mission_reclaim_morocco
+		required_missions = {  }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = xib_friends_of_the_confederation_mission.tt
+				calc_true_if = {
+					all_country = {
+						OR = {
+							alliance_with = ROOT
+							is_subject_of = ROOT
+						}
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "influential_diplomacy"
+				duration = 9125
+			}
+		}
+	}
+	rum_loyal_emirs_of_rum_mission = {
+		icon = mission_muslim_administrators
+		required_missions = { rum_friends_of_the_sultan_mission rum_rally_under_the_eagle_mission }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = rum_loyal_emirs_of_rum_mission.tt
+				calc_true_if = {
+					all_subject_country = {
+						has_matching_religion = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_loyal_emirates"
+				duration = 9125
+			}
+		}
+	}
+	rum_greeks_of_trebizond_mission = {
+		icon = mission_pf_soldier
+		required_missions = { rum_the_land_of_the_romans_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 330
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 330		#Trebizond
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_emporium_of_the_hospitable_sea"
+				duration = 10950
+			}
+			2410 = {			#Gotthia, tip of Crimean peninsula
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rum_trade_colony_in_kirim_mission = {
+		icon = mission_ottoman_early_army
+		required_missions = { rum_greeks_of_trebizond_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2410		#Gotthia, tip of Crimean peninsula
+				province_id = 285		#Theodosia, natural trade center in Crimea
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 2410
+			owns_or_non_sovereign_subject_of = 285
+		}
+		effect = {
+			country_event = {
+				id = mmetr_RUM_mission_events.10
+			}
+			tooltip = {
+				if = {
+					limit = {
+						owns_or_non_sovereign_subject_of = 2410
+						NOT = {
+							owns = 2410
+						}
+					}
+					2410 = {
+						cede_province = ROOT
+						add_territorial_core = ROOT
+					}
+				}
+				2410 = {
+					add_province_modifier = {
+						name = "me_rum_rumi_trade_colony"
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						owns_or_non_sovereign_subject_of = 285
+						NOT = {
+							owns = 285
+						}
+					}
+					285 = {
+						cede_province = ROOT
+						add_territorial_core = ROOT
+					}
+				}
+				285 = {
+					add_province_modifier = {
+						name = "me_rum_rumi_trade_colony"
+						duration = -1
+					}
+				}
+				add_mercantilism = 1
+			}
+		}
+	}
+	rum_pontic_trade_monopoly_mission = {
+		icon = mission_trade_in_gold_coast
+		required_missions = { rum_trade_colony_in_kirim_mission rum_seize_the_roman_throne_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1322		#Crimea trade node
+				province_id = 1320		#Constantinople trade node
+			}
+			NOT = {
+				is_strongest_trade_power = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			1322 = {
+				is_strongest_trade_power = ROOT
+			}
+			1320 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			add_country_modifier = {
+				name = "me_rum_trade_empire"
+				duration = 10950
+			}
+		}
+	}
+	rum_mosques_in_the_balkans_mission = {
+		icon = mission_muslim_prayer
+		required_missions = { rum_across_the_propontis_mission }
+		position = 10
+		provinces_to_highlight = {
+			region = balkan_region
+			OR = {
+				NOT = {
+					owned_by = ROOT
+				}
+				NOT = {
+					owned_by = ROOT
+					has_owner_religion = yes
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			religion_group = muslim
+			num_of_owned_provinces_with = {
+				value = 15
+				region = balkan_region
+				has_owner_religion = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				region = balkan_region
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_rum_holy_mission"
+				duration = 10950
+			}
+		}
+	}
+}

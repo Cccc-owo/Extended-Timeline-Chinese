@@ -6,6 +6,10 @@ byz_western = {
 		tag = BYZ
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_dlc = "King of Kings" }
+		OR = {
+			NOT = { started_in = 641.1.1 }
+			started_in = 1204.1.1
+		}
 	}
 	has_country_shield = yes
 	
@@ -277,7 +281,11 @@ byz_generic_slot_2 = {
 				NOT = { has_dlc = "Purple Phoenix" }
 				NOT = { has_dlc = "King of Kings" }
 			}
-			NOT = { started_in = 1204.1.1 }
+			NOT = { started_in = 641.1.1 }
+		}
+		OR = {
+			NOT = { started_in = 641.1.1 }
+			started_in = 1204.1.1
 		}
 	}
 	has_country_shield = yes

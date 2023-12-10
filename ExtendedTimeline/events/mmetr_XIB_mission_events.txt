@@ -1,0 +1,457 @@
+namespace = mmetr_XIB_mission_events
+
+# The Xianbei Stirrup
+country_event = {
+	id = mmetr_XIB_mission_events.1
+	title = "mmetr_XIB_mission_events.1.t"
+	desc = "mmetr_XIB_mission_events.1.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_xib_xianbei_stirrup"
+			duration = -1
+		}
+	}
+}
+
+# Han Settlements of the Southern Xiongnu
+country_event = {
+	id = mmetr_XIB_mission_events.2
+	title = "mmetr_XIB_mission_events.2.t"
+	desc = "mmetr_XIB_mission_events.2.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.2.a"
+		
+		inner_mongolia_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_xib_han_settlers"
+				duration = 10950
+			}
+		}
+		ordos_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_xib_han_settlers"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.2.b"
+		
+		inner_mongolia_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_xib_nomad_resettlement"
+				duration = 10950
+			}
+		}
+		ordos_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_xib_nomad_resettlement"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Khan Supplants the Chanyu
+country_event = {
+	id = mmetr_XIB_mission_events.3
+	title = "mmetr_XIB_mission_events.3.t"
+	desc = "mmetr_XIB_mission_events.3.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.3.a"
+		
+		add_horde_unity = 10
+		add_country_modifier = {
+			name = "me_xib_khanate_hegemony"
+			duration = 10950
+		}
+	}
+}
+
+# The Conquest of Yan
+country_event = {
+	id = mmetr_XIB_mission_events.4
+	title = "mmetr_XIB_mission_events.4.t"
+	desc = "mmetr_XIB_mission_events.4.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.4.a"
+		
+		liaoning_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_xib_forced_conscription"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.4.b"
+		
+		liaoning_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_xib_han_trading"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Invasion of the Middle Kingdom
+country_event = {
+	id = mmetr_XIB_mission_events.5
+	title = "mmetr_XIB_mission_events.5.t"
+	desc = "mmetr_XIB_mission_events.5.desc"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.5.a"
+		
+		add_yearly_manpower = 2
+		add_horde_unity = 10
+		add_country_modifier = {
+			name = "me_xib_victorious_armies"
+			duration = 10950
+		}
+	}
+}
+
+# The Khan in Korea
+country_event = {
+	id = mmetr_XIB_mission_events.6
+	title = "mmetr_XIB_mission_events.6.t"
+	desc = "mmetr_XIB_mission_events.6.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_xib_korean_governance"
+			duration = 10950
+		}
+		define_advisor = {
+			type = statesman
+			skill = 2
+			culture = korean
+			religion = muism
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.6.b"
+		
+		add_country_modifier = {
+			name = "me_xib_korean_fortress_building"
+			duration = 10950
+		}
+		define_advisor = {
+			type = army_reformer
+			skill = 2
+			culture = korean
+			religion = muism
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.6.c"
+		
+		add_country_modifier = {
+			name = "me_xib_korean_agriculture"
+			duration = 10950
+		}
+		define_advisor = {
+			type = natural_scientist
+			skill = 2
+			culture = korean
+			religion = muism
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.6.d"
+		
+		add_country_modifier = {
+			name = "me_xib_korean_maritime_traditions"
+			duration = 10950
+		}
+		define_advisor = {
+			type = trader
+			skill = 2
+			culture = korean
+			religion = muism
+			discount = yes
+		}
+	}
+}
+
+# A New Imperial Dynasty?
+country_event = {
+	id = mmetr_XIB_mission_events.7
+	title = "mmetr_XIB_mission_events.7.t"
+	desc = "mmetr_XIB_mission_events.7.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.7.a"
+		
+		#no new name is chosen
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.7.b"
+		
+		override_country_name = WEI		#Wei
+		set_dynasty = "Wei"
+		hidden_effect = {
+			set_country_flag = xib_chose_new_dynastic_name_flag
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.7.c"
+		
+		override_country_name = CZH		#Zhou
+		set_dynasty = "Zhou"
+		hidden_effect = {
+			set_country_flag = xib_chose_new_dynastic_name_flag
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.7.d"
+		
+		override_country_name = DAX		#Dai tag name
+		set_dynasty = "Dai"
+		hidden_effect = {
+			set_country_flag = xib_chose_new_dynastic_name_flag
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.7.e"
+		
+		override_country_name = LNG		#Liang
+		set_dynasty = "Liang"
+		hidden_effect = {
+			set_country_flag = xib_chose_new_dynastic_name_flag
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.7.f"
+		
+		override_country_name = QIN		#Qin
+		set_dynasty = "Qin"
+		hidden_effect = {
+			set_country_flag = xib_chose_new_dynastic_name_flag
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.7.g"
+		
+		override_country_name = YAN		#Yan
+		set_dynasty = "Yan"
+		hidden_effect = {
+			set_country_flag = xib_chose_new_dynastic_name_flag
+		}
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.7.h"
+		
+		override_country_name = QIC		#Qi
+		set_dynasty = "Qi"
+		hidden_effect = {
+			set_country_flag = xib_chose_new_dynastic_name_flag
+		}
+	}
+}	
+
+# The King of Dai
+country_event = {
+	id = mmetr_XIB_mission_events.8
+	title = "mmetr_XIB_mission_events.8.t"
+	desc = "mmetr_XIB_mission_events.8.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.8.a"
+		
+		697 = {
+			add_base_manpower = 1
+		}
+		add_country_modifier = {
+			name = "me_xib_king_of_dai"
+			duration = -1
+		}
+	}
+}
+
+# Chinese Recruits from Ji
+country_event = {
+	id = mmetr_XIB_mission_events.9
+	title = "mmetr_XIB_mission_events.9.t"
+	desc = "mmetr_XIB_mission_events.9.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.9.a"
+		
+		add_yearly_manpower = 2
+		add_country_modifier = {
+			name = "me_xib_chinese_conscripts"
+			duration = 10950
+		}
+		add_country_modifier = {
+			name = "me_xib_han_siege_engineers"
+			duration = 9125
+		}
+	}
+}
+
+# The Land of the Heavenly Horses
+country_event = {
+	id = mmetr_XIB_mission_events.10
+	title = "mmetr_XIB_mission_events.10.t"
+	desc = "mmetr_XIB_mission_events.10.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.10.a"
+		
+		add_country_modifier = {
+			name = "me_xib_heavenly_horses_of_ferghana"
+			duration = 10950
+		}
+	}
+}
+
+# The Great Xia
+country_event = {
+	id = mmetr_XIB_mission_events.11
+	title = "mmetr_XIB_mission_events.11.t"
+	desc = "mmetr_XIB_mission_events.11.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.11.a"
+		
+		add_country_modifier = {
+			name = "me_xib_cities_of_daxia"
+			duration = 10950
+		}
+	}
+}
+
+# The Emperor's New Government
+country_event = {
+	id = mmetr_XIB_mission_events.12
+	title = "mmetr_XIB_mission_events.12.t"
+	desc = "mmetr_XIB_mission_events.12.desc"
+	picture = MMETR_MONGOL_THRONEROOM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_XIB_mission_events.12.a"
+		
+		if = {
+			limit = {
+				NOT = {
+					government = monarchy
+				}
+			}
+			change_government = monarchy
+		}
+		add_government_reform = chinese_claimant_empire_reform
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.12.b"
+		
+		if = {
+			limit = {
+				NOT = {
+					government = monarchy
+				}
+			}
+			change_government = monarchy
+		}
+		add_government_reform = semi_nomadic_empire_reform
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.12.c"
+		
+		if = {
+			limit = {
+				NOT = {
+					government = tribal
+				}
+			}
+			change_government = tribal
+		}
+		add_government_reform = sinicized_horde_reform
+	}
+	
+	option = {
+		name = "mmetr_XIB_mission_events.12.d"
+		
+		
+	}
+}

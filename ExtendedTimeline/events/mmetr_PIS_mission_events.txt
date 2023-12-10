@@ -1,0 +1,363 @@
+namespace = mmetr_PIS_mission_events
+
+# Papal Recognition of Pisan Customs
+country_event = {
+	id = mmetr_PIS_mission_events.1
+	title = "mmetr_PIS_mission_events.1.t"
+	desc = "mmetr_PIS_mission_events.1.desc"
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.1.a"
+		
+		add_papal_influence = 10
+		add_country_modifier = {
+			name = "me_pis_papal_recognition"
+			duration = 10950
+		}
+	}
+}
+
+# Lucca Captured by the Consulate
+country_event = {
+	id = mmetr_PIS_mission_events.2
+	title = "mmetr_PIS_mission_events.2.t"
+	desc = "mmetr_PIS_mission_events.2.desc"
+	picture = latin_CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.2.a"
+		
+		add_yearly_manpower = 1
+		add_country_modifier = {
+			name = "me_pis_lucca_silk"
+			duration = 9125
+		}
+	}
+}
+
+# The Judicates of Sardinia
+country_event = {
+	id = mmetr_PIS_mission_events.3
+	title = "mmetr_PIS_mission_events.3.t"
+	desc = "mmetr_PIS_mission_events.3.desc"
+	picture = latin_CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.3.a"
+		
+		corsica_sardinia_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_pis_league_membership"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.3.b"
+		
+		corsica_sardinia_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_pis_overseas_bases"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# Authority of the Consulate
+country_event = {
+	id = mmetr_PIS_mission_events.4
+	title = "mmetr_PIS_mission_events.4.t"
+	desc = "mmetr_PIS_mission_events.4.desc"
+	picture = ELECTION_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.4.a"
+		
+		if = {
+			limit = {
+				NOT = {
+					government = republic
+				}
+			}
+			change_government = republic
+		}
+		add_government_reform = pisan_consulate_reform
+		
+		hidden_effect = {
+			set_country_flag = pis_chose_new_government_flag
+		}
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.4.b"
+		
+		if = {
+			limit = {
+				NOT = {
+					government = republic
+				}
+			}
+			change_government = republic
+		}
+		add_government_reform = pisan_podesteria_reform
+		
+		set_country_flag = pis_chose_new_government_flag
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.4.c"
+		
+		
+	}
+}
+
+# Victory Over Firenze
+country_event = {
+	id = mmetr_PIS_mission_events.5
+	title = "mmetr_PIS_mission_events.5.t"
+	desc = "mmetr_PIS_mission_events.5.desc"
+	picture = latin_CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.5.a"
+		
+		116 = {
+			add_province_modifier = {
+				name = "me_pis_florence_humbled"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.5.b"
+		
+		116 = {
+			add_province_modifier = {
+				name = "me_pis_league_privileges"
+				duration = 10950
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.5.c"
+		
+		add_prestige = 20
+		116 = {
+			add_base_production = -1
+			add_province_modifier = {
+				name = "me_pis_florence_devastated"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Defeated Genoese
+country_event = {
+	id = mmetr_PIS_mission_events.6
+	title = "mmetr_PIS_mission_events.6.t"
+	desc = "mmetr_PIS_mission_events.6.desc"
+	picture = FLAGSHIP_SUNK_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.6.a"
+		
+		add_yearly_sailors = 1
+		add_country_modifier = {
+			name = "me_pis_genoese_ships"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.6.b"
+		
+		add_country_modifier = {
+			name = "me_pis_genoese_merchant_networks"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.6.c"
+		
+		add_country_modifier = {
+			name = "me_pis_genoese_exports"
+			duration = 10950
+		}
+	}
+}
+
+# The Serene Republic
+country_event = {
+	id = mmetr_PIS_mission_events.7
+	title = "mmetr_PIS_mission_events.7.t"
+	desc = "mmetr_PIS_mission_events.7.desc"
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.7.a"
+		
+		add_country_modifier = {
+			name = "me_pis_venetian_galleasses"
+			duration = -1
+		}
+	}
+}
+
+# A New Tuscan League
+country_event = {
+	id = mmetr_PIS_mission_events.8
+	title = "mmetr_PIS_mission_events.8.t"
+	desc = "mmetr_PIS_mission_events.8.desc"
+	picture = latin_CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_pis_tuscan_league"
+			duration = 10950
+		}
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.8.b"
+		
+		add_country_modifier = {
+			name = "me_pis_pisan_hegemony"
+			duration = 10950
+		}
+	}
+}
+
+# A Chronicle of Pisan Deeds
+country_event = {
+	id = mmetr_PIS_mission_events.9
+	title = "mmetr_PIS_mission_events.9.t"
+	desc = "mmetr_PIS_mission_events.9.desc"
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.9.a"
+		
+		add_country_modifier = {
+			name = "me_pis_liber_maiorichinus_de_gestis_pisanorum_illustribus"
+			duration = -1
+		}
+	}
+}
+
+# Landfall on the Shores of Africa
+country_event = {
+	id = mmetr_PIS_mission_events.10
+	title = "mmetr_PIS_mission_events.10.t"
+	desc = "mmetr_PIS_mission_events.10.desc"
+	picture = HARBOUR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.10.a"
+		
+		add_country_modifier = {
+			name = "me_pis_african_emporium"
+			duration = 10950
+		}
+		
+		hidden_effect = {
+			country_event = {
+				id = mmetr_PIS_mission_events.11
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_PIS_mission_events.10.b"
+		
+		add_country_modifier = {
+			name = "me_pis_african_bases"
+			duration = 10950
+		}
+		
+		hidden_effect = {
+			country_event = {
+				id = mmetr_PIS_mission_events.11
+			}
+		}
+	}
+}
+
+# The Pisa Griffin
+country_event = {
+	id = mmetr_PIS_mission_events.11
+	title = "mmetr_PIS_mission_events.11.t"
+	desc = "mmetr_PIS_mission_events.11.desc"
+	picture = IMPORTANT_STATUE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.11.a"
+		
+		add_country_modifier = {
+			name = "me_pis_pisa_griffin"
+			duration = -1
+		}
+	}
+}
+
+# Il Duomo di Pisa
+country_event = {
+	id = mmetr_PIS_mission_events.12
+	title = "mmetr_PIS_mission_events.12.t"
+	desc = "mmetr_PIS_mission_events.12.desc"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_PIS_mission_events.12.a"
+		
+		add_treasury = -100
+		115 = {
+			add_province_modifier = {
+				name = "me_pis_pisa_cathedral"
+				duration = -1
+			}
+		}
+		add_country_modifier = {
+			name = "me_pis_pious_pisa"
+			duration = 10950
+		}
+	}
+}

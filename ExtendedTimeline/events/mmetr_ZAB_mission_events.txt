@@ -1,0 +1,411 @@
+namespace = mmetr_ZAB_mission_events
+
+# Diplomats in the Middle Kingdom
+country_event = {
+	id = mmetr_ZAB_mission_events.1
+	title = "mmetr_ZAB_mission_events.1.t"
+	desc = "mmetr_ZAB_mission_events.1.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.1.a"
+		
+		add_country_modifier = {
+			name = "me_zab_gedalouzhi_xielifa"
+			duration = 10950
+		}
+		
+		country_event = {
+			id = mmetr_ZAB_mission_events.2
+			days = 30
+		}
+	}
+}
+
+# Chinese Advisors in Zabulistan
+country_event = {
+	id = mmetr_ZAB_mission_events.2
+	title = "mmetr_ZAB_mission_events.2.t"
+	desc = "mmetr_ZAB_mission_events.2.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_zab_chinese_architecture"
+			duration = 10950
+		}
+		define_advisor = {
+			type = artist
+			skill = 1
+			discount = yes
+			culture = zhongyuan
+			religion = mahayana
+		}
+	}
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.2.b"
+		
+		add_country_modifier = {
+			name = "me_zab_buddhist_monasteries"
+			duration = 10950
+		}
+		define_advisor = {
+			type = theologian
+			skill = 1
+			discount = yes
+			culture = zhongyuan
+			religion = mahayana
+		}
+	}
+}
+
+# Royal Seat of the Zunbils
+country_event = {
+	id = mmetr_ZAB_mission_events.3
+	title = "mmetr_ZAB_mission_events.3.t"
+	desc = "mmetr_ZAB_mission_events.3.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.3.a"
+		
+		2229 = {
+			add_province_modifier = {
+				name = "me_zab_capital_of_the_zunbils"
+				duration = -1
+			}
+		}
+	}
+}
+
+# King of Tokharistan
+country_event = {
+	id = mmetr_ZAB_mission_events.4
+	title = "mmetr_ZAB_mission_events.4.t"
+	desc = "mmetr_ZAB_mission_events.4.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_zab_governors_of_tokharistan"
+			duration = 10950
+		}
+	}
+}
+
+# Union of Brothers
+country_event = {
+	id = mmetr_ZAB_mission_events.5
+	title = "mmetr_ZAB_mission_events.5.t"
+	desc = "mmetr_ZAB_mission_events.5.desc"
+	picture = MMETR_CHINESE_GENERAL_JOIN_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.5.a"
+		
+		add_country_modifier = {
+			name = "me_zab_union_with_the_kabul_khalaj"
+			duration = 10950
+		}
+	}
+}
+
+# Successors of the Imperial Hephthalites
+country_event = {
+	id = mmetr_ZAB_mission_events.6
+	title = "mmetr_ZAB_mission_events.6.t"
+	desc = "mmetr_ZAB_mission_events.6.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.6.a"
+		
+		add_country_modifier = {
+			name = "me_zab_turkic_hephthalite_confederation"
+			duration = -1
+		}
+	}
+}
+
+# Sistan Submits to the Zunbils
+country_event = {
+	id = mmetr_ZAB_mission_events.7
+	title = "mmetr_ZAB_mission_events.7.t"
+	desc = "mmetr_ZAB_mission_events.7.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.7.a"
+		
+		add_prestige = 15
+		add_army_tradition = 15
+		sistan_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_zab_sistan_integration"
+				duration = 10950
+			}
+		}
+	}
+}
+
+# The Bulwark of India
+country_event = {
+	id = mmetr_ZAB_mission_events.8
+	title = "mmetr_ZAB_mission_events.8.t"
+	desc = "mmetr_ZAB_mission_events.8.desc"
+	picture = FORT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.8.a"
+		
+		add_country_modifier = {
+			name = "me_zab_gatekeepers_of_india"
+			duration = -1
+		}
+	}
+}
+
+# The Ayyarun of Zabulistan
+country_event = {
+	id = mmetr_ZAB_mission_events.9
+	title = "mmetr_ZAB_mission_events.9.t"
+	desc = "mmetr_ZAB_mission_events.9.desc"
+	picture = MMETR_NOMAD_ATTACK_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.9.a"
+		
+		add_country_modifier = {
+			name = "me_zab_zabulistan_ayyarun"
+			duration = 10950
+		}
+	}
+}
+
+# Zunbil Policy in Gandhara
+country_event = {
+	id = mmetr_ZAB_mission_events.10
+	title = "mmetr_ZAB_mission_events.10.t"
+	desc = "mmetr_ZAB_mission_events.10.desc"
+	picture = BUDDHA_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.10.a"
+		
+		sind_sagar_area = {
+			add_province_modifier = {
+				name = "me_zab_gandhara_conversion_policy"
+				duration = 9125
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.10.b"
+		
+		sind_sagar_area = {
+			add_province_modifier = {
+				name = "me_zab_gandhara_tolerance_policy"
+				duration = 9125
+			}
+		}
+	}
+}
+
+# Higher Learning Rekindled in Taxila
+country_event = {
+	id = mmetr_ZAB_mission_events.11
+	title = "mmetr_ZAB_mission_events.11.t"
+	desc = "mmetr_ZAB_mission_events.11.desc"
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.11.a"
+		
+		add_prestige = 10
+		2077 = {
+			add_base_production = 1
+			add_country_modifier = {
+				name = "me_zab_new_taxila_university"
+				duration = -1
+			}
+		}
+	}
+}
+
+# Relations with the Caliph
+country_event = {
+	id = mmetr_ZAB_mission_events.12
+	title = "mmetr_ZAB_mission_events.12.t"
+	desc = "mmetr_ZAB_mission_events.12.desc"
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.12.a"
+		
+		ai_chance = { factor = 100 }
+		
+		random_country = {
+			limit = {
+				OR = {
+					has_reform = caliphate_reform
+					has_reform = caliphate_theocratic_reform		#added for RSD / Alids
+				}
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+				NOT = {
+					war_with = ROOT
+				}
+			}
+			add_truce_with = ROOT
+			
+			hidden_effect = {
+				country_event = {
+					id = mmetr_ZAB_mission_events.13
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.12.b"
+		
+		ai_chance = { factor = 0 }
+		
+		add_prestige = -15
+		
+		random_country = {
+			limit = {
+				OR = {
+					has_reform = caliphate_reform
+					has_reform = caliphate_theocratic_reform		#added for RSD / Alids
+				}
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+				NOT = {
+					war_with = ROOT
+				}
+			}
+			create_subject = {
+				subject_type = tributary_state_general		#NEW mod subject type
+				subject = ROOT
+			}
+			
+			hidden_effect = {
+				country_event = {
+					id = mmetr_ZAB_mission_events.14
+				}
+			}
+		}
+	}
+}
+
+# Zunbils Guarantee Peace
+country_event = {
+	id = mmetr_ZAB_mission_events.13
+	title = "mmetr_ZAB_mission_events.13.t"
+	desc = "mmetr_ZAB_mission_events.13.desc"
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.13.a"
+		
+		tooltip = {
+			add_truce_with = FROM
+		}
+	}
+}
+
+# Zunbils Swear Tribute to the Caliph
+country_event = {
+	id = mmetr_ZAB_mission_events.14
+	title = "mmetr_ZAB_mission_events.14.t"
+	desc = "mmetr_ZAB_mission_events.14.desc"
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.14.a"
+		
+		tooltip = {
+			create_subject = {
+				subject_type = tributary_state_general		#NEW mod subject type
+				subject = FROM
+			}
+		}
+	}
+}
+
+# An Empire of Zun
+country_event = {
+	id = mmetr_ZAB_mission_events.15
+	title = "mmetr_ZAB_mission_events.15.t"
+	desc = "mmetr_ZAB_mission_events.15.desc"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.15.a"
+		
+		override_country_name = EMPIRE_OF_ZUN
+		custom_tooltip = mmetr_ZAB_mission_events.15.tt
+		change_country_color = { 
+			color = { 255  170  0 }		#Gold, same as Toyotomi TYT tag
+		}
+	}
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.15.b"
+		
+		custom_tooltip = mmetr_ZAB_mission_events.15.tt
+		change_country_color = { 
+			color = { 255  170  0 }		#Gold, same as Toyotomi TYT tag
+		}
+	}
+	
+	option = {
+		name = "mmetr_ZAB_mission_events.15.c"
+		
+		
+	}
+}

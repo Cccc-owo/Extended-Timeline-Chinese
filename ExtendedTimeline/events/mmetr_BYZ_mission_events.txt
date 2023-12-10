@@ -1,0 +1,634 @@
+namespace = mmetr_BYZ_mission_events
+
+# Monasteries of Eastern Rome
+country_event = {
+	id = mmetr_BYZ_mission_events.1
+	title = "mmetr_BYZ_mission_events.1.t"
+	desc = "mmetr_BYZ_mission_events.1.desc"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.1.a"
+		
+		define_advisor = {
+			type = theologian
+			skill = 2
+			culture = ROOT
+			religion = ROOT
+			cost_multiplier = 0.70
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.1.b"
+		
+		add_country_modifier = {
+			name = "me_byz2_monastic_missionaries"
+			duration = 7300
+		}
+	}
+}
+
+# Saint Andreas the Apostle
+country_event = {
+	id = mmetr_BYZ_mission_events.2
+	title = "mmetr_BYZ_mission_events.2.t"
+	desc = "mmetr_BYZ_mission_events.2.desc"
+	picture = MMETR_HAGIA_SOPHIA_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.2.a"
+		
+		add_country_modifier = {
+			name = "me_byz2_successor_of_saint_andreas"
+			duration = 9125
+		}
+	}
+}
+
+# University of Constantinople
+country_event = {
+	id = mmetr_BYZ_mission_events.3
+	title = "mmetr_BYZ_mission_events.3.t"
+	desc = "mmetr_BYZ_mission_events.3.desc"
+	picture = MMETR_HAGIA_SOPHIA_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.3.a"
+		
+		151 = {
+			add_province_modifier = {
+				name = "me_byz2_university_of_constantinople"
+				duration = 9125
+			}
+		}
+	}
+}
+
+# Cultivation of Prosperity
+country_event = {
+	id = mmetr_BYZ_mission_events.4
+	title = "mmetr_BYZ_mission_events.4.t"
+	desc = "mmetr_BYZ_mission_events.4.desc"
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.4.a"
+		
+		add_country_modifier = {
+			name = "me_byz2_abundant_supply"
+			duration = 7300
+		}
+	}
+}
+
+# Theodosian Walls of Constantinople
+country_event = {
+	id = mmetr_BYZ_mission_events.5
+	title = "mmetr_BYZ_mission_events.5.t"
+	desc = "mmetr_BYZ_mission_events.5.desc"
+	picture = FORT_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.5.a"
+		
+		151 = {
+			add_province_modifier = {
+				name = "me_byz2_theodosian_walls_bolstered"
+				duration = 7300
+			}
+		}
+	}
+}
+
+# Ambitions Beyond Anatolia
+country_event = {
+	id = mmetr_BYZ_mission_events.6
+	title = "mmetr_BYZ_mission_events.6.t"
+	desc = "mmetr_BYZ_mission_events.6.desc"
+	picture = MMETR_HAGIA_SOPHIA_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.6.a"
+		
+		dulkadir_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_byz2_kleisoura"
+				duration = 7300
+			}
+		}
+		327 = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_byz2_kleisoura"
+				duration = 7300
+			}
+		}
+		2302 = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_byz2_kleisoura"
+				duration = 7300
+			}
+		}
+		2313 = {		#Antioch
+			add_permanent_claim = ROOT
+		}
+		if = {
+			limit = {
+				owns_or_non_sovereign_subject_of = 2313
+			}
+			aleppo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+# Reconquest of Syria
+country_event = {
+	id = mmetr_BYZ_mission_events.7
+	title = "mmetr_BYZ_mission_events.7.t"
+	desc = "mmetr_BYZ_mission_events.7.desc"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.7.a"
+		
+		if = {
+			limit = {
+				uses_patriarch_authority = yes
+			}
+			add_patriarch_authority = 0.05
+		}
+		aleppo_area = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_byz2_domestic_of_the_schools_of_the_east"
+				duration = 7300
+			}
+		}
+		379 = {		#Jerusalem
+			limit = {
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# The True Cross of Jerusalem
+country_event = {
+	id = mmetr_BYZ_mission_events.8
+	title = "mmetr_BYZ_mission_events.8.t"
+	desc = "mmetr_BYZ_mission_events.8.desc"
+	picture = ORTHODOX_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.8.a"
+		
+		if = {
+			limit = {
+				uses_patriarch_authority = yes
+			}
+			add_patriarch_authority = 0.05
+		}
+		add_country_modifier = {
+			name = "me_byz2_patriarch_of_jerusalem"
+			duration = 7300
+		}
+		358 = {		#Alexandria
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# Triumph in Baghdad
+country_event = {
+	id = mmetr_BYZ_mission_events.9
+	title = "mmetr_BYZ_mission_events.9.t"
+	desc = "mmetr_BYZ_mission_events.9.desc"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.9.a"
+		
+		add_country_modifier = {
+			name = "me_byz2_the_second_trajan"
+			duration = 7300
+		}
+	}
+}
+
+# Courtiers of the [Root.Monarch.GetTitle]
+country_event = {
+	id = mmetr_BYZ_mission_events.10
+	title = "mmetr_BYZ_mission_events.10.t"
+	desc = "mmetr_BYZ_mission_events.10.desc"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.10.a"
+		
+		add_country_modifier = {
+			name = "me_byz2_civil_aristocracy_promoted"
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.10.b"
+		
+		add_country_modifier = {
+			name = "me_byz2_inherited_aristocracy_favored"
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.10.c"
+		
+		add_country_modifier = {
+			name = "me_byz2_eunuch_favoritism"
+			duration = 9125
+		}
+	}
+}
+
+# The Question of Dalmatia
+country_event = {
+	id = mmetr_BYZ_mission_events.11
+	title = "mmetr_BYZ_mission_events.11.t"
+	desc = "mmetr_BYZ_mission_events.11.desc"
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		save_event_target_as = byz2_religion_event_target
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.11.a"
+		
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = croatia_area
+					area = bosnia_area
+					area = east_adriatic_coast_area
+				}
+			}
+			add_province_modifier = {
+				name = "me_byz2_dalmatian_resettlement"
+				duration = 7300
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.11.b"
+		
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = croatia_area
+					area = bosnia_area
+					area = east_adriatic_coast_area
+				}
+			}
+			add_province_modifier = {
+				name = "me_byz2_dalmatian_foederati"
+				duration = 7300
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.11.c"
+		
+		custom_tooltip = mmetr_BYZ_mission_events.11.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = croatia_area
+						area = bosnia_area
+						area = east_adriatic_coast_area
+					}
+				}
+				cede_province = DAL		#Dalmatia
+				add_core = DAL
+			}
+			create_march = DAL
+			DAL = {
+				change_religion = event_target:byz2_religion_event_target
+				change_government = monarchy
+			}
+		}
+	}
+}
+
+# A New Patriarch of Rome?
+country_event = {
+	id = mmetr_BYZ_mission_events.12
+	title = "mmetr_BYZ_mission_events.12.t"
+	desc = "mmetr_BYZ_mission_events.12.desc"
+	picture = ORTHODOX_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.12.a"
+		
+		italy_region = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_byz2_byzantine_intervention"
+				duration = 9125
+			}
+		}
+		118 = {
+			add_province_modifier = {
+				name = "me_byz2_puppeted_patriarch_of_rome"
+				duration = 9125
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.12.b"
+		
+		italy_region = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_byz2_benevolent_rulers"
+				duration = 9125
+			}
+		}
+		118 = {
+			add_province_modifier = {
+				name = "me_byz2_autonomous_patriarch_of_rome"
+				duration = 9125
+			}
+		}
+	}
+}
+
+# [Root.Monarch.GetTitle] [Root.Monarch.GetName]'s Gamble
+country_event = {
+	id = mmetr_BYZ_mission_events.13
+	title = "mmetr_BYZ_mission_events.13.t"
+	desc = "mmetr_BYZ_mission_events.13.desc"
+	picture = ORTHODOX_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.13.a"
+		
+		custom_tooltip = byz2_cross_the_rubicon_mission.tt
+		
+		183 = {		#Paris Lutetia
+			add_claim = ROOT
+		}
+		200 = {		#Nimes / Languedoc
+			add_claim = ROOT
+		}
+		203 = {		#Lugdunum / Lyon
+			add_claim = ROOT
+		}
+	}
+}
+
+# End to the Bulgarian Wars
+country_event = {
+	id = mmetr_BYZ_mission_events.14
+	title = "mmetr_BYZ_mission_events.14.t"
+	desc = "mmetr_BYZ_mission_events.14.desc"
+	picture = MMETR_BATTLEFIELD_AFTERMATH_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.14.a"
+		
+		add_country_modifier = {
+			name = "me_byz2_the_victorious"
+			duration = 5475
+		}
+	}
+}
+
+# Foederati in Armenia
+country_event = {
+	id = mmetr_BYZ_mission_events.15
+	title = "mmetr_BYZ_mission_events.15.t"
+	desc = "mmetr_BYZ_mission_events.15.desc"
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		save_event_target_as = byz2_religion_event_target
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.15.a"
+		
+		custom_tooltip = mmetr_BYZ_mission_events.15.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = armenia_area
+						area = kartli_kakheti_area
+						area = samtskhe_area
+					}
+				}
+				cede_province = ARM		#Armenia
+				add_core = ARM
+			}
+			create_march = ARM
+			ARM = {
+				change_religion = event_target:byz2_religion_event_target
+				change_government = monarchy
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.15.b"
+		
+		custom_tooltip = mmetr_BYZ_mission_events.15.tt2
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					area = armenia_area
+				}
+				cede_province = ARM		#Armenia
+				add_core = ARM
+			}
+			create_march = ARM
+			ARM = {
+				change_religion = event_target:byz2_religion_event_target
+				change_government = monarchy
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.15.c"
+		
+		
+	}
+}
+
+# The Nestorian Question
+country_event = {
+	id = mmetr_BYZ_mission_events.16
+	title = "mmetr_BYZ_mission_events.16.t"
+	desc = "mmetr_BYZ_mission_events.16.desc"
+	picture = ORTHODOX_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.16.a"
+		
+		add_country_modifier = {
+			name = "me_byz2_strict_orthodoxy"
+			duration = 7300
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.16.b"
+		
+		add_country_modifier = {
+			name = "me_byz2_nestorian_reconciliation"
+			duration = 7300
+		}
+	}
+}
+
+# The Fate of Arabia
+country_event = {
+	id = mmetr_BYZ_mission_events.17
+	title = "mmetr_BYZ_mission_events.17.t"
+	desc = "mmetr_BYZ_mission_events.17.desc"
+	picture = PRAYING_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.17.a"
+		
+		arabia_region = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_byz2_protected_muslims"
+				duration = 7300
+			}
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.17.b"
+		
+		arabia_region = {
+			limit = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_province_modifier = {
+				name = "me_byz2_missionaries_in_arabia"
+				duration = 7300
+			}
+		}
+	}
+}
+
+# Answering the Iconoclast Controversy
+country_event = {
+	id = mmetr_BYZ_mission_events.18
+	title = "mmetr_BYZ_mission_events.18.t"
+	desc = "mmetr_BYZ_mission_events.18.desc"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.18.a"
+		
+		add_ruler_modifier = {
+			name = "me_byz2_iconoclasm"
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "mmetr_BYZ_mission_events.18.b"
+		
+		add_adm_power = 100
+		add_ruler_modifier = {
+			name = "me_byz2_icons_protected"
+			duration = -1
+		}
+	}
+}

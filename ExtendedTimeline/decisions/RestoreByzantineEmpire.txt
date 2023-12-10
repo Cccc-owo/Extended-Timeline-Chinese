@@ -14,7 +14,7 @@ country_decisions = {
 				is_free_or_tributary_trigger = yes
 				ai = no
 			}
-			NOT = { exists = BYZ }
+			NOT = { tag = BYZ }
 			NOT = { tag = HLR }
 			NOT = { tag = TUR }
 			NOT = { tag = ROM }
@@ -52,19 +52,30 @@ country_decisions = {
 			NOT = { owned_by = ROOT }
 		}
 		allow = {
-			owns = 149	# Edirne
-			owns = 144  # Epiros
-			owns = 147	# Salonica
-			owns = 148	# Macedonia
-			owns = 146	# Athens
-			owns = 145	# Morea
-			owns = 1773	# Achea
-			owns = 316	# Bithynia
-			owns = 317	# Bursa
-			owns = 318	# Smyrna
-			owns = 1853	# Kozani
-			owns = 2296	# Biga
-			owns = 151  # Constantinople
+			NOT = { exists = BYZ }
+			NOT = { exists = LAE }
+			owns = 151 # Constantinople
+			OR = {
+				tag = NCA
+				tag = TRE
+				tag = THS
+				tag = EPI
+				tag = MOE
+				AND = {
+					owns = 149	# Edirne
+					owns = 144  # Epiros
+					owns = 147	# Salonica
+					owns = 148	# Macedonia
+					owns = 146	# Athens
+					owns = 145	# Morea
+					owns = 1773	# Achea
+					owns = 316	# Bithynia
+					owns = 317	# Bursa
+					owns = 318	# Smyrna
+					owns = 1853	# Kozani
+					owns = 2296	# Biga
+				}
+			}
 			151 = {		# Constantinople
 				is_state = yes
 			}

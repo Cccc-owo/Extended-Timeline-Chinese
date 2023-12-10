@@ -24,20 +24,18 @@ druid_sacred_site = {
     on_deactivation = {
 		if = {
 			limit = {
+				owner = { religion = druidism }
 				controller = {
-					NOT = {
-						religion = druidism
-					}
+					NOT = { religion = druidism }
 				}
 			}
 			owner = {
-			country_event = { 
-				id = druidism_flavor.5
-				days = 1
-				
+				country_event = { 
+					id = druidism_flavor.5
+					days = 1
+				}
 			}
-		}
-		remove_province_triggered_modifier = druid_sacred_site
+			remove_province_triggered_modifier = druid_sacred_site
 		}
     } 
 }

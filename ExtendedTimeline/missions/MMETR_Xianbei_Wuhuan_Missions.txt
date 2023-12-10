@@ -1,0 +1,1293 @@
+xianbei_wuhuan_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = XIB	#Xianbei
+			tag = WUH	#Wuhuan
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	xib_friends_of_the_confederation_mission = {
+		icon = mission_chinese_merchant
+		required_missions = {  }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = xib_friends_of_the_confederation_mission.tt
+				calc_true_if = {
+					all_country = {
+						OR = {
+							alliance_with = ROOT
+							is_subject_of = ROOT
+						}
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "influential_diplomacy"
+				duration = 9125
+			}
+		}
+	}
+	xib_expand_sphere_of_influence_mission = {
+		icon = mission_jawal_silver_mine
+		required_missions = { xib_friends_of_the_confederation_mission }
+		position = 3
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = xib_expand_sphere_of_influence_mission.tt
+					all_subject_country = {
+						is_subject_of_type_with_overlord = { 
+							who = ROOT
+							type = tributary_state
+						}
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_consistent_tribute"
+				duration = 9125
+			}
+		}
+	}
+	xib_cross_into_goryeo_mission = {
+		icon = mission_korean_castle_assault
+		required_missions = {  }	#none
+		position = 4
+		provinces_to_highlight = {
+			area = hamgyeong_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hamgyeong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_mountain_warfare_experts"
+				duration = 10950
+			}
+			korea_region = {
+				limit = {
+					NOT = {
+						has_discovered = ROOT
+					}
+				}
+				discover_country = ROOT
+			}
+			south_korea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			eastern_korea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_tribute_from_samhan_mission = {
+		icon = mng_form_depots
+		required_missions = { xib_cross_into_goryeo_mission }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = south_korea_area
+				area = eastern_korea_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				region = korea_region
+			}
+			south_korea_area = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = xib_tribute_from_samhan_mission.tt
+					country_or_subject_holds = ROOT
+				}
+			}
+			eastern_korea_area = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = xib_tribute_from_samhan_mission.tt
+					country_or_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.6
+			}
+			custom_trigger_tooltip = xib_tribute_from_samhan_mission.tt2
+			add_yearly_manpower = 2
+			
+			#Discover sea tiles and Kyushu
+			1389 = {
+				discover_country = ROOT
+			}
+			1376 = {
+				discover_country = ROOT
+			}
+			1377 = {
+				discover_country = ROOT
+			}
+			4234 = {
+				discover_country = ROOT
+			}
+			kyushu_area = {
+				discover_country = ROOT
+			}
+			northern_kyushu = {
+				discover_country = ROOT
+			}
+		}
+	}
+	xib_develop_a_new_navy_mission = {
+		icon = mission_to_the_south_china_sea
+		required_missions = { xib_tribute_from_samhan_mission }
+		position = 8
+		trigger = {
+			navy_size = 15
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_naval_raiding"
+				duration = -1
+			}
+		}
+	}
+	xib_raids_against_wa_mission = {
+		icon = mission_end_arakan_piracy
+		required_missions = { xib_develop_a_new_navy_mission }
+		position = 10
+		provinces_to_highlight = {
+			region = japan_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				region = japan_region
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_overseas_expansion"
+				duration = 10950
+			}
+		}
+	}
+}
+
+xianbei_wuhuan_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = XIB	#Xianbei
+			tag = WUH	#Wuhuan
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	xib_silk_road_hegemon_mission = {
+		icon = mission_asian_trader
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { silk = 8 }
+					}
+				}
+				trade_goods = silk
+				has_discovered = ROOT
+			}
+			else = {
+				always = no
+			}
+		}
+		trigger = {
+			production_leader = {
+				trade_goods = silk
+			}
+			silk = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "silk_road_modifier"
+				duration = 7300
+			}
+			add_mercantilism = 2
+		}
+	}
+	xib_develop_writing_mission = {
+		icon = mng_expand_yongle_dadian
+		required_missions = { xib_friends_of_the_confederation_mission }
+		position = 2
+		trigger = {
+			has_institution = writing
+			OR = {
+				adm = 5
+				has_adm_advisor = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_xianbei_script"
+				duration = -1
+			}
+		}
+	}
+	xib_reunite_the_donghu_mission = {
+		icon = mission_jurchen_cavalrymen
+		required_missions = { xib_rally_the_lesser_chiefs_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 726
+				province_id = 4675
+				province_id = 4672
+				province_id = 2115
+				province_id = 703
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 726
+			owns_or_non_sovereign_subject_of = 4675
+			owns_or_non_sovereign_subject_of = 4672
+			owns_or_non_sovereign_subject_of = 2115
+			owns_or_non_sovereign_subject_of = 703
+			if = {
+				limit = {
+					tag = XIB
+				}
+				OR = {
+					overlord_of = WUH
+					NOT = { exists = WUH }
+				}
+			}
+			
+			#more lax requirements for Wuhuan, so can still expand into Korea
+			if = {
+				limit = {
+					tag = WUH
+				}
+				OR = {
+					alliance_with = XIB
+					overlord_of = XIB
+					NOT = { exists = XIB }
+				}
+			}
+		}
+		effect = {
+			add_horde_unity = 5
+			add_country_modifier = {
+				name = "me_xib_donghu_confederation"
+				duration = 10950
+			}
+			liaoning_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hamgyeong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_seize_liaodong_mission = {
+		icon = mission_han_army
+		required_missions = { xib_reunite_the_donghu_mission }
+		position = 5
+		provinces_to_highlight = {
+			area = liaoning_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			liaoning_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.4
+			}
+			add_yearly_manpower = 2
+			add_horde_unity = 10
+			add_country_modifier = {
+				name = "me_xib_liaodong_ports"
+				duration = 10950
+			}
+			hebei_area = {		#North Hebei
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_hebei_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_tear_across_jizhou_mission = {
+		icon = mission_ancient_chinese_army_in_siege
+		required_missions = { xib_seize_liaodong_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = hebei_area		#North Hebei
+				area = south_hebei_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			hebei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_hebei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.9
+			}
+			tooltip = {
+				add_yearly_manpower = 2
+				add_country_modifier = {
+					name = "me_xib_han_siege_engineers"
+					duration = 9125
+				}
+				add_country_modifier = {
+					name = "me_xib_chinese_conscripts"
+					duration = 10950
+				}
+			}
+			henan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_henan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_question_of_sinicization_mission = {
+		icon = mission_chu_shi_biao
+		required_missions = { xib_tear_across_jizhou_mission }
+		position = 8
+		trigger = {
+			any_owned_province = {
+				culture_group = east_asian
+				has_owner_accepted_culture = yes
+				NOT = { culture = ROOT }
+			}
+			calc_true_if = {
+				any_owned_province = {
+					culture_group = east_asian
+				}
+				amount = 15
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_han_integration"
+				duration = -1
+			}
+		}
+	}
+	xib_win_heavens_favor_mission = {
+		icon = mission_chinese_edict
+		required_missions = { xib_ride_to_the_zhongyuan_mission xib_question_of_sinicization_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = xinan_region
+				region = south_china_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+			has_discovered = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				OR = {
+					is_emperor_of_china = yes
+					NOT = {
+						any_country = {
+							is_emperor_of_china = yes
+						}
+					}
+				}
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				region = xinan_region
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = south_china_region
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = 20
+			}
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 3
+					}
+				}
+				set_government_rank = 3
+			}
+			add_country_modifier = {
+				name = "me_xib_mandate_of_heaven"
+				duration = 10950
+			}
+			china_superregion = {
+				limit = {
+					is_empty = no
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = xib_chose_new_dynastic_name_flag
+					}
+				}
+				country_event = {
+					id = mmetr_XIB_mission_events.7
+				}
+			}
+		}
+	}
+}
+
+xianbei_wuhuan_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = XIB	#Xianbei
+			tag = WUH	#Wuhuan
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	xib_diplomacy_of_kinship_mission = {
+		icon = mission_japanese_marriage
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				num_of_royal_marriages = 3
+				any_known_country = {
+					culture_group = east_asian
+					marriage_with = ROOT
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_dip_power = 50
+		}
+	}
+	xib_rally_the_lesser_chiefs_mission = {
+		icon = mission_xianbei_desert_warriors
+		required_missions = {  }
+		position = 3
+		trigger = {
+			army_size_percentage = 1.0
+			is_monarch_leader = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_xianbei_raiding_parties"
+				duration = 9125
+			}
+			inner_mongolia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ordos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_mongolia_area = {		#Gobi
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chahar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_the_dogs_of_the_han_mission = {
+		icon = mission_kowtow
+		required_missions = { xib_rally_the_lesser_chiefs_mission }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = inner_mongolia_area
+				area = ordos_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			inner_mongolia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ordos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_horde_unity = 10
+			country_event = {
+				id = mmetr_XIB_mission_events.2
+			}
+			697 = {		#Dai Commandery
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_bypass_the_great_wall_mission = {
+		icon = mch_bypass_great_wall
+		required_missions = { xib_the_dogs_of_the_han_mission xib_reunite_the_donghu_mission xib_supplant_the_chanyu_mission }
+		position = 5
+		provinces_to_highlight = {
+			superregion = china_superregion
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				superregion = china_superregion
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.5
+			}
+			tooltip = {
+				add_yearly_manpower = 2
+				add_horde_unity = 10
+				add_country_modifier = {
+					name = "me_xib_victorious_armies"
+					duration = 10950
+				}
+			}
+		}
+	}
+	xib_control_dai_commandery_mission = {
+		icon = mng_thirteen_provinces
+		required_missions = { xib_bypass_the_great_wall_mission }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 697
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_core_province = 697
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.8
+			}
+			tooltip = {
+				697 = {
+					add_base_manpower = 1
+				}
+				add_country_modifier = {
+					name = "me_xib_king_of_dai"
+					duration = -1
+				}
+			}
+		}
+	}
+	xib_ride_to_the_zhongyuan_mission = {
+		icon = mission_mongol_charge
+		required_missions = { xib_control_dai_commandery_mission xib_tear_across_jizhou_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = henan_area		#South Henan
+				area = north_henan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			north_henan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			henan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_horde_unity = 10
+			add_country_modifier = {
+				name = "me_xib_lord_of_zhongyuan"
+				duration = 10950
+			}
+			shaanxi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_xianbei_emperor_mission = {
+		icon = mission_chinese_son_of_heaven
+		required_missions = { xib_ride_to_the_zhongyuan_mission }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1836	#Luoyang
+				province_id = 700	#Chang'an
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 2
+			owns_core_province = 1836
+			owns_core_province = 700
+		}
+		effect = {
+			add_prestige = 25
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 3
+					}
+				}
+				set_government_rank = 3
+			}
+			add_country_modifier = {
+				name = "me_xib_nomadic_empire"
+				duration = -1
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = xib_chose_new_dynastic_name_flag
+					}
+				}
+				country_event = {
+					id = mmetr_XIB_mission_events.7
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = no
+					NOT = { has_reform = celestial_empire }
+				}
+				country_event = {
+					id = mmetr_XIB_mission_events.12
+				}
+				custom_tooltip = xib_xianbei_emperor_mission.tt
+			}
+		}
+	}
+}
+
+xianbei_wuhuan_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = XIB	#Xianbei
+			tag = WUH	#Wuhuan
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	xib_new_grazing_lands_mission = {
+		icon = mission_nomad_camp
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				has_terrain = steppe
+				has_terrain = grasslands
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			grown_by_states = 5
+			num_of_owned_provinces_with = {
+				value = 15
+				OR = {
+					has_terrain = steppe
+					has_terrain = grasslands
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_abundant_grazing_lands"
+				duration = 10950
+			}
+		}
+	}
+	xib_flying_horses_mission = {
+		icon = mission_marwari_horses
+		required_missions = { xib_new_grazing_lands_mission xib_northern_agriculture_mission }
+		position = 2
+		trigger = {
+			army_tradition = 70
+			OR = {
+				cavalry_fraction = 0.75
+				num_of_cavalry = 20
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.1
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_xib_xianbei_stirrup"
+					duration = -1
+				}
+			}
+		}
+	}
+	xib_supplant_the_chanyu_mission = {
+		icon = mission_krums_nikephoros_skull_cup
+		required_missions = { xib_rally_the_lesser_chiefs_mission }
+		position = 4
+		provinces_to_highlight = {
+			area = central_mongolia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			central_mongolia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 20
+				region = mongolia_region
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.3
+			}
+			tooltip = {
+				add_horde_unity = 10
+				add_country_modifier = {
+					name = "me_xib_khanate_hegemony"
+					duration = 10950
+				}
+			}
+		}
+	}
+	xib_reign_in_the_twenty_clans_mission = {
+		icon = mission_mongol_allies_banner
+		required_missions = { xib_supplant_the_chanyu_mission }
+		position = 5
+		trigger = {
+			OR = {
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 4
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nomadic_tribes
+					value = 4
+				}
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 80
+				}
+				estate_loyalty = {
+					estate = estate_nomadic_tribes
+					loyalty = 80
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_tribal_reorganization"
+				duration = 10950
+			}
+		}
+	}
+	xib_centralize_tribal_authority_mission = {
+		icon = mission_mongol_throne
+		required_missions = { xib_reign_in_the_twenty_clans_mission }
+		position = 6
+		trigger = {
+			OR = {
+				legitimacy_equivalent = 90
+				monthly_adm = 9
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_supreme_khan"
+				duration = 10950
+			}
+		}
+	}
+	xib_devastate_the_yuezhi_mission = {
+		icon = mission_the_ganges_campaign
+		required_missions = { xib_subjugate_the_jushi_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = kabulistan_area
+				area = balkh_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kabulistan_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			balkh_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			OR = {
+				army_size = KUS
+				total_development = KUS
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.11
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_xib_cities_of_daxia"
+					duration = 10950
+				}
+			}
+		}
+	}
+	xib_long_ride_to_lihai_mission = {		#Caspian Sea
+		icon = mission_attila_the_hun
+		required_missions = { xib_devastate_the_yuezhi_mission xib_defeat_kangju_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = nogai_area
+				area = lower_yik_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			nogai_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			lower_yik_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_universal_khanate"
+				duration = -1
+			}
+		}
+	}
+}
+
+xianbei_wuhuan_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = XIB	#Xianbei
+			tag = WUH	#Wuhuan
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	xib_northern_agriculture_mission = {
+		icon = mission_chinese_harvest
+		required_missions = {  }
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 7
+				OR = {
+					development = 9
+					AND = {
+						has_terrain = farmlands
+						development = 7
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 25
+			add_country_modifier = {
+				name = "me_xib_agriculture_economy"
+				duration = 10950
+			}
+		}
+	}
+	xib_monuments_to_tengri_mission = {
+		icon = mission_se_birdmen
+		required_missions = { xib_northern_agriculture_mission }
+		position = 3
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = glorious_monument
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_tengri_holy_sites"
+				duration = 10950
+			}
+			define_advisor = {
+				type = theologian
+				skill = 2
+				religion = tengri_pagan_reformed
+				discount = yes
+			}
+		}
+	}
+	xib_conquer_the_wusun_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { xib_supplant_the_chanyu_mission }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 461
+				province_id = 2125
+				province_id = 2126
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 461
+			owns_or_non_sovereign_subject_of = 2125
+			owns_or_non_sovereign_subject_of = 2126
+		}
+		effect = {
+			add_country_modifier = {
+				name = "me_xib_expanding_confederation"
+				duration = 10950
+			}
+			kashgaria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tarim_basin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shanshan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_subjugate_the_jushi_mission = {		#Tocharians
+		icon = mission_pue_sky_city
+		required_missions = { xib_conquer_the_wusun_mission }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = kashgaria_area
+				area = tarim_basin_area		#North Altishahr
+				area = shanshan_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			kashgaria_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			tarim_basin_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			shanshan_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = me_kus_oases_merchants
+				duration = 10950
+			}
+			arys_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ferghana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kyzylkum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kabulistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			balkh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	xib_defeat_kangju_mission = {
+		icon = mission_tumu_crisis
+		required_missions = { xib_subjugate_the_jushi_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = arys_area
+				area = ferghana_area
+				area = kyzylkum_area
+			}
+			NOT = {
+				country_or_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			arys_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			ferghana_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			kyzylkum_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = mmetr_XIB_mission_events.10
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "me_xib_heavenly_horses_of_ferghana"
+					duration = 10950
+				}
+			}
+		}
+	}
+	xib_a_new_trade_empire_mission = {
+		icon = mission_chinese_market
+		required_missions = { xib_defeat_kangju_mission }
+		position = 10
+		trigger = {
+			calc_true_if = {
+				any_active_trade_node = {
+					is_strongest_trade_power = ROOT
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			add_country_modifier = {
+				name = me_xib_imperial_merchant_expeditions
+				duration = -1
+			}
+		}
+	}
+}
