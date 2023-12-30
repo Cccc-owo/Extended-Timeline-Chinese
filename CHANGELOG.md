@@ -2,21 +2,27 @@
 
 汉化组成员：见 [ParaTranz](https://paratranz.cn/projects/5342/members)
 
+## v1.16.1-r11
+
+- 🌐更新原版汉化
+- 🌐更新ET汉化
+
+---
+
+<details><summary>历史更新日志</summary>
+
 ## v1.16.1-r10
 
 - 🌐更新原版汉化
 - 🌐更新ET汉化
 - 🔧修复可能存在的崩溃问题
 
----
-
-<details><summary>历史更新日志</summary>
-
 ## v1.16.0-r9
 
 - 🌐更新原版汉化
 - 🌐更新ET汉化
 - ✍️更新地图字体
+- 🎇欢迎新的翻译成员：@fatyu101
 
 ## v1.16.0-r8
 
