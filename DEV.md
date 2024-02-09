@@ -20,8 +20,8 @@
 
 在此之后，修改任何需要修改的其他文件（如修改脚本、[更新字体贴图、增加额外文件](addition)等），完成后进行 ```commit```。
 
-然后更新[版本号](mod_descriptor\ETCLP.mod)和[更新日志](CHANGELOG.md)，进行 ```commit``` 并 ```push``` 至[远程仓库（GitHub）](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/)。
+然后更新[版本号](mod_descriptor\ETC.mod)和[更新日志](CHANGELOG.md)，进行 ```commit``` 并 ```push``` 至[远程仓库（GitHub）](https://github.com/Cccc-owo/Extended-Timeline-Chinese/)。
 
-完成以上操作之外，还要在 [Releases](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/releases/) 中发布[新 Release](https://github.com/Cccc-owo/Extended-Timeline-Chinese-Localisation-Project/releases/new)，```tag```应与版本号相同，其余的不需要动，直接 ```Publish Release``` 即可。
+完成以上操作之外，还要在 [Releases](https://github.com/Cccc-owo/Extended-Timeline-Chinese/releases/) 中发布[新 Release](https://github.com/Cccc-owo/Extended-Timeline-Chinese/releases/new)，```tag```应与版本号相同，其余的不需要动，直接 ```Publish Release``` 即可。
 
 以及 Steam 创意工坊更新，则由 [@Cccc_](https://paratranz.cn/users/23550/profile) 我手动完成。目前还没有实现工坊自动发布。:(

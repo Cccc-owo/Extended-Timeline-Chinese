@@ -1,7 +1,7 @@
 ::=====setting environment=====
 @ECHO OFF
-set mod_desc=ETCLP.mod
-set mod_dir=ETCLP
+set mod_desc=ETC.mod
+set mod_dir=ETC
 ::=====setting environment end=====
 ::=====checking=====
 ECHO Time:%date%

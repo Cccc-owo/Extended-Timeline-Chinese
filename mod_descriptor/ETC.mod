@@ -1,5 +1,5 @@
-name="延长时间线汉化计划 - Extended Timeline Chinese Localisation Project"
-version="1.16.1-r11"
+name="延长时间线汉化 - Extended Timeline Chinese"
+version="1.16.1-r12"
 replace_path="customizable_localization"
 dependencies={
 	"Extended Timeline"

@@ -34,8 +34,8 @@ jobs:
       - name: Upload generated files
         uses: actions/upload-artifact@v4
         with:
-          name: ETCLP
-          path: ETCLP.zip
+          name: ETC
+          path: ETC.zip
 
   nightly-release:
     permissions: write-all
@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: ETCLP
+          name: ETC
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -54,7 +54,7 @@ jobs:
           prerelease: true
           title: "test Build"
           files: |
-            ETCLP.zip
+            ETC.zip
 
   release:
     permissions: write-all
@@ -67,18 +67,18 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: ETCLP
+          name: ETC
 
       #- name: Unzip the artifact
       #  run: |
       #    mkdir temp
-      #    unzip ETCLP.zip -d temp
+      #    unzip ETC.zip -d temp
 
       - name: Release Action
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            ETCLP.zip
+            ETC.zip
           body_path: CHANGELOG.md
           discussion_category_name: "公告"
 
