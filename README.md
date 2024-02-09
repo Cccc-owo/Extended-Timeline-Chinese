@@ -1,4 +1,4 @@
-# 延长时间线汉化计划－Extended Timeline Chinese Localisation Project
+# 延长时间线汉化－Extended Timeline Chinese
 
 [![thumbnail](thumbnail.png)](https://paratranz.cn/projects/5342)
 
