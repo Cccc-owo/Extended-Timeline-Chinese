@@ -1,10 +1,6 @@
-name: update-nightly
+name: update-52-text
 
 on:
-  #runs at 11:10 UTC every day
-  #11:10 UTC = 19:10 CST (China Standard Time)
-  schedule:
-    - cron: '10 11 * * 6'
   workflow_dispatch:
 
 jobs:
@@ -17,26 +13,25 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Switch branch
-        run: git checkout -b nightly-update
+        run: git checkout -b update-52-text
 
       - name: Get the output zip
         run: |
           curl -X 'GET' \
-            'https://paratranz.cn/api/projects/5342/artifacts/download' \
+            'https://paratranz.cn/api/projects/2/artifacts/download' \
             -H 'accept: */*' \
             -H 'Authorization: ${{ secrets.PARATRANZ_API_TOKEN }}' -L --output text.zip
 
       - name: Cleanup the folder
         run: |
-          rm -r cn_text
-          mkdir cn_text
+          rm -r 52_text
+          mkdir 52_text
 
       - name: Unzip
         run: |
           mkdir temp
           unzip text.zip -d temp
-          cp temp/utf8/* cn_text/ -r
-          cp temp/chars.txt .
+          cp temp/utf8/* 52_text/ -r
 
       - name: Cleanup the folder
         run: |
@@ -48,5 +43,5 @@ jobs:
       - name: Commit Changes & Push to Remote Branch
         run: |
           git add -A
-          git commit -m "upd: update translated text nightly"
-          git push -u origin nightly-update -f
+          git commit -m "upd: update Chinese Language Mod"
+          git push -u origin update-52-text -f
