@@ -16,11 +16,11 @@ ECHO Copying started.
 ECHO.
 xcopy eu4_chinese\ output\%mod_dir%\ /E /Q /C /Y
 xcopy eu4_chinese_sup\ output\%mod_dir%\ /E /Q /C /Y
+xcopy cn_text\ output\%mod_dir%\ /E /Q /C /Y
 del /F /S /Q output\%mod_dir%\descriptor.mod
 del /F /S /Q output\%mod_dir%\history\provinces
 @REM xcopy ExtendedTimeline\ output\%mod_dir%\ /E /Q /C /Y
-xcopy cn_text\ output\%mod_dir%\ /E /Q /C /Y
-xcopy 52_text\ output\%mod_dir%\ /E /Q /C /Y
+xcopy et_text\ output\%mod_dir%\ /E /Q /C /Y
 xcopy addition\ output\%mod_dir%\ /E /Q /C /Y
 xcopy mod_descriptor\%mod_desc% output\ /E /Q /C /Y
 ECHO path="mod/%mod_dir%" >> output\%mod_desc%

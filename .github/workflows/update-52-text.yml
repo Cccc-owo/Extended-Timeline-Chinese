@@ -24,14 +24,14 @@ jobs:
 
       - name: Cleanup the folder
         run: |
-          rm -r 52_text
-          mkdir 52_text
+          rm -r cn_text
+          mkdir cn_text
 
       - name: Unzip
         run: |
           mkdir temp
           unzip text.zip -d temp
-          cp temp/utf8/* 52_text/ -r
+          cp temp/utf8/* cn_text/ -r
 
       - name: Cleanup the folder
         run: |
