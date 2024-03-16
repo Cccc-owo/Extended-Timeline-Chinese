@@ -1,22 +1,15 @@
-graphical_culture = easterngfx
-color = {
-  78
-  65
-  15
-}
+﻿graphical_culture = westerngfx
+color = { 20 14 150 }
+revolutionary_colors = { 5 9 0 } 	# Livonian Governate
 historical_idea_groups = {
-  early_religious_ideas
-  early_trade_ideas
-  early_mil_ideas
-  early_adm_ideas
-  trade_ideas
-  defensive_ideas
-  offensive_ideas
-  economic_ideas
-  diplomatic_ideas
-  aristocracy_ideas
-  spy_ideas
   religious_ideas
+  defensive_ideas
+  trade_ideas
+  offensive_ideas
+  diplomatic_ideas
+  quality_ideas
+  administrative_ideas
+  economic_ideas
 }
 historical_units = {
   western_medieval_infantry
@@ -29,66 +22,172 @@ historical_units = {
   swedish_caroline
   swedish_arme_blanche
   prussian_frederickian
-  prussian_uhlan
   mixed_order_infantry
   open_order_cavalry
   napoleonic_square
   napoleonic_lancers
 }
+monarch_names = {
+  "约翰 #0" = 80 	# Johann #0
+  "海因里希 #2" = 60 	# Heinrich #2
+  "迪特里希 #2" = 20 	# Dietrich #2
+  "威廉 #2" = 20 	# Wilhelm #2
+  "赫尔曼 #1" = 20 	# Hermann #1
+  "沃尔特 #1" = 20 	# Walter #1
+  "温内曼 #1" = 20 	# Wennemar #1
+  "伯恩哈德 #0" = 20 	# Bernhard #0
+  "西塞 #0" = 20 	# Cysse #0
+  "弗朗茨 #0" = 20 	# Franz #0
+  "格特哈德 #0" = 20 	# Gotthard #0
+  "康拉德 #2" = 20 	# Konrad #2
+  "齐格弗里德 #0" = 20 	# Siegfried #0
+  "格哈德 #2" = 15 	# Gerhard #2
+  "阿诺德 #1" = 15 	# Arnold #1
+  "罗班 #1" = 15 	# Robin #1
+  "埃伯哈德 #3" = 10 	# Eberhard #3
+  "布克哈德 #1" = 10 	# Burkhard #1
+  "戈特弗里德 #1" = 10 	# Gottfried #1
+  "阿道夫 #0" = 0 	# Adolf #0
+  "阿尔布雷希特 #0" = 0 	# Albrecht #0
+  "安德烈亚斯 #0" = 0 	# Andreas #0
+  "斐迪南 #0" = 0 	# Ferdinand #0
+  "腓特烈 #0" = 0 	# Friedrich #0
+  "格奥尔格 #0" = 0 	# Georg #0
+  "雅各布 #0" = 0 	# Jakob #0
+  "卡尔 #0" = 0 	# Karl #0
+  "洛伦茨 #0" = 0 	# Lorenz #0
+  "路德维希 #0" = 0 	# Ludwig #0
+  "卢卡斯 #0" = 0 	# Lukas #0
+  "马库斯 #0" = 0 	# Markus #0
+  "马蒂亚斯 #0" = 0 	# Matthias #0
+  "迈克尔 #0" = 0 	# Michael #0
+  "尼古拉 #0" = 0 	# Nicolaus #0
+  "保罗 #0" = 0 	# Paul #0
+  "鲁道夫 #0" = 0 	# Rudolf #0
+  "西格蒙德 #0" = 0 	# Sigmund #0
+  "施特凡 #0" = 0 	# Stephan #0
+  "托马斯 #0" = 0 	# Thomas #0
+  "文策尔 #0" = 0 	# Wenzel #0
+  "玛利亚 #0 #0" = -1 	# Maria #0
+  "埃尔梅德 #0" = -1 	# Elmede #0
+  "赫尔吉 #0" = -1 	# Helgi #0
+  "赫尔维 #0" = -1 	# Helvi #0
+  "伊尔玛 #0" = -1 	# Ilma #0
+  "伊梅特拉 #0" = -1 	# Imetra #0
+  "莱伊莉 #0" = -1 	# Leili #0
+  "迈穆 #0" = -1 	# Maimu #0
+  "瓦内马 #0" = -1 	# Vanema #0
+  "赖莉 #0" = -1 	# Raili #0
+  "莎芙娜 #0" = -1 	# Savna #0
+  "布丽塔 #0" = -1 	# Brita #0
+  "科尔杜拉 #0" = -1 	# Kordula #0
+}
 leader_names = {
-  "Bielke"
-  "Horn"
-  "Tott"
-  "Fleming"
-  "Paijkull"
-  "Bonde"
-  "Wrede"
-  "Soop"
-  "Mannerheim"
-  "Furuhjelm"
-  "Aminoff"
-  "Armfelt"
-  "Carpelan"
-  "Rehbinder"
-  "Schulman"
+  "冯 阿尔滕博库姆" 	# von Altenbockum
+  "阿舍贝格" 	# Ascheberg
+  "冯 巴赫" 	# von Bach
+  "贝尔" 	# Behr
+  "比尔德林" 	# Bilderling
+  "布隆贝格" 	# Blomberg
+  "冯 伯蒂歇尔" 	# von Boetticher
+  "博尔奇" 	# Borch
+  "布林肯" 	# Brincken
+  "布吕根" 	# Brüggen
+  "布赫霍尔茨" 	# Buchholtz
+  "德绍" 	# Derschau
+  "德拉赫菲尔斯" 	# Drachenfels
+  "杜斯特洛厄" 	# Düsterlohe
+  "恩格哈特" 	# Engelhardt
+  "菲尔克斯" 	# Fircks
+  "福尔萨姆" 	# Fölkersam
+  "丰克" 	# Funck
+  "格罗特斯" 	# Grotthuss
+  "哈赫恩" 	# Haaren
+  "哈恩" 	# Hahn
+  "海金" 	# Heyking
+  "冯 霍纳" 	# von Hoerner
+  "豪恩" 	# Howen
+  "克莱斯特" 	# Kleist
+  "克洛普曼" 	# Klopmann
+  "科莫罗夫斯基" 	# Komorowski
+  "克斯库尔" 	# Koskull
+  "兰斯多夫" 	# Lambsdorff
+  "冯 德 劳尼茨" 	# von der Launitz
+  "冯 吕山德" 	# von Lysander
+  "米尔巴赫" 	# Mirbach
+  "内特霍斯特" 	# Nettelhorst
+  "诺尔肯" 	# Nolcken
+  "奥尔森" 	# Oelsen
+  "奥芬贝格" 	# Offenberg
+  "厄斯滕-萨肯" 	# Osten-Sacken
+  "帕伦" 	# Pahlen
+  "拉琴斯基" 	# Raczynski
+  "雷克" 	# Recke
+  "霍普" 	# Ropp
+  "罗森贝格" 	# Rosenberg
+  "冯 鲁美尔" 	# von Rummel
+  "施利彭巴赫" 	# Schlippenbach
+  "冯 施罗德" 	# von Schroeders
+  "西费尔德" 	# Seefeld
+  "斯塔克尔伯格" 	# Stackelberg
+  "施特龙贝格" 	# Stromberg
+  "陶布" 	# Taube
+  "冯 蒂姆罗斯" 	# von Timroth
 }
 ship_names = {
-  "Dorpat"
-  "Wenden"
-  "Fellin"
-  "D�naburg"
-  "Riga"
-  "Wolmar"
-  "Kokenhusen"
-  "Segewold"
-  "Dobeln"
-  "Karkus"
-}
-monarch_names = {
-  "Kaupo #0" = 20
-  "Shutr #0" = 20
-  "Narvait #0" = 20
-  "Dovyat #0" = 10
-  "Likiik #0" = 10
-  "Priidu #0" = 10
-  "Klavess #0" = 5
-  "Janis #0" = 5
-  "Talivaldis #0" = 5
-  "J�rgen #0" = 5
-  "Vetseke #0" = 0
-  "Vaishvilkas #0" = 0
-  "Yudki #0" = 0
-  "Savna #0" = -1
-  "Brita #0" = -1
-  "Kordula #0" = -1
-  "Elmede #0" = -1
-  "Helgi #0" = -1
-  "Helvi #0" = -1
-  "Ilma #0" = -1
-  "Imetra #0" = -1
-  "Leili #0" = -1
-  "Maimu #0" = -1
-  "Vanema #0" = -1
-  "Raili #0" = -1
-  "�sKN�N #0" = -1  # Maria #0
+  "花盆" 	# Blumentopf
+  "女爵" 	# Dame
+  "库尔兰公爵夫人之纹章" 	# Das Wappen der Herzogin von Kurland
+  "三鲱鱼" 	# Drei Heringe
+  "希望" 	# Hoffnung
+  "鳄鱼" 	# Krokodil
+  "林恩库尔兰海鸥" 	# Lynn kurländische Möwe
+  "迪纳" 	# Düna
+  "阿" 	# Aa
+  "布鲁诺" 	# Bruno
+  "温道" 	# Windau
+  "米陶" 	# Mitau
+  "库尔迪加" 	# Goldingen
+  "西伯格" 	# Seeburg
+  "哈森波特" 	# Hasenpoth
+  "图库姆斯" 	# Tukums
+  "冯·格林宁根" 	# von Grüningen
+  "冯·史提尔兰" 	# von Stierland
+  "冯·桑格豪森" 	# von Sangershausen
+  "冯·霍亨豪森" 	# von Hornhausen
+  "冯·布莱特豪森" 	# von Breithausen
+  "冯·曼德恩" 	# von Mandern
+  "冯·卢特贝格" 	# von Lutterberg
+  "冯·诺特肯" 	# von Nortecken
+  "冯·拉斯伯格" 	# von Rassburg
+  "冯·福伊希特旺根" 	# von Feuchtwangen
+  "冯·恩多普" 	# von Endorp
+  "施泰因公爵" 	# Herzogenstein
+  "冯·霍亨巴赫" 	# von Hohembach
+  "von dinkelaghe"
+  "冯·罗加" 	# von Rogga
+  "冯·乔克" 	# von Jocke
+  "约翰内斯·温格纳德" 	# Johannes Ungenade
+  "赖马尔·哈恩" 	# Reimar Hane
+  "冯·蒙海姆" 	# von Monheim
+  "冯·德莱里本" 	# von Dreileben
+  "冯·赫克" 	# von Hercke
+  "冯·菲廷霍夫" 	# von Vietinghof
+  "冯·弗里默斯海姆" 	# von Vrymersheim
+  "冯·爱尔茨" 	# von Eltz
+  "冯·布尔格奈" 	# von Bürggeneye
+  "迪特里希·托克" 	# Diderick Tork
+  "冯·斯潘海姆" 	# von Spanheim
+  "冯·鲁滕贝格" 	# von Rutenberg
+  "弗兰克·科斯道夫" 	# Franco Kerskorff
+  "冯·博肯沃德" 	# von Bockenvorde
+  "冯·欧弗贝根" 	# von Overbergen
+  "冯·门格德" 	# von Mengede
+  "冯·赫尔森" 	# von Herse
+  "冯·德·博尔奇 " 	# von der Borch
+  "冯·洛林霍夫" 	# von Loringhofe
+  "冯·普莱滕贝格" 	# von Plettenberg
+  "冯·德·雷克" 	# von der Recke
+  "冯·加兰" 	# von Galen
+  "冯·弗斯滕伯格" 	# von Fürstenberg
 }

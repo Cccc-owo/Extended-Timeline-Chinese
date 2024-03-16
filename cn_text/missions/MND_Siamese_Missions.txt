@@ -1,4 +1,4 @@
-mnd_siam_1 = {
+﻿mnd_siam_1 = {
   slot = 1
   generic = no
   ai = yes
@@ -8,8 +8,6 @@ mnd_siam_1 = {
   potential = {
     OR = {
       tag = AYU
-      tag = THB
-      tag = RTN
       tag = SIA
     }
     has_dlc = "Leviathan"
@@ -39,9 +37,7 @@ mnd_siam_1 = {
   }
   mnd_siam_mandala = {
     icon = mission_se_birdmen
-    required_missions = {
-      mnd_siam_transfer_development
-    }
+    required_missions = { mnd_siam_transfer_development }
     provinces_to_highlight = {
       is_capital = yes
       owned_by = ROOT
@@ -67,9 +63,7 @@ mnd_siam_1 = {
   }
   mnd_siam_great_monument = {
     icon = mission_buddhist_monk_praying
-    required_missions = {
-      mnd_siam_mandala
-    }
+    required_missions = { mnd_siam_mandala }
     provinces_to_highlight = {}
     trigger = {
       4831 = {
@@ -107,9 +101,7 @@ mnd_siam_1 = {
   }
   mnd_siam_city_of_worlds_desire = {
     icon = mission_mnd_khm_restored_empire
-    required_missions = {
-      mnd_siam_great_monument
-    }
+    required_missions = { mnd_siam_great_monument }
     provinces_to_highlight = {
       has_discovered = ROOT
       OR = {
@@ -157,8 +149,6 @@ mnd_siam_2 = {
   potential = {
     OR = {
       tag = AYU
-      tag = THB
-      tag = RTN
       tag = SIA
     }
     has_dlc = "Leviathan"
@@ -170,9 +160,7 @@ mnd_siam_2 = {
   mnd_siam_japan = {
     icon = mission_japanese_samurai
     position = 2
-    required_missions = {
-      mnd_siam_transfer_development
-    }
+    required_missions = { mnd_siam_transfer_development }
     provinces_to_highlight = {
       region = japan_region
     }
@@ -197,15 +185,13 @@ mnd_siam_2 = {
         fire = 4
         manuever = 3
         siege = 2
-        name = "qS0u�?e"  # Yamada Nagamasa
+        name = "山田长政" 	# Yamada Nagamasa
       }
     }
   }
   mnd_siam_devaraja = {
     icon = mission_mnd_siam_subjugate_vietnam
-    required_missions = {
-      mnd_siam_mandala
-    }
+    required_missions = { mnd_siam_mandala }
     provinces_to_highlight = {}
     position = 3
     trigger = {
@@ -232,9 +218,7 @@ mnd_siam_2 = {
   }
   mnd_siam_revolution = {
     icon = mission_mnd_siam_revolution
-    required_missions = {
-      mnd_siam_devaraja
-    }
+    required_missions = { mnd_siam_devaraja }
     provinces_to_highlight = {}
     trigger = {
       OR = {
@@ -264,9 +248,7 @@ mnd_siam_2 = {
   }
   mnd_siam_absolutism = {
     icon = mission_kowtow
-    required_missions = {
-      mnd_siam_revolution
-    }
+    required_missions = { mnd_siam_revolution }
     provinces_to_highlight = {}
     trigger = {
       total_development = 500
@@ -304,7 +286,7 @@ mnd_siam_2 = {
           }
           country_event = {
             id = ideagroups.1
-          }
+          } 	# Swap Ideas
         }
       }
       set_country_flag = siam_royal_absolutism
@@ -340,8 +322,6 @@ mnd_siam_3 = {
   potential = {
     OR = {
       tag = AYU
-      tag = THB
-      tag = RTN
       tag = SIA
     }
     has_dlc = "Leviathan"
@@ -425,9 +405,7 @@ mnd_siam_3 = {
   }
   mnd_siam_subjugate_khmer = {
     icon = mission_unite_home_region
-    required_missions = {
-      mnd_siam_royal_duel
-    }
+    required_missions = { mnd_siam_royal_duel }
     provinces_to_highlight = {
       OR = {
         area = cambodia_area
@@ -480,9 +458,7 @@ mnd_siam_3 = {
   }
   mnd_siam_divide_the_lao = {
     icon = mission_mnd_maj_prepare_eastern_campaigns
-    required_missions = {
-      mnd_siam_subjugate_khmer
-    }
+    required_missions = { mnd_siam_subjugate_khmer }
     provinces_to_highlight = {}
     trigger = {
       OR = {
@@ -561,9 +537,7 @@ mnd_siam_3 = {
   }
   mnd_siam_subjugate_the_lao = {
     icon = mission_mnd_maj_subjugate_makassar
-    required_missions = {
-      mnd_siam_divide_the_lao
-    }
+    required_missions = { mnd_siam_divide_the_lao }
     provinces_to_highlight = {
       OR = {
         area = north_laos_area
@@ -661,9 +635,7 @@ mnd_siam_3 = {
   }
   mnd_siam_subjugate_vietnam = {
     icon = mission_mnd_dai_imperial_citadel
-    required_missions = {
-      mnd_siam_subjugate_the_lao
-    }
+    required_missions = { mnd_siam_subjugate_the_lao }
     provinces_to_highlight = {
       OR = {
         area = vietnam_area
@@ -719,10 +691,7 @@ mnd_siam_3 = {
   }
   mnd_siam_defy_china = {
     icon = mission_great_wall
-    required_missions = {
-      mnd_siam_subjugate_vietnam
-      mnd_siam_conquer_burma
-    }
+    required_missions = { mnd_siam_subjugate_vietnam mnd_siam_conquer_burma }
     provinces_to_highlight = {
       superregion = china_superregion
       NOT = {
@@ -754,9 +723,7 @@ mnd_siam_3 = {
   }
   mnd_siam_take_the_mandate = {
     icon = mission_scholar_officials
-    required_missions = {
-      mnd_siam_defy_china
-    }
+    required_missions = { mnd_siam_defy_china }
     provinces_to_highlight = {
       if = {
         limit = {
@@ -830,8 +797,6 @@ mnd_siam_4 = {
   potential = {
     OR = {
       tag = AYU
-      tag = THB
-      tag = RTN
       tag = SIA
     }
     has_dlc = "Leviathan"
@@ -886,9 +851,7 @@ mnd_siam_4 = {
   }
   mnd_siam_subjugate_chiang_mai = {
     icon = mission_che_the_cave_country
-    required_missions = {
-      mnd_siam_inherit_sukhothai
-    }
+    required_missions = { mnd_siam_inherit_sukhothai }
     provinces_to_highlight = {
       area = northern_thai_area
       NOT = {
@@ -944,9 +907,7 @@ mnd_siam_4 = {
   }
   mnd_siam_protect_the_mon = {
     icon = mission_rice_field
-    required_missions = {
-      mnd_siam_subjugate_chiang_mai
-    }
+    required_missions = { mnd_siam_subjugate_chiang_mai }
     provinces_to_highlight = {
       area = lower_burma_area
       NOT = {
@@ -989,9 +950,7 @@ mnd_siam_4 = {
   }
   mnd_siam_defeat_burma = {
     icon = mission_indian_soldier_elephant
-    required_missions = {
-      mnd_siam_protect_the_mon
-    }
+    required_missions = { mnd_siam_protect_the_mon }
     provinces_to_highlight = {
       owner = {
         capital_scope = {
@@ -1031,9 +990,7 @@ mnd_siam_4 = {
   }
   mnd_siam_conquer_burma = {
     icon = mission_mnd_dai_control_the_army
-    required_missions = {
-      mnd_siam_defeat_burma
-    }
+    required_missions = { mnd_siam_defeat_burma }
     provinces_to_highlight = {
       region = burma_region
       NOT = {
@@ -1074,8 +1031,6 @@ mnd_siam_5 = {
   potential = {
     OR = {
       tag = AYU
-      tag = THB
-      tag = RTN
       tag = SIA
     }
     has_dlc = "Leviathan"
@@ -1177,9 +1132,7 @@ mnd_siam_5 = {
   }
   mnd_siam_mlc = {
     icon = mission_invade_island
-    required_missions = {
-      mnd_siam_prepare
-    }
+    required_missions = { mnd_siam_prepare }
     provinces_to_highlight = {
       area = malacca_area
       NOT = {
@@ -1226,9 +1179,7 @@ mnd_siam_5 = {
   }
   mnd_siam_trade = {
     icon = mission_market_place_with_asian_traders
-    required_missions = {
-      mnd_siam_mlc
-    }
+    required_missions = { mnd_siam_mlc }
     provinces_to_highlight = {
       OR = {
         AND = {

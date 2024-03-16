@@ -1,28 +1,22 @@
+﻿#Country Name: Please see filename.
 graphical_culture = westerngfx
-color = {
-  21
-  93
-  124
-}
+color = { 121 163 114 }
 historical_idea_groups = {
-  early_religious_ideas
-  early_trade_ideas
-  early_mil_ideas
-  early_adm_ideas
-  defensive_ideas
-  offensive_ideas
-  administrative_ideas
-  economic_ideas
   trade_ideas
+  economic_ideas
+  defensive_ideas
+  innovativeness_ideas
+  spy_ideas
+  offensive_ideas
   religious_ideas
   diplomatic_ideas
-  spy_ideas
 }
 historical_units = {
   western_medieval_infantry
   western_medieval_knights
   western_men_at_arms
   italian_condotta
+  spanish_tercio
   austrian_tercio
   austrian_grenzer
   austrian_hussar
@@ -34,129 +28,184 @@ historical_units = {
   napoleonic_lancers
 }
 monarch_names = {
-  "Francesco #0" = 80
-  "Federico #0" = 40
-  "Vincenzo #0" = 40
-  "Ludovico #2" = 20
-  "Gianfrancesco #0" = 20
-  "Guglielmo #0" = 20
-  "Ercole #0" = 15
-  "Sigismondo #0" = 15
-  "Alessandro #0" = 10
-  "Gianlucido #0" = 10
-  "Giovanni #0" = 10
-  "Rodolfo #0" = 10
-  "Guido #1" = 5
-  "Alberto #0" = 0
-  "Benedetto #0" = 0
-  "Bonifacio #0" = 0
-  "Camillo #0" = 0
-  "Claudio #0" = 0
-  "Dario #0" = 0
-  "Emanuele #0" = 0
-  "Fabrizio #0" = 0
-  "Felice #0" = 0
-  "Gaetano #0" = 0
-  "Geronimo #0" = 0
-  "Giuseppe #0" = 0
-  "Ignazio #0" = 0
-  "Jacopo #0" = 0
-  "Leonardo #0" = 0
-  "Leopoldo #0" = 0
-  "Marcello #0" = 0
-  "Niccol� #0" = 0
-  "Paolo #0" = 0
-  "Raniero #0" = 0
-  "Rinaldo #0" = 0
-  "Salvatore #0" = 0
-  "Timoteo #0" = 0
-  "Uberto #0" = 0
-  "Vittorio #0" = 0
-  "Viola #0" = -1
-  "Zaira #0" = -1
-  "Angelica #0" = -1
-  "Cornelia #0" = -1
-  "Emma #0" = -1
-  "Fioralba #0" = -1
-  "Caterina #0" = -1
-  "aSm #0" = 60  # Carlo #0
-  "9��WSY #0" = 20  # Ferdinando #0
+  "阿尔贝托 #2" = 35 	# Alberto #2
+  "安东尼奥 #2" = 35 	# Antonio #2
+  "巴尔托洛梅奥 #2" = 35 	# Bartolomeo #2
+  "布鲁诺 #1" = 25 	# Bruno #1
+  "乔瓦尼 #0" = 25 	# Giovanni #0
+  "马斯提诺 #2" = 25 	# Mastino #2
+  "阿尔博伊诺 #2" = 20 	# Alboino #2
+  "坎格兰德 #2" = 20 	# Cangrande #2
+  "费德里科 #0" = 20 	# Federico #0
+  "坎西尼奥里奥 #1" = 15 	# Cansignorio #1
+  "Canfrancesco #0" = 15
+  "阿戈斯蒂诺 #0" = 0 	# Agostino #0
+  "亚历山德罗 #0" = 0 	# Alessandro #0
+  "阿蒂基耶罗 #0" = 0 	# Altichiero #0
+  "安德里亚 #0" = 0 	# Andrea #0
+  "安吉洛 #0" = 0 	# Angelo #0
+  "安塞尔莫 #0" = 0 	# Anselmo #0
+  "巴蒂斯塔 #0" = 0 	# Battista #0
+  "贝内代托 #0" = 0 	# Benedetto #0
+  "伯纳迪诺 #0" = 0 	# Bernardino #0
+  "比亚焦 #0" = 0 	# Biagio #0
+  "博尼法齐奥 #0" = 0 	# Bonifazio #0
+  "卡洛 #0" = 0 	# Carlo #0
+  "奇罗 #0" = 0 	# Ciro #0
+  "克劳迪奥 #0" = 0 	# Claudio #0
+  "科西莫 #0" = 0 	# Cosimo #0
+  "多梅尼科 #0" = 0 	# Domenico #0
+  "埃利奥多罗 #0" = 0 	# Eliodoro #0
+  "埃尔科莱 #0" = 0 	# Ercole #0
+  "弗拉维奥 #0" = 0 	# Flavio #0
+  "弗朗切斯科 #0" = 0 	# Francesco #0
+  "贾科莫 #0" = 0 	# Giacomo #0
+  "冈贝提诺 #0" = 0 	# Giambettino #0
+  "吉罗拉莫 #0" = 0 	# Girolamo #0
+  "朱塞佩 #0" = 0 	# Giuseppe #0
+  "圭多 #0" = 0 	# Guido #0
+  "雅可波 #0" = 0 	# Jacopo #0
+  "洛多维科 #0" = 0 	# Lodovico #0
+  "洛伦佐 #0" = 0 	# Lorenzo #0
+  "卢卡 #0" = 0 	# Luca #0
+  "路易吉 #0" = 0 	# Luigi #0
+  "马费奥 #0" = 0 	# Maffeo #0
+  "马可 #0" = 0 	# Marco #0
+  "马蒂诺 #0" = 0 	# Martino #0
+  "茂罗 #0" = 0 	# Mauro #0
+  "米凯莱 #0" = 0 	# Michele #0
+  "奥多阿尔多 #0" = 0 	# Odoardo #0
+  "奥拉齐奥 #0" = 0 	# Orazio #0
+  "奥兰多 #0" = 0 	# Orlando #0
+  "保罗 #0" = 0 	# Paolo #0
+  "帕斯夸莱 #0" = 0 	# Pasquale #0
+  "彼得罗 #0" = 0 	# Pietro #0
+  "萨维里奥 #0" = 0 	# Saverio #0
+  "塞巴斯蒂亚诺 #0" = 0 	# Sebastiano #0
+  "Sebeto #0" = 0
+  "西蒙 #0" = 0 	# Simone #0
+  "斯特凡诺 #0" = 0 	# Stefano #0
+  "托马索 #0" = 0 	# Tommaso #0
+  "图罗内 #0" = 0 	# Turone #0
+  "温琴佐 #0" = 0 	# Vincenzo #0
+  "维托里奥 #0" = 0 	# Vittorio #0
+  "卡泰丽娜 #0" = -1 	# Caterina #0
+  "朱莉娅 #0" = -1 	# Giulia #0
+  "卢克雷齐娅 #0" = -1 	# Lucrezia #0
 }
 leader_names = {
-  "d'Absburgo"
-  "Alberti"
-  "Amelia"
-  "Barone"
-  "Barzagli"
-  "Belmonte"
-  "Bibiena"
-  "Boninsegna"
-  "Bosio"
-  "di Busca"
-  "de Canal"
-  "Casabianca"
-  "Castagnaro"
-  "Cocconi"
-  "Colombo"
-  "Conti"
-  "Fancelli"
-  "Freddi"
-  "Gatti"
-  "Germano"
-  "Gonzaga"
-  "Grazioli"
-  "Grosso"
-  "Idoni"
-  "Innocenti"
-  "Juvarra"
-  "Lori"
-  "Manfredi"
-  "Mantegna"
-  "Manfredi"
-  "�V �,rGY"  # de' Medici
-  "Montanari"
-  "Neri"
-  "Oddo"
-  "Panzavecchia"
-  "Pesci"
-  "Piccoli"
-  "Pico"
-  "del Piero"
-  "Poggio"
-  "Poma"
-  "Romano"
-  "de Rossi"
-  "Speri"
-  "Tassoni"
-  "Tazolli"
-  "Tedesco"
-  "Toselli"
-  "Zaccardo"
-  "Zappa"
+  Amigazzi
+  "阿万齐尼" 	# Avanzi
+  "拜鲁耐罗" 	# Bellunello
+  "巴迪勒" 	# Badile
+  "巴尔比埃里" 	# Barbieri
+  "巴罗尼" 	# Baroni
+  "巴塞迪" 	# Bassetti
+  "贝纳格利奥" 	# Benaglio
+  Bernardi
+  "布菲提" 	# Buffetti
+  "邦西尼奥里" 	# Bonsignori
+  Calzetta
+  Cabianca
+  Caliari
+  Canella
+  Canera
+  Calvi
+  Canziani
+  Cappelletti
+  Caroto
+  Cavazzola
+  Ceroni
+  Cignaroli
+  "da Conegliano"
+  "Dalla Rosa"
+  "Dall'Oca Bianca"
+  Dondoli
+  Dossi
+  Elenetti
+  Falcieri
+  Farina
+  Farinati
+  Ferrari
+  "弗拉哥" 	# Flacco
+  "弗利桑尼" 	# Frisoni
+  Ghirlandini
+  "吉阿罗尔" 	# Giarol
+  "吉奥菲诺" 	# Giolfino
+  "兰塞尼" 	# Lanceni
+  Lancerotti
+  Lancioni
+  Locatelli
+  "dai Libri"
+  Lorenzi
+  Maccari
+  Maderni
+  Marchesini
+  Marcola
+  Montemezzano
+  "del Moro"
+  Morone
+  Nani
+  Noro
+  Ottini
+  Pachera
+  Pajetta
+  Panelli
+  Perini
+  Picenardi
+  Pozzo
+  Prunati
+  Riccio
+  Ridolfi
+  Rossetti
+  Ruggieri
+  Scaligeri
+  Squarcione
+  Salis
+  Semplice
+  Spada
+  Torelli
+  Tarabotti
+  Robido
+  Tumicelli
+  Turchi
+  Ugolini
+  Verla
+  "达 维罗纳" 	# da Verona
+  Veronese
+  Vini
+  Voltolino
+  Zimengoli
+  "da Zevio"
+  Zenatello
+  Zannoni
+  Zanconti
 }
 ship_names = {
-  "Alberto Pitentino"
-  "Andrea Mantegna"
-  "Anselmo de Lucca"
-  "Barbara di Brandeburgo"
-  "Castelletto Borgo"
-  "Corradi da Gonzaga"
-  "Donatello"
-  "Fiume Mincio"
-  "Formigosa"
-  "Gianfrancesco Gonzaga"
-  "Ghibellini"
-  "Guelphi"
-  "Luca Fancelli"
-  "Ludovico Gonzaga"
-  "Luigi Gonzaga"
-  "Matilde Canossa"
-  "Pinamonte Bonacolsi"
-  "Rinaldo Bonacolsi"
-  "San Lorenzo"
-  "San Sebastiano"
-  "Sant'Andrea"
+  "班伏里奥" 	# Benvolio
+  "爱斯卡勒斯" 	# Escalus
+  "朱丽叶·凯普莱特" 	# Giulietta Capuleti
+  "茂丘西奥" 	# Mercutio
+  "巴黎" 	# Paris
+  "罗密欧·蒙太古" 	# Romeo Montecchi
+  "提伯尔特" 	# Tebaldo
+  "圣巴比拉" 	# San Babila
+  "圣贝纳迪诺之骸" 	# San Bernardino alle Ossa
+  "圣克里斯托佛罗·苏·纳维里奥" 	# San Cristoforo sul Naviglio
+  "孔卡的圣乔瓦尼" 	# San Giovanni in Conca
+  "圣哥达" 	# San Gottardo
+  "圣洛伦佐" 	# San Lorenzo
+  "圣马可" 	# San Marco
+  "圣纳加洛·马焦雷" 	# San Nazaro Maggiore
+  "圣新伯立加诺" 	# San Simpliciano
+  "圣萨蒂罗" 	# San Satiro
+  "奇迹圣母" 	# Santa Maria dei Miracoli
+  "圣奥古斯丁" 	# Sant'Agostino
+  "圣安布罗焦" 	# Sant'Ambrogio
+  "圣欧斯托吉奥" 	# Sant'Eustorgio
+  "圣斯特凡诺" 	# Santo Stefano
+  "松德里奥" 	# Sondrio
 }
 army_names = {
-  "Armata de $PROVINCE$"
+  "$PROVINCE$军" 	# Armata di $PROVINCE$
 }

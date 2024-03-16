@@ -1,0 +1,613 @@
+﻿namespace = et_islam
+country_event = {
+  id = et_islam.1
+  title = "et_islam.1.t"
+  desc = "et_islam.1.d"
+  picture = COMET_SIGHTED_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = {
+    tag = RSD
+    has_country_flag = ruler_muhammmad
+  }
+  immediate = {
+    clr_country_flag = ruler_muhammmad
+  }
+  option = {
+    name = "et_islam.1.a"
+    ai_chance = {
+      factor = 100
+    }
+    add_stability = -1
+    define_ruler = {
+      name = "艾布 伯克尔"  # Abu Bakr
+      dynasty = "本 奥斯曼"  # ibn Uthman
+      adm = 5
+      dip = 4
+      mil = 5
+      male = yes
+      age = 58
+    }
+    hidden_effect = {
+      set_country_flag = ruler_abu_bakr
+      country_event = {
+        id = et_islam.2
+        days = 10
+        random = 10
+      }
+      country_event = {
+        id = et_islam.3
+        days = 30
+        random = 10
+      }
+    }
+  }
+  option = {
+    name = "et_islam.1.b"
+    ai_chance = {
+      factor = 0
+    }
+    add_stability = -1
+    define_ruler = {
+      name = "阿里"  # Ali
+      dynasty = "阿里"  # Alid
+      adm = 3
+      dip = 4
+      mil = 5
+      male = yes
+      age = 31
+    }
+    hidden_effect = {
+      set_country_flag = ruler_ali
+      country_event = {
+        id = et_islam.3
+        days = 30
+        random = 10
+      }
+      country_event = {
+        id = et_islam.8
+        days = 5475
+        random = 100
+      }
+    }
+  }
+}
+country_event = {
+  id = et_islam.2
+  title = "et_islam.2.t"
+  desc = "et_islam.2.d"
+  picture = RELIGION_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  option = {
+    name = "et_islam.2.a"
+    add_stability = 1
+  }
+}
+country_event = {
+  id = et_islam.3
+  title = "et_islam.3.t"
+  desc = "et_islam.3.d"
+  picture = RELIGIOUS_TURMOIL_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = {
+    ai = no
+  }
+  option = {
+    name = "et_islam.3.a"
+    random_owned_province = {
+      spawn_rebels = {
+        type = nationalist_rebels
+        size = 2
+        leader = "图利哈 本 库韦里德"  # Tulyha ibn Khuwaylid
+      }
+    }
+    random_owned_province = {
+      spawn_rebels = {
+        type = nationalist_rebels
+        size = 2
+        leader = "穆萨利玛"  # Musaylimah
+      }
+    }
+    random_owned_province = {
+      spawn_rebels = {
+        type = nationalist_rebels
+        size = 2
+        leader = "萨迦"  # Sajah
+        female = yes
+      }
+    }
+    random_owned_province = {
+      spawn_rebels = {
+        type = nationalist_rebels
+        size = 2
+        leader = "阿斯瓦德 阿南西"  # Al-Aswad al-Ansi
+      }
+    }
+  }
+}
+country_event = {
+  id = et_islam.4
+  title = "et_islam.4.t"
+  desc = "et_islam.4.d"
+  picture = KING_SICK_IN_BED_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = {
+    tag = RSD
+    has_country_flag = ruler_abu_bakr
+  }
+  immediate = {
+    clr_country_flag = ruler_abu_bakr
+  }
+  option = {
+    name = "et_islam.4.a"
+    add_stability = 1
+    define_ruler = {
+      name = "欧麦尔"  # 'Umar
+      dynasty = "本 哈塔卜"  # ibn al-Khattab
+      adm = 3
+      dip = 3
+      mil = 5
+      male = yes
+      age = 50
+    }
+    hidden_effect = {
+      set_country_flag = ruler_umar
+    }
+  }
+}
+country_event = {
+  id = et_islam.5
+  title = "et_islam.5.t"
+  desc = "et_islam.5.d"
+  picture = ASSASSINATION_eventPicture
+  trigger = {
+    tag = RSD
+    NOT = {
+      has_ruler = "穆罕默德"  # Muhammad
+    }
+    NOT = {
+      has_ruler = "阿里"  # Ali
+    }
+    NOT = {
+      has_disaster = first_fitna
+    }
+    NOT = {
+      has_country_flag = had_first_fitna
+    }
+  }
+  mean_time_to_happen = {
+    months = 120
+    modifier = {
+      factor = 0.5
+      NOT = {
+        has_country_modifier = rise_of_islam
+      }
+    }
+  }
+  option = {
+    name = "et_islam.5.a"
+    kill_ruler = yes
+    add_stability = -1
+    hidden_effect = {
+      set_country_flag = caliph_assassinated
+    }
+  }
+}
+country_event = {
+  id = et_islam.6
+  title = "et_islam.6.t"
+  desc = "et_islam.6.d"
+  picture = KING_SICK_IN_BED_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = {
+    tag = RSD
+    has_country_flag = ruler_umar
+  }
+  immediate = {
+    clr_country_flag = ruler_umar
+  }
+  option = {
+    name = "et_islam.6.a"
+    ai_chance = {
+      factor = 100
+    }
+    define_ruler = {
+      name = "奥斯曼"  # Uthman
+      dynasty = "本 阿凡"  # ibn Affan
+      adm = 4
+      dip = 3
+      mil = 4
+      male = yes
+      age = 65
+    }
+    hidden_effect = {
+      set_country_flag = ruler_uthman
+    }
+  }
+  option = {
+    name = "et_islam.6.b"
+    ai_chance = {
+      factor = 0
+    }
+    define_ruler = {
+      name = "阿里"  # Ali
+      dynasty = "阿里"  # Alid
+      adm = 3
+      dip = 4
+      mil = 5
+      male = yes
+      age = 43
+    }
+    hidden_effect = {
+      set_country_flag = ruler_ali
+      country_event = {
+        id = et_islam.8
+        days = 1900
+        random = 50
+      }
+    }
+  }
+}
+country_event = {
+  id = et_islam.7
+  title = "et_islam.7.t"
+  desc = "et_islam.7.d"
+  picture = KING_SICK_IN_BED_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = {
+    tag = RSD
+    has_country_flag = ruler_uthman
+  }
+  immediate = {
+    clr_country_flag = ruler_uthman
+  }
+  option = {
+    name = "et_islam.7.a"
+    define_ruler = {
+      name = "阿里"  # Ali
+      dynasty = "阿里"  # Alid
+      adm = 3
+      dip = 4
+      mil = 5
+      male = yes
+      age = 55
+    }
+    hidden_effect = {
+      set_country_flag = ruler_ali
+      country_event = {
+        id = et_islam.8
+        days = 90
+        random = 20
+      }
+    }
+  }
+}
+country_event = {
+  id = et_islam.8
+  title = "et_islam.8.t"
+  desc = "et_islam.8.d"
+  picture = RELIGIOUS_WARS_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  immediate = {
+    hidden_effect = {
+      set_country_flag = battle_of_the_camel_flag
+    }
+  }
+  option = {
+    name = "et_islam.8.a"
+    add_stability = -1
+    add_prestige = -10
+  }
+}
+country_event = {
+  id = et_islam.9
+  title = "et_islam.9.t"
+  desc = "et_islam.9.d"
+  picture = KING_SICK_IN_BED_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = {
+    tag = RSD
+    has_country_flag = ruler_ali
+  }
+  immediate = {
+    clr_country_flag = ruler_ali
+  }
+  option = {
+    name = "et_islam.9.a"
+    define_ruler = {
+      name = "哈桑"  # Hasan
+      dynasty = "阿里"  # Alid
+      adm = 3
+      dip = 4
+      mil = 3
+      male = yes
+      age = 37
+    }
+    hidden_effect = {
+      set_country_flag = ruler_hasan
+    }
+  }
+}
+country_event = {
+  id = et_islam.10
+  title = "et_islam.10.t"
+  desc = "et_islam.10.d"
+  picture = ASSASSINATION_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  option = {
+    name = "et_islam.10.a"
+    kill_ruler = yes
+    add_stability = -1
+    enable_religion = ibadi
+    random_owned_province = {
+      change_religion = ibadi
+      ibadi_rebels = 4
+      random_neighbor_province = {
+        ibadi_rebels = 4
+      }
+    }
+  }
+}
+country_event = {
+  id = et_islam.11
+  title = "et_islam.11.t"
+  desc = "et_islam.11.d"
+  picture = DIPLOMACY_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = {
+    NOT = {
+      has_ruler = "阿里"  # Ali
+    }
+    num_of_rebel_controlled_provinces = 2
+  }
+  option = {
+    name = "et_islam.11.a"
+    ai_chance = {
+      factor = 100
+    }
+    hidden_effect = {
+      clr_country_flag = ruler_hasan
+      clr_country_flag = early_caliphate
+      set_country_flag = muawiya_in_power
+      set_country_flag = first_fitna_can_not_end
+      country_event = {
+        id = et_islam.13
+        days = 30
+      }
+    }
+    disband_rebels = pretender_rebels
+    disband_rebels = nationalist_rebels
+    exile_ruler_as = {
+      name = alid_ruler
+    }
+    define_ruler = {
+      name = "穆阿维叶 I"  # Muawiya I
+      dynasty = "倭马亚"  # Umayyad
+      adm = 5
+      dip = 3
+      mil = 4
+      male = yes
+      age = 59
+    }
+  }
+  option = {
+    name = "et_islam.11.b"
+    ai_chance = {
+      factor = 0
+    }
+    add_prestige = 20
+    add_stability = 1
+    hidden_effect = {
+      country_event = {
+        id = et_islam.14
+        days = 30
+      }
+    }
+  }
+}
+country_event = {
+  id = et_islam.12
+  title = "et_islam.12.t"
+  desc = "et_islam.12.d"
+  picture = KING_SICK_IN_BED_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = {
+    tag = RSD
+    has_country_flag = ruler_hasan
+  }
+  immediate = {
+    clr_country_flag = ruler_hasan
+  }
+  option = {
+    name = "et_islam.12.a"
+    define_ruler = {
+      name = "侯赛因"  # Husayn
+      dynasty = "阿里"  # Alid
+      adm = 4
+      dip = 3
+      mil = 3
+      male = yes
+      age = 36
+    }
+    clr_country_flag = early_caliphate
+  }
+}
+country_event = {
+  id = et_islam.13
+  title = "et_islam.13.t"
+  desc = "et_islam.13.d"
+  picture = CIVIL_WAR_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  option = {
+    name = "et_islam.13.a"
+    change_government = monarchy
+    add_government_reform = caliphate_reform
+    set_country_flag = umayyad_dynasty_in_power
+    define_heir = {
+      name = "耶齐德"  # Yazid
+      dynasty = "倭马亚"  # Umayyad
+      claim = 100
+      age = 14
+      adm = 4
+      dip = 5
+      mil = 5
+    }
+    if = {
+      limit = {
+        NOT = {
+          is_religion_enabled = shiite
+        }
+      }
+      enable_religion = shiite
+    }
+    if = {
+      limit = {
+        NOT = {
+          is_religion_enabled = sunni
+        }
+      }
+      enable_religion = sunni
+    }
+    change_religion = sunni
+    if = {
+      limit = {
+        iraq_arabi_area = {
+          owned_by = ROOT
+        }
+      }
+      random_owned_province = {
+        limit = {
+          area = iraq_arabi_area
+        }
+        change_religion = shiite
+        shiite_rebels = 4
+      }
+    }
+    if = {
+      limit = {
+        basra_area = {
+          owned_by = ROOT
+        }
+      }
+      random_owned_province = {
+        limit = {
+          area = basra_area
+        }
+        change_religion = shiite
+        shiite_rebels = 4
+      }
+    }
+    if = {
+      limit = {
+        bahrain_area = {
+          owned_by = ROOT
+        }
+      }
+      random_owned_province = {
+        limit = {
+          area = bahrain_area
+        }
+        change_religion = shiite
+        shiite_rebels = 4
+      }
+    }
+    random_owned_province = {
+      change_religion = shiite
+      shiite_rebels = 4
+    }
+    every_province = {
+      limit = {
+        religion = islam
+      }
+      change_religion = sunni
+    }
+    every_country = {
+      limit = {
+        religion = islam
+      }
+      change_religion = sunni
+    }
+    if = {
+      limit = {
+        has_country_modifier = rise_of_islam
+      }
+      remove_country_modifier = rise_of_islam
+    }
+    hidden_effect = {
+      clr_country_flag = first_fitna_can_not_end
+    }
+  }
+}
+country_event = {
+  id = et_islam.14
+  title = "et_islam.14.t"
+  desc = "et_islam.14.d"
+  picture = CIVIL_WAR_eventPicture
+  is_triggered_only = yes
+  fire_only_once = yes
+  option = {
+    name = "et_islam.13.a"
+    change_government = monarchy
+    add_government_reform = caliphate_reform
+    if = {
+      limit = {
+        NOT = {
+          is_religion_enabled = shiite
+        }
+      }
+      enable_religion = shiite
+    }
+    if = {
+      limit = {
+        NOT = {
+          is_religion_enabled = sunni
+        }
+      }
+      enable_religion = sunni
+    }
+    change_religion = shiite
+    every_owned_province = {
+      limit = {
+        controlled_by = REB
+        religion = islam
+      }
+      change_religion = sunni
+    }
+    random_owned_province = {
+      change_religion = sunni
+      sunni_rebels = 4
+    }
+    every_province = {
+      limit = {
+        religion = islam
+      }
+      change_religion = shiite
+    }
+    every_country = {
+      limit = {
+        religion = islam
+      }
+      change_religion = shiite
+    }
+    if = {
+      limit = {
+        has_country_modifier = rise_of_islam
+      }
+      remove_country_modifier = rise_of_islam
+    }
+    hidden_effect = {
+      clr_country_flag = first_fitna_can_not_end
+    }
+  }
+}

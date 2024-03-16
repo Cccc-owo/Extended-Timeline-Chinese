@@ -1,3 +1,6 @@
+﻿##Made by Ogele 'Comrade Flan'
+#Slot 1 and 2
+#Special to Muscovy only
 mos_rus_handle_succession = {
   slot = 1
   generic = no
@@ -56,7 +59,7 @@ mos_rus_handle_succession = {
     effect = {
       if = {
         limit = {
-          dynasty = "Yu̑KQ"  # Rurikovich
+          dynasty = "留里克" 	# Rurikovich
         }
         add_country_modifier = {
           name = mos_legitimacy_of_the_rurikovich
@@ -76,9 +79,7 @@ mos_rus_handle_succession = {
   }
   mos_secure_muscovys_future = {
     icon = mission_sovereign_principality
-    required_missions = {
-      mos_the_civil_war
-    }
+    required_missions = { mos_the_civil_war }
     position = 2
     provinces_to_highlight = {}
     trigger = {
@@ -103,6 +104,7 @@ mos_rus_handle_succession = {
     }
   }
 }
+#Available only to non-Novgorodian Russia
 mos_rus_conquer_west = {
   slot = 1
   generic = no
@@ -128,9 +130,7 @@ mos_rus_conquer_west = {
   has_country_shield = yes
   mos_rus_window_on_the_west = {
     icon = mission_conquer_riga
-    required_missions = {
-      mos_rus_conquer_novgorod
-    }
+    required_missions = { mos_rus_conquer_novgorod }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -212,9 +212,7 @@ mos_rus_conquer_west = {
   }
   mos_rus_conquer_finland = {
     icon = mission_conquer_finland
-    required_missions = {
-      mos_rus_window_on_the_west
-    }
+    required_missions = { mos_rus_window_on_the_west }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -280,9 +278,7 @@ mos_rus_conquer_west = {
   }
   mos_rus_subjugate_scandinavia = {
     icon = mission_slay_the_lion
-    required_missions = {
-      mos_rus_conquer_finland
-    }
+    required_missions = { mos_rus_conquer_finland }
     position = 7
     provinces_to_highlight = {
       region = scandinavia_region
@@ -304,10 +300,25 @@ mos_rus_conquer_west = {
         simple_dynamic_effect = {
           first_custom_tooltip = mos_rus_subjugate_scandinavia_at
           first_limit = "FIN = { exists = yes is_subject_of = ROOT }"
-          first_effect = " custom_tooltip = mos_rus_subjugate_scandinavia_bt hidden_effect = { FIN = { set_country_flag = rus_can_complete_missions_as_subject }  }"
+          first_effect = "
+          custom_tooltip = mos_rus_subjugate_scandinavia_bt
+          hidden_effect = { FIN = { set_country_flag = rus_can_complete_missions_as_subject }   }"
           second_custom_tooltip = mos_rus_subjugate_scandinavia_ct
           second_limit = "NOT = { FIN = { exists = yes is_subject_of = ROOT } }"
-          second_effect = " capital_scope = { carolean_infantry = ROOT carolean_infantry = ROOT carolean_infantry = ROOT carolean_infantry = ROOT carolean_infantry = ROOT carolean_infantry = ROOT carolean_infantry = ROOT carolean_infantry = ROOT carolean_infantry = ROOT carolean_infantry = ROOT } "
+          second_effect = "
+          capital_scope = {
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+            carolean_infantry = ROOT
+          }
+          "
         }
       }
       else = {
@@ -325,9 +336,7 @@ mos_rus_conquer_west = {
   }
   mos_rus_europes_greatest_power = {
     icon = mission_great_power_from_the_east
-    required_missions = {
-      mos_rus_subjugate_scandinavia
-    }
+    required_missions = { mos_rus_subjugate_scandinavia }
     position = 8
     provinces_to_highlight = {
       if = {
@@ -443,9 +452,7 @@ mos_rus_eastern_europe = {
   has_country_shield = yes
   mos_rus_conquer_novgorod = {
     icon = mission_conquer_novgorod
-    required_missions = {
-      mos_rus_build_up_army
-    }
+    required_missions = { mos_rus_build_up_army }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -486,7 +493,16 @@ mos_rus_eastern_europe = {
       country_event_with_insight = {
         id = flavor_rus.101
         insight_tooltip = INSIGHT_JUST_TOOLTIP
-        effect_tooltip = " 310 = { add_base_tax = 1 add_base_production = 1 add_base_manpower = 1 add_province_modifier = { name = rus_developed_trade_post_novgorod duration = -1 } }"
+        effect_tooltip = "
+        310 = {
+          add_base_tax = 1
+          add_base_production = 1
+          add_base_manpower = 1
+          add_province_modifier = {
+            name = rus_developed_trade_post_novgorod
+            duration = -1
+          }
+        }"
       }
       ruthenia_region = {
         limit = {
@@ -539,9 +555,7 @@ mos_rus_eastern_europe = {
   }
   mos_rus_conquer_ruthenia = {
     icon = mission_restore_kiev
-    required_missions = {
-      mos_rus_conquer_novgorod
-    }
+    required_missions = { mos_rus_conquer_novgorod }
     position = 4
     provinces_to_highlight = {
       region = ruthenia_region
@@ -588,9 +602,7 @@ mos_rus_eastern_europe = {
   }
   mos_rus_partition_poland = {
     icon = mission_partition_poland
-    required_missions = {
-      mos_rus_conquer_ruthenia
-    }
+    required_missions = { mos_rus_conquer_ruthenia }
     position = 5
     provinces_to_highlight = {
       region = poland_region
@@ -605,6 +617,25 @@ mos_rus_eastern_europe = {
       }
     }
     effect = {
+      tooltip = {
+        add_accepted_culture = czech
+        add_accepted_culture = sorbian
+        add_accepted_culture = schlesian
+        add_accepted_culture = polish
+        add_accepted_culture = slovak
+      }
+      add_country_modifier = {
+        name = rus_west_slavic_union
+        duration = -1
+        desc = mos_rus_partition_poland_at
+      }
+      hidden_effect = {
+        add_accepted_culture = czech
+        add_accepted_culture = sorbian
+        add_accepted_culture = schlesian
+        add_accepted_culture = polish
+        add_accepted_culture = slovak
+      }
       add_country_modifier = {
         name = "rus_partition_poland_modifier"
         duration = 7300
@@ -627,9 +658,7 @@ mos_rus_eastern_europe = {
   }
   mos_rus_carpathian_conquest = {
     icon = mission_conquer_romania
-    required_missions = {
-      mos_rus_partition_poland
-    }
+    required_missions = { mos_rus_partition_poland }
     position = 6
     provinces_to_highlight = {
       region = carpathia_region
@@ -644,6 +673,21 @@ mos_rus_eastern_europe = {
       }
     }
     effect = {
+      tooltip = {
+        add_accepted_culture = hungarian
+        add_accepted_culture = romanian
+        add_accepted_culture = transylvanian
+      }
+      add_country_modifier = {
+        name = rus_carpathian_union
+        duration = -1
+        desc = mos_rus_carpathian_conquest_at
+      }
+      hidden_effect = {
+        add_accepted_culture = hungarian
+        add_accepted_culture = romanian
+        add_accepted_culture = transylvanian
+      }
       custom_tooltip = mos_rus_carpathian_conquest_ct
       hidden_effect = {
         balkan_region = {
@@ -666,9 +710,7 @@ mos_rus_eastern_europe = {
   }
   mos_rus_protect_south_slavs = {
     icon = mission_protect_the_south_slavs
-    required_missions = {
-      mos_rus_carpathian_conquest
-    }
+    required_missions = { mos_rus_carpathian_conquest }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -689,6 +731,117 @@ mos_rus_eastern_europe = {
       }
     }
     effect = {
+      custom_tooltip = mos_rus_protect_south_slavs_bt
+      hidden_effect = {
+        if = {
+          limit = {
+            accepted_culture = russian
+          }
+          remove_accepted_culture = russian
+        }
+        if = {
+          limit = {
+            accepted_culture = czech
+          }
+          remove_accepted_culture = czech
+        }
+        if = {
+          limit = {
+            accepted_culture = polish
+          }
+          remove_accepted_culture = polish
+        }
+        if = {
+          limit = {
+            accepted_culture = schlesian
+          }
+          remove_accepted_culture = schlesian
+        }
+        if = {
+          limit = {
+            accepted_culture = sorbian
+          }
+          remove_accepted_culture = sorbian
+        }
+        if = {
+          limit = {
+            accepted_culture = slovak
+          }
+          remove_accepted_culture = slovak
+        }
+        if = {
+          limit = {
+            accepted_culture = novgorodian
+          }
+          remove_accepted_culture = novgorodian
+        }
+        if = {
+          limit = {
+            accepted_culture = ryazanian
+          }
+          remove_accepted_culture = ryazanian
+        }
+        if = {
+          limit = {
+            accepted_culture = byelorussian
+          }
+          remove_accepted_culture = byelorussian
+        }
+        if = {
+          limit = {
+            accepted_culture = ruthenian
+          }
+          remove_accepted_culture = ruthenian
+        }
+        if = {
+          limit = {
+            accepted_culture = slovene
+          }
+          remove_accepted_culture = slovene
+        }
+        if = {
+          limit = {
+            accepted_culture = bosnian
+          }
+          remove_accepted_culture = bosnian
+        }
+        if = {
+          limit = {
+            accepted_culture = serbian
+          }
+          remove_accepted_culture = serbian
+        }
+        if = {
+          limit = {
+            accepted_culture = bulgarian
+          }
+          remove_accepted_culture = bulgarian
+        }
+        if = {
+          limit = {
+            accepted_culture = croatian
+          }
+          remove_accepted_culture = croatian
+        }
+        create_new_culture_group = {
+          culture_group = slavic
+          culture = russian
+          culture2 = czech
+          culture3 = polish
+          culture4 = schlesian
+          culture5 = sorbian
+          culture6 = slovak
+          culture7 = novgorodian
+          culture8 = ryazanian
+          culture9 = byelorussian
+          culture10 = ruthenian
+          culture12 = slovene
+          culture13 = bosnian
+          culture14 = serbian
+          culture15 = bulgarian
+          culture16 = croatian
+        }
+      }
       balkan_region = {
         limit = {
           NOT = {
@@ -718,10 +871,7 @@ mos_rus_eastern_europe = {
   }
   mos_rus_claim_the_third_rome = {
     icon = mission_the_third_rome
-    required_missions = {
-      mos_rus_protect_south_slavs
-      mos_rus_russian_patriarchate
-    }
+    required_missions = { mos_rus_protect_south_slavs mos_rus_russian_patriarchate }
     position = 8
     provinces_to_highlight = {
       province_id = 151
@@ -743,6 +893,7 @@ mos_rus_eastern_europe = {
     }
   }
 }
+#Available only to Novgorodian Russia
 nov_rus_conquer_west = {
   slot = 1
   generic = no
@@ -761,9 +912,7 @@ nov_rus_conquer_west = {
   has_country_shield = yes
   nov_rus_window_on_the_west = {
     icon = mission_conquer_riga
-    required_missions = {
-      nov_rus_conquer_muscovy
-    }
+    required_missions = { nov_rus_conquer_muscovy }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -845,9 +994,7 @@ nov_rus_conquer_west = {
   }
   nov_rus_conquer_finland = {
     icon = mission_conquer_finland
-    required_missions = {
-      nov_rus_window_on_the_west
-    }
+    required_missions = { nov_rus_window_on_the_west }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -878,6 +1025,8 @@ nov_rus_conquer_west = {
         name = nov_rus_scandinavian_conquest
         duration = -1
       }
+      add_accepted_culture = finnish
+      add_accepted_culture = sapmi
       add_country_modifier = {
         name = "conquest_of_finland"
         duration = 9125
@@ -900,9 +1049,7 @@ nov_rus_conquer_west = {
   }
   nov_rus_subjugate_scandinavia = {
     icon = mission_slay_the_lion
-    required_missions = {
-      nov_rus_conquer_finland
-    }
+    required_missions = { nov_rus_conquer_finland }
     position = 5
     provinces_to_highlight = {
       region = scandinavia_region
@@ -922,6 +1069,9 @@ nov_rus_conquer_west = {
         name = nov_rus_scandinavian_dominance
         duration = -1
       }
+      add_accepted_culture = swedish
+      add_accepted_culture = norwegian
+      add_accepted_culture = danish
       capital_scope = {
         carolean_infantry = ROOT
         carolean_infantry = ROOT
@@ -941,10 +1091,7 @@ nov_rus_conquer_west = {
   }
   nov_rus_monopolize_lubeck = {
     icon = mission_heart_of_the_hansa
-    required_missions = {
-      nov_rus_subjugate_scandinavia
-      nov_rus_take_danzig
-    }
+    required_missions = { nov_rus_subjugate_scandinavia nov_rus_take_danzig }
     position = 6
     provinces_to_highlight = {
       province_id = 45
@@ -982,9 +1129,7 @@ nov_rus_conquer_west = {
   }
   nov_rus_trade_empire_of_europe = {
     icon = mission_novgorod_the_great
-    required_missions = {
-      nov_rus_monopolize_lubeck
-    }
+    required_missions = { nov_rus_monopolize_lubeck }
     position = 8
     provinces_to_highlight = {
       is_european_trade_node_province = yes
@@ -1009,8 +1154,8 @@ nov_rus_conquer_west = {
       if = {
         limit = {
           OR = {
-            has_dlc = "Emperor"
-            has_dlc = "Mare Nostrum"
+            has_dlc = "Emperor" 	# Monopolies
+            has_dlc = "Mare Nostrum" 	# Promote Mercantlism
           }
         }
         mercantilism = 50
@@ -1067,9 +1212,7 @@ nov_rus_eastern_europe = {
   has_country_shield = yes
   nov_rus_conquer_muscovy = {
     icon = mission_defeat_muscovy
-    required_missions = {
-      mos_rus_build_up_army
-    }
+    required_missions = { mos_rus_build_up_army }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -1167,9 +1310,7 @@ nov_rus_eastern_europe = {
   }
   nov_rus_handle_ruthenia = {
     icon = mission_restore_kiev
-    required_missions = {
-      nov_rus_conquer_muscovy
-    }
+    required_missions = { nov_rus_conquer_muscovy }
     position = 3
     provinces_to_highlight = {
       region = ruthenia_region
@@ -1216,9 +1357,7 @@ nov_rus_eastern_europe = {
   }
   nov_rus_deal_with_poland = {
     icon = mission_partition_poland
-    required_missions = {
-      nov_rus_handle_ruthenia
-    }
+    required_missions = { nov_rus_handle_ruthenia }
     position = 4
     provinces_to_highlight = {
       region = poland_region
@@ -1233,6 +1372,25 @@ nov_rus_eastern_europe = {
       }
     }
     effect = {
+      tooltip = {
+        add_accepted_culture = czech
+        add_accepted_culture = sorbian
+        add_accepted_culture = schlesian
+        add_accepted_culture = polish
+        add_accepted_culture = slovak
+      }
+      add_country_modifier = {
+        name = rus_west_slavic_union
+        duration = -1
+        desc = mos_rus_partition_poland_at
+      }
+      hidden_effect = {
+        add_accepted_culture = czech
+        add_accepted_culture = sorbian
+        add_accepted_culture = schlesian
+        add_accepted_culture = polish
+        add_accepted_culture = slovak
+      }
       add_country_modifier = {
         name = "rus_partition_poland_modifier"
         duration = 7300
@@ -1245,9 +1403,7 @@ nov_rus_eastern_europe = {
   }
   nov_rus_take_danzig = {
     icon = mission_danzig_or_war
-    required_missions = {
-      nov_rus_deal_with_poland
-    }
+    required_missions = { nov_rus_deal_with_poland }
     position = 5
     provinces_to_highlight = {
       province_id = 43
@@ -1322,9 +1478,7 @@ nov_rus_eastern_europe = {
   }
   nov_rus_involve_in_asian_trade = {
     icon = mission_asian_trader
-    required_missions = {
-      mos_rus_conquer_persia
-    }
+    required_missions = { mos_rus_conquer_persia }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -1368,11 +1522,53 @@ nov_rus_eastern_europe = {
       }
       simple_dynamic_effect_without_alternative = {
         first_custom_tooltip = nov_rus_involve_in_asian_trade_at
-        first_limit = " 707 = { trade_share = { country = ROOT share = 20 } has_merchant = ROOT }"
-        first_effect = " shanshan_area = { limit = { NOT = { is_core = ROOT } NOT = { is_permanent_claim = ROOT } } add_russian_claim = yes } tarim_basin_area = { limit = { NOT = { is_core = ROOT } NOT = { is_permanent_claim = ROOT } } add_russian_claim = yes } mongolia_region = { limit = { NOT = { is_core = ROOT } NOT = { is_permanent_claim = ROOT } } add_russian_claim = yes }"
+        first_limit = "
+        707 = {
+          trade_share = {
+            country = ROOT
+            share = 20
+          }
+          has_merchant = ROOT
+        }"
+        first_effect = "
+        shanshan_area = {
+          limit = {
+            NOT = { is_core = ROOT }
+            NOT = { is_permanent_claim = ROOT }
+          }
+          add_russian_claim = yes
+        }
+        tarim_basin_area = {
+          limit = {
+            NOT = { is_core = ROOT }
+            NOT = { is_permanent_claim = ROOT }
+          }
+          add_russian_claim = yes
+        }
+        mongolia_region = {
+          limit = {
+            NOT = { is_core = ROOT }
+            NOT = { is_permanent_claim = ROOT }
+          }
+          add_russian_claim = yes
+        }"
         second_custom_tooltip = nov_rus_involve_in_asian_trade_bt
-        second_limit = " 507 = { trade_share = { country = ROOT share = 20 } has_merchant = ROOT }"
-        second_effect = " hindusthan_region = { limit = { NOT = { is_permanent_claim = ROOT } NOT = { is_core = ROOT } } add_russian_claim = yes }"
+        second_limit = "
+        507 = {
+          trade_share = {
+            country = ROOT
+            share = 20
+          }
+          has_merchant = ROOT
+        }"
+        second_effect = "
+        hindusthan_region = {
+          limit = {
+            NOT = { is_permanent_claim = ROOT }
+            NOT = { is_core = ROOT }
+          }
+          add_russian_claim = yes
+        }"
       }
     }
     ai_weight = {
@@ -1381,9 +1577,7 @@ nov_rus_eastern_europe = {
   }
   nov_rus_dominate_asian_market = {
     icon = mission_asian_city
-    required_missions = {
-      nov_rus_involve_in_asian_trade
-    }
+    required_missions = { nov_rus_involve_in_asian_trade }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1455,9 +1649,7 @@ nov_rus_eastern_europe = {
   }
   nov_rus_compete_in_the_channel = {
     icon = mission_market_place_with_asian_traders
-    required_missions = {
-      nov_rus_dominate_asian_market
-    }
+    required_missions = { nov_rus_dominate_asian_market }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -1584,6 +1776,8 @@ nov_rus_eastern_europe = {
     }
   }
 }
+#Slot 3
+#Available to all forms of Russias
 mos_rus_russian_consolidation = {
   slot = 3
   generic = no
@@ -1628,9 +1822,7 @@ mos_rus_russian_consolidation = {
   }
   mos_rus_eliminate_the_minors = {
     icon = mission_conquer_tver
-    required_missions = {
-      mos_rus_build_up_army
-    }
+    required_missions = { mos_rus_build_up_army }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -1665,6 +1857,15 @@ mos_rus_russian_consolidation = {
       }
       custom_tooltip = mos_rus_eliminate_the_minors_at
       hidden_effect = {
+        #russia_region = {
+        #	limit = {
+        #		owned_by = ROOT
+        #	}
+        #	add_base_manpower = 1
+        #  
+        #	type = random
+        #	amount = 10
+        #}
         random_owned_province = {
           limit = {
             NOT = {
@@ -1835,9 +2036,7 @@ mos_rus_russian_consolidation = {
   }
   mos_rus_conquer_the_caucasus = {
     icon = mission_the_caucasus_rus
-    required_missions = {
-      mos_rus_conquer_crimea
-    }
+    required_missions = { mos_rus_conquer_crimea }
     position = 4
     provinces_to_highlight = {
       region = caucasia_region
@@ -2176,10 +2375,7 @@ mos_rus_russian_consolidation = {
   }
   mos_rus_conquer_persia = {
     icon = mission_persian_soldiers
-    required_missions = {
-      mos_rus_conquer_the_caucasus
-      mos_rus_conquer_central_asia
-    }
+    required_missions = { mos_rus_conquer_the_caucasus mos_rus_conquer_central_asia }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -2335,6 +2531,7 @@ mos_rus_russian_consolidation = {
           }
         }
       }
+      #For reasons beyond my comprehension, the game is refusing to trigger any event at this spoit if I use simple_dynamic_effect.
     }
     ai_weight = {
       factor = 250
@@ -2415,9 +2612,7 @@ mos_rus_russian_consolidation = {
   }
   mos_rus_russian_patriarchate = {
     icon = mission_russian_patriarchatee
-    required_missions = {
-      mos_rus_land_of_churches
-    }
+    required_missions = { mos_rus_land_of_churches }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -2487,7 +2682,10 @@ mos_rus_russian_consolidation = {
         country_event_with_insight = {
           id = flavor_rus.120
           insight_tooltip = INSIGHT_JUST_TOOLTIP
-          effect_tooltip = " add_stability_or_adm_power = yes add_patriarch_authority = 0.1 custom_tooltip = flavor_rus.120.a.tt"
+          effect_tooltip = "
+          add_stability_or_adm_power = yes
+          add_patriarch_authority = 0.1
+          custom_tooltip = flavor_rus.120.a.tt"
         }
       }
       else = {
@@ -2502,6 +2700,7 @@ mos_rus_russian_consolidation = {
     }
   }
   mos_rus_found_the_russian_tsardom = {
+    #Custom localization for republics/monarchies/theocracies
     icon = mission_the_russian_tsardom
     required_missions = {}
     position = 9
@@ -2514,8 +2713,8 @@ mos_rus_russian_consolidation = {
       }
       else = {
         OR = {
-          province_id = 295
-          province_id = 310
+          province_id = 295 	#  Moskva
+          province_id = 310 	#  Novgorod
           AND = {
             province_id = 294
             ROOT = {
@@ -2590,6 +2789,7 @@ mos_rus_russian_consolidation = {
     }
   }
 }
+#Slot 4
 mos_rus_russian_steppes = {
   slot = 4
   generic = no
@@ -2610,9 +2810,7 @@ mos_rus_russian_steppes = {
   has_country_shield = yes
   mos_rus_conquer_the_great_horde = {
     icon = mission_break_the_tatar_yoke
-    required_missions = {
-      mos_rus_build_up_army
-    }
+    required_missions = { mos_rus_build_up_army }
     position = 2
     provinces_to_highlight = {
       province_id = 466
@@ -2665,10 +2863,7 @@ mos_rus_russian_steppes = {
   }
   mos_rus_end_the_tatar_yok = {
     icon = mission_destroy_the_horde
-    required_missions = {
-      mos_rus_conquer_the_great_horde
-      mos_rus_conquer_kazan
-    }
+    required_missions = { mos_rus_conquer_the_great_horde mos_rus_conquer_kazan }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -2727,7 +2922,15 @@ mos_rus_russian_steppes = {
       country_event_with_insight = {
         id = flavor_rus.122
         insight_tooltip = INSIGHT_JUST_TOOLTIP
-        effect_tooltip = " add_power_projection = { type = mission_rewards_power_projection amount = 100 } add_country_modifier = { name = rus_end_of_the_horde duration = 36500 }"
+        effect_tooltip = "
+        add_power_projection = {
+          type = mission_rewards_power_projection
+          amount = 100
+        }
+        add_country_modifier = {
+          name = rus_end_of_the_horde
+          duration = 36500
+        }"
       }
     }
     ai_weight = {
@@ -2736,9 +2939,7 @@ mos_rus_russian_steppes = {
   }
   mos_rus_conquer_central_asia = {
     icon = mission_non-western_cavalry_raid
-    required_missions = {
-      mos_rus_expand_eastwards
-    }
+    required_missions = { mos_rus_expand_eastwards }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -2847,9 +3048,7 @@ mos_rus_russian_steppes = {
   }
   mos_rus_conquer_manchuria = {
     icon = mission_amur_acquisition
-    required_missions = {
-      mos_rus_colonize_eastern_siberia
-    }
+    required_missions = { mos_rus_colonize_eastern_siberia }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -2887,7 +3086,7 @@ mos_rus_russian_steppes = {
     effect = {
       add_mercantilism = 4
       2106 = {
-        rename_capital = "&r�b��l�eXbKQ"  # Vladivostok
+        rename_capital = "符拉迪沃斯托克" 	# Vladivostok
         change_religion = ROOT
         change_culture = ROOT
         add_base_tax = 2
@@ -2925,9 +3124,7 @@ mos_rus_california = {
   has_country_shield = yes
   mos_rus_colonize_california = {
     icon = mission_colonize_california
-    required_missions = {
-      mos_rus_colonize_alaska
-    }
+    required_missions = { mos_rus_colonize_alaska }
     position = 8
     provinces_to_highlight = {
       colonial_region = colonial_california
@@ -2969,6 +3166,8 @@ mos_rus_california = {
     }
   }
 }
+#Slot 5
+#Muscovy only
 mos_rus_russian_subjects = {
   slot = 5
   generic = no
@@ -3030,6 +3229,7 @@ mos_rus_russian_subjects = {
     }
   }
 }
+#Novgorod only
 nov_rus_russian_navy = {
   slot = 5
   generic = no
@@ -3066,6 +3266,7 @@ nov_rus_russian_navy = {
     }
   }
 }
+#Russian Minor
 rmi_rus_power = {
   slot = 5
   generic = no
@@ -3110,6 +3311,7 @@ rmi_rus_power = {
     }
   }
 }
+#All Russias
 mos_rus_siberian_conquest = {
   slot = 5
   generic = no
@@ -3130,9 +3332,7 @@ mos_rus_siberian_conquest = {
   has_country_shield = yes
   mos_rus_conquer_kazan = {
     icon = mission_cossack_cavalry
-    required_missions = {
-      mos_rus_build_up_army
-    }
+    required_missions = { mos_rus_build_up_army }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -3232,9 +3432,7 @@ mos_rus_siberian_conquest = {
   }
   mos_rus_expand_eastwards = {
     icon = mission_chinese_general_riding
-    required_missions = {
-      mos_rus_conquer_kazan
-    }
+    required_missions = { mos_rus_conquer_kazan }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -3393,9 +3591,7 @@ mos_rus_siberian_conquest = {
   }
   mos_rus_colonize_west_siberia = {
     icon = mission_beyond_the_urals
-    required_missions = {
-      mos_rus_expand_eastwards
-    }
+    required_missions = { mos_rus_expand_eastwards }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -3443,7 +3639,7 @@ mos_rus_siberian_conquest = {
         add_russian_claim = yes
       }
       define_conquistador = {
-        name = "�SSl�KQ�P�����S�uGY"  # Yermak Timofeyevich
+        name = "叶尔马克·齐莫菲叶维奇" 	# Yermak Timofeyevich
         shock = 6
         fire = 6
         manuever = 5
@@ -3456,9 +3652,7 @@ mos_rus_siberian_conquest = {
   }
   mos_rus_colonize_central_siberia = {
     icon = mission_collect_yasak
-    required_missions = {
-      mos_rus_colonize_west_siberia
-    }
+    required_missions = { mos_rus_colonize_west_siberia }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -3508,9 +3702,7 @@ mos_rus_siberian_conquest = {
   }
   mos_rus_colonize_eastern_siberia = {
     icon = mission_extent_yasak_to_the_east
-    required_missions = {
-      mos_rus_colonize_central_siberia
-    }
+    required_missions = { mos_rus_colonize_central_siberia }
     position = 6
     provinces_to_highlight = {
       region = east_siberia_region
@@ -3537,7 +3729,7 @@ mos_rus_siberian_conquest = {
         }
       }
       define_explorer = {
-        name = "�u�V�e��v�N"  # Vitus Bering
+        name = "维图斯·白令" 	# Vitus Bering
         fire = 4
         shock = 2
         manuever = 5
@@ -3639,9 +3831,7 @@ mos_rus_new_world = {
   has_country_shield = yes
   mos_rus_colonize_alaska = {
     icon = mission_colonize_alaska
-    required_missions = {
-      mos_rus_colonize_eastern_siberia
-    }
+    required_missions = { mos_rus_colonize_eastern_siberia }
     position = 7
     provinces_to_highlight = {
       if = {
@@ -3649,13 +3839,13 @@ mos_rus_new_world = {
           ROOT = {
             NOT = {
               num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-                colonial_region = colonial_california
+                colonial_region = colonial_alaska
                 value = 20
               }
             }
           }
         }
-        colonial_region = colonial_california
+        colonial_region = colonial_alaska
       }
       else = {
         province_id = 2613
@@ -3667,7 +3857,7 @@ mos_rus_new_world = {
     }
     trigger = {
       num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-        colonial_region = colonial_california
+        colonial_region = colonial_alaska
         value = 20
       }
       owns_or_non_sovereign_subject_of = 2613
@@ -3678,6 +3868,8 @@ mos_rus_new_world = {
         duration = 7300
       }
       2613 = {
+        change_province_name = "新阿尔汉格尔斯克" 	# Novo-Arkhangelsk
+        rename_capital = "新阿尔汉格尔斯克" 	# Novo-Arkhangelsk
         add_base_tax = 1
         add_base_production = 1
         add_base_manpower = 1
@@ -3689,9 +3881,7 @@ mos_rus_new_world = {
   }
   mos_rus_colonize_canada = {
     icon = mission_settlers_north_america
-    required_missions = {
-      mos_rus_colonize_alaska
-    }
+    required_missions = { mos_rus_colonize_alaska }
     position = 8
     provinces_to_highlight = {
       colonial_region = colonial_canada
@@ -3717,6 +3907,7 @@ mos_rus_new_world = {
     }
   }
 }
+#Russian Tsardom Misssions - Available for all Russias before modernization
 rus_russian_bureaucracy = {
   slot = 1
   generic = no
@@ -3734,9 +3925,7 @@ rus_russian_bureaucracy = {
   has_country_shield = yes
   rus_enact_the_sudebnik = {
     icon = mission_the_sudebnik
-    required_missions = {
-      mos_rus_found_the_russian_tsardom
-    }
+    required_missions = { mos_rus_found_the_russian_tsardom }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -3768,8 +3957,13 @@ rus_russian_bureaucracy = {
         num_of_times_improved = 3
       }
       if = {
-        NOT = {
-          primary_culture = ruthenian
+        limit = {
+          NOT = {
+            primary_culture = ruthenian
+          }
+          NOT = {
+            primary_culture = ruthenian_new
+          }
         }
         custom_trigger_tooltip = {
           tooltip = rus_enact_the_sudebnik_ct
@@ -3793,15 +3987,15 @@ rus_russian_bureaucracy = {
   }
   rus_book_of_royal_degrees = {
     icon = mission_book_of_royal_degrees
-    required_missions = {
-      rus_enact_the_sudebnik
-    }
+    required_missions = { rus_enact_the_sudebnik }
     position = 11
     provinces_to_highlight = {}
     trigger = {
       if = {
         limit = {
+          #Promote Advisors - +2
           has_dlc = "Cradle of Civilization"
+          #National Focus - +2
           has_dlc = "Res Publica"
           has_dlc = "Common Sense"
         }
@@ -3849,9 +4043,7 @@ rus_russian_nobility = {
   has_country_shield = yes
   rus_handle_the_boyars = {
     icon = mission_unite_the_princes
-    required_missions = {
-      mos_rus_found_the_russian_tsardom
-    }
+    required_missions = { mos_rus_found_the_russian_tsardom }
     position = 10
     provinces_to_highlight = {}
     trigger = {
@@ -3905,9 +4097,7 @@ rus_russian_nobility = {
   }
   rus_the_mestnichestvo = {
     icon = mission_abolish_mestnichestvo
-    required_missions = {
-      rus_handle_the_boyars
-    }
+    required_missions = { rus_handle_the_boyars }
     position = 11
     provinces_to_highlight = {}
     trigger = {
@@ -3925,7 +4115,20 @@ rus_russian_nobility = {
       country_event_with_insight = {
         id = flavor_rus.126
         insight_tooltip = INSIGHT_JUST_TOOLTIP
-        effect_tooltip = "change_government_reform_progress = 50 if = { limit = { has_government_mechanic = russian_modernization_mechanic } add_government_power = {  mechanic_type = russian_modernization_mechanic power_type = russian_modernization value = 10 } } else = { add_adm_power = 50 }"
+        effect_tooltip = "change_government_reform_progress = 50
+        if = {
+          limit = {
+            has_government_mechanic = russian_modernization_mechanic
+          }
+          add_government_power = { 
+            mechanic_type = russian_modernization_mechanic
+            power_type = russian_modernization
+            value = 10
+          }
+        }
+        else = {
+          add_adm_power = 50
+        }"
       }
     }
     ai_weight = {
@@ -3934,10 +4137,7 @@ rus_russian_nobility = {
   }
   rus_show_russian_superiority = {
     icon = mission_great_northern_war
-    required_missions = {
-      rus_book_of_royal_degrees
-      rus_the_mestnichestvo
-    }
+    required_missions = { rus_book_of_royal_degrees rus_the_mestnichestvo }
     position = 12
     provinces_to_highlight = {
       owned_by = ROOT
@@ -4096,9 +4296,7 @@ rus_russian_disaster = {
   has_country_shield = yes
   rus_the_vodka_monopoly = {
     icon = mission_vodka_monopoly
-    required_missions = {
-      mos_rus_found_the_russian_tsardom
-    }
+    required_missions = { mos_rus_found_the_russian_tsardom }
     position = 10
     provinces_to_highlight = {
       trade_goods = grain
@@ -4169,10 +4367,7 @@ rus_russian_disaster = {
   }
   rus_the_empire_of_russia = {
     icon = mission_empire_of_russia
-    required_missions = {
-      rus_show_russian_superiority
-      rus_increase_absolute_rule
-    }
+    required_missions = { rus_show_russian_superiority rus_increase_absolute_rule }
     position = 13
     provinces_to_highlight = {}
     trigger = {
@@ -4193,7 +4388,11 @@ rus_russian_disaster = {
       country_event_with_insight = {
         id = flavor_rus.134
         insight_tooltip = INSIGHT_JUST_TOOLTIP
-        effect_tooltip = " change_technology_group = western add_prestige_or_monarch_power = { amount = 50 }"
+        effect_tooltip = "
+        change_technology_group = western
+        add_prestige_or_monarch_power = {
+          amount = 50
+        }"
       }
     }
     ai_weight = {
@@ -4218,9 +4417,7 @@ rus_russian_streltsy = {
   has_country_shield = yes
   rus_the_streltsy = {
     icon = mission_recruit_streltsy
-    required_missions = {
-      mos_rus_found_the_russian_tsardom
-    }
+    required_missions = { mos_rus_found_the_russian_tsardom }
     position = 10
     provinces_to_highlight = {}
     trigger = {
@@ -4248,6 +4445,10 @@ rus_russian_streltsy = {
             has_reform = streltsy_reform
           }
         }
+        #custom_trigger_tooltip = {
+        #	tooltip = has_not_russian_mechanic_tt
+        #	NOT = { has_government_mechanic = russian_mechanic }
+        #}
       }
     }
     effect = {
@@ -4257,21 +4458,19 @@ rus_russian_streltsy = {
       }
     }
     ai_weight = {
-      factor = 0
+      factor = 0 	#  AI can't recruit streltsy anyway, and trying to stay at forcelimit ruins Russia's economy
     }
   }
   rus_solidify_serfdom = {
     icon = mission_serfdom
-    required_missions = {
-      rus_the_vodka_monopoly
-    }
+    required_missions = { rus_the_vodka_monopoly }
     position = 11
     provinces_to_highlight = {}
     trigger = {
       OR = {
         AND = {
           custom_trigger_tooltip = {
-            tooltip = rus_enacted_early_serfdom_tt
+            tooltip = rus_enacted_early_serfdom_tt 	# Give serfdom related privilege
             has_country_flag = rus_enacted_early_serfdom_flag
           }
           custom_trigger_tooltip = {
@@ -4284,7 +4483,7 @@ rus_russian_streltsy = {
         }
         AND = {
           custom_trigger_tooltip = {
-            tooltip = rus_enacted_early_disconnection_tt
+            tooltip = rus_enacted_early_disconnection_tt 	# Give serfdom related privilege
             has_country_flag = rus_enacted_early_disconnection_flag
           }
           custom_trigger_tooltip = {
@@ -4339,10 +4538,7 @@ rus_russian_streltsy = {
   }
   rus_increase_absolute_rule = {
     icon = mission_autocratic_rule
-    required_missions = {
-      rus_solidify_serfdom
-      rus_the_courts_direction
-    }
+    required_missions = { rus_solidify_serfdom rus_the_courts_direction }
     position = 12
     provinces_to_highlight = {}
     trigger = {
@@ -4446,9 +4642,7 @@ rus_court_and_church = {
   has_country_shield = yes
   rus_role_of_the_church = {
     icon = mission_autocephalous_archbishopric
-    required_missions = {
-      mos_rus_found_the_russian_tsardom
-    }
+    required_missions = { mos_rus_found_the_russian_tsardom }
     position = 10
     provinces_to_highlight = {}
     trigger = {
@@ -4495,10 +4689,7 @@ rus_court_and_church = {
   }
   rus_the_courts_direction = {
     icon = mission_alliances
-    required_missions = {
-      rus_the_streltsy
-      rus_role_of_the_church
-    }
+    required_missions = { rus_the_streltsy rus_role_of_the_church }
     position = 11
     provinces_to_highlight = {
       is_capital = yes
@@ -4565,6 +4756,7 @@ rus_court_and_church = {
     }
   }
 }
+#Russian Empire Missions - Available for all Russias after modernization
 rus_russian_navy = {
   slot = 1
   generic = no
@@ -4583,9 +4775,7 @@ rus_russian_navy = {
   has_country_shield = yes
   rus_establish_the_russian_navy = {
     icon = mission_russian_navy
-    required_missions = {
-      rus_the_empire_of_russia
-    }
+    required_missions = { rus_the_empire_of_russia }
     position = 14
     provinces_to_highlight = {}
     trigger = {
@@ -4606,9 +4796,7 @@ rus_russian_navy = {
   }
   rus_monopolize_novgorod = {
     icon = reform_the_state
-    required_missions = {
-      rus_establish_the_russian_navy
-    }
+    required_missions = { rus_establish_the_russian_navy }
     position = 15
     provinces_to_highlight = {
       OR = {
@@ -4695,9 +4883,7 @@ rus_russian_government = {
   has_country_shield = yes
   rus_establish_the_governing_senate = {
     icon = mission_the_governing_senate
-    required_missions = {
-      rus_the_empire_of_russia
-    }
+    required_missions = { rus_the_empire_of_russia }
     position = 14
     provinces_to_highlight = {}
     trigger = {
@@ -4726,9 +4912,7 @@ rus_russian_government = {
   }
   rus_pass_issues_in_the_senate = {
     icon = mission_eastern_european_city
-    required_missions = {
-      rus_establish_the_governing_senate
-    }
+    required_missions = { rus_establish_the_governing_senate }
     position = 15
     provinces_to_highlight = {}
     trigger = {
@@ -4822,9 +5006,7 @@ rus_russian_religion_serfdom = {
   has_country_shield = yes
   rus_most_holy_synod = {
     icon = mission_most_holy_synod
-    required_missions = {
-      rus_the_empire_of_russia
-    }
+    required_missions = { rus_the_empire_of_russia }
     position = 14
     provinces_to_highlight = {}
     trigger = {
@@ -4914,6 +5096,9 @@ rus_russian_religion_serfdom = {
         custom_tooltip = BONUS_REWARD_NO
       }
       custom_tooltip = rus_most_holy_synod_ct
+      #tooltip = {
+      #	add_government_reform = holy_synod_reform
+      #}
       custom_tooltip = rus_most_holy_synod_bt
       if = {
         limit = {
@@ -4949,6 +5134,9 @@ rus_russian_religion_serfdom = {
         custom_tooltip = BONUS_REWARD_NO
       }
       custom_tooltip = rus_most_holy_synod_dt
+      #tooltip = {
+      #	add_government_reform = strengthened_the_patriarchy_reform
+      #}
       if = {
         limit = {
           any_known_country = {
@@ -5002,6 +5190,9 @@ rus_russian_religion_serfdom = {
         custom_tooltip = COMBINED_BONUS_REWARD_NO
       }
       custom_tooltip = rus_most_holy_synod_tt
+      #tooltip = {
+      #	add_government_reform = head_of_the_patriarchy_reform
+      #}
       hidden_effect = {
         if = {
           limit = {
@@ -5134,9 +5325,7 @@ rus_russian_religion_serfdom = {
   }
   rus_early_industrialization = {
     icon = mission_state_manufactories
-    required_missions = {
-      rus_establish_the_governing_senate
-    }
+    required_missions = { rus_establish_the_governing_senate }
     position = 15
     provinces_to_highlight = {
       owned_by = ROOT
@@ -5155,7 +5344,14 @@ rus_russian_religion_serfdom = {
     effect = {
       for = {
         custom_tooltip = rus_early_industrialization_at
-        effect = "random_owned_province = {  limit = {  NOT = { has_province_flag = rus_manu }  has_manufactory_trigger = yes  development = 20  } set_province_flag = rus_manu }"
+        effect = "random_owned_province = { 
+          limit = { 
+            NOT = { has_province_flag = rus_manu } 
+            has_manufactory_trigger = yes 
+            development = 20 
+          }
+          set_province_flag = rus_manu
+        }"
         amount = 10
       }
       tooltip = {
@@ -5248,9 +5444,7 @@ rus_russian_military = {
   has_country_shield = yes
   rus_dissolve_the_streltsy = {
     icon = mission_handle_the_streltsy
-    required_missions = {
-      rus_the_empire_of_russia
-    }
+    required_missions = { rus_the_empire_of_russia }
     position = 14
     provinces_to_highlight = {}
     trigger = {
@@ -5280,11 +5474,27 @@ rus_russian_military = {
     effect = {
       simple_dynamic_effect = {
         first_custom_tooltip = rus_dissolve_the_streltsy_at
-        first_limit = " has_reform = streltsy_reform num_of_streltsy = 50 has_leader_with = { total_pips = 15 }"
-        first_effect = " add_country_modifier = { name = rus_institutionalized_streltsy duration = -1 }"
+        first_limit = "
+        has_reform = streltsy_reform
+        num_of_streltsy = 50
+        has_leader_with = {
+          total_pips = 15
+        }"
+        first_effect = "
+        add_country_modifier = {
+          name = rus_institutionalized_streltsy
+          duration = -1
+        }"
         second_custom_tooltip = rus_dissolve_the_streltsy_bt
-        second_limit = " NOT = { has_reform = streltsy_reform } army_tradition = 50 monthly_mil = 12"
-        second_effect = " add_country_modifier = { name = rus_standarized_military duration = -1 }"
+        second_limit = "
+        NOT = { has_reform = streltsy_reform }
+        army_tradition = 50
+        monthly_mil = 12"
+        second_effect = "
+        add_country_modifier = {
+          name = rus_standarized_military
+          duration = -1
+        }"
       }
       hidden_effect = {
         set_country_flag = has_rus_kill_counter
@@ -5300,9 +5510,7 @@ rus_russian_military = {
   }
   rus_reform_the_military = {
     icon = mission_assemble_an_army
-    required_missions = {
-      rus_dissolve_the_streltsy
-    }
+    required_missions = { rus_dissolve_the_streltsy }
     position = 15
     provinces_to_highlight = {}
     trigger = {
@@ -5339,7 +5547,13 @@ rus_russian_military = {
       country_event_with_insight = {
         id = flavor_rus.45
         insight_tooltip = INSIGHT_JUST_TOOLTIP
-        effect_tooltip = " change_unit_type = western add_country_modifier = { name = rus_western_military_tactics duration = -1 } "
+        effect_tooltip = "
+        change_unit_type = western
+        add_country_modifier = {
+          name = rus_western_military_tactics
+          duration = -1
+        }
+        "
       }
     }
     ai_weight = {
@@ -5365,9 +5579,7 @@ rus_russian_westernization = {
   has_country_shield = yes
   rus_control_fur_trade = {
     icon = mission_control_fur_trade
-    required_missions = {
-      rus_the_empire_of_russia
-    }
+    required_missions = { rus_the_empire_of_russia }
     position = 14
     provinces_to_highlight = {}
     trigger = {
@@ -5401,9 +5613,7 @@ rus_russian_westernization = {
   }
   rus_peters_reforms = {
     icon = mission_table_of_ranks
-    required_missions = {
-      rus_control_fur_trade
-    }
+    required_missions = { rus_control_fur_trade }
     position = 15
     provinces_to_highlight = {}
     trigger = {
@@ -5422,6 +5632,7 @@ rus_russian_westernization = {
     }
   }
 }
+#Revolutionary Russia
 rus_education = {
   slot = 2
   generic = no
@@ -5441,9 +5652,7 @@ rus_education = {
   has_country_shield = yes
   rus_educational_reform = {
     icon = mission_early_modern_university
-    required_missions = {
-      rus_the_age_of_revolution
-    }
+    required_missions = { rus_the_age_of_revolution }
     position = 17
     provinces_to_highlight = {}
     trigger = {
@@ -5495,10 +5704,7 @@ rus_revolution = {
   has_country_shield = yes
   rus_the_glorious_revolution = {
     icon = mission_russian_revolution
-    required_missions = {
-      rus_educational_reform
-      rus_abolish_the_serfdom
-    }
+    required_missions = { rus_educational_reform rus_abolish_the_serfdom }
     position = 18
     provinces_to_highlight = {}
     trigger = {
@@ -5522,11 +5728,26 @@ rus_revolution = {
       add_army_tradition = 25
       simple_dynamic_effect = {
         first_custom_tooltip = rus_the_glorious_revolution_at
-        first_limit = " OR = { has_reform = revolutionary_empire_reform has_reform = revolutionary_republic_reform }"
-        first_effect = " add_country_modifier = { name = rus_revolutionary_zeal duration = -1 }"
+        first_limit = "
+        OR = {
+          has_reform = revolutionary_empire_reform
+          has_reform = revolutionary_republic_reform
+        }"
+        first_effect = "
+        add_country_modifier = {
+          name = rus_revolutionary_zeal
+          duration = -1
+        }"
         second_custom_tooltip = rus_the_glorious_revolution_bt
-        second_limit = " NOT = { has_reform = revolutionary_empire_reform } NOT = { has_reform = revolutionary_republic_reform } "
-        second_effect = " add_country_modifier = { name = rus_reactionary_zeal duration = -1 }"
+        second_limit = "
+        NOT = { has_reform = revolutionary_empire_reform }
+        NOT = { has_reform = revolutionary_republic_reform }
+        "
+        second_effect = "
+        add_country_modifier = {
+          name = rus_reactionary_zeal
+          duration = -1
+        }"
       }
     }
     ai_weight = {
@@ -5553,9 +5774,7 @@ rus_abolish_serfdom = {
   has_country_shield = yes
   rus_abolish_the_serfdom = {
     icon = mission_peasantry
-    required_missions = {
-      rus_the_age_of_revolution
-    }
+    required_missions = { rus_the_age_of_revolution }
     position = 17
     provinces_to_highlight = {}
     trigger = {

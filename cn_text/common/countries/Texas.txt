@@ -1,24 +1,18 @@
+﻿#Country Name: Please see filename.
 graphical_culture = westerngfx
-colonial_parent = GBR
+colonial_parent = SPA
 random_nation_chance = 0
-color = {
-  99
-  157
-  158
-}
+color = { 173 22 27 }
+revolutionary_colors = { 13 0 16 }
 historical_idea_groups = {
-  early_religious_ideas
-  early_mil_ideas
-  early_trade_ideas
-  early_adm_ideas
   defensive_ideas
+  religious_ideas
   offensive_ideas
+  trade_ideas
+  spy_ideas
+  diplomatic_ideas
   administrative_ideas
   economic_ideas
-  trade_ideas
-  religious_ideas
-  diplomatic_ideas
-  spy_ideas
 }
 historical_units = {
   western_medieval_infantry
@@ -39,141 +33,395 @@ historical_units = {
   napoleonic_lancers
 }
 monarch_names = {
-  "James #0" = 20
-  "John #0" = 20
-  "Thomas #0" = 20
-  "Charles #0" = 15
-  "Daniel #0" = 15
-  "Henry #0" = 15
-  "Samuel #0" = 15
-  "Arthur #0" = 10
-  "Cyrus #0" = 10
-  "Elias #0" = 10
-  "Nathaniel #0" = 10
-  "Peyton #0" = 10
-  "Richard #0" = 10
-  "Aaron #0" = 0
-  "Angus #0" = 0
-  "Calvin #0" = 0
-  "Darren #0" = 0
-  "Elbridge #0" = 0
-  "Eric #0" = 0
-  "Francis #0" = 0
-  "Frederick #0" = 0
-  "Isaac #0" = 0
-  "Jonathan #0" = 0
-  "Joseph #0" = 0
-  "Kyran #0" = 0
-  "Luke #0" = 0
-  "Patrick #0" = 0
-  "Paul #0" = 0
-  "Philip #0" = 0
-  "Randolf #0" = 0
-  "Silvester #0" = 0
-  "Timothy #0" = 0
-  "Wilbur #0" = 0
-  "William #0" = 0
-  "Stephen #0" = 0
-  "TN�l #0" = 20  # George #0
-  "'YkS #0" = 10  # David #0
-  "V���V̑KQ eY�S�eTX�e #0" = 10  # Frederick Augustus #0
-  "eY�S�eyr #0" = 0  # August #0
-  ",gpgf #0" = 0  # Benjamin #0
-  "%VS� #0" = 0  # Milton #0
-  "�N�SqS'Y #0" = 0  # Alexander #0
+  "斯蒂芬 #0" = 25 	# Stephen #0
+  "詹姆斯 #0" = 25 	# James #0
+  "大卫 #0" = 20 	# David #0
+  "塞缪尔 #0" = 20 	# Samuel #0
+  "安德鲁 #0" = 15 	# Andrew #0
+  "约瑟夫 #0" = 15 	# Joseph #0
+  "安森 #0" = 10 	# Anson #0
+  "埃比尼泽 #0" = 10 	# Ebenezer #0
+  "米拉博 #0" = 10 	# Mirabeau #0
+  "艾伯特 #0" = 0 	# Albert #0
+  "亚历山德罗 #0" = 0 	# Alexandro #0
+  "阿尔马伦 #0" = 0 	# Almaron #0
+  "安布罗西奥 #0" = 0 	# Ambrosio #0
+  "阿莫斯 #0" = 0 	# Amos #0
+  "安东尼奥 #0" = 0 	# Antonio #0
+  "安塞尔莫 #0" = 0 	# Anselmo #0
+  "阿萨 #0" = 0 	# Asa #0
+  "本杰明 #0" = 0 	# Benjamin #0
+  "布里希多 #0" = 0 	# Brigido #0
+  "伯克 #0" = 0 	# Burke #0
+  "伯德 #0" = 0 	# Byrd #0
+  "塞萨里奥 #0" = 0 	# Cesario #0
+  "查尔斯 #0" = 0 	# Charles #0
+  "克里斯托弗 #0" = 0 	# Christopher #0
+  "克莱本 #0" = 0 	# Claiborne #0
+  "克利夫兰 #0" = 0 	# Cleveland #0
+  "康拉德 #0" = 0 	# Conrad #0
+  "达马乔 #0" = 0 	# Damacio #0
+  "丹尼尔 #0" = 0 	# Daniel #0
+  "多尔芬 #0" = 0 	# Dolphin #0
+  "爱德华多 #0" = 0 	# Eduardo #0
+  "埃德温 #0" = 0 	# Edwin #0
+  "伊莱尔 #0" = 0 	# Eliel #0
+  "弗朗西斯 #0" = 0 	# Francis #0
+  "弗雷德里克 #0" = 0 	# Frederick #0
+  "弗里曼 #0" = 0 	# Freeman #0
+  "加尔巴 #0" = 0 	# Galba #0
+  "乔治 #0" = 0 	# George #0
+  "杰拉德 #0" = 0 	# Gerald #0
+  "戈登 #0" = 0 	# Gordon #0
+  "格林 #0" = 0 	# Green #0
+  "瓜达卢佩 #0" = 0 	# Guadalupe #0
+  "亨利 #0" = 0 	# Henry #0
+  "伊拉姆 #0" = 0 	# Hiram #0
+  "奥拉塞 #0" = 0 	# Horace #0
+  "伊格纳西奥 #0" = 0 	# Ignacio #0
+  "艾萨克 #0" = 0 	# Isaac #0
+  "杰克逊 #0" = 0 	# Jackson #0
+  "雅各布 #0" = 0 	# Jacob #0
+  "杰西 #0" = 0 	# Jesse #0
+  "约翰 #0" = 0 	# John #0
+  "乔纳森 #0" = 0 	# Jonathan #0
+  "何塞 #0" = 0 	# José #0
+  "约书亚 #0" = 0 	# Joshua #0
+  "朗斯洛特 #0" = 0 	# Launcelot #0
+  "莱缪尔 #0" = 0 	# Lemuel #0
+  "卢西奥 #0" = 0 	# Lucio #0
+  "曼松 #0" = 0 	# Manson #0
+  "曼努埃尔 #0" = 0 	# Manuel #0
+  "马库斯 #0" = 0 	# Marcus #0
+  "马蒂亚斯 #0" = 0 	# Matias #0
+  "米亚尔 #0" = 0 	# Mial #0
+  "迈凯亚 #0" = 0 	# Micajah #0
+  "迈尔斯 #0" = 0 	# Miles #0
+  "帕特里克 #0" = 0 	# Patrick #0
+  "佩德罗 #0" = 0 	# Pedro #0
+  "彼得 #0" = 0 	# Peter #0
+  "普罗斯佩特 #0" = 0 	# Prospect #0
+  "理查德 #0" = 0 	# Richard #0
+  "理查森 #0" = 0 	# Richardson #0
+  "罗伯特 #0" = 0 	# Robert #0
+  "罗斯 #0" = 0 	# Ross #0
+  "萨尔瓦多 #0" = 0 	# Salvador #0
+  "塞尔登 #0" = 0 	# Seldon #0
+  "西蒙 #0" = 0 	# Simon #0
+  "斯夸尔 #0" = 0 	# Squire #0
+  "塔普利 #0" = 0 	# Tapley #0
+  "托里维奥 #0" = 0 	# Toribio #0
+  "比森特 #0" = 0 	# Vicente #0
+  "威廉 #0" = 0 	# William #0
+  "劳拉 #0" = -1 	# Laura #0
+  "马拉希拉 #0" = -1 	# Marciela #0
+  "佩拉 #0" = -1 	# Perla #0
+  "德博拉 #0" = -1 	# Deborah #0
+  "萨拉 #0" = -1 	# Sarah #0
+  "安妮 #0" = -1 	# Anne #0
 }
 leader_names = {
-  "Adams"
-  "Burr"
-  "Clinton"
-  "Jay"
-  "Jefferson"
-  "Harrison"
-  "King"
-  "Langdon"
-  "Madison"
-  "Monroe"
-  "Pickney"
-  "Rutledge"
-  "Starbuck"
-  "Steed"
-  "Stryder"
-  "Sutcliffe"
-  "Swaggert"
-  "Stover"
-  "Stetson"
-  "Kempton"
-  "Kendrick"
-  "Lane"
-  "Lindon"
-  "Lyle"
-  "Merrick"
-  "Atworth"
-  "Arnott"
-  "Ashton"
-  "Boyd"
-  "Caddock"
-  "Drummond"
-  "Arkeith"
-  "Kennedy"
-  "Trevin"
-  "Vaughan"
-  "Dylan"
-  "Dalton"
-  "Dellwin"
-  "Sheldon"
-  "Spencer"
-  "Thorley"
-  "Thompson"
-  "Unwin"
-  "Walden"
-  "Ward"
-  "Winston"
-  "Douglas"
-  "Floyd"
-  "Richardson"
+  "阿玛比洛" 	# Amabillo
+  "艾伦" 	# Allen
+  "阿尔斯伯里" 	# Alsbury
+  "安德鲁斯" 	# Andrews
+  "安德罗斯" 	# Andross
+  "阿罗查" 	# Arocha
+  "阿雷奥拉" 	# Arreola
+  "奥特里" 	# Autry
+  "巴杰特" 	# Badgett
+  "巴迪洛" 	# Badillo
+  "贝利" 	# Bailey
+  "贝克" 	# Baker
+  "巴拉德" 	# Ballard
+  "巴伦坦" 	# Ballentine
+  "巴尔塞纳" 	# Barcena
+  "鲍尔" 	# Baugh
+  "巴斯塔因" 	# Bastain
+  "拜利斯" 	# Bayliss
+  "贝勒" 	# Baylor
+  "贝尔加拉" 	# Bergara
+  "布莱尔" 	# Blair
+  "布拉泽比" 	# Blazeby
+  "博纳姆" 	# Bonham
+  "博尔内" 	# Bourne
+  "博维" 	# Bowie
+  "鲍曼" 	# Bowman
+  "布朗" 	# Brown
+  "布坎南" 	# Buchanan
+  "伯恩斯" 	# Burns
+  "巴特勒" 	# Butler
+  "卡因" 	# Cain
+  "坎贝尔" 	# Campbell
+  "卡雷" 	# Carey
+  "卡莫纳" 	# Carmona
+  "克拉克" 	# Clark
+  "克劳德" 	# Cloud
+  "科克伦" 	# Cochran
+  "科特尔" 	# Cottle
+  "考特曼" 	# Courtman
+  "克劳福德" 	# Crawford
+  "克罗克特" 	# Crockett
+  "克罗斯曼" 	# Crossman
+  "克鲁兹" 	# Cruz
+  "卡明斯" 	# Cummings
+  "坎宁安" 	# Cunningham
+  "科维尔" 	# Curvier
+  "达尔斯特" 	# Darst
+  "戴维斯" 	# Davis
+  "戴" 	# Day
+  "戴蒙" 	# Daymon
+  "迪尔多夫" 	# Dearduff
+  "德 拉 加尔萨" 	# De la Garza
+  "德比奇" 	# Debichi
+  "丹尼森" 	# Dennison
+  "德绍克" 	# DeSauque
+  "德斯帕利尔" 	# Despallier
+  "德瓦尔" 	# Dewall
+  "迪金森" 	# Dickinson
+  "迪克森" 	# Dickson
+  "迪拉德" 	# Dillard
+  "迪米特" 	# Dimmitt
+  "丁普金斯" 	# Dimpkins
+  "杜瓦尔特" 	# Duvalt
+  "爱德华兹" 	# Edwards
+  "艾根诺尔" 	# Eigenauer
+  "埃利奥特" 	# Elliott
+  "埃尔姆" 	# Elm
+  "恩里克斯" 	# Enriques
+  "埃斯帕利尔" 	# Espalier
+  "埃斯帕萨" 	# Esparza
+  "埃文斯" 	# Evans
+  "尤因" 	# Ewing
+  "方特勒罗伊" 	# Fauntleroy
+  "菲什博" 	# Fishbaugh
+  "佛兰德" 	# Flanders
+  "弗洛雷斯" 	# Flores
+  "弗洛伊德" 	# Floyd
+  "福赛斯" 	# Forsyth
+  "富恩特斯" 	# Fuentes
+  "富卡" 	# Fuqua
+  "加尼特" 	# Garnett
+  "加兰德" 	# Garrand
+  "加勒特" 	# Garrett
+  "加尔文" 	# Garvin
+  "加斯顿" 	# Gaston
+  "吉布森" 	# Gibson
+  "古德里奇" 	# Goodrich
+  "格雷" 	# Gray
+  "格林" 	# Green
+  "格兰姆斯" 	# Grimes
+  "古雷亚" 	# Gurrea
+  "格雷罗" 	# Guerrero
+  "格温" 	# Gwin
+  "哈里斯" 	# Harris
+  "哈里森" 	# Harrison
+  "霍金斯" 	# Hawkins
+  "海斯" 	# Hays
+  "海斯克尔" 	# Heiskell
+  "赫恩登" 	# Herndon
+  "埃雷拉" 	# Herrera
+  "赫塞" 	# Hersee
+  "海史密斯" 	# Highsmith
+  "霍兰" 	# Holland
+  "霍洛韦" 	# Holloway
+  "豪厄尔" 	# Howell
+  "亨特" 	# Hunter
+  "哈钦森" 	# Hutchinson
+  "欧文" 	# Irwin
+  "杰克逊" 	# Jackson
+  "詹姆森" 	# Jameson
+  "詹宁斯" 	# Jennings
+  "希门尼斯" 	# Jiménez
+  "约翰逊" 	# Johnson
+  "琼斯" 	# Jones
+  "肯尼" 	# Kenny
+  "肯特" 	# Kent
+  "克尔" 	# Kerr
+  "金布尔" 	# Kimble
+  "金" 	# Kin
+  "金" 	# King
+  "刘易斯" 	# Lewis
+  "莱特富特" 	# Lightfoot
+  "林德利" 	# Lindley
+  "林" 	# Linn
+  "洛克哈特" 	# Lockhart
+  "洛索亚" 	# Losoya
+  "梅因" 	# Main
+  "马隆" 	# Malone
+  "马歇尔" 	# Marshall
+  "马丁" 	# Martin
+  "马弗里克" 	# Maverick
+  "麦卡弗蒂" 	# McCafferty
+  "麦克莱兰" 	# McClelland
+  "麦科伊" 	# McCoy
+  "麦克道尔" 	# McDowell
+  "麦吉" 	# McGee
+  "麦格雷戈" 	# McGregor
+  "麦金尼" 	# McKinney
+  "麦克内利" 	# McNeilly
+  "梅尔顿" 	# Melton
+  "门查卡" 	# Menchaca
+  "米勒" 	# Miller
+  "米尔斯" 	# Mills
+  "米尔萨普斯" 	# Millsaps
+  "米查逊" 	# Mitchasson
+  "米切尔" 	# Mitchell
+  "穆尔" 	# Moore
+  "莫尔曼" 	# Morman
+  "莫里森" 	# Morrison
+  "马塞尔曼" 	# Musselman
+  "摩根" 	# Morgan
+  "纳什" 	# Nash
+  "纳瓦" 	# Nava
+  "纳文" 	# Navan
+  "尼甘" 	# Neggan
+  "纳尔逊" 	# Nelson
+  "诺布勒斯" 	# Nobles
+  "诺斯克洛斯" 	# Northcross
+  "诺兰" 	# Nowlan
+  "奥尼尔" 	# O'Neill
+  "奥拉米奥" 	# Olamio
+  "乌里" 	# Oury
+  "帕切科" 	# Pacheco
+  "帕甘" 	# Pagan
+  "帕克" 	# Parker
+  "帕克斯" 	# Parks
+  "帕顿" 	# Patton
+  "佩里" 	# Perry
+  "佩特拉施维兹" 	# Petrasweiz
+  "波拉德" 	# Pollard
+  "拉米雷兹" 	# Ramirez
+  "雷诺兹" 	# Reynolds
+  "罗伯蒂斯" 	# Robertys
+  "罗伯特松" 	# Robertson
+  "罗德里格斯" 	# Rodriguez
+  "罗斯" 	# Rose
+  "罗特" 	# Roth
+  "鲁斯克" 	# Rusk
+  "卢瑟福" 	# Rutherford
+  "赖安" 	# Ryan
+  "罗森" 	# Rawson
+  "桑德斯" 	# Sanders
+  "斯库洛克" 	# Scurlock
+  "塞奎因" 	# Seguín
+  "休厄尔" 	# Sewell
+  "谢埃德" 	# Shied
+  "西蒙斯" 	# Simmons
+  "史密斯" 	# Smith
+  "索韦尔" 	# Sowell
+  "斯普拉特" 	# Spratt
+  "斯塔尔" 	# Starr
+  "斯图尔特" 	# Stewart
+  "斯托克顿" 	# Stockton
+  "苏默林" 	# Summerlin
+  "萨默斯" 	# Summers
+  "萨瑟兰" 	# Sutherland
+  "泰勒" 	# Taylor
+  "托马斯" 	# Thomas
+  "汤普森" 	# Thompson
+  "图尔斯敦" 	# Thurston
+  "特拉默尔" 	# Trammel
+  "特拉维斯" 	# Travis
+  "图姆林逊" 	# Tumlinson
+  "泰利" 	# Tylee
+  "沃克" 	# Walker
+  "瓦德" 	# Ward
+  "沃耐尔" 	# Warnell
+  "沃特斯" 	# Waters
+  "韦尔斯" 	# Wells
+  "怀特" 	# White
+  "威廉姆森" 	# Williamson
+  "威尔斯" 	# Wills
+  "威尔逊" 	# Wilson
+  "沃尔夫" 	# Wolf
+  "赖特" 	# Wright
+  "华盛顿" 	# Washington
+  "赞科" 	# Zanco
+  "泽佩达" 	# Zepeda
 }
 ship_names = {
-  "Adams"
-  "?�SV���V"  # Alfred
-  "Alliance"
-  "Andrew Doria"
-  "Argo"
-  "Argus"
-  "Cabot"
-  "Chesapeake"
-  "Champion"
-  "Columbus"
-  "Dolphin"
-  "Deane"
-  "Diligent"
-  "Effingham"
-  "Enterprise"
-  "Fly"
-  "Hampden"
-  "Hancock"
-  "Hornet"
-  "Lexington"
-  "Montgomery"
-  "Mosquito"
-  "Nautilus"
-  "Pigot"
-  "Randolph"
-  "Racehorse"
-  "Ranger"
-  "Reprisal"
-  "Repulse"
-  "Resistance"
-  "Retaliation"
-  "Revenge"
-  "Sachem"
-  "Saratoga"
-  "^X�b�v�e"  # Serapis
-  "Siren"
-  "Surprise"
-  "Trumbull"
-  "Viper"
-  "Vixen"
-  "Warren"
-  "Wasp"
+  "奥斯汀" 	# Austin
+  "弓兵" 	# Archer
+  "阿斯普" 	# Asp
+  "阿巴拉契科拉" 	# Apalacheola
+  "阿普尔顿" 	# Appleton
+  "安德森" 	# Anderson
+  "阿兰萨斯" 	# Aransas
+  "布拉索斯" 	# Brazos
+  "布拉希尔" 	# Brashear
+  "博蒙" 	# Beaumont
+  "布赖恩特" 	# Bryant
+  "黑马" 	# Black Horse
+  "查尔斯顿" 	# Charleston
+  "科罗拉多" 	# Colorado
+  "夏洛特" 	# Charlotte
+  "荣耀十字架" 	# Cruz de Honor
+  "克拉克" 	# Clark
+  "嘎嘣脆" 	# Crisp
+  "科克伦" 	# Cochrane
+  "疼痛" 	# Doloritas
+  "朋友之友" 	# Dos Amigos
+  "雄鹰" 	# Eagle
+  "费利克斯" 	# Felix
+  "加尔维斯顿" 	# Galveston
+  "滑翔" 	# Glide
+  "格雷" 	# Gray
+  "长臂猿" 	# Gibbons
+  "戈利亚德" 	# Goliad
+  "格伦" 	# Glenn
+  "古道尔" 	# Goodall
+  "戈登" 	# Gordon
+  "格林霍恩" 	# Greenhorn
+  "黄蜂" 	# Hornet
+  "欣顿" 	# Hinton
+  "洪多" 	# Hondo
+  "哈维斯林" 	# Haveslin
+  "马背" 	# Horseback
+  "独立" 	# Independencia
+  "铁皮夹克" 	# Iron Jacket
+  "正义" 	# Justice
+  "肯尼迪" 	# Kennedy
+  "基奥瓦" 	# Kiowa
+  "路易斯维尔" 	# Louisville
+  "自由" 	# Liberty
+  "孤星" 	# Lone Star
+  "洛思罗普" 	# Lothrop
+  "长角" 	# Longhorn
+  "摩尔" 	# Moore
+  "摩根" 	# Morgan
+  "努埃塞斯" 	# Nueces
+  "纳瓦索塔" 	# Navasota
+  "内奇斯河" 	# Neches
+  "诺科纳" 	# Nocona
+  "奥利弗" 	# Oliver
+  "奥肖内西" 	# O'Shaunessy
+  "进步" 	# Progreso
+  "普斯提尔" 	# Postell
+  "佩科斯" 	# Pecos
+  "孔雀" 	# Peacock
+  "波平杰" 	# Popinjay
+  "佩德罗纳莱斯" 	# Pedernales
+  "夸纳" 	# Quanah
+  "重建" 	# Regenerador
+  "罗莎·阿尔维娜" 	# Rosa Alvina
+  "里奥格兰德" 	# Rio Grande
+  "游侠" 	# Ranger
+  "西萨莱诺" 	# Sisaleno
+  "圣哈辛托" 	# San Jacinto
+  "圣安东尼奥" 	# San Antonio
+  "圣伯纳德" 	# San Bernard
+  "天蝎" 	# Scorpion
+  "条纹猪" 	# Striped Pig
+  "西格" 	# Seegar
+  "雪" 	# Snow
+  "白银" 	# Silvero
+  "蝰蛇" 	# Viper
+  "华盛顿" 	# Washington
+  "沃顿" 	# Wharton
+  "轮匠" 	# Wheelwright
+  "威廉姆森" 	# Williamson
+  "威尔伯" 	# Wilbur
+  "尤卡坦人" 	# Yucateco
+  "萨瓦拉" 	# Zavala
 }

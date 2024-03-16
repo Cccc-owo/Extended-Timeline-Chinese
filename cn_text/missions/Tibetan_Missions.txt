@@ -1,9 +1,15 @@
-tib_slot_2 = {
+﻿tib_slot_2 = {
   slot = 2
   generic = no
   ai = yes
   potential = {
-    culture_group = tibetan_group
+    OR = {
+      tag = TIB
+      tag = GUG
+      tag = UTS
+      tag = KAM
+      tag = PHA
+    }
     NOT = {
       map_setup = map_setup_random
     }
@@ -53,9 +59,7 @@ tib_slot_2 = {
   }
   tib_steppe_alliance = {
     icon = mission_non-western_cavalry_raid
-    required_missions = {
-      tib_unite_tibet
-    }
+    required_missions = { tib_unite_tibet }
     position = 3
     trigger = {
       is_at_war = no
@@ -65,8 +69,8 @@ tib_slot_2 = {
           tooltip = tib_steppe_alliance_tooltip_1
           any_ally = {
             OR = {
+              primary_culture = altaic_new
               culture_group = altaic
-              culture_group = mongolic
             }
             total_development = 100
           }
@@ -74,8 +78,8 @@ tib_slot_2 = {
         num_of_owned_provinces_with = {
           value = 10
           OR = {
+            culture = altaic_new
             culture_group = altaic
-            culture_group = mongolic
           }
         }
       }
@@ -122,9 +126,7 @@ tib_slot_2 = {
   }
   tib_conquer_kashmir = {
     icon = mission_hands_praying
-    required_missions = {
-      tib_steppe_alliance
-    }
+    required_missions = { tib_steppe_alliance }
     position = 4
     provinces_to_highlight = {
       area = kashmir_area
@@ -237,9 +239,7 @@ tib_slot_2 = {
   }
   tib_the_tarim_basin = {
     icon = mission_central_asian_city
-    required_missions = {
-      tib_conquer_kashmir
-    }
+    required_missions = { tib_conquer_kashmir }
     provinces_to_highlight = {
       OR = {
         area = shanshan_area
@@ -308,7 +308,13 @@ tib_slot_3 = {
   generic = no
   ai = yes
   potential = {
-    culture_group = tibetan_group
+    OR = {
+      tag = TIB
+      tag = GUG
+      tag = UTS
+      tag = KAM
+      tag = PHA
+    }
     NOT = {
       map_setup = map_setup_random
     }
@@ -316,10 +322,7 @@ tib_slot_3 = {
   has_country_shield = yes
   tib_unite_tibet = {
     icon = mission_kowtow
-    required_missions = {
-      tib_unite_west_tibet
-      tib_unite_east_tibet
-    }
+    required_missions = { tib_unite_west_tibet tib_unite_east_tibet }
     position = 2
     provinces_to_highlight = {
       region = tibet_region
@@ -330,11 +333,9 @@ tib_slot_3 = {
     trigger = {
       tibet_region = {
         type = all
-        OR = {
-          owned_by = ROOT
-          is_empty = yes
-        }
+        owned_by = ROOT
       }
+      has_institution = feudalism
     }
     effect = {
       677 = {
@@ -353,44 +354,11 @@ tib_slot_3 = {
           add_center_of_trade_level = 1
         }
       }
-      if = {
-        limit = {
-          2129 = {
-            is_empty = yes
-          }
-        }
-        2129 = {
-          create_colony = 200
-          set_permanent_province_flag = spice_island_colony_flag
-          add_permanent_province_modifier = {
-            name = spice_colony_province_modifier
-            duration = -1
-          }
-        }
-      }
-      if = {
-        limit = {
-          4522 = {
-            is_empty = yes
-          }
-        }
-        4522 = {
-          create_colony = 200
-          set_permanent_province_flag = spice_island_colony_flag
-          add_permanent_province_modifier = {
-            name = spice_colony_province_modifier
-            duration = -1
-          }
-        }
-      }
     }
   }
   tib_chinese_reconquest = {
     icon = mission_chinese_general_riding
-    required_missions = {
-      tib_support_the_gelug_school
-      tib_steppe_alliance
-    }
+    required_missions = { tib_support_the_gelug_school tib_steppe_alliance }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -449,9 +417,7 @@ tib_slot_3 = {
   }
   tib_emperor_of_china = {
     icon = mission_asian_city
-    required_missions = {
-      tib_chinese_reconquest
-    }
+    required_missions = { tib_chinese_reconquest }
     provinces_to_highlight = {
       region = xinan_region
       NOT = {
@@ -473,10 +439,26 @@ tib_slot_3 = {
         }
       }
       else = {
-        NOT = {
-          any_country = {
-            primary_culture = east_asian
-            num_of_cities = 50
+        OR = {
+          NOT = {
+            exists = MNG
+          }
+          MNG = {
+            exists = yes
+            NOT = {
+              num_of_cities = 50
+            }
+          }
+        }
+        OR = {
+          NOT = {
+            exists = QNG
+          }
+          QNG = {
+            exists = yes
+            NOT = {
+              num_of_cities = 50
+            }
           }
         }
       }
@@ -530,7 +512,13 @@ tib_slot_4 = {
   generic = no
   ai = yes
   potential = {
-    culture_group = tibetan_group
+    OR = {
+      tag = TIB
+      tag = GUG
+      tag = UTS
+      tag = KAM
+      tag = PHA
+    }
     NOT = {
       map_setup = map_setup_random
     }
@@ -580,9 +568,7 @@ tib_slot_4 = {
   }
   tib_support_the_gelug_school = {
     icon = mission_buddhist_monk_praying
-    required_missions = {
-      tib_unite_tibet
-    }
+    required_missions = { tib_unite_tibet }
     position = 3
     provinces_to_highlight = {
       region = tibet_region
@@ -719,9 +705,7 @@ tib_slot_4 = {
   }
   tib_conquer_nepal = {
     icon = mission_indian_soldier_elephant
-    required_missions = {
-      tib_support_the_gelug_school
-    }
+    required_missions = { tib_support_the_gelug_school }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -805,9 +789,7 @@ tib_slot_4 = {
   }
   tib_restore_the_pala_kingdom = {
     icon = mission_indian_soldier_elephant
-    required_missions = {
-      tib_conquer_nepal
-    }
+    required_missions = { tib_conquer_nepal }
     provinces_to_highlight = {
       OR = {
         area = gaur_area
@@ -855,13 +837,13 @@ tib_slot_4 = {
           add_liberty_desire = -50
           change_religion = ROOT
           define_ruler = {
-            dynasty = "�lW"  # Pala
+            dynasty = "波罗" 	# Pala
             religion = ROOT
           }
         }
       }
       else = {
-        custom_tooltip = tib_restore_the_pala_kingdom.tooltip
+        custom_tooltip = tib_restore_the_pala_kingdom.tooltip 	#  to tell the player that this can happen
       }
     }
   }

@@ -1,72 +1,74 @@
-government = monarchy
-add_government_reform = chinese_warlord
-government_rank = 2
-technology_group = early_chinese
+ï»¿government = monarchy
+add_government_reform = celestial_empire
+government_rank = 3
+technology_group = chinese
 religion = confucianism
+add_harmonized_religion = mahayana
 primary_culture = jianghuai
-capital = 1821
-100.1.1 = {
-  add_government_reform = early_gov_reform_1
+capital = 1821 	#  Nanjing
+if = {
+  limit = {
+    OR = {
+      has_dlc = "Dharma"
+      has_dlc = "Emperor"
+    }
+  }
+  change_estate_land_share = {
+    estate = estate_burghers
+    share = 10
+  }
+  change_estate_land_share = {
+    estate = estate_church
+    share = 10
+  }
+  change_estate_land_share = {
+    estate = estate_nobles
+    share = -20
+  }
 }
-230.1.1 = {
-  add_government_reform = early_gov_reform_2
+add_prestige = 45
+if = {
+  limit = {
+    has_dlc = "Domination"
+  }
+  every_owned_province = {
+    limit = {
+      region = south_china_region
+    }
+    add_local_autonomy = 25
+  }
+  every_owned_province = {
+    limit = {
+      region = north_china_region
+    }
+    add_local_autonomy = 10
+  }
+  every_owned_province = {
+    limit = {
+      region = xinan_region
+    }
+    add_local_autonomy = 50
+  }
 }
-360.1.1 = {
-  add_government_reform = early_gov_reform_3
+if = {
+  limit = {
+    has_dlc = "Domination"
+  }
+  set_estate_privilege = estate_eunuchs_delegate_subject_diplomacy_privilege
 }
-490.1.1 = {
-  add_government_reform = early_gov_reform_4
-}
-620.1.1 = {
-  add_government_reform = early_gov_reform_5
-}
-750.1.1 = {
-  add_government_reform = early_gov_reform_6
-}
-750.1.1 = {
-  technology_group = chinese
-}
-880.1.1 = {
-  add_government_reform = early_gov_reform_7
-}
-1010.1.1 = {
-  add_government_reform = early_gov_reform_8
-}
-1140.1.1 = {
-  add_government_reform = early_gov_reform_9
-}
-1270.1.1 = {
-  add_government_reform = early_gov_reform_10
-}
-1361.1.1 = {
-  government = monarchy
-  add_government_reform = celestial_empire
-  government_rank = 3
+1368.1.1 = {
   monarch = {
-    name = "CQ‹t"  # Yuanzhang
-    dynasty = "¿1g"  # Zhu
+    name = "å…ƒç’‹" 	# Yuanzhang 	#  Hongwu Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 6
     dip = 4
     mil = 6
   }
 }
-1377.12.5 = {
-  heir = {
-    name = "h"  # Yunwen
-    monarch_name = "h"  # Yunwen
-    dynasty = "¿1g"  # Zhu
-    birth_date = 1377.12.5
-    death_date = 1402.7.13
-    claim = 95
-    adm = 3
-    dip = 1
-    mil = 1
-  }
-}
 1398.6.24 = {
   monarch = {
-    name = "AQ†p"  # Yunwen
-    dynasty = "¿1g"  # Zhu
+    name = "å…ç‚†" 	# Yunwen 	#  Jianwen Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 3
     dip = 1
     mil = 1
@@ -74,9 +76,9 @@ capital = 1821
 }
 1398.6.24 = {
   heir = {
-    name = "ãh"  # Di
-    monarch_name = "ãh"  # Di
-    dynasty = "¿1g"  # Zhu
+    name = "æ££" 	# Di 	# Yongle Emperor
+    monarch_name = "æ££" 	# Di
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1360.5.2
     death_date = 1424.8.12
     claim = 95
@@ -84,7 +86,7 @@ capital = 1821
     dip = 6
     mil = 6
     leader = {
-      name = "1gãh"  # Di Zhu
+      name = "æœ±æ££" 	# Di Zhu
       type = general
       fire = 4
       shock = 4
@@ -95,13 +97,13 @@ capital = 1821
 }
 1402.7.13 = {
   monarch = {
-    name = "ãh"  # Di
-    dynasty = "¿1g"  # Zhu
+    name = "æ££" 	# Di 	# Yongle Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 5
     dip = 6
     mil = 6
     leader = {
-      name = "1gãh"  # Di Zhu
+      name = "æœ±æ££" 	# Di Zhu
       type = general
       fire = 4
       shock = 4
@@ -112,9 +114,9 @@ capital = 1821
 }
 1402.7.13 = {
   heir = {
-    name = "ØšËp"  # Gaochi
-    monarch_name = "ØšËp"  # Gaochi
-    dynasty = "¿1g"  # Zhu
+    name = "é«˜ç‚½" 	# Gaochi 	# Hongxi Emperor
+    monarch_name = "é«˜ç‚½" 	# Gaochi
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1378.8.16
     death_date = 1425.5.29
     claim = 95
@@ -125,7 +127,7 @@ capital = 1821
 }
 1405.1.1 = {
   leader = {
-    name = "ÑŒT"  # Zheng He
+    name = "éƒ‘å’Œ" 	# Zheng He
     type = explorer
     fire = 1
     shock = 1
@@ -136,11 +138,11 @@ capital = 1821
 }
 1421.1.1 = {
   capital = 1816
-}
+} 	#  Beijing
 1424.8.12 = {
   monarch = {
-    name = "ØšËp"  # Gaochi
-    dynasty = "¿1g"  # Zhu
+    name = "é«˜ç‚½" 	# Gaochi 	# Hongxi Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 4
     dip = 2
     mil = 2
@@ -148,9 +150,9 @@ capital = 1821
 }
 1424.8.12 = {
   heir = {
-    name = "»wúW"  # Zhanji
-    monarch_name = "»wúW"  # Zhanji
-    dynasty = "¿1g"  # Zhu
+    name = "ç»åŸº" 	# Zhanji 	# Xuande Emperor
+    monarch_name = "ç»åŸº" 	# Zhanji
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1398.2.25
     death_date = 1435.1.31
     claim = 95
@@ -161,8 +163,8 @@ capital = 1821
 }
 1425.5.29 = {
   monarch = {
-    name = "»wúW"  # Zhanji
-    dynasty = "¿1g"  # Zhu
+    name = "ç»åŸº" 	# Zhanji 	# Xuande Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 4
     dip = 4
     mil = 4
@@ -170,9 +172,9 @@ capital = 1821
 }
 1427.11.29 = {
   heir = {
-    name = "AyG•"  # Qizhen
-    monarch_name = "AyG•"  # Qizhen
-    dynasty = "¿1g"  # Zhu
+    name = "ç¥é•‡" 	# Qizhen 	# Zhengtong Emperor
+    monarch_name = "ç¥é•‡" 	# Qizhen
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1427.11.29
     death_date = 1464.2.23
     claim = 95
@@ -183,8 +185,8 @@ capital = 1821
 }
 1435.1.31 = {
   monarch = {
-    name = "AyG•"  # Qizhen
-    dynasty = "¿1g"  # Zhu
+    name = "ç¥é•‡" 	# Qizhen 	# Zhengtong Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 1
     dip = 1
     mil = 1
@@ -195,21 +197,39 @@ capital = 1821
 }
 1435.1.31 = {
   heir = {
-    name = "Ay°”"  # Qiyu
-    monarch_name = "Ay°”"  # Qiyu
-    dynasty = "¿1g"  # Zhu
+    name = "ç¥é’°" 	# Qiyu 	# Jingtai Emperor
+    monarch_name = "ç¥é’°" 	# Qiyu
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1428.9.21
     death_date = 1457.3.14
     claim = 95
-    adm = 1
-    dip = 1
-    mil = 2
+    adm = 3
+    dip = 3
+    mil = 4
+  }
+}
+1444.11.10 = {
+  change_estate_land_share = {
+    estate = all
+    share = 25
+  }
+  change_estate_land_share = {
+    estate = estate_eunuchs
+    share = -10
+  }
+  change_estate_land_share = {
+    estate = estate_eunuchs
+    share = -10
+  }
+  change_estate_land_share = {
+    estate = all
+    share = 5
   }
 }
 1449.11.23 = {
   monarch = {
-    name = "Ay°”"  # Qiyu
-    dynasty = "¿1g"  # Zhu
+    name = "ç¥é’°" 	# Qiyu 	# Jingtai Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 1
     dip = 1
     mil = 2
@@ -217,9 +237,9 @@ capital = 1821
 }
 1449.11.23 = {
   heir = {
-    name = "AyG•"  # Qizhen
-    monarch_name = "AyG•"  # Qizhen
-    dynasty = "¿1g"  # Zhu
+    name = "ç¥é•‡" 	# Qizhen 	# Tianshu Emperor
+    monarch_name = "ç¥é•‡" 	# Qizhen
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1427.11.29
     death_date = 1464.2.23
     claim = 95
@@ -230,8 +250,8 @@ capital = 1821
 }
 1457.2.23 = {
   monarch = {
-    name = "AyG•"  # Qizhen
-    dynasty = "¿1g"  # Zhu
+    name = "ç¥é•‡" 	# Qizhen 	# Tianshu Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 2
     dip = 2
     mil = 1
@@ -239,9 +259,9 @@ capital = 1821
 }
 1457.2.23 = {
   heir = {
-    name = "Á‰ñm"  # Jianjun
-    monarch_name = "Á‰ñm"  # Jianjun
-    dynasty = "¿1g"  # Zhu
+    name = "è§æ¿¬" 	# Jianjun 	# Chenghua Emperor
+    monarch_name = "è§æ·±" 	# Jianjun
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1447.12.9
     death_date = 1487.9.9
     claim = 95
@@ -252,8 +272,8 @@ capital = 1821
 }
 1464.3.24 = {
   monarch = {
-    name = "Á‰ñm"  # Jianjun
-    dynasty = "¿1g"  # Zhu
+    name = "è§æ·±" 	# Jianjun 	# Chenghua Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 1
     dip = 0
     mil = 2
@@ -261,9 +281,9 @@ capital = 1821
 }
 1470.7.30 = {
   heir = {
-    name = "Pyj"  # Youcheng
-    monarch_name = "Pyj"  # Youcheng
-    dynasty = "¿1g"  # Zhu
+    name = "ç¥æ¨˜" 	# Youcheng 	# Hongchi Emperor
+    monarch_name = "ç¥æ¨˜" 	# Youcheng
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1470.7.30
     death_date = 1505.6.8
     claim = 95
@@ -274,8 +294,8 @@ capital = 1821
 }
 1487.9.10 = {
   monarch = {
-    name = "Pyj"  # Youcheng
-    dynasty = "¿1g"  # Zhu
+    name = "ç¥æ¨˜" 	# Youcheng 	# Hongchi Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 1
     dip = 3
     mil = 4
@@ -283,9 +303,9 @@ capital = 1821
 }
 1491.10.26 = {
   heir = {
-    name = "šSgq"  # Houzhao
-    monarch_name = "šSgq"  # Houzhao
-    dynasty = "¿1g"  # Zhu
+    name = "åšç…§" 	# Houzhao 	# Zhengde Emperor
+    monarch_name = "åšç…§" 	# Houzhao
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1491.10.26
     death_date = 1521.4.20
     claim = 95
@@ -296,8 +316,8 @@ capital = 1821
 }
 1505.6.9 = {
   monarch = {
-    name = "šSgq"  # Houzhao
-    dynasty = "¿1g"  # Zhu
+    name = "åšç…§" 	# Houzhao 	# Zhengde Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 1
     dip = 4
     mil = 0
@@ -305,9 +325,9 @@ capital = 1821
 }
 1507.9.16 = {
   heir = {
-    name = "šSœq"  # Houcong
-    monarch_name = "šSœq"  # Houcong
-    dynasty = "¿1g"  # Zhu
+    name = "åšç†œ" 	# Houcong 	# Jiajing Emperor
+    monarch_name = "åšç†œ" 	# Houcong
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1507.9.16
     death_date = 1521.4.21
     claim = 95
@@ -318,8 +338,8 @@ capital = 1821
 }
 1521.4.21 = {
   monarch = {
-    name = "šSœq"  # Houcong
-    dynasty = "¿1g"  # Zhu
+    name = "åšç†œ" 	# Houcong 	# Jiajing Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 3
     dip = 4
     mil = 3
@@ -327,7 +347,7 @@ capital = 1821
 }
 1522.1.1 = {
   leader = {
-    name = "bçuIQ"  # Qi Jiguang
+    name = "æˆšç»§å…‰" 	# Qi Jiguang
     type = general
     fire = 2
     shock = 4
@@ -338,9 +358,9 @@ capital = 1821
 }
 1537.3.4 = {
   heir = {
-    name = "‹VW"  # Zaihou
-    monarch_name = "‹VW"  # Zaihou
-    dynasty = "¿1g"  # Zhu
+    name = "è½½å–" 	# Zaihou 	# Longqing Emperor
+    monarch_name = "è½½å–" 	# Zaihou
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1537.3.4
     death_date = 1572.7.5
     claim = 95
@@ -351,8 +371,8 @@ capital = 1821
 }
 1567.1.24 = {
   monarch = {
-    name = "‹VW"  # Zaihou
-    dynasty = "¿1g"  # Zhu
+    name = "è½½å–" 	# Zaihou 	# Longqing Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 3
     dip = 1
     mil = 2
@@ -360,9 +380,9 @@ capital = 1821
 }
 1567.1.24 = {
   heir = {
-    name = "Êµ”"  # Yijun
-    monarch_name = "Êµ”"  # Yijun
-    dynasty = "¿1g"  # Zhu
+    name = "ç¿Šé’§" 	# Yijun 	# Wanli Emperor
+    monarch_name = "ç¿Šé’§" 	# Yijun
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1563.9.4
     death_date = 1620.8.18
     claim = 95
@@ -373,8 +393,8 @@ capital = 1821
 }
 1572.7.5 = {
   monarch = {
-    name = "Êµ”"  # Yijun
-    dynasty = "¿1g"  # Zhu
+    name = "ç¿Šé’§" 	# Yijun 	# Wanli Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 0
     dip = 3
     mil = 4
@@ -382,9 +402,9 @@ capital = 1821
 }
 1582.8.28 = {
   heir = {
-    name = "8^m"  # Changluo
-    monarch_name = "8^m"  # Changluo
-    dynasty = "¿1g"  # Zhu
+    name = "å¸¸æ´›" 	# Changluo 	# Taichang Emperor
+    monarch_name = "å¸¸æ´›" 	# Changluo
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1582.8.28
     death_date = 1620.9.26
     claim = 95
@@ -395,7 +415,7 @@ capital = 1821
 }
 1593.1.1 = {
   leader = {
-    name = "Ng‚YŒg"  # Li Rusong
+    name = "æå¦‚æ¾" 	# Li Rusong
     type = general
     fire = 3
     shock = 2
@@ -410,7 +430,7 @@ capital = 1821
 }
 1619.1.1 = {
   leader = {
-    name = "ˆTq"  # Yuan Chonghuan
+    name = "è¢å´‡ç„•" 	# Yuan Chonghuan
     type = general
     fire = 4
     shock = 5
@@ -421,8 +441,8 @@ capital = 1821
 }
 1620.8.27 = {
   monarch = {
-    name = "8^m"  # Changluo
-    dynasty = "¿1g"  # Zhu
+    name = "å¸¸æ´›" 	# Changluo 	# Taichang Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 4
     dip = 3
     mil = 4
@@ -430,9 +450,9 @@ capital = 1821
 }
 1620.8.27 = {
   heir = {
-    name = "1u!h"  # Youxiao
-    monarch_name = "1u!h"  # Youxiao
-    dynasty = "¿1g"  # Zhu
+    name = "ç”±æ ¡" 	# Youxiao 	# Tianqi Emperor
+    monarch_name = "ç”±æ ¡" 	# Youxiao
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1605.12.23
     death_date = 1627.10.2
     claim = 95
@@ -443,8 +463,8 @@ capital = 1821
 }
 1620.9.28 = {
   monarch = {
-    name = "1u!h"  # Youxiao
-    dynasty = "¿1g"  # Zhu
+    name = "ç”±æ ¡" 	# Youxiao 	# Tianqi Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 3
     dip = 2
     mil = 0
@@ -452,9 +472,9 @@ capital = 1821
 }
 1620.9.28 = {
   heir = {
-    name = "1uÀh"  # Youjian
-    monarch_name = "1uÀh"  # Youjian
-    dynasty = "¿1g"  # Zhu
+    name = "ç”±æ£€" 	# Youjian 	# Chongzhen Emperor
+    monarch_name = "ç”±æ£€" 	# Youjian
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1611.2.6
     death_date = 1644.4.25
     claim = 95
@@ -465,8 +485,8 @@ capital = 1821
 }
 1627.10.2 = {
   monarch = {
-    name = "1uÀh"  # Youjian
-    dynasty = "¿1g"  # Zhu
+    name = "ç”±æ£€" 	# Youjian 	# Chongzhen Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 0
     dip = 2
     mil = 0
@@ -474,9 +494,9 @@ capital = 1821
 }
 1627.10.2 = {
   heir = {
-    name = "1u'T"  # Yousong
-    monarch_name = "1u'T"  # Yousong
-    dynasty = "¿1g"  # Zhu
+    name = "ç”±å´§" 	# Yousong 	# Hongguang Emperor
+    monarch_name = "ç”±å´§" 	# Yousong
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1607.1.1
     death_date = 1645.8.1
     claim = 95
@@ -487,8 +507,8 @@ capital = 1821
 }
 1644.1.1 = {
   monarch = {
-    name = "1u'T"  # Yousong
-    dynasty = "¿1g"  # Zhu
+    name = "ç”±å´§" 	# Yousong 	# Hongguang Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 2
     dip = 3
     mil = 3
@@ -496,9 +516,9 @@ capital = 1821
 }
 1644.1.1 = {
   heir = {
-    name = "w.•"  # Yujian
-    monarch_name = "w.•"  # Yujian
-    dynasty = "¿1g"  # Zhu
+    name = "è¿é”®" 	# Yujian 	# Longwu Emperor
+    monarch_name = "è¿é”®" 	# Yujian
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1602.1.1
     death_date = 1646.11.18
     claim = 95
@@ -513,8 +533,8 @@ capital = 1821
 }
 1645.8.1 = {
   monarch = {
-    name = "w.•"  # Yujian
-    dynasty = "¿1g"  # Zhu
+    name = "è¿é”®" 	# Yujian 	# Longwu Emperor
+    dynasty = "æœ±" 	# Zhu
     adm = 1
     dip = 1
     mil = 0
@@ -522,9 +542,9 @@ capital = 1821
 }
 1645.8.1 = {
   heir = {
-    name = "1u”i"  # Youlang
-    monarch_name = "1u”i"  # Youlang
-    dynasty = "¿1g"  # Zhu
+    name = "ç”±æ¦”" 	# Youlang
+    monarch_name = "ç”±æ¦”" 	# Youlang
+    dynasty = "æœ±" 	# Zhu
     birth_date = 1623.1.1
     death_date = 1662.6.6
     claim = 95
@@ -535,8 +555,8 @@ capital = 1821
 }
 1646.11.18 = {
   monarch = {
-    name = "1u”i"  # Youlang
-    dynasty = "¿1g"  # Zhu
+    name = "ç”±æ¦”" 	# Youlang
+    dynasty = "æœ±" 	# Zhu
     adm = 3
     dip = 1
     mil = 0
@@ -544,7 +564,7 @@ capital = 1821
 }
 1650.1.1 = {
   leader = {
-    name = "ÑbŸR"  # Chenggong Zheng
+    name = "éƒ‘æˆåŠŸ" 	# Chenggong Zheng
     type = admiral
     fire = 5
     shock = 5
@@ -555,8 +575,8 @@ capital = 1821
 }
 1662.2.1 = {
   monarch = {
-    name = "bŸR"  # Chenggong
-    dynasty = "¿Ñ"  # Zheng
+    name = "æˆåŠŸ" 	# Chenggong 	#  a.k.a Koxinga
+    dynasty = "éƒ‘" 	# Zheng
     adm = 5
     dip = 5
     mil = 1
@@ -564,9 +584,9 @@ capital = 1821
 }
 1662.2.1 = {
   heir = {
-    name = "Ïu"  # Jing
-    monarch_name = "Ïu"  # Jing
-    dynasty = "¿Ñ"  # Zheng
+    name = "ç»" 	# Jing
+    monarch_name = "ç»" 	# Jing
+    dynasty = "éƒ‘" 	# Zheng
     birth_date = 1642.11.4
     death_date = 1681.3.17
     claim = 95
@@ -577,8 +597,8 @@ capital = 1821
 }
 1662.6.23 = {
   monarch = {
-    name = "Ïu"  # Jing
-    dynasty = "¿Ñ"  # Zheng
+    name = "ç»" 	# Jing
+    dynasty = "éƒ‘" 	# Zheng
     adm = 3
     dip = 3
     mil = 0
@@ -586,9 +606,9 @@ capital = 1821
 }
 1670.8.13 = {
   heir = {
-    name = "KQ‹X"  # Kehshuan
-    monarch_name = "KQ‹X"  # Kehshuan
-    dynasty = "¿Ñ"  # Zheng
+    name = "å…‹å¡½" 	# Kehshuan
+    monarch_name = "å…‹å¡½" 	# Kehshuan
+    dynasty = "éƒ‘" 	# Zheng
     birth_date = 1670.8.13
     death_date = 1717.9.22
     claim = 95
@@ -599,8 +619,8 @@ capital = 1821
 }
 1681.1.1 = {
   monarch = {
-    name = "KQ‹X"  # Kehshuan
-    dynasty = "¿Ñ"  # Zheng
+    name = "å…‹å¡½" 	# Kehshuan
+    dynasty = "éƒ‘" 	# Zheng
     adm = 2
     dip = 2
     mil = 3

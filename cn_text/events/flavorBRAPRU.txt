@@ -1,5 +1,10 @@
+Ôªø########################################
+# Flavor Events for Brandenburg - Prussia
+# written by Sara Wendel-√ñrtqvist
+########################################
 namespace = flavor_brapru
 normal_or_historical_nations = yes
+# The incorporation of Prussia into Brandenburg
 country_event = {
   id = flavor_brapru.1
   title = "flavor_brapru.EVTNAME3636"
@@ -35,6 +40,7 @@ country_event = {
     }
   }
 }
+# Reform of the Brandenburg Army
 country_event = {
   id = flavor_brapru.2
   title = "flavor_brapru.EVTNAME3518"
@@ -66,6 +72,7 @@ country_event = {
     add_army_professionalism = 0.02
   }
 }
+# The Prussian (Brandenburg) African Trade Company
 country_event = {
   id = flavor_brapru.3
   title = "flavor_brapru.EVTNAME3523"
@@ -112,6 +119,7 @@ country_event = {
     }
   }
 }
+# Immanuel Kant
 country_event = {
   id = flavor_brapru.4
   title = "flavor_brapru.EVTNAME5140"
@@ -135,13 +143,14 @@ country_event = {
     define_advisor = {
       type = philosopher
       culture = prussian
-      name = "O¸f™RS∑∑^∑V"  # Immanuel Kant
+      name = "‰ºäÊõºÂä™Â∞î¬∑Â∫∑Âæ∑" 	# Immanuel Kant
       skill = 3
       discount = yes
     }
     add_innovativeness_big_effect = yes
   }
 }
+# The Absolutism
 country_event = {
   id = flavor_brapru.5
   title = "flavor_brapru.EVTNAME3525"
@@ -184,6 +193,7 @@ country_event = {
     }
   }
 }
+# The Reform of the Prussian Army
 country_event = {
   id = flavor_brapru.6
   title = "flavor_brapru.EVTNAME3526"
@@ -233,6 +243,7 @@ country_event = {
     }
   }
 }
+# The Enlightened Reforms of Frederick the Great
 country_event = {
   id = flavor_brapru.7
   title = "flavor_brapru.EVTNAME3530"
@@ -270,6 +281,7 @@ country_event = {
     }
   }
 }
+# Von Scharnhorst's and Von Stein's Reforms
 country_event = {
   id = flavor_brapru.8
   title = "flavor_brapru.EVTNAME3532"
@@ -299,6 +311,7 @@ country_event = {
     add_mil_power = 50
   }
 }
+# Berliner Unwille
 country_event = {
   id = flavor_brapru.9
   title = "flavor_brapru.EVTNAME1"
@@ -310,7 +323,7 @@ country_event = {
       tag = BRA
       tag = PRU
     }
-    owns = 50
+    owns = 50 	#  Berlin
     is_year = 1448
     NOT = {
       is_year = 1475
@@ -321,18 +334,19 @@ country_event = {
     months = 80
   }
   option = {
-    name = "flavor_brapru.EVTOPTA1"
+    name = "flavor_brapru.EVTOPTA1" 	# Ignore the rabble
     50 = {
       create_revolt = 1
     }
   }
   option = {
-    name = "flavor_brapru.EVTOPTB1"
+    name = "flavor_brapru.EVTOPTB1" 	# Listen to the people
     add_ruler_modifier = {
       name = bra_berliner_unwille
     }
   }
 }
+#The Sale of Indulgences
 country_event = {
   id = flavor_brapru.10
   title = "flavor_brapru.EVTNAME2"
@@ -352,17 +366,18 @@ country_event = {
     months = 70
   }
   option = {
-    name = "flavor_brapru.EVTOPTA2"
+    name = "flavor_brapru.EVTOPTA2" 	# Sell Indulgences
     add_ruler_modifier = {
       name = bra_sell_indulgences
     }
     add_reform_desire = 0.02
   }
   option = {
-    name = "flavor_brapru.EVTOPTB2"
+    name = "flavor_brapru.EVTOPTB2" 	# Ignore it
     add_papal_influence = -1
   }
 }
+# University of K√∂nigsberg
 country_event = {
   id = flavor_brapru.11
   title = "flavor_brapru.EVTNAME3"
@@ -397,7 +412,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.EVTOPTA3"
+    name = "flavor_brapru.EVTOPTA3" 	# Sponsor the University
     add_years_of_income = -0.25
     change_innovativeness = 2
     add_adm_power = 100
@@ -420,13 +435,14 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.EVTOPTB3"
+    name = "flavor_brapru.EVTOPTB3" 	# Do nothing
     add_prestige = -1
     ai_chance = {
       factor = 0
     }
   }
 }
+#The Grain Tax
 country_event = {
   id = flavor_brapru.12
   title = "flavor_brapru.EVTNAME4"
@@ -450,16 +466,17 @@ country_event = {
     months = 50
   }
   option = {
-    name = "flavor_brapru.EVTOPTA4"
+    name = "flavor_brapru.EVTOPTA4" 	# Institute the Grain Tax
     add_ruler_modifier = {
       name = bra_grain_tax
     }
   }
   option = {
-    name = "flavor_brapru.EVTOPTB4"
+    name = "flavor_brapru.EVTOPTB4" 	# Do nothing
     add_inflation = 1
   }
 }
+#Leonhard Thurneysser
 country_event = {
   id = flavor_brapru.13
   title = "flavor_brapru.EVTNAME5"
@@ -481,7 +498,7 @@ country_event = {
     add_adm_power = 25
     define_advisor = {
       type = natural_scientist
-      name = "±Éf»T∑V yri`ÖQmtS"  # Leonhard Thurneysser
+      name = "Ëé±ÊòÇÂìàÂæ∑¬∑ÁâπÊÅ©ÂÜÖÁëüÂ∞î" 	# Leonhard Thurneysser
       culture = swiss
       skill = 2
       discount = yes
@@ -492,6 +509,7 @@ country_event = {
     add_prestige = 5
   }
 }
+#Prutenic Tables
 country_event = {
   id = flavor_brapru.14
   title = "flavor_brapru.EVTNAME6"
@@ -510,7 +528,7 @@ country_event = {
     months = 50
   }
   option = {
-    name = "flavor_brapru.EVTOPTA6"
+    name = "flavor_brapru.EVTOPTA6" 	# Finance the printing
     add_years_of_income = -0.5
     add_ruler_modifier = {
       name = pru_prutenic_tables
@@ -518,10 +536,11 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
   option = {
-    name = "flavor_brapru.EVTOPTB6"
+    name = "flavor_brapru.EVTOPTB6" 	# Ignore the man
     add_prestige = -5
   }
 }
+#Teutons Pawn Neumark?
 country_event = {
   id = flavor_brapru.15
   title = "flavor_brapru.15.t"
@@ -544,24 +563,25 @@ country_event = {
       }
     }
     TEU = {
+      #The Teutonic order hasn't connected their lands to Neumark
       NOT = {
         owns = 48
-      }
+      } 	# Kolberg
       NOT = {
         owns = 254
-      }
+      } 	# Poznan
       NOT = {
         owns = 1858
-      }
+      } 	# Stettin
       NOT = {
         owns = 2963
-      }
+      } 	# Notec
       NOT = {
         owns = 2994
-      }
+      } 	# Greifswald
       NOT = {
         owns = 2995
-      }
+      } 	# Stolp
     }
     NOT = {
       war_with = TEU
@@ -571,10 +591,10 @@ country_event = {
     }
   }
   mean_time_to_happen = {
-    months = 20
+    months = 20 	# Reduced due to trigger inflexibility
   }
   option = {
-    name = "flavor_brapru.15.a"
+    name = "flavor_brapru.15.a" 	# Offer the Teutons to pawn back Neumark for 40 000 Guilders
     ai_chance = {
       factor = 75
     }
@@ -586,6 +606,7 @@ country_event = {
     }
   }
   option = {
+    #We could not afford that.
     name = "flavor_brapru.15.b"
     ai_chance = {
       factor = 25
@@ -594,6 +615,7 @@ country_event = {
     add_prestige = -5
   }
 }
+#The fate of Neumark
 country_event = {
   id = flavor_brapru.16
   title = "flavor_brapru.16.t"
@@ -602,7 +624,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = "flavor_brapru.16.a"
+    name = "flavor_brapru.16.a" 	# We need the money.
     ai_chance = {
       factor = 100
     }
@@ -642,7 +664,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.16.b"
+    name = "flavor_brapru.16.b" 	# Neumark shall remain ours!
     ai_chance = {
       factor = 0
     }
@@ -654,6 +676,7 @@ country_event = {
     }
   }
 }
+#Treaty of C√∂lln
 country_event = {
   id = flavor_brapru.17
   title = "flavor_brapru.17.t"
@@ -662,7 +685,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = "flavor_brapru.17.a"
+    name = "flavor_brapru.17.a" 	# Neumark shall not be brought to non-German Tongue!
     TEU = {
       49 = {
         if = {
@@ -696,6 +719,7 @@ country_event = {
     }
   }
 }
+#The Teutonic Order Declines our Offer.
 country_event = {
   id = flavor_brapru.18
   title = "flavor_brapru.18.t"
@@ -704,9 +728,10 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = "flavor_brapru.18.a"
+    name = "flavor_brapru.18.a" 	# Ack!
   }
 }
+#State of Brandenburg
 country_event = {
   id = flavor_brapru.19
   title = "flavor_brapru.19.t"
@@ -715,13 +740,13 @@ country_event = {
   fire_only_once = yes
   trigger = {
     tag = BRA
-    dynasty = "ØQ ó®N0t&O"  # von Hohenzollern
+    dynasty = "ÂÜØ Èúç‰∫®Á¥¢‰º¶" 	# von Hohenzollern
   }
   mean_time_to_happen = {
     months = 3
   }
   option = {
-    name = "flavor_brapru.19.a"
+    name = "flavor_brapru.19.a" 	# Let's do this the hard way
     ai_chance = {
       factor = 100
     }
@@ -746,7 +771,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.19.b"
+    name = "flavor_brapru.19.b" 	# Let's use financial incentives to buy people's loyalty
     ai_chance = {
       factor = 0
     }
@@ -765,6 +790,7 @@ country_event = {
     }
   }
 }
+#The Matter of Berlin
 country_event = {
   id = flavor_brapru.20
   title = "flavor_brapru.20.t"
@@ -796,7 +822,7 @@ country_event = {
     months = 180
   }
   option = {
-    name = "flavor_brapru.20.a"
+    name = "flavor_brapru.20.a" 	# Let us commence
     ai_chance = {
       factor = 100
     }
@@ -829,6 +855,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+#Unification of Berlin
 country_event = {
   id = flavor_brapru.21
   title = flavor_brapru.21.t
@@ -849,10 +876,11 @@ country_event = {
     months = 48
   }
   option = {
+    #Great!
     name = flavor_brapru.21.a
     clr_country_flag = pru_berlin_renovations_flag
     50 = {
-      rename_capital = "œgóg"  # Berlin
+      rename_capital = "ÊüèÊûó" 	# Berlin
       add_base_tax = 2
       add_base_production = 2
       add_base_manpower = 2
@@ -864,6 +892,8 @@ country_event = {
     }
   }
 }
+#Succession of Albrecht Achilles
+#Silent start
 country_event = {
   id = flavor_brapru.22
   title = flavor_brapru.21.t
@@ -874,26 +904,21 @@ country_event = {
   hidden = yes
   trigger = {
     tag = BRA
-    OR = {
-      has_ruler = "?ñS^˜ñ^yr III 0?ñéU	tØe0"  # Albrecht III Achilles
-      has_ruler = "?ñS^˜ñ^yr 0?ñéU	tØe0"  # Albrecht Achilles
-    }
-    has_country_flag = albrecht_achilles_flag
+    has_ruler = "ÈòøÂ∞îÂ∏ÉÈõ∑Â∏åÁâπ III „ÄåÈòøÂñÄÁêâÊñØ„Äç" 	# Albrecht III Achilles
+    has_country_flag = albrecht_achilles_flag 	# Bra Starts with this (set in country history) and it is used to determine that Albrecht Achilles is indeed the original Albrecht Achilles. Cleared here or in on_actions.
     ANS = {
       exists = yes
-      OR = {
-        has_ruler = "?ñS^˜ñ^yr I 0?ñéU	tØe0"  # Albrecht I Achilles
-        has_ruler = "?ñS^˜ñ^yr 0?ñéU	tØe0"  # Albrecht Achilles
-      }
+      has_ruler = "ÈòøÂ∞îÂ∏ÉÈõ∑Â∏åÁâπ I „ÄåÈòøÂñÄÁêâÊñØ„Äç" 	# Albrecht I Achilles
     }
   }
   immediate = {
+    #Great!
     clr_country_flag = albrecht_achilles_flag
     hidden_effect = {
       ANS = {
         country_event = {
           id = flavor_brapru.23
-        }
+        } 	# Leaving Ansbach
       }
     }
   }
@@ -901,6 +926,7 @@ country_event = {
     name = flavor_brapru.21.a
   }
 }
+#Hohenzollers of Brandenburg
 country_event = {
   id = flavor_brapru.23
   title = flavor_brapru.23.t
@@ -909,6 +935,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
+    #Great!
     name = flavor_brapru.23.a
     ai_chance = {
       factor = 100
@@ -922,16 +949,17 @@ country_event = {
     BRA = {
       country_event = {
         id = flavor_brapru.24
-      }
+      } 	# Succession of Albrecht Achilles
     }
   }
   option = {
+    #Great!
     name = flavor_brapru.23.b
     ai_chance = {
       factor = 0
     }
     define_ruler = {
-      dynasty = "ØQ ó®N0t&O"  # von Hohenzollern
+      dynasty = "ÂÜØ Èúç‰∫®Á¥¢‰º¶" 	# von Hohenzollern
     }
     if = {
       limit = {
@@ -941,6 +969,7 @@ country_event = {
     }
   }
 }
+#Franconian Holdings
 country_event = {
   id = flavor_brapru.24
   title = flavor_brapru.23.t
@@ -949,6 +978,7 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
+    #Great!
     name = flavor_brapru.23.a
     set_country_flag = accepted_ANS_union_flag
     create_union = ANS
@@ -956,7 +986,7 @@ country_event = {
       country_event = {
         id = flavor_brapru.25
         days = 1825
-      }
+      } 	# Used for the Dispositio Achillea Followup
     }
   }
   option = {
@@ -965,6 +995,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+#Dispositio Achillea
 country_event = {
   id = flavor_brapru.25
   title = flavor_brapru.25.t
@@ -996,24 +1027,17 @@ country_event = {
     is_elector = yes
     NOT = {
       has_country_flag = albrecht_achilles_flag
-    }
-    has_country_flag = disposatio_achillea_fix_flag
+    } 	# Albrecht must be either dead or have succeeded. Event can handle both versions but should never trigger without either being true.
     OR = {
       NOT = {
-        OR = {
-          has_ruler = "?ñS^˜ñ^yr III 0?ñéU	tØe0"  # Albrecht III Achilles
-          has_ruler = "?ñS^˜ñ^yr 0?ñéU	tØe0"  # Albrecht Achilles
-        }
-      }
+        has_ruler = "ÈòøÂ∞îÂ∏ÉÈõ∑Â∏åÁâπ III „ÄåÈòøÂñÄÁêâÊñØ„Äç" 	# Albrecht III Achilles
+      } 	# Only triggers in his lifetime if the below is true:
       senior_union_with = ANS
     }
   }
-  immediate = {
-    hidden_effect = {
-      clr_country_flag = disposatio_achillea_fix_flag
-    }
-  }
+  #Protect Brandenburg by letting go of the Franconian lands.
   option = {
+    #Brandenburg must be indivisible!
     name = flavor_brapru.25.a
     ai_chance = {
       factor = 50
@@ -1072,10 +1096,12 @@ country_event = {
     }
   }
   option = {
+    #This is only a problem in families that don‚Äôt stick together.
     name = flavor_brapru.25.b
     ai_chance = {
       factor = 50
     }
+    #Keep union over Ansbach and suffer internal instability OR you dont have Ansbach and your choice is the modifier above or a stab/prestige bonus instead. Emperor will dislike you regardless.
     if = {
       limit = {
         OR = {
@@ -1124,11 +1150,12 @@ country_event = {
   hidden = yes
   immediate = {
     define_ruler = {
-      dynasty = "ØQ ó®N0t&O"  # von Hohenzollern
+      dynasty = "ÂÜØ Èúç‰∫®Á¥¢‰º¶" 	# von Hohenzollern
     }
   }
   option = {}
 }
+#A man of Law and Integrity
 country_event = {
   id = flavor_brapru.26
   title = flavor_brapru.26.t
@@ -1149,6 +1176,7 @@ country_event = {
     months = 60
   }
   option = {
+    #Great!
     name = flavor_brapru.26.a
     set_country_flag = hired_cocceji
     if = {
@@ -1161,13 +1189,14 @@ country_event = {
     }
     define_advisor = {
       type = statesman
-      name = "(Ñ*S ØQ —yKQ«ëO"  # Samuel von Cocceji
+      name = "Ëê®Áº™Â∞î ÂÜØ ÁßëÂÖãÈáá‰ºä" 	# Samuel von Cocceji
       culture = hessian
       discount = yes
       skill = 3
     }
   }
 }
+#Legal Reforms of Frederick the Great
 country_event = {
   id = flavor_brapru.27
   title = flavor_brapru.27.t
@@ -1204,6 +1233,7 @@ country_event = {
     }
   }
   option = {
+    #Yes! Start in God‚Äôs name!
     name = flavor_brapru.27.a
     ai_chance = {
       factor = 75
@@ -1223,6 +1253,7 @@ country_event = {
     }
   }
   option = {
+    #We have no time for legal Procedure and other formalities‚Ä¶
     name = flavor_brapru.27.b
     ai_chance = {
       factor = 25
@@ -1230,6 +1261,7 @@ country_event = {
     add_adm_power = 200
   }
 }
+#The Edict of Potsdam
 country_event = {
   id = flavor_brapru.28
   title = flavor_brapru.28.t
@@ -1343,6 +1375,7 @@ country_event = {
     add_adm_power = 200
   }
 }
+# Carl von Clausewitz
 country_event = {
   id = flavor_brapru.29
   title = flavor_brapru.29.t
@@ -1371,25 +1404,27 @@ country_event = {
     months = 90
   }
   option = {
+    # Hire him as an advisor!
     name = flavor_brapru.29.a
     ai_chance = {
       factor = 80
     }
     define_advisor = {
       type = army_reformer
-      name = "aSS ØQ KQ≥R^XÙu(É"  # Carl von Clausewitz
+      name = "Âç°Â∞î ÂÜØ ÂÖãÂä≥Â°ûÁª¥Ëå®" 	# Carl von Clausewitz
       culture = saxon
       skill = 3
       discount = yes
     }
   }
   option = {
+    # Have him lead troops!
     name = flavor_brapru.29.b
     ai_chance = {
       factor = 10
     }
     define_general = {
-      name = "aSS ØQ KQ≥R^XÙu(É"  # Carl von Clausewitz
+      name = "Âç°Â∞î ÂÜØ ÂÖãÂä≥Â°ûÁª¥Ëå®" 	# Carl von Clausewitz
       shock = 3
       fire = 4
       manuever = 4
@@ -1397,6 +1432,7 @@ country_event = {
     }
   }
   option = {
+    # We don't need his ideas
     name = flavor_brapru.29.c
     ai_chance = {
       factor = 10
@@ -1404,6 +1440,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The Burghers of K√∂nigsberg (Hieronymus Roth)
 country_event = {
   id = flavor_brapru.30
   title = flavor_brapru.30.t
@@ -1420,6 +1457,7 @@ country_event = {
     has_consort_regency = no
     owns = 41
     is_year = 1660
+    #NOT = { is_year = 1690 }
     any_country = {
       NOT = {
         reverse_has_opinion = {
@@ -1460,7 +1498,7 @@ country_event = {
     months = 90
   }
   option = {
-    name = flavor_brapru.30.a
+    name = flavor_brapru.30.a 	#  Send in the troops
     41 = {
       spawn_rebels = {
         type = particularist_rebels
@@ -1469,7 +1507,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_brapru.30.b
+    name = flavor_brapru.30.b 	#  We will have to make concessions.
     every_owned_province = {
       limit = {
         is_capital = no
@@ -1482,6 +1520,7 @@ country_event = {
     }
   }
 }
+# Dreaming of Sanssouci
 country_event = {
   id = flavor_brapru.31
   title = "flavor_brapru.31.t"
@@ -1503,7 +1542,7 @@ country_event = {
     months = 180
   }
   option = {
-    name = flavor_brapru.31.a
+    name = flavor_brapru.31.a 	# Build it!
     ai_chance = {
       factor = 100
     }
@@ -1531,6 +1570,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Palace of Sanssouci finished
 country_event = {
   id = flavor_brapru.32
   title = flavor_brapru.32.t
@@ -1562,6 +1602,7 @@ country_event = {
     desc = flavor_brapru.32.db
   }
   option = {
+    #Great!
     name = flavor_brapru.32.a
     add_prestige = 10
     1759 = {
@@ -1574,6 +1615,7 @@ country_event = {
     clr_ruler_flag = pru_sanssouci_builder_flag
   }
 }
+# Diet of 1653
 country_event = {
   id = flavor_brapru.33
   title = "flavor_brapru.33.t"
@@ -1594,9 +1636,9 @@ country_event = {
       has_regency = no
       has_consort_regency = yes
     }
-    num_of_cities = 6
+    num_of_cities = 6 	# Not a dwarf state
     OR = {
-      army_size_percentage = 0.7
+      army_size_percentage = 0.7 	# Army is used as leverage here.
       AND = {
         is_emperor = yes
         army_size_percentage = 0.4
@@ -1607,7 +1649,7 @@ country_event = {
     months = 150
   }
   option = {
-    name = flavor_brapru.33.a
+    name = flavor_brapru.33.a 	# Ally with the Nobles
     ai_chance = {
       factor = 100
     }
@@ -1641,7 +1683,7 @@ country_event = {
         loyalty = 10
       }
       add_estate_loyalty = {
-        estate = estate_burghers
+        estate = estate_burghers 	# Shafted entirely more or less.
         loyalty = -15
       }
     }
@@ -1663,9 +1705,9 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.33.b"
+    name = "flavor_brapru.33.b" 	# Ally with the Burghers
     ai_chance = {
-      factor = 0
+      factor = 0 	# Out of character
     }
     custom_tooltip = flavor_brapru.33.b.tt
     add_years_of_income = -1
@@ -1719,15 +1761,16 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.33.c"
+    name = "flavor_brapru.33.c" 	# We must respect their ancient privileges
     ai_chance = {
-      factor = 0
+      factor = 0 	# Just no.
     }
     custom_tooltip = flavor_brapru.33.c.tt
     add_years_of_income = -0.25
     add_stability_or_adm_power = yes
   }
 }
+# Construction of Canals to Berlin-C√∂lln has run out of funding
 country_event = {
   id = flavor_brapru.34
   title = "flavor_brapru.34.t"
@@ -1762,10 +1805,10 @@ country_event = {
     }
   }
   option = {
-    name = flavor_brapru.34.a
+    name = flavor_brapru.34.a 	# Throw more money on the project
     custom_tooltip = flavor_brapru.34.a.tt
     ai_chance = {
-      factor = 0
+      factor = 0 	# Out of character
     }
     add_years_of_income = -1
     50 = {
@@ -1774,13 +1817,13 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.34.b"
+    name = "flavor_brapru.34.b" 	# Beg the Nobility for help
     custom_tooltip = flavor_brapru.34.b.tt
     trigger = {
       government = monarchy
     }
     ai_chance = {
-      factor = 0
+      factor = 0 	# Out of character
     }
     if = {
       limit = {
@@ -1810,14 +1853,15 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.34.c"
+    name = "flavor_brapru.34.c" 	#  We can't afford it.
     custom_tooltip = flavor_brapru.34.c.tt
     ai_chance = {
       factor = 100
-    }
+    } 	#  what actually happened
     add_prestige = -5
   }
 }
+# Praxis pietatis melica
 country_event = {
   id = flavor_brapru.35
   title = "flavor_brapru.35.t"
@@ -1841,12 +1885,14 @@ country_event = {
     add_prestige = 10
     define_advisor = {
       type = artist
-      name = "¶u KQÅú<h"  # Johann Cr¸ger
+      name = "Á∫¶Áø∞ ÂÖãÈ≤ÅÊ†º" 	# Johann Cr√ºger
       skill = 3
       discount = yes
     }
   }
 }
+# The Prussian Canton System
+# One-time megaboost for military minded Prussian monarchs some-time in the 18th century..
 country_event = {
   id = flavor_brapru.36
   title = "flavor_brapru.36.t"
@@ -1871,7 +1917,7 @@ country_event = {
     ai_chance = {
       factor = 100
     }
-    add_stability = -1
+    add_stability = -1 	# Administrative Friction
     add_army_professionalism = 0.05
     if = {
       limit = {
@@ -1900,9 +1946,10 @@ country_event = {
     }
     custom_tooltip = flavor_brapru.36.b.tt
     add_years_of_income = 1
-    add_stability_or_adm_power = yes
+    add_stability_or_adm_power = yes 	# Keeping the Status Quo
   }
 }
+# Moses Mendelssohn
 country_event = {
   id = flavor_brapru.37
   title = "flavor_brapru.37.t"
@@ -1927,10 +1974,10 @@ country_event = {
     months = 90
   }
   option = {
-    name = flavor_brapru.37.a
+    name = flavor_brapru.37.a 	#  We should talk more to this fellow
     define_advisor = {
       type = philosopher
-      name = "idâ Ëï∑VSåg"  # Moses Mendelssohn
+      name = "Êë©Ë•ø¬∑Èó®Âæ∑Â∞îÊùæ" 	# Moses Mendelssohn
       culture = saxon
       religion = jewish
       skill = 3
@@ -1939,6 +1986,7 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
 }
+#Confiscation of Herrshaft Ruppin
 country_event = {
   id = flavor_brapru.38
   title = "flavor_brapru.38.t"
@@ -1961,7 +2009,7 @@ country_event = {
     months = 90
   }
   option = {
-    name = "flavor_brapru.38.a"
+    name = "flavor_brapru.38.a" 	# Our hold over this province has now solidified!
     51 = {
       add_base_tax = 1
       add_base_production = 1
@@ -1969,6 +2017,7 @@ country_event = {
     }
   }
 }
+#Johannes Agricola
 country_event = {
   id = flavor_brapru.39
   title = "flavor_brapru.39.t"
@@ -1991,9 +2040,9 @@ country_event = {
     months = 63
   }
   option = {
-    name = "flavor_brapru.39.a"
+    name = "flavor_brapru.39.a" 	# Bring him here
     define_advisor = {
-      name = "¶uÖQØe ?ñ<hÃë—y…b"  # Johannes Agricola
+      name = "Á∫¶Áø∞ÂÜÖÊñØ¬∑ÈòøÊ†ºÈáåÁßëÊãâ" 	# Johannes Agricola
       culture = saxon
       type = theologian
       skill = 2
@@ -2017,10 +2066,11 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_brapru.39.b"
+    name = "flavor_brapru.39.b" 	# We cannot abide his reconciliary views.
     add_legitimacy = 15
   }
 }
+#Resurgence of the Robber-Barons
 country_event = {
   id = flavor_brapru.40
   title = "flavor_brapru.40.t"
@@ -2043,7 +2093,7 @@ country_event = {
     months = 150
   }
   option = {
-    name = "flavor_brapru.40.a"
+    name = "flavor_brapru.40.a" 	# "I never spilled the blood of noblemen, I only executed rouges, robbers and murders."
     custom_tooltip = flavor_brapru.40.a.tt
     add_country_modifier = {
       name = "bra_crushing_the_robber_barons"
@@ -2115,6 +2165,7 @@ country_event = {
     }
   }
 }
+#Economic Downturn - Alleviate by extending the privileges of the estates through the Kreditwerk?
 country_event = {
   id = flavor_brapru.41
   title = "flavor_brapru.41.t"
@@ -2243,6 +2294,7 @@ country_event = {
     }
   }
 }
+#Credit for these events goes to Stiopa and his team
 country_event = {
   id = flavor_brapru.43
   title = flavor_brapru.43.t
@@ -2280,7 +2332,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_brapru.43.a
+    name = flavor_brapru.43.a 	# A great development.
     ai_chance = {
       factor = 100
     }
@@ -2290,7 +2342,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_brapru.43.b
+    name = flavor_brapru.43.b 	# The churches can't be united, we are wasting our time
     ai_chance = {
       factor = 100
     }
@@ -2299,12 +2351,12 @@ country_event = {
 }
 country_event = {
   id = flavor_brapru.44
-  title = flavor_brapru.44.t
+  title = flavor_brapru.44.t 	# Toleranzedikt
   desc = flavor_brapru.44.d
   picture = COURT_eventPicture
   is_triggered_only = yes
   option = {
-    name = flavor_brapru.44.a
+    name = flavor_brapru.44.a 	# A great development.
     ai_chance = {
       factor = 100
     }
@@ -2319,7 +2371,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_brapru.44.b
+    name = flavor_brapru.44.b 	# The churches can't be united, we are wasting our time
     ai_chance = {
       factor = 100
     }
@@ -2341,7 +2393,7 @@ country_event = {
 }
 country_event = {
   id = flavor_brapru.45
-  title = flavor_brapru.45.t
+  title = flavor_brapru.45.t 	# Kreditwerk
   desc = flavor_brapru.45.d
   picture = COURT_eventPicture
   trigger = {
@@ -2355,7 +2407,7 @@ country_event = {
     months = 600
   }
   option = {
-    name = flavor_brapru.45.a
+    name = flavor_brapru.45.a 	# Ok
     ai_chance = {
       factor = 100
     }
@@ -2366,7 +2418,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_brapru.45.b
+    name = flavor_brapru.45.b 	# Ok
     ai_chance = {
       factor = 100
     }
@@ -2379,7 +2431,7 @@ country_event = {
 }
 country_event = {
   id = flavor_brapru.46
-  title = flavor_brapru.46.t
+  title = flavor_brapru.46.t 	# Humboldt brothers
   desc = flavor_brapru.46.d
   picture = ADVISOR_eventPicture
   trigger = {
@@ -2408,13 +2460,13 @@ country_event = {
     months = 600
   }
   option = {
-    name = flavor_brapru.46.a
+    name = flavor_brapru.46.a 	# Ok
     ai_chance = {
       factor = 100
     }
     define_advisor = {
       type = philosopher
-      name = "Z…^ ØQ *m!X"  # Wilhelm von Humboldt
+      name = "Â®ÅÂªâ ÂÜØ Ê¥™Â†°" 	# Wilhelm von Humboldt
       skill = 3
       culture = ROOT
       religion = ROOT
@@ -2422,13 +2474,13 @@ country_event = {
     }
   }
   option = {
-    name = flavor_brapru.46.b
+    name = flavor_brapru.46.b 	# Ok
     ai_chance = {
       factor = 100
     }
     define_advisor = {
       type = natural_scientist
-      name = "öNÜSqS'Y ØQ *m!X"  # Alexander von Humboldt
+      name = "‰∫öÂéÜÂ±±Â§ß ÂÜØ Ê¥™Â†°" 	# Alexander von Humboldt
       skill = 3
       culture = ROOT
       religion = ROOT
@@ -2438,7 +2490,7 @@ country_event = {
 }
 country_event = {
   id = flavor_brapru.47
-  title = flavor_brapru.47.t
+  title = flavor_brapru.47.t 	# Of Thaler, Groscher und Pfennige
   desc = flavor_brapru.47.d
   picture = ECONOMY_eventPicture
   fire_only_once = yes
@@ -2458,7 +2510,7 @@ country_event = {
     months = 120
   }
   option = {
-    name = flavor_brapru.47.a
+    name = flavor_brapru.47.a 	# Ok
     ai_chance = {
       factor = 100
     }
@@ -2467,7 +2519,7 @@ country_event = {
     add_mercantilism = 3
   }
   option = {
-    name = flavor_brapru.47.b
+    name = flavor_brapru.47.b 	# Ok
     ai_chance = {
       factor = 100
     }
@@ -2479,7 +2531,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_brapru.47.c
+    name = flavor_brapru.47.c 	# Ok
     ai_chance = {
       factor = 100
     }

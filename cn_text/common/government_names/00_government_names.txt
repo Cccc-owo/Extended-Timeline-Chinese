@@ -1,3 +1,6 @@
+Ôªø# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
 georgian = {
   rank = {
     1 = SAMTAVRO
@@ -35,7 +38,10 @@ georgian = {
     3 = PRINTSESA
   }
   trigger = {
-    primary_culture = georgian
+    OR = {
+      primary_culture = georgian
+      primary_culture = georgian_new
+    }
     NOT = {
       tag = SME
     }
@@ -187,14 +193,7 @@ islamic_caliphate = {
     3 = HEIR_fem
   }
   trigger = {
-    NOT = {
-      has_country_flag = ruler_muhammmad
-    }
-    OR = {
-      has_reform = caliphate_reform
-      has_reform = caliphate_theocratic_reform
-      has_country_modifier = unified_islam
-    }
+    has_country_modifier = unified_islam
   }
 }
 revolutionary_peasant_republic = {
@@ -386,20 +385,11 @@ gov_polish_republic = {
     3 = MOST_SERNE_MARSHAL_fem
   }
   trigger = {
-    primary_culture = polish
+    OR = {
+      primary_culture = polish
+      primary_culture = polish_new
+    }
     government = republic
-    NOT = {
-      has_reform = parliamentary_reform
-    }
-    NOT = {
-      has_reform = presidential_reform
-    }
-    NOT = {
-      has_reform = constitutional_republic
-    }
-    NOT = {
-      has_reform = presidential_despot_reform
-    }
   }
 }
 gov_german_empire = {
@@ -575,6 +565,7 @@ pirate_daimyo_government = {
     1 = LADY
   }
   trigger = {
+    tag = SOO
     has_government_attribute = is_pirate_republic_reform
     is_subject_of_type = daimyo_vassal
   }
@@ -746,6 +737,7 @@ celestial_parliament = {
     has_reform = parliamentary_reform
   }
 }
+#Subject Specific
 ottoman_marches = {
   rank = {
     1 = PASHALIK
@@ -941,25 +933,15 @@ march_christian_monarchy = {
     3 = HEIR_fem
   }
   trigger = {
-    OR = {
-      AND = {
-        has_reform = margraviate_reform
-        NOT = {
-          tag = SZO
-        }
-      }
-      AND = {
-        government = monarchy
-        religion_group = christian
-        NOT = {
-          religion = orthodox
-        }
-        NOT = {
-          religion = coptic
-        }
-        is_march = yes
-      }
+    government = monarchy
+    religion_group = christian
+    NOT = {
+      religion = orthodox
     }
+    NOT = {
+      religion = coptic
+    }
+    is_march = yes
   }
 }
 gov_papal_government_elector = {
@@ -1113,9 +1095,10 @@ herzegovina_monarchy = {
     tag = HRZ
   }
 }
+#HRE
 holy_roman_electors_monarchy = {
   rank = {
-    1 = ELECTORATE_DUCHY
+    1 = ELECTORATE_DUCHY 	# Kurfuerstentum
     2 = KINGDOM
     3 = EMPIRE
   }
@@ -1155,7 +1138,7 @@ holy_roman_electors_monarchy = {
     is_emperor = no
     NOT = {
       tag = HAB
-    }
+    } 	# Archdukes
   }
 }
 holy_roman_electors_bishoprics = {
@@ -1232,21 +1215,22 @@ trade_company_republic = {
     has_reform = trade_company_government
   }
 }
+#Shogunate
 japanese_shogunate = {
   rank = {
     3 = EMPIRE
-    2 = EMPIRE
-    1 = EMPIRE
+    2 = KINGDOM
+    1 = DAIMYO
   }
   ruler_male = {
-    3 = EMPEROR
-    2 = EMPEROR
-    1 = EMPEROR
+    3 = SHOGUN
+    2 = KING
+    1 = LORD
   }
   ruler_female = {
-    3 = EMPRESS
-    2 = EMPRESS
-    1 = EMPRESS
+    3 = SHOGUNESS
+    2 = QUEEN
+    1 = LADY
   }
   consort_male = {
     1 = LORD
@@ -1271,9 +1255,16 @@ japanese_shogunate = {
   trigger = {
     tag = JAP
     government = monarchy
+    NOT = {
+      has_reform = shogunate
+    }
+    NOT = {
+      has_reform = japanese_divine_empire
+    }
   }
 }
 islamic_syncretism_kingdoms = {
+  #For countries in a node being converted to islam.
   rank = {
     1 = EMIRATE
     2 = SULTANATE
@@ -1647,6 +1638,7 @@ muslim_tribal = {
   }
 }
 kathiawar_tribal_monarchy = {
+  #Sammas of Sindh are also Jams
   rank = {
     1 = PRINCEDOM
     2 = KINGDOM
@@ -1686,7 +1678,7 @@ kathiawar_tribal_monarchy = {
     government = monarchy
     OR = {
       tag = KAT
-      dynasty = "(Ñõs"  # Samma
+      primary_culture = sindhi
     }
   }
 }
@@ -1731,6 +1723,7 @@ sistan_monarchy = {
     tag = SIS
   }
 }
+#More Specific Monarchies
 turcoman_persian_monarchy = {
   rank = {
     1 = SHEIKHDOM
@@ -1935,7 +1928,7 @@ cristopher_of_bavaria_monarchy = {
       AND = {
         tag = DAN
         government = monarchy
-        has_ruler = "KQÃëØeXbV III"  # Christopher III
+        has_ruler = "ÂÖãÈáåÊñØÊâòÂºó III" 	# Christopher III
       }
       has_ruler_flag = has_proclaimed_archking_title
     }
@@ -1980,7 +1973,8 @@ hunyadi_regent_monarchy = {
   trigger = {
     tag = HUN
     government = monarchy
-    has_heir = "…bÍèØe≥RØe 0WêyÅPR0"  # Ladislaus Postumus
+    #		has_ruler = "J√°nos"
+    has_heir = "ÊãâËø™ÊñØÂä≥ÊñØ „ÄåÈÅóËÖπÂ≠ê„Äç" 	# Ladislaus Postumus
   }
 }
 austrian_monarchy = {
@@ -2115,7 +2109,7 @@ croatian_monarchy = {
   ruler_male = {
     1 = BAN_TITLE
     2 = KRALJ
-    3 = CAR_title
+    3 = CAR
   }
   ruler_female = {
     1 = BAN_TITLE
@@ -2144,7 +2138,10 @@ croatian_monarchy = {
   }
   trigger = {
     government = monarchy
-    primary_culture = croatian
+    OR = {
+      primary_culture = croatian
+      primary_culture = croatian_new
+    }
   }
 }
 finnish_monarchy = {
@@ -2322,7 +2319,7 @@ serbian_feudal_monarchy = {
   ruler_male = {
     1 = PRINC
     2 = DESPOT
-    3 = CAR_title
+    3 = CAR
   }
   ruler_female = {
     1 = PRINCEZA
@@ -2355,7 +2352,10 @@ serbian_feudal_monarchy = {
       has_reform = feudalism_reform
       has_reform = autocracy_reform
     }
-    primary_culture = serbian
+    OR = {
+      primary_culture = serbian
+      primary_culture = serbian_new
+    }
     religion = orthodox
   }
 }
@@ -2368,7 +2368,7 @@ serbian_monarchy = {
   ruler_male = {
     1 = VOJVODA
     2 = KRALJ
-    3 = CAR_title
+    3 = CAR
   }
   ruler_female = {
     1 = VOJVODKINJA
@@ -2396,8 +2396,11 @@ serbian_monarchy = {
     3 = HEIR_fem
   }
   trigger = {
-    government = monarchy
-    primary_culture = serbian
+    government = monarchy 	# All later monarchies
+    OR = {
+      primary_culture = serbian
+      primary_culture = serbian_new
+    }
   }
 }
 byzantine_monarchy = {
@@ -2443,11 +2446,11 @@ byzantine_monarchy = {
       tag = TRE
       tag = EPI
       tag = MOE
-      tag = NCA
     }
   }
 }
 greek_monarchy = {
+  #Greeks without Byzantine Ties
   rank = {
     1 = DUCHY
     2 = KINGDOM
@@ -2492,6 +2495,7 @@ greek_monarchy = {
   }
 }
 arakanese_monarchy = {
+  #Buddhist state that used Muslim titles.
   rank = {
     1 = EMIRATE
     2 = SULTANATE
@@ -2533,6 +2537,7 @@ arakanese_monarchy = {
   }
 }
 pangasinan_monarchy = {
+  #Buddhist state that used Muslim titles.
   rank = {
     1 = BARANGAY
     2 = GRAND_BARANGAY
@@ -2698,7 +2703,7 @@ egyptian_monarchy = {
       has_reform = letat_cest_moi_reform
       has_reform = regional_representation_reform
     }
-    primary_culture = al_misr_arabic
+    primary_culture = al_misr_arabic 	# Egyptian
     religion_group = muslim
   }
 }
@@ -2761,11 +2766,11 @@ pagan_egyptian_monarchy = {
   }
   trigger = {
     government = monarchy
-    religion = egyptian
     OR = {
-      tag = EGP
-      primary_culture = al_misr_arabic
-      primary_culture = saidi
+      AND = {
+        primary_culture = al_misr_arabic 	# Egyptian
+        religion = animism
+      }
       primary_culture = old_egyptian
     }
   }
@@ -2808,8 +2813,15 @@ pagan_greek_monarchy = {
   }
   trigger = {
     government = monarchy
-    primary_culture = greek
-    religion = hellenism
+    OR = {
+      AND = {
+        primary_culture = greek
+        religion = animism
+      }
+      primary_culture = athenian
+      primary_culture = spartan
+      primary_culture = atlantean
+    }
   }
 }
 pagan_roman_monarchy = {
@@ -2852,8 +2864,35 @@ pagan_roman_monarchy = {
     government = monarchy
     OR = {
       AND = {
-        culture_group = latin
-        religion = hellenism
+        primary_culture = umbrian
+        religion = animism
+      }
+      primary_culture = roman
+    }
+  }
+}
+pagan_roman_republic = {
+  rank = {
+    1 = RES_PUBLICA
+    2 = RES_PUBLICA
+    3 = RES_PUBLICA
+  }
+  ruler_male = {
+    1 = CONSUL
+    2 = GRAND_CONSUL
+    3 = GREAT_CONSUL
+  }
+  ruler_female = {
+    1 = CONSULESS
+    2 = GRAND_CONSULESS
+    3 = GREAT_CONSULESS
+  }
+  trigger = {
+    government = republic
+    OR = {
+      AND = {
+        primary_culture = umbrian
+        religion = animism
       }
       primary_culture = roman
     }
@@ -2909,7 +2948,7 @@ romanian_monarchy = {
   ruler_male = {
     1 = VOIVODE
     2 = KRALJ
-    3 = CAR_title
+    3 = CAR
   }
   ruler_female = {
     1 = VOJVODKINJA
@@ -3788,6 +3827,7 @@ burman_monarchy = {
     culture_group = burman
   }
 }
+#Less Specific Monarchies
 barangay_polity = {
   rank = {
     1 = BARANGAY
@@ -3836,15 +3876,6 @@ barangay_polity = {
       tag = MGD
     }
     primary_culture = filipino
-    NOT = {
-      has_reform = parliamentary_reform
-    }
-    NOT = {
-      has_reform = presidential_reform
-    }
-    NOT = {
-      has_reform = constitutional_republic
-    }
   }
 }
 south_slavic_monarchy = {
@@ -3856,7 +3887,7 @@ south_slavic_monarchy = {
   ruler_male = {
     1 = VOIVODE
     2 = KRALJ
-    3 = CAR_title
+    3 = CAR
   }
   ruler_female = {
     1 = VOJVODKINJA
@@ -3885,7 +3916,14 @@ south_slavic_monarchy = {
   }
   trigger = {
     government = monarchy
-    culture_group = south_slavic
+    OR = {
+      primary_culture = croatian_new
+      primary_culture = serbian_new
+      primary_culture = slovene_new
+      primary_culture = bosnian_new
+      primary_culture = bulgarian_new
+      culture_group = south_slavic
+    }
     NOT = {
       tag = CLI
     }
@@ -4104,6 +4142,7 @@ russian_monarchy = {
     OR = {
       has_reform = principality
       has_reform = tsardom
+      has_reform = ruthenian_tsardom
     }
   }
 }
@@ -4145,10 +4184,31 @@ russian_feudal_monarchy = {
   }
   trigger = {
     government = monarchy
-    religion_group = christian
     OR = {
       culture_group = east_slavic
+      culture_group = slavic
       tag = PRM
+    }
+    NOT = {
+      primary_culture = polish_new
+    }
+    NOT = {
+      primary_culture = serbian_new
+    }
+    NOT = {
+      primary_culture = croatian_new
+    }
+    NOT = {
+      primary_culture = serbian_new
+    }
+    NOT = {
+      primary_culture = slovene_new
+    }
+    NOT = {
+      primary_culture = bosnian_new
+    }
+    NOT = {
+      primary_culture = bulgarian_new
     }
   }
 }
@@ -4280,7 +4340,6 @@ nahuatl_monarchy = {
       has_reform = tribal_democracy_legacy
     }
     religion = nahuatl
-    primary_culture = aztek
   }
 }
 chinese_monarchy = {
@@ -4321,7 +4380,7 @@ chinese_monarchy = {
   }
   trigger = {
     government = monarchy
-    culture_group = east_asian
+    culture_group = east_asian 	# Chinese
   }
 }
 hindu_monarchy = {
@@ -4407,7 +4466,7 @@ buddhist_monarchy = {
       government = tribal
     }
     OR = {
-      religion = buddhism
+      religion = buddhism 	# Theravada
       religion = vajrayana
       religion = mahayana
     }
@@ -4460,6 +4519,7 @@ muslim_monarchy = {
     }
   }
 }
+#Republics
 german_free_city = {
   rank = {
     1 = FREE_CITY
@@ -4489,6 +4549,7 @@ gov_free_city = {
     has_reform = free_city
   }
 }
+#If only two first levels used then reorder so that only 2 and 3 are used
 iberian_colonial_government = {
   rank = {
     1 = COLONY
@@ -4509,6 +4570,7 @@ iberian_colonial_government = {
     }
   }
 }
+#If only two first levels used then reorder so that only 2 and 3 are used
 dutch_colonial_government = {
   rank = {
     1 = COLONY
@@ -4618,6 +4680,7 @@ russian_republic = {
     government = republic
     OR = {
       culture_group = east_slavic
+      culture_group = slavic
       tag = PRM
     }
     NOT = {
@@ -4630,13 +4693,25 @@ russian_republic = {
       has_reform = presidential_despot_reform
     }
     NOT = {
-      has_reform = dictatorial_rule
+      primary_culture = polish_new
     }
     NOT = {
-      has_reform = multi_party_system
+      primary_culture = serbian_new
     }
     NOT = {
-      has_reform = single_party_system
+      primary_culture = croatian_new
+    }
+    NOT = {
+      primary_culture = serbian_new
+    }
+    NOT = {
+      primary_culture = slovene_new
+    }
+    NOT = {
+      primary_culture = bosnian_new
+    }
+    NOT = {
+      primary_culture = bulgarian_new
     }
   }
 }
@@ -4658,7 +4733,14 @@ south_slavic_republic = {
   }
   trigger = {
     government = republic
-    culture_group = south_slavic
+    OR = {
+      primary_culture = croatian_new
+      primary_culture = serbian_new
+      primary_culture = slovene_new
+      primary_culture = bosnian_new
+      primary_culture = bulgarian_new
+      culture_group = south_slavic
+    }
     NOT = {
       is_revolutionary_republic_trigger = yes
     }
@@ -4667,15 +4749,6 @@ south_slavic_republic = {
     }
     NOT = {
       has_reform = presidential_despot_reform
-    }
-    NOT = {
-      has_reform = dictatorial_rule
-    }
-    NOT = {
-      has_reform = multi_party_system
-    }
-    NOT = {
-      has_reform = single_party_system
     }
   }
 }
@@ -4742,21 +4815,6 @@ german_republic = {
   trigger = {
     government = republic
     culture_group = germanic
-    NOT = {
-      has_reform = multi_party_system
-    }
-    NOT = {
-      has_reform = single_party_system
-    }
-    NOT = {
-      has_reform = constitutional_republic
-    }
-    NOT = {
-      has_reform = parliamentary_republic
-    }
-    NOT = {
-      has_reform = presidental_republic
-    }
   }
 }
 italian_republic = {
@@ -4778,27 +4836,10 @@ italian_republic = {
   trigger = {
     government = republic
     culture_group = latin
-    NOT = {
-      has_reform = roman_republic_reform
-    }
-    NOT = {
-      has_reform = multi_party_system
-    }
-    NOT = {
-      has_reform = single_party_system
-    }
-    NOT = {
-      has_reform = constitutional_republic
-    }
-    NOT = {
-      has_reform = parliamentary_republic
-    }
-    NOT = {
-      has_reform = presidental_republic
-    }
   }
 }
 hindu_republic = {
+  #Based on titles in Maratha administration
   rank = {
     1 = REPUBLIC
     2 = GRAND_REPUBLIC
@@ -4817,12 +4858,6 @@ hindu_republic = {
   trigger = {
     government = republic
     religion = hinduism
-    NOT = {
-      has_reform = multi_party_system
-    }
-    NOT = {
-      has_reform = single_party_system
-    }
   }
 }
 buddhist_noble_republic = {
@@ -4844,7 +4879,7 @@ buddhist_noble_republic = {
   trigger = {
     has_reform = noble_elite_reform
     OR = {
-      religion = buddhism
+      religion = buddhism 	# Theravada
       religion = vajrayana
       religion = mahayana
     }
@@ -4869,21 +4904,6 @@ muslim_republic = {
   trigger = {
     government = republic
     religion_group = muslim
-    NOT = {
-      has_reform = multi_party_system
-    }
-    NOT = {
-      has_reform = single_party_system
-    }
-    NOT = {
-      has_reform = constitutional_republic
-    }
-    NOT = {
-      has_reform = parliamentary_republic
-    }
-    NOT = {
-      has_reform = presidental_republic
-    }
   }
 }
 march_eastern_christian_monarchy = {
@@ -4908,6 +4928,7 @@ march_eastern_christian_monarchy = {
   heir_female = {
     1 = HEIR_fem
   }
+  #Standard titles for Heirs and Consorts
   trigger = {
     government = monarchy
     NOT = {

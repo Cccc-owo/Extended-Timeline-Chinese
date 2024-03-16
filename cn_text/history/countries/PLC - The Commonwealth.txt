@@ -1,42 +1,18 @@
-government = monarchy
+﻿government = monarchy
 add_government_reform = elective_monarchy
 primary_culture = polish
+add_accepted_culture = lithuanian
+add_accepted_culture = prussian
+add_accepted_culture = byelorussian
 religion = catholic
 technology_group = eastern
-capital = 262
-100.1.1 = {
-  add_government_reform = early_gov_reform_1
-}
-230.1.1 = {
-  add_government_reform = early_gov_reform_2
-}
-360.1.1 = {
-  add_government_reform = early_gov_reform_3
-}
-490.1.1 = {
-  add_government_reform = early_gov_reform_4
-}
-620.1.1 = {
-  add_government_reform = early_gov_reform_5
-}
-750.1.1 = {
-  add_government_reform = early_gov_reform_6
-}
-880.1.1 = {
-  add_government_reform = early_gov_reform_7
-}
-1010.1.1 = {
-  add_government_reform = early_gov_reform_8
-}
-1140.1.1 = {
-  add_government_reform = early_gov_reform_9
-}
-1270.1.1 = {
-  add_government_reform = early_gov_reform_10
+capital = 262 	#  Krakow
+1444.10.1 = {
+  set_estate_privilege = estate_nobles_golden_liberty
 }
 1572.1.1 = {
   leader = {
-    name = "KQ�e�NXb+Y �bP��uLN"  # Krzysztof Radziwill
+    name = "克日什托夫 拉齐维乌" 	# Krzysztof Radziwill
     type = general
     fire = 3
     shock = 4
@@ -45,24 +21,31 @@ capital = 262
     death_date = 1603.11.20
   }
 }
-1573.5.12 = {
+1573.5.11 = {
   monarch = {
-    name = "Henryk I"
-    dynasty = "�V �tbS�t"  # de Valois
+    name = "亨里克 I" 	# Henryk I
+    culture = cosmopolitan_french
+    dynasty = "德 瓦卢瓦" 	# de Valois
+    birth_date = 1551.9.19
     adm = 1
     dip = 1
     mil = 1
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = embezzler_personality
+  add_ruler_personality = craven_personality
 }
-1575.1.1 = {
+1575.12.15 = {
   monarch = {
-    name = "Stefan I"
-    dynasty = "B�thory"
+    name = "斯特凡 I" 	# Stefan I
+    dynasty = "巴托里" 	# Báthory
+    culture = hungarian
+    birth_date = 1533.9.27
     adm = 5
     dip = 2
     mil = 6
     leader = {
-      name = "Stefan B�thory"
+      name = "斯特凡 巴托里" 	# Stefan Báthory
       type = general
       fire = 3
       shock = 5
@@ -70,10 +53,24 @@ capital = 262
       siege = 1
     }
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = bold_fighter_personality
+  add_ruler_personality = tolerant_personality
+  queen = {
+    country_of_origin = LIT
+    name = "安娜" 	# Anna
+    dynasty = "雅盖隆" 	# Jagiellon
+    birth_date = 1523.10.18
+    death_date = 1596.9.9
+    female = yes
+    adm = 1
+    dip = 2
+    mil = 0
+  }
 }
 1581.1.1 = {
   leader = {
-    name = "lb Nb��O�e�W"  # Jan Zamojski
+    name = "扬 扎莫伊斯基" 	# Jan Zamojski
     type = general
     fire = 2
     shock = 4
@@ -82,15 +79,17 @@ capital = 262
     death_date = 1605.6.3
   }
 }
-1587.8.1 = {
+1587.8.19 = {
   monarch = {
-    name = "Zygmunt III"
-    dynasty = "�t(�"  # Vasa
+    name = "齐格蒙特 III" 	# Zygmunt III
+    dynasty = "瓦萨" 	# Vasa
+    culture = swedish
+    birth_date = 1566.6.20
     adm = 1
     dip = 2
     mil = 2
     leader = {
-      name = "Zygmunt III Wasa"
+      name = "齐格蒙特 III" 	# Zygmunt III
       type = general
       fire = 3
       shock = 4
@@ -98,10 +97,26 @@ capital = 262
       siege = 0
     }
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = zealot_personality
+  add_ruler_personality = conqueror_personality
+}
+1592.5.31 = {
+  queen = {
+    country_of_origin = HAB
+    name = "安娜" 	# Anna
+    dynasty = "冯 哈布斯堡" 	# von Habsburg
+    birth_date = 1573.8.16
+    death_date = 1598.2.10
+    female = yes
+    adm = 0
+    dip = 0
+    mil = 0
+  }
 }
 1589.1.1 = {
   leader = {
-    name = "hg (��^6w�T"  # Jan Sapieha
+    name = "杨 萨庇耶哈" 	# Jan Sapieha
     type = general
     fire = 2
     shock = 2
@@ -112,9 +127,9 @@ capital = 262
 }
 1595.6.9 = {
   heir = {
-    name = "�t��e�t+Y"  # Wladyslaw
-    monarch_name = "�t��e�t+Y IV"  # Wladyslaw IV
-    dynasty = "�t(�"  # Vasa
+    name = "瓦迪斯瓦夫" 	# Wladyslaw
+    monarch_name = "瓦迪斯瓦夫 IV" 	# Wladyslaw IV
+    dynasty = "瓦萨" 	# Vasa
     birth_date = 1595.6.9
     death_date = 1648.5.20
     claim = 95
@@ -122,7 +137,7 @@ capital = 262
     dip = 5
     mil = 4
     leader = {
-      name = "�t��e�t+Y IV"  # Wladyslaw IV Wasa
+      name = "瓦迪斯瓦夫 IV" 	# Wladyslaw IV
       type = general
       fire = 3
       shock = 3
@@ -130,13 +145,16 @@ capital = 262
       siege = 1
     }
   }
+  clear_scripted_personalities = yes
+  add_heir_personality = scholar_personality
+  add_heir_personality = martial_educator_personality
 }
 1596.1.1 = {
-  capital = 257
+  capital = 257 	#  Warsaw
 }
 1600.1.1 = {
   leader = {
-    name = "lb aSWS ��V�Q�uGY"  # Jan K. Chodkiewicz
+    name = "扬 卡罗尔 霍德凯维奇" 	# Jan Karol Chodkiewicz
     type = general
     fire = 3
     shock = 5
@@ -147,7 +165,7 @@ capital = 262
 }
 1600.1.1 = {
   leader = {
-    name = "�efW<S�e�t+Y bSZSs|S�e�W"  # Stanislaw Lubomirski
+    name = "斯坦尼斯瓦夫 卢博米尔斯基" 	# Stanislaw Lubomirski
     type = general
     fire = 3
     shock = 3
@@ -158,7 +176,7 @@ capital = 262
 }
 1605.1.1 = {
   leader = {
-    name = "�efW<S�e�t+Y �LN�Q+Y�e�W"  # S. Zolkiewski
+    name = "斯坦尼斯瓦夫 若乌凯夫斯基" 	# Stanislaw Zolkiewski
     type = general
     fire = 3
     shock = 4
@@ -167,9 +185,22 @@ capital = 262
     death_date = 1620.10.6
   }
 }
+1605.12.11 = {
+  queen = {
+    country_of_origin = HAB
+    name = "康斯坦齐娅" 	# Konstancja
+    dynasty = "冯 哈布斯堡" 	# von Habsburg
+    birth_date = 1588.12.24
+    death_date = 1631.7.10
+    female = yes
+    adm = 3
+    dip = 3
+    mil = 1
+  }
+}
 1615.1.1 = {
   leader = {
-    name = "KQ�e�NXb+Y �bP��uLN"  # Krzysztof Radziwill
+    name = "克日什托夫 拉齐维乌" 	# Krzysztof Radziwill
     type = general
     fire = 2
     shock = 2
@@ -178,20 +209,9 @@ capital = 262
     death_date = 1640.1.1
   }
 }
-1617.1.1 = {
-  leader = {
-    name = "Denhoff"
-    type = general
-    fire = 2
-    shock = 2
-    manuever = 3
-    siege = 0
-    death_date = 1622.1.1
-  }
-}
 1618.1.1 = {
   leader = {
-    name = "?�&O�V �KQ�f"  # Arend Dickmann
+    name = "阿伦德 迪克曼" 	# Arend Dickmann
     type = admiral
     fire = 3
     shock = 4
@@ -202,7 +222,7 @@ capital = 262
 }
 1620.1.1 = {
   leader = {
-    name = "s|KQ�tO �lXb(��W"  # Mikolaj Potocki
+    name = "米克瓦伊 波托茨基" 	# Mikolaj Potocki
     type = general
     fire = 2
     shock = 1
@@ -213,7 +233,7 @@ capital = 262
 }
 1620.1.1 = {
   leader = {
-    name = "�efW<S�e�t+Y �y�m(��lS�e�W"  # S. Koniecpolski
+    name = "斯坦尼斯瓦夫 科涅茨波尔斯基" 	# Stanislaw Koniecpolski
     type = general
     fire = 2
     shock = 5
@@ -224,8 +244,8 @@ capital = 262
 }
 1621.1.1 = {
   leader = {
-    name = "KQ�e�NXb+Y ?�P��l�u�e�W"  # K. Arciszewski
-    type = conquistador
+    name = "克日什托夫 阿齐泽维斯基" 	# Krzysztof Arciszewski
+    type = general
     fire = 3
     shock = 2
     manuever = 5
@@ -235,7 +255,7 @@ capital = 262
 }
 1630.1.1 = {
   leader = {
-    name = "^�uS hg (��^6w�T"  # P.J. Sapieha
+    name = "帕维尔 杨 萨庇耶哈" 	# Pawel Jan Sapieha
     type = general
     fire = 2
     shock = 3
@@ -244,15 +264,16 @@ capital = 262
     death_date = 1665.1.1
   }
 }
-1632.4.30 = {
+1632.11.8 = {
   monarch = {
-    name = "Wladyslaw IV"
-    dynasty = "�t(�"  # Vasa
+    name = "瓦迪斯瓦夫 IV" 	# Wladyslaw IV
+    dynasty = "瓦萨" 	# Vasa
+    birth_date = 1595.6.9
     adm = 4
     dip = 5
     mil = 4
     leader = {
-      name = "Wladyslaw IV Wasa"
+      name = "瓦迪斯瓦夫 IV" 	# Wladyslaw IV
       type = general
       fire = 3
       shock = 3
@@ -260,12 +281,14 @@ capital = 262
       siege = 1
     }
   }
-}
-1632.4.30 = {
+  clear_scripted_personalities = yes
+  add_ruler_personality = scholar_personality
+  add_ruler_personality = martial_educator_personality
+  add_heir_personality = bold_fighter_personality
   heir = {
-    name = "Jan Kazimierz"
-    monarch_name = "Jan II Kazimierz"
-    dynasty = "�t(�"  # Vasa
+    name = "扬 卡齐米日" 	# Jan Kazimierz
+    monarch_name = "扬 II 卡齐米日" 	# Jan II Kazimierz
+    dynasty = "瓦萨" 	# Vasa
     birth_date = 1609.3.22
     death_date = 1672.12.16
     claim = 95
@@ -274,9 +297,22 @@ capital = 262
     mil = 1
   }
 }
+1637.9.13 = {
+  queen = {
+    country_of_origin = HAB
+    name = "塞西莉亚 瑞娜塔" 	# Cecylia Renata
+    dynasty = "冯 哈布斯堡" 	# von Habsburg
+    birth_date = 1611.7.16
+    death_date = 1644.3.24
+    female = yes
+    adm = 2
+    dip = 1
+    mil = 0
+  }
+}
 1640.1.1 = {
   leader = {
-    name = "pg^ts| ��e<SeYZ6w(��W"  # Wisnowiecki
+    name = "杰瑞米 韦斯尼奥威耶茨基" 	# Jeremi Wisnowiecki
     type = general
     fire = 2
     shock = 3
@@ -285,18 +321,47 @@ capital = 262
     death_date = 1651.8.20
   }
 }
-1648.5.20 = {
+1646.7.15 = {
+  queen = {
+    country_of_origin = MAN
+    name = "卢德维卡 玛丽亚" 	# Ludwika Maria
+    dynasty = "冈萨加" 	# Gonzaga
+    birth_date = 1611.8.18
+    death_date = 1667.5.10
+    female = yes
+    adm = 3
+    dip = 2
+    mil = 1
+  }
+}
+1648.11.20 = {
   monarch = {
-    name = "Jan II Kazimierz"
-    dynasty = "�t(�"  # Vasa
+    name = "扬 II 卡齐米日" 	# Jan II Kazimierz
+    dynasty = "瓦萨" 	# Vasa
+    birth_date = 1609.3.22
     adm = 0
     dip = 3
+    mil = 1
+  }
+  clear_scripted_personalities = yes
+  add_ruler_personality = bold_fighter_personality
+}
+1649.5.30 = {
+  queen = {
+    country_of_origin = MAN
+    name = "卢德维卡 玛丽亚" 	# Ludwika Maria
+    dynasty = "冈萨加" 	# Gonzaga
+    birth_date = 1611.8.18
+    death_date = 1667.5.10
+    female = yes
+    adm = 3
+    dip = 2
     mil = 1
   }
 }
 1650.1.1 = {
   leader = {
-    name = "�Q )nyr"  # von Winter
+    name = "冯 温特" 	# von Winter
     type = general
     fire = 4
     shock = 2
@@ -307,7 +372,7 @@ capital = 262
 }
 1651.1.1 = {
   leader = {
-    name = "�e�S�� b�+Y�e�W"  # Gosiewski
+    name = "文岑蒂 戈西夫斯基" 	# Wincenty Gosiewski
     type = general
     fire = 4
     shock = 3
@@ -318,7 +383,7 @@ capital = 262
 }
 1654.1.1 = {
   leader = {
-    name = "�efW<S�e�t+Y hg Ŗ^m��+Y�e�W"  # S.J. Jablonowski
+    name = "斯坦尼斯瓦夫 杨 雅布洛诺夫斯基" 	# Stanislaw Jan Jablonowski
     type = general
     fire = 3
     shock = 3
@@ -329,7 +394,7 @@ capital = 262
 }
 1655.1.1 = {
   leader = {
-    name = "�eyr�Q p`S�m(��W"  # Stefan Czarniecki
+    name = "斯特凡 恰尔涅茨基" 	# Stefan Czarniecki
     type = general
     fire = 3
     shock = 5
@@ -340,7 +405,7 @@ capital = 262
 }
 1657.1.1 = {
   leader = {
-    name = "6w�e bSZSs|S�e�W"  # Jerzy Lubomirski
+    name = "耶日 卢博米尔斯基" 	# Jerzy Lubomirski
     type = general
     fire = 3
     shock = 3
@@ -349,24 +414,52 @@ capital = 262
     death_date = 1667.1.1
   }
 }
-1669.1.1 = {
+1666.1.1 = {
+  leader = {
+    name = "埃内斯特 登霍夫" 	# Ernest Denhoff
+    type = general
+    fire = 2
+    shock = 2
+    manuever = 3
+    siege = 0
+    death_date = 1693.1.1
+  }
+}
+1669.6.19 = {
   monarch = {
-    name = "Michal I Korybut"
-    dynasty = "Wisniowiecki"
+    name = "米哈乌 I" 	# Michal I
+    dynasty = "维什尼维斯基" 	# Wisniowiecki
+    birth_date = 1640.5.31
     adm = 0
     dip = 0
     mil = 0
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = naive_personality
 }
-1674.5.1 = {
+1670.10.19 = {
+  queen = {
+    country_of_origin = HAB
+    name = "埃莱奥诺拉" 	# Eleonora
+    dynasty = "冯 哈布斯堡" 	# von Habsburg
+    birth_date = 1653.5.31
+    death_date = 1697.12.17
+    female = yes
+    adm = 1
+    dip = 3
+    mil = 0
+  }
+}
+1674.5.21 = {
   monarch = {
-    name = "lb III"  # Jan III
-    dynasty = "Sobieski"
+    name = "扬 III" 	# Jan III
+    dynasty = "索别斯基" 	# Sobieski
+    birth_date = 1629.8.17
     adm = 2
     dip = 5
     mil = 6
     leader = {
-      name = "Jan Sobieski"
+      name = "扬 III" 	# Jan III
       type = general
       fire = 3
       shock = 5
@@ -374,10 +467,26 @@ capital = 262
       siege = 0
     }
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = tactical_genius_personality
+  add_ruler_personality = martial_educator_personality
+}
+1676.2.2 = {
+  queen = {
+    country_of_origin = FRA
+    name = "玛丽亚 卡齐米拉" 	# Maria Kazimiera
+    dynasty = "德 阿奎恩" 	# d’Arquien
+    birth_date = 1641.6.28
+    death_date = 1716.1.30
+    female = yes
+    adm = 1
+    dip = 3
+    mil = 0
+  }
 }
 1680.1.1 = {
   leader = {
-    name = "hg ���V�S�V ^yr�^"  # Johann Patkul
+    name = "杨 莱因霍尔德 帕特库" 	# Jan Reinhold Patkul
     type = general
     fire = 2
     shock = 1
@@ -386,18 +495,35 @@ capital = 262
     death_date = 1707.10.10
   }
 }
-1697.1.1 = {
+1697.6.27 = {
   monarch = {
-    name = "eY�S�eyr II0HVw0"  # August II Mocny
-    dynasty = "�Q ��^"  # von Wettin
+    name = "强者 奥古斯特 II" 	# August II Mocny
+    culture = saxon
+    dynasty = "冯 韦廷" 	# von Wettin
+    birth_date = 1670.5.12
     adm = 2
     dip = 1
+    mil = 0
+  }
+  clear_scripted_personalities = yes
+  add_ruler_personality = drunkard_personality
+}
+1694.4.27 = {
+  queen = {
+    country_of_origin = BAV
+    name = "克雷斯蒂娜 埃伯哈汀娜" 	# Krystyna Eberhardyna
+    dynasty = "霍亨索伦" 	# Hohenzollern
+    birth_date = 1671.12.29
+    death_date = 1727.9.5
+    female = yes
+    adm = 0
+    dip = 0
     mil = 0
   }
 }
 1700.1.1 = {
   leader = {
-    name = "hg aSP�s|�e (��^6w�T"  # Jan K. Sapieha
+    name = "杨 卡齐米日 萨庇耶哈" 	# Jan Kazimierz Sapieha
     type = general
     fire = 3
     shock = 3
@@ -406,18 +532,34 @@ capital = 262
     death_date = 1726.1.1
   }
 }
-1700.1.1 = {
+1704.7.12 = {
   monarch = {
-    name = "Stanislaw I"
-    dynasty = "Leszczynski"
+    name = "斯坦尼斯瓦夫 I" 	# Stanislaw I
+    dynasty = "莱什琴斯基" 	# Leszczynski
+    birth_date = 1677.10.20
     adm = 5
     dip = 2
     mil = 3
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = embezzler_personality
+}
+1705.10.7 = {
+  queen = {
+    country_of_origin = POL
+    name = "卡塔日娜" 	# Katarzyna
+    dynasty = "欧帕林斯基" 	# Opaliñski
+    birth_date = 1680.10.13
+    death_date = 1747.3.19
+    female = yes
+    adm = 0
+    dip = 0
+    mil = 0
+  }
 }
 1730.1.1 = {
   leader = {
-    name = "s|�TLN lb ^(�"  # J.M. Pac
+    name = "米哈乌 扬 帕茨" 	# Michal Jan Pac
     type = general
     fire = 1
     shock = 2
@@ -426,18 +568,48 @@ capital = 262
     death_date = 1780.1.1
   }
 }
-1735.10.3 = {
+1733.10.5 = {
   monarch = {
-    name = "eY�S�eyr III (��e"  # August III Sas
-    dynasty = "�Q ��^"  # von Wettin
+    name = "奥古斯特 III 萨克森" 	# August III Sas
+    dynasty = "冯 韦廷" 	# von Wettin
+    culture = saxon
+    religion = catholic
+    birth_date = 1696.10.17
     adm = 1
     dip = 3
+    mil = 0
+  }
+  clear_scripted_personalities = yes
+  add_ruler_personality = greedy_personality
+  add_ruler_personality = industrious_personality
+  queen = {
+    country_of_origin = HAB
+    name = "玛丽亚 约瑟法" 	# Maria Jozefa
+    dynasty = "冯 哈布斯堡" 	# von Habsburg
+    birth_date = 1699.12.8
+    death_date = 1757.11.17
+    female = yes
+    adm = 3
+    dip = 1
+    mil = 0
+  }
+}
+1734.1.17 = {
+  queen = {
+    country_of_origin = HAB
+    name = "玛丽亚 约瑟法" 	# Maria Jozefa
+    dynasty = "冯 哈布斯堡" 	# von Habsburg
+    birth_date = 1699.12.8
+    death_date = 1757.11.17
+    female = yes
+    adm = 1
+    dip = 1
     mil = 0
   }
 }
 1735.11.10 = {
   leader = {
-    name = "s|�TLN �bP��uLN"  # Michal Radziwill
+    name = "米哈乌 拉齐维乌" 	# Michal Radziwill
     type = general
     fire = 1
     shock = 3
@@ -446,20 +618,9 @@ capital = 262
     death_date = 1762.5.22
   }
 }
-1740.1.1 = {
-  leader = {
-    name = "Benyowski"
-    type = general
-    fire = 2
-    shock = 2
-    manuever = 4
-    siege = 0
-    death_date = 1770.1.1
-  }
-}
 1755.1.1 = {
   leader = {
-    name = "�efW<S�e�t+Y �l<S�NXb+Y�e�W"  # Stanislaw Poniatowski
+    name = "斯坦尼斯瓦夫 波尼亚托夫斯基" 	# Stanislaw Poniatowski
     type = general
     fire = 2
     shock = 2
@@ -470,7 +631,7 @@ capital = 262
 }
 1762.10.9 = {
   leader = {
-    name = "�N�SqS'Y (��^6w�T"  # A. Sapieha
+    name = "亚历山大 萨庇耶哈" 	# Aleksander Sapieha
     type = general
     fire = 2
     shock = 2
@@ -479,18 +640,22 @@ capital = 262
     death_date = 1775.9.13
   }
 }
-1764.9.8 = {
+1764.9.7 = {
   monarch = {
-    name = "Stanislaw II"
-    dynasty = "Poniatowski"
+    name = "斯坦尼斯瓦夫 II" 	# Stanislaw II
+    dynasty = "波尼亚托夫斯基" 	# Poniatowski
+    birth_date = 1732.1.17
     adm = 2
     dip = 4
     mil = 1
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = naive_personality
+  add_ruler_personality = craven_personality
 }
 1779.1.1 = {
   leader = {
-    name = "aSP�s|�e nf�t�e�W"  # Kazimierz Pulaski
+    name = "卡齐米日 普瓦斯基" 	# Kazimierz Pulaski
     type = general
     fire = 3
     shock = 2
@@ -501,7 +666,7 @@ capital = 262
 }
 1789.1.1 = {
   leader = {
-    name = "TX�VLN�N �y^N�N�y"  # Tadeusz Kosciuszko
+    name = "塔德乌什 科希丘什科" 	# Tadeusz Kosciuszko
     type = general
     fire = 3
     shock = 4
@@ -512,7 +677,7 @@ capital = 262
 }
 1789.1.1 = {
   leader = {
-    name = "�umt+Y �l<S�NXb+Y�e�W"  # J. Poniatowski
+    name = "约瑟夫 波尼亚托夫斯基" 	# Jozef Poniatowski
     type = general
     fire = 3
     shock = 4

@@ -28,14 +28,14 @@ jobs:
 
       - name: Cleanup the folder
         run: |
-          rm -r cn_text
-          mkdir cn_text
+          rm -r et_text
+          mkdir et_text
 
       - name: Unzip
         run: |
           mkdir temp
           unzip text.zip -d temp
-          cp temp/special/* cn_text/ -r
+          cp temp/utf8/* et_text/ -r
           cp temp/chars.txt .
 
       - name: Cleanup the folder
@@ -48,27 +48,5 @@ jobs:
       - name: Commit Changes & Push to Remote Branch
         run: |
           git add -A
-          git commit -m "upd: update translated text nightly
-
-          Co-authored-by: Cccc_ <47687154+Cccc-owo@users.noreply.github.com>
-          Co-authored-by: shuaichao189 <38562980+shuaichao189@users.noreply.github.com>
-          Co-authored-by: Zhujianfei1 <98221113+Zhujianfei1@users.noreply.github.com>
-          Co-authored-by: CH. <54112189+CHuang227@users.noreply.github.com>
-          Co-authored-by: Fritzwang <122777315+Fritzwang@users.noreply.github.com>
-          Co-authored-by: 15910637182 <122958141+15910637182@users.noreply.github.com>
-          Co-authored-by: IsaacChen0527 <41335976+IsaacChen0527@users.noreply.github.com>
-          Co-authored-by: bamboo river <79087199+zhuxizheng@users.noreply.github.com>
-          Co-authored-by: Observl <63183098+Observl@users.noreply.github.com>
-          Co-authored-by: Cloudflipper <123280088+Cloudflipper@users.noreply.github.com>
-          Co-authored-by: Kar0606 <123638219+Kar0606@users.noreply.github.com>
-          Co-authored-by: 止波里 <70061078+Chiangkaisheck@users.noreply.github.com>
-          Co-authored-by: 虛白Lemon <104324132+VoidLemon@users.noreply.github.com>
-          Co-authored-by: SphinX1633 <94877214+SphinX1633@users.noreply.github.com>
-          Co-authored-by: ESOSK <136055019+ESOSK@users.noreply.github.com>
-          Co-authored-by: kidding <76855840+areukiiiddingme@users.noreply.github.com>
-          Co-authored-by: cielow <40722647+cielow@users.noreply.github.com>
-          Co-authored-by: fatyu101 <151294765+fatyu101@users.noreply.github.com>
-          Co-authored-by: wkq79 <87237135+wkq79@users.noreply.github.com>
-          Co-authored-by: pytherq134 <42090131+peter123456869e4@users.noreply.github.com>
-          Co-authored-by: nicocorey <68468272+nicocorey@users.noreply.github.com>"
+          git commit -m "upd: update translated text nightly"
           git push -u origin nightly-update -f

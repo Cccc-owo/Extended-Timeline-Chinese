@@ -1,117 +1,25 @@
-government = monarchy
+ï»¿government = monarchy
 add_government_reform = autocracy_reform
 primary_culture = inca
 religion = inti
 technology_group = andean
 unit_type = south_american
-capital = 808
-100.1.1 = {
-  add_government_reform = early_gov_reform_1
-}
-230.1.1 = {
-  add_government_reform = early_gov_reform_2
-}
-360.1.1 = {
-  add_government_reform = early_gov_reform_3
-}
-490.1.1 = {
-  add_government_reform = early_gov_reform_4
-}
-620.1.1 = {
-  add_government_reform = early_gov_reform_5
-}
-750.1.1 = {
-  add_government_reform = early_gov_reform_6
-}
-880.1.1 = {
-  add_government_reform = early_gov_reform_7
-}
-1010.1.1 = {
-  add_government_reform = early_gov_reform_8
-}
-1140.1.1 = {
-  add_government_reform = early_gov_reform_9
-}
-1197.1.1 = {
+capital = 808 	#  Cuzco
+fixed_capital = 808 	#  Cannot move capital away from this province & no power cost to move to it
+1399.1.1 = {
   monarch = {
-    name = "Manco Cápac"
-    dynasty = "Hanan"
-    adm = 4
-    dip = 3
-    mil = 4
-  }
-}
-1230.1.1 = {
-  monarch = {
-    name = "Sinchi Roca"
-    dynasty = "Hanan"
-    adm = 3
-    dip = 1
-    mil = 3
-  }
-}
-1260.1.1 = {
-  monarch = {
-    name = "Lloque Yupanqui"
-    dynasty = "Hanan"
+    name = "ç»´æ‹‰ç§‘æŸ¥" 	# Viracocha
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 2
-    dip = 4
-    mil = 3
-  }
-}
-1270.1.1 = {
-  add_government_reform = early_gov_reform_10
-}
-1290.1.1 = {
-  monarch = {
-    name = "Mayta Cápac"
-    dynasty = "Hanan"
-    adm = 4
-    dip = 1
+    dip = 0
     mil = 2
-  }
-}
-1320.1.1 = {
-  monarch = {
-    name = "Cápac Yupanqui"
-    dynasty = "Hanan"
-    adm = 3
-    dip = 1
-    mil = 3
-  }
-}
-1350.1.1 = {
-  monarch = {
-    name = "Inca Roca"
-    dynasty = "Hanan"
-    adm = 3
-    dip = 2
-    mil = 4
-  }
-}
-1380.1.1 = {
-  monarch = {
-    name = "Yahuar Huacac"
-    dynasty = "Hanan"
-    adm = 2
-    dip = 2
-    mil = 3
-  }
-}
-1410.1.1 = {
-  monarch = {
-    name = "Viracocha Inca"
-    dynasty = "Hanan"
-    adm = 3
-    dip = 1
-    mil = 3
   }
 }
 1420.1.1 = {
   heir = {
-    name = "^åg“^‚„"  # Pachacuti
-    monarch_name = "^åg“^‚„"  # Pachacuti Inca
-    dynasty = "ÈTWS"  # Hanan
+    name = "å¸•æŸ¥åº“è’‚" 	# Pachacuti
+    monarch_name = "å¸•æŸ¥åº“è’‚" 	# Pachacuti
+    dynasty = "å“ˆå—" 	# Hanan
     birth_date = 1420.1.1
     death_date = 1471.1.1
     claim = 95
@@ -122,18 +30,29 @@ capital = 808
 }
 1438.1.1 = {
   monarch = {
-    name = "^åg“^‚„"  # Pachacuti Inca
-    dynasty = "ÈTWS"  # Hanan
+    name = "å¸•æŸ¥åº“è’‚" 	# Pachacuti
+    dynasty = "å“ˆå—" 	# Hanan
+    birth_date = 1420.1.1
     adm = 5
     dip = 4
     mil = 6
+    leader = {
+      name = "å¸•æŸ¥åº“è’‚" 	# Pachacuti
+      type = general
+      fire = 3
+      shock = 5
+      manuever = 4
+      siege = 2
+    }
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = conqueror_personality
 }
 1444.1.1 = {
   heir = {
-    name = "şV^KQ 2SXoúW"  # Tupac-Yupanqui
-    monarch_name = "şV^KQ 2SXoúW"  # Tupac Inca Yupanqui
-    dynasty = "ÈTWS"  # Hanan
+    name = "å›¾å¸•å…‹ å°¤æ½˜åŸº" 	# Tupac-Yupanqui
+    monarch_name = "å›¾å¸•å…‹ å°¤æ½˜åŸº" 	# Tupac Yupanqui
+    dynasty = "å“ˆå—" 	# Hanan
     birth_date = 1444.1.1
     death_date = 1493.1.1
     claim = 95
@@ -141,22 +60,27 @@ capital = 808
     dip = 3
     mil = 6
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = conqueror_personality
+  add_heir_personality = lawgiver_personality
 }
 1471.1.1 = {
   monarch = {
-    name = "şV^KQ 2SXoúW"  # Tupac Inca Yupanqui
-    dynasty = "ÈTWS"  # Hanan
+    name = "å›¾å¸•å…‹ å°¤æ½˜åŸº" 	# Tupac Yupanqui
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 5
     dip = 3
     mil = 6
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = lawgiver_personality
 }
 1475.1.1 = {
   heir = {
-    name = "ætO³u aS^KQ"  # Huayana Capac
-    monarch_name = "ætO³u aS^KQ"  # Huayana Capac
-    dynasty = "ÈTWS"  # Hanan
-    birth_date = 1475.1.1
+    name = "ç“¦ä¼Šçº³ å¡å¸•å…‹" 	# Huayana Capac
+    monarch_name = "ç“¦ä¼Šçº³ å¡å¸•å…‹" 	# Huayana Capac
+    dynasty = "å“ˆå—" 	# Hanan
+    birth_date = 1475.1.1 	#  Approx.
     death_date = 1527.1.1
     claim = 95
     adm = 5
@@ -166,8 +90,8 @@ capital = 808
 }
 1493.1.1 = {
   monarch = {
-    name = "ætO³u aS^KQ"  # Huayna-Capac
-    dynasty = "ÈTWS"  # Hanan
+    name = "ç“¦ä¼Šçº³ å¡å¸•å…‹" 	# Huayna-Capac
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 5
     dip = 2
     mil = 3
@@ -175,9 +99,9 @@ capital = 808
 }
 1503.1.1 = {
   heir = {
-    name = "æt¯eaSS"  # Huáscar
-    monarch_name = "æt¯eaSS I"  # Huáscar I
-    dynasty = "ÈTWS"  # Hanan
+    name = "ç“¦æ–¯å¡å°”" 	# HuÃ¡scar
+    monarch_name = "ç“¦æ–¯å¡å°” I" 	# HuÃ¡scar I
+    dynasty = "å“ˆå—" 	# Hanan
     birth_date = 1503.1.1
     death_date = 1532.1.1
     claim = 95
@@ -185,7 +109,7 @@ capital = 808
     dip = 0
     mil = 1
     leader = {
-      name = "æt¯eaSS"  # Huáscar
+      name = "ç“¦æ–¯å¡å°”" 	# HuÃ¡scar
       type = general
       fire = 1
       shock = 3
@@ -196,7 +120,7 @@ capital = 808
 }
 1523.1.1 = {
   leader = {
-    name = "?–XbKQ"  # Atoc
+    name = "é˜¿æ‰˜å…‹" 	# Atoc
     type = general
     fire = 1
     shock = 3
@@ -207,13 +131,13 @@ capital = 808
 }
 1527.1.1 = {
   monarch = {
-    name = "æt¯eaSS I"  # Huáscar I
-    dynasty = "ÈTWS"  # Hanan
+    name = "ç“¦æ–¯å¡å°” I" 	# HuÃ¡scar I
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 3
     dip = 0
     mil = 1
     leader = {
-      name = "æt¯eaSS"  # Huáscar
+      name = "ç“¦æ–¯å¡å°”" 	# HuÃ¡scar
       type = general
       fire = 1
       shock = 3
@@ -224,9 +148,9 @@ capital = 808
 }
 1527.1.1 = {
   heir = {
-    name = "?–TXætS^"  # Atahuallpa
-    monarch_name = "?–TXætS^"  # Atahuallpa
-    dynasty = "ÈTWS"  # Hanan
+    name = "é˜¿å¡”ç“¦å°”å¸•" 	# Atahuallpa
+    monarch_name = "é˜¿å¡”ç“¦å°”å¸•" 	# Atahuallpa
+    dynasty = "å“ˆå—" 	# Hanan
     birth_date = 1497.3.20
     death_date = 1533.8.29
     claim = 95
@@ -237,8 +161,8 @@ capital = 808
 }
 1532.1.1 = {
   monarch = {
-    name = "?–TXætS^"  # Atahuallpa
-    dynasty = "ÈTWS"  # Hanan
+    name = "é˜¿å¡”ç“¦å°”å¸•" 	# Atahuallpa
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 2
     dip = 0
     mil = 3
@@ -246,10 +170,10 @@ capital = 808
 }
 1533.1.1 = {
   heir = {
-    name = "şV^KQ ætS^"  # Tupac Huallpa
-    monarch_name = "şV^KQ ætS^"  # Tupac Huallpa
-    dynasty = "ÈTWS"  # Hanan
-    birth_date = 1510.1.1
+    name = "å›¾å¸•å…‹ ç“¦å°”å¸•" 	# Tupac Huallpa
+    monarch_name = "å›¾å¸•å…‹ ç“¦å°”å¸•" 	# Tupac Huallpa
+    dynasty = "å“ˆå—" 	# Hanan
+    birth_date = 1510.1.1 	#  Unknown.
     death_date = 1533.10.1
     claim = 95
     adm = 0
@@ -259,8 +183,8 @@ capital = 808
 }
 1533.7.28 = {
   monarch = {
-    name = "şV^KQ ætS^"  # Tupac Huallpa
-    dynasty = "ÈTWS"  # Hanan
+    name = "å›¾å¸•å…‹ ç“¦å°”å¸•" 	# Tupac Huallpa
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 0
     dip = 0
     mil = 0
@@ -268,9 +192,9 @@ capital = 808
 }
 1533.7.28 = {
   heir = {
-    name = "üfÑy 2SXoúW"  # Manco Yupanqui
-    monarch_name = "üfÑy pSaS 2SXoúW"  # Manco Inca Yupanqui
-    dynasty = "ÈTWS"  # Hanan
+    name = "æ›¼ç§‘ å°¤æ½˜åŸº" 	# Manco Yupanqui
+    monarch_name = "æ›¼ç§‘ å°å¡ å°¤æ½˜åŸº" 	# Manco Inca Yupanqui
+    dynasty = "å“ˆå—" 	# Hanan
     birth_date = 1516.1.1
     death_date = 1544.1.1
     claim = 95
@@ -281,8 +205,8 @@ capital = 808
 }
 1534.1.1 = {
   monarch = {
-    name = "üfÑy pSaS 2SXoúW"  # Manco Inca Yupanqui
-    dynasty = "ÈTWS"  # Hanan
+    name = "æ›¼ç§‘ å°å¡ å°¤æ½˜åŸº" 	# Manco Inca Yupanqui
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 3
     dip = 3
     mil = 4
@@ -290,9 +214,9 @@ capital = 808
 }
 1535.1.1 = {
   heir = {
-    name = "iÌ‘ şV^KQ"  # Sayri Tupac
-    monarch_name = "iÌ‘ pSaS şV^KQ"  # Sayri Inca Tupac
-    dynasty = "ÈTWS"  # Hanan
+    name = "èµ›é‡Œ å›¾å¸•å…‹" 	# Sayri Tupac
+    monarch_name = "èµ›é‡Œ å°å¡ å›¾å¸•å…‹" 	# Sayri Inca Tupac
+    dynasty = "å“ˆå—" 	# Hanan
     birth_date = 1535.1.1
     death_date = 1561.1.1
     claim = 95
@@ -303,8 +227,8 @@ capital = 808
 }
 1545.1.1 = {
   monarch = {
-    name = "iÌ‘ şV^KQ"  # Sayri Tupac
-    dynasty = "ÈTWS"  # Hanan
+    name = "èµ›é‡Œ å›¾å¸•å…‹" 	# Sayri Tupac
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 2
     dip = 3
     mil = 1
@@ -312,9 +236,9 @@ capital = 808
 }
 1545.1.1 = {
   heir = {
-    name = "‚„şV “^‰"  # Titu Cusi
-    monarch_name = "‚„şV “^‰ pSaS"  # Titu Cusi Inca
-    dynasty = "ÈTWS"  # Hanan
+    name = "è’‚å›¾ åº“è¥¿" 	# Titu Cusi
+    monarch_name = "è’‚å›¾ åº“è¥¿ å°å¡" 	# Titu Cusi Inca
+    dynasty = "å“ˆå—" 	# Hanan
     birth_date = 1529.1.1
     death_date = 1571.1.1
     claim = 95
@@ -325,8 +249,8 @@ capital = 808
 }
 1557.1.1 = {
   monarch = {
-    name = "‚„şV “^‰ pSaS"  # Titu Cusi Inca
-    dynasty = "ÈTWS"  # Hanan
+    name = "è’‚å›¾ åº“è¥¿ å°å¡" 	# Titu Cusi Inca
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 4
     dip = 4
     mil = 2
@@ -334,9 +258,9 @@ capital = 808
 }
 1557.1.1 = {
   heir = {
-    name = "şV^KQ ?–lšœ"  # Tupac Amaru
-    monarch_name = "şV^KQ ?–lšœ pS R"  # Tupac Amaru Inca
-    dynasty = "ÈTWS"  # Hanan
+    name = "å›¾å¸•å…‹ é˜¿é©¬é²" 	# Tupac Amaru
+    monarch_name = "å›¾å¸•å…‹ é˜¿é©¬é² å°åŠ " 	# Tupac Amaru Inca
+    dynasty = "å“ˆå—" 	# Hanan
     birth_date = 1540.1.1
     death_date = 1572.1.1
     claim = 95
@@ -347,8 +271,8 @@ capital = 808
 }
 1571.1.1 = {
   monarch = {
-    name = "şV^KQ ?–lšœ pS R"  # Tupac Amaru Inca
-    dynasty = "ÈTWS"  # Hanan
+    name = "å›¾å¸•å…‹ é˜¿é©¬é² å°åŠ " 	# Tupac Amaru Inca
+    dynasty = "å“ˆå—" 	# Hanan
     adm = 0
     dip = 0
     mil = 1
