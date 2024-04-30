@@ -1,486 +1,336 @@
-government = monarchy
+﻿government = monarchy
 add_government_reform = rajput_kingdom
 government_rank = 1
 primary_culture = rajput
 religion = hinduism
-technology_group = early_indian
-capital = 513
-100.1.1 = {
-  add_government_reform = early_gov_reform_1
-}
-230.1.1 = {
-  add_government_reform = early_gov_reform_2
-}
-360.1.1 = {
-  add_government_reform = early_gov_reform_3
-}
-490.1.1 = {
-  add_government_reform = early_gov_reform_4
-}
-620.1.1 = {
-  add_government_reform = early_gov_reform_5
-}
-750.1.1 = {
-  add_government_reform = early_gov_reform_6
-}
-750.1.1 = {
-  technology_group = indian
-}
-880.1.1 = {
-  add_government_reform = early_gov_reform_7
-}
-1010.1.1 = {
-  add_government_reform = early_gov_reform_8
-}
-1140.1.1 = {
-  add_government_reform = early_gov_reform_9
-}
-1156.1.1 = {
-  monarch = {
-    name = "Jaisal Singh"
-    dynasty = "Yadava Bhati"
-    birth_date = 1140.1.1
-    dip = 3
-    mil = 3
-    adm = 5
-  }
-}
-1240.1.1 = {
-  monarch = {
-    name = "Jaisal II"
-    dynasty = "Yadava Bhati"
-    dip = 2
-    mil = 2
-    adm = 1
-  }
-}
-1270.1.1 = {
-  add_government_reform = early_gov_reform_10
-}
-1300.1.1 = {
-  monarch = {
-    name = "Jaisal III"
-    dynasty = "Yadava Bhati"
-    dip = 0
-    mil = 2
-    adm = 1
-  }
-}
-1360.1.1 = {
-  monarch = {
-    name = "Jaisal IV"
-    dynasty = "Yadava Bhati"
-    dip = 2
-    mil = 1
-    adm = 1
-  }
-}
+technology_group = indian
+capital = 513 	#  Jaisalmer
+fixed_capital = 513 	#  Cannot move capital away from this province & no power cost to move to it
 1444.1.1 = {
+  if = {
+    limit = {
+      NOT = {
+        has_dlc = "Dharma"
+      }
+    }
+    add_government_reform = feudalism_reform
+  }
   monarch = {
-    name = "Xo�mS"  # Bhanwar
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 0
-    mil = 1
-    adm = 0
+    name = "跋发罗" 	# Bhanwar 	#  "Grandson" Haven't been able to find dynastic info before 1530
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 0
+    MIL = 1
+    ADM = 0
   }
 }
 1480.1.1 = {
   heir = {
-    name = "^iKOpQ"  # Lunkaran
-    monarch_name = "^iKOpQ"  # Lunkaran
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "楞伽兰" 	# Lunkaran
+    monarch_name = "楞伽兰" 	# Lunkaran
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1480.1.1
     death_date = 1551.1.1
     claim = 95
-    dip = 2
-    mil = 2
-    adm = 0
+    DIP = 2
+    MIL = 2
+    ADM = 0
   }
 }
 1530.1.1 = {
   monarch = {
-    name = "^iKOpQ"  # Lunkaran
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 2
-    mil = 2
-    adm = 0
+    name = "楞伽兰" 	# Lunkaran
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 2
+    MIL = 2
+    ADM = 0
   }
 }
 1530.1.1 = {
   heir = {
-    name = "Maldev"
-    monarch_name = "Maldev"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "摩罗提婆" 	# Maldev
+    monarch_name = "摩罗提婆" 	# Maldev
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1500.1.1
     death_date = 1562.1.1
     claim = 95
-    dip = 2
-    mil = 3
-    adm = 4
+    DIP = 2
+    MIL = 3
+    ADM = 4
   }
 }
 1551.1.1 = {
   monarch = {
-    name = "T�W�cFZ"  # Maldev
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 2
-    mil = 3
-    adm = 4
+    name = "摩罗提婆" 	# Maldev
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 2
+    MIL = 3
+    ADM = 4
   }
 }
 1551.1.1 = {
   heir = {
-    name = "Harraj"
-    monarch_name = "Harraj"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "诃梨罗阇" 	# Harraj
+    monarch_name = "诃梨罗阇" 	# Harraj
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1530.1.1
     death_date = 1578.1.1
     claim = 95
-    dip = 1
-    mil = 3
-    adm = 2
+    DIP = 1
+    MIL = 3
+    ADM = 2
   }
 }
 1562.1.1 = {
   monarch = {
-    name = "�T�b	T"  # Harraj
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 1
-    mil = 3
-    adm = 2
+    name = "诃梨罗阇" 	# Harraj
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 1
+    MIL = 3
+    ADM = 2
   }
 }
 1562.1.1 = {
   heir = {
-    name = "�kid ��<h"  # Bhim Singh
-    monarch_name = "�kid ��<h"  # Bhim Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "毗摩僧诃" 	# Bhim Singh
+    monarch_name = "毗摩僧诃" 	# Bhim Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1550.1.1
     death_date = 1624.1.1
     claim = 95
-    dip = 0
-    mil = 3
-    adm = 1
+    DIP = 0
+    MIL = 3
+    ADM = 1
   }
 }
 1578.1.1 = {
   monarch = {
-    name = "�kid ��<h"  # Bhim Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 0
-    mil = 3
-    adm = 1
+    name = "毗摩僧诃" 	# Bhim Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 0
+    MIL = 3
+    ADM = 1
   }
 }
 1578.1.1 = {
   heir = {
-    name = "Kalyan Das"
-    monarch_name = "Kalyan Das"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "迦梨耶那昙" 	# Kalyan Das
+    monarch_name = "迦梨耶那昙" 	# Kalyan Das
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1570.1.1
     death_date = 1634.1.1
     claim = 95
-    dip = 1
-    mil = 2
-    adm = 1
+    DIP = 1
+    MIL = 2
+    ADM = 1
   }
 }
 1624.1.1 = {
   monarch = {
-    name = "KOo���"  # Kalyan Das
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 1
-    mil = 2
-    adm = 1
+    name = "迦梨耶那昙" 	# Kalyan Das
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 1
+    MIL = 2
+    ADM = 1
   }
 }
 1624.1.1 = {
   heir = {
-    name = "Manohar Das"
-    monarch_name = "Manohar Das"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "摩罗诃罗昙" 	# Manohar Das
+    monarch_name = "摩罗诃罗昙" 	# Manohar Das
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1590.1.1
     death_date = 1648.1.1
     claim = 95
-    dip = 0
-    mil = 2
-    adm = 2
+    DIP = 0
+    MIL = 2
+    ADM = 2
   }
 }
 1634.1.1 = {
   monarch = {
-    name = "�f�R�T��"  # Manohar Das
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 0
-    mil = 2
-    adm = 2
+    name = "摩罗诃罗昙" 	# Manohar Das
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 0
+    MIL = 2
+    ADM = 2
   }
 }
 1644.1.1 = {
   heir = {
-    name = "Wid�eN�W"  # Ramchandar
-    monarch_name = "Wid�eN�W"  # Ramchandar
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "罗摩旃陀罗" 	# Ramchandar
+    monarch_name = "罗摩旃陀罗" 	# Ramchandar
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1610.1.1
     death_date = 1651.1.1
     claim = 95
-    dip = 1
-    mil = 2
-    adm = 0
+    DIP = 1
+    MIL = 2
+    ADM = 0
   }
 }
 1648.1.1 = {
   monarch = {
-    name = "Wid�eN�W"  # Ramchandar
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 1
-    mil = 2
-    adm = 0
+    name = "罗摩旃陀罗" 	# Ramchandar
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 1
+    MIL = 2
+    ADM = 0
   }
 }
 1648.1.1 = {
   heir = {
-    name = "Sabal Singh"
-    monarch_name = "Sabal Singh"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "沙婆罗僧诃" 	# Sabal Singh
+    monarch_name = "沙婆罗僧诃" 	# Sabal Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1630.1.1
     death_date = 1661.1.1
     claim = 95
-    dip = 3
-    mil = 3
-    adm = 2
+    DIP = 3
+    MIL = 3
+    ADM = 2
   }
 }
 1651.1.1 = {
   monarch = {
-    name = "!�=O��<h"  # Sabal Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 3
-    mil = 3
-    adm = 2
+    name = "沙婆罗僧诃" 	# Sabal Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 3
+    MIL = 3
+    ADM = 2
   }
 }
 1651.1.1 = {
   heir = {
-    name = "�R�sS ��<h"  # Amar Singh
-    monarch_name = "�R�sS ��<h"  # Amar Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "阿摩罗僧诃" 	# Amar Singh
+    monarch_name = "阿摩罗僧诃" 	# Amar Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1640.1.1
     death_date = 1702.1.1
     claim = 95
-    dip = 0
-    mil = 2
-    adm = 0
+    DIP = 0
+    MIL = 2
+    ADM = 0
   }
 }
 1661.1.1 = {
   monarch = {
-    name = "�R�sS ��<h"  # Amar Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 0
-    mil = 2
-    adm = 0
+    name = "阿摩罗僧诃" 	# Amar Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 0
+    MIL = 2
+    ADM = 0
   }
 }
 1661.1.1 = {
   heir = {
-    name = "Jaswant Sing"
-    monarch_name = "Jaswant Sing"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "阇舍伐多僧诃" 	# Jaswant Sing
+    monarch_name = "阇舍伐多僧诃" 	# Jaswant Sing
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1640.1.1
     death_date = 1708.1.1
     claim = 95
-    dip = 3
-    mil = 1
-    adm = 1
+    DIP = 3
+    MIL = 1
+    ADM = 1
   }
 }
 1702.1.1 = {
   monarch = {
-    name = ">��eNyr ��<h"  # Jaswant Sing
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 3
-    mil = 1
-    adm = 1
+    name = "阇舍伐多僧诃" 	# Jaswant Sing
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 3
+    MIL = 1
+    ADM = 1
   }
 }
 1702.1.1 = {
   heir = {
-    name = "Budh Singh"
-    monarch_name = "Budh Singh"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "佛陀僧诃" 	# Budh Singh
+    monarch_name = "佛陀僧诃" 	# Budh Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1680.1.1
     death_date = 1722.1.1
     claim = 95
-    dip = 1
-    mil = 2
-    adm = 3
+    DIP = 1
+    MIL = 2
+    ADM = 3
   }
+}
+1707.3.15 = {
+  government_rank = 2 	# really from 1651
 }
 1708.1.1 = {
   monarch = {
-    name = "^��<h"  # Budh Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 1
-    mil = 2
-    adm = 3
+    name = "佛陀僧诃" 	# Budh Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 1
+    MIL = 2
+    ADM = 3
   }
 }
 1708.1.1 = {
   heir = {
-    name = "Akhai Singh"
-    monarch_name = "Akhai Singh"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "阿迦僧诃" 	# Akhai Singh
+    monarch_name = "阿迦僧诃" 	# Akhai Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1695.1.1
     death_date = 1762.1.1
     claim = 95
-    dip = 4
-    mil = 5
-    adm = 3
+    DIP = 4
+    MIL = 5
+    ADM = 3
   }
 }
 1722.1.1 = {
   monarch = {
-    name = "?�GY��<h"  # Akhai Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 4
-    mil = 5
-    adm = 3
+    name = "阿迦僧诃" 	# Akhai Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 4
+    MIL = 5
+    ADM = 3
   }
 }
 1722.1.1 = {
   heir = {
-    name = "Mulraj Singh"
-    monarch_name = "Mulraj Singh II"
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "摩罗罗阇僧诃" 	# Mulraj Singh
+    monarch_name = "摩罗罗阇僧诃 II" 	# Mulraj Singh II
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1710.1.1
     death_date = 1820.1.1
     claim = 95
-    dip = 1
-    mil = 2
-    adm = 1
+    DIP = 1
+    MIL = 2
+    ADM = 1
   }
 }
 1762.1.1 = {
   monarch = {
-    name = "UaWW� ��<h II"  # Mulraj Singh II
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 1
-    mil = 2
-    adm = 1
+    name = "摩罗罗阇僧诃 II" 	# Mulraj Singh II
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 1
+    MIL = 2
+    ADM = 1
   }
 }
 1762.1.1 = {
   heir = {
-    name = "KO� ��<h"  # Gaj Singh
-    monarch_name = "KO� ��<h"  # Gaj Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
+    name = "伽阇 辛格" 	# Gaj Singh
+    monarch_name = "伽阇 辛格" 	# Gaj Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
     birth_date = 1750.1.1
     death_date = 1846.11.11
     claim = 95
-    dip = 2
-    mil = 2
-    adm = 0
+    DIP = 2
+    MIL = 2
+    ADM = 0
   }
 }
 1820.1.1 = {
   monarch = {
-    name = "KO� ��<h"  # Gaj Singh
-    dynasty = "6wN�O FZ�c"  # Yadava Bhati
-    dip = 2
-    mil = 2
-    adm = 0
-  }
-}
-1820.1.1 = {
-  heir = {
-    name = "Ranjit Singh"
-    monarch_name = "Ranjit Singh"
-    dynasty = "Yadava Bhati"
-    birth_date = 1816.1.1
-    death_date = 1864.6.1
-    claim = 95
-    adm = 4
-    dip = 1
-    mil = 4
-  }
-}
-1846.1.1 = {
-  monarch = {
-    name = "Ranjit Singh"
-    dynasty = "Yadava Bhati"
-    birth_date = 1816.1.1
-    adm = 4
-    dip = 1
-    mil = 4
-  }
-}
-1846.1.1 = {
-  heir = {
-    name = "Bairi Sal"
-    monarch_name = "Bairi Sal"
-    dynasty = "Yadava Bhati"
-    birth_date = 1834.1.1
-    death_date = 1891.4.12
-    claim = 95
-    adm = 4
-    dip = 5
-    mil = 4
-  }
-}
-1864.6.1 = {
-  monarch = {
-    name = "Bairi Sal"
-    dynasty = "Yadava Bhati"
-    birth_date = 1834.1.1
-    adm = 4
-    dip = 5
-    mil = 4
-  }
-}
-1887.1.1 = {
-  heir = {
-    name = "Shyam Singh"
-    monarch_name = "Shyam Singh"
-    dynasty = "Yadava Bhati"
-    birth_date = 1887.1.1
-    death_date = 1914.7.9
-    claim = 95
-    adm = 2
-    dip = 2
-    mil = 2
-  }
-}
-1891.4.12 = {
-  monarch = {
-    name = "Shyam Singh"
-    dynasty = "Yadava Bhati"
-    birth_date = 1887.1.1
-    adm = 2
-    dip = 2
-    mil = 2
-  }
-}
-1891.4.12 = {
-  heir = {
-    name = "Jawahir Singh"
-    monarch_name = "Jawahir Singh"
-    dynasty = "Yadava Bhati"
-    birth_date = 1882.1.1
-    death_date = 1949.1.1
-    claim = 95
-    adm = 1
-    dip = 2
-    mil = 1
-  }
-}
-1914.7.9 = {
-  monarch = {
-    name = "Jawahir Singh"
-    dynasty = "Yadava Bhati"
-    birth_date = 1882.1.1
-    adm = 1
-    dip = 2
-    mil = 1
+    name = "伽阇 辛格" 	# Gaj Singh
+    dynasty = "耶陀伐 婆提" 	# Yadava Bhati
+    DIP = 2
+    MIL = 2
+    ADM = 0
   }
 }

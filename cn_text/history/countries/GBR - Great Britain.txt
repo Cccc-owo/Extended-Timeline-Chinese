@@ -1,43 +1,13 @@
-government = monarchy
+ï»¿government = monarchy
 add_government_reform = english_monarchy
 technology_group = western
 primary_culture = english
 add_accepted_culture = scottish
-religion = anglican
-capital = 236
-100.1.1 = {
-  add_government_reform = early_gov_reform_1
-}
-230.1.1 = {
-  add_government_reform = early_gov_reform_2
-}
-360.1.1 = {
-  add_government_reform = early_gov_reform_3
-}
-490.1.1 = {
-  add_government_reform = early_gov_reform_4
-}
-620.1.1 = {
-  add_government_reform = early_gov_reform_5
-}
-750.1.1 = {
-  add_government_reform = early_gov_reform_6
-}
-880.1.1 = {
-  add_government_reform = early_gov_reform_7
-}
-1010.1.1 = {
-  add_government_reform = early_gov_reform_8
-}
-1140.1.1 = {
-  add_government_reform = early_gov_reform_9
-}
-1270.1.1 = {
-  add_government_reform = early_gov_reform_10
-}
-1534.1.1 = {
-  decision = suffragan_bishop_act
-}
+add_accepted_culture = welsh
+religion = protestant
+capital = 236 	#  London
+#1525.1.1 = { decision = judiciary_act }
+#1534.1.1 = { decision = suffragan_bishop_act }
 1536.1.1 = {
   decision = dissolution_of_the_monasteries
 }
@@ -47,16 +17,16 @@ capital = 236
 1580.1.1 = {
   decision = enlist_privateers
 }
-1651.12.30 = {
-  decision = establish_british_merchant_navy
-}
+#1660.5.29 = { decision = tenures_abolition_act }
 1673.1.1 = {
   decision = test_act
 }
+#1700.1.1 = { decision = agricultural_cultivation }
 1702.3.8 = {
+  #	decision = establish_the_wooden_wall
   monarch = {
-    name = "‰R®Y I"  # Anne I
-    dynasty = "¯eşVšNyr"  # Stuart
+    name = "å®‰å¦® I" 	# Anne I
+    dynasty = "æ–¯å›¾äºšç‰¹" 	# Stuart
     adm = 3
     dip = 5
     mil = 4
@@ -64,8 +34,8 @@ capital = 236
   }
   queen = {
     country_of_origin = DAN
-    name = "TN»l"  # George
-    dynasty = "¯Q eYS‰v!X"  # von Oldenburg
+    name = "ä¹”æ²»" 	# George
+    dynasty = "å†¯ å¥¥å°”ç™»å ¡" 	# von Oldenburg
     birth_date = 1653.4.2
     death_date = 1708.10.28
     adm = 1
@@ -75,9 +45,9 @@ capital = 236
 }
 1702.3.8 = {
   heir = {
-    name = "0tòƒZ"  # Sophia
-    monarch_name = "0tòƒZ I"  # Sophia I
-    dynasty = "¯Q ôuyrS¯eôTk"  # von Wittelsbach
+    name = "ç´¢è²å¨…" 	# Sophia
+    monarch_name = "ç´¢è²å¨… I" 	# Sophia I
+    dynasty = "å†¯ ç»´ç‰¹å°”æ–¯å·´èµ«" 	# von Wittelsbach
     birth_date = 1630.10.14
     death_date = 1714.6.8
     claim = 95
@@ -92,9 +62,10 @@ capital = 236
 }
 1714.6.8 = {
   heir = {
-    name = "TN»l ïf"  # George Louis
-    monarch_name = "TN»l I"  # George I
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "ä¹”æ²» è·¯æ˜“" 	# George Louis
+    monarch_name = "ä¹”æ²» I" 	# George I
+    culture = hannoverian
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     birth_date = 1660.5.28
     death_date = 1727.6.11
     claim = 95
@@ -105,8 +76,9 @@ capital = 236
 }
 1714.8.1 = {
   monarch = {
-    name = "TN»l I"  # George I
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "ä¹”æ²» I" 	# George I
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
+    culture = hannoverian
     adm = 3
     dip = 3
     mil = 5
@@ -114,9 +86,10 @@ capital = 236
 }
 1714.8.1 = {
   heir = {
-    name = "TN»l eYäS¯eTX¯e"  # George Augustus
-    monarch_name = "TN»l II"  # George II
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "ä¹”æ²» å¥¥å¤æ–¯å¡”æ–¯" 	# George Augustus
+    monarch_name = "ä¹”æ²» II" 	# George II
+    culture = hannoverian
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     birth_date = 1683.11.9
     death_date = 1760.10.25
     claim = 95
@@ -125,10 +98,10 @@ capital = 236
     mil = 4
   }
 }
+#1718.1.1 = { leader = {	name = "Georg Byng"		type = admiral	fire = 4	shock = 4	manuever = 3	siege = 0	death_date = 1750.4.7 } } # Removed /SWÃ–
 1725.1.1 = {
-  decision = acknowledge_britanna_rules_the_waves
   leader = {
-    name = "1r·VNS ZS¯eÑyi`"  # Edward Boscawen
+    name = "çˆ±å¾·å åšæ–¯ç§‘æ©" 	# Edward Boscawen
     type = admiral
     fire = 4
     shock = 3
@@ -139,16 +112,17 @@ capital = 236
 }
 1727.6.11 = {
   monarch = {
-    name = "TN»l II"  # George II
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "ä¹”æ²» II" 	# George II
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
+    culture = hannoverian
     adm = 4
     dip = 3
     mil = 4
   }
   queen = {
     country_of_origin = ANS
-    name = "aSW3t"  # Caroline
-    dynasty = "¯Q —¨N0t&O"  # von Hohenzollern
+    name = "å¡ç½—ç³" 	# Caroline
+    dynasty = "å†¯ éœäº¨ç´¢ä¼¦" 	# von Hohenzollern
     birth_date = 1683.3.1
     death_date = 1737.11.20
     female = yes
@@ -157,11 +131,13 @@ capital = 236
     mil = 3
   }
 }
+#1735.1.1 = { leader = {	name = "John Byng"		type = admiral	fire = 2	shock = 2	manuever = 3	siege = 0	death_date = 1757.3.14 } } # Removed /SWÃ–
 1727.6.11 = {
   heir = {
-    name = "V÷–·VÌ‘KQ ïf"  # Frederick Louis
-    monarch_name = "V÷–·VÌ‘KQ I"  # Frederick I
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "å¼—é›·å¾·é‡Œå…‹ è·¯æ˜“" 	# Frederick Louis
+    monarch_name = "å¼—é›·å¾·é‡Œå…‹ I" 	# Frederick I
+    culture = hannoverian
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     birth_date = 1707.2.1
     death_date = 1751.3.20
     claim = 95
@@ -172,7 +148,7 @@ capital = 236
 }
 1740.1.1 = {
   leader = {
-    name = "TN»l ‰Rîh"  # George Anson
+    name = "ä¹”æ²» å®‰æ£®" 	# George Anson
     type = admiral
     fire = 4
     shock = 4
@@ -181,9 +157,11 @@ capital = 236
     death_date = 1762.1.1
   }
 }
+#1740.1.1 = { leader = {	name = "Charles Cumberland"	type = general	fire = 4	shock = 2	manuever = 3	siege = 0	death_date = 1765.10.31 } } # Removed /SWÃ–
+#1740.1.1 = { leader = {	name = "William Shirley"	type = general	fire = 3	shock = 3	manuever = 4	siege = 0	death_date = 1771.3.24 } } # Removed /SWÃ–
 1744.1.1 = {
   leader = {
-    name = "yŠÆY¯e ƒlS+Y"  # James Wolfe
+    name = "è©¹å§†æ–¯ æ²ƒå°”å¤«" 	# James Wolfe
     type = general
     fire = 5
     shock = 5
@@ -194,7 +172,7 @@ capital = 236
 }
 1748.1.1 = {
   leader = {
-    name = "W=Oyr KQ±ƒfk"  # Robert Clive
+    name = "ç½—ä¼¯ç‰¹ å…‹è±æ­¦" 	# Robert Clive
     type = conquistador
     fire = 6
     shock = 6
@@ -203,14 +181,18 @@ capital = 236
     death_date = 1774.11.22
   }
 }
+#1748.1.1 = { leader = {	name = "Edward Hawke"		type = admiral	fire = 3	shock = 3	manuever = 4	siege = 0	death_date = 1781.10.16 } } # Removed /SWÃ–
+#1750.1.1 = { leader = {	name = "John Burgoyne"		type = general	fire = 3	shock = 2	manuever = 2	siege = 1	death_date = 1792.8.4 } } # Removed /SWÃ–
+#1750.1.1 = { leader = {	name = "Warren Hastings"	type = conquistador	fire = 1	shock = 1	manuever = 6	siege = 0	death_date = 1818.8.22 } } # Removed /SWÃ–
+#1750.1.1 = { leader = {	name = "Charles Saunders"	type = admiral	fire = 3	shock = 3	manuever = 4	siege = 0	death_date = 1775.12.7 } } # Removed /SWÃ–
 1750.1.1 = {
   set_country_flag = american_revolution
 }
 1751.3.20 = {
   heir = {
-    name = "TN»l ZÉ^"  # George William
-    monarch_name = "TN»l III"  # George III
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "ä¹”æ²» å¨å»‰" 	# George William
+    monarch_name = "ä¹”æ²» III" 	# George III
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     birth_date = 1738.6.4
     death_date = 1820.1.29
     claim = 95
@@ -221,7 +203,7 @@ capital = 236
 }
 1752.1.1 = {
   leader = {
-    name = "1r·VNS ^ÉbYKQ"  # Edward Braddock
+    name = "çˆ±å¾·å å¸ƒæ‹‰å¤šå…‹" 	# Edward Braddock
     type = general
     fire = 1
     shock = 1
@@ -230,9 +212,11 @@ capital = 236
     death_date = 1755.7.13
   }
 }
+#1755.1.1 = { leader = {	name = "Richard Howe"		type = admiral	fire = 2	shock = 2	manuever = 3	siege = 0	death_date = 1799.8.5 } } # Removed /SWÃ–
+#1755.1.1 = { leader = {	name = "George Rodney"		type = admiral	fire = 3	shock = 4	manuever = 4	siege = 0	death_date = 1792.5.24 } } # Removed /SWÃ–
 1756.1.1 = {
   leader = {
-    name = "TN»l NSÛv˜"  # George Washington
+    name = "ä¹”æ²» åç››é¡¿" 	# George Washington
     type = general
     fire = 2
     shock = 1
@@ -241,10 +225,12 @@ capital = 236
     death_date = 1764.12.30
   }
 }
+#1756.1.1 = { leader = {	name = "William Howe"		type = general	fire = 3	shock = 3	manuever = 3	siege = 1	death_date = 1814.7.12 } } # Removed /SWÃ–
+#1758.1.1 = { leader = {	name = "Jeffrey Amherst"	type = general	fire = 3	shock = 3	manuever = 4	siege = 1	death_date = 1797.8.3 } } # Removed /SWÃ–
 1760.10.25 = {
   monarch = {
-    name = "TN»l III"  # George III
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "ä¹”æ²» III" 	# George III
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     adm = 1
     dip = 1
     mil = 4
@@ -253,8 +239,8 @@ capital = 236
 1761.9.8 = {
   queen = {
     country_of_origin = MKL
-    name = "Ymyr"  # Charlotte
-    dynasty = "¯Q …hKQ&O!X"  # von Mecklenburg
+    name = "å¤æ´›ç‰¹" 	# Charlotte
+    dynasty = "å†¯ æ¢…å…‹ä¼¦å ¡" 	# von Mecklenburg
     birth_date = 1683.3.1
     death_date = 1737.11.20
     female = yes
@@ -265,9 +251,9 @@ capital = 236
 }
 1762.8.12 = {
   heir = {
-    name = "TN»l eYäS¯eTX¯e"  # George Augustus
-    monarch_name = "TN»l IV"  # George IV
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "ä¹”æ²» å¥¥å¤æ–¯å¡”æ–¯" 	# George Augustus
+    monarch_name = "ä¹”æ²» IV" 	# George IV
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     birth_date = 1762.8.12
     death_date = 1830.6.26
     claim = 95
@@ -276,9 +262,11 @@ capital = 236
     mil = 3
   }
 }
+#1764.1.1 = { leader = {	name = "John Byron"		type = explorer	fire = 1	shock = 2	manuever = 1	siege = 0	death_date = 1786.4.10 } } # Removed /SWÃ–
+#1767.1.1 = { leader = {	name = "Samuel Hood" type = admiral	fire = 4	shock = 4	manuever = 3	siege = 0	death_date = 1816.1.27 } } # Removed /SWÃ–
 1768.1.1 = {
   leader = {
-    name = "yŠÆY¯e “^KQ"  # James Cook
+    name = "è©¹å§†æ–¯ åº“å…‹" 	# James Cook
     type = explorer
     fire = 1
     shock = 1
@@ -292,7 +280,7 @@ capital = 236
 }
 1775.1.1 = {
   leader = {
-    name = "yŠÆY¯e aSS˜"  # James Carleton
+    name = "è©¹å§†æ–¯ å¡å°”é¡¿" 	# James Carleton
     type = conquistador
     fire = 3
     shock = 3
@@ -301,9 +289,10 @@ capital = 236
     death_date = 1790.1.1
   }
 }
+#1775.1.1 = { leader = {	name = "Charles Cornwallis"	type = general	fire = 4	shock = 3	manuever = 4	siege = 0	death_date = 1805.10.5 } } # Removed /SWÃ–
 1777.1.1 = {
   leader = {
-    name = "=O³u¯eyr TXS˜"  # Banastre Tarleton
+    name = "ä¼¯çº³æ–¯ç‰¹ å¡”å°”é¡¿" 	# Banastre Tarleton
     type = general
     fire = 3
     shock = 5
@@ -314,7 +303,7 @@ capital = 236
 }
 1778.1.1 = {
   leader = {
-    name = "eYäS¯eTX¯e ïQiOS"  # Augustus Keppel
+    name = "å¥¥å¤æ–¯å¡”æ–¯ å‡¯ä½©å°”" 	# Augustus Keppel
     type = admiral
     fire = 2
     shock = 3
@@ -323,9 +312,11 @@ capital = 236
     death_date = 1786.10.2
   }
 }
+#1778.1.1 = { leader = {	name = "George Clinton"		type = general	fire = 3	shock = 3	manuever = 3	siege = 0	death_date = 1812.4.20 } } # Removed /SWÃ–
+#1780.1.1 = { leader = {	name = "Edward Hughes"		type = admiral	fire = 4	shock = 4	manuever = 3	siege = 0	death_date = 1790.1.1 } } # Removed /SWÃ–
 1783.1.1 = {
   leader = {
-    name = "aS¯e=Oyr Ñy—gO·V"  # Cuthbert Collingwood
+    name = "å¡æ–¯ä¼¯ç‰¹ ç§‘æ—ä¼å¾·" 	# Cuthbert Collingwood
     type = admiral
     fire = 4
     shock = 4
@@ -336,7 +327,7 @@ capital = 236
 }
 1790.1.1 = {
   leader = {
-    name = "—÷––w ³uS"  # Horatio Nelson
+    name = "éœé›·è‚– çº³å°”é€Š" 	# Horatio Nelson
     type = admiral
     fire = 6
     shock = 6
@@ -347,7 +338,7 @@ capital = 236
 }
 1791.1.1 = {
   leader = {
-    name = "TN»l )nåTNS"  # George Vancouver
+    name = "ä¹”æ²» æ¸©å“¥å" 	# George Vancouver
     type = explorer
     fire = 2
     shock = 2
@@ -358,7 +349,7 @@ capital = 236
 }
 1793.1.1 = {
   leader = {
-    name = "yŠÆY¯e ¦KQU³u"  # James MacDonald
+    name = "è©¹å§†æ–¯ éº¦å…‹å”çº³" 	# James MacDonald
     type = general
     fire = 4
     shock = 4
@@ -369,7 +360,7 @@ capital = 236
 }
 1793.12.1 = {
   leader = {
-    name = "‰·V<S òSÆR¯e"  # Sidney Smith
+    name = "è¥¿å¾·å°¼ å²å¯†æ–¯" 	# Sidney Smith
     type = admiral
     fire = 4
     shock = 4
@@ -380,7 +371,7 @@ capital = 236
 }
 1794.1.1 = {
   leader = {
-    name = "Zup˜lQ5r"  # Duke of Wellington
+    name = "å¨çµé¡¿å…¬çˆµ" 	# Duke of Wellington
     type = general
     fire = 5
     shock = 5
@@ -389,9 +380,10 @@ capital = 236
     death_date = 1819.1.1
   }
 }
+#1799.1.1 = { decision = combination_act }
 1804.1.1 = {
   leader = {
-    name = "Xblš¯e ÑyKQ&O"  # Thomas Cochrane
+    name = "æ‰˜é©¬æ–¯ ç§‘å…‹ä¼¦" 	# Thomas Cochrane
     type = admiral
     fire = 5
     shock = 5
@@ -405,28 +397,18 @@ capital = 236
 }
 1811.1.5 = {
   monarch = {
-    name = "TN»l IV"  # George IV
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
-    birth_date = 1762.8.12
+    name = "ä¹”æ²» IV" 	# George IV
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     adm = 2
     dip = 3
     mil = 3
   }
-  queen = {
-    country_of_origin = BRU
-    name = "aSm3t"  # Caroline
-    dynasty = "¯Q æ—S+Y"  # von Welf
-    birth_date = 1768.5.17
-    death_date = 1821.8.7
-    adm = 2
-    dip = 3
-    mil = 2
-    female = yes
-  }
+}
+1811.2.5 = {
   heir = {
-    name = "Ymyr"  # Charlotte
-    monarch_name = "Ymyr I"  # Charlotte I
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "å¤æ´›ç‰¹" 	# Charlotte
+    monarch_name = "å¤æ´›ç‰¹ I" 	# Charlotte I
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     birth_date = 1796.1.7
     death_date = 1817.11.6
     claim = 95
@@ -437,350 +419,16 @@ capital = 236
   }
 }
 1817.11.6 = {
+  # 'The Grand Old Duke of York'
   heir = {
-    name = "V÷–·VÌ‘KQ eYäS¯eTX¯e"  # Frederick Augustus
-    monarch_name = "V÷–·VÌ‘KQ I"  # Frederick I
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
+    name = "å¼—é›·å¾·é‡Œå…‹ å¥¥å¤æ–¯å¡”æ–¯" 	# Frederick Augustus
+    monarch_name = "å¼—é›·å¾·é‡Œå…‹ I" 	# Frederick I
+    dynasty = "å†¯ æ±‰è¯ºå¨" 	# von Hannover
     birth_date = 1763.8.16
     death_date = 1827.1.5
     claim = 95
     adm = 4
     dip = 2
     mil = 3
-  }
-}
-1827.1.5 = {
-  heir = {
-    name = "ZÉ^"  # William
-    monarch_name = "ZÉ^ IV"  # William IV
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
-    birth_date = 1765.8.21
-    death_date = 1837.6.20
-    claim = 95
-    adm = 2
-    dip = 2
-    mil = 2
-  }
-}
-1830.6.26 = {
-  monarch = {
-    name = "ZÉ^ IV"  # William IV
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
-    birth_date = 1765.8.21
-    adm = 2
-    dip = 2
-    mil = 2
-  }
-  queen = {
-    name = "?–·V±ƒ·V"  # Adelaide
-    dynasty = "¯Q („KQîh-ÈR9h"  # von Saxe-Meiningen
-    birth_date = 1792.8.13
-    death_date = 1849.12.2
-    adm = 2
-    dip = 3
-    mil = 1
-    female = yes
-  }
-  heir = {
-    name = "ôuY)RšN"  # Victoria
-    monarch_name = "ôuY)RšN I"  # Victoria I
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
-    birth_date = 1819.5.24
-    death_date = 1901.1.22
-    claim = 95
-    adm = 5
-    dip = 4
-    mil = 3
-    female = yes
-  }
-}
-1837.6.20 = {
-  monarch = {
-    name = "ôuY)RšN I"  # Victoria I
-    dynasty = "¯Q Ilú‹Z"  # von Hannover
-    birth_date = 1819.5.24
-    adm = 5
-    dip = 4
-    mil = 3
-    religion = protestant
-    female = yes
-  }
-}
-1840.2.10 = {
-  queen = {
-    name = "?–Syr"  # Albert
-    dynasty = "¯Q („KQîh-Ñy!X"  # von Saxe-Coburg
-    birth_date = 1819.8.26
-    death_date = 1861.12.14
-    adm = 4
-    dip = 2
-    mil = 4
-  }
-}
-1841.11.9 = {
-  heir = {
-    name = "1r·VNS"  # Edward
-    monarch_name = "1r·VNS VII"  # Edward VII
-    dynasty = "¯Q („KQîh-Ñy!X"  # von Saxe-Coburg
-    birth_date = 1841.11.9
-    death_date = 1910.5.6
-    claim = 95
-    adm = 4
-    dip = 3
-    mil = 4
-    religion = protestant
-  }
-}
-1900.1.1 = {
-  religion = secularism
-}
-1901.1.22 = {
-  monarch = {
-    name = "1r·VNS VII"  # Edward VII
-    dynasty = "¯Q („KQîh-Ñy!X"  # von Saxe-Coburg
-    birth_date = 1841.11.9
-    adm = 4
-    dip = 3
-    mil = 4
-    religion = protestant
-  }
-  queen = {
-    country_of_origin = DAN
-    name = "šN†SqS·VÉb"  # Alexandra
-    dynasty = "¯Q <hTKQ¯e!X"  # von Glücksburg
-    birth_date = 1844.12.1
-    death_date = 1925.11.20
-    female = yes
-    adm = 2
-    dip = 2
-    mil = 1
-    religion = protestant
-  }
-  heir = {
-    name = "TN»l"  # George
-    monarch_name = "TN»l V"  # George V
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1865.6.3
-    death_date = 1936.1.20
-    claim = 95
-    adm = 3
-    dip = 3
-    mil = 5
-    religion = protestant
-  }
-}
-1910.5.6 = {
-  monarch = {
-    name = "TN»l V"  # George V
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1865.6.3
-    adm = 3
-    dip = 3
-    mil = 5
-    religion = protestant
-  }
-  queen = {
-    name = "›sKN"  # Mary
-    dynasty = "ğlKQ"  # of Teck
-    birth_date = 1867.5.26
-    death_date = 1953.3.24
-    adm = 3
-    dip = 3
-    mil = 1
-    female = yes
-  }
-  heir = {
-    name = "1r·VNS"  # Edward
-    monarch_name = "1r·VNS VIII"  # Edward VIII
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1894.6.23
-    death_date = 1972.5.28
-    claim = 95
-    adm = 2
-    dip = 3
-    mil = 2
-    religion = protestant
-  }
-}
-1916.1.1 = {
-  leader = {
-    name = "=O³u·V·™„åTlš)R"  # Bernard Montgomery
-    type = general
-    fire = 5
-    shock = 4
-    manuever = 2
-    siege = 1
-    death_date = 1948.1.1
-  }
-}
-1933.12.1 = {
-  leader = {
-    name = "‰R·Vœ·NWR‰R"  # Andrew Cunningham
-    type = admiral
-    fire = 4
-    shock = 3
-    manuever = 3
-    siege = 0
-    death_date = 1946.1.1
-  }
-}
-1936.1.20 = {
-  monarch = {
-    name = "1r·VNS VIII"  # Edward VIII
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1894.6.23
-    adm = 2
-    dip = 3
-    mil = 2
-    religion = protestant
-  }
-  heir = {
-    name = "TN»l"  # George
-    monarch_name = "TN»l VI"  # George VI
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1895.12.14
-    death_date = 1952.2.6
-    claim = 95
-    adm = 3
-    dip = 4
-    mil = 2
-    religion = protestant
-  }
-}
-1936.12.11 = {
-  monarch = {
-    name = "TN»l VI"  # George VI
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1895.12.14
-    adm = 3
-    dip = 4
-    mil = 2
-    religion = protestant
-  }
-  queen = {
-    name = "OKNƒ‹v"  # Elizabeth
-    dynasty = "œ¯e-±ƒf"  # Bowes-Lyon
-    birth_date = 1900.8.4
-    death_date = 2002.3.30
-    adm = 3
-    dip = 4
-    mil = 3
-    female = yes
-  }
-  heir = {
-    name = "OKNƒ‹v"  # Elizabeth
-    monarch_name = "OKNƒ‹v II"  # Elizabeth II
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1926.4.21
-    death_date = 2022.9.8
-    claim = 95
-    adm = 5
-    dip = 4
-    mil = 1
-    religion = protestant
-    female = yes
-  }
-}
-1938.1.1 = {
-  leader = {
-    name = "?–pQ·^œKQ"  # Alan Brooke
-    type = general
-    fire = 3
-    shock = 4
-    manuever = 3
-    siege = 1
-    death_date = 1946.1.1
-  }
-}
-1939.1.1 = {
-  government = monarchy
-  add_government_reform = parliamentary_reform
-  add_government_reform = regional_representation_reform
-  add_government_reform = legislative_houses_reform
-  add_government_reform = multi_party_system
-  add_government_reform = democracy_reform
-  add_government_reform = ceremonial_monarch
-}
-1941.5.15 = {
-  leader = {
-    name = "ZÉ^·¯e)RÆY"  # William Slim
-    type = general
-    fire = 3
-    shock = 3
-    manuever = 2
-    siege = 1
-    death_date = 1952.1.1
-  }
-}
-1952.2.6 = {
-  monarch = {
-    name = "OKNƒ‹v II"  # Elizabeth II
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1926.4.21
-    adm = 5
-    dip = 4
-    mil = 1
-    religion = protestant
-    female = yes
-  }
-  queen = {
-    name = "òƒ)Rnf"  # Philip
-    dynasty = "¯Q <hTKQ¯e!X"  # von Glücksburg
-    birth_date = 1921.6.10
-    death_date = 2021.4.9
-    adm = 3
-    dip = 2
-    mil = 3
-  }
-  heir = {
-    name = "ågS¯e"  # Charles
-    monarch_name = "ågS¯e III"  # Charles III
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1948.11.14
-    death_date = 3000.1.1
-    claim = 95
-    adm = 4
-    dip = 2
-    mil = 2
-    religion = protestant
-  }
-}
-1973.1.1 = {
-  decision = dummy_join_eu
-}
-2020.1.31 = {
-  decision = dummy_leave_eu
-}
-2022.9.8 = {
-  monarch = {
-    name = "ågS¯e III"  # Charles III
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1948.11.14
-    adm = 4
-    dip = 2
-    mil = 2
-    religion = protestant
-  }
-  queen = {
-    name = "aSs|Éb"  # Camilla
-    dynasty = "œS¯e"  # Bowles
-    birth_date = 1947.7.17
-    death_date = 3000.1.1
-    adm = 2
-    dip = 3
-    mil = 2
-    female = yes
-  }
-  heir = {
-    name = "ZÉ^"  # William
-    monarch_name = "ZÉ^ V"  # William V
-    dynasty = ")nƒ"  # of Windsor
-    birth_date = 1982.6.21
-    death_date = 3000.1.1
-    claim = 95
-    adm = 4
-    dip = 4
-    mil = 2
-    religion = protestant
   }
 }

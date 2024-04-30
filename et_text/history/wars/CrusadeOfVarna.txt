@@ -1,0 +1,47 @@
+﻿name = "瓦尔纳十字军"  # Crusade of Varna
+war_goal = {
+  type = take_claim
+  casus_belli = cb_conquest
+  province = 149
+}
+1443.10.1 = {
+  add_attacker = POL
+  add_attacker = HUN
+  add_attacker = SER
+  add_attacker = BOH
+  add_attacker = WAL
+  add_attacker = MOL
+  add_attacker = PAP
+  add_defender = TUR
+}
+1443.11.1 = {
+  battle = {
+    name = "尼什之战"  # Nish
+    location = 2121
+    attacker = {
+      commander = "亚诺什·匈雅提"  # John Hunyadi
+      infantry = 21000
+      cavalry = 12000
+      losses = 6
+      country = HUN
+    }
+    defender = {
+      commander = "卡西姆·帕夏"  # Kasim Pasha
+      infantry = 15000
+      cavalry = 12000
+      losses = 20
+      country = TUR
+    }
+    result = yes
+  }
+}
+1444.11.1 = {
+  rem_attacker = POL
+  rem_attacker = HUN
+  rem_attacker = SER
+  rem_attacker = BOH
+  rem_attacker = WAL
+  rem_attacker = MOL
+  rem_attacker = PAP
+  rem_defender = TUR
+}

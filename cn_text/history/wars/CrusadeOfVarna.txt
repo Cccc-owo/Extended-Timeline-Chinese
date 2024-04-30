@@ -1,47 +1,53 @@
-name = "ætS³uASWR›Q"  # Crusade of Varna
+ï»¿name = "ç“¦å°”çº³åå­—å†›" 	# Crusade of Varna
 war_goal = {
-  type = take_claim
-  casus_belli = cb_conquest
-  province = 149
+  type = superiority_crusade
+  casus_belli = cb_crusade
 }
-1443.10.1 = {
-  add_attacker = POL
+1443.1.1 = {
   add_attacker = HUN
   add_attacker = SER
-  add_attacker = BOH
+  add_attacker = POL
+  add_attacker = LIT
+  add_attacker = BOS
   add_attacker = WAL
   add_attacker = MOL
+  add_attacker = VEN
   add_attacker = PAP
+  add_attacker = KAR
   add_defender = TUR
 }
-1443.11.1 = {
+1444.8.1 = {
+  rem_attacker = KAR
+}
+1444.11.10 = {
   battle = {
-    name = "<SÀNKNb"  # Nish
-    location = 2121
+    name = "ç“¦å°”çº³" 	# Varna
+    location = 150
     attacker = {
-      commander = "šNú‹ÀN·SÅ–Ğc"  # John Hunyadi
-      infantry = 21000
-      cavalry = 12000
-      losses = 6
-      country = HUN
+      commander = "ç“¦è¿ªæ–¯ç“¦å¤«ä¸‰ä¸–" 	# Wladyslaw III 	#  Wladyslaw III
+      infantry = 18000
+      cavalry = 2000
+      losses = 60 	#  percent
+      country = POL
     }
     defender = {
-      commander = "aS‰ÆY·^Y"  # Kasim Pasha
-      infantry = 15000
-      cavalry = 12000
-      losses = 20
+      commander = "ç©†æ‹‰å¾· II" 	# Murad II 	#  Murad II
+      infantry = 50000
+      cavalry = 10000
+      losses = 25 	#  percent
       country = TUR
     }
-    result = yes
+    result = no
   }
 }
-1444.11.1 = {
-  rem_attacker = POL
+1444.11.11 = {
   rem_attacker = HUN
   rem_attacker = SER
-  rem_attacker = BOH
+  rem_attacker = POL
+  rem_attacker = LIT
+  rem_attacker = BOS
   rem_attacker = WAL
-  rem_attacker = MOL
+  rem_attacker = VEN
   rem_attacker = PAP
   rem_defender = TUR
 }

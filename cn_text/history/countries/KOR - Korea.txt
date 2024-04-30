@@ -1,69 +1,23 @@
-government = monarchy
-add_government_reform = confucian_bureaucracy
+﻿government = monarchy
+add_government_reform = korean_monarchy
 primary_culture = korean
 religion = confucianism
 add_harmonized_religion = mahayana
-technology_group = early_chinese
-capital = 735
-100.1.1 = {
-  add_government_reform = early_gov_reform_1
-}
-230.1.1 = {
-  add_government_reform = early_gov_reform_2
-}
-360.1.1 = {
-  add_government_reform = early_gov_reform_3
-}
-490.1.1 = {
-  add_government_reform = early_gov_reform_4
-}
-620.1.1 = {
-  add_government_reform = early_gov_reform_5
-}
-750.1.1 = {
-  add_government_reform = early_gov_reform_6
-}
-750.1.1 = {
-  technology_group = chinese
-}
-880.1.1 = {
-  add_government_reform = early_gov_reform_7
-}
-1010.1.1 = {
-  add_government_reform = early_gov_reform_8
-}
-1140.1.1 = {
-  add_government_reform = early_gov_reform_9
-}
-1270.1.1 = {
-  add_government_reform = early_gov_reform_10
-}
-1392.7.18 = {
+technology_group = chinese
+capital = 735 	#  Hanseong
+1393.1.1 = {
   monarch = {
-    name = "Taejo"
-    dynasty = "Yi"
+    name = "成桂" 	# Seonggye 	# Taejo
+    dynasty = "李" 	# Yi
     adm = 5
     dip = 4
-    mil = 4
-  }
-}
-1392.7.18 = {
-  heir = {
-    name = "Jeongjong"
-    monarch_name = "Jeongjong"
-    dynasty = "Yi"
-    birth_date = 1357.7.1
-    death_date = 1419.9.26
-    claim = 95
-    adm = 3
-    dip = 3
-    mil = 3
+    mil = 5
   }
 }
 1398.9.1 = {
   monarch = {
-    name = "���g"  # Jeongjong
-    dynasty = "Ng"  # Yi
+    name = "芳果" 	# Banggwa 	# Jeongjong
+    dynasty = "李" 	# Yi
     adm = 3
     dip = 3
     mil = 3
@@ -71,11 +25,11 @@ capital = 735
 }
 1398.9.1 = {
   heir = {
-    name = "��܏"  # Taejong
-    monarch_name = "��܏"  # Taejong
-    dynasty = "Ng"  # Yi
-    birth_date = 1367.5.18
-    death_date = 1422.5.10
+    name = "芳远" 	# Bangwon
+    monarch_name = "芳远" 	# Bangwon
+    dynasty = "李" 	# Yi
+    birth_date = 1367.6.13
+    death_date = 1422.5.30
     claim = 95
     adm = 4
     dip = 4
@@ -83,20 +37,11 @@ capital = 735
   }
 }
 1400.11.13 = {
-  monarch = {
-    name = "Taejong"
-    dynasty = "Yi"
-    adm = 4
-    dip = 4
-    mil = 5
-  }
-}
-1400.11.13 = {
   heir = {
-    name = "Sejong"
-    monarch_name = "Sejong"
-    dynasty = "Yi"
-    birth_date = 1397.5.6
+    name = "祹" 	# Do
+    monarch_name = "祹" 	# Do
+    dynasty = "李" 	# Yi
+    birth_date = 1397.5.7
     death_date = 1450.5.18
     claim = 95
     adm = 6
@@ -104,42 +49,93 @@ capital = 735
     mil = 5
   }
 }
-1418.9.18 = {
+1418.1.1 = {
   monarch = {
-    name = "Sejong"
-    dynasty = "Yi"
+    name = "「世宗」 祹" 	# Sejong Do 	# Sejong Daewang
+    dynasty = "李" 	# Yi
     adm = 6
     dip = 5
     mil = 5
+    birth_date = 1397.5.7
+    death_date = 1450.5.18
   }
 }
-1418.9.18 = {
+1418.1.1 = {
+  queen = {
+    country_of_origin = KOR
+    name = "昭宪" 	# Soheon
+    dynasty = "沈" 	# Sim
+    birth_date = 1395.10.12
+    death_date = 1446.4.19
+    female = yes
+    adm = 4
+    dip = 3
+    mil = 3
+  }
+}
+1418.1.1 = {
   heir = {
-    name = "Munjong"
-    monarch_name = "Munjong II"
-    dynasty = "Yi"
-    birth_date = 1414.1.1
-    death_date = 1452.6.12
+    name = "珦" 	# Hyang
+    monarch_name = "珦" 	# Hyang
+    dynasty = "李" 	# Yi
+    birth_date = 1414.11.15
+    death_date = 1452.6.1
     claim = 95
-    adm = 2
-    dip = 1
-    mil = 1
+    adm = 3
+    dip = 2
+    mil = 2
+  }
+}
+1420.1.1 = {
+  clear_scripted_personalities = yes
+  add_ruler_personality = careful_personality
+  add_ruler_personality = well_advised_personality 	# hall of worthies
+  if = {
+    limit = {
+      NOT = {
+        has_dlc = "Domination"
+      }
+    }
+    set_estate_privilege = estate_church_inwards_perfection
+  }
+  if = {
+    limit = {
+      has_dlc = "Domination"
+    }
+    add_country_modifier = {
+      name = no_perfectionism_focus
+      duration = -1
+      desc = has_no_perfectionism_focus
+    }
+  }
+  set_country_flag = starts_with_inwards_perfection
+}
+1444.10.29 = {
+  #stop them conquering early
+  add_truce_with = MJZ
+  add_heir_personality = craven_personality
+  add_opinion = {
+    who = MJZ
+    modifier = opinion_KOR_supported_war_for_north
   }
 }
 1450.5.18 = {
   monarch = {
-    name = "�s"  # Munjong II
-    dynasty = "Ng"  # Yi
-    adm = 2
-    dip = 1
-    mil = 1
+    name = "珦" 	# Hyang 	# Munjong
+    dynasty = "李" 	# Yi
+    adm = 3
+    dip = 2
+    mil = 2
+    birth_date = 1414.11.15
+    death_date = 1452.6.1
   }
+  clear_scripted_personalities = yes
 }
 1450.5.18 = {
   heir = {
-    name = "Vp�)�"  # Danjong
-    monarch_name = "Vp�)�"  # Danjong
-    dynasty = "Ng"  # Yi
+    name = "弘𬀩" 	# Hongwi
+    monarch_name = "弘𬀩" 	# Hongwi
+    dynasty = "李" 	# Yi
     birth_date = 1441.1.1
     death_date = 1457.1.1
     claim = 95
@@ -150,18 +146,20 @@ capital = 735
 }
 1452.6.12 = {
   monarch = {
-    name = "Vp�)�"  # Danjong
-    dynasty = "Ng"  # Yi
+    name = "弘𬀩" 	# Hongwi 	# Danjong
+    dynasty = "李" 	# Yi
     adm = 3
     dip = 1
     mil = 4
+    birth_date = 1441.1.1
+    death_date = 1457.1.1
   }
 }
 1452.6.12 = {
   heir = {
-    name = "Ht"  # Se-jo
-    monarch_name = "Ht"  # Se-jo
-    dynasty = "Ng"  # Yi
+    name = "瑈" 	# Yu
+    monarch_name = "瑈" 	# Yu
+    dynasty = "李" 	# Yi
     birth_date = 1417.1.1
     death_date = 1468.1.1
     claim = 95
@@ -172,18 +170,20 @@ capital = 735
 }
 1456.1.1 = {
   monarch = {
-    name = "Ht"  # Se-jo
-    dynasty = "Ng"  # Yi
+    name = "瑈" 	# Yu 	# Sejo
+    dynasty = "李" 	# Yi
     adm = 1
     dip = 1
     mil = 1
+    birth_date = 1417.1.1
+    death_date = 1468.1.1
   }
 }
 1456.1.1 = {
   heir = {
-    name = "Df"  # Ye-jong
-    monarch_name = "Df"  # Ye-jong
-    dynasty = "Ng"  # Yi
+    name = "晄" 	# Gwang
+    monarch_name = "晄" 	# Gwang
+    dynasty = "李" 	# Yi
     birth_date = 1450.1.1
     death_date = 1469.1.10
     claim = 95
@@ -194,18 +194,20 @@ capital = 735
 }
 1468.10.2 = {
   monarch = {
-    name = "Df"  # Ye-jong
-    dynasty = "Ng"  # Yi
+    name = "晄" 	# Gwang 	# Yejong
+    dynasty = "李" 	# Yi
     adm = 2
     dip = 1
     mil = 2
+    birth_date = 1450.1.1
+    death_date = 1469.1.10
   }
 }
 1468.10.2 = {
   heir = {
-    name = "Z"  # Seongjong
-    monarch_name = "Z"  # Seongjong
-    dynasty = "Ng"  # Yi
+    name = "娎" 	# Hyeol
+    monarch_name = "娎" 	# Hyeol
+    dynasty = "李" 	# Yi
     birth_date = 1457.1.1
     death_date = 1494.1.1
     claim = 95
@@ -216,18 +218,20 @@ capital = 735
 }
 1469.1.10 = {
   monarch = {
-    name = "Z"  # Seongjong
-    dynasty = "Ng"  # Yi
+    name = "娎" 	# Hyeol 	# Seongjong
+    dynasty = "李" 	# Yi
     adm = 3
     dip = 3
     mil = 2
+    birth_date = 1457.1.1
+    death_date = 1494.1.1
   }
 }
 1476.1.1 = {
   heir = {
-    name = "�9"  # Yi Yung
-    monarch_name = "�9"  # Yeonsangun
-    dynasty = "Ng"  # Yi
+    name = "㦕" 	# Yung
+    monarch_name = "㦕" 	# Yung
+    dynasty = "李" 	# Yi
     birth_date = 1476.1.1
     death_date = 1506.1.1
     claim = 95
@@ -238,18 +242,20 @@ capital = 735
 }
 1495.1.30 = {
   monarch = {
-    name = "�9"  # Yeonsangun
-    dynasty = "Ng"  # Yi
+    name = "㦕" 	# Yung 	# Yeonsangun
+    dynasty = "李" 	# Yi
     adm = 0
     dip = 0
     mil = 0
+    birth_date = 1476.1.1
+    death_date = 1506.1.1
   }
 }
 1495.1.30 = {
   heir = {
-    name = "?`"  # Yi Yeok
-    monarch_name = "?`"  # Jungjong
-    dynasty = "Ng"  # Yi
+    name = "怿" 	# Yeok
+    monarch_name = "怿" 	# Yeok
+    dynasty = "李" 	# Yi
     birth_date = 1488.1.1
     death_date = 1544.12.5
     claim = 95
@@ -260,18 +266,20 @@ capital = 735
 }
 1506.1.1 = {
   monarch = {
-    name = "?`"  # Jungjong
-    dynasty = "Ng"  # Yi
+    name = "怿" 	# Yeok 	# Jungjong
+    dynasty = "李" 	# Yi
     adm = 1
     dip = 1
     mil = 1
+    birth_date = 1488.1.1
+    death_date = 1544.12.5
   }
 }
 1515.1.1 = {
   heir = {
-    name = "�S"  # Injong
-    monarch_name = "�S"  # Injong
-    dynasty = "Ng"  # Yi
+    name = "峼" 	# Ho
+    monarch_name = "峼" 	# Ho
+    dynasty = "李" 	# Yi
     birth_date = 1515.1.1
     death_date = 1545.8.18
     claim = 95
@@ -282,18 +290,20 @@ capital = 735
 }
 1544.12.5 = {
   monarch = {
-    name = "�S"  # Injong
-    dynasty = "Ng"  # Yi
+    name = "峼" 	# Ho 	# Injong
+    dynasty = "李" 	# Yi
     adm = 2
     dip = 1
     mil = 1
+    birth_date = 1515.1.1
+    death_date = 1545.8.18
   }
 }
 1544.12.5 = {
   heir = {
-    name = "�S"  # Myeongjong
-    monarch_name = "�S"  # Myeongjong
-    dynasty = "Ng"  # Yi
+    name = "峘" 	# Hwan
+    monarch_name = "峘" 	# Hwan
+    dynasty = "李" 	# Yi
     birth_date = 1534.1.1
     death_date = 1567.8.13
     claim = 95
@@ -304,18 +314,20 @@ capital = 735
 }
 1545.8.18 = {
   monarch = {
-    name = "�S"  # Myeongjong
-    dynasty = "Ng"  # Yi
+    name = "峘" 	# Hwan 	# Myeongjong
+    dynasty = "李" 	# Yi
     adm = 2
     dip = 1
-    mil = 1
+    mil = 2
+    birth_date = 1534.1.1
+    death_date = 1567.8.13
   }
 }
 1552.1.1 = {
   heir = {
-    name = "f"  # Yi Gyun
-    monarch_name = "f"  # Seonjo
-    dynasty = "Ng"  # Yi
+    name = "昖" 	# Yeon
+    monarch_name = "昖" 	# Yeon
+    dynasty = "李" 	# Yi
     birth_date = 1552.1.1
     death_date = 1608.3.7
     claim = 95
@@ -326,18 +338,20 @@ capital = 735
 }
 1567.8.13 = {
   monarch = {
-    name = "f"  # Seonjo
-    dynasty = "Ng"  # Yi
+    name = "昖" 	# Yeon 	# Seonjo
+    dynasty = "李" 	# Yi
     adm = 2
     dip = 1
     mil = 0
+    birth_date = 1552.1.1
+    death_date = 1608.3.7
   }
 }
 1574.1.1 = {
   heir = {
-    name = "�s"  # Gwanghaegun
-    monarch_name = "�s"  # Gwanghaegun
-    dynasty = "Ng"  # Yi
+    name = "珲" 	# Hon
+    monarch_name = "珲" 	# Hon
+    dynasty = "李" 	# Yi
     birth_date = 1574.1.1
     death_date = 1641.1.1
     claim = 95
@@ -348,7 +362,7 @@ capital = 735
 }
 1576.1.1 = {
   leader = {
-    name = "Ng��"  # Yi Sun-sin
+    name = "李舜臣" 	# Yi Sun-Sin
     type = admiral
     fire = 6
     shock = 6
@@ -359,17 +373,20 @@ capital = 735
 }
 1608.3.7 = {
   monarch = {
-    name = "�s"  # Gwanghaegun
-    dynasty = "Ng"  # Yi
+    name = "珲" 	# Hon 	# Gwanghaegun
+    dynasty = "李" 	# Yi
     adm = 1
     dip = 4
     mil = 2
+    birth_date = 1574.1.1
+    death_date = 1641.1.1
   }
 }
+# Coup
 1623.4.13 = {
   monarch = {
-    name = "'P"  # In-jo
-    dynasty = "Ng"  # Yi
+    name = "倧" 	# Jong 	# Injo
+    dynasty = "李" 	# Yi
     adm = 0
     dip = 0
     mil = 0
@@ -377,9 +394,9 @@ capital = 735
 }
 1623.4.13 = {
   heir = {
-    name = "�S"  # Hyojong
-    monarch_name = "�S"  # Hyojong
-    dynasty = "Ng"  # Yi
+    name = "峼" 	# Ho
+    monarch_name = "峼" 	# Ho
+    dynasty = "李" 	# Yi
     birth_date = 1619.1.1
     death_date = 1659.6.24
     claim = 95
@@ -388,20 +405,31 @@ capital = 735
     mil = 2
   }
 }
+1637.1.1 = {
+  government_rank = 1
+}
+1645.6.30 = {
+  government_rank = 2
+}
+1645.7.1 = {
+  government_rank = 1
+}
 1649.7.5 = {
   monarch = {
-    name = "�m"  # Hyojong
-    dynasty = "Ng"  # Yi
+    name = "淏" 	# Ho 	# Hyojong
+    dynasty = "李" 	# Yi
     adm = 3
     dip = 0
     mil = 2
+    birth_date = 1619.1.1
+    death_date = 1659.6.24
   }
 }
 1649.7.5 = {
   heir = {
-    name = "�h"  # Hyeonjong
-    monarch_name = "�h"  # Hyeonjong
-    dynasty = "Ng"  # Yi
+    name = "棩" 	# Yon
+    monarch_name = "棩" 	# Yon
+    dynasty = "李" 	# Yi
     birth_date = 1641.1.1
     death_date = 1674.9.19
     claim = 95
@@ -412,18 +440,20 @@ capital = 735
 }
 1659.6.24 = {
   monarch = {
-    name = "�h"  # Hyeonjong
-    dynasty = "Ng"  # Yi
+    name = "棩" 	# Yon 	# Hyeonjong
+    dynasty = "李" 	# Yi
     adm = 1
     dip = 0
     mil = 2
+    birth_date = 1641.1.1
+    death_date = 1674.9.19
   }
 }
 1661.8.15 = {
   heir = {
-    name = "q"  # Sukjong
-    monarch_name = "q"  # Sukjong
-    dynasty = "Ng"  # Yi
+    name = "焞" 	# Sun
+    monarch_name = "焞" 	# Sun
+    dynasty = "李" 	# Yi
     birth_date = 1661.8.15
     death_date = 1720.7.13
     claim = 95
@@ -434,18 +464,20 @@ capital = 735
 }
 1674.9.19 = {
   monarch = {
-    name = "q"  # Sukjong
-    dynasty = "Ng"  # Yi
+    name = "焞" 	# Sun 	# Sukjong
+    dynasty = "李" 	# Yi
     adm = 3
     dip = 0
     mil = 2
+    birth_date = 1661.8.15
+    death_date = 1720.7.13
   }
 }
 1688.1.1 = {
   heir = {
-    name = "f"  # Gyeonjong
-    monarch_name = "f"  # Gyeonjong
-    dynasty = "Ng"  # Yi
+    name = "昀" 	# Yun
+    monarch_name = "昀" 	# Yun
+    dynasty = "李" 	# Yi
     birth_date = 1688.1.1
     death_date = 1724.10.7
     claim = 95
@@ -456,18 +488,20 @@ capital = 735
 }
 1720.7.13 = {
   monarch = {
-    name = "f"  # Gyeonjong
-    dynasty = "Ng"  # Yi
+    name = "昀" 	# Yun 	# Gyeongjong
+    dynasty = "李" 	# Yi
     adm = 1
     dip = 0
     mil = 1
+    birth_date = 1688.1.1
+    death_date = 1724.10.7
   }
 }
 1720.7.13 = {
   heir = {
-    name = "f"  # Yeongjo
-    monarch_name = "f"  # Yeongjo
-    dynasty = "Ng"  # Yi
+    name = "昑" 	# Geum
+    monarch_name = "昑" 	# Geum
+    dynasty = "李" 	# Yi
     birth_date = 1694.9.13
     death_date = 1776.3.5
     claim = 95
@@ -478,18 +512,20 @@ capital = 735
 }
 1724.10.7 = {
   monarch = {
-    name = "f"  # Yeongjo
-    dynasty = "Ng"  # Yi
+    name = "昑" 	# Geum 	# Yeongjo
+    dynasty = "李" 	# Yi
     adm = 4
     dip = 2
     mil = 2
+    birth_date = 1694.9.13
+    death_date = 1776.3.5
   }
 }
 1752.9.22 = {
   heir = {
-    name = "Xy"  # Jeongjo
-    monarch_name = "Xy"  # Jeongjo
-    dynasty = "Ng"  # Yi
+    name = "祘" 	# San
+    monarch_name = "祘" 	# San
+    dynasty = "李" 	# Yi
     birth_date = 1752.9.22
     death_date = 1800.6.28
     claim = 95
@@ -500,18 +536,31 @@ capital = 735
 }
 1776.1.1 = {
   monarch = {
-    name = "Xy"  # Jeongjo
-    dynasty = "Ng"  # Yi
+    name = "祘" 	# San 	# Jeongjo
+    dynasty = "李" 	# Yi
     adm = 1
     dip = 0
+    mil = 1
+    birth_date = 1752.9.22
+    death_date = 1800.6.28
+  }
+  queen = {
+    country_of_origin = KOR
+    name = "贞纯" 	# Jung Soon
+    dynasty = "金" 	# Gyeongju Kim
+    birth_date = 1745.12.2
+    death_date = 1805.2.11
+    female = yes
+    adm = 3
+    dip = 3
     mil = 1
   }
 }
 1790.1.1 = {
   heir = {
-    name = "�s"  # Sunjo
-    monarch_name = "�s"  # Sunjo
-    dynasty = "Ng"  # Yi
+    name = "玜" 	# Gong
+    monarch_name = "玜" 	# Gong
+    dynasty = "李" 	# Yi
     birth_date = 1790.1.1
     death_date = 1834.1.1
     claim = 95
@@ -522,126 +571,12 @@ capital = 735
 }
 1800.8.19 = {
   monarch = {
-    name = "�s"  # Sunjo
-    dynasty = "Ng"  # Yi
+    name = "玜" 	# Gong 	# Sunjo
+    dynasty = "李" 	# Yi
     adm = 2
     dip = 0
     mil = 1
-  }
-}
-1827.9.8 = {
-  heir = {
-    name = "Heonjong"
-    monarch_name = "Heonjong"
-    dynasty = "Yi"
-    birth_date = 1827.9.8
-    death_date = 1849.7.25
-    claim = 95
-    adm = 4
-    dip = 5
-    mil = 4
-  }
-}
-1834.12.13 = {
-  monarch = {
-    name = "Heonjong"
-    dynasty = "Yi"
-    adm = 4
-    dip = 5
-    mil = 4
-  }
-}
-1834.12.13 = {
-  heir = {
-    name = "Cheoljong"
-    monarch_name = "Cheoljong"
-    dynasty = "Yi"
-    birth_date = 1831.7.25
-    death_date = 1864.1.15
-    claim = 95
-    adm = 2
-    dip = 5
-    mil = 5
-  }
-}
-1849.7.25 = {
-  monarch = {
-    name = "Cheoljong"
-    dynasty = "Yi"
-    adm = 2
-    dip = 5
-    mil = 5
-  }
-}
-1852.9.8 = {
-  heir = {
-    name = "Gojong"
-    monarch_name = "Gojong"
-    dynasty = "Yi"
-    birth_date = 1852.9.8
-    death_date = 1919.1.21
-    claim = 95
-    adm = 3
-    dip = 2
-    mil = 4
-  }
-}
-1863.12.13 = {
-  monarch = {
-    name = "Gojong"
-    dynasty = "Yi"
-    adm = 3
-    dip = 2
-    mil = 4
-  }
-}
-1874.3.25 = {
-  heir = {
-    name = "Sunjong"
-    monarch_name = "Sunjong"
-    dynasty = "Yi"
-    birth_date = 1874.3.25
-    death_date = 1926.4.24
-    claim = 95
-    adm = 5
-    dip = 2
-    mil = 3
-  }
-}
-1897.10.1 = {
-  government_rank = 3
-}
-1907.7.20 = {
-  monarch = {
-    name = "Sunjong"
-    dynasty = "Yi"
-    adm = 5
-    dip = 2
-    mil = 3
-  }
-}
-1920.1.1 = {
-  religion = secularism
-}
-1930.1.1 = {
-  technology_group = asian
-}
-1945.8.15 = {
-  government = republic
-  add_government_reform = parliamentary_reform
-  add_government_reform = strengthen_executive_powers_reform
-  add_government_reform = single_party_system
-  add_government_reform = democracy_reform
-  add_government_reform = powerful_head_of_state
-  set_legacy_government = constitutional_republic
-  government_rank = 2
-}
-1945.8.15 = {
-  monarch = {
-    name = "�4N�e?e�^	�"  # (Provisional Government)
-    regent = yes
-    adm = 2
-    dip = 2
-    mil = 2
+    birth_date = 1790.1.1
+    death_date = 1834.1.1
   }
 }

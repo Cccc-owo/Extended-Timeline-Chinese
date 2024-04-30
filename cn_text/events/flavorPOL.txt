@@ -1,5 +1,11 @@
+﻿######################################## 
+# Flavor events for Poland
+# 
+# written by Sara Wendel-ï¿½rtqvist
+######################################## 
 namespace = flavor_pol
 normal_or_historical_nations = yes
+# The Nieszawa Privileges-'Conventiones Particulares'
 country_event = {
   id = flavor_pol.3467
   title = "flavor_pol.EVTNAME3467"
@@ -7,6 +13,7 @@ country_event = {
   picture = LIBERUM_VETO_eventPicture
   fire_only_once = yes
   trigger = {
+    #NOT = {	num_of_estate_privileges = { estate = estate_nobles	value = 4 } }
     OR = {
       AND = {
         tag = POL
@@ -36,7 +43,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTA3467"
+    name = "flavor_pol.EVTOPTA3467" 	#  Accept the Conventions
     if = {
       limit = {
         NOT = {
@@ -118,13 +125,14 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB3467"
+    name = "flavor_pol.EVTOPTB3467" 	#  Refuse to sign it and defy the Magnates
     goto = pol_reble_province
     event_target:pol_reble_province = {
       polish_noble_rebels = 3
     }
   }
 }
+# The Statute of Piotrkow
 country_event = {
   id = flavor_pol.3468
   title = "flavor_pol.EVTNAME3468"
@@ -150,7 +158,7 @@ country_event = {
     months = 50
   }
   option = {
-    name = "flavor_pol.EVTOPTA3468"
+    name = "flavor_pol.EVTOPTA3468" 	#  Enact
     add_stability_or_adm_power = yes
     add_mercantilism = 3
     add_country_modifier = {
@@ -159,10 +167,11 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB3468"
+    name = "flavor_pol.EVTOPTB3468" 	#  Refuse to enact
     add_stability = -3
   }
 }
+# The Polish Inheritance of Masovia
 country_event = {
   id = flavor_pol.3473
   title = "flavor_pol.EVTNAME3473"
@@ -171,8 +180,9 @@ country_event = {
   fire_only_once = yes
   is_triggered_only = yes
   option = {
-    name = "flavor_pol.EVTOPTA3473"
+    name = "flavor_pol.EVTOPTA3473" 	#  Make it a personal royal fiefdom
     257 = {
+      # Warszawa
       if = {
         limit = {
           NOT = {
@@ -193,6 +203,7 @@ country_event = {
     }
   }
 }
+# The Jesuit King
 country_event = {
   id = flavor_pol.3477
   title = "flavor_pol.EVTNAME3477"
@@ -221,7 +232,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_pol.EVTOPTA3477"
+    name = "flavor_pol.EVTOPTA3477" 	#  Religious Freedom won the day
     remove_country_modifier = counter_reformation
     add_ruler_modifier = {
       name = pol_religious_freedom
@@ -238,7 +249,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB3477"
+    name = "flavor_pol.EVTOPTB3477" 	#  The Catholic Faith are the First among Equals
     every_country = {
       limit = {
         religion = catholic
@@ -250,12 +261,13 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTC3477"
+    name = "flavor_pol.EVTOPTC3477" 	#  Hail the Jesuit King!
     add_ruler_modifier = {
       name = pol_jesuit_king
     }
   }
 }
+# The Pacta Conventa and the Henrykian Articles
 country_event = {
   id = flavor_pol.3480
   title = "flavor_pol.EVTNAME3480"
@@ -293,7 +305,7 @@ country_event = {
     days = 1
   }
   option = {
-    name = "flavor_pol.EVTOPTA3480"
+    name = "flavor_pol.EVTOPTA3480" 	#  There is nothing we can do my King
     if = {
       limit = {
         num_of_estate_privileges = {
@@ -337,6 +349,7 @@ country_event = {
     set_country_flag = pol_pact_conventa_flag_had_before
   }
 }
+# The Sobieskian Army Reforms
 country_event = {
   id = flavor_pol.3485
   title = "flavor_pol.EVTNAME3485"
@@ -362,13 +375,13 @@ country_event = {
     months = 40
   }
   option = {
-    name = "flavor_pol.EVTOPTA3485"
+    name = "flavor_pol.EVTOPTA3485" 	#  Make a strict Army Reform only
     add_yearly_manpower = 1
     add_mil_power = 150
     add_stability_or_adm_power = yes
   }
   option = {
-    name = "flavor_pol.EVTOPTB3485"
+    name = "flavor_pol.EVTOPTB3485" 	#  Reform Army and undermine the power of the Sejm
     trigger = {
       has_estate_privilege = estate_nobles_nieszawa_privileges
     }
@@ -382,6 +395,7 @@ country_event = {
     }
   }
 }
+# The Great Northern Conflict
 country_event = {
   id = flavor_pol.3491
   title = "flavor_pol.EVTNAME3491"
@@ -411,7 +425,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_pol.EVTOPTA3491"
+    name = "flavor_pol.EVTOPTA3491" 	#  Advance!
     SWE = {
       add_opinion = {
         who = POL
@@ -438,7 +452,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB3491"
+    name = "flavor_pol.EVTOPTB3491" 	#  Stay calm for a while
     add_prestige = -10
     SWE = {
       add_opinion = {
@@ -448,6 +462,7 @@ country_event = {
     }
   }
 }
+# Turko-Polish Tension
 country_event = {
   id = flavor_pol.3488
   title = "flavor_pol.EVTNAME3488"
@@ -541,7 +556,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_pol.EVTOPTA3488"
+    name = "flavor_pol.EVTOPTA3488" 	#  We will defend Christendom
     add_country_modifier = {
       name = pol_tur_tension_timer
       duration = 3650
@@ -641,6 +656,7 @@ country_event = {
     }
   }
 }
+# The Horrible Plague in Lithuania
 country_event = {
   id = flavor_pol.3493
   title = "flavor_pol.EVTNAME3493"
@@ -669,7 +685,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_pol.EVTOPTA3493"
+    name = "flavor_pol.EVTOPTA3493" 	#  There is nothing we can do
     ai_chance = {
       factor = 25
     }
@@ -679,7 +695,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB3493"
+    name = "flavor_pol.EVTOPTB3493" 	#  Try to contain it
     ai_chance = {
       factor = 75
     }
@@ -690,6 +706,7 @@ country_event = {
     }
   }
 }
+# Ending the Stagnation - Jan Sobieski
 country_event = {
   id = flavor_pol.3497
   title = "flavor_pol.EVTNAME3497"
@@ -716,18 +733,19 @@ country_event = {
     months = 180
   }
   option = {
-    name = "flavor_pol.EVTOPTA3497"
+    name = "flavor_pol.EVTOPTA3497" 	#  No, it's too problematic to change the situation
     add_stability_or_adm_power = yes
     add_mercantilism = 3
     custom_tooltip = "pol_stag_maybe_more"
   }
   option = {
-    name = "flavor_pol.EVTOPTB3497"
+    name = "flavor_pol.EVTOPTB3497" 	#  Let us change this depressive situation
     add_stability = -3
     clr_country_flag = librium_veto
     remove_estate_privilege = estate_nobles_nieszawa_privileges
   }
 }
+# Ending the Stagnation - Friedrich Augustus II
 country_event = {
   id = flavor_pol.3498
   title = "flavor_pol.EVTNAME3497"
@@ -754,18 +772,19 @@ country_event = {
     months = 180
   }
   option = {
-    name = "flavor_pol.EVTOPTA3497"
+    name = "flavor_pol.EVTOPTA3497" 	#  No, it's too problematic to change the situation
     add_stability_or_adm_power = yes
     add_mercantilism = 3
     custom_tooltip = "pol_stag_maybe_more"
   }
   option = {
-    name = "flavor_pol.EVTOPTB3497"
+    name = "flavor_pol.EVTOPTB3497" 	#  Let us change this depressive situation
     add_stability = -3
     clr_country_flag = librium_veto
     remove_estate_privilege = estate_nobles_nieszawa_privileges
   }
 }
+# Ending the Stagnation - Stanislaus Poniatowski
 country_event = {
   id = flavor_pol.3499
   title = "flavor_pol.EVTNAME3497"
@@ -792,18 +811,19 @@ country_event = {
     months = 180
   }
   option = {
-    name = "flavor_pol.EVTOPTA3497"
+    name = "flavor_pol.EVTOPTA3497" 	#  No, it's too problematic to change the situation
     add_stability_or_adm_power = yes
     add_mercantilism = 3
     custom_tooltip = "pol_stag_maybe_more"
   }
   option = {
-    name = "flavor_pol.EVTOPTB3497"
+    name = "flavor_pol.EVTOPTB3497" 	#  Let us change this depressive situation
     add_stability = -3
     clr_country_flag = librium_veto
     remove_estate_privilege = estate_nobles_nieszawa_privileges
   }
 }
+# Ending the Stagnation - King Stanislaus
 country_event = {
   id = flavor_pol.3500
   title = "flavor_pol.EVTNAME3497"
@@ -830,18 +850,19 @@ country_event = {
     months = 180
   }
   option = {
-    name = "flavor_pol.EVTOPTA3497"
+    name = "flavor_pol.EVTOPTA3497" 	#  No, it's too problematic to change the situation
     add_stability = 2
     add_mercantilism = 3
     custom_tooltip = "pol_stag_no_more"
   }
   option = {
-    name = "flavor_pol.EVTOPTB3497"
+    name = "flavor_pol.EVTOPTB3497" 	#  Let us change this depressive situation
     add_stability = -3
     clr_country_flag = librium_veto
     remove_estate_privilege = estate_nobles_nieszawa_privileges
   }
 }
+# The Sejm refuse to allow the mobilization of more troops
 country_event = {
   id = flavor_pol.3738
   title = "flavor_pol.EVTNAME3738"
@@ -884,6 +905,7 @@ country_event = {
     add_stability = -1
   }
 }
+# The Sejm comply to your policies
 country_event = {
   id = flavor_pol.3743
   title = "flavor_pol.EVTNAME3743"
@@ -921,6 +943,7 @@ country_event = {
     }
   }
 }
+# The Sejm veto all your policies
 country_event = {
   id = flavor_pol.3744
   title = "flavor_pol.EVTNAME3744"
@@ -960,6 +983,7 @@ country_event = {
     add_stability = -1
   }
 }
+# Nicolaus Copernicus
 country_event = {
   id = flavor_pol.5100
   title = "flavor_pol.EVTNAME5100"
@@ -970,13 +994,14 @@ country_event = {
     name = "flavor_pol.EVTOPTOK"
     define_advisor = {
       type = natural_scientist
-      name = "<S�S�b �T�v<S"  # Nicolaus Copernicus
+      name = "尼古拉 哥白尼" 	# Nicolaus Copernicus
       culture = polish
       skill = 3
       cost_multiplier = 0.25
     }
   }
 }
+# Polish-Lithuanian Commonwealth Navy
 country_event = {
   id = flavor_pol.1
   title = "flavor_pol.EVTNAME1"
@@ -988,7 +1013,7 @@ country_event = {
     num_of_ports = 1
   }
   option = {
-    name = "flavor_pol.EVTOPTA1"
+    name = "flavor_pol.EVTOPTA1" 	#  Build a Great Navy
     add_navy_tradition = 20
     random_owned_province = {
       limit = {
@@ -1003,6 +1028,7 @@ country_event = {
     }
   }
 }
+# Sigismund's Column
 country_event = {
   id = flavor_pol.2
   title = "flavor_pol.EVTNAME2"
@@ -1033,7 +1059,7 @@ country_event = {
     months = 100
   }
   option = {
-    name = "flavor_pol.EVTOPTA2"
+    name = "flavor_pol.EVTOPTA2" 	#  Construct Sigismund's Column
     add_years_of_income = -0.5
     add_country_modifier = {
       name = "pol_sigismunds_column"
@@ -1041,11 +1067,12 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB2"
+    name = "flavor_pol.EVTOPTB2" 	#  There is no need to commemorate King Sigismund!
     add_prestige = -1
     add_legitimacy = 10
   }
 }
+# Merkuriusz Polski Ordynaryjny
 country_event = {
   id = flavor_pol.3
   title = "flavor_pol.EVTNAME3"
@@ -1071,24 +1098,25 @@ country_event = {
     months = 100
   }
   option = {
-    name = "flavor_pol.EVTOPTA3"
+    name = "flavor_pol.EVTOPTA3" 	#  Sponsor the newspaper
     add_years_of_income = -0.15
     add_ruler_modifier = {
       name = pol_merkuriusz_polski_ordynaryjny
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB3"
+    name = "flavor_pol.EVTOPTB3" 	#  Allow it
     add_stability_or_adm_power = yes
   }
   option = {
-    name = "flavor_pol.EVTOPTC3"
+    name = "flavor_pol.EVTOPTC3" 	#  Ban it
     trigger = {
       is_lesser_in_union = no
     }
     add_legitimacy = 15
   }
 }
+# Vilnius University
 country_event = {
   id = flavor_pol.4
   title = "flavor_pol.EVTNAME4"
@@ -1109,7 +1137,7 @@ country_event = {
     NOT = {
       is_year = 1610
     }
-    owns = 272
+    owns = 272 	#  Vilna
     NOT = {
       exists = LIT
     }
@@ -1118,17 +1146,18 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_pol.EVTOPTA4"
+    name = "flavor_pol.EVTOPTA4" 	#  Sponsor the University
     add_years_of_income = -0.25
     add_prestige = 5
     add_adm_power = 100
     add_innovativeness_small_effect = yes
   }
   option = {
-    name = "flavor_pol.EVTOPTB4"
+    name = "flavor_pol.EVTOPTB4" 	#  Do nothing
     add_prestige = -1
   }
 }
+# Jan Brozek
 country_event = {
   id = flavor_pol.5
   title = "flavor_pol.EVTNAME5"
@@ -1154,12 +1183,12 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_pol.EVTOPTA5"
+    name = "flavor_pol.EVTOPTA5" 	#  Hire him as advisor
     add_years_of_income = -0.2
     add_dip_power = 100
     define_advisor = {
       type = natural_scientist
-      name = "lb ^W�pKQ"  # Jan Brozek
+      name = "扬 布罗热克" 	# Jan Brozek
       culture = polish
       discount = yes
       skill = 2
@@ -1167,10 +1196,11 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
   option = {
-    name = "flavor_pol.EVTOPTB5"
+    name = "flavor_pol.EVTOPTB5" 	#  Ignore him
     add_prestige = -1
   }
 }
+# Michal Sedziwï¿½j
 country_event = {
   id = flavor_pol.6
   title = "flavor_pol.EVTNAME6"
@@ -1196,12 +1226,12 @@ country_event = {
     months = 150
   }
   option = {
-    name = "flavor_pol.EVTOPTA5"
+    name = "flavor_pol.EVTOPTA5" 	#  Hire him as advisor
     add_years_of_income = -0.2
     add_adm_power = 100
     define_advisor = {
       type = philosopher
-      name = "s|�TLN �hP�fkO"  # Michal Sedziwj
+      name = "米哈乌 塞齐武伊" 	# Michal Sedziwój
       culture = polish
       discount = yes
       skill = 3
@@ -1209,10 +1239,11 @@ country_event = {
     add_innovativeness_small_effect = yes
   }
   option = {
-    name = "flavor_pol.EVTOPTB5"
+    name = "flavor_pol.EVTOPTB5" 	#  Ignore him
     add_prestige = -1
   }
 }
+# Zamojski Academy
 country_event = {
   id = flavor_pol.7
   title = "flavor_pol.EVTNAME7"
@@ -1238,17 +1269,19 @@ country_event = {
     months = 200
   }
   option = {
-    name = "flavor_pol.EVTOPTA4"
+    name = "flavor_pol.EVTOPTA4" 	#  Sponsor the university
     add_years_of_income = -0.25
     add_prestige = 5
     add_mil_power = 100
     add_innovativeness_small_effect = yes
   }
   option = {
-    name = "flavor_pol.EVTOPTB4"
+    name = "flavor_pol.EVTOPTB4" 	#  Do nothing
     add_prestige = -1
   }
 }
+### THE STRUGGLE FOR ROYAL POWER ### 
+# Reworked into a disaster
 country_event = {
   id = flavor_pol.3481
   title = "flavor_pol.EVTNAME3481"
@@ -1260,7 +1293,7 @@ country_event = {
     set_country_flag = pol_zebrzydowski_rebellion_flag
   }
   option = {
-    name = "flavor_pol.EVTOPTC3481"
+    name = "flavor_pol.EVTOPTC3481" 	#  Wage a war of extermination on the Nobility
     add_stability = -3
     random_owned_province = {
       limit = {
@@ -1277,6 +1310,7 @@ country_event = {
     }
   }
 }
+# Konfederacja
 country_event = {
   id = flavor_pol.10
   title = "flavor_pol.EVTNAME10"
@@ -1296,7 +1330,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTA10"
+    name = "flavor_pol.EVTOPTA10" 	#  Accept their demands
     ai_chance = {
       factor = 25
       modifier = {
@@ -1316,7 +1350,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB10"
+    name = "flavor_pol.EVTOPTB10" 	#  Reject their demands
     ai_chance = {
       factor = 75
     }
@@ -1338,6 +1372,7 @@ country_event = {
     }
   }
 }
+# Rokosz Sandomierski
 country_event = {
   id = flavor_pol.11
   title = "flavor_pol.EVTNAME11"
@@ -1384,7 +1419,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTA11"
+    name = "flavor_pol.EVTOPTA11" 	#  Confer with the rebel leaders
     ai_chance = {
       factor = 25
       modifier = {
@@ -1416,7 +1451,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB11"
+    name = "flavor_pol.EVTOPTB11" 	#  Suppress the rebels
     ai_chance = {
       factor = 75
     }
@@ -1457,6 +1492,7 @@ country_event = {
     }
   }
 }
+# Pacification Sejm
 country_event = {
   id = flavor_pol.12
   title = "flavor_pol.EVTNAME12"
@@ -1482,7 +1518,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTA12"
+    name = "flavor_pol.EVTOPTA12" 	#  The nobles has formally surrendered
     remove_estate_privilege = estate_nobles_pacta_conventa
     clr_country_flag = pol_pact_conventa_flag
     remove_country_modifier = pol_sejm_veto
@@ -1500,6 +1536,7 @@ country_event = {
         has_reform = elective_monarchy
       }
       remove_government_reform = elective_monarchy
+      #set_legacy_government = administrative_monarchy
       remove_heir = {}
       add_absolutism = 10
     }
@@ -1531,6 +1568,35 @@ country_event = {
     }
   }
 }
+# cleanup event for hotfix
+#country_event = {
+#	id = flavor_pol.13
+#	title = "flavor_pol.EVTNAME12"
+#	desc = "flavor_pol.EVTDESC12"
+#	picture = ANGRY_MOB_eventPicture
+#	
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		has_country_modifier = pol_zebrzydowski_rebellion_flag
+#		NOT = { has_country_flag = pol_zebrzydowski_rebellion_flag }
+#	}
+#	
+#	mean_time_to_happen = {
+#		months = 1
+#	}
+#	
+#	option = {
+#		name = "flavor_pol.EVTOPTA12" # The nobles has formally surrendered
+#		remove_estate_privilege = estate_nobles_pacta_conventa
+#		remove_country_modifier = pol_zebrzydowski_rebellion_flag
+#		remove_country_modifier = pol_sejm_veto
+#		remove_country_modifier = pol_sejm_refuse_troops
+#		remove_country_modifier = pol_sejm_comply_policies
+#		clr_country_flag = pol_konfederacja_flag
+#	}
+#}
+# Collegium Hosianum
 country_event = {
   id = flavor_pol.14
   title = flavor_pol.14.t
@@ -1558,7 +1624,7 @@ country_event = {
     months = 45
   }
   option = {
-    name = flavor_pol.14.a
+    name = flavor_pol.14.a 	# Great!
     add_prestige = 5
     42 = {
       add_province_modifier = {
@@ -1576,6 +1642,7 @@ country_event = {
     }
   }
 }
+# The Radziwill Bible & the Reformation in Poland
 country_event = {
   id = flavor_pol.15
   title = flavor_pol.15.t
@@ -1608,7 +1675,10 @@ country_event = {
       random_owned_province = {
         limit = {
           is_capital = no
-          culture = polish
+          OR = {
+            culture = polish
+            culture = polish_new
+          }
           religion = catholic
           NOT = {
             province_id = 260
@@ -1619,7 +1689,10 @@ country_event = {
       random_owned_province = {
         limit = {
           is_capital = no
-          culture = polish
+          OR = {
+            culture = polish
+            culture = polish_new
+          }
           religion = catholic
           NOT = {
             province_id = 260
@@ -1633,6 +1706,7 @@ country_event = {
     }
   }
   option = {
+    #We must burn this abomination
     name = flavor_pol.15.a
     add_papal_influence = 10
     260 = {
@@ -1653,6 +1727,7 @@ country_event = {
     }
   }
   option = {
+    #Interesting...
     name = flavor_pol.15.b
     260 = {
       change_religion = reformed
@@ -1665,6 +1740,7 @@ country_event = {
     }
   }
 }
+#State religion resulting in the suspension of the College.
 country_event = {
   id = flavor_pol.16
   title = flavor_pol.16.t
@@ -1692,12 +1768,13 @@ country_event = {
     months = 45
   }
   option = {
-    name = flavor_pol.16.a
+    name = flavor_pol.16.a 	# Suspend the College
     42 = {
       remove_province_modifier = pol_collegium_hosianum
     }
   }
 }
+#Clearing of Teutonic Rivalry
 country_event = {
   id = flavor_pol.17
   title = flavor_pol.17.t
@@ -1731,6 +1808,7 @@ country_event = {
     }
   }
 }
+#Election of Kasimir
 country_event = {
   id = flavor_pol.18
   title = flavor_pol.18.t
@@ -1751,9 +1829,8 @@ country_event = {
       NOT = {
         junior_union_with = POL
       }
-      dynasty = "Ŗ�v��"  # Jagiellon
+      dynasty = "雅盖隆" 	# Jagiellon
     }
-    started_in = 1444.11.11
     NOT = {
       is_year = 1450
     }
@@ -1777,7 +1854,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_pol.18.a
+    name = flavor_pol.18.a 	# We must retain the Jagiellon Dynasty
     ai_chance = {
       factor = 75
     }
@@ -1796,7 +1873,7 @@ country_event = {
     custom_tooltip = pol_potential_cb_on_hungary_tt
   }
   option = {
-    name = flavor_pol.18.b
+    name = flavor_pol.18.b 	# Appoint a Local Noble.
     ai_chance = {
       factor = 25
     }
@@ -1833,6 +1910,7 @@ country_event = {
     custom_tooltip = pol_potential_cb_on_bohemia_tt
   }
 }
+# Become elective
 country_event = {
   id = flavor_pol.20
   title = flavor_pol.20.t
@@ -1924,6 +2002,9 @@ country_event = {
     }
   }
 }
+# New events for Struggle for Royal Power Disaster
+# by Daniel Tolman
+# Alternate ending - Sejm Seizes control
 country_event = {
   id = flavor_pol.21
   title = flavor_pol.21.t
@@ -1943,7 +2024,7 @@ country_event = {
     }
   }
   option = {
-    name = "flavor_pol.EVTOPTB3481"
+    name = "flavor_pol.EVTOPTB3481" 	#  Resign completely and read theological books instead
     add_prestige = -100
     give_estate_land_share_large = {
       estate = estate_nobles
@@ -1968,6 +2049,7 @@ country_event = {
     complete_mission = plc_golden_liberty
   }
 }
+# Disaster end event
 country_event = {
   id = flavor_pol.22
   title = flavor_pol.22.t
@@ -1992,6 +2074,7 @@ country_event = {
       }
       remove_government_reform = elective_monarchy
       remove_government_reform = polish_elective_monarchy
+      #set_legacy_government = administrative_monarchy
       remove_heir = {}
       add_absolutism = 10
     }
@@ -2019,6 +2102,7 @@ country_event = {
       }
       remove_government_reform = elective_monarchy
       remove_government_reform = polish_elective_monarchy
+      #set_legacy_government = administrative_monarchy
       remove_heir = {}
       add_absolutism = 10
       if = {
@@ -2032,7 +2116,9 @@ country_event = {
     name = flavor_pol.22.b
   }
 }
+####Lions of the North#### scripted by Big Boss
 country_event = {
+  #The Little Kings Uprising
   id = flavor_pol.23
   title = flavor_pol.23.t
   desc = flavor_pol.23.d
@@ -2090,6 +2176,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Constitution of [GetYear]
   id = flavor_pol.24
   title = flavor_pol.24.t
   desc = flavor_pol.24.d
@@ -2163,6 +2250,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Constitution of [GetYear]
   id = flavor_pol.25
   title = flavor_pol.25.t
   desc = flavor_pol.25.d
@@ -2300,6 +2388,7 @@ country_event = {
   }
 }
 country_event = {
+  #Polish-Hungarian Ties 
   id = flavor_pol.26
   title = flavor_pol.26.t
   desc = flavor_pol.26.d
@@ -2433,6 +2522,7 @@ country_event = {
   }
 }
 country_event = {
+  #Expanding the Quarter Army 
   id = flavor_pol.27
   title = flavor_pol.27.t
   desc = flavor_pol.27.d
@@ -2525,6 +2615,7 @@ country_event = {
   }
 }
 country_event = {
+  #Collegium Maius & the Growth of Thought
   id = flavor_pol.28
   title = flavor_pol.28.t
   desc = flavor_pol.28.d
@@ -2578,6 +2669,7 @@ country_event = {
   }
 }
 country_event = {
+  #Stefan the Great Ascends on the Moldavian Throne
   id = flavor_pol.29
   title = flavor_pol.29.t
   desc = flavor_pol.29.d
@@ -2587,7 +2679,7 @@ country_event = {
     name = flavor_pol.29.a
     MOL = {
       define_ruler = {
-        name = "�eyr�Q 0'Y^0"  # Stefan the Great
+        name = "斯特凡 「大帝」" 	# Stefan the Great
         dynasty = ROOT
         adm = 3
         dip = 3
@@ -2635,6 +2727,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Crown of Rome
   id = flavor_pol.30
   title = flavor_pol.30.t
   desc = flavor_pol.30.d
@@ -2698,7 +2791,27 @@ country_event = {
     LAE = {
       change_religion = catholic
       set_dynasty = ROOT
-      add_accepted_culture = polish
+      hidden_effect = {
+        every_owned_province = {
+          limit = {
+            region = balkan_region
+            has_owner_religion = no
+          }
+          change_religion = catholic
+          change_culture = ROOT
+        }
+      }
+      if = {
+        limit = {
+          has_updated_culture = {
+            culture = slavic
+          }
+        }
+        add_accepted_culture = polish_new
+      }
+      else = {
+        add_accepted_culture = polish
+      }
     }
     151 = {
       if = {
@@ -2729,6 +2842,7 @@ country_event = {
   }
 }
 country_event = {
+  #Baltic Gold & the Gates of Kings 
   id = flavor_pol.31
   title = flavor_pol.31.t
   desc = flavor_pol.31.d
@@ -2755,6 +2869,7 @@ country_event = {
   }
 }
 country_event = {
+  #Negotiations of Lublin 
   id = flavor_pol.32
   title = flavor_pol.32.t
   desc = flavor_pol.32.d
@@ -2842,6 +2957,7 @@ country_event = {
   }
 }
 country_event = {
+  #The Sejm Diet of [GetYear]
   id = flavor_pol.33
   title = flavor_pol.33.t
   desc = flavor_pol.33.d

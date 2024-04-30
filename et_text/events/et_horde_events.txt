@@ -1,0 +1,240 @@
+﻿namespace = et
+province_event = {
+  id = et.12
+  title = "EVTNAME9206"
+  desc = "EVTDESC9206"
+  picture = HORDE_ON_HORSEBACK_eventPicture
+  is_triggered_only = yes
+  trigger = {
+    OR = {
+      has_building = fort_15th
+      has_building = fort_16th
+      has_building = fort_17th
+      has_building = fort_18th
+    }
+    FROM = {
+      is_nomad = yes
+      NOT = {
+        has_country_modifier = nomadic_conquest
+      }
+    }
+    owner = {
+      is_nomad = no
+    }
+  }
+  option = {
+    name = "EVTOPTA9206"
+    owner = {
+      add_prestige = -10
+    }
+    controller = {
+      country_event = {
+        id = et.13
+        days = 1
+      }
+    }
+  }
+}
+country_event = {
+  id = et.13
+  title = "EVTNAME9205"
+  desc = "EVTDESC9205"
+  picture = HORDE_ON_HORSEBACK_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "EVTOPTA9205"
+    add_legitimacy = 2
+    add_prestige = 5
+    add_war_exhaustion = -0.1
+  }
+}
+province_event = {
+  id = et.14
+  title = "et.EVTNAME14"
+  desc = "et.EVTDESC14"
+  picture = HORDE_ON_HORSEBACK_eventPicture
+  is_triggered_only = yes
+  trigger = {
+    controller = {
+      is_at_war = yes
+    }
+    OR = {
+      controller = {
+        has_country_modifier = nomadic_conquest
+      }
+      AND = {
+        controller = {
+          has_country_modifier = barbarian_migration
+        }
+        OR = {
+          owner = {
+            tag = ROM
+          }
+          owner = {
+            tag = ROW
+          }
+          owner = {
+            tag = BYZ
+          }
+          owner = {
+            tag = GLL
+          }
+        }
+      }
+    }
+    owner = {
+      NOT = {
+        has_country_modifier = nomadic_conquest
+      }
+    }
+  }
+  option = {
+    name = "et.EVTOPTA14"
+    controller = {
+      add_core = ROOT
+      ROOT = {
+        cede_province = PREV
+      }
+      country_event = {
+        id = et.15
+        days = 1
+      }
+    }
+  }
+}
+country_event = {
+  id = et.15
+  title = "et.EVTNAME15"
+  desc = "et.EVTDESC15"
+  picture = HORDE_ON_HORSEBACK_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "et.EVTOPTA15"
+    add_prestige = 5
+  }
+}
+province_event = {
+  id = et.30
+  title = "et.EVTNAME30"
+  desc = "et.EVTDESC30"
+  picture = HORDE_ON_HORSEBACK_eventPicture
+  is_triggered_only = yes
+  trigger = {
+    FROM = {
+      OR = {
+        has_country_modifier = nomadic_conquest
+        has_country_modifier = barbarian_migration
+      }
+    }
+    owner = {
+      NOT = {
+        has_country_modifier = nomadic_conquest
+      }
+      NOT = {
+        has_country_modifier = barbarian_migration
+      }
+    }
+  }
+  option = {
+    name = "et.EVTOPTA30"
+    owner = {
+      add_prestige = -2
+    }
+    controller = {
+      country_event = {
+        id = et.31
+        days = 1
+      }
+    }
+    province_event = {
+      id = et.14
+      days = 178
+    }
+  }
+}
+country_event = {
+  id = et.31
+  title = "et.EVTNAME31"
+  desc = "et.EVTDESC31"
+  picture = HORDE_ON_HORSEBACK_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "et.EVTOTPA31"
+    add_legitimacy = 1
+    add_prestige = 2
+    add_treasury = 10
+    add_war_exhaustion = -0.05
+  }
+}
+country_event = {
+  id = et.95
+  title = "et.EVTNAME95"
+  desc = "et.EVTDESC95"
+  picture = HORDE_ON_HORSEBACK_eventPicture
+  trigger = {
+    has_country_modifier = nomadic_conquest
+    is_at_war = no
+    NOT = {
+      war_exhaustion = 10
+    }
+    manpower_percentage = 0.25
+    ai = yes
+    any_neighbor_country = {
+      NOT = {
+        truce_with = ROOT
+      }
+      NOT = {
+        alliance_with = ROOT
+      }
+      NOT = {
+        is_subject_of = ROOT
+      }
+      NOT = {
+        overlord_of = ROOT
+      }
+      OR = {
+        is_subject = no
+        overlord = {
+          NOT = {
+            overlord_of = ROOT
+          }
+          NOT = {
+            truce_with = ROOT
+          }
+          NOT = {
+            alliance_with = ROOT
+          }
+          NOT = {
+            is_subject_of = ROOT
+          }
+        }
+      }
+    }
+  }
+  mean_time_to_happen = {
+    months = 6
+  }
+  option = {
+    name = "et.EVTOPTA63"
+    add_stability = 1
+    random_neighbor_country = {
+      limit = {
+        NOT = {
+          truce_with = ROOT
+        }
+        NOT = {
+          alliance_with = ROOT
+        }
+        NOT = {
+          is_subject_of = ROOT
+        }
+      }
+      ROOT = {
+        declare_war_with_cb = {
+          who = PREV
+          casus_belli = cb_horde_vs_civ
+        }
+      }
+    }
+  }
+}

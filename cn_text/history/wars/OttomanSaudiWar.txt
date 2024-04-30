@@ -1,0 +1,149 @@
+﻿name = "奥斯曼-沙特战争" 	# Ottoman-Saudi War
+war_goal = {
+  type = take_claim
+  casus_belli = cb_conquest
+  province = 405 	#  Al Jawf
+}
+1811.1.1 = {
+  add_attacker = TUR
+  add_defender = NAJ
+}
+1811.1.1 = {
+  battle = {
+    name = "延布" 	# Yanbu
+    location = 384
+    attacker = {
+      commander = "土桑帕夏" 	# Tusun Pasha 	#  Tusun Pasha
+      infantry = 10000
+      losses = 0 	#  percent
+      country = TUR
+    }
+    defender = {
+      commander = "沙特 卡比尔" 	# Saud AL-Kabeer 	#  Saud AL-Kabeer
+      infantry = 70
+      losses = 1 	#  percent
+      country = NAJ
+    }
+    result = yes
+  }
+}
+1812.1.1 = {
+  battle = {
+    name = "萨夫拉" 	# Al-Safra
+    location = 384
+    attacker = {
+      commander = "土桑帕夏" 	# Tusun Pasha 	#  Tusun Pasha
+      infantry = 8000
+      losses = 25 	#  percent
+      country = TUR
+    }
+    defender = {
+      commander = "沙特 卡比尔" 	# Saud AL-Kabeer 	#  Saud AL-Kabeer
+      infantry = 10000
+      losses = 8 	#  percent
+      country = NAJ
+    }
+    result = no
+  }
+}
+1812.6.1 = {
+  battle = {
+    name = "麦地那" 	# Medina
+    location = 384
+    attacker = {
+      commander = "土桑帕夏" 	# Tusun Pasha 	#  Tusun Pasha
+      infantry = 20000
+      losses = 2 	#  percent
+      country = TUR
+    }
+    defender = {
+      commander = "沙特 卡比尔" 	# Saud AL-Kabeer 	#  Saud AL-Kabeer
+      infantry = 10000
+      losses = 1 	#  percent
+      country = NAJ
+    }
+    result = yes
+  }
+}
+1813.1.1 = {
+  battle = {
+    name = "吉达" 	# Jeddah
+    location = 385
+    attacker = {
+      commander = "土桑帕夏" 	# Tusun Pasha 	#  Tusun Pasha
+      infantry = 25000
+      losses = 1 	#  percent
+      country = TUR
+    }
+    defender = {
+      commander = "沙特 卡比尔" 	# Saud AL-Kabeer 	#  Saud AL-Kabeer
+      infantry = 2000
+      losses = 40 	#  percent
+      country = NAJ
+    }
+    result = yes
+  }
+}
+1813.1.20 = {
+  battle = {
+    name = "麦加" 	# Mecca
+    location = 385
+    attacker = {
+      commander = "土桑帕夏" 	# Tusun Pasha 	#  Tusun Pasha
+      infantry = 22000
+      losses = 0 	#  percent
+      country = TUR
+    }
+    defender = {
+      commander = "费萨尔 本 沙特" 	# Faisal bin Saud 	#  Faisal bin Saud
+      infantry = 1000
+      losses = 1 	#  percent
+      country = NAJ
+    }
+    result = yes
+  }
+}
+1818.1.1 = {
+  battle = {
+    name = "内志" 	# Najd
+    location = 392
+    attacker = {
+      commander = "易卜拉欣 帕夏" 	# Ibrahim Pasha 	#  Ibrahim Pasha
+      infantry = 30000
+      losses = 3 	#  percent
+      country = TUR
+    }
+    defender = {
+      commander = "阿卜杜拉 I" 	# Abdullah I 	#  Abdullah I
+      infantry = 6000
+      losses = 83 	#  percent
+      country = NAJ
+    }
+    result = yes
+  }
+}
+1818.9.1 = {
+  battle = {
+    name = "迪里耶" 	# Diriyah
+    location = 394
+    attacker = {
+      commander = "易卜拉欣 帕夏" 	# Ibrahim Pasha 	#  Ibrahim Pasha
+      infantry = 30000
+      artillery = 30
+      losses = 2 	#  percent
+      country = TUR
+    }
+    defender = {
+      commander = "阿卜杜拉 I" 	# Abdullah I 	#  Abdullah I
+      infantry = 2000
+      losses = 85 	#  percent
+      country = NAJ
+    }
+    result = yes
+  }
+}
+# Abdullah is forced to surrender
+1818.9.9 = {
+  rem_attacker = TUR
+  rem_defender = NAJ
+}

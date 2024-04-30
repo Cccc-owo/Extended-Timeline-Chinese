@@ -1,0 +1,339 @@
+﻿namespace = mmetr_PAR_mission_events
+country_event = {
+  id = mmetr_PAR_mission_events.1
+  title = "mmetr_PAR_mission_events.1.t"
+  desc = "mmetr_PAR_mission_events.1.desc"
+  picture = MMETR_STEPPE_CAVALRY_ANCIENT_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.1.a"
+    add_country_modifier = {
+      name = "me_par_parthian_shot"
+      duration = 14600
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.2
+  title = "mmetr_PAR_mission_events.2.t"
+  desc = "mmetr_PAR_mission_events.2.desc"
+  picture = ROMAN_ROAD_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.2.a"
+    add_prestige = 40
+    add_legitimacy = 50
+    add_dip_power = 75
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.3
+  title = "mmetr_PAR_mission_events.3.t"
+  desc = "mmetr_PAR_mission_events.3.desc"
+  picture = CPBM_ROMAN_TEMPLE_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.3.a"
+    add_mil_power = 30
+    add_country_modifier = {
+      name = "me_par_hellenistic_legacy"
+      duration = 10950
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.4
+  title = "mmetr_PAR_mission_events.4.t"
+  desc = "mmetr_PAR_mission_events.4.desc"
+  picture = CITY_DEVELOPMENT_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.4.a"
+    palestine_area = {
+      add_province_modifier = {
+        name = "me_par_jewish_repopulation"
+        duration = 10950
+      }
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.4.b"
+    palestine_area = {
+      add_province_modifier = {
+        name = "me_par_parthian_rule"
+        duration = 10950
+      }
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.4.c"
+    trigger = {
+      OR = {
+        NOT = {
+          exists = JUD
+        }
+        JUD = {
+          is_subject_of = ROOT
+        }
+      }
+    }
+    379 = {
+      cede_province = JUD
+      add_core = JUD
+    }
+    3244 = {
+      cede_province = JUD
+      add_core = JUD
+    }
+    1854 = {
+      cede_province = JUD
+      add_core = JUD
+    }
+    hidden_effect = {
+      JUD = {
+        set_capital = 379
+        change_religion = jewish
+      }
+    }
+    vassalize = JUD
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.5
+  title = "mmetr_PAR_mission_events.5.t"
+  desc = "mmetr_PAR_mission_events.5.desc"
+  picture = MMETR_SASSANID_AHURA_MAZDA_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.5.a"
+    rum_area = {
+      limit = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      add_province_modifier = {
+        name = "me_par_cappadocian_integration"
+        duration = 14600
+      }
+    }
+    dulkadir_area = {
+      limit = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      add_province_modifier = {
+        name = "me_par_cappadocian_integration"
+        duration = 14600
+      }
+    }
+    karaman_area = {
+      limit = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      add_province_modifier = {
+        name = "me_par_cappadocian_integration"
+        duration = 14600
+      }
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.6
+  title = "mmetr_PAR_mission_events.6.t"
+  desc = "mmetr_PAR_mission_events.6.desc"
+  picture = MMETR_SASSANID_AHURA_MAZDA_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.6.a"
+    add_dip_power = 75
+    add_ruler_modifier = {
+      name = "me_par_lord_of_asia"
+      duration = -1
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.7
+  title = "mmetr_PAR_mission_events.7.t"
+  desc = "mmetr_PAR_mission_events.7.desc"
+  picture = MMETR_SASSANID_AHURA_MAZDA_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.7.a"
+    egypt_region = {
+      limit = {
+        owned_by = ROOT
+      }
+      add_province_modifier = {
+        name = "me_par_egyptian_integration"
+        duration = 14600
+      }
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.7.b"
+    egypt_region = {
+      limit = {
+        owned_by = ROOT
+      }
+      add_province_modifier = {
+        name = "me_par_egyptian_local_rule"
+        duration = 14600
+      }
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.8
+  title = "mmetr_PAR_mission_events.8.t"
+  desc = "mmetr_PAR_mission_events.8.desc"
+  picture = ADVISOR_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.8.a"
+    define_advisor = {
+      type = philosopher
+      skill = 2
+      culture = greek
+      discount = yes
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.8.b"
+    define_advisor = {
+      type = natural_scientist
+      skill = 2
+      culture = greek
+      discount = yes
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.8.c"
+    define_advisor = {
+      type = diplomat
+      skill = 2
+      culture = greek
+      discount = yes
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.9
+  title = "mmetr_PAR_mission_events.9.t"
+  desc = "mmetr_PAR_mission_events.9.desc"
+  picture = NAVAL_MILITARY_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.9.a"
+    add_country_modifier = {
+      name = "me_par_characenian_fleet"
+      duration = 14600
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.11
+  title = "mmetr_PAR_mission_events.11.t"
+  desc = "mmetr_PAR_mission_events.11.desc"
+  picture = CITY_VIEW_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.11.a"
+    410 = {
+      add_base_manpower = 1
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.11.b"
+    410 = {
+      add_base_tax = 1
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.12
+  title = "mmetr_PAR_mission_events.12.t"
+  desc = "mmetr_PAR_mission_events.12.desc"
+  picture = CITY_VIEW_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.12.a"
+    409 = {
+      add_province_modifier = {
+        name = "me_par_patronage_of_babylonian_temples"
+        duration = -1
+      }
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.13
+  title = "mmetr_PAR_mission_events.13.t"
+  desc = "mmetr_PAR_mission_events.13.desc"
+  picture = COURT_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.13.a"
+    define_consort = {
+      country_of_origin = ARM
+      religion = ARM
+      culture = ARM
+      dynasty = "安息"  # Arsacid
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.13.b"
+    add_ruler_modifier = {
+      name = "me_par_royal_concubines"
+      duration = -1
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.14
+  title = "mmetr_PAR_mission_events.14.t"
+  desc = "mmetr_PAR_mission_events.14.desc"
+  picture = COURT_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.14.a"
+    create_general = {
+      tradition = 50
+      add_shock = 2
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.14.b"
+    create_general = {
+      tradition = 50
+      add_shock = 2
+    }
+  }
+}
+country_event = {
+  id = mmetr_PAR_mission_events.15
+  title = "mmetr_PAR_mission_events.15.t"
+  desc = "mmetr_PAR_mission_events.15.desc"
+  picture = CONQUEST_eventPicture
+  is_triggered_only = yes
+  option = {
+    name = "mmetr_PAR_mission_events.15.a"
+    kastamonu_area = {
+      limit = {
+        country_or_non_sovereign_subject_holds = ROOT
+      }
+      cede_province = PON
+      add_core = PON
+    }
+    330 = {
+      cede_province = PON
+      add_core = PON
+    }
+    create_subject = {
+      subject_type = client_kingdom
+      subject = PON
+    }
+  }
+  option = {
+    name = "mmetr_PAR_mission_events.15.b"
+    add_prestige = 15
+  }
+}

@@ -1,12 +1,11 @@
-country_decisions = {
+﻿country_decisions = {
   enthrone_timurid_prince = {
     major = yes
     potential = {
       normal_or_historical_nations = yes
-      has_global_flag = timurids_exist_at_start
       was_never_end_game_tag_trigger = yes
       NOT = {
-        dynasty = "^(g?Q"  # Timurid
+        dynasty = "帖木儿" 	# Timurid
       }
       NOT = {
         is_year = 1490
@@ -52,15 +51,15 @@ country_decisions = {
     }
     provinces_to_highlight = {
       OR = {
-        province_id = 428
-        province_id = 429
-        province_id = 446
-        province_id = 451
-        province_id = 458
-        province_id = 454
-        province_id = 2213
-        province_id = 2214
-        province_id = 2218
+        province_id = 428 	#  Teheran/Rayy
+        province_id = 429 	#  Isfahan
+        province_id = 446 	#  Herat
+        province_id = 451 	#  Kabul
+        province_id = 458 	#  Ferghana
+        province_id = 454 	#  Samarkand
+        province_id = 2213 	#  Qom
+        province_id = 2214 	#  Astarabad
+        province_id = 2218 	#  Shiraz
       }
       OR = {
         NOT = {
@@ -74,18 +73,18 @@ country_decisions = {
     allow = {
       is_subject = no
       OR = {
-        owns_core_province = 428
-        owns_core_province = 429
-        owns_core_province = 446
-        owns_core_province = 451
-        owns_core_province = 458
-        owns_core_province = 454
-        owns_core_province = 2213
-        owns_core_province = 2214
-        owns_core_province = 2218
+        owns_core_province = 428 	#  Teheran/Rayy
+        owns_core_province = 429 	#  Isfahan
+        owns_core_province = 446 	#  Herat
+        owns_core_province = 451 	#  Kabul
+        owns_core_province = 458 	#  Ferghana
+        owns_core_province = 454 	#  Samarkand
+        owns_core_province = 2213 	#  Qom
+        owns_core_province = 2214 	#  Astarabad
+        owns_core_province = 2218 	#  Shiraz
       }
       NOT = {
-        dynasty = "^(g?Q"  # Timurid
+        dynasty = "帖木儿" 	# Timurid
       }
       NOT = {
         is_year = 1490
@@ -95,7 +94,7 @@ country_decisions = {
       add_stability = -2
       custom_tooltip = tooltip_about_timurid_empire
       define_ruler = {
-        dynasty = "^(g?Q"  # Timurid
+        dynasty = "帖木儿" 	# Timurid
       }
       add_legitimacy = 20
       if = {
@@ -105,7 +104,7 @@ country_decisions = {
         remove_heir = {}
       }
       define_heir = {
-        dynasty = "^(g?Q"  # Timurid
+        dynasty = "帖木儿" 	# Timurid
       }
       set_country_flag = enthroned_a_timurid_prince
     }
@@ -115,13 +114,13 @@ country_decisions = {
         factor = 0
         NOT = {
           exists = MUG
-        }
+        } 	# Mughals should appear instead first
       }
       modifier = {
         factor = 0
         NOT = {
           exists = PER
-        }
+        } 	# Same goes for Persia
       }
     }
   }
@@ -176,7 +175,7 @@ country_decisions = {
         primary_culture = turkmeni
       }
       religion_group = muslim
-      dynasty = "^(g?Q"  # Timurid
+      dynasty = "帖木儿" 	# Timurid
     }
     provinces_to_highlight = {
       OR = {
@@ -204,21 +203,22 @@ country_decisions = {
       }
       is_free_or_tributary_trigger = yes
       is_at_war = no
-      owns_core_province = 446
-      owns_core_province = 454
+      owns_core_province = 446 	#  Herat
+      owns_core_province = 454 	#  Samarkand
       454 = {
+        # Samarkand
         is_state = yes
       }
       OR = {
         AND = {
-          owns_core_province = 429
-          owns_core_province = 2213
-          owns_core_province = 2218
+          owns_core_province = 429 	#  Isfahan
+          owns_core_province = 2213 	#  Qom
+          owns_core_province = 2218 	#  Shiraz
         }
         AND = {
-          owns_core_province = 451
-          owns_core_province = 445
-          owns_core_province = 428
+          owns_core_province = 451 	#  Kabul
+          owns_core_province = 445 	#  Merv
+          owns_core_province = 428 	#  Teheran/Rayy
         }
       }
     }
@@ -411,7 +411,7 @@ country_decisions = {
         }
         country_event = {
           id = ideagroups.1
-        }
+        } 	# Swap Ideas
       }
       set_country_flag = formed_timurids_flag
     }
@@ -421,13 +421,13 @@ country_decisions = {
         factor = 0
         NOT = {
           exists = MUG
-        }
+        } 	# Mughals should appear instead first
       }
       modifier = {
         factor = 0
         NOT = {
           exists = PER
-        }
+        } 	# Same goes for Persia
       }
     }
     ai_importance = 600

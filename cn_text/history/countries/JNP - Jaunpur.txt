@@ -1,190 +1,241 @@
-government = monarchy
+﻿government = monarchy
 add_government_reform = indian_sultanate_reform
-technology_group = early_indian
+technology_group = indian
 religion = sunni
 primary_culture = avadhi
-capital = 555
+capital = 555 	#  Jaunpur
+fixed_capital = 555 	#  Cannot move capital away from this province & no power cost to move to it
 religious_school = hanafi_school
-100.1.1 = {
-  add_government_reform = early_gov_reform_1
+change_rajputs_or_marathas_or_nobles_land_share_effect = {
+  share = 5
 }
-230.1.1 = {
-  add_government_reform = early_gov_reform_2
-}
-360.1.1 = {
-  add_government_reform = early_gov_reform_3
-}
-490.1.1 = {
-  add_government_reform = early_gov_reform_4
-}
-620.1.1 = {
-  add_government_reform = early_gov_reform_5
-}
-750.1.1 = {
-  add_government_reform = early_gov_reform_6
-}
-750.1.1 = {
-  technology_group = indian
-}
-880.1.1 = {
-  add_government_reform = early_gov_reform_7
-}
-1010.1.1 = {
-  add_government_reform = early_gov_reform_8
-}
-1140.1.1 = {
-  add_government_reform = early_gov_reform_9
-}
-1270.1.1 = {
-  add_government_reform = early_gov_reform_10
-}
-1394.1.1 = {
+#Sultans of Jaunpur
+1399.1.1 = {
   monarch = {
-    name = "l�)RKQ �l�t"  # Malik Sarwar
-    dynasty = "Sharqi"
-    adm = 4
-    dip = 2
-    mil = 3
+    name = "穆巴拉克 沙阿" 	# Mubarak Shah 	# Malik Qaranfal took this name when he became ruler
+    dynasty = "沙尔吉" 	# Sharqi
+    ADM = 2
+    DIP = 1
+    MIL = 3
   }
 }
 1399.1.1 = {
   heir = {
-    name = "l�)RKQ �RpQ�lS"  # Malik Qaranfal
-    monarch_name = "Mubarak Shah"
-    dynasty = "Sharqi"
+    name = "马利克 加兰法尔" 	# Malik Qaranfal
+    monarch_name = "穆巴拉克 沙阿" 	# Mubarrak Shah
+    dynasty = "沙尔吉" 	# Sharqi
     claim = 75
     birth_date = 1370.1.1
     death_date = 1402.1.1
-    adm = 2
-    dip = 1
-    mil = 3
+    ADM = 0
+    DIP = 0
+    MIL = 0
   }
 }
-1399.1.1 = {
-  monarch = {
-    name = "Mubarak Shah"
-    dynasty = "Sharqi"
-    adm = 2
-    dip = 1
-    mil = 3
-  }
-}
-1399.1.1 = {
+1401.1.1 = {
   heir = {
-    name = "fjS�b1k"  # Ibrahim
-    monarch_name = "Ibrahim Shah"
-    dynasty = "Sharqi"
+    name = "易卜拉欣" 	# Ibrahim
+    monarch_name = "易卜拉欣 沙" 	# Ibrahim Shah
+    dynasty = "沙尔吉" 	# Sharqi
     birth_date = 1380.1.1
     death_date = 1436.1.1
     claim = 95
-    adm = 2
-    dip = 1
-    mil = 3
+    ADM = 2
+    DIP = 1
+    MIL = 3
   }
 }
 1402.1.1 = {
   monarch = {
-    name = "fjS�b1k �l"  # Ibrahim Shah
-    dynasty = "�lS	T"  # Sharqi
-    adm = 2
-    dip = 1
-    mil = 3
+    name = "易卜拉欣 沙" 	# Ibrahim Shah
+    dynasty = "沙尔吉" 	# Sharqi
+    ADM = 2
+    DIP = 1
+    MIL = 3
   }
 }
 1402.1.1 = {
   heir = {
-    name = "l��TFz�V"  # Mahmud
-    monarch_name = "l��TFz�V �l?�"  # Mahmud Shah
-    dynasty = "�lS	T"  # Sharqi
+    name = "马哈穆德" 	# Mahmud
+    monarch_name = "马哈茂德 沙阿" 	# Mahmud Shah
+    dynasty = "沙尔吉" 	# Sharqi
     claim = 95
     birth_date = 1402.1.1
     death_date = 1457.1.1
-    adm = 5
-    dip = 2
-    mil = 2
+    ADM = 5
+    DIP = 2
+    MIL = 2
   }
 }
 1436.1.1 = {
   monarch = {
-    name = "l��TFz�V �l?�"  # Mahmud Shah
-    dynasty = "�lS	T"  # Sharqi
-    adm = 5
-    dip = 2
-    mil = 2
+    name = "马哈茂德 沙阿" 	# Mahmud Shah
+    dynasty = "沙尔吉" 	# Sharqi
+    ADM = 5
+    DIP = 2
+    MIL = 2
   }
-}
-1436.1.1 = {
+  clear_scripted_personalities = yes
+  add_ruler_personality = craven_personality
   heir = {
-    name = "Bhikhan"
-    monarch_name = "Muhammad Shah"
-    dynasty = "Sharqi"
+    name = "比汗" 	# Bhikhan
+    monarch_name = "穆罕默德 沙" 	# Muhammad Shah
+    dynasty = "沙尔吉" 	# Sharqi
     claim = 95
     birth_date = 1436.1.1
     death_date = 1458.6.1
-    adm = 3
-    dip = 1
-    mil = 2
+    ADM = 3
+    DIP = 1
+    MIL = 2
   }
+  add_heir_personality = naive_personality
 }
 1457.1.1 = {
   monarch = {
-    name = "FzU؞�V �l"  # Muhammad Shah
-    dynasty = "�lS	T"  # Sharqi
-    adm = 3
-    dip = 1
-    mil = 2
+    name = "穆罕默德 沙" 	# Muhammad Shah
+    dynasty = "沙尔吉" 	# Sharqi
+    ADM = 3
+    DIP = 1
+    MIL = 2
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = naive_personality
 }
+#While Muhammad Shah is away his brother hussain usurps the throne
 1457.1.1 = {
   heir = {
-    name = "�Oi��V"  # Hussain
-    monarch_name = "�Oi��V �l?�"  # Hussain Shah
-    dynasty = "�lS	T"  # Sharqi
+    name = "侯赛因" 	# Hussain
+    monarch_name = "侯赛因 沙阿" 	# Hussain Shah
+    dynasty = "沙尔吉" 	# Sharqi
     birth_date = 1437.1.1
     death_date = 1486.1.1
     claim = 85
-    adm = 4
-    dip = 0
-    mil = 3
+    ADM = 4
+    DIP = 0
+    MIL = 3
   }
+  clear_scripted_personalities = yes
+  add_heir_personality = strict_personality
 }
 1458.6.1 = {
   monarch = {
-    name = "�Oi��V �l"  # Hussain Shah
-    dynasty = "�lS	T"  # Sharqi
-    adm = 4
-    dip = 0
-    mil = 3
+    name = "侯赛因 沙" 	# Hussain Shah
+    dynasty = "沙尔吉" 	# Sharqi
+    ADM = 4
+    DIP = 0
+    MIL = 3
   }
+  clear_scripted_personalities = yes
+  add_ruler_personality = strict_personality
 }
+#Delhi sultan inserts his own son on the throne of Jaunpur 1486, annexation in anything but name
+#Surs
 1553.1.1 = {
   monarch = {
-    name = "?���R"  # Adil
-    dynasty = "ςS"  # Suri
-    adm = 2
-    dip = 2
-    mil = 3
+    name = "阿迪勒" 	# Adil
+    dynasty = "苏尔" 	# Suri
+    ADM = 2
+    DIP = 2
+    MIL = 3
   }
 }
 1553.1.1 = {
   heir = {
-    name = "�S Wl"  # Sher Khan
-    monarch_name = "�S Wl"  # Sher Khan
-    dynasty = "ςS"  # Suri
+    name = "舍尔 汗" 	# Sher Khan
+    monarch_name = "舍尔 汗" 	# Sher Khan
+    dynasty = "苏尔" 	# Suri
     birth_date = 1520.1.1
     death_date = 1561.1.1
     claim = 85
-    adm = 1
-    dip = 1
-    mil = 4
+    ADM = 1
+    DIP = 1
+    MIL = 4
   }
 }
 1557.4.1 = {
   monarch = {
-    name = "�S Wl"  # Sher Khan
-    dynasty = "ςS"  # Suri
-    adm = 1
-    dip = 1
-    mil = 4
+    name = "舍尔 汗" 	# Sher Khan
+    dynasty = "苏尔" 	# Suri
+    ADM = 1
+    DIP = 1
+    MIL = 4
+  }
+}
+#Kingdom of Kasi
+1738.1.1 = {
+  monarch = {
+    name = "婆罗槃陀辛格" 	# Balwant Singh
+    dynasty = "那罗延" 	# Narayan
+    ADM = 3
+    DIP = 3
+    MIL = 3
+  }
+  religion = hinduism
+  primary_culture = bihari
+}
+1740.1.1 = {
+  heir = {
+    name = "猜陀辛格" 	# Chait Singh
+    monarch_name = "猜陀辛格" 	# Chait Singh
+    dynasty = "那罗延" 	# Narayan
+    birth_date = 1730.1.1
+    death_date = 1810.1.1
+    claim = 95
+    ADM = 2
+    DIP = 3
+    MIL = 2
+  }
+}
+1770.8.19 = {
+  monarch = {
+    name = "猜陀辛格" 	# Chait Singh
+    dynasty = "那罗延" 	# Narayan
+    ADM = 2
+    DIP = 3
+    MIL = 2
+  }
+}
+1770.8.19 = {
+  heir = {
+    name = "摩喜婆陀 辛格" 	# Mahipat Singh
+    monarch_name = "摩喜婆陀 辛格" 	# Mahipat Singh
+    dynasty = "那罗延" 	# Narayan
+    birth_date = 1756.1.1
+    death_date = 1795.9.12
+    claim = 95
+    ADM = 1
+    DIP = 1
+    MIL = 1
+  }
+}
+1781.9.14 = {
+  monarch = {
+    name = "摩喜婆陀辛格" 	# Mahipat Singh
+    dynasty = "那罗延" 	# Narayan
+    ADM = 2
+    DIP = 1
+    MIL = 2
+  }
+}
+1781.9.14 = {
+  heir = {
+    name = "优提陀 辛格" 	# Udit Singh
+    monarch_name = "优提陀 辛格" 	# Udit Singh
+    dynasty = "那罗延" 	# Narayan
+    birth_date = 1770.1.1
+    death_date = 1835.4.4
+    claim = 95
+    ADM = 0
+    DIP = 1
+    MIL = 1
+  }
+}
+1795.9.12 = {
+  monarch = {
+    name = "优提陀辛格" 	# Udit Singh
+    dynasty = "那罗延" 	# Narayan
+    ADM = 0
+    DIP = 1
+    MIL = 1
   }
 }

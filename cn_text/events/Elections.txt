@@ -1,4 +1,5 @@
-namespace = elections
+ï»¿namespace = elections
+# Election!
 country_event = {
   id = 700
   title = "EVTNAME700"
@@ -59,9 +60,6 @@ country_event = {
       has_states_general_mechanic = yes
     }
     NOT = {
-      has_faction = conservative_party
-    }
-    NOT = {
       has_government_attribute = lottery_election
     }
     NOT = {
@@ -105,7 +103,7 @@ country_event = {
     post_ruler_focus_clearance = yes
   }
   option = {
-    name = "EVTOPTA700"
+    name = "EVTOPTA700" 	#  Current ruler stays
     trigger = {
       has_regency = no
       NOT = {
@@ -199,24 +197,7 @@ country_event = {
         }
       }
       change_government = monarchy
-    }
-    if = {
-      limit = {
-        has_reform = single_party_system
-        NOT = {
-          republican_tradition = 20
-        }
-      }
-      add_government_reform = dictatorial_rule
-    }
-    if = {
-      limit = {
-        has_reform = multi_party_system
-        NOT = {
-          republican_tradition = 20
-        }
-      }
-      add_government_reform = single_party_system
+      #set_legacy_government = despotic_monarchy
     }
     if = {
       limit = {
@@ -279,7 +260,9 @@ country_event = {
       hidden_effect = {
         for_variable_amount = {
           variable = election_term
-          effect = " add_absolutism = 10 "
+          effect = "
+            add_absolutism = 10
+          "
         }
       }
       hidden_effect = {
@@ -311,7 +294,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTB700"
+    name = "EVTOPTB700" 	#  An administrator type
     ai_chance = {
       factor = 20
     }
@@ -323,7 +306,7 @@ country_event = {
         mil = 1
         adm = 4
         dip = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -371,7 +354,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTC700"
+    name = "EVTOPTC700" 	#  A diplomat
     ai_chance = {
       factor = 20
     }
@@ -383,7 +366,7 @@ country_event = {
         dip = 4
         adm = 1
         mil = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -431,7 +414,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTD700"
+    name = "EVTOPTD700" 	#  A military man
     ai_chance = {
       factor = 20
     }
@@ -443,7 +426,7 @@ country_event = {
         mil = 4
         adm = 1
         dip = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -491,6 +474,7 @@ country_event = {
     }
   }
   option = {
+    # Nepotism choice, re-electing within dynasty
     name = "EVTOPTE700"
     trigger = {
       has_government_attribute = enables_nepotism
@@ -522,7 +506,7 @@ country_event = {
         min_age = 30
         max_age = 50
         name = "lastname"
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else_if = {
@@ -534,7 +518,7 @@ country_event = {
         min_age = 30
         max_age = 50
         name = "lastname"
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else_if = {
@@ -596,6 +580,7 @@ country_event = {
     }
   }
 }
+# Election!
 country_event = {
   id = 701
   title = "EVTNAME700"
@@ -608,9 +593,6 @@ country_event = {
     }
     NOT = {
       has_government_attribute = lottery_election
-    }
-    NOT = {
-      has_faction = conservative_party
     }
     NOT = {
       has_government_attribute = is_pirate_republic_reform
@@ -647,7 +629,7 @@ country_event = {
     post_ruler_focus_clearance = yes
   }
   option = {
-    name = "EVTOPTB700"
+    name = "EVTOPTB700" 	#  An administrator type
     ai_chance = {
       factor = 40
     }
@@ -659,7 +641,7 @@ country_event = {
         mil = 1
         adm = 4
         dip = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -695,7 +677,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTC700"
+    name = "EVTOPTC700" 	#  A diplomat
     ai_chance = {
       factor = 30
     }
@@ -707,7 +689,7 @@ country_event = {
         dip = 4
         adm = 1
         mil = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -743,7 +725,7 @@ country_event = {
     }
   }
   option = {
-    name = "EVTOPTD700"
+    name = "EVTOPTD700" 	#  A military man
     ai_chance = {
       factor = 30
     }
@@ -755,7 +737,7 @@ country_event = {
         mil = 4
         adm = 1
         dip = 1
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -791,6 +773,7 @@ country_event = {
     }
   }
   option = {
+    # Nepotism choice, re-electing within dynasty
     name = "EVTOPTE700"
     trigger = {
       has_government_attribute = enables_nepotism
@@ -822,7 +805,7 @@ country_event = {
         min_age = 30
         max_age = 50
         name = "lastname"
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else_if = {
@@ -834,7 +817,7 @@ country_event = {
         min_age = 30
         max_age = 50
         name = "lastname"
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else_if = {
@@ -845,7 +828,7 @@ country_event = {
         min_age = 30
         max_age = 50
         name = "lastname"
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else = {
@@ -886,6 +869,10 @@ country_event = {
     }
   }
 }
+########################################
+# Colonial Nations                     #
+########################################
+# Election!
 country_event = {
   id = elections.707
   title = "elections.EVTNAME707"
@@ -893,7 +880,7 @@ country_event = {
   picture = ELECTION_REPUBLICAN_eventPicture
   is_triggered_only = yes
   option = {
-    name = "elections.EVTOPTB707"
+    name = "elections.EVTOPTB707" 	#  Bureaucrat Candidate
     ai_chance = {
       factor = 20
     }
@@ -907,7 +894,7 @@ country_event = {
     }
   }
   option = {
-    name = "elections.EVTOPTC707"
+    name = "elections.EVTOPTC707" 	#  Diplomat Candidate
     ai_chance = {
       factor = 20
     }
@@ -921,7 +908,7 @@ country_event = {
     }
   }
   option = {
-    name = "elections.EVTOPTD707"
+    name = "elections.EVTOPTD707" 	#  Military Candidate
     ai_chance = {
       factor = 20
     }
@@ -935,6 +922,7 @@ country_event = {
     }
   }
 }
+# Colonial Assembly
 country_event = {
   id = elections.711
   title = "elections.EVTNAME711"
@@ -942,7 +930,7 @@ country_event = {
   picture = ELECTION_REPUBLICAN_eventPicture
   is_triggered_only = yes
   option = {
-    name = "elections.EVTOPTB711"
+    name = "elections.EVTOPTB711" 	#  Suspicious indeed...
     tooltip = {
       FROM = {
         add_liberty_desire = 10
@@ -950,6 +938,24 @@ country_event = {
     }
   }
 }
+## Winds of Liberty
+#country_event = {
+#	id = elections.712
+#	title = "elections.EVTNAME712"
+#	desc = "elections.EVTDESC712"
+#	picture = ELECTION_REPUBLICAN_eventPicture
+#	
+#	is_triggered_only = yes
+#	option = {
+#		name = "elections.EVTOPTB712"	# Most worrisome...
+#		tooltip = {
+#			FROM = {
+#				add_liberty_desire = -25
+#			}
+#		}
+#	}
+#}
+# Dutch Republic
 country_event = {
   id = elections.720
   title = elections.720.t
@@ -1031,7 +1037,7 @@ country_event = {
     }
     name = elections.720.b
     define_ruler = {
-      dynasty = "ƒ eYpQ»l"  # van Oranje
+      dynasty = "èŒƒ å¥¥å…°æ²»" 	# van Oranje
     }
     change_statists_vs_orangists = 0.33
   }
@@ -1051,7 +1057,7 @@ country_event = {
         tag = FRA
       }
       define_ruler = {
-        dynasty = "âlÿbôT"  # Bonaparte
+        dynasty = "æ³¢æ‹¿å·´" 	# Bonaparte
       }
     }
     else_if = {
@@ -1065,7 +1071,7 @@ country_event = {
     }
     else = {
       define_ruler = {
-        dynasty = historic_dynasty
+        dynasty = historic_dynasty 	#  Will pick one weighted by how many rulers a family has had
       }
     }
     if = {
@@ -1177,7 +1183,7 @@ country_event = {
     }
     name = elections.720.b
     define_ruler = {
-      dynasty = "ƒ eYpQ»l"  # van Oranje
+      dynasty = "èŒƒ å¥¥å…°æ²»" 	# van Oranje
     }
     change_statists_vs_orangists = 0.33
   }
@@ -1197,7 +1203,7 @@ country_event = {
         tag = FRA
       }
       define_ruler = {
-        dynasty = "âlÿbôT"  # Bonaparte
+        dynasty = "æ³¢æ‹¿å·´" 	# Bonaparte
       }
     }
     else_if = {
@@ -1211,7 +1217,7 @@ country_event = {
     }
     else = {
       define_ruler = {
-        dynasty = historic_dynasty
+        dynasty = historic_dynasty 	#  Will pick one weighted by how many rulers a family has had
       }
     }
     if = {
@@ -1242,6 +1248,7 @@ country_event = {
     change_statists_vs_orangists = 0.33
   }
 }
+# Lottery Election by Daniel Tolman
 country_event = {
   id = elections.800
   title = elections.800.t
@@ -1554,6 +1561,7 @@ country_event = {
     }
   }
   option = {
+    # lottery
     name = elections.800.da
     ai_chance = {
       factor = 90
@@ -1656,6 +1664,7 @@ country_event = {
     }
   }
   option = {
+    # nepotism
     name = elections.800.e
     trigger = {
       has_government_attribute = enables_nepotism
@@ -1687,7 +1696,7 @@ country_event = {
         change_adm = -1
         change_dip = -1
         name = "lastname"
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else_if = {
@@ -1699,7 +1708,7 @@ country_event = {
         min_age = 30
         max_age = 50
         name = "lastname"
-        random_gender = yes
+        random_gender = yes 	#  Allows random gender for republics
       }
     }
     else_if = {
