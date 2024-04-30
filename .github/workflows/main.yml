@@ -60,11 +60,6 @@ jobs:
         with:
           name: ETC
 
-      #- name: Unzip the artifact
-      #  run: |
-      #    mkdir temp
-      #    unzip ETC.zip -d temp
-
       - name: Release Action
         uses: softprops/action-gh-release@v1
         with:
@@ -73,13 +68,69 @@ jobs:
           body_path: CHANGELOG.md
           discussion_category_name: "公告"
 
-      #- name: steam-workshop-upload
-      #  uses: Weilbyte/steam-workshop-upload@v1.1
-      #  with:
-      #    appid: 236850 # Game's Steam App ID
-      #    itemid: 2897275182 # Your mod's Steam Workshop ID
-      #    path: 'temp'
-      #  env:
-      #    STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }} # Your Steam username
-      #    STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }} # Your Steam password
-      #    STEAM_TFASEED: ${{ secrets.STEAM_TFASEED }} # Your Steam Guard 2FA shared secret (Optional)
+  publish:
+    runs-on: windows-2019
+    needs: build
+    strategy:
+      matrix:
+        python-version: [3.8]
+    if: startsWith(github.ref, 'refs/tags/')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Update pip
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Install regex
+        run: |
+          pip install regex
+
+      - name: Install boto3
+        run: |
+          pip install boto3
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ETC
+
+      - name: Unzip mod
+        run: |
+          mkdir output
+          dir
+          cd output
+          Expand-Archive -Path ETC.zip
+          dir
+          cd ..
+
+      - name: Get steamcmd
+        run: |
+          dir
+          curl https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip --output steamcmd.zip
+          Expand-Archive -Path steamcmd.zip
+          dir
+
+      - name: Checkout steamcmd config
+        uses: actions/checkout@v4
+        with:
+          repository: Cccc-owo/steamcmd
+          token: ${{ secrets.STEAMCMD_TOKEN }}
+          path: steamcmd/config
+
+      - name: Upload Steam workshop
+        run: |
+          cd steamcmd
+          dir
+          steamcmd.exe -dev -textmode -ignoredxsupportcfg +login %STEAM_LOGIN_NAME% +workshop_build_item ..\resources\main.vdf +quit
+        env:
+          STEAM_LOGIN_NAME: ${{ secrets.STEAM_LOGIN_NAME }}
+          STEAM_LOGIN_PASSWORD: ${{ secrets.STEAM_LOGIN_PASSWORD }}
+        shell: cmd
+        continue-on-error: true
