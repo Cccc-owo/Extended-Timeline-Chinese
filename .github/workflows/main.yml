@@ -104,18 +104,16 @@ jobs:
       - name: Unzip mod
         run: |
           mkdir output
-          dir
-          cd output
-          Expand-Archive -Path ETC.zip
-          dir
-          cd ..
+          7z.exe e ETC.zip -ooutput
+        shell: cmd
 
       - name: Get steamcmd
         run: |
           dir
           curl https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip --output steamcmd.zip
-          Expand-Archive -Path steamcmd.zip
+          7z.exe e steamcmd.zip -osteamcmd
           dir
+        shell: cmd
 
       - name: Checkout steamcmd config
         uses: actions/checkout@v4
