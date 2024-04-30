@@ -2,15 +2,22 @@
 
 汉化组成员：见 [ParaTranz](https://paratranz.cn/projects/5342/members)
 
+## v1.16.1-r13
+
+- 🎇祝各位五一快乐！
+- 🌐更新原版汉化
+- 🌐更新ET汉化（没什么更新）
+- ✍️更新地图字体，增加更多字符
+
+---
+
+<details><summary>历史更新日志</summary>
+
 ## v1.16.1-r12
 
 - 🎇祝各位新年快乐！
 - 🌐更新原版汉化
 - 🌐更新ET汉化——泰文化人名，补充其他部分人名本地化
-
----
-
-<details><summary>历史更新日志</summary>
 
 ## v1.16.1-r11
 
