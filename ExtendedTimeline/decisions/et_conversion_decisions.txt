@@ -1,6 +1,7 @@
 country_decisions = {
 
 	convert_to_chalcedonism = {
+		color = { 231 208 122 }
 		major = yes
 		potential = {
 			NOT = { has_global_flag = reformed_the_chalcedonism_faith }
@@ -47,6 +48,7 @@ country_decisions = {
 	}
 
 	convert_to_reformed_chalcedonism = {
+		color = { 240 220 159 }
 		major = yes
 		potential = {
 			has_global_flag = reformed_the_chalcedonism_faith
@@ -94,6 +96,7 @@ country_decisions = {
 	}
 
 	convert_to_catholic = {
+		color = { 232 232 120 }
 		major = yes
 		potential = {
 			OR = {
@@ -140,6 +143,7 @@ country_decisions = {
 	}
 
 	convert_to_orthodox = {
+		color = { 216 190 121 }
 		major = yes
 		potential = {
 			OR = {
@@ -186,6 +190,7 @@ country_decisions = {
 	}
 
 	convert_to_arianism = {
+		color = { 186 186 119 }
 		major = yes
 		potential = {
 			OR = {
@@ -231,6 +236,7 @@ country_decisions = {
 	}
 
 	convert_to_coptic = {
+		color = { 216 186 186 }
 		major = yes
 		potential = {
 			OR = {
@@ -276,6 +282,7 @@ country_decisions = {
 	}
 
 	convert_to_nestorianism = {
+		color = { 208 208 122 }
 		major = yes
 		potential = {
 			OR = {
@@ -321,6 +328,7 @@ country_decisions = {
 	}
 
 	convert_to_sunni = {
+		color = { 138 196 138 }
 		major = yes
 		potential = {
 			OR = {
@@ -366,6 +374,7 @@ country_decisions = {
 	}
 
 	adopt_secularism = {
+		color = { 160 160 160 }
 		major = yes
 		potential = {
 			adm_tech = 79
@@ -415,6 +424,7 @@ country_decisions = {
 	}
 
 	convert_to_buddhism = {
+		color = { 228 153 184 }
 		major = yes
 		potential = {
 			OR = {
@@ -457,6 +467,7 @@ country_decisions = {
 	}
 
 	convert_to_shinto = {
+		color = { 236 128 128 }
 		major = yes
 		potential = {
 			OR = {
@@ -495,6 +506,7 @@ country_decisions = {
 	}
 
 	abandon_secularism = {
+		color = { 160 160 160 }
 		major = yes
 		potential = {
 			religion = secularism
@@ -519,6 +531,7 @@ country_decisions = {
 	}
 
 	convert_to_manichaeism = {
+		color = { 181 232 181 }
 		major = yes
 		potential = {
 			OR = {
@@ -575,6 +588,7 @@ country_decisions = {
 	}
 
 	convert_to_armenian_religion = {
+		color = { 219 183 183 }
 		major = yes
 		potential = {
 			primary_culture = armenian
@@ -609,6 +623,7 @@ country_decisions = {
 	}
 	
 	convert_to_cathar = {
+		color = { 188 188 255 }
 		major = yes
 		potential = {
 			religion_group = christian
@@ -636,6 +651,131 @@ country_decisions = {
 			modifier = {
 				factor = 0
 				NOT = { dominant_religion = cathar }
+			}
+		}
+	}
+
+	convert_to_bogomilism = {
+		major = yes
+		color = { 200 100 85 }
+		potential = {
+			religion_group = christian
+			is_religion_enabled = bogomilism
+			NOT = { religion = bogomilism }
+			NOT = { tag = PAP }
+			is_force_converted = no
+			any_owned_province = {
+				is_core = ROOT
+				religion = bogomilism
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = bogomilism
+			add_stability = -1
+			add_country_modifier = {
+				name = recent_conversion
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = et_bogomilism_recent_conversion_modifier
+				duration = 3650
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { dominant_religion = bogomilism }
+					is_emperor = yes
+					is_papal_controller = yes
+				}
+			}
+		}
+	}
+
+	convert_to_waldensian = {
+		major = yes
+		color = { 230 255 140 }
+		potential = {
+			religion_group = christian
+			is_religion_enabled = waldensian
+			NOT = { religion = waldensian }
+			NOT = { tag = PAP }
+			is_force_converted = no
+			any_owned_province = {
+				is_core = ROOT
+				religion = waldensian
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = waldensian
+			add_stability = -1
+			add_country_modifier = {
+				name = recent_conversion
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = et_waldensian_recent_conversion_modifier
+				duration = 3650
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { dominant_religion = waldensian }
+					is_emperor = yes
+					is_papal_controller = yes
+				}
+			}
+		}
+	}
+
+	convert_to_lollard = {
+		major = yes
+		color = { 255 200 255 }
+		potential = {
+			religion_group = christian
+			is_religion_enabled = lollard
+			NOT = { religion = lollard }
+			NOT = { tag = PAP }
+			is_force_converted = no
+			any_owned_province = {
+				is_core = ROOT
+				religion = lollard
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			change_religion = lollard
+			add_stability = -1
+			add_country_modifier = {
+				name = recent_conversion
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { dominant_religion = lollard }
+					is_emperor = yes
+					is_papal_controller = yes
+				}
 			}
 		}
 	}

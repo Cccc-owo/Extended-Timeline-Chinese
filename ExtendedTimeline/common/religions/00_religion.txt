@@ -454,6 +454,7 @@ christian = {
 			taborite_resurgence_aspect
 			orphan_hetmans_aspect
 			freedom_to_preach_aspect
+			rekindle_the_hussite_wars_aspect
 		}
 		aspects_name = PROTESTANT_ASPECTS
 		
@@ -501,6 +502,7 @@ christian = {
 			justified_religious_war_aspect
 			war_preaches_aspect
 			head_of_the_church_aspect
+			anglican_aspect
 		}
 		aspects_name = PROTESTANT_ASPECTS
 		
@@ -953,6 +955,12 @@ christian = {
 		province = {
 			local_missionary_strength = -0.02
 		}
+		allowed_center_conversion = {
+			orthodox
+			sunni
+			shiite
+			ibadi
+		}
 		
 		heretic = { ZAMIKAELITES STEPHANITES EUSTATHIANS }
 		
@@ -1213,7 +1221,172 @@ christian = {
 
 		heretic = { BOGOMILIST WALDENSIAN FRATICELLI HUSSITE LOLLARD SOCINIAN }
 	}
-	
+
+	bogomilism = {
+		color = { 170 0 0 }
+		icon = 61
+		allowed_conversion = {
+		}
+		country = {
+			tolerance_own = 1
+			advisor_cost = -0.1
+			church_influence_modifier = -0.1
+		}
+		country_as_secondary = {
+			yearly_corruption = -0.1
+		}
+		province = {
+			local_missionary_strength = -0.02
+		}
+
+		on_convert = {
+			change_religion = bogomilism
+			set_bogomilism_strength_of_faith_value = { value = 0 }
+		}
+
+		heretic = { WALDENSIAN FRATICELLI HUSSITE LOLLARD SOCINIAN }
+
+		date = 940.1.1
+	}
+
+	waldensian = {
+		color = { 215 255 90 }
+		icon = 62
+		allowed_conversion = {
+			catholic
+			hussite
+		}
+		country = {
+			tolerance_own = 1
+			missionary_maintenance_cost = -0.25
+		}
+		country_as_secondary = {
+			state_maintenance_modifier = -0.1
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+
+		on_convert = {
+			change_religion = waldensian
+			if = {
+				limit = {
+					NOT = { has_country_modifier = et_waldensian_apostolic_poverty_donations_focus_modifier }
+					NOT = { has_country_modifier = et_waldensian_apostolic_poverty_work_communes_focus_modifier }
+					NOT = { has_country_modifier = et_waldensian_apostolic_poverty_no_focus_modifier }
+				}
+				add_country_modifier = {
+					name = et_waldensian_apostolic_poverty_no_focus_modifier
+					duration = -1
+				}
+			}
+		}
+
+		heretic = { BOGOMILIST FRATICELLI LOLLARD SOCINIAN }
+
+		date = 1173.1.1
+	}
+
+	lollard = {
+		color = { 215 70 235 }
+		icon = 63
+		allowed_conversion = {
+			catholic
+			anglican
+			protestant
+			reformed
+		}
+		allowed_center_conversion = {
+			catholic
+		}
+		country = {
+			culture_conversion_time = -0.1
+			diplomatic_reputation = 1
+		}
+		country_as_secondary = {
+			culture_conversion_time = -0.1
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+
+		will_get_center = { #Refered to even for initial CoR Spawn
+			has_friendly_reformation_center = no
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = lollard
+				}
+			}
+		}
+
+		on_convert = {
+			change_religion = lollard
+			if = {
+				limit = {
+					has_country_modifier = eng_opposes_lollards
+				}
+				remove_country_modifier = eng_opposes_lollards
+			}
+			if = {
+				limit = {
+					has_country_modifier = eng_tolerates_lollards
+				}
+				remove_country_modifier = eng_tolerates_lollards
+			}
+			if = {
+				limit = {
+					any_owned_province = {
+						has_province_modifier = lollards
+					}
+				}
+				every_owned_province = {
+					limit = {
+						has_province_modifier = lollards
+					}
+					remove_province_modifier = lollards
+				}
+			}
+
+			if = {
+				limit = {
+					has_friendly_reformation_center = no
+					any_owned_province = {
+						can_have_center_of_reformation_trigger = {
+							RELIGION = lollard
+						}
+					}
+					NOT = {
+						calc_true_if = {
+							all_province = {
+								religion = lollard
+								is_reformation_center = yes
+							}
+							amount = 3
+						}
+					}
+				}
+				hidden_effect = {
+					random_owned_province = {
+						limit = {
+							can_have_center_of_reformation_trigger = {
+								RELIGION = lollard
+							}
+						}
+						change_religion = lollard
+						add_reform_center = lollard
+					}
+				}
+				custom_tooltip = CENTER_OF_REFORMATION_POSSIBLE
+			}
+		}
+
+		fervor = yes
+
+		heretic = { BOGOMILIST FRATICELLI WALDENSIAN SOCINIAN }
+
+		date = 1377.1.1
+	}
+
 	harmonized_modifier = harmonized_christian
 	
 	crusade_name = CRUSADE
@@ -1880,6 +2053,10 @@ muslim = {
 	sunni = {
 		color = { 0 153 0 }
 		icon = 8
+		allowed_center_conversion = {
+			ibadi
+			shiite
+		}
 		country = {
 			cav_to_inf_ratio = 0.10
 			heir_chance = 1.0
@@ -1902,6 +2079,10 @@ muslim = {
 	shiite = {
 		color = { 0 204 0 }
 		icon = 9
+		allowed_center_conversion = {
+			sunni
+			ibadi
+		}
 		country = {
 			heir_chance = 1.0
 			land_morale = 0.05
@@ -1924,6 +2105,10 @@ muslim = {
 	ibadi = {
 		color = { 0 102 0 }
 		icon = 10
+		allowed_center_conversion = {
+			sunni
+			shiite
+		}
 		country = {
 			heir_chance = 1.0
 			global_trade_goods_size_modifier = 0.1
@@ -1990,7 +2175,7 @@ buddhic = {
 			buddhism #Theravada
 		}
 		country = {
-			tolerance_heretic = 1
+			tolerance_heretic = 2
 			land_morale = 0.05
 		}
 		country_as_secondary = {

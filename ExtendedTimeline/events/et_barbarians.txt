@@ -1,0 +1,446 @@
+namespace = barbarian
+country_event = {#No glory??
+    id = barbarian.1
+    title = barbarian.1.t
+    desc = barbarian.1.d
+    picture = ANGRY_MOB_eventPicture
+    trigger = {
+        has_reform = barbarian_reform
+        NOT = {
+            has_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_glory
+					value = 20
+			}
+        }
+    }
+    mean_time_to_happen = {
+        years = 20
+    }
+    option = {#cope
+        name = barbarian.1.a
+        add_stability = -1
+        random_owned_province = {
+            spawn_rebels = {
+                type = pretender_rebels
+                size = 1
+                win = yes
+                should_take_capital = yes
+            }
+        }
+        if = {
+            limit = {
+                total_development = 100
+            }
+            random_owned_province = {
+                spawn_rebels = {
+                    type = pretender_rebels
+                    size = 1
+                    win = yes
+                    should_take_capital = yes
+                }
+            }
+        }
+        if = {
+            limit = {
+                total_development = 200
+            }
+            random_owned_province = {
+                spawn_rebels = {
+                    type = pretender_rebels
+                    size = 1
+                    win = yes
+                    should_take_capital = yes
+                }
+            }
+        }
+        if = {
+            limit = {
+                total_development = 300
+            }
+            random_owned_province = {
+                spawn_rebels = {
+                    type = pretender_rebels
+                    size = 1
+                    win = yes
+                    should_take_capital = yes
+                }
+            }
+        }
+        if = {
+            limit = {
+                total_development = 400
+            }
+            random_owned_province = {
+                spawn_rebels = {
+                    type = pretender_rebels
+                    size = 1
+                    win = yes
+                    should_take_capital = yes
+                }
+            }
+        }
+       
+    }
+}
+country_event = {#exceptional games held
+     id = barbarian.2
+    title = barbarian.2.t
+    desc = barbarian.2.d
+    picture = FEAST_eventPicture
+    is_triggered_only = yes
+    option = {#splendid
+        name = barbarian.2.a
+        add_prestige = 15
+        add_years_of_income = 0.2
+
+    }
+}
+province_event = {#pillaged area revolts
+    id = barbarian.3
+    title = barbarian.3.t
+    desc = barbarian.3.d
+    picture = BORDER_TENSION_eventPicture
+    is_triggered_only = yes
+    option = {
+        name = barbarian.3.a
+        owner = {
+
+        
+         	random_neighbor_country = { 
+                
+                save_event_target_as = RebCountry
+               
+            }}
+        add_core = event_target:RebCountry
+        add_nationalism = 10
+     	
+
+    }
+}
+country_event = {#high civ good
+    id = barbarian.4
+    title = barbarian.4.t
+    desc = barbarian.4.d
+    picture = UNIVERSITY_eventPicture
+    trigger = {
+         has_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_civilization
+					value = 50
+			}
+
+    }
+    mean_time_to_happen = {
+        years = 15
+        
+    }
+    option = {#invest in our provinces
+        name = barbarian.4.a
+        random_owned_province = {
+            add_base_tax = 1
+            add_base_production = 1
+        }
+    }
+    option = {#allow it to grow
+        name = barbarian.4.b
+        random_owned_province = {
+            add_next_institution_embracement = 20
+        }
+    }
+    option ={#theftery
+        name = barbarian.4.c
+        trigger = {
+            OR = {
+                corruption = 3
+                ruler_has_personality= embezzler_personality
+
+            }
+        }
+        add_years_of_income = 1
+        add_corruption = 0.5
+
+	highlight = yes
+    }
+}
+country_event = {
+    id = barbarian.5
+    title = barbarian.5.t
+    desc = barbarian.5.d
+    picture = MERCHANTS_TALKING_eventPicture
+    mean_time_to_happen = {
+        years = 20
+    }
+    trigger = {
+        has_reform = barbarian_reform
+
+        any_ally = {
+            OR = {
+                government = monarchy
+                government = republic
+                government = theocracy
+            }
+        }
+    }
+    option = {#accept
+    name = barbarian.5.a
+        add_country_modifier = {
+            name = barbaian_civil_ally
+            duration = 2000
+        }
+    }
+    option = {#deny
+        name = barbarian.5.b
+         add_government_power = {
+		            mechanic_type = barbarian_glory_mechanic
+		            power_type = barbarian_glory
+		            value = 8
+	            } 
+        add_government_power = {
+		            mechanic_type = barbarian_glory_mechanic
+		            power_type = barbarian_civilization
+		            value = -8
+	    } 
+
+    }
+}
+country_event = {#truly feared tribe
+    id = barbarian.6
+    title = barbarian.6.t
+    desc = barbarian.6.d
+    picture = VILLAGE_RAIDED_eventPicture
+    trigger = {
+        has_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_glory
+					value = 85
+			}
+
+        overextension_percentage = 0.20
+    }
+    mean_time_to_happen = {
+        years = 3
+    }
+    option = {#dont back down
+    name = barbarian.6.a
+     add_government_power = {
+		            mechanic_type = barbarian_glory_mechanic
+		            power_type = barbarian_glory
+		            value = 8
+	    }
+        add_country_modifier = {
+            name = barbarian_hated_expansion
+            duration = 1000
+        }
+    }
+    option = {#intimidate
+        name = barbarian.6.b
+        add_prestige = -10
+        add_country_modifier = {
+            name = barbarian_intimidation
+            duration = 1000
+        }
+
+    }
+    option = {#make concessions
+           name = barbarian.6.c
+            add_government_power = {
+		            mechanic_type = barbarian_glory_mechanic
+		            power_type = barbarian_glory
+		            value = -12
+	        }
+             add_government_power = {
+		            mechanic_type = barbarian_glory_mechanic
+		            power_type = barbarian_civilization
+		            value = 10
+	        }
+            add_country_modifier = {
+                name = barbarian_ae_concess
+                duration = 1000
+            }
+
+
+    }
+
+}
+country_event = {#high glory attracts migrants
+    id = barbarian.7
+    title = barbarian.7.t
+    desc = barbarian.7.d
+    picture = MILITARY_CAMP_eventPicture
+    mean_time_to_happen = {
+        years = 5
+    }
+    trigger = {
+         has_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_glory
+					value = 80
+			}
+
+    }
+    option = {#hand-pick warriors
+        name = barbarian.7.a
+        create_general = { tradition = 50
+            add_shock = 2
+        } 
+        add_manpower = 1.25
+
+    }
+    option = {#encourage settlers
+    name = barbarian.7.b
+     add_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_civilization
+					value = 7.5
+			}
+        random_owned_province = {
+            add_base_manpower = 2
+            add_base_production = 1
+        }
+
+    }
+
+}
+country_event = {#barbarians demand a war!
+     id = barbarian.8
+    title = barbarian.8.t
+    desc = barbarian.8.d
+    picture = OVEREXTENSION_eventPicture
+      mean_time_to_happen = {
+        years = 10
+    }
+    trigger = {
+        NOT = {
+         has_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_glory
+					value = 30
+			}
+        }
+        is_at_war = no
+
+    }
+    option = {#to battle
+    name = barbarian.8.a
+        random_owned_province = {
+            spawn_rebels = {
+                type = warrior_rebels
+                size = 1
+            }
+        }
+        if = {
+            limit={
+                total_development = 100
+            }
+             random_owned_province = {
+            spawn_rebels = {
+                type = warrior_rebels
+                size = 1
+            }
+        }
+        }
+       
+    }
+
+
+}
+country_event = {#warriors reject civ
+    id = barbarian.9
+    title = barbarian.9.t
+    desc = barbarian.9.d
+    picture = BATTLE_eventPicture
+    trigger = {
+         has_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_civilization
+					value = 20
+			}
+    }
+    mean_time_to_happen = {
+        years = 20
+    }
+    option = {#agreeance
+        name = barbarian.9.a
+        add_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_civilization
+					value = -5
+		}
+
+    }
+    option = {#no
+        name = barbarian.9.b
+        add_estate_loyalty = {
+            estate = estate_nobles
+            loyalty = -20
+        }
+    }
+   
+
+}
+country_event = {#Council seeks a focus
+    id = barbarian.10
+    title = barbarian.10.t
+    desc = barbarian.10.d
+    picture = BIG_BOOK_eventPicture
+    trigger = {
+        has_reform = barbarian_reform
+    }
+    mean_time_to_happen = {
+        years = 10
+    }
+    option = {
+        name = barbarian.10.a
+        
+        add_country_modifier = {
+            name = barbarian_prestige_accruement
+            duration = 1500
+        }
+    }
+    option = {
+        name = barbarian.10.b
+        add_country_modifier = {
+            name = barbarian_centralize_effort
+            duration = 1500
+        }
+    }
+    option = {
+        name = barbarian.10.c
+         add_country_modifier = {
+            name = barbarian_factionalism_focus
+            duration = 1500
+        }
+
+    }
+
+}
+country_event = {#ways of war
+    id = barbarian.11
+    title = barbarian.11.t
+    desc = barbarian.11.d
+    trigger = {
+        has_reform = barbarian_reform
+    }
+    mean_time_to_happen = {
+        years = 20
+    }
+    picture =     DIPLOMACY_eventPicture
+    option = {
+        name = barbarian.11.a
+        add_country_modifier = {
+            name = barbarian_razing_war
+            duration = 2000
+        }
+    }
+    option = {
+        name = barbarian.11.b
+         add_country_modifier = {
+            name = barbarian_diplo_war
+            duration = 2000
+        }
+    }
+
+
+}
+

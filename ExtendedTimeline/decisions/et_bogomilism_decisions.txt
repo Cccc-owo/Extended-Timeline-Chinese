@@ -1,0 +1,95 @@
+country_decisions = {
+	et_bogomilism_embrace_ruler_abstinance_decision = {
+		potential = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+			government = monarchy
+			is_lesser_in_union = no
+			has_government_attribute = heir
+			NOT = { has_ruler_modifier = et_bogomilism_embrace_ruler_abstinance_modifier }
+			NOT = { has_ruler_flag = et_bogomilism_ruler_broke_vow_of_abstinance }
+		}
+		allow = {
+			ruler_religion = new_variable:religion
+			adm_power = 50
+			has_regency = no
+			num_of_royal_marriages = 1
+			ruler_age = 20
+			NOT = { ruler_age = 50 }
+			if = {
+				limit = {
+					has_dlc = "Rights of Man"
+				}
+				has_consort = yes
+			}
+		}
+		effect = {
+			add_adm_power = -50
+			add_ruler_modifier = {
+				name = et_bogomilism_embrace_ruler_abstinance_modifier
+				duration = -1
+			}
+			export_yearly_bogomilism_strength_of_faith_gain = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	# for AI only, player can use the gui button
+	# if you change this, make sure to change the et_bogomilism_strength_of_faith_button button accordingly
+	et_bogomilism_appeal_for_ascetic_lifestyle_decision = {
+		potential = {
+			ai = yes
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		allow = {
+			NOT = { has_bogomilism_strength_of_faith_value = { value = 100 } }
+			adm_power = 50
+			if = {
+				limit = {
+					has_country_flag = et_bogomilism_appealed_for_ascetic_lifestyle
+				}
+				custom_trigger_tooltip = {
+					tooltip = et_bogomilism_not_appealed_for_ascetic_lifestyle_recently_tt_with_year
+					had_country_flag = { flag = et_bogomilism_appealed_for_ascetic_lifestyle days = 7300 }
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = et_bogomilism_not_appealed_for_ascetic_lifestyle_recently_tt
+					NOT = { has_country_flag = et_bogomilism_appealed_for_ascetic_lifestyle }
+				}
+			}
+		}
+		effect = {
+			clr_country_flag = et_bogomilism_appealed_for_ascetic_lifestyle
+			set_country_flag = et_bogomilism_appealed_for_ascetic_lifestyle
+			add_adm_power = -50
+			add_bogomilism_strength_of_faith_value = { value = 5 }
+			add_country_modifier = {
+				name = et_bogomilism_appeal_for_ascetic_lifestyle_modifier
+				duration = 3650
+			}
+			export_yearly_bogomilism_strength_of_faith_gain = yes
+			hidden_effect = {
+				export_to_variable = {
+					which = et_bogomilism_appeal_for_ascetic_year
+					value = trigger_value:is_year
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { adm_power = 500 }
+					NOT = { monthly_income = 10 }
+					num_of_loans = 1
+					is_in_deficit = yes
+					ruler_has_personality = greedy_personality
+				}
+			}
+		}
+	}
+}

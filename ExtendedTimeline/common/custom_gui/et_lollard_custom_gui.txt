@@ -1,0 +1,107 @@
+custom_button = {
+	name = et_lollard_baptize_monarch_button
+	# if you change this, make sure to change the et_lollard_baptize_monarch_decision decision accordingly
+	potential = {
+		ai = no
+		religion = lollard
+		uses_fervor = yes # just do make sure the religion uses it and the DLC is active
+	}
+	trigger = {
+		is_lesser_in_union = no
+		has_regency = no
+		ruler_age = 15
+		custom_trigger_tooltip = {
+			tooltip = et_lollard_monarch_not_baptized_tt
+			NOT = { has_ruler_flag = et_lollard_baptized }
+		}
+		if = {
+			limit = {
+				monthly_income = 500
+			}
+			treasury = 3000
+		}
+		else_if = {
+			limit = {
+				monthly_income = 17
+			}
+			years_of_income = 0.5
+		}
+		else = {
+			treasury = 100
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				monthly_income = 500
+			}
+			add_treasury = -3000
+		}
+		else_if = {
+			limit = {
+				monthly_income = 17
+			}
+			add_years_of_income = -0.5
+		}
+		else = {
+			add_treasury = -100
+		}
+		add_fervor = 10
+	}
+	tooltip = et_lollard_baptize_monarch_button_tt
+}
+
+custom_button = {
+	name = et_lollard_baptize_heir_button
+	# if you change this, make sure to change the et_lollard_baptize_heir_decision decision accordingly
+	potential = {
+		ai = no
+		religion = lollard
+		uses_fervor = yes # just do make sure the religion uses it and the DLC is active
+		government = monarchy
+		has_government_attribute = heir
+	}
+	trigger = {
+		is_lesser_in_union = no
+		has_heir = yes
+		heir_age = 15
+		custom_trigger_tooltip = {
+			tooltip = et_lollard_heir_not_baptized_tt
+			NOT = { has_heir_flag = et_lollard_baptized }
+		}
+		if = {
+			limit = {
+				monthly_income = 500
+			}
+			treasury = 2000
+		}
+		else_if = {
+			limit = {
+				monthly_income = 17
+			}
+			years_of_income = 0.33
+		}
+		else = {
+			treasury = 75
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				monthly_income = 500
+			}
+			add_treasury = -2000
+		}
+		else_if = {
+			limit = {
+				monthly_income = 17
+			}
+			add_years_of_income = -0.33
+		}
+		else = {
+			add_treasury = -75
+		}
+		add_fervor = 10
+	}
+	tooltip = et_lollard_baptize_heir_button_tt
+}

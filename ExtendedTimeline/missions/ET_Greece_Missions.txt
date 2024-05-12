@@ -142,9 +142,10 @@ greece_mission_1 = {
 			327 = { add_permanent_claim = ROOT }
 			418 = {	add_permanent_claim = ROOT }
 			2306 = { add_permanent_claim = ROOT }
-			2243 = { add_permanent_claim = ROOT }
+			2302 = { add_permanent_claim = ROOT }
 			4298 = { add_permanent_claim = ROOT	}
 			4303 = { add_permanent_claim = ROOT	}
+			add_prestige = 25
 		}
 	}
 	lawful_property_gre = {
@@ -157,7 +158,7 @@ greece_mission_1 = {
 				province_id = 327
 				province_id = 418
 				province_id = 2306
-				province_id = 2243
+				province_id = 2302
 				province_id = 4298
 				province_id = 4303
 				area = ankara_area
@@ -249,51 +250,47 @@ greece_mission_1 = {
 			NOT = { religion = ROOT }
         }
         trigger = {
-			OR = {
-				AND = {
-					327 = { religion = ROOT }
-					418 = { religion = ROOT }
-					2306 = { religion = ROOT }
-					2302 = { religion = ROOT }
-					4298 = { religion = ROOT }
-					4303 = { religion = ROOT }
-					ankara_area = {
-						type = all
-						religion = ROOT
-					}
-					karaman_area = {
-						type = all
-						religion = ROOT
-					}
-					rum_area = {
-						type = all
-						religion = ROOT
-					}
-					erzurum_area = {
-						type = all
-						religion = ROOT
-					}
-					dulkadir_area = {
-						type = all
-						religion = ROOT
-					}
-					kastamonu_area = {
-						type = all
-						religion = ROOT
-					}
-					germiyan_area = {
-						type = all
-						religion = ROOT
-					}
-					aydin_area = {
-						type = all
-						religion = ROOT
-					}
-					hudavendigar_area = {
-						type = all
-						religion = ROOT
-					}
-				}
+			327 = { religion = ROOT }
+			418 = { religion = ROOT }
+			2306 = { religion = ROOT }
+			2302 = { religion = ROOT }
+			4298 = { religion = ROOT }
+			4303 = { religion = ROOT }
+			ankara_area = {
+				type = all
+				religion = ROOT
+			}
+			karaman_area = {
+				type = all
+				religion = ROOT
+			}
+			rum_area = {
+				type = all
+				religion = ROOT
+			}
+			erzurum_area = {
+				type = all
+				religion = ROOT
+			}
+			dulkadir_area = {
+				type = all
+				religion = ROOT
+			}
+			kastamonu_area = {
+				type = all
+				religion = ROOT
+			}
+			germiyan_area = {
+				type = all
+				religion = ROOT
+			}
+			aydin_area = {
+				type = all
+				religion = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				religion = ROOT
 			}
 		}
 		effect = {
@@ -327,7 +324,7 @@ greece_mission_2 = {
 			NOT = { owned_by = ROOT	}
 		}
 		trigger = {
-			owns_core_province = 151
+			151 = { owned_by = ROOT }
 		}
 		effect = {
 			151 = {
@@ -545,6 +542,10 @@ greece_mission_3 = {
 		}
 		trigger = {
 			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_sicily_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

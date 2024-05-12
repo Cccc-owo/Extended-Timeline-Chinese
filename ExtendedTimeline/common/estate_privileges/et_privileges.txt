@@ -1,3 +1,67 @@
+#Barbarian Raiding Freedom 
+free_raids_barbarians = {
+	icon = horse
+	land_share = 0
+	max_absolutism = -5
+	influence = 0.1
+	loyalty = 0.05
+	penalties = {
+		improve_relation_modifier = -0.1
+		diplomatic_reputation = -1
+	}
+	benefits = {
+		monthly_barbarian_glory = 0.1
+	}
+	is_valid = {
+		has_reform = barbarian_reform
+	}
+}
+#encouraged trading for the burghers
+trade_lands_barbarians = {
+	icon = privilege_monopoly
+	land_share = 5
+	max_absolutism = -5
+	loyalty = 0.15
+	influence = 0.1
+	penalties = {
+		development_cost_modifier = 0.15
+	}
+	benefits = {
+		global_trade_goods_size_modifier = 0.1
+		monthly_barbarian_civilization = 0.05
+	}
+	is_valid = {
+		has_reform = barbarian_reform
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+
+}
+#Barbarian superwar
+barbarian_always_war = {
+	icon = privilege_recruit_minister
+	land_share = 0
+	influence = 0.15
+	loyalty = 0.1
+	max_absolutism = -10
+	penalties = {
+		monthly_barbarian_civilization = -0.05
+		monthly_barbarian_glory = -0.2
+	}
+	is_valid = {
+		has_reform = barbarian_reform
+	}
+	benefits = {
+		war_taxes_cost_modifier = -0.5
+		prestige_from_land = 0.1
+	}
+
+
+}
+
+
+
 #Corporate Privileges
 estate_corporate_land_rights = {
 	icon = privilege_grant_autonomy

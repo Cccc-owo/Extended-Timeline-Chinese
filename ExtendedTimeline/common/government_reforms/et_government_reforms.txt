@@ -11,15 +11,14 @@ barbarian_reform = {
 	lock_level_when_selected = yes
 
 	modifiers = {
-		land_forcelimit_modifier = 0.75
-		global_manpower_modifier = 0.75
- 		global_manpower = 1
-		global_regiment_cost = -0.4	
-
-		technology_cost = 0.4
-		global_prov_trade_power_modifier = -1.0
-		development_cost = 0.5
-		max_absolutism = -10
+		prestige_from_land = 0.2
+		available_province_loot = 0.15
+		land_forcelimit_modifier = 0.4	
+		min_autonomy = 10
+		defensiveness = -0.2
+	}
+	government_abilities = {
+		barbarian_glory_mechanic
 	}
 	ai = {
 		factor = 0.5 #generic
@@ -390,8 +389,7 @@ parthian_reform = {
 	icon = "parthian_reform"
 	allow_normal_conversion = no
 	potential = {
-		religion_group = iranian
-		
+		religion_group = zoroastrian_group
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 15
@@ -1169,9 +1167,7 @@ early_gov_reform_5c = {#delegate research power to the market
 		}
 	}
 	modifiers = {
-		merchants_influence = 0.15
 		trade_efficiency = 0.1
-		burghers_loyalty_equilibrium = 0.15
 		dip_tech_cost_modifier = -0.2
 		adm_tech_cost_modifier = 0.1
 		mil_tech_cost_modifier = 0.1

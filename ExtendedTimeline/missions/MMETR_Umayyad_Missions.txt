@@ -1169,9 +1169,11 @@ umayyad_missions_5 = {
 		
 		effect = {
 			151 = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
 				}
 				add_permanent_claim = ROOT
 			}

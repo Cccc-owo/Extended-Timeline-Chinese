@@ -167,13 +167,11 @@ estate_qizilbash = {
 	influence_modifier = {
 		desc = EST_VAL_ACCEPTS_TURKOMAN_CULTURE
 		trigger = {
-			not = { religion_group = zoroastrian_group }
-			NOT = { primary_culture = turco_iranian }
+			NOT = { religion_group = zoroastrian_group }
 			NOT = { primary_culture = azerbaijani }
 			NOT = { primary_culture = turkish }
 			NOT = { primary_culture = turkmeni }
 			OR = {
-				accepted_culture = turco_iranian
 				accepted_culture = azerbaijani
 				accepted_culture = turkish
 				accepted_culture = turkmeni
@@ -184,9 +182,8 @@ estate_qizilbash = {
 	influence_modifier = {
 		desc = EST_VAL_IS_TURKOMAN_CULTURE
 		trigger = {
-			not = { religion_group = zoroastrian_group }
+			NOT = { religion_group = zoroastrian_group }
 			OR = {
-				primary_culture = turco_iranian
 				primary_culture = azerbaijani
 				primary_culture = turkish
 				primary_culture = turkmeni
@@ -303,13 +300,11 @@ estate_qizilbash = {
 	loyalty_modifier = {
 		desc = EST_VAL_ACCEPTS_TURKOMAN_CULTURE_LOY
 		trigger = {
-			not = { religion_group = zoroastrian_group }
-			NOT = { primary_culture = turco_iranian }
+			NOT = { religion_group = zoroastrian_group }
 			NOT = { primary_culture = azerbaijani }
 			NOT = { primary_culture = turkish }
 			NOT = { primary_culture = turkmeni }
 			OR = {
-				accepted_culture = turco_iranian
 				accepted_culture = azerbaijani
 				accepted_culture = turkish
 				accepted_culture = turkmeni
@@ -320,9 +315,8 @@ estate_qizilbash = {
 	loyalty_modifier = {
 		desc = EST_VAL_IS_TURKOMAN_CULTURE_LOY
 		trigger = {
-			not = { religion_group = zoroastrian_group }
+			NOT = { religion_group = zoroastrian_group }
 			OR = {
-				primary_culture = turco_iranian
 				primary_culture = azerbaijani
 				primary_culture = turkish
 				primary_culture = turkmeni
@@ -356,6 +350,10 @@ estate_qizilbash = {
 
 	custom_name = {
 		desc = estate_aswaran
+		trigger = { religion_group = zoroastrian_group }
+	}
+	custom_desc = {
+		desc = estate_aswaran_desc
 		trigger = { religion_group = zoroastrian_group }
 	}
 

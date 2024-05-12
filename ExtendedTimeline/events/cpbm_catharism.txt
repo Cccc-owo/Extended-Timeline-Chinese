@@ -16,11 +16,17 @@ province_event = {
 		religion = cathar
 		owner = { religion = cathar }
 		NOT = { has_climate = arid }
-		NOT = { has_province_modifier = pelican_spotted }
+		NOT = { has_province_flag = pelican_spotted }
 	}
 
 	mean_time_to_happen = {
 		months = 2500
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_province_flag = pelican_spotted
+		}
 	}
 
 	option = {
@@ -296,7 +302,7 @@ country_event = {
 	id = cpbm_cathar.15
 	title = cpbm_cathar.EVTNAME15
 	desc = cpbm_cathar.EVTDESC15
-	picture = CPBM_BURNING_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture
 
 	is_triggered_only = yes
 
@@ -311,7 +317,7 @@ province_event = {
 	id = cpbm_cathar.16
 	title = cpbm_cathar.EVTNAME16
 	desc = cpbm_cathar.EVTDESC16
-	picture = CPBM_TROUBADOUR_eventPicture
+	picture = CULTURE_eventPicture
 	
 	fire_only_once = yes
 

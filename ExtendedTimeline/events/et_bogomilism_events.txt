@@ -1,0 +1,1583 @@
+namespace = et_bogomilism_events
+
+###############################
+# list of events in this file #
+###############################
+#
+# bogomilism specific events (mostly refering to bogomilist religious practices or ideas):
+#		et_bogomilism_events.1
+#		et_bogomilism_events.2
+#		et_bogomilism_events.3
+#		et_bogomilism_events.4
+#		et_bogomilism_events.5
+#		et_bogomilism_events.6
+#		et_bogomilism_events.7
+#		et_bogomilism_events.8
+#		et_bogomilism_events.9
+#		et_bogomilism_events.10
+#
+# general events (for any religion that was added to the scripted trigger uses_bogomilism_streng_of_faith_mechanic):
+#		et_bogomilism_events.11
+#		et_bogomilism_events.12
+#		et_bogomilism_events.13
+#
+################################
+
+# Spawn of Bogomilism
+country_event = {
+	id = et_bogomilism_events.1
+	title = et_bogomilism_events.EVTNAME1
+	desc = et_bogomilism_events.EVTDESC1
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	major = yes
+	fire_only_once = yes
+
+	goto = origin_province
+
+	trigger = {
+		religion_group = christian
+		is_year = 930
+		NOT = { is_religion_enabled = bogomilism }
+		OR = {
+			religion = orthodox
+			religion = chalcedonism
+			religion = catholic
+		}
+		balkan_region = {
+			owned_by = ROOT
+			island = no
+			OR = {
+				religion = orthodox
+				religion = chalcedonism
+				religion = catholic
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+        months = 240
+		modifier = {
+			factor = 0.9
+			war_exhaustion = 5
+		}
+		modifier = {
+			factor = 0.9
+			war_exhaustion = 10
+		}
+		modifier = {
+			factor = 1.5
+			capital_scope = {
+				NOT = { region = balkan_region }
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { tag = BUL }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = et_bogomilism_spawned
+			random_owned_province = {
+				limit = {
+					region = balkan_region
+					island = no
+					OR = {
+						religion = orthodox
+						religion = chalcedonism
+					}
+				}
+				save_event_target_as = origin_province
+				random_neighbor_province = {
+					limit = {
+						owned_by = ROOT
+						region = balkan_region
+						island = no
+						OR = {
+							religion = orthodox
+							religion = chalcedonism
+						}
+					}
+					save_event_target_as = target_province_1
+				}
+				if = {
+					limit = {
+						ROOT = {
+							total_development = 200
+						}
+						has_saved_event_target = target_province_1
+					}
+					random_neighbor_province = {
+						limit = {
+							owned_by = ROOT
+							region = balkan_region
+							island = no
+							OR = {
+								religion = orthodox
+								religion = chalcedonism
+							}
+							NOT = { province_id = event_target:target_province_1 }
+						}
+						save_event_target_as = target_province_2
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events1.EVTOPT1
+
+		ai_chance = {
+			factor = 0.6
+		}
+
+		enable_religion = bogomilism
+		if = {
+			limit = {
+				is_religion_enabled = catholic
+				OR = {
+					religion = catholic
+					any_country = {
+						religion = catholic
+					}
+				}
+			}
+			PAP = {
+				add_reform_desire = 0.05
+			}
+		}
+		add_stability = -1
+		custom_tooltip = " "
+		event_target:origin_province = {
+			change_religion = bogomilism
+			add_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 9125
+			}
+			add_province_modifier = {
+				name = et_bogomilism_persecution
+				duration = 9125
+			}
+		}
+		if = {
+			limit = {
+				has_saved_event_target = target_province_1
+			}
+			event_target:target_province_1 = {
+				if = {
+					limit = {
+						local_autonomy = 70
+					}
+					custom_tooltip = et_bogomilism_events.1.tt.1
+					hidden_effect = {
+						change_religion = bogomilism
+						add_province_modifier = {
+							name = religious_zeal_at_conv
+							duration = 9125
+						}
+						add_province_modifier = {
+							name = et_bogomilism_persecution
+							duration = 9125
+						}
+					}
+				}
+				else = {
+					custom_tooltip = et_bogomilism_events.1.tt.2
+					hidden_effect = {
+						random = {
+							chance = 75
+							change_religion = bogomilism
+							add_province_modifier = {
+								name = religious_zeal_at_conv
+								duration = 9125
+							}
+							add_province_modifier = {
+								name = et_bogomilism_persecution
+								duration = 9125
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_saved_event_target = target_province_2
+			}
+			event_target:target_province_2 = {
+				if = {
+					limit = {
+						local_autonomy = 70
+					}
+					custom_tooltip = et_bogomilism_events.1.tt.1
+					hidden_effect = {
+						change_religion = bogomilism
+						add_province_modifier = {
+							name = religious_zeal_at_conv
+							duration = 9125
+						}
+						add_province_modifier = {
+							name = et_bogomilism_persecution
+							duration = 9125
+						}
+					}
+				}
+				else = {
+					custom_tooltip = et_bogomilism_events.1.tt.2
+					hidden_effect = {
+						random = {
+							chance = 75
+							change_religion = bogomilism
+							add_province_modifier = {
+								name = religious_zeal_at_conv
+								duration = 9125
+							}
+							add_province_modifier = {
+								name = et_bogomilism_persecution
+								duration = 9125
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events1.EVTOPT2
+
+		ai_chance = {
+			factor = 0.4
+			modifier = {
+				factor = 1.25
+				capital_scope = {
+					region = balkan_region
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:origin_province = {
+					is_capital_of = ROOT
+				}
+			}
+		}
+
+		enable_religion = bogomilism
+		if = {
+			limit = {
+				is_religion_enabled = catholic
+				OR = {
+					religion = catholic
+					any_country = {
+						religion = catholic
+					}
+				}
+			}
+			PAP = {
+				add_reform_desire = 0.05
+			}
+		}
+		add_stability = -1
+		set_country_flag = et_tolerance_of_bogomilism
+		if = {
+			limit = {
+				religion = orthodox
+			}
+			add_patriarch_authority = -0.5
+		}
+		else_if = {
+			limit = {
+				religion = catholic
+			}
+			add_papal_influence = -50
+		}
+		else = {
+			add_prestige = -25
+		}
+		custom_tooltip = " "
+		event_target:origin_province = {
+			change_religion = bogomilism
+			add_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 9125
+			}
+		}
+		if = {
+			limit = {
+				has_saved_event_target = target_province_1
+			}
+			event_target:target_province_1 = {
+				if = {
+					limit = {
+						local_autonomy = 70
+					}
+					custom_tooltip = et_bogomilism_events.1.tt.1
+					hidden_effect = {
+						change_religion = bogomilism
+						add_province_modifier = {
+							name = religious_zeal_at_conv
+							duration = 9125
+						}
+					}
+				}
+				else = {
+					custom_tooltip = et_bogomilism_events.1.tt.2
+					hidden_effect = {
+						random = {
+							chance = 75
+							change_religion = bogomilism
+							add_province_modifier = {
+								name = religious_zeal_at_conv
+								duration = 9125
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_saved_event_target = target_province_2
+			}
+			event_target:target_province_2 = {
+				if = {
+					limit = {
+						local_autonomy = 70
+					}
+					custom_tooltip = et_bogomilism_events.1.tt.1
+					hidden_effect = {
+						change_religion = bogomilism
+						add_province_modifier = {
+							name = religious_zeal_at_conv
+							duration = 9125
+						}
+					}
+				}
+				else = {
+					custom_tooltip = et_bogomilism_events.1.tt.2
+					hidden_effect = {
+						random = {
+							chance = 75
+							change_religion = bogomilism
+							add_province_modifier = {
+								name = religious_zeal_at_conv
+								duration = 9125
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Spread of Bogomilism
+province_event = {
+    id = et_bogomilism_events.2
+    title = et_bogomilism_events.EVTNAME2
+    desc = et_bogomilism_events.EVTDESC2
+    picture = PEASANTS_BARTERING_eventPicture
+
+	goto = ROOT
+
+    trigger = {
+		OR = {
+			region = balkan_region
+			region = carpathia_region
+        }
+		is_religion_enabled = bogomilism
+		NOT = { religion = bogomilism }
+		NOT = { is_year = 1400 }
+		OR = {
+			religion = orthodox
+			religion = chalcedonism
+			religion = catholic
+		}
+    }
+
+    mean_time_to_happen = {
+        months = 4800
+		modifier = {
+            factor = 0.75
+			owner = {
+				has_country_flag = et_tolerance_of_bogomilism
+			}
+		}
+		modifier = {
+            factor = 0.8
+			any_neighbor_province = { religion = bogomilism }
+		}
+		modifier = {
+            factor = 0.9
+			religion = orthodox
+		}
+        modifier = {
+            factor = 1.1
+            region = carpathia_region
+        }
+        modifier = {
+            factor = 0.9
+			region = balkan_region
+        }
+        modifier = {
+            factor = 1.25
+			is_year = 1100
+			NOT = { is_year = 1250 }
+			NOT = { area = bosnia_area }
+        }
+		modifier = {
+            factor = 1.5
+			is_year = 1250
+			NOT = { area = bosnia_area }
+        }
+        modifier = {
+            factor = 1.25
+			is_year = 1250
+			area = bosnia_area
+        }
+    }
+
+    option = {
+        name = et_bogomilism_events2.EVTOPT1
+
+		trigger = {
+			owner = {
+				NOT = { religion = bogomilism }
+			}
+		}
+
+        change_religion = bogomilism
+        add_permanent_province_modifier = {
+            name = religious_zeal_at_conv
+            duration = 3650
+        }
+    }
+
+    option = {
+        name = et_bogomilism_events2.EVTOPT2
+
+		trigger = {
+			owner = {
+				religion = bogomilism
+			}
+		}
+
+        change_religion = bogomilism
+        add_permanent_province_modifier = {
+            name = religious_zeal_at_conv
+            duration = 3650
+        }
+		owner = {
+			add_bogomilism_strength_of_faith_value = { value = 0.1 }
+		}
+    }
+}
+
+# Question of Livestock
+country_event = {
+    id = et_bogomilism_events.3
+    title = et_bogomilism_events.EVTNAME3
+    desc = et_bogomilism_events.EVTDESC3
+    picture = FARMING_eventPicture
+
+	trigger = {
+		religion = bogomilism
+		livestock = 1
+		any_owned_province = {
+			has_owner_religion = yes
+			trade_goods = livestock
+			NOT = { has_province_modifier = et_bogomilism_livestock_ban }
+			NOT = { has_province_modifier = et_bogomilism_livestock_low_demand }
+		}
+	}
+
+	mean_time_to_happen = {
+        months = 480
+	}
+
+	option = {
+		name = et_bogomilism_events3.EVTOPT1
+
+		ai_chance = {
+			factor = 0.9
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = 5 }
+		custom_tooltip = et_bogomilism_events.3.tt.1
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = livestock
+				}
+				change_trade_goods = unknown
+				add_province_modifier = {
+					name = et_bogomilism_livestock_ban
+					duration = 7300
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							has_province_modifier = et_bogomilism_livestock_low_demand
+						}
+						remove_province_modifier = et_bogomilism_livestock_low_demand
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events3.EVTOPT2
+
+		ai_chance = {
+			factor = 0.1
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -15 }
+		custom_tooltip = et_bogomilism_events.3.tt.2
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = livestock
+				}
+				if = {
+					limit = {
+						has_province_modifier = et_bogomilism_livestock_low_demand
+					}
+					remove_province_modifier = et_bogomilism_livestock_low_demand
+				}
+				add_province_modifier = {
+					name = et_bogomilism_livestock_low_demand
+					duration = 18250
+				}
+			}
+		}
+	}
+}
+
+# RULER turns to a religious life
+country_event = {
+    id = et_bogomilism_events.4
+    title = et_bogomilism_events.EVTNAME4
+    desc = et_bogomilism_events.EVTDESC4
+    picture = PRAYING_eventPicture
+
+	trigger = {
+		religion = bogomilism
+		ruler_religion = bogomilism
+		government = monarchy
+		is_lesser_in_union = no
+		has_regency = no
+		ruler_age = 30
+		NOT = { has_ruler_flag = et_bogomilism_pious_ruler }
+		NOT = { has_ruler_flag = et_bogomilism_non_pious_ruler }
+		OR = {
+			NOT = { has_dlc = "Rights of Man" }
+			AND = {
+				NOT = { ruler_has_personality = sinner_personality }
+				NOT = { ruler_has_personality = embezzler_personality }
+				NOT = { ruler_has_personality = greedy_personality }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+        months = 600
+		modifier = {
+			factor = 0.75
+			ruler_has_personality = pious_personality
+		}
+		modifier = {
+			factor = 0.75
+			ruler_has_personality = zealot_personality
+		}
+		modifier = {
+			factor = 0.9
+			has_bogomilism_strength_of_faith_value = { value = 75 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { has_bogomilism_strength_of_faith_value = { value = 25 } }
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events4.EVTOPT1
+
+		ai_chance = {
+			factor = 0.6
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = 10 }
+		set_ruler_flag = et_bogomilism_pious_ruler
+		if = {
+			limit = {
+				ADM = 1
+			}
+			change_adm = -1
+		}
+		else = {
+			add_adm_power = -50
+		}
+		if = {
+			limit = {
+				DIP = 1
+			}
+			change_dip = -1
+		}
+		else = {
+			add_dip_power = -50
+		}
+		if = {
+			limit = {
+				MIL = 1
+			}
+			change_mil = -1
+		}
+		else = {
+			add_mil_power = -50
+		}
+		add_ruler_modifier = {
+			name = et_bogomilism_pious_ruler_modifier
+			duration = -1
+		}
+		export_yearly_bogomilism_strength_of_faith_gain = yes
+	}
+
+	option = {
+		name = et_bogomilism_events4.EVTOPT2
+
+		ai_chance = {
+			factor = 0.2
+			modifier = {
+				factor = 0.5
+				NOT = { stability = 0 }
+			}
+			modifier = {
+				factor = 0.75
+				ADM = 4
+			}
+			modifier = {
+				factor = 0.75
+				DIP = 4
+			}
+			modifier = {
+				factor = 0.75
+				MIL = 4
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { ruler_age = 50 }
+			}
+			modifier = {
+				factor = 0
+				has_government_attribute = heir
+				has_heir = no
+			}
+			modifier = {
+				factor = 1.2
+				NOT = { has_bogomilism_strength_of_faith_value = { value = 10 } }
+			}
+			modifier = {
+				factor = 0.9
+				has_bogomilism_strength_of_faith_value = { value = 50 }
+			}
+			modifier = {
+				factor = 0.8
+				has_bogomilism_strength_of_faith_value = { value = 75 }
+			}
+		}
+
+		hidden_effect = {
+			kill_ruler = yes
+		}
+		add_bogomilism_strength_of_faith_value = { value = 20 }
+		if = {
+			limit = {
+				has_global_modifier_value = {
+					which = no_stability_loss_on_monarch_death
+					value = 1
+				}
+			}
+			custom_tooltip = et_bogomilism_events.4.tt.1
+		}
+		else = {
+			custom_tooltip = et_bogomilism_events.4.tt.2
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events4.EVTOPT3
+
+		ai_chance = {
+			factor = 0.2
+			modifier = {
+				factor = 0.5
+				NOT = { stability = 0 }
+			}
+			modifier = {
+				factor = 0.5
+				ruler_has_personality = pious_personality
+			}
+			modifier = {
+				factor = 0.5
+				ruler_has_personality = zealot_personality
+			}
+		}
+
+		add_stability = -1
+		add_bogomilism_strength_of_faith_value = { value = -10 }
+		set_ruler_flag = et_bogomilism_non_pious_ruler
+		if = {
+			limit = {
+				ruler_has_personality = pious_personality
+			}
+			remove_ruler_personality = pious_personality
+		}
+		if = {
+			limit = {
+				ruler_has_personality = zealot_personality
+			}
+			remove_ruler_personality = zealot_personality
+		}
+	}
+}
+
+# RULER shows unpious behavior
+country_event = {
+    id = et_bogomilism_events.5
+    title = et_bogomilism_events.EVTNAME5
+    desc = et_bogomilism_events.EVTDESC5
+    picture = BAD_WITH_MONARCH_eventPicture
+
+	trigger = {
+		religion = bogomilism
+		ruler_religion = bogomilism
+		is_lesser_in_union = no
+		has_regency = no
+		NOT = { has_ruler_flag = et_bogomilism_pious_ruler }
+		NOT = { has_ruler_modifier = et_bogomilism_non_pious_ruler_got_more_pious_modifier }
+		OR = {
+			has_ruler_flag = et_bogomilism_non_pious_ruler
+			AND = {
+				has_dlc = "Rights of Man"
+				OR = {
+					ruler_has_personality = sinner_personality
+					ruler_has_personality = embezzler_personality
+					ruler_has_personality = greedy_personality
+					ruler_has_personality = drunkard_personality
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+        months = 480
+		modifier = {
+			factor = 0.9
+			has_ruler_flag = et_bogomilism_non_pious_ruler
+		}
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = sinner_personality
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events5.EVTOPT1
+
+		ai_chance = {
+			factor = 0.9
+		}
+
+		add_treasury = -300
+		random_list = {
+			60 = {
+				add_prestige = -10
+			}
+			40 = {
+				modifier = {
+					factor = 0.6
+					ruler_has_personality = sinner_personality
+					ruler_has_personality = embezzler_personality
+					ruler_has_personality = greedy_personality
+					ruler_has_personality = drunkard_personality
+				}
+				modifier = {
+					factor = 0.7
+					calc_true_if = {
+						amount = 3
+						ruler_has_personality = sinner_personality
+						ruler_has_personality = embezzler_personality
+						ruler_has_personality = greedy_personality
+						ruler_has_personality = drunkard_personality
+					}
+				}
+				modifier = {
+					factor = 0.8
+					calc_true_if = {
+						amount = 2
+						ruler_has_personality = sinner_personality
+						ruler_has_personality = embezzler_personality
+						ruler_has_personality = greedy_personality
+						ruler_has_personality = drunkard_personality
+					}
+				}
+				modifier = {
+					factor = 0.9
+					has_ruler_flag = et_bogomilism_non_pious_ruler
+					OR = {
+						ruler_has_personality = sinner_personality
+						ruler_has_personality = embezzler_personality
+						ruler_has_personality = greedy_personality
+						ruler_has_personality = drunkard_personality
+					}
+				}
+				add_ruler_modifier = {
+					name = et_bogomilism_non_pious_ruler_got_more_pious_modifier
+					duration = 5475
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events5.EVTOPT2
+
+		trigger = {
+			has_ruler_flag = et_bogomilism_non_pious_ruler
+			OR = {
+				ruler_has_personality = sinner_personality
+				ruler_has_personality = embezzler_personality
+				ruler_has_personality = greedy_personality
+				ruler_has_personality = drunkard_personality
+			}
+		}
+
+		ai_chance = {
+			factor = 0.1
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -15 }
+	}
+
+	option = {
+		name = et_bogomilism_events5.EVTOPT3
+
+		trigger = {
+			NOT = { has_ruler_flag = et_bogomilism_non_pious_ruler }
+			OR = {
+				ruler_has_personality = sinner_personality
+				ruler_has_personality = embezzler_personality
+				ruler_has_personality = greedy_personality
+				ruler_has_personality = drunkard_personality
+			}
+		}
+
+		ai_chance = {
+			factor = 0.1
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -10 }
+	}
+
+	option = {
+		name = et_bogomilism_events5.EVTOPT4
+
+		trigger = {
+			has_ruler_flag = et_bogomilism_non_pious_ruler
+			NOT = { ruler_has_personality = sinner_personality }
+			NOT = { ruler_has_personality = embezzler_personality }
+			NOT = { ruler_has_personality = greedy_personality }
+			NOT = { ruler_has_personality = drunkard_personality }
+		}
+
+		ai_chance = {
+			factor = 0.1
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -5 }
+	}
+}
+
+# Support for the Preachers?
+country_event = {
+    id = et_bogomilism_events.6
+    title = et_bogomilism_events.EVTNAME6
+    desc = et_bogomilism_events.EVTDESC6
+    picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = bogomilism
+	}
+
+	mean_time_to_happen = {
+        days = 1
+	}
+
+	option = {
+		name = et_bogomilism_events6.EVTOPT1
+
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				NOT = { stability = 3 }
+			}
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = 5 }
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events6.EVTOPT2
+
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				NOT = { stability = 3 }
+			}
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -5 }
+		add_stability_or_adm_power = yes
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+	}
+}
+
+# Complaint about a Local Preacher
+country_event = {
+    id = et_bogomilism_events.7
+    title = et_bogomilism_events.EVTNAME7
+    desc = et_bogomilism_events.EVTDESC7
+    picture = STREET_SPEECH_eventPicture
+
+	is_triggered_only = yes
+
+	goto = target_province
+
+	trigger = {
+		religion = bogomilism
+		any_owned_province = {
+			religion = bogomilism
+			NOT = { has_province_modifier = et_bogomilism_failed_complaint_modifier }
+		}
+	}
+
+	mean_time_to_happen = {
+        days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = bogomilism
+					NOT = { has_province_modifier = et_bogomilism_failed_complaint_modifier }
+				}
+				save_event_target_as = target_province
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events7.EVTOPT1
+
+		ai_chance = {
+			factor = 0.6
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = 5 }
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+		}
+		event_target:target_province = {
+			add_province_modifier = {
+				name = et_bogomilism_failed_complaint_modifier
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events7.EVTOPT2
+
+		ai_chance = {
+			factor = 0.4
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -5 }
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		event_target:target_province = {
+			add_base_production = 1
+		}
+	}
+}
+
+# The Situation of Lay Members
+country_event = {
+    id = et_bogomilism_events.8
+    title = et_bogomilism_events.EVTNAME8
+    desc = et_bogomilism_events.EVTDESC8
+    picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = bogomilism
+	}
+
+	mean_time_to_happen = {
+        days = 1
+	}
+
+	option = {
+		name = et_bogomilism_events8.EVTOPT1
+
+		ai_chance = {
+			factor = 0.5
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = 5 }
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 10
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events8.EVTOPT2
+
+		ai_chance = {
+			factor = 0.5
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -5 }
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -10
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_burghers
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -10
+			}
+		}
+		add_adm_power = 50
+	}
+}
+
+# A Sinful Nobility?
+country_event = {
+    id = et_bogomilism_events.9
+    title = et_bogomilism_events.EVTNAME9
+    desc = et_bogomilism_events.EVTDESC9
+    picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = bogomilism
+	}
+
+	mean_time_to_happen = {
+        days = 1
+	}
+
+	option = {
+		name = et_bogomilism_events9.EVTOPT1
+
+		ai_chance = {
+			factor = 0.6
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = 5 }
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events9.EVTOPT2
+
+		ai_chance = {
+			factor = 0.4
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -5 }
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -10
+			}
+		}
+		add_legitimacy_equivalent = { amount = 10 republican_tradition = 5 }
+	}
+}
+
+# The Church in PROVINCE
+country_event = {
+    id = et_bogomilism_events.10
+    title = et_bogomilism_events.EVTNAME10
+    desc = et_bogomilism_events.EVTDESC10
+    picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	goto = target_province
+
+	trigger = {
+		religion = bogomilism
+		any_owned_province = {
+			religion = bogomilism
+			NOT = { has_province_modifier = et_bogomilism_remove_church_modifier }
+			NOT = { has_province_modifier = et_bogomilism_keep_church_modifier }
+			has_religion_building_et = yes
+		}
+	}
+
+	mean_time_to_happen = {
+        days = 1
+		modifier = {
+			factor = 1.25
+			num_of_owned_provinces_with = {
+				value = 15
+				religion = bogomilism
+				NOT = { has_province_modifier = et_bogomilism_remove_church_modifier }
+				NOT = { has_province_modifier = et_bogomilism_keep_church_modifier }
+				has_religion_building_et = yes
+			}
+			NOT = {
+				num_of_owned_provinces_with = {
+					value = 30
+					religion = bogomilism
+					NOT = { has_province_modifier = et_bogomilism_remove_church_modifier }
+					NOT = { has_province_modifier = et_bogomilism_keep_church_modifier }
+					has_religion_building_et = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			num_of_owned_provinces_with = {
+				value = 30
+				religion = bogomilism
+				NOT = { has_province_modifier = et_bogomilism_remove_church_modifier }
+				NOT = { has_province_modifier = et_bogomilism_keep_church_modifier }
+				has_religion_building_et = yes
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = bogomilism
+					NOT = { has_province_modifier = et_bogomilism_remove_church_modifier }
+					NOT = { has_province_modifier = et_bogomilism_keep_church_modifier }
+					has_religion_building_et = yes
+				}
+				save_event_target_as = target_province
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events10.EVTOPT1
+
+		ai_chance = {
+			factor = 0.1
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = 5 }
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+		}
+		event_target:target_province = {
+			if = {
+				limit = {
+					has_building = cathedral
+				}
+				remove_building = cathedral
+			}
+			else_if = {
+				limit = {
+					has_building = temple
+				}
+				remove_building = temple
+			}
+			else_if = {
+				limit = {
+					has_building = glorious_monument
+				}
+				remove_building = glorious_monument
+			}
+			add_province_modifier = {
+				name = et_bogomilism_remove_church_modifier
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events10.EVTOPT2
+
+		ai_chance = {
+			factor = 0.9
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -5 }
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		event_target:target_province = {
+			add_province_modifier = {
+				name = et_bogomilism_keep_church_modifier
+				duration = 3650
+			}
+		}
+	}
+}
+
+# Unrest in PROVINCE
+country_event = {
+    id = et_bogomilism_events.11
+    title = et_bogomilism_events.EVTNAME11
+    desc = et_bogomilism_events.EVTDESC11
+    picture = ANGRY_MOB_eventPicture
+
+	goto = target_province
+
+	trigger = {
+		uses_bogomilism_streng_of_faith_mechanic = yes
+		has_country_modifier = et_bogomilism_appeal_for_ascetic_lifestyle_modifier
+		any_owned_province = {
+			has_owner_religion = yes
+		}
+	}
+
+	mean_time_to_happen = {
+        months = 360
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_owner_religion = yes
+				}
+				save_event_target_as = target_province
+			}
+			random_owned_province = {
+				limit = {
+					has_owner_religion = yes
+					is_island = no
+				}
+				save_event_target_as = target_province
+			}
+			random_owned_province = {
+				limit = {
+					has_owner_religion = yes
+					is_island = no
+					is_in_capital_area = yes
+				}
+				save_event_target_as = target_province
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events11.EVTOPT1
+
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				years_of_income = 1
+			}
+			modifier = {
+				factor = 2
+				is_at_war = yes
+			}
+		}
+
+		add_bogomilism_strength_of_faith_value = { value = -10 }
+		add_treasury = -300
+	}
+
+	option = {
+		name = et_bogomilism_events11.EVTOPT2
+
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				is_bankrupt = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					is_in_deficit = yes
+					num_of_loans = 1
+				}
+			}
+		}
+
+		event_target:target_province = {
+			add_unrest = 5
+			anti_tax_rebels = 2
+		}
+	}
+}
+
+# RULER breaks Vow of Abstinance (rumor)
+country_event = {
+    id = et_bogomilism_events.12
+    title = et_bogomilism_events.EVTNAME12
+    desc = et_bogomilism_events.EVTDESC12
+    picture = ACCUSATION_eventPicture
+
+	trigger = {
+		has_dlc = "Rights of Man"
+		uses_bogomilism_streng_of_faith_mechanic = yes
+		government = monarchy
+		ruler_has_personality = sinner_personality
+		has_ruler_modifier = et_bogomilism_embrace_ruler_abstinance_modifier
+		NOT = { has_ruler_flag = et_bogomilism_ruler_broke_vow_of_abstinance }
+		is_lesser_in_union = no
+		has_regency = no
+		ruler_age = 30
+	}
+
+	mean_time_to_happen = {
+        months = 300
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = et_bogomilism_ruler_broke_vow_of_abstinance
+			if = {
+				limit = {
+					OR = {
+						employed_advisor = { category = ADM }
+						employed_advisor = { category = DIP }
+						employed_advisor = { category = MIL }
+					}
+				}
+				random_list = {
+					33 = {
+						trigger = {
+							employed_advisor = { category = ADM }
+						}
+						set_country_flag = et_bogomilism_blame_adm_advisor
+					}
+					33 = {
+						trigger = {
+							employed_advisor = { category = DIP }
+						}
+						set_country_flag = et_bogomilism_blame_dip_advisor
+					}
+					33 = {
+						trigger = {
+							employed_advisor = { category = MIL }
+						}
+						set_country_flag = et_bogomilism_blame_mil_advisor
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events12.EVTOPT1
+
+		ai_chance = {
+			factor = 0
+		}
+
+		add_stability = -1
+		add_bogomilism_strength_of_faith_value = { value = -15 }
+		remove_country_modifier = et_bogomilism_embrace_ruler_abstinance_modifier
+		export_yearly_bogomilism_strength_of_faith_gain = yes
+	}
+
+	option = {
+		name = et_bogomilism_events12.EVTOPT2
+
+		ai_chance = {
+			factor = 100
+		}
+
+		add_stability = -1
+		add_corruption = 2
+		if = {
+			limit = {
+				has_country_flag = et_bogomilism_blame_adm_advisor
+			}
+			remove_advisor_by_category = ADM
+		}
+		else_if = {
+			limit = {
+				has_country_flag = et_bogomilism_blame_dip_advisor
+			}
+			remove_advisor_by_category = DIP
+		}
+		else_if = {
+			limit = {
+				has_country_flag = et_bogomilism_blame_mil_advisor
+			}
+			remove_advisor_by_category = MIL
+		}
+	}
+
+	after = {
+		clr_country_flag = et_bogomilism_blame_adm_advisor
+		clr_country_flag = et_bogomilism_blame_dip_advisor
+		clr_country_flag = et_bogomilism_blame_mil_advisor
+	}
+}
+
+# RULER breaks Vow of Abstinance (new heir)
+country_event = {
+    id = et_bogomilism_events.13
+    title = et_bogomilism_events.EVTNAME13
+    desc = et_bogomilism_events.EVTDESC13
+    picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		uses_bogomilism_streng_of_faith_mechanic = yes
+		government = monarchy
+		has_ruler_modifier = et_bogomilism_embrace_ruler_abstinance_modifier
+		NOT = { has_ruler_flag = et_bogomilism_ruler_broke_vow_of_abstinance }
+		is_lesser_in_union = no
+		has_regency = no
+		has_heir = yes
+		heir_has_ruler_dynasty = yes
+		NOT = { heir_age = 1 }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = et_bogomilism_ruler_broke_vow_of_abstinance
+		}
+	}
+
+	option = {
+		name = et_bogomilism_events13.EVTOPT1
+
+		ai_chance = {
+			factor = 1
+		}
+
+		add_stability = -1
+		add_bogomilism_strength_of_faith_value = { value = -15 }
+		remove_country_modifier = et_bogomilism_embrace_ruler_abstinance_modifier
+		export_yearly_bogomilism_strength_of_faith_gain = yes
+	}
+
+	option = {
+		name = et_bogomilism_events13.EVTOPT2
+
+		highlight = yes
+
+		trigger = {
+			OR = {
+				ruler_has_personality = zealot_personality
+				ruler_has_personality = pious_personality
+				ruler_has_personality = infertile_personality
+				ruler_has_personality = silver_tongue_personality
+			}
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+
+		add_prestige = -25
+		add_legitimacy = -25
+		add_heir_claim = -100
+	}
+}

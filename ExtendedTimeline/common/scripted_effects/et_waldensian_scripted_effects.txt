@@ -1,0 +1,146 @@
+remove_waldensian_apostolic_poverty_focus_opinions = {
+	hidden_effect = {
+		every_country = {
+			limit = {
+				OR = {
+					has_opinion_modifier = {
+						who = PREV
+						modifier = et_waldensian_same_focus_opinion
+					}
+					reverse_has_opinion_modifier = {
+						who = PREV
+						modifier = et_waldensian_same_focus_opinion
+					}
+					has_opinion_modifier = {
+						who = PREV
+						modifier = et_waldensian_different_focus_opinion
+					}
+					reverse_has_opinion_modifier = {
+						who = PREV
+						modifier = et_waldensian_different_focus_opinion
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_opinion_modifier = {
+						who = PREV
+						modifier = et_waldensian_same_focus_opinion
+					}
+				}
+				remove_opinion = {
+					who = PREV
+					modifier = et_waldensian_same_focus_opinion
+				}
+			}
+			if = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = PREV
+						modifier = et_waldensian_same_focus_opinion
+					}
+				}
+				reverse_remove_opinion = {
+					who = PREV
+					modifier = et_waldensian_same_focus_opinion
+				}
+			}
+			if = {
+				limit = {
+					has_opinion_modifier = {
+						who = PREV
+						modifier = et_waldensian_different_focus_opinion
+					}
+				}
+				remove_opinion = {
+					who = PREV
+					modifier = et_waldensian_different_focus_opinion
+				}
+			}
+			if = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = PREV
+						modifier = et_waldensian_different_focus_opinion
+					}
+				}
+				reverse_remove_opinion = {
+					who = PREV
+					modifier = et_waldensian_different_focus_opinion
+				}
+			}
+		}
+	}
+}
+
+apply_waldensian_apostolic_poverty_focus_opinions = {
+	hidden_effect = {
+		remove_waldensian_apostolic_poverty_focus_opinions = yes
+		country_event = { id = et_waldensian_events.3 } # checking for the modifiers doesn't work here, for some reason, so it's done in the event
+	}
+}
+
+clear_waldensian_modifiers = {
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = et_waldensian_apostolic_poverty_focus_changed
+				has_country_flag = et_waldensian_apostilic_poverty_fed_the_poor_year
+				has_country_flag = et_waldensian_apostolic_poverty_organized_welfare_and_labor
+				has_country_modifier = et_waldensian_apostolic_poverty_donations_focus_modifier
+				has_country_modifier = et_waldensian_apostolic_poverty_work_communes_focus_modifier
+				has_country_modifier = et_waldensian_apostolic_poverty_no_focus_modifier
+				any_country = {
+					OR = {
+						has_opinion_modifier = {
+							who = PREV
+							modifier = et_waldensian_same_focus_opinion
+						}
+						reverse_has_opinion_modifier = {
+							who = PREV
+							modifier = et_waldensian_same_focus_opinion
+						}
+						has_opinion_modifier = {
+							who = PREV
+							modifier = et_waldensian_different_focus_opinion
+						}
+						reverse_has_opinion_modifier = {
+							who = PREV
+							modifier = et_waldensian_different_focus_opinion
+						}
+					}
+				}
+			}
+		}
+		clr_country_flag = et_waldensian_apostolic_poverty_focus_changed
+		set_variable = { which = et_waldensian_apostilic_poverty_changed_focus_year value = 0 }
+		clr_country_flag = et_waldensian_apostolic_poverty_fed_the_poor
+		set_variable = { which = et_waldensian_apostilic_poverty_fed_the_poor_year value = 0 }
+		clr_country_flag = et_waldensian_apostolic_poverty_organized_welfare_and_labor
+		set_variable = { which = et_waldensian_apostilic_organized_poverty_welfare_and_labor_year value = 0 }
+		remove_waldensian_apostolic_poverty_focus_opinions = yes
+		remove_country_modifier = et_waldensian_apostolic_poverty_donations_focus_modifier
+		remove_country_modifier = et_waldensian_apostolic_poverty_work_communes_focus_modifier
+		remove_country_modifier = et_waldensian_apostolic_poverty_no_focus_modifier
+	}
+}
+
+clear_waldensian_modifiers_when_changing_religion = {
+	if = {
+		limit = {
+			NOT = { uses_waldensian_apostolic_poverty_mechanic = yes }
+		}
+		clear_waldensian_modifiers = yes
+	}
+	else_if = {
+		limit = {
+			NOT = { has_country_modifier = et_waldensian_apostolic_poverty_donations_focus_modifier }
+			NOT = { has_country_modifier = et_waldensian_apostolic_poverty_work_communes_focus_modifier }
+			NOT = { has_country_modifier = et_waldensian_apostolic_poverty_no_focus_modifier }
+		}
+		add_country_modifier = {
+			name = et_waldensian_apostolic_poverty_no_focus_modifier
+			duration = -1
+		}
+	}
+}

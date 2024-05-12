@@ -295,6 +295,23 @@ defined_text = {
     }
 }
 
+defined_text = {
+    name = GetMZumZur
+
+   text = {
+        localisation_key = string_ZumZur_male
+        trigger = {
+			is_female = no
+        }
+    }
+	text = {
+        localisation_key = string_ZumZur_female
+        trigger = {
+			is_female = yes
+        }
+    }
+}
+
 ###Possessivpronomen
 #Bsp: "...unseres Königs", "...unserer Königin"
 defined_text = {
@@ -677,6 +694,23 @@ defined_text = {
     }
 }
 
+defined_text = {
+    name = GetMIhnSie
+
+   text = {
+        localisation_key = string_IhnSie_male
+        trigger = {
+			is_female = no
+        }
+    }
+	text = {
+        localisation_key = string_IhnSie_female
+        trigger = {
+			is_female = yes
+        }
+    }
+}
+
 ###Relativpronomen
 #Bsp: "Wir sollten dem König...", "Wir sollten der Königin..."
 defined_text = {
@@ -799,6 +833,60 @@ defined_text = {
 	
 	text = {
         localisation_key = string_endingIN_female
+        trigger = {
+			is_female = yes
+        }
+    }
+}
+
+defined_text = {
+    name = GetMrmEnding
+
+    text = {
+        localisation_key = string_endingRM_male
+        trigger = {
+			is_female = no
+        }
+    }
+	
+	text = {
+        localisation_key = string_endingRM_female
+        trigger = {
+			is_female = yes
+        }
+    }
+}
+
+defined_text = {
+    name = GetMvomvonder
+
+    text = {
+        localisation_key = string_vomvonder_male
+        trigger = {
+			is_female = no
+        }
+    }
+	
+	text = {
+        localisation_key = string_vomvonder_female
+        trigger = {
+			is_female = yes
+        }
+    }
+}
+
+defined_text = {
+    name = GetMVomVonder
+
+    text = {
+        localisation_key = string_VomVonder_male
+        trigger = {
+			is_female = no
+        }
+    }
+	
+	text = {
+        localisation_key = string_VomVonder_female
         trigger = {
 			is_female = yes
         }
@@ -2077,6 +2165,142 @@ defined_text = {
 			has_female_heir = yes
         }
     }
+}
+
+defined_text = {
+	name = GetStateFormDE1
+
+	text = {
+		localisation_key = string_crown_DE1
+		trigger = {
+			government = monarchy
+			NOT = { tag = TUR }
+		}
+	}
+	text = {
+		localisation_key = string_sublime_porte_DE1
+		trigger = {
+			government = monarchy
+			tag = TUR
+		}
+	}
+	text = {
+		localisation_key = string_council_DE1
+		trigger = {
+			government = republic
+		}
+	}
+	text = { #fallback
+		localisation_key = string_govtname
+		trigger = {
+			NOT = {
+				government = monarchy
+				government = republic
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetStateFormDE2
+
+	text = {
+		localisation_key = string_crown_DE2
+		trigger = {
+			government = monarchy
+			NOT = { tag = TUR }
+		}
+	}
+	text = {
+		localisation_key = string_sublime_porte_DE2
+		trigger = {
+			government = monarchy
+			tag = TUR
+		}
+	}
+	text = {
+		localisation_key = string_council_DE2
+		trigger = {
+			government = republic
+		}
+	}
+	text = { #fallback
+		localisation_key = string_govtname
+		trigger = {
+			NOT = {
+				government = monarchy
+				government = republic
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetStateFormDE3
+
+	text = {
+		localisation_key = string_crown_DE3
+		trigger = {
+			government = monarchy
+			NOT = { tag = TUR }
+		}
+	}
+	text = {
+		localisation_key = string_sublime_porte_DE3
+		trigger = {
+			government = monarchy
+			tag = TUR
+		}
+	}
+	text = {
+		localisation_key = string_council_DE3
+		trigger = {
+			government = republic
+		}
+	}
+	text = { #fallback
+		localisation_key = string_govtname
+		trigger = {
+			NOT = {
+				government = monarchy
+				government = republic
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetStateFormDE4
+
+	text = {
+		localisation_key = string_crown_DE4
+		trigger = {
+			government = monarchy
+			NOT = { tag = TUR }
+		}
+	}
+	text = {
+		localisation_key = string_sublime_porte_DE4
+		trigger = {
+			government = monarchy
+			tag = TUR
+		}
+	}
+	text = {
+		localisation_key = string_council_DE4
+		trigger = {
+			government = republic
+		}
+	}
+	text = { #fallback
+		localisation_key = string_govtname
+		trigger = {
+			NOT = {
+				government = monarchy
+				government = republic
+			}
+		}
+	}
 }
 
 ####################################
@@ -6567,5 +6791,439 @@ defined_text = {
 			has_country_flag = advisor_events_mil
 		}	
 	}		
-}			
+}
 
+defined_text = {
+	name = GetTempleNameDE1
+	text = {
+		localisation_key = building_temple_christian_DE1
+		trigger = { religion_group = christian }
+	}
+	text = {
+		localisation_key = building_temple_muslim_DE1
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_temple_shinto_DE1
+		trigger = { religion = shinto }
+	}
+	text = {
+		localisation_key = building_temple_zoroastrian_DE1
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_temple_jewish_DE1
+		trigger = { religion = jewish }
+	}
+	text = {
+		localisation_key = building_temple_DE1
+	}
+}
+
+defined_text = {
+	name = GetTempleNameDE2
+	text = {
+		localisation_key = building_temple_christian_DE2
+		trigger = { religion_group = christian }
+	}
+	text = {
+		localisation_key = building_temple_muslim_DE2
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_temple_shinto_DE2
+		trigger = { religion = shinto }
+	}
+	text = {
+		localisation_key = building_temple_zoroastrian_DE2
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_temple_jewish_DE2
+		trigger = { religion = jewish }
+	}
+	text = {
+		localisation_key = building_temple_DE2
+	}
+}
+
+defined_text = {
+	name = GetTempleNameDE3
+	text = {
+		localisation_key = building_temple_christian_DE3
+		trigger = { religion_group = christian }
+	}
+	text = {
+		localisation_key = building_temple_muslim_DE3
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_temple_shinto_DE3
+		trigger = { religion = shinto }
+	}
+	text = {
+		localisation_key = building_temple_zoroastrian_DE3
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_temple_jewish_DE3
+		trigger = { religion = jewish }
+	}
+	text = {
+		localisation_key = building_temple_DE3
+	}
+}
+
+defined_text = {
+	name = GetTempleNameDE4
+	text = {
+		localisation_key = building_temple_christian_DE4
+		trigger = { religion_group = christian }
+	}
+	text = {
+		localisation_key = building_temple_muslim_DE4
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_temple_shinto_DE4
+		trigger = { religion = shinto }
+	}
+	text = {
+		localisation_key = building_temple_zoroastrian_DE4
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_temple_jewish_DE4
+		trigger = { religion = jewish }
+	}
+	text = {
+		localisation_key = building_temple_DE4
+	}
+}
+
+defined_text = {
+	name = GetTempleNameDE5
+	text = {
+		localisation_key = building_temple_christian_DE5
+		trigger = { religion_group = christian }
+	}
+	text = {
+		localisation_key = building_temple_muslim_DE5
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_temple_shinto_DE5
+		trigger = { religion = shinto }
+	}
+	text = {
+		localisation_key = building_temple_zoroastrian_DE5
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_temple_jewish_DE5
+		trigger = { religion = jewish }
+	}
+	text = {
+		localisation_key = building_temple_DE5
+	}
+}
+
+defined_text = {
+	name = GetTempleNameDE6
+	text = {
+		localisation_key = building_temple_christian_DE6
+		trigger = { religion_group = christian }
+	}
+	text = {
+		localisation_key = building_temple_muslim_DE6
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_temple_shinto_DE6
+		trigger = { religion = shinto }
+	}
+	text = {
+		localisation_key = building_temple_zoroastrian_DE6
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_temple_jewish_DE6
+		trigger = { religion = jewish }
+	}
+	text = {
+		localisation_key = building_temple_DE6
+	}
+}
+
+defined_text = {
+	name = GetTempleNameDE7
+	text = {
+		localisation_key = building_temple_christian_DE7
+		trigger = { religion_group = christian }
+	}
+	text = {
+		localisation_key = building_temple_muslim_DE7
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_temple_shinto_DE7
+		trigger = { religion = shinto }
+	}
+	text = {
+		localisation_key = building_temple_zoroastrian_DE7
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_temple_jewish_DE7
+		trigger = { religion = jewish }
+	}
+	text = {
+		localisation_key = building_temple_DE7
+	}
+}
+
+defined_text = {
+	name = GetReligiousMainDeityNameDE1
+	text = {
+		localisation_key = THE_LORD_DEITY_DE1	#Note: He will be always referred as 'THE LORD'
+		trigger = {
+			religion_group = christian
+		}
+	}
+	text = {
+		localisation_key = ALLAH_DEITY_DE1
+		trigger = {
+			religion_group = muslim
+		}
+	}
+	text = {
+		localisation_key = MAHABRAHMA_DEITY_DE1	#Note: Buddhism does not belief in any creator deity
+		trigger = {
+			OR = {
+				religion = buddhism
+				religion = mahayana
+				religion = vajrayana
+			}
+		}
+	}
+	text = {
+		localisation_key = THE_HEAVEN_DEITY_DE1	#Note: Here is the say of 'THE HEAVEN'
+		trigger = {
+			religion = confucianism
+			OR = {
+				has_reform = celestial_empire
+				is_emperor_of_china = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = AMATERASU_DEITY_DE1
+		trigger = {
+			religion = shinto
+		}
+	}
+	text = {
+		localisation_key = INTI_DEITY_DE1
+		trigger = {
+			religion = inti
+		}
+	}
+	text = {
+		localisation_key = OMETECUHTLI_DEITY_DE1	#Randomly picked for Nahuatl
+		trigger = {
+			religion = nahuatl
+		}
+	}
+	text = {
+		localisation_key = OMECIHUATL_DEITY_DE1		#Randomly picked for Nahuatl
+		trigger = {
+			religion = nahuatl
+		}
+	}
+	text = {
+		localisation_key = HUNAB_KU_DEITY_DE1
+		trigger = {
+			religion = mesoamerican_religion
+		}
+	}
+	text = {
+		localisation_key = ODIN_DEITY_DE1
+		trigger = {
+			religion = norse_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = TENGRI_DEITY_DE1
+		trigger = {
+			religion = tengri_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = BRAHMAN_DEITY_DE1
+		trigger = {
+			religion = hinduism
+		}
+	}
+	text = {
+		localisation_key = KARTA_PURAKH_DEITY_DE1
+		trigger = {
+			religion = sikhism
+		}
+	}
+	text = {
+		localisation_key = GOD_DEITY_DE1	#Note: Technically speaking, God for the Jews has a lot of different names. However, using any of the Jewish names can be seen as disrespectful, so I opted with the most generally accepted term
+		trigger = {
+			religion_group = jewish_group
+		}
+	}
+	text = {
+		localisation_key = AHURA_MAZDA_DEITY_DE1
+		trigger = {
+			religion_group = zoroastrian_group
+		}
+	}
+	text = {
+		localisation_key = GREAT_SPIRIT_FALLBACK_DEITY_DE1
+		trigger = {
+			NOT = { religion_group = christian }
+			NOT = { religion_group = muslim }
+			NOT = { religion = buddhism }
+			NOT = { religion = mahayana }
+			NOT = { religion = vajrayana }
+			NOT = { religion = confucianism }
+			NOT = { religion = shinto }
+			NOT = { religion = inti }
+			NOT = { religion = nahuatl }
+			NOT = { religion = mesoamerican_religion }
+			NOT = { religion = norse_pagan_reformed }
+			NOT = { religion = tengri_pagan_reformed }
+			NOT = { religion = hinduism }
+			NOT = { religion = sikhism }
+			NOT = { religion_group = jewish_group }
+			NOT = { religion_group = zoroastrian_group }
+		}
+	}
+}
+
+defined_text = {
+	name = GetReligiousMainDeityNameDE2
+	text = {
+		localisation_key = THE_LORD_DEITY_DE2	#Note: He will be always referred as 'THE LORD'
+		trigger = {
+			religion_group = christian
+		}
+	}
+	text = {
+		localisation_key = ALLAH_DEITY_DE2
+		trigger = {
+			religion_group = muslim
+		}
+	}
+	text = {
+		localisation_key = MAHABRAHMA_DEITY_DE2	#Note: Buddhism does not belief in any creator deity
+		trigger = {
+			OR = {
+				religion = buddhism
+				religion = mahayana
+				religion = vajrayana
+			}
+		}
+	}
+	text = {
+		localisation_key = THE_HEAVEN_DEITY_DE2	#Note: Here is the say of 'THE HEAVEN'
+		trigger = {
+			religion = confucianism
+			OR = {
+				has_reform = celestial_empire
+				is_emperor_of_china = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = AMATERASU_DEITY_DE2
+		trigger = {
+			religion = shinto
+		}
+	}
+	text = {
+		localisation_key = INTI_DEITY_DE2
+		trigger = {
+			religion = inti
+		}
+	}
+	text = {
+		localisation_key = OMETECUHTLI_DEITY_DE2	#Randomly picked for Nahuatl
+		trigger = {
+			religion = nahuatl
+		}
+	}
+	text = {
+		localisation_key = OMECIHUATL_DEITY_DE2		#Randomly picked for Nahuatl
+		trigger = {
+			religion = nahuatl
+		}
+	}
+	text = {
+		localisation_key = HUNAB_KU_DEITY_DE2
+		trigger = {
+			religion = mesoamerican_religion
+		}
+	}
+	text = {
+		localisation_key = ODIN_DEITY_DE2
+		trigger = {
+			religion = norse_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = TENGRI_DEITY_DE2
+		trigger = {
+			religion = tengri_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = BRAHMAN_DEITY_DE2
+		trigger = {
+			religion = hinduism
+		}
+	}
+	text = {
+		localisation_key = KARTA_PURAKH_DEITY_DE2
+		trigger = {
+			religion = sikhism
+		}
+	}
+	text = {
+		localisation_key = GOD_DEITY_DE2	#Note: Technically speaking, God for the Jews has a lot of different names. However, using any of the Jewish names can be seen as disrespectful, so I opted with the most generally accepted term
+		trigger = {
+			religion_group = jewish_group
+		}
+	}
+	text = {
+		localisation_key = AHURA_MAZDA_DEITY_DE2
+		trigger = {
+			religion_group = zoroastrian_group
+		}
+	}
+	text = {
+		localisation_key = GREAT_SPIRIT_FALLBACK_DEITY_DE2
+		trigger = {
+			NOT = { religion_group = christian }
+			NOT = { religion_group = muslim }
+			NOT = { religion = buddhism }
+			NOT = { religion = mahayana }
+			NOT = { religion = vajrayana }
+			NOT = { religion = confucianism }
+			NOT = { religion = shinto }
+			NOT = { religion = inti }
+			NOT = { religion = nahuatl }
+			NOT = { religion = mesoamerican_religion }
+			NOT = { religion = norse_pagan_reformed }
+			NOT = { religion = tengri_pagan_reformed }
+			NOT = { religion = hinduism }
+			NOT = { religion = sikhism }
+			NOT = { religion_group = jewish_group }
+			NOT = { religion_group = zoroastrian_group }
+		}
+	}
+}

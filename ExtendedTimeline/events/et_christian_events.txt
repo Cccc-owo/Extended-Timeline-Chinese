@@ -482,6 +482,11 @@ country_event = {
 				change_religion = catholic
 			}
 		}
+		if = {
+			limit = { is_emperor = yes }
+			set_hre_religion_treaty = yes # to prevent disbanding
+			set_hre_religion = catholic
+		}
 	}
 	option = {
 		name = "et.EVTOPTB6" # Side with Constantinople
@@ -505,6 +510,11 @@ country_event = {
 				change_religion = orthodox
 			}
 		}
+		if = {
+			limit = { is_emperor = yes }
+			set_hre_religion_treaty = yes # to prevent disbanding
+			set_hre_religion = orthodox
+		}
 	}
 }
 
@@ -527,6 +537,11 @@ country_event = {
 		every_owned_province = {
 			limit = { religion = catholic }
 			change_religion = orthodox
+		}
+		if = {
+			limit = { is_emperor = yes }
+			set_hre_religion_treaty = yes # to prevent disbanding
+			set_hre_religion = orthodox
 		}
 	}
 	option = {
@@ -558,6 +573,11 @@ country_event = {
 		every_owned_province = {
 			limit = { religion = orthodox }
 			change_religion = catholic
+		}
+		if = {
+			limit = { is_emperor = yes }
+			set_hre_religion_treaty = yes # to prevent disbanding
+			set_hre_religion = catholic
 		}
 	}
 	option = {

@@ -1,0 +1,875 @@
+namespace = et_waldensian_events
+
+###############################
+# list of events in this file #
+###############################
+#
+# waldensian specific events (mostly refering to waldensian religious practices or ideas):
+#		et_waldensian_events.1
+#		et_waldensian_events.2
+#		et_waldensian_events.4
+#		et_waldensian_events.5
+#		et_waldensian_events.6
+#		et_waldensian_events.7
+#		et_waldensian_events.9
+#
+# general events (for any religion that was added to the scripted trigger uses_waldensian_apostolic_poverty_mechanic):
+#		et_waldensian_events.3
+#		et_waldensian_events.8
+#
+################################
+
+# Spawn of Waldensian
+country_event = {
+    id = et_waldensian_events.1
+    title = et_waldensian_events.EVTNAME1
+    desc = et_waldensian_events.EVTDESC1
+    picture = RELIGION_eventPicture
+
+	major = yes
+	fire_only_once = yes
+
+	goto = origin_province
+
+	trigger = {
+		is_religion_enabled = cathar
+		religion_years = { cathar = 25 }
+		NOT = { is_religion_enabled = waldensian }
+		religion_group = christian
+		capital_scope = {
+			continent = europe
+		}
+		any_owned_province = {
+			religion = catholic
+			OR = {
+				region = france_region
+				region = italy_region
+				area = switzerland_area
+				area = romandie_area
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 3
+			NOT = { religion = catholic }
+		}
+		modifier = {
+			factor = 0.5
+			religion_years = { cathar = 30 }
+		}
+		modifier = {
+			factor = 0.5
+			religion_years = { cathar = 50 }
+		}
+		modifier = {
+			factor = 2
+			capital_scope = {
+				NOT = {
+					area = massif_central_area
+					area = savoy_dauphine_area
+					area = languedoc_area
+					area = provence_area
+					area = lombardy_area
+					area = po_valley_area
+					area = piedmont_area
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			NOT = {
+				any_owned_province = {
+					religion = catholic
+					OR = {
+						area = massif_central_area
+						area = savoy_dauphine_area
+						area = languedoc_area
+						area = provence_area
+						area = lombardy_area
+						area = po_valley_area
+						area = piedmont_area
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = et_waldensian_spawned
+			random_owned_province = {
+				limit = {
+					religion = catholic
+					OR = {
+						region = france_region
+						region = italy_region
+						area = switzerland_area
+						area = romandie_area
+					}
+				}
+				save_event_target_as = origin_province
+			}
+			random_owned_province = {
+				limit = {
+					religion = catholic
+					OR = {
+						area = massif_central_area
+						area = savoy_dauphine_area
+						area = languedoc_area
+						area = provence_area
+						area = lombardy_area
+						area = po_valley_area
+						area = piedmont_area
+					}
+				}
+				save_event_target_as = origin_province
+			}
+			random_owned_province = {
+				limit = {
+					religion = catholic
+					OR = {
+						area = savoy_dauphine_area
+						area = lombardy_area
+					}
+				}
+				save_event_target_as = origin_province
+			}
+			random_owned_province = {
+				limit = {
+					religion = catholic
+					area = savoy_dauphine_area
+				}
+				save_event_target_as = origin_province
+			}
+		}
+	}
+
+	option = {
+		name = et_waldensian_events1.EVTOPT1
+
+		ai_chance = {
+			factor = 0.6
+		}
+
+		enable_religion = waldensian
+		add_stability = -1
+		event_target:origin_province = {
+			change_religion = waldensian
+			add_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 9125
+			}
+			add_province_modifier = {
+				name = et_waldensian_persecution
+				duration = 9125
+			}
+		}
+		if = {
+			limit = {
+				event_target:origin_province = {
+					is_capital = no
+					OR = {
+						region = france_region
+						region = italy_region
+						area = switzerland_area
+						area = romandie_area
+					}
+				}
+			}
+			capital_scope = {
+				change_religion = waldensian
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 9125
+				}
+				add_province_modifier = {
+					name = et_waldensian_persecution
+					duration = 9125
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_waldensian_events1.EVTOPT2
+
+		ai_chance = {
+			factor = 0.4
+		}
+
+		enable_religion = waldensian
+		add_stability = -1
+		set_country_flag = tolerance_of_waldensian
+		event_target:origin_province = {
+			change_religion = waldensian
+			add_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 9125
+			}
+		}
+		if = {
+			limit = {
+				event_target:origin_province = {
+					is_capital = no
+					OR = {
+						region = france_region
+						region = italy_region
+						area = switzerland_area
+						area = romandie_area
+					}
+				}
+			}
+			capital_scope = {
+				change_religion = waldensian
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 9125
+				}
+			}
+		}
+	}
+}
+
+# Spread of Waldensian
+province_event = {
+    id = et_waldensian_events.2
+    title = et_waldensian_events.EVTNAME2
+    desc = et_waldensian_events.EVTDESC2
+    picture = PEASANTS_BARTERING_eventPicture
+
+	goto = ROOT
+
+    trigger = {
+		OR = {
+			region = france_region
+			region = italy_region
+			area = switzerland_area
+			area = romandie_area
+        }
+		is_religion_enabled = waldensian
+		NOT = { religion = waldensian }
+		NOT = { is_year = 1400 }
+		OR = {
+			religion = orthodox
+			religion = catholic
+		}
+    }
+
+    mean_time_to_happen = {
+        months = 6000
+		modifier = {
+            factor = 0.75
+			owner = {
+				has_country_flag = et_tolerance_of_waldensian
+			}
+		}
+		modifier = {
+            factor = 0.8
+			any_neighbor_province = { religion = waldensian }
+		}
+		modifier = {
+            factor = 1.2
+			religion = orthodox
+		}
+		modifier = {
+            factor = 0.7
+            OR = {
+                area = massif_central_area
+                area = savoy_dauphine_area
+                area = languedoc_area
+                area = provence_area
+            }
+        }
+		modifier = {
+            factor = 0.8
+            OR = {
+                area = lombardy_area
+                area = po_valley_area
+                area = piedmont_area
+            }
+        }
+		modifier = {
+            factor = 5
+			NOT = {
+				area = massif_central_area
+                area = savoy_dauphine_area
+                area = languedoc_area
+                area = provence_area
+				area = lombardy_area
+                area = po_valley_area
+                area = piedmont_area
+			}
+        }
+    }
+
+    option = {
+        name = et_waldensian_events2.EVTOPT1
+
+		trigger = {
+			owner = {
+				NOT = { religion = waldensian }
+			}
+		}
+
+        change_religion = waldensian
+        add_permanent_province_modifier = {
+            name = religious_zeal_at_conv
+            duration = 3650
+        }
+    }
+
+    option = {
+        name = et_waldensian_events2.EVTOPT2
+
+		trigger = {
+			owner = {
+				religion = waldensian
+			}
+		}
+
+        change_religion = waldensian
+        add_permanent_province_modifier = {
+            name = religious_zeal_at_conv
+            duration = 3650
+        }
+    }
+}
+
+# Apply Modifiers for Same/Different Focus
+country_event = {
+    id = et_waldensian_events.3
+    title = et_waldensian_events.EVTNAME3
+    desc = et_waldensian_events.EVTDESC3
+    picture = RELIGION_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_modifier = et_waldensian_apostolic_poverty_donations_focus_modifier
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = PREV }
+						religion = PREV
+					}
+					if = {
+						limit = {
+							has_country_modifier = et_waldensian_apostolic_poverty_donations_focus_modifier
+						}
+						add_opinion = {
+							who = PREV
+							modifier = et_waldensian_same_focus_opinion
+						}
+						reverse_add_opinion = {
+							who = PREV
+							modifier = et_waldensian_same_focus_opinion
+						}
+					}
+					else_if = {
+						limit = {
+							has_country_modifier = et_waldensian_apostolic_poverty_work_communes_focus_modifier
+						}
+						add_opinion = {
+							who = PREV
+							modifier = et_waldensian_different_focus_opinion
+						}
+						reverse_add_opinion = {
+							who = PREV
+							modifier = et_waldensian_different_focus_opinion
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = et_waldensian_apostolic_poverty_work_communes_focus_modifier
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = PREV }
+						religion = PREV
+					}
+					if = {
+						limit = {
+							has_country_modifier = et_waldensian_apostolic_poverty_work_communes_focus_modifier
+						}
+						add_opinion = {
+							who = PREV
+							modifier = et_waldensian_same_focus_opinion
+						}
+						reverse_add_opinion = {
+							who = PREV
+							modifier = et_waldensian_same_focus_opinion
+						}
+					}
+					else_if = {
+						limit = {
+							has_country_modifier = et_waldensian_apostolic_poverty_donations_focus_modifier
+						}
+						add_opinion = {
+							who = PREV
+							modifier = et_waldensian_different_focus_opinion
+						}
+						reverse_add_opinion = {
+							who = PREV
+							modifier = et_waldensian_different_focus_opinion
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_waldensian_events3.EVTOPT1
+
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Personal Bible Studies of RULER
+country_event = {
+    id = et_waldensian_events.4
+    title = et_waldensian_events.EVTNAME4
+    desc = et_waldensian_events.EVTDESC4
+    picture = BIG_BOOK_eventPicture
+
+	trigger = {
+		religion = waldensian
+		ruler_religion = waldensian
+		is_lesser_in_union = no
+		has_regency = no
+		OR = {
+			NOT = { has_dlc = "Rights of Man" }
+			NOT = { ruler_has_personality = sinner_personality }
+		}
+		NOT = { has_ruler_modifier = et_waldensian_ruler_excessive_bible_studies_modifier }
+		NOT = { has_ruler_modifier = et_waldensian_ruler_normal_bible_studies_modifier }
+		NOT = { has_ruler_modifier = et_waldensian_ruler_small_bible_studies_modifier }
+		NOT = { has_ruler_modifier = et_waldensian_ruler_no_bible_studies_modifier }
+	}
+
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.75
+			ruler_has_personality = zealot_personality
+		}
+		modifier = {
+			factor = 0.75
+			ruler_has_personality = pious_personality
+		}
+	}
+
+	option = {
+		name = et_waldensian_events4.EVTOPT1
+
+		highlight = yes
+
+		trigger = {
+			OR = {
+				ruler_has_personality = zealot_personality
+				ruler_has_personality = pious_personality
+			}
+		}
+
+		ai_chance = { factor = 1 }
+
+		add_adm_power = -75
+		add_dip_power = -75
+		add_mil_power = -75
+		add_ruler_modifier = {
+			name = et_waldensian_ruler_excessive_bible_studies_modifier
+			duration = -1
+		}
+	}
+
+	option = {
+		name = et_waldensian_events4.EVTOPT2
+
+		ai_chance = { factor = 0.3 }
+
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_ruler_modifier = {
+			name = et_waldensian_ruler_normal_bible_studies_modifier
+			duration = -1
+		}
+	}
+
+	option = {
+		name = et_waldensian_events4.EVTOPT3
+
+		ai_chance = { factor = 0.6 }
+
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		add_ruler_modifier = {
+			name = et_waldensian_ruler_small_bible_studies_modifier
+			duration = -1
+		}
+	}
+
+	option = {
+		name = et_waldensian_events4.EVTOPT4
+
+		ai_chance = { factor = 0.1 }
+
+		add_ruler_modifier = {
+			name = et_waldensian_ruler_no_bible_studies_modifier
+			duration = 5475
+		}
+	}
+}
+
+# Progress in Personal Bible Studies
+country_event = {
+    id = et_waldensian_events.5
+    title = et_waldensian_events.EVTNAME5
+    desc = et_waldensian_events.EVTDESC5
+    picture = PRAYING_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = waldensian
+		ruler_religion = waldensian
+		is_lesser_in_union = no
+		has_regency = no
+		OR = {
+			has_ruler_modifier = et_waldensian_ruler_excessive_bible_studies_modifier
+			has_ruler_modifier = et_waldensian_ruler_normal_bible_studies_modifier
+			has_ruler_modifier = et_waldensian_ruler_small_bible_studies_modifier
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			has_ruler_modifier = et_waldensian_ruler_excessive_bible_studies_modifier
+		}
+		modifier = {
+			factor = 1.25
+			has_ruler_modifier = et_waldensian_ruler_normal_bible_studies_modifier
+		}
+	}
+
+	option = {
+		name = et_waldensian_events5.EVTOPT1
+
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+	}
+}
+
+# Unsatisfactory Personal Bible Studies
+country_event = {
+    id = et_waldensian_events.6
+    title = et_waldensian_events.EVTNAME6
+    desc = et_waldensian_events.EVTDESC6
+    picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = waldensian
+		ruler_religion = waldensian
+		is_lesser_in_union = no
+		has_regency = no
+		OR = {
+			has_ruler_modifier = et_waldensian_ruler_excessive_bible_studies_modifier
+			has_ruler_modifier = et_waldensian_ruler_normal_bible_studies_modifier
+			has_ruler_modifier = et_waldensian_ruler_small_bible_studies_modifier
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			has_ruler_modifier = et_waldensian_ruler_small_bible_studies_modifier
+		}
+		modifier = {
+			factor = 1.25
+			has_ruler_modifier = et_waldensian_ruler_normal_bible_studies_modifier
+		}
+	}
+
+	option = {
+		name = et_waldensian_events6.EVTOPT1
+
+		ai_chance = { factor = 0.75 }
+
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+	}
+
+	option = {
+		name = et_waldensian_events6.EVTOPT2
+
+		ai_chance = { factor = 0.25 }
+
+		add_prestige = -10
+		add_legitimacy_equivalent = { amount = -10 republican_tradition = -5 }
+		if = {
+			limit = {
+				has_ruler_modifier = et_waldensian_ruler_excessive_bible_studies_modifier
+			}
+			remove_country_modifier = et_waldensian_ruler_excessive_bible_studies_modifier
+		}
+		if = {
+			limit = {
+				has_ruler_modifier = et_waldensian_ruler_normal_bible_studies_modifier
+			}
+			remove_country_modifier = et_waldensian_ruler_normal_bible_studies_modifier
+		}
+		if = {
+			limit = {
+				has_ruler_modifier = et_waldensian_ruler_small_bible_studies_modifier
+			}
+			remove_country_modifier = et_waldensian_ruler_small_bible_studies_modifier
+		}
+	}
+}
+
+# Increase in Lay Priests
+country_event = {
+    id = et_waldensian_events.7
+    title = et_waldensian_events.EVTNAME7
+    desc = et_waldensian_events.EVTDESC7
+    picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = waldensian
+		NOT = { has_country_modifier = et_waldensian_increase_in_lay_priests_modifier }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = et_waldensian_events7.EVTOPT1
+
+		ai_chance = { factor = 0.66 }
+
+		add_country_modifier = {
+			name = et_waldensian_increase_in_lay_priests_modifier
+			duration = 5475
+		}
+	}
+
+	option = {
+		name = et_waldensian_events7.EVTOPT2
+
+		ai_chance = { factor = 0.33 }
+
+		add_adm_power = 25
+	}
+}
+
+# Terrible Living Conditions for the Poor
+country_event = {
+    id = et_waldensian_events.8
+    title = et_waldensian_events.EVTNAME8
+    desc = et_waldensian_events.EVTDESC8
+    picture = FAMINE_eventPicture
+
+	is_triggered_only = yes
+
+	goto = target_province
+
+	trigger = {
+		uses_waldensian_apostolic_poverty_mechanic = yes
+		NOT = { has_country_modifier = et_waldensian_apostolic_poverty_fed_the_poor_modifier }
+		OR = {
+			NOT = { has_country_flag = et_waldensian_apostolic_poverty_organized_welfare_and_labor }
+			had_country_flag = { flag = et_waldensian_apostolic_poverty_organized_welfare_and_labor days = 7300 }
+		}
+		NOT = { has_country_modifier = et_waldensian_apostolic_poverty_organized_welfare_and_labor_modifier }
+		OR = {
+			NOT = { has_country_flag = et_waldensian_apostolic_poverty_fed_the_poor }
+			had_country_flag = { flag = et_waldensian_apostolic_poverty_fed_the_poor days = 7300 }
+		}
+		any_owned_province = {
+			has_owner_religion = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2
+			ruler_has_personality = cruel_personality
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_owner_religion = yes
+				}
+				save_event_target_as = target_province
+			}
+			random_owned_province = {
+				limit = {
+					has_owner_religion = yes
+					is_island = no
+				}
+				save_event_target_as = target_province
+			}
+			random_owned_province = {
+				limit = {
+					has_owner_religion = yes
+					is_island = no
+					is_in_capital_area = yes
+				}
+				save_event_target_as = target_province
+			}
+		}
+	}
+
+	option = {
+		name = et_waldensian_events8.EVTOPT1
+
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				years_of_income = 1
+			}
+			modifier = {
+				factor = 2
+				is_at_war = yes
+			}
+		}
+
+		add_years_of_income = -0.2
+	}
+
+	option = {
+		name = et_waldensian_events8.EVTOPT2
+
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				is_bankrupt = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					is_in_deficit = yes
+					num_of_loans = 1
+				}
+			}
+			modifier = {
+				factor = 3
+				NOT = { years_of_income = 0.5 }
+			}
+		}
+
+		event_target:target_province = {
+			add_unrest = 5
+			anti_tax_rebels = 2
+		}
+	}
+}
+
+# RULER lives in Unholy Wealth
+country_event = {
+    id = et_waldensian_events.9
+    title = et_waldensian_events.EVTNAME9
+    desc = et_waldensian_events.EVTDESC9
+    picture = FEAST_eventPicture
+
+	trigger = {
+		has_dlc = "Rights of Man"
+		religion = waldensian
+		is_lesser_in_union = no
+		has_regency = no
+		OR = {
+			ruler_has_personality = sinner_personality
+			ruler_has_personality = embezzler_personality
+			ruler_has_personality = greedy_personality
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	option = {
+		name = et_waldensian_events9.EVTOPT1
+
+		ai_chance = {
+			factor = 0.7
+			modifier = {
+				factor = 2
+				NOT = { stability = 1 }
+			}
+		}
+
+		add_years_of_income = -0.5
+	}
+
+	option = {
+		name = et_waldensian_events9.EVTOPT2
+
+		ai_chance = {
+			factor = 0.3
+			modifier = {
+				factor = 2
+				stability = 3
+			}
+			modifier = {
+				factor = 3
+				NOT = { years_of_income = 1 }
+			}
+		}
+
+		add_stability = -1
+	}
+
+	option = {
+		name = et_waldensian_events9.EVTOPT3
+
+		highlight = yes
+
+		trigger = {
+			OR = {
+				ruler_has_personality = silver_tongue_personality
+				ruler_has_personality = just_personality
+			}
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+
+		if = {
+			limit = {
+				monthly_income = 250
+			}
+			add_treasury = -300
+		}
+		else = {
+			add_years_of_income = -0.1
+		}
+	}
+}

@@ -15,6 +15,10 @@ province_event = {
 		is_year = 550
 		OR = {
 			culture = celtiberian
+			culture = lusitanian
+			culture = turduli
+			culture = cantabrian
+			culture = gallaecian
 			culture = iberi
 			culture = roman
 		}
@@ -26,6 +30,10 @@ province_event = {
 			NOT = { primary_culture = roman }
 			NOT = { primary_culture = iberi }
 			NOT = { primary_culture = celtiberian }
+			NOT = { primary_culture = lusitanian }
+			NOT = { primary_culture = turduli }
+			NOT = { primary_culture = cantabrian }
+			NOT = { primary_culture = gallaecian }
 			NOT = { culture_group = basque_group }
 		}
 	}
@@ -49,6 +57,10 @@ province_event = {
 		is_year = 550
 		OR = {
 			culture = celtiberian
+			culture = lusitanian
+			culture = turduli
+			culture = cantabrian
+			culture = gallaecian
 			culture = iberi
 			culture = roman
 		}
@@ -57,6 +69,10 @@ province_event = {
 			NOT = { primary_culture = roman }
 			NOT = { primary_culture = iberi }
 			NOT = { primary_culture = celtiberian }
+			NOT = { primary_culture = lusitanian }
+			NOT = { primary_culture = turduli }
+			NOT = { primary_culture = cantabrian }
+			NOT = { primary_culture = gallaecian }
 			NOT = { culture_group = basque_group }
 		}
 	}
@@ -81,12 +97,16 @@ province_event = {
 		NOT = { is_year = 1000 }
 		OR = {
 			culture = celtiberian
+			culture = lusitanian
+			culture = turduli
+			culture = cantabrian
 			culture = iberi
 			culture = roman
 		}
 		OR = {
 			area = leon_area
 			area = extremadura_area
+			area = galicia_area
 			province_id = 207
 			province_id = 1745
 		}
@@ -94,6 +114,10 @@ province_event = {
 			NOT = { primary_culture = roman }
 			NOT = { primary_culture = iberi }
 			NOT = { primary_culture = celtiberian }
+			NOT = { primary_culture = lusitanian }
+			NOT = { primary_culture = turduli }
+			NOT = { primary_culture = cantabrian }
+			NOT = { primary_culture = gallaecian }
 			NOT = { culture_group = basque_group }
 		}
 	}
@@ -119,6 +143,10 @@ province_event = {
 		is_year = 550
 		OR = {
 			culture = celtiberian
+			culture = lusitanian
+			culture = turduli
+			culture = cantabrian
+			culture = gallaecian
 			culture = iberi
 			culture = roman
 		}
@@ -130,6 +158,10 @@ province_event = {
 			NOT = { primary_culture = roman }
 			NOT = { primary_culture = iberi }
 			NOT = { primary_culture = celtiberian }
+			NOT = { primary_culture = lusitanian }
+			NOT = { primary_culture = turduli }
+			NOT = { primary_culture = cantabrian }
+			NOT = { primary_culture = gallaecian }
 			NOT = { culture_group = basque_group }
 		}
 	}
@@ -154,6 +186,9 @@ province_event = {
 		NOT = { is_year = 1200 }
 		OR = {
 			culture = celtiberian
+			culture = lusitanian
+			culture = turduli
+			culture = cantabrian
 			culture = iberi
 			culture = roman
 		}
@@ -165,6 +200,10 @@ province_event = {
 			NOT = { primary_culture = roman }
 			NOT = { primary_culture = iberi }
 			NOT = { primary_culture = celtiberian }
+			NOT = { primary_culture = lusitanian }
+			NOT = { primary_culture = turduli }
+			NOT = { primary_culture = cantabrian }
+			NOT = { primary_culture = gallaecian }
 			NOT = { culture_group = basque_group }
 		}
 	}
@@ -176,6 +215,36 @@ province_event = {
 		change_culture = portugese
 	}
 }
+#Birth of Galician Culture
+province_event = {
+	id = culturedk.14
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		is_year = 800
+		NOT = { is_year = 1200 }
+		culture = gallaecian
+		owner = {
+			NOT = { primary_culture = roman }
+			NOT = { primary_culture = iberi }
+			NOT = { primary_culture = celtiberian }
+			NOT = { primary_culture = lusitanian }
+			NOT = { primary_culture = turduli }
+			NOT = { primary_culture = cantabrian }
+			NOT = { primary_culture = gallaecian }
+			NOT = { culture_group = basque_group }
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = galician
+	}
+}
+
 #Birth of Andalucian Culture
 province_event = {
 	id = culturedk.14
@@ -252,8 +321,10 @@ province_event = {
 		culture_group = latin
 		NOT = { culture = lombard }
 		NOT = { is_year = 1000 }
-		area = lombardy_area
-		area = po_valley_area
+		OR = {
+			area = lombardy_area
+			area = po_valley_area
+		}
 		owner = {
 			NOT = { primary_culture = roman }
 		}
@@ -324,7 +395,7 @@ province_event = {
 		NOT = { is_year = 1000 }
 		OR = {
 			culture_group = latin
-			culture = greek 
+			culture_group = byzantine 
 		}
 		OR = {
 			area = naples_area
@@ -332,7 +403,7 @@ province_event = {
 			area = apulia_area
 		}
 		owner = {
-			NOT = { primary_culture = greek }
+			NOT = { culture_group = byzantine }
 			NOT = { primary_culture = roman }
 		}
 	}
@@ -356,11 +427,13 @@ province_event = {
 		province_id = 126
 		OR = {
 			culture_group = latin
-			culture = greek 
+			culture_group = byzantine
 		}
 		owner = {
-			NOT = { primary_culture = greek }
-			NOT = { primary_culture = roman }
+			NOT = { culture_group = byzantine }
+			NOT = { culture_group = latin }
+			NOT = { culture_group = iberian }
+			NOT = { culture_group = french }
 		}
 	}
 	mean_time_to_happen = {
@@ -387,10 +460,10 @@ province_event = {
 		NOT = { province_id = 126 }
 		OR = {
 			culture_group = latin
-			culture = greek 
+			culture_group = byzantine
 		}
 		owner = {
-			NOT = { primary_culture = greek }
+			NOT = { culture_group = byzantine }
 			NOT = { primary_culture = roman }
 		}
 	}
@@ -412,9 +485,12 @@ province_event = {
 	trigger = {
 		culture = roman
 		NOT = { is_year = 1000 }
-		area = central_italy_area
+		OR = {
+			area = central_italy_area
+			area = lazio_area
+		}
 		owner = {
-			NOT = { primary_culture = greek }
+			NOT = { culture_group = byzantine }
 			NOT = { primary_culture = roman }
 		}
 	}
@@ -437,12 +513,25 @@ province_event = {
 		NOT = { is_year = 1000 }
 		is_year = 600
 		OR = {
-			culture = dacian
-			culture = thracian
-		}
-		owner = {
-			NOT = { primary_culture = dacian }
-			NOT = { primary_culture = thracian }
+			AND = {
+				culture = dacian
+				owner = {
+					NOT = { primary_culture = dacian }
+					NOT = { primary_culture = thracian }
+				}
+			}
+			AND = {
+				culture = thracian
+				owner = {
+					NOT = { primary_culture = dacian }
+					NOT = { primary_culture = thracian }
+					NOT = { primary_culture = bulgar }
+					NOT = { culture_group = byzantine }
+					NOT = { culture_group = south_slavic }
+					NOT = { culture_group = west_slavic }
+					NOT = { culture_group = east_slavic }
+				}
+			}
 		}
 	}
 	mean_time_to_happen = {
@@ -453,6 +542,7 @@ province_event = {
 		change_culture = romanian
 	}
 }
+
 #Spread of Silesian Culture
 province_event = {
 	id = culturedk.36
@@ -580,11 +670,9 @@ province_event = {
 	trigger = {
 		NOT = { is_year = 1200 }
 		OR = {
-	        area = neumark_area
-			area = mittelmark_area
-			area = vorpommern_area
+			area = lusatia_area
 			area = south_saxony_area
-			area = mecklenburg_area
+			area = thuringia_area
 		}
 		culture_group = germanic
 		owner = {
@@ -616,6 +704,8 @@ province_event = {
 		OR = {
 			culture_group = germanic
 			culture_group = western_balkan
+			culture = pannonian
+			culture = avar
 		}
 		owner = {
 			OR = {
@@ -646,11 +736,16 @@ province_event = {
 			area = carinthia_area
 			area = inner_austria_area
 			area = austria_proper_area
+			area = tirol_area
+			area = east_bavaria_area
 		}
 		OR = {
 			culture_group = germanic
+			culture_group = latin
 			culture = noric
 			culture = illyrian
+			culture = pannonian
+			culture = avar
 		}
 		owner = {
 			OR = {
@@ -676,15 +771,19 @@ province_event = {
 	picture = CULTURE_eventPicture
 	trigger = {
 		NOT = { is_year = 1200 }
-		OR = {
-			area = transdanubia_area	
+		OR = {	
 			area = croatia_area
+			area = slavonia_area
 			area = east_adriatic_coast_area
+			area = transdanubia_area
 		}
 		OR = {
 			culture_group = germanic
+			culture_group = latin
 			culture = noric
 			culture = illyrian
+			culture = pannonian
+			culture = avar
 		}
 		owner = {
 			OR = {
@@ -711,9 +810,9 @@ province_event = {
 	trigger = {
 		NOT = { is_year = 1200 }
 		OR = {
-			area = alfold_area	
 			area = serbia_area
-			area = bosnia_area
+			area = rascia_area
+			area = vojvodina_area
 		}
 		OR = {
 			culture_group = germanic
@@ -852,6 +951,8 @@ province_event = {
 			area = mittelmark_area
 			area = vorpommern_area
 			area = mecklenburg_area
+			area = northern_saxony_area
+			area = lower_saxony_area
 		}
 		culture_group = germanic
 		owner = {
@@ -870,3 +971,208 @@ province_event = {
 		change_culture = polabian
 	}
 }
+
+#Spread of Thracian Greek Culture
+province_event = {
+    id = culturedk.50
+    title = culturedk.1.t
+    desc = culturedk.1.d
+    picture = CULTURE_eventPicture
+    trigger = {
+        NOT = { is_year = 1000 }
+        is_year = 600
+        culture = thracian
+        owner = {
+            culture_group = byzantine
+        }
+    }
+    mean_time_to_happen = {
+        years = 100
+    }
+    option = {
+        name = culturedk.1.a
+        change_culture = greek
+    }
+}
+
+#Spread of Bulgarian Culture
+province_event = {
+	id = culturedk.51
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1000 }
+		NOT = { culture = bulgarian }
+		is_year = 600
+		OR = {
+			AND = {
+				OR = {
+					area = thrace_area
+					area = bulgaria_area
+					area = silistria_area
+				}
+				OR = {
+					culture_group = byzantine
+					culture_group = south_slavic
+				}
+			}
+			culture = thracian
+		}
+		owner = {
+			OR = {
+				primary_culture = bulgarian
+				primary_culture = bulgar
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = bulgarian
+	}
+}
+
+#Spread of Bulgarian Culture 2 from Bulgar to Bulgarian
+province_event = {
+	id = culturedk.52
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1100 }
+		is_year = 600
+		culture = bulgar
+		any_neighbor_province = { culture_group = south_slavic }
+		OR = {
+			region = balkan_region
+			region = carpathia_region 
+		}
+		owner = {
+			OR = {
+				primary_culture = bulgar
+				culture_group = south_slavic
+				culture_group = west_slavic
+				culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = bulgarian
+	}
+}
+
+#Spread of Macedonian Culture
+province_event = {
+	id = culturedk.53
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1000 }
+		is_year = 600
+		OR = {
+			culture_group = byzantine
+			culture = thracian
+		}
+		OR = {
+			AND = {
+				OR = {
+					area = macedonia_area	
+					area = thrace_area
+					area = bulgaria_area
+					area = silistria_area
+				}
+				OR = {
+					culture_group = byzantine
+					culture = thracian
+				}
+				owner = {
+					NOT = { primary_culture = bulgarian } 
+					OR = {
+						culture_group = south_slavic
+						culture_group = west_slavic
+						culture_group = east_slavic
+					}
+				}
+			}
+			AND = {
+				area = macedonia_area	
+				culture_group = byzantine
+				owner = {
+					primary_culture = bulgarian
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = macedonian
+	}
+}
+
+#Spread of Bosnian Culture
+province_event = {
+	id = culturedk.54
+	title = culturedk.3.t
+	desc = culturedk.3.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1200 }
+		area = bosnia_area
+		OR = {
+			culture_group = germanic
+			culture = illyrian
+		}
+		owner = {
+			OR = {
+				culture_group = south_slavic
+		        culture_group = west_slavic
+		        culture_group = east_slavic
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.3.a
+		change_culture = bosnian
+	}
+}
+
+#Birth of Balten Culture
+province_event = {
+	id = culturedk.55
+	title = culturedk.1.t
+	desc = culturedk.1.d
+	picture = CULTURE_eventPicture
+	trigger = {
+		NOT = { is_year = 1500 }
+		province_id = 38
+		OR = {
+			culture_group = finno_ugric
+			culture_group = baltic
+		}
+		owner = {
+			culture_group = germanic
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+	}
+	option = {
+		name = culturedk.1.a
+		change_culture = baltic_german
+	}
+}
+

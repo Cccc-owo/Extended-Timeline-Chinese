@@ -1,0 +1,74 @@
+uses_bogomilism_streng_of_faith_mechanic = {
+	# if you edit this, make sure to also edit the trigger of the yearly_bogomilism_streng_of_faith estate modifier (used for power gain)
+	custom_trigger_tooltip = {
+		tooltip = uses_bogomilism_streng_of_faith_mechanic_tt
+		religion = bogomilism
+	}
+}
+
+not_uses_bogomilism_streng_of_faith_mechanic = { # mainly if you want a proper tooltip
+	custom_trigger_tooltip = {
+		tooltip = not_uses_bogomilism_streng_of_faith_mechanic_tt
+		NOT = { uses_bogomilism_streng_of_faith_mechanic = yes }
+	}
+}
+
+has_bogomilism_strength_of_faith_value = {
+	if = {
+		limit = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		[[value]
+			check_variable = { which = et_bogomilism_streng_of_faith_value value = $value$ }
+		]
+		[[which]
+			check_variable = { which = et_bogomilism_streng_of_faith_value which = $which$ }
+		]
+	}
+}
+
+has_any_bogomilism_strength_of_faith_modifier = {
+	OR = {
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_1
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_2
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_3
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_4
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_5
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_6
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_7
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_8
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_9
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_10
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_11
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_12
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_13
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_14
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_15
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_16
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_17
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_18
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_19
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_20
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_21
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_22
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_23
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_24
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_25
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_26
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_27
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_28
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_29
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_30
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_31
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_32
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_33
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_34
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_35
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_36
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_37
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_38
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_39
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_40
+		has_country_modifier = et_bogomilism_streng_of_faith_modifier_41
+	}
+}

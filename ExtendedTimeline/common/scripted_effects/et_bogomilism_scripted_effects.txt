@@ -1,0 +1,988 @@
+set_bogomilism_strength_of_faith_value = {
+	if = {
+		limit = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		[[value]
+			set_variable = { which = et_bogomilism_streng_of_faith_value value = $value$ }
+		]
+		[[which]
+			set_variable = { which = et_bogomilism_streng_of_faith_value which = $which$ }
+		]
+		hidden_effect = {
+			if = {
+				limit = {
+					has_bogomilism_strength_of_faith_value = { value = 100 }
+				}
+				set_variable = { which = et_bogomilism_streng_of_faith_value value = 100 }
+			}
+			else_if = {
+				limit = {
+					NOT = { has_bogomilism_strength_of_faith_value = { value = 0 } }
+				}
+				set_variable = { which = et_bogomilism_streng_of_faith_value value = 0 }
+			}
+			set_variable = { which = et_bogomilism_streng_of_faith_value_display which = et_bogomilism_streng_of_faith_value }
+			divide_variable = { which = et_bogomilism_streng_of_faith_value_display value = 10 }
+			multiply_variable = { which = et_bogomilism_streng_of_faith_value_display value = 10 } # max 2 decimals in display
+			update_bogomilism_strength_of_faith_modifier = yes
+		}
+	}
+}
+
+add_bogomilism_strength_of_faith_value = {
+	if = {
+		limit = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		[[value]
+			change_variable = { which = et_bogomilism_streng_of_faith_value value = $value$ }
+		]
+		[[which]
+			change_variable = { which = et_bogomilism_streng_of_faith_value which = $which$ }
+		]
+		hidden_effect = {
+			if = {
+				limit = {
+					has_bogomilism_strength_of_faith_value = { value = 100 }
+				}
+				set_variable = { which = et_bogomilism_streng_of_faith_value value = 100 }
+			}
+			else_if = {
+				limit = {
+					NOT = { has_bogomilism_strength_of_faith_value = { value = 0 } }
+				}
+				set_variable = { which = et_bogomilism_streng_of_faith_value value = 0 }
+			}
+			set_variable = { which = et_bogomilism_streng_of_faith_value_display which = et_bogomilism_streng_of_faith_value }
+			divide_variable = { which = et_bogomilism_streng_of_faith_value_display value = 10 }
+			multiply_variable = { which = et_bogomilism_streng_of_faith_value_display value = 10 } # max 2 decimals in display
+			update_bogomilism_strength_of_faith_modifier = yes
+		}
+	}
+}
+
+export_yearly_bogomilism_strength_of_faith_gain = {
+	hidden_effect = {
+		export_to_variable = {
+			which = yearly_bogomilism_streng_of_faith_value
+			value = modifier:yearly_bogomilism_streng_of_faith
+		}
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			change_variable = { which = yearly_bogomilism_streng_of_faith_value value = -0.5 }
+		}
+	}
+}
+
+add_yearly_bogomilism_strength_of_faith_value = {
+	export_yearly_bogomilism_strength_of_faith_gain = yes
+	set_variable = { which = yearly_bogomilism_streng_of_faith_value_temp which = yearly_bogomilism_streng_of_faith_value }
+	divide_variable = { which = yearly_bogomilism_streng_of_faith_value_temp value = 12 }
+	add_bogomilism_strength_of_faith_value = { which = yearly_bogomilism_streng_of_faith_value_temp }
+	set_variable = { which = yearly_bogomilism_streng_of_faith_value_temp value = 0 }
+}
+
+remove_bogomilism_strength_of_faith_modifiers = {
+	hidden_effect = {
+		if = {
+			limit = {
+				has_any_bogomilism_strength_of_faith_modifier = yes
+			}
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_1
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_2
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_3
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_4
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_5
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_6
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_7
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_8
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_9
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_10
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_11
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_12
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_13
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_14
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_15
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_16
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_17
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_18
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_19
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_20
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_21
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_22
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_23
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_24
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_25
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_26
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_27
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_28
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_29
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_30
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_31
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_32
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_33
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_34
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_35
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_36
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_37
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_38
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_39
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_40
+			remove_country_modifier = et_bogomilism_streng_of_faith_modifier_41
+		}
+	}
+}
+
+update_bogomilism_strength_of_faith_modifier = {
+	remove_bogomilism_strength_of_faith_modifiers = yes
+	if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 100 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_41
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 97.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_40
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 95 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_39
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 92.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_38
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 90 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_37
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 87.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_36
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 85 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_35
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 82.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_34
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 80 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_33
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 77.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_32
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 75 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_31
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 72.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_30
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 70 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_29
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 67.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_28
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 65 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_27
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 62.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_26
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 60 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_25
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 57.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_24
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 55 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_23
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 52.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_22
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 50 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_21
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 47.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_20
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 45 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_19
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 42.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_18
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 40 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_17
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 37.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_16
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 35 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_15
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 32.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_14
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 30 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_13
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 27.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_12
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 25 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_11
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 22.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_10
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 20 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_9
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 17.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_8
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 15 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_7
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 12.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_6
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 10 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_5
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 7.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_4
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_3
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_bogomilism_strength_of_faith_value = { value = 2.5 }
+		}
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_2
+			duration = -1
+		}
+	}
+	else = {
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_1
+			duration = -1
+		}
+	}
+}
+
+show_current_bogomilism_strength_of_faith_modifier_tooltip = {
+	custom_tooltip = show_current_bogomilism_strength_of_faith_modifier_tooltip_tt
+	tooltip = {
+		if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_41
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_41
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_40
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_40
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_39
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_39
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_38
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_38
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_37
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_37
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_36
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_36
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_35
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_35
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_34
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_34
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_33
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_33
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_32
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_32
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_31
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_31
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_30
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_30
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_29
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_29
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_28
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_28
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_27
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_27
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_26
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_26
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_25
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_25
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_24
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_24
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_23
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_23
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_22
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_22
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_21
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_21
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_20
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_20
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_19
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_19
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_18
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_18
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_17
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_17
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_16
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_16
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_15
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_15
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_14
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_14
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_13
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_13
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_12
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_12
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_11
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_11
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_10
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_10
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_9
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_9
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_8
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_8
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_7
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_7
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_6
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_6
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_5
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_5
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_4
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_4
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_3
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_3
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = et_bogomilism_streng_of_faith_modifier_2
+			}
+			add_country_modifier = {
+				name = et_bogomilism_streng_of_faith_modifier_2
+				duration = -1
+			}
+		}
+		else = {
+		#	add_country_modifier = {
+		#		name = et_bogomilism_streng_of_faith_modifier_1
+		#		duration = -1
+		#	}
+			custom_tooltip = show_current_bogomilism_strength_of_faith_modifier_tooltip_tt_none # no effects
+		}
+	}
+}
+
+show_max_bogomilism_strength_of_faith_modifier_tooltip = {
+	custom_tooltip = show_max_bogomilism_strength_of_faith_modifier_tooltip_tt
+	tooltip = {
+		add_country_modifier = {
+			name = et_bogomilism_streng_of_faith_modifier_41
+			duration = -1
+		}
+	}
+}
+
+clear_bogomilism_modifiers = {
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = et_bogomilism_appealed_for_ascetic_lifestyle
+				has_any_bogomilism_strength_of_faith_modifier = yes
+				any_owned_province = {
+					OR = {
+						has_province_modifier = et_bogomilism_persecution
+						has_province_modifier = et_bogomilism_livestock_ban
+						has_province_modifier = et_bogomilism_livestock_low_demand
+						has_province_modifier = et_bogomilism_failed_complaint_modifier
+						has_province_modifier = et_bogomilism_remove_church_modifier
+						has_province_modifier = et_bogomilism_keep_church_modifier
+					}
+				}
+			}
+		}
+		set_variable = { which = et_bogomilism_streng_of_faith_value value = 0 } # should clear the variable for the save game
+		set_variable = { which = et_bogomilism_streng_of_faith_value_display value = 0 } # should clear the variable for the save game
+		set_variable = { which = yearly_bogomilism_streng_of_faith_value value = 0 } # should clear the variable for the save game
+		remove_bogomilism_strength_of_faith_modifiers = yes
+		clr_country_flag = et_bogomilism_appealed_for_ascetic_lifestyle
+		set_variable = { which = et_bogomilism_appeal_for_ascetic_year value = 0 } # should clear the variable for the save game
+		if = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						has_province_modifier = et_bogomilism_persecution
+						has_province_modifier = et_bogomilism_livestock_ban
+						has_province_modifier = et_bogomilism_livestock_low_demand
+						has_province_modifier = et_bogomilism_failed_complaint_modifier
+						has_province_modifier = et_bogomilism_remove_church_modifier
+						has_province_modifier = et_bogomilism_keep_church_modifier
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_province_modifier = et_bogomilism_persecution
+						has_province_modifier = et_bogomilism_livestock_ban
+						has_province_modifier = et_bogomilism_livestock_low_demand
+						has_province_modifier = et_bogomilism_failed_complaint_modifier
+						has_province_modifier = et_bogomilism_remove_church_modifier
+						has_province_modifier = et_bogomilism_keep_church_modifier
+					}
+				}
+				if = {
+					limit = {
+						has_province_modifier = et_bogomilism_persecution
+					}
+					remove_province_modifier = et_bogomilism_persecution
+				}
+				if = {
+					limit = {
+						has_province_modifier = et_bogomilism_livestock_ban
+					}
+					remove_province_modifier = et_bogomilism_livestock_ban
+				}
+				if = {
+					limit = {
+						has_province_modifier = et_bogomilism_livestock_low_demand
+					}
+					remove_province_modifier = et_bogomilism_livestock_low_demand
+				}
+				if = {
+					limit = {
+						has_province_modifier = et_bogomilism_failed_complaint_modifier
+					}
+					remove_province_modifier = et_bogomilism_failed_complaint_modifier
+				}
+				if = {
+					limit = {
+						has_province_modifier = et_bogomilism_remove_church_modifier
+					}
+					remove_province_modifier = et_bogomilism_remove_church_modifier
+				}
+				if = {
+					limit = {
+						has_province_modifier = et_bogomilism_keep_church_modifier
+					}
+					remove_province_modifier = et_bogomilism_keep_church_modifier
+				}
+			}
+		}
+	}
+}
+
+clear_bogomilism_modifiers_when_changing_religion = {
+	if = {
+		limit = {
+			NOT = { uses_bogomilism_streng_of_faith_mechanic = yes }
+		}
+		clear_bogomilism_modifiers = yes
+	}
+}

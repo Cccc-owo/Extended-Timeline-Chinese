@@ -171,15 +171,14 @@ country_event = {
 	
 	option = {
 		name = "red_turbans.11.a"
-		china_superregion = {
-			type = random
-			amount = 50
+		every_owned_province = {
 			limit = {
-                culture_group = east_asian
+				culture_group = east_asian
+				superregion = china_superregion
 				NOT = { accepted_culture = ROOT }
-            }
+			}
 			add_local_autonomy = 100
-        }
+		}
 		add_mandate = -5
 	}
 }

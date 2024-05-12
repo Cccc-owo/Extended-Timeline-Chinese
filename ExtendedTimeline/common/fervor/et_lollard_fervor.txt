@@ -1,0 +1,111 @@
+et_lollard_fervor_taxed_clergy = {
+	cost = 8
+	potential = {
+		religion = lollard
+	}
+	trigger = {
+	}
+	effect = {
+		global_tax_modifier = 0.15
+		development_cost = -0.1
+		burghers_loyalty_modifier = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { fervor = 50 }
+			has_active_fervor = no
+		}
+	}
+}
+
+et_lollard_fervor_apostolic_poverty = {
+	cost = 8
+	potential = {
+		religion = lollard
+	}
+	trigger = {
+	}
+	effect = {
+		global_unrest = -2
+		stability_cost_modifier = -0.1
+		yearly_corruption = -0.05
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			unrest = 2
+		}
+		modifier = {
+			factor = 3
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 2
+			corruption = 1
+		}
+		modifier = {
+			factor = 0.25
+			stability = 3
+		}
+		modifier = {
+			factor = 0
+			NOT = { fervor = 50 }
+			has_active_fervor = no
+		}
+	}
+}
+
+et_lollard_fervor_lay_priests = {
+	cost = 8
+	potential = {
+		religion = lollard
+	}
+	trigger = {
+	}
+	effect = {
+		global_missionary_strength = 0.015
+		missionary_maintenance_cost = -0.25
+		nobles_loyalty_modifier = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_province = {
+					has_owner_religion = no
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { fervor = 50 }
+			has_active_fervor = no
+		}
+	}
+}
+
+et_lollard_fervor_pacifism = {
+	cost = 8
+	potential = {
+		religion = lollard
+	}
+	trigger = {
+	}
+	effect = {
+		diplomatic_reputation = 2
+		improve_relation_modifier = 0.25
+		church_loyalty_modifier = 0.1
+		stability_cost_to_declare_war = 1
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}

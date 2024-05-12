@@ -68,15 +68,16 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PLC
+			on_change_tag_effect = yes
 			inherit = LIT
 			swap_non_generic_missions = yes
 			if = {
 				limit = { NOT = { accepted_culture = lithuanian } }
-				add_accepted_culture = lithuanian
-			}
-			add_country_modifier = {
-				name = plc_polish_lithuanian_union
-				duration = -1
+				add_accepted_culture_or_dip_power = {
+					culture = lithuanian
+					dip_reward = yes
+					free = yes
+				}
 			}
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -222,6 +223,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PLC
+			on_change_tag_effect = yes
 			if = { 
 				limit = { 
 					OR = { 
@@ -236,13 +238,10 @@ country_decisions = {
 			inherit = POL
 			set_country_flag = pol_chose_pu_flag
 			swap_non_generic_missions = yes
-			if = {
-				limit = { NOT = { accepted_culture = polish } }
-				add_accepted_culture = polish
-			}
-			add_country_modifier = {
-				name = plc_polish_lithuanian_union
-				duration = -1
+			add_accepted_culture_or_dip_power = {
+				culture = polish
+				dip_reward = yes
+				free = yes
 			}
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -385,6 +384,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PLC
+			on_change_tag_effect = yes
 			if = { 
 				limit = { 
 					OR = { 
@@ -396,6 +396,7 @@ country_decisions = {
 				set_country_flag = is_LPC_flag
 			}
 			else = { restore_country_name = yes }
+			set_country_flag = pol_chose_pu_flag
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
@@ -416,10 +417,6 @@ country_decisions = {
 				}
 				add_accepted_culture = lithuanian
 			}
-			add_country_modifier = {
-				name = plc_polish_lithuanian_union
-				duration = -1
-			}
 			if = {
 				limit = {
 					poland_region = {
@@ -429,7 +426,7 @@ country_decisions = {
 					}
 				}
 				poland_region = {
-					add_permanent_claim = PLC
+					add_permanent_claim = ROOT
 				}
 			}
 			if = {
@@ -441,7 +438,7 @@ country_decisions = {
 					}
 				}
 				white_ruthenia_area = {
-					add_permanent_claim = PLC
+					add_permanent_claim = ROOT
 				}
 			}
 			if = {
@@ -453,7 +450,7 @@ country_decisions = {
 					}
 				}
 				lithuania_area = {
-					add_permanent_claim = PLC
+					add_permanent_claim = ROOT
 				}
 			}
 			if = {
@@ -465,7 +462,7 @@ country_decisions = {
 					}
 				}
 				pripyat_area = {
-					add_permanent_claim = PLC
+					add_permanent_claim = ROOT
 				}
 			}
 			random_owned_province = {
@@ -476,7 +473,8 @@ country_decisions = {
 			add_prestige = 25
 			if = { 
 				limit = { 
-					NOT = { was_tag = POL } 
+					NOT = { was_tag = POL }
+					has_dlc = "Lions of the North" 
 				}
 				complete_mission = pol_leverage_magnates
 				complete_mission = pol_great_sejm
@@ -492,5 +490,4 @@ country_decisions = {
 		}
 		ai_importance = 200
 	}
-	
 }

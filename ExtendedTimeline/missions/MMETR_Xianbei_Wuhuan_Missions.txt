@@ -452,7 +452,7 @@ xianbei_wuhuan_missions_2 = {
 				NOT = { culture = ROOT }
 			}
 			calc_true_if = {
-				any_owned_province = {
+				all_owned_province = {
 					culture_group = east_asian
 				}
 				amount = 15
@@ -648,9 +648,11 @@ xianbei_wuhuan_missions_3 = {
 				id = mmetr_XIB_mission_events.2
 			}
 			697 = {		#Dai Commandery
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
+				if = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
 				}
 				add_permanent_claim = ROOT
 			}

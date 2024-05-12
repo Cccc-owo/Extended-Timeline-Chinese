@@ -1207,9 +1207,11 @@ pisan_mmetr_missions_5 = {
 				add_permanent_claim = ROOT
 			}
 			2473 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
 				}
 				add_permanent_claim = ROOT
 			}

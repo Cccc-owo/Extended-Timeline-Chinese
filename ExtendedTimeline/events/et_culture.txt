@@ -553,6 +553,66 @@ country_event = {
 			change_primary_culture = gaelic_oceanian
 		}
 		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_canada } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_canadian }
+			change_primary_culture = celtic_canadian
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_eastern_america } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_east_american }
+			change_primary_culture = celtic_east_american
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_louisiana } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_louisianan }
+			change_primary_culture = celtic_louisianan
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_california } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_californian }
+			change_primary_culture = celtic_californian
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_mexico } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_mexican }
+			change_primary_culture = celtic_mexican
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_the_carribean } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_caribbean }
+			change_primary_culture = celtic_caribbean
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_colombia } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_colombian }
+			change_primary_culture = celtic_colombian
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_peru } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_peruvian }
+			change_primary_culture = celtic_peruvian
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_la_plata } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_la_platan }
+			change_primary_culture = celtic_la_platan
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_brazil } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_brazilian }
+			change_primary_culture = celtic_brazilian
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_australia } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_australian }
+			change_primary_culture = celtic_australian
+		}
+		if = {
+			limit = { culture_group = celtic capital_scope = { colonial_region = colonial_oceania } }
+			every_owned_province = { limit = { culture = ROOT } change_culture = celtic_oceanian }
+			change_primary_culture = celtic_oceanian
+		}
+		if = {
 			limit = { culture_group = latin capital_scope = { colonial_region = colonial_canada } }
 			every_owned_province = { limit = { culture = ROOT } change_culture = latin_canadian }
 			change_primary_culture = latin_canadian
@@ -3123,6 +3183,54 @@ province_event = {
 			change_culture = gaelic_oceanian
 		}
 		if = {
+			limit = { culture_group = celtic colonial_region = colonial_canada }
+			change_culture = celtic_canadian
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_eastern_america }
+			change_culture = celtic_east_american
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_louisiana }
+			change_culture = celtic_louisianan
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_california }
+			change_culture = celtic_californian
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_mexico }
+			change_culture = celtic_mexican
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_the_carribean }
+			change_culture = celtic_caribbean
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_colombia }
+			change_culture = celtic_colombian
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_peru }
+			change_culture = celtic_peruvian
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_la_plata }
+			change_culture = celtic_la_platan
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_brazil }
+			change_culture = celtic_brazilian
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_australia }
+			change_culture = celtic_australian
+		}
+		if = {
+			limit = { culture_group = celtic colonial_region = colonial_oceania }
+			change_culture = celtic_oceanian
+		}
+		if = {
 			limit = { culture_group = latin colonial_region = colonial_canada }
 			change_culture = latin_canadian
 		}
@@ -5071,7 +5179,6 @@ province_event = {
 						dominant_culture = cosmopolitan_french 
 						dominant_culture = gascon
 						dominant_culture = normand
-						dominant_culture = aquitaine
 						dominant_culture = burgundian
 						dominant_culture = occitain
 						dominant_culture = wallonian
@@ -5093,7 +5200,11 @@ province_event = {
 		}
 		if = {
 			limit = {
-				area = pyrenees_area
+				OR = {
+					area = pyrenees_area
+					area = guyenne_area
+					area = basque_country
+				}
 			}
 			change_culture = gascon
 		}
@@ -5102,15 +5213,6 @@ province_event = {
 				area = normandy_area
 			}
 			change_culture = normand
-		}
-		if = {
-			limit = { 
-				OR = {
-					area = poitou_area
-					area = guyenne_area
-				}
-			}
-			change_culture = aquitaine
 		}
 		if = {
 			limit = { 
@@ -5125,6 +5227,7 @@ province_event = {
 		if = {
 			limit = { 
 				OR = {
+					area = poitou_area
 					area = massif_central_area
 					area = languedoc_area
 					area = provence_area
@@ -5165,7 +5268,6 @@ province_event = {
 					NOT = { dominant_culture = cosmopolitan_french } 
 					NOT = { dominant_culture = gascon } 
 					NOT = { dominant_culture = normand } 
-					NOT = { dominant_culture = aquitaine } 
 					NOT = { dominant_culture = burgundian } 
 					NOT = { dominant_culture = occitain } 
 					NOT = { dominant_culture = wallonian } 
@@ -5185,9 +5287,12 @@ province_event = {
 			owner = { change_primary_culture = cosmopolitan_french }
 		}
 		if = {
-			limit = { owner = {
+			limit = { owner = { OR = {
 				culture_group = basque_group
-			} }
+				primary_culture = pommeranian
+				primary_culture = prussian
+				primary_culture = gothic
+			} } }
 			change_culture = gascon
 			owner = { change_primary_culture = gascon }
 		}
@@ -5199,15 +5304,6 @@ province_event = {
 			} } }
 			change_culture = normand
 			owner = { change_primary_culture = normand }
-		}
-		if = {
-			limit = { owner = { OR = {
-				primary_culture = pommeranian
-				primary_culture = prussian
-				primary_culture = gothic
-			} } }
-			change_culture = aquitaine
-			owner = { change_primary_culture = aquitaine }
 		}
 		if = {
 			limit = { owner = { OR = {

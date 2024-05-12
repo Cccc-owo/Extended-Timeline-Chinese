@@ -47,7 +47,7 @@ kok_persia_conquest_mission_slot_1 = {
 			NOT = { owned_by = root }
 		}
 		trigger = {
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = caucasia_region
 				value = 15
 			}
@@ -65,7 +65,6 @@ kok_persia_conquest_mission_slot_1 = {
 					add_accepted_culture_or_dip_power = {
 						culture = georgian
 						free = yes
-						new_line = yes
 					}
 					add_accepted_culture_or_dip_power = {
 						culture = armenian
@@ -251,7 +250,7 @@ kok_persia_mission_muslim_slot_1 = {
 				}
 				AND = {
 					superregion = near_east_superregion
-					NOT = { root = { num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = { superregion = near_east_superregion value = 100 } } }
+					NOT = { root = { num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = { superregion = near_east_superregion value = 125 } } }
 				}
 				AND = {
 					OR = {
@@ -265,7 +264,7 @@ kok_persia_mission_muslim_slot_1 = {
 									superregion = eastern_europe_superregion 
 									superregion = europe_superregion 
 								} 
-								value = 100 
+								value = 50 
 							} 
 						} 
 					}
@@ -341,7 +340,7 @@ kok_persia_mission_zoroastrian_slot_1 = {
 				}
 				AND = {
 					superregion = near_east_superregion
-					NOT = { root = { num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = { superregion = near_east_superregion value = 100 } } }
+					NOT = { root = { num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = { superregion = near_east_superregion value = 125 } } }
 				}
 				AND = {
 					OR = {
@@ -355,7 +354,7 @@ kok_persia_mission_zoroastrian_slot_1 = {
 									superregion = eastern_europe_superregion 
 									superregion = europe_superregion 
 								} 
-								value = 100 
+								value = 50 
 							} 
 						} 
 					}
@@ -500,14 +499,34 @@ kok_persia_conquest_mission_slot_2 = {
 			NOT = { country_or_non_sovereign_subject_holds = root }
 		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				culture = kurdish
-				OR = {
-					region = persia_region
-					region = anatolia_region
-					region = mashriq_region
+			if = {
+				limit = {
+					calc_true_if = {
+						all_province = { culture = kurdish }
+						amount = 8
+					}
 				}
-				value = 10
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					culture = kurdish
+					value = 8
+				}
+			}
+			else_if = {
+				limit = {
+					any_province = { culture = kurdish }
+				}
+				all_province = {
+					OR = {
+						NOT = { culture = kurdish }
+						AND = {
+							culture = kurdish
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				NOT = { any_province = { culture = kurdish } }
 			}
 		}
 		effect = {
@@ -549,7 +568,6 @@ kok_persia_conquest_mission_slot_2 = {
 			add_accepted_culture_or_dip_power = {
 				culture = al_iraqiya_arabic
 				free = yes
-				new_line = yes
 			}
 			add_accepted_culture_or_dip_power = {
 				culture = al_suryah_arabic
@@ -2313,8 +2331,12 @@ kok_persia_mission_muslim_slot_5 = {
 			development_in_provinces = {
 				custom_trigger_tooltip = {
 					tooltip = per_the_persian_influence_ct
-					culture = root
-					religion = root
+					or = {
+						has_owner_culture = yes
+						culture_group = root
+						has_owner_accepted_culture = yes
+					}
+					has_owner_religion = yes
 				}
 				value = 150
 			}
@@ -2658,7 +2680,7 @@ kok_persia_mission_zoroastrian_slot_4 = {
 				duration = 9125
 			}
 			if = {
-				limit = { is_core = 4430 }
+				limit = { NOT = { is_core = 4430 } }
 				add_core = 4430
 			}
 		}
@@ -3068,17 +3090,25 @@ kok_persia_culture_mission_slot_1 = {
 			}
 		}
 		trigger = {
-			OR = {
-				production_leader = { trade_goods = silk } 
-				trade_goods_produced_amount = { trade_goods = silk amount = 20 }
+			if = {
+				limit = {
+					mission_completed = TIM_rugs
+				}
+				mission_completed = TIM_rugs
 			}
-			OR = {
-				production_leader = { trade_goods = cloth } 
-				trade_goods_produced_amount = { trade_goods = cloth amount = 20 }
-			}
-			OR = {
-				production_leader = { trade_goods = dyes } 
-				trade_goods_produced_amount = { trade_goods = dyes amount = 20 }
+			else = {
+				OR = {
+					production_leader = { trade_goods = silk } 
+					trade_goods_produced_amount = { trade_goods = silk amount = 20 }
+				}
+				OR = {
+					production_leader = { trade_goods = cloth } 
+					trade_goods_produced_amount = { trade_goods = cloth amount = 20 }
+				}
+				OR = {
+					production_leader = { trade_goods = dyes } 
+					trade_goods_produced_amount = { trade_goods = dyes amount = 20 }
+				}
 			}
 		}
 		effect = {

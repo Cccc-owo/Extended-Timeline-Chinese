@@ -1,0 +1,233 @@
+namespace = et_lollard_events
+
+# Spawn of Lollard
+country_event = {
+    id = et_lollard_events.1
+    title = et_lollard_events.EVTNAME1
+    desc = et_lollard_events.EVTDESC1
+    picture = RELIGION_eventPicture
+
+	major = yes
+	fire_only_once = yes
+
+	goto = origin_province
+
+	trigger = {
+		religion = catholic
+		NOT = { is_religion_enabled = lollard }
+		is_year = 1250
+		OR = {
+			reform_desire = 1
+			is_religion_enabled = hussite
+		}
+		capital_scope = {
+			continent = europe
+		}
+		any_owned_province = {
+			religion = catholic
+			region = british_isles_region
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 0.5
+			is_religion_enabled = hussite
+		}
+		modifier = {
+			factor = 2
+			capital_scope = {
+				NOT = { region = british_isles_region }
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = et_lollard_spawned
+			if = {
+				limit = {
+					NOT = { is_religion_enabled = hussite }
+				}
+				add_reform_desire = -0.1 # don't want to delay Hussite by too much
+			}
+			random_owned_province = {
+				limit = {
+					region = british_isles_region
+				}
+				save_event_target_as = origin_province
+			}
+			random_owned_province = {
+				limit = {
+					region = british_isles_region
+					is_in_capital_area = yes
+				}
+				save_event_target_as = origin_province
+			}
+			random_owned_province = {
+				limit = {
+					region = british_isles_region
+					is_in_capital_area = yes
+					area_for_scope_province = {
+						is_capital_of = ROOT
+					}
+				}
+				save_event_target_as = origin_province
+			}
+		}
+	}
+
+	option = {
+		name = et_lollard_events1.EVTOPT1
+
+		ai_chance = {
+			factor = 0.6
+		}
+
+		enable_religion = lollard
+		add_stability = -1
+		event_target:origin_province = {
+			change_religion = lollard
+			add_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 9125
+			}
+			add_province_modifier = {
+				name = et_lollard_persecution
+				duration = 9125
+			}
+		}
+		if = {
+			limit = {
+				event_target:origin_province = {
+					is_capital = no
+				}
+			}
+			capital_scope = {
+				change_religion = lollard
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 9125
+				}
+				add_province_modifier = {
+					name = et_lollard_persecution
+					duration = 9125
+				}
+			}
+		}
+	}
+
+	option = {
+		name = et_lollard_events1.EVTOPT2
+
+		ai_chance = {
+			factor = 0.4
+		}
+
+		enable_religion = lollard
+		add_stability = -1
+		set_country_flag = et_tolerance_of_lollard
+		event_target:origin_province = {
+			change_religion = lollard
+			add_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 9125
+			}
+		}
+		if = {
+			limit = {
+				event_target:origin_province = {
+					is_capital = no
+				}
+			}
+			capital_scope = {
+				change_religion = lollard
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 9125
+				}
+			}
+		}
+	}
+}
+
+# Spread of Lollardism
+province_event = {
+    id = et_lollard_events.2
+    title = et_lollard_events.EVTNAME2
+    desc = et_lollard_events.EVTDESC2
+    picture = PEASANTS_BARTERING_eventPicture
+
+	goto = ROOT
+
+    trigger = {
+		region = british_isles_region
+		is_religion_enabled = lollard
+		NOT = { num_of_centers_of_reformation = { religion = lollard count = 1 } }
+		OR = {
+			NOT = { is_year = 1400 }
+			AND = {
+				NOT = { is_year = 1500 }
+				NOT = { religion_years = { lollard = 75 } }
+			}
+		}
+		NOT = { religion = lollard }
+		religion = catholic
+    }
+
+    mean_time_to_happen = {
+        months = 6000
+		modifier = {
+            factor = 0.75
+			owner = {
+				has_country_flag = et_tolerance_of_lollard
+			}
+		}
+		modifier = {
+            factor = 0.8
+			any_neighbor_province = { religion = lollard }
+		}
+		modifier = {
+			factor = 0.75
+			has_global_flag = lollard_heresy
+		}
+		modifier = {
+			factor = 0.75
+			has_global_flag = lollard_heresy
+			has_province_modifier = lollards
+		}
+    }
+
+    option = {
+        name = et_lollard_events2.EVTOPT1
+
+		trigger = {
+			owner = {
+				NOT = { religion = lollard }
+			}
+		}
+
+        change_religion = lollard
+        add_permanent_province_modifier = {
+            name = religious_zeal_at_conv
+            duration = 3650
+        }
+    }
+
+    option = {
+        name = et_lollard_events2.EVTOPT2
+
+		trigger = {
+			owner = {
+				religion = lollard
+			}
+		}
+
+        change_religion = lollard
+        add_permanent_province_modifier = {
+            name = religious_zeal_at_conv
+            duration = 3650
+        }
+    }
+}

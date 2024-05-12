@@ -110,10 +110,28 @@ defined_text = {
         localisation_key = string_start_title_sweden_norway
         trigger = {
 			OR = {
-				tag = SWE
-				tag = NOR
+				AND = {
+					OR = {
+						tag = SWE
+						tag = NOR
+					}
+					is_subject_of = DAN
+				}
 			}
-			is_subject_of = DAN
+			OR ={
+				tag = GOT
+				has_ruler = "Erik VII"
+			}
+		}
+    }
+	text = {
+        localisation_key = string_start_title_baltic_orders
+        trigger = {
+			OR = {
+				tag = TEU
+				tag = LIV
+				tag = RIG
+			}
 		}
     }
 	text = {
@@ -186,6 +204,7 @@ defined_text = {
         localisation_key = string_start_title_poland
         trigger = {
 			tag = POL
+			tag = LIT
 			is_year = 1444
 		}
     }
@@ -573,6 +592,13 @@ defined_text = {
         }
     }
 	
+	text = { #Osraige 58
+        localisation_key = string_start_osg_58
+        trigger = {
+			tag = OSG
+        }
+    }
+	
 	text = { #Rome, 224
         localisation_key = string_start_rom_224
         trigger = {
@@ -662,12 +688,50 @@ defined_text = {
         }
     }
 	
+	text = { #Tibet, 637
+        localisation_key = string_start_tib_637
+        trigger = {
+			is_year = 630
+			NOT = { is_year = 640 }
+			tag = TIB
+        }
+    }
+	
+	text = { #Baltic tribes, 637
+        localisation_key = string_start_baltic_637
+        trigger = {
+			OR = {
+				tag = PRS
+				tag = YOT
+				tag = SEM
+				tag = LTG
+				tag = CUR
+			}
+        }
+    }
+	
 	text = { #England, 1066
         localisation_key = string_start_eng_1066
 		trigger = {
 			is_year = 1066
 			NOT = { is_year = 1067 }
 			tag = ENG
+        }
+    }
+	
+	text = { #Galicia, 1066
+        localisation_key = string_start_gal_1066
+		trigger = {
+			is_year = 1060
+			NOT = { is_year = 1080 }
+			tag = GAL
+        }
+    }
+	
+	text = { #Nicaea, 1206
+        localisation_key = string_start_nca_1206
+		trigger = {
+			tag = NCA
         }
     }
 	
@@ -710,6 +774,24 @@ defined_text = {
         localisation_key = string_start_tex_1836
         trigger = {
 			tag = TEX
+        }
+    }
+	
+	text = { #USA, 1836
+        localisation_key = string_start_usa_1836
+        trigger = {
+			is_year = 1836
+			NOT = { is_year = 1846 }
+			tag = USA
+        }
+    }
+	
+	text = { #FRA, 1836
+        localisation_key = string_start_fra_1836
+        trigger = {
+			is_year = 1830
+			NOT = { is_year = 1848 }
+			tag = FR2
         }
     }
 	
@@ -788,6 +870,14 @@ defined_text = {
         trigger = {
 			is_year = 2001
 			tag = USA
+        }
+    }
+	
+	text = { #HAB, present
+        localisation_key = string_start_hab_present
+        trigger = {
+			is_year = 1942
+			tag = HAB
         }
     }
 	
@@ -928,6 +1018,53 @@ defined_text = {
 				primary_culture = kyushuan
 			}
 			NOT = { is_year = 1468 }
+		}
+	}
+
+	#South East Asia
+	text = { #Majapahit
+		localisation_key = string_start_majapahit
+		trigger = {
+			tag = MAJ
+			is_year = 1390
+		}
+	}
+	text = { #Palembang
+		localisation_key = string_start_palembang
+		trigger = {
+			tag = PLB
+		}
+	}
+	text = { #Tondo
+		localisation_key = string_start_tondo
+		trigger = {
+			tag = TDO
+		}
+	}
+	text = { #Dai Viet
+		localisation_key = string_start_dai_viet
+		trigger = {
+			tag = DAI
+			is_year = 1400
+		}
+	}
+	text = { #Khmer
+		localisation_key = string_start_khmer
+		trigger = {
+			tag = KHM
+			NOT = { is_year = 1863 }
+		}
+	}
+	text = { #Ayutthaya
+		localisation_key = string_start_ayutthaya
+		trigger = {
+			tag = AYU
+		}
+	}
+	text = { #Pegu
+		localisation_key = string_start_pegu
+		trigger = {
+			tag = PEG
 		}
 	}
 	
@@ -1322,9 +1459,44 @@ defined_text = {
 			tag = GEN
 		}
 	}
+	text = { #Norway
+		localisation_key = string_start_norway
+        trigger = {
+			tag = NOR
+			is_year = 1444
+			NOT = { is_year = 1448 }
+        }
+	}
+	text = { #Teutonic Order
+		localisation_key = string_start_teutonic_order
+        trigger = {
+			tag = TEU
+			NOT = { is_year = 1525 }
+        }
+	}
+	text = { #Livonian Order
+		localisation_key = string_start_livonian_order
+        trigger = {
+			tag = LIV
+			NOT = { is_year = 1561 }
+        }
+	}
+	text = { #Riga
+		localisation_key = string_start_riga
+        trigger = {
+			tag = RIG
+			NOT = { is_year = 1581 }
+        }
+	}
+	text = { #Gotland
+		localisation_key = string_start_gotland
+        trigger = {
+			tag = GOT
+			NOT = { is_year = 1449 }
+        }
+	}
 	
-	#Middle & Near East
-	
+	#Middle & Near East	
 	text = { # The Tatar Hordes
 		localisation_key = string_start_tatars
         trigger = {
@@ -1434,6 +1606,19 @@ defined_text = {
 			}
         }
 	}
+	text = { #Ajam
+		localisation_key = string_start_ajam
+		trigger = {
+			tag = QOM
+			is_year = 1444
+		}
+	}
+	text = { #Ardabil
+		localisation_key = string_start_ardabil
+		trigger = {
+			tag = ARL
+		}
+	}
 	# India
 	text = { # The remnants of Delhi
 		localisation_key = string_start_delhi
@@ -1531,12 +1716,41 @@ defined_text = {
 					region = niger_region
 					region = guinea_region
 					region = sahel_region
-					region = maghreb_region
 				}
 			}
         }
     }
-	text = {
+	text = { # Central Africa
+        localisation_key = string_start_tag_central_africa
+        trigger = {
+			capital_scope = {
+				OR = {
+					region = central_africa_region
+					region = kongo_region
+				}
+			}
+        }
+    }
+	text = { # East Africa
+        localisation_key = string_start_tag_east_africa
+        trigger = {
+			capital_scope = {
+				OR = {
+					region = south_africa_region
+					region = east_africa_region
+				}
+			}
+        }
+    }
+	text = { #Arabia
+		localisation_key = string_start_tag_arabia
+		trigger	= {
+			capital_scope = {
+				region = arabia_region
+			}
+		}
+	}
+	text = { # Central Asia
         localisation_key = string_start_tag_central_asia
         trigger = {
 			is_year = 1444
@@ -1701,6 +1915,13 @@ defined_text = {
 			religion = catholic
         }
     }
+	#Hussite (The Reformation)
+	text = {
+        localisation_key = string_start_religion_hussite
+        trigger = {
+			religion = hussite
+        }
+    }
 	#Protestant (The Reformation)
 	text = {
         localisation_key = string_start_religion_protestant
@@ -1834,11 +2055,30 @@ defined_text = {
 	text = {
         localisation_key = string_start_religion_norse
         trigger = {
-			OR = { 
-				religion = norse_pagan_reformed
-			}
+			religion = norse_pagan_reformed
         }
     }
+	#Totemism
+	text = {
+        localisation_key = string_start_religion_totemism
+        trigger = {
+			religion = totemism
+        }
+    }
+	#Alcheringa
+	text = {
+        localisation_key = string_start_religion_dreamtime
+        trigger = {
+			religion = dreamtime #Alcheringa
+        }
+    }
+	#Judaism
+	text = {
+        localisation_key = string_start_religion_jewish
+        trigger = {
+			religion = jewish
+		}
+	}
 	text = {
         localisation_key = string_start_religion_et_deities
         trigger = {
@@ -1950,10 +2190,24 @@ defined_text = {
         }
     }
 	text = {
+        localisation_key = string_church_power_hussite_info #Has to end with \n
+        trigger = {
+			religion = hussite
+			has_dlc = "Emperor"
+        }
+    }
+	text = {
         localisation_key = string_church_power_info_no #\n
         trigger = {
 			religion = protestant
 			NOT = { has_dlc = "Common Sense" }
+        }
+    }
+	text = {
+        localisation_key = string_hussite_power_info_no #\n
+        trigger = {
+			religion = hussite
+			NOT = { has_dlc = "Emperor" }
         }
     }
 }
@@ -1979,9 +2233,9 @@ defined_text = {
 }
 
 
-#Coptic Blessings
+#Coptic / Zoroastrian Blessings
 defined_text = {
-	name = start_coptic_blessings
+	name = start_coptic_zoroastrian_blessings
 	random = no
 	text = {
         localisation_key = string_blessings_info #Has to end with \n
@@ -1994,6 +2248,20 @@ defined_text = {
         localisation_key = string_blessings_info_no #\n
         trigger = {
 			religion = coptic
+			NOT = { has_dlc = "Rights of Man" }
+        }
+    }
+	text = {
+        localisation_key = string_rituals_info #Has to end with \n
+        trigger = {
+			religion = zoroastrian
+			has_dlc = "Rights of Man"
+        }
+    }
+	text = {
+        localisation_key = string_rituals_info_no #\n
+        trigger = {
+			religion = zoroastrian
 			NOT = { has_dlc = "Rights of Man" }
         }
     }
@@ -2090,7 +2358,7 @@ defined_text = {
 
 #Fetishist Cults
 defined_text = {
-	name = start_fetishist_cults
+	name = start_fetishist_alcheringa_cults
 	random = no
 	text = {
         localisation_key = string_cults_info #Has to end with \n
@@ -2103,6 +2371,20 @@ defined_text = {
         localisation_key = string_cults_info_no #\n
         trigger = {
 			religion = shamanism
+			NOT = { has_dlc = "Rights of Man" }
+        }
+    }
+	text = {
+        localisation_key = string_stories_info #Has to end with \n
+        trigger = {
+			religion = dreamtime
+			has_dlc = "Rights of Man"
+        }
+    }
+	text = {
+        localisation_key = string_stories_info_no #\n
+        trigger = {
+			religion = dreamtime
 			NOT = { has_dlc = "Rights of Man" }
         }
     }
@@ -2185,6 +2467,46 @@ defined_text = {
         trigger = {
 			religion = mesoamerican_religion
 			NOT = { has_dlc = "El Dorado" }
+        }
+    }
+}
+
+#Totemism Ancestors
+defined_text = {
+	name = start_totemism_ancestor
+	random = no
+	text = {
+        localisation_key = string_ancestor_info #Has to end with \n
+        trigger = {
+			religion = totemism
+			has_dlc = "Leviathan"
+        }
+    }
+	text = {
+        localisation_key = string_ancestor_info_no #\n
+        trigger = {
+			religion = totemism
+			NOT = { has_dlc = "Leviathan" }
+        }
+    }
+}
+
+#Jewish Aspects
+defined_text = {
+	name = start_judaism_aspects
+	random = no
+	text = {
+        localisation_key = string_jewish_aspects_info #Has to end with \n
+        trigger = {
+			religion = jewish
+			has_dlc = "Origins"
+        }
+    }
+	text = {
+        localisation_key = string_jewish_aspects_info_no #\n
+        trigger = {
+			religion = jewish
+			NOT = { has_dlc = "Origins" }
         }
     }
 }
@@ -2513,8 +2835,14 @@ defined_text  = {
     text = {
         localisation_key = string_start_harem
         trigger = {
-			has_reform = ottoman_government
-			has_dlc = "Rights of Man"
+			OR = {
+				has_reform = ottoman_government
+				has_reform = sultanate_of_rum_reform
+			}
+			OR = {
+				has_dlc = "Rights of Man"
+				has_dlc = "Domination"
+			}
         }
     }
 	text = {
@@ -2533,8 +2861,14 @@ defined_text  = {
     text = {
         localisation_key = string_start_pashas
         trigger = {
-			has_reform = ottoman_government
-			has_dlc = "Cradle of Civilization"
+			OR = {
+				has_reform = ottoman_government
+				has_reform = sultanate_of_rum_reform
+			}
+			OR = {
+				has_dlc = "Cradle of Civilization"
+				has_dlc = "Domination"
+			}
         }
     }
 	text = {
@@ -2635,7 +2969,10 @@ defined_text  = {
     text = {
         localisation_key = string_start_prussian_government
         trigger = {
-			has_reform = prussian_monarchy
+			OR = {
+				has_reform = prussian_monarchy_base
+				has_reform = prussian_monarchy
+			}
         }
     }
 	text = {
@@ -2769,8 +3106,7 @@ defined_text  = {
 	text = {
         localisation_key = string_start_meritocracy
         trigger = {
-			has_reform = celestial_empire
-			has_dlc = "Mandate of Heaven"
+			uses_meritocracy = yes
         }
     }
 	text = {

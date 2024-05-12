@@ -1,0 +1,167 @@
+on_religion_change = {
+	clear_bogomilism_modifiers_when_changing_religion = yes
+}
+
+on_monthly_pulse = {
+	if = {
+		limit = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		# yearly value / 12 is added
+		add_yearly_bogomilism_strength_of_faith_value = yes
+	}
+}
+
+# ROOT = converted province
+on_province_religion_converted = {
+	if = {
+		limit = {
+			has_owner_religion = yes
+			owner = {
+				uses_bogomilism_streng_of_faith_mechanic = yes
+			}
+		}
+		owner = {
+			export_to_variable = {
+				which = et_bogomilism_strength_of_faith_per_dev
+				value = trigger_value:development
+				who = PREV
+			}
+			multiply_variable = { which = et_bogomilism_strength_of_faith_per_dev value = 0.1 }
+			add_bogomilism_strength_of_faith_value = { which = et_bogomilism_strength_of_faith_per_dev }
+			set_variable = { which = et_bogomilism_strength_of_faith_per_dev value = 0 }
+		}
+	}
+}
+
+# ROOT = converted country, FROM = converting country
+on_force_conversion = {
+	if = {
+		limit = {
+			religion = FROM
+			FROM = {
+				uses_bogomilism_streng_of_faith_mechanic = yes
+			}
+		}
+		FROM = {
+			add_bogomilism_strength_of_faith_value = { value = 10 }
+		}
+	}
+}
+
+on_thri_yearly_pulse_2 = {
+	random_events = {
+		# Random Events for Spirituality Gain/Loss
+		20 = et_bogomilism_events.6
+		25 = et_bogomilism_events.7
+		25 = et_bogomilism_events.8
+		25 = et_bogomilism_events.9
+		25 = et_bogomilism_events.10
+	}
+}
+
+on_new_heir = {
+	events = {
+		et_bogomilism_events.13
+	}
+	if = {
+		limit = {
+			government = monarchy
+		}
+		add_bogomilism_strength_of_faith_value = { value = -5 }
+	}
+}
+
+on_heir_disinherited = {
+	if = {
+		limit = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		if = {
+			limit = {
+				has_country_modifier = et_bogomilism_disinherited_heir_modifier
+			}
+			remove_country_modifier = et_bogomilism_disinherited_heir_modifier
+		}
+		add_country_modifier = {
+			name = et_bogomilism_disinherited_heir_modifier
+			duration = 7300
+		}
+		export_yearly_bogomilism_strength_of_faith_gain = yes
+	}
+}
+
+# ROOT = winner, FROM = loser
+on_war_ended = {
+	# update yearly Bogomilism value for players when war ends (only for tooltip)
+	if = {
+		limit = {
+			ai = no
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		export_yearly_bogomilism_strength_of_faith_gain = yes
+	}
+	FROM = {
+		if = {
+			limit = {
+				ai = no
+				uses_bogomilism_streng_of_faith_mechanic = yes
+			}
+			export_yearly_bogomilism_strength_of_faith_gain = yes
+		}
+	}
+}
+
+# ROOT = annexing country, FROM = annexed country
+on_annexed = {
+	FROM = {
+		if = {
+			limit = {
+				uses_bogomilism_streng_of_faith_mechanic = yes
+			}
+			clear_bogomilism_modifiers = yes
+		}
+	}
+}
+
+# ROOT = released country, FROM = releasing country
+on_country_released = {
+	if = {
+		limit = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		clear_bogomilism_modifiers = yes
+		set_bogomilism_strength_of_faith_value = { value = 0 }
+	}
+	else = {
+		clear_bogomilism_modifiers_when_changing_religion = yes
+	}
+}
+
+# ROOT = released country
+on_country_creation = {
+	if = {
+		limit = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		clear_bogomilism_modifiers = yes
+		set_bogomilism_strength_of_faith_value = { value = 0 }
+	}
+	else = {
+		clear_bogomilism_modifiers_when_changing_religion = yes
+	}
+}
+
+# ROOT = vassal, FROM = overlord
+on_create_vassal = {
+	if = {
+		limit = {
+			uses_bogomilism_streng_of_faith_mechanic = yes
+		}
+		clear_bogomilism_modifiers = yes
+		set_bogomilism_strength_of_faith_value = { value = 0 }
+	}
+	else = {
+		clear_bogomilism_modifiers_when_changing_religion = yes
+	}
+}

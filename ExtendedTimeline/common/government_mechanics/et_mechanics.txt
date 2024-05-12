@@ -1,0 +1,223 @@
+barbarian_glory_mechanic = {
+    alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 3
+    
+    powers = {
+
+        barbarian_glory = {
+            development_scaled_monthly_growth = -1
+            default = 50
+            max = 100
+            show_before_interactions = yes
+            scaled_modifier = {
+                start_value = 50
+                modifier = {
+                      tolerance_own = 2
+                        morale_damage_received = -0.3
+                        global_manpower_modifier = 0.75
+                        global_regiment_cost = -0.4
+                        monthly_barbarian_glory = -0.5
+                        nobles_loyalty_modifier = 0.3
+                }
+              
+            }
+            reverse_scaled_modifier = {
+                start_value = 0
+                end_value = 50
+                modifier = {
+                    global_unrest = 4
+                    tolerance_own = -2
+                    morale_damage_received = 0.3
+                    global_regiment_cost = 0.4
+                    legitimacy = -2 
+                    nobles_loyalty_modifier = -0.3
+                }
+
+            }
+        }
+        barbarian_civilization = {
+           default = 0
+            max = 100
+            reverse_scaled_modifier = {
+                end_value = 100
+                modifier = {
+                    
+                    technology_cost = 0.4
+		            global_prov_trade_power_modifier = -1.0
+		            development_cost = 0.5
+                    global_institution_spread = -0.65
+                }
+            }
+        }
+        
+    }
+    interactions = {
+        
+        hold_games = { #hold games
+			cooldown_years = 3
+			icon = GFX_barbarian_games
+            trigger = {
+                dip_power = 50
+               
+                manpower_percentage = 0.1
+            }
+            effect = {
+                add_dip_power = -50
+               add_yearly_manpower = -0.3
+               add_government_power = {
+		            mechanic_type = barbarian_glory_mechanic
+		            power_type = barbarian_glory
+		            value = 8
+	            } 
+                if = {
+                    limit = {
+                        OR = {
+                            
+                            stability = 3
+                            prestige = 40
+                            diplomatic_reputation = 4
+                        }
+                    }
+                    
+                        random = {
+                            chance = 35
+                            country_event = {id = barbarian.2}
+                        }
+
+                    
+                    
+                }
+            }
+        }
+        encourage_settlement = { #try to settle the tribe
+			icon = GFX_barbarian_settle
+            ai_chance = {
+                factor = 1
+                modifier = {
+                    factor = 0
+                    NOT = {
+                        has_government_power = {
+                             mechanic_type = barbarian_glory_mechanic
+		                    power_type = barbarian_glory
+		                    value = 80
+                        }
+                    }
+                }
+                modifier = {
+                    factor = 0
+                    NOT = {
+                        is_year = 600
+                    }
+                }
+                modifier = {
+                    factor = 0.5
+                    religion = germanic
+                }
+            }
+            trigger = {
+                has_government_power = {
+                    mechanic_type = barbarian_glory_mechanic
+                    power_type = barbarian_glory
+                    value = 15
+                }
+                
+                adm_power = 50
+                
+                is_at_war = no
+            }
+            effect = {
+                add_government_power = {
+		            mechanic_type = barbarian_glory_mechanic
+		            power_type = barbarian_civilization
+		            value = 20
+	            } 
+                add_government_power = {
+		            mechanic_type = barbarian_glory_mechanic
+		            power_type = barbarian_glory
+		            value = -15
+	            } 
+                add_adm_power = -50
+                
+            }
+        }
+        pillage_lands = { # RAIDING PARTY
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					is_year = 600
+				}
+				modifier = {
+					factor = 0
+					has_government_power = {
+						 mechanic_type = barbarian_glory_mechanic
+						power_type = barbarian_civilization
+						value = 30
+					}
+				}
+			}
+			icon = GFX_barbarian_pillage
+			trigger = {
+				
+			   mil_power = 100
+				#NOT = {barbarian_glory = 100}
+				NOT = {
+					war_exhaustion = 2
+				}
+				any_owned_province = {
+					  NOT = {devastation = 5}
+						NOT = {is_capital = yes}
+						
+							development = 4
+						
+				}
+
+				
+			}
+			effect = {
+				add_mil_power = -100
+				 add_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_glory
+					value = 15
+				}
+				add_years_of_income = 0.8
+				add_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_civilization
+					value = -25
+				} 
+				random_owned_province = { 
+					limit = {
+						NOT = { devastation = 1 }
+						NOT = { is_capital = yes }
+						development = 4
+					}
+					add_devastation = 40
+					add_base_manpower = -1
+					add_base_tax = -1
+					add_base_production = -1
+					hidden_effect = {
+						if= {
+							limit = {
+								owner = {
+									 OR = {
+										 unrest = 4
+										 NOT = { stability = 0 }
+										 NOT ={ legitimacy = 80 }
+									}
+								}
+							}
+							random = {
+								chance = 15
+								province_event = {
+									id = barbarian.3
+								}
+							}
+						}
+					}
+				}
+			}
+        }
+    }
+}

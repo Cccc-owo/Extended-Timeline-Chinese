@@ -84,7 +84,17 @@ country_decisions = {
 			NOT = { exists = RUS }
 			adm_tech = 55
 			NOT = { has_reform = states_general_reform }
-			is_free_or_tributary_trigger = yes
+			if = {
+				limit = {
+					overlord = {
+						has_country_flag = feo_russian_cooperation_flag
+					}
+				}
+				always = yes
+			}
+			else = {
+				is_free_or_tributary_trigger = yes
+			}
 			is_nomad = no
 			is_at_war = no
 			owns_core_province = 295			# Moskva
@@ -113,6 +123,7 @@ country_decisions = {
 				}
 			}
 			change_tag = RUS
+			on_change_tag_effect = yes
 			restore_country_name = yes
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
@@ -125,7 +136,7 @@ country_decisions = {
 				else = {
 					if = {
 						limit = { NOT = { government = monarchy } }
-						change_government_to_monarchy = yes
+						change_government = monarchy
 					}
 					add_government_reform = tsardom
 				}

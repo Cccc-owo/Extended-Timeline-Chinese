@@ -1,0 +1,76 @@
+defined_text = {
+	name = GetBogomilismStrengthOfFaithValue
+	random = no
+
+	text = {
+		trigger = {
+			has_bogomilism_strength_of_faith_value = { value = 0.001 }
+		}
+		localisation_key = "[This.et_bogomilism_streng_of_faith_value_display.GetValue]"
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = "0"
+	}
+}
+
+defined_text = {
+	name = GetBogomilismStrengthOfFaithYearlyGainValue
+	random = no
+
+	text = {
+		trigger = {
+			check_variable = { which = yearly_bogomilism_streng_of_faith_value value = 0.001 }
+		}
+		localisation_key = string_get_bogomilism_strength_of_faith_yearly_gain_value_positive
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { which = yearly_bogomilism_streng_of_faith_value value = 0 } }
+		}
+		localisation_key = string_get_bogomilism_strength_of_faith_yearly_gain_value_negative
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = string_get_bogomilism_strength_of_faith_yearly_gain_value_neutral
+	}
+}
+
+defined_text = {
+	name = GetBogomilismStrengthOfFaithChangeReasonNewHeir
+	random = no
+
+	text = {
+		trigger = {
+			government = monarchy
+		}
+		localisation_key = string_get_bogomilism_strength_of_faith_change_reason_new_heir
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = ""
+	}
+}
+defined_text = {
+	name = GetBogomilismStrengthOfFaithChangeReasonDisinheritHeir
+	random = no
+
+	text = {
+		trigger = {
+			government = monarchy
+		}
+		localisation_key = string_get_bogomilism_strength_of_faith_change_reason_disinherit_heir
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = ""
+	}
+}

@@ -1877,7 +1877,12 @@ livestock = {
 		}
 		modifier = {
 			factor = 0
-			religion = cathar
+			OR = {
+				religion = cathar
+				owner = { religion = cathar }
+				religion = bogomilism
+				owner = { religion = bogomilism }
+			}
 		}
 		modifier = {
 			factor = 2

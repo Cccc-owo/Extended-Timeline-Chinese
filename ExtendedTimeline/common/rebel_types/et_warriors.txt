@@ -1,0 +1,137 @@
+ Warrior Rebels. Want you to be more glorious and to be at war 24/7
+warrior_rebels = {
+    color = {210 20 20}
+    area = nation
+
+    government = anti
+    independence = none
+    defection = none
+    defect_delay = 999
+    unit_transfer = yes
+    resilient = no
+    reinforcing = yes
+    general = yes
+    smart = yes
+    gfx_type = culture_province
+    infantry = 0.8
+    cavalry = 0.2
+    artillery = 0.0
+	will_relocate = yes
+    handle_action_negotiate = no			yes/no
+	handle_action_stability = no
+	handle_action_build_core = no
+	handle_action_send_missionary = no
+    spawn_chance = {
+        factor = 1
+        modifier = {
+            factor = 0.25
+            owner = {
+                 NOT = { has_reform = barbarian_reform }
+            }
+        }
+        modifier = {
+            factor = 0
+            owner = {
+                 is_subject = yes
+            }
+        }
+        modifier = {
+			factor = 5
+			owner = {
+				  has_reform = barbarian_reform
+			}
+		}
+        modifier = {
+            factor = 0
+            owner = { is_at_war = yes }
+        }
+        modifier = {
+            factor = 1.5
+            owner = {
+				NOT = {
+					has_government_power = {
+						mechanic_type = barbarian_glory_mechanic
+						power_type = barbarian_glory
+						value = 50
+					}
+				}
+            }
+        }
+        modifier = {
+            factor = 0
+            owner = {
+				has_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_glory
+					value = 50
+				}
+			}
+        }
+        modifier = {
+            factor = 1
+            owner = {
+				has_government_power = {
+					mechanic_type = barbarian_glory_mechanic
+					power_type = barbarian_civilization
+					value = 30
+				}
+            }
+
+        }
+       
+        modifier = {
+            factor = 0
+            estate_loyalty = {
+                estate = estate_nobles
+                loyalty = 60
+            }
+        }
+         modifier = {
+            factor = 2
+			NOT = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 30
+				}
+			}
+        }
+       
+        
+    }
+    spawn_chance = {
+        factor = 0
+    }
+    movement_evaluation = {
+        factor = 1
+    }
+    can_negotiate_trigger = {	#whether the player is allowed to negotiate
+		always = no
+	}
+    siege_won_effect = {
+		add_base_manpower = -1
+        add_local_autonomy = 30
+	}
+    can_enforce_trigger = {         #any 'demands_enforced_effect' effect will not run unless the trigger evaluates to true
+		OR = {
+            NOT = { army_size = 1 }
+            capital_scope = {
+                NOT = { controlled_by = ROOT }
+            }
+        }
+	}
+    demands_description = warriors_demands
+    demands_enforced_effect = {
+		add_stability = -1
+        add_government_power = {
+            mechanic_type = barbarian_glory_mechanic
+            power_type = barbarian_civilization
+            value = -30
+        }
+        random_neighbor_country = {
+            save_event_target_as = targ_country
+        }
+        declare_war = event_target:targ_country
+      
+       
+	}
+}

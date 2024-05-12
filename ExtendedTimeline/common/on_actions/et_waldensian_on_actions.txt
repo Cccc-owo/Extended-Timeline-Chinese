@@ -1,0 +1,76 @@
+on_religion_change = {
+	clear_waldensian_modifiers_when_changing_religion = yes
+}
+
+on_thri_yearly_pulse_2 = {
+	random_events = {
+		# Random Events for Waldensian
+		20 = et_waldensian_events.5
+		20 = et_waldensian_events.6
+		20 = et_waldensian_events.7
+		20 = et_waldensian_events.8
+	}
+}
+
+# ROOT = annexing country, FROM = annexed country
+on_annexed = {
+	FROM = {
+		if = {
+			limit = {
+				uses_waldensian_apostolic_poverty_mechanic = yes
+			}
+			clear_waldensian_modifiers = yes
+		}
+	}
+}
+
+# ROOT = released country, FROM = releasing country
+on_country_released = {
+	if = {
+		limit = {
+			uses_waldensian_apostolic_poverty_mechanic = yes
+		}
+		clear_waldensian_modifiers = yes
+		add_country_modifier = {
+			name = et_waldensian_apostolic_poverty_no_focus_modifier
+			duration = -1
+		}
+	}
+	else = {
+		clear_waldensian_modifiers_when_changing_religion = yes
+	}
+}
+
+# ROOT = released country
+on_country_creation = {
+	if = {
+		limit = {
+			uses_waldensian_apostolic_poverty_mechanic = yes
+		}
+		clear_waldensian_modifiers = yes
+		add_country_modifier = {
+			name = et_waldensian_apostolic_poverty_no_focus_modifier
+			duration = -1
+		}
+	}
+	else = {
+		clear_waldensian_modifiers_when_changing_religion = yes
+	}
+}
+
+# ROOT = vassal, FROM = overlord
+on_create_vassal = {
+	if = {
+		limit = {
+			uses_waldensian_apostolic_poverty_mechanic = yes
+		}
+		clear_waldensian_modifiers = yes
+		add_country_modifier = {
+			name = et_waldensian_apostolic_poverty_no_focus_modifier
+			duration = -1
+		}
+	}
+	else = {
+		clear_waldensian_modifiers_when_changing_religion = yes
+	}
+}

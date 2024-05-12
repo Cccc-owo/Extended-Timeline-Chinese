@@ -3886,8 +3886,16 @@ AYY_ideas = {
 	}
 
 	trigger = {
-		tag = EGY
-		dynasty = "Ayyubid"
+		OR = {
+			AND = {
+				tag = EGY
+				dynasty = "Ayyubid"
+			}
+			AND = {
+				tag = HSN
+				has_country_flag = hsn_ayyubid_ideas
+			}
+		}
 	}
 	free = yes
 
@@ -11178,5 +11186,84 @@ SNX_ideas = {
 	}
 	snx_nippon_ichi_no_hei = {
 		army_tradition = 0.5
+	}
+}
+
+BOT_ideas = {
+    start = {
+        global_institution_spread = 0.25
+        land_morale = 0.1
+    }
+
+    bonus = {
+        prestige = 1
+    }
+    
+    trigger = {
+        tag = BOT
+    }
+    free = yes        #will be added at load.
+    
+    bot_legacy_of_seretse_khama = {
+        republican_tradition = 0.3
+    }
+    bot_develop_the_economy = {
+        development_cost = -0.1
+        build_cost = -0.1
+    }
+    bot_extreme_innovation = {
+        technology_cost = -0.1
+        idea_cost = -0.1
+    }
+    bot_diamonds = {
+        global_trade_goods_size_modifier = 0.1
+    }
+    bot_estate_loyalty = {
+        corporations_loyalty_modifier = 0.1
+        workers_loyalty_modifier = 0.1
+    }
+    bot_adapt_the_economy = {
+        innovativeness_gain = 0.5
+        }
+    bot_shining_example_to_neighbours = {
+        inflation_reduction = 0.1
+    }
+}
+
+HYR_ideas = {
+	start = {
+		infantry_power = 0.1
+		merc_maintenance_modifier = -0.1
+	}
+
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		tag = HYR
+	}
+	free = yes
+	
+	hyr_arsacid_kingship = {
+		development_cost = -0.1
+	}
+	hyr_followers_of_zoroaster = {
+		tolerance_own = 2
+	}
+	hyr_nomadic_allies = {
+		cavalry_cost = -0.1
+	}
+	hyr_hyrcanian_wall = {
+		defensiveness = 0.2
+	}
+	hyr_caspian_silk_road = {
+		production_efficiency = 0.1
+	}
+	hyr_tigers_of_hyrcania = {
+		discipline = 0.05
+	}
+	hyr_caspian_merchants = {
+		caravan_power = 0.2
 	}
 }

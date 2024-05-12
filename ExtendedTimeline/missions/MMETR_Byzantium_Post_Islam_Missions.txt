@@ -1535,8 +1535,10 @@ byzantium_post_islam_mmetr_missions_4 = {
 					}
 				}
 				379 = {		#Jerusalem
-					limit = {
-						NOT = { is_core = ROOT }
+					if = {
+						limit = {
+							NOT = { is_core = ROOT }
+						}
 					}
 					add_permanent_claim = ROOT
 				}

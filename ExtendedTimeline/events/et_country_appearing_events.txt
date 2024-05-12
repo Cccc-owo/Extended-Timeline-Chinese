@@ -1105,9 +1105,9 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		owns = 410
+		owns = 409
 		is_year = 200
-		409 = { is_empty = yes }
+		3211 = { is_empty = yes }
 	}
 	mean_time_to_happen = {
 		months = 240
@@ -1115,22 +1115,13 @@ country_event = {
 	
 	option = {
 		name = "et.EVTOPTA100"
-		409 = { 
+		3211 = { 
 			cede_province = LKH
 			add_core = LKH
 			change_religion = chalcedonism
-			change_trade_goods = spices
+			change_trade_goods = wool
 		}
 		LKH = { every_neighbor_country = { add_truce_with = LKH } }
-		if = {
-			limit = { 3211 = { is_empty = yes } }
-			3211 = { 
-				cede_province = LKH
-				add_core = LKH
-				change_religion = chalcedonism
-				change_trade_goods = wool
-			}
-		}
 	}
 }
 
@@ -2647,6 +2638,14 @@ country_event = {
 		if = {
 			limit = { 1955 = { is_empty = yes } }
 			1955 = { 
+				cede_province = KRL
+				add_core = KRL
+				change_trade_goods = fur
+			}
+		}
+		if = {
+			limit = { 309 = { is_empty = yes } }
+			309 = { 
 				cede_province = KRL
 				add_core = KRL
 				change_trade_goods = fur
@@ -8348,8 +8347,7 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
-			3275 = { 
-				change_province_name = "Golog" 
+			3275 = {
 				change_trade_goods = wool
 				set_base_tax = 1
 				set_base_production = 1

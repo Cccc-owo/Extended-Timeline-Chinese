@@ -104,9 +104,15 @@ country_decisions = {
 				hidden_effect = {
 					set_in_empire = no
 				}
-				set_government_rank = 2
+				if = {
+					limit = {
+						NOT = { is_part_of_hre = yes } #for tooltip purposes
+					}
+					set_government_rank = 2
+				}
 			}
 			change_tag = ITA
+			on_change_tag_effect = yes
 			#this is so that a tier 1 reform is always selected, preventing the user from just never selecting one and enjoying loads of absolutism
 			if = {
 				limit = {
@@ -130,6 +136,7 @@ country_decisions = {
 			}
 			swap_non_generic_missions = yes
 			set_country_flag = formed_italy_flag
+			set_global_flag = formed_italy_flag_global # for german mission
 		}
 		ai_will_do = {
 			factor = 400

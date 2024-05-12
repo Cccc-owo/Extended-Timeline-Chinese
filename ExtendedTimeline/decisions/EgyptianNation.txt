@@ -48,7 +48,7 @@ country_decisions = {
 		}
 		allow = {
 			capital = 361 # Cairo
-			adm_tech = 65
+			adm_tech = 63
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
@@ -169,6 +169,10 @@ country_decisions = {
 			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
 			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			if = {
 				limit = { has_regency = no }
 				kill_ruler = yes
 			}
@@ -185,7 +189,6 @@ country_decisions = {
 					}
 					change_government = monarchy
 				}
-				set_government_rank = 2
 				add_government_reform = mamluk_government
 				add_country_modifier = {
 					name = "centralization_modifier"
@@ -219,7 +222,7 @@ country_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				adm_tech = 20
+				adm_tech = 63
 			}
 		}
 	}

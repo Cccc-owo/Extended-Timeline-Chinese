@@ -62,7 +62,7 @@ country_event = {
 				random_owned_province = { limit = { region = low_countries_region } add_core = FRD set_province_flag = splittag1_prov }
 			}
 		}
-		if = { limit = { government_rank = 2 any_owned_province = { region = italy_region } NOT = { exists = ITA } }
+		if = { limit = { government_rank = 2 any_owned_province = { region = italy_region NOT = { province_id = 102 } } NOT = { exists = ITA } }
 			if = { limit = { is_variable_equal = { which = splittags_set value = 2 } }
 				set_variable = { which = splittags_set value = 3 }
 				ITA = { save_global_event_target_as = splittag3 }
