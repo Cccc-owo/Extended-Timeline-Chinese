@@ -1302,15 +1302,15 @@ MEE_BYZ_defense_5 = {
 			province_id = 151
 			OR = {
 				NOT = { owned_by = ROOT }
-				NOT = { base_manpower = 7 }
+				NOT = { base_manpower = 6 }
 			}
 		}
 		trigger = {
+			151 = {
+				base_manpower = 6
+				owned_by = ROOT
+			}
 			OR = {
-				151 = {
-					base_manpower = 7
-					owned_by = ROOT
-				}
 				has_mil_advisor_2 = yes
 				fortification_expert = 1
 				if = {
@@ -1912,14 +1912,30 @@ MEE_BYZ_economy_1 = {
 					}
 				}
 				AND = {
-					OR = {
-						province_id = 148
-						province_id = 330
-					}
+					province_id = 148
 					OR = {
 						NOT = { owned_by = ROOT }
 						NOT = { has_production_building_trigger = yes }
 					}
+				}
+				AND = {
+					province_id = 330
+                    OR = {
+                        AND = {
+                            trade_goods = gold
+                            OR = {
+                                NOT = { owned_by = ROOT }
+                                NOT = { base_production = 10 }
+                            }
+                        }
+                        AND = {
+                            NOT = { trade_goods = gold }
+                            OR = {
+                                NOT = { owned_by = ROOT }
+                                NOT = { has_production_building_trigger = yes }
+                            }
+                        }
+                    }
 				}
 			}
 		}
@@ -1937,7 +1953,13 @@ MEE_BYZ_economy_1 = {
 			}
 			330 = {
 				owned_by = ROOT
-				has_production_building_trigger = yes
+				if = {
+					limit = {
+						NOT = { trade_goods = gold }
+					}
+					has_production_building_trigger = yes
+				}
+				else = { base_production = 12 }
 			}
 			
 			gold_income = 10

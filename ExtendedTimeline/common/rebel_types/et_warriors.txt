@@ -1,4 +1,4 @@
- Warrior Rebels. Want you to be more glorious and to be at war 24/7
+# Warrior Rebels. Want you to be more glorious and to be at war 24/7
 warrior_rebels = {
     color = {210 20 20}
     area = nation
@@ -24,7 +24,7 @@ warrior_rebels = {
     spawn_chance = {
         factor = 1
         modifier = {
-            factor = 0.25
+            factor = 0
             owner = {
                  NOT = { has_reform = barbarian_reform }
             }
@@ -127,11 +127,5 @@ warrior_rebels = {
             power_type = barbarian_civilization
             value = -30
         }
-        random_neighbor_country = {
-            save_event_target_as = targ_country
-        }
-        declare_war = event_target:targ_country
-      
-       
 	}
 }

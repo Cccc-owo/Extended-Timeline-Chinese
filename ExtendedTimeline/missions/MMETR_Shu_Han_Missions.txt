@@ -709,9 +709,11 @@ shu_han_missions_3 = {
 					duration = 7300
 				}
 				1836 = {	#Luoyang
-					limit = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
+					if = {
+						limit = {
+							NOT = { owned_by = ROOT }
+							NOT = { is_core = ROOT }
+						}
 					}
 					add_core = ROOT
 				}
