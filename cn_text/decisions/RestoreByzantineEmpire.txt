@@ -2,7 +2,14 @@ country_decisions = {
   restore_byzantine_empire = {
     major = yes
     potential = {
-      was_never_end_game_tag_trigger = yes
+      OR = {
+        was_never_end_game_tag_trigger = yes
+        AND = {
+          was_tag = BYZ
+          tag = MOE
+          has_country_flag = BYZ_accepted_ottoman_threat
+        }
+      }
       normal_or_historical_nations = yes
       NOT = {
         has_country_flag = formed_byzantium_flag
@@ -206,6 +213,12 @@ country_decisions = {
         show_ambient_object = hagia_sophia
         hide_ambient_object = hagia_sophia_minarets
       }
+      if = {
+        limit = {
+          government = tribal
+        }
+        change_government = monarchy
+      }
       set_government_rank = 3
       if = {
         limit = {
@@ -218,9 +231,34 @@ country_decisions = {
       set_country_flag = formed_byzantium_flag
       if = {
         limit = {
+          has_country_flag = feo_byzantium_formation_stats_flag
+        }
+        change_ruler_stat = {
+          type = adm
+          amount = 1
+        }
+        change_ruler_stat = {
+          type = dip
+          amount = 1
+        }
+        change_ruler_stat = {
+          type = mil
+          amount = 1
+        }
+      }
+      if = {
+        limit = {
           has_country_flag = BYZ_accepted_ottoman_threat
         }
         clr_country_flag = BYZ_accepted_ottoman_threat
+      }
+      if = {
+        limit = {
+          has_country_flag = tre_byzantium_forming_bonus_mana
+        }
+        add_adm_power = 100
+        add_dip_power = 100
+        add_mil_power = 100
       }
     }
     ai_will_do = {

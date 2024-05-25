@@ -1371,10 +1371,10 @@ country_event = {
     tag = TUR
     is_year = 1700
     NOT = {
-      exists = TRI
+      exists = TRP
     }
     any_owned_province = {
-      is_core = TRI
+      is_core = TRP
       culture = tunisian
       can_spawn_rebels = nationalist_rebels
     }
@@ -1387,7 +1387,7 @@ country_event = {
       random_owned_province = {
         limit = {
           culture = tunisian
-          is_core = TRI
+          is_core = TRP
           can_spawn_rebels = nationalist_rebels
         }
         set_province_flag = tripolitanian_uprising_3
@@ -1395,7 +1395,7 @@ country_event = {
       random_owned_province = {
         limit = {
           culture = tunisian
-          is_core = TRI
+          is_core = TRP
           can_spawn_rebels = nationalist_rebels
           NOT = {
             has_province_flag = tripolitanian_uprising_3
@@ -1414,7 +1414,7 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 3
-        friend = TRI
+        friend = TRP
       }
       clr_province_flag = tripolitanian_uprising_3
     }
@@ -1425,7 +1425,7 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        friend = TRI
+        friend = TRP
       }
       clr_province_flag = tripolitanian_uprising_2
     }
@@ -3481,6 +3481,31 @@ country_event = {
       hidden_effect = {
         grant_independence = yes
       }
+      eyalet_effect = {
+        tag = EY3
+      }
+    }
+    create_subject = {
+      who = HAB
+      subject_type = eyalet
+    }
+    HAB = {
+      if = {
+        limit = {
+          NOT = {
+            government = monarchy
+          }
+        }
+        change_government = monarchy
+      }
+      if = {
+        limit = {
+          NOT = {
+            has_reform = eyalet_government
+          }
+        }
+        add_government_reform = eyalet_government
+      }
       if = {
         limit = {
           is_lesser_in_union = no
@@ -3512,14 +3537,6 @@ country_event = {
           }
         }
       }
-      add_government_reform = eyalet_government
-      eyalet_effect = {
-        tag = EY3
-      }
-    }
-    create_subject = {
-      who = HAB
-      subject_type = eyalet
     }
     ai_chance = {
       factor = 1
@@ -6713,6 +6730,12 @@ country_event = {
         controlled_by = ROOT
       }
     }
+    NOT = {
+      exists = EGY
+    }
+  }
+  mean_time_to_happen = {
+    days = 1
   }
   option = {
     name = flavor_tur.242.a
@@ -9625,7 +9648,6 @@ country_event = {
     set_capital = 585
     585 = {
       rename_capital = "O¯eNT"  # Istaungoo
-      change_province_name = "O¯eNT"  # Istaungoo
       if = {
         limit = {
           NOT = {

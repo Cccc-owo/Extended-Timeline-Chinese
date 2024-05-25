@@ -290,7 +290,9 @@ gen_north_india_2 = {
       }
     }
     effect = {
-      add_mercantilism = 5
+      add_mercantilism_or_monarch_power = {
+        amount = 5
+      }
       524 = {
         add_trade_modifier = {
           who = root
@@ -327,7 +329,9 @@ gen_north_india_2 = {
       total_development = 1000
     }
     effect = {
-      add_prestige = 30
+      add_prestige_or_monarch_power = {
+        amount = 30
+      }
       if = {
         limit = {
           NOT = {
@@ -608,7 +612,9 @@ gen_south_india_2 = {
       total_development = 1000
     }
     effect = {
-      add_prestige = 30
+      add_prestige_or_monarch_power = {
+        amount = 30
+      }
       add_adm_power = 100
       add_dip_power = 100
       add_mil_power = 100
@@ -675,7 +681,9 @@ gen_hindu = {
       }
     }
     effect = {
-      add_prestige = 20
+      add_prestige_or_monarch_power = {
+        amount = 20
+      }
       if = {
         limit = {
           has_estate = estate_brahmins
@@ -923,6 +931,13 @@ gen_hindu = {
       add_country_modifier = {
         name = "sapta_puri_modifier"
         duration = 7300
+      }
+      define_advisor = {
+        type = inquisitor
+        skill = 3
+        culture = ROOT
+        religion = ROOT
+        cost_multiplier = 0.5
       }
     }
   }
@@ -1361,11 +1376,21 @@ gen_indian_sikh = {
     }
     effect = {
       2075 = {
-        add_province_modifier = {
-          name = "sikh_golden_temple"
-          duration = -1
+        if = {
+          limit = {
+            has_dlc = "Leviathan"
+          }
+          add_great_project_tier = {
+            type = golden_temple
+            tier = 1
+          }
         }
-        change_province_name = "?–ÆY)RR"  # Amritsar
+        else = {
+          add_province_modifier = {
+            name = "sikh_golden_temple"
+            duration = -1
+          }
+        }
         rename_capital = "?–ÆY)RR"  # Amritsar
       }
       multan_area = {
@@ -1892,6 +1917,13 @@ gen_south_india_5 = {
     effect = {
       add_years_of_income = 1
       add_dip_power = 100
+      define_advisor = {
+        type = trader
+        skill = 3
+        culture = ROOT
+        religion = ROOT
+        cost_multiplier = 0.5
+      }
     }
   }
 }
