@@ -1508,7 +1508,9 @@ country_event = {
   major = yes
   option = {
     name = flavor_tur.252.a
-    add_prestige = 100
+    add_prestige_or_monarch_power = {
+      amount = 100
+    }
     change_price = {
       trade_goods = silk
       key = PERSIAN_SILK
@@ -2085,11 +2087,9 @@ country_event = {
             has_country_flag = per_zoroastrian_missions
           }
         }
-        change_province_name = "“^¯efWN<SšN"  # Kustantiniya
         rename_capital = "“^¯efWN<SšN"  # Kustantiniya
       }
       else = {
-        change_province_name = "TëXfWN<S6w"  # Konstantiniyyeh
         rename_capital = "TëXfWN<S6w"  # Konstantiniyyeh
       }
       remove_base_development = {
@@ -2192,7 +2192,6 @@ country_event = {
     add_accepted_culture_or_dip_power = {
       culture = georgian
       free = yes
-      new_line = yes
     }
     add_accepted_culture_or_dip_power = {
       culture = armenian
@@ -2288,6 +2287,10 @@ country_event = {
     NOT = {
       religion_group = zoroastrian_group
     }
+    any_owned_province = {
+      religion = root
+      is_state = yes
+    }
   }
   mean_time_to_happen = {
     months = 24
@@ -2295,14 +2298,27 @@ country_event = {
   immediate = {
     hidden_effect = {
       set_country_flag = zoroastrian_study_event
+      random_owned_province = {
+        limit = {
+          religion = root
+          is_state = yes
+        }
+        save_event_target_as = target_province
+      }
     }
   }
   option = {
     name = flavor_per.44.a
     custom_tooltip = flavor_per.44.a.tt
+    goto = target_province
     add_estate_loyalty = {
       estate = estate_church
       loyalty = -15
+    }
+    event_target:target_province = {
+      spawn_country_religious_rebels = {
+        size = 3
+      }
     }
     add_piety = -0.2
     set_country_flag = promoted_zoroastrian_studies
@@ -2312,6 +2328,7 @@ country_event = {
   }
   option = {
     name = flavor_per.44.b
+    add_legitimacy = -15
     add_piety = 0.1
     ai_chance = {
       factor = 0
@@ -3133,7 +3150,7 @@ country_event = {
     }
     event_target:target_province = {
       spawn_province_religious_rebels = {
-        size = 2
+        size = 4
       }
     }
     add_piety = -0.2
@@ -3152,7 +3169,7 @@ country_event = {
     }
     event_target:target_province = {
       spawn_province_religious_rebels = {
-        size = 1
+        size = 3
       }
     }
     add_piety = -0.1
@@ -3220,7 +3237,7 @@ country_event = {
     set_ruler_religion = zoroastrian
     event_target:target_province = {
       spawn_province_religious_rebels = {
-        size = 2
+        size = 4
       }
     }
     add_estate_loyalty = {
@@ -3465,6 +3482,7 @@ country_event = {
   title = flavor_per.62.t
   desc = flavor_per.62.desc
   picture = RELIGIOUS_CONVERSION_eventPicture
+  goto = target_province
   trigger = {
     has_country_modifier = zoroastrian_interests
     has_country_flag = zoroastrian_study_event
@@ -3473,6 +3491,10 @@ country_event = {
     }
     NOT = {
       has_country_flag = zoroastrian_court_event
+    }
+    any_owned_province = {
+      religion = root
+      controlled_by = root
     }
   }
   mean_time_to_happen = {
@@ -3484,6 +3506,13 @@ country_event = {
   }
   immediate = {
     hidden_effect = {
+      random_owned_province = {
+        limit = {
+          religion = root
+          controlled_by = root
+        }
+        save_event_target_as = target_province
+      }
       set_country_flag = zoroastrian_court_event
     }
   }
@@ -3500,6 +3529,11 @@ country_event = {
       loyalty = -15
     }
     add_piety = -0.2
+    event_target:target_province = {
+      spawn_province_religious_rebels = {
+        size = 3
+      }
+    }
     set_country_flag = promoted_zoroastrian_studies
     ai_chance = {
       factor = 1
@@ -3515,6 +3549,12 @@ country_event = {
     add_estate_loyalty = {
       estate = estate_church
       loyalty = 15
+    }
+    event_target:target_province = {
+      spawn_rebels = {
+        type = noble_rebels
+        size = 3
+      }
     }
     add_piety = 0.1
     ai_chance = {
@@ -3571,6 +3611,12 @@ country_event = {
         }
         save_event_target_as = target_province_3
       }
+      random_owned_province = {
+        limit = {
+          is_state = yes
+        }
+        save_event_target_as = target_province_4
+      }
     }
   }
   option = {
@@ -3584,17 +3630,22 @@ country_event = {
     }
     event_target:target_province_1 = {
       spawn_country_religious_rebels = {
-        size = 3
+        size = 5
       }
     }
     event_target:target_province_2 = {
       spawn_country_religious_rebels = {
-        size = 2
+        size = 3
       }
     }
     event_target:target_province_3 = {
       spawn_country_religious_rebels = {
-        size = 2
+        size = 3
+      }
+    }
+    event_target:target_province_4 = {
+      spawn_country_religious_rebels = {
+        size = 3
       }
     }
     if = {

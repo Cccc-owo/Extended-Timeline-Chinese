@@ -1488,12 +1488,14 @@ rum_mmetr_missions_5 = {
         duration = 10950
       }
       2410 = {
-        limit = {
-          NOT = {
-            owned_by = ROOT
-          }
-          NOT = {
-            is_core = ROOT
+        if = {
+          limit = {
+            NOT = {
+              owned_by = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
           }
         }
         add_permanent_claim = ROOT

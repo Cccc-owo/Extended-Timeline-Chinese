@@ -127,9 +127,14 @@ ming_missions_1 = {
             who = ROOT
             value = 150
           }
-          trust = {
-            who = ROOT
-            value = 70
+          if = {
+            limit = {
+              has_dlc = "Leviathan"
+            }
+            trust = {
+              who = ROOT
+              value = 70
+            }
           }
         }
         any_subject_country = {
@@ -144,9 +149,14 @@ ming_missions_1 = {
             who = ROOT
             value = 150
           }
-          trust = {
-            who = ROOT
-            value = 70
+          if = {
+            limit = {
+              has_dlc = "Leviathan"
+            }
+            trust = {
+              who = ROOT
+              value = 70
+            }
           }
         }
       }
@@ -183,9 +193,14 @@ ming_missions_1 = {
                 who = ROOT
                 value = 150
               }
-              trust = {
-                who = ROOT
-                value = 70
+              if = {
+                limit = {
+                  has_dlc = "Leviathan"
+                }
+                trust = {
+                  who = ROOT
+                  value = 70
+                }
               }
             }
           }
@@ -208,9 +223,14 @@ ming_missions_1 = {
                 who = ROOT
                 value = 150
               }
-              trust = {
-                who = ROOT
-                value = 70
+              if = {
+                limit = {
+                  has_dlc = "Leviathan"
+                }
+                trust = {
+                  who = ROOT
+                  value = 70
+                }
               }
             }
             capital_scope = {
@@ -242,9 +262,14 @@ ming_missions_1 = {
               who = ROOT
               value = 150
             }
-            trust = {
-              who = ROOT
-              value = 70
+            if = {
+              limit = {
+                has_dlc = "Leviathan"
+              }
+              trust = {
+                who = ROOT
+                value = 70
+              }
             }
           }
           add_country_modifier = {
@@ -273,9 +298,14 @@ ming_missions_1 = {
               who = ROOT
               value = 150
             }
-            trust = {
-              who = ROOT
-              value = 70
+            if = {
+              limit = {
+                has_dlc = "Leviathan"
+              }
+              trust = {
+                who = ROOT
+                value = 70
+              }
             }
           }
           capital_scope = {
@@ -668,15 +698,15 @@ chinese_kingdoms_1 = {
         add_ruler_personality = conqueror_personality
       }
       change_ruler_stat = {
-        stat = adm
+        type = adm
         amount = 3
       }
       change_ruler_stat = {
-        stat = dip
+        type = dip
         amount = 3
       }
       change_ruler_stat = {
-        stat = mil
+        type = mil
         amount = 3
       }
       custom_tooltip = chi_warscore_reward_tt
@@ -888,8 +918,21 @@ ming_missions_1_b = {
       }
     }
     effect = {
-      custom_tooltip = mng_enable_3_grand_coordinators_offices_tt
-      set_country_flag = mng_enable_3_grand_coordinators_offices_flag
+      if = {
+        limit = {
+          has_dlc = "Golden Century"
+        }
+        custom_tooltip = mng_enable_3_grand_coordinators_offices_tt
+        set_country_flag = mng_enable_3_grand_coordinators_offices_flag
+      }
+      else = {
+        add_corruption = -2
+        change_government_reform_progress = 100
+        change_ruler_stat = {
+          type = adm
+          amount = 1
+        }
+      }
     }
   }
 }
@@ -1068,7 +1111,15 @@ DOM_Qing_Missions_1_b_formable = {
       else = {
         num_of_cavalry = 50
       }
-      empire_of_china_reform_passed = modernize_the_banners_decision
+      if = {
+        limit = {
+          is_emperor_of_china = yes
+        }
+        empire_of_china_reform_passed = modernize_the_banners_decision
+      }
+      else = {
+        full_idea_group = aristocracy_ideas
+      }
       OR = {
         national_focus = MIL
         army_reformer = 3
@@ -1621,7 +1672,9 @@ DOM_Qing_Missions_2 = {
       }
     }
     trigger = {
-      tag = MCH
+      is_or_was_tag = {
+        tag = MCH
+      }
       army_size = 25
       OR = {
         power_projection = 50

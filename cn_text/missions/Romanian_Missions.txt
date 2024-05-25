@@ -15,7 +15,7 @@ romanian_missions_1 = {
   }
   has_country_shield = yes
   order_of_the_dragon = {
-    icon = mission_alliances
+    icon = reformatio_sigismundi
     required_missions = {}
     trigger = {
       is_subject = no
@@ -62,6 +62,14 @@ romanian_missions_1 = {
       }
     }
     effect = {
+      if = {
+        limit = {
+          has_dlc = "Winds of Change"
+          has_dlc = "Golden Century"
+        }
+        custom_tooltip = boh_unlock_order_of_the_dragon
+        set_country_flag = boh_unlocked_order_of_the_dragon
+      }
       add_country_modifier = {
         name = "order_of_the_dragon_restored"
         duration = 7300
@@ -120,18 +128,8 @@ romanian_missions_1 = {
       }
     }
     effect = {
-      if = {
-        limit = {
-          exists = TUR
-          TUR = {
-            capital_scope = {
-              controlled_by = ROOT
-            }
-          }
-        }
-        country_event = {
-          id = flavor_wal.2
-        }
+      add_power_projection_mission = {
+        amount = 25
       }
       macedonia_area = {
         limit = {
@@ -169,23 +167,60 @@ romanian_missions_1 = {
           }
           add_claim = ROOT
         }
-      }
-      balkan_region = {
-        limit = {
-          NOT = {
-            is_permanent_claim = ROOT
+        balkan_region = {
+          limit = {
+            NOT = {
+              is_permanent_claim = ROOT
+            }
+            NOT = {
+              is_core = ROOT
+            }
+            owned_by = TUR
           }
-          NOT = {
-            is_core = ROOT
-          }
-          owned_by = TUR
+          add_claim = ROOT
         }
-        add_claim = ROOT
+        if = {
+          limit = {
+            exists = TUR
+            TUR = {
+              capital_scope = {
+                controlled_by = ROOT
+              }
+            }
+          }
+          country_event = {
+            id = flavor_wal.2
+          }
+        }
+      }
+      if = {
+        limit = {
+          exists = TUR
+          TUR = {
+            capital_scope = {
+              controlled_by = ROOT
+            }
+          }
+        }
+        custom_tooltip = occupy_ottoman_capital_yes
+        tooltip = {
+          country_event = {
+            id = flavor_wal.2
+          }
+        }
+      }
+      else = {
+        custom_tooltip = occupy_ottoman_capital_no
+        tooltip = {
+          country_event = {
+            id = flavor_wal.2
+          }
+        }
       }
     }
   }
   rmn_drive_out_the_turks = {
-    icon = mission_crusade_for_varna
+    icon = geo_break_the_crescent_2
     required_missions = {
       rmn_impale_the_sultan
     }
@@ -231,7 +266,9 @@ romanian_missions_1 = {
       }
     }
     effect = {
-      add_prestige = 25
+      add_prestige_or_monarch_power = {
+        amount = 25
+      }
       add_mil_power = 100
       northern_greece_area = {
         limit = {
@@ -258,7 +295,7 @@ romanian_missions_1 = {
     }
   }
   rmn_heir_of_rome = {
-    icon = mission_monarch_in_throne_room
+    icon = end_the_schism
     required_missions = {
       rmn_drive_out_the_turks
     }
@@ -286,7 +323,18 @@ romanian_missions_1 = {
       }
     }
     effect = {
-      add_adm_power = 100
+      change_ruler_stat = {
+        type = adm
+        amount = 1
+      }
+      change_ruler_stat = {
+        type = dip
+        amount = 1
+      }
+      change_ruler_stat = {
+        type = mil
+        amount = 1
+      }
       add_country_modifier = {
         name = "roman_romania"
         duration = 7300
@@ -311,7 +359,7 @@ romanian_missions_5 = {
   }
   has_country_shield = yes
   unite_the_voivodes = {
-    icon = mission_noble_council
+    icon = mission_unite_home_region
     required_missions = {}
     completed_by = 1918.11.11
     provinces_to_highlight = {
@@ -327,14 +375,20 @@ romanian_missions_5 = {
       is_subject = no
       wallachia_area = {
         type = all
-        owned_by = ROOT
+        country_or_non_sovereign_subject_holds = ROOT
       }
       moldavia_area = {
         type = all
-        owned_by = ROOT
+        country_or_non_sovereign_subject_holds = ROOT
       }
     }
     effect = {
+      wallachia_area = {
+        add_nationalism = -10
+      }
+      moldavia_area = {
+        add_nationalism = -10
+      }
       add_country_modifier = {
         name = "united_voivodes"
         duration = 7300
@@ -406,7 +460,7 @@ romanian_missions_5 = {
     }
   }
   rmn_conquer_transylvania = {
-    icon = mission_impaled_soldies
+    icon = mission_landsknecht_soldier
     required_missions = {
       found_bucharest
     }
@@ -423,14 +477,20 @@ romanian_missions_5 = {
     trigger = {
       transylvania_area = {
         type = all
-        owned_by = ROOT
+        country_or_non_sovereign_subject_holds = ROOT
       }
       southern_transylvania_area = {
         type = all
-        owned_by = ROOT
+        country_or_non_sovereign_subject_holds = ROOT
       }
     }
     effect = {
+      transylvania_area = {
+        add_local_autonomy = -25
+      }
+      southern_transylvania_area = {
+        add_local_autonomy = -25
+      }
       add_country_modifier = {
         name = "rmn_consolidating_transylvania"
         duration = 7300
@@ -442,6 +502,13 @@ romanian_missions_5 = {
     required_missions = {
       rmn_conquer_transylvania
     }
+    provinces_to_highlight = {
+      owned_by = ROOT
+      has_fort_building_trigger = yes
+      NOT = {
+        fort_level = 4
+      }
+    }
     trigger = {
       num_of_owned_provinces_with = {
         fort_level = 4
@@ -449,6 +516,7 @@ romanian_missions_5 = {
       }
     }
     effect = {
+      add_yearly_manpower = 1
       add_country_modifier = {
         name = "rmn_bulwark"
         duration = 7300
