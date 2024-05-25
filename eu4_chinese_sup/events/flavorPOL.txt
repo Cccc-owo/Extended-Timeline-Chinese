@@ -1,4 +1,4 @@
-######################################## 
+ 	# ####################################### 
 # Flavor events for Poland
 # 
 # written by Sara Wendel-�rtqvist
@@ -12,8 +12,7 @@ country_event = {
   desc = "flavor_pol.EVTDESC3467"
   picture = LIBERUM_VETO_eventPicture
   fire_only_once = yes
-  trigger = {
-    #NOT = {	num_of_estate_privileges = { estate = estate_nobles	value = 4 } }
+  trigger = { 	# NOT = {	num_of_estate_privileges = { estate = estate_nobles	value = 4 } }
     OR = {
       AND = {
         tag = POL
@@ -181,8 +180,7 @@ country_event = {
   is_triggered_only = yes
   option = {
     name = "flavor_pol.EVTOPTA3473" 	#  Make it a personal royal fiefdom
-    257 = {
-      # Warszawa
+    257 = { 	#  Warszawa
       if = {
         limit = {
           NOT = {
@@ -1705,8 +1703,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #We must burn this abomination
+  option = { 	# We must burn this abomination
     name = flavor_pol.15.a
     add_papal_influence = 10
     260 = {
@@ -1726,8 +1723,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Interesting...
+  option = { 	# Interesting...
     name = flavor_pol.15.b
     260 = {
       change_religion = reformed
@@ -1869,8 +1865,8 @@ country_event = {
       }
       custom_tooltip = pol_impact_future_missions_tt
       set_country_flag = pol_chose_pu_flag
+      custom_tooltip = pol_potential_cb_on_hungary_tt
     }
-    custom_tooltip = pol_potential_cb_on_hungary_tt
   }
   option = {
     name = flavor_pol.18.b 	# Appoint a Local Noble.
@@ -1898,16 +1894,21 @@ country_event = {
         who = ROOT
         modifier = lit_denied_birthright
       }
-      set_country_flag = lit_decline_pu_flag
+      if = {
+        limit = {
+          has_dlc = "Lions of the North"
+        }
+        set_country_flag = lit_decline_pu_flag
+      }
     }
     if = {
       limit = {
-        has_dlc = "Emperor"
+        has_dlc = "Lions of the North"
       }
-      custom_tooltip = pol_impact_future_missions_tt
       set_country_flag = pol_denied_pu_flag
+      custom_tooltip = pol_impact_future_missions_tt
+      custom_tooltip = pol_potential_cb_on_bohemia_tt
     }
-    custom_tooltip = pol_potential_cb_on_bohemia_tt
   }
 }
 # Become elective
@@ -2117,8 +2118,7 @@ country_event = {
   }
 }
 ####Lions of the North#### scripted by Big Boss
-country_event = {
-  #The Little Kings Uprising
+country_event = { 	# The Little Kings Uprising
   id = flavor_pol.23
   title = flavor_pol.23.t
   desc = flavor_pol.23.d
@@ -2175,8 +2175,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #The Constitution of [GetYear]
+country_event = { 	# The Constitution of [GetYear]
   id = flavor_pol.24
   title = flavor_pol.24.t
   desc = flavor_pol.24.d
@@ -2249,8 +2248,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #The Constitution of [GetYear]
+country_event = { 	# The Constitution of [GetYear]
   id = flavor_pol.25
   title = flavor_pol.25.t
   desc = flavor_pol.25.d
@@ -2387,8 +2385,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #Polish-Hungarian Ties 
+country_event = { 	# Polish-Hungarian Ties 
   id = flavor_pol.26
   title = flavor_pol.26.t
   desc = flavor_pol.26.d
@@ -2521,8 +2518,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #Expanding the Quarter Army 
+country_event = { 	# Expanding the Quarter Army 
   id = flavor_pol.27
   title = flavor_pol.27.t
   desc = flavor_pol.27.d
@@ -2614,8 +2610,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #Collegium Maius & the Growth of Thought
+country_event = { 	# Collegium Maius & the Growth of Thought
   id = flavor_pol.28
   title = flavor_pol.28.t
   desc = flavor_pol.28.d
@@ -2668,8 +2663,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #Stefan the Great Ascends on the Moldavian Throne
+country_event = { 	# Stefan the Great Ascends on the Moldavian Throne
   id = flavor_pol.29
   title = flavor_pol.29.t
   desc = flavor_pol.29.d
@@ -2726,8 +2720,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #The Crown of Rome
+country_event = { 	# The Crown of Rome
   id = flavor_pol.30
   title = flavor_pol.30.t
   desc = flavor_pol.30.d
@@ -2841,8 +2834,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #Baltic Gold & the Gates of Kings 
+country_event = { 	# Baltic Gold & the Gates of Kings 
   id = flavor_pol.31
   title = flavor_pol.31.t
   desc = flavor_pol.31.d
@@ -2868,8 +2860,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #Negotiations of Lublin 
+country_event = { 	# Negotiations of Lublin 
   id = flavor_pol.32
   title = flavor_pol.32.t
   desc = flavor_pol.32.d
@@ -2956,8 +2947,7 @@ country_event = {
     }
   }
 }
-country_event = {
-  #The Sejm Diet of [GetYear]
+country_event = { 	# The Sejm Diet of [GetYear]
   id = flavor_pol.33
   title = flavor_pol.33.t
   desc = flavor_pol.33.d

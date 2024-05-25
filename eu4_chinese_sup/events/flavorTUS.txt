@@ -14,8 +14,16 @@ country_event = {
   fire_only_once = yes
   trigger = {
     OR = {
-      tag = TUS
-      tag = LAN 	#  florence
+      AND = {
+        tag = TUS
+        tag = LAN 	#  florence
+        NOT = {
+          VEN = {
+            has_country_flag = ven_access_italian_events_flag
+          }
+        }
+      }
+      has_country_flag = ven_access_italian_events_flag
     }
     is_year = 1500
     NOT = {
@@ -144,8 +152,16 @@ country_event = {
   fire_only_once = yes
   trigger = {
     OR = {
-      tag = TUS
-      tag = LAN
+      AND = {
+        tag = TUS
+        tag = LAN 	#  florence
+        NOT = {
+          VEN = {
+            has_country_flag = ven_access_italian_events_flag
+          }
+        }
+      }
+      has_country_flag = ven_access_italian_events_flag
     }
     is_year = 1550
     owns = 115
@@ -266,8 +282,16 @@ country_event = {
   fire_only_once = yes
   trigger = {
     OR = {
-      tag = TUS
-      tag = LAN
+      AND = {
+        tag = TUS
+        tag = LAN 	#  florence
+        NOT = {
+          VEN = {
+            has_country_flag = ven_access_italian_events_flag
+          }
+        }
+      }
+      has_country_flag = ven_access_italian_events_flag
     }
     is_year = 1650
     NOT = {
@@ -311,8 +335,16 @@ country_event = {
   fire_only_once = yes
   trigger = {
     OR = {
-      tag = TUS
-      tag = LAN
+      AND = {
+        tag = TUS
+        tag = LAN 	#  florence
+        NOT = {
+          VEN = {
+            has_country_flag = ven_access_italian_events_flag
+          }
+        }
+      }
+      has_country_flag = ven_access_italian_events_flag
     }
     has_institution = printing_press
     is_at_war = no

@@ -879,10 +879,7 @@ country_event = {
   option = {
     name = flavor_mam.100.a
     trigger = {
-      OR = {
-        has_dlc = "Golden Century"
-        has_dlc = "Rule Britannia"
-      }
+      has_dlc = "Rule Britannia"
     }
     custom_tooltip = mam_unlock_galley_doctrine_tt
     clr_country_flag = mam_unlock_galley_doctrine_flag
@@ -894,10 +891,7 @@ country_event = {
   option = {
     name = flavor_mam.100.b
     trigger = {
-      OR = {
-        has_dlc = "Golden Century"
-        has_dlc = "Rule Britannia"
-      }
+      has_dlc = "Rule Britannia"
     }
     custom_tooltip = mam_unlock_light_doctrine_tt
     clr_country_flag = mam_unlock_galley_doctrine_flag
@@ -909,10 +903,7 @@ country_event = {
   option = {
     name = flavor_mam.100.c
     trigger = {
-      OR = {
-        has_dlc = "Golden Century"
-        has_dlc = "Rule Britannia"
-      }
+      has_dlc = "Rule Britannia"
     }
     custom_tooltip = mam_unlock_warships_doctrine_tt
     clr_country_flag = mam_unlock_galley_doctrine_flag
@@ -924,7 +915,7 @@ country_event = {
   option = {
     name = flavor_mam.100.e
     trigger = {
-      has_dlc = "Golden Century"
+      has_dlc = "Rule Britannia"
     }
     custom_tooltip = mam_unlock_transports_doctrine_tt
     clr_country_flag = mam_unlock_galley_doctrine_flag
@@ -937,7 +928,7 @@ country_event = {
     name = flavor_mam.100.f
     trigger = {
       NOT = {
-        has_dlc = "Golden Century"
+        has_dlc = "Rule Britannia"
       }
     }
     create_admiral = {
@@ -992,7 +983,6 @@ country_event = {
         }
         remove_province_modifier = nile_estuary_modifier
         add_province_modifier = {
-          #TODO add in scripted trigger
           name = expanded_nile_estuary_modifier
           duration = -1
         }
@@ -1601,31 +1591,27 @@ country_event = {
   title = flavor_mam.115.t
   desc = flavor_mam.115.d
   picture = BYZ_HARBOUR_eventPicture
-  fire_only_once = yes
   is_triggered_only = yes
+  major_trigger = {
+    has_discovered = 2316
+  }
   option = {
     name = flavor_mam.115.a
     hidden_effect = {
       add_treasury = 20000
     }
     4316 = {
-      add_great_project_tier = {
-        type = suez_canal
-        tier = 3
-      }
       add_great_project = {
         type = suez_canal
+        instant = no
+        builder = root
       }
     }
     hidden_effect = {
       add_treasury = -20000
     }
   }
-  after = {
-    4316 = {
-      add_construction_progress = 1
-    }
-  }
+  after = {}
 }
 # Extension of Coffee Monopoly
 country_event = {

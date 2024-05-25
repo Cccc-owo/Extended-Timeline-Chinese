@@ -987,6 +987,12 @@ country_event = {
   is_triggered_only = yes
   trigger = {
     has_dlc = "Res Publica"
+    if = {
+      limit = {
+        has_country_flag = ned_buff_statists_candidates_flag
+      }
+      is_statists_in_power = no
+    }
     has_states_general_mechanic = yes
     is_eligible_for_statists_monarchist_events = yes
     NOT = {

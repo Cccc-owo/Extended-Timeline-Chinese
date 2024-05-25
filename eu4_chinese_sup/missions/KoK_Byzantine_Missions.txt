@@ -297,7 +297,9 @@ MEE_BYZ_conquest_2 = {
   }
   BYZ_bar = {
     icon = tame_the_magnates
-    required_missions = { BYZ_false_despots BYZ_greece }
+    required_missions = {
+      BYZ_false_despots = BYZ_greece
+    }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -507,7 +509,9 @@ MEE_BYZ_conquest_2 = {
   }
   BYZ_justinians_ambition = {
     icon = byz_justinians_ambition
-    required_missions = { BYZ_belisarius_foe BYZ_magna_graecia }
+    required_missions = {
+      BYZ_belisarius_foe = BYZ_magna_graecia
+    }
     position = 6
     provinces_to_highlight = {
       province_id = 118
@@ -1100,7 +1104,7 @@ MEE_BYZ_conquest_4 = {
       else = {
         add_accepted_culture_or_dip_power = {
           culture = turkish
-          dip_reward = yes
+          value = 100
         }
         custom_tooltip = " "
       }
@@ -1153,7 +1157,7 @@ MEE_BYZ_conquest_4 = {
       country_event_with_option_insight = {
         id = MEE_Byzantine_Events.8
         option_1 = "
-          add_accepted_culture_or_dip_power = { culture = turkish dip_reward = yes }
+          add_accepted_culture_or_dip_power = { culture = turkish value = 100 }
           custom_tooltip = \" \"
           custom_tooltip = BYZ_every_turkish_province
           tooltip = {
@@ -1428,16 +1432,16 @@ MEE_BYZ_defense_5 = {
           owned_by = ROOT
         }
         NOT = {
-          base_manpower = 7
+          base_manpower = 6
         }
       }
     }
     trigger = {
+      151 = {
+        base_manpower = 6
+        owned_by = ROOT
+      }
       OR = {
-        151 = {
-          base_manpower = 7
-          owned_by = ROOT
-        }
         has_mil_advisor_2 = yes
         fortification_expert = 1
         if = {
@@ -1486,7 +1490,9 @@ MEE_BYZ_defense_5 = {
   }
   BYZ_defence_in_depth = {
     icon = mission_conquer_mewar
-    required_missions = { BYZ_reinforce_constantinople BYZ_hexamilion }
+    required_missions = {
+      BYZ_reinforce_constantinople = BYZ_hexamilion
+    }
     position = 2
     provinces_to_highlight = {}
     trigger = {
@@ -1504,6 +1510,9 @@ MEE_BYZ_defense_5 = {
             151 = {
               has_province_modifier = BYZ_theodosian_wall_2
             } 	# should't be possible without ownership anyway.
+            151 = {
+              has_province_modifier = BYZ_theodosian_wall_3
+            } 	# should't be possible without ownership anyway.
             4701 = {
               has_province_modifier = BYZ_hexamilion_wall_2
             }
@@ -1516,8 +1525,7 @@ MEE_BYZ_defense_5 = {
         amount = 10
       }
       custom_tooltip = " "
-      complex_dynamic_effect = {
-        #I will not rethink this mission reward!
+      complex_dynamic_effect = { 	# I will not rethink this mission reward!
         first_custom_tooltip = BYZ_if_done_via_mercenary_companies
         first_limit = "num_of_hired_mercenary_companies = 3"
         first_effect = "
@@ -2073,16 +2081,42 @@ MEE_BYZ_economy_1 = {
           }
         }
         AND = {
-          OR = {
-            province_id = 148
-            province_id = 330
-          }
+          province_id = 148
           OR = {
             NOT = {
               owned_by = ROOT
             }
             NOT = {
               has_production_building_trigger = yes
+            }
+          }
+        }
+        AND = {
+          province_id = 330
+          OR = {
+            AND = {
+              trade_goods = gold
+              OR = {
+                NOT = {
+                  owned_by = ROOT
+                }
+                NOT = {
+                  base_production = 10
+                }
+              }
+            }
+            AND = {
+              NOT = {
+                trade_goods = gold
+              }
+              OR = {
+                NOT = {
+                  owned_by = ROOT
+                }
+                NOT = {
+                  has_production_building_trigger = yes
+                }
+              }
             }
           }
         }
@@ -2102,7 +2136,17 @@ MEE_BYZ_economy_1 = {
       }
       330 = {
         owned_by = ROOT
-        has_production_building_trigger = yes
+        if = {
+          limit = {
+            NOT = {
+              trade_goods = gold
+            }
+          }
+          has_production_building_trigger = yes
+        }
+        else = {
+          base_production = 12
+        }
       }
       gold_income = 10
       share_of_starting_income = 5
@@ -3043,22 +3087,19 @@ MEE_BYZ_economy_5 = {
       }
     }
     trigger = {
-      1320 = {
-        #constantinople
+      1320 = { 	# constantinople
         trade_share = {
           country = ROOT
           share = 80
         }
       }
-      377 = {
-        #aleppo
+      377 = { 	# aleppo
         trade_share = {
           country = ROOT
           share = 80
         }
       }
-      358 = {
-        #Alexandria
+      358 = { 	# Alexandria
         trade_share = {
           country = ROOT
           share = 80
@@ -3310,8 +3351,7 @@ MEE_BYZ_religion_1 = {
           total_development = NOV
         }
       }
-      else = {
-        #Fallback.
+      else = { 	# Fallback.
         is_defender_of_faith = yes
         total_development = 500
       }
@@ -3333,7 +3373,9 @@ MEE_BYZ_religion_1 = {
   }
   BYZ_mend_the_schism = {
     icon = show_piety
-    required_missions = { BYZ_muscovite_autocephaly BYZ_pentarchy }
+    required_missions = {
+      BYZ_muscovite_autocephaly = BYZ_pentarchy
+    }
     position = 17
     provinces_to_highlight = {
       OR = {
@@ -3958,7 +4000,9 @@ MEE_BYZ_military_branching_5 = {
   }
   BYZ_branching_bottom = {
     icon = mission_unknown_mission
-    required_missions = { BYZ_branching_top_left BYZ_branching_top_right }
+    required_missions = {
+      BYZ_branching_top_left = BYZ_branching_top_right
+    }
     position = 16
     provinces_to_highlight = {}
     trigger = {
@@ -4051,7 +4095,9 @@ MEE_BYZ_military_decentralized_5 = {
   }
   BYZ_strategoi_realms = {
     icon = moravian_arms
-    required_missions = { BYZ_decentralized_pronoia BYZ_foreign_officers }
+    required_missions = {
+      BYZ_decentralized_pronoia = BYZ_foreign_officers
+    }
     position = 16
     provinces_to_highlight = {}
     trigger = {
@@ -4179,7 +4225,9 @@ MEE_BYZ_military_centralized_5 = {
   }
   BYZ_reform_the_themata = {
     icon = fight_bosnian_heresies
-    required_missions = { BYZ_centralized_pronoia BYZ_varangian_guard }
+    required_missions = {
+      BYZ_centralized_pronoia = BYZ_varangian_guard
+    }
     position = 16
     provinces_to_highlight = {
       owned_by = ROOT

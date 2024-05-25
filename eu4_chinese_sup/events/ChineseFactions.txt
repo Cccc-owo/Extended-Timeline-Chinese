@@ -32,8 +32,7 @@ country_event = {
   is_triggered_only = yes
   immediate = {
     hidden_effect = {
-      random_owned_province = {
-        #Atleast here
+      random_owned_province = { 	# Atleast here
         limit = {
           is_capital = no
           is_state = yes
@@ -46,8 +45,7 @@ country_event = {
         }
         save_event_target_as = trade_problems_province
       }
-      random_owned_province = {
-        #But rather here
+      random_owned_province = { 	# But rather here
         limit = {
           is_capital = no
           has_building = marketplace
@@ -60,8 +58,7 @@ country_event = {
         }
         save_event_target_as = trade_problems_province
       }
-      random_owned_province = {
-        #Here would be even better
+      random_owned_province = { 	# Here would be even better
         limit = {
           is_capital = no
           has_port = yes
@@ -74,8 +71,7 @@ country_event = {
         }
         save_event_target_as = trade_problems_province
       }
-      random_owned_province = {
-        #Warmer
+      random_owned_province = { 	# Warmer
         limit = {
           is_capital = no
           has_port = yes
@@ -89,8 +85,7 @@ country_event = {
         }
         save_event_target_as = trade_problems_province
       }
-      random_owned_province = {
-        #Best
+      random_owned_province = { 	# Best
         limit = {
           is_capital = no
           province_has_center_of_trade_of_level = 1
@@ -1128,8 +1123,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
-  option = {
-    name = "china_events.20.a"
+  immediate = {
     random_owned_province = {
       limit = {
         NOT = {
@@ -1140,6 +1134,13 @@ country_event = {
         }
         has_port = no
       }
+      save_event_target_as = target_province
+    }
+  }
+  option = {
+    name = "china_events.20.a"
+    goto = target_province
+    event_target:target_province = {
       change_trade_goods = gold
     }
     boost_bureaucrats_effect = yes
@@ -2575,8 +2576,7 @@ country_event = {
   }
   option = {
     name = "china_events.45.b"
-    every_province = {
-      #Just to be Sure
+    every_province = { 	# Just to be Sure
       limit = {
         has_province_flag = chinese_millenarianism
       }

@@ -871,7 +871,9 @@ mos_rus_eastern_europe = {
   }
   mos_rus_claim_the_third_rome = {
     icon = mission_the_third_rome
-    required_missions = { mos_rus_protect_south_slavs mos_rus_russian_patriarchate }
+    required_missions = {
+      mos_rus_protect_south_slavs = mos_rus_russian_patriarchate
+    }
     position = 8
     provinces_to_highlight = {
       province_id = 151
@@ -1091,7 +1093,9 @@ nov_rus_conquer_west = {
   }
   nov_rus_monopolize_lubeck = {
     icon = mission_heart_of_the_hansa
-    required_missions = { nov_rus_subjugate_scandinavia nov_rus_take_danzig }
+    required_missions = {
+      nov_rus_subjugate_scandinavia = nov_rus_take_danzig
+    }
     position = 6
     provinces_to_highlight = {
       province_id = 45
@@ -1856,8 +1860,7 @@ mos_rus_russian_consolidation = {
         duration = -1
       }
       custom_tooltip = mos_rus_eliminate_the_minors_at
-      hidden_effect = {
-        #russia_region = {
+      hidden_effect = { 	# russia_region = {
         #	limit = {
         #		owned_by = ROOT
         #	}
@@ -2375,7 +2378,9 @@ mos_rus_russian_consolidation = {
   }
   mos_rus_conquer_persia = {
     icon = mission_persian_soldiers
-    required_missions = { mos_rus_conquer_the_caucasus mos_rus_conquer_central_asia }
+    required_missions = {
+      mos_rus_conquer_the_caucasus = mos_rus_conquer_central_asia
+    }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -2480,7 +2485,7 @@ mos_rus_russian_consolidation = {
             capital_scope = {
               region = caucasia_region
             }
-            religion = ROOT
+            religion_group = ROOT
             num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
               region = persia_region
               value = 20
@@ -2699,8 +2704,7 @@ mos_rus_russian_consolidation = {
       factor = 250
     }
   }
-  mos_rus_found_the_russian_tsardom = {
-    #Custom localization for republics/monarchies/theocracies
+  mos_rus_found_the_russian_tsardom = { 	# Custom localization for republics/monarchies/theocracies
     icon = mission_the_russian_tsardom
     required_missions = {}
     position = 9
@@ -2863,7 +2867,9 @@ mos_rus_russian_steppes = {
   }
   mos_rus_end_the_tatar_yok = {
     icon = mission_destroy_the_horde
-    required_missions = { mos_rus_conquer_the_great_horde mos_rus_conquer_kazan }
+    required_missions = {
+      mos_rus_conquer_the_great_horde = mos_rus_conquer_kazan
+    }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -3086,7 +3092,7 @@ mos_rus_russian_steppes = {
     effect = {
       add_mercantilism = 4
       2106 = {
-        rename_capital = "&r…bÍèÉlØeXbKQ" 	# Vladivostok
+        rename_capital = "&rÔøΩbÔøΩÔøΩlÔøΩeXbKQ" 	# Vladivostok
         change_religion = ROOT
         change_culture = ROOT
         add_base_tax = 2
@@ -3639,7 +3645,7 @@ mos_rus_siberian_conquest = {
         add_russian_claim = yes
       }
       define_conquistador = {
-        name = "ˆSSlöKQ∑Pü´ÉÚÉˆSÙuGY" 	# Yermak Timofeyevich
+        name = "ÔøΩSSlÔøΩKQÔøΩPÔøΩÔøΩÔøΩÔøΩÔøΩSÔøΩuGY" 	# Yermak Timofeyevich
         shock = 6
         fire = 6
         manuever = 5
@@ -3729,7 +3735,7 @@ mos_rus_siberian_conquest = {
         }
       }
       define_explorer = {
-        name = "Ùu˛VØe∑ãv‰N" 	# Vitus Bering
+        name = "ÔøΩuÔøΩVÔøΩeÔøΩÔøΩvÔøΩN" 	# Vitus Bering
         fire = 4
         shock = 2
         manuever = 5
@@ -3868,8 +3874,8 @@ mos_rus_new_world = {
         duration = 7300
       }
       2613 = {
-        change_province_name = "∞e?ñSIl<hSØeKQ" 	# Novo-Arkhangelsk
-        rename_capital = "∞e?ñSIl<hSØeKQ" 	# Novo-Arkhangelsk
+        change_province_name = "ÔøΩe?ÔøΩSIl<hSÔøΩeKQ" 	# Novo-Arkhangelsk
+        rename_capital = "ÔøΩe?ÔøΩSIl<hSÔøΩeKQ" 	# Novo-Arkhangelsk
         add_base_tax = 1
         add_base_production = 1
         add_base_manpower = 1
@@ -3992,8 +3998,7 @@ rus_russian_bureaucracy = {
     provinces_to_highlight = {}
     trigger = {
       if = {
-        limit = {
-          #Promote Advisors - +2
+        limit = { 	# Promote Advisors - +2
           has_dlc = "Cradle of Civilization"
           #National Focus - +2
           has_dlc = "Res Publica"
@@ -4137,7 +4142,9 @@ rus_russian_nobility = {
   }
   rus_show_russian_superiority = {
     icon = mission_great_northern_war
-    required_missions = { rus_book_of_royal_degrees rus_the_mestnichestvo }
+    required_missions = {
+      rus_book_of_royal_degrees = rus_the_mestnichestvo
+    }
     position = 12
     provinces_to_highlight = {
       owned_by = ROOT
@@ -4367,7 +4374,9 @@ rus_russian_disaster = {
   }
   rus_the_empire_of_russia = {
     icon = mission_empire_of_russia
-    required_missions = { rus_show_russian_superiority rus_increase_absolute_rule }
+    required_missions = {
+      rus_show_russian_superiority = rus_increase_absolute_rule
+    }
     position = 13
     provinces_to_highlight = {}
     trigger = {
@@ -4466,36 +4475,93 @@ rus_russian_streltsy = {
     required_missions = { rus_the_vodka_monopoly }
     position = 11
     provinces_to_highlight = {}
-    trigger = {
-      OR = {
-        AND = {
-          custom_trigger_tooltip = {
-            tooltip = rus_enacted_early_serfdom_tt 	# Give serfdom related privilege
-            has_country_flag = rus_enacted_early_serfdom_flag
-          }
-          custom_trigger_tooltip = {
-            tooltip = rus_solidify_serfdom_at
-            has_country_flag = rus_crushed_peasant_revolt
-          }
-          NOT = {
-            has_spawned_rebels = anti_tax_rebels
-          }
+    trigger = { 	# Exception case if the player - somehow - crushes the peasants and liberates them at the same time and vice versa for nobles...
+      if = {
+        limit = {
+          RUS_has_none_of_the_serfdom_privileges = yes
         }
-        AND = {
-          custom_trigger_tooltip = {
-            tooltip = rus_enacted_early_disconnection_tt 	# Give serfdom related privilege
-            has_country_flag = rus_enacted_early_disconnection_flag
-          }
-          custom_trigger_tooltip = {
-            tooltip = rus_solidify_serfdom_bt
-            has_country_flag = rus_crushed_boyars_revolt
-          }
-          NOT = {
-            has_spawned_rebels = noble_rebels
+        RUS_has_none_of_the_serfdom_privileges = yes
+      }
+      else_if = {
+        limit = {
+          OR = {
+            AND = {
+              has_country_flag = rus_crushed_boyars_revolt
+              OR = {
+                has_country_flag = rus_enacted_early_serfdom_flag
+                has_country_flag = enserfed_peasants
+              }
+            }
+            AND = {
+              has_country_flag = rus_crushed_peasant_revolt
+              OR = {
+                has_country_flag = liberated_peasants
+                has_country_flag = rus_enacted_early_disconnection_flag
+              }
+            }
           }
         }
         NOT = {
-          has_estate = estate_nobles
+          has_spawned_rebels = anti_tax_rebels
+        }
+        NOT = {
+          has_spawned_rebels = noble_rebels
+        }
+        OR = {
+          AND = {
+            custom_trigger_tooltip = {
+              tooltip = rus_solidify_serfdom_at
+              has_country_flag = rus_crushed_peasant_revolt
+            }
+          }
+          AND = {
+            custom_trigger_tooltip = {
+              tooltip = rus_solidify_serfdom_bt
+              has_country_flag = rus_crushed_boyars_revolt
+            }
+          }
+          NOT = {
+            has_estate = estate_nobles
+          }
+        }
+      }
+      else = {
+        OR = {
+          AND = {
+            custom_trigger_tooltip = {
+              tooltip = rus_enacted_early_serfdom_tt 	# Give serfdom related privilege
+              OR = {
+                has_country_flag = rus_enacted_early_serfdom_flag
+                has_country_flag = enserfed_peasants
+              }
+            }
+            custom_trigger_tooltip = {
+              tooltip = rus_solidify_serfdom_at
+              has_country_flag = rus_crushed_peasant_revolt
+            }
+            NOT = {
+              has_spawned_rebels = anti_tax_rebels
+            }
+          }
+          AND = {
+            custom_trigger_tooltip = {
+              tooltip = rus_enacted_early_disconnection_tt 	# Give serfdom related privilege
+              OR = {
+                has_country_flag = liberated_peasants
+                has_country_flag = rus_enacted_early_disconnection_flag
+              }
+            }
+            custom_trigger_tooltip = {
+              tooltip = rus_solidify_serfdom_bt
+              has_country_flag = rus_crushed_boyars_revolt
+            }
+            NOT = {
+              has_spawned_rebels = noble_rebels
+            }
+          }
+          NOT = {
+            has_estate = estate_nobles
+          }
         }
       }
     }
@@ -4504,26 +4570,22 @@ rus_russian_streltsy = {
         limit = {
           has_estate = estate_nobles
         }
-        simple_dynamic_effect = {
-          first_custom_tooltip = rus_solidify_serfdom_ct
-          first_limit = "has_estate_privilege = estate_nobles_early_serfdom has_country_flag = rus_crushed_peasant_revolt NOT = { has_spawned_rebels = anti_tax_rebels }"
-          first_effect = "custom_tooltip = rus_solidify_serfdom_dt set_country_flag = rus_buffed_serfdom_privileges"
-          second_custom_tooltip = rus_solidify_serfdom_et
-          second_limit = "has_estate_privilege = estate_nobles_increased_peasant_freedom has_country_flag = rus_crushed_boyars_revolt NOT = { has_spawned_rebels = noble_rebels }"
-          second_effect = "custom_tooltip = rus_solidify_serfdom_ft set_country_flag = rus_buffed_free_peasantry_privileges"
-        }
         if = {
           limit = {
-            NOT = {
-              has_estate_privilege = estate_nobles_early_serfdom
-            }
-            NOT = {
-              has_estate_privilege = estate_nobles_increased_peasant_freedom
-            }
+            RUS_has_none_of_the_serfdom_privileges = yes
           }
           add_adm_power = 100
           add_dip_power = 100
           add_mil_power = 100
+          custom_tooltip = " "
+        }
+        simple_dynamic_effect = {
+          first_custom_tooltip = rus_solidify_serfdom_ct
+          first_limit = "RUS_rus_solidify_serfdom_serfdom = yes"
+          first_effect = "custom_tooltip = rus_solidify_serfdom_dt set_country_flag = rus_buffed_serfdom_privileges"
+          second_custom_tooltip = rus_solidify_serfdom_et
+          second_limit = "RUS_rus_solidify_serfdom_free_peasants = yes"
+          second_effect = "custom_tooltip = rus_solidify_serfdom_ft set_country_flag = rus_buffed_free_peasantry_privileges"
         }
       }
       else = {
@@ -4538,7 +4600,9 @@ rus_russian_streltsy = {
   }
   rus_increase_absolute_rule = {
     icon = mission_autocratic_rule
-    required_missions = { rus_solidify_serfdom rus_the_courts_direction }
+    required_missions = {
+      rus_solidify_serfdom = rus_the_courts_direction
+    }
     position = 12
     provinces_to_highlight = {}
     trigger = {
@@ -4689,7 +4753,9 @@ rus_court_and_church = {
   }
   rus_the_courts_direction = {
     icon = mission_alliances
-    required_missions = { rus_the_streltsy rus_role_of_the_church }
+    required_missions = {
+      rus_the_streltsy = rus_role_of_the_church
+    }
     position = 11
     provinces_to_highlight = {
       is_capital = yes
@@ -5704,7 +5770,9 @@ rus_revolution = {
   has_country_shield = yes
   rus_the_glorious_revolution = {
     icon = mission_russian_revolution
-    required_missions = { rus_educational_reform rus_abolish_the_serfdom }
+    required_missions = {
+      rus_educational_reform = rus_abolish_the_serfdom
+    }
     position = 18
     provinces_to_highlight = {}
     trigger = {
