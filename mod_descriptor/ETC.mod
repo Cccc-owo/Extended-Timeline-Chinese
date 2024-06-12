@@ -1,5 +1,5 @@
 name="延长时间线汉化 - Extended Timeline Chinese"
-version="1.17.2-pre14"
+version="1.17.2-r14"
 replace_path="customizable_localization"
 dependencies={
 	"Extended Timeline"
@@ -12,5 +12,5 @@ tags={
 	"Translation"
 }
 picture="thumbnail.png"
-supported_version="1.37.*"
+supported_version="1.37.*.*"
 remote_file_id="2897275182"
