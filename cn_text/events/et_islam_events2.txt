@@ -1,4 +1,5 @@
 namespace = et_islam
+# Death of Muhammad
 country_event = {
   id = et_islam.1
   title = "et_islam.1.t"
@@ -14,14 +15,14 @@ country_event = {
     clr_country_flag = ruler_muhammmad
   }
   option = {
-    name = "et_islam.1.a"
+    name = "et_islam.1.a" 	# Abu Bakr
     ai_chance = {
       factor = 100
     }
     add_stability = -1
     define_ruler = {
-      name = "Œ‚^ =OKQS"  # Abu Bakr
-      dynasty = ",g eY¯eüf"  # ibn Uthman
+      name = "Œ‚^ =OKQS" 	# Abu Bakr
+      dynasty = ",g eY¯eüf" 	# ibn Uthman
       adm = 5
       dip = 4
       mil = 5
@@ -42,15 +43,15 @@ country_event = {
       }
     }
   }
-  option = {
-    name = "et_islam.1.b"
+  option = { 	# Ali
+    name = "et_islam.1.b" 	# Ali
     ai_chance = {
       factor = 0
     }
     add_stability = -1
     define_ruler = {
-      name = "?–Ì‘"  # Ali
-      dynasty = "?–Ì‘"  # Alid
+      name = "?–Ì‘" 	# Ali
+      dynasty = "?–Ì‘" 	# Alid
       adm = 3
       dip = 4
       mil = 5
@@ -72,6 +73,7 @@ country_event = {
     }
   }
 }
+#Ali accepts Abu Bakr
 country_event = {
   id = et_islam.2
   title = "et_islam.2.t"
@@ -84,6 +86,7 @@ country_event = {
     add_stability = 1
   }
 }
+#Ridda Wars
 country_event = {
   id = et_islam.3
   title = "et_islam.3.t"
@@ -100,21 +103,21 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        leader = "şV)RÈT ,g “^æ—Ì‘·V"  # Tulyha ibn Khuwaylid
+        leader = "şV)RÈT ,g “^æ—Ì‘·V" 	# Tulyha ibn Khuwaylid
       }
     }
     random_owned_province = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        leader = "Fz(„)R›s"  # Musaylimah
+        leader = "Fz(„)R›s" 	# Musaylimah
       }
     }
     random_owned_province = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        leader = "(„æ"  # Sajah
+        leader = "(„æ" 	# Sajah
         female = yes
       }
     }
@@ -122,11 +125,12 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        leader = "?–¯eæt·V ?–WS‰"  # Al-Aswad al-Ansi
+        leader = "?–¯eæt·V ?–WS‰" 	# Al-Aswad al-Ansi
       }
     }
   }
 }
+#Death of Abu Bakr
 country_event = {
   id = et_islam.4
   title = "et_islam.4.t"
@@ -145,8 +149,8 @@ country_event = {
     name = "et_islam.4.a"
     add_stability = 1
     define_ruler = {
-      name = "'k¦S"  # 'Umar
-      dynasty = ",g ÈTTXjS"  # ibn al-Khattab
+      name = "'k¦S" 	# 'Umar
+      dynasty = ",g ÈTTXjS" 	# ibn al-Khattab
       adm = 3
       dip = 3
       mil = 5
@@ -158,6 +162,7 @@ country_event = {
     }
   }
 }
+#Assassination of the Caliph
 country_event = {
   id = et_islam.5
   title = "et_islam.5.t"
@@ -166,10 +171,10 @@ country_event = {
   trigger = {
     tag = RSD
     NOT = {
-      has_ruler = "FzUØ·V"  # Muhammad
+      has_ruler = "FzUØ·V" 	# Muhammad
     }
     NOT = {
-      has_ruler = "?–Ì‘"  # Ali
+      has_ruler = "?–Ì‘" 	# Ali
     }
     NOT = {
       has_disaster = first_fitna
@@ -196,6 +201,7 @@ country_event = {
     }
   }
 }
+#Death of Umar
 country_event = {
   id = et_islam.6
   title = "et_islam.6.t"
@@ -211,13 +217,13 @@ country_event = {
     clr_country_flag = ruler_umar
   }
   option = {
-    name = "et_islam.6.a"
+    name = "et_islam.6.a" 	# Uthman
     ai_chance = {
       factor = 100
     }
     define_ruler = {
-      name = "eY¯eüf"  # Uthman
-      dynasty = ",g ?–áQ"  # ibn Affan
+      name = "eY¯eüf" 	# Uthman
+      dynasty = ",g ?–áQ" 	# ibn Affan
       adm = 4
       dip = 3
       mil = 4
@@ -229,13 +235,13 @@ country_event = {
     }
   }
   option = {
-    name = "et_islam.6.b"
+    name = "et_islam.6.b" 	# Ali
     ai_chance = {
       factor = 0
     }
     define_ruler = {
-      name = "?–Ì‘"  # Ali
-      dynasty = "?–Ì‘"  # Alid
+      name = "?–Ì‘" 	# Ali
+      dynasty = "?–Ì‘" 	# Alid
       adm = 3
       dip = 4
       mil = 5
@@ -252,6 +258,7 @@ country_event = {
     }
   }
 }
+#Death of Uthman
 country_event = {
   id = et_islam.7
   title = "et_islam.7.t"
@@ -267,10 +274,10 @@ country_event = {
     clr_country_flag = ruler_uthman
   }
   option = {
-    name = "et_islam.7.a"
+    name = "et_islam.7.a" 	# Ali
     define_ruler = {
-      name = "?–Ì‘"  # Ali
-      dynasty = "?–Ì‘"  # Alid
+      name = "?–Ì‘" 	# Ali
+      dynasty = "?–Ì‘" 	# Alid
       adm = 3
       dip = 4
       mil = 5
@@ -287,6 +294,7 @@ country_event = {
     }
   }
 }
+#Battle of the Camel
 country_event = {
   id = et_islam.8
   title = "et_islam.8.t"
@@ -305,6 +313,7 @@ country_event = {
     add_prestige = -10
   }
 }
+#Death of Ali
 country_event = {
   id = et_islam.9
   title = "et_islam.9.t"
@@ -320,10 +329,10 @@ country_event = {
     clr_country_flag = ruler_ali
   }
   option = {
-    name = "et_islam.9.a"
+    name = "et_islam.9.a" 	# Hasan
     define_ruler = {
-      name = "ÈTQh"  # Hasan
-      dynasty = "?–Ì‘"  # Alid
+      name = "ÈTQh" 	# Hasan
+      dynasty = "?–Ì‘" 	# Alid
       adm = 3
       dip = 4
       mil = 3
@@ -335,6 +344,7 @@ country_event = {
     }
   }
 }
+#Kharijites assassinate the caliph
 country_event = {
   id = et_islam.10
   title = "et_islam.10.t"
@@ -356,6 +366,7 @@ country_event = {
     }
   }
 }
+#Hasan-Muawiya Treaty
 country_event = {
   id = et_islam.11
   title = "et_islam.11.t"
@@ -365,7 +376,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     NOT = {
-      has_ruler = "?–Ì‘"  # Ali
+      has_ruler = "?–Ì‘" 	# Ali
     }
     num_of_rebel_controlled_provinces = 2
   }
@@ -390,8 +401,8 @@ country_event = {
       name = alid_ruler
     }
     define_ruler = {
-      name = "Fz?–ôuöS I"  # Muawiya I
-      dynasty = "-PlššN"  # Umayyad
+      name = "Fz?–ôuöS I" 	# Muawiya I
+      dynasty = "-PlššN" 	# Umayyad
       adm = 5
       dip = 3
       mil = 4
@@ -414,6 +425,7 @@ country_event = {
     }
   }
 }
+#Death of Hasan
 country_event = {
   id = et_islam.12
   title = "et_islam.12.t"
@@ -429,10 +441,10 @@ country_event = {
     clr_country_flag = ruler_hasan
   }
   option = {
-    name = "et_islam.12.a"
+    name = "et_islam.12.a" 	# Husayn
     define_ruler = {
-      name = "¯OiàV"  # Husayn
-      dynasty = "?–Ì‘"  # Alid
+      name = "¯OiàV" 	# Husayn
+      dynasty = "?–Ì‘" 	# Alid
       adm = 4
       dip = 3
       mil = 3
@@ -442,6 +454,7 @@ country_event = {
     clr_country_flag = early_caliphate
   }
 }
+#Sunni-Shia Split - Umayyads
 country_event = {
   id = et_islam.13
   title = "et_islam.13.t"
@@ -455,8 +468,8 @@ country_event = {
     add_government_reform = caliphate_reform
     set_country_flag = umayyad_dynasty_in_power
     define_heir = {
-      name = "6wPŸ·V"  # Yazid
-      dynasty = "-PlššN"  # Umayyad
+      name = "6wPŸ·V" 	# Yazid
+      dynasty = "-PlššN" 	# Umayyad
       claim = 100
       age = 14
       adm = 4
@@ -549,6 +562,7 @@ country_event = {
     }
   }
 }
+#Sunni-Shia Split - Alids
 country_event = {
   id = et_islam.14
   title = "et_islam.14.t"

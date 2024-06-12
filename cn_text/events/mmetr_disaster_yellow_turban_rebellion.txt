@@ -1,10 +1,14 @@
+###########################################################
+# Events for Estate Disasters
+###########################################################
 namespace = yellow_turban_rebellion
+# Yellow Turban Rebellion - Start Event
 country_event = {
   id = yellow_turban_rebellion.1
   title = "yellow_turban_rebellion.1.t"
   desc = "yellow_turban_rebellion.1.desc"
   picture = MMETR_YELLOW_TURBANS_eventPicture
-  major = yes
+  major = yes 	# makes notification pop up for others
   is_triggered_only = yes
   fire_only_once = yes
   immediate = {
@@ -89,6 +93,7 @@ country_event = {
     add_corruption = 5
   }
 }
+# Yellow Turban Rebellion - End Event
 country_event = {
   id = yellow_turban_rebellion.2
   title = "yellow_turban_rebellion.2.t"
@@ -106,19 +111,20 @@ country_event = {
     add_mandate = 20
   }
 }
+# Rebellion in Liang Province
 country_event = {
   id = yellow_turban_rebellion.3
   title = "yellow_turban_rebellion.3.t"
   desc = "yellow_turban_rebellion.3.desc"
   picture = MONGOL_BANNERS_eventPicture
-  is_triggered_only = yes
+  is_triggered_only = yes 	# So that only fires through disaster if triggers are met
   fire_only_once = yes
   major = yes
   trigger = {
     OR = {
       NOT = {
         exists = LNG
-      }
+      } 	# Liang
     }
     any_owned_province = {
       OR = {
@@ -129,7 +135,7 @@ country_event = {
     }
     had_country_flag = {
       flag = yellow_turban_rebellion_started_flag
-      days = 365
+      days = 365 	# disaster has gone on for 1 year
     }
   }
   immediate = {
@@ -168,12 +174,13 @@ country_event = {
     custom_tooltip = yellow_turban_rebellion.3.tt
   }
 }
+# Inspectors Granted Autonomy
 country_event = {
   id = yellow_turban_rebellion.4
   title = "yellow_turban_rebellion.4.t"
   desc = "yellow_turban_rebellion.4.desc"
   picture = LAND_MILITARY_eventPictures
-  is_triggered_only = yes
+  is_triggered_only = yes 	# only fires through disaster
   fire_only_once = yes
   major = yes
   trigger = {
@@ -183,16 +190,16 @@ country_event = {
     average_unrest = 10
     had_country_flag = {
       flag = yellow_turban_rebellion_started_flag
-      days = 1095
+      days = 1095 	# disaster has gone on for 3 years
     }
   }
   immediate = {
     hidden_effect = {
-      every_owned_province = {
+      every_owned_province = { 	# Jingzhou autonomy
         limit = {
           OR = {
             area = hunan_area
-            area = huguang_area
+            area = huguang_area 	# Hubei
           }
           OR = {
             controlled_by = REB
@@ -213,8 +220,8 @@ country_event = {
         add_government_reform = chinese_warlord
         adopt_reform_progress = ROOT
         define_ruler = {
-          name = "hˆ"  # Biao
-          dynasty = "¿R"  # Liu
+          name = "hˆ" 	# Biao 	# Liu Biao
+          dynasty = "¿R" 	# Liu
           adm = 4
           dip = 4
           mil = 4
@@ -223,7 +230,7 @@ country_event = {
         }
       }
       create_march = JNG
-      every_owned_province = {
+      every_owned_province = { 	# Yizhou autonomy - Shu
         limit = {
           OR = {
             region = xinan_region
@@ -248,8 +255,8 @@ country_event = {
         add_government_reform = chinese_warlord
         adopt_reform_progress = ROOT
         define_ruler = {
-          name = "	q"  # Yan
-          dynasty = "¿R"  # Liu
+          name = "	q" 	# Yan 	# Liu Yan
+          dynasty = "¿R" 	# Liu
           adm = 2
           dip = 3
           mil = 3
@@ -258,7 +265,7 @@ country_event = {
         }
       }
       create_march = SHU
-      every_owned_province = {
+      every_owned_province = { 	# Yangzhou autonomy - Wu
         limit = {
           OR = {
             area = south_anhui_area
@@ -285,8 +292,8 @@ country_event = {
         add_government_reform = chinese_warlord
         adopt_reform_progress = ROOT
         define_ruler = {
-          name = "Gu"  # Yan
-          dynasty = "¿R"  # Liu
+          name = "Gu" 	# Yan 	# Liu Yao
+          dynasty = "¿R" 	# Liu
           adm = 3
           dip = 3
           mil = 3
@@ -295,7 +302,7 @@ country_event = {
         }
       }
       create_march = WUU
-      every_owned_province = {
+      every_owned_province = { 	# Jiaozhi autonomy - Yue
         limit = {
           OR = {
             area = guangdong_area
@@ -325,8 +332,8 @@ country_event = {
         add_government_reform = chinese_warlord
         adopt_reform_progress = ROOT
         define_ruler = {
-          name = "îq"  # Xie
-          dynasty = "¿ëX"  # Shi
+          name = "îq" 	# Xie 	# Shi Xie
+          dynasty = "¿ëX" 	# Shi
           adm = 3
           dip = 3
           mil = 2
@@ -374,6 +381,7 @@ country_event = {
     }
   }
 }
+# Yellow Turbans in Jing
 country_event = {
   id = yellow_turban_rebellion.5
   title = "yellow_turban_rebellion.5.t"
@@ -410,6 +418,7 @@ country_event = {
     custom_tooltip = yellow_turban_rebellion.5.tt
   }
 }
+# Yellow Turbans in Yi
 country_event = {
   id = yellow_turban_rebellion.6
   title = "yellow_turban_rebellion.6.t"
@@ -440,6 +449,7 @@ country_event = {
     custom_tooltip = yellow_turban_rebellion.6.tt
   }
 }
+# White Wave Bandits
 country_event = {
   id = yellow_turban_rebellion.7
   title = "yellow_turban_rebellion.7.t"
@@ -476,6 +486,7 @@ country_event = {
     custom_tooltip = yellow_turban_rebellion.7.tt
   }
 }
+# Advisor Suspected of Treason
 country_event = {
   id = yellow_turban_rebellion.8
   title = "yellow_turban_rebellion.8.t"
@@ -495,6 +506,7 @@ country_event = {
     add_corruption = 2
   }
 }
+# Peasants Revolt in [han_yt_disaster_rebel_province.GetAreaName]	- same as ming_crisis.6
 country_event = {
   id = yellow_turban_rebellion.9
   title = "yellow_turban_rebellion.9.t"
@@ -554,6 +566,7 @@ country_event = {
     }
   }
 }
+# Nomad Raid - repeatable
 country_event = {
   id = yellow_turban_rebellion.10
   title = "yellow_turban_rebellion.10.t"
@@ -569,7 +582,7 @@ country_event = {
     hidden_effect = {
       random_owned_province = {
         limit = {
-          any_neighbor_province = {
+          any_neighbor_province = { 	# land frontier province
             NOT = {
               owned_by = ROOT
             }
@@ -577,13 +590,13 @@ country_event = {
           }
         }
         spawn_rebels = {
-          type = nomad_rebels
+          type = nomad_rebels 	# New rebel type
           size = 2
         }
       }
       random_owned_province = {
         limit = {
-          any_neighbor_province = {
+          any_neighbor_province = { 	# land frontier province
             NOT = {
               owned_by = ROOT
             }
@@ -591,7 +604,7 @@ country_event = {
           }
         }
         spawn_rebels = {
-          type = nomad_rebels
+          type = nomad_rebels 	# New rebel type
           size = 2
         }
       }
@@ -602,6 +615,7 @@ country_event = {
     custom_tooltip = yellow_turban_rebellion.10.tt
   }
 }
+# Local Militias Support the Han
 country_event = {
   id = yellow_turban_rebellion.11
   title = "yellow_turban_rebellion.11.t"
@@ -616,9 +630,10 @@ country_event = {
   }
   option = {
     name = yellow_turban_rebellion.11.a
-    add_manpower = 0.5
+    add_manpower = 0.5 	# 500
   }
 }
+# Local Prefect Recruits Han Loyalists
 country_event = {
   id = yellow_turban_rebellion.12
   title = "yellow_turban_rebellion.12.t"
@@ -633,9 +648,10 @@ country_event = {
   }
   option = {
     name = yellow_turban_rebellion.12.a
-    add_manpower = 1
+    add_manpower = 1 	# 1000
   }
 }
+# Liaodong Autonomy
 country_event = {
   id = yellow_turban_rebellion.13
   title = "yellow_turban_rebellion.13.t"
@@ -653,7 +669,7 @@ country_event = {
   }
   immediate = {
     hidden_effect = {
-      every_owned_province = {
+      every_owned_province = { 	# Liaodong autonomy
         limit = {
           OR = {
             area = liaoning_area
@@ -674,8 +690,8 @@ country_event = {
         add_government_reform = chinese_warlord
         adopt_reform_progress = ROOT
         define_ruler = {
-          name = "¦^"  # Du
-          dynasty = "¿lQYR"  # Gongsun
+          name = "¦^" 	# Du 	# Gongsun Du
+          dynasty = "¿lQYR" 	# Gongsun
           adm = 2
           dip = 4
           mil = 4
@@ -697,6 +713,7 @@ country_event = {
     }
   }
 }
+# Yellow Turban Remnants Declare an Emperor - Ma Xiang
 country_event = {
   id = yellow_turban_rebellion.14
   title = "yellow_turban_rebellion.14.t"
@@ -724,7 +741,7 @@ country_event = {
         spawn_rebels = {
           type = pretender_rebels
           size = 3
-          leader = "lšøv"  # Ma Xiang
+          leader = "lšøv" 	# Ma Xiang
         }
       }
     }
@@ -734,6 +751,7 @@ country_event = {
     custom_tooltip = yellow_turban_rebellion.14.tt
   }
 }
+# Ou Xing Invades Changsha
 country_event = {
   id = yellow_turban_rebellion.15
   title = "yellow_turban_rebellion.15.t"
@@ -742,7 +760,7 @@ country_event = {
   is_triggered_only = yes
   fire_only_once = yes
   trigger = {
-    owns = 671
+    owns = 671 	# Changsha
   }
   option = {
     name = "yellow_turban_rebellion.15.a"
@@ -754,6 +772,7 @@ country_event = {
     }
   }
 }
+# Eunuchs Ignore Rebel Reports
 country_event = {
   id = yellow_turban_rebellion.16
   title = "yellow_turban_rebellion.16.t"
@@ -765,10 +784,11 @@ country_event = {
     name = "yellow_turban_rebellion.16.a"
     add_country_modifier = {
       name = "disaster_eunuch_interference_of_rebel_reports"
-      duration = 1095
+      duration = 1095 	# 3 years
     }
   }
 }
+# The Yellow Sky Reigns
 country_event = {
   id = yellow_turban_rebellion.17
   title = "yellow_turban_rebellion.17.t"
@@ -785,6 +805,7 @@ country_event = {
       region = north_china_region
       controlled_by = REB
     }
+    #Luoyang
     1836 = {
       controlled_by = REB
     }
@@ -826,7 +847,7 @@ country_event = {
         add_core = ZAO
         clear_rebels = yes
       }
-      every_owned_province = {
+      every_owned_province = { 	# get rid of bordergore from random Mongolian provinces
         limit = {
           region = mongolia_region
           any_neighbor_province = {
@@ -849,11 +870,11 @@ country_event = {
           }
         }
         change_government = monarchy
-        add_government_reform = theocratic_monarchy_ancient_reform
+        add_government_reform = theocratic_monarchy_ancient_reform 	# new MMETR reform
         adopt_reform_progress = ROOT
         define_ruler = {
-          name = "Ò‰"  # Jue
-          dynasty = "¿.V"  # Zhang
+          name = "Ò‰" 	# Jue
+          dynasty = "¿.V" 	# Zhang
           adm = 2
           dip = 5
           mil = 5

@@ -1,5 +1,9 @@
+########################################
+# Major Flavor Events                  #
+########################################
 namespace = flavor_per
 normal_or_historical_nations = yes
+# Turko-Persian Conflicts: Shiite rebels
 country_event = {
   id = flavor_per.3560
   title = "flavor_per.EVTNAME3560"
@@ -41,7 +45,7 @@ country_event = {
   immediate = {
     set_country_flag = PER_had_event_3560
   }
-  option = {
+  option = { 	#  Support the Turkish Shiites
     name = "flavor_per.EVTOPTA3560"
     add_stability_or_adm_power = yes
     add_years_of_income = -0.2
@@ -57,11 +61,11 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Leave them to their fate
     name = "flavor_per.EVTOPTB3560"
     add_stability = -1
   }
-  option = {
+  option = { 	#  Betray the Turkish rebels
     name = "flavor_per.EVTOPTC3560"
     add_stability = -2
     add_opinion = {
@@ -70,13 +74,14 @@ country_event = {
     }
   }
 }
+# Murad III's campaigns against Persia
 country_event = {
   id = flavor_per.3562
   title = "flavor_per.EVTNAME3562"
   desc = "flavor_per.EVTDESC3562"
   picture = BATTLE_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  Teach the Turks a lesson!
     name = "flavor_per.EVTOPTA3562"
     add_stability_or_adm_power = yes
     TUR = {
@@ -100,11 +105,11 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Ignore the Turkish threats
     name = "flavor_per.EVTOPTB3562"
     add_stability = -1
   }
-  option = {
+  option = { 	#  Seek a diplomatic solution
     name = "flavor_per.EVTOPTC3562"
     TUR = {
       add_opinion = {
@@ -114,6 +119,7 @@ country_event = {
     }
   }
 }
+# Turko-Persian Tension
 country_event = {
   id = flavor_per.3563
   title = "flavor_per.EVTNAME3563"
@@ -153,7 +159,7 @@ country_event = {
   immediate = {
     set_country_flag = PER_had_event_3563
   }
-  option = {
+  option = { 	#  Support the Turkish rebels and prepare for war
     name = "flavor_per.EVTOPTA3563"
     add_years_of_income = -0.2
     TUR = {
@@ -168,18 +174,23 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Concentrate on internal issues
     name = "flavor_per.EVTOPTB3563"
     add_adm_power = 25
   }
 }
+########################################
+# Flavor Events for Persia
+# written by Sara Wendel-Örtqvist & Henrik Lohmander
+########################################
+#The Reforms of Ismail
 country_event = {
   id = flavor_per.1
   title = "flavor_per.EVTNAME1"
   desc = "flavor_per.EVTDESC1"
   picture = REFORM_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	# Reform
     name = "flavor_per.EVTOPTA1"
     if = {
       limit = {
@@ -197,46 +208,47 @@ country_event = {
       }
       set_government_rank = 3
     }
-    416 = {
+    416 = { 	# Tabriz
       add_base_tax = 2
       add_base_production = 2
       add_base_manpower = 1
     }
-    429 = {
+    429 = { 	# Isfahan
       add_base_tax = 3
       add_base_production = 3
       add_base_manpower = 1
     }
-    2215 = {
+    2215 = { 	# Qazvin
       add_base_tax = 2
       add_base_production = 2
       add_base_manpower = 1
     }
-    2218 = {
+    2218 = { 	# Shiraz
       add_base_tax = 2
       add_base_production = 2
     }
-    428 = {
+    428 = { 	# Teheran
       add_base_tax = 1
       add_base_production = 1
       add_base_manpower = 1
     }
-    433 = {
+    433 = { 	# Yazd
       add_base_tax = 1
       add_base_production = 1
     }
-    2213 = {
+    2213 = { 	# Qom
       add_base_tax = 1
       add_base_production = 1
       add_base_manpower = 1
     }
-    2212 = {
+    2212 = { 	# Zanjan
       add_base_tax = 1
       add_base_production = 1
       add_base_manpower = 1
     }
   }
 }
+#The Reforms of Abbas the Great
 country_event = {
   id = flavor_per.2
   title = "flavor_per.EVTNAME2"
@@ -257,7 +269,7 @@ country_event = {
   mean_time_to_happen = {
     months = 150
   }
-  option = {
+  option = { 	# Reform
     name = "flavor_per.EVTOPTA1"
     if = {
       limit = {
@@ -273,6 +285,7 @@ country_event = {
     add_dip_power = 50
   }
 }
+# The Advisors of Abbas the Great
 country_event = {
   id = flavor_per.3
   title = "flavor_per.EVTNAME3"
@@ -293,7 +306,7 @@ country_event = {
   mean_time_to_happen = {
     months = 150
   }
-  option = {
+  option = { 	#  Hire the English advisors
     name = "flavor_per.EVTOPTA3"
     if = {
       limit = {
@@ -308,11 +321,12 @@ country_event = {
     }
     add_stability = -1
   }
-  option = {
+  option = { 	#  Rely on ones
     name = "flavor_per.EVTOPTB3"
     add_stability_or_adm_power = yes
   }
 }
+# Political Turmoil
 country_event = {
   id = flavor_per.4
   title = "flavor_per.EVTNAME4"
@@ -355,7 +369,7 @@ country_event = {
   mean_time_to_happen = {
     months = 500
   }
-  option = {
+  option = { 	# Let the Clans fight
     name = "flavor_per.EVTOPTA4"
     hidden_effect = {
       add_country_modifier = {
@@ -366,7 +380,7 @@ country_event = {
     }
     add_stability = -1
   }
-  option = {
+  option = { 	# Buy the loyalty of the Clans
     name = "flavor_per.EVTOPTB4"
     hidden_effect = {
       add_country_modifier = {
@@ -382,6 +396,7 @@ country_event = {
     }
   }
 }
+# Political Fragmentation
 country_event = {
   id = flavor_per.5
   title = "flavor_per.EVTNAME5"
@@ -401,7 +416,7 @@ country_event = {
   mean_time_to_happen = {
     months = 500
   }
-  option = {
+  option = { 	#  Let the factions conspire
     name = "flavor_per.EVTOPTA5"
     hidden_effect = {
       add_country_modifier = {
@@ -412,7 +427,7 @@ country_event = {
     }
     add_stability_or_adm_power = yes
   }
-  option = {
+  option = { 	#  Tighten state control
     name = "flavor_per.EVTOPTB5"
     hidden_effect = {
       add_country_modifier = {
@@ -431,6 +446,7 @@ country_event = {
     }
   }
 }
+#The Afghan Rebellions
 country_event = {
   id = flavor_per.6
   title = "flavor_per.EVTNAME6"
@@ -455,7 +471,7 @@ country_event = {
   mean_time_to_happen = {
     months = 2000
   }
-  option = {
+  option = { 	# Curses!
     name = "flavor_per.EVTOPTA6"
     random_owned_province = {
       limit = {
@@ -473,6 +489,11 @@ country_event = {
     }
   }
 }
+########################################
+# Additional Flavor Events for Persia
+# written by Henrik Lohmander
+########################################
+#Persian Miniature Painting
 country_event = {
   id = flavor_per.7
   title = flavor_per.7.t
@@ -491,7 +512,7 @@ country_event = {
   mean_time_to_happen = {
     months = 300
   }
-  option = {
+  option = { 	# Ok
     name = flavor_per.7.a
     add_prestige = 10
     add_country_modifier = {
@@ -500,6 +521,7 @@ country_event = {
     }
   }
 }
+#Iskander Munshi
 country_event = {
   id = flavor_per.8
   title = flavor_per.8.t
@@ -531,6 +553,7 @@ country_event = {
     add_splendor = 400
   }
 }
+#The Shrines of Najaf
 country_event = {
   id = flavor_per.9
   title = flavor_per.9.t
@@ -560,7 +583,7 @@ country_event = {
       set_country_flag = had_najaf_event
     }
   }
-  option = {
+  option = { 	# Whatever is needed we must provide.
     name = flavor_per.9.a
     ai_chance = {
       factor = 1
@@ -573,7 +596,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# We must practice restraint.
     name = flavor_per.9.b
     ai_chance = {
       factor = 0
@@ -586,6 +609,7 @@ country_event = {
     }
   }
 }
+#Rise of the Mushashaiya
 country_event = {
   id = flavor_per.10
   title = flavor_per.10.t
@@ -623,6 +647,7 @@ country_event = {
     }
   }
 }
+#Rise of the Safawiya
 country_event = {
   id = flavor_per.11
   title = flavor_per.11.t
@@ -673,6 +698,7 @@ country_event = {
     }
   }
 }
+#Qizilbash Tribesmen Assemble
 country_event = {
   id = flavor_per.12
   title = flavor_per.12.t
@@ -770,7 +796,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Ok.
     name = flavor_per.12.a
     random_owned_province = {
       limit = {
@@ -819,6 +845,7 @@ country_event = {
     }
   }
 }
+#Persia and Shiism
 country_event = {
   id = flavor_per.13
   title = flavor_per.13.t
@@ -869,6 +896,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+#The Sunni Ulema
 country_event = {
   id = flavor_per.14
   title = flavor_per.14.t
@@ -886,7 +914,7 @@ country_event = {
   mean_time_to_happen = {
     months = 30
   }
-  option = {
+  option = { 	#  Carrot
     name = flavor_per.14.a
     ai_chance = {
       factor = 1
@@ -896,7 +924,7 @@ country_event = {
       duration = 3650
     }
   }
-  option = {
+  option = { 	#  Whip
     name = flavor_per.14.b
     ai_chance = {
       factor = 0
@@ -907,6 +935,7 @@ country_event = {
     }
   }
 }
+#Shiite Brain Drain
 country_event = {
   id = flavor_per.15
   title = flavor_per.15.t
@@ -924,7 +953,7 @@ country_event = {
   mean_time_to_happen = {
     months = 30
   }
-  option = {
+  option = { 	#  Welcome them with open arms
     name = flavor_per.15.a
     ai_chance = {
       factor = 1
@@ -949,7 +978,14 @@ country_event = {
       duration = 7300
     }
   }
+  #option = { # Turn them away
+  #	name = flavor_per.15.b
+  #	ai_chance = { factor = 0 }
+  #	add_piety = -0.25
+  #	add_stability_or_adm_power = yes
+  #}
 }
+#Restructuring of Isfahan
 country_event = {
   id = flavor_per.16
   title = flavor_per.16.t
@@ -974,7 +1010,7 @@ country_event = {
   mean_time_to_happen = {
     months = 150
   }
-  option = {
+  option = { 	# Let us build a new, truly Persian capital.
     name = flavor_per.16.a
     ai_chance = {
       factor = 1
@@ -989,7 +1025,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Our current capital fit our current needs
     name = flavor_per.16.b
     ai_chance = {
       factor = 0
@@ -997,6 +1033,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+#Isfahan - Finished
 country_event = {
   id = flavor_per.17
   title = flavor_per.17.t
@@ -1020,7 +1057,7 @@ country_event = {
   mean_time_to_happen = {
     months = 168
   }
-  option = {
+  option = { 	# Great!
     name = flavor_per.17.a
     add_prestige = 20
     429 = {
@@ -1032,6 +1069,10 @@ country_event = {
     }
   }
 }
+########################################
+# Additional Events for Persia
+########################################
+#The Religious Focus of Persia
 country_event = {
   id = flavor_per.18
   title = flavor_per.18.t
@@ -1109,6 +1150,7 @@ country_event = {
       factor = 0
     }
   }
+  #AI section
   option = {
     trigger = {
       ai = yes
@@ -1186,6 +1228,7 @@ country_event = {
     }
   }
 }
+#The Persian Rugs
 country_event = {
   id = flavor_per.19
   title = flavor_per.19.t
@@ -1193,7 +1236,7 @@ country_event = {
   picture = CITY_VIEW_eventPicture
   is_triggered_only = yes
   major = yes
-  option = {
+  option = { 	# Monopolize the Rug Market
     name = flavor_per.19.a
     add_mercantilism = 5
     change_price = {
@@ -1218,7 +1261,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	# Flood the Rug Market
     name = flavor_per.19.b
     add_years_of_owned_provinces_production_income = {
       years = 5
@@ -1254,7 +1297,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	# Keep it moderate
     name = flavor_per.19.c
     add_years_of_owned_provinces_production_income = {
       years = 2
@@ -1292,12 +1335,17 @@ country_event = {
     }
   }
 }
+#################
+# Legacy Events #
+#################
+#Legacy of Timur
 country_event = {
   id = flavor_per.20
   title = flavor_per.20.t
   desc = flavor_per.20.desc
   picture = HORDE_ON_HORSEBACK_eventPicture
   is_triggered_only = yes
+  #Timur lives on in our memories!
   option = {
     name = flavor_per.20.a
     if = {
@@ -1316,6 +1364,7 @@ country_event = {
       factor = 1
     }
   }
+  #His practices might be useful for a later time
   option = {
     name = flavor_per.20.b
     unlock_government_reform = {
@@ -1327,12 +1376,14 @@ country_event = {
     }
   }
 }
+#Legacy of the Safavid
 country_event = {
   id = flavor_per.21
   title = flavor_per.21.t
   desc = flavor_per.21.desc
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
+  #Timur lives on in our memories!
   option = {
     name = flavor_per.21.a
     unlock_government_reform = {
@@ -1343,6 +1394,7 @@ country_event = {
       factor = 1
     }
   }
+  #His practices might be useful for a later time
   option = {
     name = flavor_per.21.b
     unlock_government_reform = {
@@ -1354,6 +1406,7 @@ country_event = {
     }
   }
 }
+#Legacy of Eranshahr
 country_event = {
   id = flavor_per.22
   title = flavor_per.22.t
@@ -1472,6 +1525,7 @@ country_event = {
     }
   }
 }
+#Legacy of the Seljuk
 country_event = {
   id = flavor_per.23
   title = flavor_per.23.t
@@ -1499,6 +1553,8 @@ country_event = {
     }
   }
 }
+##########
+# Weaving Gold & Silk
 country_event = {
   id = flavor_per.24
   title = flavor_tur.252.t
@@ -1531,6 +1587,7 @@ country_event = {
     }
   }
 }
+# Establishment of the Ghulams
 country_event = {
   id = flavor_per.25
   title = flavor_per.25.t
@@ -1550,13 +1607,14 @@ country_event = {
     }
   }
 }
+#Trade with Persia
 country_event = {
   id = flavor_per.26
   title = flavor_aju.5.t
   desc = flavor_aju.5.d
   picture = MERCHANTS_TALKING_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	# Good idea
     name = flavor_aju.5.a
     add_country_modifier = {
       name = per_persian_merchants_active
@@ -1583,7 +1641,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Nah
     name = flavor_aju.5.b
     add_mercantilism = 2
     ai_chance = {
@@ -1612,6 +1670,7 @@ country_event = {
     }
   }
 }
+#The Lion and the Dragon
 country_event = {
   id = flavor_per.27
   title = flavor_per.27.t
@@ -1648,6 +1707,7 @@ country_event = {
     }
   }
 }
+#A [From.GetAdjective] ambassador meets us
 country_event = {
   id = flavor_per.28
   title = flavor_per.28.t
@@ -1662,7 +1722,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Welcome him!
     name = flavor_per.28.a
     add_historical_friend = FROM
     tooltip = {
@@ -1695,7 +1755,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	# We have no need for diplomacy with Persia
     name = flavor_per.28.b
     FROM = {
       country_event = {
@@ -1707,6 +1767,7 @@ country_event = {
     }
   }
 }
+#Persia welcomes our ambassador + embassy
 country_event = {
   id = flavor_per.29
   title = flavor_per.29.t
@@ -1745,6 +1806,7 @@ country_event = {
     }
   }
 }
+#China expelled the ambassador
 country_event = {
   id = flavor_per.30
   title = flavor_per.30.t
@@ -1765,6 +1827,7 @@ country_event = {
     }
   }
 }
+#End of the Embassies - Persia
 country_event = {
   id = flavor_per.31
   title = flavor_per.31.t
@@ -1795,6 +1858,7 @@ country_event = {
     clr_country_flag = has_chinese_embassy
   }
 }
+#End of the Embassies - China
 country_event = {
   id = flavor_per.32
   title = flavor_per.31.t
@@ -1824,6 +1888,7 @@ country_event = {
     clr_country_flag = has_persian_embassy
   }
 }
+#Introduction - Shia
 country_event = {
   id = flavor_per.33
   title = flavor_per.13.t
@@ -1858,6 +1923,10 @@ country_event = {
       custom_tooltip = flavor_per.33.a.tt
       hidden_effect = {
         add_reform_center = shiite
+        #province_event = {
+        #	id = flavor_per.3300
+        #	days = 18250
+        #}
       }
     }
     if = {
@@ -1886,6 +1955,17 @@ country_event = {
     }
   }
 }
+#Remove Center
+#province_event = {
+#	id = flavor_per.3300
+#	title = none
+#	desc = none
+#	picture = none
+#	hidden = yes
+#	is_triggered_only = yes
+#	option = { remove_reform_center = shiite ai_chance = { factor = 1 } }
+#}
+#Introduction - Muslim
 country_event = {
   id = flavor_per.34
   title = flavor_per.34.t
@@ -1948,6 +2028,7 @@ country_event = {
     }
   }
 }
+#Introduction - Zoroastrian
 country_event = {
   id = flavor_per.35
   title = flavor_per.35.t
@@ -1985,6 +2066,7 @@ country_event = {
     }
   }
 }
+#The Aristocratic Split
 country_event = {
   id = flavor_per.36
   title = flavor_per.36.t
@@ -2012,12 +2094,14 @@ country_event = {
     }
   }
 }
+#The Supreme Emerald Lion
 country_event = {
   id = flavor_per.37
   title = flavor_per.37.t
   desc = flavor_per.37.desc
   picture = CITY_VIEW_eventPicture
   is_triggered_only = yes
+  #Expand its development
   option = {
     name = flavor_per.37.a
     add_prestige_or_monarch_power = {
@@ -2032,6 +2116,7 @@ country_event = {
     }
   }
 }
+#Redecorating Constantinople
 country_event = {
   id = flavor_per.38
   title = flavor_per.38.t
@@ -2045,6 +2130,7 @@ country_event = {
       }
     }
   }
+  #Expand its development
   option = {
     name = flavor_per.38.a
     goto = 151
@@ -2055,10 +2141,10 @@ country_event = {
             has_country_flag = per_zoroastrian_missions
           }
         }
-        rename_capital = "“^¯efWN<SšN"  # Kustantiniya
+        rename_capital = "“^¯efWN<SšN" 	# Kustantiniya
       }
       else = {
-        rename_capital = "TëXfWN<S6w"  # Konstantiniyyeh
+        rename_capital = "TëXfWN<S6w" 	# Konstantiniyyeh
       }
       add_base_tax = 2
       add_base_production = 2
@@ -2072,6 +2158,7 @@ country_event = {
       factor = 1
     }
   }
+  #Siphon its development
   option = {
     name = flavor_per.38.b
     goto = capital
@@ -2087,10 +2174,10 @@ country_event = {
             has_country_flag = per_zoroastrian_missions
           }
         }
-        rename_capital = "“^¯efWN<SšN"  # Kustantiniya
+        rename_capital = "“^¯efWN<SšN" 	# Kustantiniya
       }
       else = {
-        rename_capital = "TëXfWN<S6w"  # Konstantiniyyeh
+        rename_capital = "TëXfWN<S6w" 	# Konstantiniyyeh
       }
       remove_base_development = {
         amount = 2
@@ -2119,6 +2206,7 @@ country_event = {
     }
   }
 }
+#Turkish integration
 country_event = {
   id = flavor_per.39
   title = flavor_per.39.t
@@ -2181,6 +2269,7 @@ country_event = {
     }
   }
 }
+#Georgian Slaves in the Persian Empire
 country_event = {
   id = flavor_per.40
   title = flavor_per.40.t
@@ -2199,6 +2288,7 @@ country_event = {
     }
   }
 }
+#Sarkhej Roza and the City of Ahmedabad
 country_event = {
   id = flavor_per.41
   title = flavor_per.41.t
@@ -2238,6 +2328,81 @@ country_event = {
     }
   }
 }
+#Hindu Influences in the Persian Court
+#country_event = {
+#	id = flavor_per.42
+#	title = flavor_per.42.t 
+#	desc = flavor_per.42.d 
+#	picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+#	is_triggered_only = yes 
+#	
+#	option = {
+#		name = flavor_per.42.a 
+#		
+#		change_tag = MUG
+#		hidden_effect = {
+#			remove_non_electors_emperors_from_empire_effect = yes
+#			set_government_rank = 3 
+#			set_country_flag = formed_mughal_empire_flag
+#			set_country_flag = per_blend_with_mug_ideas_flag
+#		}
+#		522 = {
+#			add_base_tax = 1
+#			add_base_production = 1
+#			add_base_manpower = 1
+#		}
+#		add_prestige_or_monarch_power = { amount = 25 }
+#		if = {
+#			limit = {
+#				NOT = { government = monarchy }
+#				is_revolutionary = no
+#			}
+#			change_government_to_monarchy = yes
+#		}
+#		if = {
+#			limit = {
+#				has_dlc = "Dharma"
+#				is_revolutionary = no
+#			}
+#			add_government_reform = indian_sultanate_reform
+#			add_government_reform = mughal_government
+#		}
+#		if = {
+#			limit = { has_reform = states_general_reform }
+#			remove_government_reform = states_general_reform
+#		}
+#		if = {
+#			limit = { has_unlocked_estate = { estate = estate_nomadic_tribes } }
+#			disable_estate_effect = { estate = estate_nomadic_tribes }
+#		}
+#		if = {
+#			limit = { has_unlocked_estate = { estate = estate_qizilbash } }
+#			disable_estate_effect = { estate = estate_qizilbash }
+#		}
+#		if = {
+#			limit = { has_unlocked_estate = { estate = estate_ghulams } }
+#			disable_estate_effect = { estate = estate_ghulams }
+#		}
+#		country_event = { id = ideagroups.1 } 
+#		override_country_name = ERANA
+#		set_country_flag = is_ERANA_flag
+#		add_country_modifier = {
+#			name = per_master_of_india_modifier
+#			duration = -1
+#		}
+#	}
+#	
+#	option = {
+#		name = flavor_per.42.b 
+#		add_dip_power = 200 
+#		add_stability_or_adm_power = yes 
+#		add_country_modifier = {
+#			name = per_master_of_india_modifier
+#			duration = -1
+#		}
+#	}
+#}
+#The [Root.Culture.GetName] Influence
 country_event = {
   id = flavor_per.43
   title = flavor_per.43.t
@@ -2274,6 +2439,7 @@ country_event = {
     }
   }
 }
+#The Zoroastrianism Study
 country_event = {
   id = flavor_per.44
   title = flavor_per.44.t
@@ -2335,6 +2501,7 @@ country_event = {
     }
   }
 }
+#The Islamic Focus of Persia
 country_event = {
   id = flavor_per.45
   title = flavor_per.45.t
@@ -2390,6 +2557,7 @@ country_event = {
       factor = 0
     }
   }
+  #AI section
   option = {
     trigger = {
       ai = yes
@@ -2432,6 +2600,7 @@ country_event = {
     }
   }
 }
+#Armenian Slaves in the Persian Empire
 country_event = {
   id = flavor_per.46
   title = flavor_per.46.t
@@ -2525,12 +2694,14 @@ country_event = {
     }
   }
 }
+#Rise of [Root.GetName]
 country_event = {
   id = flavor_per.47
   title = flavor_per.47.t
   desc = flavor_per.47.d
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
+  #We truly surpassed Cyrus the Great.
   option = {
     name = flavor_per.47.a
     add_prestige_or_monarch_power = {
@@ -2545,6 +2716,7 @@ country_event = {
     }
   }
 }
+#Mamlukian Administration
 country_event = {
   id = flavor_per.48
   title = flavor_per.48.t
@@ -2556,7 +2728,15 @@ country_event = {
     unlock_estate_privilege = {
       estate_privilege = estate_nobles_mamlukian_administration
       modifier_tooltip = estate_nobles_mamlukian_administration_tooltip
-      effect_tooltip = " custom_tooltip = mamlukian_administration_modifier_gt tooltip = { add_province_modifier = { name = mamlukian_administration_modifier duration = -1 } } "
+      effect_tooltip = "
+        custom_tooltip = mamlukian_administration_modifier_gt
+        tooltip = {
+          add_province_modifier = {
+            name = mamlukian_administration_modifier
+            duration = -1
+          }
+        }
+      "
     }
     unlock_estate_privilege = {
       estate_privilege = estate_qizilbash_mamlukian_administration
@@ -2566,6 +2746,7 @@ country_event = {
     }
   }
 }
+#Turkmen Recruits Flock to the Banners
 country_event = {
   id = flavor_per.49
   title = flavor_per.49.t
@@ -2646,6 +2827,7 @@ country_event = {
     }
   }
 }
+#Al Quds as-Sharif
 country_event = {
   id = flavor_per.50
   title = flavor_per.50.t
@@ -2681,6 +2863,7 @@ country_event = {
     }
   }
 }
+#Victory in Egypt 
 country_event = {
   id = flavor_per.51
   title = flavor_per.51.t
@@ -2711,6 +2894,7 @@ country_event = {
     }
   }
 }
+#Legacy of the Delhi Empire
 country_event = {
   id = flavor_per.52
   title = flavor_per.52.t
@@ -2743,6 +2927,7 @@ country_event = {
     }
   }
 }
+#Wealth of Bengal
 country_event = {
   id = flavor_per.53
   title = flavor_per.53.t
@@ -2774,6 +2959,7 @@ country_event = {
     add_mercantilism = 5
   }
 }
+#The New Persian Horse
 country_event = {
   id = flavor_per.54
   title = flavor_per.54.t
@@ -2951,6 +3137,7 @@ country_event = {
     }
   }
 }
+#Introduction - Sunni
 country_event = {
   id = flavor_per.55
   title = flavor_per.55.t
@@ -3018,6 +3205,7 @@ country_event = {
     }
   }
 }
+#The End of the Timurid Dynasty
 country_event = {
   id = flavor_per.56
   title = flavor_per.56.t
@@ -3029,7 +3217,7 @@ country_event = {
       tag = ERS
     }
     NOT = {
-      dynasty = "^(g?Q"  # Timurid
+      dynasty = "^(g?Q" 	# Timurid
     }
     started_in = 1370.1.1
     NOT = {
@@ -3108,6 +3296,7 @@ country_event = {
     }
   }
 }
+#A Zoroastrian Prophet appears!
 country_event = {
   id = flavor_per.57
   title = flavor_per.57.t
@@ -3139,6 +3328,7 @@ country_event = {
       }
     }
   }
+  #Hire this man!
   option = {
     name = flavor_per.57.a
     goto = target_province
@@ -3158,6 +3348,7 @@ country_event = {
       factor = 1
     }
   }
+  #Let him be
   option = {
     name = flavor_per.57.b
     goto = target_province
@@ -3177,6 +3368,7 @@ country_event = {
       factor = 1
     }
   }
+  #Persecute this man!
   option = {
     name = flavor_per.57.c
     random_list = {
@@ -3198,6 +3390,7 @@ country_event = {
     }
   }
 }
+#Prophet in the Royal Court
 country_event = {
   id = flavor_per.58
   title = flavor_per.58.t
@@ -3229,6 +3422,7 @@ country_event = {
       }
     }
   }
+  #Keep him at the court
   option = {
     name = flavor_per.58.a
     goto = target_province
@@ -3248,6 +3442,7 @@ country_event = {
       factor = 1
     }
   }
+  #Banish him from the court
   option = {
     name = flavor_per.58.b
     goto = target_province
@@ -3270,6 +3465,7 @@ country_event = {
     }
   }
 }
+#The Two Rivers of the Fertile Crescent 
 country_event = {
   id = flavor_per.59
   title = flavor_per.59.t
@@ -3312,6 +3508,7 @@ country_event = {
     }
   }
 }
+#Guardians of the Strait
 country_event = {
   id = flavor_per.60
   title = flavor_per.60.t
@@ -3432,6 +3629,7 @@ country_event = {
     }
   }
 }
+#Chinese Blue-and-White Porcelains
 country_event = {
   id = flavor_per.61
   title = flavor_per.61.t
@@ -3477,6 +3675,7 @@ country_event = {
     }
   }
 }
+#Zoroastrianism within the Court
 country_event = {
   id = flavor_per.62
   title = flavor_per.62.t
@@ -3562,6 +3761,7 @@ country_event = {
     }
   }
 }
+#The [Root.Religion.GetName] revolution against the [Root.GovernmentName]
 country_event = {
   id = flavor_per.63
   title = flavor_per.63.t
@@ -3619,6 +3819,7 @@ country_event = {
       }
     }
   }
+  #Crush these revolutionaries
   option = {
     name = flavor_per.63.a
     custom_tooltip = flavor_per.63.a.tt
@@ -3672,6 +3873,7 @@ country_event = {
       factor = 1
     }
   }
+  #Oblige to the Clergy
   option = {
     name = flavor_per.63.b
     remove_country_modifier = zoroastrian_interests
@@ -3727,6 +3929,7 @@ country_event = {
     }
   }
 }
+#[Root.GetName] breaks to the Revolution
 country_event = {
   id = flavor_per.64
   title = flavor_per.64.t
@@ -3741,6 +3944,7 @@ country_event = {
       clr_country_flag = zoroastrian_civil_war_event
     }
   }
+  #Oblige to the Clergy
   option = {
     name = flavor_per.64.a
     remove_country_modifier = zoroastrian_interests
@@ -3781,6 +3985,7 @@ country_event = {
     }
   }
 }
+#[Root.GetName] crushes the revolution
 country_event = {
   id = flavor_per.65
   title = flavor_per.65.t
@@ -3825,6 +4030,7 @@ country_event = {
     }
   }
 }
+#Zoroastrian Identity
 country_event = {
   id = flavor_per.66
   title = flavor_per.66.t
@@ -3845,11 +4051,17 @@ country_event = {
   mean_time_to_happen = {
     months = 1
   }
+  #Embrace the Eranshahr Identity
   option = {
     name = flavor_per.66.a
     override_country_name = ERANSHAHR_STRING
+    #set_country_flag = is_ERANSHAHR_flag
+    #change_country_color = { color = { 101 46 137 } }
     set_country_flag = has_overriden_name_flag
+    #set_country_flag = has_overriden_color_flag
+    #hidden_effect = { set_country_flag = eranshahr_ideas }
     change_tag = ERS
+    #on_change_tag_effect = yes
     country_event = {
       id = ideagroups.1
     }
@@ -3857,6 +4069,7 @@ country_event = {
       factor = 1
     }
   }
+  #We are still Persia. And we shall as such be remembered.
   option = {
     name = flavor_per.66.b
     add_prestige = 10
@@ -3865,6 +4078,7 @@ country_event = {
     }
   }
 }
+#Abbas I Safavid 
 country_event = {
   id = flavor_per.67
   title = flavor_per.67.t
@@ -3896,7 +4110,7 @@ country_event = {
   option = {
     name = flavor_per.67.a
     define_heir = {
-      name = "?–Ôb¯e"  # Abbas
+      name = "?–Ôb¯e" 	# Abbas
       dynasty = ROOT
       claim = 95
       male = yes
@@ -3921,6 +4135,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+#Abbas I's Expansion of Isfahan
 country_event = {
   id = flavor_per.68
   title = flavor_per.68.t
@@ -3955,6 +4170,7 @@ country_event = {
     }
   }
 }
+#Prophet becomes proper part of the court
 country_event = {
   id = flavor_per.69
   title = flavor_per.69.t
@@ -4014,6 +4230,13 @@ country_event = {
       event_target:zoroastrian_center_of_conversion = {
         change_religion = zoroastrian
         add_reform_center = zoroastrian
+        #custom_tooltip = flavor_per.69.a.tt
+        #hidden_effect = {
+        #	province_event = {
+        #		id = flavor_per.6900
+        #		days = 18250
+        #	}
+        #}
       }
       hidden_effect = {
         1 = {
@@ -4029,6 +4252,21 @@ country_event = {
     }
   }
 }
+#province_event = {
+#	id = flavor_per.6900
+#	title = none
+#	desc = none
+#	picture = none
+#	hidden = yes
+#	is_triggered_only = yes
+#	option = {
+#		remove_reform_center = zoroastrian
+#		ai_chance = {
+#			factor = 1
+#		}
+#	}
+#}
+#The Prophet of the streets
 country_event = {
   id = flavor_per.70
   title = flavor_per.70.t
@@ -4093,12 +4331,19 @@ country_event = {
       change_religion = zoroastrian
       add_reform_center = zoroastrian
       custom_tooltip = flavor_per.69.a.tt
+      #hidden_effect = {
+      #	province_event = {
+      #		id = flavor_per.6900
+      #		days = 18250
+      #	}
+      #}
     }
     ai_chance = {
       factor = 1
     }
   }
 }
+#The Prophet returns with an army
 country_event = {
   id = flavor_per.71
   title = flavor_per.71.t
@@ -4196,12 +4441,19 @@ country_event = {
       change_religion = zoroastrian
       add_reform_center = zoroastrian
       custom_tooltip = flavor_per.69.a.tt
+      #hidden_effect = {
+      #	province_event = {
+      #		id = flavor_per.6900
+      #		days = 18250
+      #	}
+      #}
     }
     ai_chance = {
       factor = 1
     }
   }
 }
+#[Root.GetName] joins the [root.religion.getname] community
 country_event = {
   id = flavor_per.72
   title = flavor_per.72.t
@@ -4227,6 +4479,7 @@ country_event = {
     }
   }
 }
+#Shahnameh of Shah $RULER$
 country_event = {
   id = flavor_per.76
   title = flavor_per.76.t
@@ -4269,6 +4522,7 @@ country_event = {
     }
   }
 }
+#Rise of the Persian Arquebus
 country_event = {
   id = flavor_per.77
   title = flavor_per.77.t
@@ -4318,6 +4572,7 @@ country_event = {
     }
   }
 }
+#The Arrival of the Shirley Brothers
 country_event = {
   id = flavor_per.78
   title = flavor_per.78.t
@@ -4365,7 +4620,7 @@ country_event = {
       }
     }
     define_advisor = {
-      name = "W=Oyr ê–‰ƒ"  # Robert Shirley
+      name = "W=Oyr ê–‰ƒ" 	# Robert Shirley
       culture = english
       religion = anglican
       type = army_reformer
@@ -4384,7 +4639,7 @@ country_event = {
   option = {
     name = flavor_per.79.a
     define_heir = {
-      name = "O¯e›sêN"  # Ismail
+      name = "O¯e›sêN" 	# Ismail
       dynasty = ROOT
       age = 15
       adm = 5
@@ -4407,7 +4662,7 @@ country_event = {
   option = {
     name = flavor_per.79.b
     define_advisor = {
-      name = "O¯e›sêN"  # Ismail
+      name = "O¯e›sêN" 	# Ismail
       type = statesman
       skill = 3
       cost_multiplier = 0.1
@@ -4422,7 +4677,7 @@ country_event = {
   option = {
     name = flavor_per.79.c
     define_general = {
-      name = "O¯e›sêN"  # Ismail
+      name = "O¯e›sêN" 	# Ismail
       shock = 5
       fire = 5
       manuever = 5

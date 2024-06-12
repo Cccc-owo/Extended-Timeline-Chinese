@@ -1,4 +1,5 @@
 namespace = mmetr_FRK_Carolingian_mission_events
+# The King of All Franks
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.1
   title = "mmetr_FRK_Carolingian_mission_events.1.t"
@@ -25,6 +26,7 @@ country_event = {
     }
   }
 }
+# The Lombards of Italy
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.2
   title = "mmetr_FRK_Carolingian_mission_events.2.t"
@@ -48,7 +50,7 @@ country_event = {
     }
     if = {
       limit = {
-        exists = BNV
+        exists = BNV 	# Benevento
       }
       add_casus_belli = {
         target = BNV
@@ -73,6 +75,7 @@ country_event = {
     }
   }
 }
+# Frankish King of Italy
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.3
   title = "mmetr_FRK_Carolingian_mission_events.3.t"
@@ -99,6 +102,7 @@ country_event = {
     }
   }
 }
+# Pagan Saxons Vanquished
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.4
   title = "mmetr_FRK_Carolingian_mission_events.4.t"
@@ -197,6 +201,7 @@ country_event = {
     }
   }
 }
+# The Lex Saxonum
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.5
   title = "mmetr_FRK_Carolingian_mission_events.5.t"
@@ -216,13 +221,14 @@ country_event = {
     }
   }
 }
+# The Emperor of the Romans
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.6
   title = "mmetr_FRK_Carolingian_mission_events.6.t"
   desc = "mmetr_FRK_Carolingian_mission_events.6.desc"
   picture = MMETR_CORONATION_CHARLEMAGNE_eventPicture
   is_triggered_only = yes
-  major = yes
+  major = yes 	# makes notification pop up
   option = {
     name = "mmetr_FRK_Carolingian_mission_events.6.a"
     add_prestige = 25
@@ -303,7 +309,7 @@ country_event = {
             set_in_empire = yes
           }
         }
-        JMN = {
+        JMN = { 	# removes Jan Mayen as placeholder emperor
           elector = no
           kill_ruler = yes
         }
@@ -316,6 +322,7 @@ country_event = {
     }
   }
 }
+# The March of the Britons
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.7
   title = "mmetr_FRK_Carolingian_mission_events.7.t"
@@ -388,6 +395,7 @@ country_event = {
     name = "mmetr_FRK_Carolingian_mission_events.7.b"
   }
 }
+# A Vassal in Corsica?
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.8
   title = "mmetr_FRK_Carolingian_mission_events.8.t"
@@ -401,10 +409,11 @@ country_event = {
       add_core = COR
     }
     vassalize = COR
+    #Bouchard de Dominicur, the Constable of Charlemagne who defeated an invading force of Saracens
     COR = {
       define_ruler = {
-        name = "^™lS"  # Bouchard
-        dynasty = "·V Ys|<S“^S"  # de Dominicur
+        name = "^™lS" 	# Bouchard
+        dynasty = "·V Ys|<S“^S" 	# de Dominicur
         adm = 3
         dip = 2
         mil = 5
@@ -465,14 +474,14 @@ country_event = {
     name = "mmetr_FRK_Carolingian_mission_events.8.b"
     define_advisor = {
       type = grand_captain
-      name = "^™lS ·V Ys|<S“^S"  # Bouchard de Dominicur
+      name = "^™lS ·V Ys|<S“^S" 	# Bouchard de Dominicur
       skill = 2
     }
   }
   option = {
     name = "mmetr_FRK_Carolingian_mission_events.8.c"
     define_general = {
-      name = "^™lS ·V Ys|<S“^S"  # Bouchard de Dominicur
+      name = "^™lS ·V Ys|<S“^S" 	# Bouchard de Dominicur
       shock = 3
       fire = 1
       manuever = 2
@@ -480,6 +489,7 @@ country_event = {
     }
   }
 }
+# The Dukes of Bavaria
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.9
   title = "mmetr_FRK_Carolingian_mission_events.9.t"
@@ -569,6 +579,7 @@ country_event = {
     add_dip_power = 50
   }
 }
+# The Emperor of Christendom
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.10
   title = "mmetr_FRK_Carolingian_mission_events.10.t"
@@ -594,7 +605,7 @@ country_event = {
           }
         }
       }
-      118 = {
+      118 = { 	# Rome
         add_permanent_claim = ROOT
       }
     }
@@ -672,6 +683,7 @@ country_event = {
     }
   }
 }
+# Marca Hispanica
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.11
   title = "mmetr_FRK_Carolingian_mission_events.11.t"
@@ -703,6 +715,7 @@ country_event = {
     name = "mmetr_FRK_Carolingian_mission_events.11.b"
   }
 }
+# Emperor of Twin Capitals
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.12
   title = "mmetr_FRK_Carolingian_mission_events.12.t"
@@ -725,6 +738,7 @@ country_event = {
     }
   }
 }
+# The Franks Send Aid
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.13
   title = "mmetr_FRK_Carolingian_mission_events.13.t"
@@ -736,6 +750,7 @@ country_event = {
     add_treasury = 25
   }
 }
+# The Avar March
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.14
   title = "mmetr_FRK_Carolingian_mission_events.14.t"
@@ -755,6 +770,7 @@ country_event = {
     }
   }
 }
+# Spanish Aprisio
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.15
   title = "mmetr_FRK_Carolingian_mission_events.15.t"
@@ -774,6 +790,7 @@ country_event = {
     }
   }
 }
+# Charter of Modern Thought
 country_event = {
   id = mmetr_FRK_Carolingian_mission_events.16
   title = "mmetr_FRK_Carolingian_mission_events.16.t"

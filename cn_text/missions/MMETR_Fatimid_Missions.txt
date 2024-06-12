@@ -13,9 +13,7 @@ fatimid_mmetr_missions_1 = {
   has_country_shield = yes
   fat_appeal_to_the_dhimmi_mission = {
     icon = chivalry_is_not_dead
-    required_missions = {
-      fat_awliya_allah_mission
-    }
+    required_missions = { fat_awliya_allah_mission }
     position = 2
     trigger = {
       OR = {
@@ -63,24 +61,21 @@ fatimid_mmetr_missions_1 = {
         duration = -1
       }
       country_event = {
-        id = mmetr_FAT_mission_events.12
+        id = mmetr_FAT_mission_events.12 	# Choose Berber Advisor
       }
     }
   }
   fat_hegemonize_the_maghreb_mission = {
     icon = mission_traverse_the_sahara
-    required_missions = {
-      fat_kutama_cavalry_mission
-      fat_palaces_of_tunis_mission
-    }
+    required_missions = { fat_kutama_cavalry_mission fat_palaces_of_tunis_mission }
     position = 6
     provinces_to_highlight = {
       OR = {
         area = algiers_area
         area = fez_area
         area = northern_morocco_area
-        area = hautes_plaines_area
-        area = western_morocco_area
+        area = hautes_plaines_area 	# Central Morocco
+        area = western_morocco_area 	# Gharb
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
@@ -146,9 +141,7 @@ fatimid_mmetr_missions_1 = {
   }
   fat_challenge_cordoba_mission = {
     icon = mission_develop_cordoba
-    required_missions = {
-      fat_hegemonize_the_maghreb_mission
-    }
+    required_missions = { fat_hegemonize_the_maghreb_mission }
     position = 7
     provinces_to_highlight = {
       province_id = 225
@@ -158,15 +151,15 @@ fatimid_mmetr_missions_1 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_or_non_sovereign_subject_of = 225
+      owns_or_non_sovereign_subject_of = 225 	# Cordoba
     }
     effect = {
       country_event = {
-        id = mmetr_FAT_mission_events.13
+        id = mmetr_FAT_mission_events.13 	# The Martyrdom of Husayn ibn Ali
       }
       tooltip = {
         add_power_projection = {
-          type = mission_rewards_power_projection
+          type = mission_rewards_power_projection 	# Adding Power Projection
           amount = 20
         }
         add_country_modifier = {
@@ -178,9 +171,7 @@ fatimid_mmetr_missions_1 = {
   }
   fat_dominate_al_andalus_mission = {
     icon = mission_umayyad_court
-    required_missions = {
-      fat_challenge_cordoba_mission
-    }
+    required_missions = { fat_challenge_cordoba_mission }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -227,9 +218,7 @@ fatimid_mmetr_missions_1 = {
   }
   fat_the_caliph_in_rome_mission = {
     icon = answer_the_roman_question
-    required_missions = {
-      fat_landfall_in_siqilliya_mission
-    }
+    required_missions = { fat_landfall_in_siqilliya_mission }
     position = 9
     provinces_to_highlight = {
       province_id = 118
@@ -240,7 +229,7 @@ fatimid_mmetr_missions_1 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 118
+      owns_core_province = 118 	# Roma
       num_of_owned_provinces_with = {
         value = 6
         region = italy_region
@@ -252,7 +241,7 @@ fatimid_mmetr_missions_1 = {
       }
       add_dip_power = 100
       add_power_projection = {
-        type = mission_rewards_power_projection
+        type = mission_rewards_power_projection 	# Adding Power Projection
         amount = 25
       }
       lazio_area = {
@@ -315,10 +304,7 @@ fatimid_mmetr_missions_1 = {
   }
   fat_viceroy_of_italiya_mission = {
     icon = kingdom_of_lombardy
-    required_missions = {
-      fat_the_caliph_in_rome_mission
-      fat_mediterranean_powerhouse_mission
-    }
+    required_missions = { fat_the_caliph_in_rome_mission fat_mediterranean_powerhouse_mission }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -361,9 +347,7 @@ fatimid_mmetr_missions_1 = {
   }
   fat_caliph_of_caliphs_mission = {
     icon = mission_restore_faith_in_the_throne
-    required_missions = {
-      fat_unify_bilad_al_arab_mission
-    }
+    required_missions = { fat_unify_bilad_al_arab_mission }
     position = 12
     trigger = {
       development = 1000
@@ -420,13 +404,11 @@ fatimid_mmetr_missions_2 = {
   }
   fat_protector_of_all_shiites_mission = {
     icon = mission_al_andalus
-    required_missions = {
-      fat_awliya_allah_mission
-    }
+    required_missions = { fat_awliya_allah_mission }
     position = 3
     trigger = {
       religion = shiite
-      is_defender_of_faith_of_tier = 2
+      is_defender_of_faith_of_tier = 2 	# works for non-Emperor DLC as well
       num_of_owned_provinces_with = {
         value = 50
         religion = shiite
@@ -451,9 +433,7 @@ fatimid_mmetr_missions_2 = {
   }
   fat_lord_of_ifriqiyah_mission = {
     icon = mission_found_udaipur
-    required_missions = {
-      fat_kutama_berbers_mission
-    }
+    required_missions = { fat_kutama_berbers_mission }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -511,9 +491,7 @@ fatimid_mmetr_missions_2 = {
   }
   fat_palaces_of_tunis_mission = {
     icon = mission_cairo_citadel
-    required_missions = {
-      fat_lord_of_ifriqiyah_mission
-    }
+    required_missions = { fat_lord_of_ifriqiyah_mission }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -532,8 +510,8 @@ fatimid_mmetr_missions_2 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 4566
-      owns_core_province = 2473
+      owns_core_province = 4566 	# Kairwan / Kairouan
+      owns_core_province = 2473 	# Souss / Mahdia
       4566 = {
         num_of_times_improved_by_owner = 3
       }
@@ -552,7 +530,7 @@ fatimid_mmetr_missions_2 = {
       tooltip = {
         add_prestige = 15
         4566 = {
-          rename_capital = "�fς̑6w"  # El-Mansuriya
+          rename_capital = "�fς̑6w" 	# El-Mansuriya
         }
         4566 = {
           add_province_modifier = {
@@ -571,9 +549,7 @@ fatimid_mmetr_missions_2 = {
   }
   fat_fleet_of_the_khalifa_mission = {
     icon = mission_arabian_sea_trade
-    required_missions = {
-      fat_palaces_of_tunis_mission
-    }
+    required_missions = { fat_palaces_of_tunis_mission }
     position = 6
     trigger = {
       navy_size = 20
@@ -617,9 +593,7 @@ fatimid_mmetr_missions_2 = {
   }
   fat_landfall_in_siqilliya_mission = {
     icon = mission_sicily_roger_keys_to_city
-    required_missions = {
-      fat_fleet_of_the_khalifa_mission
-    }
+    required_missions = { fat_fleet_of_the_khalifa_mission }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -643,7 +617,7 @@ fatimid_mmetr_missions_2 = {
     }
     effect = {
       country_event = {
-        id = mmetr_FAT_mission_events.14
+        id = mmetr_FAT_mission_events.14 	# Greek Fire Event at Battle of the Straits
       }
       tooltip = {
         add_country_modifier = {
@@ -655,9 +629,7 @@ fatimid_mmetr_missions_2 = {
   }
   fat_mediterranean_powerhouse_mission = {
     icon = mission_rb_mediterranean_authority
-    required_missions = {
-      fat_landfall_in_siqilliya_mission
-    }
+    required_missions = { fat_landfall_in_siqilliya_mission }
     position = 9
     provinces_to_highlight = {
       area = corsica_sardinia_area
@@ -671,10 +643,10 @@ fatimid_mmetr_missions_2 = {
         type = all
         country_or_non_sovereign_subject_holds = ROOT
       }
-      358 = {
+      358 = { 	# Alexandria
         has_most_province_trade_power = ROOT
       }
-      341 = {
+      341 = { 	# Tunis
         has_most_province_trade_power = ROOT
       }
       num_of_owned_provinces_with = {
@@ -703,9 +675,7 @@ fatimid_mmetr_missions_2 = {
   }
   fat_secure_the_red_sea_mission = {
     icon = mission_dominate_persian_gulf
-    required_missions = {
-      fat_arabian_expansion_mission
-    }
+    required_missions = { fat_arabian_expansion_mission }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -722,7 +692,7 @@ fatimid_mmetr_missions_2 = {
           }
         }
         AND = {
-          province_id = 4346
+          province_id = 4346 	# Gulf of Aden
           NOT = {
             is_strongest_trade_power = ROOT
           }
@@ -751,7 +721,7 @@ fatimid_mmetr_missions_2 = {
         type = all
         country_or_non_sovereign_subject_holds = ROOT
       }
-      4346 = {
+      4346 = { 	# Gulf of Adeb Trade Node
         is_strongest_trade_power = ROOT
       }
     }
@@ -764,10 +734,7 @@ fatimid_mmetr_missions_2 = {
   }
   fat_unify_bilad_al_arab_mission = {
     icon = mission_turning_the_tables
-    required_missions = {
-      fat_secure_the_red_sea_mission
-      fat_subdue_the_qarmatians_mission
-    }
+    required_missions = { fat_secure_the_red_sea_mission fat_subdue_the_qarmatians_mission }
     position = 11
     provinces_to_highlight = {
       region = arabia_region
@@ -825,16 +792,16 @@ fatimid_mmetr_missions_3 = {
         tooltip = fat_caliphal_administration_mission.tt
         OR = {
           AND = {
-            has_adm_advisor = yes
-            has_dip_advisor = yes
+            has_adm_advisor = yes 	# vanilla Scripted_trigger
+            has_dip_advisor = yes 	# vanilla Scripted_trigger
           }
           AND = {
-            has_adm_advisor = yes
-            has_mil_advisor = yes
+            has_adm_advisor = yes 	# vanilla Scripted_trigger
+            has_mil_advisor = yes 	# vanilla Scripted_trigger
           }
           AND = {
-            has_dip_advisor = yes
-            has_mil_advisor = yes
+            has_dip_advisor = yes 	# vanilla Scripted_trigger
+            has_mil_advisor = yes 	# vanilla Scripted_trigger
           }
         }
       }
@@ -852,9 +819,7 @@ fatimid_mmetr_missions_3 = {
   }
   fat_cash_crop_agriculture_mission = {
     icon = prosperity_for_all
-    required_missions = {
-      fat_caliphal_administration_mission
-    }
+    required_missions = { fat_caliphal_administration_mission }
     position = 2
     provinces_to_highlight = {
       OR = {
@@ -1003,15 +968,13 @@ fatimid_mmetr_missions_3 = {
   }
   fat_makurian_relations_mission = {
     icon = mission_zim_strong_rulership
-    required_missions = {
-      fat_kutama_berbers_mission
-    }
+    required_missions = { fat_kutama_berbers_mission }
     position = 4
     provinces_to_highlight = {
       owner = {
         OR = {
-          tag = MAK
-          tag = NBI
+          tag = MAK 	# Makuria
+          tag = NBI 	# Nubia
         }
         NOT = {
           OR = {
@@ -1029,8 +992,8 @@ fatimid_mmetr_missions_3 = {
     trigger = {
       any_known_country = {
         OR = {
-          tag = MAK
-          tag = NBI
+          tag = MAK 	# Makuria
+          tag = NBI 	# Nubia
         }
         OR = {
           has_opinion = {
@@ -1052,7 +1015,7 @@ fatimid_mmetr_missions_3 = {
           duration = 10950
         }
       }
-      if = {
+      if = { 	# not just a tooltip to avoid decreased opinion decay preventing effect when event lasts for more than one day
         limit = {
           MAK = {
             OR = {
@@ -1092,9 +1055,7 @@ fatimid_mmetr_missions_3 = {
   }
   fat_spread_the_dawa_mission = {
     icon = mission_muslim_prayer
-    required_missions = {
-      fat_egyptian_ambitions_mission
-    }
+    required_missions = { fat_egyptian_ambitions_mission }
     position = 5
     provinces_to_highlight = {
       region = egypt_region
@@ -1119,9 +1080,7 @@ fatimid_mmetr_missions_3 = {
   }
   fat_custodian_of_the_holy_cities_mission = {
     icon = mission_into_arabia
-    required_missions = {
-      fat_imam_caliph_of_egypt_mission
-    }
+    required_missions = { fat_imam_caliph_of_egypt_mission }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1136,8 +1095,8 @@ fatimid_mmetr_missions_3 = {
         }
         AND = {
           OR = {
-            province_id = 385
-            province_id = 384
+            province_id = 385 	# Mecca
+            province_id = 384 	# Medina
           }
           NOT = {
             owned_by = ROOT
@@ -1148,8 +1107,8 @@ fatimid_mmetr_missions_3 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 385
-      owns_core_province = 384
+      owns_core_province = 385 	# Mecca
+      owns_core_province = 384 	# Medina
       mecca_area = {
         type = all
         country_or_non_sovereign_subject_holds = ROOT
@@ -1182,9 +1141,7 @@ fatimid_mmetr_missions_3 = {
   }
   fat_arabian_expansion_mission = {
     icon = mission_seljuk_captives
-    required_missions = {
-      fat_custodian_of_the_holy_cities_mission
-    }
+    required_missions = { fat_custodian_of_the_holy_cities_mission }
     position = 9
     provinces_to_highlight = {
       OR = {
@@ -1280,17 +1237,14 @@ fatimid_mmetr_missions_3 = {
   }
   fat_subdue_the_qarmatians_mission = {
     icon = mission_camel_cataphracts_prt_sas
-    required_missions = {
-      fat_arabian_expansion_mission
-      fat_the_abbasid_capital_mission
-    }
+    required_missions = { fat_arabian_expansion_mission fat_the_abbasid_capital_mission }
     position = 10
     provinces_to_highlight = {
       OR = {
-        province_id = 394
-        province_id = 2347
-        province_id = 396
-        province_id = 395
+        province_id = 394 	# El Qatif, Bahrain area
+        province_id = 2347 	# Al Hasa
+        province_id = 396 	# Bahrain
+        province_id = 395 	# Qatar
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
@@ -1306,7 +1260,7 @@ fatimid_mmetr_missions_3 = {
         NOT = {
           exists = QRM
         }
-        overlord_of = QRM
+        overlord_of = QRM 	# Qarmatians
       }
     }
     effect = {
@@ -1321,10 +1275,7 @@ fatimid_mmetr_missions_3 = {
   }
   fat_legacy_of_the_first_imam_mission = {
     icon = mission_al_andalus
-    required_missions = {
-      fat_unify_bilad_al_arab_mission
-      fat_iranian_campaign_mission
-    }
+    required_missions = { fat_unify_bilad_al_arab_mission fat_iranian_campaign_mission }
     position = 12
     provinces_to_highlight = {
       OR = {
@@ -1406,10 +1357,7 @@ fatimid_mmetr_missions_4 = {
   has_country_shield = yes
   fat_codification_by_the_jurists_mission = {
     icon = mission_reclaim_morocco
-    required_missions = {
-      fat_caliphal_administration_mission
-      fat_ismaili_mosques_mission
-    }
+    required_missions = { fat_caliphal_administration_mission fat_ismaili_mosques_mission }
     position = 2
     trigger = {
       religion = shiite
@@ -1444,9 +1392,7 @@ fatimid_mmetr_missions_4 = {
   }
   fat_egyptian_ambitions_mission = {
     icon = mission_rb_seize_alexandria
-    required_missions = {
-      fat_kutama_berbers_mission
-    }
+    required_missions = { fat_kutama_berbers_mission }
     position = 4
     completed_by = 969.6.1
     provinces_to_highlight = {
@@ -1461,8 +1407,8 @@ fatimid_mmetr_missions_4 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 361
-      owns_core_province = 358
+      owns_core_province = 361 	# Cairo
+      owns_core_province = 358 	# Alexandria
     }
     effect = {
       country_event = {
@@ -1493,16 +1439,14 @@ fatimid_mmetr_missions_4 = {
   }
   fat_imam_caliph_of_egypt_mission = {
     icon = mission_fatimid_caliphate
-    required_missions = {
-      fat_egyptian_ambitions_mission
-    }
+    required_missions = { fat_egyptian_ambitions_mission }
     position = 6
     provinces_to_highlight = {
       OR = {
         area = delta_area
         area = bahari_area
         area = vostani_area
-        area = said_area
+        area = said_area 	# not including Lower Nubia, which is in Egypt region
         area = gulf_of_arabia_area
         area = al_wahat_area
       }
@@ -1583,9 +1527,7 @@ fatimid_mmetr_missions_4 = {
   }
   fat_hegemon_of_syria_mission = {
     icon = mission_saladin_takes_jerusalem
-    required_missions = {
-      fat_imam_caliph_of_egypt_mission
-    }
+    required_missions = { fat_imam_caliph_of_egypt_mission }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1598,8 +1540,8 @@ fatimid_mmetr_missions_4 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 377
-      owns_core_province = 382
+      owns_core_province = 377 	# Aleppo
+      owns_core_province = 382 	# Damascus
       syria_area = {
         type = all
         country_or_non_sovereign_subject_holds = ROOT
@@ -1669,9 +1611,7 @@ fatimid_mmetr_missions_4 = {
   }
   fat_the_abbasid_capital_mission = {
     icon = mission_black_standard_of_the_eagle
-    required_missions = {
-      fat_hegemon_of_syria_mission
-    }
+    required_missions = { fat_hegemon_of_syria_mission }
     position = 9
     provinces_to_highlight = {
       province_id = 410
@@ -1682,17 +1622,17 @@ fatimid_mmetr_missions_4 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 410
+      owns_core_province = 410 	# Baghdad
       mashriq_region = {
         type = all
         NOT = {
-          owned_by = ABA
+          owned_by = ABA 	# Abbasids
         }
       }
     }
     effect = {
       country_event = {
-        id = mmetr_FAT_mission_events.16
+        id = mmetr_FAT_mission_events.16 	# The Revolution Reaches Baghdad
       }
       tooltip = {
         add_prestige = 25
@@ -1766,9 +1706,7 @@ fatimid_mmetr_missions_4 = {
   }
   fat_iranian_campaign_mission = {
     icon = mission_persianate_empire
-    required_missions = {
-      fat_the_abbasid_capital_mission
-    }
+    required_missions = { fat_the_abbasid_capital_mission }
     position = 11
     provinces_to_highlight = {
       OR = {
@@ -1844,9 +1782,7 @@ fatimid_mmetr_missions_5 = {
   }
   fat_patron_of_the_arts_mission = {
     icon = porcelain_from_meissen
-    required_missions = {
-      fat_ismaili_mosques_mission
-    }
+    required_missions = { fat_ismaili_mosques_mission }
     position = 2
     trigger = {
       OR = {
@@ -1873,10 +1809,7 @@ fatimid_mmetr_missions_5 = {
   }
   fat_descendants_of_fatima_mission = {
     icon = mission_hands_praying
-    required_missions = {
-      fat_patron_of_the_arts_mission
-      fat_codification_by_the_jurists_mission
-    }
+    required_missions = { fat_patron_of_the_arts_mission fat_codification_by_the_jurists_mission }
     position = 3
     trigger = {
       prestige = 90
@@ -1888,11 +1821,9 @@ fatimid_mmetr_missions_5 = {
       }
     }
   }
-  fat_turkish_ghulam_mission = {
+  fat_turkish_ghulam_mission = { 	# moved here from 1.1
     icon = mission_egyptian_mamluk_soldier
-    required_missions = {
-      fat_kutama_berbers_mission
-    }
+    required_missions = { fat_kutama_berbers_mission }
     position = 4
     trigger = {
       army_tradition = 70
@@ -1906,12 +1837,10 @@ fatimid_mmetr_missions_5 = {
   }
   fat_develop_al_qahira_mission = {
     icon = mission_into_persia_2
-    required_missions = {
-      fat_egyptian_ambitions_mission
-    }
+    required_missions = { fat_egyptian_ambitions_mission }
     position = 5
     provinces_to_highlight = {
-      province_id = 361
+      province_id = 361 	# Cairo
       OR = {
         NOT = {
           num_of_times_improved_by_owner = 5
@@ -1959,9 +1888,7 @@ fatimid_mmetr_missions_5 = {
   }
   fat_al_azhar_university_mission = {
     icon = mission_into_persia_1
-    required_missions = {
-      fat_develop_al_qahira_mission
-    }
+    required_missions = { fat_develop_al_qahira_mission }
     position = 6
     provinces_to_highlight = {
       province_id = 361
@@ -1980,7 +1907,7 @@ fatimid_mmetr_missions_5 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 361
+      owns_core_province = 361 	# Cairo
       361 = {
         has_great_project = {
           type = al_azhar_mosque
@@ -1990,7 +1917,7 @@ fatimid_mmetr_missions_5 = {
     }
     effect = {
       country_event = {
-        id = mmetr_FAT_mission_events.23
+        id = mmetr_FAT_mission_events.23 	# Advisor Choice Event
       }
       custom_tooltip = fat_al_azhar_university_mission.tt
       add_country_modifier = {
@@ -2001,9 +1928,7 @@ fatimid_mmetr_missions_5 = {
   }
   fat_renovate_jerusalem_mission = {
     icon = mission_jerusalem_dome_of_the_rock
-    required_missions = {
-      fat_imam_caliph_of_egypt_mission
-    }
+    required_missions = { fat_imam_caliph_of_egypt_mission }
     position = 7
     provinces_to_highlight = {
       province_id = 379
@@ -2034,7 +1959,7 @@ fatimid_mmetr_missions_5 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 379
+      owns_core_province = 379 	# Jerusalem
       379 = {
         num_of_times_improved_by_owner = 3
       }
@@ -2052,7 +1977,7 @@ fatimid_mmetr_missions_5 = {
           has_owner_religion = yes
         }
         379 = {
-          tolerance_to_this = 1
+          tolerance_to_this = 1 	# tolerance of at least X towards the religion of the country or scoped province
         }
         estate_loyalty = {
           estate = estate_dhimmi
@@ -2075,14 +2000,12 @@ fatimid_mmetr_missions_5 = {
   }
   fat_drive_back_the_romans_mission = {
     icon = mission_pf_soldier
-    required_missions = {
-      fat_hegemon_of_syria_mission
-    }
+    required_missions = { fat_hegemon_of_syria_mission }
     position = 8
     provinces_to_highlight = {
       OR = {
         region = anatolia_region
-        province_id = 2313
+        province_id = 2313 	# Antioch
       }
       NOT = {
         owned_by = ROOT
@@ -2090,7 +2013,7 @@ fatimid_mmetr_missions_5 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 2313
+      owns_core_province = 2313 	# Antioch
       num_of_owned_provinces_with = {
         value = 10
         region = anatolia_region
@@ -2108,12 +2031,10 @@ fatimid_mmetr_missions_5 = {
   }
   fat_besiege_qustantiniyya_mission = {
     icon = mission_city_of_the_world's_desire
-    required_missions = {
-      fat_drive_back_the_romans_mission
-    }
+    required_missions = { fat_drive_back_the_romans_mission }
     position = 9
     provinces_to_highlight = {
-      province_id = 151
+      province_id = 151 	# Constantinople
       NOT = {
         owned_by = ROOT
       }
@@ -2123,7 +2044,7 @@ fatimid_mmetr_missions_5 = {
       owns = 151
     }
     effect = {
-      add_prestige = 25
+      add_prestige = 25 	# effect separate from Event effects!
       151 = {
         add_province_modifier = {
           name = "me_fat_caliph_of_qustantiniyya"
@@ -2137,9 +2058,7 @@ fatimid_mmetr_missions_5 = {
   }
   fat_ismaili_revolution_mission = {
     icon = mission_muslim_prayer
-    required_missions = {
-      fat_the_abbasid_capital_mission
-    }
+    required_missions = { fat_the_abbasid_capital_mission }
     position = 10
     provinces_to_highlight = {
       province_id = 410
@@ -2175,10 +2094,7 @@ fatimid_mmetr_missions_5 = {
   }
   fat_complete_the_revolution_mission = {
     icon = mission_fatimid_caliphate
-    required_missions = {
-      fat_ismaili_revolution_mission
-      fat_iranian_campaign_mission
-    }
+    required_missions = { fat_ismaili_revolution_mission fat_iranian_campaign_mission }
     position = 12
     provinces_to_highlight = {
       OR = {

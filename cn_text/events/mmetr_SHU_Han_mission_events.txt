@@ -1,4 +1,5 @@
 namespace = mmetr_SHU_Han_mission_events
+# Legacy of Liu Bang
 country_event = {
   id = mmetr_SHU_Han_mission_events.1
   title = "mmetr_SHU_Han_mission_events.1.t"
@@ -11,7 +12,7 @@ country_event = {
       name = me_hnd_king_of_hanzhong
       duration = 10950
     }
-    700 = {
+    700 = { 	# Chang'an
       if = {
         limit = {
           NOT = {
@@ -24,7 +25,7 @@ country_event = {
         add_permanent_claim = ROOT
       }
     }
-    1836 = {
+    1836 = { 	# Luoyang
       if = {
         limit = {
           NOT = {
@@ -61,6 +62,7 @@ country_event = {
     }
   }
 }
+# The White Feather Guard
 country_event = {
   id = mmetr_SHU_Han_mission_events.2
   title = "mmetr_SHU_Han_mission_events.2.t"
@@ -82,6 +84,7 @@ country_event = {
     }
   }
 }
+# Lord of Zhongyuan
 country_event = {
   id = mmetr_SHU_Han_mission_events.3
   title = "mmetr_SHU_Han_mission_events.3.t"
@@ -113,6 +116,7 @@ country_event = {
     }
   }
 }
+# The Western Capital
 country_event = {
   id = mmetr_SHU_Han_mission_events.4
   title = "mmetr_SHU_Han_mission_events.4.t"
@@ -129,6 +133,7 @@ country_event = {
     }
   }
 }
+# Restoration of the Han?
 country_event = {
   id = mmetr_SHU_Han_mission_events.5
   title = "mmetr_SHU_Han_mission_events.5.t"
@@ -138,19 +143,20 @@ country_event = {
   option = {
     name = "mmetr_SHU_Han_mission_events.5.a"
     hidden_effect = {
-      restore_country_name = yes
+      restore_country_name = yes 	# removes any overriden name
     }
-    change_tag = HND
+    change_tag = HND 	# Switch to Han
   }
   option = {
     name = "mmetr_SHU_Han_mission_events.5.b"
-    override_country_name = SHU_HAN_NAME
+    override_country_name = SHU_HAN_NAME 	# Name change to Shu Han
   }
   option = {
     name = "mmetr_SHU_Han_mission_events.5.c"
     custom_tooltip = mmetr_SHU_Han_mission_events.5.tt
   }
 }
+# Purge of the Corrupt
 country_event = {
   id = mmetr_SHU_Han_mission_events.6
   title = "mmetr_SHU_Han_mission_events.6.t"
@@ -173,6 +179,7 @@ country_event = {
     }
   }
 }
+# Promotion of Education and Talent
 country_event = {
   id = mmetr_SHU_Han_mission_events.7
   title = "mmetr_SHU_Han_mission_events.7.t"
@@ -187,6 +194,7 @@ country_event = {
     }
   }
 }
+# The City of Silk
 country_event = {
   id = mmetr_SHU_Han_mission_events.8
   title = "mmetr_SHU_Han_mission_events.8.t"
@@ -204,6 +212,7 @@ country_event = {
     }
   }
 }
+# Innovations of Shu
 country_event = {
   id = mmetr_SHU_Han_mission_events.9
   title = "mmetr_SHU_Han_mission_events.9.t"
@@ -222,6 +231,7 @@ country_event = {
     }
   }
 }
+# Land of Salt and Steel
 country_event = {
   id = mmetr_SHU_Han_mission_events.10
   title = "mmetr_SHU_Han_mission_events.10.t"
@@ -245,6 +255,7 @@ country_event = {
     }
   }
 }
+# Empire of Silk
 country_event = {
   id = mmetr_SHU_Han_mission_events.11
   title = "mmetr_SHU_Han_mission_events.11.t"
@@ -260,6 +271,7 @@ country_event = {
     }
   }
 }
+# Eunuch Influence Curbed
 country_event = {
   id = mmetr_SHU_Han_mission_events.12
   title = "mmetr_SHU_Han_mission_events.12.t"
@@ -274,6 +286,7 @@ country_event = {
     }
   }
 }
+# Jing Province Claimed
 country_event = {
   id = mmetr_SHU_Han_mission_events.13
   title = "mmetr_SHU_Han_mission_events.13.t"
@@ -327,6 +340,7 @@ country_event = {
     }
   }
 }
+# The Fate of the Sun Clan
 country_event = {
   id = mmetr_SHU_Han_mission_events.14
   title = "mmetr_SHU_Han_mission_events.14.t"
@@ -345,7 +359,7 @@ country_event = {
   option = {
     name = "mmetr_SHU_Han_mission_events.14.b"
     define_consort = {
-      dynasty = "¿YR"  # Sun
+      dynasty = "¿YR" 	# Sun
       religion = ROOT
       culture = wu
     }
@@ -376,6 +390,7 @@ country_event = {
     }
   }
 }
+# The People of Nanyue
 country_event = {
   id = mmetr_SHU_Han_mission_events.15
   title = "mmetr_SHU_Han_mission_events.15.t"
@@ -425,6 +440,7 @@ country_event = {
     }
   }
 }
+# The People of Nanyue
 country_event = {
   id = mmetr_SHU_Han_mission_events.16
   title = "mmetr_SHU_Han_mission_events.16.t"
@@ -456,6 +472,7 @@ country_event = {
     }
   }
 }
+# Rise of the Cuan Clan
 country_event = {
   id = mmetr_SHU_Han_mission_events.17
   title = "mmetr_SHU_Han_mission_events.17.t"
@@ -474,7 +491,7 @@ country_event = {
   option = {
     name = "mmetr_SHU_Han_mission_events.17.b"
     define_advisor = {
-      name = "(r`N"  # Cuan Xi
+      name = "(r`N" 	# Cuan Xi
       type = recruitmaster
       skill = 2
       culture = bai
@@ -484,7 +501,7 @@ country_event = {
   option = {
     name = "mmetr_SHU_Han_mission_events.17.c"
     define_advisor = {
-      name = "(r`N"  # Cuan Xi
+      name = "(r`N" 	# Cuan Xi
       type = diplomat
       skill = 2
       culture = bai
@@ -492,6 +509,7 @@ country_event = {
     }
   }
 }
+# Hostage from the Xianbei Tribes
 country_event = {
   id = mmetr_SHU_Han_mission_events.18
   title = "mmetr_SHU_Han_mission_events.18.t"

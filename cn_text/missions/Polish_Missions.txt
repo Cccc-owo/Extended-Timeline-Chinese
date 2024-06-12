@@ -110,11 +110,9 @@ polish_missions_main_slot = {
       }
     }
   }
-  conquer_warmia = {
+  conquer_warmia = { 	# Conquer Western Prussia
     icon = mission_conquer_5_states
-    required_missions = {
-      prussian_confederation_mission_pol
-    }
+    required_missions = { prussian_confederation_mission_pol }
     completed_by = 1466.10.19
     position = 3
     provinces_to_highlight = {
@@ -175,9 +173,7 @@ polish_missions_main_slot = {
   }
   vassalize_the_teutonic_order = {
     icon = mission_teutonic_knights
-    required_missions = {
-      conquer_warmia
-    }
+    required_missions = { conquer_warmia }
     position = 5
     provinces_to_highlight = {
       area = east_prussia_area
@@ -258,9 +254,7 @@ plc_missions_1 = {
   has_country_shield = yes
   polish_navy_mission = {
     icon = mission_galleys_in_port
-    required_missions = {
-      vassalize_the_teutonic_order
-    }
+    required_missions = { vassalize_the_teutonic_order }
     position = 6
     provinces_to_highlight = {
       province_id = 43
@@ -323,9 +317,7 @@ plc_missions_1 = {
   }
   swedish_deluge_mission = {
     icon = mission_steppe_warriors
-    required_missions = {
-      polish_navy_mission
-    }
+    required_missions = { polish_navy_mission }
     provinces_to_highlight = {
       OR = {
         area = ostra_svealand_area
@@ -377,9 +369,7 @@ polish_missions_branch_slot = {
   has_country_shield = yes
   revenge_for_varna_mission = {
     icon = mission_crusade_for_varna
-    required_missions = {
-      vassalize_the_teutonic_order
-    }
+    required_missions = { vassalize_the_teutonic_order }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -556,11 +546,9 @@ polish_missions_slot_3 = {
       }
     }
   }
-  vassalize_lithuania = {
+  vassalize_lithuania = { 	#  INTEGRATE lithuania
     icon = mission_empire
-    required_missions = {
-      annex_mazovia
-    }
+    required_missions = { annex_mazovia }
     completed_by = 1569.7.1
     provinces_to_highlight = {
       OR = {
@@ -592,7 +580,7 @@ polish_missions_slot_3 = {
       }
     }
     effect = {
-      add_country_modifier = {
+      add_country_modifier = { 	#  autonomy reduction speed
         name = "integration_of_lithuania"
         duration = 5475
       }
@@ -649,9 +637,7 @@ polish_missions_slot_3 = {
   }
   union_over_hungary_mission = {
     icon = mission_monarch_in_throne_room
-    required_missions = {
-      vassalize_lithuania
-    }
+    required_missions = { vassalize_lithuania }
     provinces_to_highlight = {
       OR = {
         area = slovakia_area
@@ -692,9 +678,7 @@ polish_missions_slot_3 = {
   }
   conquer_silesia = {
     icon = mission_conquer_5_states
-    required_missions = {
-      union_over_hungary_mission
-    }
+    required_missions = { union_over_hungary_mission }
     provinces_to_highlight = {
       area = silesia_area
       NOT = {
@@ -765,9 +749,7 @@ polish_missions_slot_3 = {
   }
   union_over_bohemia_mission = {
     icon = mission_monarch_in_throne_room
-    required_missions = {
-      conquer_silesia
-    }
+    required_missions = { conquer_silesia }
     provinces_to_highlight = {
       OR = {
         area = bohemia_area
@@ -822,9 +804,7 @@ polish_missions_slot_4 = {
   has_country_shield = yes
   mission_restore_ruthenia = {
     icon = mission_eastern_european_city
-    required_missions = {
-      deal_with_the_sejm_mission
-    }
+    required_missions = { deal_with_the_sejm_mission }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -854,13 +834,13 @@ polish_missions_slot_4 = {
       }
     }
     effect = {
-      west_dniepr_area = {
+      west_dniepr_area = { 	#  dev cost
         add_province_modifier = {
           name = "restored_ruthenia"
           duration = -1
         }
       }
-      east_dniepr_area = {
+      east_dniepr_area = { 	#  dev cost
         add_province_modifier = {
           name = "restored_ruthenia"
           duration = -1
@@ -952,9 +932,7 @@ polish_missions_slot_5 = {
   }
   expand_kazimierz_mission = {
     icon = mission_eastern_european_city
-    required_missions = {
-      polish_renaissance_mission
-    }
+    required_missions = { polish_renaissance_mission }
     provinces_to_highlight = {
       province_id = 262
     }
@@ -988,7 +966,7 @@ polish_missions_slot_5 = {
     effect = {
       define_advisor = {
         type = theologian
-        name = "idâ ÂNmt)RØe"  # Moses Isserles
+        name = "idâ ÂNmt)RØe" 	# Moses Isserles
         culture = polish
         religion = jewish
         skill = 3
@@ -1008,9 +986,7 @@ polish_missions_slot_5 = {
   }
   deal_with_the_sejm_mission = {
     icon = mission_noble_council
-    required_missions = {
-      expand_kazimierz_mission
-    }
+    required_missions = { expand_kazimierz_mission }
     position = 5
     trigger = {
       NOT = {
@@ -1034,9 +1010,7 @@ polish_missions_slot_5 = {
   }
   invest_in_eastern_poland_mission = {
     icon = mission_have_manufactories
-    required_missions = {
-      deal_with_the_sejm_mission
-    }
+    required_missions = { deal_with_the_sejm_mission }
     provinces_to_highlight = {
       OR = {
         province_id = 260
@@ -1079,7 +1053,7 @@ polish_missions_slot_5 = {
         }
       }
     }
-    effect = {
+    effect = { 	#  goods produced and local trade power
       sandomierz_area = {
         limit = {
           owned_by = ROOT
