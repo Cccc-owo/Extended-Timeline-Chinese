@@ -13,9 +13,7 @@ sengoku_unifier_missions_1 = {
   has_country_shield = yes
   oda_subjugate_chugoku = {
     icon = mission_invade_island
-    required_missions = {
-      oda_new_capital
-    }
+    required_missions = { oda_new_capital }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -65,7 +63,7 @@ sengoku_unifier_missions_2 = {
       }
     }
     trigger = {
-      owns_core_province = 1030
+      owns_core_province = 1030 	# Owari
       army_size_percentage = 1
       stability = 1
     }
@@ -75,9 +73,7 @@ sengoku_unifier_missions_2 = {
   }
   oda_besiege_inabayama = {
     icon = mission_japanese_fort
-    required_missions = {
-      oda_consolidate_owari
-    }
+    required_missions = { oda_consolidate_owari }
     position = 2
     completed_by = 1568.1.1
     provinces_to_highlight = {
@@ -89,20 +85,18 @@ sengoku_unifier_missions_2 = {
       }
     }
     trigger = {
-      owns = 1835
+      owns = 1835 	# Mino
     }
     effect = {
       1835 = {
         add_base_manpower = 1
-        rename_capital = "êSñ"  # Gifu
+        rename_capital = "êSñ" 	# Gifu
       }
     }
   }
   oda_conquer_echizen = {
     icon = mission_build_up_to_force_limit
-    required_missions = {
-      oda_besiege_inabayama
-    }
+    required_missions = { oda_besiege_inabayama }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -113,9 +107,9 @@ sengoku_unifier_missions_2 = {
       }
     }
     trigger = {
-      owns_core_province = 1023
+      owns_core_province = 1023 	# Echizen
     }
-    effect = {
+    effect = { 	# Tango
       4315 = {
         add_permanent_claim = ROOT
       }
@@ -123,9 +117,7 @@ sengoku_unifier_missions_2 = {
   }
   oda_ishiyama_hongangji = {
     icon = mission_japanese_castle_burning
-    required_missions = {
-      oda_conquer_echizen
-    }
+    required_missions = { oda_conquer_echizen }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -136,9 +128,9 @@ sengoku_unifier_missions_2 = {
       }
     }
     trigger = {
-      owns_or_non_sovereign_subject_of = 1021
+      owns_or_non_sovereign_subject_of = 1021 	# Settsu
     }
-    effect = {
+    effect = { 	# Tango
       4315 = {
         add_permanent_claim = ROOT
       }
@@ -146,9 +138,7 @@ sengoku_unifier_missions_2 = {
   }
   oda_new_capital = {
     icon = mission_colonial
-    required_missions = {
-      oda_ishiyama_hongangji
-    }
+    required_missions = { oda_ishiyama_hongangji }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -174,9 +164,7 @@ sengoku_unifier_missions_2 = {
   }
   oda_subjugate_shikoku = {
     icon = mission_japanese_samurai
-    required_missions = {
-      oda_new_capital
-    }
+    required_missions = { oda_new_capital }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -199,10 +187,7 @@ sengoku_unifier_missions_2 = {
   }
   oda_kyushu_campaign = {
     icon = mission_rb_conquer_ireland
-    required_missions = {
-      oda_subjugate_shikoku
-      oda_subjugate_chugoku
-    }
+    required_missions = { oda_subjugate_shikoku oda_subjugate_chugoku }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -243,7 +228,7 @@ sengoku_unifier_missions_3 = {
   has_country_shield = yes
   oda_intensive_firearms = {
     icon = mission_japanese_arquebus
-    required_missions = {}
+    required_missions = {} 	# none
     position = 1
     trigger = {
       army_tradition = 40
@@ -259,7 +244,7 @@ sengoku_unifier_missions_3 = {
   }
   oda_samurai_steel = {
     icon = mission_trade_with_japan
-    required_missions = {}
+    required_missions = {} 	# none
     position = 2
     trigger = {
       num_of_heavy_ship = 10
@@ -272,7 +257,7 @@ sengoku_unifier_missions_3 = {
   }
   oda_fushimi_era = {
     icon = mission_noble_council
-    required_missions = {}
+    required_missions = {} 	# none
     position = 3
     trigger = {
       total_development = 60
@@ -285,7 +270,7 @@ sengoku_unifier_missions_3 = {
   }
   oda_secure_mikawa = {
     icon = mission_tokugawa_shogunate
-    required_missions = {}
+    required_missions = {} 	# none
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -297,7 +282,7 @@ sengoku_unifier_missions_3 = {
     }
     trigger = {
       OR = {
-        owns_or_subject_of = 4360
+        owns_or_subject_of = 4360 	# Mikawa
         alliance_with = TKG
       }
     }
@@ -307,9 +292,7 @@ sengoku_unifier_missions_3 = {
   }
   oda_furinkazan = {
     icon = mission_conquer_5_states
-    required_missions = {
-      oda_secure_mikawa
-    }
+    required_missions = { oda_secure_mikawa }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -322,8 +305,8 @@ sengoku_unifier_missions_3 = {
     }
     trigger = {
       OR = {
-        owns_core_province = 4188
-        owns_core_province = 1029
+        owns_core_province = 4188 	# Shinano
+        owns_core_province = 1029 	# Kai
       }
     }
     effect = {
@@ -333,9 +316,7 @@ sengoku_unifier_missions_3 = {
   }
   oda_dragon_and_tiger_of_echigo = {
     icon = mission_defy_the_dragon
-    required_missions = {
-      oda_furinkazan
-    }
+    required_missions = { oda_furinkazan }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -347,7 +328,7 @@ sengoku_unifier_missions_3 = {
     }
     trigger = {
       OR = {
-        owns_core_province = 1024
+        owns_core_province = 1024 	# Echigo
       }
     }
     effect = {
@@ -356,13 +337,11 @@ sengoku_unifier_missions_3 = {
   }
   oda_besiege_odawara_mission = {
     icon = mission_cannons_firing
-    required_missions = {
-      oda_dragon_and_tiger_of_echigo
-    }
+    required_missions = { oda_dragon_and_tiger_of_echigo }
     position = 7
     provinces_to_highlight = {
       OR = {
-        province_id = 4189
+        province_id = 4189 	# Sagami
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
@@ -370,25 +349,22 @@ sengoku_unifier_missions_3 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 4189
+      owns_core_province = 4189 	# Sagami
     }
     effect = {
       add_country_modifier = {
         name = "oda_cannon_siegecraft"
-        duration = 9125
+        duration = 9125 	# 25 years
       }
     }
   }
   oda_great_unifier = {
     icon = mission_oda_nobunaga
-    required_missions = {
-      oda_besiege_odawara_mission
-      oda_kyushu_campaign
-    }
+    required_missions = { oda_besiege_odawara_mission oda_kyushu_campaign }
     position = 8
     provinces_to_highlight = {
       OR = {
-        province_id = 1028
+        province_id = 1028 	# Musashi
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
@@ -424,9 +400,7 @@ sengoku_unifier_missions_4 = {
   has_country_shield = yes
   oda_quell_saika_ikki = {
     icon = mission_landsknecht_soldier
-    required_missions = {
-      oda_dragon_and_tiger_of_echigo
-    }
+    required_missions = { oda_dragon_and_tiger_of_echigo }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -438,7 +412,7 @@ sengoku_unifier_missions_4 = {
     }
     trigger = {
       OR = {
-        owns_core_province = 4187
+        owns_core_province = 4187 	# Kii
       }
       4187 = {
         NOT = {
@@ -452,7 +426,7 @@ sengoku_unifier_missions_4 = {
     effect = {
       add_country_modifier = {
         name = "oda_saika_ikki"
-        duration = 9125
+        duration = 9125 	# 25 years
       }
     }
   }
@@ -499,12 +473,12 @@ sengoku_unifier_missions_5 = {
     }
     trigger = {
       has_reform = shogunate
-      owns = 1020
+      owns = 1020 	# Kyoto
     }
     effect = {
       add_country_modifier = {
         name = "oda_sengoku_great_unifier"
-        duration = 10950
+        duration = 10950 	# 30 years	
       }
       japan_region = {
         limit = {
@@ -521,9 +495,7 @@ sengoku_unifier_missions_5 = {
   }
   oda_conquest_of_korea = {
     icon = mission_unite_home_region
-    required_missions = {
-      oda_march_to_kyoto
-    }
+    required_missions = { oda_march_to_kyoto }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -555,9 +527,7 @@ sengoku_unifier_missions_5 = {
   }
   oda_invasion_of_china = {
     icon = et_mission_forbidden_city
-    required_missions = {
-      oda_conquest_of_korea
-    }
+    required_missions = { oda_conquest_of_korea }
     position = 6
     provinces_to_highlight = {
       OR = {

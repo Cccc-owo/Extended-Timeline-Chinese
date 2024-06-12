@@ -18,9 +18,7 @@ arm_first_branch = {
   has_country_shield = yes
   arm_avenge_seljuk_conquest = {
     icon = mission_crush_eyalet_rebellion
-    required_missions = {
-      arm_breaking_the_chains
-    }
+    required_missions = { arm_breaking_the_chains }
     position = 2
     provinces_to_highlight = {
       area = tabriz_area
@@ -106,9 +104,7 @@ arm_first_branch = {
   }
   arm_church_of_the_east = {
     icon = mission_cradle_of_civilization
-    required_missions = {
-      arm_avenge_seljuk_conquest
-    }
+    required_missions = { arm_avenge_seljuk_conquest }
     position = 4
     provinces_to_highlight = {
       area = iraq_arabi_area
@@ -226,9 +222,7 @@ arm_first_branch = {
   }
   arm_wool_industry = {
     icon = mission_serfdom
-    required_missions = {
-      arm_national_awakening
-    }
+    required_missions = { arm_national_awakening }
     position = 6
     provinces_to_highlight = {
       trade_goods = wool
@@ -285,10 +279,7 @@ arm_first_branch = {
   }
   arm_resettle_ancestral_homeland = {
     icon = mission_expel_the_moriscos
-    required_missions = {
-      arm_wool_industry
-      arm_rebuild_tigranakert
-    }
+    required_missions = { arm_wool_industry arm_rebuild_tigranakert }
     position = 7
     provinces_to_highlight = {
       owned_by = ROOT
@@ -334,9 +325,7 @@ arm_second_branch = {
   has_country_shield = yes
   arm_artaxiad_legacy = {
     icon = arm_artaxiad_legacy
-    required_missions = {
-      arm_avenge_seljuk_conquest
-    }
+    required_missions = { arm_avenge_seljuk_conquest }
     position = 3
     provinces_to_highlight = {
       region = persia_region
@@ -402,7 +391,7 @@ arm_second_branch = {
     effect = {
       set_country_flag = arm_capital_tigranakert
       418 = {
-        rename_capital = "‚„<hÉb³uKQyr"  # Tigranakert
+        rename_capital = "‚„<hÉb³uKQyr" 	# Tigranakert
       }
       418 = {
         change_trade_goods = cloth
@@ -577,9 +566,7 @@ arm_third_branch = {
   }
   arm_caspian_riches = {
     icon = mission_arabian_sea_trade
-    required_missions = {
-      arm_breaking_the_chains
-    }
+    required_missions = { arm_breaking_the_chains }
     position = 2
     provinces_to_highlight = {
       area = shirvan_area
@@ -672,16 +659,21 @@ arm_third_branch = {
       hidden_effect = {
         for = {
           amount = 5
-          effect = " random_owned_province = { limit = { religion = ROOT } add_base_tax = 1 } "
+          effect = "
+            random_owned_province = {
+              limit = {
+                religion = ROOT
+              }
+              add_base_tax = 1
+            }
+          "
         }
       }
     }
   }
   arm_etchmiadzin_cathedral = {
     icon = arm_etchmiadzin_cathedral
-    required_missions = {
-      arm_ecclesiastical_revival
-    }
+    required_missions = { arm_ecclesiastical_revival }
     position = 4
     provinces_to_highlight = {
       if = {
@@ -745,16 +737,22 @@ arm_third_branch = {
       hidden_effect = {
         for = {
           amount = 5
-          effect = " random_owned_province = { limit = { has_building = temple } remove_building = temple add_building = cathedral } "
+          effect = "
+            random_owned_province = {
+              limit = {
+                has_building = temple
+              }
+              remove_building = temple
+              add_building = cathedral
+            }
+          "
         }
       }
     }
   }
   arm_holy_sites = {
     icon = arm_holy_sites
-    required_missions = {
-      arm_etchmiadzin_cathedral
-    }
+    required_missions = { arm_etchmiadzin_cathedral }
     position = 5
     provinces_to_highlight = {
       if = {
@@ -951,9 +949,7 @@ arm_third_branch = {
   }
   arm_office_of_sparapet = {
     icon = mission_late_ottoman_reforms
-    required_missions = {
-      arm_refine_the_nakharar
-    }
+    required_missions = { arm_refine_the_nakharar }
     position = 7
     trigger = {
       OR = {
@@ -991,9 +987,7 @@ arm_fourth_branch = {
   has_country_shield = yes
   arm_bagrationi_union = {
     icon = mission_the_caucasus_rus
-    required_missions = {
-      arm_liberation_of_the_homeland
-    }
+    required_missions = { arm_liberation_of_the_homeland }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -1056,9 +1050,7 @@ arm_fourth_branch = {
   }
   arm_secure_caucasia = {
     icon = mission_castle_construction
-    required_missions = {
-      arm_bagrationi_union
-    }
+    required_missions = { arm_bagrationi_union }
     position = 4
     provinces_to_highlight = {
       region = caucasia_region
@@ -1116,16 +1108,21 @@ arm_fourth_branch = {
       hidden_effect = {
         for = {
           amount = 10
-          effect = " random_owned_province = { limit = { culture_group = caucasian } add_base_manpower = 1 } "
+          effect = "
+            random_owned_province = {
+              limit = {
+                culture_group = caucasian
+              }
+              add_base_manpower = 1
+            }
+          "
         }
       }
     }
   }
   arm_break_osmans_legacy = {
     icon = mission_ottoman_diplomacy
-    required_missions = {
-      arm_proclaim_great_armenia
-    }
+    required_missions = { arm_proclaim_great_armenia }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1225,9 +1222,7 @@ arm_fourth_branch = {
   }
   arm_restore_armenian_cilicia = {
     icon = arm_restore_armenian_cilicia
-    required_missions = {
-      arm_break_osmans_legacy
-    }
+    required_missions = { arm_break_osmans_legacy }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1350,9 +1345,7 @@ arm_fifth_branch = {
   has_country_shield = yes
   arm_liberation_of_the_homeland = {
     icon = mission_unite_home_region
-    required_missions = {
-      arm_breaking_the_chains
-    }
+    required_missions = { arm_breaking_the_chains }
     position = 2
     provinces_to_highlight = {
       area = armenia_area
@@ -1427,10 +1420,7 @@ arm_fifth_branch = {
   }
   arm_proclaim_great_armenia = {
     icon = arm_proclaim_great_armenia
-    required_missions = {
-      arm_liberation_of_the_homeland
-      arm_bagrationi_union
-    }
+    required_missions = { arm_liberation_of_the_homeland arm_bagrationi_union }
     position = 4
     provinces_to_highlight = {
       culture = armenian
@@ -1582,9 +1572,7 @@ arm_fifth_branch = {
   }
   arm_mamluks = {
     icon = mission_break_the_mamluks
-    required_missions = {
-      arm_proclaim_great_armenia
-    }
+    required_missions = { arm_proclaim_great_armenia }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1664,9 +1652,7 @@ arm_fifth_branch = {
   }
   arm_jerusalem = {
     icon = jerusalem
-    required_missions = {
-      arm_mamluks
-    }
+    required_missions = { arm_mamluks }
     position = 6
     provinces_to_highlight = {
       area = palestine_area
@@ -1743,9 +1729,7 @@ arm_fifth_branch = {
   }
   arm_egypt = {
     icon = prester_john
-    required_missions = {
-      arm_jerusalem
-    }
+    required_missions = { arm_jerusalem }
     position = 6
     provinces_to_highlight = {
       region = egypt_region

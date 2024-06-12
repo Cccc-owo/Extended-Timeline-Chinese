@@ -1,4 +1,5 @@
 namespace = mmetr_MEO_mission_events
+# Legacy of Queen Amanirenas
 country_event = {
   id = mmetr_MEO_mission_events.1
   title = "mmetr_MEO_mission_events.1.t"
@@ -13,6 +14,7 @@ country_event = {
     }
   }
 }
+# The Royal Capital in Meroë
 country_event = {
   id = mmetr_MEO_mission_events.2
   title = "mmetr_MEO_mission_events.2.t"
@@ -40,6 +42,7 @@ country_event = {
     }
   }
 }
+# Temple of Amun Restored
 country_event = {
   id = mmetr_MEO_mission_events.3
   title = "mmetr_MEO_mission_events.3.t"
@@ -48,7 +51,7 @@ country_event = {
   is_triggered_only = yes
   option = {
     name = "mmetr_MEO_mission_events.3.a"
-    1228 = {
+    1228 = { 	# Napata
       add_province_modifier = {
         name = "me_meo_temple_of_amun"
         duration = -1
@@ -56,6 +59,7 @@ country_event = {
     }
   }
 }
+# Egyptian Ambitions
 country_event = {
   id = mmetr_MEO_mission_events.4
   title = "mmetr_MEO_mission_events.4.t"
@@ -77,6 +81,7 @@ country_event = {
     }
   }
 }
+# [Root.Monarch.GetTitle] of the Nile
 country_event = {
   id = mmetr_MEO_mission_events.5
   title = "mmetr_MEO_mission_events.5.t"
@@ -106,6 +111,7 @@ country_event = {
     }
   }
 }
+# The Wayekiye Family of Dodekaschoinos
 country_event = {
   id = mmetr_MEO_mission_events.6
   title = "mmetr_MEO_mission_events.6.t"
@@ -115,7 +121,7 @@ country_event = {
   option = {
     name = "mmetr_MEO_mission_events.6.a"
     define_advisor = {
-      name = "^ÃW^X æ—6wúW6w"  # Paese Wayekiye
+      name = "^ÃW^X æ—6wúW6w" 	# Paese Wayekiye
       type = theologian
       skill = 2
       discount = yes
@@ -130,6 +136,7 @@ country_event = {
     }
   }
 }
+# The 33rd Dynasty of Egypt
 country_event = {
   id = mmetr_MEO_mission_events.7
   title = "mmetr_MEO_mission_events.7.t"
@@ -137,7 +144,7 @@ country_event = {
   picture = CPBM_PYRAMID_eventPicture
   is_triggered_only = yes
   option = {
-    name = "mmetr_MEO_mission_events.7.a"
+    name = "mmetr_MEO_mission_events.7.a" 	# Become Kushite Pharaoh
     add_accepted_culture = old_egyptian
     add_country_modifier = {
       name = "me_meo_egyptian_dynasty"
@@ -152,7 +159,7 @@ country_event = {
     }
   }
   option = {
-    name = "mmetr_MEO_mission_events.7.b"
+    name = "mmetr_MEO_mission_events.7.b" 	# Egyptianization
     change_primary_culture = old_egyptian
     add_accepted_culture = kushite
     add_country_modifier = {
@@ -172,7 +179,7 @@ country_event = {
     }
   }
   option = {
-    name = "mmetr_MEO_mission_events.7.c"
+    name = "mmetr_MEO_mission_events.7.c" 	# Maintain status quo
     add_accepted_culture = old_egyptian
     add_country_modifier = {
       name = "me_meo_egyptian_dynasty"
@@ -180,6 +187,7 @@ country_event = {
     }
   }
 }
+# Ever-Expanding Empire
 country_event = {
   id = mmetr_MEO_mission_events.8
   title = "mmetr_MEO_mission_events.8.t"
@@ -198,6 +206,7 @@ country_event = {
     }
   }
 }
+# The Son of Ra
 country_event = {
   id = mmetr_MEO_mission_events.9
   title = "mmetr_MEO_mission_events.9.t"
@@ -212,6 +221,7 @@ country_event = {
     }
   }
 }
+# The Land of Punt
 country_event = {
   id = mmetr_MEO_mission_events.10
   title = "mmetr_MEO_mission_events.10.t"
@@ -274,6 +284,7 @@ country_event = {
     }
   }
 }
+# The Land of Frankincense
 country_event = {
   id = mmetr_MEO_mission_events.11
   title = "mmetr_MEO_mission_events.11.t"
@@ -289,6 +300,7 @@ country_event = {
     }
   }
 }
+# The Incense Route
 country_event = {
   id = mmetr_MEO_mission_events.12
   title = "mmetr_MEO_mission_events.12.t"
@@ -310,6 +322,7 @@ country_event = {
     }
   }
 }
+# Musawwarat es-Sufra
 country_event = {
   id = mmetr_MEO_mission_events.13
   title = "mmetr_MEO_mission_events.13.t"
@@ -330,6 +343,7 @@ country_event = {
     }
   }
 }
+# The Ivory Dispute
 country_event = {
   id = mmetr_MEO_mission_events.14
   title = "mmetr_MEO_mission_events.14.t"
@@ -344,7 +358,7 @@ country_event = {
           owns_or_non_sovereign_subject_of = 1227
         }
       }
-      1227 = {
+      1227 = { 	# Aksum
         owner = {
           reverse_add_casus_belli = {
             target = ROOT
@@ -380,6 +394,7 @@ country_event = {
     }
   }
 }
+# The Ivory Trade
 country_event = {
   id = mmetr_MEO_mission_events.15
   title = "mmetr_MEO_mission_events.15.t"
@@ -387,7 +402,7 @@ country_event = {
   picture = TRADEGOODS_eventPicture
   is_triggered_only = yes
   option = {
-    name = "mmetr_MEO_mission_events.15.a"
+    name = "mmetr_MEO_mission_events.15.a" 	# Oobja Trade Good changes to Ivory
     1226 = {
       change_trade_goods = ivory
     }
@@ -397,7 +412,7 @@ country_event = {
     }
   }
   option = {
-    name = "mmetr_MEO_mission_events.15.b"
+    name = "mmetr_MEO_mission_events.15.b" 	# Keep status quo
     add_dip_power = 25
     add_country_modifier = {
       name = "me_meo_kushite_trade_goods"
@@ -405,6 +420,7 @@ country_event = {
     }
   }
 }
+# The Silphium Herb of Cyrenaica
 country_event = {
   id = mmetr_MEO_mission_events.16
   title = "mmetr_MEO_mission_events.16.t"
@@ -412,13 +428,14 @@ country_event = {
   picture = TRADEGOODS_eventPicture
   is_triggered_only = yes
   option = {
-    name = "mmetr_MEO_mission_events.16.a"
+    name = "mmetr_MEO_mission_events.16.a" 	# Oobja Trade Good changes to Ivory
     add_country_modifier = {
       name = "me_meo_silphium_production"
       duration = -1
     }
   }
 }
+# Peace with Rome - Kushite event
 country_event = {
   id = mmetr_MEO_mission_events.17
   title = "mmetr_MEO_mission_events.17.t"
@@ -471,6 +488,7 @@ country_event = {
     }
   }
 }
+# Peace with [FROM.GetName]	- Roman event
 country_event = {
   id = mmetr_MEO_mission_events.18
   title = "mmetr_MEO_mission_events.18.t"
@@ -478,7 +496,7 @@ country_event = {
   picture = CPBM_PYRAMID_eventPicture
   is_triggered_only = yes
   option = {
-    name = "mmetr_MEO_mission_events.18.a"
+    name = "mmetr_MEO_mission_events.18.a" 	# Oobja Trade Good changes to Ivory
     tooltip = {
       add_truce_with = FROM
     }

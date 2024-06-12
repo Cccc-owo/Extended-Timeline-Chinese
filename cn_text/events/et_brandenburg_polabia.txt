@@ -1,4 +1,10 @@
+########################################
+# Events concerning Brandenburg
+# and the region of Polabia
+# Written by Jey the Count
+########################################
 namespace = et_brandenburg_polabia
+#Establishment of the Northern March
 country_event = {
   id = et_brandenburg_polabia.1
   title = et_brandenburg_polabia.1.t
@@ -27,7 +33,7 @@ country_event = {
   mean_time_to_happen = {
     years = 10
   }
-  option = {
+  option = { 	# A splendind idea!
     name = et_brandenburg_polabia.1.a
     every_owned_province = {
       limit = {
@@ -50,8 +56,8 @@ country_event = {
       hidden_effect = {
         add_government_reform = imperial_march_reform
         define_ruler = {
-          name = "pgW"  # Gero
-          dynasty = "¯Q …hýl!X"  # von Merseburg
+          name = "pgW" 	# Gero
+          dynasty = "¯Q …hýl!X" 	# von Merseburg
           adm = 4
           dip = 2
           mil = 5
@@ -68,9 +74,9 @@ country_event = {
     }
     ai_chance = {
       factor = 100
-    }
+    } 	# historically accurate
   }
-  option = {
+  option = { 	# We shouldn't decentralise our domain
     name = et_brandenburg_polabia.1.b
     every_owned_province = {
       limit = {
@@ -83,6 +89,7 @@ country_event = {
     }
   }
 }
+#Death of Margrave Gero
 country_event = {
   id = et_brandenburg_polabia.2
   title = et_brandenburg_polabia.2.t
@@ -90,7 +97,7 @@ country_event = {
   picture = KING_SICK_IN_BED_eventPicture
   fire_only_once = yes
   is_triggered_only = yes
-  option = {
+  option = { 	# Allow for the split
     name = et_brandenburg_polabia.2.a
     every_owned_province = {
       limit = {
@@ -150,9 +157,9 @@ country_event = {
     add_stability = 1
     ai_chance = {
       factor = 75
-    }
+    } 	# historically accurate
   }
-  option = {
+  option = { 	# Try to enforce unity
     name = et_brandenburg_polabia.2.b
     add_stability = -1
     random_owned_province = {
@@ -207,7 +214,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	# Settle on a compromise
     name = et_brandenburg_polabia.2.c
     every_owned_province = {
       limit = {
@@ -274,6 +281,7 @@ country_event = {
     clr_country_flag = nordmark_flag
   }
 }
+#Pagans split from the Empire!
 country_event = {
   id = et_brandenburg_polabia.3
   title = et_brandenburg_polabia.3.t
@@ -282,7 +290,7 @@ country_event = {
   immediate = {
     random_country = {
       limit = {
-        OR = {
+        OR = { 	# pagan!
           religion = animism
           religion = shamanist
           religion = dreamtime
@@ -306,7 +314,7 @@ country_event = {
   }
   trigger = {
     any_country = {
-      OR = {
+      OR = { 	# pagan!
         religion = animism
         religion = shamanist
         religion = dreamtime
@@ -330,7 +338,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
-  option = {
+  option = { 	# Unacceptable!
     name = et_brandenburg_polabia.3.a
     event_target:cursed_pagans = {
       set_in_empire = no
@@ -342,6 +350,7 @@ country_event = {
     }
   }
 }
+#Great Lutitian Revolt
 country_event = {
   id = et_brandenburg_polabia.4
   title = et_brandenburg_polabia.4.t
@@ -359,7 +368,7 @@ country_event = {
       is_year = 1100
     }
     NOT = {
-      has_ruler = "pgW"  # Gero
+      has_ruler = "pgW" 	# Gero
     }
   }
   mean_time_to_happen = {
@@ -375,7 +384,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Offer concessions
     name = et_brandenburg_polabia.4.a
     every_owned_province = {
       limit = {
@@ -389,7 +398,7 @@ country_event = {
       factor = 5
     }
   }
-  option = {
+  option = { 	# Send the troops
     name = et_brandenburg_polabia.4.b
     random_owned_province = {
       limit = {
@@ -426,9 +435,9 @@ country_event = {
     }
     ai_chance = {
       factor = 70
-    }
+    } 	# historically accurate
   }
-  option = {
+  option = { 	# Abbandon most of the territory and reoragnise
     name = et_brandenburg_polabia.4.c
     add_stability = 2
     release = KOP
@@ -437,6 +446,7 @@ country_event = {
     }
   }
 }
+#The House of Ascania and the Margraviate of Brandenburg
 country_event = {
   id = et_brandenburg_polabia.5
   title = et_brandenburg_polabia.5.t
@@ -450,17 +460,17 @@ country_event = {
     }
     tag = BRA
     NOT = {
-      has_ruler = "?–S^÷–^yr I 0Šq0"  # Albrecht I der Bär
+      has_ruler = "?–S^÷–^yr I 0Šq0" 	# Albrecht I der Bär
     }
   }
   mean_time_to_happen = {
     days = 1
   }
-  option = {
+  option = { 	# He will make a great margrave
     name = et_brandenburg_polabia.5.a
     define_ruler = {
-      name = "?–S^÷–^yr I 0Šq0"  # Albrecht I der Bär
-      dynasty = "?–¯eNW<S"  # Askanier
+      name = "?–S^÷–^yr I 0Šq0" 	# Albrecht I der Bär
+      dynasty = "?–¯eNW<S" 	# Askanier
       adm = 4
       dip = 3
       mil = 3
@@ -491,11 +501,12 @@ country_event = {
       add_core = BRA
     }
   }
-  option = {
+  option = { 	# We don't need him
     name = et_brandenburg_polabia.5.b
     add_stability_or_adm_power = yes
   }
 }
+#Albrecht Achilles - Ansbach
 country_event = {
   id = et_brandenburg_polabia.6
   title = et_brandenburg_polabia.6.t
@@ -515,7 +526,7 @@ country_event = {
   immediate = {
     hidden_effect = {
       define_heir = {
-        name = "?–S^÷–^yr 0?–ŽU	t¯e0"  # Albrecht Achilles
+        name = "?–S^÷–^yr 0?–ŽU	t¯e0" 	# Albrecht Achilles
         dynasty = ROOT
         claim = 95
         adm = 3
@@ -525,7 +536,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# And heir of Brandenburg he will be.
     name = et_brandenburg_polabia.6.a
     if = {
       limit = {
@@ -538,11 +549,12 @@ country_event = {
     set_country_flag = albrecht_achilles_flag_ANS_heir
     custom_tooltip = et_brandenburg_polabia.6.tooltip
   }
-  option = {
+  option = { 	# Let's enjoy our separateness.
     name = et_brandenburg_polabia.6.b
     add_prestige = 25
   }
 }
+#Albrecht Achilles - Brandenburg
 country_event = {
   id = et_brandenburg_polabia.7
   title = et_brandenburg_polabia.7.t
@@ -565,6 +577,7 @@ country_event = {
   immediate = {
     hidden_effect = {
       set_country_flag = disposatio_achillea_fix_flag
+      # I'm sorry it looks how it looks, but blame EU4 devs for not allowing me to set the age directly 
       ANS = {
         if = {
           limit = {

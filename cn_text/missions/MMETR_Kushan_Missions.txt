@@ -51,9 +51,7 @@ kushan_missions_1 = {
   }
   kus_fourth_buddhist_council_mission = {
     icon = mission_dharma_mission_religious_harmony
-    required_missions = {
-      kus_buddhist_temples_mission
-    }
+    required_missions = { kus_buddhist_temples_mission }
     position = 2
     trigger = {
       religion_group = buddhic
@@ -122,9 +120,7 @@ kushan_missions_1 = {
   }
   kus_sogdian_merchants_mission = {
     icon = mission_merchant_of_gujarat
-    required_missions = {
-      kus_heavenly_horses_mission
-    }
+    required_missions = { kus_heavenly_horses_mission }
     position = 5
     provinces_to_highlight = {
       province_id = 454
@@ -201,9 +197,7 @@ kushan_missions_1 = {
   }
   kus_march_into_media_mission = {
     icon = mission_sassanid_golden_cataphract_attack
-    required_missions = {
-      kus_iranian_ambitions_mission
-    }
+    required_missions = { kus_iranian_ambitions_mission }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -246,10 +240,7 @@ kushan_missions_2 = {
   has_country_shield = yes
   kus_sponsor_yavana_art_mission = {
     icon = mission_onward_to_gaur
-    required_missions = {
-      kus_buddhist_temples_mission
-      kus_palace_in_bagram_mission
-    }
+    required_missions = { kus_buddhist_temples_mission kus_palace_in_bagram_mission }
     position = 2
     trigger = {
       num_of_owned_provinces_with = {
@@ -281,7 +272,7 @@ kushan_missions_2 = {
     required_missions = {}
     position = 3
     provinces_to_highlight = {
-      province_id = 739
+      province_id = 739 	# Kashgar / Shule
       NOT = {
         country_or_subject_holds = ROOT
       }
@@ -305,7 +296,7 @@ kushan_missions_2 = {
         }
         discover_country = ROOT
       }
-      tarim_basin_area = {
+      tarim_basin_area = { 	# North Altishahr
         limit = {
           NOT = {
             has_discovered = ROOT
@@ -325,14 +316,12 @@ kushan_missions_2 = {
   }
   kus_influence_the_tocharians_mission = {
     icon = mission_conquer_malwa_bah
-    required_missions = {
-      kus_hegemonize_kashgar_mission
-    }
+    required_missions = { kus_hegemonize_kashgar_mission }
     position = 4
     provinces_to_highlight = {
       OR = {
         area = kashgaria_area
-        area = tarim_basin_area
+        area = tarim_basin_area 	# North Altishahr
         area = shanshan_area
       }
       NOT = {
@@ -368,9 +357,7 @@ kushan_missions_2 = {
   }
   kus_decimate_the_wusun_mission = {
     icon = mission_mongol_charge
-    required_missions = {
-      kus_heavenly_horses_mission
-    }
+    required_missions = { kus_heavenly_horses_mission }
     position = 5
     provinces_to_highlight = {
       area = jetysuu_area
@@ -398,7 +385,7 @@ kushan_missions_2 = {
           amount = 20
           republican_tradition = 10
         }
-        zungaria_area = {
+        zungaria_area = { 	# South Dzungaria
           limit = {
             NOT = {
               has_discovered = ROOT
@@ -406,7 +393,7 @@ kushan_missions_2 = {
           }
           discover_country = ROOT
         }
-        north_zungaria = {
+        north_zungaria = { 	# North Dzungaria
           limit = {
             NOT = {
               has_discovered = ROOT
@@ -414,7 +401,7 @@ kushan_missions_2 = {
           }
           discover_country = ROOT
         }
-        zungaria_area = {
+        zungaria_area = { 	# Claims
           limit = {
             NOT = {
               is_core = ROOT
@@ -450,9 +437,7 @@ kushan_missions_2 = {
   }
   kus_pay_back_the_chanyu_mission = {
     icon = mission_xianbei_desert_warriors
-    required_missions = {
-      kus_decimate_the_wusun_mission
-    }
+    required_missions = { kus_decimate_the_wusun_mission }
     position = 7
     provinces_to_highlight = {
       owner = {
@@ -511,7 +496,7 @@ kushan_missions_2 = {
           }
           discover_country = ROOT
         }
-        707 = {
+        707 = { 	# Yumen
           if = {
             limit = {
               NOT = {
@@ -526,9 +511,7 @@ kushan_missions_2 = {
   }
   kus_cosmopolitan_melting_pot_mission = {
     icon = mission_interfaith_relations
-    required_missions = {
-      kus_kushan_administration_mission
-    }
+    required_missions = { kus_kushan_administration_mission }
     position = 8
     trigger = {
       num_accepted_cultures = 2
@@ -547,9 +530,7 @@ kushan_missions_2 = {
   }
   kus_seize_sakastan_mission = {
     icon = mission_conquer_mewar
-    required_missions = {
-      kus_iranian_ambitions_mission
-    }
+    required_missions = { kus_iranian_ambitions_mission }
     position = 9
     provinces_to_highlight = {
       OR = {
@@ -567,7 +548,7 @@ kushan_missions_2 = {
         country_or_non_sovereign_subject_holds = ROOT
       }
       OR = {
-        overlord_of = SIS
+        overlord_of = SIS 	# Sistan
         NOT = {
           exists = SIS
         }
@@ -587,19 +568,16 @@ kushan_missions_2 = {
   }
   kus_emperor_of_persia_mission = {
     icon = mission_persianate_empire
-    required_missions = {
-      kus_seize_sakastan_mission
-      kus_march_into_media_mission
-    }
+    required_missions = { kus_seize_sakastan_mission kus_march_into_media_mission }
     position = 11
     provinces_to_highlight = {
       OR = {
-        province_id = 2218
-        province_id = 414
-        province_id = 429
-        province_id = 433
-        province_id = 2213
-        province_id = 2215
+        province_id = 2218 	# Persepolis
+        province_id = 414 	#  Hamadan
+        province_id = 429 	#  Isfahan
+        province_id = 433 	#  Yazd
+        province_id = 2213 	#  Qom
+        province_id = 2215 	#  Qazvin
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
@@ -607,12 +585,12 @@ kushan_missions_2 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_or_non_sovereign_subject_of = 2218
-      owns_or_non_sovereign_subject_of = 414
-      owns_or_non_sovereign_subject_of = 429
-      owns_or_non_sovereign_subject_of = 433
-      owns_or_non_sovereign_subject_of = 2213
-      owns_or_non_sovereign_subject_of = 2215
+      owns_or_non_sovereign_subject_of = 2218 	# Persepolis
+      owns_or_non_sovereign_subject_of = 414 	#  Hamadan
+      owns_or_non_sovereign_subject_of = 429 	#  Isfahan
+      owns_or_non_sovereign_subject_of = 433 	#  Yazd
+      owns_or_non_sovereign_subject_of = 2213 	#  Qom
+      owns_or_non_sovereign_subject_of = 2215 	#  Qazvin
     }
     effect = {
       add_prestige = 50
@@ -642,14 +620,14 @@ kushan_missions_3 = {
     required_missions = {}
     position = 1
     provinces_to_highlight = {
-      province_id = 451
+      province_id = 451 	#  Bagram, near Kapisa, the actual capital
       NOT = {
         num_of_times_improved_by_owner = 3
       }
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 451
+      owns_core_province = 451 	#  Bagram
       451 = {
         num_of_times_improved_by_owner = 3
       }
@@ -670,12 +648,10 @@ kushan_missions_3 = {
   }
   kus_rebuild_ai_khanoum_mission = {
     icon = mission_greco_roman_market
-    required_missions = {
-      kus_palace_in_bagram_mission
-    }
+    required_missions = { kus_palace_in_bagram_mission }
     position = 2
     provinces_to_highlight = {
-      province_id = 4343
+      province_id = 4343 	# Termez, where Ai-Khanoum may have been
       NOT = {
         development = 9
       }
@@ -693,7 +669,7 @@ kushan_missions_3 = {
       }
       tooltip = {
         4343 = {
-          rename_capital = "Œ‚ÈTªRÆY"  # Ai-Khanoum
+          rename_capital = "Œ‚ÈTªRÆY" 	# Ai-Khanoum
           add_province_modifier = {
             name = "me_kus_ai_khanoum"
             duration = -1
@@ -704,17 +680,14 @@ kushan_missions_3 = {
   }
   kus_the_silk_road_mission = {
     icon = mission_chinese_market
-    required_missions = {
-      kus_hegemonize_kashgar_mission
-      kus_indian_ambitions_mission
-    }
+    required_missions = { kus_hegemonize_kashgar_mission kus_indian_ambitions_mission }
     position = 4
     provinces_to_highlight = {
       OR = {
-        province_id = 454
-        province_id = 4457
-        province_id = 1334
-        province_id = 1340
+        province_id = 454 	# Samarkand
+        province_id = 4457 	# Gujarat
+        province_id = 1334 	# Hormuz
+        province_id = 1340 	# comorin_cape
       }
       NOT = {
         is_strongest_trade_power = ROOT
@@ -751,12 +724,10 @@ kushan_missions_3 = {
   }
   kus_university_of_taxila_mission = {
     icon = mission_conquer_malwa_bng
-    required_missions = {
-      kus_into_gandhara_mission
-    }
+    required_missions = { kus_into_gandhara_mission }
     position = 5
     provinces_to_highlight = {
-      province_id = 2077
+      province_id = 2077 	# Taxila / Margalla
       NOT = {
         owned_by = ROOT
         is_core = ROOT
@@ -781,12 +752,10 @@ kushan_missions_3 = {
   }
   kus_mathura_school_of_art_mission = {
     icon = mission_protect_jain_communities
-    required_missions = {
-      kus_university_of_taxila_mission
-    }
+    required_missions = { kus_university_of_taxila_mission }
     position = 6
     provinces_to_highlight = {
-      province_id = 524
+      province_id = 524 	# Mathura
       NOT = {
         owned_by = ROOT
         is_core = ROOT
@@ -811,9 +780,7 @@ kushan_missions_3 = {
   }
   kus_kushan_administration_mission = {
     icon = mission_into_the_west
-    required_missions = {
-      kus_satraps_of_mathura_mission
-    }
+    required_missions = { kus_satraps_of_mathura_mission }
     position = 7
     trigger = {
       stability = 3
@@ -828,13 +795,10 @@ kushan_missions_3 = {
   }
   kus_emperor_of_magadha_mission = {
     icon = mission_emperor_of_hindusthan
-    required_missions = {
-      kus_kushan_administration_mission
-      kus_astamahasthanas_of_lord_buddha_mission
-    }
+    required_missions = { kus_kushan_administration_mission kus_astamahasthanas_of_lord_buddha_mission }
     position = 8
     provinces_to_highlight = {
-      province_id = 558
+      province_id = 558 	# Pataliputra
       NOT = {
         owned_by = ROOT
         is_core = ROOT
@@ -873,9 +837,7 @@ kushan_missions_3 = {
   }
   kus_subdue_the_mahameghavahana_mission = {
     icon = mission_rajendras_ambition
-    required_missions = {
-      kus_emperor_of_magadha_mission
-    }
+    required_missions = { kus_emperor_of_magadha_mission }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -893,7 +855,7 @@ kushan_missions_3 = {
         country_or_non_sovereign_subject_holds = ROOT
       }
       OR = {
-        overlord_of = KLI
+        overlord_of = KLI 	# Kalinga
         NOT = {
           exists = KLI
         }
@@ -952,9 +914,7 @@ kushan_missions_4 = {
   has_country_shield = yes
   kus_develop_bactria_mission = {
     icon = mission_restore_rule_over_mysore
-    required_missions = {
-      kus_palace_in_bagram_mission
-    }
+    required_missions = { kus_palace_in_bagram_mission }
     position = 2
     provinces_to_highlight = {
       area = balkh_area
@@ -1025,9 +985,7 @@ kushan_missions_4 = {
   }
   kus_into_gandhara_mission = {
     icon = mission_control_the_desh
-    required_missions = {
-      kus_indian_ambitions_mission
-    }
+    required_missions = { kus_indian_ambitions_mission }
     position = 4
     provinces_to_highlight = {
       OR = {
@@ -1053,7 +1011,7 @@ kushan_missions_4 = {
       if = {
         limit = {
           NOT = {
-            capital = 578
+            capital = 578 	# Peshawar
           }
         }
         country_event = {
@@ -1108,13 +1066,11 @@ kushan_missions_4 = {
   }
   kus_satraps_of_mathura_mission = {
     icon = mission_indo_scythians
-    required_missions = {
-      kus_into_gandhara_mission
-    }
+    required_missions = { kus_into_gandhara_mission }
     position = 6
     provinces_to_highlight = {
       OR = {
-        province_id = 524
+        province_id = 524 	# Mathura
         area = lahore_area
         area = sirhind_area
       }
@@ -1134,7 +1090,7 @@ kushan_missions_4 = {
         country_or_non_sovereign_subject_holds = ROOT
       }
       OR = {
-        overlord_of = NST
+        overlord_of = NST 	# Northern Satraps
         NOT = {
           exists = NST
         }
@@ -1218,9 +1174,7 @@ kushan_missions_4 = {
   }
   kus_astamahasthanas_of_lord_buddha_mission = {
     icon = mission_protect_lankan_buddhism
-    required_missions = {
-      kus_satraps_of_mathura_mission
-    }
+    required_missions = { kus_satraps_of_mathura_mission }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1271,9 +1225,7 @@ kushan_missions_4 = {
   }
   kus_deccan_campaign_mission = {
     icon = mission_hills_of_gondwana
-    required_missions = {
-      kus_astamahasthanas_of_lord_buddha_mission
-    }
+    required_missions = { kus_astamahasthanas_of_lord_buddha_mission }
     position = 8
     provinces_to_highlight = {
       OR = {
@@ -1301,7 +1253,7 @@ kushan_missions_4 = {
       }
     }
     effect = {
-      telingana_area = {
+      telingana_area = { 	# North Telingana
         limit = {
           NOT = {
             is_core = ROOT
@@ -1312,7 +1264,7 @@ kushan_missions_4 = {
         }
         add_permanent_claim = ROOT
       }
-      golconda_area = {
+      golconda_area = { 	# South Telingana
         limit = {
           NOT = {
             is_core = ROOT
@@ -1349,14 +1301,12 @@ kushan_missions_4 = {
   }
   kus_lord_of_dakshinapatha_mission = {
     icon = mission_unite_the_deccan
-    required_missions = {
-      kus_deccan_campaign_mission
-    }
+    required_missions = { kus_deccan_campaign_mission }
     position = 9
     provinces_to_highlight = {
       OR = {
         area = telingana_area
-        area = golconda_area
+        area = golconda_area 	# South Telingana
         area = ahmednagar_area
         area = maidan_area
       }
@@ -1409,10 +1359,7 @@ kushan_missions_4 = {
   }
   kus_subjugate_tamilakam_mission = {
     icon = mission_the_tamil_trade_guilds
-    required_missions = {
-      kus_lord_of_dakshinapatha_mission
-      kus_subdue_the_mahameghavahana_mission
-    }
+    required_missions = { kus_lord_of_dakshinapatha_mission kus_subdue_the_mahameghavahana_mission }
     position = 11
     provinces_to_highlight = {
       OR = {
@@ -1429,7 +1376,7 @@ kushan_missions_4 = {
     }
     trigger = {
       OR = {
-        overlord_of = TML
+        overlord_of = TML 	# Tamilakam, new tag
         NOT = {
           exists = TML
         }
@@ -1569,9 +1516,7 @@ kushan_missions_5 = {
   }
   kus_patron_of_many_faiths_mission = {
     icon = mission_patronize_local_gods
-    required_missions = {
-      kus_indian_ambitions_mission
-    }
+    required_missions = { kus_indian_ambitions_mission }
     position = 4
     trigger = {
       num_of_owned_provinces_with = {
@@ -1596,9 +1541,7 @@ kushan_missions_5 = {
   }
   kus_control_the_indus_mission = {
     icon = mission_advance_to_the_arabian_sea
-    required_missions = {
-      kus_into_gandhara_mission
-    }
+    required_missions = { kus_into_gandhara_mission }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1634,9 +1577,7 @@ kushan_missions_5 = {
   }
   kus_vanquish_the_saka_mission = {
     icon = mission_control_the_ganges_delta
-    required_missions = {
-      kus_satraps_of_mathura_mission
-    }
+    required_missions = { kus_satraps_of_mathura_mission }
     position = 7
     provinces_to_highlight = {
       OR = {
@@ -1663,7 +1604,7 @@ kushan_missions_5 = {
         country_or_non_sovereign_subject_holds = ROOT
       }
       OR = {
-        overlord_of = WSA
+        overlord_of = WSA 	# Western Satraps
         NOT = {
           exists = WSA
         }
@@ -1679,12 +1620,10 @@ kushan_missions_5 = {
   }
   kus_renovate_sanchi_stupa_mission = {
     icon = mission_sanchi_stupa
-    required_missions = {
-      kus_astamahasthanas_of_lord_buddha_mission
-    }
+    required_missions = { kus_astamahasthanas_of_lord_buddha_mission }
     position = 8
     provinces_to_highlight = {
-      province_id = 2057
+      province_id = 2057 	#  Vidisha, where Sanchi Stupa great project is located
     }
     trigger = {
       owns_core_province = 2057
@@ -1701,9 +1640,7 @@ kushan_missions_5 = {
   }
   kus_lankan_buddhism_mission = {
     icon = mission_conquer_lanka
-    required_missions = {
-      kus_lord_of_dakshinapatha_mission
-    }
+    required_missions = { kus_lord_of_dakshinapatha_mission }
     position = 10
     provinces_to_highlight = {
       OR = {

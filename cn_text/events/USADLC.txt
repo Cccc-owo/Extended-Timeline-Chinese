@@ -1,5 +1,10 @@
+########################################
+# USA DLC Events
+# written by Sara Wendel-÷rtqvist
+########################################
 namespace = usa_dlc
 normal_or_historical_nations = yes
+# Congress of the Confederation
 country_event = {
   id = usa_dlc.1
   title = "usa_dlc.EVTNAME1"
@@ -23,7 +28,7 @@ country_event = {
   option = {
     name = "usa_dlc.EVTOPTA1"
     country_event = {
-      id = usa_dlc.2
+      id = usa_dlc.2 	#  Import Duties
     }
   }
   option = {
@@ -37,10 +42,11 @@ country_event = {
       }
     }
     country_event = {
-      id = usa_dlc.3
+      id = usa_dlc.3 	#  Northwest Ordinance
     }
   }
 }
+# 5% duty on imports
 country_event = {
   id = usa_dlc.2
   title = "usa_dlc.EVTNAME2"
@@ -95,6 +101,7 @@ country_event = {
     }
   }
 }
+# Northwest Ordinance - Prohibit slavery there? 
 country_event = {
   id = usa_dlc.3
   title = "usa_dlc.EVTNAME3"
@@ -107,7 +114,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTA3"
+    name = "usa_dlc.EVTOPTA3" 	#  Prohibit slavery!
     every_owned_province = {
       limit = {
         OR = {
@@ -132,7 +139,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB3"
+    name = "usa_dlc.EVTOPTB3" 	#  Let them decide for themselves
     every_owned_province = {
       limit = {
         OR = {
@@ -157,6 +164,7 @@ country_event = {
     }
   }
 }
+# Articles of Confederation
 country_event = {
   id = usa_dlc.4
   title = "usa_dlc.EVTNAME4"
@@ -179,13 +187,14 @@ country_event = {
     months = 12
   }
   option = {
-    name = "usa_dlc.EVTOPTA4"
+    name = "usa_dlc.EVTOPTA4" 	#  Ratify the Articles
     add_country_modifier = {
       name = articles_of_confederation
       duration = -1
     }
   }
 }
+# Formal declaration of American Independence
 country_event = {
   id = usa_dlc.5
   title = "usa_dlc.EVTNAME5"
@@ -254,6 +263,7 @@ country_event = {
     }
   }
 }
+# American Independence
 country_event = {
   id = usa_dlc.6
   title = "usa_dlc.EVTNAME6"
@@ -261,7 +271,7 @@ country_event = {
   picture = DECLARATION_INDEPENDENCE_eventPicture
   is_triggered_only = yes
   option = {
-    name = "usa_dlc.EVTOPTA6"
+    name = "usa_dlc.EVTOPTA6" 	#  Yay!
     ai_chance = {
       factor = 75
     }
@@ -290,7 +300,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB6"
+    name = "usa_dlc.EVTOPTB6" 	#  Nay!
     ai_chance = {
       factor = 25
     }
@@ -319,6 +329,7 @@ country_event = {
     }
   }
 }
+# American Independence?
 country_event = {
   id = usa_dlc.7
   title = "usa_dlc.EVTNAME6"
@@ -326,7 +337,7 @@ country_event = {
   picture = DECLARATION_INDEPENDENCE_eventPicture
   is_triggered_only = yes
   option = {
-    name = "usa_dlc.EVTOPTA7"
+    name = "usa_dlc.EVTOPTA7" 	#  Yay!
     trigger = {
       has_country_flag = yay_independence_flag
     }
@@ -339,7 +350,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB7"
+    name = "usa_dlc.EVTOPTB7" 	#  Nay! - We don't need their approval!
     trigger = {
       has_country_flag = nay_independence_flag
     }
@@ -351,6 +362,7 @@ country_event = {
     }
   }
 }
+# Constitutional Convention
 country_event = {
   id = usa_dlc.10
   title = "usa_dlc.EVTNAME10"
@@ -381,6 +393,7 @@ country_event = {
     }
   }
 }
+# Government Forms
 country_event = {
   id = usa_dlc.11
   title = "usa_dlc.EVTNAME11"
@@ -414,6 +427,7 @@ country_event = {
     add_government_reform = parliamentary_reform
   }
 }
+# Abolition of the slave trade
 country_event = {
   id = usa_dlc.12
   title = "usa_dlc.EVTNAME12"
@@ -450,6 +464,7 @@ country_event = {
     }
   }
 }
+# What offenses should be impeachable?
 country_event = {
   id = usa_dlc.13
   title = "usa_dlc.EVTNAME13"
@@ -493,6 +508,7 @@ country_event = {
     }
   }
 }
+# United States Constitution
 country_event = {
   id = usa_dlc.14
   title = "usa_dlc.EVTNAME14"
@@ -506,6 +522,7 @@ country_event = {
     add_mil_power = 100
   }
 }
+# GBR supplies weapons to Indians?
 country_event = {
   id = usa_dlc.20
   title = "usa_dlc.EVTNAME20"
@@ -550,7 +567,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA20"
+    name = "usa_dlc.EVTOPTA20" 	# Supply them!
     random_known_country = {
       limit = {
         capital_scope = {
@@ -597,6 +614,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Indians supplied with weapons from GBR
 country_event = {
   id = usa_dlc.21
   title = "usa_dlc.EVTNAME21"
@@ -623,6 +641,7 @@ country_event = {
     }
   }
 }
+# USA learns about GBR supplying Indians with weapons
 country_event = {
   id = usa_dlc.22
   title = "usa_dlc.EVTNAME22"
@@ -638,6 +657,7 @@ country_event = {
     }
   }
 }
+# Benjamin Franklin
 country_event = {
   id = usa_dlc.25
   title = "usa_dlc.EVTNAME25"
@@ -664,6 +684,7 @@ country_event = {
     add_dip_power = 200
   }
 }
+# Fur Trade
 country_event = {
   id = usa_dlc.26
   title = "usa_dlc.EVTNAME26"
@@ -719,6 +740,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Cultural assimilation of Native Americans
 country_event = {
   id = usa_dlc.27
   title = "usa_dlc.EVTNAME27"
@@ -751,6 +773,7 @@ country_event = {
     add_dip_power = -10
   }
 }
+# American Academy of Arts and Sciences
 country_event = {
   id = usa_dlc.28
   title = "usa_dlc.EVTNAME28"
@@ -784,6 +807,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Union Fire Company
 country_event = {
   id = usa_dlc.29
   title = "usa_dlc.EVTNAME29"
@@ -797,7 +821,7 @@ country_event = {
       has_country_flag = usa_declaration_independence_flag
     }
     is_year = 1791
-    owns = 956
+    owns = 956 	#  Lenape
   }
   mean_time_to_happen = {
     months = 200
@@ -828,6 +852,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Treaty of Amity and Commerce
 country_event = {
   id = usa_dlc.30
   title = "usa_dlc.EVTNAME30"
@@ -890,6 +915,7 @@ country_event = {
     }
   }
 }
+# Dunlap Broadside
 country_event = {
   id = usa_dlc.31
   title = "usa_dlc.EVTNAME31"
@@ -911,6 +937,7 @@ country_event = {
     }
   }
 }
+# Nonintercourse Act
 country_event = {
   id = usa_dlc.32
   title = "usa_dlc.EVTNAME32"
@@ -946,6 +973,7 @@ country_event = {
     }
   }
 }
+# Whiskey Rebellion
 country_event = {
   id = usa_dlc.33
   title = "usa_dlc.EVTNAME33"
@@ -1062,6 +1090,7 @@ country_event = {
     }
   }
 }
+# Boston Post Road
 country_event = {
   id = usa_dlc.34
   title = "usa_dlc.EVTNAME34"
@@ -1074,13 +1103,13 @@ country_event = {
       tag = USA
       has_country_flag = usa_declaration_independence_flag
     }
-    owns = 965
-    owns = 966
-    owns = 967
-    owns = 968
-    owns = 2560
-    owns = 2010
-    owns = 2561
+    owns = 965 	#  Manhattan
+    owns = 966 	#  Berkshires
+    owns = 967 	#  Rhode Island
+    owns = 968 	#  Massachusetts
+    owns = 2560 	#  New Haven
+    owns = 2010 	#  Connecticut
+    owns = 2561 	#  Plymouth
   }
   mean_time_to_happen = {
     months = 200
@@ -1099,6 +1128,7 @@ country_event = {
     add_dip_power = 40
   }
 }
+# American Philosophical Society
 country_event = {
   id = usa_dlc.35
   title = "usa_dlc.EVTNAME35"
@@ -1111,7 +1141,7 @@ country_event = {
     NOT = {
       war_with = GBR
     }
-    owns = 962
+    owns = 962 	#  Unami/Philadelphia
     NOT = {
       has_country_modifier = american_philosophical_society
     }
@@ -1136,6 +1166,7 @@ country_event = {
     name = "usa_dlc.EVTOPTC35"
   }
 }
+# Evacuation Day
 country_event = {
   id = usa_dlc.36
   title = "usa_dlc.EVTNAME36"
@@ -1146,7 +1177,7 @@ country_event = {
     has_dlc = "American Dream"
     tag = USA
     is_year = 1783
-    is_month = 10
+    is_month = 10 	#  November
     truce_with = GBR
     GBR = {
       NOT = {
@@ -1165,6 +1196,7 @@ country_event = {
     set_country_flag = evacuation_day
   }
 }
+# Massachusetts Humane Society
 country_event = {
   id = usa_dlc.37
   title = "usa_dlc.EVTNAME37"
@@ -1173,7 +1205,7 @@ country_event = {
   fire_only_once = yes
   trigger = {
     has_dlc = "American Dream"
-    owns = 968
+    owns = 968 	#  Massachusetts
     is_year = 1786
     NOT = {
       has_country_modifier = massachusetts_humane_society
@@ -1195,6 +1227,7 @@ country_event = {
     add_adm_power = 10
   }
 }
+# Committee of Safety
 country_event = {
   id = usa_dlc.38
   title = "usa_dlc.EVTNAME38"
@@ -1224,6 +1257,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Liberty pole
 country_event = {
   id = usa_dlc.39
   title = "usa_dlc.EVTNAME39"
@@ -1244,6 +1278,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Great Fire of New York
 country_event = {
   id = usa_dlc.40
   title = "usa_dlc.EVTNAME40"
@@ -1261,7 +1296,7 @@ country_event = {
       is_year = 1800
     }
     war_with = GBR
-    965 = {
+    965 = { 	#  Manhattan
       OR = {
         owned_by = ROOT
         controlled_by = GBR
@@ -1289,6 +1324,7 @@ country_event = {
     }
   }
 }
+# Lewis and Clark Expedition
 country_event = {
   id = usa_dlc.41
   title = "usa_dlc.EVTNAME41"
@@ -1351,6 +1387,7 @@ country_event = {
     add_prestige = 5
   }
 }
+# First Bank of the United States
 country_event = {
   id = usa_dlc.42
   title = "usa_dlc.EVTNAME42"
@@ -1383,6 +1420,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# Women in the American Revolution
 country_event = {
   id = usa_dlc.43
   title = "usa_dlc.EVTNAME43"
@@ -1407,6 +1445,7 @@ country_event = {
     add_mil_power = 50
   }
 }
+# The Invention of the Cotton Gin
 country_event = {
   id = usa_dlc.44
   title = "usa_dlc.EVTNAME44"
@@ -1525,6 +1564,7 @@ country_event = {
     }
   }
 }
+# United States Mint
 country_event = {
   id = usa_dlc.45
   title = "usa_dlc.EVTNAME45"
@@ -1558,6 +1598,7 @@ country_event = {
     add_dip_power = 20
   }
 }
+# Tecumseh
 country_event = {
   id = usa_dlc.46
   title = "usa_dlc.EVTNAME46"
@@ -1638,6 +1679,7 @@ country_event = {
     }
   }
 }
+# Shays' Rebellion
 country_event = {
   id = usa_dlc.47
   title = "usa_dlc.EVTNAME47"
@@ -1764,6 +1806,7 @@ country_event = {
     }
   }
 }
+# The Netherlands recognise USA as an independent government?
 country_event = {
   id = usa_dlc.48
   title = "usa_dlc.EVTNAME48"
@@ -1805,6 +1848,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# Netherlands: Independent USA?
 country_event = {
   id = usa_dlc.49
   title = "usa_dlc.EVTNAME48"
@@ -1861,6 +1905,7 @@ country_event = {
     }
   }
 }
+# USA: Netherlands acknowledged independence
 country_event = {
   id = usa_dlc.50
   title = "usa_dlc.EVTNAME48"
@@ -1878,6 +1923,7 @@ country_event = {
     }
   }
 }
+# USA: Netherlands rejected independence
 country_event = {
   id = usa_dlc.51
   title = "usa_dlc.EVTNAME48"
@@ -1895,6 +1941,7 @@ country_event = {
     }
   }
 }
+# New York Manumission Society
 country_event = {
   id = usa_dlc.52
   title = "usa_dlc.EVTNAME52"
@@ -2182,6 +2229,8 @@ country_event = {
     }
   }
 }
+### USA Major Events from EUII ###
+# The Creation of the Continental Army
 country_event = {
   id = usa_dlc.60
   title = "usa_dlc.EVTNAME60"
@@ -2204,7 +2253,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA60"
+    name = "usa_dlc.EVTOPTA60" 	#  Raise Professional Army
     create_general = {
       tradition = 50
     }
@@ -2212,17 +2261,18 @@ country_event = {
     add_army_tradition = 20
   }
   option = {
-    name = "usa_dlc.EVTOPTB60"
+    name = "usa_dlc.EVTOPTB60" 	#  Raise Provincial Militias
     add_manpower = 20
     add_mil_power = 50
     add_army_tradition = 10
   }
   option = {
-    name = "usa_dlc.EVTOPTC60"
+    name = "usa_dlc.EVTOPTC60" 	#  Call for Volunteers
     add_adm_power = 20
     add_manpower = 10
   }
 }
+# The Congress' Printing Machine
 country_event = {
   id = usa_dlc.61
   title = "usa_dlc.EVTNAME61"
@@ -2245,24 +2295,25 @@ country_event = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA61"
+    name = "usa_dlc.EVTOPTA61" 	#  Print more money
     add_inflation = 2
     add_treasury = 500
     add_adm_power = -50
   }
   option = {
-    name = "usa_dlc.EVTOPTB61"
+    name = "usa_dlc.EVTOPTB61" 	#  Use with constrain
     add_inflation = 1
     add_treasury = 100
     add_adm_power = -25
   }
   option = {
-    name = "usa_dlc.EVTOPTC61"
+    name = "usa_dlc.EVTOPTC61" 	#  Stop immediately
     add_inflation = -1
     add_treasury = -50
     add_adm_power = 25
   }
 }
+# US.Presidential Election of 1796
 country_event = {
   id = usa_dlc.62
   title = "usa_dlc.EVTNAME62"
@@ -2280,17 +2331,17 @@ country_event = {
       is_year = 1797
     }
     NOT = {
-      has_ruler = "¶u öNSVØe"  # John Adams
+      has_ruler = "¶u öNSVØe" 	# John Adams
     }
     NOT = {
-      has_ruler = "XblöØe pgêeê"  # Thomas Jefferson
+      has_ruler = "XblöØe pgêeê" 	# Thomas Jefferson
     }
   }
   mean_time_to_happen = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA62"
+    name = "usa_dlc.EVTOPTA62" 	#  John Adams
     add_opinion = {
       who = FRA
       modifier = opinion_displeased
@@ -2302,7 +2353,7 @@ country_event = {
       years = 20
     }
     define_ruler = {
-      name = "¶u öNSVØe"  # John Adams
+      name = "¶u öNSVØe" 	# John Adams
       adm = 5
       dip = 4
       mil = 2
@@ -2319,7 +2370,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB62"
+    name = "usa_dlc.EVTOPTB62" 	#  Thomas Jefferson
     add_opinion = {
       who = GBR
       modifier = opinion_displeased
@@ -2329,7 +2380,7 @@ country_event = {
       modifier = opinion_correct_ruler
     }
     define_ruler = {
-      name = "XblöØe pgêeê"  # Thomas Jefferson
+      name = "XblöØe pgêeê" 	# Thomas Jefferson
       adm = 5
       dip = 4
       mil = 3
@@ -2346,6 +2397,7 @@ country_event = {
     }
   }
 }
+# Federal Taxes on Property
 country_event = {
   id = usa_dlc.63
   title = "usa_dlc.EVTNAME63"
@@ -2401,7 +2453,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTA63"
+    name = "usa_dlc.EVTOPTA63" 	#  Limited Federal Taxation Rights
     add_adm_power = -20
     add_dip_power = -20
     random_owned_province = {
@@ -2428,12 +2480,12 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB63"
+    name = "usa_dlc.EVTOPTB63" 	#  No Federal Taxation Rights
     add_adm_power = 100
     add_dip_power = 100
   }
   option = {
-    name = "usa_dlc.EVTOPTC63"
+    name = "usa_dlc.EVTOPTC63" 	#  Unlimited Federal Taxation Rights
     add_adm_power = -40
     add_dip_power = -40
     random_owned_province = {
@@ -2459,6 +2511,7 @@ country_event = {
     }
   }
 }
+# US.Presidential Election of 1800
 country_event = {
   id = usa_dlc.64
   title = "usa_dlc.EVTNAME64"
@@ -2476,23 +2529,23 @@ country_event = {
       has_country_flag = usa_declaration_independence_flag
     }
     NOT = {
-      has_ruler = "XblöØe pgêeê"  # Thomas Jefferson
+      has_ruler = "XblöØe pgêeê" 	# Thomas Jefferson
     }
     NOT = {
-      has_ruler = "?ñ&O =OS"  # Aaron Burr
+      has_ruler = "?ñ&O =OS" 	# Aaron Burr
     }
     NOT = {
-      has_ruler = "¶u öNSVØe"  # John Adams
+      has_ruler = "¶u öNSVØe" 	# John Adams
     }
   }
   mean_time_to_happen = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA64"
+    name = "usa_dlc.EVTOPTA64" 	#  Thomas Jefferson
     add_adm_power = 20
     define_ruler = {
-      name = "XblöØe pgêeê"  # Thomas Jefferson
+      name = "XblöØe pgêeê" 	# Thomas Jefferson
       adm = 5
       dip = 4
       mil = 3
@@ -2509,10 +2562,10 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB64"
+    name = "usa_dlc.EVTOPTB64" 	#  Aaron Burr
     add_dip_power = 40
     define_ruler = {
-      name = "?ñ&O =OS"  # Aaron Burr
+      name = "?ñ&O =OS" 	# Aaron Burr
       adm = 3
       dip = 6
       mil = 3
@@ -2529,10 +2582,10 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTC64"
+    name = "usa_dlc.EVTOPTC64" 	#  John Adams
     add_mil_power = 40
     define_ruler = {
-      name = "¶u öNSVØe"  # John Adams
+      name = "¶u öNSVØe" 	# John Adams
       adm = 5
       dip = 4
       mil = 2
@@ -2549,6 +2602,7 @@ country_event = {
     }
   }
 }
+# The Louisiana Purchase
 country_event = {
   id = usa_dlc.65
   title = "usa_dlc.EVTNAME65"
@@ -2580,7 +2634,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA65"
+    name = "usa_dlc.EVTOPTA65" 	#  Accept Offer
     add_treasury = -1000
     add_opinion = {
       who = FRA
@@ -2638,7 +2692,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB65"
+    name = "usa_dlc.EVTOPTB65" 	#  Decline Offer
     add_opinion = {
       who = FRA
       modifier = opinion_disappointed
@@ -2649,6 +2703,7 @@ country_event = {
     }
   }
 }
+# US.Presidential Election of 1804
 country_event = {
   id = usa_dlc.66
   title = "usa_dlc.EVTNAME66"
@@ -2666,20 +2721,20 @@ country_event = {
       is_year = 1805
     }
     NOT = {
-      has_ruler = "XblöØe pgêeê"  # Thomas Jefferson
+      has_ruler = "XblöØe pgêeê" 	# Thomas Jefferson
     }
     NOT = {
-      has_ruler = "ÂgSØe s^KQ<S"  # Charles Pinckney
+      has_ruler = "ÂgSØe s^KQ<S" 	# Charles Pinckney
     }
   }
   mean_time_to_happen = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA66"
+    name = "usa_dlc.EVTOPTA66" 	#  Thomas Jefferson
     add_mercantilism = 5
     define_ruler = {
-      name = "XblöØe pgêeê"  # Thomas Jefferson
+      name = "XblöØe pgêeê" 	# Thomas Jefferson
       dip = 4
       adm = 5
       mil = 3
@@ -2696,10 +2751,10 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB66"
+    name = "usa_dlc.EVTOPTB66" 	#  Charles Pinckney
     add_mercantilism = -5
     define_ruler = {
-      name = "ÂgSØe s^KQ<S"  # Charles Pinckney
+      name = "ÂgSØe s^KQ<S" 	# Charles Pinckney
       dip = 3
       adm = 4
       mil = 5
@@ -2716,6 +2771,7 @@ country_event = {
     }
   }
 }
+# US.Presidential Election of 1808
 country_event = {
   id = usa_dlc.67
   title = "usa_dlc.EVTNAME67"
@@ -2733,23 +2789,23 @@ country_event = {
       is_year = 1809
     }
     NOT = {
-      has_ruler = "yä∆YØe ¶ûÍèê"  # James Madison
+      has_ruler = "yä∆YØe ¶ûÍèê" 	# James Madison
     }
     NOT = {
-      has_ruler = "ÂgSØe s^KQ<S"  # Charles Pinckney
+      has_ruler = "ÂgSØe s^KQ<S" 	# Charles Pinckney
     }
     NOT = {
-      has_ruler = "TNªl KQógò"  # George Clinton
+      has_ruler = "TNªl KQógò" 	# George Clinton
     }
   }
   mean_time_to_happen = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA67"
+    name = "usa_dlc.EVTOPTA67" 	#  James Madison
     add_mercantilism = 5
     define_ruler = {
-      name = "yä∆YØe ¶ûÍèê"  # James Madison
+      name = "yä∆YØe ¶ûÍèê" 	# James Madison
       dip = 5
       adm = 5
       mil = 3
@@ -2766,10 +2822,10 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB67"
+    name = "usa_dlc.EVTOPTB67" 	#  Charles Pinckney
     add_mercantilism = -5
     define_ruler = {
-      name = "ÂgSØe s^KQ<S"  # Charles Pinckney
+      name = "ÂgSØe s^KQ<S" 	# Charles Pinckney
       dip = 3
       adm = 4
       mil = 5
@@ -2786,10 +2842,10 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTC67"
+    name = "usa_dlc.EVTOPTC67" 	#  George Clinton
     add_mercantilism = -5
     define_ruler = {
-      name = "TNªl KQógò"  # George Clinton
+      name = "TNªl KQógò" 	# George Clinton
       dip = 5
       adm = 3
       mil = 4
@@ -2806,6 +2862,7 @@ country_event = {
     }
   }
 }
+# Hawks and Doves of 1812
 country_event = {
   id = usa_dlc.68
   title = "usa_dlc.EVTNAME68"
@@ -2833,7 +2890,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA68"
+    name = "usa_dlc.EVTOPTA68" 	#  Support Warhawks
     add_casus_belli = {
       target = GBR
       type = cb_insult
@@ -2847,7 +2904,7 @@ country_event = {
     add_adm_power = -10
   }
   option = {
-    name = "usa_dlc.EVTOPTB68"
+    name = "usa_dlc.EVTOPTB68" 	#  Support Doves
     add_opinion = {
       who = GBR
       modifier = opinion_doves
@@ -2857,6 +2914,7 @@ country_event = {
     add_dip_power = 20
   }
 }
+# US.Presidential Election of 1812
 country_event = {
   id = usa_dlc.69
   title = "usa_dlc.EVTNAME69"
@@ -2874,17 +2932,17 @@ country_event = {
       is_year = 1813
     }
     NOT = {
-      has_ruler = "yä∆YØe ¶ûÍèê"  # James Madison
+      has_ruler = "yä∆YØe ¶ûÍèê" 	# James Madison
     }
     NOT = {
-      has_ruler = "∑VÙuyr KQógò"  # DeWitt Clinton
+      has_ruler = "∑VÙuyr KQógò" 	# DeWitt Clinton
     }
   }
   mean_time_to_happen = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA69"
+    name = "usa_dlc.EVTOPTA69" 	#  James Madison
     add_opinion = {
       who = GBR
       modifier = opinion_disappointed
@@ -2893,7 +2951,7 @@ country_event = {
     add_stability_or_adm_power = yes
     add_mercantilism = 5
     define_ruler = {
-      name = "yä∆YØe ¶ûÍèê"  # James Madison
+      name = "yä∆YØe ¶ûÍèê" 	# James Madison
       dip = 5
       adm = 5
       mil = 3
@@ -2910,7 +2968,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB69"
+    name = "usa_dlc.EVTOPTB69" 	#  DeWitt Clinton
     add_opinion = {
       who = GBR
       modifier = opinion_displeased
@@ -2919,7 +2977,7 @@ country_event = {
     add_stability = -1
     add_mercantilism = -5
     define_ruler = {
-      name = "∑VÙuyr KQógò"  # DeWitt Clinton
+      name = "∑VÙuyr KQógò" 	# DeWitt Clinton
       adm = 4
       dip = 6
       mil = 3
@@ -2936,6 +2994,7 @@ country_event = {
     }
   }
 }
+# US.Presidential Election of 1816
 country_event = {
   id = usa_dlc.70
   title = "usa_dlc.EVTNAME70"
@@ -2953,21 +3012,22 @@ country_event = {
       is_year = 1817
     }
     NOT = {
-      has_ruler = "yä∆YØe ËïW"  # James Monroe
+      has_ruler = "yä∆YØe ËïW" 	# James Monroe
     }
     NOT = {
-      has_ruler = "ÅúVØe —ë"  # Rufus King
+      has_ruler = "ÅúVØe —ë" 	# Rufus King
     }
   }
   mean_time_to_happen = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA70"
+    name = "usa_dlc.EVTOPTA70" 	#  James Monroe
     add_mercantilism = 5
     add_stability = 2
+    # monarch = 04065
     define_ruler = {
-      name = "yä∆YØe ËïW"  # James Monroe
+      name = "yä∆YØe ËïW" 	# James Monroe
       dip = 5
       adm = 6
       mil = 3
@@ -2984,14 +3044,14 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB70"
+    name = "usa_dlc.EVTOPTB70" 	#  Rufus King
     add_mercantilism = -5
     add_opinion = {
       who = GBR
       modifier = opinion_pleased
     }
     define_ruler = {
-      name = "ÅúVØe —ë"  # Rufus King
+      name = "ÅúVØe —ë" 	# Rufus King
       dip = 5
       adm = 6
       mil = 5
@@ -3006,8 +3066,10 @@ country_event = {
         }
       }
     }
+    # monarch = 03999
   }
 }
+# Adam-OnÌs Treaty
 country_event = {
   id = usa_dlc.71
   title = "usa_dlc.EVTNAME71"
@@ -3034,7 +3096,7 @@ country_event = {
     months = 200
   }
   option = {
-    name = "usa_dlc.EVTOPTA71"
+    name = "usa_dlc.EVTOPTA71" 	#  Accept Offer
     reverse_add_opinion = {
       who = SPA
       modifier = opinion_florida
@@ -3058,7 +3120,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTB71"
+    name = "usa_dlc.EVTOPTB71" 	#  Decline Offer
     reverse_add_opinion = {
       who = SPA
       modifier = opinion_displeased
@@ -3066,6 +3128,7 @@ country_event = {
     }
   }
 }
+# The Economic Dependency on England is broken
 country_event = {
   id = usa_dlc.72
   title = "usa_dlc.EVTNAME72"
@@ -3119,7 +3182,7 @@ country_event = {
     }
   }
   option = {
-    name = "usa_dlc.EVTOPTA72"
+    name = "usa_dlc.EVTOPTA72" 	#  At last!
     random_owned_province = {
       limit = {
         is_capital = yes
@@ -3149,6 +3212,7 @@ country_event = {
     }
   }
 }
+# More buns for the people!
 country_event = {
   id = usa_dlc.100
   title = "usa_dlc.EVTNAME100"

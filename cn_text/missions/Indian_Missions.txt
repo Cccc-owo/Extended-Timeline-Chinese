@@ -54,9 +54,7 @@ gen_north_india_2 = {
   }
   gen_north_india_conquer_delhi = {
     icon = mission_persian_soldiers
-    required_missions = {
-      gen_north_india_unite_culture
-    }
+    required_missions = { gen_north_india_unite_culture }
     provinces_to_highlight = {
       area = upper_doab_area
       NOT = {
@@ -78,9 +76,7 @@ gen_north_india_2 = {
   }
   gen_north_india_warrior_castes = {
     icon = mission_non-western_cavalry_raid
-    required_missions = {
-      gen_north_india_conquer_delhi
-    }
+    required_missions = { gen_north_india_conquer_delhi }
     provinces_to_highlight = {}
     trigger = {
       army_tradition = 50
@@ -206,9 +202,7 @@ gen_north_india_2 = {
   }
   gen_north_india_grand_trunk_road = {
     icon = mission_indian_soldier_elephant
-    required_missions = {
-      gen_north_india_warrior_castes
-    }
+    required_missions = { gen_north_india_warrior_castes }
     provinces_to_highlight = {
       OR = {
         area = lahore_area
@@ -321,9 +315,7 @@ gen_north_india_2 = {
   }
   gen_north_india_empire = {
     icon = mission_empire
-    required_missions = {
-      gen_north_india_grand_trunk_road
-    }
+    required_missions = { gen_north_india_grand_trunk_road }
     trigger = {
       stability = 2
       total_development = 1000
@@ -410,9 +402,7 @@ gen_south_india_2 = {
   }
   gen_south_india_forts = {
     icon = mission_arabian_fort
-    required_missions = {
-      gen_south_india_reparations
-    }
+    required_missions = { gen_south_india_reparations }
     trigger = {
       num_of_owned_provinces_with = {
         fort_level = 2
@@ -439,9 +429,7 @@ gen_south_india_2 = {
   }
   gen_south_india_maratha = {
     icon = mission_non-western_cavalry_raid
-    required_missions = {
-      gen_south_india_forts
-    }
+    required_missions = { gen_south_india_forts }
     provinces_to_highlight = {
       area = desh_area
       NOT = {
@@ -552,9 +540,7 @@ gen_south_india_2 = {
   }
   gen_south_india_deccan_conquest = {
     icon = mission_persian_soldiers
-    required_missions = {
-      gen_south_india_maratha
-    }
+    required_missions = { gen_south_india_maratha }
     provinces_to_highlight = {
       OR = {
         area = konkan_area
@@ -603,9 +589,7 @@ gen_south_india_2 = {
   }
   gen_south_india_empire = {
     icon = mission_empire
-    required_missions = {
-      gen_south_india_deccan_conquest
-    }
+    required_missions = { gen_south_india_deccan_conquest }
     provinces_to_highlight = {}
     trigger = {
       stability = 2
@@ -709,9 +693,7 @@ gen_hindu = {
   }
   gen_hindu_caste_loyalty = {
     icon = mission_ottoman_harem
-    required_missions = {
-      gen_hindu_temples
-    }
+    required_missions = { gen_hindu_temples }
     provinces_to_highlight = {}
     trigger = {
       OR = {
@@ -755,9 +737,7 @@ gen_hindu = {
   }
   gen_hindu_education = {
     icon = mission_early_modern_university
-    required_missions = {
-      gen_hindu_caste_loyalty
-    }
+    required_missions = { gen_hindu_caste_loyalty }
     provinces_to_highlight = {}
     trigger = {
       university = 5
@@ -772,9 +752,7 @@ gen_hindu = {
   }
   gen_hindu_administration = {
     icon = mission_indian_stateman
-    required_missions = {
-      gen_hindu_education
-    }
+    required_missions = { gen_hindu_education }
     provinces_to_highlight = {}
     trigger = {
       num_of_states = 20
@@ -875,9 +853,7 @@ gen_hindu = {
   }
   gen_hindu_sapta_puri = {
     icon = mission_hands_praying
-    required_missions = {
-      gen_hindu_administration
-    }
+    required_missions = { gen_hindu_administration }
     provinces_to_highlight = {
       OR = {
         province_id = 4495
@@ -901,31 +877,31 @@ gen_hindu = {
       4495 = {
         owned_by = ROOT
         religion = hinduism
-      }
+      } 	# Ayodhya
       524 = {
         owned_by = ROOT
         religion = hinduism
-      }
+      } 	# Mathura
       511 = {
         owned_by = ROOT
         religion = hinduism
-      }
+      } 	# Haridwar
       4417 = {
         owned_by = ROOT
         religion = hinduism
-      }
+      } 	# Kanchipuram
       558 = {
         owned_by = ROOT
         religion = hinduism
-      }
+      } 	# Varanasi
       2052 = {
         owned_by = ROOT
         religion = hinduism
-      }
+      } 	# Dwarkadhish
       4461 = {
         owned_by = ROOT
         religion = hinduism
-      }
+      } 	# Ujjain
     }
     effect = {
       add_country_modifier = {
@@ -990,9 +966,7 @@ gen_indian_muslim = {
   }
   gen_indian_muslim_brahmins_church = {
     icon = mission_buddhist_monk_praying
-    required_missions = {
-      gen_indian_muslim_harem
-    }
+    required_missions = { gen_indian_muslim_harem }
     provinces_to_highlight = {}
     trigger = {
       if = {
@@ -1129,9 +1103,7 @@ gen_indian_muslim = {
   }
   gen_indian_muslim_hajj = {
     icon = mission_bedouins
-    required_missions = {
-      gen_indian_muslim_brahmins_church
-    }
+    required_missions = { gen_indian_muslim_brahmins_church }
     provinces_to_highlight = {}
     trigger = {
       custom_trigger_tooltip = {
@@ -1156,9 +1128,7 @@ gen_indian_muslim = {
   }
   gen_indian_muslim_gunpowder_empire = {
     icon = mission_cannons_firing
-    required_missions = {
-      gen_indian_muslim_hajj
-    }
+    required_missions = { gen_indian_muslim_hajj }
     provinces_to_highlight = {}
     trigger = {
       army_size = 60
@@ -1217,9 +1187,7 @@ gen_indian_muslim = {
   }
   gen_indian_muslim_sufi_shrines = {
     icon = mission_mosque
-    required_missions = {
-      gen_indian_muslim_gunpowder_empire
-    }
+    required_missions = { gen_indian_muslim_gunpowder_empire }
     provinces_to_highlight = {
       OR = {
         province_id = 2087
@@ -1240,19 +1208,19 @@ gen_indian_muslim = {
       2087 = {
         owned_by = ROOT
         religion = ROOT
-      }
+      } 	#  Ajmer
       522 = {
         owned_by = ROOT
         religion = ROOT
-      }
+      } 	#  Delhi
       4513 = {
         owned_by = ROOT
         religion = ROOT
-      }
+      } 	#  Pakpattan
       567 = {
         owned_by = ROOT
         religion = ROOT
-      }
+      } 	#  Silhet
     }
     effect = {
       add_piety = -0.5
@@ -1330,9 +1298,7 @@ gen_indian_sikh = {
   }
   gen_indian_sikh_punjab = {
     icon = mission_arabian_fort
-    required_missions = {
-      gen_indian_sikh_khalsa
-    }
+    required_missions = { gen_indian_sikh_khalsa }
     provinces_to_highlight = {
       area = lahore_area
       NOT = {
@@ -1354,9 +1320,7 @@ gen_indian_sikh = {
   }
   gen_indian_sikh_amritsar = {
     icon = mission_central_asian_city
-    required_missions = {
-      gen_indian_sikh_punjab
-    }
+    required_missions = { gen_indian_sikh_punjab }
     provinces_to_highlight = {
       province_id = 2075
     }
@@ -1391,7 +1355,7 @@ gen_indian_sikh = {
             duration = -1
           }
         }
-        rename_capital = "?–ÆY)RR"  # Amritsar
+        rename_capital = "?–ÆY)RR" 	# Amritsar
       }
       multan_area = {
         limit = {
@@ -1441,9 +1405,7 @@ gen_indian_sikh = {
   }
   gen_indian_sikh_empire = {
     icon = mission_unite_home_region
-    required_missions = {
-      gen_indian_sikh_amritsar
-    }
+    required_missions = { gen_indian_sikh_amritsar }
     provinces_to_highlight = {
       OR = {
         area = multan_area
@@ -1512,9 +1474,7 @@ gen_indian_sikh = {
   }
   gen_indian_sikh_five_thrones = {
     icon = mission_monarch_in_throne_room
-    required_missions = {
-      gen_indian_sikh_empire
-    }
+    required_missions = { gen_indian_sikh_empire }
     provinces_to_highlight = {
       OR = {
         area = bihar_area
@@ -1631,9 +1591,7 @@ gen_north_india_4 = {
   }
   gen_north_india_powerful_subject = {
     icon = mission_have_two_subjects
-    required_missions = {
-      gen_north_india_cot
-    }
+    required_missions = { gen_north_india_cot }
     provinces_to_highlight = {}
     trigger = {
       custom_trigger_tooltip = {
@@ -1655,9 +1613,7 @@ gen_north_india_4 = {
   }
   gen_north_india_gujarat_bengal = {
     icon = mission_junk_boat
-    required_missions = {
-      gen_north_india_powerful_subject
-    }
+    required_missions = { gen_north_india_powerful_subject }
     provinces_to_highlight = {
       OR = {
         province_id = 504
@@ -1683,9 +1639,7 @@ gen_north_india_4 = {
   }
   gen_north_india_jains = {
     icon = mission_buddhist_monk_praying
-    required_missions = {
-      gen_north_india_gujarat_bengal
-    }
+    required_missions = { gen_north_india_gujarat_bengal }
     provinces_to_highlight = {}
     trigger = {
       if = {
@@ -1714,9 +1668,7 @@ gen_north_india_4 = {
   }
   gen_north_india_textiles = {
     icon = mission_have_manufactories
-    required_missions = {
-      gen_north_india_jains
-    }
+    required_missions = { gen_north_india_jains }
     provinces_to_highlight = {}
     trigger = {
       num_of_owned_provinces_with = {
@@ -1791,9 +1743,7 @@ gen_south_india_4 = {
   }
   gen_south_india_navy = {
     icon = mission_establish_high_seas_navy
-    required_missions = {
-      gen_south_india_production
-    }
+    required_missions = { gen_south_india_production }
     provinces_to_highlight = {}
     trigger = {
       num_of_light_ship = 30
@@ -1807,9 +1757,7 @@ gen_south_india_4 = {
   }
   gen_south_india_trade = {
     icon = mission_junk_boat
-    required_missions = {
-      gen_south_india_navy
-    }
+    required_missions = { gen_south_india_navy }
     provinces_to_highlight = {}
     trigger = {
       num_of_centers_of_trade = 5
@@ -1840,9 +1788,7 @@ gen_south_india_4 = {
   }
   gen_south_india_spice_textile = {
     icon = mission_have_manufactories
-    required_missions = {
-      gen_south_india_trade
-    }
+    required_missions = { gen_south_india_trade }
     provinces_to_highlight = {}
     trigger = {
       num_of_owned_provinces_with = {
@@ -1896,9 +1842,7 @@ gen_south_india_5 = {
   }
   gen_south_india_diamonds = {
     icon = mission_war_chest
-    required_missions = {
-      gen_south_india_trade
-    }
+    required_missions = { gen_south_india_trade }
     position = 4
     provinces_to_highlight = {
       province_id = 542

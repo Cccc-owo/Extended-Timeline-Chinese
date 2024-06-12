@@ -29,7 +29,7 @@ country_decisions = {
       }
       NOT = {
         tag = SPA
-      }
+      } 	#  Basque is a valid culture for both FRA and SPA
       NOT = {
         tag = FR2
       }
@@ -79,9 +79,9 @@ country_decisions = {
             owns_core_province = 186
           }
         }
-        province_id = 183
-        province_id = 184
-        province_id = 186
+        province_id = 183 	#  Île-de-France
+        province_id = 184 	#  Orléannais
+        province_id = 186 	#  Champagne
       }
       OR = {
         NOT = {
@@ -99,10 +99,10 @@ country_decisions = {
       NOT = {
         exists = FRA
       }
-      owns_core_province = 184
-      owns_core_province = 186
-      owns_core_province = 183
-      183 = {
+      owns_core_province = 184 	#  Orléannais
+      owns_core_province = 186 	#  Champagne
+      owns_core_province = 183 	#  Île-de-France
+      183 = { 	#  Île-de-France / Paris
         is_state = yes
       }
       num_of_owned_provinces_with = {
@@ -112,7 +112,7 @@ country_decisions = {
       }
     }
     effect = {
-      183 = {
+      183 = { 	# Paris
         move_capital_effect = yes
       }
       change_tag = FRA
@@ -147,7 +147,7 @@ country_decisions = {
         }
         country_event = {
           id = ideagroups.1
-        }
+        } 	# Swap Ideas
       }
       set_country_flag = formed_france_flag
     }
@@ -155,7 +155,7 @@ country_decisions = {
       factor = 1
       modifier = {
         factor = 0
-        dynasty = " Rm—g"  # Carolingian
+        dynasty = " Rm—g" 	# Carolingian 	# prevents West Francia from always forming France
       }
     }
   }

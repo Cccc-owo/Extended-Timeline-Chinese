@@ -16,6 +16,7 @@ republic_mechanic = {
   }
   valid_for_nation_designer = no
 }
+#Oligarchy vs Merchant Class vs Noble Elite
 oligarchy_reform = {
   icon = "people_walking"
   allow_normal_conversion = yes
@@ -52,7 +53,7 @@ oligarchy_reform = {
     enables_aristocratic_idea_group = no
   }
   ai = {
-    factor = 0.5
+    factor = 0.5 	# generic
   }
 }
 signoria_reform = {
@@ -210,9 +211,7 @@ prussian_republic_reform = {
     allow = {
       has_dlc = "Rights of Man"
     }
-    government_abilities = {
-      militarization_mechanic
-    }
+    government_abilities = { militarization_mechanic }
   }
   custom_attributes = {
     enables_plutocratic_idea_group = yes
@@ -300,7 +299,7 @@ merchants_reform = {
     elections_increase_factions_influence = yes
   }
   ai = {
-    factor = 0.75
+    factor = 0.75 	# generic
     modifier = {
       factor = 0
       num_of_cities = 11
@@ -387,9 +386,7 @@ venice_merchants_reform = {
     allow = {
       has_dlc = "Winds of Change"
     }
-    government_abilities = {
-      council_of_ten
-    }
+    government_abilities = { council_of_ten }
   }
   custom_attributes = {
     enables_plutocratic_idea_group = yes
@@ -510,7 +507,7 @@ noble_elite_reform = {
     enables_aristocratic_idea_group = yes
   }
   ai = {
-    factor = 0.5
+    factor = 0.5 	# generic
   }
 }
 presidential_despot_reform = {
@@ -676,7 +673,7 @@ junior_revolutionary_republic_reform = {
   royal_marriage = no
   uses_revolutionary_zeal = yes
   revolutionary = yes
-  revolutionary_client_state = yes
+  revolutionary_client_state = yes 	#  Used By Revolutionary Client State
   modifiers = {
     tolerance_heretic = 2
     land_morale = 0.1
@@ -971,7 +968,7 @@ trading_city = {
       }
     }
     can_form_trade_league = yes
-    trade_city_reform = merchants_reform
+    trade_city_reform = merchants_reform 	#  For trade cities this is their fallback government if they get more than 1 provinces
   }
   conditional = {
     allow = {
@@ -980,7 +977,7 @@ trading_city = {
     }
     can_use_trade_post = yes
     can_form_trade_league = yes
-    trade_city_reform = merchants_reform
+    trade_city_reform = merchants_reform 	#  For trade cities this is their fallback government if they get more than 1 provinces
   }
   duration = 4
 }
@@ -1095,9 +1092,7 @@ veche_republic = {
         has_dlc = "Domination"
       }
     }
-    government_abilities = {
-      russian_mechanic
-    }
+    government_abilities = { russian_mechanic }
     custom_attributes = {
       weaker_russian_ability = yes
     }
@@ -1168,18 +1163,13 @@ great_veche_republic = {
         has_dlc = "Domination"
       }
     }
-    government_abilities = {
-      russian_mechanic
-    }
+    government_abilities = { russian_mechanic }
   }
   conditional = {
     allow = {
       has_dlc = "Domination"
     }
-    government_abilities = {
-      russian_mechanic
-      russian_modernization_mechanic
-    }
+    government_abilities = { russian_mechanic russian_modernization_mechanic }
   }
   duration = 6
 }
@@ -1235,9 +1225,7 @@ great_russian_republic_reform = {
     allow = {
       has_dlc = "Domination"
     }
-    government_abilities = {
-      russian_rule_mechanic
-    }
+    government_abilities = { russian_rule_mechanic }
   }
   duration = 6
 }
@@ -1869,7 +1857,7 @@ dutch_republic = {
     allowed_voc_indiamen_fraction = 0.2
   }
   removed_effect = {
-    if = {
+    if = { 	#  Monarchs seize power
       limit = {
         government = monarchy
       }
@@ -1936,9 +1924,7 @@ cossacks_reform = {
     }
   }
   raze_province = yes
-  government_abilities = {
-    cossacks_mechanic
-  }
+  government_abilities = { cossacks_mechanic }
   conditional = {
     allow = {
       has_dlc = "Origins"
@@ -2002,10 +1988,9 @@ city_alliance_reform = {
       remove_country_modifier = the_fifth_sun
     }
   }
-  government_abilities = {
-    blood_gathering_mechanic
-  }
+  government_abilities = { blood_gathering_mechanic }
 }
+#Republican Virtues
 republican_authoritarianism_reform = {
   icon = "merchant"
   allow_normal_conversion = yes
@@ -2344,6 +2329,7 @@ fraternite_reform = {
     factor = 2.5
   }
 }
+#Frequency of Elections / Consolidation of Power
 frequent_elections_reform = {
   icon = "ballot_box"
   allow_normal_conversion = yes
@@ -2616,6 +2602,7 @@ national_assembly_reform = {
     factor = 2
   }
 }
+#Religion within Republic
 establish_religious_institution_for_pirates_reform = {
   icon = "religious_leader"
   allow_normal_conversion = yes
@@ -2725,6 +2712,7 @@ relgious_freedom_reform = {
     factor = 2.5
   }
 }
+#Federalism vs Unitarianism vs Confederacy
 provincial_governments_reform = {
   icon = "landscape"
   allow_normal_conversion = yes
@@ -2837,6 +2825,8 @@ cultural_administration_reform = {
     }
   }
 }
+#Parliamentary vs Presidential
+# parliamentary_reform defined in common file
 presidential_reform = {
   icon = "man_on_podium"
   allow_normal_conversion = yes
@@ -2899,7 +2889,7 @@ attorney_general_reform = {
   modifiers = {
     same_culture_advisor_cost = -0.15
   }
-  custom_attributes = {
+  custom_attributes = { 	# seizing_land_no_rebels = yes
     republican_tradition_from_advisors = yes
     can_not_seize_land = yes
   }
@@ -3011,6 +3001,7 @@ two_chamber_reform = {
     factor = 1
   }
 }
+#Consolidation of Power
 broaden_executive_powers_reform = {
   icon = "castle"
   allow_normal_conversion = yes
@@ -3168,9 +3159,7 @@ war_against_the_world_doctrine_reform = {
   icon = "war_against_the_world"
   allow_normal_conversion = yes
   legacy_equivalent = war_against_the_world_government
-  disallowed_trade_goods = {
-    slaves
-  }
+  disallowed_trade_goods = { slaves }
   potential = {
     has_government_attribute = is_pirate_republic_reform
   }
@@ -3246,6 +3235,7 @@ revolutionary_council_reform = {
     factor = 2
   }
 }
+#Economical Matters
 empowered_quartermasters_reform = {
   icon = "merchant"
   allow_normal_conversion = yes
@@ -3395,6 +3385,7 @@ cutthroat_approach_reform = {
     factor = 1
   }
 }
+#Administration
 political_principle_reform = {
   icon = "paper_with_seal_3"
   allow_normal_conversion = yes
@@ -3489,6 +3480,7 @@ imperial_principle_reform = {
     factor = 2
   }
 }
+#Electorate
 landholders_reform = {
   icon = "dutch_flag"
   allow_normal_conversion = yes
@@ -3665,6 +3657,7 @@ military_electorate_reform = {
     factor = 1
   }
 }
+#Office Selection Method
 appointment_by_committee_reform = {
   icon = "politician"
   allow_normal_conversion = yes
@@ -3729,6 +3722,7 @@ pirate_representation_reform = {
     factor = 0
   }
 }
+#Question of Dictatorship
 pirates_become_republic_reform = {
   icon = "parliament_highlighted"
   allow_normal_conversion = yes
@@ -3994,7 +3988,7 @@ millenarian_theocracy_reform = {
   has_term_election = no
   potential = {
     religion = catholic
-    has_ruler = "	TWÉb«ƒ („iO³uWÉb"  # Girolamo Savonarola
+    has_ruler = "	TWÉb«ƒ („iO³uWÉb" 	# Girolamo Savonarola
     OR = {
       tag = LAN
       tag = TUS
@@ -4002,7 +3996,7 @@ millenarian_theocracy_reform = {
   }
   trigger = {
     religion = catholic
-    has_ruler = "	TWÉb«ƒ („iO³uWÉb"  # Girolamo Savonarola
+    has_ruler = "	TWÉb«ƒ („iO³uWÉb" 	# Girolamo Savonarola
     OR = {
       tag = LAN
       tag = TUS

@@ -1,6 +1,6 @@
 byz_western = {
-  slot = 1
-  generic = no
+  slot = 1 	# upper left column
+  generic = no 	# if a mission without generic = yes wants this slot then it overrides this.
   ai = yes
   potential = {
     tag = BYZ
@@ -11,7 +11,7 @@ byz_western = {
   has_country_shield = yes
   recover_greece = {
     icon = mission_assemble_an_army
-    required_missions = {}
+    required_missions = {} 	# None
     provinces_to_highlight = {
       OR = {
         province_id = 144
@@ -112,7 +112,7 @@ byz_western = {
         }
         if = {
           limit = {
-            has_dlc = "Purple Phoenix"
+            has_dlc = "Purple Phoenix" 	# For the PP mission to conquer Albania
           }
           albania_area = {
             limit = {
@@ -155,14 +155,12 @@ byz_western = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
   recover_the_balkans = {
     icon = mission_eastern_european_city
-    required_missions = {
-      recover_greece
-    }
+    required_missions = { recover_greece }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -219,14 +217,12 @@ byz_western = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
   recover_south_italy = {
     icon = mission_italian_condottiere
-    required_missions = {
-      recover_the_balkans
-    }
+    required_missions = { recover_the_balkans }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -295,14 +291,12 @@ byz_western = {
       add_permanent_claim = 2982
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
   recover_sicily = {
     icon = mission_sea_battles
-    required_missions = {
-      recover_south_italy
-    }
+    required_missions = { recover_south_italy }
     provinces_to_highlight = {
       OR = {
         area = western_sicily_area
@@ -327,13 +321,13 @@ byz_western = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
 }
 byz_generic_slot_2 = {
   slot = 2
-  generic = no
+  generic = no 	# Needs to be replaced by similar missions for Purple Phoenix
   ai = yes
   potential = {
     NOT = {
@@ -353,9 +347,7 @@ byz_generic_slot_2 = {
   recover_rome = {
     position = 6
     icon = mission_religious
-    required_missions = {
-      recover_south_italy
-    }
+    required_missions = { recover_south_italy }
     provinces_to_highlight = {
       province_id = 118
       NOT = {
@@ -405,14 +397,12 @@ byz_generic_slot_2 = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
   destroy_venice = {
     icon = mission_monarch_in_throne_room
-    required_missions = {
-      recover_rome
-    }
+    required_missions = { recover_rome }
     provinces_to_highlight = {
       area = venetia_area
       NOT = {
@@ -439,7 +429,7 @@ byz_generic_slot_2 = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
 }
@@ -561,10 +551,10 @@ byz_east = {
           }
           add_permanent_claim = ROOT
         }
-        add_permanent_claim = 327
-        add_permanent_claim = 2302
-        add_permanent_claim = 2750
-        add_permanent_claim = 4310
+        add_permanent_claim = 327 	#  Adana
+        add_permanent_claim = 2302 	#  Icel
+        add_permanent_claim = 2750 	#  Plovdiv
+        add_permanent_claim = 4310 	#  Divrigi
       }
       else = {
         germiyan_area = {
@@ -603,13 +593,13 @@ byz_east = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
 }
 byz_generic_slot_5 = {
   slot = 5
-  generic = no
+  generic = no 	# Needs to be replaced by similar missions for Purple Phoenix
   ai = yes
   potential = {
     NOT = {
@@ -624,9 +614,7 @@ byz_generic_slot_5 = {
   has_country_shield = yes
   reestablish_the_theme_system = {
     icon = mission_non-western_cavalry_raid
-    required_missions = {
-      recover_the_coast_of_asia_minor
-    }
+    required_missions = { recover_the_coast_of_asia_minor }
     position = 3
     provinces_to_highlight = {
       OR = {
@@ -639,10 +627,10 @@ byz_generic_slot_5 = {
         area = rum_area
         area = thrace_area
         area = erzurum_area
-        province_id = 327
-        province_id = 2302
-        province_id = 4310
-        province_id = 2750
+        province_id = 327 	#  Adana
+        province_id = 2302 	#  Icel
+        province_id = 4310 	#  Divrigi
+        province_id = 2750 	#  Plovdiv
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
@@ -685,126 +673,126 @@ byz_generic_slot_5 = {
         type = all
         country_or_non_sovereign_subject_holds = ROOT
       }
-      owns = 327
-      owns = 2302
-      owns = 4310
-      owns = 2750
+      owns = 327 	#  Adana
+      owns = 2302 	#  Icel
+      owns = 4310 	#  Divrigi
+      owns = 2750 	#  Plovdiv
     }
     effect = {
       hidden_effect = {
         149 = {
-          rename_capital = "ÈT·Vo‚!X"  # Adrianopolis
+          rename_capital = "ÈT·Vo‚!X" 	# Adrianopolis
         }
         151 = {
-          rename_capital = "TëXfWN!X"  # Konstantinopolis
+          rename_capital = "TëXfWN!X" 	# Konstantinopolis
         }
         316 = {
-          rename_capital = "<SÑys|•^šN"  # Nikomedeia
+          rename_capital = "<SÑys|•^šN" 	# Nikomedeia
         }
         317 = {
-          rename_capital = "nfœ(„"  # Prussa
+          rename_capital = "nfœ(„" 	# Prussa
         }
         318 = {
-          rename_capital = "ëX¦žÿb"  # Smyrna
+          rename_capital = "ëX¦žÿb" 	# Smyrna
         }
         319 = {
-          rename_capital = "FzÉb"  # Mougla
+          rename_capital = "FzÉb" 	# Mougla
         }
         322 = {
-          rename_capital = "Ñy‚„šNÁ"  # Kotyaion
+          rename_capital = "Ñy‚„šNÁ" 	# Kotyaion
         }
         323 = {
-          rename_capital = "OÑy<SÁ"  # Iconion
+          rename_capital = "OÑy<SÁ" 	# Iconion
         }
         324 = {
-          rename_capital = "ÉbpQ¾"  # Laranda
+          rename_capital = "ÉbpQ¾" 	# Laranda
         }
         325 = {
-          rename_capital = "Ðc«ƒ<SeY"  # Timonio
+          rename_capital = "Ðc«ƒ<SeY" 	# Timonio
         }
         326 = {
-          rename_capital = "‰RaSÉb"  # Ancyra
+          rename_capital = "‰RaSÉb" 	# Ancyra
         }
         327 = {
-          rename_capital = "?–TX³u"  # Atana
+          rename_capital = "?–TX³u" 	# Atana
         }
         328 = {
-          rename_capital = "!•ú‹nf"  # Sinop
+          rename_capital = "!•ú‹nf" 	# Sinop
         }
         329 = {
-          rename_capital = "^XôT¯eXbâl)R¯e"  # Sebastopolis
+          rename_capital = "^XôT¯eXbâl)R¯e" 	# Sebastopolis
         }
         330 = {
-          rename_capital = "yrÉbiOVy¯e"  # Trapezous
+          rename_capital = "yrÉbiOVy¯e" 	# Trapezous
         }
         331 = {
-          rename_capital = "ÄreYY‰âl)R¯e"  # Theodosiopolis
+          rename_capital = "ÄreYY‰âl)R¯e" 	# Theodosiopolis
         }
         1764 = {
-          rename_capital = "…hîh^Ì‘šN"  # Mesambria
+          rename_capital = "…hîh^Ì‘šN" 	# Mesambria
         }
         1846 = {
-          rename_capital = "?–lš‰šN"  # Amasea
+          rename_capital = "?–lš‰šN" 	# Amasea
         }
         1848 = {
-          rename_capital = "ôTÌ‘¯e"  # Baris
+          rename_capital = "ôTÌ‘¯e" 	# Baris
         }
         2296 = {
-          rename_capital = "®vÖvO"  # Pigai
+          rename_capital = "®vÖvO" 	# Pigai
         }
         2297 = {
-          rename_capital = "lš<h…m‰šN"  # Magnesia
+          rename_capital = "lš<h…m‰šN" 	# Magnesia
         }
         2298 = {
-          rename_capital = "?–TX)RšN"  # Attalia
+          rename_capital = "?–TX)RšN" 	# Attalia
         }
         2299 = {
-          rename_capital = "KQ³RêeYâl)R¯e"  # Klaudiopol
+          rename_capital = "KQ³RêeYâl)R¯e" 	# Klaudiopol
         }
         2300 = {
-          rename_capital = "TXôuÁ"  # Tavium
+          rename_capital = "TXôuÁ" 	# Tavium
         }
         2301 = {
-          rename_capital = "ïQ’dÌ‘šN"  # Ceasarea
+          rename_capital = "ïQ’dÌ‘šN" 	# Ceasarea
         }
         2302 = {
-          rename_capital = "KQ›sÉb	T"  # Kermarage
+          rename_capital = "KQ›sÉb	T" 	# Kermarage
         }
         2304 = {
-          rename_capital = "?–s|0t¯e"  # Amissos
+          rename_capital = "?–s|0t¯e" 	# Amissos
         }
         2305 = {
-          rename_capital = "?–ŽU)R^X…m"  # Acilisene
+          rename_capital = "?–ŽU)R^X…m" 	# Acilisene
         }
         2750 = {
-          rename_capital = "S›Râl)R¯e"  # Philippopolis
+          rename_capital = "S›Râl)R¯e" 	# Philippopolis
         }
         4307 = {
-          rename_capital = "Ñym<SšN"  # Colonia
+          rename_capital = "Ñym<SšN" 	# Colonia
         }
         4308 = {
-          rename_capital = "³RêúWšN"  # Laodicea
+          rename_capital = "³RêúWšN" 	# Laodicea
         }
         4309 = {
-          rename_capital = "yrÉb±ƒ¯e"  # Tralles
+          rename_capital = "yrÉb±ƒ¯e" 	# Tralles
         }
         4310 = {
-          rename_capital = "ðl+YÌ‘ïQ"  # Tephrike
+          rename_capital = "ðl+YÌ‘ïQ" 	# Tephrike
         }
         4311 = {
-          rename_capital = "âl)RYÌ‘Á"  # Polydorion
+          rename_capital = "âl)RYÌ‘Á" 	# Polydorion
         }
         4312 = {
-          rename_capital = "Y)RYuÆY"  # Dorylaeum
+          rename_capital = "Y)RYuÆY" 	# Dorylaeum
         }
         4313 = {
-          rename_capital = "u<hÉb"  # Gangra
+          rename_capital = "u<hÉb" 	# Gangra
         }
         4314 = {
-          rename_capital = "ågëXN<Sâl)R¯e"  # Justinianopolis
+          rename_capital = "ågëXN<Sâl)R¯e" 	# Justinianopolis
         }
         4315 = {
-          rename_capital = "ÃW+YYKQ‰šN"  # Evdoksia
+          rename_capital = "ÃW+YYKQ‰šN" 	# Evdoksia
         }
       }
       custom_tooltip = reestablishing_themes_names_tooltip
@@ -827,14 +815,12 @@ byz_generic_slot_5 = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
   convert_asia_minor = {
     icon = mission_non-western_soldiers
-    required_missions = {
-      reestablish_the_theme_system
-    }
+    required_missions = { reestablish_the_theme_system }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -874,16 +860,13 @@ byz_generic_slot_5 = {
       add_permanent_claim = 2313
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
   the_pentarchy = {
     icon = mission_empire
     position = 7
-    required_missions = {
-      recover_rome
-      convert_asia_minor
-    }
+    required_missions = { recover_rome convert_asia_minor }
     provinces_to_highlight = {
       OR = {
         province_id = 118
@@ -894,11 +877,11 @@ byz_generic_slot_5 = {
       }
     }
     trigger = {
-      owns = 118
-      owns = 151
-      owns = 358
-      owns = 379
-      owns = 2313
+      owns = 118 	# Rome
+      owns = 151 	# Constantinople
+      owns = 358 	# Alexandria
+      owns = 379 	# Jerusalem
+      owns = 2313 	# Antioch
     }
     effect = {
       add_country_modifier = {
@@ -910,7 +893,7 @@ byz_generic_slot_5 = {
       }
     }
     ai_weight = {
-      factor = 500
+      factor = 500 	# Byzantium is basically Ottomans in its conquest behavior
     }
   }
 }

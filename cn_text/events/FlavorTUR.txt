@@ -1,5 +1,9 @@
+########################################
+# Major Flavor Events                  #
+########################################
 namespace = flavor_tur
 normal_or_historical_nations = yes
+# The Economic Reforms of Mehmed II
 country_event = {
   id = flavor_tur.3352
   title = "flavor_tur.EVTNAME3352"
@@ -34,7 +38,7 @@ country_event = {
   mean_time_to_happen = {
     months = 100
   }
-  option = {
+  option = { 	#  End trade agreements with Venice and Genoa
     name = "flavor_tur.EVTOPTA3352"
     ai_chance = {
       factor = 50
@@ -75,7 +79,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Maintain agreements with Venice and Genoa
     name = "flavor_tur.EVTOPTB3352"
     ai_chance = {
       factor = 50
@@ -114,6 +118,7 @@ country_event = {
     }
   }
 }
+# Military Reforms
 country_event = {
   id = flavor_tur.3354
   title = "flavor_tur.EVTNAME3354"
@@ -131,7 +136,7 @@ country_event = {
   mean_time_to_happen = {
     months = 300
   }
-  option = {
+  option = { 	#  Great Army Reform
     name = "flavor_tur.EVTOPTA3354"
     ai_chance = {
       factor = 50
@@ -142,7 +147,7 @@ country_event = {
       duration = 7300
     }
   }
-  option = {
+  option = { 	#  Reform Army and Navy
     name = "flavor_tur.EVTOPTB3354"
     ai_chance = {
       factor = 25
@@ -153,7 +158,7 @@ country_event = {
       duration = 7300
     }
   }
-  option = {
+  option = { 	#  Great Navy Reform
     name = "flavor_tur.EVTOPTC3354"
     ai_chance = {
       factor = 25
@@ -165,6 +170,7 @@ country_event = {
     }
   }
 }
+# Enderun Academy
 country_event = {
   id = flavor_tur.3357
   title = "flavor_tur.EVTNAME3357"
@@ -182,7 +188,7 @@ country_event = {
   mean_time_to_happen = {
     months = 100
   }
-  option = {
+  option = { 	#  Found the Enderun
     name = "flavor_tur.EVTOPTA3357"
     add_years_of_income = -0.10
     add_army_professionalism = 0.02
@@ -191,7 +197,7 @@ country_event = {
       duration = 3650
     }
   }
-  option = {
+  option = { 	#  Expand the Timariot System instead
     name = "flavor_tur.EVTOPTB3357"
     add_army_professionalism = 0.02
     add_country_modifier = {
@@ -200,6 +206,7 @@ country_event = {
     }
   }
 }
+# Land Reforms of Mehmed II
 country_event = {
   id = flavor_tur.3358
   title = "flavor_tur.EVTNAME3358"
@@ -217,26 +224,27 @@ country_event = {
   mean_time_to_happen = {
     months = 150
   }
-  option = {
+  option = { 	#  Expand the Timar System.
     name = "flavor_tur.EVTOPTA3358"
     add_piety = -0.25
     add_estate_nobles_loyalty_effect = yes
     reduce_estate_church_loyalty_effect = yes
   }
-  option = {
+  option = { 	#  Leave the Ulema alone.
     name = "flavor_tur.EVTOPTB3358"
     add_piety = 0.25
     reduce_estate_nobles_loyalty_effect = yes
     add_estate_church_loyalty_effect = yes
   }
 }
+# The Veneto-Turkish Conflict
 country_event = {
   id = flavor_tur.3359
   title = "flavor_tur.EVTNAME3359"
   desc = "flavor_tur.EVTDESC3359"
   picture = BATTLE_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  Refuse even to discuss compensation
     name = "flavor_tur.EVTOPTA3359"
     ai_chance = {
       factor = 90
@@ -255,7 +263,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Give Alexandria as compensation
     name = "flavor_tur.EVTOPTB3359"
     ai_chance = {
       factor = 10
@@ -282,6 +290,7 @@ country_event = {
     }
   }
 }
+# The Turko-Persian Conflicts: Shiite rebels
 country_event = {
   id = flavor_tur.3360
   title = "flavor_tur.EVTNAME3360"
@@ -298,7 +307,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Crush the Shiite rebellion
     name = "flavor_tur.EVTOPTA3360"
     ai_chance = {
       factor = 90
@@ -321,7 +330,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Give in to their demands
     name = "flavor_tur.EVTOPTB3360"
     ai_chance = {
       factor = 10
@@ -341,6 +350,7 @@ country_event = {
     }
   }
 }
+# Murad III's campaigns against Persia
 country_event = {
   id = flavor_tur.3362
   title = "flavor_tur.EVTNAME3362"
@@ -377,7 +387,7 @@ country_event = {
   mean_time_to_happen = {
     months = 250
   }
-  option = {
+  option = { 	#  Fan the Flames of War
     name = "flavor_tur.EVTOPTA3362"
     ai_chance = {
       factor = 75
@@ -415,7 +425,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Seek reconciliation
     name = "flavor_tur.EVTOPTC3362"
     PER = {
       add_opinion = {
@@ -425,6 +435,7 @@ country_event = {
     }
   }
 }
+# Persians take advantage of Ottoman instability
 country_event = {
   id = flavor_tur.3363
   title = "flavor_tur.EVTNAME3363"
@@ -441,7 +452,7 @@ country_event = {
       set_province_flag = spahi_revolt
     }
   }
-  option = {
+  option = { 	#  Crush the rebels and prepare for war!
     name = "flavor_tur.EVTOPTA3363"
     random_owned_province = {
       limit = {
@@ -456,6 +467,7 @@ country_event = {
     }
   }
 }
+# The Expansion of the Royal Bureaucracy
 country_event = {
   id = flavor_tur.3366
   title = "flavor_tur.EVTNAME3366"
@@ -473,7 +485,7 @@ country_event = {
   mean_time_to_happen = {
     months = 25
   }
-  option = {
+  option = { 	#  Expand the Royal Bureaucracy
     name = "flavor_tur.EVTOPTA3366"
     ai_chance = {
       factor = 25
@@ -498,7 +510,7 @@ country_event = {
       duration = 14600
     }
   }
-  option = {
+  option = { 	#  Limited reforms
     name = "flavor_tur.EVTOPTB3366"
     ai_chance = {
       factor = 50
@@ -511,7 +523,7 @@ country_event = {
     }
     add_adm_power = 50
   }
-  option = {
+  option = { 	#  Reduce the Royal Bureucracy
     name = "flavor_tur.EVTOPTC3366"
     ai_chance = {
       factor = 25
@@ -523,6 +535,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# The Great Naval Reform
 country_event = {
   id = flavor_tur.3367
   title = "flavor_tur.EVTNAME3367"
@@ -543,7 +556,7 @@ country_event = {
   mean_time_to_happen = {
     months = 25
   }
-  option = {
+  option = { 	#  Build the Imperial Halic Shipyard
     name = "flavor_tur.EVTOPTA3367"
     ai_chance = {
       factor = 60
@@ -560,7 +573,7 @@ country_event = {
       duration = -1
     }
   }
-  option = {
+  option = { 	#  Build a smaller shipyard
     name = "flavor_tur.EVTOPTB3367"
     ai_chance = {
       factor = 20
@@ -573,7 +586,7 @@ country_event = {
     }
     add_dip_power = 50
   }
-  option = {
+  option = { 	#  Reform the army instead
     name = "flavor_tur.EVTOPTC3367"
     ai_chance = {
       factor = 20
@@ -587,6 +600,7 @@ country_event = {
     add_mil_power = 50
   }
 }
+# Cem Sultan's Rebellion
 country_event = {
   id = flavor_tur.3368
   title = "flavor_tur.EVTNAME3368"
@@ -607,7 +621,7 @@ country_event = {
   mean_time_to_happen = {
     months = 150
   }
-  option = {
+  option = { 	#  Crush Cem's rebellion
     name = "flavor_tur.EVTOPTA3368"
     ai_chance = {
       factor = 75
@@ -625,7 +639,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Seek reconciliation
     name = "flavor_tur.EVTOPTB3368"
     ai_chance = {
       factor = 25
@@ -640,6 +654,7 @@ country_event = {
     add_years_of_income = -0.25
   }
 }
+# The 1st Celali Uprising
 country_event = {
   id = flavor_tur.3370
   title = "flavor_tur.EVTNAME3370"
@@ -672,7 +687,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Crush Celali and the Shiites
     name = "flavor_tur.EVTOPTA3370"
     random_owned_province = {
       limit = {
@@ -685,7 +700,7 @@ country_event = {
       clr_province_flag = celali_uprising
     }
   }
-  option = {
+  option = { 	#  Heed their demands
     name = "flavor_tur.EVTOPTB3370"
     random_owned_province = {
       limit = {
@@ -696,6 +711,7 @@ country_event = {
     }
   }
 }
+# Protector of the Pilgrimage
 country_event = {
   id = flavor_tur.3371
   title = "flavor_tur.EVTNAME3371"
@@ -706,15 +722,15 @@ country_event = {
     tag = TUR
     is_at_war = no
     religion_group = muslim
-    owns_or_non_sovereign_subject_of = 361
-    owns_or_non_sovereign_subject_of = 358
-    owns_or_non_sovereign_subject_of = 382
-    owns_or_non_sovereign_subject_of = 379
+    owns_or_non_sovereign_subject_of = 361 	#  Cairo
+    owns_or_non_sovereign_subject_of = 358 	#  Alexandria
+    owns_or_non_sovereign_subject_of = 382 	#  Damascus
+    owns_or_non_sovereign_subject_of = 379 	#  Jerusalem
   }
   mean_time_to_happen = {
     months = 36
   }
-  option = {
+  option = { 	#  Assume the title of Khadim al-Haramayn.
     name = "flavor_tur.EVTOPTA3371"
     add_adm_power = 400
     add_prestige = 25
@@ -722,6 +738,7 @@ country_event = {
     add_piety = 0.25
   }
 }
+# Mameluk Uprising under Canbirdi Ghazeli
 country_event = {
   id = flavor_tur.3373
   title = "flavor_tur.EVTNAME3373"
@@ -765,7 +782,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Crush them!
     name = "flavor_tur.EVTOPTA3373"
     random_owned_province = {
       limit = {
@@ -791,6 +808,7 @@ country_event = {
     }
   }
 }
+# Mimar Sinan's Great Constructions
 country_event = {
   id = flavor_tur.3374
   title = "flavor_tur.EVTNAME3374"
@@ -808,7 +826,7 @@ country_event = {
   mean_time_to_happen = {
     months = 100
   }
-  option = {
+  option = { 	#  Appoint him royal architect
     name = "flavor_tur.EVTOPTA3374"
     ai_chance = {
       factor = 90
@@ -817,7 +835,7 @@ country_event = {
       name = mimar_sinan
     }
   }
-  option = {
+  option = { 	#  Enlist his services for a short time
     name = "flavor_tur.EVTOPTB3374"
     ai_chance = {
       factor = 10
@@ -835,6 +853,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# The Legal Reforms of Suleyman the Magnificent
 country_event = {
   id = flavor_tur.3375
   title = "flavor_tur.EVTNAME3375"
@@ -857,7 +876,7 @@ country_event = {
   immediate = {
     set_country_flag = TUR_had_event_3375
   }
-  option = {
+  option = { 	#  Codify the Ottoman Laws
     name = "flavor_tur.EVTOPTA3375"
     ai_chance = {
       factor = 75
@@ -879,7 +898,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Leave it be
     name = "flavor_tur.EVTOPTB3375"
     ai_chance = {
       factor = 25
@@ -896,6 +915,7 @@ country_event = {
     add_stability_or_adm_power = yes
   }
 }
+# Kˆsem Sultana
 country_event = {
   id = flavor_tur.3377
   title = "flavor_tur.EVTNAME3377"
@@ -917,7 +937,7 @@ country_event = {
   mean_time_to_happen = {
     months = 100
   }
-  option = {
+  option = { 	#  Wed Kˆsem
     name = "flavor_tur.EVTOPTA3377"
     ai_chance = {
       factor = 90
@@ -932,7 +952,7 @@ country_event = {
         has_government_attribute = queen
       }
       define_consort = {
-        name = "Ôg^X∆YœÇ9N"  # Kˆsem Sultan
+        name = "Ôg^X∆YœÇ9N" 	# Kˆsem Sultan
         culture = greek
         adm = 5
         dip = 4
@@ -946,7 +966,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Choose another wife
     name = "flavor_tur.EVTOPTB3377"
     ai_chance = {
       factor = 10
@@ -964,6 +984,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# The Murder of Kˆsem Sultana
 country_event = {
   id = flavor_tur.3384
   title = "flavor_tur.EVTNAME3384"
@@ -980,11 +1001,12 @@ country_event = {
   mean_time_to_happen = {
     months = 300
   }
-  option = {
+  option = { 	#  Kˆsem is murdered
     name = "flavor_tur.EVTOPTA3384"
     remove_country_modifier = kosem_sultana
   }
 }
+# The Age of the Kˆpr¸l¸s
 country_event = {
   id = flavor_tur.3385
   title = "flavor_tur.EVTNAME3385"
@@ -1001,7 +1023,7 @@ country_event = {
   mean_time_to_happen = {
     months = 100
   }
-  option = {
+  option = { 	#  Support the Kˆpr¸l¸ Family
     name = "flavor_tur.EVTOPTA3385"
     ai_chance = {
       factor = 90
@@ -1018,7 +1040,7 @@ country_event = {
       name = koprulu_family
     }
   }
-  option = {
+  option = { 	#  Rely on other advisors
     name = "flavor_tur.EVTOPTB3385"
     ai_chance = {
       factor = 10
@@ -1044,6 +1066,7 @@ country_event = {
     add_dip_power = 50
   }
 }
+# The Reforms of Kemankes
 country_event = {
   id = flavor_tur.3386
   title = "flavor_tur.EVTNAME3386"
@@ -1060,7 +1083,7 @@ country_event = {
   mean_time_to_happen = {
     months = 100
   }
-  option = {
+  option = { 	#  Empower Kemankes
     name = "flavor_tur.EVTOPTA3386"
     ai_chance = {
       factor = 90
@@ -1069,7 +1092,7 @@ country_event = {
       name = reformes_of_kemankes
     }
   }
-  option = {
+  option = { 	#  Ignore his advice.
     name = "flavor_tur.EVTOPTB3386"
     ai_chance = {
       factor = 10
@@ -1077,6 +1100,7 @@ country_event = {
     add_legitimacy = 10
   }
 }
+# The Treaty of Kasr-i Sirin with Persia
 country_event = {
   id = flavor_tur.3387
   title = "flavor_tur.EVTNAME3387"
@@ -1114,7 +1138,7 @@ country_event = {
   mean_time_to_happen = {
     months = 200
   }
-  option = {
+  option = { 	#  Suggest full reconciliation
     name = "flavor_tur.EVTOPTA3387"
     ai_chance = {
       factor = 25
@@ -1132,7 +1156,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Suggest a moderate Treaty
     name = "flavor_tur.EVTOPTB3387"
     ai_chance = {
       factor = 25
@@ -1146,7 +1170,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  There will be no Treaty
     name = "flavor_tur.EVTOPTC3387"
     ai_chance = {
       factor = 50
@@ -1160,13 +1184,14 @@ country_event = {
     add_prestige = 5
   }
 }
+# The Treaty of Kasr-i Sirin
 country_event = {
   id = flavor_tur.1
   title = "flavor_tur.EVTNAME3387"
   desc = "flavor_tur.EVTDESC3387"
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  Agree full reconciliation
     name = "flavor_tur.EVTOPTA1"
     trigger = {
       has_country_flag = full_reconciliation
@@ -1191,7 +1216,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Agree on a moderate Treaty
     name = "flavor_tur.EVTOPTB1"
     trigger = {
       has_country_flag = moderate_treaty
@@ -1216,7 +1241,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  There will be no Treaty
     name = "flavor_tur.EVTOPTC3387"
     ai_chance = {
       factor = 25
@@ -1240,13 +1265,14 @@ country_event = {
     }
   }
 }
+# Persian Response
 country_event = {
   id = flavor_tur.2
   title = "flavor_tur.EVTNAME2"
   desc = "flavor_tur.EVTDESC2"
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  Excellent
     name = "EXCELLENT"
     trigger = {
       PER = {
@@ -1263,7 +1289,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Excellent
     name = "EXCELLENT"
     trigger = {
       PER = {
@@ -1281,16 +1307,18 @@ country_event = {
     }
   }
 }
+# Persian Response
 country_event = {
   id = flavor_tur.3
   title = "flavor_tur.EVTNAME3"
   desc = "flavor_tur.EVTDESC3"
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  They will pay for this insult
     name = "flavor_tur.EVTOPTA3"
   }
 }
+# The Tunisian Rebellion
 country_event = {
   id = flavor_tur.3391
   title = "flavor_tur.EVTNAME3391"
@@ -1335,7 +1363,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Crush them!
     name = "flavor_tur.EVTOPTA3391"
     random_owned_province = {
       limit = {
@@ -1361,6 +1389,7 @@ country_event = {
     }
   }
 }
+# The Tripolitanian Rebellion
 country_event = {
   id = flavor_tur.3392
   title = "flavor_tur.EVTNAME3392"
@@ -1405,7 +1434,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Crush them!
     name = "flavor_tur.EVTOPTA3392"
     random_owned_province = {
       limit = {
@@ -1431,6 +1460,7 @@ country_event = {
     }
   }
 }
+# Ali Bey's Rebellion in Egypt
 country_event = {
   id = flavor_tur.3394
   title = "flavor_tur.EVTNAME3394"
@@ -1470,7 +1500,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Crush them!
     name = "flavor_tur.EVTOPTA3394"
     random_owned_province = {
       limit = {
@@ -1495,6 +1525,7 @@ country_event = {
     }
   }
 }
+# The Horrible Plague in Anatolia
 country_event = {
   id = flavor_tur.3395
   title = "flavor_tur.EVTNAME3395"
@@ -1508,7 +1539,7 @@ country_event = {
   mean_time_to_happen = {
     months = 300
   }
-  option = {
+  option = { 	#  There is nothing we can do
     name = "flavor_tur.EVTOPTA3395"
     ai_chance = {
       factor = 25
@@ -1524,7 +1555,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Try to contain it
     name = "flavor_tur.EVTOPTB3395"
     ai_chance = {
       factor = 75
@@ -1542,6 +1573,7 @@ country_event = {
     }
   }
 }
+# Fate of the Patriarchate
 country_event = {
   id = flavor_tur.3750
   title = "flavor_tur.EVTNAME3750"
@@ -1564,7 +1596,7 @@ country_event = {
       set_country_flag = tur_had_fate_of_patriarchate_event
     }
   }
-  option = {
+  option = { 	#  Allow the Patriarchate to exist and keep the current Patriarch
     name = "flavor_tur.EVTOPTA3750"
     ai_chance = {
       factor = 50
@@ -1607,7 +1639,7 @@ country_event = {
           duration = 9125
         }
         define_advisor = {
-          name = "ˆ^≥uÍèeYØe II"  # Gennadios II
+          name = "ˆ^≥uÍèeYØe II" 	# Gennadios II
           type = theologian
           skill = 3
           cost_multiplier = 0.25
@@ -1617,7 +1649,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Close down the Patriarchate and confiscate its properties
     name = "flavor_tur.EVTOPTB3750"
     ai_chance = {
       factor = 50
@@ -1676,6 +1708,7 @@ country_event = {
     }
   }
 }
+# The Algerian Rebellion
 country_event = {
   id = flavor_tur.3897
   title = "flavor_tur.EVTNAME3897"
@@ -1717,7 +1750,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Crush them!
     name = "flavor_tur.EVTOPTA3897"
     random_owned_province = {
       limit = {
@@ -1741,6 +1774,10 @@ country_event = {
     }
   }
 }
+########################################
+# Provincial System                    #
+########################################
+# The Decentralizing Effect of the Provincial System
 country_event = {
   id = flavor_tur.5
   title = flavor_tur.EVTNAME5
@@ -1750,6 +1787,7 @@ country_event = {
   trigger = {
     tag = TUR
     is_year = 1600
+    #has_country_modifier = the_provincial_system
     has_reform = ottoman_provincial_government_system_reform
     any_owned_province = {
       is_capital = no
@@ -1776,7 +1814,7 @@ country_event = {
       set_province_flag = bey_uproar
     }
   }
-  option = {
+  option = { 	#  Give in to their demands
     name = flavor_tur.EVTOPTA5
     every_owned_province = {
       limit = {
@@ -1786,7 +1824,7 @@ country_event = {
       clr_province_flag = bey_uproar
     }
   }
-  option = {
+  option = { 	#  Limit the concessions
     name = flavor_tur.EVTOPTB5
     every_owned_province = {
       limit = {
@@ -1797,7 +1835,7 @@ country_event = {
     }
     add_legitimacy = -20
   }
-  option = {
+  option = { 	#  Rein them in
     name = flavor_tur.EVTOPTC5
     add_stability = -2
     every_owned_province = {
@@ -1809,6 +1847,10 @@ country_event = {
     }
   }
 }
+########################################
+# Jannisaries                          #
+########################################
+# The Janissaries
 country_event = {
   id = flavor_tur.100
   title = "flavor_tur.EVTNAME100"
@@ -1817,7 +1859,7 @@ country_event = {
   fire_only_once = yes
   major = yes
   is_triggered_only = yes
-  option = {
+  option = { 	#  Continue building up the Janissaries
     name = "flavor_tur.EVTOPTA100"
     add_country_modifier = {
       name = tur_janissary
@@ -1827,6 +1869,7 @@ country_event = {
     set_country_flag = janissary_timer
   }
 }
+# The Janissaries and the Bektashi Order
 country_event = {
   id = flavor_tur.101
   title = "flavor_tur.EVTNAME101"
@@ -1848,11 +1891,12 @@ country_event = {
   mean_time_to_happen = {
     months = 500
   }
-  option = {
+  option = { 	#  
     name = "flavor_tur.EVTOPTA101"
     add_piety = -0.10
   }
 }
+# Janissary Reward
 country_event = {
   id = flavor_tur.102
   title = "flavor_tur.EVTNAME102"
@@ -1881,7 +1925,7 @@ country_event = {
     has_regency = no
   }
   is_triggered_only = yes
-  option = {
+  option = { 	#  Give a reward and higher wages
     name = "flavor_tur.EVTOPTA102"
     if = {
       limit = {
@@ -1983,7 +2027,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Refuse such blackmail
     name = "flavor_tur.EVTOPTB102"
     if = {
       limit = {
@@ -2016,6 +2060,7 @@ country_event = {
     }
   }
 }
+# Janissaries Demand Pay
 country_event = {
   id = flavor_tur.111
   title = "flavor_tur.EVTNAME111"
@@ -2207,6 +2252,7 @@ country_event = {
     }
   }
 }
+# Civilianization
 country_event = {
   id = flavor_tur.105
   title = "flavor_tur.EVTNAME105"
@@ -2245,7 +2291,7 @@ country_event = {
   mean_time_to_happen = {
     months = 500
   }
-  option = {
+  option = { 	#  Everyone needs to make a living.
     name = "flavor_tur.EVTOPTA105"
     if = {
       limit = {
@@ -2266,7 +2312,7 @@ country_event = {
     add_mercantilism = 1
     add_estate_burghers_loyalty_effect = yes
   }
-  option = {
+  option = { 	#  Let us increase drilling and salaries instead.
     name = "flavor_tur.EVTOPTB105"
     if = {
       limit = {
@@ -2289,6 +2335,7 @@ country_event = {
     reduce_estate_burghers_loyalty_effect = yes
   }
 }
+# Dissolution of the janissary corp - Tag Switch
 country_event = {
   id = flavor_tur.106
   title = "flavor_tur.106.t"
@@ -2309,10 +2356,11 @@ country_event = {
   immediate = {
     remove_country_modifier = tur_janissary
   }
-  option = {
+  option = { 	#  Ok.
     name = "flavor_tur.106.a"
   }
 }
+# Muslims in the Janissary rolls
 country_event = {
   id = flavor_tur.107
   title = "flavor_tur.107.t"
@@ -2355,14 +2403,14 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  
     name = "flavor_tur.107.a"
     add_country_modifier = {
       name = "strictly_enforced_janissary_discipline"
       duration = 3650
     }
   }
-  option = {
+  option = { 	#  
     name = "flavor_tur.107.b"
     add_country_modifier = {
       name = "non_christian_janissaries"
@@ -2370,6 +2418,7 @@ country_event = {
     }
   }
 }
+# Lapse of the Devshirme
 country_event = {
   id = flavor_tur.108
   title = "flavor_tur.108.t"
@@ -2399,12 +2448,18 @@ country_event = {
   mean_time_to_happen = {
     months = 500
   }
-  option = {
+  option = { 	#  
     name = "flavor_tur.108.a"
     remove_country_modifier = the_devshirme_system
     set_country_flag = lapse_of_devshirme
   }
 }
+########################################
+# 1.35 Events for the Ottomans
+# written by Ogulcan Yildirim
+# and Big Boss
+########################################
+# A [Root.GetAdjective]-Venetian Trade Deal?
 country_event = {
   id = flavor_tur.200
   title = flavor_tur.200.t
@@ -2419,6 +2474,7 @@ country_event = {
   after = {
     clr_country_flag = tur_is_in_event
   }
+  #Accept the Trade Deal
   option = {
     name = flavor_tur.200.a
     custom_tooltip = flavor_tur.200.a.tt
@@ -2474,6 +2530,7 @@ country_event = {
       }
     }
   }
+  #Decline the Trade Deal
   option = {
     name = flavor_tur.200.b
     reverse_add_opinion = {
@@ -2497,6 +2554,7 @@ country_event = {
     }
   }
 }
+# Break of the [Root.GetAdjective]-Venetian Trade Deal
 country_event = {
   id = flavor_tur.201
   title = flavor_tur.201.t
@@ -2593,6 +2651,7 @@ country_event = {
     }
   }
 }
+# Expansion of the Trade Deal?
 country_event = {
   id = flavor_tur.202
   title = flavor_tur.202.t
@@ -2607,7 +2666,7 @@ country_event = {
   after = {
     clr_country_flag = tur_is_in_event
   }
-  option = {
+  option = { 	#  Expand on the Trade Agreements
     name = flavor_tur.202.a
     custom_tooltip = flavor_tur.200.a.tt
     reverse_add_opinion = {
@@ -2648,14 +2707,14 @@ country_event = {
       factor = 50
     }
   }
-  option = {
+  option = { 	#  Maintain Status Quo
     name = flavor_tur.202.b
     add_years_of_income = 3
     ai_chance = {
       factor = 50
     }
   }
-  option = {
+  option = { 	#  End trade agreements with Venice and implement a Mercantilism
     name = flavor_tur.202.c
     ai_chance = {
       factor = 50
@@ -2749,6 +2808,7 @@ country_event = {
     }
   }
 }
+# The Victory of the Varna Crusade - written by Big Boss
 country_event = {
   id = flavor_tur.203
   title = flavor_tur.203.t
@@ -2777,6 +2837,7 @@ country_event = {
     }
   }
 }
+# The Hungarian Military Engineer Urban
 country_event = {
   id = flavor_tur.204
   title = flavor_tur.204.t
@@ -2797,11 +2858,11 @@ country_event = {
   mean_time_to_happen = {
     months = 1
   }
-  option = {
+  option = { 	#  Blasting the walls of Babylon itself you say?
     name = flavor_tur.204.a
     add_years_of_income = -0.3
     define_advisor = {
-      name = "LNSÌs"  # Urban
+      name = "LNSÌs" 	# Urban
       culture = hungarian
       religion = catholic
       type = army_reformer
@@ -2814,7 +2875,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Hush, we don't need your services
     name = flavor_tur.204.b
     add_mil_power = 10
     ai_chance = {
@@ -2822,13 +2883,14 @@ country_event = {
     }
   }
 }
+# The Conquest of Constantinople
 country_event = {
   id = flavor_tur.205
   title = flavor_tur.205.t
   desc = flavor_tur.205.desc
   picture = CONQUEROR_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  
     name = flavor_tur.205.a
     add_country_modifier = {
       name = defeated_byzantine_empire
@@ -2848,6 +2910,7 @@ country_event = {
     }
   }
 }
+# The Internal Power Structure
 country_event = {
   id = flavor_tur.206
   title = flavor_tur.206.t
@@ -2864,6 +2927,7 @@ country_event = {
     NOT = {
       ruler_age = 20
     }
+    #NOT = { has_country_modifier = tur_the_ottoman_rule }
   }
   mean_time_to_happen = {
     months = 12
@@ -2873,14 +2937,19 @@ country_event = {
       set_country_flag = tur_enabled_power_struggle_disaster
     }
   }
-  option = {
+  option = { 	#  
     name = flavor_tur.206.a
+    #add_country_modifier = {	#No longer needed, used to be the old variable counter for the Decadence
+    #	name = tur_the_ottoman_rule
+    #	duration = -1
+    #}
     custom_tooltip = flavor_tur.206.a.tt
     ai_chance = {
       factor = 1
     }
   }
 }
+# The Conquest of Rodos (remove the raid province modifier from all raided provinces, banish the knights from the island) - written by Big Boss
 province_event = {
   id = flavor_tur.207
   title = flavor_tur.207.t
@@ -2900,7 +2969,7 @@ province_event = {
       }
     }
   }
-  option = {
+  option = { 	#  
     name = flavor_tur.207.a
     TUR = {
       custom_tooltip = flavor_tur.207.a.tt
@@ -2932,13 +3001,14 @@ province_event = {
     }
   }
 }
+# The Janissaries
 country_event = {
   id = flavor_tur.208
   title = flavor_tur.208.t
   desc = flavor_tur.208.desc
   picture = JANISSARY_ESTATE_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  
     name = flavor_tur.208.a
     add_mil_power = 25
     add_country_modifier = {
@@ -2950,6 +3020,7 @@ country_event = {
     }
   }
 }
+# The Eyalet of Hungary
 country_event = {
   id = flavor_tur.209
   title = flavor_tur.209.t
@@ -2978,7 +3049,7 @@ country_event = {
       set_country_flag = had_carpathian_eyalet_event
     }
   }
-  option = {
+  option = { 	#  Turn the Hungarians into a proper Core Eyalet
     name = flavor_tur.209.a
     trigger = {
       HUN = {
@@ -3024,7 +3095,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Just let them be.
     name = flavor_tur.209.b
     trigger = {
       HUN = {
@@ -3046,7 +3117,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Our greatest Core Eyalet
     name = flavor_tur.209.c
     trigger = {
       HUN = {
@@ -3068,7 +3139,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Fallback option
     name = flavor_tur.209.d
     trigger = {
       NOT = {
@@ -3083,6 +3154,7 @@ country_event = {
     }
   }
 }
+# The Carpathian Eyalet
 country_event = {
   id = flavor_tur.210
   title = flavor_tur.210.t
@@ -3159,7 +3231,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Hungarian Eyalet
     name = flavor_tur.210.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -3211,7 +3283,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the great Transylvanian Eyalet
     name = flavor_tur.210.b
     trigger = {
       has_saved_event_target = second_potential_eyalet
@@ -3282,7 +3354,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the great Nitran Eyalet
     name = flavor_tur.210.c
     trigger = {
       has_saved_event_target = third_potential_eyalet
@@ -3337,7 +3409,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 100
     ai_chance = {
@@ -3345,6 +3417,7 @@ country_event = {
     }
   }
 }
+# The Fall of Vienna
 country_event = {
   id = flavor_tur.211
   title = flavor_tur.211.t
@@ -3371,7 +3444,7 @@ country_event = {
     }
     NOT = {
       religion_group = christian
-    }
+    } 	# It wouldn't be so dramatic if the Ottomans were just another Christian kingdom
     134 = {
       any_neighbor_province = {
         owner = {
@@ -3428,6 +3501,7 @@ country_event = {
     }
   }
 }
+# The Turkish Fear
 country_event = {
   id = flavor_tur.212
   title = flavor_tur.212.t
@@ -3454,6 +3528,7 @@ country_event = {
     }
   }
 }
+# The Eyalet of Austria
 country_event = {
   id = flavor_tur.213
   title = flavor_tur.213.t
@@ -3473,7 +3548,7 @@ country_event = {
   mean_time_to_happen = {
     months = 12
   }
-  option = {
+  option = { 	# Depose the Habsburgs and establish the Core Eyalet of Austria
     name = flavor_tur.213.a
     remove_historical_rival = HAB
     HAB = {
@@ -3509,7 +3584,7 @@ country_event = {
       if = {
         limit = {
           is_lesser_in_union = no
-          dynasty = "ØQ »T^Øe!X"  # von Habsburg
+          dynasty = "ØQ »T^Øe!X" 	# von Habsburg
         }
         tooltip = {
           if = {
@@ -3542,7 +3617,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	# Keep the Habsburgs around. Just to humiliate them.
     name = flavor_tur.213.b
     add_humiliation_reward = yes
     add_adm_power = 100
@@ -3553,6 +3628,7 @@ country_event = {
     }
   }
 }
+# The Eyalet of Northern Italy
 country_event = {
   id = flavor_tur.214
   title = flavor_tur.214.t
@@ -3565,7 +3641,7 @@ country_event = {
     capital_scope = {
       NOT = {
         region = italy_region
-      }
+      } 	# Why Eyalets when you can practically rule the stuff yourself?
     }
     num_of_owned_provinces_with = {
       OR = {
@@ -3636,7 +3712,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Venetian Eyalet
     name = flavor_tur.214.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -3711,7 +3787,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the great Milanese Eyalet
     name = flavor_tur.214.b
     trigger = {
       has_saved_event_target = second_potential_eyalet
@@ -3786,7 +3862,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the great Ferraran Eyalet
     name = flavor_tur.214.c
     trigger = {
       has_saved_event_target = third_potential_eyalet
@@ -3861,7 +3937,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the great Savoyen Eyalet
     name = flavor_tur.214.d
     trigger = {
       has_saved_event_target = fourth_potential_eyalet
@@ -3936,7 +4012,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the great Geonese Eyalet
     name = flavor_tur.214.e
     trigger = {
       has_saved_event_target = fifth_potential_eyalet
@@ -4011,7 +4087,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 100
     ai_chance = {
@@ -4019,6 +4095,7 @@ country_event = {
     }
   }
 }
+# The Restoration of the Emirate of Siciy
 country_event = {
   id = flavor_tur.215
   title = flavor_tur.215.t
@@ -4051,7 +4128,7 @@ country_event = {
     capital_scope = {
       NOT = {
         region = italy_region
-      }
+      } 	# Why Eyalets when you can practically rule the stuff yourself?
     }
     num_of_owned_provinces_with = {
       OR = {
@@ -4101,7 +4178,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the Siqilliya Sultanate
     name = flavor_tur.215.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -4205,7 +4282,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the Sicilian Eyalet
     name = flavor_tur.215.b
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -4288,7 +4365,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 150
     ai_chance = {
@@ -4296,12 +4373,14 @@ country_event = {
     }
   }
 }
+# Crown of Rome - written by Big Boss
 country_event = {
   id = flavor_tur.216
   title = flavor_tur.216.t
   desc = flavor_tur.216.desc
   picture = DEVLET_I_RUM_eventPicture
   is_triggered_only = yes
+  #We shall be officially recognized as the Devlet-i R˚m!
   option = {
     name = flavor_tur.216.a
     override_country_name = TRK
@@ -4317,6 +4396,7 @@ country_event = {
       factor = 1
     }
   }
+  #We should rather stay humble
   option = {
     name = flavor_tur.216.b
     add_country_modifier = {
@@ -4331,12 +4411,14 @@ country_event = {
     }
   }
 }
+# Rome - the new Imperial Capital?
 country_event = {
   id = flavor_tur.217
   title = flavor_tur.217.t
   desc = flavor_tur.217.desc
   picture = CITY_VIEW_eventPicture
   is_triggered_only = yes
+  #Move the capital to Rome!
   option = {
     name = flavor_tur.217.a
     goto = 118
@@ -4399,6 +4481,7 @@ country_event = {
       factor = 0
     }
   }
+  #Constantinople is and will always be the heart of our empire
   option = {
     name = flavor_tur.217.b
     goto = 151
@@ -4424,6 +4507,7 @@ country_event = {
     }
   }
 }
+# The Eyalet of Rome
 country_event = {
   id = flavor_tur.218
   title = flavor_tur.218.t
@@ -4437,7 +4521,7 @@ country_event = {
     capital_scope = {
       NOT = {
         region = italy_region
-      }
+      } 	# Why Eyalets when you can practically rule the stuff yourself?
     }
     num_of_owned_provinces_with = {
       OR = {
@@ -4516,7 +4600,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Tuscan Eyalet
     name = flavor_tur.218.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -4580,7 +4664,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the great Milanese Eyalet
     name = flavor_tur.218.b
     trigger = {
       has_saved_event_target = second_potential_eyalet
@@ -4644,7 +4728,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.218.c
     add_adm_power = 100
     ai_chance = {
@@ -4652,6 +4736,7 @@ country_event = {
     }
   }
 }
+# Granadan Moriscos seek Refuge in [151.GetName] - written by Big Boss
 country_event = {
   id = flavor_tur.219
   title = flavor_tur.219.t
@@ -4682,6 +4767,7 @@ country_event = {
     add_prestige = 10
   }
 }
+# The Eyalet of Al-Andalus
 country_event = {
   id = flavor_tur.220
   title = flavor_tur.220.t
@@ -4738,7 +4824,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Al-Andalusian Eyalet
     name = flavor_tur.220.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -4793,7 +4879,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.220.b
     add_adm_power = 100
     ai_chance = {
@@ -4801,6 +4887,7 @@ country_event = {
     }
   }
 }
+# The Eyalet of Tunis
 country_event = {
   id = flavor_tur.221
   title = flavor_tur.221.t
@@ -4824,7 +4911,7 @@ country_event = {
   }
   picture = EYALET_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  Turn the Tunisians into a proper Core Eyalet
     name = flavor_tur.221.a
     trigger = {
       TUN = {
@@ -4870,7 +4957,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Just let them be.
     name = flavor_tur.221.b
     trigger = {
       TUN = {
@@ -4892,7 +4979,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Our greatest Core Eyalet
     name = flavor_tur.221.c
     trigger = {
       TUN = {
@@ -4915,7 +5002,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Fallback option
     name = flavor_tur.209.d
     trigger = {
       NOT = {
@@ -4930,6 +5017,7 @@ country_event = {
     }
   }
 }
+# The Eyalet in the Tunisian area
 country_event = {
   id = flavor_tur.222
   title = flavor_tur.222.t
@@ -4984,7 +5072,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Tripolitanian Eyalet
     name = flavor_tur.222.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -5059,7 +5147,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Create the great Tripolitanian Eyalet
     name = flavor_tur.222.b
     trigger = {
       has_saved_event_target = second_potential_eyalet
@@ -5134,7 +5222,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 100
     ai_chance = {
@@ -5142,6 +5230,7 @@ country_event = {
     }
   }
 }
+#Hayreddin Barbarossa
 country_event = {
   id = flavor_tur.223
   title = flavor_tur.223.t
@@ -5165,7 +5254,7 @@ country_event = {
     name = flavor_tur.223.a
     add_navy_tradition = 20
     define_admiral = {
-      name = "wm˜ñN ÙTÙTW(Ñ"  # Hayreddin Barbarossa
+      name = "wm˜ñN ÙTÙTW(Ñ" 	# Hayreddin Barbarossa
       shock = 6
       fire = 6
       manuever = 5
@@ -5174,6 +5263,7 @@ country_event = {
     }
   }
 }
+# The Eyalet of Algiers
 country_event = {
   id = flavor_tur.224
   title = flavor_tur.224.t
@@ -5227,7 +5317,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Algiers Eyalet
     name = flavor_tur.224.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -5290,7 +5380,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 100
     ai_chance = {
@@ -5298,13 +5388,14 @@ country_event = {
     }
   }
 }
+# The Eyalet of Morocco
 country_event = {
   id = flavor_tur.225
   title = flavor_tur.225.t
   desc = flavor_tur.225.desc
   picture = EYALET_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  Turn the Moroccan into a proper Core Eyalet
     name = flavor_tur.225.a
     trigger = {
       MOR = {
@@ -5350,7 +5441,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Just let them be.
     name = flavor_tur.225.b
     trigger = {
       MOR = {
@@ -5372,7 +5463,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Our greatest Core Eyalet
     name = flavor_tur.225.c
     trigger = {
       MOR = {
@@ -5395,7 +5486,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Fallback option
     name = flavor_tur.209.d
     trigger = {
       NOT = {
@@ -5410,6 +5501,7 @@ country_event = {
     }
   }
 }
+# The Eyalet in the Moroccan area
 country_event = {
   id = flavor_tur.226
   title = flavor_tur.226.t
@@ -5516,7 +5608,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Moroccan Eyalet
     name = flavor_tur.226.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -5591,7 +5683,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 100
     ai_chance = {
@@ -5599,13 +5691,14 @@ country_event = {
     }
   }
 }
+# The Eyalet of Adal
 country_event = {
   id = flavor_tur.227
   title = flavor_tur.227.t
   desc = flavor_tur.227.desc
   picture = EYALET_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  Turn the Adal into a proper Core Eyalet
     name = flavor_tur.227.a
     trigger = {
       ADA = {
@@ -5651,7 +5744,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Just let them be.
     name = flavor_tur.227.b
     trigger = {
       ADA = {
@@ -5673,7 +5766,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Our greatest Core Eyalet
     name = flavor_tur.227.c
     trigger = {
       ADA = {
@@ -5695,7 +5788,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Fallback option
     name = flavor_tur.209.d
     trigger = {
       NOT = {
@@ -5710,6 +5803,7 @@ country_event = {
     }
   }
 }
+# The Eyalet in the Adal area
 country_event = {
   id = flavor_tur.228
   title = flavor_tur.228.t
@@ -5778,7 +5872,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Adal Eyalet
     name = flavor_tur.228.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -5823,7 +5917,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 100
     ai_chance = {
@@ -5831,6 +5925,7 @@ country_event = {
     }
   }
 }
+# Seizing the Caliphate - written by Big Boss
 country_event = {
   id = flavor_tur.229
   title = flavor_tur.229.t
@@ -5872,6 +5967,7 @@ country_event = {
     }
   }
 }
+# Ending the Caliphate (for the unlikely case we have Orthomans again)
 country_event = {
   id = flavor_tur.230
   title = flavor_tur.230.t
@@ -5896,6 +5992,7 @@ country_event = {
     }
   }
 }
+# Victory for the Ottoman House - written by Big Boss
 country_event = {
   id = flavor_tur.231
   title = flavor_tur.231.t
@@ -5918,6 +6015,7 @@ country_event = {
     }
   }
 }
+# Christians of the Caucasus
 country_event = {
   id = flavor_tur.232
   title = flavor_tur.232.t
@@ -5941,13 +6039,14 @@ country_event = {
     }
   }
 }
+# The Eyalet of Yemen
 country_event = {
   id = flavor_tur.233
   title = flavor_tur.233.t
   desc = flavor_tur.233.desc
   picture = EYALET_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  Turn Yemen into a proper Core Eyalet
     name = flavor_tur.233.a
     trigger = {
       YEM = {
@@ -5993,7 +6092,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Just let them be.
     name = flavor_tur.233.b
     trigger = {
       YEM = {
@@ -6015,7 +6114,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Our greatest Core Eyalet
     name = flavor_tur.233.c
     trigger = {
       YEM = {
@@ -6037,7 +6136,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
+  option = { 	#  Fallback option
     name = flavor_tur.209.d
     trigger = {
       NOT = {
@@ -6052,6 +6151,7 @@ country_event = {
     }
   }
 }
+# The Eyalet in the Yemen area
 country_event = {
   id = flavor_tur.234
   title = flavor_tur.234.t
@@ -6118,7 +6218,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Yemen Eyalet
     name = flavor_tur.234.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -6187,7 +6287,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 100
     ai_chance = {
@@ -6195,6 +6295,7 @@ country_event = {
     }
   }
 }
+# The Eyalet of Persia
 country_event = {
   id = flavor_tur.236
   title = flavor_tur.236.t
@@ -6259,14 +6360,14 @@ country_event = {
           NOT = {
             exists = FRS
           }
-        }
+        } 	# Kekw
         FRS = {
           save_event_target_as = first_potential_eyalet
         }
       }
     }
   }
-  option = {
+  option = { 	#  Create the great Persian Eyalet
     name = flavor_tur.236.a
     trigger = {
       has_saved_event_target = first_potential_eyalet
@@ -6312,7 +6413,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	#  Fallback
     name = flavor_tur.210.d
     add_adm_power = 100
     set_country_flag = tur_keeps_persia_for_themselves
@@ -6321,6 +6422,7 @@ country_event = {
     }
   }
 }
+# Supremacy Over the Emerald Lion - written by Big Boss
 country_event = {
   id = flavor_tur.237
   title = flavor_tur.237.t
@@ -6353,6 +6455,7 @@ country_event = {
     }
   }
 }
+# Millet System - written by Big Boss
 country_event = {
   id = flavor_tur.238
   title = flavor_tur.238.t
@@ -6549,6 +6652,7 @@ country_event = {
     }
   }
 }
+# Suleiman the Magnificent - written by Big Boss
 country_event = {
   id = flavor_tur.239
   title = flavor_tur.239.t
@@ -6581,7 +6685,7 @@ country_event = {
   option = {
     name = flavor_tur.239.a
     define_heir = {
-      name = "œÇ±É¸f 0Àz’lw0"  # S¸leyman Kanuni
+      name = "œÇ±É¸f 0Àz’lw0" 	# S¸leyman Kanuni
       adm = 6
       dip = 5
       mil = 6
@@ -6589,7 +6693,7 @@ country_event = {
     }
     hidden_effect = {
       add_heir_personality = lawgiver_personality
-      set_heir_flag = suleiman_music
+      set_heir_flag = suleiman_music 	# Makes the song "suleiman_the_magnificent" more likely to trigger
     }
     ai_chance = {
       factor = 1
@@ -6632,6 +6736,7 @@ country_event = {
     }
   }
 }
+# Collapse of the Mamluks - Ottoman event - written by Big Boss
 country_event = {
   id = flavor_tur.240
   title = flavor_tur.240.t
@@ -6674,6 +6779,7 @@ country_event = {
     }
   }
 }
+# Collapse of the Mamluks - Mamluk event
 country_event = {
   id = flavor_tur.241
   title = flavor_tur.241.t
@@ -6690,6 +6796,7 @@ country_event = {
     }
   }
 }
+# Collapse of the Mamluks - Creation of the Egyptian Eyalet
 country_event = {
   id = flavor_tur.242
   title = flavor_tur.242.t
@@ -6810,6 +6917,7 @@ country_event = {
     }
   }
 }
+# Egyptian Eyalet breaks free!
 country_event = {
   id = flavor_tur.243
   title = flavor_tur.243.t
@@ -6844,6 +6952,7 @@ country_event = {
     }
   }
 }
+# Egypt under Ottoman Rule
 country_event = {
   id = flavor_tur.244
   title = flavor_tur.244.t
@@ -6867,6 +6976,7 @@ country_event = {
     }
   }
 }
+# Rocket Man - written by Big Boss
 country_event = {
   id = flavor_tur.245
   title = flavor_tur.245.t
@@ -6890,7 +7000,7 @@ country_event = {
       50 = {
         define_advisor = {
           type = natural_scientist
-          name = "±É†RÃë »TQh R±É‘k"  # Legari Hasan Celebi
+          name = "±É†RÃë »TQh R±É‘k" 	# Legari Hasan Celebi
           skill = 3
           cost_multiplier = 0.25
         }
@@ -6905,6 +7015,7 @@ country_event = {
     add_prestige = -5
   }
 }
+# Imperial School of Military Engineering
 country_event = {
   id = flavor_tur.246
   title = flavor_tur.246.t
@@ -6938,6 +7049,7 @@ country_event = {
     }
   }
 }
+# Expansion of the Devshirme
 country_event = {
   id = flavor_tur.247
   title = flavor_tur.247.t
@@ -6967,6 +7079,7 @@ country_event = {
     }
   }
 }
+# Commercial Ventures in the East - written by Big Boss
 country_event = {
   id = flavor_tur.248
   title = flavor_tur.248.t
@@ -6983,7 +7096,15 @@ country_event = {
           }
         }
         for = {
-          effect = " random_owned_province = { limit = { superregion = india_superregion  province_has_center_of_trade_of_level = 1 NOT = { has_province_flag = tur_marked } } set_province_flag = tur_marked }"
+          effect = "
+          random_owned_province = {
+            limit = {
+              superregion = india_superregion 
+              province_has_center_of_trade_of_level = 1
+              NOT = { has_province_flag = tur_marked }
+            }
+            set_province_flag = tur_marked
+          }"
           amount = 3
         }
       }
@@ -7105,6 +7226,7 @@ country_event = {
     }
   }
 }
+# The Siyasah
 country_event = {
   id = flavor_tur.249
   title = flavor_tur.249.t
@@ -7131,6 +7253,7 @@ country_event = {
     }
   }
 }
+# The Baghdad Eyalet - written by Big Boss
 country_event = {
   id = flavor_tur.250
   title = flavor_tur.250.t
@@ -7165,6 +7288,7 @@ country_event = {
     }
   }
 }
+# Reformation of the Sipahi - written by Big Boss
 country_event = {
   id = flavor_tur.251
   title = flavor_tur.251.t
@@ -7189,6 +7313,7 @@ country_event = {
     }
   }
 }
+# Weaving Gold & Silk - written by Big Boss
 country_event = {
   id = flavor_tur.252
   title = flavor_tur.252.t
@@ -7221,6 +7346,7 @@ country_event = {
     }
   }
 }
+# The Development of Trade in Egypt - written by Big Boss
 country_event = {
   id = flavor_tur.253
   title = flavor_tur.253.t
@@ -7266,6 +7392,7 @@ country_event = {
     }
   }
 }
+# The Three Court System of the Ottoman Empire - written by Big Boss
 country_event = {
   id = flavor_tur.254
   title = flavor_tur.254.t
@@ -7284,6 +7411,7 @@ country_event = {
     }
   }
 }
+# Second Islamic Golden Age
 country_event = {
   id = flavor_tur.255
   title = flavor_tur.255.t
@@ -7332,6 +7460,7 @@ country_event = {
     }
   }
 }
+# Second Islamic Golden Age
 country_event = {
   id = flavor_tur.256
   title = flavor_tur.256.t
@@ -7360,6 +7489,7 @@ country_event = {
     }
   }
 }
+# The Sharia
 country_event = {
   id = flavor_tur.257
   title = flavor_tur.257.t
@@ -7386,6 +7516,7 @@ country_event = {
     }
   }
 }
+# Sufism
 country_event = {
   id = flavor_tur.258
   title = flavor_tur.258.t
@@ -7412,6 +7543,7 @@ country_event = {
     }
   }
 }
+# Persia under Ottoman Rule
 country_event = {
   id = flavor_tur.259
   title = flavor_tur.259.t
@@ -7435,6 +7567,7 @@ country_event = {
     }
   }
 }
+# Peak of the Ottomans - CCR buff when you have the large Ottoman borders
 country_event = {
   id = flavor_tur.260
   title = flavor_tur.260.t
@@ -7470,6 +7603,7 @@ country_event = {
     }
   }
 }
+# Janissary Demands - Transform good privilege to bad privilege
 country_event = {
   id = flavor_tur.261
   title = flavor_tur.261.t
@@ -7704,6 +7838,7 @@ country_event = {
       factor = 1
     }
   }
+  #Fallback option
   option = {
     name = flavor_tur.261.j
     trigger = {
@@ -7737,6 +7872,7 @@ country_event = {
     }
   }
 }
+# Reign of Women - written by Big Boss
 country_event = {
   id = flavor_tur.262
   title = flavor_tur.262.t
@@ -7791,6 +7927,7 @@ country_event = {
     }
   }
 }
+# The Harem makes a move
 country_event = {
   id = flavor_tur.263
   title = flavor_tur.263.t
@@ -7819,6 +7956,7 @@ country_event = {
       }
     }
   }
+  #Succumb to the Harem
   option = {
     name = flavor_tur.263.a
     add_country_modifier = {
@@ -7831,6 +7969,7 @@ country_event = {
       value = -10
     }
   }
+  #Remove the Harem from the Palace
   option = {
     name = flavor_tur.263.b
     goto = capital
@@ -7851,6 +7990,7 @@ country_event = {
     }
   }
 }
+# Dissolving the Harem
 country_event = {
   id = flavor_tur.264
   title = flavor_tur.264.t
@@ -7865,6 +8005,7 @@ country_event = {
     }
   }
   goto = capital
+  #The Harem is no more
   option = {
     name = flavor_tur.264.a
     custom_tooltip = flavor_tur.264.a.tt
@@ -7880,6 +8021,7 @@ country_event = {
     }
   }
 }
+# The Ottoman Line of Succession - written by Big Boss
 country_event = {
   id = flavor_tur.265
   title = flavor_tur.265.t
@@ -8133,6 +8275,7 @@ country_event = {
     set_heir_flag = tur_purged_line_flag
   }
 }
+# The Sadness of Those Who Live - written by Big Boss
 country_event = {
   id = flavor_tur.266
   title = flavor_tur.266.t
@@ -8146,6 +8289,7 @@ country_event = {
     add_legitimacy = -10
   }
 }
+# The Fate of the Holy City - written by Big Boss
 country_event = {
   id = flavor_tur.267
   title = flavor_tur.267.t
@@ -8236,6 +8380,7 @@ country_event = {
     }
   }
 }
+# The letter from the Pope to Mehmed II
 country_event = {
   id = flavor_tur.269
   title = flavor_tur.269.t
@@ -8274,6 +8419,7 @@ country_event = {
       }
     }
   }
+  #Hmm... not that bad of an idea
   option = {
     name = flavor_tur.269.a
     goto = tur_revolter_province
@@ -8289,6 +8435,7 @@ country_event = {
       factor = 1
     }
   }
+  #Pff
   option = {
     name = flavor_tur.269.b
     add_prestige = 10
@@ -8297,6 +8444,7 @@ country_event = {
     }
   }
 }
+# Myrrh Imports for the Dhimmi - written by Big Boss
 country_event = {
   id = flavor_tur.270
   title = flavor_tur.270.t
@@ -8326,6 +8474,7 @@ country_event = {
     }
   }
 }
+# The Bay Toll of Hormuz
 country_event = {
   id = flavor_tur.271
   title = flavor_tur.271.t
@@ -8351,6 +8500,7 @@ country_event = {
     add_mercantilism = 2
   }
 }
+# Travelling the Asian Trade Routes - written by Big Boss
 country_event = {
   id = flavor_tur.272
   title = flavor_tur.272.t
@@ -8412,6 +8562,7 @@ country_event = {
     }
   }
 }
+# Surgun Flock to [151.GetName] - written by Big Boss
 country_event = {
   id = flavor_tur.273
   title = flavor_tur.273.t
@@ -8438,6 +8589,7 @@ country_event = {
     }
   }
 }
+# Dhimmi Religions Thrive in [151.GetName] - written by Big Boss
 country_event = {
   id = flavor_tur.274
   title = flavor_tur.274.t
@@ -8477,6 +8629,7 @@ country_event = {
     }
   }
 }
+# Qizilbash Rebellion - written by Big Boss
 country_event = {
   id = flavor_tur.275
   title = flavor_tur.275.t
@@ -8525,6 +8678,7 @@ country_event = {
     add_stability = -1
   }
 }
+# Sahkulu Rebellions - written by Big Boss
 country_event = {
   id = flavor_tur.276
   title = flavor_tur.276.t
@@ -8576,6 +8730,7 @@ country_event = {
     }
   }
 }
+# Mehmed II. Italian Ambitions
 country_event = {
   id = flavor_tur.277
   title = flavor_tur.277.t
@@ -8610,6 +8765,7 @@ country_event = {
     }
   }
 }
+# Franco-Ottoman Alliance - France
 country_event = {
   id = flavor_tur.278
   title = flavor_tur.278.t
@@ -8641,6 +8797,7 @@ country_event = {
   mean_time_to_happen = {
     months = 100
   }
+  #Reach out to the Ottomans
   option = {
     name = flavor_tur.278.a
     add_dip_power = -25
@@ -8671,6 +8828,7 @@ country_event = {
       factor = 1
     }
   }
+  #Nah
   option = {
     name = flavor_tur.278.b
     add_dip_power = 50
@@ -8697,6 +8855,7 @@ country_event = {
     }
   }
 }
+# Franco-Ottoman Alliance - Ottomans
 country_event = {
   id = flavor_tur.279
   title = flavor_tur.279.t
@@ -8712,6 +8871,7 @@ country_event = {
       continent = europe
     }
   }
+  #Accept the Alliance
   option = {
     name = flavor_tur.279.a
     create_alliance = FROM
@@ -8728,6 +8888,7 @@ country_event = {
       factor = 1
     }
   }
+  #Refuse the Alliance
   option = {
     name = flavor_tur.279.b
     add_prestige_or_monarch_power = {
@@ -8743,12 +8904,14 @@ country_event = {
     }
   }
 }
+# Franco-Ottoman Alliance - Ottomans accepts
 country_event = {
   id = flavor_tur.280
   title = flavor_tur.280.t
   desc = flavor_tur.280.desc
   picture = TRANSYLVANIAN_OTTOMAN_eventPicture
   is_triggered_only = yes
+  #Neat
   option = {
     name = flavor_tur.280.a
     add_dip_power = -10
@@ -8757,12 +8920,14 @@ country_event = {
     }
   }
 }
+# Franco-Ottoman Alliance - Ottomans refuses
 country_event = {
   id = flavor_tur.281
   title = flavor_tur.281.t
   desc = flavor_tur.281.desc
   picture = TRANSYLVANIAN_OTTOMAN_eventPicture
   is_triggered_only = yes
+  #A shame
   option = {
     name = flavor_tur.281.a
     add_dip_power = 25
@@ -8771,6 +8936,7 @@ country_event = {
     }
   }
 }
+# The Siyer-i Nebi - written by Big Boss
 country_event = {
   id = flavor_tur.282
   title = flavor_tur.282.t
@@ -8812,6 +8978,7 @@ country_event = {
     }
   }
 }
+# The tomb of Abu Hanifa - written by Big Boss
 country_event = {
   id = flavor_tur.283
   title = flavor_tur.283.t
@@ -8879,6 +9046,7 @@ country_event = {
     }
   }
 }
+# Islamic Epistemology in Mehmet's Era - written by Big Boss
 country_event = {
   id = flavor_tur.284
   title = flavor_tur.284.t
@@ -8915,6 +9083,7 @@ country_event = {
     }
   }
 }
+# Poor Economic Policies of [Root.Monarch.GetName] - written by Big Boss
 country_event = {
   id = flavor_tur.285
   title = flavor_tur.285.t
@@ -8944,12 +9113,14 @@ country_event = {
     add_corruption = 2
   }
 }
+# Fate of the Devshirme System
 country_event = {
   id = flavor_tur.286
   title = flavor_tur.286.t
   desc = flavor_tur.286.desc
   picture = DEVSHIRME_eventPicture
   is_triggered_only = yes
+  #Abolish it for good
   option = {
     name = flavor_tur.286.a
     set_country_flag = tur_abolished_devshirme_for_good
@@ -8975,6 +9146,7 @@ country_event = {
       factor = 1
     }
   }
+  #Overhaul it instead
   option = {
     name = flavor_tur.286.b
     add_piety = -0.25
@@ -8996,6 +9168,7 @@ country_event = {
     }
   }
 }
+# Expansion of the Mansure Army Recruitment
 country_event = {
   id = flavor_tur.287
   title = flavor_tur.287.t
@@ -9025,6 +9198,7 @@ country_event = {
     }
   }
 }
+# Westernization of the Mansure Army
 country_event = {
   id = flavor_tur.288
   title = flavor_tur.288.t
@@ -9057,6 +9231,7 @@ country_event = {
     change_unit_type = western
   }
 }
+# Reigned the Janissaries
 country_event = {
   id = flavor_tur.289
   title = flavor_tur.289.t
@@ -9093,6 +9268,7 @@ country_event = {
     }
   }
 }
+# Rework of the Millits
 country_event = {
   id = flavor_tur.290
   title = flavor_tur.290.t
@@ -9116,6 +9292,7 @@ country_event = {
     add_adm_power = 200
   }
 }
+# Janissary Demands - Get bad privileges if the player tries to avoidd giving any privileges entirely
 country_event = {
   id = flavor_tur.292
   title = flavor_tur.292.t
@@ -9433,6 +9610,7 @@ country_event = {
       factor = 1
     }
   }
+  #Fallback option
   option = {
     name = flavor_tur.261.j
     trigger = {
@@ -9453,6 +9631,7 @@ country_event = {
     }
   }
 }
+# Success of the Janissaries
 country_event = {
   id = flavor_tur.293
   title = flavor_tur.293.t
@@ -9493,6 +9672,10 @@ country_event = {
     }
   }
 }
+########################################
+# 1.35 Decadence events
+########################################
+# Loss of a war
 country_event = {
   id = flavor_tur.300
   title = flavor_tur.300.t
@@ -9523,6 +9706,7 @@ country_event = {
       }
     }
   }
+  #Blame the Janissaries
   option = {
     name = flavor_tur.300.a
     goto = revolt_province
@@ -9540,6 +9724,7 @@ country_event = {
       factor = 0
     }
   }
+  #It is what it is
   option = {
     name = flavor_tur.300.b
     add_government_power = {
@@ -9552,6 +9737,7 @@ country_event = {
     }
   }
 }
+# Overextension of an Empire
 country_event = {
   id = flavor_tur.301
   title = flavor_tur.301.t
@@ -9571,6 +9757,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
+  #Use our resources to fight against it
   option = {
     name = flavor_tur.301.a
     add_adm_power = -100
@@ -9580,6 +9767,7 @@ country_event = {
       factor = 0
     }
   }
+  #It is what it is
   option = {
     name = flavor_tur.301.b
     add_government_power = {
@@ -9592,6 +9780,7 @@ country_event = {
     }
   }
 }
+# Sultan's Relative declares war of independence (need this event because otherwise the game cries in the error log)
 country_event = {
   id = flavor_tur.998
   title = flavor_tur.998.t
@@ -9609,6 +9798,8 @@ country_event = {
     }
   }
 }
+# [Root.Monarch.GetTitle]'s Newest Fascination 
+#Has absolutely no historical context behind it, but the idea of a completely unhinged Sultan is fun
 country_event = {
   id = flavor_tur.999
   title = flavor_tur.999.t
@@ -9647,7 +9838,7 @@ country_event = {
     goto = 585
     set_capital = 585
     585 = {
-      rename_capital = "OØeNT"  # Istaungoo
+      rename_capital = "OØeNT" 	# Istaungoo
       if = {
         limit = {
           NOT = {
@@ -9662,13 +9853,14 @@ country_event = {
     }
   }
 }
+# Liberated Eyalet
 country_event = {
   id = flavor_tur.1000
   title = flavor_tur.1000.t
   desc = flavor_tur.1000.desc
   picture = EYALET_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	#  We are free from the Turks!
     name = flavor_tur.1000.a
     clr_country_flag = has_eyalet_country_name
     clr_country_flag = has_eyalet_color

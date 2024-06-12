@@ -6,7 +6,7 @@ rum_mmetr_missions_1 = {
     tag = RUM
     NOT = {
       started_in = 1307.1.1
-    }
+    } 	# When Konya replaces Rum
     NOT = {
       map_setup = map_setup_random
     }
@@ -45,12 +45,10 @@ rum_mmetr_missions_1 = {
   }
   rum_cultivate_port_alaiye_mission = {
     icon = mission_shipyards_of_gujarat
-    required_missions = {
-      rum_mediterranean_seaports_mission
-    }
+    required_missions = { rum_mediterranean_seaports_mission }
     position = 2
     provinces_to_highlight = {
-      province_id = 319
+      province_id = 319 	# Antalya / Alanya / Alaiye
       NOT = {
         OR = {
           num_of_times_improved_by_owner = 5
@@ -74,7 +72,7 @@ rum_mmetr_missions_1 = {
       }
       tooltip = {
         319 = {
-          rename_capital = "?–Éb6w"  # Alaiye
+          rename_capital = "?–Éb6w" 	# Alaiye
           add_province_modifier = {
             name = "me_rum_city_state_of_alaiye"
             duration = -1
@@ -85,13 +83,11 @@ rum_mmetr_missions_1 = {
   }
   rum_beyond_erzurums_gates_mission = {
     icon = mission_the_caucasus_tur
-    required_missions = {
-      rum_rally_under_the_eagle_mission
-    }
+    required_missions = { rum_rally_under_the_eagle_mission }
     position = 5
     provinces_to_highlight = {
       OR = {
-        province_id = 331
+        province_id = 331 	# Erzurum
         area = north_kurdistan_area
         area = samtskhe_area
       }
@@ -152,9 +148,7 @@ rum_mmetr_missions_1 = {
   }
   rum_subjugate_the_georgians_mission = {
     icon = mission_georgian_warrior
-    required_missions = {
-      rum_beyond_erzurums_gates_mission
-    }
+    required_missions = { rum_beyond_erzurums_gates_mission }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -190,9 +184,7 @@ rum_mmetr_missions_1 = {
   }
   rum_control_syria_mission = {
     icon = mission_fatimid_caliphate
-    required_missions = {
-      rum_besiege_aleppo_mission
-    }
+    required_missions = { rum_besiege_aleppo_mission }
     position = 8
     provinces_to_highlight = {
       area = syria_area
@@ -228,9 +220,7 @@ rum_mmetr_missions_1 = {
   }
   rum_end_to_the_crusades_mission = {
     icon = mission_saladin_crusaders_surrender
-    required_missions = {
-      rum_control_syria_mission
-    }
+    required_missions = { rum_control_syria_mission }
     position = 9
     provinces_to_highlight = {
       OR = {
@@ -258,7 +248,7 @@ rum_mmetr_missions_1 = {
         type = all
         country_or_non_sovereign_subject_holds = ROOT
       }
-      379 = {
+      379 = { 	# Jerusalem
         has_owner_religion = yes
       }
     }
@@ -276,14 +266,12 @@ rum_mmetr_missions_1 = {
   }
   rum_egyptian_campaign_mission = {
     icon = mission_egyptian_mamluk_soldier
-    required_missions = {
-      rum_end_to_the_crusades_mission
-    }
+    required_missions = { rum_end_to_the_crusades_mission }
     position = 11
     provinces_to_highlight = {
       OR = {
-        province_id = 361
-        province_id = 358
+        province_id = 361 	# Cairo
+        province_id = 358 	# Alexandria
       }
       OR = {
         NOT = {
@@ -308,9 +296,7 @@ rum_mmetr_missions_1 = {
   }
   rum_consolidate_cairo_mission = {
     icon = mission_cairo_citadel
-    required_missions = {
-      rum_egyptian_campaign_mission
-    }
+    required_missions = { rum_egyptian_campaign_mission }
     position = 12
     provinces_to_highlight = {
       province_id = 361
@@ -324,20 +310,20 @@ rum_mmetr_missions_1 = {
     }
     trigger = {
       owns_core_province = 361
+      361 = {
+        num_of_times_improved_by_owner = 3
+      }
+      361 = {
+        num_of_buildings_in_province = 2
+      }
     }
-    trigger = {
-      361    num_of_times_improved_by_owner = 3
-    }
-  }
-  rum_consolidate_cairo_mission = {
-    361    num_of_buildings_in_province = 2
-  }
-}
-effect = {
-  361 = {
-    add_province_modifier = {
-      name = "me_rum_atabeg_of_cairo"
-      duration = -1
+    effect = {
+      361 = {
+        add_province_modifier = {
+          name = "me_rum_atabeg_of_cairo"
+          duration = -1
+        }
+      }
     }
   }
 }
@@ -349,7 +335,7 @@ rum_mmetr_missions_2 = {
     tag = RUM
     NOT = {
       started_in = 1307.1.1
-    }
+    } 	# When Konya replaces Rum
     NOT = {
       map_setup = map_setup_random
     }
@@ -379,10 +365,7 @@ rum_mmetr_missions_2 = {
   }
   rum_roman_riches_mission = {
     icon = mission_entrepot_of_india
-    required_missions = {
-      rum_caravanserais_mission
-      rum_seljuk_architecture_mission
-    }
+    required_missions = { rum_caravanserais_mission rum_seljuk_architecture_mission }
     position = 3
     trigger = {
       capital_scope = {
@@ -401,9 +384,7 @@ rum_mmetr_missions_2 = {
   }
   rum_recruit_the_ghilman_mission = {
     icon = mission_defeat_mewar
-    required_missions = {
-      rum_rally_under_the_eagle_mission
-    }
+    required_missions = { rum_rally_under_the_eagle_mission }
     position = 5
     trigger = {
       grown_by_states = 3
@@ -423,9 +404,7 @@ rum_mmetr_missions_2 = {
   }
   rum_askar_and_daylamite_mission = {
     icon = mission_battle_of_varna
-    required_missions = {
-      rum_recruit_the_ghilman_mission
-    }
+    required_missions = { rum_recruit_the_ghilman_mission }
     position = 6
     trigger = {
       army_tradition = 70
@@ -443,9 +422,7 @@ rum_mmetr_missions_2 = {
   }
   rum_besiege_aleppo_mission = {
     icon = mission_fall_of_constantinople
-    required_missions = {
-      rum_armenians_of_cilicia_mission
-    }
+    required_missions = { rum_armenians_of_cilicia_mission }
     position = 7
     provinces_to_highlight = {
       province_id = 377
@@ -493,9 +470,7 @@ rum_mmetr_missions_2 = {
   }
   rum_iranian_ambitions_mission = {
     icon = mission_abu_saids_dream
-    required_missions = {
-      rum_besiege_aleppo_mission
-    }
+    required_missions = { rum_besiege_aleppo_mission }
     position = 9
     provinces_to_highlight = {
       region = persia_region
@@ -586,9 +561,7 @@ rum_mmetr_missions_2 = {
   }
   rum_bulwark_of_islam_mission = {
     icon = mission_into_arabia
-    required_missions = {
-      rum_end_to_the_crusades_mission
-    }
+    required_missions = { rum_end_to_the_crusades_mission }
     position = 10
     trigger = {
       religion_group = muslim
@@ -608,9 +581,7 @@ rum_mmetr_missions_2 = {
   }
   rum_new_emirs_in_persia_mission = {
     icon = mission_fiqh_laws
-    required_missions = {
-      rum_seljuk_restoration_mission
-    }
+    required_missions = { rum_seljuk_restoration_mission }
     position = 11
     provinces_to_highlight = {
       region = persia_region
@@ -650,7 +621,7 @@ rum_mmetr_missions_3 = {
     tag = RUM
     NOT = {
       started_in = 1307.1.1
-    }
+    } 	# When Konya replaces Rum
     NOT = {
       map_setup = map_setup_random
     }
@@ -661,7 +632,7 @@ rum_mmetr_missions_3 = {
     required_missions = {}
     position = 1
     provinces_to_highlight = {
-      province_id = 323
+      province_id = 323 	# Konya
       OR = {
         NOT = {
           owned_by = 323
@@ -708,9 +679,7 @@ rum_mmetr_missions_3 = {
   }
   rum_seljuk_architecture_mission = {
     icon = mission_into_persia_1
-    required_missions = {
-      rum_palace_in_iconium_mission
-    }
+    required_missions = { rum_palace_in_iconium_mission }
     position = 2
     trigger = {
       num_of_owned_provinces_with = {
@@ -765,13 +734,11 @@ rum_mmetr_missions_3 = {
   }
   rum_armenians_of_cilicia_mission = {
     icon = mission_sassanid_golden_cataphract_attack
-    required_missions = {
-      rum_rally_under_the_eagle_mission
-    }
+    required_missions = { rum_rally_under_the_eagle_mission }
     position = 6
     provinces_to_highlight = {
       OR = {
-        province_id = 327
+        province_id = 327 	# provinces of cukurova_area excluding Cyprus
         province_id = 2302
       }
       NOT = {
@@ -808,9 +775,7 @@ rum_mmetr_missions_3 = {
   }
   rum_march_to_baghdad_mission = {
     icon = mission_black_standard_of_the_eagle
-    required_missions = {
-      rum_besiege_aleppo_mission
-    }
+    required_missions = { rum_besiege_aleppo_mission }
     position = 8
     provinces_to_highlight = {
       province_id = 410
@@ -820,7 +785,7 @@ rum_mmetr_missions_3 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_or_non_sovereign_subject_of = 410
+      owns_or_non_sovereign_subject_of = 410 	# Baghdad
       ABA = {
         OR = {
           is_subject_of = ROOT
@@ -853,10 +818,7 @@ rum_mmetr_missions_3 = {
   }
   rum_seljuk_restoration_mission = {
     icon = mission_islamic_golden_age
-    required_missions = {
-      rum_march_to_baghdad_mission
-      rum_iranian_ambitions_mission
-    }
+    required_missions = { rum_march_to_baghdad_mission rum_iranian_ambitions_mission }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -918,10 +880,7 @@ rum_mmetr_missions_3 = {
   }
   rum_a_seljuk_empire_mission = {
     icon = mission_persianate_empire
-    required_missions = {
-      rum_seljuk_restoration_mission
-      rum_hegemon_of_hellas_mission
-    }
+    required_missions = { rum_seljuk_restoration_mission rum_hegemon_of_hellas_mission }
     position = 11
     trigger = {
       OR = {
@@ -957,7 +916,7 @@ rum_mmetr_missions_4 = {
     tag = RUM
     NOT = {
       started_in = 1307.1.1
-    }
+    } 	# When Konya replaces Rum
     NOT = {
       map_setup = map_setup_random
     }
@@ -987,9 +946,7 @@ rum_mmetr_missions_4 = {
   }
   rum_greek_administration_mission = {
     icon = mission_pf_cross
-    required_missions = {
-      rum_roman_aristocracy_mission
-    }
+    required_missions = { rum_roman_aristocracy_mission }
     position = 2
     trigger = {
       grown_by_states = 3
@@ -1030,9 +987,7 @@ rum_mmetr_missions_4 = {
   }
   rum_the_land_of_the_romans_mission = {
     icon = mission_byzantine_flag_waving
-    required_missions = {
-      rum_rally_under_the_eagle_mission
-    }
+    required_missions = { rum_rally_under_the_eagle_mission }
     position = 5
     provinces_to_highlight = {
       OR = {
@@ -1073,9 +1028,7 @@ rum_mmetr_missions_4 = {
   }
   rum_legacy_of_manzikert_mission = {
     icon = mission_seljuk_rum_sultanate_banners
-    required_missions = {
-      rum_the_land_of_the_romans_mission
-    }
+    required_missions = { rum_the_land_of_the_romans_mission }
     position = 6
     provinces_to_highlight = {
       OR = {
@@ -1118,10 +1071,7 @@ rum_mmetr_missions_4 = {
   }
   rum_seize_the_roman_throne_mission = {
     icon = mission_hagia_sophia
-    required_missions = {
-      rum_legacy_of_manzikert_mission
-      rum_greeks_of_trebizond_mission
-    }
+    required_missions = { rum_legacy_of_manzikert_mission rum_greeks_of_trebizond_mission }
     position = 7
     provinces_to_highlight = {
       province_id = 151
@@ -1132,7 +1082,7 @@ rum_mmetr_missions_4 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_core_province = 151
+      owns_core_province = 151 	# Constantinople
     }
     effect = {
       add_prestige = 20
@@ -1165,9 +1115,7 @@ rum_mmetr_missions_4 = {
   }
   rum_across_the_propontis_mission = {
     icon = mission_retake_ceuta
-    required_missions = {
-      rum_seize_the_roman_throne_mission
-    }
+    required_missions = { rum_seize_the_roman_throne_mission }
     position = 9
     provinces_to_highlight = {
       area = thrace_area
@@ -1235,9 +1183,7 @@ rum_mmetr_missions_4 = {
   }
   rum_hegemon_of_hellas_mission = {
     icon = mission_parthenon
-    required_missions = {
-      rum_across_the_propontis_mission
-    }
+    required_missions = { rum_across_the_propontis_mission }
     position = 10
     provinces_to_highlight = {
       OR = {
@@ -1295,9 +1241,7 @@ rum_mmetr_missions_4 = {
   }
   rum_rome_for_romans_mission = {
     icon = mission_the_roman_sultan
-    required_missions = {
-      rum_hegemon_of_hellas_mission
-    }
+    required_missions = { rum_hegemon_of_hellas_mission }
     position = 12
     provinces_to_highlight = {
       province_id = 118
@@ -1307,7 +1251,7 @@ rum_mmetr_missions_4 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns = 118
+      owns = 118 	# Roma
     }
     effect = {
       add_navy_tradition = 20
@@ -1342,7 +1286,7 @@ rum_mmetr_missions_5 = {
     tag = RUM
     NOT = {
       started_in = 1307.1.1
-    }
+    } 	# When Konya replaces Rum
     NOT = {
       map_setup = map_setup_random
     }
@@ -1388,9 +1332,7 @@ rum_mmetr_missions_5 = {
   }
   rum_patron_of_persianization_mission = {
     icon = mission_persian_lion
-    required_missions = {
-      rum_messengers_of_islam_mission
-    }
+    required_missions = { rum_messengers_of_islam_mission }
     position = 2
     trigger = {
       OR = {
@@ -1439,10 +1381,7 @@ rum_mmetr_missions_5 = {
   }
   rum_loyal_emirs_of_rum_mission = {
     icon = mission_muslim_administrators
-    required_missions = {
-      rum_friends_of_the_sultan_mission
-      rum_rally_under_the_eagle_mission
-    }
+    required_missions = { rum_friends_of_the_sultan_mission rum_rally_under_the_eagle_mission }
     position = 5
     trigger = {
       custom_trigger_tooltip = {
@@ -1468,9 +1407,7 @@ rum_mmetr_missions_5 = {
   }
   rum_greeks_of_trebizond_mission = {
     icon = mission_pf_soldier
-    required_missions = {
-      rum_the_land_of_the_romans_mission
-    }
+    required_missions = { rum_the_land_of_the_romans_mission }
     position = 6
     provinces_to_highlight = {
       province_id = 330
@@ -1480,14 +1417,14 @@ rum_mmetr_missions_5 = {
       has_discovered = ROOT
     }
     trigger = {
-      owns_or_non_sovereign_subject_of = 330
+      owns_or_non_sovereign_subject_of = 330 	# Trebizond
     }
     effect = {
       add_country_modifier = {
         name = "me_rum_emporium_of_the_hospitable_sea"
         duration = 10950
       }
-      2410 = {
+      2410 = { 	# Gotthia, tip of Crimean peninsula
         if = {
           limit = {
             NOT = {
@@ -1504,14 +1441,12 @@ rum_mmetr_missions_5 = {
   }
   rum_trade_colony_in_kirim_mission = {
     icon = mission_ottoman_early_army
-    required_missions = {
-      rum_greeks_of_trebizond_mission
-    }
+    required_missions = { rum_greeks_of_trebizond_mission }
     position = 7
     provinces_to_highlight = {
       OR = {
-        province_id = 2410
-        province_id = 285
+        province_id = 2410 	# Gotthia, tip of Crimean peninsula
+        province_id = 285 	# Theodosia, natural trade center in Crimea
       }
       NOT = {
         country_or_non_sovereign_subject_holds = ROOT
@@ -1569,15 +1504,12 @@ rum_mmetr_missions_5 = {
   }
   rum_pontic_trade_monopoly_mission = {
     icon = mission_trade_in_gold_coast
-    required_missions = {
-      rum_trade_colony_in_kirim_mission
-      rum_seize_the_roman_throne_mission
-    }
+    required_missions = { rum_trade_colony_in_kirim_mission rum_seize_the_roman_throne_mission }
     position = 8
     provinces_to_highlight = {
       OR = {
-        province_id = 1322
-        province_id = 1320
+        province_id = 1322 	# Crimea trade node
+        province_id = 1320 	# Constantinople trade node
       }
       NOT = {
         is_strongest_trade_power = ROOT
@@ -1602,9 +1534,7 @@ rum_mmetr_missions_5 = {
   }
   rum_mosques_in_the_balkans_mission = {
     icon = mission_muslim_prayer
-    required_missions = {
-      rum_across_the_propontis_mission
-    }
+    required_missions = { rum_across_the_propontis_mission }
     position = 10
     provinces_to_highlight = {
       region = balkan_region

@@ -1,5 +1,10 @@
+########################################
+# Events for Hungary
+# written by Johan Andersson & Henrik Lohmander
+########################################
 namespace = flavor_hun
 normal_or_historical_nations = yes
+# Diet of 1445
 country_event = {
   id = flavor_hun.1
   title = flavor_hun.1.t
@@ -11,7 +16,7 @@ country_event = {
     has_regency = yes
     has_consort_regency = no
     is_lesser_in_union = no
-    has_leader = "šNú‹ÀN SÅ–Ğc"  # János Hunyadi
+    has_leader = "šNú‹ÀN SÅ–Ğc" 	# János Hunyadi
     is_year = 1445
     NOT = {
       is_year = 1470
@@ -27,18 +32,18 @@ country_event = {
     }
     trigger = {
       HAB = {
-        has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
+        has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
       }
     }
     name = flavor_hun.1.a
     define_ruler = {
-      name = "šNú‹ÀN"  # János
-      dynasty = "SÅ–Ğc"  # Hunyadi
+      name = "šNú‹ÀN" 	# János
+      dynasty = "SÅ–Ğc" 	# Hunyadi
       DIP = 5
       ADM = 4
       MIL = 5
       age = 39
-      attach_leader = "šNú‹ÀN SÅ–Ğc"  # János Hunyadi
+      attach_leader = "šNú‹ÀN SÅ–Ğc" 	# János Hunyadi
     }
     if = {
       limit = {
@@ -57,8 +62,8 @@ country_event = {
       }
     }
     define_heir = {
-      name = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      name = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       culture = austrian
       adm = 3
       dip = 3
@@ -75,7 +80,7 @@ country_event = {
         NOT = {
           tag = ROOT
         }
-        dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+        dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       }
       add_opinion = {
         who = root
@@ -91,7 +96,7 @@ country_event = {
     name = flavor_hun.1.b
     trigger = {
       HAB = {
-        has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
+        has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
       }
     }
     ai_chance = {
@@ -99,8 +104,8 @@ country_event = {
     }
     add_stability_or_adm_power = yes
     define_heir = {
-      name = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
-      dynasty = "¯Q ÈT^¯e!X"  # von Habsburg
+      name = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
+      dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
       culture = austrian
       adm = 3
       dip = 3
@@ -131,24 +136,24 @@ country_event = {
     trigger = {
       HAB = {
         NOT = {
-          has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
+          has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
         }
       }
     }
     name = flavor_hun.1.c
     define_ruler = {
-      name = "šNú‹ÀN"  # János
-      dynasty = "SÅ–Ğc"  # Hunyadi
+      name = "šNú‹ÀN" 	# János
+      dynasty = "SÅ–Ğc" 	# Hunyadi
       DIP = 5
       ADM = 4
       MIL = 5
       age = 39
-      attach_leader = "šNú‹ÀN SÅ–Ğc"  # János Hunyadi
+      attach_leader = "šNú‹ÀN SÅ–Ğc" 	# János Hunyadi
     }
     define_heir = {
-      name = "lš RÀN"  # Mátyás
+      name = "lš RÀN" 	# Mátyás
       culture = hungarian
-      dynasty = "SÅ–Ğc"  # Hunyadi
+      dynasty = "SÅ–Ğc" 	# Hunyadi
       adm = 4
       dip = 5
       mil = 6
@@ -180,6 +185,7 @@ country_event = {
     }
   }
 }
+# Mattias Corvinus or a Habsburg king
 country_event = {
   id = flavor_hun.2
   title = flavor_hun.2.t
@@ -222,7 +228,7 @@ country_event = {
   }
   immediate = {
     hidden_effect = {
-      set_country_flag = hun_has_had_matthias_corvinus_event
+      set_country_flag = hun_has_had_matthias_corvinus_event 	# for missions
     }
   }
   option = {
@@ -232,7 +238,7 @@ country_event = {
     trigger = {
       OR = {
         has_heir = no
-        has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
+        has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
       }
     }
     name = flavor_hun.2.a
@@ -244,9 +250,9 @@ country_event = {
       clr_country_flag = hun_ladislaus_postumus_heir
     }
     define_heir = {
-      name = "lš RÀN"  # Mátyás
+      name = "lš RÀN" 	# Mátyás
       culture = hungarian
-      dynasty = "SÅ–Ğc"  # Hunyadi
+      dynasty = "SÅ–Ğc" 	# Hunyadi
       adm = 4
       dip = 5
       mil = 6
@@ -315,7 +321,7 @@ country_event = {
     trigger = {
       has_heir = yes
       NOT = {
-        has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
+        has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
       }
       NOT = {
         dynasty = HAB
@@ -352,32 +358,33 @@ country_event = {
     }
   }
 }
+# Ladislaus Postumus dies of Leukemia (copy of flavor_hun.2 with adaptations)
 country_event = {
   id = flavor_hun.201
   title = flavor_hun.201.name
   desc = {
     trigger = {
-      has_ruler = "Ébê¯e³R¯e 0WyPR0 I"  # Ladislaus Postumus I
+      has_ruler = "Ébê¯e³R¯e 0WyPR0 I" 	# Ladislaus Postumus I
       has_heir = no
     }
     desc = flavor_hun.201.d.king_no_heir
   }
   desc = {
     trigger = {
-      has_ruler = "Ébê¯e³R¯e 0WyPR0 I"  # Ladislaus Postumus I
+      has_ruler = "Ébê¯e³R¯e 0WyPR0 I" 	# Ladislaus Postumus I
       has_heir = yes
     }
     desc = flavor_hun.201.d.king
   }
   desc = {
     trigger = {
-      has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
+      has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
     }
     desc = flavor_hun.201.d.heir
   }
   picture = DEATH_OF_HEIR_eventPicture
   mean_time_to_happen = {
-    years = 20
+    years = 20 	# so it should happen about 1/3 of games
   }
   fire_only_once = yes
   trigger = {
@@ -387,13 +394,13 @@ country_event = {
       is_year = 1457
     }
     OR = {
-      has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
-      has_ruler = "Ébê¯e³R¯e 0WyPR0 I"  # Ladislaus Postumus I
+      has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
+      has_ruler = "Ébê¯e³R¯e 0WyPR0 I" 	# Ladislaus Postumus I
     }
     HAB = {
       OR = {
-        has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
-        has_ruler = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
+        has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
+        has_ruler = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
       }
     }
     NOT = {
@@ -404,13 +411,13 @@ country_event = {
   immediate = {
     set_country_flag = hun_has_had_matthias_corvinus_event
   }
-  option = {
+  option = { 	# Heir dies, get Matyas
     name = flavor_hun.201.a
     ai_chance = {
       factor = 1
     }
     trigger = {
-      has_heir = "Ébê¯e³R¯e 0WyPR0"  # Ladislaus Postumus
+      has_heir = "Ébê¯e³R¯e 0WyPR0" 	# Ladislaus Postumus
     }
     remove_historical_friend = HAB
     HAB = {
@@ -420,9 +427,9 @@ country_event = {
       allow_new_heir = no
     }
     define_heir = {
-      name = "lš RÀN"  # Mátyás
+      name = "lš RÀN" 	# Mátyás
       culture = hungarian
-      dynasty = "SÅ–Ğc"  # Hunyadi
+      dynasty = "SÅ–Ğc" 	# Hunyadi
       adm = 4
       dip = 5
       mil = 6
@@ -455,24 +462,24 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Ruler dies, keep his heir
     name = flavor_hun.201.b
     ai_chance = {
       factor = 1
     }
     trigger = {
-      has_ruler = "Ébê¯e³R¯e 0WyPR0 I"  # Ladislaus Postumus I
+      has_ruler = "Ébê¯e³R¯e 0WyPR0 I" 	# Ladislaus Postumus I
       has_heir = yes
     }
     kill_ruler = yes
   }
-  option = {
+  option = { 	# Ruler dies with no heir, take a union
     name = flavor_hun.201.c
     ai_chance = {
       factor = 1
     }
     trigger = {
-      has_ruler = "Ébê¯e³R¯e 0WyPR0 I"  # Ladislaus Postumus I
+      has_ruler = "Ébê¯e³R¯e 0WyPR0 I" 	# Ladislaus Postumus I
       has_heir = no
     }
     add_stability_or_adm_power = yes
@@ -495,13 +502,13 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Ruler dies with no heir, take Matyas
     name = flavor_hun.201.d
     ai_chance = {
       factor = 3
     }
     trigger = {
-      has_ruler = "Ébê¯e³R¯e 0WyPR0 I"  # Ladislaus Postumus I
+      has_ruler = "Ébê¯e³R¯e 0WyPR0 I" 	# Ladislaus Postumus I
       has_heir = no
     }
     remove_historical_friend = HAB
@@ -509,9 +516,9 @@ country_event = {
       remove_historical_friend = HUN
     }
     define_heir = {
-      name = "lš RÀN"  # Mátyás
+      name = "lš RÀN" 	# Mátyás
       culture = hungarian
-      dynasty = "SÅ–Ğc"  # Hunyadi
+      dynasty = "SÅ–Ğc" 	# Hunyadi
       adm = 4
       dip = 5
       mil = 6
@@ -546,6 +553,7 @@ country_event = {
     }
   }
 }
+# Union with Hungary
 country_event = {
   id = flavor_hun.3
   title = flavor_hun.3.t
@@ -559,6 +567,7 @@ country_event = {
     add_prestige = 5
   }
 }
+# The magyar Throne
 country_event = {
   id = flavor_hun.10
   title = flavor_hun.10.t
@@ -567,7 +576,7 @@ country_event = {
   is_triggered_only = yes
   option = {
     name = flavor_hun.10.a
-    if = {
+    if = { 	# Only add if we haven't got one already.
       limit = {
         has_casus_belli = {
           type = cb_restore_personal_union
@@ -591,6 +600,7 @@ country_event = {
     }
   }
 }
+# Administrative and Social Reforms of Mathias Corvinus
 country_event = {
   id = flavor_hun.4
   title = flavor_hun.4.t
@@ -604,7 +614,7 @@ country_event = {
       is_year = 1470
     }
     has_regency = no
-    dynasty = "SÅ–Ğc"  # Hunyadi
+    dynasty = "SÅ–Ğc" 	# Hunyadi
   }
   mean_time_to_happen = {
     months = 18
@@ -648,6 +658,7 @@ country_event = {
     }
   }
 }
+# Academia Istropolitana
 country_event = {
   id = flavor_hun.5
   title = flavor_hun.5.t
@@ -658,8 +669,8 @@ country_event = {
     tag = HUN
     is_year = 1465
     has_regency = no
-    owns = 1772
-    dynasty = "SÅ–Ğc"  # Hunyadi
+    owns = 1772 	# Pressburg
+    dynasty = "SÅ–Ğc" 	# Hunyadi
     religion = catholic
   }
   mean_time_to_happen = {
@@ -682,6 +693,7 @@ country_event = {
     }
   }
 }
+# Printing Press in Buda
 country_event = {
   id = flavor_hun.6
   title = flavor_hun.6.t
@@ -703,6 +715,7 @@ country_event = {
     add_adm_power = 50
   }
 }
+# Decline of Royal Power
 country_event = {
   id = flavor_hun.7
   title = flavor_hun.7.t
@@ -746,6 +759,7 @@ country_event = {
     }
   }
 }
+# Elizabeth Bathory
 country_event = {
   id = flavor_hun.8
   title = flavor_hun.8.t
@@ -783,6 +797,7 @@ country_event = {
     add_stability = -1
   }
 }
+#Advance of the Turks.
 country_event = {
   id = flavor_hun.9
   title = flavor_hun.9.t
@@ -822,7 +837,7 @@ country_event = {
         OR = {
           area = transylvania_area
           area = southern_transylvania_area
-          area = alfold_area
+          area = alfold_area 	# Additional just to be sure:
           area = wallachia_area
           area = moldavia_area
           area = bulgaria_area
@@ -843,6 +858,8 @@ country_event = {
     }
   }
 }
+#magyar Peasant Revolt
+#György Dózsa
 country_event = {
   id = flavor_hun.11
   title = flavor_hun.11.t
@@ -886,7 +903,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_hun.11.a
+    name = flavor_hun.11.a 	# Ok.
     random_owned_province = {
       limit = {
         has_province_flag = hun_peasant_revolt
@@ -894,7 +911,7 @@ country_event = {
       spawn_rebels = {
         type = anti_tax_rebels
         size = 2
-        leader = "òTS	T Yv™"  # György Dózsa
+        leader = "òTS	T Yv™" 	# György Dózsa
       }
       clr_province_flag = hun_peasant_revolt
     }
@@ -910,6 +927,7 @@ country_event = {
     }
   }
 }
+#Tamás Bakócz
 country_event = {
   id = flavor_hun.12
   title = flavor_hun.12.t
@@ -940,7 +958,7 @@ country_event = {
     add_prestige = 5
     define_advisor = {
       type = statesman
-      name = "TXlš¯e ôTaSR"  # Tamás Bakócz
+      name = "TXlš¯e ôTaSR" 	# Tamás Bakócz
       culture = hungarian
       discount = yes
       skill = 2
@@ -964,6 +982,7 @@ country_event = {
     }
   }
 }
+#The Catholics in Bohemia seek our aid
 country_event = {
   id = flavor_hun.13
   title = flavor_hun.13.t
@@ -999,7 +1018,7 @@ country_event = {
     add_prestige = 10
     if = {
       limit = {
-        265 = {
+        265 = { 	# Moravia
           owned_by = BOH
         }
       }
@@ -1009,7 +1028,7 @@ country_event = {
     }
     if = {
       limit = {
-        4237 = {
+        4237 = { 	# Moravia
           owned_by = BOH
         }
       }
@@ -1079,6 +1098,7 @@ country_event = {
     }
   }
 }
+#Crowning of X
 country_event = {
   id = flavor_hun.14
   title = flavor_hun.14.t
@@ -1095,7 +1115,7 @@ country_event = {
     tooltip = {
       if = {
         limit = {
-          265 = {
+          265 = { 	# Moravia
             owned_by = BOH
           }
         }
@@ -1105,7 +1125,7 @@ country_event = {
       }
       if = {
         limit = {
-          4237 = {
+          4237 = { 	# Moravia
             owned_by = BOH
           }
         }
@@ -1129,6 +1149,7 @@ country_event = {
     }
   }
 }
+#Banditry in Slovakia
 country_event = {
   id = flavor_hun.15
   title = flavor_hun.15.t
@@ -1152,7 +1173,7 @@ country_event = {
     }
   }
   option = {
-    name = flavor_hun.15.a
+    name = flavor_hun.15.a 	# We must crush these bandits!
     slovakia_area = {
       limit = {
         owned_by = ROOT
@@ -1173,12 +1194,12 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        leader = "lb O¯eaSÉb yQ ^pQê™l"  # Jan Jiskra z Brandısa
+        leader = "lb O¯eaSÉb yQ ^pQê™l" 	# Jan Jiskra z Brandısa
       }
     }
   }
   option = {
-    name = flavor_hun.15.b
+    name = flavor_hun.15.b 	# Leave it to the local lords to handle.
     slovakia_area = {
       limit = {
         owned_by = ROOT
@@ -1191,6 +1212,7 @@ country_event = {
     }
   }
 }
+#Black Army
 country_event = {
   id = flavor_hun.16
   title = flavor_hun.16.t
@@ -1244,6 +1266,7 @@ country_event = {
     }
   }
 }
+#Maintain the Black Army?
 country_event = {
   id = flavor_hun.17
   title = flavor_hun.17.t
@@ -1295,6 +1318,7 @@ country_event = {
     }
   }
 }
+#End of the Black Army
 country_event = {
   id = flavor_hun.18
   title = flavor_hun.18.t
@@ -1324,7 +1348,7 @@ country_event = {
       custom_tooltip = end_of_black_army_tooltip
     }
   }
-  option = {
+  option = { 	#  new option, keep the black army
     name = flavor_hun.18.b
     trigger = {
       is_subject = no
@@ -1343,6 +1367,7 @@ country_event = {
     }
   }
 }
+#Mutiny in the Black Army
 country_event = {
   id = flavor_hun.19
   title = flavor_hun.19.t
@@ -1433,6 +1458,7 @@ country_event = {
     }
   }
 }
+#Walls of Belgrade and the Ottoman Threat
 country_event = {
   id = flavor_hun.20
   title = flavor_hun.20.t
@@ -1446,7 +1472,7 @@ country_event = {
     NOT = {
       is_year = 1500
     }
-    OR = {
+    OR = { 	# Big threathening power in the south, probably Ottomans
       AND = {
         is_neighbor_of = TUR
         NOT = {
@@ -1465,7 +1491,7 @@ country_event = {
     }
   }
   immediate = {
-    hidden_effect = {
+    hidden_effect = { 	# Used in Loc
       if = {
         limit = {
           any_neighbor_country = {
@@ -1533,6 +1559,7 @@ country_event = {
     }
   }
 }
+#Fall of Serbia
 country_event = {
   id = flavor_hun.21
   title = flavor_hun.21.t
@@ -1551,7 +1578,7 @@ country_event = {
     }
     4239 = {
       culture = serbian
-      any_neighbor_province = {
+      any_neighbor_province = { 	# Best not have this event triggering from conquering Serbia yourself...
         owned_by = TUR
         culture = serbian
       }
@@ -1570,7 +1597,7 @@ country_event = {
   option = {
     name = flavor_hun.21.a
     4239 = {
-      add_devastation = 25
+      add_devastation = 25 	# Chaos
       add_base_manpower = 2
       add_base_tax = 1
       add_base_production = 1
@@ -1585,6 +1612,7 @@ country_event = {
     }
   }
 }
+#Synod of Debrecen
 country_event = {
   id = flavor_hun.22
   title = flavor_hun.22.t
@@ -1704,7 +1732,7 @@ country_event = {
           is_reformation_center = yes
           religion = reformed
         }
-        save_event_target_as = reformed_origin
+        save_event_target_as = reformed_origin 	# Used in localization
       }
     }
   }
@@ -1789,6 +1817,7 @@ country_event = {
     }
   }
 }
+#Támas Nádasdy
 country_event = {
   id = flavor_hun.23
   title = flavor_hun.23.t
@@ -1809,7 +1838,7 @@ country_event = {
     name = flavor_hun.23.a
     add_adm_power = 50
     define_advisor = {
-      name = "³uSÀNê XblšÀN"  # Tamás Nádasdy
+      name = "³uSÀNê XblšÀN" 	# Tamás Nádasdy
       culture = hungarian
       type = master_of_mint
       skill = 3
@@ -1820,7 +1849,7 @@ country_event = {
     name = flavor_hun.23.b
     add_dip_power = 50
     define_advisor = {
-      name = "³uSÀNê XblšÀN"  # Tamás Nádasdy
+      name = "³uSÀNê XblšÀN" 	# Tamás Nádasdy
       culture = hungarian
       type = diplomat
       skill = 3
@@ -1831,7 +1860,7 @@ country_event = {
     name = flavor_hun.23.c
     add_mil_power = 50
     define_advisor = {
-      name = "³uSÀNê XblšÀN"  # Tamás Nádasdy
+      name = "³uSÀNê XblšÀN" 	# Tamás Nádasdy
       type = fortification_expert
       culture = hungarian
       skill = 3
@@ -1839,6 +1868,8 @@ country_event = {
     }
   }
 }
+#Voivodes of Transylvania Abolish their title
+#Triggers after the advance of the Turks
 country_event = {
   id = flavor_hun.24
   title = flavor_hun.24.t
@@ -1863,11 +1894,11 @@ country_event = {
       is_permanent_claim = HAB
     }
     TUR = {
-      owns = 153
-      num_of_cities = HAB
+      owns = 153 	# Pest
+      num_of_cities = HAB 	# Ottomans are bigger than Austria
     }
     HAB = {
-      num_of_cities = HUN
+      num_of_cities = HUN 	# Austria is bigger than Hungary
     }
     capital_scope = {
       OR = {
@@ -1896,9 +1927,9 @@ country_event = {
     change_tag = TRA
     on_change_tag_effect = yes
     define_ruler = {
-      name = "šNú‹ÀN"  # János
+      name = "šNú‹ÀN" 	# János
       culture = hungarian
-      dynasty = "Nbâl'S"  # Zápolya
+      dynasty = "Nbâl'S" 	# Zápolya
       claim = 95
       change_adm = 4
       change_dip = 3
@@ -1935,7 +1966,7 @@ country_event = {
       }
       country_event = {
         id = ideagroups.1
-      }
+      } 	# Swap Ideas
     }
   }
   option = {
@@ -1946,6 +1977,7 @@ country_event = {
     release = TRA
   }
 }
+#magyar Estates elect X to lead them
 country_event = {
   id = flavor_hun.25
   title = flavor_hun.25.t
@@ -1972,7 +2004,7 @@ country_event = {
     }
     custom_tooltip = flavor_hun.25.a.tt
     tooltip = {
-      add_country_modifier = {
+      add_country_modifier = { 	# Consciously set to "wrong" scope to give prettier tooltip.
         name = "hab_royal_hungary"
         duration = 18250
       }
@@ -1995,6 +2027,7 @@ country_event = {
     }
   }
 }
+#Statuta Valachorum
 country_event = {
   id = flavor_hun.26
   title = flavor_hun.26.t
@@ -2202,6 +2235,7 @@ country_event = {
     }
   }
 }
+# Romanian Revolt
 country_event = {
   id = flavor_hun.27
   title = flavor_hun.27.t
@@ -2254,11 +2288,12 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 2
-        leader = "—÷–šN"  # Horea
+        leader = "—÷–šN" 	# Horea
       }
     }
   }
 }
+# Tamás Erdödy
 country_event = {
   id = flavor_hun.28
   title = flavor_hun.28.t
@@ -2279,7 +2314,7 @@ country_event = {
   option = {
     name = flavor_hun.28.a
     define_advisor = {
-      name = "ÃWS·Vê v–lšÀN"  # Tamás Erdödy
+      name = "ÃWS·Vê v–lšÀN" 	# Tamás Erdödy
       culture = hungarian
       skill = 3
       discount = yes
@@ -2289,7 +2324,7 @@ country_event = {
   option = {
     name = flavor_hun.28.b
     define_general = {
-      name = "ÃWS·Vê v–lšÀN"  # Tamás Erdödy
+      name = "ÃWS·Vê v–lšÀN" 	# Tamás Erdödy
       shock = 3
       fire = 3
       manuever = 2
@@ -2298,6 +2333,7 @@ country_event = {
     }
   }
 }
+# Matthias Dévay
 country_event = {
   id = flavor_hun.29
   title = flavor_hun.29.t
@@ -2344,10 +2380,11 @@ country_event = {
       }
     }
   }
+  #AI picks randomly here
   option = {
     name = flavor_hun.29.a
     define_advisor = {
-      name = "·VætO lš RÀN"  # Matthias Dévay
+      name = "·VætO lš RÀN" 	# Matthias Dévay
       skill = 3
       discount = yes
       religion = protestant
@@ -2374,7 +2411,7 @@ country_event = {
       clr_province_flag = magyar_reform
     }
     define_advisor = {
-      name = "Xblš¯e („ÉbÈTPŸ"  # Thomas Szalaházy
+      name = "Xblš¯e („ÉbÈTPŸ" 	# Thomas Szalaházy
       culture = hungarian
       religion = catholic
       skill = 3
@@ -2383,6 +2420,7 @@ country_event = {
     }
   }
 }
+# Janus Pannonius
 country_event = {
   id = flavor_hun.30
   title = flavor_hun.30.t
@@ -2432,7 +2470,7 @@ country_event = {
       }
     }
     define_advisor = {
-      name = "Å–ªR¯e Xoú‹<SLN¯e"  # Janus Pannonius
+      name = "Å–ªR¯e Xoú‹<SLN¯e" 	# Janus Pannonius
       type = philosopher
       culture = croatian
       skill = 2
@@ -2440,6 +2478,7 @@ country_event = {
     }
   }
 }
+# City leagues of Upper Hungary
 country_event = {
   id = flavor_hun.31
   title = flavor_hun.31.t
@@ -2493,6 +2532,7 @@ country_event = {
     }
   }
 }
+#Slovak National Awakening
 country_event = {
   id = flavor_hun.32
   title = flavor_hun.32.t
@@ -2570,6 +2610,7 @@ country_event = {
     }
   }
 }
+#Kurucs and Hajduks
 country_event = {
   id = flavor_hun.33
   title = flavor_hun.33.t
@@ -2616,6 +2657,8 @@ country_event = {
     }
   }
 }
+#Francis (II) Rákóczi
+#Event for independent Hungary
 country_event = {
   id = flavor_hun.34
   title = flavor_hun.34.t
@@ -2633,7 +2676,7 @@ country_event = {
     }
   }
   mean_time_to_happen = {
-    months = 54
+    months = 54 	# Lower due to triggers being somewhat rare
   }
   option = {
     name = flavor_hun.34.a
@@ -2641,8 +2684,8 @@ country_event = {
       factor = 95
     }
     define_ruler = {
-      name = "9&O(ƒ"  # Ferenc
-      dynasty = "ÉbÑyPŸ"  # Rákóczy
+      name = "9&O(ƒ" 	# Ferenc
+      dynasty = "ÉbÑyPŸ" 	# Rákóczy
       culture = hungarian
       adm = 4
       dip = 5
@@ -2669,12 +2712,14 @@ country_event = {
         type = pretender_rebels
         size = 2
         culture = hungarian
-        leader = "9&O(ƒ"  # Ferenc
-        leader_dynasty = "ÉbÑyPŸ"  # Rákóczy
+        leader = "9&O(ƒ" 	# Ferenc
+        leader_dynasty = "ÉbÑyPŸ" 	# Rákóczy
       }
     }
   }
 }
+#Francis (II) Rákóczi
+#Event for subjected Hungary
 country_event = {
   id = flavor_hun.35
   title = flavor_hun.35.t
@@ -2709,8 +2754,8 @@ country_event = {
             casus_belli = cb_independence_war
           }
           define_ruler = {
-            name = "9&O(ƒ"  # Ferenc
-            dynasty = "ÉbÑyPŸ"  # Rákóczy
+            name = "9&O(ƒ" 	# Ferenc
+            dynasty = "ÉbÑyPŸ" 	# Rákóczy
             culture = hungarian
             adm = 4
             dip = 5
@@ -2739,12 +2784,14 @@ country_event = {
         type = pretender_rebels
         culture = hungarian
         size = 3
-        leader = "9&O(ƒ"  # Ferenc
-        leader_dynasty = "ÉbÑyPŸ"  # Rákóczy
+        leader = "9&O(ƒ" 	# Ferenc
+        leader_dynasty = "ÉbÑyPŸ" 	# Rákóczy
       }
     }
   }
 }
+#Francis (II) Rákóczi
+#Event for subjected Hungary
 country_event = {
   id = flavor_hun.36
   title = flavor_hun.36.t
@@ -2760,8 +2807,8 @@ country_event = {
       }
       hidden_effect = {
         define_ruler = {
-          name = "9&O(ƒ"  # Ferenc
-          dynasty = "ÉbÑyPŸ"  # Rákóczy
+          name = "9&O(ƒ" 	# Ferenc
+          dynasty = "ÉbÑyPŸ" 	# Rákóczy
           culture = hungarian
           adm = 4
           dip = 5
@@ -2771,6 +2818,8 @@ country_event = {
     }
   }
 }
+#Francis (II) Rákóczi
+#Event for subjected Hungary
 country_event = {
   id = flavor_hun.37
   title = flavor_hun.36.t
@@ -2834,12 +2883,17 @@ country_event = {
       spawn_rebels = {
         type = nationalist_rebels
         size = 3
-        leader = "9&O(ƒ ÉbÑyPŸ II"  # Ferenc II Rákóczy
+        leader = "9&O(ƒ ÉbÑyPŸ II" 	# Ferenc II Rákóczy
       }
     }
   }
 }
+########################################
+# More Events for Hungary
+# written by Pierre du Plessis
+########################################
 namespace = new_flavour_hun
+#Ask the Emperor to become part of the Empire?
 country_event = {
   id = new_flavour_hun.1
   title = new_flavour_hun.1.name
@@ -2847,11 +2901,11 @@ country_event = {
   picture = HRE_eventPicture
   immediate = {
     hidden_effect = {
-      save_event_target_as = "SYr)R"  # Hungary
+      save_event_target_as = "SYr)R" 	# Hungary
     }
   }
   is_triggered_only = yes
-  option = {
+  option = { 	# Go for it
     name = new_flavour_hun.1.A
     set_country_flag = hungary_flag_incident
     set_imperial_incident = incident_hungary_mission
@@ -2888,7 +2942,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Nah
     name = new_flavour_hun.1.B
     add_prestige = 15
     ai_chance = {
@@ -2896,6 +2950,7 @@ country_event = {
     }
   }
 }
+#Hungary Joins the Empire? - Incident
 country_event = {
   id = new_flavour_hun.201
   title = new_flavour_hun.2.name
@@ -2912,7 +2967,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# Sure
     name = new_flavour_hun.2.A
     BOH = {
       elector = no
@@ -2996,7 +3051,7 @@ country_event = {
       }
     }
   }
-  option = {
+  option = { 	# No way in h...
     name = new_flavour_hun.2.B
     event_target:hungary_country = {
       add_opinion = {
@@ -3060,13 +3115,14 @@ country_event = {
     }
   }
 }
+#The Greeks in Constantinople (used by Austria too)
 country_event = {
   id = new_flavour_hun.3
   title = new_flavour_hun.3.name
   desc = new_flavour_hun.3.desc
   picture = CITY_VIEW_eventPicture
   is_triggered_only = yes
-  option = {
+  option = { 	# Bring back the Greeks
     name = new_flavour_hun.3.A
     151 = {
       change_culture = greek
@@ -3076,7 +3132,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
+  option = { 	# Leave it as is
     name = new_flavour_hun.3.B
     151 = {
       add_nationalism = -5

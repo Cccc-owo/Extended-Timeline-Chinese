@@ -45,7 +45,7 @@ country_decisions = {
         primary_culture = pontic_greek
         AND = {
           has_idea = MFA_byzantine_claimants
-          dynasty = "ÙTReYeu"  # Palaiologos
+          dynasty = "ÙTReYeu" 	# Palaiologos
         }
       }
       OR = {
@@ -55,19 +55,19 @@ country_decisions = {
     }
     provinces_to_highlight = {
       OR = {
-        province_id = 151
-        province_id = 149
-        province_id = 144
-        province_id = 147
-        province_id = 148
-        province_id = 146
-        province_id = 145
-        province_id = 1773
-        province_id = 316
-        province_id = 317
-        province_id = 318
-        province_id = 1853
-        province_id = 2296
+        province_id = 151 	#  Constantinople
+        province_id = 149 	#  Edirne
+        province_id = 144 	#  Epiros
+        province_id = 147 	#  Salonica
+        province_id = 148 	#  Macedonia
+        province_id = 146 	#  Athens
+        province_id = 145 	#  Morea
+        province_id = 1773 	#  Achea
+        province_id = 316 	#  Bithynia
+        province_id = 317 	#  Bursa
+        province_id = 318 	#  Smyrna
+        province_id = 1853 	#  Kozani
+        province_id = 2296 	#  Biga
       }
       NOT = {
         owned_by = ROOT
@@ -80,7 +80,7 @@ country_decisions = {
       NOT = {
         exists = LAE
       }
-      owns = 151
+      owns = 151 	#  Constantinople
       OR = {
         tag = NCA
         tag = TRE
@@ -88,21 +88,21 @@ country_decisions = {
         tag = EPI
         tag = MOE
         AND = {
-          owns = 149
-          owns = 144
-          owns = 147
-          owns = 148
-          owns = 146
-          owns = 145
-          owns = 1773
-          owns = 316
-          owns = 317
-          owns = 318
-          owns = 1853
-          owns = 2296
+          owns = 149 	#  Edirne
+          owns = 144 	#  Epiros
+          owns = 147 	#  Salonica
+          owns = 148 	#  Macedonia
+          owns = 146 	#  Athens
+          owns = 145 	#  Morea
+          owns = 1773 	#  Achea
+          owns = 316 	#  Bithynia
+          owns = 317 	#  Bursa
+          owns = 318 	#  Smyrna
+          owns = 1853 	#  Kozani
+          owns = 2296 	#  Biga
         }
       }
-      151 = {
+      151 = { 	#  Constantinople
         is_state = yes
       }
       is_at_war = no
@@ -140,29 +140,29 @@ country_decisions = {
             area = kastamonu_area
             area = hudavendigar_area
             area = dulkadir_area
-            province_id = 149
-            province_id = 147
-            province_id = 148
-            province_id = 146
-            province_id = 145
-            province_id = 1773
-            province_id = 163
-            province_id = 164
-            province_id = 320
-            province_id = 330
-            province_id = 285
-            province_id = 142
-            province_id = 143
-            province_id = 144
-            province_id = 1765
-            province_id = 150
-            province_id = 1764
-            province_id = 159
-            province_id = 1853
-            province_id = 2348
-            province_id = 2410
-            province_id = 2750
-            province_id = 4298
+            province_id = 149 	#  Edirne
+            province_id = 147 	#  Salonica
+            province_id = 148 	#  Macedonia
+            province_id = 146 	#  Athens
+            province_id = 145 	#  Morea
+            province_id = 1773 	#  Achea
+            province_id = 163 	#  Crete
+            province_id = 164 	#  Naxos
+            province_id = 320 	#  Rhodes
+            province_id = 330 	#  Trebizon
+            province_id = 285 	#  Kaffa
+            province_id = 142 	#  Corfu
+            province_id = 143 	#  Albania
+            province_id = 144 	#  Janina
+            province_id = 1765 	#  Nis
+            province_id = 150 	#  Bulgaria
+            province_id = 1764 	#  Burgas
+            province_id = 159 	#  Silistria
+            province_id = 1853 	#  Kozani
+            province_id = 2348 	#  Chios
+            province_id = 2410 	#  Theodoro
+            province_id = 2750 	#  Plovdiv
+            province_id = 4298 	#  Ayntab
           }
           NOT = {
             is_core = BYZ
@@ -188,7 +188,7 @@ country_decisions = {
       }
       add_prestige = 10
       BYZ = {
-        add_core = 151
+        add_core = 151 	#  Constantinople
       }
       if = {
         limit = {
@@ -226,7 +226,7 @@ country_decisions = {
         }
         country_event = {
           id = ideagroups.1
-        }
+        } 	# Swap Ideas
       }
       set_country_flag = formed_byzantium_flag
       if = {
