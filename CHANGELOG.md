@@ -2,13 +2,17 @@
 
 汉化组成员：见 [ParaTranz](https://paratranz.cn/projects/5342/members)
 
-## v1.17.2-r14
+## v1.17.2-r15
 
-- 🌐更新ET汉化，补充新版汉化内容
+- 🌐更新原版汉化
 
 ---
 
 <details><summary>历史更新日志</summary>
+
+## v1.17.2-r14
+
+- 🌐更新ET汉化，补充新版汉化内容
 
 ## v1.17.2-pre14
 
