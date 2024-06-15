@@ -1656,8 +1656,7 @@ country_event = {
   mean_time_to_happen = {
     months = 360
   }
-  option = {
-    # throw the consort a feast!
+  option = { 	#  throw the consort a feast!
     name = consort_events.55.a
     custom_tooltip = consort_events.55.a.tt
     add_adm_power = -35
@@ -1670,8 +1669,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # the consort will get used to their new life eventually
+  option = { 	#  the consort will get used to their new life eventually
     name = consort_events.55.b
     custom_tooltip = consort_events.55.b.tt
     set_consort_flag = no_party_for_consort
@@ -1891,8 +1889,7 @@ country_event = {
     }
     desc = consort_events.57.de
   }
-  trigger = {
-    #get rid of fringe case where consort dies in intervening 30 days
+  trigger = { 	# get rid of fringe case where consort dies in intervening 30 days
     marriage_with = FROM
     has_consort = yes
     has_consort_regency = no
@@ -2317,8 +2314,7 @@ country_event = {
     }
     #Send 100
     if = {
-      limit = {
-        #check_variable = { which = manpower_to_send value = 0.1 }
+      limit = { 	# check_variable = { which = manpower_to_send value = 0.1 }
         NOT = {
           check_variable = {
             which = manpower_to_send
@@ -2479,8 +2475,7 @@ country_event = {
     }
     desc = consort_events.58.de
   }
-  trigger = {
-    #get rid of fringe case where consort dies in intervening 5 days
+  trigger = { 	# get rid of fringe case where consort dies in intervening 5 days
     FROM = {
       marriage_with = ROOT
       has_consort = yes
@@ -2496,8 +2491,7 @@ country_event = {
       limit = {
         has_country_flag = asked_consort_for_money
       }
-      FROM = {
-        #Receive 10
+      FROM = { 	# Receive 10
         if = {
           limit = {
             NOT = {
@@ -2605,8 +2599,7 @@ country_event = {
       limit = {
         has_country_flag = asked_consort_for_manpower
       }
-      FROM = {
-        #Receive 100
+      FROM = { 	# Receive 100
         if = {
           limit = {
             check_variable = {
@@ -2708,8 +2701,7 @@ country_event = {
   desc = consort_events.59.d
   picture = BAD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
-  trigger = {
-    #get rid of fringe case where consort dies in intervening 5 days
+  trigger = { 	# get rid of fringe case where consort dies in intervening 5 days
     FROM = {
       marriage_with = ROOT
       has_consort = yes
@@ -4043,8 +4035,7 @@ country_event = {
   picture = none
   is_triggered_only = yes
   hidden = yes
-  immediate = {
-    #if = {
+  immediate = { 	# if = {
     #limit = { has_consort_regency = no }
     random_owned_province = {
       limit = {
@@ -4203,8 +4194,7 @@ country_event = {
   mean_time_to_happen = {
     months = 150
   }
-  option = {
-    # we have received gifts
+  option = { 	#  we have received gifts
     name = consort_events.301.a
     custom_tooltip = consort_events.301.a.tt
     add_treasury = 50
@@ -4292,8 +4282,7 @@ country_event = {
   mean_time_to_happen = {
     months = 150
   }
-  option = {
-    # we have received gifts
+  option = { 	#  we have received gifts
     name = consort_events.302.a
     custom_tooltip = consort_events.302.a.tt
     add_treasury = 50
@@ -4434,8 +4423,7 @@ country_event = {
   mean_time_to_happen = {
     months = 400
   }
-  option = {
-    # great!
+  option = { 	#  great!
     name = consort_events.303.a
     add_dip_power = 50
     clr_consort_flag = home_province_lost
@@ -4606,8 +4594,7 @@ country_event = {
   mean_time_to_happen = {
     months = 400
   }
-  option = {
-    # great!
+  option = { 	#  great!
     name = consort_events.304.a
     add_adm_power = 50
     clr_consort_flag = home_province_lost
@@ -4732,8 +4719,7 @@ country_event = {
   mean_time_to_happen = {
     months = 400
   }
-  option = {
-    # great!
+  option = { 	#  great!
     name = consort_events.305.a
     add_mil_power = 50
     clr_consort_flag = home_province_lost
@@ -4863,8 +4849,7 @@ country_event = {
   mean_time_to_happen = {
     months = 1000
   }
-  option = {
-    # great!
+  option = { 	#  great!
     name = consort_events.306.a
     if = {
       limit = {
@@ -5013,8 +4998,7 @@ country_event = {
   mean_time_to_happen = {
     months = 700
   }
-  option = {
-    # those two go well together at least
+  option = { 	#  those two go well together at least
     name = consort_events.307.a
     if = {
       limit = {
@@ -5088,8 +5072,7 @@ country_event = {
   mean_time_to_happen = {
     months = 600
   }
-  option = {
-    # raise statue
+  option = { 	#  raise statue
     name = consort_events.308.a
     if = {
       limit = {
@@ -5115,8 +5098,7 @@ country_event = {
     clr_ruler_flag = had_20_years_anniversary
     clr_ruler_flag = consort_had_affection_of_ruler
   }
-  option = {
-    # bury yourself in work - ADM
+  option = { 	#  bury yourself in work - ADM
     name = consort_events.308.b
     random_list = {
       80 = {
@@ -5142,8 +5124,7 @@ country_event = {
     clr_ruler_flag = had_20_years_anniversary
     clr_ruler_flag = consort_had_affection_of_ruler
   }
-  option = {
-    # bury yourself in work - DIP
+  option = { 	#  bury yourself in work - DIP
     name = consort_events.308.c
     random_list = {
       80 = {
@@ -5169,8 +5150,7 @@ country_event = {
     clr_ruler_flag = had_20_years_anniversary
     clr_ruler_flag = consort_had_affection_of_ruler
   }
-  option = {
-    # bury yourself in work - MIL
+  option = { 	#  bury yourself in work - MIL
     name = consort_events.308.d
     random_list = {
       80 = {
@@ -5196,8 +5176,7 @@ country_event = {
     clr_ruler_flag = had_20_years_anniversary
     clr_ruler_flag = consort_had_affection_of_ruler
   }
-  option = {
-    # do nothing
+  option = { 	#  do nothing
     name = consort_events.308.e
     clr_ruler_flag = had_10_years_anniversary
     clr_ruler_flag = had_20_years_anniversary
@@ -5252,8 +5231,7 @@ country_event = {
   mean_time_to_happen = {
     months = 600
   }
-  option = {
-    # Encourage these ideas...
+  option = { 	#  Encourage these ideas...
     name = consort_events.309.a
     custom_tooltip = consort_events.309.a.tt
     country_event = {
@@ -5261,8 +5239,7 @@ country_event = {
       days = 60
     }
   }
-  option = {
-    # Do nothing!
+  option = { 	#  Do nothing!
     name = consort_events.309.b
     custom_tooltip = consort_events.309.b.tt
     set_consort_flag = "consort_decided_to_not_pursue_the_throne"
@@ -5282,8 +5259,7 @@ country_event = {
     }
   }
   is_triggered_only = yes
-  option = {
-    # Make the consort ruler!
+  option = { 	#  Make the consort ruler!
     name = consort_events.310.a
     change_consort_regent_to_ruler = yes
     set_heir_flag = had_throne_stolen
@@ -5291,8 +5267,7 @@ country_event = {
       name = devious_ruler
     }
   }
-  option = {
-    # Do nothing!
+  option = { 	#  Do nothing!
     name = consort_events.310.b
   }
 }
@@ -5916,8 +5891,7 @@ country_event = {
       }
     }
     OR = {
-      AND = {
-        # if male consort
+      AND = { 	#  if male consort
         has_female_consort = no
         OR = {
           employed_advisor = {
@@ -5942,8 +5916,7 @@ country_event = {
           }
         }
       }
-      AND = {
-        # if female consort
+      AND = { 	#  if female consort
         has_female_consort = yes
         OR = {
           employed_advisor = {

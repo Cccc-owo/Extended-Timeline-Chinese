@@ -490,8 +490,7 @@ country_event = {
   desc = flavor_zan.8.desc
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
-  option = {
-    #Send an ambassador to Persia
+  option = { 	# Send an ambassador to Persia
     name = flavor_zan.8.a
     custom_tooltip = flavor_zan.8.a.tt
     hidden_effect = {
@@ -523,8 +522,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #It's not really worth it
+  option = { 	# It's not really worth it
     name = flavor_zan.8.b
     add_prestige = 20
     add_legitimacy = 20
@@ -552,8 +550,7 @@ country_event = {
   desc = flavor_zan.9.desc
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
-  option = {
-    #Welcome him!
+  option = { 	# Welcome him!
     name = flavor_zan.9.a
     FROM = {
       country_event = {
@@ -590,8 +587,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #We have no need for diplomacy with Kilwa
+  option = { 	# We have no need for diplomacy with Kilwa
     name = flavor_zan.9.b
     FROM = {
       country_event = {
@@ -988,16 +984,14 @@ country_event = {
       }
     }
   }
-  option = {
-    #Change religion to Persia
+  option = { 	# Change religion to Persia
     name = flavor_zan.18.a
     change_religion = event_target:zan_persia
     ai_chance = {
       factor = 0
     }
   }
-  option = {
-    #Not really worth it
+  option = { 	# Not really worth it
     name = flavor_zan.18.b
     add_piety = 0.05
     ai_chance = {
@@ -1043,8 +1037,7 @@ country_event = {
       set_country_flag = had_embassy_event
     }
   }
-  option = {
-    #We must pressure the claims of our origins!
+  option = { 	# We must pressure the claims of our origins!
     name = flavor_zan.19.a
     random_owned_province = {
       limit = {
@@ -1059,8 +1052,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
-    #Not really worth it
+  option = { 	# Not really worth it
     name = flavor_zan.19.b
     add_prestige = 25
     ai_chance = {

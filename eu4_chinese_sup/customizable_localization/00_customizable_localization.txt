@@ -1,4 +1,4 @@
- 	# AVIALABLE CUSTOM LOCALISATION KEYS
+#AVIALABLE CUSTOM LOCALISATION KEYS
 #When adding new custom loc keys, add them to the appropriate category (or add a new one) and describe them. Name the strings "String_X" where x is its content.
 # To not display anything, you can use 'localisation_key = ""'
 # Please add one example sentence for each key.
@@ -6060,6 +6060,23 @@ defined_text = {
     localisation_key = persian_influence_current_reduction_bonus_tt
     trigger = {
       has_country_flag = persian_influence_setup_flag
+    }
+  }
+}
+defined_text = {
+  name = GetTempElevationCostReductionCap
+  text = {
+    localisation_key = TWO_HUNDRED
+    trigger = {
+      NOT = {
+        has_country_flag = improved_elevation_reduction
+      }
+    }
+  }
+  text = {
+    localisation_key = FOUR_HUNDRED
+    trigger = {
+      has_country_flag = improved_elevation_reduction
     }
   }
 }

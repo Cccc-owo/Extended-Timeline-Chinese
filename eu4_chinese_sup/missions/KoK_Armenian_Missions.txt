@@ -1558,25 +1558,33 @@ arm_fifth_branch = {
       }
       if = {
         limit = {
-          is_great_power = yes
+          OR = {
+            has_dlc = "Emperor"
+            has_dlc = "Rights of Man"
+          }
         }
-        custom_tooltip = arm_great_power_tt_yes
-        tooltip = {
-          add_splendor = 200
-        }
-      }
-      else = {
-        custom_tooltip = arm_great_power_tt_no
-        tooltip = {
-          add_splendor = 200
-        }
-      }
-      hidden_effect = {
         if = {
           limit = {
             is_great_power = yes
           }
-          add_splendor = 200
+          custom_tooltip = arm_great_power_tt_yes
+          tooltip = {
+            add_splendor = 200
+          }
+        }
+        else = {
+          custom_tooltip = arm_great_power_tt_no
+          tooltip = {
+            add_splendor = 200
+          }
+        }
+        hidden_effect = {
+          if = {
+            limit = {
+              is_great_power = yes
+            }
+            add_splendor = 200
+          }
         }
       }
     }

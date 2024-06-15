@@ -53,9 +53,7 @@ feo_1 = {
   feo_black_sea_domination = {
     icon = mission_control_the_black_sea
     position = 2
-    required_missions = {
-      feo_black_sea_fleet = feo_rival_genoa
-    }
+    required_missions = { feo_black_sea_fleet feo_rival_genoa }
     provinces_to_highlight = {
       is_capital = yes
       owned_by = ROOT
@@ -185,9 +183,7 @@ feo_1 = {
   feo_constantinople = {
     icon = mission_hagia_sophia
     position = 4
-    required_missions = {
-      feo_komnenos_relations = feo_gothia
-    }
+    required_missions = { feo_komnenos_relations feo_gothia }
     provinces_to_highlight = {
       OR = {
         region = anatolia_region
@@ -640,6 +636,9 @@ feo_2 = {
           2348 = {
             country_or_non_sovereign_subject_holds = ROOT
           }
+          164 = {
+            country_or_non_sovereign_subject_holds = ROOT
+          }
           3003 = {
             country_or_non_sovereign_subject_holds = ROOT
           }
@@ -739,9 +738,7 @@ feo_3 = {
   feo_azov_sea = {
     icon = renaissance_city
     position = 2
-    required_missions = {
-      feo_rival_genoa = feo_crimea
-    }
+    required_missions = { feo_rival_genoa feo_crimea }
     provinces_to_highlight = {
       if = {
         limit = {
@@ -887,9 +884,7 @@ feo_3 = {
   feo_conflits_in_lithuania = {
     icon = mission_rule_ruthenia
     position = 4
-    required_missions = {
-      feo_gothia = feo_beyond_crimea
-    }
+    required_missions = { feo_gothia feo_beyond_crimea }
     provinces_to_highlight = {
       region = ruthenia_region
       NOT = {
@@ -933,9 +928,7 @@ feo_3 = {
   feo_gavras_triumphant = {
     icon = mission_monarch_in_throne_room
     position = 6
-    required_missions = {
-      feo_integrate_cossacks = feo_aegean_supremacy
-    }
+    required_missions = { feo_integrate_cossacks feo_aegean_supremacy }
     trigger = {
       OR = {
         NOT = {
@@ -1285,9 +1278,7 @@ feo_4 = {
   feo_integrate_cossacks = {
     icon = mission_recruit_the_cossacks
     position = 5
-    required_missions = {
-      feo_conflits_in_lithuania = feo_subdue_the_hordes
-    }
+    required_missions = { feo_conflits_in_lithuania feo_subdue_the_hordes }
     provinces_to_highlight = {
       has_terrain = steppe
       country_or_non_sovereign_subject_holds = ROOT
@@ -1382,19 +1373,10 @@ feo_5 = {
         first_effect = "
           set_country_flag = feo_russian_alliance_branch
           random_known_country = {
-            limit = {
-              capital_scope = {
-                region = russia_region
-              }
-              total_development = 100
-              alliance_with = ROOT
-            }
-            save_global_event_target_as = russian_ally
-            set_country_flag = feo_russian_ally
-            add_patriarch_authority = 0.05
+            limit = { capital_scope = { region = russia_region } total_development = 100 alliance_with = ROOT }
+            hidden_effect = { save_global_event_target_as = russian_ally } set_country_flag = feo_russian_ally add_patriarch_authority = 0.05
           }
-          add_patriarch_authority = 0.05
-          custom_tooltip = FEO_LOCK_TO_ALLIANCE_BRANCH
+          add_patriarch_authority = 0.05 custom_tooltip = FEO_LOCK_TO_ALLIANCE_BRANCH
         "
         second_custom_tooltip = FEO_IF_COMPLETED_WITH_ARMY_SIZE
         second_limit = "
@@ -1451,9 +1433,7 @@ feo_5_branching = {
   feo_branching1 = {
     icon = mission_unknown_mission
     position = 2
-    required_missions = {
-      feo_crimea = feo_russian_aristocracy
-    }
+    required_missions = { feo_crimea feo_russian_aristocracy }
     trigger = {
       custom_trigger_tooltip = {
         tooltip = FEO_BRANCHING_MISSION
@@ -1563,9 +1543,7 @@ feo_5_russian_alliance = {
   feo_russian_aid = {
     icon = mission_early_russian_army
     position = 2
-    required_missions = {
-      feo_crimea = feo_russian_aristocracy
-    }
+    required_missions = { feo_crimea feo_russian_aristocracy }
     provinces_to_highlight = {}
     trigger = {
       not_in_mission_preview_mode = {
@@ -1651,9 +1629,7 @@ feo_5_russian_rivalry = {
   feo_russian_claims = {
     icon = mission_plc_break_the_rus
     position = 2
-    required_missions = {
-      feo_crimea = feo_russian_aristocracy
-    }
+    required_missions = { feo_crimea feo_russian_aristocracy }
     provinces_to_highlight = {
       region = russia_region
       NOT = {

@@ -30,8 +30,7 @@ country_event = {
   mean_time_to_happen = {
     months = 150
   }
-  option = {
-    # Rule with the support of the Burghers
+  option = { 	#  Rule with the support of the Burghers
     name = "flavor_dan.EVTOPTA3285"
     if = {
       limit = {
@@ -76,8 +75,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # Rely on the Royal Council
+  option = { 	#  Rely on the Royal Council
     name = "flavor_dan.EVTOPTB3285"
     add_stability_or_adm_power = yes
     if = {
@@ -2259,8 +2257,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Release them as a pirate vassal
+  option = { 	# Release them as a pirate vassal
     name = "flavor_dan.101.b"
     remove_core = 25
     release = GOT
@@ -2412,8 +2409,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Colonize the Random New World
+  option = { 	# Colonize the Random New World
     name = "flavor_dan.102.a"
     goto = dan_rnw_colonial_province
     trigger = {
@@ -2428,8 +2424,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Colonize Hudson Bay
+  option = { 	# Colonize Hudson Bay
     name = "flavor_dan.102.b"
     goto = dan_hudson_bay_colonial_province
     trigger = {
@@ -2444,8 +2439,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Colonize Canada
+  option = { 	# Colonize Canada
     name = "flavor_dan.102.c"
     goto = dan_canada_colonial_province
     trigger = {
@@ -2460,8 +2454,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Colonize Northeast America
+  option = { 	# Colonize Northeast America
     name = "flavor_dan.102.d"
     goto = dan_northeast_america_colonial_province
     trigger = {
@@ -2476,8 +2469,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Colonize Southeast America
+  option = { 	# Colonize Southeast America
     name = "flavor_dan.102.e"
     goto = dan_southeast_america_colonial_province
     trigger = {
@@ -2492,8 +2484,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Fallback
+  option = { 	# Fallback
     name = "flavor_dan.102.zzz"
     trigger = {
       NOT = {
@@ -2672,8 +2663,7 @@ country_event = {
   desc = flavor_dan.108.desc
   picture = MERCHANTS_TALKING_eventPicture
   is_triggered_only = yes
-  option = {
-    #Good idea
+  option = { 	# Good idea
     name = flavor_dan.108.a
     add_country_modifier = {
       name = dan_danish_investment
@@ -2700,8 +2690,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Nah
+  option = { 	# Nah
     name = flavor_dan.108.b
     add_mercantilism = 2
     ai_chance = {
@@ -2743,8 +2732,7 @@ country_event = {
   mean_time_to_happen = {
     months = 6
   }
-  option = {
-    #Good lord
+  option = { 	# Good lord
     name = flavor_dan.109.a
     custom_tooltip = flavor_dan.109.a.tt
     ai_chance = {
@@ -2767,8 +2755,7 @@ country_event = {
   after = {
     clr_country_flag = dan_considers_war_with_denmark
   }
-  option = {
-    #That's it! We wage war with the Danes!
+  option = { 	# That's it! We wage war with the Danes!
     name = flavor_dan.110.a
     declare_war_with_cb = {
       casus_belli = cb_trade_conflict_triggered
@@ -2799,8 +2786,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #We cannot afford a conflict with Denmark...
+  option = { 	# We cannot afford a conflict with Denmark...
     name = flavor_dan.110.b
     45 = {
       add_trade_modifier = {
@@ -2834,8 +2820,7 @@ country_event = {
   desc = flavor_dan.111.desc
   picture = CONQUEST_eventPicture
   is_triggered_only = yes
-  option = {
-    #Excellent!
+  option = { 	# Excellent!
     name = flavor_dan.111.a
     tooltip = {
       45 = {
@@ -2862,8 +2847,7 @@ country_event = {
   desc = flavor_dan.112.desc
   picture = NOBLE_ESTATE_eventPicture
   is_triggered_only = yes
-  option = {
-    #Grant Norway a more important role in the Union
+  option = { 	# Grant Norway a more important role in the Union
     name = flavor_dan.112.a
     add_country_modifier = {
       name = dan_nor_equal_crowns
@@ -2894,16 +2878,14 @@ country_event = {
       factor = 0
     }
   }
-  option = {
-    #Let's keep status quo
+  option = { 	# Let's keep status quo
     name = flavor_dan.112.b
     add_dip_power = 100
     ai_chance = {
       factor = 1
     }
   }
-  option = {
-    #Exploit the Norwegian Crown
+  option = { 	# Exploit the Norwegian Crown
     name = flavor_dan.112.c
     add_country_modifier = {
       name = dan_exploiting_norwegians
@@ -3154,8 +3136,7 @@ country_event = {
   desc = flavor_dan.114.desc
   picture = NOBLE_ESTATE_DEMANDS_eventPicture
   is_triggered_only = yes
-  option = {
-    #Grant Sweden a more important role in the Union
+  option = { 	# Grant Sweden a more important role in the Union
     name = flavor_dan.114.a
     add_country_modifier = {
       name = dan_swe_supports_pro_unionists
@@ -3172,16 +3153,14 @@ country_event = {
       factor = 0
     }
   }
-  option = {
-    #Let's keep status quo
+  option = { 	# Let's keep status quo
     name = flavor_dan.114.b
     add_adm_power = 100
     ai_chance = {
       factor = 0
     }
   }
-  option = {
-    #Exploit the Swedish Crown
+  option = { 	# Exploit the Swedish Crown
     name = flavor_dan.114.c
     add_country_modifier = {
       name = dan_exploiting_swedes
@@ -3326,8 +3305,7 @@ country_event = {
       has_country_flag = got_no_swedish_disloayalty_to_gotland
     }
   }
-  option = {
-    #Let it escalate
+  option = { 	# Let it escalate
     name = "flavor_dan.118.a"
     SWE = {
       capital_scope = {
@@ -3386,8 +3364,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
-    #Eliminate the Noble Threat now!
+  option = { 	# Eliminate the Noble Threat now!
     name = "flavor_dan.118.b"
     add_stability_or_adm_power = yes
     mil_power_cost = 75
@@ -3411,8 +3388,7 @@ country_event = {
   desc = "flavor_dan.119.desc"
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
-  option = {
-    #Make London to our new Capital!
+  option = { 	# Make London to our new Capital!
     name = "flavor_dan.119.a"
     set_capital = 236
     add_accepted_culture_or_dip_power = {
@@ -3425,8 +3401,7 @@ country_event = {
       add_base_manpower = 2
     }
   }
-  option = {
-    #We rule from Coppenhagen!
+  option = { 	# We rule from Coppenhagen!
     name = "flavor_dan.119.b"
     capital_scope = {
       add_base_tax = 3
@@ -3459,8 +3434,7 @@ country_event = {
     months = 1
   }
   fire_only_once = yes
-  option = {
-    #Darn
+  option = { 	# Darn
     name = "flavor_dan.120.a"
     remove_country_modifier = dan_control_over_the_english_channel
   }
@@ -3562,8 +3536,7 @@ country_event = {
   desc = "flavor_dan.122.desc"
   picture = REVOLUTION_eventPicture
   is_triggered_only = yes
-  option = {
-    #Keeping them loyal will be impossible now...
+  option = { 	# Keeping them loyal will be impossible now...
     name = "flavor_dan.122.a"
     tooltip = {
       FROM = {
@@ -3596,8 +3569,7 @@ country_event = {
   trigger = {
     overlord_of = SWE
   }
-  option = {
-    #Oh wonderful
+  option = { 	# Oh wonderful
     name = "flavor_dan.123.a"
     SWE = {
       capital_scope = {
@@ -3638,16 +3610,14 @@ country_event = {
   desc = flavor_dan.124.desc
   picture = MILITARY_CAMP_eventPicture
   is_triggered_only = yes
-  option = {
-    #Double down on Mercs
+  option = { 	# Double down on Mercs
     name = flavor_dan.124.a
     add_country_modifier = {
       name = dan_sca_standing_professional_merc_army
       duration = -1
     }
   }
-  option = {
-    #The time for Mercs is long over
+  option = { 	# The time for Mercs is long over
     name = flavor_dan.124.b
     remove_country_modifier = dan_sca_merc_contract
     remove_country_modifier = dan_sca_grand_merc_army
@@ -3720,8 +3690,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #The kingdoms will have to accept [Root.Monarch.GetName]
+  option = { 	# The kingdoms will have to accept [Root.Monarch.GetName]
     name = kalmar_union_events.1.a
     custom_tooltip = kalmar_union_events.1.a.tt
     ai_chance = {
@@ -3785,8 +3754,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Ensure the love of the kingdoms
+  option = { 	# Ensure the love of the kingdoms
     name = kalmar_union_events.1.b
     add_ruler_modifier = {
       name = dan_granting_privileges_to_juniors
@@ -3832,8 +3800,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Make concessions for the Rebellious nobels
+  option = { 	# Make concessions for the Rebellious nobels
     name = kalmar_union_events.1.c
     trigger = {
       any_subject_country = {
@@ -3913,8 +3880,7 @@ country_event = {
   major_trigger = {
     has_government_attribute = kalmar_union_succession
   }
-  option = {
-    #[Root.Monarch.GetName] shall be the elected [Root.Monarch.GetTitle] of [Root.GetName]!
+  option = { 	# [Root.Monarch.GetName] shall be the elected [Root.Monarch.GetTitle] of [Root.GetName]!
     name = kalmar_union_events.2.a
     FROM = {
       add_prestige = 10
@@ -4064,11 +4030,9 @@ country_event = {
       }
     }
   }
-  option = {
-    #We will not bow before him. We have a better idea though
+  option = { 	# We will not bow before him. We have a better idea though
     name = kalmar_union_events.2.b
-    trigger = {
-      #Originally the plan was to have this option for every subject but it's not feasible 
+    trigger = { 	# Originally the plan was to have this option for every subject but it's not feasible 
       if = {
         limit = {
           tag = SWE
@@ -4417,8 +4381,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #How about... no?
+  option = { 	# How about... no?
     name = kalmar_union_events.2.c
     add_liberty_desire = 20
     FROM = {
@@ -4764,8 +4727,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Select one from the Clergy
+  option = { 	# Select one from the Clergy
     name = kalmar_union_events.3.a
     custom_tooltip = kalmar_union_events.3.a.tt
     hidden_effect = {
@@ -4821,8 +4783,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Select one from the Burghers
+  option = { 	# Select one from the Burghers
     name = kalmar_union_events.3.b
     custom_tooltip = kalmar_union_events.3.b.tt
     hidden_effect = {
@@ -4878,8 +4839,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Select one from the Nobility
+  option = { 	# Select one from the Nobility
     name = kalmar_union_events.3.c
     custom_tooltip = kalmar_union_events.3.c.tt
     hidden_effect = {
@@ -4958,8 +4918,7 @@ country_event = {
   desc = kalmar_union_events.4.desc
   picture = NOBLE_ESTATE_eventPicture
   is_triggered_only = yes
-  option = {
-    #Accept him
+  option = { 	# Accept him
     name = kalmar_union_events.4.a
     trigger = {
       OR = {
@@ -5056,8 +5015,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Refuse to take him
+  option = { 	# Refuse to take him
     name = kalmar_union_events.4.b
     trigger = {
       OR = {
@@ -5106,8 +5064,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Fallback
+  option = { 	# Fallback
     name = kalmar_union_events.4.c
     trigger = {
       NOT = {
@@ -5185,8 +5142,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #The kingdoms will have to accept [Root.Monarch.GetName]
+  option = { 	# The kingdoms will have to accept [Root.Monarch.GetName]
     name = kalmar_union_events.1.a
     custom_tooltip = kalmar_union_events.1.a.tt
     ai_chance = {
@@ -5223,8 +5179,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Ensure the love of the kingdoms
+  option = { 	# Ensure the love of the kingdoms
     name = kalmar_union_events.1.b
     custom_tooltip = kalmar_union_events.1.b.tt
     add_ruler_modifier = {
@@ -5273,8 +5228,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Make concessions for the Rebellious nobels
+  option = { 	# Make concessions for the Rebellious nobels
     name = kalmar_union_events.1.c
     trigger = {
       any_subject_country = {
@@ -5352,8 +5306,7 @@ country_event = {
   after = {
     clr_country_flag = dan_picked_suggested_ruler
   }
-  option = {
-    #[Root.Monarch.GetName] shall be the elected [Root.Monarch.GetTitle] of [Root.GetName]!
+  option = { 	# [Root.Monarch.GetName] shall be the elected [Root.Monarch.GetTitle] of [Root.GetName]!
     name = kalmar_union_events.2.a
     FROM = {
       add_prestige = 10
@@ -5487,8 +5440,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #How about... no?
+  option = { 	# How about... no?
     name = kalmar_union_events.2.c
     add_liberty_desire = 20
     capital_scope = {
@@ -5875,8 +5827,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Fight off the pretenders
+  option = { 	# Fight off the pretenders
     name = kalmar_union_events.7.a
     event_target:dan_rebellious_junior_partner = {
       capital_scope = {
@@ -5904,8 +5855,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Orchestrate the assassination of the leader
+  option = { 	# Orchestrate the assassination of the leader
     name = kalmar_union_events.7.b
     add_years_of_income = -0.5
     random_list = {
@@ -6027,8 +5977,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Doesn't really matter
+  option = { 	# Doesn't really matter
     name = kalmar_union_events.8.a
     event_target:dan_rebellious_junior_partner = {
       add_ruler_modifier = {
@@ -6044,8 +5993,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Give dan_rebellious_junior_partner nobility extra privileges
+  option = { 	# Give dan_rebellious_junior_partner nobility extra privileges
     name = kalmar_union_events.8.b
     add_estate_loyalty = {
       estate = estate_nobles
@@ -6205,8 +6153,7 @@ country_event = {
     clr_country_flag = dan_nobles_demand_diplomatic_support
     clr_country_flag = dan_nobles_demand_military_support
   }
-  option = {
-    #Crush the Nobility
+  option = { 	# Crush the Nobility
     name = kalmar_union_events.9.a
     add_estate_loyalty = {
       estate = estate_nobles
@@ -6222,8 +6169,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
-    #Fight off the pretenders
+  option = { 	# Fight off the pretenders
     name = kalmar_union_events.9.b
     add_estate_loyalty = {
       estate = estate_nobles

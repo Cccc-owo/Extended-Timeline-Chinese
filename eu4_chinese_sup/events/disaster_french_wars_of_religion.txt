@@ -27,8 +27,7 @@ country_event = {
   immediate = {
     hidden_effect = {
       set_country_flag = fra_wars_of_religion_flag
-      if = {
-        #for localisations only
+      if = { 	# for localisations only
         limit = {
           religion = catholic
         }
@@ -61,8 +60,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # French Catholics
+  option = { 	#  French Catholics
     name = "flavor_fra.EVTOPTA3110"
     ai_chance = {
       factor = 50
@@ -98,8 +96,7 @@ country_event = {
       duration = 7300
     }
   }
-  option = {
-    # French Protestants
+  option = { 	#  French Protestants
     name = "flavor_fra.EVTOPTB3110"
     ai_chance = {
       factor = 50
@@ -179,8 +176,7 @@ country_event = {
     }
     set_country_flag = FRA_supports_protestant_majority
   }
-  option = {
-    # French Moderates
+  option = { 	#  French Moderates
     name = "flavor_fra.EVTOPTC3110"
     ai_chance = {
       factor = 50
@@ -247,8 +243,7 @@ country_event = {
   #	add_mil_power = -100
   #	set_country_flag = repressed_bartholomews_day_massacre
   #}
-  option = {
-    # Contain it to CAPITALNAME
+  option = { 	#  Contain it to CAPITALNAME
     name = "flavor_fra.EVTOPTB3101"
     goto = capital
     ai_chance = {
@@ -263,8 +258,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # Let it spread to the provinces
+  option = { 	#  Let it spread to the provinces
     name = "flavor_fra.EVTOPTC3101"
     goto = capital
     ai_chance = {
@@ -439,8 +433,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # Support a RELIGION League
+  option = { 	#  Support a RELIGION League
     name = "flavor_fra.EVTOPTA3010"
     ai_chance = {
       factor = 25
@@ -455,8 +448,7 @@ country_event = {
     set_country_flag = supports_religious_league
     custom_tooltip = support_french_league_tt
   }
-  option = {
-    # Distance ourself from it
+  option = { 	#  Distance ourself from it
     name = "flavor_fra.EVTOPTB3010"
     ai_chance = {
       factor = 75
@@ -491,16 +483,14 @@ country_event = {
       }
     }
   }
-  option = {
-    # Flee from CAPITALNAME
+  option = { 	#  Flee from CAPITALNAME
     name = "flavor_fra.EVTOPTA3009"
     ai_chance = {
       factor = 0
     }
     add_prestige = -25
   }
-  option = {
-    # Stay and fight!
+  option = { 	#  Stay and fight!
     name = "flavor_fra.EVTOPTB3009"
     ai_chance = {
       factor = 50
@@ -527,8 +517,7 @@ country_event = {
   }
   immediate = {
     set_country_flag = FRA_had_event_3102
-    hidden_effect = {
-      # Less than 5 true faith provinces
+    hidden_effect = { 	#  Less than 5 true faith provinces
       if = {
         limit = {
           any_owned_province = {
@@ -624,8 +613,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # Assassinate him
+  option = { 	#  Assassinate him
     name = "flavor_fra.EVTOPTA3102"
     ai_chance = {
       factor = 75
@@ -642,8 +630,7 @@ country_event = {
       clr_province_flag = religious_rebels
     }
   }
-  option = {
-    # Condone the League's actions
+  option = { 	#  Condone the League's actions
     name = "flavor_fra.EVTOPTB3102"
     ai_chance = {
       factor = 25
@@ -778,8 +765,7 @@ province_event = {
   immediate = {
     set_province_flag = religious_fanatics
   }
-  option = {
-    # Encourage these attacks...
+  option = { 	#  Encourage these attacks...
     name = "flavor_fra.EVTOPTA3200"
     ai_chance = {
       factor = 100
@@ -796,8 +782,7 @@ province_event = {
     }
     set_province_flag = religious_fanatics_encouraged
   }
-  option = {
-    # They must be stopped
+  option = { 	#  They must be stopped
     name = "flavor_fra.EVTOPTB3200"
     ai_chance = {
       factor = 50
@@ -857,8 +842,7 @@ province_event = {
     }
   }
   is_triggered_only = yes 	#  from on_action on_siege_lost_province
-  option = {
-    # When will these horrors stop?
+  option = { 	#  When will these horrors stop?
     name = "flavor_fra.EVTOPTA3201"
     trigger = {
       NOT = {
@@ -871,8 +855,7 @@ province_event = {
     }
     clr_province_flag = religious_fanatics
   }
-  option = {
-    # For the good of RELIGION!
+  option = { 	#  For the good of RELIGION!
     name = "flavor_fra.EVTOPTB3201"
     trigger = {
       has_province_flag = religious_fanatics_encouraged
@@ -1023,8 +1006,7 @@ province_event = {
   #}
   #set_province_flag = heretic_fanatics_encouraged
   #}
-  option = {
-    # They must be stopped
+  option = { 	#  They must be stopped
     name = "flavor_fra.EVTOPTB3202"
     ai_chance = {
       factor = 50
@@ -1064,8 +1046,7 @@ province_event = {
     }
   }
   is_triggered_only = yes
-  option = {
-    # When will these horrors stop?
+  option = { 	#  When will these horrors stop?
     name = "flavor_fra.EVTOPTA3203"
     trigger = {
       NOT = {
@@ -1079,8 +1060,7 @@ province_event = {
     clr_province_flag = heretic_fanatics
     clr_province_flag = heretic_fanatics_encouraged
   }
-  option = {
-    # These RELIGION followers must be rooted out!
+  option = { 	#  These RELIGION followers must be rooted out!
     name = "flavor_fra.EVTOPTB3203"
     trigger = {
       has_province_flag = heretic_fanatics_encouraged
@@ -1163,8 +1143,7 @@ country_event = {
   immediate = {
     set_country_flag = foreign_support_for_france
   }
-  option = {
-    # Send troops to support France
+  option = { 	#  Send troops to support France
     name = "flavor_fra.EVTOPTA3002"
     ai_chance = {
       factor = 25
@@ -1259,8 +1238,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # Send troops to fight France
+  option = { 	#  Send troops to fight France
     name = "flavor_fra.EVTOPTB3002"
     ai_chance = {
       factor = 25
@@ -1357,8 +1335,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # Ignore the Wars in France
+  option = { 	#  Ignore the Wars in France
     name = "flavor_fra.EVTOPTC3002"
     ai_chance = {
       factor = 50
@@ -1416,8 +1393,7 @@ country_event = {
   picture = BATTLE_eventPicture
   is_triggered_only = yes
   immediate = {
-    hidden_effect = {
-      # Neighbor
+    hidden_effect = { 	#  Neighbor
       if = {
         limit = {
           any_owned_province = {
@@ -1477,8 +1453,7 @@ country_event = {
     name = "flavor_fra.EVTOPTA3004"
     # Large support
     if = {
-      limit = {
-        #Neighbor
+      limit = { 	# Neighbor
         has_country_flag = foreign_support_for_french_rebels_5
         has_country_flag = wars_of_religion_neighbor_case
         NOT = {
@@ -1530,8 +1505,7 @@ country_event = {
       }
     }
     if = {
-      limit = {
-        #Not neighbor with port
+      limit = { 	# Not neighbor with port
         has_country_flag = foreign_support_for_french_rebels_5
         has_country_flag = wars_of_religion_neighbor_port_case
         NOT = {
@@ -1581,8 +1555,7 @@ country_event = {
       }
     }
     if = {
-      limit = {
-        # Not neighbor without port
+      limit = { 	#  Not neighbor without port
         has_country_flag = foreign_support_for_french_rebels_5
         has_country_flag = wars_of_religion_not_neighbor_port_case
         NOT = {
@@ -1637,8 +1610,7 @@ country_event = {
     }
     # Small support
     if = {
-      limit = {
-        #Neighbor
+      limit = { 	# Neighbor
         has_country_flag = foreign_support_for_french_rebels_3
         has_country_flag = wars_of_religion_neighbor_case
         NOT = {
@@ -1690,8 +1662,7 @@ country_event = {
       }
     }
     if = {
-      limit = {
-        #Not neighbor with port
+      limit = { 	# Not neighbor with port
         has_country_flag = foreign_support_for_french_rebels_3
         has_country_flag = wars_of_religion_neighbor_port_case
         NOT = {
@@ -1741,8 +1712,7 @@ country_event = {
       }
     }
     if = {
-      limit = {
-        # Not neighbor without port
+      limit = { 	#  Not neighbor without port
         has_country_flag = foreign_support_for_french_rebels_3
         has_country_flag = wars_of_religion_not_neighbor_port_case
         NOT = {
@@ -1849,8 +1819,7 @@ province_event = {
       }
     }
   }
-  option = {
-    # How will I ever get it back?
+  option = { 	#  How will I ever get it back?
     name = "flavor_fra.EVTOPTA3196"
     goto = capital
     if = {
@@ -1899,8 +1868,7 @@ country_event = {
     set_country_flag = FRA_had_event_3197
     set_country_flag = paris_worth_flag
   }
-  option = {
-    # Paris is worth a mass
+  option = { 	#  Paris is worth a mass
     name = "flavor_fra.EVTOPTA3197"
     trigger = {
       religion = catholic
@@ -1916,8 +1884,7 @@ country_event = {
     clr_country_flag = FRA_supports_protestant_minority
     set_country_flag = FRA_wars_of_religion_ended
   }
-  option = {
-    # Lets hope it is
+  option = { 	#  Lets hope it is
     name = "flavor_fra.EVTOPTB3197"
     trigger = {
       NOT = {
@@ -1935,8 +1902,7 @@ country_event = {
     clr_country_flag = FRA_supports_protestant_minority
     set_country_flag = FRA_wars_of_religion_ended
   }
-  option = {
-    # Never! Paris will fall by the sword!
+  option = { 	#  Never! Paris will fall by the sword!
     name = "flavor_fra.EVTOPTC3197"
     add_stability = -2
     add_prestige = 25
@@ -1970,8 +1936,7 @@ country_event = {
     set_country_flag = FRA_had_event_3198
     set_country_flag = paris_worth_flag
   }
-  option = {
-    # Paris is worth a mass
+  option = { 	#  Paris is worth a mass
     name = "flavor_fra.EVTOPTA3198"
     trigger = {
       capital_scope = {
@@ -1996,8 +1961,7 @@ country_event = {
     }
     set_country_flag = FRA_wars_of_religion_ended
   }
-  option = {
-    # Lets hope it is
+  option = { 	#  Lets hope it is
     name = "flavor_fra.EVTOPTB3198"
     trigger = {
       capital_scope = {
@@ -2025,8 +1989,7 @@ country_event = {
     }
     set_country_flag = FRA_wars_of_religion_ended
   }
-  option = {
-    # Never! Paris will fall by the sword!
+  option = { 	#  Never! Paris will fall by the sword!
     name = "flavor_fra.EVTOPTC3198"
     add_stability = -2
     add_prestige = 25
@@ -2047,8 +2010,7 @@ country_event = {
     set_country_flag = FRA_had_event_3199
     set_country_flag = FRA_wars_of_religion_ended
   }
-  option = {
-    # Blessed be the Lord
+  option = { 	#  Blessed be the Lord
     name = "flavor_fra.EVTOPTA3199"
     add_stability = 4
     add_adm_power = 50
@@ -2092,8 +2054,7 @@ country_event = {
   immediate = {
     set_country_flag = FRA_had_event_3190
   }
-  option = {
-    # 
+  option = { 	#  
     name = "flavor_fra.EVTOPTA3190"
     every_known_country = {
       limit = {

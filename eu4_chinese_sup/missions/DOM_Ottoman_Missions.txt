@@ -1185,8 +1185,7 @@ tur_african_conquest = {
         nationalism = 1
       }
     }
-    trigger = {
-      #num_of_pashas = 5
+    trigger = { 	# num_of_pashas = 5
       stability = 1
       num_of_owned_provinces_with = {
         NOT = {
@@ -1805,8 +1804,7 @@ tur_african_conquest = {
             mil_ideas = yes
           }
           if = {
-            limit = {
-              #Promote Advisors - +2
+            limit = { 	# Promote Advisors - +2
               has_dlc = "Cradle of Civilization"
               #National Focus - +2
               has_dlc = "Res Publica"
@@ -2837,71 +2835,74 @@ tur_egyptian_conquest = {
         }
         add_permanent_claim = ROOT
       }
-      bahrain_area = {
-        limit = {
-          NOT = {
-            is_core = ROOT
+      custom_tooltip = tur_defeat_the_mamluks_tt
+      hidden_effect = {
+        bahrain_area = {
+          limit = {
+            NOT = {
+              is_core = ROOT
+            }
+            NOT = {
+              is_permanent_claim = ROOT
+            }
           }
-          NOT = {
-            is_permanent_claim = ROOT
-          }
+          add_permanent_claim = ROOT
         }
-        add_permanent_claim = ROOT
-      }
-      tabuk_area = {
-        limit = {
-          NOT = {
-            is_core = ROOT
+        tabuk_area = {
+          limit = {
+            NOT = {
+              is_core = ROOT
+            }
+            NOT = {
+              is_permanent_claim = ROOT
+            }
           }
-          NOT = {
-            is_permanent_claim = ROOT
-          }
+          add_permanent_claim = ROOT
         }
-        add_permanent_claim = ROOT
-      }
-      nafud_area = {
-        limit = {
-          NOT = {
-            is_core = ROOT
+        nafud_area = {
+          limit = {
+            NOT = {
+              is_core = ROOT
+            }
+            NOT = {
+              is_permanent_claim = ROOT
+            }
           }
-          NOT = {
-            is_permanent_claim = ROOT
-          }
+          add_permanent_claim = ROOT
         }
-        add_permanent_claim = ROOT
-      }
-      qasim_area = {
-        limit = {
-          NOT = {
-            is_core = ROOT
+        qasim_area = {
+          limit = {
+            NOT = {
+              is_core = ROOT
+            }
+            NOT = {
+              is_permanent_claim = ROOT
+            }
           }
-          NOT = {
-            is_permanent_claim = ROOT
-          }
+          add_permanent_claim = ROOT
         }
-        add_permanent_claim = ROOT
-      }
-      medina_area = {
-        limit = {
-          NOT = {
-            is_core = ROOT
+        medina_area = {
+          limit = {
+            NOT = {
+              is_core = ROOT
+            }
+            NOT = {
+              is_permanent_claim = ROOT
+            }
           }
-          NOT = {
-            is_permanent_claim = ROOT
-          }
+          add_permanent_claim = ROOT
         }
-        add_permanent_claim = ROOT
-      }
-      mecca_area = {
-        limit = {
-          NOT = {
-            is_core = ROOT
+        mecca_area = {
+          limit = {
+            NOT = {
+              is_core = ROOT
+            }
+            NOT = {
+              is_permanent_claim = ROOT
+            }
           }
-          NOT = {
-            is_permanent_claim = ROOT
-          }
+          add_permanent_claim = ROOT
         }
-        add_permanent_claim = ROOT
       }
     }
     ai_weight = {
@@ -3128,8 +3129,7 @@ tur_egyptian_conquest = {
       }
       else = {
         custom_tooltip = tur_handle_the_egyptian_eyalet_ct
-        hidden_effect = {
-          #egypt_region = {
+        hidden_effect = { 	# egypt_region = {
           #	limit = {
           #		country_or_non_sovereign_subject_holds = ROOT
           #	}
@@ -6519,8 +6519,7 @@ tur_stagnation_slot_4 = {
     trigger = {
       reform_level = 7
       if = {
-        limit = {
-          #Promote Advisors - +2
+        limit = { 	# Promote Advisors - +2
           has_dlc = "Cradle of Civilization"
           #National Focus - +2
           has_dlc = "Res Publica"

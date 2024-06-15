@@ -103,8 +103,7 @@ country_event = {
     NOT = {
       is_year = 1500
     }
-    315 = {
-      #Finnmark
+    315 = { 	# Finnmark
       owned_by = ROOT
       controlled_by = ROOT
     }
@@ -115,8 +114,7 @@ country_event = {
   option = {
     name = "flavor_nor.EVTOPTA3"
     add_years_of_income = -0.5
-    315 = {
-      #Finnmark
+    315 = { 	# Finnmark
       add_building = fort_15th
       add_province_modifier = {
         name = "local_fortress"
@@ -164,8 +162,7 @@ country_event = {
     NOT = {
       is_year = 1470
     }
-    16 = {
-      #Bohuslýÿn
+    16 = { 	# Bohuslýÿn
       owned_by = ROOT
       controlled_by = ROOT
     }
@@ -175,8 +172,7 @@ country_event = {
   }
   option = {
     name = "flavor_nor.EVTOPTA4"
-    16 = {
-      #Bohuslýÿn
+    16 = { 	# Bohuslýÿn
       add_building = fort_15th
       add_province_modifier = {
         name = nor_bohus_fortress
@@ -262,8 +258,7 @@ country_event = {
           tag = NOR
         }
       }
-      tooltip = {
-        #Happens in event 7.
+      tooltip = { 	# Happens in event 7.
         NOR = {
           add_opinion = {
             who = ROOT
@@ -299,8 +294,7 @@ country_event = {
       add_treasury = 200 	# This happens in event 8.
       add_truce_with = SCO 	# This happens in event 6.
     }
-    if = {
-      #This happens in event 6.
+    if = { 	# This happens in event 6.
       limit = {
         NOT = {
           marriage_with = SCO
@@ -396,8 +390,7 @@ country_event = {
         }
       }
     }
-    tooltip = {
-      #This happens in event 8:
+    tooltip = { 	# This happens in event 8:
       NOR = {
         369 = {
           cede_province = SCO
@@ -466,8 +459,7 @@ country_event = {
         id = flavor_nor.9
       }
     }
-    tooltip = {
-      #This happens in event 9:
+    tooltip = { 	# This happens in event 9:
       NOR = {
         NOR = {
           if = {
@@ -708,8 +700,7 @@ country_event = {
   }
 }
 #Norway Refuses
-country_event = {
-  #Notification event, a human will only see this if both Norway or Denmark are human controlled.
+country_event = { 	# Notification event, a human will only see this if both Norway or Denmark are human controlled.
   id = flavor_nor.10
   title = "flavor_nor.10.t"
   desc = "flavor_nor.10.d"
@@ -1290,8 +1281,7 @@ country_event = {
   desc = "flavor_nor.24.d"
   picture = STREET_SPEECH_eventPicture
   fire_only_once = yes
-  trigger = {
-    #Will trigger sometime in the 17th century, depends on trigger date of Hollendertiden.
+  trigger = { 	# Will trigger sometime in the 17th century, depends on trigger date of Hollendertiden.
     num_of_ports = 1
     has_country_flag = hollendertiden
     NOT = {
@@ -1365,25 +1355,21 @@ country_event = {
   }
   option = {
     name = "flavor_nor.25.a"
-    17 = {
-      #Akershus
+    17 = { 	# Akershus
       add_base_tax = 2
       add_base_manpower = 2
       add_base_production = 1
     }
-    21 = {
-      #Hýÿlogoland
+    21 = { 	# Hýÿlogoland
       add_base_tax = 1
       add_base_production = 1
     }
-    22 = {
-      #Oplandene
+    22 = { 	# Oplandene
       add_base_tax = 2
       add_base_manpower = 2
       add_base_production = 2
     }
-    4145 = {
-      #Agdesiden
+    4145 = { 	# Agdesiden
       add_base_tax = 1
       add_base_manpower = 1
     }
@@ -1472,8 +1458,7 @@ country_event = {
       senior_union_with = NOR
     } 	# Will happen as long as the union still holds in the years above. If Norway is already integrated or independent this event will never trigger.
   }
-  immediate = {
-    #Used in localisation only.
+  immediate = { 	# Used in localisation only.
     hidden_effect = {
       if = {
         limit = {
@@ -1655,8 +1640,7 @@ country_event = {
   desc = "flavor_nor.33.desc"
   picture = FROZEN_VILLAGE_eventPicture
   is_triggered_only = yes
-  option = {
-    #Look for the vikings
+  option = { 	# Look for the vikings
     name = "flavor_nor.33.a"
     custom_tooltip = flavor_nor.33.a.tt
     add_years_of_income = -0.5
@@ -1686,8 +1670,7 @@ country_event = {
       factor = 10
     }
   }
-  option = {
-    #They are long gong already. Colonize the land for ourselves
+  option = { 	# They are long gong already. Colonize the land for ourselves
     name = "flavor_nor.33.b"
     create_colony_mission_reward = {
       province = 1104
@@ -1720,8 +1703,7 @@ country_event = {
   }
   picture = VIKINGS_eventPicture
   is_triggered_only = yes
-  option = {
-    #Nice
+  option = { 	# Nice
     name = "flavor_nor.34.a"
     trigger = {
       religion = norse_pagan_reformed
@@ -1759,8 +1741,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Dear God...
+  option = { 	# Dear God...
     name = "flavor_nor.34.b"
     trigger = {
       NOT = {
@@ -1810,8 +1791,7 @@ country_event = {
   desc = flavor_nor.34.desc.a
   picture = CITY_DEVELOPMENT_eventPicture
   is_triggered_only = yes
-  option = {
-    #Nice
+  option = { 	# Nice
     name = "flavor_nor.34.a"
     if = {
       limit = {
@@ -2035,8 +2015,7 @@ country_event = {
       tag = SWE
     }
   }
-  option = {
-    #Ask for military support
+  option = { 	# Ask for military support
     name = "flavor_nor.42.a"
     add_mil_power = 100
     add_liberty_desire = 25
@@ -2069,8 +2048,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #We need more manpower!
+  option = { 	# We need more manpower!
     name = "flavor_nor.42.b"
     add_manpower = 10
     add_liberty_desire = 25
@@ -2103,8 +2081,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Money is what we really need
+  option = { 	# Money is what we really need
     name = "flavor_nor.42.c"
     add_treasury = 200
     add_liberty_desire = 25
@@ -2137,8 +2114,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Pah, we will get our independence by our own!
+  option = { 	# Pah, we will get our independence by our own!
     name = "flavor_nor.42.d"
     add_prestige = 20
     custom_tooltip = flavor_nor.42.d.tt
@@ -2153,8 +2129,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #There is little reason for us to wage war against Denmark.
+  option = { 	# There is little reason for us to wage war against Denmark.
     name = "flavor_nor.42.e"
     add_liberty_desire = -50
     ai_chance = {
@@ -2212,8 +2187,7 @@ country_event = {
       has_country_flag = nor_requested_to_give_money
     }
   }
-  desc = {
-    #Fallback
+  desc = { 	# Fallback
     desc = flavor_nor.43.desc.d
     trigger = {
       OR = {
@@ -2225,8 +2199,7 @@ country_event = {
   }
   picture = DIPLOMACY_eventPicture
   is_triggered_only = yes
-  option = {
-    #We shall aid Norway!
+  option = { 	# We shall aid Norway!
     name = "flavor_nor.43.a"
     trigger = {
       OR = {
@@ -2270,8 +2243,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #We see no gain from this
+  option = { 	# We see no gain from this
     name = "flavor_nor.43.b"
     trigger = {
       OR = {
@@ -2297,8 +2269,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #How did you get into my house? - Fallback option for the case something breaks
+  option = { 	# How did you get into my house? - Fallback option for the case something breaks
     name = "flavor_nor.43.c"
     add_prestige = 5
     trigger = {
@@ -2345,8 +2316,7 @@ country_event = {
       }
     }
   }
-  desc = {
-    #Fallback
+  desc = { 	# Fallback
     desc = flavor_nor.44.desc.d
     trigger = {
       FROM = {
@@ -2466,8 +2436,7 @@ country_event = {
   desc = "flavor_nor.46.d"
   picture = CONQUEST_eventPicture
   is_triggered_only = yes
-  option = {
-    #Establish the March of Gaeldon with Sinclair as our representative
+  option = { 	# Establish the March of Gaeldon with Sinclair as our representative
     name = "flavor_nor.46.a"
     highlands_area = {
       limit = {
@@ -2526,8 +2495,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #We can rule over it ourselves
+  option = { 	# We can rule over it ourselves
     name = "flavor_nor.46.b"
     random_owned_province = {
       limit = {
@@ -2613,8 +2581,7 @@ country_event = {
   desc = "flavor_nor.48.d"
   picture = LAND_MILITARY_eventPicture
   is_triggered_only = yes
-  option = {
-    #Iron for Soldiers
+  option = { 	# Iron for Soldiers
     name = "flavor_nor.48.a"
     add_manpower = 15
     add_treasury = 150
@@ -2626,8 +2593,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Copper for Cannons
+  option = { 	# Copper for Cannons
     name = "flavor_nor.48.b"
     capital_scope = {
       artillery = ROOT
@@ -2644,8 +2610,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Gold for Us!
+  option = { 	# Gold for Us!
     name = "flavor_nor.48.c"
     add_years_of_owned_provinces_production_income = {
       years = 4

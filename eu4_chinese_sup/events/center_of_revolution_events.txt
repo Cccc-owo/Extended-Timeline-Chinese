@@ -239,8 +239,7 @@ province_event = {
     modifier = {
       factor = 0.8
       owner = {
-        variable_arithmetic_trigger = {
-          #trade and production is 75% of national income
+        variable_arithmetic_trigger = { 	# trade and production is 75% of national income
           export_to_variable = {
             value = trigger_value:production_income_percentage
             which = burgher_income_proportion
@@ -410,8 +409,7 @@ province_event = {
   fire_only_once = yes
   immediate = {
     hidden_effect = {
-      set_saved_name = {
-        #deliberately never cleared
+      set_saved_name = { 	# deliberately never cleared
         key = first_center_revolutionary_philosopher
         type = advisor
       }
@@ -481,8 +479,7 @@ province_event = {
       has_province_flag = first_revolution_center
     }
   }
-  mean_time_to_happen = {
-    #slightly simplified version of .1000's weights
+  mean_time_to_happen = { 	# slightly simplified version of .1000's weights
     years = 15
     modifier = {
       factor = 0.75
@@ -659,8 +656,7 @@ province_event = {
     modifier = {
       factor = 0.8
       owner = {
-        variable_arithmetic_trigger = {
-          #trade and production is 75% of national income
+        variable_arithmetic_trigger = { 	# trade and production is 75% of national income
           export_to_variable = {
             value = trigger_value:production_income_percentage
             which = burgher_income_proportion
@@ -883,8 +879,7 @@ country_event = {
       set_heir = heir_of_france
     }
     if = {
-      limit = {
-        #you can't get rid of them that easily...
+      limit = { 	# you can't get rid of them that easily...
         has_country_flag = habsburgs_exiled_flag
       }
       define_ruler = {
@@ -1092,8 +1087,7 @@ country_event = {
     }
     NOT = {
       1 = {
-        check_variable = {
-          #it can only happen to 2 countries
+        check_variable = { 	# it can only happen to 2 countries
           which = revolutionary_sentiment_many_loans_happened
           value = 2
         }
@@ -1119,16 +1113,14 @@ country_event = {
     set_country_flag = revolutionary_sentiment_many_loans_happened
     hidden_effect = {
       1 = {
-        change_variable = {
-          #it can only happen to 2 countries
+        change_variable = { 	# it can only happen to 2 countries
           which = revolutionary_sentiment_many_loans_happened
           value = 1
         }
       }
     }
   }
-  option = {
-    #give in to their demands
+  option = { 	# give in to their demands
     name = center_of_revolution.2002.A
     custom_tooltip = revolutionary_sentiment_warning
     set_country_flag = revolutionary_sentiment_many_loans
@@ -1140,8 +1132,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #decline
+  option = { 	# decline
     name = center_of_revolution.2002.B
     add_country_modifier = {
       name = revolution_administrative_reforms
@@ -1197,8 +1188,7 @@ country_event = {
   immediate = {
     set_global_flag = necker_reforms_happened
   }
-  option = {
-    #agree
+  option = { 	# agree
     name = center_of_revolution.2003.A
     add_adm_power = -100
     add_dip_power = -100
@@ -1217,8 +1207,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #decline
+  option = { 	# decline
     name = center_of_revolution.2003.B
     custom_tooltip = revolutionary_sentiment_warning
     set_country_flag = revolutionary_sentiment_necker_reforms
@@ -1253,8 +1242,7 @@ country_event = {
     }
     NOT = {
       1 = {
-        check_variable = {
-          #it can only happen to 2 countries
+        check_variable = { 	# it can only happen to 2 countries
           which = demands_of_the_3rd_estate_happened
           value = 2
         }
@@ -1275,8 +1263,7 @@ country_event = {
         }
       }
     }
-    variable_arithmetic_trigger = {
-      #trade and production is 75% of national income
+    variable_arithmetic_trigger = { 	# trade and production is 75% of national income
       export_to_variable = {
         value = trigger_value:production_income_percentage
         which = burgher_income_proportion
@@ -1311,16 +1298,14 @@ country_event = {
     set_country_flag = demands_of_the_3rd_estate_happened
     hidden_effect = {
       1 = {
-        change_variable = {
-          #it can only happen to 2 countries
+        change_variable = { 	# it can only happen to 2 countries
           which = demands_of_the_3rd_estate_happened
           value = 1
         }
       }
     }
   }
-  option = {
-    #give in to their demands
+  option = { 	# give in to their demands
     name = center_of_revolution.2010.A
     add_estate_loyalty = {
       estate = estate_burghers
@@ -1336,8 +1321,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #decline
+  option = { 	# decline
     name = center_of_revolution.2010.B
     custom_tooltip = revolutionary_sentiment_warning
     set_country_flag = revolutionary_sentiment_3rd_estate_demands
@@ -1458,8 +1442,7 @@ country_event = {
     revolution_target_exists = no
     OR = {
       years_since_dismantle_revolution = 20
-      AND = {
-        #No one ever became RT
+      AND = { 	# No one ever became RT
         had_global_flag = {
           flag = first_revolution_center_spawned
           days = 10950
@@ -3055,8 +3038,7 @@ country_event = {
           is_revolutionary = no
         }
       }
-      add_country_modifier = {
-        # add 30 liberty desire
+      add_country_modifier = { 	#  add 30 liberty desire
         name = "colony_inspired_by_revolution"
         duration = -1
       }

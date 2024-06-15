@@ -8,15 +8,13 @@ country_event = {
   desc = flavor_pue.1.d
   picture = GOOD_WITH_MONARCH_eventPicture
   is_triggered_only = yes
-  option = {
-    # change to Pueblo
+  option = { 	#  change to Pueblo
     name = flavor_pue.1.a
     override_country_name = PUE
     set_country_flag = is_pue_flag
     add_prestige = 50
   }
-  option = {
-    # keep old name
+  option = { 	#  keep old name
     name = flavor_pue.1.b
     add_prestige = 50
   }
@@ -163,8 +161,7 @@ country_event = {
   mean_time_to_happen = {
     months = 240
   }
-  option = {
-    #restore the murals
+  option = { 	# restore the murals
     name = flavor_pue.4.a
     trigger = {
       NOT = {
@@ -179,8 +176,7 @@ country_event = {
     }
     set_country_flag = pue_restored_murals
   }
-  option = {
-    #keep restoring them
+  option = { 	# keep restoring them
     name = flavor_pue.4.b
     trigger = {
       has_country_flag = pue_restored_murals
@@ -192,8 +188,7 @@ country_event = {
       duration = 7300
     }
   }
-  option = {
-    #ignore them
+  option = { 	# ignore them
     name = flavor_pue.4.c
     add_adm_power = 25
   }

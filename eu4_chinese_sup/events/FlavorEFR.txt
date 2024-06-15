@@ -28,8 +28,7 @@ country_event = {
   mean_time_to_happen = {
     months = 60
   }
-  option = {
-    # Request to join the Empire
+  option = { 	#  Request to join the Empire
     name = "flavor_efr.EVTOPTA1"
     ai_chance = {
       factor = 90
@@ -41,8 +40,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # Keep statues quo
+  option = { 	#  Keep statues quo
     name = "flavor_efr.EVTOPTB1"
     ai_chance = {
       factor = 10
@@ -67,8 +65,7 @@ country_event = {
   desc = "flavor_efr.EVTDESC2"
   picture = HRE_eventPicture
   is_triggered_only = yes
-  option = {
-    # Accept East Frisia into the Empire
+  option = { 	#  Accept East Frisia into the Empire
     name = "flavor_efr.EVTOPTA2"
     ai_chance = {
       factor = 100
@@ -79,14 +76,12 @@ country_event = {
       }
     }
   }
-  option = {
-    # Restore province to Holland
+  option = { 	#  Restore province to Holland
     name = "flavor_efr.EVTOPTB2"
     ai_chance = {
       factor = 0
     }
-    hidden_effect = {
-      #East Frisia and claimant are informed of the Emperor's decision.
+    hidden_effect = { 	# East Frisia and claimant are informed of the Emperor's decision.
       EFR = {
         set_country_flag = east_frisia_unrecognised
         country_event = {
@@ -118,8 +113,7 @@ country_event = {
         add_core = event_target:dutch_east_frisia_claimant
       }
     }
-    else = {
-      #if a valid title claimant does not exist, the Emperor gains the claim.
+    else = { 	# if a valid title claimant does not exist, the Emperor gains the claim.
       1931 = {
         add_core = ROOT
       }
@@ -174,8 +168,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # East Frisia is brought into HRE and recognised as a Duchy
+  option = { 	#  East Frisia is brought into HRE and recognised as a Duchy
     name = "flavor_efr.EVTOPTA3"
     ai_chance = {
       factor = 100
@@ -209,8 +202,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # East Frisia remains unrecognised
+  option = { 	#  East Frisia remains unrecognised
     name = "flavor_efr.EVTOPTB3"
     ai_chance = {
       factor = 100
@@ -221,8 +213,7 @@ country_event = {
     }
     add_prestige = -25
   }
-  option = {
-    # Claimant is informed of their claim
+  option = { 	#  Claimant is informed of their claim
     name = "flavor_efr.EVTOPTC3"
     ai_chance = {
       factor = 100

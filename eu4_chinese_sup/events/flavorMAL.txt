@@ -198,8 +198,7 @@ province_event = {
       }
     }
   }
-  option = {
-    #Switch tag to Fulo
+  option = { 	# Switch tag to Fulo
     name = flavor_mal.2.b
     trigger = {
       owner = {
@@ -1673,8 +1672,7 @@ country_event = {
       limit = {
         755 = {
           OR = {
-            owner = {
-              #Mission reward should be not ruined by some native OPM
+            owner = { 	# Mission reward should be not ruined by some native OPM
               was_player = no
               ai = yes
               NOT = {
@@ -1691,8 +1689,7 @@ country_event = {
       if = {
         limit = {
           OR = {
-            owner = {
-              #Mission reward should be not ruined by some native OPM
+            owner = { 	# Mission reward should be not ruined by some native OPM
               was_player = no
               ai = yes
               NOT = {
@@ -1729,8 +1726,7 @@ country_event = {
   desc = flavor_mal.26.desc
   picture = AFRICAN_EUROPEAN_PURCHASE_eventPicture
   is_triggered_only = yes
-  option = {
-    #Ivory trade!
+  option = { 	# Ivory trade!
     name = flavor_mal.26.a
     add_years_of_owned_provinces_production_income = {
       years = 3
@@ -1767,8 +1763,7 @@ country_event = {
   desc = flavor_mal.27.desc
   picture = TRADEGOODS_eventPicture
   is_triggered_only = yes
-  option = {
-    #Ivory trade!
+  option = { 	# Ivory trade!
     name = flavor_mal.27.a
     tooltip = {
       change_price = {
@@ -1790,8 +1785,7 @@ country_event = {
   desc = flavor_mal.28.desc
   picture = AFRICAN_FIGHT_EUROPEANS_eventPicture
   is_triggered_only = yes
-  option = {
-    #Move capital to Timbuktu
+  option = { 	# Move capital to Timbuktu
     name = flavor_mal.28.a
     set_capital = 1132
     1132 = {
@@ -1814,8 +1808,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Develop own capital instead
+  option = { 	# Develop own capital instead
     name = flavor_mal.28.b
     capital_scope = {
       add_base_tax = 2
@@ -1900,8 +1893,7 @@ country_event = {
   desc = flavor_mal.31.desc
   picture = SAHARA_eventPicture
   is_triggered_only = yes
-  option = {
-    #Send a gold gift to the Maghreb people
+  option = { 	# Send a gold gift to the Maghreb people
     name = flavor_mal.31.a
     add_treasury = -400
     every_country = {
@@ -1940,8 +1932,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Send an ivory gift to the Maghreb people
+  option = { 	# Send an ivory gift to the Maghreb people
     name = flavor_mal.31.b
     add_treasury = -200
     every_country = {
@@ -1980,8 +1971,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Send no gold whatsoever
+  option = { 	# Send no gold whatsoever
     name = flavor_mal.31.c
     add_prestige = 10
     ai_chance = {
@@ -2014,8 +2004,7 @@ country_event = {
       clr_country_flag = mal_allowed_to_purchase_trade_colony
     }
   }
-  option = {
-    #Try to buy Gibraltar
+  option = { 	# Try to buy Gibraltar
     name = flavor_mal.32.a
     goto = 226
     trigger = {
@@ -2049,8 +2038,7 @@ country_event = {
       factor = 20
     }
   }
-  option = {
-    #Try to buy Corsica
+  option = { 	# Try to buy Corsica
     name = flavor_mal.32.b
     goto = 1247
     trigger = {
@@ -2084,8 +2072,7 @@ country_event = {
       factor = 20
     }
   }
-  option = {
-    #Try to buy Malta
+  option = { 	# Try to buy Malta
     name = flavor_mal.32.c
     goto = 126
     trigger = {
@@ -2119,8 +2106,7 @@ country_event = {
       factor = 20
     }
   }
-  option = {
-    #Try to buy Minorca
+  option = { 	# Try to buy Minorca
     name = flavor_mal.32.d
     goto = 4559
     trigger = {
@@ -2154,8 +2140,7 @@ country_event = {
       factor = 20
     }
   }
-  option = {
-    #Try to buy Nice
+  option = { 	# Try to buy Nice
     name = flavor_mal.32.e
     goto = 102
     trigger = {
@@ -2189,8 +2174,7 @@ country_event = {
       factor = 20
     }
   }
-  option = {
-    #I need more time to think about it
+  option = { 	# I need more time to think about it
     name = flavor_mal.32.f
     custom_tooltip = flavor_mal.32.f.tt
     hidden_effect = {
@@ -2200,8 +2184,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
-    #I already have them all though
+  option = { 	# I already have them all though
     name = flavor_mal.32.g
     trigger = {
       owns_or_non_sovereign_subject_of = 226
@@ -2225,8 +2208,7 @@ country_event = {
   picture = AFRICAN_EUROPEAN_PURCHASE_eventPicture
   goto = mal_colony_to_buy
   is_triggered_only = yes
-  option = {
-    #Thanks for the money
+  option = { 	# Thanks for the money
     name = flavor_mal.33.a
     event_target:mal_colony_to_buy = {
       remove_core = ROOT
@@ -2313,8 +2295,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Nah
+  option = { 	# Nah
     name = flavor_mal.33.b
     event_target:mal_colony_to_buy = {
       add_core = FROM
@@ -2367,8 +2348,7 @@ country_event = {
   picture = AFRICAN_EUROPEAN_PURCHASE_eventPicture
   goto = mal_colony_to_buy
   is_triggered_only = yes
-  option = {
-    #Lovely
+  option = { 	# Lovely
     name = flavor_mal.34.a
     add_treasury = -2000
     tooltip = {
@@ -2396,8 +2376,7 @@ country_event = {
   picture = AFRICAN_EUROPEAN_PURCHASE_eventPicture
   goto = mal_colony_to_buy
   is_triggered_only = yes
-  option = {
-    #Aww... then I must take it by force then
+  option = { 	# Aww... then I must take it by force then
     name = flavor_mal.35.a
     tooltip = {
       event_target:mal_colony_to_buy = {
@@ -2422,8 +2401,7 @@ country_event = {
   picture = AN_EMPIRE_FOR_A_GIRAFFE_eventPicture
   is_triggered_only = yes
   major = yes
-  option = {
-    #Gold for the entire market!
+  option = { 	# Gold for the entire market!
     name = flavor_mal.36.a
     add_treasury = -15000
     custom_tooltip = flavor_mal.36.a.tt
@@ -2668,8 +2646,7 @@ country_event = {
   desc = flavor_mal.40.desc
   picture = AFRICAN_CARAVAN_eventPicture
   is_triggered_only = yes
-  option = {
-    #Let the Mansa go onto the pilgrimage
+  option = { 	# Let the Mansa go onto the pilgrimage
     name = flavor_mal.40.a
     custom_tooltip = flavor_mal.40.a.tt
     add_country_modifier = {
@@ -2690,8 +2667,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Let the advisors go onto the pilgrimage
+  option = { 	# Let the advisors go onto the pilgrimage
     name = flavor_mal.40.b
     custom_tooltip = flavor_mal.40.b.tt
     remove_advisor_by_category = ADM
@@ -2713,8 +2689,7 @@ country_event = {
       factor = 0
     }
   }
-  option = {
-    #We just take the classical route instead
+  option = { 	# We just take the classical route instead
     name = flavor_mal.40.c
     custom_tooltip = flavor_mal.40.c.tt
     add_country_modifier = {
@@ -3077,8 +3052,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Be generos
+  option = { 	# Be generos
     name = flavor_mal.41.a
     trigger = {
       NOT = {
@@ -3137,8 +3111,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Be moderate
+  option = { 	# Be moderate
     name = flavor_mal.41.b
     trigger = {
       NOT = {
@@ -3191,8 +3164,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Try to not draw attention
+  option = { 	# Try to not draw attention
     name = flavor_mal.41.c
     trigger = {
       NOT = {
@@ -3210,8 +3182,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Glad to be back home
+  option = { 	# Glad to be back home
     name = flavor_mal.41.d
     trigger = {
       has_country_flag = mal_journey_to_home
@@ -3229,8 +3200,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Quite nice here (fringe case - nobody has a capital in this region)
+  option = { 	# Quite nice here (fringe case - nobody has a capital in this region)
     name = flavor_mal.41.e
     trigger = {
       NOT = {
@@ -3244,8 +3214,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Quite nice here (fringe case - Mali is the only worthy power here)
+  option = { 	# Quite nice here (fringe case - Mali is the only worthy power here)
     name = flavor_mal.41.f
     trigger = {
       NOT = {
@@ -3275,8 +3244,7 @@ country_event = {
       has_country_modifier = mal_mansas_journey
       has_country_modifier = mal_advisors_journey
     }
-    OR = {
-      #The times are estimated under the condition that your capital is in West Africa
+    OR = { 	# The times are estimated under the condition that your capital is in West Africa
       #A Mali which has its capital God knows where breaks its own immersion - fair trade off for moving your capital away imo
       had_country_flag = {
         flag = mal_journey_to_iberia
@@ -3402,8 +3370,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Accept gift
+  option = { 	# Accept gift
     name = flavor_mal.43.a
     custom_tooltip = flavor_mal.43.a.tt
     add_inflation_scaled_to_trade = {
@@ -3433,8 +3400,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Decline
+  option = { 	# Decline
     name = flavor_mal.43.b
     custom_tooltip = flavor_mal.43.b.tt
     add_country_modifier = {
@@ -3498,8 +3464,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Yay!
+  option = { 	# Yay!
     name = flavor_mal.44.a
     reverse_add_opinion = {
       who = FROM
@@ -3562,15 +3527,13 @@ country_event = {
       }
     }
   }
-  option = {
-    #Welp... their misfortune
+  option = { 	# Welp... their misfortune
     name = flavor_mal.45.a
     ai_chance = {
       factor = 1
     }
   }
-  option = {
-    #Maybe somebody else wants it instead
+  option = { 	# Maybe somebody else wants it instead
     name = flavor_mal.45.b
     trigger = {
       FROM = {
@@ -3625,8 +3588,7 @@ country_event = {
       set_country_flag = mal_is_already_getting_visit
     }
   }
-  option = {
-    #Oof
+  option = { 	# Oof
     name = flavor_mal.46.a
     tooltip = {
       add_country_modifier = {
@@ -3646,8 +3608,7 @@ country_event = {
   trigger = {
     has_country_modifier = mal_mansas_journey
   }
-  option = {
-    #Oh...
+  option = { 	# Oh...
     name = flavor_mal.47.a
     custom_tooltip = flavor_mal.47.a.tt
     add_piety = 0.25
@@ -3665,8 +3626,7 @@ country_event = {
   desc = flavor_mal.48.desc
   picture = MALI_RULER_eventPicture
   is_triggered_only = yes
-  option = {
-    #Lovely
+  option = { 	# Lovely
     name = flavor_mal.48.a
     385 = {
       add_base_tax = 2

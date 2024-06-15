@@ -19,8 +19,7 @@ swe_scandinavian_colonialism_mission_slot = {
     }
   }
   has_country_shield = yes
-  swe_engelbrekt_rebellion = {
-    #aka. build troops
+  swe_engelbrekt_rebellion = { 	# aka. build troops
     icon = mission_engelbrekt
     position = 1
     required_missions = {}
@@ -1203,8 +1202,7 @@ swe_diplomacy_mission_slot = {
         }
       }
     }
-    effect = {
-      #Maybe a new event for Lübeck?
+    effect = { 	# Maybe a new event for Lübeck?
       if = {
         limit = {
           owns_or_non_sovereign_subject_of = 45
@@ -2736,8 +2734,7 @@ swe_kalmar_union_mission_slot = {
           has_mil_advisor_3 = yes
           mil_power_cost = 800
           if = {
-            limit = {
-              #Promote Advisors - +2
+            limit = { 	# Promote Advisors - +2
               has_dlc = "Cradle of Civilization"
               #National Focus - +2
               has_dlc = "Res Publica"
@@ -3469,8 +3466,7 @@ swe_swedish_military_mission_slot = {
       }
     }
   }
-  swe_a_new_dynasty = {
-    #Get Stability and Legitimacy up
+  swe_a_new_dynasty = { 	# Get Stability and Legitimacy up
     icon = mission_restore_faith_in_the_throne
     position = 3
     required_missions = { swe_gain_support_from_estates swe_declare_independence }
@@ -3674,8 +3670,7 @@ swe_swedish_military_mission_slot = {
           }
         }
       }
-      else = {
-        #Fallback case
+      else = { 	# Fallback case
         custom_trigger_tooltip = {
           tooltip = swe_the_polish_throne_tt
           mission_completed = swe_a_new_dynasty
@@ -3801,8 +3796,7 @@ swe_swedish_military_mission_slot = {
         add_dip_power = 100
         add_splendor = 400
       }
-      else_if = {
-        #Fallback case
+      else_if = { 	# Fallback case
         limit = {
           mission_completed = swe_a_new_dynasty
           NOT = {

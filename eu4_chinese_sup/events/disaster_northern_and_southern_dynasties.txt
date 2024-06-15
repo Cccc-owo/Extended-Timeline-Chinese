@@ -7,8 +7,7 @@ country_event = {
   picture = CIVIL_WAR_eventPicture
   is_triggered_only = yes
   fire_only_once = yes
-  option = {
-    # Le (or Nguyen if later) dynasty in the south
+  option = { 	#  Le (or Nguyen if later) dynasty in the south
     name = dai_disaster.1.a
     trigger = {
       num_of_owned_provinces_with = {
@@ -55,8 +54,7 @@ country_event = {
       id = dai_disaster.2
     }
   }
-  option = {
-    # Mac (or Trinh if later) dynasty in the north
+  option = { 	#  Mac (or Trinh if later) dynasty in the north
     name = dai_disaster.1.b
     trigger = {
       num_of_owned_provinces_with = {
@@ -116,8 +114,7 @@ country_event = {
   major = yes
   fire_only_once = yes
   immediate = {
-    hidden_effect = {
-      # Create Northern country if Dai Viet picked the Southern Dynasty
+    hidden_effect = { 	#  Create Northern country if Dai Viet picked the Southern Dynasty
       if = {
         limit = {
           has_country_flag = dai_southern_dynasty
@@ -249,8 +246,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # for the southern dynasty
+  option = { 	#  for the southern dynasty
     name = dai_disaster.2.a
     trigger = {
       has_country_flag = dai_southern_dynasty
@@ -291,8 +287,7 @@ country_event = {
       }
     }
   }
-  option = {
-    # for the northern dynasty
+  option = { 	#  for the northern dynasty
     name = dai_disaster.2.a
     trigger = {
       has_country_flag = dai_northern_dynasty

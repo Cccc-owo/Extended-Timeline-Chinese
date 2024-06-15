@@ -734,9 +734,7 @@ WoC_austria_1_1 = {
   hab_austria_prospers = {
     icon = austria_prospers
     position = 12
-    required_missions = {
-      hab_balance_estates = hab_tirol_silver_mine
-    }
+    required_missions = { hab_balance_estates hab_tirol_silver_mine }
     provinces_to_highlight = {
       culture = austrian
       OR = {
@@ -2028,9 +2026,7 @@ WoC_austria_2_1 = {
   hab_eastern_roman_empire = {
     icon = take_constantinople
     position = 10
-    required_missions = {
-      hab_liberate_balkans = hab_beat_up_ottomans
-    }
+    required_missions = { hab_liberate_balkans hab_beat_up_ottomans }
     provinces_to_highlight = {
       province_id = 151
       NOT = {
@@ -2079,12 +2075,8 @@ WoC_austria_2_1 = {
           }
         "
         first_effect = "
-          BYZ = {
-            change_tag = LAE
-            change_religion = ROOT
-            set_dynasty = ROOT
-          }
-          add_scaled_imperial_influence = 5
+          BYZ = { change_tag = LAE change_religion = ROOT set_dynasty = ROOT }
+          if = { limit = { is_emperor =  yes } add_scaled_imperial_influence = 5 }
         "
       }
     }
@@ -2188,9 +2180,7 @@ WoC_austria_2_1 = {
   hab_von_raab = {
     icon = rein_in_the_nobles
     position = 13
-    required_missions = {
-      hab_austria_prospers = hab_vienna_university
-    }
+    required_missions = { hab_austria_prospers hab_vienna_university }
     trigger = {
       OR = {
         NOT = {
@@ -2842,9 +2832,7 @@ WoC_austria_3_1 = {
   hab_the_last_knights = {
     icon = league_of_the_public_weal
     position = 12
-    required_missions = {
-      hab_balance_of_power = hab_balance_estates
-    }
+    required_missions = { hab_balance_of_power hab_balance_estates }
     trigger = {
       army_tradition = 40
       num_of_cavalry = 25
@@ -2893,9 +2881,7 @@ WoC_austria_3_1 = {
   hab_aeiou = {
     icon = glory_to_von_habsburg
     position = 14
-    required_missions = {
-      hab_spread_dynasty = hab_von_raab
-    }
+    required_missions = { hab_spread_dynasty hab_von_raab }
     trigger = {
       if = {
         limit = {
@@ -3075,9 +3061,7 @@ WoC_austria_4 = {
   hab_western_europe = {
     icon = mission_establish_mint_towns
     position = 4
-    required_missions = {
-      hab_defeat_west_franks = hab_spain_pu
-    }
+    required_missions = { hab_defeat_west_franks hab_spain_pu }
     provinces_to_highlight = {
       OR = {
         region = france_region
@@ -3530,9 +3514,7 @@ WoC_austria_4 = {
   hab_austrian_australia = {
     icon = colonize_australia
     position = 10
-    required_missions = {
-      hab_indian_trading = hab_china
-    }
+    required_missions = { hab_indian_trading hab_china }
     provinces_to_highlight = {
       region = australia_region
       ROOT = {

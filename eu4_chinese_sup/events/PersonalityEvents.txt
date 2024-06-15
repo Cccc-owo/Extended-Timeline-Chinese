@@ -111,8 +111,7 @@ country_event = {
     clr_ruler_flag = scholar_cartograph
     add_dip_power = 50
     add_years_of_income = -0.1
-    random_province = {
-      #This part simply does nothing if there is no viable area.
+    random_province = { 	# This part simply does nothing if there is no viable area.
       limit = {
         NOT = {
           region = ural_region
@@ -1143,8 +1142,7 @@ country_event = {
           remove_ruler_personality = free_thinker_personality
           add_ruler_personality = zealot_personality
         }
-        70 = {
-          #Nothing to see here
+        70 = { 	# Nothing to see here
         }
       }
     }
@@ -1192,8 +1190,7 @@ country_event = {
           set_country_flag = well_connected_master_recruiter
         }
       }
-      random_known_country = {
-        #From where?
+      random_known_country = { 	# From where?
         limit = {
           NOT = {
             tag = ROOT
@@ -1681,8 +1678,7 @@ country_event = {
     NOT = {
       has_ruler_flag = well_advised_tutored_heir
     } 	# Also cleared on heir death.
-    OR = {
-      #A well advised monarch without advisors is not that well advised.
+    OR = { 	# A well advised monarch without advisors is not that well advised.
       AND = {
         OR = {
           advisor = philosopher
@@ -1816,8 +1812,7 @@ country_event = {
     NOT = {
       has_ruler_flag = well_advised_tutored
     } 	# Also cleared on heir death.
-    OR = {
-      #A well advised ruler without advisors is not that well advised.
+    OR = { 	# A well advised ruler without advisors is not that well advised.
       AND = {
         OR = {
           advisor = philosopher
@@ -2863,8 +2858,7 @@ country_event = {
   mean_time_to_happen = {
     days = 1
   }
-  option = {
-    # hold tournaments for two years
+  option = { 	#  hold tournaments for two years
     name = "personality_events.39.a"
     add_army_professionalism = 0.01
     add_ruler_modifier = {
@@ -2872,8 +2866,7 @@ country_event = {
       duration = 3650
     }
   }
-  option = {
-    # drill troops for seven years
+  option = { 	#  drill troops for seven years
     name = "personality_events.39.b"
     add_army_professionalism = 0.01
     add_ruler_modifier = {
@@ -3080,8 +3073,7 @@ country_event = {
         has_idea = quest_for_the_new_world
       }
     }
-    define_admiral = {
-      #name = "Nerus the Gentle"
+    define_admiral = { 	# name = "Nerus the Gentle"
       shock = 2
       fire = 2
       manuever = 3
@@ -3089,8 +3081,7 @@ country_event = {
   }
   option = {
     name = "personality_events.43.b"
-    define_explorer = {
-      #name = "Nerus the Gentle"
+    define_explorer = { 	# name = "Nerus the Gentle"
       shock = 2
       fire = 2
       manuever = 3
@@ -3161,8 +3152,7 @@ country_event = {
     days = 1
   }
   immediate = {
-    hidden_effect = {
-      #Finds a country which dislikes you but isn't your enemy
+    hidden_effect = { 	# Finds a country which dislikes you but isn't your enemy
       random_neighbor_country = {
         limit = {
           NOT = {
@@ -3321,8 +3311,7 @@ country_event = {
     }
   }
   immediate = {
-    hidden_effect = {
-      #Find country nr 1
+    hidden_effect = { 	# Find country nr 1
       random_country = {
         limit = {
           marriage_with = ROOT
@@ -3518,8 +3507,7 @@ country_event = {
         20 = {
           set_country_flag = homosexual_ruler
         }
-        80 = {
-          #Nothing
+        80 = { 	# Nothing
         }
       }
     }

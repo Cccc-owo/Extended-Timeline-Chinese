@@ -315,8 +315,7 @@ country_event = {
     months = 800
   }
   immediate = {
-    check_if_non_state_advisor_effect = {
-      #Hidden scripted effect, is used by scripted effect and must always be cleared in after = { } using erase_advisor_flags_effect.
+    check_if_non_state_advisor_effect = { 	# Hidden scripted effect, is used by scripted effect and must always be cleared in after = { } using erase_advisor_flags_effect.
       chance_of_primary = 85 	# Not percentages!
       chance_of_tertiary = 5
       chance_of_secondary = 15
@@ -720,6 +719,7 @@ country_event = {
       has_reform = mamluk_government
     }
     has_regency = no
+    is_lesser_in_union = no
     any_known_country = {
       dynasty = ROOT
       government = monarchy
@@ -1523,8 +1523,7 @@ country_event = {
       }
     }
     event_target:marriage_policy_paid_off_here = {
-      define_heir = {
-        #Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
+      define_heir = { 	# Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
         dynasty = ROOT
         age = 14
       }
@@ -1543,8 +1542,7 @@ country_event = {
       dynasty = "¯Q ÈT^¯e!X" 	# von Habsburg
     }
     event_target:marriage_policy_paid_off_here = {
-      define_heir = {
-        #Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
+      define_heir = { 	# Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
         dynasty = ROOT
         age = 14
       }

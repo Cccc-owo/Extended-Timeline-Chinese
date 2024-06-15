@@ -1,6 +1,5 @@
 #Estate Privilege on_action effects are in 01_scripted_effects_for_estates.txt
-initialize_schools_effect = {
-  #Used in on_startup on_action
+initialize_schools_effect = { 	# Used in on_startup on_action
   if = {
     limit = {
       NOT = {
@@ -8,8 +7,7 @@ initialize_schools_effect = {
       }
     }
     set_global_flag = schools_initiated
-    random_country = {
-      #Ismailis are disliked by all Sunnis at start.
+    random_country = { 	# Ismailis are disliked by all Sunnis at start.
       limit = {
         religious_school = {
           group = muslim
@@ -65,8 +63,7 @@ initialize_schools_effect = {
         }
       }
     }
-    random_country = {
-      #Jafaris are disliked by all Sunnis at start.
+    random_country = { 	# Jafaris are disliked by all Sunnis at start.
       limit = {
         religious_school = {
           group = muslim
@@ -122,8 +119,7 @@ initialize_schools_effect = {
         }
       }
     }
-    random_country = {
-      #Zaidis are disliked by all Sunnis at start.
+    random_country = { 	# Zaidis are disliked by all Sunnis at start.
       limit = {
         religious_school = {
           group = muslim
@@ -402,8 +398,7 @@ on_new_monarch_effect = {
     }
   }
 }
-battle_cult_spreading_effect = {
-  #Yemoya
+battle_cult_spreading_effect = { 	# Yemoya
   if = {
     limit = {
       ROOT = {
@@ -1513,8 +1508,7 @@ ladislaus_postumus_union_effect = {
     }
   }
 }
-burgundian_inheritance_start_effect = {
-  #Burgundian succession stuff
+burgundian_inheritance_start_effect = { 	# Burgundian succession stuff
   if = {
     limit = {
       tag = BUR
@@ -1544,8 +1538,7 @@ burgundian_inheritance_start_effect = {
       }
     }
     clr_ruler_flag = is_charles_of_burg_flag
-    add_country_modifier = {
-      #country modifier used to weaken Charles's fertility, is also used as a trigger for the inheritance event above.
+    add_country_modifier = { 	# country modifier used to weaken Charles's fertility, is also used as a trigger for the inheritance event above.
       name = burgundian_succession_crisis
       duration = -1
       hidden = yes
@@ -2332,8 +2325,7 @@ on_battle_won_unit_effect = {
     limit = {
       unit_owner = {
         has_government_mechanic = ottoman_decadence_mechanic
-        check_variable = {
-          #Check so overrun will not decrease Decadence
+        check_variable = { 	# Check so overrun will not decrease Decadence
           which = land_units_lost
           value = 1
         }
@@ -2357,8 +2349,7 @@ on_battle_won_unit_effect = {
         which = monarch_losses
         value = 1000
       }
-      change_variable = {
-        #in order to avoid division by 0
+      change_variable = { 	# in order to avoid division by 0
         which = monarch_losses
         value = 1
       }
@@ -2452,8 +2443,7 @@ on_battle_lost_unit_effect = {
     limit = {
       unit_owner = {
         has_government_mechanic = ottoman_decadence_mechanic
-        check_variable = {
-          #Check so overrun will not decrease Decadence
+        check_variable = { 	# Check so overrun will not decrease Decadence
           which = land_units_killed
           value = 1
         }
@@ -2477,8 +2467,7 @@ on_battle_lost_unit_effect = {
         which = monarch_losses
         value = 1000
       }
-      change_variable = {
-        #in order to avoid division by 0
+      change_variable = { 	# in order to avoid division by 0
         which = monarch_kill
         value = 1
       }
@@ -2767,8 +2756,7 @@ judaism_on_province_culture_converted_effect = {
     }
   }
 }
-on_religion_change_effect = {
-  ###removes catholic modifiers
+on_religion_change_effect = { 	# ##removes catholic modifiers
   remove_country_modifier = counter_reformation
   remove_country_modifier = the_statue_in_restraint_of_appeals
   remove_country_modifier = revocation_of_restraint_of_appeals
@@ -3000,8 +2988,7 @@ judaism_on_religion_change_effect = {
 #	on_culture_demoted_effect_free_slot_removal = { culture = occitain }
 #}
 #Country effect
-on_culture_demoted_effect = {
-  #if = {
+on_culture_demoted_effect = { 	# if = {
   #	limit = {
   #		has_country_flag = boh_czechoslovak_brotherhood_flag
   #		NOT = {
@@ -3888,13 +3875,7 @@ remove_all_age_of_absolutism_modifiers = {
     }
   }
 }
-remove_all_age_of_revolution_modifiers = {
-  #if = {
-  #	limit = {
-  #		NOT = { current_age = age_of_revolutions }
-  #	}
-  #}
-  #Empty as there are no modifiers specific for this age
+remove_all_age_of_revolution_modifiers = { 	# if = { 	# 	limit = { 	# 		NOT = { current_age = age_of_revolutions } 	# 	} 	# } 	# Empty as there are no modifiers specific for this age
 }
 set_age_passed_global_flag = {
   if = {
@@ -4389,51 +4370,6 @@ on_alliance_broken_effect = {
         }
       }
       remove_country_modifier = mam_ven_cooperation_modifier
-    }
-  }
-  if = {
-    limit = {
-      has_country_modifier = hsn_a_sublime_alliance
-      NOT = {
-        alliance_with = event_target:hsn_anatolian_ally
-      }
-    }
-    remove_country_modifier = hsn_a_sublime_alliance
-  }
-  FROM = {
-    if = {
-      limit = {
-        has_country_modifier = hsn_a_sublime_alliance
-        NOT = {
-          alliance_with = event_target:hsn_anatolian_ally
-        }
-      }
-      remove_country_modifier = hsn_a_sublime_alliance
-    }
-  }
-  if = {
-    limit = {
-      has_saved_global_event_target = hsn_anatolian_ally
-    }
-    if = {
-      limit = {
-        has_country_modifier = hsn_a_sublime_alliance
-        NOT = {
-          alliance_with = event_target:hsn_anatolian_ally
-        }
-      }
-      remove_country_modifier = hsn_a_sublime_alliance
-    }
-    FROM = {
-      if = {
-        limit = {
-          has_country_modifier = hsn_a_sublime_alliance
-          NOT = {
-            alliance_with = event_target:hsn_anatolian_ally
-          }
-        }
-        remove_country_modifier = hsn_a_sublime_alliance
-      }
     }
   }
 }
@@ -5372,8 +5308,7 @@ on_change_tag_effect = {
     }
   }
 }
-on_force_conversion_effect = {
-  #if = {	#Commented out for now because Catholicism has received a lot of buffs already.
+on_force_conversion_effect = { 	# if = {	#Commented out for now because Catholicism has received a lot of buffs already.
   #	limit = {
   #		FROM = { religion = catholic }
   #	}
@@ -6240,6 +6175,29 @@ on_dependency_gained_effect = {
     overlord = ROOT
     subject = FROM
   }
+  FROM = {
+    if = {
+      limit = {
+        OR = {
+          is_subject_of_type = personal_union
+          is_subject_of_type = integrated_personal_union
+        }
+        has_reform = stadthalter_monarchy_reform
+      }
+      remove_government_reform = stadthalter_monarchy_reform
+    }
+    if = {
+      limit = {
+        OR = {
+          has_country_flag = hun_ladislaus_postumus_king
+          has_country_flag = hun_ladislaus_postumus_heir
+        }
+        is_lesser_in_union = yes
+      }
+      clr_country_flag = hun_ladislaus_postumus_king
+      clr_country_flag = hun_ladislaus_postumus_heir
+    }
+  }
   if = {
     limit = {
       FROM = {
@@ -6249,8 +6207,7 @@ on_dependency_gained_effect = {
     ROOT = {
       country_event = {
         id = dutch_republic.31
-      }
-      # States General falls under a PU
+      } 	#  States General falls under a PU
     }
   }
   if = {
@@ -6364,8 +6321,7 @@ on_monarch_death_effect = {
       id = polynesian.36
     }
   }
-  if = {
-    # Ascension of Trailokanat	
+  if = { 	#  Ascension of Trailokanat	
     limit = {
       tag = AYU
     }

@@ -562,8 +562,7 @@ country_event = {
         controlled_by = TEU
       }
     }
-    TEU = {
-      #The Teutonic order hasn't connected their lands to Neumark
+    TEU = { 	# The Teutonic order hasn't connected their lands to Neumark
       NOT = {
         owns = 48
       } 	# Kolberg
@@ -605,8 +604,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #We could not afford that.
+  option = { 	# We could not afford that.
     name = "flavor_brapru.15.b"
     ai_chance = {
       factor = 25
@@ -875,8 +873,7 @@ country_event = {
   mean_time_to_happen = {
     months = 48
   }
-  option = {
-    #Great!
+  option = { 	# Great!
     name = flavor_brapru.21.a
     clr_country_flag = pru_berlin_renovations_flag
     50 = {
@@ -911,8 +908,7 @@ country_event = {
       has_ruler = "?–S^÷–^yr I 0?–ŽU	t¯e0" 	# Albrecht I Achilles
     }
   }
-  immediate = {
-    #Great!
+  immediate = { 	# Great!
     clr_country_flag = albrecht_achilles_flag
     hidden_effect = {
       ANS = {
@@ -934,8 +930,7 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   fire_only_once = yes
   is_triggered_only = yes
-  option = {
-    #Great!
+  option = { 	# Great!
     name = flavor_brapru.23.a
     ai_chance = {
       factor = 100
@@ -952,8 +947,7 @@ country_event = {
       } 	# Succession of Albrecht Achilles
     }
   }
-  option = {
-    #Great!
+  option = { 	# Great!
     name = flavor_brapru.23.b
     ai_chance = {
       factor = 0
@@ -977,8 +971,7 @@ country_event = {
   picture = GOOD_WITH_MONARCH_eventPicture
   fire_only_once = yes
   is_triggered_only = yes
-  option = {
-    #Great!
+  option = { 	# Great!
     name = flavor_brapru.23.a
     set_country_flag = accepted_ANS_union_flag
     create_union = ANS
@@ -1036,8 +1029,7 @@ country_event = {
     }
   }
   #Protect Brandenburg by letting go of the Franconian lands.
-  option = {
-    #Brandenburg must be indivisible!
+  option = { 	# Brandenburg must be indivisible!
     name = flavor_brapru.25.a
     ai_chance = {
       factor = 50
@@ -1095,8 +1087,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #This is only a problem in families that dont stick together.
+  option = { 	# This is only a problem in families that dont stick together.
     name = flavor_brapru.25.b
     ai_chance = {
       factor = 50
@@ -1175,8 +1166,7 @@ country_event = {
   mean_time_to_happen = {
     months = 60
   }
-  option = {
-    #Great!
+  option = { 	# Great!
     name = flavor_brapru.26.a
     set_country_flag = hired_cocceji
     if = {
@@ -1232,8 +1222,7 @@ country_event = {
       set_country_flag = pru_legal_reforms_flag
     }
   }
-  option = {
-    #Yes! Start in Gods name!
+  option = { 	# Yes! Start in Gods name!
     name = flavor_brapru.27.a
     ai_chance = {
       factor = 75
@@ -1252,8 +1241,7 @@ country_event = {
       duration = -1
     }
   }
-  option = {
-    #We have no time for legal Procedure and other formalities&
+  option = { 	# We have no time for legal Procedure and other formalities&
     name = flavor_brapru.27.b
     ai_chance = {
       factor = 25
@@ -1403,8 +1391,7 @@ country_event = {
   mean_time_to_happen = {
     months = 90
   }
-  option = {
-    # Hire him as an advisor!
+  option = { 	#  Hire him as an advisor!
     name = flavor_brapru.29.a
     ai_chance = {
       factor = 80
@@ -1417,8 +1404,7 @@ country_event = {
       discount = yes
     }
   }
-  option = {
-    # Have him lead troops!
+  option = { 	#  Have him lead troops!
     name = flavor_brapru.29.b
     ai_chance = {
       factor = 10
@@ -1431,8 +1417,7 @@ country_event = {
       siege = 1
     }
   }
-  option = {
-    # We don't need his ideas
+  option = { 	#  We don't need his ideas
     name = flavor_brapru.29.c
     ai_chance = {
       factor = 10
@@ -1601,8 +1586,7 @@ country_event = {
     }
     desc = flavor_brapru.32.db
   }
-  option = {
-    #Great!
+  option = { 	# Great!
     name = flavor_brapru.32.a
     add_prestige = 10
     1759 = {
@@ -1869,7 +1853,10 @@ country_event = {
   picture = RELIGION_eventPicture
   fire_only_once = yes
   trigger = {
-    tag = BRA
+    OR = {
+      tag = BRA
+      tag = PRU
+    }
     owns = 50
     religion = protestant
     is_year = 1635
@@ -2221,6 +2208,7 @@ country_event = {
       flag = accepted_ANS_union_flag
       days = 1825
     }
+    has_dlc = "Domination"
   }
   mean_time_to_happen = {
     months = 1
@@ -2396,6 +2384,7 @@ country_event = {
   title = flavor_brapru.45.t 	# Kreditwerk
   desc = flavor_brapru.45.d
   picture = COURT_eventPicture
+  fire_only_once = yes
   trigger = {
     OR = {
       tag = BRA

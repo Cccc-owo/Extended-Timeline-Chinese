@@ -199,9 +199,7 @@ NED_1_1 = {
   NED_low_countries_urbanization = {
     icon = mission_hanseatic_city
     position = 7
-    required_missions = {
-      NED_dutch_polders = NED_dutch_canal_works
-    }
+    required_missions = { NED_dutch_polders NED_dutch_canal_works }
     provinces_to_highlight = {
       region = low_countries_region
       country_or_non_sovereign_subject_holds = ROOT
@@ -1038,9 +1036,7 @@ NED_2_1 = {
   NED_humanism = {
     icon = mission_european_church
     position = 12
-    required_missions = {
-      NED_universities = NED_organizing_the_church
-    }
+    required_missions = { NED_universities NED_organizing_the_church }
     trigger = {
       OR = {
         full_idea_group = humanist_ideas
@@ -1060,9 +1056,7 @@ NED_2_1 = {
   NED_erasmus = {
     icon = ned_erasmus
     position = 14
-    required_missions = {
-      NED_unified_confession = NED_religious_immigrants
-    }
+    required_missions = { NED_unified_confession NED_religious_immigrants }
     trigger = {
       religious_unity = 1
       theologian = 3
@@ -1155,9 +1149,7 @@ NED_2_1 = {
   NED_grand_design = {
     icon = colonize_brazil
     position = 18
-    required_missions = {
-      NED_carribean_colonies = NED_ivory_trade
-    }
+    required_missions = { NED_carribean_colonies NED_ivory_trade }
     provinces_to_highlight = {
       OR = {
         region = guinea_region
@@ -1440,9 +1432,7 @@ NED_3_1 = {
   NED_glorious_revolution = {
     icon = the_glorious_revolution
     position = 5
-    required_missions = {
-      NED_english_channel_dominance = NED_english_relations
-    }
+    required_missions = { NED_english_channel_dominance NED_english_relations }
     provinces_to_highlight = {
       if = {
         limit = {
@@ -1669,6 +1659,17 @@ NED_3_1 = {
     icon = leiden_university
     position = 12
     required_missions = { NED_universities }
+    provinces_to_highlight = {
+      province_id = 4383
+      OR = {
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
+        NOT = {
+          development = 30
+        }
+      }
+    }
     trigger = {
       4383 = {
         country_or_non_sovereign_subject_holds = ROOT
@@ -1704,9 +1705,7 @@ NED_3_1 = {
   NED_unified_confession = {
     icon = religious_resolution
     position = 13
-    required_missions = {
-      NED_humanism = NED_patronage_of_arts
-    }
+    required_missions = { NED_humanism NED_patronage_of_arts }
     trigger = {
       religious_unity = 0.9
       if = {
@@ -1769,9 +1768,7 @@ NED_3_1 = {
   NED_ivory_trade = {
     icon = mission_trade_in_gold_coast
     position = 17
-    required_missions = {
-      NED_west_indies_company = NED_founding_the_voc
-    }
+    required_missions = { NED_west_indies_company NED_founding_the_voc }
     provinces_to_highlight = {
       region = guinea_region
       province_has_center_of_trade_of_level = 1
@@ -2020,6 +2017,18 @@ NED_4 = {
           }
         "
       }
+      hidden_effect = {
+        if = {
+          limit = {
+            12 = {
+              country_or_non_sovereign_subject_holds = ROOT
+            }
+          }
+          country_event = {
+            id = dutch_mission_events.4
+          }
+        }
+      }
     }
   }
   NED_baltic_supremacy = {
@@ -2103,9 +2112,14 @@ NED_4_1 = {
           who = ENG
           value = 1.1
         }
-        has_spy_network_in = {
-          who = ENG
-          value = 30
+        OR = {
+          ENG = {
+            is_subject = yes
+          }
+          has_spy_network_in = {
+            who = ENG
+            value = 30
+          }
         }
         total_development = ENG
       }
@@ -2117,9 +2131,14 @@ NED_4_1 = {
           who = GBR
           value = 1.1
         }
-        has_spy_network_in = {
-          who = GBR
-          value = 30
+        OR = {
+          GBR = {
+            is_subject = yes
+          }
+          has_spy_network_in = {
+            who = GBR
+            value = 30
+          }
         }
         total_development = GBR
       }
@@ -2279,9 +2298,7 @@ NED_4_1 = {
   NED_army_of_the_state = {
     icon = establish_a_standing_army
     position = 7
-    required_missions = {
-      NED_marician_reforms = NED_garrision_system
-    }
+    required_missions = { NED_marician_reforms NED_garrision_system }
     trigger = {
       army_size = 200
       num_of_battles = {
@@ -2425,9 +2442,7 @@ NED_4_1 = {
   NED_question_of_the_confederation = {
     icon = bavarian_netherlands
     position = 10
-    required_missions = {
-      NED_organizing_the_seven_provinces = NED_managing_stadholders
-    }
+    required_missions = { NED_organizing_the_seven_provinces NED_managing_stadholders }
     trigger = {
       has_final_tier_reforms_trigger = yes
       if = {
@@ -2479,9 +2494,7 @@ NED_4_1 = {
   NED_patronage_of_arts = {
     icon = sponsor_the_arts
     position = 12
-    required_missions = {
-      NED_northern_renaissance = NED_universities
-    }
+    required_missions = { NED_northern_renaissance NED_universities }
     trigger = {
       prestige = 50
       if = {
@@ -2508,9 +2521,7 @@ NED_4_1 = {
   NED_golden_age = {
     icon = ned_golden_age
     position = 14
-    required_missions = {
-      NED_unified_confession = NED_dutch_architecture
-    }
+    required_missions = { NED_unified_confession NED_dutch_architecture }
     trigger = {
       total_development = 700
       prestige = 90
@@ -2974,10 +2985,21 @@ NED_5_1 = {
       NOT = {
         average_home_autonomy = 10
       }
-      OR = {
-        full_idea_group = administrative_ideas
-        ruler_has_personality = lawgiver_personality
-        current_size_of_parliament = 10
+      if = {
+        limit = {
+          has_parliament = yes
+        }
+        OR = {
+          full_idea_group = administrative_ideas
+          ruler_has_personality = lawgiver_personality
+          current_size_of_parliament = 10
+        }
+      }
+      else = {
+        OR = {
+          full_idea_group = administrative_ideas
+          ruler_has_personality = lawgiver_personality
+        }
       }
     }
     effect = {

@@ -119,8 +119,7 @@ country_event = {
   mean_time_to_happen = {
     months = 1
   }
-  option = {
-    #Long live Pacachuti, he who makes the Earth Shake!
+  option = { 	# Long live Pacachuti, he who makes the Earth Shake!
     name = flavor_inc.2.a
     hidden_effect = {
       country_event = {
@@ -169,8 +168,7 @@ country_event = {
   trigger = {
     owns = 808 	# Though losing this is very unlikely.
   }
-  option = {
-    #Let us create a worthy capital!
+  option = { 	# Let us create a worthy capital!
     name = flavor_inc.3.a
     goto = 808
     set_country_flag = inc_cusco_began
@@ -186,8 +184,7 @@ country_event = {
     add_adm_power = -25
     add_dip_power = -25
   }
-  option = {
-    #Our resources are better used for other things.
+  option = { 	# Our resources are better used for other things.
     name = flavor_inc.3.b
     add_stability_or_adm_power = yes
   }
@@ -211,8 +208,7 @@ country_event = {
   mean_time_to_happen = {
     months = 1
   }
-  option = {
-    #Great!
+  option = { 	# Great!
     name = flavor_inc.4.a
     808 = {
       add_province_modifier = {
@@ -250,8 +246,7 @@ country_event = {
   mean_time_to_happen = {
     months = 75
   }
-  option = {
-    #Make it great.
+  option = { 	# Make it great.
     name = flavor_inc.5.a
     goto = 807
     set_capital = 807
@@ -279,8 +274,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Let's not get carried away.
+  option = { 	# Let's not get carried away.
     name = flavor_inc.5.b
     add_stability_or_adm_power = yes
   }
@@ -299,8 +293,7 @@ country_event = {
   mean_time_to_happen = {
     months = 120
   }
-  option = {
-    #Move the Huacas to the Temple.
+  option = { 	# Move the Huacas to the Temple.
     name = flavor_inc.6.a
     add_stability = -1
     add_legitimacy = -10
@@ -317,8 +310,7 @@ country_event = {
       duration = -1
     }
   }
-  option = {
-    #Let them keep their petty gods.
+  option = { 	# Let them keep their petty gods.
     name = flavor_inc.6.b
     add_stability_or_adm_power = yes
   }
@@ -351,8 +343,7 @@ country_event = {
   mean_time_to_happen = {
     months = 48
   }
-  option = {
-    #Integrate them
+  option = { 	# Integrate them
     name = flavor_inc.7.a
     add_country_modifier = {
       name = "inc_chimu_integration"
@@ -363,8 +354,7 @@ country_event = {
       dip_reward = yes
     }
   }
-  option = {
-    #Don't integrate them.
+  option = { 	# Don't integrate them.
     name = flavor_inc.7.b
     custom_tooltip = INC_every_province_in_chimu_area_loses_25_autonomy
     hidden_effect = {
@@ -509,8 +499,7 @@ country_event = {
   mean_time_to_happen = {
     months = 12
   }
-  option = {
-    #Forbid the Chimu to serve in our armies and resettle many of them.
+  option = { 	# Forbid the Chimu to serve in our armies and resettle many of them.
     name = flavor_inc.9.a
     random_owned_province = {
       limit = {
@@ -538,8 +527,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #The revolters must be punished where they'll feel it the most.
+  option = { 	# The revolters must be punished where they'll feel it the most.
     name = flavor_inc.9.b
     if = {
       limit = {
@@ -614,8 +602,7 @@ country_event = {
   mean_time_to_happen = {
     months = 3650
   }
-  option = {
-    #Horrible
+  option = { 	# Horrible
     name = flavor_inc.10.a
     if = {
       limit = {
@@ -657,8 +644,7 @@ country_event = {
   mean_time_to_happen = {
     months = 12
   }
-  option = {
-    #Support Atahualpa
+  option = { 	# Support Atahualpa
     name = flavor_inc.11.a
     set_country_flag = inc_civil_war_support_atahualpa
     add_stability = -2 	# Unexpected death of king, civil war and epidemics
@@ -705,8 +691,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Support Huascar
+  option = { 	# Support Huascar
     name = flavor_inc.11.b
     set_country_flag = inc_civil_war_support_huascar
     add_stability = -2 	# Unexpected death of king, civil war and epidemics
@@ -775,24 +760,21 @@ country_event = {
   mean_time_to_happen = {
     months = 6
   }
-  option = {
-    #We must keep our true friends close, traditions are made to be broken.
+  option = { 	# We must keep our true friends close, traditions are made to be broken.
     name = flavor_inc.12.a
     trigger = {
       has_country_flag = inc_civil_war_support_huascar
     }
     add_legitimacy = 20
   }
-  option = {
-    #Try to placate the traditional nobility.
+  option = { 	# Try to placate the traditional nobility.
     name = flavor_inc.12.b
     trigger = {
       has_country_flag = inc_civil_war_support_huascar
     }
     add_stability_or_adm_power = yes
   }
-  option = {
-    #We shall be everything Huascar is not.
+  option = { 	# We shall be everything Huascar is not.
     name = flavor_inc.12.c
     trigger = {
       has_country_flag = inc_civil_war_support_atahualpa
@@ -825,14 +807,12 @@ country_event = {
   mean_time_to_happen = {
     months = 6
   }
-  option = {
-    #Let it be known what happens to those who would defy us.
+  option = { 	# Let it be known what happens to those who would defy us.
     name = flavor_inc.13.a
     add_legitimacy = 25 	# Those that did not support this candidate to start with are crushed.
     add_stability = -2 	# Unusually harsh response, burning of mummified ancestor.
   }
-  option = {
-    #Let us exact more moderate retribution.
+  option = { 	# Let us exact more moderate retribution.
     name = flavor_inc.13.b
     add_stability_or_adm_power = yes 	# End of a civil war.
     add_legitimacy = -10 	# Still doubt about the succession.
@@ -866,8 +846,7 @@ country_event = {
   mean_time_to_happen = {
     months = 6
   }
-  option = {
-    #Execute the Sapa Inca.
+  option = { 	# Execute the Sapa Inca.
     name = flavor_inc.14.a
     ai_chance = {
       factor = 1
@@ -891,8 +870,7 @@ country_event = {
       } 	# Revolt of Incan subjects.
     }
   }
-  option = {
-    #Keep him as a hostage.
+  option = { 	# Keep him as a hostage.
     name = flavor_inc.14.b
     ai_chance = {
       factor = 0
@@ -926,8 +904,7 @@ country_event = {
   picture = EXPLORERS_eventPicture
   fire_only_once = yes
   is_triggered_only = yes
-  option = {
-    #We will not bow!
+  option = { 	# We will not bow!
     name = flavor_inc.15.a
     add_stability = -3
     add_years_of_income = -1
@@ -1002,8 +979,7 @@ country_event = {
   picture = EXPLORERS_eventPicture
   fire_only_once = yes
   is_triggered_only = yes
-  option = {
-    #His heir will take his place.
+  option = { 	# His heir will take his place.
     name = flavor_inc.16.a
     trigger = {
       has_heir = yes
@@ -1025,8 +1001,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #His brother will take his place.
+  option = { 	# His brother will take his place.
     name = flavor_inc.16.b
     trigger = {
       has_heir = no
@@ -1079,15 +1054,13 @@ country_event = {
   mean_time_to_happen = {
     months = 105
   }
-  option = {
-    #Mount an expedition into the Pacific to find these islands.
+  option = { 	# Mount an expedition into the Pacific to find these islands.
     name = flavor_inc.17.a
     add_dip_power = -5
     set_heir_flag = inc_pacific_exploration
     custom_tooltip = flavor_inc.17.a.tt
   }
-  option = {
-    #Let us focus on the here and now and not on distant dreams.
+  option = { 	# Let us focus on the here and now and not on distant dreams.
     name = flavor_inc.17.b
     add_stability_or_adm_power = yes
   }
@@ -1115,14 +1088,12 @@ country_event = {
   mean_time_to_happen = {
     months = 3
   }
-  option = {
-    #An interesting experience
+  option = { 	# An interesting experience
     name = flavor_inc.18.a
     add_prestige = 10
     add_dip_power = 50
   }
-  option = {
-    #Let us use what we have learnt to improve the seafaring skills of our people.
+  option = { 	# Let us use what we have learnt to improve the seafaring skills of our people.
     name = flavor_inc.18.b
     add_ruler_modifier = {
       name = "inc_pacific_expedition"
@@ -1153,8 +1124,7 @@ country_event = {
   mean_time_to_happen = {
     months = 3
   }
-  option = {
-    #Such a shame.
+  option = { 	# Such a shame.
     name = flavor_inc.19.a
     kill_heir = {}
     add_stability = -1
@@ -1199,8 +1169,7 @@ country_event = {
   mean_time_to_happen = {
     months = 35
   }
-  option = {
-    #Horrible
+  option = { 	# Horrible
     name = flavor_inc.20.a
     every_province = {
       limit = {
@@ -1233,8 +1202,7 @@ country_event = {
   mean_time_to_happen = {
     months = 12
   }
-  option = {
-    #Destroy the Temple
+  option = { 	# Destroy the Temple
     name = flavor_inc.21.a
     ai_chance = {
       factor = 1
@@ -1245,8 +1213,7 @@ country_event = {
       add_unrest = 5
     }
   }
-  option = {
-    #This is a fascinating religion, let us embrace it instead.
+  option = { 	# This is a fascinating religion, let us embrace it instead.
     ai_chance = {
       factor = 1
     }
@@ -1270,8 +1237,7 @@ country_event = {
       #set_legacy_government = tribal_despotism_legacy
     }
   }
-  option = {
-    #Let them worship the idol.
+  option = { 	# Let them worship the idol.
     name = flavor_inc.21.c
     trigger = {
       full_idea_group = humanist_ideas

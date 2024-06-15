@@ -749,17 +749,32 @@ woc_hun_first_branch = {
       east_adriatic_coast_area = {
         add_base_production = 1
       }
-      random_province = {
+      if = {
         limit = {
-          has_port = yes
-          country_or_non_sovereign_subject_holds = ROOT
+          any_owned_province = {
+            has_port = yes
+            NOT = {
+              has_construction = navy
+            }
+          }
         }
-        add_unit_construction = {
-          type = light_ship
-          amount = 5
-          speed = 0.25
-          cost = 0
+        random_owned_province = {
+          limit = {
+            has_port = yes
+            NOT = {
+              has_construction = navy
+            }
+          }
+          add_unit_construction = {
+            type = light_ship
+            amount = 5
+            speed = 0.25
+            cost = 0
+          }
         }
+      }
+      else = {
+        add_yearly_sailors = 2.5
       }
       custom_tooltip = hun_empty
       venetia_area = {
@@ -1506,8 +1521,7 @@ woc_hun_second_branch = {
           }
         }
       }
-      else = {
-        #congrats, you've broken it.
+      else = { 	# congrats, you've broken it.
         religion_group = root
       }
     }

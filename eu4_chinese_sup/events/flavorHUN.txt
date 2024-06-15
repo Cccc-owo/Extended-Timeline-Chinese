@@ -419,8 +419,7 @@ country_event = {
   immediate = {
     set_country_flag = hun_has_had_matthias_corvinus_event
   }
-  option = {
-    #Heir dies, get Matyas
+  option = { 	# Heir dies, get Matyas
     name = flavor_hun.201.a
     ai_chance = {
       factor = 1
@@ -471,8 +470,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Ruler dies, keep his heir
+  option = { 	# Ruler dies, keep his heir
     name = flavor_hun.201.b
     ai_chance = {
       factor = 1
@@ -483,8 +481,7 @@ country_event = {
     }
     kill_ruler = yes
   }
-  option = {
-    #Ruler dies with no heir, take a union
+  option = { 	# Ruler dies with no heir, take a union
     name = flavor_hun.201.c
     ai_chance = {
       factor = 1
@@ -513,8 +510,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Ruler dies with no heir, take Matyas
+  option = { 	# Ruler dies with no heir, take Matyas
     name = flavor_hun.201.d
     ai_chance = {
       factor = 3
@@ -588,8 +584,7 @@ country_event = {
   is_triggered_only = yes
   option = {
     name = flavor_hun.10.a
-    if = {
-      #Only add if we haven't got one already.
+    if = { 	# Only add if we haven't got one already.
       limit = {
         has_casus_belli = {
           type = cb_restore_personal_union
@@ -1055,8 +1050,7 @@ country_event = {
     add_prestige = 10
     if = {
       limit = {
-        265 = {
-          #Moravia
+        265 = { 	# Moravia
           owned_by = BOH
         }
       }
@@ -1066,8 +1060,7 @@ country_event = {
     }
     if = {
       limit = {
-        4237 = {
-          #Moravia
+        4237 = { 	# Moravia
           owned_by = BOH
         }
       }
@@ -1154,8 +1147,7 @@ country_event = {
     tooltip = {
       if = {
         limit = {
-          265 = {
-            #Moravia
+          265 = { 	# Moravia
             owned_by = BOH
           }
         }
@@ -1165,8 +1157,7 @@ country_event = {
       }
       if = {
         limit = {
-          4237 = {
-            #Moravia
+          4237 = { 	# Moravia
             owned_by = BOH
           }
         }
@@ -1398,8 +1389,7 @@ country_event = {
       custom_tooltip = end_of_black_army_tooltip
     }
   }
-  option = {
-    # new option, keep the black army
+  option = { 	#  new option, keep the black army
     name = flavor_hun.18.b
     trigger = {
       is_subject = no
@@ -1529,8 +1519,7 @@ country_event = {
     NOT = {
       is_year = 1500
     }
-    OR = {
-      #Big threathening power in the south, probably Ottomans
+    OR = { 	# Big threathening power in the south, probably Ottomans
       AND = {
         is_neighbor_of = TUR
         NOT = {
@@ -1549,8 +1538,7 @@ country_event = {
     }
   }
   immediate = {
-    hidden_effect = {
-      #Used in Loc
+    hidden_effect = { 	# Used in Loc
       if = {
         limit = {
           any_neighbor_country = {
@@ -1640,8 +1628,7 @@ country_event = {
     }
     4239 = {
       culture = serbian
-      any_neighbor_province = {
-        #Best not have this event triggering from conquering Serbia yourself...
+      any_neighbor_province = { 	# Best not have this event triggering from conquering Serbia yourself...
         owned_by = TUR
         culture = serbian
       }
@@ -2076,8 +2063,7 @@ country_event = {
     }
     custom_tooltip = flavor_hun.25.a.tt
     tooltip = {
-      add_country_modifier = {
-        #Consciously set to "wrong" scope to give prettier tooltip.
+      add_country_modifier = { 	# Consciously set to "wrong" scope to give prettier tooltip.
         name = "hab_royal_hungary"
         duration = 18250
       }
@@ -3042,8 +3028,7 @@ country_event = {
     }
   }
   is_triggered_only = yes
-  option = {
-    #Go for it
+  option = { 	# Go for it
     name = new_flavour_hun.1.A
     set_country_flag = hungary_flag_incident
     set_imperial_incident = incident_hungary_mission
@@ -3080,8 +3065,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Nah
+  option = { 	# Nah
     name = new_flavour_hun.1.B
     add_prestige = 15
     ai_chance = {
@@ -3106,8 +3090,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #Sure
+  option = { 	# Sure
     name = new_flavour_hun.2.A
     BOH = {
       elector = no
@@ -3196,8 +3179,7 @@ country_event = {
       }
     }
   }
-  option = {
-    #No way in h...
+  option = { 	# No way in h...
     name = new_flavour_hun.2.B
     event_target:hungary_country = {
       add_opinion = {
@@ -3273,8 +3255,7 @@ country_event = {
   desc = new_flavour_hun.3.desc
   picture = CITY_VIEW_eventPicture
   is_triggered_only = yes
-  option = {
-    #Bring back the Greeks
+  option = { 	# Bring back the Greeks
     name = new_flavour_hun.3.A
     151 = {
       change_culture = greek
@@ -3284,8 +3265,7 @@ country_event = {
       factor = 1
     }
   }
-  option = {
-    #Leave it as is
+  option = { 	# Leave it as is
     name = new_flavour_hun.3.B
     151 = {
       add_nationalism = -5
@@ -3306,16 +3286,14 @@ country_event = {
   desc = flavor_hun.38.d
   picture = REFORM_eventPicture
   is_triggered_only = yes
-  option = {
-    #Promote the Hungarian culture
+  option = { 	# Promote the Hungarian culture
     name = flavor_hun.38.a
     add_country_modifier = {
       name = "hun_promote_hungarian_culture"
       duration = -1
     }
   }
-  option = {
-    #Guarantee the minority rights
+  option = { 	# Guarantee the minority rights
     name = flavor_hun.38.b
     add_country_modifier = {
       name = "hun_guarantee_minority_rights"

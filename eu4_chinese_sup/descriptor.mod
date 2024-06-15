@@ -1,4 +1,4 @@
-version="3.11.0"
+version="3.11.2"
 tags={
 	"Translation"
 }
@@ -7,5 +7,5 @@ dependencies={
 }
 name="Chinese Language Supplementary Mod for 1.37"
 picture="thumbnail.png"
-supported_version="1.37.*"
+supported_version="v1.37.*.*"
 remote_file_id="1999055990"

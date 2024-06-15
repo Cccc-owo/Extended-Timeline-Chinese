@@ -79,8 +79,7 @@ ajuuran_asian_trade_slot = {
     }
     effect = {
       custom_tooltip = aju_gold_minting_ct
-      if = {
-        #Cash
+      if = { 	# Cash
         limit = {
           OR = {
             gold = 1
@@ -93,8 +92,7 @@ ajuuran_asian_trade_slot = {
           id = flavor_aju.4
         }
       }
-      else_if = {
-        #Deal with the other owner
+      else_if = { 	# Deal with the other owner
         limit = {
           any_known_country = {
             gold = 1
@@ -309,8 +307,7 @@ ajuuran_asian_trade_slot = {
           }
         }
       }
-      else_if = {
-        #Fringe case of no emperor existing
+      else_if = { 	# Fringe case of no emperor existing
         limit = {
           NOT = {
             owns_or_non_sovereign_subject_of = 1816
