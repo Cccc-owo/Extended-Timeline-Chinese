@@ -16,6 +16,6 @@ tags={
 	"New Nations"
 }
 picture="extended_timeline.jpg"
-version="1.17.2"
+version="1.17.3"
 supported_version="v1.37.*"
 remote_file_id="217416366"

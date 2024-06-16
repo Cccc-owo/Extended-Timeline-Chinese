@@ -1150,10 +1150,13 @@ has_been_insulted_by_root = {
 }
 
 valid_for_personal_unions_trigger = {
-	exists = yes
-	is_subject = no
-	government = monarchy
-	religion_group = christian
+    exists = yes
+    is_subject = no
+    OR = {
+        government = monarchy
+        has_reform = dutch_republic
+    }
+    religion_group = christian
 }
 
 is_shadow_kingdom_eligible_trigger = {
@@ -2247,8 +2250,9 @@ is_not_free_merc_company = {
 		# NOT = { mercenary_company = merc_may_chontals }
 		NOT = { mercenary_company = merc_mug_elite_gurkhas }
 		NOT = { mercenary_company = merc_lisowczyk }
+		NOT = { mercenary_company = merc_ita_lost_legions }
 	}
-}
+} 
 
 has_free_mercs_trait = {
 	OR = {
@@ -4311,13 +4315,16 @@ has_completed_all_persian_missions = {
 has_any_ongoing_construction = {
 	custom_trigger_tooltip = {
 		tooltip = has_any_ongoing_construction_tt
-		has_construction = building
-		has_construction = core
-		has_construction = culture
-		has_construction = great_project
-		has_construction = canal
-		has_construction = missionary
-		has_construction = state_house
+		OR = {
+			has_construction = building
+			has_construction = core
+			has_construction = culture
+			has_construction = great_project
+			has_construction = canal
+			has_construction = missionary
+			has_construction = state_house
+		}
+		
 	}
 }
 

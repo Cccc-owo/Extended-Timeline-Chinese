@@ -347,6 +347,10 @@ on_war_won = {
 			id = flavor_swe.121
 		}
 	}
+	change_variable = {
+		which = num_of_wars_won_var
+		value = 1
+	}
 	if = {
 		limit = { 
 			ROOT = { is_rival = FROM }  
@@ -517,7 +521,12 @@ on_battle_won_country = {
 			}
 			from = {
 				war_with = root
-				NOT = { has_country_flag = hun_uniqe_defeated_country }
+				NOT = {
+					check_variable = {
+						which = hun_uniqe_defeated_country
+						value = 3
+					}
+				}
 			}
 		}
 		set_country_flag = hun_won_battle
@@ -825,7 +834,21 @@ on_battle_won_unit = {
 			random_war_enemy_country = {
 				limit = { has_country_flag = hun_lost_battle }
 				clr_country_flag = hun_lost_battle
-				set_country_flag = hun_uniqe_defeated_country
+				if = {
+					limit = {
+						NOT = { check_variable = { which = hun_uniqe_defeated_country value = 1 } }
+					}
+					set_variable = {
+						which = hun_uniqe_defeated_country
+						value = 1
+					}
+				}
+				else = {
+					change_variable = {
+						which = hun_uniqe_defeated_country
+						value = 1
+					}
+				}
 			}
 		}
 	}
@@ -1812,6 +1835,13 @@ on_annexed = {
 		else = {
 			add_dip_power = 100
 		}
+	}
+	if = {
+		limit = {
+			FROM = { tag = TUR }
+			HUN = { has_country_modifier = hun_avenge_varna }
+		}
+		HUN = { remove_country_modifier = hun_avenge_varna }
 	}
 }
 
@@ -4912,6 +4942,54 @@ on_province_owner_change = {
         }
 		remove_province_modifier = estate_nobles_vegvar_system_modifier
 	}
+	if = {
+		limit = {
+			FROM = {
+				has_estate_privilege = estate_nobles_vegvar_system
+			}
+		}
+		if = {
+			limit = {
+				any_neighbor_province = {
+					owned_by = FROM
+				}
+				FROM = {
+					has_estate_privilege = estate_nobles_vegvar_system
+				}
+			}
+			every_neighbor_province = {
+				limit = {
+					owned_by = FROM
+					has_fort_building_trigger = yes
+					NOT = {
+						has_province_modifier = estate_nobles_vegvar_system_modifier
+					}
+				}
+				add_province_modifier = {
+					name = estate_nobles_vegvar_system_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+	if = {
+        limit = {
+			NOT = {
+				has_province_modifier = estate_nobles_vegvar_system_modifier
+			}
+			owner = {
+				has_estate_privilege = estate_nobles_vegvar_system
+			}
+			has_fort_building_trigger = yes
+			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
+			}
+        }
+        add_province_modifier = {
+            name = estate_nobles_vegvar_system_modifier
+            duration = -1
+        }
+	}
 }
 
 # country
@@ -5525,75 +5603,24 @@ on_company_chartered = {
 
 # ROOT = Overlord, FROM = Minor
 on_dependency_gained = {
-	if = {
-		limit = {
-			FROM = {
-				has_government_attribute = has_dutch_election
-			}
-		}
-		ROOT = {
-			country_event = {
-				id = dutch_republic.31
-			}# States General falls under a PU
-		}
-	}
-	if = {
-		limit = {
-			FROM = {
-				tag = AVE
-				government_rank = 1
-			}
-		}
-		FROM = {
-			country_event = {
-				id = flavor_gbr.20
-			}
-		}
-	}
+	on_dependency_gained_effect = yes
 }
 
 # ROOT = Overlord, FROM = Minor
 on_dependency_lost = {
-	if = {
-		limit = {
-			has_country_modifier = mng_tibetan_horses_monopoly_modifier
-		}
-		remove_country_modifier = mng_tibetan_horses_monopoly_modifier
-	}
-	if = {
-		limit = {
-			has_country_modifier = tur_tatar_vanguard_modifier
-			FROM = { 
-				tag = CRI 
-				NOT = { is_subject_of = ROOT }
-			}
-		}
-		remove_country_modifier = tur_tatar_vanguard_modifier
-	}
-	if = {
-		limit = {
-			has_country_modifier = rus_grand_duke_of_finland
-			FROM = { tag = FIN }
-		}
-		remove_country_modifier = rus_grand_duke_of_finland
-	}
-	FROM = {
-		if = {
-			limit = { has_country_modifier = revoked_war_rights }
-			remove_country_modifier = revoked_war_rights
-		}
-	}
-	FROM = {
-		if = {
-			limit = { has_country_modifier = grain_trade_imports_modifier }
-			remove_country_modifier = grain_trade_imports_modifier
-		}
-	}
+	on_dependency_lost_effect = yes
 }
 
 # ROOT = New vassal, FROM = Overlord
 on_create_vassal = {
 	on_religion_change_estate_privileges_effect = yes
+	if = {
+		limit = {
+			tag = TUR
+			HUN = { has_country_modifier = hun_avenge_varna }
+		}
+		HUN = { remove_country_modifier = hun_avenge_varna }
+	}
 	if = {
 		limit = {
 			ai = no
@@ -6228,7 +6255,17 @@ on_expanded_infrastructure = {
 			owner = {
 				has_country_flag = boh_expand_infrastructure_prague_flag
 			}
+			NOT = {
+				check_variable = {
+					which = boh_expanded_infrastructure_prague
+					value = 3
+				}
+			}
 		}
+        change_variable = {
+            which = boh_expanded_infrastructure_prague
+            value = 1
+        }
 		add_base_tax = 1
 		add_base_production = 1
 		add_base_manpower = 1
