@@ -2333,11 +2333,22 @@ GER_remove_cultural_disunity_modifiers = {
     effect = GER_remove_cultural_disunity_modifier_for_culture
   }
 }
+ned_glorious_revolution_effect_opt_1_event_insight = {
+  if = {
+    limit = {
+      has_dlc = "Domination"
+    }
+    custom_tooltip = NED_UNLOCK_MAN_O_WARS_TOOLTIP
+  }
+  else = {
+    add_dip_power = 100
+  }
+}
 ned_glorious_revolution_effect_opt_1 = {
   country_event_with_option_insight = {
     id = dutch_mission_events.3
     option_1 = "
-      custom_tooltip = NED_UNLOCK_MAN_O_WARS_TOOLTIP
+      ned_glorious_revolution_effect_opt_1_event_insight = yes
       define_advisor = {
         type = naval_reformer
         skill = 3
@@ -2857,7 +2868,7 @@ austria_surpass_poland_effect = {
         valid_for_personal_unions_trigger = yes
         PLC = {
           NOT = {
-            total_own_and_non_tributary_subject_development = 300
+            total_own_and_non_tributary_subject_development = 400
           }
         }
       }
@@ -2875,7 +2886,7 @@ austria_surpass_poland_effect = {
         valid_for_personal_unions_trigger = yes
         POL = {
           NOT = {
-            total_own_and_non_tributary_subject_development = 300
+            total_own_and_non_tributary_subject_development = 400
           }
         }
       }
@@ -3031,8 +3042,9 @@ set_startup_values = {
   }
 }
 hab_divide_france = {
-  every_owned_province = {
+  every_province = {
     limit = {
+      country_or_non_sovereign_subject_holds = ROOT
       region = france_region
     }
     set_in_empire = yes
@@ -3043,10 +3055,11 @@ hab_divide_france = {
         exists = DAU
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = DAU
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = DAU
       }
@@ -3054,7 +3067,7 @@ hab_divide_france = {
     savoy_dauphine_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = DAU
         set_in_empire = yes
@@ -3078,10 +3091,11 @@ hab_divide_france = {
         exists = BOU
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = BOU
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = BOU
       }
@@ -3089,7 +3103,7 @@ hab_divide_france = {
     massif_central_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = BOU
         set_in_empire = yes
@@ -3113,10 +3127,11 @@ hab_divide_france = {
         exists = LOR
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = LOR
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = LOR
       }
@@ -3124,7 +3139,7 @@ hab_divide_france = {
     lorraine_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = LOR
         set_in_empire = yes
@@ -3148,10 +3163,11 @@ hab_divide_france = {
         exists = PIC
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = PIC
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = PIC
       }
@@ -3159,7 +3175,7 @@ hab_divide_france = {
     picardy_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = PIC
         set_in_empire = yes
@@ -3169,7 +3185,7 @@ hab_divide_france = {
     182 = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = PIC
         set_in_empire = yes
@@ -3193,10 +3209,11 @@ hab_divide_france = {
         exists = CHP
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = CHP
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = CHP
       }
@@ -3204,7 +3221,7 @@ hab_divide_france = {
     champagne_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = CHP
         set_in_empire = yes
@@ -3214,7 +3231,7 @@ hab_divide_france = {
     185 = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = CHP
         set_in_empire = yes
@@ -3224,7 +3241,7 @@ hab_divide_france = {
     183 = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = CHP
         set_in_empire = yes
@@ -3248,10 +3265,11 @@ hab_divide_france = {
         exists = NRM
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = NRM
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = NRM
       }
@@ -3259,7 +3277,7 @@ hab_divide_france = {
     normandy_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = NRM
         set_in_empire = yes
@@ -3269,7 +3287,7 @@ hab_divide_france = {
     4388 = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = NRM
         set_in_empire = yes
@@ -3293,10 +3311,11 @@ hab_divide_france = {
         exists = BRI
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = BRI
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = BRI
       }
@@ -3304,7 +3323,7 @@ hab_divide_france = {
     brittany_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = BRI
         set_in_empire = yes
@@ -3328,10 +3347,11 @@ hab_divide_france = {
         exists = ORL
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = ORL
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = ORL
       }
@@ -3339,7 +3359,7 @@ hab_divide_france = {
     orleans_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = ORL
         set_in_empire = yes
@@ -3349,7 +3369,7 @@ hab_divide_france = {
     loire_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = ORL
         set_in_empire = yes
@@ -3373,10 +3393,11 @@ hab_divide_france = {
         exists = PRO
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = PRO
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = PRO
       }
@@ -3384,7 +3405,7 @@ hab_divide_france = {
     provence_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = PRO
         set_in_empire = yes
@@ -3408,10 +3429,11 @@ hab_divide_france = {
         exists = TOU
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = TOU
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = TOU
       }
@@ -3419,7 +3441,7 @@ hab_divide_france = {
     languedoc_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = TOU
         set_in_empire = yes
@@ -3429,7 +3451,7 @@ hab_divide_france = {
     198 = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = TOU
         set_in_empire = yes
@@ -3453,10 +3475,11 @@ hab_divide_france = {
         exists = GUY
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = GUY
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = GUY
       }
@@ -3464,7 +3487,7 @@ hab_divide_france = {
     guyenne_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = GUY
         set_in_empire = yes
@@ -3474,7 +3497,7 @@ hab_divide_france = {
     poitou_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = GUY
         set_in_empire = yes
@@ -3484,7 +3507,7 @@ hab_divide_france = {
     pyrenees_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = GUY
         set_in_empire = yes
@@ -3508,10 +3531,11 @@ hab_divide_france = {
         exists = BUR
       }
     }
-    every_owned_province = {
+    every_province = {
       if = {
         limit = {
           is_core = BUR
+          country_or_non_sovereign_subject_holds = ROOT
         }
         remove_core = BUR
       }
@@ -3519,7 +3543,7 @@ hab_divide_france = {
     west_burgundy_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = BUR
         remove_core = ROOT
@@ -3528,7 +3552,7 @@ hab_divide_france = {
     bourgogne_area = {
       if = {
         limit = {
-          owned_by = ROOT
+          country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = BUR
         remove_core = ROOT
@@ -3877,5 +3901,55 @@ update_fervor_effects = {
     }
     remove_active_fervor = fervor_diplomacy
     add_active_fervor = fervor_diplomacy_buffed
+  }
+}
+rus_clear_peasantry_estate_privileges = {
+  if = {
+    limit = {
+      has_estate_privilege = estate_nobles_early_serfdom
+    }
+    remove_estate_privilege = estate_nobles_early_serfdom
+  }
+  if = {
+    limit = {
+      has_estate_privilege = estate_nobles_total_serfdom
+    }
+    remove_estate_privilege = estate_nobles_total_serfdom
+  }
+  if = {
+    limit = {
+      has_estate_privilege = estate_nobles_legalized_serfdom
+    }
+    remove_estate_privilege = estate_nobles_legalized_serfdom
+  }
+  if = {
+    limit = {
+      has_estate_privilege = estate_nobles_restricted_serfdom
+    }
+    remove_estate_privilege = estate_nobles_restricted_serfdom
+  }
+  if = {
+    limit = {
+      has_estate_privilege = estate_nobles_devastating_serfdom
+    }
+    remove_estate_privilege = estate_nobles_devastating_serfdom
+  }
+  if = {
+    limit = {
+      has_estate_privilege = estate_nobles_increased_peasant_freedom
+    }
+    remove_estate_privilege = estate_nobles_increased_peasant_freedom
+  }
+  if = {
+    limit = {
+      has_estate_privilege = estate_nobles_peasant_liberation
+    }
+    remove_estate_privilege = estate_nobles_peasant_liberation
+  }
+  if = {
+    limit = {
+      has_estate_privilege = estate_burghers_rise_of_the_burghers
+    }
+    remove_estate_privilege = estate_burghers_rise_of_the_burghers
   }
 }
