@@ -35,10 +35,10 @@ ECHO.
 ::====fix crash====
 @REM del /F /S /Q output\%mod_dir%\*_DE.txt
 @REM del /F /S /Q output\%mod_dir%\*_DE.txt
-del /F /S /Q output\%mod_dir%\common\scripted_effects
-del /F /S /Q output\%mod_dir%\common\scripted_triggers
-rmdir /S /Q output\%mod_dir%\common\scripted_effects
-rmdir /S /Q output\%mod_dir%\common\scripted_triggers
+@REM del /F /S /Q output\%mod_dir%\common\scripted_effects
+@REM del /F /S /Q output\%mod_dir%\common\scripted_triggers
+@REM rmdir /S /Q output\%mod_dir%\common\scripted_effects
+@REM rmdir /S /Q output\%mod_dir%\common\scripted_triggers
 @REM xcopy ExtendedTimeline\common\scripted_effects\00_scripted_effects.txt output\%mod_dir%\common\scripted_effects\ /Q /C /Y
 @REM xcopy ExtendedTimeline\common\scripted_triggers\00_scripted_triggers.txt output\%mod_dir%\common\scripted_triggers\ /Q /C /Y
 ::====fix crash end====
