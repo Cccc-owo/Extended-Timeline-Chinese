@@ -18,6 +18,7 @@ xcopy eu4_chinese\ output\%mod_dir%\ /E /Q /C /Y
 xcopy eu4_chinese_sup\ output\%mod_dir%\ /E /Q /C /Y
 del /F /S /Q output\%mod_dir%\descriptor.mod
 del /F /S /Q output\%mod_dir%\history\provinces
+del /F /S /Q output\%mod_dir%\interface\endgamedialog.gui
 @REM xcopy ExtendedTimeline\ output\%mod_dir%\ /E /Q /C /Y
 xcopy cn_text\ output\%mod_dir%\ /E /Q /C /Y
 xcopy addition\ output\%mod_dir%\ /E /Q /C /Y
