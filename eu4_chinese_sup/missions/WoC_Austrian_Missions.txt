@@ -280,43 +280,43 @@ WoC_austria_1_holy_roman_empire = {
           for = {
             amount = 5
             effect = "
-              random_owned_province = {
-                limit = {
-                  is_part_of_hre = yes
-                  development = 25
-                  num_of_buildings_in_province = 3
-                  NOT = {
-                    has_province_modifier = hab_imperial_cities
-                  }
-                }
-                add_province_modifier = {
-                  name = hab_imperial_cities
-                  duration = -1
-                }
-                add_or_upgrade_production_building = yes
-              }
-            "
+							random_owned_province = {
+								limit = {
+									is_part_of_hre = yes
+									development = 25
+									num_of_buildings_in_province = 3
+									NOT = {
+										has_province_modifier = hab_imperial_cities
+									}
+								}
+								add_province_modifier = {
+									name = hab_imperial_cities
+									duration = -1
+								}
+								add_or_upgrade_production_building = yes
+							}
+						"
           }
         }
         else = {
           for = {
             amount = 5
             effect = "
-              random_owned_province = {
-                limit = {
-                  development = 25
-                  num_of_buildings_in_province = 3
-                  NOT = {
-                    has_province_modifier = hab_imperial_cities
-                  }
-                }
-                add_province_modifier = {
-                  name = hab_imperial_cities
-                  duration = -1
-                }
-                add_or_upgrade_production_building = yes
-              }
-            "
+							random_owned_province = {
+								limit = {
+									development = 25
+									num_of_buildings_in_province = 3
+									NOT = {
+										has_province_modifier = hab_imperial_cities
+									}
+								}
+								add_province_modifier = {
+									name = hab_imperial_cities
+									duration = -1
+								}
+								add_or_upgrade_production_building = yes
+							}
+						"
           }
         }
       }
@@ -438,22 +438,22 @@ WoC_austria_1_germany = {
         for = {
           amount = 5
           effect = "
-            random_owned_province = {
-              limit = {
-                region = south_german_region
-                development = 20
-                num_of_buildings_in_province = 3
-                NOT = {
-                  has_province_modifier = hab_south_german_cities
-                }
-              }
-              add_province_modifier = {
-                name = hab_south_german_cities
-                duration = -1
-              }
-              add_or_upgrade_tax_building = yes
-            }
-          "
+						random_owned_province = {
+							limit = {
+								region = south_german_region
+								development = 20
+								num_of_buildings_in_province = 3
+								NOT = {
+									has_province_modifier = hab_south_german_cities
+								}
+							}
+							add_province_modifier = {
+								name = hab_south_german_cities
+								duration = -1
+							}
+							add_or_upgrade_tax_building = yes
+						}
+					"
         }
       }
     }
@@ -3805,24 +3805,24 @@ WoC_austria_5 = {
           }
         "
         first_effect = "
-          country_event_with_option_insight = {
-            id = flavor_hab.25
-            option_1 = \"
-              add_country_modifier = {
-                name = hab_dukes_of_burgundy_and_austria
-                duration = 3650
-              }
-              custom_tooltip = HAB_DISABLE_HORSE_KISSING
-            \"
-            option_2 = \"
-              add_adm_power = 100
-              change_ruler_stat = {
-                type = adm
-                amount = 1
-              }
-            \"
-          }
-        "
+					country_event_with_option_insight = {
+						id = flavor_hab.25
+						option_1 = \"
+							add_country_modifier = {
+								name = hab_dukes_of_burgundy_and_austria
+								duration = 3650
+							}
+							custom_tooltip = HAB_DISABLE_HORSE_KISSING
+						\"
+						option_2 = \"
+							add_adm_power = 100
+							change_ruler_stat = {
+								type = adm
+								amount = 1
+							}
+						\"
+					}
+				"
         second_custom_tooltip = HAB_IF_BURGUNDY_HRE
         second_limit = "
           BUR = {

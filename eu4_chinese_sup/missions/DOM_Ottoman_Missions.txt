@@ -3826,28 +3826,28 @@ tur_arabian_conquest = {
         id = flavor_tur.250
         insight_tooltip = INSIGHT_JUST_TOOLTIP
         effect_tooltip = "
-        if = {
-          limit = {
-            has_dlc = \"Cradle of Civilization\"
-          }
-          if = {
-            limit = { 
-              religion_group = muslim 
-            } 
-            enable_baseline_invite_scholar_no_privilege = yes
-          }
-          else = {
-            hidden_effect = { enable_baseline_invite_scholar_no_privilege = yes }
-            add_adm_power = 100
-          } 
-        }
-        else = {
-          add_adm_power = 100
-        }
-        add_country_modifier = {
-          name = tur_baghdad_city_of_learning
-          duration = 10950
-        }"
+				if = {
+					limit = {
+						has_dlc = \"Cradle of Civilization\"
+					}
+					if = {
+						limit = { 
+							religion_group = muslim 
+						} 
+						enable_baseline_invite_scholar_no_privilege = yes
+					}
+					else = {
+						hidden_effect = { enable_baseline_invite_scholar_no_privilege = yes }
+						add_adm_power = 100
+					} 
+				}
+				else = {
+					add_adm_power = 100
+				}
+				add_country_modifier = {
+					name = tur_baghdad_city_of_learning
+					duration = 10950
+				}"
       }
     }
     ai_weight = {
