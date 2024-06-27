@@ -1014,23 +1014,23 @@ MEE_BYZ_defense_4 = {
       country_event_with_option_insight = {
         id = MEE_Byzantine_Events.11
         option_1 = "
-          if = {
-            limit = {
-              145 = { owned_by = ROOT has_building = fort_15th }
-            }
-            145 = { remove_building = fort_15th }
-          }
-          if = {
-            limit = {
-              4701 = { owned_by = ROOT NOT = { has_fort_building_trigger = yes } }          
-            }
-            4701 = {
-              add_building = fort_15th
-            }
-          }
-          custom_tooltip = \" \"
-          custom_tooltip = BYZ_unlock_decision_to_upgrade_hexamilion_wall
-        "
+					if = {
+						limit = {
+							145 = { owned_by = ROOT has_building = fort_15th }
+						}
+						145 = { remove_building = fort_15th }
+					}
+					if = {
+						limit = {
+							4701 = { owned_by = ROOT NOT = { has_fort_building_trigger = yes } }					
+						}
+						4701 = {
+							add_building = fort_15th
+						}
+					}
+					custom_tooltip = \" \"
+					custom_tooltip = BYZ_unlock_decision_to_upgrade_hexamilion_wall
+				"
         option_2 = "
           custom_tooltip = BYZ_upgrading_theodosian_walls_will_be_25_cheaper
         "
@@ -1742,23 +1742,23 @@ MEE_BYZ_conquest_5 = {
           }
         "
         first_effect = "
-          custom_tooltip = BYZ_the_conquered_areas_will_get_separatism
-          hidden_effect = {
-            every_owned_province = {
-              limit = {
-                OR = {
-                  area = imereti_area
-                  area = kartli_kakheti_area
-                  area = samtskhe_area
-                  area = circassia_area
-                  area = armenia_area
-                  area = shirvan_area
-                }
-              }
-              add_nationalism = -10
-            }
-          }
-        "
+					custom_tooltip = BYZ_the_conquered_areas_will_get_separatism
+					hidden_effect = {
+						every_owned_province = {
+							limit = {
+								OR = {
+									area = imereti_area
+									area = kartli_kakheti_area
+									area = samtskhe_area
+									area = circassia_area
+									area = armenia_area
+									area = shirvan_area
+								}
+							}
+							add_nationalism = -10
+						}
+					}
+				"
         second_custom_tooltip = BYZ_if_done_via_war
         second_limit = "
           any_country = {
@@ -1867,27 +1867,27 @@ MEE_BYZ_conquest_5 = {
       country_event_with_option_insight = {
         id = MEE_Byzantine_Events.9
         option_1 = "
-          add_adm_power = 100
-          custom_tooltip = \" \"
-          385 = {
-            if = {
-              limit = {
-                NOT = { has_tax_building_trigger = yes }
-              }
-              add_building = cathedral
-            }
-            else = {
-              add_or_upgrade_tax_building = yes
-            }
-          }
-          if = {
-            limit = {
-              BYZ_has_leviathan = yes
-            }
-            custom_tooltip = \" \"
-            custom_tooltip = BYZ_kaaba_but_only_gives_prestige_and_half_of_religious_unity
-          }
-        "
+					add_adm_power = 100
+					custom_tooltip = \" \"
+					385 = {
+						if = {
+							limit = {
+								NOT = { has_tax_building_trigger = yes }
+							}
+							add_building = cathedral
+						}
+						else = {
+							add_or_upgrade_tax_building = yes
+						}
+					}
+					if = {
+						limit = {
+							BYZ_has_leviathan = yes
+						}
+						custom_tooltip = \" \"
+						custom_tooltip = BYZ_kaaba_but_only_gives_prestige_and_half_of_religious_unity
+					}
+				"
         option_2 = "
           add_dip_power = 100
           custom_tooltip = \" \"
@@ -2019,25 +2019,25 @@ MEE_BYZ_economy_1 = {
       complex_dynamic_effect = {
         first_custom_tooltip = BYZ_if_done_via_war
         first_limit = "
-          if = {
-            limit = { exists = GEN }
-            has_won_war_against = { who = GEN max_years_since = 50 }
-          }
-          else = {
-            GEN = {
-              any_core_province = { country_or_non_sovereign_subject_holds = ROOT }
-            }
-          }
-          if = {
-            limit = { exists = VEN }
-            has_won_war_against = { who = VEN max_years_since = 50 }
-          }
-          else = {
-            VEN = {
-              any_core_province = { country_or_non_sovereign_subject_holds = ROOT }
-            }
-          }
-        "
+					if = {
+						limit = { exists = GEN }
+						has_won_war_against = { who = GEN max_years_since = 50 }
+					}
+					else = {
+						GEN = {
+							any_core_province = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+					}
+					if = {
+						limit = { exists = VEN }
+						has_won_war_against = { who = VEN max_years_since = 50 }
+					}
+					else = {
+						VEN = {
+							any_core_province = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+					}
+				"
         first_effect = "
           add_country_modifier = {
             name = BYZ_dominance
@@ -3424,23 +3424,23 @@ MEE_BYZ_religion_1 = {
       country_event_with_effect_insight = {
         id = MEE_Byzantine_Events.48
         effect = "
-          if = { limit = { religion = orthodox }
-            add_patriarch_authority = 0.2
-            custom_tooltip = \" \"
-          }
-          add_country_modifier = {
-            name = conversion_of_rome
-            duration = 7300
-          }
-          custom_tooltip = \" \"
-          define_advisor = {
-            type = theologian skill = 3 culture = umbrian religion = ROOT cost_multiplier = 0.25
-          }
-          if = { limit = { religion = orthodox }
-            custom_tooltip = \" \"
-            custom_tooltip = BYZ_every_catholic
-          }
-        "
+					if = { limit = { religion = orthodox }
+						add_patriarch_authority = 0.2
+						custom_tooltip = \" \"
+					}
+					add_country_modifier = {
+						name = conversion_of_rome
+						duration = 7300
+					}
+					custom_tooltip = \" \"
+					define_advisor = {
+						type = theologian skill = 3 culture = umbrian religion = ROOT cost_multiplier = 0.25
+					}
+					if = { limit = { religion = orthodox }
+						custom_tooltip = \" \"
+						custom_tooltip = BYZ_every_catholic
+					}
+				"
         #Yes, I had trouble fitting it in, sorry!
       }
     }
