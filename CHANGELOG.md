@@ -2,8 +2,7 @@
 
 汉化组成员：见 [ParaTranz](https://paratranz.cn/projects/5342/members)
 
-## v1.17.3-r17
+## v1.17.3-r18
 
-- 🌐更新内置原版汉化
-- 🌐更新ET汉化，尝试修复一些txt文件的问题
-- 🔧修复一些gui冲突
+- 🌐更新ET汉化
+- 🗺️更新地图字体
