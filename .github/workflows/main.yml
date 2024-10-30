@@ -22,6 +22,7 @@ jobs:
       - name: Set the environment variable
         shell: pwsh
         run: |
+          $ref = $env:GITHUB_REF
           if ($ref.StartsWith('refs/tags/')) {
             $tag = $ref.Substring(10)
             echo "Setting TAG_NAME=$tag"
