@@ -22,9 +22,17 @@ jobs:
       - name: Set the environment variable
         shell: pwsh
         run: |
-          $tag = $env:GITHUB_REF.Substring(10)
-          echo "Setting TAG_NAME=$tag"
-          echo "TAG_NAME=$tag" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          if ($ref.StartsWith('refs/tags/')) {
+            $tag = $ref.Substring(10)
+            echo "Setting TAG_NAME=$tag"
+            echo "TAG_NAME=$tag" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          } elseif ($ref.StartsWith('refs/heads/')) {
+            $branch = $ref.Substring(11)
+            echo "Setting TAG_NAME=$branch"
+            echo "TAG_NAME=$branch" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          } else {
+            echo "Unknown ref type: $ref"
+          }
           $commitId = $env:GITHUB_SHA
           $shortCommitId = $commitId.Substring(0, 7)
           echo "Setting COMMIT_ID=$shortCommitId"
@@ -39,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ETC
-          path: ETC*.zip
+          path: ETC-*.zip
 
   nightly-release:
     permissions: write-all
@@ -58,7 +66,7 @@ jobs:
           prerelease: true
           title: "test Build"
           files: |
-            ETC*.zip
+            ETC-*.zip
 
   release:
     permissions: write-all
@@ -77,7 +85,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            ETC*.zip
+            ETC-*.zip
           body_path: CHANGELOG.md
           discussion_category_name: "公告"
 
@@ -97,7 +105,7 @@ jobs:
       - name: Unzip mod
         run: |
           mkdir output
-          7z.exe x ETC*.zip -ooutput
+          7z.exe x ETC-*.zip -ooutput
         shell: cmd
 
       - name: Get steamcmd
