@@ -53,7 +53,7 @@ xcopy thumbnail.png output\%mod_dir%\ /Q /C /Y
 @REM del /F /S /Q output\%mod_dir%\localisation\*_l_spanish.yml
 ECHO.
 ECHO Compressing the mod files...
-7z.exe a %mod_dir%.zip .\output\%mod_dir%*
+7z.exe a %mod_dir%-%TAG_NAME%-%COMMIT_ID%-.zip .\output\%mod_dir%*
 ::=====post-processing end=====
 
 ECHO.
