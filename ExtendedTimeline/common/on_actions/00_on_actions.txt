@@ -6417,7 +6417,12 @@ on_new_age = {
 	if = {
 		limit = {
 			has_government_mechanic = ottoman_decadence_mechanic
-			current_age = age_of_discovery
+			OR = {
+				current_age = feudal_age
+				current_age = high_middle_ages
+				current_age = late_middle_ages
+				current_age = age_of_discovery
+			}
 		}
 		add_country_modifier = {
 			name = rise_of_the_ottomans

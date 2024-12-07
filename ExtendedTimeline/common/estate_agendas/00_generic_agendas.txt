@@ -3023,7 +3023,9 @@ estate_burghers_build_manufactory_in_y = {
 		}
 	}
     task_requirements = {
-		has_manufactory_trigger_et = yes
+		event_target:agenda_province = {
+            has_manufactory_trigger_et = yes
+        }
     }
     task_completed_effect = {
 		on_completed_agenda_effect = {

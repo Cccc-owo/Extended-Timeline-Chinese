@@ -748,14 +748,32 @@ add_government_reform = feudalism_reform }
 	monarch = {
 		name = "Philippe III"
 		dynasty = "de Bourgogne"
-		adm = 6
-		dip = 6
-		mil = 6
-		leader = { name = "Philippe III"   	type = general		fire = 3	shock = 3	manuever = 3	siege = 1 }
+		birth_date = 1396.7.31
+		adm = 5
+		dip = 5
+		mil = 5
+		leader = { name = "Philippe III"   	type = general	fire = 3	shock = 3	manuever = 3	siege = 1 }
 	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = calm_personality
+	add_ruler_personality = well_connected_personality
+	add_ruler_personality = well_advised_personality
+	add_heir_personality = bold_fighter_personality
 }
 
-1428.7.3 = { add_accepted_culture = dutch }
+1430.1.7 = {
+	queen = {
+		country_of_origin = POR
+		name = "Isabella"
+		dynasty = "de Avis"
+		birth_date = 1397.2.21
+		death_date = 1471.12.17
+		female = yes
+		adm = 3 
+		dip = 4
+		mil = 1
+	}
+}
 
 1433.11.10 = {
 	heir = {
@@ -765,10 +783,12 @@ add_government_reform = feudalism_reform }
 		birth_date = 1433.11.10
 		death_date = 1477.1.5
 		claim = 95
-		adm = 3
-		dip = 1
-		mil = 5
+		adm = 2
+		dip = 0
+		mil = 4
+		block_disinherit = yes
 	}
+	set_heir_flag = is_charles_of_burg_flag
 }
 
 
@@ -777,25 +797,46 @@ add_government_reform = feudalism_reform }
 	monarch = {
 		name = "Charles I"
 		dynasty = "de Bourgogne"
-		adm = 3
-		dip = 1
-		mil = 5
-		leader = { name = "Charles I le Téméraire"	type = general		fire = 3	shock = 3	manuever = 3	siege = 1}
+		birth_date = 1433.11.10
+		adm = 2
+		dip = 0
+		mil = 4
+		leader = { name = "Charles I le Téméraire"	type = general	fire = 3	shock = 3	manuever = 3	siege = 1}
 	}
-}
-
-1467.6.16 = {
+	set_ruler_flag = is_charles_of_burg_flag
+	add_country_modifier = {
+		name = burgundian_succession_crisis
+		duration = -1
+		hidden = yes
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = bold_fighter_personality
+	add_heir_personality = benevolent_personality
 	heir = {
 		name = "Marie"
 		monarch_name = "Marie I"
 		dynasty = "de Bourgogne"
 		birth_date = 1457.2.13
 		death_date = 1482.3.27
-		claim = 95
-		adm = 4
-		dip = 5
-		mil = 3
+		claim = 50
+		adm = 3
+		dip = 4
+		mil = 2
 		female = yes
+	}
+}
+
+1468.7.3 = {
+	queen = {
+		country_of_origin = ENG
+		name = "Margaret"
+		dynasty = "York"
+		birth_date = 1446.5.3
+		death_date = 1503.11.23
+		female = yes
+		adm = 5
+		dip = 4
+		mil = 1
 	}
 }
 
@@ -803,11 +844,15 @@ add_government_reform = feudalism_reform }
 	monarch = {
 		name = "Marie I"
 		dynasty = "de Bourgogne"
-		adm = 4
-		dip = 5
-		mil = 3
+		birth_date = 1457.2.13
+		adm = 3
+		dip = 4
+		mil = 2
 		female = yes
 	}
+	remove_country_modifier = burgundian_succession_crisis
+	clear_scripted_personalities = yes
+	add_ruler_personality = benevolent_personality
 }
 
 # Burgundy is owned by the Habsburgs at this point, represented as HAB ownership
@@ -820,9 +865,9 @@ add_government_reform = feudalism_reform }
 		birth_date = 1478.7.22
 		death_date = 1506.9.25
 		claim = 95
-		adm = 1
-		dip = 1
-		mil = 1
+		adm = 0
+		dip = 0
+		mil = 0
 	}
 }
 
@@ -830,9 +875,10 @@ add_government_reform = feudalism_reform }
 	monarch = {
 		name = "Philippe IV"
 		dynasty = "von Habsburg"
-		adm = 1
-		dip = 1
-		mil = 1
+		birth_date = 1478.7.22
+		adm = 0
+		dip = 0
+		mil = 0
 	}
 }
 
@@ -844,9 +890,9 @@ add_government_reform = feudalism_reform }
 		birth_date = 1500.2.24
 		death_date = 1558.9.21
 		claim = 95
-		adm = 5
-		dip = 6
-		mil = 6
+		adm = 4
+		dip = 5
+		mil = 5
 	}
 }
 
@@ -854,9 +900,10 @@ add_government_reform = feudalism_reform }
 	monarch = {
 		name = "Charles II"
 		dynasty = "von Habsburg"
-		adm = 5
-		dip = 6
-		mil = 6
+		birth_date = 1500.2.24
+		adm = 4
+		dip = 5
+		mil = 5
 	}
 }
 

@@ -2442,11 +2442,16 @@ medicine = {
 		
 		is_island = no
 		is_state = yes
-		development_discounting_tribal = 15
 		OR = {
+			is_year = 1350
+			development_discounting_tribal = 15
+		}
+		OR = {
+			is_year = 1380
 			has_province_modifier = et_plague
 			has_province_modifier = et_famine
 			has_province_modifier = et_drought
+			has_province_modifier = great_plague_province
 			AND = {
 				NOT = { has_dlc = "Common Sense" }
 				development_discounting_tribal = 18

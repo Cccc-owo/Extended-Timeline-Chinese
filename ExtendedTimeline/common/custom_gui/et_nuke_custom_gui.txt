@@ -1,0 +1,96 @@
+custom_button = {
+	name = et_nuke_province_button
+	potential = {
+		FROM = {
+			ai = no
+			OR = {
+				has_country_flag = nuclear_weapons_allowed
+				current_age = information_age
+			}
+		}
+		NOT = { country_or_subject_holds = FROM }
+	}
+	trigger = {
+		FROM = {
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+		}
+		owner = {
+			war_with = FROM
+		}
+	}
+	effect = {
+		custom_tooltip = et_nuke_province_button_tt_effect
+		tooltip = {
+			add_devastation = 100
+			custom_tooltip = et_nuke_province_button_tt_kill_units
+			if = {
+				limit = { base_tax = 20 }
+				add_base_tax = -10
+				set_province_flag = et_nuke_lost_10_tax
+			}
+			else_if = {
+				limit = { base_tax = 6 }
+				add_base_tax = -5
+				set_province_flag = et_nuke_lost_5_tax
+			}
+			else = { set_base_tax = 1 }
+			if = {
+				limit = { base_production = 20 }
+				add_base_production = -10
+				set_province_flag = et_nuke_lost_10_production
+			}
+			else_if = {
+				limit = { base_production = 6 }
+				add_base_production = -5
+				set_province_flag = et_nuke_lost_5_production
+			}
+			else = { set_base_production = 1 }
+			if = {
+				limit = { base_manpower = 20 }
+				add_base_manpower = -10
+				set_province_flag = et_nuke_lost_10_manpower
+			}
+			else_if = {
+				limit = { base_manpower = 6 }
+				add_base_manpower = -5
+				set_province_flag = et_nuke_lost_5_manpower
+			}
+			else = { set_base_manpower = 1 }
+			add_province_modifier = {
+				name = province_nuked
+				duration = 1825
+			}
+			owner = { add_war_exhaustion = 4 }
+		}
+		owner = {
+			add_opinion = {
+				who = FROM
+				modifier = nuked_us
+			}
+		}
+		custom_tooltip = " "
+		FROM = {
+			change_variable = {
+				which = num_of_nuclear_weapons
+				value = -1
+			}
+		}
+		if = {
+			limit = { NOT = { has_global_flag = nukes_used } }
+			set_global_flag = nukes_used
+			FROM = {
+				add_country_modifier = {
+					name = used_nukes
+					duration = 7300
+				}
+			}
+		}
+		hidden_effect = {
+			province_event = { id = et_nuke.3 }
+		}
+	}
+	tooltip = et_nuke_province_button_tt
+}

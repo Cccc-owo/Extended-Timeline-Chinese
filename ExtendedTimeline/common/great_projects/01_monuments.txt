@@ -3691,8 +3691,17 @@ the_great_wall_of_china = {
 
 	#can we build it?
 	build_trigger = {
-		culture_group = east_asian
-		province_is_or_accepts_culture = yes
+		OR = { 
+			AND = {
+				culture_group = east_asian
+				province_is_or_accepts_culture = yes
+			}
+			owner = { is_emperor_of_china = yes }
+			custom_trigger_tooltip = {
+				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
+				owner = { has_country_flag = hordes_unlocked_wall_of_china }
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -3707,14 +3716,32 @@ the_great_wall_of_china = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		culture_group = east_asian
-		province_is_or_accepts_culture = yes
+		OR = { 
+			AND = {
+				culture_group = east_asian
+				province_is_or_accepts_culture = yes
+			}
+			owner = { is_emperor_of_china = yes }
+			custom_trigger_tooltip = {
+				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
+				owner = { has_country_flag = hordes_unlocked_wall_of_china }
+			}
+		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		culture_group = east_asian
-		province_is_or_accepts_culture = yes
+		OR = { 
+			AND = {
+				culture_group = east_asian
+				province_is_or_accepts_culture = yes
+			}
+			owner = { is_emperor_of_china = yes }
+			custom_trigger_tooltip = {
+				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
+				owner = { has_country_flag = hordes_unlocked_wall_of_china }
+			}
+		}
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
