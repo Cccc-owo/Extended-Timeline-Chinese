@@ -510,13 +510,19 @@ ikko_ikki_reform = {
 		culture_group = japanese_g
 	}
 	trigger = {
-		religion_group = eastern
+		OR = {
+			religion_group = eastern
+			religion_group = buddhic
+		}
 		is_not_blocked_by_estate_privilege = { estate = estate_nobles }
 	}
 	valid_for_nation_designer = yes
 	nation_designer_trigger = {
 		culture_group = japanese_g
-		religion_group = eastern
+		OR = {
+			religion_group = eastern
+			religion_group = buddhic
+		}
 	}
 	nation_designer_cost = 20
 	modifiers = {

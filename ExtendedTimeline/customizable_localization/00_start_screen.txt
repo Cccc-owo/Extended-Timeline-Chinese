@@ -563,7 +563,13 @@ defined_text = {
 	text = { #Rome, 58
         localisation_key = string_start_rom_58
         trigger = {
-			NOT = { is_year = 224 }
+			OR = {
+				NOT = { is_year = 96 }
+				AND = {
+					is_year = 192
+					NOT = { is_year = 224 }
+				}
+			}
 			tag = ROM
         }
     }
@@ -599,6 +605,15 @@ defined_text = {
         }
     }
 	
+	text = { #Rome, 100
+        localisation_key = string_start_rom_58
+        trigger = {
+			is_year = 96
+			NOT = { is_year = 192 }
+			tag = ROM
+        }
+    }
+	
 	text = { #Rome, 224
         localisation_key = string_start_rom_224
         trigger = {
@@ -622,6 +637,15 @@ defined_text = {
         trigger = {
 			tag = FUN
 			is_year = 68
+        }
+    }
+	
+	text = { #Rome, 350
+        localisation_key = string_start_rom_350
+        trigger = {
+			is_year = 306
+			NOT = { is_year = 363 }
+			tag = ROM
         }
     }
 	
@@ -649,6 +673,13 @@ defined_text = {
 			is_year = 395
 			NOT = { is_year = 396 }
 			tag = HNS
+        }
+    }
+	
+	text = { #Dumnonia, 476
+        localisation_key = string_start_dum_476
+        trigger = {
+			tag = DUM
         }
     }
 	
@@ -710,6 +741,15 @@ defined_text = {
         }
     }
 	
+	text = { #Poland, 1066
+        localisation_key = string_start_pol_1066
+		trigger = {
+			is_year = 966
+			NOT = { is_year = 1138 }
+			tag = POL
+        }
+    }
+	
 	text = { #England, 1066
         localisation_key = string_start_eng_1066
 		trigger = {
@@ -732,6 +772,15 @@ defined_text = {
         localisation_key = string_start_nca_1206
 		trigger = {
 			tag = NCA
+        }
+    }
+	
+	text = { #Poland, 1206
+        localisation_key = string_start_pol_1206
+		trigger = {
+			is_year = 1138
+			NOT = { is_year = 1320 }
+			primary_culture = polish
         }
     }
 	
@@ -862,6 +911,15 @@ defined_text = {
 			is_year = 1988
 			NOT = { is_year = 1995 }
 			tag = GER
+        }
+    }
+	
+	text = { #Nigeria, 1991
+        localisation_key = string_start_nig_1991
+        trigger = {
+			is_year = 1986
+			NOT = { is_year = 1993 }
+			tag = NIG
         }
     }
 	
