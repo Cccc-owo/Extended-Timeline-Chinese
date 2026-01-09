@@ -139,8 +139,8 @@ restore_greek_names = {
       rename_capital = "âl)RPOÌ‘Á" 	# Polydorion
     }
     4312 = {
-      change_province_name = "Y)RYuÆY" 	# Dorylaeum
-      rename_capital = "Y)RYuÆY" 	# Dorylaeum
+      change_province_name = "YÌ‘±ƒLNÆY" 	# Dorylaeum
+      rename_capital = "YÌ‘±ƒLNÆY" 	# Dorylaeum
     }
     4313 = {
       change_province_name = "u<hÉb" 	# Gangra
@@ -2379,9 +2379,16 @@ ned_glorious_revolution_effect_opt_1_event_insight = {
       has_dlc = "Domination"
     }
     custom_tooltip = NED_UNLOCK_MAN_O_WARS_TOOLTIP
+    set_country_flag = ned_man_o_wars_from_pu_flag
   }
   else = {
     add_dip_power = 100
+  }
+  define_advisor = {
+    type = naval_reformer
+    skill = 3
+    cost_multiplier = 0.25
+    culture = english
   }
 }
 ned_glorious_revolution_effect_opt_1 = {
@@ -2389,12 +2396,6 @@ ned_glorious_revolution_effect_opt_1 = {
     id = dutch_mission_events.3
     option_1 = "
       ned_glorious_revolution_effect_opt_1_event_insight = yes
-      define_advisor = {
-        type = naval_reformer
-        skill = 3
-        cost_multiplier = 0.25
-        culture = english
-      }
     "
     option_2 = "
       custom_tooltip = NED_ENGLAND_PU_IS_25_CHEAPER_TO_INTEGRATE
@@ -3112,17 +3113,12 @@ hab_divide_france = {
         add_core = DAU
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = DAU
       }
-    }
-    ROOT = {
-      release = DAU
     }
     DAU = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3147,18 +3143,12 @@ hab_divide_france = {
         }
         add_core = BOU
         set_in_empire = yes
-        remove_core = ROOT
+        cede_province = BOU
       }
-    }
-    ROOT = {
-      release = BOU
     }
     BOU = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3183,18 +3173,12 @@ hab_divide_france = {
         }
         add_core = LOR
         set_in_empire = yes
-        remove_core = ROOT
+        cede_province = LOR
       }
-    }
-    ROOT = {
-      release = LOR
     }
     LOR = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3220,6 +3204,7 @@ hab_divide_france = {
         add_core = PIC
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = PIC
       }
     }
     182 = {
@@ -3230,17 +3215,12 @@ hab_divide_france = {
         add_core = PIC
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = PIC
       }
-    }
-    ROOT = {
-      release = PIC
     }
     PIC = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3266,6 +3246,7 @@ hab_divide_france = {
         add_core = CHP
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = CHP
       }
     }
     185 = {
@@ -3276,6 +3257,7 @@ hab_divide_france = {
         add_core = CHP
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = CHP
       }
     }
     183 = {
@@ -3286,17 +3268,12 @@ hab_divide_france = {
         add_core = CHP
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = CHP
       }
-    }
-    ROOT = {
-      release = CHP
     }
     CHP = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3322,6 +3299,7 @@ hab_divide_france = {
         add_core = NRM
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = NRM
       }
     }
     4388 = {
@@ -3332,17 +3310,12 @@ hab_divide_france = {
         add_core = NRM
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = NRM
       }
-    }
-    ROOT = {
-      release = NRM
     }
     NRM = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3368,17 +3341,12 @@ hab_divide_france = {
         add_core = BRI
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = BRI
       }
-    }
-    ROOT = {
-      release = BRI
     }
     BRI = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3404,6 +3372,7 @@ hab_divide_france = {
         add_core = ORL
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = ORL
       }
     }
     loire_area = {
@@ -3414,17 +3383,12 @@ hab_divide_france = {
         add_core = ORL
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = ORL
       }
-    }
-    ROOT = {
-      release = ORL
     }
     ORL = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3450,17 +3414,12 @@ hab_divide_france = {
         add_core = PRO
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = PRO
       }
-    }
-    ROOT = {
-      release = PRO
     }
     PRO = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3486,6 +3445,7 @@ hab_divide_france = {
         add_core = TOU
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = TOU
       }
     }
     198 = {
@@ -3496,17 +3456,12 @@ hab_divide_france = {
         add_core = TOU
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = TOU
       }
-    }
-    ROOT = {
-      release = TOU
     }
     TOU = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3532,6 +3487,7 @@ hab_divide_france = {
         add_core = GUY
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = GUY
       }
     }
     poitou_area = {
@@ -3542,6 +3498,7 @@ hab_divide_france = {
         add_core = GUY
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = GUY
       }
     }
     pyrenees_area = {
@@ -3552,17 +3509,12 @@ hab_divide_france = {
         add_core = GUY
         set_in_empire = yes
         remove_core = ROOT
+        cede_province = GUY
       }
-    }
-    ROOT = {
-      release = GUY
     }
     GUY = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
   if = {
@@ -3586,7 +3538,9 @@ hab_divide_france = {
           country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = BUR
+        set_in_empire = yes
         remove_core = ROOT
+        cede_province = BUR
       }
     }
     bourgogne_area = {
@@ -3595,18 +3549,14 @@ hab_divide_france = {
           country_or_non_sovereign_subject_holds = ROOT
         }
         add_core = BUR
+        set_in_empire = yes
         remove_core = ROOT
+        cede_province = BUR
       }
-    }
-    ROOT = {
-      release = BUR
     }
     BUR = {
       set_startup_values = yes
       add_historical_friend = ROOT
-      ROOT = {
-        add_historical_friend = BUR
-      }
     }
   }
 }
@@ -3992,4 +3942,25 @@ rus_clear_peasantry_estate_privileges = {
     }
     remove_estate_privilege = estate_burghers_rise_of_the_burghers
   }
+}
+feo_rival_genoa_effect_1 = {
+  if = {
+    limit = {
+      has_dlc = "The Cossacks"
+    }
+    add_favors = {
+      who = GEN
+      amount = 10
+    }
+    add_trust = {
+      who = GEN
+      value = 5
+      mutual = yes
+    }
+  }
+  add_historical_friend = GEN
+  GEN = {
+    add_historical_friend = ROOT
+  }
+  set_country_flag = feo_peaceful_italian_approach
 }

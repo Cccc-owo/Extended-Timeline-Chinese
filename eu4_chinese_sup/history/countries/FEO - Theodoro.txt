@@ -7,7 +7,12 @@ technology_group = eastern
 historical_friend = TRE
 capital = 2410 	#  Theodoro
 fixed_capital = 2410 	#  Cannot move capital away from this province & no power cost to move to it
-set_estate_privilege = estate_burghers_italian_coastal_influence
+if = {
+  limit = {
+    has_dlc = "Winds of Change"
+  }
+  set_estate_privilege = estate_burghers_italian_coastal_influence
+}
 1410.3.8 = {
   monarch = {
     name = "?ñ±ÉKQÓOØe" 	# Alexis

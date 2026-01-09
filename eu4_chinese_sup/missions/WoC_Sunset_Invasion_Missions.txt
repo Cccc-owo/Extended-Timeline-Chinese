@@ -15,6 +15,7 @@ WoC_sunset_invasion_1 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUN_disease = {
@@ -104,9 +105,25 @@ WoC_sunset_invasion_1 = {
     required_missions = { SUN_ships }
     position = 18
     provinces_to_highlight = {
-      region = iberia_region
-      NOT = {
-        country_or_non_sovereign_subject_holds = ROOT
+      if = {
+        limit = {
+          ROOT = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+              region = iberia_region
+              value = 15
+            }
+          }
+        }
+        province_id = 217
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
+      }
+      else = {
+        region = iberia_region
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
       }
     }
     trigger = {
@@ -138,6 +155,7 @@ WoC_sunset_invasion_1 = {
               destroy_great_project = {
                 type = el_escorial
               }
+              set_country_flag = sun_permanently_destroyed_el_escorial
             }
           }
         }
@@ -175,6 +193,7 @@ WoC_sunset_invasion_2 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUN_punish_colonialism = {
@@ -226,7 +245,7 @@ WoC_sunset_invasion_2 = {
       country_event_with_option_insight = {
         id = sunset_invasion.1
         option_1 = "
-          add_power_projection_mission = { amount = 25 } 
+          add_power_projection_mission = { amount = 20 } 
           custom_tooltip = \" \"
           add_country_modifier = { 
             name = SUN_expel_colonists
@@ -278,9 +297,25 @@ WoC_sunset_invasion_2 = {
     required_missions = { SUN_ships }
     position = 18
     provinces_to_highlight = {
-      region = france_region
-      NOT = {
-        country_or_non_sovereign_subject_holds = ROOT
+      if = {
+        limit = {
+          ROOT = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+              region = france_region
+              value = 15
+            }
+          }
+        }
+        province_id = 183
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
+      }
+      else = {
+        region = france_region
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
       }
     }
     trigger = {
@@ -290,7 +325,7 @@ WoC_sunset_invasion_2 = {
       }
       183 = {
         country_or_non_sovereign_subject_holds = ROOT
-      } 	# madrid
+      }
     }
     effect = {
       if = {
@@ -380,6 +415,7 @@ WoC_sunset_invasion_3 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUN_technology_adoption = {
@@ -446,9 +482,29 @@ WoC_sunset_invasion_3 = {
     required_missions = { SUN_ships }
     position = 18
     provinces_to_highlight = {
-      region = british_isles_region
-      NOT = {
-        country_or_non_sovereign_subject_holds = ROOT
+      if = {
+        limit = {
+          ROOT = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+              region = british_isles_region
+              value = 25
+            }
+          }
+        }
+        region = british_isles_region
+        has_great_project = {
+          type = stonehenge
+          tier = 0
+        }
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
+      }
+      else = {
+        region = british_isles_region
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
       }
     }
     trigger = {
@@ -510,6 +566,7 @@ WoC_sunset_invasion_4 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUN_strangers = {
@@ -698,6 +755,7 @@ WoC_sunset_invasion_5 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUN_settling_europe = {
@@ -909,6 +967,7 @@ WoC_sunset_invasion_maya_1 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUNm_disease = {
@@ -998,9 +1057,25 @@ WoC_sunset_invasion_maya_1 = {
     required_missions = { SUNm_ships }
     position = 14
     provinces_to_highlight = {
-      region = iberia_region
-      NOT = {
-        country_or_non_sovereign_subject_holds = ROOT
+      if = {
+        limit = {
+          ROOT = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+              region = iberia_region
+              value = 15
+            }
+          }
+        }
+        province_id = 217
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
+      }
+      else = {
+        region = iberia_region
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
       }
     }
     trigger = {
@@ -1065,6 +1140,7 @@ WoC_sunset_invasion_maya_2 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUNm_punish_colonialism = {
@@ -1129,6 +1205,10 @@ WoC_sunset_invasion_maya_2 = {
             duration = -1
           }
         "
+        option_3 = "
+          change_technology_group = high_american
+          change_unit_type = high_american
+        "
       }
     }
   }
@@ -1164,9 +1244,25 @@ WoC_sunset_invasion_maya_2 = {
     required_missions = { SUNm_ships }
     position = 14
     provinces_to_highlight = {
-      region = france_region
-      NOT = {
-        country_or_non_sovereign_subject_holds = ROOT
+      if = {
+        limit = {
+          ROOT = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+              region = france_region
+              value = 15
+            }
+          }
+        }
+        province_id = 183
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
+      }
+      else = {
+        region = france_region
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
       }
     }
     trigger = {
@@ -1259,6 +1355,7 @@ WoC_sunset_invasion_maya_3 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUNm_technology_adoption = {
@@ -1325,9 +1422,29 @@ WoC_sunset_invasion_maya_3 = {
     required_missions = { SUNm_ships }
     position = 14
     provinces_to_highlight = {
-      region = british_isles_region
-      NOT = {
-        country_or_non_sovereign_subject_holds = ROOT
+      if = {
+        limit = {
+          ROOT = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+              region = british_isles_region
+              value = 25
+            }
+          }
+        }
+        region = british_isles_region
+        has_great_project = {
+          type = stonehenge
+          tier = 0
+        }
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
+      }
+      else = {
+        region = british_isles_region
+        NOT = {
+          country_or_non_sovereign_subject_holds = ROOT
+        }
       }
     }
     trigger = {
@@ -1385,6 +1502,7 @@ WoC_sunset_invasion_maya_4 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUNm_strangers = {
@@ -1569,6 +1687,7 @@ WoC_sunset_invasion_maya_5 = {
       map_setup = map_setup_random
     }
     has_dlc = "Winds of Change"
+    is_random_new_world = no
   }
   has_country_shield = yes
   SUNm_settling_europe = {

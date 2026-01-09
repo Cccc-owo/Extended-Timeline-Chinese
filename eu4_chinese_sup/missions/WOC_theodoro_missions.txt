@@ -246,7 +246,12 @@ feo_1 = {
       }
     }
     effect = {
-      custom_tooltip = FEO_GAIN_MANA_PER_GREAT_PROJECT
+      if = {
+        limit = {
+          has_dlc = "Leviathan"
+        }
+        custom_tooltip = FEO_GAIN_MANA_PER_GREAT_PROJECT
+      }
       1766 = {
         add_province_modifier = {
           name = feo_gavras_family_gold_deposits
@@ -360,20 +365,7 @@ feo_2 = {
           }
         "
         first_effect = "
-          add_trust = {
-            who = GEN
-            value = 5
-            mutual = yes
-          }
-          add_favors = {
-             who = GEN
-             amount = 10
-          }
-          add_historical_friend = GEN
-          GEN = {
-            add_historical_friend = ROOT
-          }
-          set_country_flag = feo_peaceful_italian_approach
+          feo_rival_genoa_effect_1 = yes
         "
         second_custom_tooltip = FEO_IF_COMPLETED_THROUGH_COMBATING_ITALIANS
         second_limit = "
@@ -1381,6 +1373,14 @@ feo_5 = {
         second_custom_tooltip = FEO_IF_COMPLETED_WITH_ARMY_SIZE
         second_limit = "
           army_size = 20
+          NOT = {
+            any_ally = {
+              capital_scope = {
+                region = russia_region
+              }
+              total_development = 100
+            }
+          }
         "
         second_effect = "
           custom_tooltip = FEO_GRANT_UNION_CB_WITH_MOST_DEVELOPED_RUSSIAN_NATION

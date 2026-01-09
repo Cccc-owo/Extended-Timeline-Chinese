@@ -1953,6 +1953,7 @@ NED_4 = {
       }
     }
     trigger = {
+      tag = NED
       12 = {
         OR = {
           country_or_non_sovereign_subject_holds = ROOT
@@ -1987,7 +1988,6 @@ NED_4 = {
         first_effect = "
           12 = {
             add_province_triggered_modifier = ned_sound_toll_ties
-            save_global_event_target_as = dutch_country
             custom_tooltip = NED_PROVINCE_TRIGGERED_MODIFIER_GRANTS_TRADE_POWER
           }
         "
@@ -2462,6 +2462,7 @@ NED_4_1 = {
       complex_dynamic_effect = {
         first_custom_tooltip = NED_IF_STATISTS_IN_POWER
         first_limit = "
+          has_government_attribute = has_dutch_election
           NOT = { statists_vs_orangists = -0.9 }
         "
         first_effect = "
@@ -2472,6 +2473,7 @@ NED_4_1 = {
         "
         second_custom_tooltip = NED_IF_ORANGISTS_IN_POWER
         second_limit = "
+          has_government_attribute = has_dutch_election
           statists_vs_orangists = 0.9
         "
         second_effect = "

@@ -605,8 +605,42 @@ country_event = {
           }
         }
       }
-      cede_province = YUA
+      tooltip = {
+        cede_province = YUA
+      }
       add_core = YUA
+    }
+    hidden_effect = {
+      release = YUA
+      if = {
+        limit = {
+          NOT = {
+            exists = YUA
+          }
+        }
+        random_subject_country = {
+          limit = {
+            any_owned_province = {
+              region = mongolia_region
+            }
+          }
+          release = YUA
+        }
+      }
+      mongolia_region = {
+        limit = {
+          country_or_non_sovereign_subject_holds = ROOT
+          hidden_trigger = {
+            OR = {
+              owner = {
+                ai = yes
+              }
+              owned_by = ROOT
+            }
+          }
+        }
+        cede_province = YUA
+      }
     }
     custom_tooltip = " "
     create_subject = {

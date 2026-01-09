@@ -2327,9 +2327,16 @@ country_event = {
   is_triggered_only = yes
   option = {
     name = flavor_hab.27.a
-    add_country_modifier = {
-      name = hab_bulwark_of_catholicism
-      duration = -1
+    if = {
+      limit = {
+        NOT = {
+          has_country_modifier = hab_bulwark_of_catholicism_2
+        }
+      }
+      add_country_modifier = {
+        name = hab_bulwark_of_catholicism
+        duration = -1
+      }
     }
     add_prestige_or_monarch_power = {
       amount = 20

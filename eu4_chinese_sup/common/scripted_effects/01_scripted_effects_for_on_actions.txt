@@ -5229,11 +5229,12 @@ on_main_war_won_effect = {
     }
   }
 }
+#ALWAYS call this AFTER swap_non_generic_missions has been set or else the preview missions won't update
 on_change_tag_effect = {
-  hidden_effect = {
+  hidden_effect = { 	# Clear potential messes with name / map color changes
     restore_country_name = yes
     restore_country_color = yes
-    #England specific
+    #Remove tag-locked modifiers
     if = {
       limit = {
         has_country_modifier = royal_impressment_act_modifier
@@ -5294,6 +5295,7 @@ on_change_tag_effect = {
       }
       remove_country_modifier = TIM_india_conquest
     }
+    #Update event targets
     if = {
       limit = {
         has_country_flag = feo_russian_ally
@@ -5306,6 +5308,8 @@ on_change_tag_effect = {
       }
       save_global_event_target_as = feo_russian_pu
     }
+    #Clear all flags which add the preview buttons if you do not have any mission enabling them
+    update_mission_previews = yes
   }
 }
 on_force_conversion_effect = { 	# if = {	#Commented out for now because Catholicism has received a lot of buffs already.

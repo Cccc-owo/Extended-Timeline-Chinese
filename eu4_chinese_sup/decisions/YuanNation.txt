@@ -177,7 +177,6 @@ country_decisions = {
         rename_capital = "-N˝ê" 	# Zhongdu
       }
       change_tag = YUA
-      on_change_tag_effect = yes
       remove_non_electors_emperors_from_empire_effect = yes
       china_superregion = {
         limit = {
@@ -300,6 +299,10 @@ country_decisions = {
             }
           }
           set_global_flag = sinicized_altaic_flag
+          remove_accepted_culture = mongol
+          remove_accepted_culture = oirats
+          remove_accepted_culture = khalkha
+          remove_accepted_culture = chahar
         }
         custom_tooltip = sinicize_mongols_ct
       }
@@ -312,6 +315,7 @@ country_decisions = {
         } 	# Swap Ideas
       }
       swap_non_generic_missions = yes
+      on_change_tag_effect = yes
     }
     ai_will_do = {
       factor = 0
