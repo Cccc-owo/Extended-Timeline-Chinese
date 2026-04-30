@@ -17,7 +17,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set the environment variable
         shell: pwsh
@@ -76,7 +76,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - uses: actions/download-artifact@v4
         with:
@@ -97,7 +97,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - uses: actions/download-artifact@v4
         with:
@@ -118,7 +118,7 @@ jobs:
         shell: cmd
 
       - name: Checkout steamcmd config
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: Cccc-owo/steamcmd
           token: ${{ secrets.STEAMCMD_TOKEN }}
